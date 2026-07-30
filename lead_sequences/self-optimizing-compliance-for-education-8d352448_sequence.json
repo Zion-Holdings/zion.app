@@ -1,0 +1,35 @@
+{
+  "service_id": "self-optimizing-compliance-for-education-8d352448",
+  "service_name": "Self-Optimizing Compliance for Education",
+  "industry": "education",
+  "lead_magnet": "Student Success Automation Framework",
+  "metrics": {
+    "improvement": "41%",
+    "savings": "$5.4M",
+    "timeframe": "11 months",
+    "similar": "EduCore"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, EduCore is closing their Q3 deals this week. Want to see how Self-Optimizing Compliance for Education can help {company} save $5.4M?",
+      "sequence_id": "seq-69",
+      "service_id": "self-optimizing-compliance-for-education-8d352448"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Self-Optimizing Compliance for Education delivers 41% in 11 months.",
+      "sequence_id": "seq-69",
+      "service_id": "self-optimizing-compliance-for-education-8d352448"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-69",
+      "service_id": "self-optimizing-compliance-for-education-8d352448"
+    }
+  ],
+  "hot_lead_score": 68,
+  "conversion_likelihood": "51%",
+  "timestamp": "2026-07-30T06:42:13.029130+00:00"
+}

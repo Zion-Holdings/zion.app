@@ -1,0 +1,42 @@
+{
+  "service_id": "ai-service-directory-5d562be3",
+  "service_name": "AI Service Directory",
+  "industry": "Marketplace",
+  "conversion_metrics": {
+    "open_rate": "68%",
+    "click_rate": "42%",
+    "reply_rate": "28%",
+    "close_rate": "15%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest Marketplace challenge? AI Service Directory solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-96",
+      "service_id": "ai-service-directory-5d562be3",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is micro-saas holding you back? AI Service Directory delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-96",
+      "service_id": "ai-service-directory-5d562be3",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop micro-saas headaches. AI Service Directory = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-96",
+      "service_id": "ai-service-directory-5d562be3",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:34:08.131320+00:00"
+}

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Healthcare Autonomous - Construction - Zion Tech Group",
-  description: "The future of construction is here with Healthcare Autonomous - Construction. Powered by cutting-edge AI, this platform delivers fraud prevention like never bef",
+  description: "Unlock unprecedented growth with Healthcare Autonomous - Construction. This autonomous system provides threat detection with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/healthcare-autonomous---construction-49ab5cb8`
   }
@@ -13,25 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Healthcare Autonomous - Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Healthcare Autonomous - Construction. Powered by cutting-edge AI, this platform delivers fraud prevention like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Healthcare Autonomous - Construction. This autonomous system provides threat detection with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Network optimization with traffic analysis</li>
-            <li>Data encryption at rest and in transit</li>
-            <li>Healthcare data analytics with patient insights</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>HIPAA ready with healthcare data protection</li>
             <li>Maintenance scheduling with predictive analytics</li>
+            <li>Image recognition with computer vision</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>24/7 automated operations without human intervention</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Real-time insights and alerts for proactive management</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Better compliance with automated audit trails</li>
           </ul>
         </div>
         

@@ -1,0 +1,42 @@
+{
+  "service_id": "ai-sales-healthcare-edition-1-cce60cbd",
+  "service_name": "AI Sales - Healthcare Edition #1",
+  "industry": "healthcare",
+  "conversion_metrics": {
+    "open_rate": "71%",
+    "click_rate": "45%",
+    "reply_rate": "32%",
+    "close_rate": "18%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Q3 Special: AI Sales - Healthcare Edition #1 at 20% off. 52% improvement, $18.4M savings. Offer ends: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-20",
+      "service_id": "ai-sales-healthcare-edition-1-cce60cbd",
+      "conversion_rate": "18%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Exclusive offer for {company}: 20% discount on AI Sales - Healthcare Edition #1. 52% improvement guaranteed. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-20",
+      "service_id": "ai-sales-healthcare-edition-1-cce60cbd",
+      "conversion_rate": "18%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Limited-time: AI Sales - Healthcare Edition #1 at 20% off. $18.4M savings. Book by Friday: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-20",
+      "service_id": "ai-sales-healthcare-edition-1-cce60cbd",
+      "conversion_rate": "18%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:41:22.608373+00:00"
+}

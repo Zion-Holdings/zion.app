@@ -1,0 +1,35 @@
+{
+  "service_id": "finance-neural-manufacturing-80acd5da",
+  "service_name": "Finance Neural - Manufacturing",
+  "industry": "manufacturing",
+  "lead_magnet": "Predictive Maintenance ROI Calculator",
+  "metrics": {
+    "improvement": "51%",
+    "savings": "$15.8M",
+    "timeframe": "8 months",
+    "similar": "ManufactureCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve manufacturing. Our AI platform helped ManufactureCo achieve 51% improvement in 8 months. Quick 5-minute call?",
+      "sequence_id": "seq-71",
+      "service_id": "finance-neural-manufacturing-80acd5da"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Finance Neural - Manufacturing typically saves $15.8M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-71",
+      "service_id": "finance-neural-manufacturing-80acd5da"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 51% results. If not interested, just let me know!",
+      "sequence_id": "seq-71",
+      "service_id": "finance-neural-manufacturing-80acd5da"
+    }
+  ],
+  "hot_lead_score": 90,
+  "conversion_likelihood": "65%",
+  "timestamp": "2026-07-30T06:47:20.668822+00:00"
+}

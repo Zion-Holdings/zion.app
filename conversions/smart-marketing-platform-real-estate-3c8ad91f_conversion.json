@@ -1,0 +1,42 @@
+{
+  "service_id": "smart-marketing-platform-real-estate-3c8ad91f",
+  "service_name": "Smart Marketing Platform - Real-Estate",
+  "industry": "real-estate",
+  "conversion_metrics": {
+    "open_rate": "66%",
+    "click_rate": "39%",
+    "reply_rate": "24%",
+    "close_rate": "14%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, 90-day money-back guarantee on Smart Marketing Platform - Real-Estate. 52% improvement, $18.4M savings. Try free: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-52",
+      "service_id": "smart-marketing-platform-real-estate-3c8ad91f",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Risk-free trial: Smart Marketing Platform - Real-Estate delivers 52% or you don't pay. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-52",
+      "service_id": "smart-marketing-platform-real-estate-3c8ad91f",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "No risk, all reward: $18.4M savings with Smart Marketing Platform - Real-Estate. 90-day guarantee. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-52",
+      "service_id": "smart-marketing-platform-real-estate-3c8ad91f",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:34:08.122582+00:00"
+}

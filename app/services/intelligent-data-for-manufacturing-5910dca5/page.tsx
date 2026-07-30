@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Data for Manufacturing - Zion Tech Group",
-  description: "The future of manufacturing is here with Intelligent Data for Manufacturing. Powered by cutting-edge AI, this platform delivers threat detection like never befo",
+  description: "Revolutionize manufacturing through intelligent automation. Our Intelligent Data for Manufacturing leverages advanced machine learning to deliver document proce",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-data-for-manufacturing-5910dca5`
   }
@@ -13,26 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Data for Manufacturing</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of manufacturing is here with Intelligent Data for Manufacturing. Powered by cutting-edge AI, this platform delivers threat detection like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize manufacturing through intelligent automation. Our Intelligent Data for Manufacturing leverages advanced machine learning to deliver document processing at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Customer service automation with chatbot integration</li>
-            <li>Audit trails with compliance reporting</li>
             <li>HIPAA ready with healthcare data protection</li>
-            <li>Machine learning integration with automatic model training</li>
-            <li>Predictive modeling with ensemble methods</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>Real-time processing with streaming analytics</li>
+            <li>Edge computing support for low-latency operations</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced decision making with data-driven insights</li>
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Better supply chain visibility with tracking</li>
-            <li>Better risk management with predictive analytics</li>
+            <li>Seamless integration with existing systems and workflows</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

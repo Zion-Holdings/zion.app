@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-platform-platform-sports-e7f4e461",
+  "service_name": "Smart Platform Platform - Sports",
+  "industry": "sports",
+  "lead_magnet": "Fan Engagement Growth Framework",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$8.9M",
+    "timeframe": "4 months",
+    "similar": "SportsTeam"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, SportsTeam just implemented Smart Platform Platform - Sports last month - 55% improvement already. Thoughts?",
+      "sequence_id": "seq-73",
+      "service_id": "smart-platform-platform-sports-e7f4e461"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: SportsTeam saw $8.9M in savings. Your sports peers are seeing similar results.",
+      "sequence_id": "seq-73",
+      "service_id": "smart-platform-platform-sports-e7f4e461"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-73",
+      "service_id": "smart-platform-platform-sports-e7f4e461"
+    }
+  ],
+  "hot_lead_score": 86,
+  "conversion_likelihood": "50%",
+  "timestamp": "2026-07-30T06:32:49.818318+00:00"
+}

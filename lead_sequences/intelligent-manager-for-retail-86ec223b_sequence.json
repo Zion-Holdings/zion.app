@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-manager-for-retail-86ec223b",
+  "service_name": "Intelligent Manager for Retail",
+  "industry": "retail",
+  "lead_magnet": "Customer Retention Playbook",
+  "metrics": {
+    "improvement": "44%",
+    "savings": "$9.3M",
+    "timeframe": "7 months",
+    "similar": "RetailPro"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, RetailPro is closing their Q3 deals this week. Want to see how Intelligent Manager for Retail can help {company} save $9.3M?",
+      "sequence_id": "seq-89",
+      "service_id": "intelligent-manager-for-retail-86ec223b"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Intelligent Manager for Retail delivers 44% in 7 months.",
+      "sequence_id": "seq-89",
+      "service_id": "intelligent-manager-for-retail-86ec223b"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-89",
+      "service_id": "intelligent-manager-for-retail-86ec223b"
+    }
+  ],
+  "hot_lead_score": 89,
+  "conversion_likelihood": "72%",
+  "timestamp": "2026-07-30T06:38:30.265134+00:00"
+}

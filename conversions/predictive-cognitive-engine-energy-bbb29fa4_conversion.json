@@ -1,0 +1,42 @@
+{
+  "service_id": "predictive-cognitive-engine-energy-bbb29fa4",
+  "service_name": "Predictive Cognitive Engine - Energy",
+  "industry": "energy",
+  "conversion_metrics": {
+    "open_rate": "68%",
+    "click_rate": "42%",
+    "reply_rate": "28%",
+    "close_rate": "16%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Q3 Special: Predictive Cognitive Engine - Energy at 20% off. 52% improvement, $18.4M savings. Offer ends: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-62",
+      "service_id": "predictive-cognitive-engine-energy-bbb29fa4",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Exclusive offer for {company}: 20% discount on Predictive Cognitive Engine - Energy. 52% improvement guaranteed. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-62",
+      "service_id": "predictive-cognitive-engine-energy-bbb29fa4",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Limited-time: Predictive Cognitive Engine - Energy at 20% off. $18.4M savings. Book by Friday: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-62",
+      "service_id": "predictive-cognitive-engine-energy-bbb29fa4",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:36:20.604985+00:00"
+}

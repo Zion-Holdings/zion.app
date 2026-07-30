@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Finance Automated - Logistics - Zion Tech Group",
-  description: "Unlock unprecedented growth with Finance Automated - Logistics. This autonomous system provides risk assessment with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Finance Automated - Logistics. This autonomous system provides maintenance scheduling with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/finance-automated---logistics-86b5ed68`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Finance Automated - Logistics</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Finance Automated - Logistics. This autonomous system provides risk assessment with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Finance Automated - Logistics. This autonomous system provides maintenance scheduling with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>Content generation with plagiarism checks</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Financial risk management with scenario analysis</li>
+            <li>Image recognition with computer vision</li>
             <li>Fraud detection with anomaly analysis</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>Version control with rollback capabilities</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>50% reduction in operational costs through automation</li>
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Better compliance with automated audit trails</li>
-            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         

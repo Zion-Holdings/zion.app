@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-manager-finance-fa99e75e",
+  "service_name": "Cognitive manager-finance",
+  "industry": "finance",
+  "lead_magnet": "Regulatory Compliance Automation Guide",
+  "metrics": {
+    "improvement": "58%",
+    "savings": "$24.1M",
+    "timeframe": "5 months",
+    "similar": "Capital Group"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows finance companies using Cognitive manager-finance see 58% improvement. Your current process?",
+      "sequence_id": "seq-15",
+      "service_id": "cognitive-manager-finance-fa99e75e"
+    },
+    {
+      "step": 2,
+      "message": "Based on your finance profile, Cognitive manager-finance could save {company} approximately $24.1M. Interested in details?",
+      "sequence_id": "seq-15",
+      "service_id": "cognitive-manager-finance-fa99e75e"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Cognitive manager-finance is proven to deliver 58% results.",
+      "sequence_id": "seq-15",
+      "service_id": "cognitive-manager-finance-fa99e75e"
+    }
+  ],
+  "hot_lead_score": 74,
+  "conversion_likelihood": "42%",
+  "timestamp": "2026-07-30T06:32:49.791528+00:00"
+}

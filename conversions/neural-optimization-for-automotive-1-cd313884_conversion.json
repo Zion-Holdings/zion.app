@@ -1,0 +1,42 @@
+{
+  "service_id": "neural-optimization-for-automotive-1-cd313884",
+  "service_name": "Neural Optimization for Automotive #1",
+  "industry": "automotive",
+  "conversion_metrics": {
+    "open_rate": "69%",
+    "click_rate": "41%",
+    "reply_rate": "27%",
+    "close_rate": "16%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest automotive challenge? Neural Optimization for Automotive #1 solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-89",
+      "service_id": "neural-optimization-for-automotive-1-cd313884",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is optimization holding you back? Neural Optimization for Automotive #1 delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-89",
+      "service_id": "neural-optimization-for-automotive-1-cd313884",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop optimization headaches. Neural Optimization for Automotive #1 = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-89",
+      "service_id": "neural-optimization-for-automotive-1-cd313884",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:48:18.406842+00:00"
+}

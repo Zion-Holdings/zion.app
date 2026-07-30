@@ -1,0 +1,42 @@
+{
+  "service_id": "ai-powered-experience-for-logistics-f8aba6a8",
+  "service_name": "AI-Powered Experience for Logistics",
+  "industry": "logistics",
+  "conversion_metrics": {
+    "open_rate": "67%",
+    "click_rate": "40%",
+    "reply_rate": "26%",
+    "close_rate": "15%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, {company} can save $18.4 million with AI-Powered Experience for Logistics. Quick call? https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-56",
+      "service_id": "ai-powered-experience-for-logistics-f8aba6a8",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "$18.4M in annual savings with AI-Powered Experience for Logistics. 52% improvement in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-56",
+      "service_id": "ai-powered-experience-for-logistics-f8aba6a8",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Save $18.4 million/year. AI-Powered Experience for Logistics delivers 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-56",
+      "service_id": "ai-powered-experience-for-logistics-f8aba6a8",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:45:21.744753+00:00"
+}

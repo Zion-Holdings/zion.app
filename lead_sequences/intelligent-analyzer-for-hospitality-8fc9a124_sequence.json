@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-analyzer-for-hospitality-8fc9a124",
+  "service_name": "Intelligent Analyzer for Hospitality",
+  "industry": "hospitality",
+  "lead_magnet": "Guest Experience Automation Blueprint",
+  "metrics": {
+    "improvement": "42%",
+    "savings": "$7.6M",
+    "timeframe": "10 months",
+    "similar": "HotelChain"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, HotelChain just implemented Intelligent Analyzer for Hospitality last month - 42% improvement already. Thoughts?",
+      "sequence_id": "seq-78",
+      "service_id": "intelligent-analyzer-for-hospitality-8fc9a124"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: HotelChain saw $7.6M in savings. Your hospitality peers are seeing similar results.",
+      "sequence_id": "seq-78",
+      "service_id": "intelligent-analyzer-for-hospitality-8fc9a124"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-78",
+      "service_id": "intelligent-analyzer-for-hospitality-8fc9a124"
+    }
+  ],
+  "hot_lead_score": 65,
+  "conversion_likelihood": "62%",
+  "timestamp": "2026-07-30T06:38:30.264085+00:00"
+}

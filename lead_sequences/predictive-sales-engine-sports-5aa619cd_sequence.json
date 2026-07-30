@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-sales-engine-sports-5aa619cd",
+  "service_name": "Predictive Sales Engine - Sports",
+  "industry": "sports",
+  "lead_magnet": "Fan Engagement Growth Framework",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$8.9M",
+    "timeframe": "4 months",
+    "similar": "SportsTeam"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with sports generator?",
+      "sequence_id": "seq-12",
+      "service_id": "predictive-sales-engine-sports-5aa619cd"
+    },
+    {
+      "step": 2,
+      "message": "We've helped SportsTeam solve this exact problem with Predictive Sales Engine - Sports. Achieved 55% in 4 months.",
+      "sequence_id": "seq-12",
+      "service_id": "predictive-sales-engine-sports-5aa619cd"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-12",
+      "service_id": "predictive-sales-engine-sports-5aa619cd"
+    }
+  ],
+  "hot_lead_score": 74,
+  "conversion_likelihood": "75%",
+  "timestamp": "2026-07-30T06:47:20.657339+00:00"
+}

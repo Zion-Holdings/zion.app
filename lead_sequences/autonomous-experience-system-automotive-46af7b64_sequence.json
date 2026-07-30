@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-experience-system-automotive-46af7b64",
+  "service_name": "Autonomous Experience System - Automotive",
+  "industry": "automotive",
+  "lead_magnet": "Supply Chain Efficiency Audit",
+  "metrics": {
+    "improvement": "50%",
+    "savings": "$14.1M",
+    "timeframe": "6 months",
+    "similar": "AutoMakers"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, AutoMakers just implemented Autonomous Experience System - Automotive last month - 50% improvement already. Thoughts?",
+      "sequence_id": "seq-33",
+      "service_id": "autonomous-experience-system-automotive-46af7b64"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: AutoMakers saw $14.1M in savings. Your automotive peers are seeing similar results.",
+      "sequence_id": "seq-33",
+      "service_id": "autonomous-experience-system-automotive-46af7b64"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-33",
+      "service_id": "autonomous-experience-system-automotive-46af7b64"
+    }
+  ],
+  "hot_lead_score": 90,
+  "conversion_likelihood": "69%",
+  "timestamp": "2026-07-30T06:47:20.661268+00:00"
+}

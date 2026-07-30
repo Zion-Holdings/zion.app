@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Customer Advisor - Zion Tech Group",
-  description: "Next-generation automotive solution: Intelligent Customer Advisor. Combines inventory management with adaptive intelligence for optimal results.",
+  description: "Next-generation automotive solution: Intelligent Customer Advisor. Combines code optimization with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-customer-advisor-0ca02876`
   }
@@ -13,26 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Customer Advisor</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation automotive solution: Intelligent Customer Advisor. Combines inventory management with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation automotive solution: Intelligent Customer Advisor. Combines code optimization with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Maintenance scheduling with predictive analytics</li>
-            <li>Energy optimization with consumption tracking</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Multi-region deployment with automatic failover</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>Compliance monitoring with regulatory updates</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>Reduced human error by 95% with automated processes</li>
             <li>3x faster decision making with real-time insights</li>
-            <li>Improved quality with automated testing and validation</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>Reduced human error by 95% with automated processes</li>
           </ul>
         </div>
         

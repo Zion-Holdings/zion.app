@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-data-solution-telecom-06f69767",
+  "service_name": "Cognitive Data Solution - Telecom",
+  "industry": "telecom",
+  "lead_magnet": "Network Optimization Cost Analysis",
+  "metrics": {
+    "improvement": "53%",
+    "savings": "$19.2M",
+    "timeframe": "5 months",
+    "similar": "TeleCom Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve telecom. Our AI platform helped TeleCom Solutions achieve 53% improvement in 5 months. Quick 5-minute call?",
+      "sequence_id": "seq-26",
+      "service_id": "cognitive-data-solution-telecom-06f69767"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Cognitive Data Solution - Telecom typically saves $19.2M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-26",
+      "service_id": "cognitive-data-solution-telecom-06f69767"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 53% results. If not interested, just let me know!",
+      "sequence_id": "seq-26",
+      "service_id": "cognitive-data-solution-telecom-06f69767"
+    }
+  ],
+  "hot_lead_score": 72,
+  "conversion_likelihood": "61%",
+  "timestamp": "2026-07-30T06:32:49.797735+00:00"
+}

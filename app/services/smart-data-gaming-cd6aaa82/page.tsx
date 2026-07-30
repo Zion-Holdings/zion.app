@@ -18,21 +18,21 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Open-source friendly with plugin architecture</li>
-            <li>SOC 2 certified with security controls</li>
+            <li>Inventory prediction with demand forecasting</li>
             <li>Alerting system with intelligent notifications</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Network optimization with traffic analysis</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>Better compliance with automated audit trails</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Increased revenue with optimized pricing strategies</li>
             <li>Cost optimization recommendations with savings analysis</li>
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Improved customer satisfaction with faster response times</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
           </ul>
         </div>
         

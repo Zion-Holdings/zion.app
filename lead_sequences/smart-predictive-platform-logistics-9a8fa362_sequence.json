@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-predictive-platform-logistics-9a8fa362",
+  "service_name": "Smart Predictive Platform - Logistics",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, LogisticsPlus is closing their Q3 deals this week. Want to see how Smart Predictive Platform - Logistics can help {company} save $11.2M?",
+      "sequence_id": "seq-89",
+      "service_id": "smart-predictive-platform-logistics-9a8fa362"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Smart Predictive Platform - Logistics delivers 49% in 6 months.",
+      "sequence_id": "seq-89",
+      "service_id": "smart-predictive-platform-logistics-9a8fa362"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-89",
+      "service_id": "smart-predictive-platform-logistics-9a8fa362"
+    }
+  ],
+  "hot_lead_score": 94,
+  "conversion_likelihood": "50%",
+  "timestamp": "2026-07-30T06:47:20.672292+00:00"
+}

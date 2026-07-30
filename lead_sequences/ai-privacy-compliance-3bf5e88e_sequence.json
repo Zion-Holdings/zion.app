@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-privacy-compliance-3bf5e88e",
+  "service_name": "AI Privacy Compliance",
+  "industry": "Compliance",
+  "lead_magnet": "AI Solutions Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with Compliance security?",
+      "sequence_id": "seq-22",
+      "service_id": "ai-privacy-compliance-3bf5e88e"
+    },
+    {
+      "step": 2,
+      "message": "We've helped TechStart Inc. solve this exact problem with AI Privacy Compliance. Achieved 52% in 6 months.",
+      "sequence_id": "seq-22",
+      "service_id": "ai-privacy-compliance-3bf5e88e"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-22",
+      "service_id": "ai-privacy-compliance-3bf5e88e"
+    }
+  ],
+  "hot_lead_score": 77,
+  "conversion_likelihood": "62%",
+  "timestamp": "2026-07-30T06:38:30.258738+00:00"
+}

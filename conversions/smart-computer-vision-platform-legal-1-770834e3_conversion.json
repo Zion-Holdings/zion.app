@@ -1,0 +1,42 @@
+{
+  "service_id": "smart-computer-vision-platform-legal-1-770834e3",
+  "service_name": "Smart Computer Vision Platform - Legal #1",
+  "industry": "legal",
+  "conversion_metrics": {
+    "open_rate": "61%",
+    "click_rate": "34%",
+    "reply_rate": "21%",
+    "close_rate": "12%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest legal challenge? Smart Computer Vision Platform - Legal #1 solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-61",
+      "service_id": "smart-computer-vision-platform-legal-1-770834e3",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is ai holding you back? Smart Computer Vision Platform - Legal #1 delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-61",
+      "service_id": "smart-computer-vision-platform-legal-1-770834e3",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop ai headaches. Smart Computer Vision Platform - Legal #1 = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-61",
+      "service_id": "smart-computer-vision-platform-legal-1-770834e3",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:39:10.798359+00:00"
+}

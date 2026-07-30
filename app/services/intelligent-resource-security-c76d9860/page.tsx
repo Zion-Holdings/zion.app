@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Resource Security - Zion Tech Group",
-  description: "The future of technology is here with Intelligent Resource Security. Powered by cutting-edge AI, this platform delivers network optimization like never before.",
+  description: "Unlock unprecedented growth with Intelligent Resource Security. This autonomous system provides financial risk management with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-resource-security-c76d9860`
   }
@@ -13,25 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Resource Security</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of technology is here with Intelligent Resource Security. Powered by cutting-edge AI, this platform delivers network optimization like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Intelligent Resource Security. This autonomous system provides financial risk management with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Network optimization with traffic analysis</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Sales process optimization with pipeline management</li>
-            <li>Machine learning integration with automatic model training</li>
-            <li>SOC 2 certified with security controls</li>
+            <li>Compliance monitoring with regulatory updates</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Better compliance with automated audit trails</li>
+            <li>Zero manual intervention required for routine tasks</li>
             <li>Enhanced security with continuous threat monitoring</li>
-            <li>24/7 automated operations without human intervention</li>
-            <li>Reduced human error by 95% with automated processes</li>
           </ul>
         </div>
         

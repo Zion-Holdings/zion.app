@@ -1,0 +1,42 @@
+{
+  "service_id": "cognitive-healthcare-solution-logistics-5f00aac0",
+  "service_name": "Cognitive Healthcare Solution - Logistics",
+  "industry": "logistics",
+  "conversion_metrics": {
+    "open_rate": "67%",
+    "click_rate": "40%",
+    "reply_rate": "26%",
+    "close_rate": "15%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest logistics challenge? Cognitive Healthcare Solution - Logistics solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-26",
+      "service_id": "cognitive-healthcare-solution-logistics-5f00aac0",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is manufacturing holding you back? Cognitive Healthcare Solution - Logistics delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-26",
+      "service_id": "cognitive-healthcare-solution-logistics-5f00aac0",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop manufacturing headaches. Cognitive Healthcare Solution - Logistics = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-26",
+      "service_id": "cognitive-healthcare-solution-logistics-5f00aac0",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:36:20.600200+00:00"
+}

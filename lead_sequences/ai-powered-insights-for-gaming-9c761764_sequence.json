@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-powered-insights-for-gaming-9c761764",
+  "service_name": "AI-Powered Insights for Gaming",
+  "industry": "gaming",
+  "lead_magnet": "Player Retention Strategy Playbook",
+  "metrics": {
+    "improvement": "57%",
+    "savings": "$10.3M",
+    "timeframe": "5 months",
+    "similar": "GameStudio"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, GameStudio just implemented AI-Powered Insights for Gaming last month - 57% improvement already. Thoughts?",
+      "sequence_id": "seq-63",
+      "service_id": "ai-powered-insights-for-gaming-9c761764"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: GameStudio saw $10.3M in savings. Your gaming peers are seeing similar results.",
+      "sequence_id": "seq-63",
+      "service_id": "ai-powered-insights-for-gaming-9c761764"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-63",
+      "service_id": "ai-powered-insights-for-gaming-9c761764"
+    }
+  ],
+  "hot_lead_score": 71,
+  "conversion_likelihood": "44%",
+  "timestamp": "2026-07-30T06:42:13.027062+00:00"
+}

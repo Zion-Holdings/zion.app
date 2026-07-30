@@ -1,0 +1,42 @@
+{
+  "service_id": "intelligent-devops-for-finance-b5b67e54",
+  "service_name": "Intelligent DevOps for Finance",
+  "industry": "finance",
+  "conversion_metrics": {
+    "open_rate": "73%",
+    "click_rate": "48%",
+    "reply_rate": "35%",
+    "close_rate": "22%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, {company} can save $18.4 million with Intelligent DevOps for Finance. Quick call? https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-77",
+      "service_id": "intelligent-devops-for-finance-b5b67e54",
+      "conversion_rate": "22%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "$18.4M in annual savings with Intelligent DevOps for Finance. 52% improvement in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-77",
+      "service_id": "intelligent-devops-for-finance-b5b67e54",
+      "conversion_rate": "22%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Save $18.4 million/year. Intelligent DevOps for Finance delivers 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-77",
+      "service_id": "intelligent-devops-for-finance-b5b67e54",
+      "conversion_rate": "22%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:36:20.606451+00:00"
+}

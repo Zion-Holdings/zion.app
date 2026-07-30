@@ -18,22 +18,21 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Custom integrations with webhook support</li>
-            <li>Customer service automation with chatbot integration</li>
-            <li>Code optimization with performance profiling</li>
-            <li>Maintenance scheduling with predictive analytics</li>
-            <li>Audit trails with compliance reporting</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>3x faster decision making with real-time insights</li>
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>50% reduction in operational costs through automation</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
-            <li>24/7 automated operations without human intervention</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>Improved customer satisfaction with faster response times</li>
           </ul>
         </div>
         

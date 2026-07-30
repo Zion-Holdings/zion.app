@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Monitoring - Construction Edition - Zion Tech Group",
-  description: "Next-generation construction solution: AI Monitoring - Construction Edition. Combines financial planning with adaptive intelligence for optimal results.",
+  description: "Revolutionize construction through intelligent automation. Our AI Monitoring - Construction Edition leverages advanced machine learning to deliver financial ris",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-monitoring---construction-edition-2ba8cf0a`
   }
@@ -13,15 +13,15 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Monitoring - Construction Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: AI Monitoring - Construction Edition. Combines financial planning with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our AI Monitoring - Construction Edition leverages advanced machine learning to deliver financial risk management at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Language processing with sentiment analysis</li>
-            <li>Serverless functions for cost-effective scaling</li>
-            <li>Edge computing support for low-latency operations</li>
-            <li>Custom integrations with webhook support</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Machine learning integration with automatic model training</li>
+            <li>Data encryption at rest and in transit</li>
             <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
@@ -29,10 +29,11 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced security with continuous threat monitoring</li>
+            <li>50% reduction in operational costs through automation</li>
             <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Increased revenue with optimized pricing strategies</li>
-            <li>Better risk management with predictive analytics</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>Improved customer satisfaction with faster response times</li>
           </ul>
         </div>
         

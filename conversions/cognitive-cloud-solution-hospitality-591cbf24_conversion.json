@@ -1,0 +1,42 @@
+{
+  "service_id": "cognitive-cloud-solution-hospitality-591cbf24",
+  "service_name": "Cognitive Cloud Solution - Hospitality",
+  "industry": "hospitality",
+  "conversion_metrics": {
+    "open_rate": "63%",
+    "click_rate": "36%",
+    "reply_rate": "23%",
+    "close_rate": "13%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, {company} can save $18.4 million with Cognitive Cloud Solution - Hospitality. Quick call? https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-14",
+      "service_id": "cognitive-cloud-solution-hospitality-591cbf24",
+      "conversion_rate": "13%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "$18.4M in annual savings with Cognitive Cloud Solution - Hospitality. 52% improvement in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-14",
+      "service_id": "cognitive-cloud-solution-hospitality-591cbf24",
+      "conversion_rate": "13%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Save $18.4 million/year. Cognitive Cloud Solution - Hospitality delivers 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-14",
+      "service_id": "cognitive-cloud-solution-hospitality-591cbf24",
+      "conversion_rate": "13%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:36:20.598494+00:00"
+}

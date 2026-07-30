@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-marketing-engine-energy-aa7f3794",
+  "service_name": "Predictive Marketing Engine - Energy",
+  "industry": "energy",
+  "lead_magnet": "Energy Savings Calculator",
+  "metrics": {
+    "improvement": "48%",
+    "savings": "$16.5M",
+    "timeframe": "8 months",
+    "similar": "EnergyCorp"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with energy predictor?",
+      "sequence_id": "seq-37",
+      "service_id": "predictive-marketing-engine-energy-aa7f3794"
+    },
+    {
+      "step": 2,
+      "message": "We've helped EnergyCorp solve this exact problem with Predictive Marketing Engine - Energy. Achieved 48% in 8 months.",
+      "sequence_id": "seq-37",
+      "service_id": "predictive-marketing-engine-energy-aa7f3794"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-37",
+      "service_id": "predictive-marketing-engine-energy-aa7f3794"
+    }
+  ],
+  "hot_lead_score": 93,
+  "conversion_likelihood": "52%",
+  "timestamp": "2026-07-30T06:47:20.661860+00:00"
+}

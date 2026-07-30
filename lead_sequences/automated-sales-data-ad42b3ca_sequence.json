@@ -1,0 +1,35 @@
+{
+  "service_id": "automated-sales-data-ad42b3ca",
+  "service_name": "Automated Sales Data",
+  "industry": "healthcare",
+  "lead_magnet": "HIPAA-Compliant Automation Checklist",
+  "metrics": {
+    "improvement": "47%",
+    "savings": "$12.7M",
+    "timeframe": "9 months",
+    "similar": "HealthFirst Hospital"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, HealthFirst Hospital is closing their Q3 deals this week. Want to see how Automated Sales Data can help {company} save $12.7M?",
+      "sequence_id": "seq-64",
+      "service_id": "automated-sales-data-ad42b3ca"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Automated Sales Data delivers 47% in 9 months.",
+      "sequence_id": "seq-64",
+      "service_id": "automated-sales-data-ad42b3ca"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-64",
+      "service_id": "automated-sales-data-ad42b3ca"
+    }
+  ],
+  "hot_lead_score": 94,
+  "conversion_likelihood": "66%",
+  "timestamp": "2026-07-30T06:38:30.262706+00:00"
+}

@@ -1,0 +1,42 @@
+{
+  "service_id": "ai-powered-generator-for-automotive-bbf42ce3",
+  "service_name": "AI-Powered Generator for Automotive",
+  "industry": "automotive",
+  "conversion_metrics": {
+    "open_rate": "69%",
+    "click_rate": "41%",
+    "reply_rate": "27%",
+    "close_rate": "16%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Q3 Special: AI-Powered Generator for Automotive at 20% off. 52% improvement, $18.4M savings. Offer ends: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-69",
+      "service_id": "ai-powered-generator-for-automotive-bbf42ce3",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Exclusive offer for {company}: 20% discount on AI-Powered Generator for Automotive. 52% improvement guaranteed. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-69",
+      "service_id": "ai-powered-generator-for-automotive-bbf42ce3",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Limited-time: AI-Powered Generator for Automotive at 20% off. $18.4M savings. Book by Friday: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-69",
+      "service_id": "ai-powered-generator-for-automotive-bbf42ce3",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:45:21.769904+00:00"
+}

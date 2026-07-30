@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-revenue-platform-legal-d41d889b",
+  "service_name": "Smart Revenue Platform - Legal",
+  "industry": "legal",
+  "lead_magnet": "Document Review Automation Checklist",
+  "metrics": {
+    "improvement": "39%",
+    "savings": "$3.1M",
+    "timeframe": "14 months",
+    "similar": "LawFirm"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, LawFirm is closing their Q3 deals this week. Want to see how Smart Revenue Platform - Legal can help {company} save $3.1M?",
+      "sequence_id": "seq-19",
+      "service_id": "smart-revenue-platform-legal-d41d889b"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Smart Revenue Platform - Legal delivers 39% in 14 months.",
+      "sequence_id": "seq-19",
+      "service_id": "smart-revenue-platform-legal-d41d889b"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-19",
+      "service_id": "smart-revenue-platform-legal-d41d889b"
+    }
+  ],
+  "hot_lead_score": 83,
+  "conversion_likelihood": "62%",
+  "timestamp": "2026-07-30T06:47:20.658139+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-predictor-solution-insurance-03c17b0b",
+  "service_name": "Cognitive Predictor Solution - Insurance",
+  "industry": "insurance",
+  "lead_magnet": "Claims Processing Automation Guide",
+  "metrics": {
+    "improvement": "54%",
+    "savings": "$17.3M",
+    "timeframe": "7 months",
+    "similar": "InsurePlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, InsurePlus is closing their Q3 deals this week. Want to see how Cognitive Predictor Solution - Insurance can help {company} save $17.3M?",
+      "sequence_id": "seq-74",
+      "service_id": "cognitive-predictor-solution-insurance-03c17b0b"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Cognitive Predictor Solution - Insurance delivers 54% in 7 months.",
+      "sequence_id": "seq-74",
+      "service_id": "cognitive-predictor-solution-insurance-03c17b0b"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-74",
+      "service_id": "cognitive-predictor-solution-insurance-03c17b0b"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "61%",
+  "timestamp": "2026-07-30T06:38:30.263715+00:00"
+}

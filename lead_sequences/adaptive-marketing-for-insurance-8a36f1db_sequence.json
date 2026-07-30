@@ -1,0 +1,35 @@
+{
+  "service_id": "adaptive-marketing-for-insurance-8a36f1db",
+  "service_name": "Adaptive Marketing for Insurance",
+  "industry": "insurance",
+  "lead_magnet": "Claims Processing Automation Guide",
+  "metrics": {
+    "improvement": "54%",
+    "savings": "$17.3M",
+    "timeframe": "7 months",
+    "similar": "InsurePlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, InsurePlus is closing their Q3 deals this week. Want to see how Adaptive Marketing for Insurance can help {company} save $17.3M?",
+      "sequence_id": "seq-59",
+      "service_id": "adaptive-marketing-for-insurance-8a36f1db"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Adaptive Marketing for Insurance delivers 54% in 7 months.",
+      "sequence_id": "seq-59",
+      "service_id": "adaptive-marketing-for-insurance-8a36f1db"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-59",
+      "service_id": "adaptive-marketing-for-insurance-8a36f1db"
+    }
+  ],
+  "hot_lead_score": 66,
+  "conversion_likelihood": "48%",
+  "timestamp": "2026-07-30T06:42:13.025507+00:00"
+}

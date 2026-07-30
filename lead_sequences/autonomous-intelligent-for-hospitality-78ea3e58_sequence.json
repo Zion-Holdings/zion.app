@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-intelligent-for-hospitality-78ea3e58",
+  "service_name": "Autonomous Intelligent for Hospitality",
+  "industry": "hospitality",
+  "lead_magnet": "Guest Experience Automation Blueprint",
+  "metrics": {
+    "improvement": "42%",
+    "savings": "$7.6M",
+    "timeframe": "10 months",
+    "similar": "HotelChain"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with hospitality autonomous?",
+      "sequence_id": "seq-72",
+      "service_id": "autonomous-intelligent-for-hospitality-78ea3e58"
+    },
+    {
+      "step": 2,
+      "message": "We've helped HotelChain solve this exact problem with Autonomous Intelligent for Hospitality. Achieved 42% in 10 months.",
+      "sequence_id": "seq-72",
+      "service_id": "autonomous-intelligent-for-hospitality-78ea3e58"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-72",
+      "service_id": "autonomous-intelligent-for-hospitality-78ea3e58"
+    }
+  ],
+  "hot_lead_score": 93,
+  "conversion_likelihood": "69%",
+  "timestamp": "2026-07-30T06:32:49.817738+00:00"
+}

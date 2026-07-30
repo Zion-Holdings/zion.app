@@ -1,0 +1,42 @@
+{
+  "service_id": "enterprise-decision-platform-aitech-25ebee1a",
+  "service_name": "Enterprise Decision Platform - AITECH",
+  "industry": "aitech",
+  "conversion_metrics": {
+    "open_rate": "75%",
+    "click_rate": "50%",
+    "reply_rate": "37%",
+    "close_rate": "24%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest aitech challenge? Enterprise Decision Platform - AITECH solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-96",
+      "service_id": "enterprise-decision-platform-aitech-25ebee1a",
+      "conversion_rate": "24%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is automation holding you back? Enterprise Decision Platform - AITECH delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-96",
+      "service_id": "enterprise-decision-platform-aitech-25ebee1a",
+      "conversion_rate": "24%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop automation headaches. Enterprise Decision Platform - AITECH = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-96",
+      "service_id": "enterprise-decision-platform-aitech-25ebee1a",
+      "conversion_rate": "24%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:36:20.607960+00:00"
+}

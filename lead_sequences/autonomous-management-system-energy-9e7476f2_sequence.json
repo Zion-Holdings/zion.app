@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-management-system-energy-9e7476f2",
+  "service_name": "Autonomous Management System - Energy",
+  "industry": "energy",
+  "lead_magnet": "Energy Savings Calculator",
+  "metrics": {
+    "improvement": "48%",
+    "savings": "$16.5M",
+    "timeframe": "8 months",
+    "similar": "EnergyCorp"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows energy companies using Autonomous Management System - Energy see 48% improvement. Your current process?",
+      "sequence_id": "seq-30",
+      "service_id": "autonomous-management-system-energy-9e7476f2"
+    },
+    {
+      "step": 2,
+      "message": "Based on your energy profile, Autonomous Management System - Energy could save {company} approximately $16.5M. Interested in details?",
+      "sequence_id": "seq-30",
+      "service_id": "autonomous-management-system-energy-9e7476f2"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Autonomous Management System - Energy is proven to deliver 48% results.",
+      "sequence_id": "seq-30",
+      "service_id": "autonomous-management-system-energy-9e7476f2"
+    }
+  ],
+  "hot_lead_score": 89,
+  "conversion_likelihood": "54%",
+  "timestamp": "2026-07-30T06:47:20.660468+00:00"
+}

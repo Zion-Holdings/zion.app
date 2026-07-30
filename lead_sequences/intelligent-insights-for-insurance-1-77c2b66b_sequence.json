@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-insights-for-insurance-1-77c2b66b",
+  "service_name": "Intelligent Insights for Insurance #1",
+  "industry": "insurance",
+  "lead_magnet": "Claims Processing Automation Guide",
+  "metrics": {
+    "improvement": "54%",
+    "savings": "$17.3M",
+    "timeframe": "7 months",
+    "similar": "InsurePlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, InsurePlus is closing their Q3 deals this week. Want to see how Intelligent Insights for Insurance #1 can help {company} save $17.3M?",
+      "sequence_id": "seq-9",
+      "service_id": "intelligent-insights-for-insurance-1-77c2b66b"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Intelligent Insights for Insurance #1 delivers 54% in 7 months.",
+      "sequence_id": "seq-9",
+      "service_id": "intelligent-insights-for-insurance-1-77c2b66b"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-9",
+      "service_id": "intelligent-insights-for-insurance-1-77c2b66b"
+    }
+  ],
+  "hot_lead_score": 66,
+  "conversion_likelihood": "62%",
+  "timestamp": "2026-07-30T06:38:30.257490+00:00"
+}

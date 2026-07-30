@@ -1,0 +1,42 @@
+{
+  "service_id": "intelligent-cognitive-for-automotive-c7c294c3",
+  "service_name": "Intelligent Cognitive for Automotive",
+  "industry": "automotive",
+  "conversion_metrics": {
+    "open_rate": "69%",
+    "click_rate": "41%",
+    "reply_rate": "27%",
+    "close_rate": "16%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, {company} can save $18.4 million with Intelligent Cognitive for Automotive. Quick call? https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-63",
+      "service_id": "intelligent-cognitive-for-automotive-c7c294c3",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "$18.4M in annual savings with Intelligent Cognitive for Automotive. 52% improvement in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-63",
+      "service_id": "intelligent-cognitive-for-automotive-c7c294c3",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Save $18.4 million/year. Intelligent Cognitive for Automotive delivers 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-63",
+      "service_id": "intelligent-cognitive-for-automotive-c7c294c3",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:41:22.616262+00:00"
+}

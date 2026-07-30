@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-optimization-hospitality-edition-08c6779b",
+  "service_name": "AI Optimization - Hospitality Edition",
+  "industry": "hospitality",
+  "lead_magnet": "Guest Experience Automation Blueprint",
+  "metrics": {
+    "improvement": "42%",
+    "savings": "$7.6M",
+    "timeframe": "10 months",
+    "similar": "HotelChain"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, HotelChain just implemented AI Optimization - Hospitality Edition last month - 42% improvement already. Thoughts?",
+      "sequence_id": "seq-88",
+      "service_id": "ai-optimization-hospitality-edition-08c6779b"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: HotelChain saw $7.6M in savings. Your hospitality peers are seeing similar results.",
+      "sequence_id": "seq-88",
+      "service_id": "ai-optimization-hospitality-edition-08c6779b"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-88",
+      "service_id": "ai-optimization-hospitality-edition-08c6779b"
+    }
+  ],
+  "hot_lead_score": 67,
+  "conversion_likelihood": "69%",
+  "timestamp": "2026-07-30T06:32:49.824622+00:00"
+}

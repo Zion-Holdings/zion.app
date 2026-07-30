@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Management Automated - Construction - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Management Automated - Construction leverages advanced machine learning to deliver data processin",
+  description: "Revolutionize construction through intelligent automation. Our Management Automated - Construction leverages advanced machine learning to deliver manufacturing ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/management-automated---construction-0c669546`
   }
@@ -13,15 +13,15 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Management Automated - Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our Management Automated - Construction leverages advanced machine learning to deliver data processing at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our Management Automated - Construction leverages advanced machine learning to deliver manufacturing quality control at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Edge computing support for low-latency operations</li>
-            <li>Multi-language support with localization</li>
             <li>Machine learning integration with automatic model training</li>
-            <li>User experience analytics with behavior tracking</li>
+            <li>Network optimization with traffic analysis</li>
+            <li>A/B testing framework for continuous optimization</li>
+            <li>GDPR compliance with data portability</li>
           </ul>
         </div>
         
@@ -29,10 +29,8 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Increased revenue with optimized pricing strategies</li>
-            <li>Cost optimization recommendations with savings analysis</li>
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Scalable to millions of transactions per second</li>
+            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

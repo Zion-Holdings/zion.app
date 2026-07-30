@@ -1,0 +1,42 @@
+{
+  "service_id": "hyper-accelerated-automation-education-8520e62a",
+  "service_name": "Hyper-Accelerated Automation - Education",
+  "industry": "education",
+  "conversion_metrics": {
+    "open_rate": "65%",
+    "click_rate": "38%",
+    "reply_rate": "25%",
+    "close_rate": "14%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Q3 Special: Hyper-Accelerated Automation - Education at 20% off. 52% improvement, $18.4M savings. Offer ends: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-69",
+      "service_id": "hyper-accelerated-automation-education-8520e62a",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Exclusive offer for {company}: 20% discount on Hyper-Accelerated Automation - Education. 52% improvement guaranteed. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-69",
+      "service_id": "hyper-accelerated-automation-education-8520e62a",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Limited-time: Hyper-Accelerated Automation - Education at 20% off. $18.4M savings. Book by Friday: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-69",
+      "service_id": "hyper-accelerated-automation-education-8520e62a",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:36:20.605772+00:00"
+}

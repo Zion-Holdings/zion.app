@@ -1,0 +1,35 @@
+{
+  "service_id": "automated-quality-for-media-ba53ce62",
+  "service_name": "Automated Quality for Media",
+  "industry": "media",
+  "lead_magnet": "Content Performance Optimization Guide",
+  "metrics": {
+    "improvement": "43%",
+    "savings": "$6.8M",
+    "timeframe": "9 months",
+    "similar": "MediaHouse"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows media companies using Automated Quality for Media see 43% improvement. Your current process?",
+      "sequence_id": "seq-80",
+      "service_id": "automated-quality-for-media-ba53ce62"
+    },
+    {
+      "step": 2,
+      "message": "Based on your media profile, Automated Quality for Media could save {company} approximately $6.8M. Interested in details?",
+      "sequence_id": "seq-80",
+      "service_id": "automated-quality-for-media-ba53ce62"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Automated Quality for Media is proven to deliver 43% results.",
+      "sequence_id": "seq-80",
+      "service_id": "automated-quality-for-media-ba53ce62"
+    }
+  ],
+  "hot_lead_score": 68,
+  "conversion_likelihood": "72%",
+  "timestamp": "2026-07-30T06:47:20.670019+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "data-smart-logistics-f46bf6cf",
+  "service_name": "Data Smart - Logistics",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, LogisticsPlus just implemented Data Smart - Logistics last month - 49% improvement already. Thoughts?",
+      "sequence_id": "seq-63",
+      "service_id": "data-smart-logistics-f46bf6cf"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: LogisticsPlus saw $11.2M in savings. Your logistics peers are seeing similar results.",
+      "sequence_id": "seq-63",
+      "service_id": "data-smart-logistics-f46bf6cf"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-63",
+      "service_id": "data-smart-logistics-f46bf6cf"
+    }
+  ],
+  "hot_lead_score": 77,
+  "conversion_likelihood": "54%",
+  "timestamp": "2026-07-30T06:47:20.667489+00:00"
+}

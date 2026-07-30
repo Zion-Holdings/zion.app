@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-orchestrator-for-sports-560d901f",
+  "service_name": "Intelligent Orchestrator for Sports",
+  "industry": "sports",
+  "lead_magnet": "Fan Engagement Growth Framework",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$8.9M",
+    "timeframe": "4 months",
+    "similar": "SportsTeam"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows sports companies using Intelligent Orchestrator for Sports see 55% improvement. Your current process?",
+      "sequence_id": "seq-15",
+      "service_id": "intelligent-orchestrator-for-sports-560d901f"
+    },
+    {
+      "step": 2,
+      "message": "Based on your sports profile, Intelligent Orchestrator for Sports could save {company} approximately $8.9M. Interested in details?",
+      "sequence_id": "seq-15",
+      "service_id": "intelligent-orchestrator-for-sports-560d901f"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Intelligent Orchestrator for Sports is proven to deliver 55% results.",
+      "sequence_id": "seq-15",
+      "service_id": "intelligent-orchestrator-for-sports-560d901f"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "44%",
+  "timestamp": "2026-07-30T06:42:13.008204+00:00"
+}

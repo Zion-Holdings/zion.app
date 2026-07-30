@@ -1,0 +1,42 @@
+{
+  "service_id": "cognitive-devops-solution-fintech-2fb77d00",
+  "service_name": "Cognitive DevOps Solution - FINTECH",
+  "industry": "fintech",
+  "conversion_metrics": {
+    "open_rate": "74%",
+    "click_rate": "49%",
+    "reply_rate": "36%",
+    "close_rate": "23%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, {company} - we only have 2 spots left this quarter for Cognitive DevOps Solution - FINTECH. 52% improvement, $18.4M savings. Book now: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-85",
+      "service_id": "cognitive-devops-solution-fintech-2fb77d00",
+      "conversion_rate": "23%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Final call - Q3 budget closes Friday. Cognitive DevOps Solution - FINTECH delivers 52% in 6 months. Last chance: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-85",
+      "service_id": "cognitive-devops-solution-fintech-2fb77d00",
+      "conversion_rate": "23%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "\u26a0\ufe0f URGENT: 52% ROI available until EOD. $18.4M savings with Cognitive DevOps Solution - FINTECH. Book: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-85",
+      "service_id": "cognitive-devops-solution-fintech-2fb77d00",
+      "conversion_rate": "23%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:36:20.607079+00:00"
+}

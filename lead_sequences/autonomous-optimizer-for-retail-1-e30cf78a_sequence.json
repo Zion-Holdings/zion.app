@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-optimizer-for-retail-1-e30cf78a",
+  "service_name": "Autonomous Optimizer for Retail #1",
+  "industry": "retail",
+  "lead_magnet": "Customer Retention Playbook",
+  "metrics": {
+    "improvement": "44%",
+    "savings": "$9.3M",
+    "timeframe": "7 months",
+    "similar": "RetailPro"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, RetailPro is closing their Q3 deals this week. Want to see how Autonomous Optimizer for Retail #1 can help {company} save $9.3M?",
+      "sequence_id": "seq-4",
+      "service_id": "autonomous-optimizer-for-retail-1-e30cf78a"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Autonomous Optimizer for Retail #1 delivers 44% in 7 months.",
+      "sequence_id": "seq-4",
+      "service_id": "autonomous-optimizer-for-retail-1-e30cf78a"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-4",
+      "service_id": "autonomous-optimizer-for-retail-1-e30cf78a"
+    }
+  ],
+  "hot_lead_score": 70,
+  "conversion_likelihood": "50%",
+  "timestamp": "2026-07-30T06:42:13.001153+00:00"
+}

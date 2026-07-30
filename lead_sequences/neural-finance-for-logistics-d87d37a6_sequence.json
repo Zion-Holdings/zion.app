@@ -1,0 +1,35 @@
+{
+  "service_id": "neural-finance-for-logistics-d87d37a6",
+  "service_name": "Neural Finance for Logistics",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, LogisticsPlus just implemented Neural Finance for Logistics last month - 49% improvement already. Thoughts?",
+      "sequence_id": "seq-68",
+      "service_id": "neural-finance-for-logistics-d87d37a6"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: LogisticsPlus saw $11.2M in savings. Your logistics peers are seeing similar results.",
+      "sequence_id": "seq-68",
+      "service_id": "neural-finance-for-logistics-d87d37a6"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-68",
+      "service_id": "neural-finance-for-logistics-d87d37a6"
+    }
+  ],
+  "hot_lead_score": 76,
+  "conversion_likelihood": "48%",
+  "timestamp": "2026-07-30T06:32:49.815906+00:00"
+}

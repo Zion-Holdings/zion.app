@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-engine-platform-gaming-1-4dad1746",
+  "service_name": "Smart Engine Platform - Gaming #1",
+  "industry": "gaming",
+  "lead_magnet": "Player Retention Strategy Playbook",
+  "metrics": {
+    "improvement": "57%",
+    "savings": "$10.3M",
+    "timeframe": "5 months",
+    "similar": "GameStudio"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with gaming suite?",
+      "sequence_id": "seq-7",
+      "service_id": "smart-engine-platform-gaming-1-4dad1746"
+    },
+    {
+      "step": 2,
+      "message": "We've helped GameStudio solve this exact problem with Smart Engine Platform - Gaming #1. Achieved 57% in 5 months.",
+      "sequence_id": "seq-7",
+      "service_id": "smart-engine-platform-gaming-1-4dad1746"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-7",
+      "service_id": "smart-engine-platform-gaming-1-4dad1746"
+    }
+  ],
+  "hot_lead_score": 76,
+  "conversion_likelihood": "62%",
+  "timestamp": "2026-07-30T06:32:49.786139+00:00"
+}

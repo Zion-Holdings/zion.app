@@ -1,0 +1,35 @@
+{
+  "service_id": "neural-risk-manufacturing-d0618fab",
+  "service_name": "Neural risk-manufacturing",
+  "industry": "manufacturing",
+  "lead_magnet": "Predictive Maintenance ROI Calculator",
+  "metrics": {
+    "improvement": "51%",
+    "savings": "$15.8M",
+    "timeframe": "8 months",
+    "similar": "ManufactureCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows manufacturing companies using Neural risk-manufacturing see 51% improvement. Your current process?",
+      "sequence_id": "seq-60",
+      "service_id": "neural-risk-manufacturing-d0618fab"
+    },
+    {
+      "step": 2,
+      "message": "Based on your manufacturing profile, Neural risk-manufacturing could save {company} approximately $15.8M. Interested in details?",
+      "sequence_id": "seq-60",
+      "service_id": "neural-risk-manufacturing-d0618fab"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Neural risk-manufacturing is proven to deliver 51% results.",
+      "sequence_id": "seq-60",
+      "service_id": "neural-risk-manufacturing-d0618fab"
+    }
+  ],
+  "hot_lead_score": 73,
+  "conversion_likelihood": "60%",
+  "timestamp": "2026-07-30T06:32:49.812825+00:00"
+}

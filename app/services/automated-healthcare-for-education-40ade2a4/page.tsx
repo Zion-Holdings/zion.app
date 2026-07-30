@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Healthcare for Education - Zion Tech Group",
-  description: "Revolutionize education through intelligent automation. Our Automated Healthcare for Education leverages advanced machine learning to deliver supply chain at sc",
+  description: "Next-generation education solution: Automated Healthcare for Education. Combines logistics route optimization with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-healthcare-for-education-40ade2a4`
   }
@@ -13,16 +13,16 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated Healthcare for Education</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize education through intelligent automation. Our Automated Healthcare for Education leverages advanced machine learning to deliver supply chain at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation education solution: Automated Healthcare for Education. Combines logistics route optimization with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Financial risk management with scenario analysis</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Inventory prediction with demand forecasting</li>
             <li>Compliance monitoring with regulatory updates</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Logistics route optimization with traffic prediction</li>
-            <li>Real-time processing with streaming analytics</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         
@@ -30,9 +30,8 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Improved customer satisfaction with faster response times</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Reduced human error by 95% with automated processes</li>
-            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

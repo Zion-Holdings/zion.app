@@ -1,0 +1,35 @@
+{
+  "service_id": "automated-manufacturing-finance-26a039ba",
+  "service_name": "Automated manufacturing-finance",
+  "industry": "finance",
+  "lead_magnet": "Regulatory Compliance Automation Guide",
+  "metrics": {
+    "improvement": "58%",
+    "savings": "$24.1M",
+    "timeframe": "5 months",
+    "similar": "Capital Group"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Capital Group just implemented Automated manufacturing-finance last month - 58% improvement already. Thoughts?",
+      "sequence_id": "seq-8",
+      "service_id": "automated-manufacturing-finance-26a039ba"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: Capital Group saw $24.1M in savings. Your finance peers are seeing similar results.",
+      "sequence_id": "seq-8",
+      "service_id": "automated-manufacturing-finance-26a039ba"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-8",
+      "service_id": "automated-manufacturing-finance-26a039ba"
+    }
+  ],
+  "hot_lead_score": 75,
+  "conversion_likelihood": "65%",
+  "timestamp": "2026-07-30T06:47:20.656870+00:00"
+}

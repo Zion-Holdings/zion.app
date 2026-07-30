@@ -1,0 +1,42 @@
+{
+  "service_id": "quantum-insights-agriculture-quantum-853b8e0d",
+  "service_name": "Quantum Insights - Agriculture Quantum",
+  "industry": "agriculture",
+  "conversion_metrics": {
+    "open_rate": "62%",
+    "click_rate": "35%",
+    "reply_rate": "22%",
+    "close_rate": "12%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest agriculture challenge? Quantum Insights - Agriculture Quantum solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-40",
+      "service_id": "quantum-insights-agriculture-quantum-853b8e0d",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is optimization holding you back? Quantum Insights - Agriculture Quantum delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-40",
+      "service_id": "quantum-insights-agriculture-quantum-853b8e0d",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop optimization headaches. Quantum Insights - Agriculture Quantum = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-40",
+      "service_id": "quantum-insights-agriculture-quantum-853b8e0d",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:36:20.602870+00:00"
+}

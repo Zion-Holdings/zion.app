@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-sales-platform-sports-39f5b497",
+  "service_name": "Smart Sales Platform - Sports",
+  "industry": "sports",
+  "lead_magnet": "Fan Engagement Growth Framework",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$8.9M",
+    "timeframe": "4 months",
+    "similar": "SportsTeam"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, SportsTeam is closing their Q3 deals this week. Want to see how Smart Sales Platform - Sports can help {company} save $8.9M?",
+      "sequence_id": "seq-89",
+      "service_id": "smart-sales-platform-sports-39f5b497"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Smart Sales Platform - Sports delivers 55% in 4 months.",
+      "sequence_id": "seq-89",
+      "service_id": "smart-sales-platform-sports-39f5b497"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-89",
+      "service_id": "smart-sales-platform-sports-39f5b497"
+    }
+  ],
+  "hot_lead_score": 81,
+  "conversion_likelihood": "51%",
+  "timestamp": "2026-07-30T06:32:49.825077+00:00"
+}

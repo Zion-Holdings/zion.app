@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-suite-for-logistics-eb93c85b",
+  "service_name": "Intelligent Suite for Logistics",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows logistics companies using Intelligent Suite for Logistics see 49% improvement. Your current process?",
+      "sequence_id": "seq-35",
+      "service_id": "intelligent-suite-for-logistics-eb93c85b"
+    },
+    {
+      "step": 2,
+      "message": "Based on your logistics profile, Intelligent Suite for Logistics could save {company} approximately $11.2M. Interested in details?",
+      "sequence_id": "seq-35",
+      "service_id": "intelligent-suite-for-logistics-eb93c85b"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Intelligent Suite for Logistics is proven to deliver 49% results.",
+      "sequence_id": "seq-35",
+      "service_id": "intelligent-suite-for-logistics-eb93c85b"
+    }
+  ],
+  "hot_lead_score": 95,
+  "conversion_likelihood": "63%",
+  "timestamp": "2026-07-30T06:42:13.017434+00:00"
+}

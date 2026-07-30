@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-deep-learning-engine-media-8c23c01a",
+  "service_name": "Predictive Deep Learning Engine - Media",
+  "industry": "media",
+  "lead_magnet": "Content Performance Optimization Guide",
+  "metrics": {
+    "improvement": "43%",
+    "savings": "$6.8M",
+    "timeframe": "9 months",
+    "similar": "MediaHouse"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with media intelligence?",
+      "sequence_id": "seq-72",
+      "service_id": "predictive-deep-learning-engine-media-8c23c01a"
+    },
+    {
+      "step": 2,
+      "message": "We've helped MediaHouse solve this exact problem with Predictive Deep Learning Engine - Media. Achieved 43% in 9 months.",
+      "sequence_id": "seq-72",
+      "service_id": "predictive-deep-learning-engine-media-8c23c01a"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-72",
+      "service_id": "predictive-deep-learning-engine-media-8c23c01a"
+    }
+  ],
+  "hot_lead_score": 94,
+  "conversion_likelihood": "53%",
+  "timestamp": "2026-07-30T06:38:30.263529+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-compliance-solution-real-estate-697013da",
+  "service_name": "Cognitive Compliance Solution - Real-Estate",
+  "industry": "real-estate",
+  "lead_magnet": "Property Management Automation Guide",
+  "metrics": {
+    "improvement": "46%",
+    "savings": "$13.4M",
+    "timeframe": "7 months",
+    "similar": "PropertyGroup"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, PropertyGroup is closing their Q3 deals this week. Want to see how Cognitive Compliance Solution - Real-Estate can help {company} save $13.4M?",
+      "sequence_id": "seq-99",
+      "service_id": "cognitive-compliance-solution-real-estate-697013da"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Cognitive Compliance Solution - Real-Estate delivers 46% in 7 months.",
+      "sequence_id": "seq-99",
+      "service_id": "cognitive-compliance-solution-real-estate-697013da"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-99",
+      "service_id": "cognitive-compliance-solution-real-estate-697013da"
+    }
+  ],
+  "hot_lead_score": 87,
+  "conversion_likelihood": "53%",
+  "timestamp": "2026-07-30T06:38:30.266456+00:00"
+}

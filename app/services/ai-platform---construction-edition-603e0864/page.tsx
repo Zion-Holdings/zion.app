@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Platform - Construction Edition - Zion Tech Group",
-  description: "Next-generation construction solution: AI Platform - Construction Edition. Combines document processing with adaptive intelligence for optimal results.",
+  description: "Revolutionize construction through intelligent automation. Our AI Platform - Construction Edition leverages advanced machine learning to deliver decision suppor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-platform---construction-edition-603e0864`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Platform - Construction Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: AI Platform - Construction Edition. Combines document processing with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our AI Platform - Construction Edition leverages advanced machine learning to deliver decision support at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Edge computing support for low-latency operations</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Healthcare data analytics with patient insights</li>
+            <li>A/B testing framework for continuous optimization</li>
             <li>Language processing with sentiment analysis</li>
+            <li>Document processing with OCR and NLP</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Faster time-to-market with accelerated development</li>
             <li>Cost optimization recommendations with savings analysis</li>
-            <li>50% reduction in operational costs through automation</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Improved quality with automated testing and validation</li>
-            <li>Improved customer satisfaction with faster response times</li>
           </ul>
         </div>
         

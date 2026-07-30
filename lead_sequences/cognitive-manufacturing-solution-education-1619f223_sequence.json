@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-manufacturing-solution-education-1619f223",
+  "service_name": "Cognitive Manufacturing Solution - Education",
+  "industry": "education",
+  "lead_magnet": "Student Success Automation Framework",
+  "metrics": {
+    "improvement": "41%",
+    "savings": "$5.4M",
+    "timeframe": "11 months",
+    "similar": "EduCore"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows education companies using Cognitive Manufacturing Solution - Education see 41% improvement. Your current process?",
+      "sequence_id": "seq-80",
+      "service_id": "cognitive-manufacturing-solution-education-1619f223"
+    },
+    {
+      "step": 2,
+      "message": "Based on your education profile, Cognitive Manufacturing Solution - Education could save {company} approximately $5.4M. Interested in details?",
+      "sequence_id": "seq-80",
+      "service_id": "cognitive-manufacturing-solution-education-1619f223"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Cognitive Manufacturing Solution - Education is proven to deliver 41% results.",
+      "sequence_id": "seq-80",
+      "service_id": "cognitive-manufacturing-solution-education-1619f223"
+    }
+  ],
+  "hot_lead_score": 86,
+  "conversion_likelihood": "53%",
+  "timestamp": "2026-07-30T06:32:49.821116+00:00"
+}

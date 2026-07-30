@@ -1,0 +1,35 @@
+{
+  "service_id": "analyzer-autonomous-tech-0a937247",
+  "service_name": "Analyzer Autonomous - Tech",
+  "industry": "technology",
+  "lead_magnet": "AI Cost Calculator - See Your Potential Savings",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows technology companies using Analyzer Autonomous - Tech see 52% improvement. Your current process?",
+      "sequence_id": "seq-65",
+      "service_id": "analyzer-autonomous-tech-0a937247"
+    },
+    {
+      "step": 2,
+      "message": "Based on your technology profile, Analyzer Autonomous - Tech could save {company} approximately $18.4M. Interested in details?",
+      "sequence_id": "seq-65",
+      "service_id": "analyzer-autonomous-tech-0a937247"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Analyzer Autonomous - Tech is proven to deliver 52% results.",
+      "sequence_id": "seq-65",
+      "service_id": "analyzer-autonomous-tech-0a937247"
+    }
+  ],
+  "hot_lead_score": 74,
+  "conversion_likelihood": "69%",
+  "timestamp": "2026-07-30T06:38:30.262799+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-manufacturing-system-agriculture-1-e5634207",
+  "service_name": "Autonomous Manufacturing System - Agriculture #1",
+  "industry": "agriculture",
+  "lead_magnet": "Precision Farming ROI Analysis",
+  "metrics": {
+    "improvement": "40%",
+    "savings": "$4.2M",
+    "timeframe": "12 months",
+    "similar": "FarmTech"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, FarmTech is closing their Q3 deals this week. Want to see how Autonomous Manufacturing System - Agriculture #1 can help {company} save $4.2M?",
+      "sequence_id": "seq-14",
+      "service_id": "autonomous-manufacturing-system-agriculture-1-e5634207"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Autonomous Manufacturing System - Agriculture #1 delivers 40% in 12 months.",
+      "sequence_id": "seq-14",
+      "service_id": "autonomous-manufacturing-system-agriculture-1-e5634207"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-14",
+      "service_id": "autonomous-manufacturing-system-agriculture-1-e5634207"
+    }
+  ],
+  "hot_lead_score": 81,
+  "conversion_likelihood": "53%",
+  "timestamp": "2026-07-30T06:32:49.790922+00:00"
+}

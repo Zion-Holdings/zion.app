@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-model-integrity-checker-61155fe1",
+  "service_name": "AI Model Integrity Checker",
+  "industry": "AI Security",
+  "lead_magnet": "AI Solutions Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows AI Security companies using AI Model Integrity Checker see 52% improvement. Your current process?",
+      "sequence_id": "seq-35",
+      "service_id": "ai-model-integrity-checker-61155fe1"
+    },
+    {
+      "step": 2,
+      "message": "Based on your AI Security profile, AI Model Integrity Checker could save {company} approximately $18.4M. Interested in details?",
+      "sequence_id": "seq-35",
+      "service_id": "ai-model-integrity-checker-61155fe1"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. AI Model Integrity Checker is proven to deliver 52% results.",
+      "sequence_id": "seq-35",
+      "service_id": "ai-model-integrity-checker-61155fe1"
+    }
+  ],
+  "hot_lead_score": 72,
+  "conversion_likelihood": "60%",
+  "timestamp": "2026-07-30T06:38:30.259957+00:00"
+}

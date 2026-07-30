@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-advisor-for-automotive-3ad0db2b",
+  "service_name": "Cognitive Advisor for Automotive",
+  "industry": "automotive",
+  "lead_magnet": "Supply Chain Efficiency Audit",
+  "metrics": {
+    "improvement": "50%",
+    "savings": "$14.1M",
+    "timeframe": "6 months",
+    "similar": "AutoMakers"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows automotive companies using Cognitive Advisor for Automotive see 50% improvement. Your current process?",
+      "sequence_id": "seq-10",
+      "service_id": "cognitive-advisor-for-automotive-3ad0db2b"
+    },
+    {
+      "step": 2,
+      "message": "Based on your automotive profile, Cognitive Advisor for Automotive could save {company} approximately $14.1M. Interested in details?",
+      "sequence_id": "seq-10",
+      "service_id": "cognitive-advisor-for-automotive-3ad0db2b"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Cognitive Advisor for Automotive is proven to deliver 50% results.",
+      "sequence_id": "seq-10",
+      "service_id": "cognitive-advisor-for-automotive-3ad0db2b"
+    }
+  ],
+  "hot_lead_score": 73,
+  "conversion_likelihood": "65%",
+  "timestamp": "2026-07-30T06:38:30.257589+00:00"
+}

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "System Intelligent - Logistics - Zion Tech Group",
-  description: "The future of logistics is here with System Intelligent - Logistics. Powered by cutting-edge AI, this platform delivers quality control like never before.",
+  description: "Revolutionize logistics through intelligent automation. Our System Intelligent - Logistics leverages advanced machine learning to deliver user experience at sca",
   alternates: {
     canonical: `https://ziontechgroup.com/services/system-intelligent---logistics-9c8de605`
   }
@@ -13,25 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">System Intelligent - Logistics</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of logistics is here with System Intelligent - Logistics. Powered by cutting-edge AI, this platform delivers quality control like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize logistics through intelligent automation. Our System Intelligent - Logistics leverages advanced machine learning to deliver user experience at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Compliance monitoring with regulatory updates</li>
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Custom integrations with webhook support</li>
-            <li>Network optimization with traffic analysis</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>A/B testing framework for continuous optimization</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Image recognition with computer vision</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>50% reduction in operational costs through automation</li>
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
             <li>24/7 automated operations without human intervention</li>
-            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

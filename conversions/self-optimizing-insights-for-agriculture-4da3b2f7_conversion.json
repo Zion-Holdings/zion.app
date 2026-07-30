@@ -1,0 +1,42 @@
+{
+  "service_id": "self-optimizing-insights-for-agriculture-4da3b2f7",
+  "service_name": "Self-Optimizing Insights for Agriculture",
+  "industry": "agriculture",
+  "conversion_metrics": {
+    "open_rate": "62%",
+    "click_rate": "35%",
+    "reply_rate": "22%",
+    "close_rate": "12%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Industry Leader just signed - 52% improvement in 6 months. {company} next? https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-30",
+      "service_id": "self-optimizing-insights-for-agriculture-4da3b2f7",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} + Industry Leader = $18.4M in annual savings. Self-Optimizing Insights for Agriculture case study attached. Let's talk: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-30",
+      "service_id": "self-optimizing-insights-for-agriculture-4da3b2f7",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Results: Industry Leader \u2192 52% \u2192 $18.4M. Your turn? Book call: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-30",
+      "service_id": "self-optimizing-insights-for-agriculture-4da3b2f7",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:48:18.394303+00:00"
+}

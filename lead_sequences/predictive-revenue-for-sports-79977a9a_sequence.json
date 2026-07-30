@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-revenue-for-sports-79977a9a",
+  "service_name": "Predictive Revenue for Sports",
+  "industry": "sports",
+  "lead_magnet": "Fan Engagement Growth Framework",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$8.9M",
+    "timeframe": "4 months",
+    "similar": "SportsTeam"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with sports revenue?",
+      "sequence_id": "seq-12",
+      "service_id": "predictive-revenue-for-sports-79977a9a"
+    },
+    {
+      "step": 2,
+      "message": "We've helped SportsTeam solve this exact problem with Predictive Revenue for Sports. Achieved 55% in 4 months.",
+      "sequence_id": "seq-12",
+      "service_id": "predictive-revenue-for-sports-79977a9a"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-12",
+      "service_id": "predictive-revenue-for-sports-79977a9a"
+    }
+  ],
+  "hot_lead_score": 76,
+  "conversion_likelihood": "55%",
+  "timestamp": "2026-07-30T06:42:13.006905+00:00"
+}

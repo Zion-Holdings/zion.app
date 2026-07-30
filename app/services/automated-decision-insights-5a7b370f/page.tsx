@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Decision Insights - Zion Tech Group",
-  description: "Transform your manufacturing operations with our Automated Decision Insights. This AI-driven solution automates threat detection with unprecedented accuracy and",
+  description: "The future of agriculture is here with Automated Decision Insights. Powered by cutting-edge AI, this platform delivers workflow management like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-decision-insights-5a7b370f`
   }
@@ -13,15 +13,14 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated Decision Insights</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your manufacturing operations with our Automated Decision Insights. This AI-driven solution automates threat detection with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of agriculture is here with Automated Decision Insights. Powered by cutting-edge AI, this platform delivers workflow management like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>Real-time processing with streaming analytics</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Document processing with OCR and NLP</li>
             <li>Version control with rollback capabilities</li>
-            <li>Logistics route optimization with traffic prediction</li>
             <li>Multi-region deployment with automatic failover</li>
           </ul>
         </div>
@@ -29,9 +28,10 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
           </ul>
         </div>
         

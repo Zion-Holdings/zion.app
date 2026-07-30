@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-predictive-energy-353a3560",
+  "service_name": "Cognitive predictive-energy",
+  "industry": "energy",
+  "lead_magnet": "Energy Savings Calculator",
+  "metrics": {
+    "improvement": "48%",
+    "savings": "$16.5M",
+    "timeframe": "8 months",
+    "similar": "EnergyCorp"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, EnergyCorp just implemented Cognitive predictive-energy last month - 48% improvement already. Thoughts?",
+      "sequence_id": "seq-93",
+      "service_id": "cognitive-predictive-energy-353a3560"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: EnergyCorp saw $16.5M in savings. Your energy peers are seeing similar results.",
+      "sequence_id": "seq-93",
+      "service_id": "cognitive-predictive-energy-353a3560"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-93",
+      "service_id": "cognitive-predictive-energy-353a3560"
+    }
+  ],
+  "hot_lead_score": 65,
+  "conversion_likelihood": "64%",
+  "timestamp": "2026-07-30T06:32:49.826424+00:00"
+}

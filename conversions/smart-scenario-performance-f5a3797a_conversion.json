@@ -1,0 +1,42 @@
+{
+  "service_id": "smart-scenario-performance-f5a3797a",
+  "service_name": "Smart Scenario Performance",
+  "industry": "media",
+  "conversion_metrics": {
+    "open_rate": "64%",
+    "click_rate": "37%",
+    "reply_rate": "24%",
+    "close_rate": "14%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Q3 Special: Smart Scenario Performance at 20% off. 52% improvement, $18.4M savings. Offer ends: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-41",
+      "service_id": "smart-scenario-performance-f5a3797a",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Exclusive offer for {company}: 20% discount on Smart Scenario Performance. 52% improvement guaranteed. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-41",
+      "service_id": "smart-scenario-performance-f5a3797a",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Limited-time: Smart Scenario Performance at 20% off. $18.4M savings. Book by Friday: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-41",
+      "service_id": "smart-scenario-performance-f5a3797a",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:39:10.793834+00:00"
+}

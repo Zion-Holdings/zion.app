@@ -1,0 +1,42 @@
+{
+  "service_id": "cognitive-machine-learning-solution-agriculture-0fd1b06d",
+  "service_name": "Cognitive Machine Learning Solution - Agriculture",
+  "industry": "agriculture",
+  "conversion_metrics": {
+    "open_rate": "62%",
+    "click_rate": "35%",
+    "reply_rate": "22%",
+    "close_rate": "12%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, {company} can save $18.4 million with Cognitive Machine Learning Solution - Agriculture. Quick call? https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-63",
+      "service_id": "cognitive-machine-learning-solution-agriculture-0fd1b06d",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "$18.4M in annual savings with Cognitive Machine Learning Solution - Agriculture. 52% improvement in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-63",
+      "service_id": "cognitive-machine-learning-solution-agriculture-0fd1b06d",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Save $18.4 million/year. Cognitive Machine Learning Solution - Agriculture delivers 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-63",
+      "service_id": "cognitive-machine-learning-solution-agriculture-0fd1b06d",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:39:10.798639+00:00"
+}

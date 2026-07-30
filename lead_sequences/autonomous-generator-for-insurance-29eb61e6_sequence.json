@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-generator-for-insurance-29eb61e6",
+  "service_name": "Autonomous Generator for Insurance",
+  "industry": "insurance",
+  "lead_magnet": "Claims Processing Automation Guide",
+  "metrics": {
+    "improvement": "54%",
+    "savings": "$17.3M",
+    "timeframe": "7 months",
+    "similar": "InsurePlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, InsurePlus is closing their Q3 deals this week. Want to see how Autonomous Generator for Insurance can help {company} save $17.3M?",
+      "sequence_id": "seq-39",
+      "service_id": "autonomous-generator-for-insurance-29eb61e6"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Autonomous Generator for Insurance delivers 54% in 7 months.",
+      "sequence_id": "seq-39",
+      "service_id": "autonomous-generator-for-insurance-29eb61e6"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-39",
+      "service_id": "autonomous-generator-for-insurance-29eb61e6"
+    }
+  ],
+  "hot_lead_score": 66,
+  "conversion_likelihood": "61%",
+  "timestamp": "2026-07-30T06:42:13.018616+00:00"
+}

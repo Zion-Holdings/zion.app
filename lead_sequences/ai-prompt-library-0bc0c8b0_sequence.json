@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-prompt-library-0bc0c8b0",
+  "service_name": "AI Prompt Library",
+  "industry": "AI Tools",
+  "lead_magnet": "AI Solutions Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve AI Tools. Our AI platform helped TechStart Inc. achieve 52% improvement in 6 months. Quick 5-minute call?",
+      "sequence_id": "seq-26",
+      "service_id": "ai-prompt-library-0bc0c8b0"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the AI Prompt Library typically saves $18.4M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-26",
+      "service_id": "ai-prompt-library-0bc0c8b0"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 52% results. If not interested, just let me know!",
+      "sequence_id": "seq-26",
+      "service_id": "ai-prompt-library-0bc0c8b0"
+    }
+  ],
+  "hot_lead_score": 77,
+  "conversion_likelihood": "66%",
+  "timestamp": "2026-07-30T06:38:30.259128+00:00"
+}

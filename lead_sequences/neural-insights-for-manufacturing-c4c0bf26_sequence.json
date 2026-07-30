@@ -1,0 +1,35 @@
+{
+  "service_id": "neural-insights-for-manufacturing-c4c0bf26",
+  "service_name": "Neural Insights for Manufacturing",
+  "industry": "manufacturing",
+  "lead_magnet": "Predictive Maintenance ROI Calculator",
+  "metrics": {
+    "improvement": "51%",
+    "savings": "$15.8M",
+    "timeframe": "8 months",
+    "similar": "ManufactureCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, ManufactureCo just implemented Neural Insights for Manufacturing last month - 51% improvement already. Thoughts?",
+      "sequence_id": "seq-13",
+      "service_id": "neural-insights-for-manufacturing-c4c0bf26"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: ManufactureCo saw $15.8M in savings. Your manufacturing peers are seeing similar results.",
+      "sequence_id": "seq-13",
+      "service_id": "neural-insights-for-manufacturing-c4c0bf26"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-13",
+      "service_id": "neural-insights-for-manufacturing-c4c0bf26"
+    }
+  ],
+  "hot_lead_score": 84,
+  "conversion_likelihood": "44%",
+  "timestamp": "2026-07-30T06:38:30.257887+00:00"
+}

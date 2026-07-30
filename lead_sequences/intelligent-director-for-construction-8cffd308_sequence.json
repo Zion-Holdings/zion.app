@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-director-for-construction-8cffd308",
+  "service_name": "Intelligent Director for Construction",
+  "industry": "construction",
+  "lead_magnet": "Project Delivery Acceleration Guide",
+  "metrics": {
+    "improvement": "45%",
+    "savings": "$8.7M",
+    "timeframe": "8 months",
+    "similar": "BuildCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with construction director?",
+      "sequence_id": "seq-12",
+      "service_id": "intelligent-director-for-construction-8cffd308"
+    },
+    {
+      "step": 2,
+      "message": "We've helped BuildCo solve this exact problem with Intelligent Director for Construction. Achieved 45% in 8 months.",
+      "sequence_id": "seq-12",
+      "service_id": "intelligent-director-for-construction-8cffd308"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-12",
+      "service_id": "intelligent-director-for-construction-8cffd308"
+    }
+  ],
+  "hot_lead_score": 80,
+  "conversion_likelihood": "61%",
+  "timestamp": "2026-07-30T06:38:30.257787+00:00"
+}

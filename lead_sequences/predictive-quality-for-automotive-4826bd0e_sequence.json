@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-quality-for-automotive-4826bd0e",
+  "service_name": "Predictive Quality for Automotive",
+  "industry": "automotive",
+  "lead_magnet": "Supply Chain Efficiency Audit",
+  "metrics": {
+    "improvement": "50%",
+    "savings": "$14.1M",
+    "timeframe": "6 months",
+    "similar": "AutoMakers"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, AutoMakers just implemented Predictive Quality for Automotive last month - 50% improvement already. Thoughts?",
+      "sequence_id": "seq-98",
+      "service_id": "predictive-quality-for-automotive-4826bd0e"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: AutoMakers saw $14.1M in savings. Your automotive peers are seeing similar results.",
+      "sequence_id": "seq-98",
+      "service_id": "predictive-quality-for-automotive-4826bd0e"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-98",
+      "service_id": "predictive-quality-for-automotive-4826bd0e"
+    }
+  ],
+  "hot_lead_score": 74,
+  "conversion_likelihood": "40%",
+  "timestamp": "2026-07-30T06:47:20.673777+00:00"
+}

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Analytics Smart - Hospitality #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Analytics Smart - Hospitality #1. This autonomous system provides performance monitoring with zero manual intervention needed.",
+  description: "Revolutionize hospitality through intelligent automation. Our Analytics Smart - Hospitality #1 leverages advanced machine learning to deliver workflow managemen",
   alternates: {
     canonical: `https://ziontechgroup.com/services/analytics-smart---hospitality-1-d276ab34`
   }
@@ -13,26 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Analytics Smart - Hospitality #1</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Analytics Smart - Hospitality #1. This autonomous system provides performance monitoring with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize hospitality through intelligent automation. Our Analytics Smart - Hospitality #1 leverages advanced machine learning to deliver workflow management at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Sales process optimization with pipeline management</li>
-            <li>Competitive intelligence with market share tracking</li>
-            <li>Market analysis with buyer behavior insights</li>
-            <li>Open-source friendly with plugin architecture</li>
-            <li>Maintenance scheduling with predictive analytics</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>A/B testing framework for continuous optimization</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved conversion rates with personalization</li>
-            <li>Faster content creation with AI assistance</li>
-            <li>Scalable to millions of transactions per second</li>
-            <li>Zero manual intervention required for routine tasks</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Cost optimization recommendations with savings analysis</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>

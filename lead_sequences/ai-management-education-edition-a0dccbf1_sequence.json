@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-management-education-edition-a0dccbf1",
+  "service_name": "AI Management - Education Edition",
+  "industry": "education",
+  "lead_magnet": "Student Success Automation Framework",
+  "metrics": {
+    "improvement": "41%",
+    "savings": "$5.4M",
+    "timeframe": "11 months",
+    "similar": "EduCore"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, EduCore is closing their Q3 deals this week. Want to see how AI Management - Education Edition can help {company} save $5.4M?",
+      "sequence_id": "seq-54",
+      "service_id": "ai-management-education-edition-a0dccbf1"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. AI Management - Education Edition delivers 41% in 11 months.",
+      "sequence_id": "seq-54",
+      "service_id": "ai-management-education-edition-a0dccbf1"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-54",
+      "service_id": "ai-management-education-edition-a0dccbf1"
+    }
+  ],
+  "hot_lead_score": 66,
+  "conversion_likelihood": "54%",
+  "timestamp": "2026-07-30T06:47:20.666333+00:00"
+}

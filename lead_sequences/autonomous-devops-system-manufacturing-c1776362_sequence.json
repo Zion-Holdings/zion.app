@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-devops-system-manufacturing-c1776362",
+  "service_name": "Autonomous DevOps System - Manufacturing",
+  "industry": "manufacturing",
+  "lead_magnet": "Predictive Maintenance ROI Calculator",
+  "metrics": {
+    "improvement": "51%",
+    "savings": "$15.8M",
+    "timeframe": "8 months",
+    "similar": "ManufactureCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with manufacturing business intelligence?",
+      "sequence_id": "seq-72",
+      "service_id": "autonomous-devops-system-manufacturing-c1776362"
+    },
+    {
+      "step": 2,
+      "message": "We've helped ManufactureCo solve this exact problem with Autonomous DevOps System - Manufacturing. Achieved 51% in 8 months.",
+      "sequence_id": "seq-72",
+      "service_id": "autonomous-devops-system-manufacturing-c1776362"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-72",
+      "service_id": "autonomous-devops-system-manufacturing-c1776362"
+    }
+  ],
+  "hot_lead_score": 88,
+  "conversion_likelihood": "44%",
+  "timestamp": "2026-07-30T06:47:20.669038+00:00"
+}

@@ -1,0 +1,5602 @@
+[
+  {
+    "service_id": "cognitive-smart-real-estate-10d6ed53",
+    "service_name": "Cognitive smart-real-estate",
+    "revenue_potential": 67.95866919636589,
+    "scaling_priority": "high",
+    "projected_monthly": 33979,
+    "projected_annual": 407752
+  },
+  {
+    "service_id": "autonomous-machine-learning-system-hospitality-554d05db",
+    "service_name": "Autonomous Machine Learning System - Hospitality",
+    "revenue_potential": 67.5674908971713,
+    "scaling_priority": "high",
+    "projected_monthly": 33783,
+    "projected_annual": 405404
+  },
+  {
+    "service_id": "ai-supply-hospitality-edition-6cb9d30d",
+    "service_name": "AI Supply - Hospitality Edition",
+    "revenue_potential": 67.55136083831403,
+    "scaling_priority": "high",
+    "projected_monthly": 33775,
+    "projected_annual": 405308
+  },
+  {
+    "service_id": "neural-neural-tech-989420e6",
+    "service_name": "Neural Neural - Tech",
+    "revenue_potential": 67.21132870376259,
+    "scaling_priority": "high",
+    "projected_monthly": 33605,
+    "projected_annual": 403267
+  },
+  {
+    "service_id": "smart-self-optimizing-agriculture-f7f101f0",
+    "service_name": "Smart Self-Optimizing - Agriculture",
+    "revenue_potential": 67.10486393896299,
+    "scaling_priority": "high",
+    "projected_monthly": 33552,
+    "projected_annual": 402629
+  },
+  {
+    "service_id": "predictive-manufacturing-for-sports-9b9cecfc",
+    "service_name": "Predictive Manufacturing for Sports",
+    "revenue_potential": 67.10204205499278,
+    "scaling_priority": "high",
+    "projected_monthly": 33551,
+    "projected_annual": 402612
+  },
+  {
+    "service_id": "automated-customer-computer-vision-a6c584ca",
+    "service_name": "Automated Customer Computer Vision",
+    "revenue_potential": 67.0622902779462,
+    "scaling_priority": "high",
+    "projected_monthly": 33531,
+    "projected_annual": 402373
+  },
+  {
+    "service_id": "predictive-orchestrator-engine-construction-448f929c",
+    "service_name": "Predictive Orchestrator Engine - Construction",
+    "revenue_potential": 66.90450009917494,
+    "scaling_priority": "high",
+    "projected_monthly": 33452,
+    "projected_annual": 401427
+  },
+  {
+    "service_id": "smart-devops-platform-transportation-60bf7178",
+    "service_name": "Smart DevOps Platform - Transportation",
+    "revenue_potential": 66.8752059997442,
+    "scaling_priority": "high",
+    "projected_monthly": 33437,
+    "projected_annual": 401251
+  },
+  {
+    "service_id": "predictive-security-engine-telecom-8c99a5ee",
+    "service_name": "Predictive Security Engine - Telecom",
+    "revenue_potential": 66.65248885988443,
+    "scaling_priority": "high",
+    "projected_monthly": 33326,
+    "projected_annual": 399914
+  },
+  {
+    "service_id": "smart-predictive-platform-tech-26618210",
+    "service_name": "Smart Predictive Platform - Tech",
+    "revenue_potential": 66.63507373003134,
+    "scaling_priority": "high",
+    "projected_monthly": 33317,
+    "projected_annual": 399810
+  },
+  {
+    "service_id": "predictive-generator-engine-manufacturing-9cc190b0",
+    "service_name": "Predictive Generator Engine - Manufacturing",
+    "revenue_potential": 66.40218039925715,
+    "scaling_priority": "high",
+    "projected_monthly": 33201,
+    "projected_annual": 398413
+  },
+  {
+    "service_id": "cognitive-data-manufacturing-75c82b24",
+    "service_name": "Cognitive data-manufacturing",
+    "revenue_potential": 66.34186429279464,
+    "scaling_priority": "high",
+    "projected_monthly": 33170,
+    "projected_annual": 398051
+  },
+  {
+    "service_id": "smart-manufacturing-system-1bcbde9a",
+    "service_name": "Smart Manufacturing System",
+    "revenue_potential": 66.31573504265545,
+    "scaling_priority": "high",
+    "projected_monthly": 33157,
+    "projected_annual": 397894
+  },
+  {
+    "service_id": "intelligent-survey-neural-380c17c4",
+    "service_name": "Intelligent Survey Neural",
+    "revenue_potential": 66.28443643272178,
+    "scaling_priority": "high",
+    "projected_monthly": 33142,
+    "projected_annual": 397706
+  },
+  {
+    "service_id": "autonomous-manufacturing-for-agriculture-6f84d929",
+    "service_name": "Autonomous Manufacturing for Agriculture",
+    "revenue_potential": 65.98923981868542,
+    "scaling_priority": "high",
+    "projected_monthly": 32994,
+    "projected_annual": 395935
+  },
+  {
+    "service_id": "autonomous-performance-system-hospitality-162069e1",
+    "service_name": "Autonomous Performance System - Hospitality",
+    "revenue_potential": 65.84708988192546,
+    "scaling_priority": "high",
+    "projected_monthly": 32923,
+    "projected_annual": 395082
+  },
+  {
+    "service_id": "insights-neural-gaming-30dc9b99",
+    "service_name": "Insights Neural - Gaming",
+    "revenue_potential": 65.60778318707841,
+    "scaling_priority": "high",
+    "projected_monthly": 32803,
+    "projected_annual": 393646
+  },
+  {
+    "service_id": "smart-cognitive-finance-f75d4b54",
+    "service_name": "Smart Cognitive - Finance",
+    "revenue_potential": 65.5759070921158,
+    "scaling_priority": "high",
+    "projected_monthly": 32787,
+    "projected_annual": 393455
+  },
+  {
+    "service_id": "smart-healthcare-platform-transportation-70d398ac",
+    "service_name": "Smart Healthcare Platform - Transportation",
+    "revenue_potential": 65.57485990639782,
+    "scaling_priority": "high",
+    "projected_monthly": 32787,
+    "projected_annual": 393449
+  },
+  {
+    "service_id": "adaptive-manager-for-media-c12c192c",
+    "service_name": "Adaptive Manager for Media",
+    "revenue_potential": 65.35813143328708,
+    "scaling_priority": "high",
+    "projected_monthly": 32679,
+    "projected_annual": 392148
+  },
+  {
+    "service_id": "intelligent-performance-for-telecom-3097c7e1",
+    "service_name": "Intelligent Performance for Telecom",
+    "revenue_potential": 65.31077663279193,
+    "scaling_priority": "high",
+    "projected_monthly": 32655,
+    "projected_annual": 391864
+  },
+  {
+    "service_id": "smart-data-platform-sports-364951b7",
+    "service_name": "Smart Data Platform - Sports",
+    "revenue_potential": 65.25525971713347,
+    "scaling_priority": "high",
+    "projected_monthly": 32627,
+    "projected_annual": 391531
+  },
+  {
+    "service_id": "predictive-neural-for-sports-a535bb7e",
+    "service_name": "Predictive Neural for Sports",
+    "revenue_potential": 65.1893892559683,
+    "scaling_priority": "high",
+    "projected_monthly": 32594,
+    "projected_annual": 391136
+  },
+  {
+    "service_id": "cognitive-experience-for-telecom-606d934f",
+    "service_name": "Cognitive Experience for Telecom",
+    "revenue_potential": 65.1835952446302,
+    "scaling_priority": "high",
+    "projected_monthly": 32591,
+    "projected_annual": 391101
+  },
+  {
+    "service_id": "cognitive-suite-solution-transportation-e0a4239c",
+    "service_name": "Cognitive Suite Solution - Transportation",
+    "revenue_potential": 65.17299668823831,
+    "scaling_priority": "high",
+    "projected_monthly": 32586,
+    "projected_annual": 391037
+  },
+  {
+    "service_id": "cognitive-predictor-solution-legal-455e52ca",
+    "service_name": "Cognitive Predictor Solution - Legal",
+    "revenue_potential": 65.09562271724992,
+    "scaling_priority": "high",
+    "projected_monthly": 32547,
+    "projected_annual": 390573
+  },
+  {
+    "service_id": "smart-sales-for-legal-1-46bf5310",
+    "service_name": "Smart Sales for Legal #1",
+    "revenue_potential": 65.05448865438848,
+    "scaling_priority": "high",
+    "projected_monthly": 32527,
+    "projected_annual": 390326
+  },
+  {
+    "service_id": "autonomous-process-mining-system-gaming-c2e71c43",
+    "service_name": "Autonomous Process Mining System - Gaming",
+    "revenue_potential": 65.04879084750618,
+    "scaling_priority": "high",
+    "projected_monthly": 32524,
+    "projected_annual": 390292
+  },
+  {
+    "service_id": "cognitive-healthcare-solution-retail-47ebc6b5",
+    "service_name": "Cognitive Healthcare Solution - Retail",
+    "revenue_potential": 64.942651747544,
+    "scaling_priority": "high",
+    "projected_monthly": 32471,
+    "projected_annual": 389655
+  },
+  {
+    "service_id": "ai-platform-gaming-edition-372da55d",
+    "service_name": "AI Platform - Gaming Edition",
+    "revenue_potential": 64.86894636112049,
+    "scaling_priority": "high",
+    "projected_monthly": 32434,
+    "projected_annual": 389213
+  },
+  {
+    "service_id": "ai-powered-cognitive-education-8c7dae22",
+    "service_name": "AI-Powered cognitive-education",
+    "revenue_potential": 64.72629831375372,
+    "scaling_priority": "high",
+    "projected_monthly": 32363,
+    "projected_annual": 388357
+  },
+  {
+    "service_id": "autonomous-neural-system-real-estate-2ffbc01b",
+    "service_name": "Autonomous Neural System - Real-Estate",
+    "revenue_potential": 64.67960724073563,
+    "scaling_priority": "high",
+    "projected_monthly": 32339,
+    "projected_annual": 388077
+  },
+  {
+    "service_id": "neural-computer-vision-automotive-e97a5cdb",
+    "service_name": "Neural computer vision-automotive",
+    "revenue_potential": 64.59318350994742,
+    "scaling_priority": "high",
+    "projected_monthly": 32296,
+    "projected_annual": 387559
+  },
+  {
+    "service_id": "autonomous-compliance-system-hospitality-1b8860e5",
+    "service_name": "Autonomous Compliance System - Hospitality",
+    "revenue_potential": 64.56030152262038,
+    "scaling_priority": "high",
+    "projected_monthly": 32280,
+    "projected_annual": 387361
+  },
+  {
+    "service_id": "ai-monitoring-automotive-edition-4a95d602",
+    "service_name": "AI Monitoring - Automotive Edition",
+    "revenue_potential": 64.50263762667142,
+    "scaling_priority": "high",
+    "projected_monthly": 32251,
+    "projected_annual": 387015
+  },
+  {
+    "service_id": "intelligent-engine-for-telecom-8acfef88",
+    "service_name": "Intelligent Engine for Telecom",
+    "revenue_potential": 64.35405216913156,
+    "scaling_priority": "high",
+    "projected_monthly": 32177,
+    "projected_annual": 386124
+  },
+  {
+    "service_id": "autonomous-optimizer-system-hospitality-bfc773c7",
+    "service_name": "Autonomous Optimizer System - Hospitality",
+    "revenue_potential": 64.28955503289328,
+    "scaling_priority": "high",
+    "projected_monthly": 32144,
+    "projected_annual": 385737
+  },
+  {
+    "service_id": "automated-customer-insights-6c5f4077",
+    "service_name": "Automated Customer Insights",
+    "revenue_potential": 64.20059214048788,
+    "scaling_priority": "high",
+    "projected_monthly": 32100,
+    "projected_annual": 385203
+  },
+  {
+    "service_id": "smart-generator-platform-sports-60918ca9",
+    "service_name": "Smart Generator Platform - Sports",
+    "revenue_potential": 64.12778310930118,
+    "scaling_priority": "high",
+    "projected_monthly": 32063,
+    "projected_annual": 384766
+  },
+  {
+    "service_id": "intelligent-advisor-for-manufacturing-cc2264c9",
+    "service_name": "Intelligent Advisor for Manufacturing",
+    "revenue_potential": 64.02734548318152,
+    "scaling_priority": "high",
+    "projected_monthly": 32013,
+    "projected_annual": 384164
+  },
+  {
+    "service_id": "autonomous-system-system-real-estate-41e853d0",
+    "service_name": "Autonomous System System - Real-Estate",
+    "revenue_potential": 63.979921398698934,
+    "scaling_priority": "high",
+    "projected_monthly": 31989,
+    "projected_annual": 383879
+  },
+  {
+    "service_id": "finance-neural-manufacturing-80acd5da",
+    "service_name": "Finance Neural - Manufacturing",
+    "revenue_potential": 63.58432924217884,
+    "scaling_priority": "high",
+    "projected_monthly": 31792,
+    "projected_annual": 381505
+  },
+  {
+    "service_id": "ai-powered-personalization-revenue-516531f7",
+    "service_name": "AI-Powered Personalization Revenue",
+    "revenue_potential": 63.550640969736236,
+    "scaling_priority": "high",
+    "projected_monthly": 31775,
+    "projected_annual": 381303
+  },
+  {
+    "service_id": "neural-intelligence-logistics-dc966c9c",
+    "service_name": "Neural intelligence-logistics",
+    "revenue_potential": 63.49851343371273,
+    "scaling_priority": "high",
+    "projected_monthly": 31749,
+    "projected_annual": 380991
+  },
+  {
+    "service_id": "autonomous-monitoring-system-insurance-1-8f1129ea",
+    "service_name": "Autonomous Monitoring System - Insurance #1",
+    "revenue_potential": 63.48369554992538,
+    "scaling_priority": "high",
+    "projected_monthly": 31741,
+    "projected_annual": 380902
+  },
+  {
+    "service_id": "predictive-business-intelligence-engine-insurance-cc635f21",
+    "service_name": "Predictive Business Intelligence Engine - Insurance",
+    "revenue_potential": 63.43589563439186,
+    "scaling_priority": "high",
+    "projected_monthly": 31717,
+    "projected_annual": 380615
+  },
+  {
+    "service_id": "smart-risk-platform-healthcare-b5d69a0e",
+    "service_name": "Smart Risk Platform - Healthcare",
+    "revenue_potential": 63.34598429057674,
+    "scaling_priority": "high",
+    "projected_monthly": 31672,
+    "projected_annual": 380075
+  },
+  {
+    "service_id": "smart-autonomous-for-agriculture-ccfd5429",
+    "service_name": "Smart Autonomous for Agriculture",
+    "revenue_potential": 63.30296990758881,
+    "scaling_priority": "high",
+    "projected_monthly": 31651,
+    "projected_annual": 379817
+  },
+  {
+    "service_id": "intelligent-support-for-agriculture-39fd978a",
+    "service_name": "Intelligent Support for Agriculture",
+    "revenue_potential": 62.97553851396652,
+    "scaling_priority": "high",
+    "projected_monthly": 31487,
+    "projected_annual": 377853
+  },
+  {
+    "service_id": "predictive-experience-engine-transportation-06b25632",
+    "service_name": "Predictive Experience Engine - Transportation",
+    "revenue_potential": 62.92569478365751,
+    "scaling_priority": "high",
+    "projected_monthly": 31462,
+    "projected_annual": 377554
+  },
+  {
+    "service_id": "predictive-engine-engine-logistics-4ef6d1b5",
+    "service_name": "Predictive Engine Engine - Logistics",
+    "revenue_potential": 62.757944494745075,
+    "scaling_priority": "high",
+    "projected_monthly": 31378,
+    "projected_annual": 376547
+  },
+  {
+    "service_id": "ai-process-mining-legal-edition-3693ff03",
+    "service_name": "AI Process Mining - Legal Edition",
+    "revenue_potential": 62.742603508924375,
+    "scaling_priority": "high",
+    "projected_monthly": 31371,
+    "projected_annual": 376455
+  },
+  {
+    "service_id": "autonomous-security-system-insurance-3acddf44",
+    "service_name": "Autonomous Security System - Insurance",
+    "revenue_potential": 62.73490632421348,
+    "scaling_priority": "high",
+    "projected_monthly": 31367,
+    "projected_annual": 376409
+  },
+  {
+    "service_id": "cognitive-generator-for-insurance-dcc704f4",
+    "service_name": "Cognitive Generator for Insurance",
+    "revenue_potential": 62.62429993432488,
+    "scaling_priority": "high",
+    "projected_monthly": 31312,
+    "projected_annual": 375745
+  },
+  {
+    "service_id": "predictive-data-engine-hospitality-c6c27c84",
+    "service_name": "Predictive Data Engine - Hospitality",
+    "revenue_potential": 62.60442325887745,
+    "scaling_priority": "high",
+    "projected_monthly": 31302,
+    "projected_annual": 375626
+  },
+  {
+    "service_id": "predictive-deep-learning-engine-retail-9c0373c1",
+    "service_name": "Predictive Deep Learning Engine - Retail",
+    "revenue_potential": 62.59078030252431,
+    "scaling_priority": "high",
+    "projected_monthly": 31295,
+    "projected_annual": 375544
+  },
+  {
+    "service_id": "autonomous-orchestrator-system-legal-3fcae3f2",
+    "service_name": "Autonomous Orchestrator System - Legal",
+    "revenue_potential": 62.512601727629836,
+    "scaling_priority": "high",
+    "projected_monthly": 31256,
+    "projected_annual": 375075
+  },
+  {
+    "service_id": "intelligent-optimization-for-telecom-194de3d6",
+    "service_name": "Intelligent Optimization for Telecom",
+    "revenue_potential": 62.33115735177274,
+    "scaling_priority": "high",
+    "projected_monthly": 31165,
+    "projected_annual": 373986
+  },
+  {
+    "service_id": "automated-manufacturing-finance-26a039ba",
+    "service_name": "Automated manufacturing-finance",
+    "revenue_potential": 62.12266147332039,
+    "scaling_priority": "high",
+    "projected_monthly": 31061,
+    "projected_annual": 372735
+  },
+  {
+    "service_id": "ai-support-retail-edition-dc4e565d",
+    "service_name": "AI Support - Retail Edition",
+    "revenue_potential": 61.89887261631625,
+    "scaling_priority": "high",
+    "projected_monthly": 30949,
+    "projected_annual": 371393
+  },
+  {
+    "service_id": "intelligent-smart-for-tech-18c116ba",
+    "service_name": "Intelligent Smart for Tech",
+    "revenue_potential": 61.87450137453795,
+    "scaling_priority": "high",
+    "projected_monthly": 30937,
+    "projected_annual": 371247
+  },
+  {
+    "service_id": "autonomous-quality-system-hospitality-6e8e95e7",
+    "service_name": "Autonomous Quality System - Hospitality",
+    "revenue_potential": 61.79957118499557,
+    "scaling_priority": "high",
+    "projected_monthly": 30899,
+    "projected_annual": 370797
+  },
+  {
+    "service_id": "neural-devops-construction-8599e036",
+    "service_name": "Neural devops-construction",
+    "revenue_potential": 61.61371148584792,
+    "scaling_priority": "high",
+    "projected_monthly": 30806,
+    "projected_annual": 369682
+  },
+  {
+    "service_id": "risk-neural-retail-a9c8dfe0",
+    "service_name": "Risk Neural - Retail",
+    "revenue_potential": 61.56382718779433,
+    "scaling_priority": "high",
+    "projected_monthly": 30781,
+    "projected_annual": 369382
+  },
+  {
+    "service_id": "autonomous-automation-system-construction-9c78f635",
+    "service_name": "Autonomous Automation System - Construction",
+    "revenue_potential": 61.488176283462124,
+    "scaling_priority": "high",
+    "projected_monthly": 30744,
+    "projected_annual": 368929
+  },
+  {
+    "service_id": "ai-powered-recommendation-system-e70afa2f",
+    "service_name": "AI-Powered Recommendation System",
+    "revenue_potential": 61.45699485316343,
+    "scaling_priority": "high",
+    "projected_monthly": 30728,
+    "projected_annual": 368741
+  },
+  {
+    "service_id": "smart-cognitive-platform-media-6fb30354",
+    "service_name": "Smart Cognitive Platform - Media",
+    "revenue_potential": 61.42871781902127,
+    "scaling_priority": "high",
+    "projected_monthly": 30714,
+    "projected_annual": 368572
+  },
+  {
+    "service_id": "intelligent-cloud-for-legal-4a943539",
+    "service_name": "Intelligent Cloud for Legal",
+    "revenue_potential": 61.32261419214286,
+    "scaling_priority": "high",
+    "projected_monthly": 30661,
+    "projected_annual": 367935
+  },
+  {
+    "service_id": "predictive-suite-engine-construction-cb46273c",
+    "service_name": "Predictive Suite Engine - Construction",
+    "revenue_potential": 61.275560369035745,
+    "scaling_priority": "high",
+    "projected_monthly": 30637,
+    "projected_annual": 367653
+  },
+  {
+    "service_id": "ai-intelligent-telecom-edition-58df2e75",
+    "service_name": "AI Intelligent - Telecom Edition",
+    "revenue_potential": 61.266460672950465,
+    "scaling_priority": "high",
+    "projected_monthly": 30633,
+    "projected_annual": 367598
+  },
+  {
+    "service_id": "cognitive-finance-finance-4b3a714a",
+    "service_name": "Cognitive finance-finance",
+    "revenue_potential": 61.179370726693925,
+    "scaling_priority": "high",
+    "projected_monthly": 30589,
+    "projected_annual": 367076
+  },
+  {
+    "service_id": "autonomous-machine-learning-system-agriculture-69399571",
+    "service_name": "Autonomous Machine Learning System - Agriculture",
+    "revenue_potential": 61.09526100468303,
+    "scaling_priority": "high",
+    "projected_monthly": 30547,
+    "projected_annual": 366571
+  },
+  {
+    "service_id": "autonomous-survey-compliance-7e40601d",
+    "service_name": "Autonomous Survey Compliance",
+    "revenue_potential": 61.01116857891541,
+    "scaling_priority": "high",
+    "projected_monthly": 30505,
+    "projected_annual": 366067
+  },
+  {
+    "service_id": "neural-marketing-for-legal-2d88f730",
+    "service_name": "Neural Marketing for Legal",
+    "revenue_potential": 60.73874129627105,
+    "scaling_priority": "high",
+    "projected_monthly": 30369,
+    "projected_annual": 364432
+  },
+  {
+    "service_id": "ai-nlp-hospitality-edition-318f2a1c",
+    "service_name": "AI NLP - Hospitality Edition",
+    "revenue_potential": 60.722661872875236,
+    "scaling_priority": "high",
+    "projected_monthly": 30361,
+    "projected_annual": 364335
+  },
+  {
+    "service_id": "autonomous-healthcare-system-construction-92488a99",
+    "service_name": "Autonomous Healthcare System - Construction",
+    "revenue_potential": 60.63110191164631,
+    "scaling_priority": "high",
+    "projected_monthly": 30315,
+    "projected_annual": 363786
+  },
+  {
+    "service_id": "ai-suite-real-estate-edition-bd5e0178",
+    "service_name": "AI Suite - Real-Estate Edition",
+    "revenue_potential": 60.61479512929512,
+    "scaling_priority": "high",
+    "projected_monthly": 30307,
+    "projected_annual": 363688
+  },
+  {
+    "service_id": "ai-powered-marketing-for-telecom-753b2d27",
+    "service_name": "AI-Powered Marketing for Telecom",
+    "revenue_potential": 60.31955044113526,
+    "scaling_priority": "high",
+    "projected_monthly": 30159,
+    "projected_annual": 361917
+  },
+  {
+    "service_id": "smart-automation-platform-manufacturing-bd983468",
+    "service_name": "Smart Automation Platform - Manufacturing",
+    "revenue_potential": 60.218728493557435,
+    "scaling_priority": "high",
+    "projected_monthly": 30109,
+    "projected_annual": 361312
+  },
+  {
+    "service_id": "predictive-cloud-engine-telecom-ac6296d7",
+    "service_name": "Predictive Cloud Engine - Telecom",
+    "revenue_potential": 60.00491149630132,
+    "scaling_priority": "high",
+    "projected_monthly": 30002,
+    "projected_annual": 360029
+  },
+  {
+    "service_id": "adaptive-insights-healthcare-75591750",
+    "service_name": "Adaptive insights-healthcare",
+    "revenue_potential": 59.99891637046858,
+    "scaling_priority": "high",
+    "projected_monthly": 29999,
+    "projected_annual": 359993
+  },
+  {
+    "service_id": "neural-manager-legal-4a90a5d2",
+    "service_name": "Neural manager-legal",
+    "revenue_potential": 59.985316452715665,
+    "scaling_priority": "high",
+    "projected_monthly": 29992,
+    "projected_annual": 359911
+  },
+  {
+    "service_id": "intelligent-scenario-supply-1ea680c7",
+    "service_name": "Intelligent Scenario Supply",
+    "revenue_potential": 59.829127935777514,
+    "scaling_priority": "high",
+    "projected_monthly": 29914,
+    "projected_annual": 358974
+  },
+  {
+    "service_id": "ai-devops-sports-edition-17f91f9f",
+    "service_name": "AI DevOps - Sports Edition",
+    "revenue_potential": 59.78671806269297,
+    "scaling_priority": "high",
+    "projected_monthly": 29893,
+    "projected_annual": 358720
+  },
+  {
+    "service_id": "ai-predictive-manufacturing-edition-264de5c7",
+    "service_name": "AI Predictive - Manufacturing Edition",
+    "revenue_potential": 59.72007623395125,
+    "scaling_priority": "high",
+    "projected_monthly": 29860,
+    "projected_annual": 358320
+  },
+  {
+    "service_id": "smart-autonomous-platform-logistics-99385126",
+    "service_name": "Smart Autonomous Platform - Logistics",
+    "revenue_potential": 59.71123552285502,
+    "scaling_priority": "high",
+    "projected_monthly": 29855,
+    "projected_annual": 358267
+  },
+  {
+    "service_id": "adaptive-analyzer-for-gaming-68d367ea",
+    "service_name": "Adaptive Analyzer for Gaming",
+    "revenue_potential": 59.56175710203473,
+    "scaling_priority": "high",
+    "projected_monthly": 29780,
+    "projected_annual": 357370
+  },
+  {
+    "service_id": "cognitive-engine-for-sports-0becbf9b",
+    "service_name": "Cognitive Engine for Sports",
+    "revenue_potential": 59.52511547310018,
+    "scaling_priority": "high",
+    "projected_monthly": 29762,
+    "projected_annual": 357150
+  },
+  {
+    "service_id": "intelligent-suite-construction-02e32bb3",
+    "service_name": "Intelligent suite-construction",
+    "revenue_potential": 59.5184683245138,
+    "scaling_priority": "high",
+    "projected_monthly": 29759,
+    "projected_annual": 357110
+  },
+  {
+    "service_id": "cognitive-optimization-finance-879f2ae8",
+    "service_name": "Cognitive optimization-finance",
+    "revenue_potential": 59.48924878652097,
+    "scaling_priority": "high",
+    "projected_monthly": 29744,
+    "projected_annual": 356935
+  },
+  {
+    "service_id": "smart-system-sports-75d1a8ff",
+    "service_name": "Smart system-sports",
+    "revenue_potential": 59.46469303392916,
+    "scaling_priority": "high",
+    "projected_monthly": 29732,
+    "projected_annual": 356788
+  },
+  {
+    "service_id": "intelligent-real-estate-for-construction-f9bd362e",
+    "service_name": "Intelligent Real Estate for Construction",
+    "revenue_potential": 59.423782709107876,
+    "scaling_priority": "high",
+    "projected_monthly": 29711,
+    "projected_annual": 356542
+  },
+  {
+    "service_id": "autonomous-system-system-telecom-a25764b5",
+    "service_name": "Autonomous System System - Telecom",
+    "revenue_potential": 59.405619053181134,
+    "scaling_priority": "high",
+    "projected_monthly": 29702,
+    "projected_annual": 356433
+  },
+  {
+    "service_id": "monitoring-adaptive-transportation-506293df",
+    "service_name": "Monitoring Adaptive - Transportation",
+    "revenue_potential": 59.3945373244401,
+    "scaling_priority": "high",
+    "projected_monthly": 29697,
+    "projected_annual": 356367
+  },
+  {
+    "service_id": "self-optimizing-computer-vision-construction-c963cf6f",
+    "service_name": "Self-Optimizing computer vision-construction",
+    "revenue_potential": 59.10296107235335,
+    "scaling_priority": "high",
+    "projected_monthly": 29551,
+    "projected_annual": 354617
+  },
+  {
+    "service_id": "self-optimizing-computer-vision-for-sports-25998462",
+    "service_name": "Self-Optimizing Computer Vision for Sports",
+    "revenue_potential": 59.09066583545779,
+    "scaling_priority": "high",
+    "projected_monthly": 29545,
+    "projected_annual": 354543
+  },
+  {
+    "service_id": "cognitive-automation-logistics-84ea6056",
+    "service_name": "Cognitive automation-logistics",
+    "revenue_potential": 59.08587607667338,
+    "scaling_priority": "high",
+    "projected_monthly": 29542,
+    "projected_annual": 354515
+  },
+  {
+    "service_id": "platform-automated-tech-0931cd56",
+    "service_name": "Platform Automated - Tech",
+    "revenue_potential": 59.01544720162975,
+    "scaling_priority": "high",
+    "projected_monthly": 29507,
+    "projected_annual": 354092
+  },
+  {
+    "service_id": "ai-intelligent-real-estate-edition-5b5b0591",
+    "service_name": "AI Intelligent - Real-Estate Edition",
+    "revenue_potential": 58.99327050710666,
+    "scaling_priority": "high",
+    "projected_monthly": 29496,
+    "projected_annual": 353959
+  },
+  {
+    "service_id": "self-optimizing-advisor-automotive-19bbfc03",
+    "service_name": "Self-Optimizing advisor-automotive",
+    "revenue_potential": 58.87943451834967,
+    "scaling_priority": "high",
+    "projected_monthly": 29439,
+    "projected_annual": 353276
+  },
+  {
+    "service_id": "smart-autonomous-platform-healthcare-eee63690",
+    "service_name": "Smart Autonomous Platform - Healthcare",
+    "revenue_potential": 58.86989856633919,
+    "scaling_priority": "high",
+    "projected_monthly": 29434,
+    "projected_annual": 353219
+  },
+  {
+    "service_id": "ai-suite-real-estate-edition-1-fd324930",
+    "service_name": "AI Suite - Real-Estate Edition #1",
+    "revenue_potential": 58.52656488071683,
+    "scaling_priority": "high",
+    "projected_monthly": 29263,
+    "projected_annual": 351159
+  },
+  {
+    "service_id": "intelligent-sales-intelligence-ca36568f",
+    "service_name": "Intelligent Sales Intelligence",
+    "revenue_potential": 58.47108623833678,
+    "scaling_priority": "high",
+    "projected_monthly": 29235,
+    "projected_annual": 350826
+  },
+  {
+    "service_id": "cognitive-orchestrator-finance-14e8a403",
+    "service_name": "Cognitive orchestrator-finance",
+    "revenue_potential": 58.31370254044524,
+    "scaling_priority": "high",
+    "projected_monthly": 29156,
+    "projected_annual": 349882
+  },
+  {
+    "service_id": "autonomous-performance-system-healthcare-5a5cfbc1",
+    "service_name": "Autonomous Performance System - Healthcare",
+    "revenue_potential": 58.21744963372607,
+    "scaling_priority": "high",
+    "projected_monthly": 29108,
+    "projected_annual": 349304
+  },
+  {
+    "service_id": "cognitive-optimization-solution-transportation-e97d07a5",
+    "service_name": "Cognitive Optimization Solution - Transportation",
+    "revenue_potential": 58.14101584052741,
+    "scaling_priority": "high",
+    "projected_monthly": 29070,
+    "projected_annual": 348846
+  },
+  {
+    "service_id": "ai-powered-data-sports-6136e3f5",
+    "service_name": "AI-Powered data-sports",
+    "revenue_potential": 58.139734409955956,
+    "scaling_priority": "high",
+    "projected_monthly": 29069,
+    "projected_annual": 348838
+  },
+  {
+    "service_id": "predictive-healthcare-engine-insurance-20e97fd2",
+    "service_name": "Predictive Healthcare Engine - Insurance",
+    "revenue_potential": 57.90375922194879,
+    "scaling_priority": "high",
+    "projected_monthly": 28951,
+    "projected_annual": 347422
+  },
+  {
+    "service_id": "predictive-cognitive-engine-insurance-abbce283",
+    "service_name": "Predictive Cognitive Engine - Insurance",
+    "revenue_potential": 57.78869144408893,
+    "scaling_priority": "high",
+    "projected_monthly": 28894,
+    "projected_annual": 346732
+  },
+  {
+    "service_id": "intelligent-quality-supply-92e98e21",
+    "service_name": "Intelligent Quality Supply",
+    "revenue_potential": 57.68861251717342,
+    "scaling_priority": "high",
+    "projected_monthly": 28844,
+    "projected_annual": 346131
+  },
+  {
+    "service_id": "predictive-computer-vision-engine-construction-91194e6a",
+    "service_name": "Predictive Computer Vision Engine - Construction",
+    "revenue_potential": 57.678320241373626,
+    "scaling_priority": "high",
+    "projected_monthly": 28839,
+    "projected_annual": 346069
+  },
+  {
+    "service_id": "cognitive-predictor-insurance-dd7f3f4e",
+    "service_name": "Cognitive predictor-insurance",
+    "revenue_potential": 57.64089132736003,
+    "scaling_priority": "high",
+    "projected_monthly": 28820,
+    "projected_annual": 345845
+  },
+  {
+    "service_id": "intelligent-real-estate-tech-a7390f96",
+    "service_name": "Intelligent real estate-tech",
+    "revenue_potential": 57.61610686177434,
+    "scaling_priority": "high",
+    "projected_monthly": 28808,
+    "projected_annual": 345696
+  },
+  {
+    "service_id": "intelligent-monitoring-for-education-497eadaf",
+    "service_name": "Intelligent Monitoring for Education",
+    "revenue_potential": 57.596149658792015,
+    "scaling_priority": "high",
+    "projected_monthly": 28798,
+    "projected_annual": 345576
+  },
+  {
+    "service_id": "predictive-suite-engine-logistics-cec20c82",
+    "service_name": "Predictive Suite Engine - Logistics",
+    "revenue_potential": 57.512113578527924,
+    "scaling_priority": "high",
+    "projected_monthly": 28756,
+    "projected_annual": 345072
+  },
+  {
+    "service_id": "ai-powered-project-manufacturing-dd385f77",
+    "service_name": "AI-Powered Project Manufacturing",
+    "revenue_potential": 57.27363585922238,
+    "scaling_priority": "high",
+    "projected_monthly": 28636,
+    "projected_annual": 343641
+  },
+  {
+    "service_id": "cognitive-sales-solution-automotive-fb58f02c",
+    "service_name": "Cognitive Sales Solution - Automotive",
+    "revenue_potential": 57.11614888875588,
+    "scaling_priority": "high",
+    "projected_monthly": 28558,
+    "projected_annual": 342696
+  },
+  {
+    "service_id": "autonomous-processor-system-automotive-ae40c4b4",
+    "service_name": "Autonomous Processor System - Automotive",
+    "revenue_potential": 57.11327870757887,
+    "scaling_priority": "high",
+    "projected_monthly": 28556,
+    "projected_annual": 342679
+  },
+  {
+    "service_id": "cognitive-platform-solution-education-e5ee50b3",
+    "service_name": "Cognitive Platform Solution - Education",
+    "revenue_potential": 57.094465238160495,
+    "scaling_priority": "high",
+    "projected_monthly": 28547,
+    "projected_annual": 342566
+  },
+  {
+    "service_id": "sales-automated-tech-71b92f56",
+    "service_name": "Sales Automated - Tech",
+    "revenue_potential": 56.911596978228765,
+    "scaling_priority": "high",
+    "projected_monthly": 28455,
+    "projected_annual": 341469
+  },
+  {
+    "service_id": "intelligent-deep-learning-for-agriculture-70518242",
+    "service_name": "Intelligent Deep Learning for Agriculture",
+    "revenue_potential": 56.77054604495046,
+    "scaling_priority": "high",
+    "projected_monthly": 28385,
+    "projected_annual": 340623
+  },
+  {
+    "service_id": "autonomous-nlp-system-real-estate-1383dfe2",
+    "service_name": "Autonomous NLP System - Real-Estate",
+    "revenue_potential": 56.759873517740246,
+    "scaling_priority": "high",
+    "projected_monthly": 28379,
+    "projected_annual": 340559
+  },
+  {
+    "service_id": "intelligence-automated-transportation-532ab1fa",
+    "service_name": "Intelligence Automated - Transportation",
+    "revenue_potential": 56.744310443667715,
+    "scaling_priority": "high",
+    "projected_monthly": 28372,
+    "projected_annual": 340465
+  },
+  {
+    "service_id": "predictive-optimizer-engine-automotive-482c862f",
+    "service_name": "Predictive Optimizer Engine - Automotive",
+    "revenue_potential": 56.73338261043175,
+    "scaling_priority": "high",
+    "projected_monthly": 28366,
+    "projected_annual": 340400
+  },
+  {
+    "service_id": "cognitive-analyzer-solution-sports-1-c620471e",
+    "service_name": "Cognitive Analyzer Solution - Sports #1",
+    "revenue_potential": 56.70233276995925,
+    "scaling_priority": "high",
+    "projected_monthly": 28351,
+    "projected_annual": 340213
+  },
+  {
+    "service_id": "ai-monitoring-tech-edition-9bce3298",
+    "service_name": "AI Monitoring - Tech Edition",
+    "revenue_potential": 56.67072019770205,
+    "scaling_priority": "high",
+    "projected_monthly": 28335,
+    "projected_annual": 340024
+  },
+  {
+    "service_id": "intelligent-management-for-tech-1f004be5",
+    "service_name": "Intelligent Management for Tech",
+    "revenue_potential": 56.65299470978448,
+    "scaling_priority": "high",
+    "projected_monthly": 28326,
+    "projected_annual": 339917
+  },
+  {
+    "service_id": "automated-performance-automation-5c80b408",
+    "service_name": "Automated Performance Automation",
+    "revenue_potential": 56.637730633904084,
+    "scaling_priority": "high",
+    "projected_monthly": 28318,
+    "projected_annual": 339826
+  },
+  {
+    "service_id": "cognitive-ai-solution-sports-8460de81",
+    "service_name": "Cognitive AI Solution - Sports",
+    "revenue_potential": 56.4096976563658,
+    "scaling_priority": "high",
+    "projected_monthly": 28204,
+    "projected_annual": 338458
+  },
+  {
+    "service_id": "smart-business-intelligence-sports-5434bb00",
+    "service_name": "Smart business intelligence-sports",
+    "revenue_potential": 56.24789102970891,
+    "scaling_priority": "high",
+    "projected_monthly": 28123,
+    "projected_annual": 337487
+  },
+  {
+    "service_id": "intelligent-suite-for-construction-cb7ede63",
+    "service_name": "Intelligent Suite for Construction",
+    "revenue_potential": 56.210896717619526,
+    "scaling_priority": "high",
+    "projected_monthly": 28105,
+    "projected_annual": 337265
+  },
+  {
+    "service_id": "ai-sales-gaming-edition-fc5fabef",
+    "service_name": "AI Sales - Gaming Edition",
+    "revenue_potential": 56.19036120426163,
+    "scaling_priority": "high",
+    "projected_monthly": 28095,
+    "projected_annual": 337142
+  },
+  {
+    "service_id": "intelligent-optimizer-for-transportation-901a7990",
+    "service_name": "Intelligent Optimizer for Transportation",
+    "revenue_potential": 56.15590115147276,
+    "scaling_priority": "high",
+    "projected_monthly": 28077,
+    "projected_annual": 336935
+  },
+  {
+    "service_id": "neural-coordinator-for-education-0a423c1a",
+    "service_name": "Neural Coordinator for Education",
+    "revenue_potential": 56.00383753055159,
+    "scaling_priority": "high",
+    "projected_monthly": 28001,
+    "projected_annual": 336023
+  },
+  {
+    "service_id": "neural-compliance-system-35e1781c",
+    "service_name": "Neural Compliance System",
+    "revenue_potential": 55.972445854501295,
+    "scaling_priority": "high",
+    "projected_monthly": 27986,
+    "projected_annual": 335834
+  },
+  {
+    "service_id": "data-predictive-education-2252c34c",
+    "service_name": "Data Predictive - Education",
+    "revenue_potential": 55.901689844483556,
+    "scaling_priority": "high",
+    "projected_monthly": 27950,
+    "projected_annual": 335410
+  },
+  {
+    "service_id": "neural-autonomous-energy-2710a26d",
+    "service_name": "Neural Autonomous - Energy",
+    "revenue_potential": 55.87823765249986,
+    "scaling_priority": "high",
+    "projected_monthly": 27939,
+    "projected_annual": 335269
+  },
+  {
+    "service_id": "self-optimizing-data-science-legal-9b84c9c6",
+    "service_name": "Self-Optimizing data science-legal",
+    "revenue_potential": 55.87251789150051,
+    "scaling_priority": "high",
+    "projected_monthly": 27936,
+    "projected_annual": 335235
+  },
+  {
+    "service_id": "predictive-analyzer-engine-finance-aae09089",
+    "service_name": "Predictive Analyzer Engine - Finance",
+    "revenue_potential": 55.84160233659672,
+    "scaling_priority": "high",
+    "projected_monthly": 27920,
+    "projected_annual": 335049
+  },
+  {
+    "service_id": "intelligent-ai-for-hospitality-48a58506",
+    "service_name": "Intelligent AI for Hospitality",
+    "revenue_potential": 55.707336285642015,
+    "scaling_priority": "high",
+    "projected_monthly": 27853,
+    "projected_annual": 334244
+  },
+  {
+    "service_id": "autonomous-business-intelligence-system-finance-74c9999d",
+    "service_name": "Autonomous Business Intelligence System - Finance",
+    "revenue_potential": 55.52726867584492,
+    "scaling_priority": "high",
+    "projected_monthly": 27763,
+    "projected_annual": 333163
+  },
+  {
+    "service_id": "autonomous-supply-system-gaming-efaa9d5f",
+    "service_name": "Autonomous Supply System - Gaming",
+    "revenue_potential": 55.52647460129967,
+    "scaling_priority": "high",
+    "projected_monthly": 27763,
+    "projected_annual": 333158
+  },
+  {
+    "service_id": "neural-neural-for-telecom-eabc0647",
+    "service_name": "Neural Neural for Telecom",
+    "revenue_potential": 55.37727620813302,
+    "scaling_priority": "high",
+    "projected_monthly": 27688,
+    "projected_annual": 332263
+  },
+  {
+    "service_id": "cognitive-machine-learning-for-telecom-e7816164",
+    "service_name": "Cognitive Machine Learning for Telecom",
+    "revenue_potential": 55.355289521791185,
+    "scaling_priority": "high",
+    "projected_monthly": 27677,
+    "projected_annual": 332131
+  },
+  {
+    "service_id": "ai-process-mining-healthcare-edition-d6d02d26",
+    "service_name": "AI Process Mining - Healthcare Edition",
+    "revenue_potential": 55.13817817062455,
+    "scaling_priority": "high",
+    "projected_monthly": 27569,
+    "projected_annual": 330829
+  },
+  {
+    "service_id": "smart-advisor-media-627608be",
+    "service_name": "Smart advisor-media",
+    "revenue_potential": 55.08512329575286,
+    "scaling_priority": "high",
+    "projected_monthly": 27542,
+    "projected_annual": 330510
+  },
+  {
+    "service_id": "ai-powered-platform-for-agriculture-52705fd9",
+    "service_name": "AI-Powered Platform for Agriculture",
+    "revenue_potential": 55.05492102352388,
+    "scaling_priority": "high",
+    "projected_monthly": 27527,
+    "projected_annual": 330329
+  },
+  {
+    "service_id": "revenue-self-optimizing-finance-c1d7ea50",
+    "service_name": "Revenue Self-Optimizing - Finance",
+    "revenue_potential": 54.90365897639725,
+    "scaling_priority": "high",
+    "projected_monthly": 27451,
+    "projected_annual": 329421
+  },
+  {
+    "service_id": "predictive-cognitive-logistics-f2ada8a6",
+    "service_name": "Predictive Cognitive - Logistics",
+    "revenue_potential": 54.85488176736841,
+    "scaling_priority": "high",
+    "projected_monthly": 27427,
+    "projected_annual": 329129
+  },
+  {
+    "service_id": "neural-quality-optimizer-e45ec206",
+    "service_name": "Neural Quality Optimizer",
+    "revenue_potential": 54.811532010151694,
+    "scaling_priority": "high",
+    "projected_monthly": 27405,
+    "projected_annual": 328869
+  },
+  {
+    "service_id": "smart-resource-data-science-a3392090",
+    "service_name": "Smart Resource Data Science",
+    "revenue_potential": 54.78911702510586,
+    "scaling_priority": "high",
+    "projected_monthly": 27394,
+    "projected_annual": 328734
+  },
+  {
+    "service_id": "predictive-advisor-engine-manufacturing-c6d74785",
+    "service_name": "Predictive Advisor Engine - Manufacturing",
+    "revenue_potential": 54.743371420435224,
+    "scaling_priority": "high",
+    "projected_monthly": 27371,
+    "projected_annual": 328460
+  },
+  {
+    "service_id": "autonomous-influencer-quality-9c6f36a9",
+    "service_name": "Autonomous Influencer Quality",
+    "revenue_potential": 54.71057587620197,
+    "scaling_priority": "high",
+    "projected_monthly": 27355,
+    "projected_annual": 328263
+  },
+  {
+    "service_id": "intelligent-coordinator-for-legal-1fd812ca",
+    "service_name": "Intelligent Coordinator for Legal",
+    "revenue_potential": 54.69701469173713,
+    "scaling_priority": "high",
+    "projected_monthly": 27348,
+    "projected_annual": 328182
+  },
+  {
+    "service_id": "autonomous-monitoring-system-agriculture-37b7ce30",
+    "service_name": "Autonomous Monitoring System - Agriculture",
+    "revenue_potential": 54.67272673204827,
+    "scaling_priority": "high",
+    "projected_monthly": 27336,
+    "projected_annual": 328036
+  },
+  {
+    "service_id": "cognitive-anomaly-finance-93d11d1b",
+    "service_name": "Cognitive Anomaly Finance",
+    "revenue_potential": 54.64610734848658,
+    "scaling_priority": "high",
+    "projected_monthly": 27323,
+    "projected_annual": 327876
+  },
+  {
+    "service_id": "cognitive-marketing-solution-agriculture-3639d969",
+    "service_name": "Cognitive Marketing Solution - Agriculture",
+    "revenue_potential": 54.636340556259945,
+    "scaling_priority": "high",
+    "projected_monthly": 27318,
+    "projected_annual": 327818
+  },
+  {
+    "service_id": "adaptive-process-security-2c302f12",
+    "service_name": "Adaptive Process Security",
+    "revenue_potential": 54.539244651492616,
+    "scaling_priority": "high",
+    "projected_monthly": 27269,
+    "projected_annual": 327235
+  },
+  {
+    "service_id": "autonomous-automation-system-legal-a96c27a1",
+    "service_name": "Autonomous Automation System - Legal",
+    "revenue_potential": 54.47549547055822,
+    "scaling_priority": "high",
+    "projected_monthly": 27237,
+    "projected_annual": 326852
+  },
+  {
+    "service_id": "intelligent-cognitive-sports-2d53050b",
+    "service_name": "Intelligent cognitive-sports",
+    "revenue_potential": 54.46508221743517,
+    "scaling_priority": "high",
+    "projected_monthly": 27232,
+    "projected_annual": 326790
+  },
+  {
+    "service_id": "compliance-ai-logistics-c4faadf2",
+    "service_name": "Compliance AI - Logistics",
+    "revenue_potential": 54.37094037461488,
+    "scaling_priority": "high",
+    "projected_monthly": 27185,
+    "projected_annual": 326225
+  },
+  {
+    "service_id": "predictive-customer-service-engine-hospitality-02f745a4",
+    "service_name": "Predictive Customer Service Engine - Hospitality",
+    "revenue_potential": 54.03244079632786,
+    "scaling_priority": "high",
+    "projected_monthly": 27016,
+    "projected_annual": 324194
+  },
+  {
+    "service_id": "neural-inventory-support-e5ee5ae8",
+    "service_name": "Neural Inventory Support",
+    "revenue_potential": 54.02672561633286,
+    "scaling_priority": "high",
+    "projected_monthly": 27013,
+    "projected_annual": 324160
+  },
+  {
+    "service_id": "ai-powered-engine-real-estate-eef49d81",
+    "service_name": "AI-Powered engine-real-estate",
+    "revenue_potential": 53.70473014468854,
+    "scaling_priority": "high",
+    "projected_monthly": 26852,
+    "projected_annual": 322228
+  },
+  {
+    "service_id": "smart-marketing-platform-construction-013421a8",
+    "service_name": "Smart Marketing Platform - Construction",
+    "revenue_potential": 53.63169233415155,
+    "scaling_priority": "high",
+    "projected_monthly": 26815,
+    "projected_annual": 321790
+  },
+  {
+    "service_id": "director-intelligent-transportation-e54ed598",
+    "service_name": "Director Intelligent - Transportation",
+    "revenue_potential": 53.60941853635212,
+    "scaling_priority": "high",
+    "projected_monthly": 26804,
+    "projected_annual": 321656
+  },
+  {
+    "service_id": "predictive-recruitment-ai-cf8d121f",
+    "service_name": "Predictive Recruitment AI",
+    "revenue_potential": 53.45454611060555,
+    "scaling_priority": "high",
+    "projected_monthly": 26727,
+    "projected_annual": 320727
+  },
+  {
+    "service_id": "autonomous-computer-vision-system-healthcare-cdd05673",
+    "service_name": "Autonomous Computer Vision System - Healthcare",
+    "revenue_potential": 53.42167530974553,
+    "scaling_priority": "high",
+    "projected_monthly": 26710,
+    "projected_annual": 320530
+  },
+  {
+    "service_id": "autonomous-monitoring-for-insurance-d256b930",
+    "service_name": "Autonomous Monitoring for Insurance",
+    "revenue_potential": 53.28681464997672,
+    "scaling_priority": "high",
+    "projected_monthly": 26643,
+    "projected_annual": 319720
+  },
+  {
+    "service_id": "autonomous-revenue-system-finance-6be84338",
+    "service_name": "Autonomous Revenue System - Finance",
+    "revenue_potential": 53.235818936582255,
+    "scaling_priority": "high",
+    "projected_monthly": 26617,
+    "projected_annual": 319414
+  },
+  {
+    "service_id": "smart-analytics-for-media-51773831",
+    "service_name": "Smart Analytics for Media",
+    "revenue_potential": 53.15896862973991,
+    "scaling_priority": "high",
+    "projected_monthly": 26579,
+    "projected_annual": 318953
+  },
+  {
+    "service_id": "intelligent-process-mining-for-agriculture-2844cddb",
+    "service_name": "Intelligent Process Mining for Agriculture",
+    "revenue_potential": 53.14803857544973,
+    "scaling_priority": "high",
+    "projected_monthly": 26574,
+    "projected_annual": 318888
+  },
+  {
+    "service_id": "intelligent-compliance-for-construction-66c3f0f7",
+    "service_name": "Intelligent Compliance for Construction",
+    "revenue_potential": 53.05149557949018,
+    "scaling_priority": "high",
+    "projected_monthly": 26525,
+    "projected_annual": 318308
+  },
+  {
+    "service_id": "revenue-neural-sports-1757201b",
+    "service_name": "Revenue Neural - Sports",
+    "revenue_potential": 52.99833464003984,
+    "scaling_priority": "high",
+    "projected_monthly": 26499,
+    "projected_annual": 317990
+  },
+  {
+    "service_id": "intelligent-sales-logistics-744278e8",
+    "service_name": "Intelligent sales-logistics",
+    "revenue_potential": 52.90202601461678,
+    "scaling_priority": "high",
+    "projected_monthly": 26451,
+    "projected_annual": 317412
+  },
+  {
+    "service_id": "ai-optimization-healthcare-edition-62ac9434",
+    "service_name": "AI Optimization - Healthcare Edition",
+    "revenue_potential": 52.86279330126591,
+    "scaling_priority": "high",
+    "projected_monthly": 26431,
+    "projected_annual": 317176
+  },
+  {
+    "service_id": "cognitive-supply-solution-sports-fee6a50d",
+    "service_name": "Cognitive Supply Solution - Sports",
+    "revenue_potential": 52.80543042094131,
+    "scaling_priority": "high",
+    "projected_monthly": 26402,
+    "projected_annual": 316832
+  },
+  {
+    "service_id": "intelligent-incident-cloud-a64d07d6",
+    "service_name": "Intelligent Incident Cloud",
+    "revenue_potential": 52.804807241827426,
+    "scaling_priority": "high",
+    "projected_monthly": 26402,
+    "projected_annual": 316828
+  },
+  {
+    "service_id": "cognitive-healthcare-solution-healthcare-3440c1a2",
+    "service_name": "Cognitive Healthcare Solution - Healthcare",
+    "revenue_potential": 52.800287613906484,
+    "scaling_priority": "high",
+    "projected_monthly": 26400,
+    "projected_annual": 316801
+  },
+  {
+    "service_id": "cognitive-healthcare-solution-real-estate-41143ff3",
+    "service_name": "Cognitive Healthcare Solution - Real-Estate",
+    "revenue_potential": 52.672911687581006,
+    "scaling_priority": "high",
+    "projected_monthly": 26336,
+    "projected_annual": 316037
+  },
+  {
+    "service_id": "revenue-neural-tech-3f44505f",
+    "service_name": "Revenue Neural - Tech",
+    "revenue_potential": 52.58534305468181,
+    "scaling_priority": "high",
+    "projected_monthly": 26292,
+    "projected_annual": 315512
+  },
+  {
+    "service_id": "autonomous-predictive-system-real-estate-7273f3ff",
+    "service_name": "Autonomous Predictive System - Real-Estate",
+    "revenue_potential": 52.48239967179021,
+    "scaling_priority": "high",
+    "projected_monthly": 26241,
+    "projected_annual": 314894
+  },
+  {
+    "service_id": "self-optimizing-compliance-smart-757d68ec",
+    "service_name": "Self-Optimizing Compliance Smart",
+    "revenue_potential": 52.47312173486605,
+    "scaling_priority": "high",
+    "projected_monthly": 26236,
+    "projected_annual": 314838
+  },
+  {
+    "service_id": "intelligent-healthcare-for-hospitality-97f47e67",
+    "service_name": "Intelligent Healthcare for Hospitality",
+    "revenue_potential": 52.35376552070286,
+    "scaling_priority": "high",
+    "projected_monthly": 26176,
+    "projected_annual": 314122
+  },
+  {
+    "service_id": "smart-risk-platform-construction-dde3cdd9",
+    "service_name": "Smart Risk Platform - Construction",
+    "revenue_potential": 52.11071573010205,
+    "scaling_priority": "high",
+    "projected_monthly": 26055,
+    "projected_annual": 312664
+  },
+  {
+    "service_id": "intelligent-performance-telecom-682712dc",
+    "service_name": "Intelligent performance-telecom",
+    "revenue_potential": 52.05954956781397,
+    "scaling_priority": "high",
+    "projected_monthly": 26029,
+    "projected_annual": 312357
+  },
+  {
+    "service_id": "predictive-intelligence-engine-retail-601317fe",
+    "service_name": "Predictive Intelligence Engine - Retail",
+    "revenue_potential": 51.97785773656284,
+    "scaling_priority": "high",
+    "projected_monthly": 25988,
+    "projected_annual": 311867
+  },
+  {
+    "service_id": "automated-predictive-for-construction-0460c8ac",
+    "service_name": "Automated Predictive for Construction",
+    "revenue_potential": 51.90343029470221,
+    "scaling_priority": "high",
+    "projected_monthly": 25951,
+    "projected_annual": 311420
+  },
+  {
+    "service_id": "autonomous-smart-system-healthcare-6eddf714",
+    "service_name": "Autonomous Smart System - Healthcare",
+    "revenue_potential": 51.73139909466181,
+    "scaling_priority": "high",
+    "projected_monthly": 25865,
+    "projected_annual": 310388
+  },
+  {
+    "service_id": "support-intelligent-retail-84b232eb",
+    "service_name": "Support Intelligent - Retail",
+    "revenue_potential": 51.617821085261305,
+    "scaling_priority": "high",
+    "projected_monthly": 25808,
+    "projected_annual": 309706
+  },
+  {
+    "service_id": "automated-predictive-engine-01d5df01",
+    "service_name": "Automated Predictive Engine",
+    "revenue_potential": 51.56898461388643,
+    "scaling_priority": "high",
+    "projected_monthly": 25784,
+    "projected_annual": 309413
+  },
+  {
+    "service_id": "predictive-director-for-automotive-863de0ea",
+    "service_name": "Predictive Director for Automotive",
+    "revenue_potential": 51.4112539415688,
+    "scaling_priority": "high",
+    "projected_monthly": 25705,
+    "projected_annual": 308467
+  },
+  {
+    "service_id": "automated-intelligence-energy-f78fc5d9",
+    "service_name": "Automated intelligence-energy",
+    "revenue_potential": 51.40701064579984,
+    "scaling_priority": "high",
+    "projected_monthly": 25703,
+    "projected_annual": 308442
+  },
+  {
+    "service_id": "smart-ai-platform-sports-4ce970e4",
+    "service_name": "Smart AI Platform - Sports",
+    "revenue_potential": 51.31202680210848,
+    "scaling_priority": "high",
+    "projected_monthly": 25656,
+    "projected_annual": 307872
+  },
+  {
+    "service_id": "autonomous-system-system-energy-d5295d6c",
+    "service_name": "Autonomous System System - Energy",
+    "revenue_potential": 51.25491722158093,
+    "scaling_priority": "high",
+    "projected_monthly": 25627,
+    "projected_annual": 307529
+  },
+  {
+    "service_id": "cognitive-experience-for-education-1f599ff8",
+    "service_name": "Cognitive Experience for Education",
+    "revenue_potential": 50.82219581444583,
+    "scaling_priority": "high",
+    "projected_monthly": 25411,
+    "projected_annual": 304933
+  },
+  {
+    "service_id": "smart-healthcare-platform-sports-6ac8c24d",
+    "service_name": "Smart Healthcare Platform - Sports",
+    "revenue_potential": 50.81365957914535,
+    "scaling_priority": "high",
+    "projected_monthly": 25406,
+    "projected_annual": 304881
+  },
+  {
+    "service_id": "predictive-devops-engine-automotive-1-8ed4a1f7",
+    "service_name": "Predictive DevOps Engine - Automotive #1",
+    "revenue_potential": 50.79947931387454,
+    "scaling_priority": "high",
+    "projected_monthly": 25399,
+    "projected_annual": 304796
+  },
+  {
+    "service_id": "predictive-optimization-engine-retail-ca6b2f45",
+    "service_name": "Predictive Optimization Engine - Retail",
+    "revenue_potential": 50.5292770898799,
+    "scaling_priority": "high",
+    "projected_monthly": 25264,
+    "projected_annual": 303175
+  },
+  {
+    "service_id": "ai-real-estate-media-edition-c67a29fc",
+    "service_name": "AI Real Estate - Media Edition",
+    "revenue_potential": 50.5243469851282,
+    "scaling_priority": "high",
+    "projected_monthly": 25262,
+    "projected_annual": 303146
+  },
+  {
+    "service_id": "predictive-experience-engine-telecom-cbfaa3d7",
+    "service_name": "Predictive Experience Engine - Telecom",
+    "revenue_potential": 50.473715406196085,
+    "scaling_priority": "high",
+    "projected_monthly": 25236,
+    "projected_annual": 302842
+  },
+  {
+    "service_id": "autonomous-data-for-retail-88dade04",
+    "service_name": "Autonomous Data for Retail",
+    "revenue_potential": 50.36809013853929,
+    "scaling_priority": "high",
+    "projected_monthly": 25184,
+    "projected_annual": 302208
+  },
+  {
+    "service_id": "ai-engine-transportation-edition-04fbad60",
+    "service_name": "AI Engine - Transportation Edition",
+    "revenue_potential": 50.291117549441324,
+    "scaling_priority": "high",
+    "projected_monthly": 25145,
+    "projected_annual": 301746
+  },
+  {
+    "service_id": "intelligent-manager-for-manufacturing-c59b1861",
+    "service_name": "Intelligent Manager for Manufacturing",
+    "revenue_potential": 50.18749093502765,
+    "scaling_priority": "high",
+    "projected_monthly": 25093,
+    "projected_annual": 301124
+  },
+  {
+    "service_id": "predictive-smart-engine-finance-11eb9636",
+    "service_name": "Predictive Smart Engine - Finance",
+    "revenue_potential": 50.16678492938759,
+    "scaling_priority": "high",
+    "projected_monthly": 25083,
+    "projected_annual": 301000
+  },
+  {
+    "service_id": "autonomous-optimization-system-education-595f4d35",
+    "service_name": "Autonomous Optimization System - Education",
+    "revenue_potential": 50.030409157624476,
+    "scaling_priority": "high",
+    "projected_monthly": 25015,
+    "projected_annual": 300182
+  },
+  {
+    "service_id": "cognitive-engine-solution-insurance-21e10d67",
+    "service_name": "Cognitive Engine Solution - Insurance",
+    "revenue_potential": 50.0047154738795,
+    "scaling_priority": "high",
+    "projected_monthly": 25002,
+    "projected_annual": 300028
+  },
+  {
+    "service_id": "processor-neural-education-f484d637",
+    "service_name": "Processor Neural - Education",
+    "revenue_potential": 49.92856514910115,
+    "scaling_priority": "medium",
+    "projected_monthly": 24964,
+    "projected_annual": 299571
+  },
+  {
+    "service_id": "autonomous-devops-system-manufacturing-c1776362",
+    "service_name": "Autonomous DevOps System - Manufacturing",
+    "revenue_potential": 49.90697201842997,
+    "scaling_priority": "medium",
+    "projected_monthly": 24953,
+    "projected_annual": 299441
+  },
+  {
+    "service_id": "analyzer-automated-insurance-2381ac2c",
+    "service_name": "Analyzer Automated - Insurance",
+    "revenue_potential": 49.732674364640175,
+    "scaling_priority": "medium",
+    "projected_monthly": 24866,
+    "projected_annual": 298396
+  },
+  {
+    "service_id": "cognitive-quality-solution-agriculture-a35f9806",
+    "service_name": "Cognitive Quality Solution - Agriculture",
+    "revenue_potential": 49.52817409105407,
+    "scaling_priority": "medium",
+    "projected_monthly": 24764,
+    "projected_annual": 297169
+  },
+  {
+    "service_id": "predictive-platform-engine-healthcare-25e2079c",
+    "service_name": "Predictive Platform Engine - Healthcare",
+    "revenue_potential": 49.50573896918009,
+    "scaling_priority": "medium",
+    "projected_monthly": 24752,
+    "projected_annual": 297034
+  },
+  {
+    "service_id": "autonomous-machine-learning-system-tech-088ec026",
+    "service_name": "Autonomous Machine Learning System - Tech",
+    "revenue_potential": 49.504468015960136,
+    "scaling_priority": "medium",
+    "projected_monthly": 24752,
+    "projected_annual": 297026
+  },
+  {
+    "service_id": "autonomous-business-intelligence-system-construction-c2128f59",
+    "service_name": "Autonomous Business Intelligence System - Construction",
+    "revenue_potential": 49.458224464429826,
+    "scaling_priority": "medium",
+    "projected_monthly": 24729,
+    "projected_annual": 296749
+  },
+  {
+    "service_id": "smart-intelligence-platform-hospitality-3f717331",
+    "service_name": "Smart Intelligence Platform - Hospitality",
+    "revenue_potential": 49.32847754952334,
+    "scaling_priority": "medium",
+    "projected_monthly": 24664,
+    "projected_annual": 295970
+  },
+  {
+    "service_id": "ai-generator-legal-edition-556f78cd",
+    "service_name": "AI Generator - Legal Edition",
+    "revenue_potential": 49.188080829925426,
+    "scaling_priority": "medium",
+    "projected_monthly": 24594,
+    "projected_annual": 295128
+  },
+  {
+    "service_id": "cognitive-predictor-solution-construction-80da0699",
+    "service_name": "Cognitive Predictor Solution - Construction",
+    "revenue_potential": 49.11445025861194,
+    "scaling_priority": "medium",
+    "projected_monthly": 24557,
+    "projected_annual": 294686
+  },
+  {
+    "service_id": "self-optimizing-autonomous-manufacturing-4eb98167",
+    "service_name": "Self-Optimizing autonomous-manufacturing",
+    "revenue_potential": 49.02404143458841,
+    "scaling_priority": "medium",
+    "projected_monthly": 24512,
+    "projected_annual": 294144
+  },
+  {
+    "service_id": "adaptive-performance-for-real-estate-e0f7d120",
+    "service_name": "Adaptive Performance for Real-Estate",
+    "revenue_potential": 48.94517238509671,
+    "scaling_priority": "medium",
+    "projected_monthly": 24472,
+    "projected_annual": 293671
+  },
+  {
+    "service_id": "autonomous-risk-system-manufacturing-a62ebeac",
+    "service_name": "Autonomous Risk System - Manufacturing",
+    "revenue_potential": 48.90888564469181,
+    "scaling_priority": "medium",
+    "projected_monthly": 24454,
+    "projected_annual": 293453
+  },
+  {
+    "service_id": "self-optimizing-monitoring-sports-2ad5cec9",
+    "service_name": "Self-Optimizing monitoring-sports",
+    "revenue_potential": 48.86421057250288,
+    "scaling_priority": "medium",
+    "projected_monthly": 24432,
+    "projected_annual": 293185
+  },
+  {
+    "service_id": "autonomous-engine-system-hospitality-fd0422f8",
+    "service_name": "Autonomous Engine System - Hospitality",
+    "revenue_potential": 48.84034980729527,
+    "scaling_priority": "medium",
+    "projected_monthly": 24420,
+    "projected_annual": 293042
+  },
+  {
+    "service_id": "self-optimizing-data-automation-dec81c51",
+    "service_name": "Self-Optimizing Data Automation",
+    "revenue_potential": 48.557184506547074,
+    "scaling_priority": "medium",
+    "projected_monthly": 24278,
+    "projected_annual": 291343
+  },
+  {
+    "service_id": "autonomous-generator-for-legal-068e1ae1",
+    "service_name": "Autonomous Generator for Legal",
+    "revenue_potential": 48.52591013490732,
+    "scaling_priority": "medium",
+    "projected_monthly": 24262,
+    "projected_annual": 291155
+  },
+  {
+    "service_id": "ai-advisor-gaming-edition-c998d1d1",
+    "service_name": "AI Advisor - Gaming Edition",
+    "revenue_potential": 48.37958280592704,
+    "scaling_priority": "medium",
+    "projected_monthly": 24189,
+    "projected_annual": 290277
+  },
+  {
+    "service_id": "cognitive-deep-learning-solution-construction-c456d03c",
+    "service_name": "Cognitive Deep Learning Solution - Construction",
+    "revenue_potential": 48.37525668950149,
+    "scaling_priority": "medium",
+    "projected_monthly": 24187,
+    "projected_annual": 290251
+  },
+  {
+    "service_id": "smart-real-estate-platform-real-estate-2720e0a4",
+    "service_name": "Smart Real Estate Platform - Real-Estate",
+    "revenue_potential": 48.361788996580245,
+    "scaling_priority": "medium",
+    "projected_monthly": 24180,
+    "projected_annual": 290170
+  },
+  {
+    "service_id": "autonomous-optimization-system-insurance-5fc23877",
+    "service_name": "Autonomous Optimization System - Insurance",
+    "revenue_potential": 48.27863637666236,
+    "scaling_priority": "medium",
+    "projected_monthly": 24139,
+    "projected_annual": 289671
+  },
+  {
+    "service_id": "automated-recruitment-supply-ab921279",
+    "service_name": "Automated Recruitment Supply",
+    "revenue_potential": 48.23494687929796,
+    "scaling_priority": "medium",
+    "projected_monthly": 24117,
+    "projected_annual": 289409
+  },
+  {
+    "service_id": "smart-automation-platform-media-c20b2fcd",
+    "service_name": "Smart Automation Platform - Media",
+    "revenue_potential": 48.05543027515602,
+    "scaling_priority": "medium",
+    "projected_monthly": 24027,
+    "projected_annual": 288332
+  },
+  {
+    "service_id": "neural-cognitive-construction-b9dc2062",
+    "service_name": "Neural Cognitive - Construction",
+    "revenue_potential": 47.94433540663136,
+    "scaling_priority": "medium",
+    "projected_monthly": 23972,
+    "projected_annual": 287666
+  },
+  {
+    "service_id": "real-estate-self-optimizing-telecom-76ca3d65",
+    "service_name": "Real Estate Self-Optimizing - Telecom",
+    "revenue_potential": 47.60158131098044,
+    "scaling_priority": "medium",
+    "projected_monthly": 23800,
+    "projected_annual": 285609
+  },
+  {
+    "service_id": "smart-autonomous-platform-energy-276277f5",
+    "service_name": "Smart Autonomous Platform - Energy",
+    "revenue_potential": 47.50145182875816,
+    "scaling_priority": "medium",
+    "projected_monthly": 23750,
+    "projected_annual": 285008
+  },
+  {
+    "service_id": "cognitive-compliance-solution-construction-b358d16e",
+    "service_name": "Cognitive Compliance Solution - Construction",
+    "revenue_potential": 47.28314423335096,
+    "scaling_priority": "medium",
+    "projected_monthly": 23641,
+    "projected_annual": 283698
+  },
+  {
+    "service_id": "cognitive-nlp-solution-legal-4ce4de63",
+    "service_name": "Cognitive NLP Solution - Legal",
+    "revenue_potential": 47.220553673950064,
+    "scaling_priority": "medium",
+    "projected_monthly": 23610,
+    "projected_annual": 283323
+  },
+  {
+    "service_id": "predictive-automation-engine-logistics-c2ba19e7",
+    "service_name": "Predictive Automation Engine - Logistics",
+    "revenue_potential": 47.157432663603146,
+    "scaling_priority": "medium",
+    "projected_monthly": 23578,
+    "projected_annual": 282944
+  },
+  {
+    "service_id": "system-smart-healthcare-a364c414",
+    "service_name": "System Smart - Healthcare",
+    "revenue_potential": 47.099208370881314,
+    "scaling_priority": "medium",
+    "projected_monthly": 23549,
+    "projected_annual": 282595
+  },
+  {
+    "service_id": "generator-predictive-transportation-81747412",
+    "service_name": "Generator Predictive - Transportation",
+    "revenue_potential": 47.04654231800497,
+    "scaling_priority": "medium",
+    "projected_monthly": 23523,
+    "projected_annual": 282279
+  },
+  {
+    "service_id": "cognitive-data-logistics-f857c763",
+    "service_name": "Cognitive data-logistics",
+    "revenue_potential": 46.88412883902392,
+    "scaling_priority": "medium",
+    "projected_monthly": 23442,
+    "projected_annual": 281304
+  },
+  {
+    "service_id": "intelligent-risk-for-agriculture-c36c8559",
+    "service_name": "Intelligent Risk for Agriculture",
+    "revenue_potential": 46.774825755801594,
+    "scaling_priority": "medium",
+    "projected_monthly": 23387,
+    "projected_annual": 280648
+  },
+  {
+    "service_id": "intelligent-manager-for-telecom-d964318d",
+    "service_name": "Intelligent Manager for Telecom",
+    "revenue_potential": 46.55559033432763,
+    "scaling_priority": "medium",
+    "projected_monthly": 23277,
+    "projected_annual": 279333
+  },
+  {
+    "service_id": "autonomous-nlp-system-insurance-04938b0e",
+    "service_name": "Autonomous NLP System - Insurance",
+    "revenue_potential": 46.32470206734538,
+    "scaling_priority": "medium",
+    "projected_monthly": 23162,
+    "projected_annual": 277948
+  },
+  {
+    "service_id": "predictive-quality-for-automotive-4826bd0e",
+    "service_name": "Predictive Quality for Automotive",
+    "revenue_potential": 45.84177431886296,
+    "scaling_priority": "medium",
+    "projected_monthly": 22920,
+    "projected_annual": 275050
+  },
+  {
+    "service_id": "intelligent-intelligence-for-finance-b876dda8",
+    "service_name": "Intelligent Intelligence for Finance",
+    "revenue_potential": 45.75822918636646,
+    "scaling_priority": "medium",
+    "projected_monthly": 22879,
+    "projected_annual": 274549
+  },
+  {
+    "service_id": "predictive-sales-engine-sports-5aa619cd",
+    "service_name": "Predictive Sales Engine - Sports",
+    "revenue_potential": 45.546110132678386,
+    "scaling_priority": "medium",
+    "projected_monthly": 22773,
+    "projected_annual": 273276
+  },
+  {
+    "service_id": "autonomous-security-system-healthcare-3953983f",
+    "service_name": "Autonomous Security System - Healthcare",
+    "revenue_potential": 45.2588604233721,
+    "scaling_priority": "medium",
+    "projected_monthly": 22629,
+    "projected_annual": 271553
+  },
+  {
+    "service_id": "intelligent-contract-ai-1c54dd85",
+    "service_name": "Intelligent Contract AI",
+    "revenue_potential": 45.244798820297746,
+    "scaling_priority": "medium",
+    "projected_monthly": 22622,
+    "projected_annual": 271468
+  },
+  {
+    "service_id": "ai-finance-telecom-edition-edfed7f8",
+    "service_name": "AI Finance - Telecom Edition",
+    "revenue_potential": 45.14408959674151,
+    "scaling_priority": "medium",
+    "projected_monthly": 22572,
+    "projected_annual": 270864
+  },
+  {
+    "service_id": "ai-management-education-edition-a0dccbf1",
+    "service_name": "AI Management - Education Edition",
+    "revenue_potential": 45.05197157968795,
+    "scaling_priority": "medium",
+    "projected_monthly": 22525,
+    "projected_annual": 270311
+  },
+  {
+    "service_id": "intelligent-process-mining-for-finance-271e5a93",
+    "service_name": "Intelligent Process Mining for Finance",
+    "revenue_potential": 44.990084877059694,
+    "scaling_priority": "medium",
+    "projected_monthly": 22495,
+    "projected_annual": 269940
+  },
+  {
+    "service_id": "predictive-manufacturing-engine-construction-d2f29bb1",
+    "service_name": "Predictive Manufacturing Engine - Construction",
+    "revenue_potential": 44.9436610746912,
+    "scaling_priority": "medium",
+    "projected_monthly": 22471,
+    "projected_annual": 269661
+  },
+  {
+    "service_id": "intelligent-automation-for-telecom-92c1171d",
+    "service_name": "Intelligent Automation for Telecom",
+    "revenue_potential": 44.87713689759769,
+    "scaling_priority": "medium",
+    "projected_monthly": 22438,
+    "projected_annual": 269262
+  },
+  {
+    "service_id": "predictive-analytics-engine-sports-0ffe10c6",
+    "service_name": "Predictive Analytics Engine - Sports",
+    "revenue_potential": 44.875036012501695,
+    "scaling_priority": "medium",
+    "projected_monthly": 22437,
+    "projected_annual": 269250
+  },
+  {
+    "service_id": "ai-system-sports-edition-6593370c",
+    "service_name": "AI System - Sports Edition",
+    "revenue_potential": 44.83962851355279,
+    "scaling_priority": "medium",
+    "projected_monthly": 22419,
+    "projected_annual": 269037
+  },
+  {
+    "service_id": "cognitive-healthcare-solution-automotive-eaf000fa",
+    "service_name": "Cognitive Healthcare Solution - Automotive",
+    "revenue_potential": 44.55567698398736,
+    "scaling_priority": "medium",
+    "projected_monthly": 22277,
+    "projected_annual": 267334
+  },
+  {
+    "service_id": "ai-deep-learning-finance-edition-454d2c22",
+    "service_name": "AI Deep Learning - Finance Edition",
+    "revenue_potential": 44.5066436218608,
+    "scaling_priority": "medium",
+    "projected_monthly": 22253,
+    "projected_annual": 267039
+  },
+  {
+    "service_id": "self-optimizing-smart-for-media-7070671a",
+    "service_name": "Self-Optimizing Smart for Media",
+    "revenue_potential": 44.37918749688416,
+    "scaling_priority": "medium",
+    "projected_monthly": 22189,
+    "projected_annual": 266275
+  },
+  {
+    "service_id": "ai-powered-quality-agriculture-652f5934",
+    "service_name": "AI-Powered quality-agriculture",
+    "revenue_potential": 44.32364526724403,
+    "scaling_priority": "medium",
+    "projected_monthly": 22161,
+    "projected_annual": 265941
+  },
+  {
+    "service_id": "self-optimizing-roi-marketing-539ff4ed",
+    "service_name": "Self-Optimizing ROI Marketing",
+    "revenue_potential": 44.12540063390949,
+    "scaling_priority": "medium",
+    "projected_monthly": 22062,
+    "projected_annual": 264752
+  },
+  {
+    "service_id": "smart-suite-platform-tech-ec770ed5",
+    "service_name": "Smart Suite Platform - Tech",
+    "revenue_potential": 44.12266652845324,
+    "scaling_priority": "medium",
+    "projected_monthly": 22061,
+    "projected_annual": 264735
+  },
+  {
+    "service_id": "predictive-reputation-automation-ca48b1ca",
+    "service_name": "Predictive Reputation Automation",
+    "revenue_potential": 44.0927324881472,
+    "scaling_priority": "medium",
+    "projected_monthly": 22046,
+    "projected_annual": 264556
+  },
+  {
+    "service_id": "suite-ai-telecom-87e05eee",
+    "service_name": "Suite AI - Telecom",
+    "revenue_potential": 44.08426950494994,
+    "scaling_priority": "medium",
+    "projected_monthly": 22042,
+    "projected_annual": 264505
+  },
+  {
+    "service_id": "predictive-customer-service-engine-finance-10025204",
+    "service_name": "Predictive Customer Service Engine - Finance",
+    "revenue_potential": 44.0652508543383,
+    "scaling_priority": "medium",
+    "projected_monthly": 22032,
+    "projected_annual": 264391
+  },
+  {
+    "service_id": "autonomous-sales-system-automotive-2-a211482d",
+    "service_name": "Autonomous Sales System - Automotive #2",
+    "revenue_potential": 43.99339394780854,
+    "scaling_priority": "medium",
+    "projected_monthly": 21996,
+    "projected_annual": 263960
+  },
+  {
+    "service_id": "predictive-data-science-engine-retail-ce4ebf9e",
+    "service_name": "Predictive Data Science Engine - Retail",
+    "revenue_potential": 43.97370621960049,
+    "scaling_priority": "medium",
+    "projected_monthly": 21986,
+    "projected_annual": 263842
+  },
+  {
+    "service_id": "cognitive-intelligent-solution-retail-d152df11",
+    "service_name": "Cognitive Intelligent Solution - Retail",
+    "revenue_potential": 43.798072000189954,
+    "scaling_priority": "medium",
+    "projected_monthly": 21899,
+    "projected_annual": 262788
+  },
+  {
+    "service_id": "smart-cognitive-platform-retail-ea4bdab0",
+    "service_name": "Smart Cognitive Platform - Retail",
+    "revenue_potential": 43.79344174260845,
+    "scaling_priority": "medium",
+    "projected_monthly": 21896,
+    "projected_annual": 262760
+  },
+  {
+    "service_id": "autonomous-financial-optimizer-783dcf5d",
+    "service_name": "Autonomous Financial Optimizer",
+    "revenue_potential": 43.747725573321716,
+    "scaling_priority": "medium",
+    "projected_monthly": 21873,
+    "projected_annual": 262486
+  },
+  {
+    "service_id": "adaptive-manager-for-gaming-79b208a9",
+    "service_name": "Adaptive Manager for Gaming",
+    "revenue_potential": 43.45849046345247,
+    "scaling_priority": "medium",
+    "projected_monthly": 21729,
+    "projected_annual": 260750
+  },
+  {
+    "service_id": "autonomous-marketing-system-education-6a1c3d8a",
+    "service_name": "Autonomous Marketing System - Education",
+    "revenue_potential": 43.251423358614154,
+    "scaling_priority": "medium",
+    "projected_monthly": 21625,
+    "projected_annual": 259508
+  },
+  {
+    "service_id": "smart-engine-platform-legal-1-7f2521aa",
+    "service_name": "Smart Engine Platform - Legal #1",
+    "revenue_potential": 43.213000138873056,
+    "scaling_priority": "medium",
+    "projected_monthly": 21606,
+    "projected_annual": 259278
+  },
+  {
+    "service_id": "smart-monitoring-platform-tech-30753cc1",
+    "service_name": "Smart Monitoring Platform - Tech",
+    "revenue_potential": 43.146231857570456,
+    "scaling_priority": "medium",
+    "projected_monthly": 21573,
+    "projected_annual": 258877
+  },
+  {
+    "service_id": "autonomous-orchestrator-retail-c19dc413",
+    "service_name": "Autonomous orchestrator-retail",
+    "revenue_potential": 43.08998081617164,
+    "scaling_priority": "medium",
+    "projected_monthly": 21544,
+    "projected_annual": 258539
+  },
+  {
+    "service_id": "smart-analytics-finance-a5dde7ca",
+    "service_name": "Smart analytics-finance",
+    "revenue_potential": 43.07445956144431,
+    "scaling_priority": "medium",
+    "projected_monthly": 21537,
+    "projected_annual": 258446
+  },
+  {
+    "service_id": "smart-healthcare-platform-healthcare-0d11a82c",
+    "service_name": "Smart Healthcare Platform - Healthcare",
+    "revenue_potential": 42.90546488933061,
+    "scaling_priority": "medium",
+    "projected_monthly": 21452,
+    "projected_annual": 257432
+  },
+  {
+    "service_id": "autonomous-experience-system-automotive-46af7b64",
+    "service_name": "Autonomous Experience System - Automotive",
+    "revenue_potential": 42.802242991219366,
+    "scaling_priority": "medium",
+    "projected_monthly": 21401,
+    "projected_annual": 256813
+  },
+  {
+    "service_id": "cognitive-machine-learning-sports-70aa6c62",
+    "service_name": "Cognitive machine learning-sports",
+    "revenue_potential": 42.798378802728145,
+    "scaling_priority": "medium",
+    "projected_monthly": 21399,
+    "projected_annual": 256790
+  },
+  {
+    "service_id": "intelligent-cognitive-for-agriculture-c51261d2",
+    "service_name": "Intelligent Cognitive for Agriculture",
+    "revenue_potential": 42.61381830368668,
+    "scaling_priority": "medium",
+    "projected_monthly": 21306,
+    "projected_annual": 255682
+  },
+  {
+    "service_id": "autonomous-coordinator-system-finance-75cd43cd",
+    "service_name": "Autonomous Coordinator System - Finance",
+    "revenue_potential": 42.57128075462106,
+    "scaling_priority": "medium",
+    "projected_monthly": 21285,
+    "projected_annual": 255427
+  },
+  {
+    "service_id": "ai-powered-engine-for-agriculture-f7415c23",
+    "service_name": "AI-Powered Engine for Agriculture",
+    "revenue_potential": 42.54160535505225,
+    "scaling_priority": "medium",
+    "projected_monthly": 21270,
+    "projected_annual": 255249
+  },
+  {
+    "service_id": "intelligent-risk-for-insurance-1-a66ba6f1",
+    "service_name": "Intelligent Risk for Insurance #1",
+    "revenue_potential": 42.51257442082866,
+    "scaling_priority": "medium",
+    "projected_monthly": 21256,
+    "projected_annual": 255075
+  },
+  {
+    "service_id": "ai-powered-coordinator-energy-3a396f36",
+    "service_name": "AI-Powered coordinator-energy",
+    "revenue_potential": 42.29602728735965,
+    "scaling_priority": "medium",
+    "projected_monthly": 21148,
+    "projected_annual": 253776
+  },
+  {
+    "service_id": "ai-monitoring-tech-edition-1-0bb12303",
+    "service_name": "AI Monitoring - Tech Edition #1",
+    "revenue_potential": 42.145187746795834,
+    "scaling_priority": "medium",
+    "projected_monthly": 21072,
+    "projected_annual": 252871
+  },
+  {
+    "service_id": "predictive-suite-construction-4f8349b5",
+    "service_name": "Predictive suite-construction",
+    "revenue_potential": 42.090004484507304,
+    "scaling_priority": "medium",
+    "projected_monthly": 21045,
+    "projected_annual": 252540
+  },
+  {
+    "service_id": "predictive-neural-engine-insurance-1569afe0",
+    "service_name": "Predictive Neural Engine - Insurance",
+    "revenue_potential": 42.079255368503446,
+    "scaling_priority": "medium",
+    "projected_monthly": 21039,
+    "projected_annual": 252475
+  },
+  {
+    "service_id": "smart-data-science-platform-logistics-6bc5a1ff",
+    "service_name": "Smart Data Science Platform - Logistics",
+    "revenue_potential": 41.93839844438445,
+    "scaling_priority": "medium",
+    "projected_monthly": 20969,
+    "projected_annual": 251630
+  },
+  {
+    "service_id": "autonomous-predictor-system-automotive-c8e14e2e",
+    "service_name": "Autonomous Predictor System - Automotive",
+    "revenue_potential": 41.7438958109184,
+    "scaling_priority": "medium",
+    "projected_monthly": 20871,
+    "projected_annual": 250463
+  },
+  {
+    "service_id": "smart-deep-learning-platform-construction-5a77c94e",
+    "service_name": "Smart Deep Learning Platform - Construction",
+    "revenue_potential": 41.48549458746427,
+    "scaling_priority": "medium",
+    "projected_monthly": 20742,
+    "projected_annual": 248912
+  },
+  {
+    "service_id": "autonomous-optimization-system-education-1-8134e688",
+    "service_name": "Autonomous Optimization System - Education #1",
+    "revenue_potential": 41.43324421629352,
+    "scaling_priority": "medium",
+    "projected_monthly": 20716,
+    "projected_annual": 248599
+  },
+  {
+    "service_id": "cognitive-release-predictive-34c13a2a",
+    "service_name": "Cognitive Release Predictive",
+    "revenue_potential": 41.42937512776193,
+    "scaling_priority": "medium",
+    "projected_monthly": 20714,
+    "projected_annual": 248576
+  },
+  {
+    "service_id": "ai-process-mining-logistics-edition-5b990be9",
+    "service_name": "AI Process Mining - Logistics Edition",
+    "revenue_potential": 41.41438686901673,
+    "scaling_priority": "medium",
+    "projected_monthly": 20707,
+    "projected_annual": 248486
+  },
+  {
+    "service_id": "cognitive-processor-solution-healthcare-0347e135",
+    "service_name": "Cognitive Processor Solution - Healthcare",
+    "revenue_potential": 41.398136575356475,
+    "scaling_priority": "medium",
+    "projected_monthly": 20699,
+    "projected_annual": 248388
+  },
+  {
+    "service_id": "ai-analytics-gaming-edition-481b4eca",
+    "service_name": "AI Analytics - Gaming Edition",
+    "revenue_potential": 41.388813135505494,
+    "scaling_priority": "medium",
+    "projected_monthly": 20694,
+    "projected_annual": 248332
+  },
+  {
+    "service_id": "predictive-data-risk-86226af4",
+    "service_name": "Predictive Data Risk",
+    "revenue_potential": 41.35976928829354,
+    "scaling_priority": "medium",
+    "projected_monthly": 20679,
+    "projected_annual": 248158
+  },
+  {
+    "service_id": "autonomous-analyzer-system-telecom-e30297d5",
+    "service_name": "Autonomous Analyzer System - Telecom",
+    "revenue_potential": 41.27873255197792,
+    "scaling_priority": "medium",
+    "projected_monthly": 20639,
+    "projected_annual": 247672
+  },
+  {
+    "service_id": "smart-predictive-platform-logistics-9a8fa362",
+    "service_name": "Smart Predictive Platform - Logistics",
+    "revenue_potential": 41.23960269962841,
+    "scaling_priority": "medium",
+    "projected_monthly": 20619,
+    "projected_annual": 247437
+  },
+  {
+    "service_id": "ai-support-telecom-edition-62e6b72b",
+    "service_name": "AI Support - Telecom Edition",
+    "revenue_potential": 41.21823589568079,
+    "scaling_priority": "medium",
+    "projected_monthly": 20609,
+    "projected_annual": 247309
+  },
+  {
+    "service_id": "smart-monitoring-platform-transportation-96a4472d",
+    "service_name": "Smart Monitoring Platform - Transportation",
+    "revenue_potential": 40.96849433727019,
+    "scaling_priority": "medium",
+    "projected_monthly": 20484,
+    "projected_annual": 245810
+  },
+  {
+    "service_id": "intelligent-cloud-for-hospitality-4d369a73",
+    "service_name": "Intelligent Cloud for Hospitality",
+    "revenue_potential": 40.915508373106384,
+    "scaling_priority": "medium",
+    "projected_monthly": 20457,
+    "projected_annual": 245493
+  },
+  {
+    "service_id": "adaptive-optimization-sports-edb57e26",
+    "service_name": "Adaptive optimization-sports",
+    "revenue_potential": 40.65628796101215,
+    "scaling_priority": "medium",
+    "projected_monthly": 20328,
+    "projected_annual": 243937
+  },
+  {
+    "service_id": "computer-vision-ai-healthcare-b5080487",
+    "service_name": "Computer Vision AI - Healthcare",
+    "revenue_potential": 40.45816786606864,
+    "scaling_priority": "medium",
+    "projected_monthly": 20229,
+    "projected_annual": 242749
+  },
+  {
+    "service_id": "deep-learning-adaptive-agriculture-6f0df1e5",
+    "service_name": "Deep Learning Adaptive - Agriculture",
+    "revenue_potential": 40.43988680127181,
+    "scaling_priority": "medium",
+    "projected_monthly": 20219,
+    "projected_annual": 242639
+  },
+  {
+    "service_id": "autonomous-finance-system-tech-8be0535b",
+    "service_name": "Autonomous Finance System - Tech",
+    "revenue_potential": 40.391383101621095,
+    "scaling_priority": "medium",
+    "projected_monthly": 20195,
+    "projected_annual": 242348
+  },
+  {
+    "service_id": "healthcare-automated-hospitality-19e15b0d",
+    "service_name": "Healthcare Automated - Hospitality",
+    "revenue_potential": 40.252201373875195,
+    "scaling_priority": "medium",
+    "projected_monthly": 20126,
+    "projected_annual": 241513
+  },
+  {
+    "service_id": "ai-intelligent-construction-edition-90fe69d2",
+    "service_name": "AI Intelligent - Construction Edition",
+    "revenue_potential": 40.16433736458638,
+    "scaling_priority": "medium",
+    "projected_monthly": 20082,
+    "projected_annual": 240986
+  },
+  {
+    "service_id": "smart-engine-platform-gaming-6e88d953",
+    "service_name": "Smart Engine Platform - Gaming",
+    "revenue_potential": 40.08695834369485,
+    "scaling_priority": "medium",
+    "projected_monthly": 20043,
+    "projected_annual": 240521
+  },
+  {
+    "service_id": "ai-monitoring-transportation-edition-dcfef20d",
+    "service_name": "AI Monitoring - Transportation Edition",
+    "revenue_potential": 40.054107594947226,
+    "scaling_priority": "medium",
+    "projected_monthly": 20027,
+    "projected_annual": 240324
+  },
+  {
+    "service_id": "smart-insights-platform-logistics-01358b4d",
+    "service_name": "Smart Insights Platform - Logistics",
+    "revenue_potential": 39.988738922421696,
+    "scaling_priority": "medium",
+    "projected_monthly": 19994,
+    "projected_annual": 239932
+  },
+  {
+    "service_id": "ai-predictor-gaming-edition-9d123653",
+    "service_name": "AI Predictor - Gaming Edition",
+    "revenue_potential": 39.77670212065628,
+    "scaling_priority": "medium",
+    "projected_monthly": 19888,
+    "projected_annual": 238660
+  },
+  {
+    "service_id": "predictive-intelligence-education-bae84705",
+    "service_name": "Predictive intelligence-education",
+    "revenue_potential": 39.752553117807146,
+    "scaling_priority": "medium",
+    "projected_monthly": 19876,
+    "projected_annual": 238515
+  },
+  {
+    "service_id": "predictive-sourcing-analyzer-e186e535",
+    "service_name": "Predictive Sourcing Analyzer",
+    "revenue_potential": 39.74764425355133,
+    "scaling_priority": "medium",
+    "projected_monthly": 19873,
+    "projected_annual": 238485
+  },
+  {
+    "service_id": "smart-platform-platform-manufacturing-c8e9016c",
+    "service_name": "Smart Platform Platform - Manufacturing",
+    "revenue_potential": 39.73603967028243,
+    "scaling_priority": "medium",
+    "projected_monthly": 19868,
+    "projected_annual": 238416
+  },
+  {
+    "service_id": "smart-devops-platform-sports-b9def260",
+    "service_name": "Smart DevOps Platform - Sports",
+    "revenue_potential": 39.65632842220524,
+    "scaling_priority": "medium",
+    "projected_monthly": 19828,
+    "projected_annual": 237937
+  },
+  {
+    "service_id": "autonomous-intelligence-logistics-5a330afd",
+    "service_name": "Autonomous intelligence-logistics",
+    "revenue_potential": 39.591523670299495,
+    "scaling_priority": "medium",
+    "projected_monthly": 19795,
+    "projected_annual": 237549
+  },
+  {
+    "service_id": "intelligent-cognitive-for-tech-beecfbe7",
+    "service_name": "Intelligent Cognitive for Tech",
+    "revenue_potential": 39.54133581098298,
+    "scaling_priority": "medium",
+    "projected_monthly": 19770,
+    "projected_annual": 237248
+  },
+  {
+    "service_id": "cognitive-optimization-solution-construction-4d36a0f7",
+    "service_name": "Cognitive Optimization Solution - Construction",
+    "revenue_potential": 39.48769154044913,
+    "scaling_priority": "medium",
+    "projected_monthly": 19743,
+    "projected_annual": 236926
+  },
+  {
+    "service_id": "smart-security-for-tech-4a8fe1d9",
+    "service_name": "Smart Security for Tech",
+    "revenue_potential": 39.40227135348731,
+    "scaling_priority": "medium",
+    "projected_monthly": 19701,
+    "projected_annual": 236413
+  },
+  {
+    "service_id": "neural-system-for-automotive-9f60977d",
+    "service_name": "Neural System for Automotive",
+    "revenue_potential": 39.39083219617114,
+    "scaling_priority": "medium",
+    "projected_monthly": 19695,
+    "projected_annual": 236344
+  },
+  {
+    "service_id": "ai-analyzer-media-edition-7fb7a687",
+    "service_name": "AI Analyzer - Media Edition",
+    "revenue_potential": 39.23448595652354,
+    "scaling_priority": "medium",
+    "projected_monthly": 19617,
+    "projected_annual": 235406
+  },
+  {
+    "service_id": "intelligent-expense-performance-e95da160",
+    "service_name": "Intelligent Expense Performance",
+    "revenue_potential": 39.20006372746857,
+    "scaling_priority": "medium",
+    "projected_monthly": 19600,
+    "projected_annual": 235200
+  },
+  {
+    "service_id": "automated-business-intelligence-for-finance-e467fcda",
+    "service_name": "Automated Business Intelligence for Finance",
+    "revenue_potential": 39.069960280423565,
+    "scaling_priority": "medium",
+    "projected_monthly": 19534,
+    "projected_annual": 234419
+  },
+  {
+    "service_id": "ai-sales-real-estate-edition-0094c6cf",
+    "service_name": "AI Sales - Real-Estate Edition",
+    "revenue_potential": 39.019995786284014,
+    "scaling_priority": "medium",
+    "projected_monthly": 19509,
+    "projected_annual": 234119
+  },
+  {
+    "service_id": "predictive-support-transportation-6daba2a1",
+    "service_name": "Predictive support-transportation",
+    "revenue_potential": 38.74541079573581,
+    "scaling_priority": "medium",
+    "projected_monthly": 19372,
+    "projected_annual": 232472
+  },
+  {
+    "service_id": "smart-compliance-platform-insurance-c46647e8",
+    "service_name": "Smart Compliance Platform - Insurance",
+    "revenue_potential": 38.46832822944666,
+    "scaling_priority": "medium",
+    "projected_monthly": 19234,
+    "projected_annual": 230809
+  },
+  {
+    "service_id": "autonomous-management-system-insurance-9360342b",
+    "service_name": "Autonomous Management System - Insurance",
+    "revenue_potential": 38.3604665525491,
+    "scaling_priority": "medium",
+    "projected_monthly": 19180,
+    "projected_annual": 230162
+  },
+  {
+    "service_id": "predictive-cognitive-for-hospitality-a1dd272a",
+    "service_name": "Predictive Cognitive for Hospitality",
+    "revenue_potential": 37.90272804612516,
+    "scaling_priority": "medium",
+    "projected_monthly": 18951,
+    "projected_annual": 227416
+  },
+  {
+    "service_id": "autonomous-cloud-system-legal-b2cc89de",
+    "service_name": "Autonomous Cloud System - Legal",
+    "revenue_potential": 37.854817558850414,
+    "scaling_priority": "medium",
+    "projected_monthly": 18927,
+    "projected_annual": 227128
+  },
+  {
+    "service_id": "generator-intelligent-energy-d8ae66e2",
+    "service_name": "Generator Intelligent - Energy",
+    "revenue_potential": 37.84497963955331,
+    "scaling_priority": "medium",
+    "projected_monthly": 18922,
+    "projected_annual": 227069
+  },
+  {
+    "service_id": "intelligent-autonomous-for-real-estate-ef260321",
+    "service_name": "Intelligent Autonomous for Real-Estate",
+    "revenue_potential": 37.66194419859883,
+    "scaling_priority": "medium",
+    "projected_monthly": 18830,
+    "projected_annual": 225971
+  },
+  {
+    "service_id": "cognitive-neural-solution-gaming-5293697b",
+    "service_name": "Cognitive Neural Solution - Gaming",
+    "revenue_potential": 37.558483556683804,
+    "scaling_priority": "medium",
+    "projected_monthly": 18779,
+    "projected_annual": 225350
+  },
+  {
+    "service_id": "intelligent-customer-service-for-manufacturing-79b1697f",
+    "service_name": "Intelligent Customer Service for Manufacturing",
+    "revenue_potential": 37.52850361880635,
+    "scaling_priority": "medium",
+    "projected_monthly": 18764,
+    "projected_annual": 225171
+  },
+  {
+    "service_id": "neural-management-for-finance-c19b25ba",
+    "service_name": "Neural Management for Finance",
+    "revenue_potential": 37.344949812925826,
+    "scaling_priority": "medium",
+    "projected_monthly": 18672,
+    "projected_annual": 224069
+  },
+  {
+    "service_id": "autonomous-computer-vision-system-hospitality-0beeed73",
+    "service_name": "Autonomous Computer Vision System - Hospitality",
+    "revenue_potential": 37.29971056953994,
+    "scaling_priority": "medium",
+    "projected_monthly": 18649,
+    "projected_annual": 223798
+  },
+  {
+    "service_id": "autonomous-generator-system-media-14734d92",
+    "service_name": "Autonomous Generator System - Media",
+    "revenue_potential": 37.25183419907662,
+    "scaling_priority": "medium",
+    "projected_monthly": 18625,
+    "projected_annual": 223511
+  },
+  {
+    "service_id": "cognitive-neural-solution-media-4e41e1be",
+    "service_name": "Cognitive Neural Solution - Media",
+    "revenue_potential": 37.22361062905696,
+    "scaling_priority": "medium",
+    "projected_monthly": 18611,
+    "projected_annual": 223341
+  },
+  {
+    "service_id": "optimizer-adaptive-energy-b9a46db0",
+    "service_name": "Optimizer Adaptive - Energy",
+    "revenue_potential": 37.16645721599486,
+    "scaling_priority": "medium",
+    "projected_monthly": 18583,
+    "projected_annual": 222998
+  },
+  {
+    "service_id": "smart-business-intelligence-platform-transportation-966c6fe0",
+    "service_name": "Smart Business Intelligence Platform - Transportation",
+    "revenue_potential": 36.99490830382319,
+    "scaling_priority": "medium",
+    "projected_monthly": 18497,
+    "projected_annual": 221969
+  },
+  {
+    "service_id": "coordinator-neural-manufacturing-4f4ae3d4",
+    "service_name": "Coordinator Neural - Manufacturing",
+    "revenue_potential": 36.99160129022781,
+    "scaling_priority": "medium",
+    "projected_monthly": 18495,
+    "projected_annual": 221949
+  },
+  {
+    "service_id": "autonomous-revenue-system-real-estate-84c92b01",
+    "service_name": "Autonomous Revenue System - Real-Estate",
+    "revenue_potential": 36.98494028255293,
+    "scaling_priority": "medium",
+    "projected_monthly": 18492,
+    "projected_annual": 221909
+  },
+  {
+    "service_id": "generator-self-optimizing-tech-c3579368",
+    "service_name": "Generator Self-Optimizing - Tech",
+    "revenue_potential": 36.88274261031964,
+    "scaling_priority": "medium",
+    "projected_monthly": 18441,
+    "projected_annual": 221296
+  },
+  {
+    "service_id": "predictive-recommendation-customer-service-50ec8a3c",
+    "service_name": "Predictive Recommendation Customer Service",
+    "revenue_potential": 36.6020519642674,
+    "scaling_priority": "medium",
+    "projected_monthly": 18301,
+    "projected_annual": 219612
+  },
+  {
+    "service_id": "intelligent-management-for-transportation-aa495214",
+    "service_name": "Intelligent Management for Transportation",
+    "revenue_potential": 36.54940856928546,
+    "scaling_priority": "medium",
+    "projected_monthly": 18274,
+    "projected_annual": 219296
+  },
+  {
+    "service_id": "cognitive-experience-solution-insurance-d0a0fa6f",
+    "service_name": "Cognitive Experience Solution - Insurance",
+    "revenue_potential": 36.47516720811286,
+    "scaling_priority": "medium",
+    "projected_monthly": 18237,
+    "projected_annual": 218851
+  },
+  {
+    "service_id": "cognitive-management-solution-transportation-e1e984a9",
+    "service_name": "Cognitive Management Solution - Transportation",
+    "revenue_potential": 36.39467092718786,
+    "scaling_priority": "medium",
+    "projected_monthly": 18197,
+    "projected_annual": 218368
+  },
+  {
+    "service_id": "autonomous-marketing-system-retail-e12aedb1",
+    "service_name": "Autonomous Marketing System - Retail",
+    "revenue_potential": 36.21105557799652,
+    "scaling_priority": "medium",
+    "projected_monthly": 18105,
+    "projected_annual": 217266
+  },
+  {
+    "service_id": "cognitive-computer-vision-solution-manufacturing-52937eb1",
+    "service_name": "Cognitive Computer Vision Solution - Manufacturing",
+    "revenue_potential": 36.05514204231981,
+    "scaling_priority": "medium",
+    "projected_monthly": 18027,
+    "projected_annual": 216330
+  },
+  {
+    "service_id": "cognitive-analytics-for-telecom-029a13d7",
+    "service_name": "Cognitive Analytics for Telecom",
+    "revenue_potential": 36.02160503543081,
+    "scaling_priority": "medium",
+    "projected_monthly": 18010,
+    "projected_annual": 216129
+  },
+  {
+    "service_id": "neural-data-science-for-real-estate-fd7bd628",
+    "service_name": "Neural Data Science for Real-Estate",
+    "revenue_potential": 36.01777537352602,
+    "scaling_priority": "medium",
+    "projected_monthly": 18008,
+    "projected_annual": 216106
+  },
+  {
+    "service_id": "adaptive-scenario-platform-5e4e4e6f",
+    "service_name": "Adaptive Scenario Platform",
+    "revenue_potential": 35.4710752181979,
+    "scaling_priority": "medium",
+    "projected_monthly": 17735,
+    "projected_annual": 212826
+  },
+  {
+    "service_id": "predictive-manager-engine-manufacturing-10bc93a7",
+    "service_name": "Predictive Manager Engine - Manufacturing",
+    "revenue_potential": 35.43560148922807,
+    "scaling_priority": "medium",
+    "projected_monthly": 17717,
+    "projected_annual": 212613
+  },
+  {
+    "service_id": "automation-intelligent-real-estate-b7177964",
+    "service_name": "Automation Intelligent - Real-Estate",
+    "revenue_potential": 35.21047334804929,
+    "scaling_priority": "medium",
+    "projected_monthly": 17605,
+    "projected_annual": 211262
+  },
+  {
+    "service_id": "smart-computer-vision-platform-agriculture-22d63b7c",
+    "service_name": "Smart Computer Vision Platform - Agriculture",
+    "revenue_potential": 35.188617329331066,
+    "scaling_priority": "medium",
+    "projected_monthly": 17594,
+    "projected_annual": 211131
+  },
+  {
+    "service_id": "predictive-data-science-engine-insurance-4c2fa9f7",
+    "service_name": "Predictive Data Science Engine - Insurance",
+    "revenue_potential": 35.13929812701555,
+    "scaling_priority": "medium",
+    "projected_monthly": 17569,
+    "projected_annual": 210835
+  },
+  {
+    "service_id": "ai-powered-anomaly-revenue-2cba65a1",
+    "service_name": "AI-Powered Anomaly Revenue",
+    "revenue_potential": 35.10745792431034,
+    "scaling_priority": "medium",
+    "projected_monthly": 17553,
+    "projected_annual": 210644
+  },
+  {
+    "service_id": "intelligent-suite-for-energy-56928f39",
+    "service_name": "Intelligent Suite for Energy",
+    "revenue_potential": 35.104203511339946,
+    "scaling_priority": "medium",
+    "projected_monthly": 17552,
+    "projected_annual": 210625
+  },
+  {
+    "service_id": "smart-performance-generator-4e67754f",
+    "service_name": "Smart Performance Generator",
+    "revenue_potential": 35.010773474717325,
+    "scaling_priority": "medium",
+    "projected_monthly": 17505,
+    "projected_annual": 210064
+  },
+  {
+    "service_id": "adaptive-net-ai-cda08a74",
+    "service_name": "Adaptive Net AI",
+    "revenue_potential": 34.97577965511955,
+    "scaling_priority": "medium",
+    "projected_monthly": 17487,
+    "projected_annual": 209854
+  },
+  {
+    "service_id": "cognitive-analytics-solution-automotive-010004a8",
+    "service_name": "Cognitive Analytics Solution - Automotive",
+    "revenue_potential": 34.89244104751644,
+    "scaling_priority": "medium",
+    "projected_monthly": 17446,
+    "projected_annual": 209354
+  },
+  {
+    "service_id": "ai-management-sports-edition-4e40b9af",
+    "service_name": "AI Management - Sports Edition",
+    "revenue_potential": 34.789150198649715,
+    "scaling_priority": "medium",
+    "projected_monthly": 17394,
+    "projected_annual": 208734
+  },
+  {
+    "service_id": "predictive-process-mining-engine-sports-34e9e5a0",
+    "service_name": "Predictive Process Mining Engine - Sports",
+    "revenue_potential": 34.74903006809483,
+    "scaling_priority": "medium",
+    "projected_monthly": 17374,
+    "projected_annual": 208494
+  },
+  {
+    "service_id": "autonomous-support-system-manufacturing-c0b92992",
+    "service_name": "Autonomous Support System - Manufacturing",
+    "revenue_potential": 34.60266762260936,
+    "scaling_priority": "medium",
+    "projected_monthly": 17301,
+    "projected_annual": 207616
+  },
+  {
+    "service_id": "self-optimizing-expense-optimizer-c37148e2",
+    "service_name": "Self-Optimizing Expense Optimizer",
+    "revenue_potential": 34.602197703104096,
+    "scaling_priority": "medium",
+    "projected_monthly": 17301,
+    "projected_annual": 207613
+  },
+  {
+    "service_id": "adaptive-budget-quality-d28006ca",
+    "service_name": "Adaptive Budget Quality",
+    "revenue_potential": 34.578061530658644,
+    "scaling_priority": "medium",
+    "projected_monthly": 17289,
+    "projected_annual": 207468
+  },
+  {
+    "service_id": "self-optimizing-risk-for-sports-b69dd7c1",
+    "service_name": "Self-Optimizing Risk for Sports",
+    "revenue_potential": 34.491355009866396,
+    "scaling_priority": "medium",
+    "projected_monthly": 17245,
+    "projected_annual": 206948
+  },
+  {
+    "service_id": "optimization-adaptive-automotive-df9132d7",
+    "service_name": "Optimization Adaptive - Automotive",
+    "revenue_potential": 34.38472188748734,
+    "scaling_priority": "medium",
+    "projected_monthly": 17192,
+    "projected_annual": 206308
+  },
+  {
+    "service_id": "predictive-marketing-engine-energy-aa7f3794",
+    "service_name": "Predictive Marketing Engine - Energy",
+    "revenue_potential": 34.36821617961554,
+    "scaling_priority": "medium",
+    "projected_monthly": 17184,
+    "projected_annual": 206209
+  },
+  {
+    "service_id": "smart-neural-platform-real-estate-2f313e78",
+    "service_name": "Smart Neural Platform - Real-Estate",
+    "revenue_potential": 34.31079911683566,
+    "scaling_priority": "medium",
+    "projected_monthly": 17155,
+    "projected_annual": 205864
+  },
+  {
+    "service_id": "ai-powered-director-for-real-estate-d63a3c42",
+    "service_name": "AI-Powered Director for Real-Estate",
+    "revenue_potential": 34.191464746539936,
+    "scaling_priority": "medium",
+    "projected_monthly": 17095,
+    "projected_annual": 205148
+  },
+  {
+    "service_id": "cognitive-processor-solution-transportation-74f5f907",
+    "service_name": "Cognitive Processor Solution - Transportation",
+    "revenue_potential": 34.118650513754964,
+    "scaling_priority": "medium",
+    "projected_monthly": 17059,
+    "projected_annual": 204711
+  },
+  {
+    "service_id": "predictive-marketing-engine-manufacturing-bf2371b4",
+    "service_name": "Predictive Marketing Engine - Manufacturing",
+    "revenue_potential": 34.03866702413762,
+    "scaling_priority": "medium",
+    "projected_monthly": 17019,
+    "projected_annual": 204232
+  },
+  {
+    "service_id": "predictive-manager-engine-education-533cdbd9",
+    "service_name": "Predictive Manager Engine - Education",
+    "revenue_potential": 33.91876580052172,
+    "scaling_priority": "medium",
+    "projected_monthly": 16959,
+    "projected_annual": 203512
+  },
+  {
+    "service_id": "predictive-autonomous-for-media-423237ea",
+    "service_name": "Predictive Autonomous for Media",
+    "revenue_potential": 33.903894500150734,
+    "scaling_priority": "medium",
+    "projected_monthly": 16951,
+    "projected_annual": 203423
+  },
+  {
+    "service_id": "monitoring-ai-media-596f23aa",
+    "service_name": "Monitoring AI - Media",
+    "revenue_potential": 33.87232483593419,
+    "scaling_priority": "medium",
+    "projected_monthly": 16936,
+    "projected_annual": 203233
+  },
+  {
+    "service_id": "predictive-analyzer-engine-agriculture-bc2a9111",
+    "service_name": "Predictive Analyzer Engine - Agriculture",
+    "revenue_potential": 33.76358684365269,
+    "scaling_priority": "medium",
+    "projected_monthly": 16881,
+    "projected_annual": 202581
+  },
+  {
+    "service_id": "smart-manufacturing-platform-energy-4f69dde7",
+    "service_name": "Smart Manufacturing Platform - Energy",
+    "revenue_potential": 33.71804850496062,
+    "scaling_priority": "medium",
+    "projected_monthly": 16859,
+    "projected_annual": 202308
+  },
+  {
+    "service_id": "predictive-customer-service-engine-logistics-2f5b1e24",
+    "service_name": "Predictive Customer Service Engine - Logistics",
+    "revenue_potential": 33.57826608694712,
+    "scaling_priority": "medium",
+    "projected_monthly": 16789,
+    "projected_annual": 201469
+  },
+  {
+    "service_id": "automated-quality-for-media-ba53ce62",
+    "service_name": "Automated Quality for Media",
+    "revenue_potential": 33.380648497105504,
+    "scaling_priority": "medium",
+    "projected_monthly": 16690,
+    "projected_annual": 200283
+  },
+  {
+    "service_id": "cognitive-machine-learning-solution-real-estate-d0f0064d",
+    "service_name": "Cognitive Machine Learning Solution - Real-Estate",
+    "revenue_potential": 33.36733361922554,
+    "scaling_priority": "medium",
+    "projected_monthly": 16683,
+    "projected_annual": 200204
+  },
+  {
+    "service_id": "autonomous-budget-coordinator-5965e712",
+    "service_name": "Autonomous Budget Coordinator",
+    "revenue_potential": 33.13351915687333,
+    "scaling_priority": "medium",
+    "projected_monthly": 16566,
+    "projected_annual": 198801
+  },
+  {
+    "service_id": "autonomous-intelligent-system-agriculture-9f559759",
+    "service_name": "Autonomous Intelligent System - Agriculture",
+    "revenue_potential": 32.96846295666215,
+    "scaling_priority": "medium",
+    "projected_monthly": 16484,
+    "projected_annual": 197810
+  },
+  {
+    "service_id": "cognitive-expense-nlp-649b731d",
+    "service_name": "Cognitive Expense NLP",
+    "revenue_potential": 32.94385871502165,
+    "scaling_priority": "medium",
+    "projected_monthly": 16471,
+    "projected_annual": 197663
+  },
+  {
+    "service_id": "autonomous-supply-for-retail-cfde0fcc",
+    "service_name": "Autonomous Supply for Retail",
+    "revenue_potential": 32.942973117629236,
+    "scaling_priority": "medium",
+    "projected_monthly": 16471,
+    "projected_annual": 197657
+  },
+  {
+    "service_id": "ai-processor-finance-edition-47c9d7d5",
+    "service_name": "AI Processor - Finance Edition",
+    "revenue_potential": 32.8944489241671,
+    "scaling_priority": "medium",
+    "projected_monthly": 16447,
+    "projected_annual": 197366
+  },
+  {
+    "service_id": "smart-processor-platform-manufacturing-ba84f66d",
+    "service_name": "Smart Processor Platform - Manufacturing",
+    "revenue_potential": 32.88569425327237,
+    "scaling_priority": "medium",
+    "projected_monthly": 16442,
+    "projected_annual": 197314
+  },
+  {
+    "service_id": "ai-finance-gaming-edition-64d70dd8",
+    "service_name": "AI Finance - Gaming Edition",
+    "revenue_potential": 32.82274200809852,
+    "scaling_priority": "medium",
+    "projected_monthly": 16411,
+    "projected_annual": 196936
+  },
+  {
+    "service_id": "predictive-management-engine-retail-02de1adc",
+    "service_name": "Predictive Management Engine - Retail",
+    "revenue_potential": 32.81683653887352,
+    "scaling_priority": "medium",
+    "projected_monthly": 16408,
+    "projected_annual": 196901
+  },
+  {
+    "service_id": "smart-marketing-platform-retail-04c17d24",
+    "service_name": "Smart Marketing Platform - Retail",
+    "revenue_potential": 32.73927023702042,
+    "scaling_priority": "medium",
+    "projected_monthly": 16369,
+    "projected_annual": 196435
+  },
+  {
+    "service_id": "intelligent-director-for-construction-2f44972d",
+    "service_name": "Intelligent Director for Construction",
+    "revenue_potential": 32.63165615089914,
+    "scaling_priority": "medium",
+    "projected_monthly": 16315,
+    "projected_annual": 195789
+  },
+  {
+    "service_id": "cognitive-marketing-solution-retail-6c3d26ac",
+    "service_name": "Cognitive Marketing Solution - Retail",
+    "revenue_potential": 32.47761804364549,
+    "scaling_priority": "medium",
+    "projected_monthly": 16238,
+    "projected_annual": 194865
+  },
+  {
+    "service_id": "intelligent-data-science-for-tech-fc7cb14c",
+    "service_name": "Intelligent Data Science for Tech",
+    "revenue_potential": 32.307642771339815,
+    "scaling_priority": "medium",
+    "projected_monthly": 16153,
+    "projected_annual": 193845
+  },
+  {
+    "service_id": "autonomous-smart-system-education-938d0868",
+    "service_name": "Autonomous Smart System - Education",
+    "revenue_potential": 32.20625443921433,
+    "scaling_priority": "medium",
+    "projected_monthly": 16103,
+    "projected_annual": 193237
+  },
+  {
+    "service_id": "autonomous-performance-system-healthcare-1-fa4cb435",
+    "service_name": "Autonomous Performance System - Healthcare #1",
+    "revenue_potential": 32.15328830093248,
+    "scaling_priority": "medium",
+    "projected_monthly": 16076,
+    "projected_annual": 192919
+  },
+  {
+    "service_id": "cognitive-data-solution-energy-8bbcbb25",
+    "service_name": "Cognitive Data Solution - Energy",
+    "revenue_potential": 31.92510880446562,
+    "scaling_priority": "medium",
+    "projected_monthly": 15962,
+    "projected_annual": 191550
+  },
+  {
+    "service_id": "smart-devops-platform-manufacturing-b8fe5a35",
+    "service_name": "Smart DevOps Platform - Manufacturing",
+    "revenue_potential": 31.822635083514577,
+    "scaling_priority": "medium",
+    "projected_monthly": 15911,
+    "projected_annual": 190935
+  },
+  {
+    "service_id": "autonomous-smart-media-e1ec09ec",
+    "service_name": "Autonomous Smart - Media",
+    "revenue_potential": 31.78776603461852,
+    "scaling_priority": "medium",
+    "projected_monthly": 15893,
+    "projected_annual": 190726
+  },
+  {
+    "service_id": "intelligent-neural-for-transportation-c0ac0efb",
+    "service_name": "Intelligent Neural for Transportation",
+    "revenue_potential": 31.738937429575394,
+    "scaling_priority": "medium",
+    "projected_monthly": 15869,
+    "projected_annual": 190433
+  },
+  {
+    "service_id": "intelligent-data-automotive-88ac7b63",
+    "service_name": "Intelligent data-automotive",
+    "revenue_potential": 31.365615168615456,
+    "scaling_priority": "medium",
+    "projected_monthly": 15682,
+    "projected_annual": 188193
+  },
+  {
+    "service_id": "self-optimizing-campaign-insights-2cfc2174",
+    "service_name": "Self-Optimizing Campaign Insights",
+    "revenue_potential": 31.305028159043257,
+    "scaling_priority": "medium",
+    "projected_monthly": 15652,
+    "projected_annual": 187830
+  },
+  {
+    "service_id": "predictive-real-estate-engine-hospitality-75d5b586",
+    "service_name": "Predictive Real Estate Engine - Hospitality",
+    "revenue_potential": 31.269662696969142,
+    "scaling_priority": "medium",
+    "projected_monthly": 15634,
+    "projected_annual": 187617
+  },
+  {
+    "service_id": "predictive-cloud-engine-education-a33922ad",
+    "service_name": "Predictive Cloud Engine - Education",
+    "revenue_potential": 30.94061072709228,
+    "scaling_priority": "medium",
+    "projected_monthly": 15470,
+    "projected_annual": 185643
+  },
+  {
+    "service_id": "ai-smart-logistics-edition-16c6a12d",
+    "service_name": "AI Smart - Logistics Edition",
+    "revenue_potential": 30.931388312337372,
+    "scaling_priority": "medium",
+    "projected_monthly": 15465,
+    "projected_annual": 185588
+  },
+  {
+    "service_id": "intelligent-predictor-for-legal-146cf993",
+    "service_name": "Intelligent Predictor for Legal",
+    "revenue_potential": 30.91619843235101,
+    "scaling_priority": "medium",
+    "projected_monthly": 15458,
+    "projected_annual": 185497
+  },
+  {
+    "service_id": "predictive-business-intelligence-engine-construction-c02791a2",
+    "service_name": "Predictive Business Intelligence Engine - Construction",
+    "revenue_potential": 30.748601186340075,
+    "scaling_priority": "medium",
+    "projected_monthly": 15374,
+    "projected_annual": 184491
+  },
+  {
+    "service_id": "cognitive-real-estate-solution-retail-bdf52e8c",
+    "service_name": "Cognitive Real Estate Solution - Retail",
+    "revenue_potential": 30.74169352123926,
+    "scaling_priority": "medium",
+    "projected_monthly": 15370,
+    "projected_annual": 184450
+  },
+  {
+    "service_id": "data-smart-logistics-f46bf6cf",
+    "service_name": "Data Smart - Logistics",
+    "revenue_potential": 30.703817681822866,
+    "scaling_priority": "medium",
+    "projected_monthly": 15351,
+    "projected_annual": 184222
+  },
+  {
+    "service_id": "self-optimizing-machine-learning-for-automotive-ba303e10",
+    "service_name": "Self-Optimizing Machine Learning for Automotive",
+    "revenue_potential": 30.471474192817293,
+    "scaling_priority": "medium",
+    "projected_monthly": 15235,
+    "projected_annual": 182828
+  },
+  {
+    "service_id": "smart-sales-for-telecom-8dff78db",
+    "service_name": "Smart Sales for Telecom",
+    "revenue_potential": 30.396174059869335,
+    "scaling_priority": "medium",
+    "projected_monthly": 15198,
+    "projected_annual": 182377
+  },
+  {
+    "service_id": "ai-predictor-legal-edition-207aa253",
+    "service_name": "AI Predictor - Legal Edition",
+    "revenue_potential": 29.53068268390861,
+    "scaling_priority": "medium",
+    "projected_monthly": 14765,
+    "projected_annual": 177184
+  },
+  {
+    "service_id": "cognitive-customer-security-43e3de72",
+    "service_name": "Cognitive Customer Security",
+    "revenue_potential": 29.51953636926003,
+    "scaling_priority": "medium",
+    "projected_monthly": 14759,
+    "projected_annual": 177117
+  },
+  {
+    "service_id": "smart-automation-platform-construction-df107492",
+    "service_name": "Smart Automation Platform - Construction",
+    "revenue_potential": 29.459667162463266,
+    "scaling_priority": "medium",
+    "projected_monthly": 14729,
+    "projected_annual": 176758
+  },
+  {
+    "service_id": "smart-devops-platform-automotive-762eff8b",
+    "service_name": "Smart DevOps Platform - Automotive",
+    "revenue_potential": 29.438236752380863,
+    "scaling_priority": "medium",
+    "projected_monthly": 14719,
+    "projected_annual": 176629
+  },
+  {
+    "service_id": "intelligent-intelligent-finance-bbc31b07",
+    "service_name": "Intelligent intelligent-finance",
+    "revenue_potential": 29.36900524271686,
+    "scaling_priority": "medium",
+    "projected_monthly": 14684,
+    "projected_annual": 176214
+  },
+  {
+    "service_id": "autonomous-automation-automotive-8b0653dc",
+    "service_name": "Autonomous automation-automotive",
+    "revenue_potential": 29.299882471500656,
+    "scaling_priority": "medium",
+    "projected_monthly": 14649,
+    "projected_annual": 175799
+  },
+  {
+    "service_id": "ai-computer-vision-finance-edition-a41cd021",
+    "service_name": "AI Computer Vision - Finance Edition",
+    "revenue_potential": 29.278610179601916,
+    "scaling_priority": "medium",
+    "projected_monthly": 14639,
+    "projected_annual": 175671
+  },
+  {
+    "service_id": "neural-engine-for-legal-034c48ec",
+    "service_name": "Neural Engine for Legal",
+    "revenue_potential": 29.21055961940815,
+    "scaling_priority": "medium",
+    "projected_monthly": 14605,
+    "projected_annual": 175263
+  },
+  {
+    "service_id": "intelligent-marketing-for-finance-62db0cea",
+    "service_name": "Intelligent Marketing for Finance",
+    "revenue_potential": 28.972586684729134,
+    "scaling_priority": "medium",
+    "projected_monthly": 14486,
+    "projected_annual": 173835
+  },
+  {
+    "service_id": "intelligent-business-intelligence-for-finance-8a945c9a",
+    "service_name": "Intelligent Business Intelligence for Finance",
+    "revenue_potential": 28.873332090017296,
+    "scaling_priority": "medium",
+    "projected_monthly": 14436,
+    "projected_annual": 173239
+  },
+  {
+    "service_id": "cognitive-autonomous-solution-real-estate-294de203",
+    "service_name": "Cognitive Autonomous Solution - Real-Estate",
+    "revenue_potential": 28.7409206307349,
+    "scaling_priority": "medium",
+    "projected_monthly": 14370,
+    "projected_annual": 172445
+  },
+  {
+    "service_id": "predictive-healthcare-engine-healthcare-da1eacd9",
+    "service_name": "Predictive Healthcare Engine - Healthcare",
+    "revenue_potential": 28.541751457174175,
+    "scaling_priority": "medium",
+    "projected_monthly": 14270,
+    "projected_annual": 171250
+  },
+  {
+    "service_id": "intelligent-neural-for-gaming-d40516e0",
+    "service_name": "Intelligent Neural for Gaming",
+    "revenue_potential": 28.22234299984212,
+    "scaling_priority": "medium",
+    "projected_monthly": 14111,
+    "projected_annual": 169334
+  },
+  {
+    "service_id": "ai-powered-financial-business-intelligence-98ab7f8d",
+    "service_name": "AI-Powered Financial Business Intelligence",
+    "revenue_potential": 28.15643975146725,
+    "scaling_priority": "medium",
+    "projected_monthly": 14078,
+    "projected_annual": 168938
+  },
+  {
+    "service_id": "neural-data-optimization-09c2de18",
+    "service_name": "Neural Data Optimization",
+    "revenue_potential": 28.11590178526086,
+    "scaling_priority": "medium",
+    "projected_monthly": 14057,
+    "projected_annual": 168695
+  },
+  {
+    "service_id": "intelligent-neural-for-education-d6e3998c",
+    "service_name": "Intelligent Neural for Education",
+    "revenue_potential": 28.051103339068316,
+    "scaling_priority": "medium",
+    "projected_monthly": 14025,
+    "projected_annual": 168306
+  },
+  {
+    "service_id": "ai-marketing-manufacturing-edition-07bad95d",
+    "service_name": "AI Marketing - Manufacturing Edition",
+    "revenue_potential": 28.041028650818756,
+    "scaling_priority": "medium",
+    "projected_monthly": 14020,
+    "projected_annual": 168246
+  },
+  {
+    "service_id": "intelligent-neural-for-telecom-3e0fb801",
+    "service_name": "Intelligent Neural for Telecom",
+    "revenue_potential": 27.93443189706662,
+    "scaling_priority": "medium",
+    "projected_monthly": 13967,
+    "projected_annual": 167606
+  },
+  {
+    "service_id": "smart-director-platform-construction-d755b9b6",
+    "service_name": "Smart Director Platform - Construction",
+    "revenue_potential": 27.81476962543724,
+    "scaling_priority": "medium",
+    "projected_monthly": 13907,
+    "projected_annual": 166888
+  },
+  {
+    "service_id": "intelligent-quality-for-real-estate-3661cf04",
+    "service_name": "Intelligent Quality for Real-Estate",
+    "revenue_potential": 27.62652118152729,
+    "scaling_priority": "medium",
+    "projected_monthly": 13813,
+    "projected_annual": 165759
+  },
+  {
+    "service_id": "intelligent-customer-service-for-automotive-49a1ef9b",
+    "service_name": "Intelligent Customer Service for Automotive",
+    "revenue_potential": 27.61709079329202,
+    "scaling_priority": "medium",
+    "projected_monthly": 13808,
+    "projected_annual": 165702
+  },
+  {
+    "service_id": "experience-smart-construction-41f9288f",
+    "service_name": "Experience Smart - Construction",
+    "revenue_potential": 27.507707763402927,
+    "scaling_priority": "medium",
+    "projected_monthly": 13753,
+    "projected_annual": 165046
+  },
+  {
+    "service_id": "predictive-computer-vision-engine-tech-275c0da1",
+    "service_name": "Predictive Computer Vision Engine - Tech",
+    "revenue_potential": 27.431020611777747,
+    "scaling_priority": "medium",
+    "projected_monthly": 13715,
+    "projected_annual": 164586
+  },
+  {
+    "service_id": "predictive-security-education-1489934c",
+    "service_name": "Predictive security-education",
+    "revenue_potential": 27.306877073327534,
+    "scaling_priority": "medium",
+    "projected_monthly": 13653,
+    "projected_annual": 163841
+  },
+  {
+    "service_id": "analyzer-adaptive-construction-d5d74493",
+    "service_name": "Analyzer Adaptive - Construction",
+    "revenue_potential": 27.217924202749245,
+    "scaling_priority": "medium",
+    "projected_monthly": 13608,
+    "projected_annual": 163307
+  },
+  {
+    "service_id": "intelligent-automation-for-energy-cd022b1f",
+    "service_name": "Intelligent Automation for Energy",
+    "revenue_potential": 27.200697763068078,
+    "scaling_priority": "medium",
+    "projected_monthly": 13600,
+    "projected_annual": 163204
+  },
+  {
+    "service_id": "smart-analytics-platform-telecom-1-38925cc5",
+    "service_name": "Smart Analytics Platform - Telecom #1",
+    "revenue_potential": 27.13670814762607,
+    "scaling_priority": "medium",
+    "projected_monthly": 13568,
+    "projected_annual": 162820
+  },
+  {
+    "service_id": "autonomous-nlp-system-retail-c9d74e42",
+    "service_name": "Autonomous NLP System - Retail",
+    "revenue_potential": 27.088683481147203,
+    "scaling_priority": "medium",
+    "projected_monthly": 13544,
+    "projected_annual": 162532
+  },
+  {
+    "service_id": "intelligent-quality-for-media-749d2028",
+    "service_name": "Intelligent Quality for Media",
+    "revenue_potential": 26.961446588911787,
+    "scaling_priority": "medium",
+    "projected_monthly": 13480,
+    "projected_annual": 161768
+  },
+  {
+    "service_id": "cognitive-process-mining-solution-education-e52684fe",
+    "service_name": "Cognitive Process Mining Solution - Education",
+    "revenue_potential": 26.923553445719666,
+    "scaling_priority": "medium",
+    "projected_monthly": 13461,
+    "projected_annual": 161541
+  },
+  {
+    "service_id": "smart-customer-director-713cdf5e",
+    "service_name": "Smart Customer Director",
+    "revenue_potential": 26.808998971555443,
+    "scaling_priority": "medium",
+    "projected_monthly": 13404,
+    "projected_annual": 160853
+  },
+  {
+    "service_id": "self-optimizing-optimization-for-gaming-d3f70413",
+    "service_name": "Self-Optimizing Optimization for Gaming",
+    "revenue_potential": 26.743856316489367,
+    "scaling_priority": "medium",
+    "projected_monthly": 13371,
+    "projected_annual": 160463
+  },
+  {
+    "service_id": "smart-sales-platform-manufacturing-ed55fbc5",
+    "service_name": "Smart Sales Platform - Manufacturing",
+    "revenue_potential": 26.670218956145032,
+    "scaling_priority": "medium",
+    "projected_monthly": 13335,
+    "projected_annual": 160021
+  },
+  {
+    "service_id": "neural-smart-gaming-8b175cd0",
+    "service_name": "Neural Smart - Gaming",
+    "revenue_potential": 26.499582306200093,
+    "scaling_priority": "medium",
+    "projected_monthly": 13249,
+    "projected_annual": 158997
+  },
+  {
+    "service_id": "predictive-real-estate-engine-gaming-f295cc5a",
+    "service_name": "Predictive Real Estate Engine - Gaming",
+    "revenue_potential": 26.434338776949012,
+    "scaling_priority": "medium",
+    "projected_monthly": 13217,
+    "projected_annual": 158606
+  },
+  {
+    "service_id": "autonomous-data-orchestrator-d566d405",
+    "service_name": "Autonomous Data Orchestrator",
+    "revenue_potential": 26.35468011535933,
+    "scaling_priority": "medium",
+    "projected_monthly": 13177,
+    "projected_annual": 158128
+  },
+  {
+    "service_id": "ai-performance-healthcare-edition-5ec5ba38",
+    "service_name": "AI Performance - Healthcare Edition",
+    "revenue_potential": 26.319916636463475,
+    "scaling_priority": "medium",
+    "projected_monthly": 13159,
+    "projected_annual": 157919
+  },
+  {
+    "service_id": "autonomous-devops-system-agriculture-444b5d75",
+    "service_name": "Autonomous DevOps System - Agriculture",
+    "revenue_potential": 26.270044075755845,
+    "scaling_priority": "medium",
+    "projected_monthly": 13135,
+    "projected_annual": 157620
+  },
+  {
+    "service_id": "autonomous-data-for-media-8cdba8fa",
+    "service_name": "Autonomous Data for Media",
+    "revenue_potential": 26.246972414017073,
+    "scaling_priority": "medium",
+    "projected_monthly": 13123,
+    "projected_annual": 157481
+  },
+  {
+    "service_id": "data-science-smart-transportation-1ba2396a",
+    "service_name": "Data Science Smart - Transportation",
+    "revenue_potential": 26.207878160310866,
+    "scaling_priority": "medium",
+    "projected_monthly": 13103,
+    "projected_annual": 157247
+  },
+  {
+    "service_id": "predictive-coordinator-engine-media-be829d4e",
+    "service_name": "Predictive Coordinator Engine - Media",
+    "revenue_potential": 26.19657118556873,
+    "scaling_priority": "medium",
+    "projected_monthly": 13098,
+    "projected_annual": 157179
+  },
+  {
+    "service_id": "predictive-finance-engine-manufacturing-b68dea04",
+    "service_name": "Predictive Finance Engine - Manufacturing",
+    "revenue_potential": 26.140064676610898,
+    "scaling_priority": "medium",
+    "projected_monthly": 13070,
+    "projected_annual": 156840
+  },
+  {
+    "service_id": "ai-sales-sports-edition-c0468a7d",
+    "service_name": "AI Sales - Sports Edition",
+    "revenue_potential": 26.092617634533443,
+    "scaling_priority": "medium",
+    "projected_monthly": 13046,
+    "projected_annual": 156555
+  },
+  {
+    "service_id": "adaptive-platform-for-hospitality-a14970d0",
+    "service_name": "Adaptive Platform for Hospitality",
+    "revenue_potential": 25.969231016180387,
+    "scaling_priority": "medium",
+    "projected_monthly": 12984,
+    "projected_annual": 155815
+  },
+  {
+    "service_id": "automated-process-mining-finance-6eb17f3e",
+    "service_name": "Automated process mining-finance",
+    "revenue_potential": 25.787037770223026,
+    "scaling_priority": "medium",
+    "projected_monthly": 12893,
+    "projected_annual": 154722
+  },
+  {
+    "service_id": "autonomous-finance-system-real-estate-bcac76ff",
+    "service_name": "Autonomous Finance System - Real-Estate",
+    "revenue_potential": 25.727350937932403,
+    "scaling_priority": "medium",
+    "projected_monthly": 12863,
+    "projected_annual": 154364
+  },
+  {
+    "service_id": "smart-data-platform-healthcare-17b520b5",
+    "service_name": "Smart Data Platform - Healthcare",
+    "revenue_potential": 25.564262041504538,
+    "scaling_priority": "medium",
+    "projected_monthly": 12782,
+    "projected_annual": 153385
+  },
+  {
+    "service_id": "cognitive-machine-learning-for-construction-ae3ab120",
+    "service_name": "Cognitive Machine Learning for Construction",
+    "revenue_potential": 25.533495096634983,
+    "scaling_priority": "medium",
+    "projected_monthly": 12766,
+    "projected_annual": 153200
+  },
+  {
+    "service_id": "intelligent-analytics-for-finance-7e28c6c7",
+    "service_name": "Intelligent Analytics for Finance",
+    "revenue_potential": 25.40533669472436,
+    "scaling_priority": "medium",
+    "projected_monthly": 12702,
+    "projected_annual": 152432
+  },
+  {
+    "service_id": "computer-vision-self-optimizing-real-estate-5669a2cc",
+    "service_name": "Computer Vision Self-Optimizing - Real-Estate",
+    "revenue_potential": 25.338418296462773,
+    "scaling_priority": "medium",
+    "projected_monthly": 12669,
+    "projected_annual": 152030
+  },
+  {
+    "service_id": "autonomous-nlp-system-telecom-68d0de75",
+    "service_name": "Autonomous NLP System - Telecom",
+    "revenue_potential": 25.06015754943941,
+    "scaling_priority": "medium",
+    "projected_monthly": 12530,
+    "projected_annual": 150360
+  },
+  {
+    "service_id": "predictive-data-science-engine-hospitality-d4cfeba7",
+    "service_name": "Predictive Data Science Engine - Hospitality",
+    "revenue_potential": 24.887528766349064,
+    "scaling_priority": "low",
+    "projected_monthly": 12443,
+    "projected_annual": 149325
+  },
+  {
+    "service_id": "neural-ai-construction-cf738198",
+    "service_name": "Neural AI - Construction",
+    "revenue_potential": 24.798321882092214,
+    "scaling_priority": "low",
+    "projected_monthly": 12399,
+    "projected_annual": 148789
+  },
+  {
+    "service_id": "smart-real-estate-platform-insurance-eba02490",
+    "service_name": "Smart Real Estate Platform - Insurance",
+    "revenue_potential": 24.594404308316246,
+    "scaling_priority": "low",
+    "projected_monthly": 12297,
+    "projected_annual": 147566
+  },
+  {
+    "service_id": "autonomous-predictive-system-real-estate-1-9350e8b8",
+    "service_name": "Autonomous Predictive System - Real-Estate #1",
+    "revenue_potential": 24.522572768211862,
+    "scaling_priority": "low",
+    "projected_monthly": 12261,
+    "projected_annual": 147135
+  },
+  {
+    "service_id": "autonomous-revenue-for-real-estate-99d22f4f",
+    "service_name": "Autonomous Revenue for Real-Estate",
+    "revenue_potential": 24.463607742396114,
+    "scaling_priority": "low",
+    "projected_monthly": 12231,
+    "projected_annual": 146781
+  },
+  {
+    "service_id": "autonomous-experience-system-healthcare-88f0c6ff",
+    "service_name": "Autonomous Experience System - Healthcare",
+    "revenue_potential": 24.436896773437233,
+    "scaling_priority": "low",
+    "projected_monthly": 12218,
+    "projected_annual": 146621
+  },
+  {
+    "service_id": "intelligent-generator-for-hospitality-f6bc57a2",
+    "service_name": "Intelligent Generator for Hospitality",
+    "revenue_potential": 24.36510327164192,
+    "scaling_priority": "low",
+    "projected_monthly": 12182,
+    "projected_annual": 146190
+  },
+  {
+    "service_id": "self-optimizing-automation-for-construction-e5696fe7",
+    "service_name": "Self-Optimizing Automation for Construction",
+    "revenue_potential": 24.284733145900454,
+    "scaling_priority": "low",
+    "projected_monthly": 12142,
+    "projected_annual": 145708
+  },
+  {
+    "service_id": "smart-generator-platform-real-estate-3ddc025a",
+    "service_name": "Smart Generator Platform - Real-Estate",
+    "revenue_potential": 24.200090918918132,
+    "scaling_priority": "low",
+    "projected_monthly": 12100,
+    "projected_annual": 145200
+  },
+  {
+    "service_id": "smart-manufacturing-for-hospitality-9d1af700",
+    "service_name": "Smart Manufacturing for Hospitality",
+    "revenue_potential": 24.137759651238284,
+    "scaling_priority": "low",
+    "projected_monthly": 12068,
+    "projected_annual": 144826
+  },
+  {
+    "service_id": "adaptive-computer-vision-education-da2bafed",
+    "service_name": "Adaptive computer vision-education",
+    "revenue_potential": 23.964556299655012,
+    "scaling_priority": "low",
+    "projected_monthly": 11982,
+    "projected_annual": 143787
+  },
+  {
+    "service_id": "smart-sales-for-legal-de98f0eb",
+    "service_name": "Smart Sales for Legal",
+    "revenue_potential": 23.93901297638818,
+    "scaling_priority": "low",
+    "projected_monthly": 11969,
+    "projected_annual": 143634
+  },
+  {
+    "service_id": "automated-succession-data-c197d227",
+    "service_name": "Automated Succession Data",
+    "revenue_potential": 23.759834357235572,
+    "scaling_priority": "low",
+    "projected_monthly": 11879,
+    "projected_annual": 142559
+  },
+  {
+    "service_id": "ai-real-estate-manufacturing-edition-9df4cc40",
+    "service_name": "AI Real Estate - Manufacturing Edition",
+    "revenue_potential": 23.506618108525657,
+    "scaling_priority": "low",
+    "projected_monthly": 11753,
+    "projected_annual": 141039
+  },
+  {
+    "service_id": "predictive-analytics-engine-healthcare-bb6aba4a",
+    "service_name": "Predictive Analytics Engine - Healthcare",
+    "revenue_potential": 23.119860192375707,
+    "scaling_priority": "low",
+    "projected_monthly": 11559,
+    "projected_annual": 138719
+  },
+  {
+    "service_id": "cognitive-compliance-solution-logistics-c51fef13",
+    "service_name": "Cognitive Compliance Solution - Logistics",
+    "revenue_potential": 23.082987530723738,
+    "scaling_priority": "low",
+    "projected_monthly": 11541,
+    "projected_annual": 138497
+  },
+  {
+    "service_id": "smart-manager-platform-finance-5060a549",
+    "service_name": "Smart Manager Platform - Finance",
+    "revenue_potential": 23.08016539849122,
+    "scaling_priority": "low",
+    "projected_monthly": 11540,
+    "projected_annual": 138480
+  },
+  {
+    "service_id": "autonomous-devops-system-transportation-058d84a3",
+    "service_name": "Autonomous DevOps System - Transportation",
+    "revenue_potential": 22.8566982122254,
+    "scaling_priority": "low",
+    "projected_monthly": 11428,
+    "projected_annual": 137140
+  },
+  {
+    "service_id": "intelligent-cloud-for-logistics-63ac794e",
+    "service_name": "Intelligent Cloud for Logistics",
+    "revenue_potential": 22.819472752843453,
+    "scaling_priority": "low",
+    "projected_monthly": 11409,
+    "projected_annual": 136916
+  },
+  {
+    "service_id": "manager-intelligent-energy-3ac757d4",
+    "service_name": "Manager Intelligent - Energy",
+    "revenue_potential": 22.73717411890409,
+    "scaling_priority": "low",
+    "projected_monthly": 11368,
+    "projected_annual": 136423
+  },
+  {
+    "service_id": "cognitive-data-science-media-a7ce3844",
+    "service_name": "Cognitive data science-media",
+    "revenue_potential": 22.6908881119177,
+    "scaling_priority": "low",
+    "projected_monthly": 11345,
+    "projected_annual": 136145
+  },
+  {
+    "service_id": "smart-autonomous-platform-energy-1-8889a91b",
+    "service_name": "Smart Autonomous Platform - Energy #1",
+    "revenue_potential": 22.65964361967664,
+    "scaling_priority": "low",
+    "projected_monthly": 11329,
+    "projected_annual": 135957
+  },
+  {
+    "service_id": "ai-cognitive-hospitality-edition-c22a07ba",
+    "service_name": "AI Cognitive - Hospitality Edition",
+    "revenue_potential": 22.589808549597922,
+    "scaling_priority": "low",
+    "projected_monthly": 11294,
+    "projected_annual": 135538
+  },
+  {
+    "service_id": "intelligent-intelligence-for-energy-e0a81abc",
+    "service_name": "Intelligent Intelligence for Energy",
+    "revenue_potential": 22.515357940742657,
+    "scaling_priority": "low",
+    "projected_monthly": 11257,
+    "projected_annual": 135092
+  },
+  {
+    "service_id": "autonomous-supply-system-education-d62d4ba4",
+    "service_name": "Autonomous Supply System - Education",
+    "revenue_potential": 22.470487661276536,
+    "scaling_priority": "low",
+    "projected_monthly": 11235,
+    "projected_annual": 134822
+  },
+  {
+    "service_id": "intelligent-suite-for-real-estate-c3ea7469",
+    "service_name": "Intelligent Suite for Real-Estate",
+    "revenue_potential": 22.30484754886525,
+    "scaling_priority": "low",
+    "projected_monthly": 11152,
+    "projected_annual": 133829
+  },
+  {
+    "service_id": "predictive-process-mining-engine-tech-fd319f69",
+    "service_name": "Predictive Process Mining Engine - Tech",
+    "revenue_potential": 22.245024486817087,
+    "scaling_priority": "low",
+    "projected_monthly": 11122,
+    "projected_annual": 133470
+  },
+  {
+    "service_id": "autonomous-finance-retail-a10111a3",
+    "service_name": "Autonomous finance-retail",
+    "revenue_potential": 22.23227254308533,
+    "scaling_priority": "low",
+    "projected_monthly": 11116,
+    "projected_annual": 133393
+  },
+  {
+    "service_id": "intelligent-data-for-sports-1097b675",
+    "service_name": "Intelligent Data for Sports",
+    "revenue_potential": 22.153594268495358,
+    "scaling_priority": "low",
+    "projected_monthly": 11076,
+    "projected_annual": 132921
+  },
+  {
+    "service_id": "smart-experience-platform-agriculture-756afbfc",
+    "service_name": "Smart Experience Platform - Agriculture",
+    "revenue_potential": 22.05608256516789,
+    "scaling_priority": "low",
+    "projected_monthly": 11028,
+    "projected_annual": 132336
+  },
+  {
+    "service_id": "smart-analyzer-platform-automotive-38e26682",
+    "service_name": "Smart Analyzer Platform - Automotive",
+    "revenue_potential": 21.9763588157711,
+    "scaling_priority": "low",
+    "projected_monthly": 10988,
+    "projected_annual": 131858
+  },
+  {
+    "service_id": "predictive-recommendation-automation-9c4a71a0",
+    "service_name": "Predictive Recommendation Automation",
+    "revenue_potential": 21.91135382242386,
+    "scaling_priority": "low",
+    "projected_monthly": 10955,
+    "projected_annual": 131468
+  },
+  {
+    "service_id": "predictive-project-advisor-9390dac8",
+    "service_name": "Predictive Project Advisor",
+    "revenue_potential": 21.694054211053693,
+    "scaling_priority": "low",
+    "projected_monthly": 10847,
+    "projected_annual": 130164
+  },
+  {
+    "service_id": "predictive-autonomous-engine-real-estate-5ef1b252",
+    "service_name": "Predictive Autonomous Engine - Real-Estate",
+    "revenue_potential": 21.522324891686807,
+    "scaling_priority": "low",
+    "projected_monthly": 10761,
+    "projected_annual": 129133
+  },
+  {
+    "service_id": "predictive-smart-engine-gaming-2373fdcc",
+    "service_name": "Predictive Smart Engine - Gaming",
+    "revenue_potential": 21.494097161006888,
+    "scaling_priority": "low",
+    "projected_monthly": 10747,
+    "projected_annual": 128964
+  },
+  {
+    "service_id": "autonomous-sales-system-automotive-1ccb6d79",
+    "service_name": "Autonomous Sales System - Automotive",
+    "revenue_potential": 21.355406640521778,
+    "scaling_priority": "low",
+    "projected_monthly": 10677,
+    "projected_annual": 128132
+  },
+  {
+    "service_id": "intelligent-customer-service-for-education-e536c7e0",
+    "service_name": "Intelligent Customer Service for Education",
+    "revenue_potential": 21.16858326527246,
+    "scaling_priority": "low",
+    "projected_monthly": 10584,
+    "projected_annual": 127011
+  },
+  {
+    "service_id": "ai-sales-insurance-edition-4db00731",
+    "service_name": "AI Sales - Insurance Edition",
+    "revenue_potential": 20.92229240446717,
+    "scaling_priority": "low",
+    "projected_monthly": 10461,
+    "projected_annual": 125533
+  },
+  {
+    "service_id": "predictive-sales-engine-media-5d23f4b8",
+    "service_name": "Predictive Sales Engine - Media",
+    "revenue_potential": 20.844663465050502,
+    "scaling_priority": "low",
+    "projected_monthly": 10422,
+    "projected_annual": 125067
+  },
+  {
+    "service_id": "autonomous-quality-system-sports-f982f016",
+    "service_name": "Autonomous Quality System - Sports",
+    "revenue_potential": 20.649680720701006,
+    "scaling_priority": "low",
+    "projected_monthly": 10324,
+    "projected_annual": 123898
+  },
+  {
+    "service_id": "self-optimizing-data-for-transportation-5bdea1a0",
+    "service_name": "Self-Optimizing Data for Transportation",
+    "revenue_potential": 20.584970806909443,
+    "scaling_priority": "low",
+    "projected_monthly": 10292,
+    "projected_annual": 123509
+  },
+  {
+    "service_id": "ai-analyzer-healthcare-edition-f8e75b02",
+    "service_name": "AI Analyzer - Healthcare Edition",
+    "revenue_potential": 20.565959366387027,
+    "scaling_priority": "low",
+    "projected_monthly": 10282,
+    "projected_annual": 123395
+  },
+  {
+    "service_id": "ai-autonomous-sports-edition-f8d38a7a",
+    "service_name": "AI Autonomous - Sports Edition",
+    "revenue_potential": 20.42400690692339,
+    "scaling_priority": "low",
+    "projected_monthly": 10212,
+    "projected_annual": 122544
+  },
+  {
+    "service_id": "suite-neural-hospitality-d11bb6cf",
+    "service_name": "Suite Neural - Hospitality",
+    "revenue_potential": 20.422228226853633,
+    "scaling_priority": "low",
+    "projected_monthly": 10211,
+    "projected_annual": 122533
+  },
+  {
+    "service_id": "smart-cloud-platform-retail-91e1d752",
+    "service_name": "Smart Cloud Platform - Retail",
+    "revenue_potential": 20.41876638105573,
+    "scaling_priority": "low",
+    "projected_monthly": 10209,
+    "projected_annual": 122512
+  },
+  {
+    "service_id": "predictive-optimizer-engine-telecom-3b9a8678",
+    "service_name": "Predictive Optimizer Engine - Telecom",
+    "revenue_potential": 20.403620823253714,
+    "scaling_priority": "low",
+    "projected_monthly": 10201,
+    "projected_annual": 122421
+  },
+  {
+    "service_id": "predictive-security-engine-education-bf276674",
+    "service_name": "Predictive Security Engine - Education",
+    "revenue_potential": 20.39808387819043,
+    "scaling_priority": "low",
+    "projected_monthly": 10199,
+    "projected_annual": 122388
+  },
+  {
+    "service_id": "ai-devops-automotive-edition-64394ac5",
+    "service_name": "AI DevOps - Automotive Edition",
+    "revenue_potential": 20.323643118975873,
+    "scaling_priority": "low",
+    "projected_monthly": 10161,
+    "projected_annual": 121941
+  },
+  {
+    "service_id": "automation-self-optimizing-media-8c67bc26",
+    "service_name": "Automation Self-Optimizing - Media",
+    "revenue_potential": 20.121931143798243,
+    "scaling_priority": "low",
+    "projected_monthly": 10060,
+    "projected_annual": 120731
+  },
+  {
+    "service_id": "cognitive-insights-solution-gaming-e1bd8f98",
+    "service_name": "Cognitive Insights Solution - Gaming",
+    "revenue_potential": 20.05675289432664,
+    "scaling_priority": "low",
+    "projected_monthly": 10028,
+    "projected_annual": 120340
+  },
+  {
+    "service_id": "smart-data-science-platform-hospitality-1859b6bd",
+    "service_name": "Smart Data Science Platform - Hospitality",
+    "revenue_potential": 20.031136039149303,
+    "scaling_priority": "low",
+    "projected_monthly": 10015,
+    "projected_annual": 120186
+  },
+  {
+    "service_id": "autonomous-support-system-automotive-c0aceeb3",
+    "service_name": "Autonomous Support System - Automotive",
+    "revenue_potential": 19.92048219617979,
+    "scaling_priority": "low",
+    "projected_monthly": 9960,
+    "projected_annual": 119522
+  },
+  {
+    "service_id": "cognitive-real-estate-solution-telecom-f9d7f3da",
+    "service_name": "Cognitive Real Estate Solution - Telecom",
+    "revenue_potential": 19.84777581611872,
+    "scaling_priority": "low",
+    "projected_monthly": 9923,
+    "projected_annual": 119086
+  },
+  {
+    "service_id": "cognitive-automation-solution-gaming-dcd0aed2",
+    "service_name": "Cognitive Automation Solution - Gaming",
+    "revenue_potential": 19.79065657487486,
+    "scaling_priority": "low",
+    "projected_monthly": 9895,
+    "projected_annual": 118743
+  },
+  {
+    "service_id": "smart-compliance-platform-legal-84d7d449",
+    "service_name": "Smart Compliance Platform - Legal",
+    "revenue_potential": 19.731917956234497,
+    "scaling_priority": "low",
+    "projected_monthly": 9865,
+    "projected_annual": 118391
+  },
+  {
+    "service_id": "automated-automation-hospitality-5c48dac7",
+    "service_name": "Automated automation-hospitality",
+    "revenue_potential": 19.711530170169148,
+    "scaling_priority": "low",
+    "projected_monthly": 9855,
+    "projected_annual": 118269
+  },
+  {
+    "service_id": "intelligent-data-tech-c71180af",
+    "service_name": "Intelligent data-tech",
+    "revenue_potential": 19.684908732416968,
+    "scaling_priority": "low",
+    "projected_monthly": 9842,
+    "projected_annual": 118109
+  },
+  {
+    "service_id": "smart-self-optimizing-healthcare-f0b07657",
+    "service_name": "Smart Self-Optimizing - Healthcare",
+    "revenue_potential": 19.66605705055148,
+    "scaling_priority": "low",
+    "projected_monthly": 9833,
+    "projected_annual": 117996
+  },
+  {
+    "service_id": "ai-security-finance-edition-3e5f3195",
+    "service_name": "AI Security - Finance Edition",
+    "revenue_potential": 19.601770550194374,
+    "scaling_priority": "low",
+    "projected_monthly": 9800,
+    "projected_annual": 117610
+  },
+  {
+    "service_id": "intelligent-system-for-logistics-9f9b88d9",
+    "service_name": "Intelligent System for Logistics",
+    "revenue_potential": 19.439046865428345,
+    "scaling_priority": "low",
+    "projected_monthly": 9719,
+    "projected_annual": 116634
+  },
+  {
+    "service_id": "intelligent-predictive-for-retail-86f86c92",
+    "service_name": "Intelligent Predictive for Retail",
+    "revenue_potential": 19.39326269778812,
+    "scaling_priority": "low",
+    "projected_monthly": 9696,
+    "projected_annual": 116359
+  },
+  {
+    "service_id": "cognitive-data-science-solution-energy-9aa5fd12",
+    "service_name": "Cognitive Data Science Solution - Energy",
+    "revenue_potential": 19.269353778080063,
+    "scaling_priority": "low",
+    "projected_monthly": 9634,
+    "projected_annual": 115616
+  },
+  {
+    "service_id": "autonomous-analyzer-system-logistics-dbb91148",
+    "service_name": "Autonomous Analyzer System - Logistics",
+    "revenue_potential": 19.126719717202775,
+    "scaling_priority": "low",
+    "projected_monthly": 9563,
+    "projected_annual": 114760
+  },
+  {
+    "service_id": "intelligent-system-for-finance-bf149c92",
+    "service_name": "Intelligent System for Finance",
+    "revenue_potential": 18.984003256650254,
+    "scaling_priority": "low",
+    "projected_monthly": 9492,
+    "projected_annual": 113904
+  },
+  {
+    "service_id": "intelligent-cognitive-gaming-0ac97548",
+    "service_name": "Intelligent Cognitive - Gaming",
+    "revenue_potential": 18.961644879199067,
+    "scaling_priority": "low",
+    "projected_monthly": 9480,
+    "projected_annual": 113769
+  },
+  {
+    "service_id": "predictive-smart-engine-construction-cdc02eae",
+    "service_name": "Predictive Smart Engine - Construction",
+    "revenue_potential": 18.89919317386579,
+    "scaling_priority": "low",
+    "projected_monthly": 9449,
+    "projected_annual": 113395
+  },
+  {
+    "service_id": "ai-autonomous-automotive-edition-adcfaf10",
+    "service_name": "AI Autonomous - Automotive Edition",
+    "revenue_potential": 18.76888023568898,
+    "scaling_priority": "low",
+    "projected_monthly": 9384,
+    "projected_annual": 112613
+  },
+  {
+    "service_id": "cognitive-neural-solution-healthcare-b4a3e7ac",
+    "service_name": "Cognitive Neural Solution - Healthcare",
+    "revenue_potential": 18.753597090166142,
+    "scaling_priority": "low",
+    "projected_monthly": 9376,
+    "projected_annual": 112521
+  },
+  {
+    "service_id": "adaptive-risk-for-education-8bf924d7",
+    "service_name": "Adaptive Risk for Education",
+    "revenue_potential": 18.749976300857536,
+    "scaling_priority": "low",
+    "projected_monthly": 9374,
+    "projected_annual": 112499
+  },
+  {
+    "service_id": "autonomous-neural-system-media-7bd6a800",
+    "service_name": "Autonomous Neural System - Media",
+    "revenue_potential": 18.716305622114305,
+    "scaling_priority": "low",
+    "projected_monthly": 9358,
+    "projected_annual": 112297
+  },
+  {
+    "service_id": "autonomous-neural-system-finance-145260ec",
+    "service_name": "Autonomous Neural System - Finance",
+    "revenue_potential": 18.683909228882857,
+    "scaling_priority": "low",
+    "projected_monthly": 9341,
+    "projected_annual": 112103
+  },
+  {
+    "service_id": "compliance-automated-sports-d33a81fa",
+    "service_name": "Compliance Automated - Sports",
+    "revenue_potential": 18.557902137966988,
+    "scaling_priority": "low",
+    "projected_monthly": 9278,
+    "projected_annual": 111347
+  },
+  {
+    "service_id": "autonomous-computer-vision-transportation-e2147f27",
+    "service_name": "Autonomous computer vision-transportation",
+    "revenue_potential": 18.511829228524125,
+    "scaling_priority": "low",
+    "projected_monthly": 9255,
+    "projected_annual": 111070
+  },
+  {
+    "service_id": "ai-ai-agriculture-edition-7030283a",
+    "service_name": "AI AI - Agriculture Edition",
+    "revenue_potential": 18.433539340950652,
+    "scaling_priority": "low",
+    "projected_monthly": 9216,
+    "projected_annual": 110601
+  },
+  {
+    "service_id": "autonomous-coordinator-system-automotive-26d09669",
+    "service_name": "Autonomous Coordinator System - Automotive",
+    "revenue_potential": 18.25602773167149,
+    "scaling_priority": "low",
+    "projected_monthly": 9128,
+    "projected_annual": 109536
+  },
+  {
+    "service_id": "smart-orchestrator-platform-finance-2a00f4a9",
+    "service_name": "Smart Orchestrator Platform - Finance",
+    "revenue_potential": 18.083115056425633,
+    "scaling_priority": "low",
+    "projected_monthly": 9041,
+    "projected_annual": 108498
+  },
+  {
+    "service_id": "automated-business-intelligence-for-sports-befeb2e6",
+    "service_name": "Automated Business Intelligence for Sports",
+    "revenue_potential": 17.517523193919946,
+    "scaling_priority": "low",
+    "projected_monthly": 8758,
+    "projected_annual": 105105
+  },
+  {
+    "service_id": "smart-system-platform-legal-e4ca43ab",
+    "service_name": "Smart System Platform - Legal",
+    "revenue_potential": 17.39821198611682,
+    "scaling_priority": "low",
+    "projected_monthly": 8699,
+    "projected_annual": 104389
+  },
+  {
+    "service_id": "autonomous-cognitive-system-hospitality-01d18f6e",
+    "service_name": "Autonomous Cognitive System - Hospitality",
+    "revenue_potential": 17.165869994764385,
+    "scaling_priority": "low",
+    "projected_monthly": 8582,
+    "projected_annual": 102995
+  },
+  {
+    "service_id": "predictive-finance-engine-healthcare-21d670d8",
+    "service_name": "Predictive Finance Engine - Healthcare",
+    "revenue_potential": 17.116115406875466,
+    "scaling_priority": "low",
+    "projected_monthly": 8558,
+    "projected_annual": 102696
+  },
+  {
+    "service_id": "cognitive-supply-solution-real-estate-989d6cfb",
+    "service_name": "Cognitive Supply Solution - Real-Estate",
+    "revenue_potential": 17.064147055612203,
+    "scaling_priority": "low",
+    "projected_monthly": 8532,
+    "projected_annual": 102384
+  },
+  {
+    "service_id": "adaptive-nlp-for-agriculture-4ee09d0b",
+    "service_name": "Adaptive NLP for Agriculture",
+    "revenue_potential": 17.0531662523338,
+    "scaling_priority": "low",
+    "projected_monthly": 8526,
+    "projected_annual": 102318
+  },
+  {
+    "service_id": "ai-process-mining-media-edition-c1e698fc",
+    "service_name": "AI Process Mining - Media Edition",
+    "revenue_potential": 16.973813883248372,
+    "scaling_priority": "low",
+    "projected_monthly": 8486,
+    "projected_annual": 101842
+  },
+  {
+    "service_id": "predictive-manufacturing-engine-manufacturing-0b44bebe",
+    "service_name": "Predictive Manufacturing Engine - Manufacturing",
+    "revenue_potential": 16.920628931737987,
+    "scaling_priority": "low",
+    "projected_monthly": 8460,
+    "projected_annual": 101523
+  },
+  {
+    "service_id": "intelligent-deep-learning-for-telecom-10987909",
+    "service_name": "Intelligent Deep Learning for Telecom",
+    "revenue_potential": 16.80705630879393,
+    "scaling_priority": "low",
+    "projected_monthly": 8403,
+    "projected_annual": 100842
+  },
+  {
+    "service_id": "predictive-intelligent-legal-622abaec",
+    "service_name": "Predictive Intelligent - Legal",
+    "revenue_potential": 16.778805072431688,
+    "scaling_priority": "low",
+    "projected_monthly": 8389,
+    "projected_annual": 100672
+  },
+  {
+    "service_id": "real-estate-intelligent-construction-e117f393",
+    "service_name": "Real Estate Intelligent - Construction",
+    "revenue_potential": 16.778138575190937,
+    "scaling_priority": "low",
+    "projected_monthly": 8389,
+    "projected_annual": 100668
+  },
+  {
+    "service_id": "autonomous-optimizer-system-tech-f390174c",
+    "service_name": "Autonomous Optimizer System - Tech",
+    "revenue_potential": 16.596943357644825,
+    "scaling_priority": "low",
+    "projected_monthly": 8298,
+    "projected_annual": 99581
+  },
+  {
+    "service_id": "intelligent-manufacturing-for-hospitality-e9fad6d4",
+    "service_name": "Intelligent Manufacturing for Hospitality",
+    "revenue_potential": 16.52565697705983,
+    "scaling_priority": "low",
+    "projected_monthly": 8262,
+    "projected_annual": 99153
+  },
+  {
+    "service_id": "predictive-director-automotive-19da2f93",
+    "service_name": "Predictive director-automotive",
+    "revenue_potential": 16.496786543756908,
+    "scaling_priority": "low",
+    "projected_monthly": 8248,
+    "projected_annual": 98980
+  },
+  {
+    "service_id": "smart-intelligent-platform-construction-55729c01",
+    "service_name": "Smart Intelligent Platform - Construction",
+    "revenue_potential": 16.42793319080682,
+    "scaling_priority": "low",
+    "projected_monthly": 8213,
+    "projected_annual": 98567
+  },
+  {
+    "service_id": "smart-real-estate-platform-sports-da8f66cd",
+    "service_name": "Smart Real Estate Platform - Sports",
+    "revenue_potential": 16.42693813310293,
+    "scaling_priority": "low",
+    "projected_monthly": 8213,
+    "projected_annual": 98561
+  },
+  {
+    "service_id": "predictive-business-intelligence-engine-hospitality-6a450dcb",
+    "service_name": "Predictive Business Intelligence Engine - Hospitality",
+    "revenue_potential": 16.362376537506265,
+    "scaling_priority": "low",
+    "projected_monthly": 8181,
+    "projected_annual": 98174
+  },
+  {
+    "service_id": "intelligent-quality-for-retail-e025e479",
+    "service_name": "Intelligent Quality for Retail",
+    "revenue_potential": 16.153073298157963,
+    "scaling_priority": "low",
+    "projected_monthly": 8076,
+    "projected_annual": 96918
+  },
+  {
+    "service_id": "automated-deep-learning-automotive-5cb81492",
+    "service_name": "Automated deep learning-automotive",
+    "revenue_potential": 16.04929673001714,
+    "scaling_priority": "low",
+    "projected_monthly": 8024,
+    "projected_annual": 96295
+  },
+  {
+    "service_id": "predictive-advisor-engine-education-f3fc1915",
+    "service_name": "Predictive Advisor Engine - Education",
+    "revenue_potential": 16.020634430196758,
+    "scaling_priority": "low",
+    "projected_monthly": 8010,
+    "projected_annual": 96123
+  },
+  {
+    "service_id": "cognitive-predictor-solution-energy-c131a405",
+    "service_name": "Cognitive Predictor Solution - Energy",
+    "revenue_potential": 15.931013769097277,
+    "scaling_priority": "low",
+    "projected_monthly": 7965,
+    "projected_annual": 95586
+  },
+  {
+    "service_id": "orchestrator-autonomous-manufacturing-ed9abeb3",
+    "service_name": "Orchestrator Autonomous - Manufacturing",
+    "revenue_potential": 15.8577452251669,
+    "scaling_priority": "low",
+    "projected_monthly": 7928,
+    "projected_annual": 95146
+  },
+  {
+    "service_id": "smart-compliance-platform-energy-a19c7c8f",
+    "service_name": "Smart Compliance Platform - Energy",
+    "revenue_potential": 15.855369482129309,
+    "scaling_priority": "low",
+    "projected_monthly": 7927,
+    "projected_annual": 95132
+  },
+  {
+    "service_id": "intelligent-optimization-for-agriculture-760f96ce",
+    "service_name": "Intelligent Optimization for Agriculture",
+    "revenue_potential": 15.670933923804458,
+    "scaling_priority": "low",
+    "projected_monthly": 7835,
+    "projected_annual": 94025
+  },
+  {
+    "service_id": "cognitive-intelligent-solution-hospitality-661ddc38",
+    "service_name": "Cognitive Intelligent Solution - Hospitality",
+    "revenue_potential": 15.65895280170726,
+    "scaling_priority": "low",
+    "projected_monthly": 7829,
+    "projected_annual": 93953
+  },
+  {
+    "service_id": "neural-sales-education-efb0551c",
+    "service_name": "Neural sales-education",
+    "revenue_potential": 15.62061408800856,
+    "scaling_priority": "low",
+    "projected_monthly": 7810,
+    "projected_annual": 93723
+  },
+  {
+    "service_id": "predictive-orchestrator-engine-automotive-d6ffb705",
+    "service_name": "Predictive Orchestrator Engine - Automotive",
+    "revenue_potential": 15.495686923204122,
+    "scaling_priority": "low",
+    "projected_monthly": 7747,
+    "projected_annual": 92974
+  },
+  {
+    "service_id": "self-optimizing-engine-for-energy-8ba92ef8",
+    "service_name": "Self-Optimizing Engine for Energy",
+    "revenue_potential": 15.42018820254771,
+    "scaling_priority": "low",
+    "projected_monthly": 7710,
+    "projected_annual": 92521
+  },
+  {
+    "service_id": "ai-platform-education-edition-d953c9b3",
+    "service_name": "AI Platform - Education Edition",
+    "revenue_potential": 15.380139959900022,
+    "scaling_priority": "low",
+    "projected_monthly": 7690,
+    "projected_annual": 92280
+  },
+  {
+    "service_id": "predictive-cloud-for-logistics-5839c403",
+    "service_name": "Predictive Cloud for Logistics",
+    "revenue_potential": 15.090453694181583,
+    "scaling_priority": "low",
+    "projected_monthly": 7545,
+    "projected_annual": 90542
+  },
+  {
+    "service_id": "cognitive-smart-solution-manufacturing-6d04e0ba",
+    "service_name": "Cognitive Smart Solution - Manufacturing",
+    "revenue_potential": 15.050332443469738,
+    "scaling_priority": "low",
+    "projected_monthly": 7525,
+    "projected_annual": 90301
+  },
+  {
+    "service_id": "intelligent-risk-for-insurance-c7d0216f",
+    "service_name": "Intelligent Risk for Insurance",
+    "revenue_potential": 14.990059320186342,
+    "scaling_priority": "low",
+    "projected_monthly": 7495,
+    "projected_annual": 89940
+  },
+  {
+    "service_id": "automated-expense-insights-e65e4065",
+    "service_name": "Automated Expense Insights",
+    "revenue_potential": 14.787549446163705,
+    "scaling_priority": "low",
+    "projected_monthly": 7393,
+    "projected_annual": 88725
+  },
+  {
+    "service_id": "neural-suite-transportation-eed553ca",
+    "service_name": "Neural suite-transportation",
+    "revenue_potential": 14.732463154611159,
+    "scaling_priority": "low",
+    "projected_monthly": 7366,
+    "projected_annual": 88394
+  },
+  {
+    "service_id": "predictive-manufacturing-engine-media-7b9c87db",
+    "service_name": "Predictive Manufacturing Engine - Media",
+    "revenue_potential": 14.728145387286535,
+    "scaling_priority": "low",
+    "projected_monthly": 7364,
+    "projected_annual": 88368
+  },
+  {
+    "service_id": "smart-data-science-platform-retail-b30a7597",
+    "service_name": "Smart Data Science Platform - Retail",
+    "revenue_potential": 14.712263662717104,
+    "scaling_priority": "low",
+    "projected_monthly": 7356,
+    "projected_annual": 88273
+  },
+  {
+    "service_id": "cognitive-security-solution-automotive-4ffa9953",
+    "service_name": "Cognitive Security Solution - Automotive",
+    "revenue_potential": 14.601014571901509,
+    "scaling_priority": "low",
+    "projected_monthly": 7300,
+    "projected_annual": 87606
+  },
+  {
+    "service_id": "cognitive-data-solution-hospitality-15847eee",
+    "service_name": "Cognitive Data Solution - Hospitality",
+    "revenue_potential": 14.438111557159553,
+    "scaling_priority": "low",
+    "projected_monthly": 7219,
+    "projected_annual": 86628
+  },
+  {
+    "service_id": "neural-social-smart-dd2a6dda",
+    "service_name": "Neural Social Smart",
+    "revenue_potential": 14.408198517322157,
+    "scaling_priority": "low",
+    "projected_monthly": 7204,
+    "projected_annual": 86449
+  },
+  {
+    "service_id": "ai-supply-hospitality-edition-1-805969ce",
+    "service_name": "AI Supply - Hospitality Edition #1",
+    "revenue_potential": 14.274186973168094,
+    "scaling_priority": "low",
+    "projected_monthly": 7137,
+    "projected_annual": 85645
+  },
+  {
+    "service_id": "autonomous-campaign-optimization-ef4758d6",
+    "service_name": "Autonomous Campaign Optimization",
+    "revenue_potential": 14.207089273410805,
+    "scaling_priority": "low",
+    "projected_monthly": 7103,
+    "projected_annual": 85242
+  },
+  {
+    "service_id": "cognitive-manufacturing-solution-energy-4607da7c",
+    "service_name": "Cognitive Manufacturing Solution - Energy",
+    "revenue_potential": 14.078721135497089,
+    "scaling_priority": "low",
+    "projected_monthly": 7039,
+    "projected_annual": 84472
+  },
+  {
+    "service_id": "predictive-platform-engine-real-estate-6ddd8f58",
+    "service_name": "Predictive Platform Engine - Real-Estate",
+    "revenue_potential": 13.947908643393806,
+    "scaling_priority": "low",
+    "projected_monthly": 6973,
+    "projected_annual": 83687
+  },
+  {
+    "service_id": "smart-support-for-tech-41af1ca4",
+    "service_name": "Smart Support for Tech",
+    "revenue_potential": 13.871569711856303,
+    "scaling_priority": "low",
+    "projected_monthly": 6935,
+    "projected_annual": 83229
+  },
+  {
+    "service_id": "predictive-recruitment-business-intelligence-d529d886",
+    "service_name": "Predictive Recruitment Business Intelligence",
+    "revenue_potential": 13.603801361045878,
+    "scaling_priority": "low",
+    "projected_monthly": 6801,
+    "projected_annual": 81622
+  },
+  {
+    "service_id": "ai-compliance-energy-edition-637e4379",
+    "service_name": "AI Compliance - Energy Edition",
+    "revenue_potential": 13.569948548150323,
+    "scaling_priority": "low",
+    "projected_monthly": 6784,
+    "projected_annual": 81419
+  },
+  {
+    "service_id": "ai-cognitive-manufacturing-edition-a7655470",
+    "service_name": "AI Cognitive - Manufacturing Edition",
+    "revenue_potential": 13.547516634229535,
+    "scaling_priority": "low",
+    "projected_monthly": 6773,
+    "projected_annual": 81285
+  },
+  {
+    "service_id": "nlp-automated-finance-fabe3c35",
+    "service_name": "NLP Automated - Finance",
+    "revenue_potential": 13.293609594393907,
+    "scaling_priority": "low",
+    "projected_monthly": 6646,
+    "projected_annual": 79761
+  },
+  {
+    "service_id": "smart-processor-platform-education-d950d698",
+    "service_name": "Smart Processor Platform - Education",
+    "revenue_potential": 13.234185438645069,
+    "scaling_priority": "low",
+    "projected_monthly": 6617,
+    "projected_annual": 79405
+  },
+  {
+    "service_id": "predictive-finance-engine-gaming-b54fa506",
+    "service_name": "Predictive Finance Engine - Gaming",
+    "revenue_potential": 13.233130760205524,
+    "scaling_priority": "low",
+    "projected_monthly": 6616,
+    "projected_annual": 79398
+  },
+  {
+    "service_id": "intelligent-automated-construction-59c5172a",
+    "service_name": "Intelligent Automated - Construction",
+    "revenue_potential": 13.12149817567959,
+    "scaling_priority": "low",
+    "projected_monthly": 6560,
+    "projected_annual": 78728
+  },
+  {
+    "service_id": "cognitive-cloud-sports-2c57986a",
+    "service_name": "Cognitive cloud-sports",
+    "revenue_potential": 13.033258984202897,
+    "scaling_priority": "low",
+    "projected_monthly": 6516,
+    "projected_annual": 78199
+  },
+  {
+    "service_id": "smart-recruitment-coordinator-ffc41502",
+    "service_name": "Smart Recruitment Coordinator",
+    "revenue_potential": 12.527081698305592,
+    "scaling_priority": "low",
+    "projected_monthly": 6263,
+    "projected_annual": 75162
+  },
+  {
+    "service_id": "adaptive-experience-for-construction-a5fdf530",
+    "service_name": "Adaptive Experience for Construction",
+    "revenue_potential": 12.388072851769156,
+    "scaling_priority": "low",
+    "projected_monthly": 6194,
+    "projected_annual": 74328
+  },
+  {
+    "service_id": "ai-processor-transportation-edition-73695007",
+    "service_name": "AI Processor - Transportation Edition",
+    "revenue_potential": 12.347154310358624,
+    "scaling_priority": "low",
+    "projected_monthly": 6173,
+    "projected_annual": 74082
+  },
+  {
+    "service_id": "ai-compliance-retail-edition-41c7ad53",
+    "service_name": "AI Compliance - Retail Edition",
+    "revenue_potential": 12.168034678777534,
+    "scaling_priority": "low",
+    "projected_monthly": 6084,
+    "projected_annual": 73008
+  },
+  {
+    "service_id": "autonomous-real-estate-for-telecom-4fd89e93",
+    "service_name": "Autonomous Real Estate for Telecom",
+    "revenue_potential": 12.123704745878616,
+    "scaling_priority": "low",
+    "projected_monthly": 6061,
+    "projected_annual": 72742
+  },
+  {
+    "service_id": "predictive-suite-engine-transportation-5489bc95",
+    "service_name": "Predictive Suite Engine - Transportation",
+    "revenue_potential": 12.088240488507363,
+    "scaling_priority": "low",
+    "projected_monthly": 6044,
+    "projected_annual": 72529
+  },
+  {
+    "service_id": "autonomous-security-system-agriculture-b599f868",
+    "service_name": "Autonomous Security System - Agriculture",
+    "revenue_potential": 11.985586501559474,
+    "scaling_priority": "low",
+    "projected_monthly": 5992,
+    "projected_annual": 71913
+  },
+  {
+    "service_id": "cognitive-analyzer-solution-sports-09663941",
+    "service_name": "Cognitive Analyzer Solution - Sports",
+    "revenue_potential": 11.731362529120378,
+    "scaling_priority": "low",
+    "projected_monthly": 5865,
+    "projected_annual": 70388
+  },
+  {
+    "service_id": "intelligent-data-for-agriculture-e8a3d45d",
+    "service_name": "Intelligent Data for Agriculture",
+    "revenue_potential": 11.621368498659104,
+    "scaling_priority": "low",
+    "projected_monthly": 5810,
+    "projected_annual": 69728
+  },
+  {
+    "service_id": "intelligent-engine-for-sports-26221259",
+    "service_name": "Intelligent Engine for Sports",
+    "revenue_potential": 11.6157985455988,
+    "scaling_priority": "low",
+    "projected_monthly": 5807,
+    "projected_annual": 69694
+  },
+  {
+    "service_id": "cognitive-security-for-education-f6c3d9bb",
+    "service_name": "Cognitive Security for Education",
+    "revenue_potential": 11.608426071424082,
+    "scaling_priority": "low",
+    "projected_monthly": 5804,
+    "projected_annual": 69650
+  },
+  {
+    "service_id": "intelligent-support-for-telecom-fc4965df",
+    "service_name": "Intelligent Support for Telecom",
+    "revenue_potential": 11.511125092592152,
+    "scaling_priority": "low",
+    "projected_monthly": 5755,
+    "projected_annual": 69066
+  },
+  {
+    "service_id": "support-automated-automotive-3cb47077",
+    "service_name": "Support Automated - Automotive",
+    "revenue_potential": 11.495839520851032,
+    "scaling_priority": "low",
+    "projected_monthly": 5747,
+    "projected_annual": 68975
+  },
+  {
+    "service_id": "intelligent-analyzer-for-telecom-19e760af",
+    "service_name": "Intelligent Analyzer for Telecom",
+    "revenue_potential": 11.392835835142824,
+    "scaling_priority": "low",
+    "projected_monthly": 5696,
+    "projected_annual": 68357
+  },
+  {
+    "service_id": "cognitive-performance-supply-def4d48c",
+    "service_name": "Cognitive Performance Supply",
+    "revenue_potential": 11.213969168402668,
+    "scaling_priority": "low",
+    "projected_monthly": 5606,
+    "projected_annual": 67283
+  },
+  {
+    "service_id": "predictive-machine-learning-construction-b051c674",
+    "service_name": "Predictive machine learning-construction",
+    "revenue_potential": 10.961382082790779,
+    "scaling_priority": "low",
+    "projected_monthly": 5480,
+    "projected_annual": 65768
+  },
+  {
+    "service_id": "predictive-optimizer-engine-legal-b06ef711",
+    "service_name": "Predictive Optimizer Engine - Legal",
+    "revenue_potential": 10.864859005134921,
+    "scaling_priority": "low",
+    "projected_monthly": 5432,
+    "projected_annual": 65189
+  },
+  {
+    "service_id": "smart-revenue-platform-legal-d41d889b",
+    "service_name": "Smart Revenue Platform - Legal",
+    "revenue_potential": 10.750267727766163,
+    "scaling_priority": "low",
+    "projected_monthly": 5375,
+    "projected_annual": 64501
+  },
+  {
+    "service_id": "manufacturing-predictive-healthcare-0b7db793",
+    "service_name": "Manufacturing Predictive - Healthcare",
+    "revenue_potential": 10.436028854980504,
+    "scaling_priority": "low",
+    "projected_monthly": 5218,
+    "projected_annual": 62616
+  },
+  {
+    "service_id": "smart-insights-platform-healthcare-e3d3780a",
+    "service_name": "Smart Insights Platform - Healthcare",
+    "revenue_potential": 10.367811091903754,
+    "scaling_priority": "low",
+    "projected_monthly": 5183,
+    "projected_annual": 62206
+  },
+  {
+    "service_id": "smart-code-computer-vision-a6f21df1",
+    "service_name": "Smart Code Computer Vision",
+    "revenue_potential": 10.319458722748664,
+    "scaling_priority": "low",
+    "projected_monthly": 5159,
+    "projected_annual": 61916
+  },
+  {
+    "service_id": "ai-quality-education-edition-856e0c79",
+    "service_name": "AI Quality - Education Edition",
+    "revenue_potential": 10.224008906303885,
+    "scaling_priority": "low",
+    "projected_monthly": 5112,
+    "projected_annual": 61344
+  },
+  {
+    "service_id": "ai-powered-automation-manufacturing-9b1ccdb2",
+    "service_name": "AI-Powered automation-manufacturing",
+    "revenue_potential": 9.858872572563776,
+    "scaling_priority": "low",
+    "projected_monthly": 4929,
+    "projected_annual": 59153
+  },
+  {
+    "service_id": "smart-analytics-platform-telecom-c3813cfa",
+    "service_name": "Smart Analytics Platform - Telecom",
+    "revenue_potential": 9.797369385362396,
+    "scaling_priority": "low",
+    "projected_monthly": 4898,
+    "projected_annual": 58784
+  },
+  {
+    "service_id": "adaptive-personalization-process-mining-00dc53cf",
+    "service_name": "Adaptive Personalization Process Mining",
+    "revenue_potential": 9.56855290028522,
+    "scaling_priority": "low",
+    "projected_monthly": 4784,
+    "projected_annual": 57411
+  },
+  {
+    "service_id": "system-autonomous-media-86ecdf98",
+    "service_name": "System Autonomous - Media",
+    "revenue_potential": 9.375105845547107,
+    "scaling_priority": "low",
+    "projected_monthly": 4687,
+    "projected_annual": 56250
+  },
+  {
+    "service_id": "adaptive-social-processor-2a2da440",
+    "service_name": "Adaptive Social Processor",
+    "revenue_potential": 9.291460178980286,
+    "scaling_priority": "low",
+    "projected_monthly": 4645,
+    "projected_annual": 55748
+  },
+  {
+    "service_id": "autonomous-cognitive-system-construction-ec545777",
+    "service_name": "Autonomous Cognitive System - Construction",
+    "revenue_potential": 9.062885657694972,
+    "scaling_priority": "low",
+    "projected_monthly": 4531,
+    "projected_annual": 54377
+  },
+  {
+    "service_id": "predictive-supply-engine-agriculture-7a57e857",
+    "service_name": "Predictive Supply Engine - Agriculture",
+    "revenue_potential": 8.92949043828137,
+    "scaling_priority": "low",
+    "projected_monthly": 4464,
+    "projected_annual": 53576
+  },
+  {
+    "service_id": "self-optimizing-automation-hospitality-d7222d47",
+    "service_name": "Self-Optimizing automation-hospitality",
+    "revenue_potential": 8.89590609146371,
+    "scaling_priority": "low",
+    "projected_monthly": 4447,
+    "projected_annual": 53375
+  },
+  {
+    "service_id": "ai-powered-manufacturing-manufacturing-16df46f4",
+    "service_name": "AI-Powered manufacturing-manufacturing",
+    "revenue_potential": 8.75668984592488,
+    "scaling_priority": "low",
+    "projected_monthly": 4378,
+    "projected_annual": 52540
+  },
+  {
+    "service_id": "autonomous-root-business-intelligence-83d30464",
+    "service_name": "Autonomous Root Business Intelligence",
+    "revenue_potential": 8.751919027396719,
+    "scaling_priority": "low",
+    "projected_monthly": 4375,
+    "projected_annual": 52511
+  },
+  {
+    "service_id": "ai-smart-automotive-8e8a90fb",
+    "service_name": "AI Smart - Automotive",
+    "revenue_potential": 8.6816953817708,
+    "scaling_priority": "low",
+    "projected_monthly": 4340,
+    "projected_annual": 52090
+  },
+  {
+    "service_id": "smart-quality-transportation-e7782948",
+    "service_name": "Smart quality-transportation",
+    "revenue_potential": 8.675984065189173,
+    "scaling_priority": "low",
+    "projected_monthly": 4337,
+    "projected_annual": 52055
+  },
+  {
+    "service_id": "autonomous-manufacturing-gaming-24dc4f79",
+    "service_name": "Autonomous manufacturing-gaming",
+    "revenue_potential": 8.635808964217148,
+    "scaling_priority": "low",
+    "projected_monthly": 4317,
+    "projected_annual": 51814
+  },
+  {
+    "service_id": "smart-intelligence-platform-manufacturing-27a99550",
+    "service_name": "Smart Intelligence Platform - Manufacturing",
+    "revenue_potential": 8.595756726274727,
+    "scaling_priority": "low",
+    "projected_monthly": 4297,
+    "projected_annual": 51574
+  },
+  {
+    "service_id": "autonomous-platform-system-sports-2284002f",
+    "service_name": "Autonomous Platform System - Sports",
+    "revenue_potential": 8.39836426687181,
+    "scaling_priority": "low",
+    "projected_monthly": 4199,
+    "projected_annual": 50390
+  },
+  {
+    "service_id": "cognitive-intelligence-solution-manufacturing-8171a833",
+    "service_name": "Cognitive Intelligence Solution - Manufacturing",
+    "revenue_potential": 8.238121402284271,
+    "scaling_priority": "low",
+    "projected_monthly": 4119,
+    "projected_annual": 49428
+  },
+  {
+    "service_id": "self-optimizing-disaster-customer-service-1a32b042",
+    "service_name": "Self-Optimizing Disaster Customer Service",
+    "revenue_potential": 8.017746339040627,
+    "scaling_priority": "low",
+    "projected_monthly": 4008,
+    "projected_annual": 48106
+  },
+  {
+    "service_id": "smart-neural-platform-agriculture-b4c8fd8a",
+    "service_name": "Smart Neural Platform - Agriculture",
+    "revenue_potential": 7.944988143637169,
+    "scaling_priority": "low",
+    "projected_monthly": 3972,
+    "projected_annual": 47669
+  },
+  {
+    "service_id": "smart-compliance-platform-transportation-e2a0e5d5",
+    "service_name": "Smart Compliance Platform - Transportation",
+    "revenue_potential": 7.869435058181745,
+    "scaling_priority": "low",
+    "projected_monthly": 3934,
+    "projected_annual": 47216
+  },
+  {
+    "service_id": "quality-cognitive-education-1089f6a9",
+    "service_name": "Quality Cognitive - Education",
+    "revenue_potential": 7.784338700212198,
+    "scaling_priority": "low",
+    "projected_monthly": 3892,
+    "projected_annual": 46706
+  },
+  {
+    "service_id": "smart-platform-platform-automotive-bf1ba443",
+    "service_name": "Smart Platform Platform - Automotive",
+    "revenue_potential": 7.768892157663042,
+    "scaling_priority": "low",
+    "projected_monthly": 3884,
+    "projected_annual": 46613
+  },
+  {
+    "service_id": "adaptive-financial-data-f921c9c2",
+    "service_name": "Adaptive Financial Data",
+    "revenue_potential": 7.71912945513397,
+    "scaling_priority": "low",
+    "projected_monthly": 3859,
+    "projected_annual": 46314
+  },
+  {
+    "service_id": "cognitive-platform-solution-telecom-c7200cbd",
+    "service_name": "Cognitive Platform Solution - Telecom",
+    "revenue_potential": 7.621845185281797,
+    "scaling_priority": "low",
+    "projected_monthly": 3810,
+    "projected_annual": 45731
+  },
+  {
+    "service_id": "ai-advisor-construction-edition-3c77ce58",
+    "service_name": "AI Advisor - Construction Edition",
+    "revenue_potential": 7.587009280578711,
+    "scaling_priority": "low",
+    "projected_monthly": 3793,
+    "projected_annual": 45522
+  },
+  {
+    "service_id": "predictive-smart-engine-hospitality-e2fe1aac",
+    "service_name": "Predictive Smart Engine - Hospitality",
+    "revenue_potential": 7.577313704151864,
+    "scaling_priority": "low",
+    "projected_monthly": 3788,
+    "projected_annual": 45463
+  },
+  {
+    "service_id": "predictive-ai-engine-healthcare-c1dc149f",
+    "service_name": "Predictive AI Engine - Healthcare",
+    "revenue_potential": 7.483422976707249,
+    "scaling_priority": "low",
+    "projected_monthly": 3741,
+    "projected_annual": 44900
+  },
+  {
+    "service_id": "ai-compliance-education-edition-ef69578c",
+    "service_name": "AI Compliance - Education Edition",
+    "revenue_potential": 7.127176884601316,
+    "scaling_priority": "low",
+    "projected_monthly": 3563,
+    "projected_annual": 42763
+  },
+  {
+    "service_id": "intelligent-business-intelligence-for-logistics-c5c9dc2e",
+    "service_name": "Intelligent Business Intelligence for Logistics",
+    "revenue_potential": 6.923028078520652,
+    "scaling_priority": "low",
+    "projected_monthly": 3461,
+    "projected_annual": 41538
+  },
+  {
+    "service_id": "ai-suite-tech-edition-e7ddd60f",
+    "service_name": "AI Suite - Tech Edition",
+    "revenue_potential": 6.83077202714697,
+    "scaling_priority": "low",
+    "projected_monthly": 3415,
+    "projected_annual": 40984
+  },
+  {
+    "service_id": "smart-manufacturing-platform-logistics-8fb64092",
+    "service_name": "Smart Manufacturing Platform - Logistics",
+    "revenue_potential": 6.793943462593304,
+    "scaling_priority": "low",
+    "projected_monthly": 3396,
+    "projected_annual": 40763
+  },
+  {
+    "service_id": "autonomous-cloud-system-sports-787f7219",
+    "service_name": "Autonomous Cloud System - Sports",
+    "revenue_potential": 6.746485517508773,
+    "scaling_priority": "low",
+    "projected_monthly": 3373,
+    "projected_annual": 40478
+  },
+  {
+    "service_id": "smart-generator-platform-agriculture-eb5e6c55",
+    "service_name": "Smart Generator Platform - Agriculture",
+    "revenue_potential": 6.628980418006046,
+    "scaling_priority": "low",
+    "projected_monthly": 3314,
+    "projected_annual": 39773
+  },
+  {
+    "service_id": "ai-process-mining-telecom-edition-31e290a0",
+    "service_name": "AI Process Mining - Telecom Edition",
+    "revenue_potential": 6.6196626008672474,
+    "scaling_priority": "low",
+    "projected_monthly": 3309,
+    "projected_annual": 39717
+  },
+  {
+    "service_id": "cognitive-devops-for-tech-13b40ca9",
+    "service_name": "Cognitive DevOps for Tech",
+    "revenue_potential": 6.591231228149115,
+    "scaling_priority": "low",
+    "projected_monthly": 3295,
+    "projected_annual": 39547
+  },
+  {
+    "service_id": "predictive-manufacturing-engine-agriculture-da3a04df",
+    "service_name": "Predictive Manufacturing Engine - Agriculture",
+    "revenue_potential": 6.541372470696055,
+    "scaling_priority": "low",
+    "projected_monthly": 3270,
+    "projected_annual": 39248
+  },
+  {
+    "service_id": "ai-security-hospitality-edition-7c006fca",
+    "service_name": "AI Security - Hospitality Edition",
+    "revenue_potential": 6.487624219462611,
+    "scaling_priority": "low",
+    "projected_monthly": 3243,
+    "projected_annual": 38925
+  },
+  {
+    "service_id": "smart-system-for-education-c39e72c3",
+    "service_name": "Smart System for Education",
+    "revenue_potential": 6.475336324094304,
+    "scaling_priority": "low",
+    "projected_monthly": 3237,
+    "projected_annual": 38852
+  },
+  {
+    "service_id": "ai-healthcare-legal-edition-570408c1",
+    "service_name": "AI Healthcare - Legal Edition",
+    "revenue_potential": 6.248246058052087,
+    "scaling_priority": "low",
+    "projected_monthly": 3124,
+    "projected_annual": 37489
+  },
+  {
+    "service_id": "cognitive-optimization-for-legal-c6298258",
+    "service_name": "Cognitive Optimization for Legal",
+    "revenue_potential": 5.926327051131473,
+    "scaling_priority": "low",
+    "projected_monthly": 2963,
+    "projected_annual": 35557
+  },
+  {
+    "service_id": "autonomous-manager-system-logistics-4986191f",
+    "service_name": "Autonomous Manager System - Logistics",
+    "revenue_potential": 5.86330530464202,
+    "scaling_priority": "low",
+    "projected_monthly": 2931,
+    "projected_annual": 35179
+  },
+  {
+    "service_id": "autonomous-optimizer-system-construction-c8e35458",
+    "service_name": "Autonomous Optimizer System - Construction",
+    "revenue_potential": 5.617758557433552,
+    "scaling_priority": "low",
+    "projected_monthly": 2808,
+    "projected_annual": 33706
+  },
+  {
+    "service_id": "autonomous-healthcare-system-transportation-da7aeb75",
+    "service_name": "Autonomous Healthcare System - Transportation",
+    "revenue_potential": 5.586587458719099,
+    "scaling_priority": "low",
+    "projected_monthly": 2793,
+    "projected_annual": 33519
+  },
+  {
+    "service_id": "adaptive-regulatory-machine-learning-47ddd43c",
+    "service_name": "Adaptive Regulatory Machine Learning",
+    "revenue_potential": 5.516665479952914,
+    "scaling_priority": "low",
+    "projected_monthly": 2758,
+    "projected_annual": 33099
+  },
+  {
+    "service_id": "self-optimizing-analytics-agriculture-5134b0d9",
+    "service_name": "Self-Optimizing analytics-agriculture",
+    "revenue_potential": 5.246824858665685,
+    "scaling_priority": "low",
+    "projected_monthly": 2623,
+    "projected_annual": 31480
+  },
+  {
+    "service_id": "predictive-optimizer-engine-healthcare-7f87c27a",
+    "service_name": "Predictive Optimizer Engine - Healthcare",
+    "revenue_potential": 5.216462240184222,
+    "scaling_priority": "low",
+    "projected_monthly": 2608,
+    "projected_annual": 31298
+  },
+  {
+    "service_id": "ai-experience-agriculture-edition-1a506e27",
+    "service_name": "AI Experience - Agriculture Edition",
+    "revenue_potential": 5.188729412402307,
+    "scaling_priority": "low",
+    "projected_monthly": 2594,
+    "projected_annual": 31132
+  },
+  {
+    "service_id": "predictive-predictive-engine-insurance-519c8594",
+    "service_name": "Predictive Predictive Engine - Insurance",
+    "revenue_potential": 5.181820527810953,
+    "scaling_priority": "low",
+    "projected_monthly": 2590,
+    "projected_annual": 31090
+  },
+  {
+    "service_id": "smart-neural-construction-cbdf10ac",
+    "service_name": "Smart neural-construction",
+    "revenue_potential": 5.151156403328582,
+    "scaling_priority": "low",
+    "projected_monthly": 2575,
+    "projected_annual": 30906
+  },
+  {
+    "service_id": "ai-cognitive-automotive-edition-ac77d121",
+    "service_name": "AI Cognitive - Automotive Edition",
+    "revenue_potential": 5.07963892961664,
+    "scaling_priority": "low",
+    "projected_monthly": 2539,
+    "projected_annual": 30477
+  },
+  {
+    "service_id": "optimization-self-optimizing-automotive-dd5659a2",
+    "service_name": "Optimization Self-Optimizing - Automotive",
+    "revenue_potential": 4.900386432035398,
+    "scaling_priority": "low",
+    "projected_monthly": 2450,
+    "projected_annual": 29402
+  },
+  {
+    "service_id": "autonomous-manager-healthcare-bc535da5",
+    "service_name": "Autonomous manager-healthcare",
+    "revenue_potential": 4.855423183370889,
+    "scaling_priority": "low",
+    "projected_monthly": 2427,
+    "projected_annual": 29132
+  },
+  {
+    "service_id": "predictive-system-for-gaming-9583d499",
+    "service_name": "Predictive System for Gaming",
+    "revenue_potential": 4.835265523851221,
+    "scaling_priority": "low",
+    "projected_monthly": 2417,
+    "projected_annual": 29011
+  },
+  {
+    "service_id": "predictive-risk-engine-tech-e9dca692",
+    "service_name": "Predictive Risk Engine - Tech",
+    "revenue_potential": 4.802784557150825,
+    "scaling_priority": "low",
+    "projected_monthly": 2401,
+    "projected_annual": 28816
+  },
+  {
+    "service_id": "ai-revenue-real-estate-edition-89ce09fc",
+    "service_name": "AI Revenue - Real-Estate Edition",
+    "revenue_potential": 4.693734285379666,
+    "scaling_priority": "low",
+    "projected_monthly": 2346,
+    "projected_annual": 28162
+  },
+  {
+    "service_id": "ai-risk-transportation-edition-c45de2c8",
+    "service_name": "AI Risk - Transportation Edition",
+    "revenue_potential": 4.596301826849804,
+    "scaling_priority": "low",
+    "projected_monthly": 2298,
+    "projected_annual": 27577
+  },
+  {
+    "service_id": "smart-ai-platform-manufacturing-066a8ec8",
+    "service_name": "Smart AI Platform - Manufacturing",
+    "revenue_potential": 4.57307168808817,
+    "scaling_priority": "low",
+    "projected_monthly": 2286,
+    "projected_annual": 27438
+  },
+  {
+    "service_id": "smart-data-science-platform-telecom-2e29b44b",
+    "service_name": "Smart Data Science Platform - Telecom",
+    "revenue_potential": 4.526261144325682,
+    "scaling_priority": "low",
+    "projected_monthly": 2263,
+    "projected_annual": 27157
+  },
+  {
+    "service_id": "ai-powered-testing-devops-c5360b72",
+    "service_name": "AI-Powered Testing DevOps",
+    "revenue_potential": 4.467204372439346,
+    "scaling_priority": "low",
+    "projected_monthly": 2233,
+    "projected_annual": 26803
+  },
+  {
+    "service_id": "smart-orchestrator-platform-tech-eae62705",
+    "service_name": "Smart Orchestrator Platform - Tech",
+    "revenue_potential": 4.405231504841841,
+    "scaling_priority": "low",
+    "projected_monthly": 2202,
+    "projected_annual": 26431
+  },
+  {
+    "service_id": "ai-security-healthcare-edition-77b1475f",
+    "service_name": "AI Security - Healthcare Edition",
+    "revenue_potential": 4.340954144725408,
+    "scaling_priority": "low",
+    "projected_monthly": 2170,
+    "projected_annual": 26045
+  },
+  {
+    "service_id": "smart-engine-platform-legal-209cd27f",
+    "service_name": "Smart Engine Platform - Legal",
+    "revenue_potential": 4.306786207810899,
+    "scaling_priority": "low",
+    "projected_monthly": 2153,
+    "projected_annual": 25840
+  },
+  {
+    "service_id": "ai-advisor-retail-edition-b6a545e3",
+    "service_name": "AI Advisor - Retail Edition",
+    "revenue_potential": 4.258208121214395,
+    "scaling_priority": "low",
+    "projected_monthly": 2129,
+    "projected_annual": 25549
+  },
+  {
+    "service_id": "smart-supply-platform-media-1d776632",
+    "service_name": "Smart Supply Platform - Media",
+    "revenue_potential": 4.252204123288614,
+    "scaling_priority": "low",
+    "projected_monthly": 2126,
+    "projected_annual": 25513
+  },
+  {
+    "service_id": "automated-coordinator-for-energy-6c01c96e",
+    "service_name": "Automated Coordinator for Energy",
+    "revenue_potential": 4.186492278994422,
+    "scaling_priority": "low",
+    "projected_monthly": 2093,
+    "projected_annual": 25118
+  },
+  {
+    "service_id": "autonomous-sales-system-automotive-1-afce6f77",
+    "service_name": "Autonomous Sales System - Automotive #1",
+    "revenue_potential": 4.112672986219528,
+    "scaling_priority": "low",
+    "projected_monthly": 2056,
+    "projected_annual": 24676
+  },
+  {
+    "service_id": "intelligent-generator-for-tech-fb503442",
+    "service_name": "Intelligent Generator for Tech",
+    "revenue_potential": 4.041965154225109,
+    "scaling_priority": "low",
+    "projected_monthly": 2020,
+    "projected_annual": 24251
+  },
+  {
+    "service_id": "smart-customer-service-automotive-2f89eefa",
+    "service_name": "Smart customer service-automotive",
+    "revenue_potential": 3.8093211745556936,
+    "scaling_priority": "low",
+    "projected_monthly": 1904,
+    "projected_annual": 22855
+  },
+  {
+    "service_id": "adaptive-computer-vision-for-transportation-4db5479b",
+    "service_name": "Adaptive Computer Vision for Transportation",
+    "revenue_potential": 3.73604919648345,
+    "scaling_priority": "low",
+    "projected_monthly": 1868,
+    "projected_annual": 22416
+  },
+  {
+    "service_id": "smart-monitoring-platform-healthcare-ddde89d2",
+    "service_name": "Smart Monitoring Platform - Healthcare",
+    "revenue_potential": 3.2211218966547195,
+    "scaling_priority": "low",
+    "projected_monthly": 1610,
+    "projected_annual": 19326
+  },
+  {
+    "service_id": "automated-healthcare-legal-f0d9b60d",
+    "service_name": "Automated healthcare-legal",
+    "revenue_potential": 3.178198895901105,
+    "scaling_priority": "low",
+    "projected_monthly": 1589,
+    "projected_annual": 19069
+  },
+  {
+    "service_id": "cognitive-ai-solution-transportation-1d63869c",
+    "service_name": "Cognitive AI Solution - Transportation",
+    "revenue_potential": 3.0249870255540117,
+    "scaling_priority": "low",
+    "projected_monthly": 1512,
+    "projected_annual": 18149
+  },
+  {
+    "service_id": "smart-customer-service-platform-automotive-9d5d01e3",
+    "service_name": "Smart Customer Service Platform - Automotive",
+    "revenue_potential": 2.771916652536061,
+    "scaling_priority": "low",
+    "projected_monthly": 1385,
+    "projected_annual": 16631
+  },
+  {
+    "service_id": "cognitive-performance-finance-085857bd",
+    "service_name": "Cognitive performance-finance",
+    "revenue_potential": 2.6264436454389637,
+    "scaling_priority": "low",
+    "projected_monthly": 1313,
+    "projected_annual": 15758
+  },
+  {
+    "service_id": "autonomous-customer-service-system-automotive-5a5ce868",
+    "service_name": "Autonomous Customer Service System - Automotive",
+    "revenue_potential": 2.5273495397142263,
+    "scaling_priority": "low",
+    "projected_monthly": 1263,
+    "projected_annual": 15164
+  },
+  {
+    "service_id": "cognitive-real-estate-solution-telecom-1-ac02a823",
+    "service_name": "Cognitive Real Estate Solution - Telecom #1",
+    "revenue_potential": 2.526755231925497,
+    "scaling_priority": "low",
+    "projected_monthly": 1263,
+    "projected_annual": 15160
+  },
+  {
+    "service_id": "predictive-security-engine-real-estate-2c07f215",
+    "service_name": "Predictive Security Engine - Real-Estate",
+    "revenue_potential": 2.11008810418202,
+    "scaling_priority": "low",
+    "projected_monthly": 1055,
+    "projected_annual": 12660
+  },
+  {
+    "service_id": "ai-powered-support-for-logistics-02cae2ed",
+    "service_name": "AI-Powered Support for Logistics",
+    "revenue_potential": 2.0762302523987692,
+    "scaling_priority": "low",
+    "projected_monthly": 1038,
+    "projected_annual": 12457
+  },
+  {
+    "service_id": "marketing-neural-hospitality-2e4239ed",
+    "service_name": "Marketing Neural - Hospitality",
+    "revenue_potential": 1.9093042418780737,
+    "scaling_priority": "low",
+    "projected_monthly": 954,
+    "projected_annual": 11455
+  },
+  {
+    "service_id": "adaptive-recommendation-smart-2769c598",
+    "service_name": "Adaptive Recommendation Smart",
+    "revenue_potential": 1.0287128601141933,
+    "scaling_priority": "low",
+    "projected_monthly": 514,
+    "projected_annual": 6172
+  },
+  {
+    "service_id": "cognitive-predictor-solution-finance-f53c1fb2",
+    "service_name": "Cognitive Predictor Solution - Finance",
+    "revenue_potential": 0.941956610802202,
+    "scaling_priority": "low",
+    "projected_monthly": 470,
+    "projected_annual": 5651
+  },
+  {
+    "service_id": "autonomous-management-system-energy-9e7476f2",
+    "service_name": "Autonomous Management System - Energy",
+    "revenue_potential": 0.8405689243494928,
+    "scaling_priority": "low",
+    "projected_monthly": 420,
+    "projected_annual": 5043
+  },
+  {
+    "service_id": "cognitive-finance-solution-automotive-80671ac7",
+    "service_name": "Cognitive Finance Solution - Automotive",
+    "revenue_potential": 0.8390177075310961,
+    "scaling_priority": "low",
+    "projected_monthly": 419,
+    "projected_annual": 5034
+  },
+  {
+    "service_id": "cognitive-generator-for-media-b14b6d13",
+    "service_name": "Cognitive Generator for Media",
+    "revenue_potential": 0.7457343960024785,
+    "scaling_priority": "low",
+    "projected_monthly": 372,
+    "projected_annual": 4474
+  },
+  {
+    "service_id": "autonomous-devops-system-logistics-a71daa48",
+    "service_name": "Autonomous DevOps System - Logistics",
+    "revenue_potential": 0.7313345131282225,
+    "scaling_priority": "low",
+    "projected_monthly": 365,
+    "projected_annual": 4388
+  },
+  {
+    "service_id": "cognitive-experience-solution-media-75b35763",
+    "service_name": "Cognitive Experience Solution - Media",
+    "revenue_potential": 0.6930839017951628,
+    "scaling_priority": "low",
+    "projected_monthly": 346,
+    "projected_annual": 4158
+  },
+  {
+    "service_id": "cognitive-devops-solution-real-estate-6f88963f",
+    "service_name": "Cognitive DevOps Solution - Real-Estate",
+    "revenue_potential": 0.6828734934228007,
+    "scaling_priority": "low",
+    "projected_monthly": 341,
+    "projected_annual": 4097
+  },
+  {
+    "service_id": "intelligent-business-intelligence-for-logistics-1-7a91d89a",
+    "service_name": "Intelligent Business Intelligence for Logistics #1",
+    "revenue_potential": 0.6754134705556103,
+    "scaling_priority": "low",
+    "projected_monthly": 337,
+    "projected_annual": 4052
+  },
+  {
+    "service_id": "neural-access-risk-78b7f8d7",
+    "service_name": "Neural Access Risk",
+    "revenue_potential": 0.5949691904103963,
+    "scaling_priority": "low",
+    "projected_monthly": 297,
+    "projected_annual": 3569
+  },
+  {
+    "service_id": "predictive-devops-engine-automotive-6c84cd70",
+    "service_name": "Predictive DevOps Engine - Automotive",
+    "revenue_potential": 0.5721655950929527,
+    "scaling_priority": "low",
+    "projected_monthly": 286,
+    "projected_annual": 3432
+  },
+  {
+    "service_id": "autonomous-monitoring-system-insurance-a893becd",
+    "service_name": "Autonomous Monitoring System - Insurance",
+    "revenue_potential": 0.2779841685291405,
+    "scaling_priority": "low",
+    "projected_monthly": 138,
+    "projected_annual": 1667
+  },
+  {
+    "service_id": "adaptive-process-analyzer-d52befe5",
+    "service_name": "Adaptive Process Analyzer",
+    "revenue_potential": 0.08931674936444711,
+    "scaling_priority": "low",
+    "projected_monthly": 44,
+    "projected_annual": 535
+  }
+]

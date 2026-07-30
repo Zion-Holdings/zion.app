@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-processor-transportation-edition-73695007",
+  "service_name": "AI Processor - Transportation Edition",
+  "industry": "transportation",
+  "lead_magnet": "Fleet Efficiency Optimization Report",
+  "metrics": {
+    "improvement": "48%",
+    "savings": "$11.9M",
+    "timeframe": "6 months",
+    "similar": "TransitCorp"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve transportation. Our AI platform helped TransitCorp achieve 48% improvement in 6 months. Quick 5-minute call?",
+      "sequence_id": "seq-51",
+      "service_id": "ai-processor-transportation-edition-73695007"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the AI Processor - Transportation Edition typically saves $11.9M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-51",
+      "service_id": "ai-processor-transportation-edition-73695007"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 48% results. If not interested, just let me know!",
+      "sequence_id": "seq-51",
+      "service_id": "ai-processor-transportation-edition-73695007"
+    }
+  ],
+  "hot_lead_score": 82,
+  "conversion_likelihood": "42%",
+  "timestamp": "2026-07-30T06:47:20.665413+00:00"
+}

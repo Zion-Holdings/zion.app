@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Analytics for Healthcare - Zion Tech Group",
-  description: "The future of healthcare is here with Automated Analytics for Healthcare. Powered by cutting-edge AI, this platform delivers risk assessment like never before.",
+  description: "Transform your healthcare operations with our Automated Analytics for Healthcare. This AI-driven solution automates decision support with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-analytics-for-healthcare-018319b5`
   }
@@ -13,27 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated Analytics for Healthcare</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of healthcare is here with Automated Analytics for Healthcare. Powered by cutting-edge AI, this platform delivers risk assessment like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your healthcare operations with our Automated Analytics for Healthcare. This AI-driven solution automates decision support with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Network optimization with traffic analysis</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>HIPAA ready with healthcare data protection</li>
+            <li>GDPR compliance with data portability</li>
+            <li>Language processing with sentiment analysis</li>
             <li>Customer service automation with chatbot integration</li>
-            <li>Code optimization with performance profiling</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>Security monitoring with threat intelligence</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>50% reduction in operational costs through automation</li>
-            <li>Scalable to millions of transactions per second</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Real-time insights and alerts for proactive management</li>
             <li>ROI achieved in under 90 days with cost savings</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Better compliance with automated audit trails</li>
           </ul>
         </div>
         

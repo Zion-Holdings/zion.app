@@ -1,0 +1,35 @@
+{
+  "service_id": "neural-experience-for-media-c2d56b26",
+  "service_name": "Neural Experience for Media",
+  "industry": "media",
+  "lead_magnet": "Content Performance Optimization Guide",
+  "metrics": {
+    "improvement": "43%",
+    "savings": "$6.8M",
+    "timeframe": "9 months",
+    "similar": "MediaHouse"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, MediaHouse just implemented Neural Experience for Media last month - 43% improvement already. Thoughts?",
+      "sequence_id": "seq-53",
+      "service_id": "neural-experience-for-media-c2d56b26"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: MediaHouse saw $6.8M in savings. Your media peers are seeing similar results.",
+      "sequence_id": "seq-53",
+      "service_id": "neural-experience-for-media-c2d56b26"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-53",
+      "service_id": "neural-experience-for-media-c2d56b26"
+    }
+  ],
+  "hot_lead_score": 86,
+  "conversion_likelihood": "57%",
+  "timestamp": "2026-07-30T06:42:13.023656+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-smart-for-tech-18c116ba",
+  "service_name": "Intelligent Smart for Tech",
+  "industry": "technology",
+  "lead_magnet": "AI Cost Calculator - See Your Potential Savings",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TechStart Inc. is closing their Q3 deals this week. Want to see how Intelligent Smart for Tech can help {company} save $18.4M?",
+      "sequence_id": "seq-69",
+      "service_id": "intelligent-smart-for-tech-18c116ba"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Intelligent Smart for Tech delivers 52% in 6 months.",
+      "sequence_id": "seq-69",
+      "service_id": "intelligent-smart-for-tech-18c116ba"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-69",
+      "service_id": "intelligent-smart-for-tech-18c116ba"
+    }
+  ],
+  "hot_lead_score": 86,
+  "conversion_likelihood": "70%",
+  "timestamp": "2026-07-30T06:47:20.668409+00:00"
+}

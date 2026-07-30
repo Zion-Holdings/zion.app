@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Generator Autonomous - Transportation - Zion Tech Group",
-  description: "Unlock unprecedented growth with Generator Autonomous - Transportation. This autonomous system provides financial planning with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Generator Autonomous - Transportation. This autonomous system provides threat detection with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/generator-autonomous---transportation-be5b1c3b`
   }
@@ -13,25 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Generator Autonomous - Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Generator Autonomous - Transportation. This autonomous system provides financial planning with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Generator Autonomous - Transportation. This autonomous system provides threat detection with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Multi-region deployment with automatic failover</li>
+            <li>Multi-language support with localization</li>
             <li>Healthcare data analytics with patient insights</li>
-            <li>Role-based access control with SSO integration</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Fraud detection with anomaly analysis</li>
-            <li>Code optimization with performance profiling</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Energy optimization with consumption tracking</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Seamless integration with existing systems and workflows</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
             <li>50% reduction in operational costs through automation</li>
-            <li>Improved quality with automated testing and validation</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Seamless integration with existing systems and workflows</li>
+            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Platform for Education - Zion Tech Group",
-  description: "Next-generation education solution: Intelligent Platform for Education. Combines process automation with adaptive intelligence for optimal results.",
+  description: "Revolutionize education through intelligent automation. Our Intelligent Platform for Education leverages advanced machine learning to deliver risk assessment at",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-platform-for-education-27cdc1db`
   }
@@ -13,25 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Platform for Education</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation education solution: Intelligent Platform for Education. Combines process automation with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize education through intelligent automation. Our Intelligent Platform for Education leverages advanced machine learning to deliver risk assessment at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Image recognition with computer vision</li>
-            <li>Microservices deployment with container orchestration</li>
-            <li>Open-source friendly with plugin architecture</li>
+            <li>Custom integrations with webhook support</li>
             <li>Healthcare data analytics with patient insights</li>
-            <li>Fraud detection with anomaly analysis</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Microservices deployment with container orchestration</li>
+            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>50% reduction in operational costs through automation</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Seamless integration with existing systems and workflows</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

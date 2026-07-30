@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-powered-intelligence-for-sports-e319e172",
+  "service_name": "AI-Powered Intelligence for Sports",
+  "industry": "sports",
+  "lead_magnet": "Fan Engagement Growth Framework",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$8.9M",
+    "timeframe": "4 months",
+    "similar": "SportsTeam"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows sports companies using AI-Powered Intelligence for Sports see 55% improvement. Your current process?",
+      "sequence_id": "seq-40",
+      "service_id": "ai-powered-intelligence-for-sports-e319e172"
+    },
+    {
+      "step": 2,
+      "message": "Based on your sports profile, AI-Powered Intelligence for Sports could save {company} approximately $8.9M. Interested in details?",
+      "sequence_id": "seq-40",
+      "service_id": "ai-powered-intelligence-for-sports-e319e172"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. AI-Powered Intelligence for Sports is proven to deliver 55% results.",
+      "sequence_id": "seq-40",
+      "service_id": "ai-powered-intelligence-for-sports-e319e172"
+    }
+  ],
+  "hot_lead_score": 71,
+  "conversion_likelihood": "71%",
+  "timestamp": "2026-07-30T06:42:13.019059+00:00"
+}

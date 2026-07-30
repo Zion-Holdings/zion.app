@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Intelligence for Hospitality - Zion Tech Group",
-  description: "Transform your hospitality operations with our Autonomous Intelligence for Hospitality. This AI-driven solution automates customer insights with unprecedented a",
+  description: "The future of hospitality is here with Autonomous Intelligence for Hospitality. Powered by cutting-edge AI, this platform delivers financial risk management lik",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-intelligence-for-hospitality-76537a42`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Autonomous Intelligence for Hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your hospitality operations with our Autonomous Intelligence for Hospitality. This AI-driven solution automates customer insights with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of hospitality is here with Autonomous Intelligence for Hospitality. Powered by cutting-edge AI, this platform delivers financial risk management like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Edge computing support for low-latency operations</li>
-            <li>A/B testing framework for continuous optimization</li>
-            <li>Data encryption at rest and in transit</li>
-            <li>Serverless functions for cost-effective scaling</li>
-            <li>SOC 2 certified with security controls</li>
+            <li>Microservices deployment with container orchestration</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Language processing with sentiment analysis</li>
+            <li>GDPR compliance with data portability</li>
+            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>3x faster decision making with real-time insights</li>
+            <li>Seamless integration with existing systems and workflows</li>
             <li>Improved customer satisfaction with faster response times</li>
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

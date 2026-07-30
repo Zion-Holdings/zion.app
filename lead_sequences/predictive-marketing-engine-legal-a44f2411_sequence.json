@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-marketing-engine-legal-a44f2411",
+  "service_name": "Predictive Marketing Engine - Legal",
+  "industry": "legal",
+  "lead_magnet": "Document Review Automation Checklist",
+  "metrics": {
+    "improvement": "39%",
+    "savings": "$3.1M",
+    "timeframe": "14 months",
+    "similar": "LawFirm"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, LawFirm is closing their Q3 deals this week. Want to see how Predictive Marketing Engine - Legal can help {company} save $3.1M?",
+      "sequence_id": "seq-79",
+      "service_id": "predictive-marketing-engine-legal-a44f2411"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Predictive Marketing Engine - Legal delivers 39% in 14 months.",
+      "sequence_id": "seq-79",
+      "service_id": "predictive-marketing-engine-legal-a44f2411"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-79",
+      "service_id": "predictive-marketing-engine-legal-a44f2411"
+    }
+  ],
+  "hot_lead_score": 73,
+  "conversion_likelihood": "40%",
+  "timestamp": "2026-07-30T06:32:49.820812+00:00"
+}

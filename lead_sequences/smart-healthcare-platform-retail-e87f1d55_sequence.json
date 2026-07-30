@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-healthcare-platform-retail-e87f1d55",
+  "service_name": "Smart Healthcare Platform - Retail",
+  "industry": "retail",
+  "lead_magnet": "Customer Retention Playbook",
+  "metrics": {
+    "improvement": "44%",
+    "savings": "$9.3M",
+    "timeframe": "7 months",
+    "similar": "RetailPro"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows retail companies using Smart Healthcare Platform - Retail see 44% improvement. Your current process?",
+      "sequence_id": "seq-90",
+      "service_id": "smart-healthcare-platform-retail-e87f1d55"
+    },
+    {
+      "step": 2,
+      "message": "Based on your retail profile, Smart Healthcare Platform - Retail could save {company} approximately $9.3M. Interested in details?",
+      "sequence_id": "seq-90",
+      "service_id": "smart-healthcare-platform-retail-e87f1d55"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Smart Healthcare Platform - Retail is proven to deliver 44% results.",
+      "sequence_id": "seq-90",
+      "service_id": "smart-healthcare-platform-retail-e87f1d55"
+    }
+  ],
+  "hot_lead_score": 89,
+  "conversion_likelihood": "72%",
+  "timestamp": "2026-07-30T06:32:49.825439+00:00"
+}

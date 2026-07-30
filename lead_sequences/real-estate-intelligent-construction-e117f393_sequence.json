@@ -1,0 +1,35 @@
+{
+  "service_id": "real-estate-intelligent-construction-e117f393",
+  "service_name": "Real Estate Intelligent - Construction",
+  "industry": "construction",
+  "lead_magnet": "Project Delivery Acceleration Guide",
+  "metrics": {
+    "improvement": "45%",
+    "savings": "$8.7M",
+    "timeframe": "8 months",
+    "similar": "BuildCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, BuildCo just implemented Real Estate Intelligent - Construction last month - 45% improvement already. Thoughts?",
+      "sequence_id": "seq-88",
+      "service_id": "real-estate-intelligent-construction-e117f393"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: BuildCo saw $8.7M in savings. Your construction peers are seeing similar results.",
+      "sequence_id": "seq-88",
+      "service_id": "real-estate-intelligent-construction-e117f393"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-88",
+      "service_id": "real-estate-intelligent-construction-e117f393"
+    }
+  ],
+  "hot_lead_score": 90,
+  "conversion_likelihood": "58%",
+  "timestamp": "2026-07-30T06:47:20.671893+00:00"
+}

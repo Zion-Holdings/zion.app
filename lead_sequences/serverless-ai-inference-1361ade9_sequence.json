@@ -1,0 +1,35 @@
+{
+  "service_id": "serverless-ai-inference-1361ade9",
+  "service_name": "Serverless AI Inference",
+  "industry": "AI Inference",
+  "lead_magnet": "AI Solutions Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve AI Inference. Our AI platform helped TechStart Inc. achieve 52% improvement in 6 months. Quick 5-minute call?",
+      "sequence_id": "seq-41",
+      "service_id": "serverless-ai-inference-1361ade9"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Serverless AI Inference typically saves $18.4M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-41",
+      "service_id": "serverless-ai-inference-1361ade9"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 52% results. If not interested, just let me know!",
+      "sequence_id": "seq-41",
+      "service_id": "serverless-ai-inference-1361ade9"
+    }
+  ],
+  "hot_lead_score": 81,
+  "conversion_likelihood": "49%",
+  "timestamp": "2026-07-30T06:38:30.260489+00:00"
+}

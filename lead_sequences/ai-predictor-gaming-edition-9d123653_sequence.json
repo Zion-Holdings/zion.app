@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-predictor-gaming-edition-9d123653",
+  "service_name": "AI Predictor - Gaming Edition",
+  "industry": "gaming",
+  "lead_magnet": "Player Retention Strategy Playbook",
+  "metrics": {
+    "improvement": "57%",
+    "savings": "$10.3M",
+    "timeframe": "5 months",
+    "similar": "GameStudio"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with gaming sales?",
+      "sequence_id": "seq-97",
+      "service_id": "ai-predictor-gaming-edition-9d123653"
+    },
+    {
+      "step": 2,
+      "message": "We've helped GameStudio solve this exact problem with AI Predictor - Gaming Edition. Achieved 57% in 5 months.",
+      "sequence_id": "seq-97",
+      "service_id": "ai-predictor-gaming-edition-9d123653"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-97",
+      "service_id": "ai-predictor-gaming-edition-9d123653"
+    }
+  ],
+  "hot_lead_score": 80,
+  "conversion_likelihood": "52%",
+  "timestamp": "2026-07-30T06:47:20.673675+00:00"
+}

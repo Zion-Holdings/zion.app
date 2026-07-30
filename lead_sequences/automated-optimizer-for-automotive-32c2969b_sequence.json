@@ -1,0 +1,35 @@
+{
+  "service_id": "automated-optimizer-for-automotive-32c2969b",
+  "service_name": "Automated Optimizer for Automotive",
+  "industry": "automotive",
+  "lead_magnet": "Supply Chain Efficiency Audit",
+  "metrics": {
+    "improvement": "50%",
+    "savings": "$14.1M",
+    "timeframe": "6 months",
+    "similar": "AutoMakers"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with automotive neural?",
+      "sequence_id": "seq-97",
+      "service_id": "automated-optimizer-for-automotive-32c2969b"
+    },
+    {
+      "step": 2,
+      "message": "We've helped AutoMakers solve this exact problem with Automated Optimizer for Automotive. Achieved 50% in 6 months.",
+      "sequence_id": "seq-97",
+      "service_id": "automated-optimizer-for-automotive-32c2969b"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-97",
+      "service_id": "automated-optimizer-for-automotive-32c2969b"
+    }
+  ],
+  "hot_lead_score": 81,
+  "conversion_likelihood": "40%",
+  "timestamp": "2026-07-30T06:32:49.827891+00:00"
+}

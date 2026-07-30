@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-neural-platform-real-estate-2f313e78",
+  "service_name": "Smart Neural Platform - Real-Estate",
+  "industry": "real-estate",
+  "lead_magnet": "Property Management Automation Guide",
+  "metrics": {
+    "improvement": "46%",
+    "savings": "$13.4M",
+    "timeframe": "7 months",
+    "similar": "PropertyGroup"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with real-estate business intelligence?",
+      "sequence_id": "seq-17",
+      "service_id": "smart-neural-platform-real-estate-2f313e78"
+    },
+    {
+      "step": 2,
+      "message": "We've helped PropertyGroup solve this exact problem with Smart Neural Platform - Real-Estate. Achieved 46% in 7 months.",
+      "sequence_id": "seq-17",
+      "service_id": "smart-neural-platform-real-estate-2f313e78"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-17",
+      "service_id": "smart-neural-platform-real-estate-2f313e78"
+    }
+  ],
+  "hot_lead_score": 88,
+  "conversion_likelihood": "69%",
+  "timestamp": "2026-07-30T06:47:20.657923+00:00"
+}

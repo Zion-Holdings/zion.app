@@ -1,0 +1,35 @@
+{
+  "service_id": "automated-coordinator-for-energy-6c01c96e",
+  "service_name": "Automated Coordinator for Energy",
+  "industry": "energy",
+  "lead_magnet": "Energy Savings Calculator",
+  "metrics": {
+    "improvement": "48%",
+    "savings": "$16.5M",
+    "timeframe": "8 months",
+    "similar": "EnergyCorp"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, EnergyCorp is closing their Q3 deals this week. Want to see how Automated Coordinator for Energy can help {company} save $16.5M?",
+      "sequence_id": "seq-99",
+      "service_id": "automated-coordinator-for-energy-6c01c96e"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Automated Coordinator for Energy delivers 48% in 8 months.",
+      "sequence_id": "seq-99",
+      "service_id": "automated-coordinator-for-energy-6c01c96e"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-99",
+      "service_id": "automated-coordinator-for-energy-6c01c96e"
+    }
+  ],
+  "hot_lead_score": 93,
+  "conversion_likelihood": "66%",
+  "timestamp": "2026-07-30T06:47:20.673876+00:00"
+}

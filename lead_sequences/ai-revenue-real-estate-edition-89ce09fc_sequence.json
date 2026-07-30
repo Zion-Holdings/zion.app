@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-revenue-real-estate-edition-89ce09fc",
+  "service_name": "AI Revenue - Real-Estate Edition",
+  "industry": "real-estate",
+  "lead_magnet": "Property Management Automation Guide",
+  "metrics": {
+    "improvement": "46%",
+    "savings": "$13.4M",
+    "timeframe": "7 months",
+    "similar": "PropertyGroup"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows real-estate companies using AI Revenue - Real-Estate Edition see 46% improvement. Your current process?",
+      "sequence_id": "seq-85",
+      "service_id": "ai-revenue-real-estate-edition-89ce09fc"
+    },
+    {
+      "step": 2,
+      "message": "Based on your real-estate profile, AI Revenue - Real-Estate Edition could save {company} approximately $13.4M. Interested in details?",
+      "sequence_id": "seq-85",
+      "service_id": "ai-revenue-real-estate-edition-89ce09fc"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. AI Revenue - Real-Estate Edition is proven to deliver 46% results.",
+      "sequence_id": "seq-85",
+      "service_id": "ai-revenue-real-estate-edition-89ce09fc"
+    }
+  ],
+  "hot_lead_score": 65,
+  "conversion_likelihood": "70%",
+  "timestamp": "2026-07-30T06:47:20.670555+00:00"
+}

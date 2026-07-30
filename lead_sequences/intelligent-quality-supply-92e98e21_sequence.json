@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-quality-supply-92e98e21",
+  "service_name": "Intelligent Quality Supply",
+  "industry": "healthcare",
+  "lead_magnet": "HIPAA-Compliant Automation Checklist",
+  "metrics": {
+    "improvement": "47%",
+    "savings": "$12.7M",
+    "timeframe": "9 months",
+    "similar": "HealthFirst Hospital"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, HealthFirst Hospital just implemented Intelligent Quality Supply last month - 47% improvement already. Thoughts?",
+      "sequence_id": "seq-13",
+      "service_id": "intelligent-quality-supply-92e98e21"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: HealthFirst Hospital saw $12.7M in savings. Your healthcare peers are seeing similar results.",
+      "sequence_id": "seq-13",
+      "service_id": "intelligent-quality-supply-92e98e21"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-13",
+      "service_id": "intelligent-quality-supply-92e98e21"
+    }
+  ],
+  "hot_lead_score": 91,
+  "conversion_likelihood": "68%",
+  "timestamp": "2026-07-30T06:47:20.657445+00:00"
+}

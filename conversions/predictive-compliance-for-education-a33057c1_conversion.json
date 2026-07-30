@@ -1,0 +1,42 @@
+{
+  "service_id": "predictive-compliance-for-education-a33057c1",
+  "service_name": "Predictive Compliance for Education",
+  "industry": "education",
+  "conversion_metrics": {
+    "open_rate": "65%",
+    "click_rate": "38%",
+    "reply_rate": "25%",
+    "close_rate": "14%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, data shows education companies using Predictive Compliance for Education achieve 52%. Your baseline: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-53",
+      "service_id": "predictive-compliance-for-education-a33057c1",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Based on {company}'s profile, Predictive Compliance for Education can save $18.4 million. Details: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-53",
+      "service_id": "predictive-compliance-for-education-a33057c1",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "ROI Analysis for {company}: 52% improvement, 6 months payback. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-53",
+      "service_id": "predictive-compliance-for-education-a33057c1",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:48:18.398094+00:00"
+}

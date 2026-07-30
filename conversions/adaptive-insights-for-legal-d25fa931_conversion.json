@@ -1,0 +1,42 @@
+{
+  "service_id": "adaptive-insights-for-legal-d25fa931",
+  "service_name": "Adaptive Insights for Legal",
+  "industry": "legal",
+  "conversion_metrics": {
+    "open_rate": "61%",
+    "click_rate": "34%",
+    "reply_rate": "21%",
+    "close_rate": "12%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, data shows legal companies using Adaptive Insights for Legal achieve 52%. Your baseline: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-53",
+      "service_id": "adaptive-insights-for-legal-d25fa931",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Based on {company}'s profile, Adaptive Insights for Legal can save $18.4 million. Details: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-53",
+      "service_id": "adaptive-insights-for-legal-d25fa931",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "ROI Analysis for {company}: 52% improvement, 6 months payback. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-53",
+      "service_id": "adaptive-insights-for-legal-d25fa931",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:45:21.744259+00:00"
+}

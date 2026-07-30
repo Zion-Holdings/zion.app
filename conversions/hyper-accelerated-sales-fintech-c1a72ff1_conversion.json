@@ -1,0 +1,42 @@
+{
+  "service_id": "hyper-accelerated-sales-fintech-c1a72ff1",
+  "service_name": "Hyper-Accelerated sales-fintech",
+  "industry": "fintech",
+  "conversion_metrics": {
+    "open_rate": "74%",
+    "click_rate": "49%",
+    "reply_rate": "36%",
+    "close_rate": "23%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest fintech challenge? Hyper-Accelerated sales-fintech solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-12",
+      "service_id": "hyper-accelerated-sales-fintech-c1a72ff1",
+      "conversion_rate": "23%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is workflow holding you back? Hyper-Accelerated sales-fintech delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-12",
+      "service_id": "hyper-accelerated-sales-fintech-c1a72ff1",
+      "conversion_rate": "23%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop workflow headaches. Hyper-Accelerated sales-fintech = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-12",
+      "service_id": "hyper-accelerated-sales-fintech-c1a72ff1",
+      "conversion_rate": "23%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:36:20.598220+00:00"
+}

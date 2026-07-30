@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-security-for-education-f6c3d9bb",
+  "service_name": "Cognitive Security for Education",
+  "industry": "education",
+  "lead_magnet": "Student Success Automation Framework",
+  "metrics": {
+    "improvement": "41%",
+    "savings": "$5.4M",
+    "timeframe": "11 months",
+    "similar": "EduCore"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve education. Our AI platform helped EduCore achieve 41% improvement in 11 months. Quick 5-minute call?",
+      "sequence_id": "seq-76",
+      "service_id": "cognitive-security-for-education-f6c3d9bb"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Cognitive Security for Education typically saves $5.4M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-76",
+      "service_id": "cognitive-security-for-education-f6c3d9bb"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 41% results. If not interested, just let me know!",
+      "sequence_id": "seq-76",
+      "service_id": "cognitive-security-for-education-f6c3d9bb"
+    }
+  ],
+  "hot_lead_score": 80,
+  "conversion_likelihood": "70%",
+  "timestamp": "2026-07-30T06:47:20.669554+00:00"
+}

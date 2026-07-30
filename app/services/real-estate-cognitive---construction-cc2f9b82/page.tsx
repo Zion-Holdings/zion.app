@@ -18,11 +18,11 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Role-based access control with SSO integration</li>
-            <li>Open-source friendly with plugin architecture</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Maintenance scheduling with predictive analytics</li>
             <li>SOC 2 certified with security controls</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         
@@ -30,9 +30,8 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>ROI achieved in under 90 days with cost savings</li>
+            <li>50% reduction in operational costs through automation</li>
             <li>Performance benchmarking against industry standards</li>
-            <li>24/7 automated operations without human intervention</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
           </ul>
         </div>
         

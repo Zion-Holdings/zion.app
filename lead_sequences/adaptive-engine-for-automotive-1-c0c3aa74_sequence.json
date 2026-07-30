@@ -1,0 +1,35 @@
+{
+  "service_id": "adaptive-engine-for-automotive-1-c0c3aa74",
+  "service_name": "Adaptive Engine for Automotive #1",
+  "industry": "automotive",
+  "lead_magnet": "Supply Chain Efficiency Audit",
+  "metrics": {
+    "improvement": "50%",
+    "savings": "$14.1M",
+    "timeframe": "6 months",
+    "similar": "AutoMakers"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows automotive companies using Adaptive Engine for Automotive #1 see 50% improvement. Your current process?",
+      "sequence_id": "seq-85",
+      "service_id": "adaptive-engine-for-automotive-1-c0c3aa74"
+    },
+    {
+      "step": 2,
+      "message": "Based on your automotive profile, Adaptive Engine for Automotive #1 could save {company} approximately $14.1M. Interested in details?",
+      "sequence_id": "seq-85",
+      "service_id": "adaptive-engine-for-automotive-1-c0c3aa74"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Adaptive Engine for Automotive #1 is proven to deliver 50% results.",
+      "sequence_id": "seq-85",
+      "service_id": "adaptive-engine-for-automotive-1-c0c3aa74"
+    }
+  ],
+  "hot_lead_score": 89,
+  "conversion_likelihood": "43%",
+  "timestamp": "2026-07-30T06:42:13.034590+00:00"
+}

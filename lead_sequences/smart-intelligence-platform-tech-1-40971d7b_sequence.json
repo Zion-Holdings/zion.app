@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-intelligence-platform-tech-1-40971d7b",
+  "service_name": "Smart Intelligence Platform - Tech #1",
+  "industry": "technology",
+  "lead_magnet": "AI Cost Calculator - See Your Potential Savings",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TechStart Inc. is closing their Q3 deals this week. Want to see how Smart Intelligence Platform - Tech #1 can help {company} save $18.4M?",
+      "sequence_id": "seq-59",
+      "service_id": "smart-intelligence-platform-tech-1-40971d7b"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Smart Intelligence Platform - Tech #1 delivers 52% in 6 months.",
+      "sequence_id": "seq-59",
+      "service_id": "smart-intelligence-platform-tech-1-40971d7b"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-59",
+      "service_id": "smart-intelligence-platform-tech-1-40971d7b"
+    }
+  ],
+  "hot_lead_score": 78,
+  "conversion_likelihood": "64%",
+  "timestamp": "2026-07-30T06:38:30.262221+00:00"
+}

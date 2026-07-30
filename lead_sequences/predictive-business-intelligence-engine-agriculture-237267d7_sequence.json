@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-business-intelligence-engine-agriculture-237267d7",
+  "service_name": "Predictive Business Intelligence Engine - Agriculture",
+  "industry": "agriculture",
+  "lead_magnet": "Precision Farming ROI Analysis",
+  "metrics": {
+    "improvement": "40%",
+    "savings": "$4.2M",
+    "timeframe": "12 months",
+    "similar": "FarmTech"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows agriculture companies using Predictive Business Intelligence Engine - Agriculture see 40% improvement. Your current process?",
+      "sequence_id": "seq-75",
+      "service_id": "predictive-business-intelligence-engine-agriculture-237267d7"
+    },
+    {
+      "step": 2,
+      "message": "Based on your agriculture profile, Predictive Business Intelligence Engine - Agriculture could save {company} approximately $4.2M. Interested in details?",
+      "sequence_id": "seq-75",
+      "service_id": "predictive-business-intelligence-engine-agriculture-237267d7"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Predictive Business Intelligence Engine - Agriculture is proven to deliver 40% results.",
+      "sequence_id": "seq-75",
+      "service_id": "predictive-business-intelligence-engine-agriculture-237267d7"
+    }
+  ],
+  "hot_lead_score": 73,
+  "conversion_likelihood": "65%",
+  "timestamp": "2026-07-30T06:32:49.819144+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-data-for-finance-08431631",
+  "service_name": "Intelligent Data for Finance",
+  "industry": "finance",
+  "lead_magnet": "Regulatory Compliance Automation Guide",
+  "metrics": {
+    "improvement": "58%",
+    "savings": "$24.1M",
+    "timeframe": "5 months",
+    "similar": "Capital Group"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with finance computer vision?",
+      "sequence_id": "seq-47",
+      "service_id": "intelligent-data-for-finance-08431631"
+    },
+    {
+      "step": 2,
+      "message": "We've helped Capital Group solve this exact problem with Intelligent Data for Finance. Achieved 58% in 5 months.",
+      "sequence_id": "seq-47",
+      "service_id": "intelligent-data-for-finance-08431631"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-47",
+      "service_id": "intelligent-data-for-finance-08431631"
+    }
+  ],
+  "hot_lead_score": 89,
+  "conversion_likelihood": "45%",
+  "timestamp": "2026-07-30T06:32:49.807721+00:00"
+}

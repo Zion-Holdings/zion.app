@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Analytics - Construction Edition - Zion Tech Group",
-  description: "The future of construction is here with AI Analytics - Construction Edition. Powered by cutting-edge AI, this platform delivers sales forecasting like never bef",
+  description: "Next-generation construction solution: AI Analytics - Construction Edition. Combines network optimization with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-analytics---construction-edition-8b591af1`
   }
@@ -13,26 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Analytics - Construction Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with AI Analytics - Construction Edition. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: AI Analytics - Construction Edition. Combines network optimization with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Data encryption at rest and in transit</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Healthcare data analytics with patient insights</li>
-            <li>GDPR compliance with data portability</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Multi-region deployment with automatic failover</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Microservices deployment with container orchestration</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Better compliance with automated audit trails</li>
             <li>Increased revenue with optimized pricing strategies</li>
+            <li>Seamless integration with existing systems and workflows</li>
             <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>

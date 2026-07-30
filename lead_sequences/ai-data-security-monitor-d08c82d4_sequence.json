@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-data-security-monitor-d08c82d4",
+  "service_name": "AI Data Security Monitor",
+  "industry": "Data Security",
+  "lead_magnet": "AI Solutions Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TechStart Inc. is closing their Q3 deals this week. Want to see how AI Data Security Monitor can help {company} save $18.4M?",
+      "sequence_id": "seq-24",
+      "service_id": "ai-data-security-monitor-d08c82d4"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. AI Data Security Monitor delivers 52% in 6 months.",
+      "sequence_id": "seq-24",
+      "service_id": "ai-data-security-monitor-d08c82d4"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-24",
+      "service_id": "ai-data-security-monitor-d08c82d4"
+    }
+  ],
+  "hot_lead_score": 69,
+  "conversion_likelihood": "66%",
+  "timestamp": "2026-07-30T06:38:30.258951+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "self-optimizing-roi-marketing-539ff4ed",
+  "service_name": "Self-Optimizing ROI Marketing",
+  "industry": "media",
+  "lead_magnet": "Content Performance Optimization Guide",
+  "metrics": {
+    "improvement": "43%",
+    "savings": "$6.8M",
+    "timeframe": "9 months",
+    "similar": "MediaHouse"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, MediaHouse is closing their Q3 deals this week. Want to see how Self-Optimizing ROI Marketing can help {company} save $6.8M?",
+      "sequence_id": "seq-74",
+      "service_id": "self-optimizing-roi-marketing-539ff4ed"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Self-Optimizing ROI Marketing delivers 43% in 9 months.",
+      "sequence_id": "seq-74",
+      "service_id": "self-optimizing-roi-marketing-539ff4ed"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-74",
+      "service_id": "self-optimizing-roi-marketing-539ff4ed"
+    }
+  ],
+  "hot_lead_score": 71,
+  "conversion_likelihood": "53%",
+  "timestamp": "2026-07-30T06:47:20.669251+00:00"
+}

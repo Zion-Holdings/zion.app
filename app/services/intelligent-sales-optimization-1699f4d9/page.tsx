@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Sales Optimization - Zion Tech Group",
-  description: "Revolutionize media through intelligent automation. Our Intelligent Sales Optimization leverages advanced machine learning to deliver healthcare data analytics ",
+  description: "The future of healthcare is here with Intelligent Sales Optimization. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-sales-optimization-1699f4d9`
   }
@@ -13,16 +13,15 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Sales Optimization</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize media through intelligent automation. Our Intelligent Sales Optimization leverages advanced machine learning to deliver healthcare data analytics at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of healthcare is here with Intelligent Sales Optimization. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Maintenance scheduling with predictive analytics</li>
             <li>Performance dashboards with real-time metrics</li>
-            <li>A/B testing framework for continuous optimization</li>
-            <li>HIPAA ready with healthcare data protection</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         
@@ -31,8 +30,8 @@ export default function ServicePage() {
           <ul className="list-disc list-inside space-y-2">
             <li>Seamless integration with existing systems and workflows</li>
             <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Performance benchmarking against industry standards</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
           </ul>
         </div>
         

@@ -1,0 +1,35 @@
+{
+  "service_id": "automated-manufacturing-for-legal-11185187",
+  "service_name": "Automated Manufacturing for Legal",
+  "industry": "legal",
+  "lead_magnet": "Document Review Automation Checklist",
+  "metrics": {
+    "improvement": "39%",
+    "savings": "$3.1M",
+    "timeframe": "14 months",
+    "similar": "LawFirm"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows legal companies using Automated Manufacturing for Legal see 39% improvement. Your current process?",
+      "sequence_id": "seq-70",
+      "service_id": "automated-manufacturing-for-legal-11185187"
+    },
+    {
+      "step": 2,
+      "message": "Based on your legal profile, Automated Manufacturing for Legal could save {company} approximately $3.1M. Interested in details?",
+      "sequence_id": "seq-70",
+      "service_id": "automated-manufacturing-for-legal-11185187"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Automated Manufacturing for Legal is proven to deliver 39% results.",
+      "sequence_id": "seq-70",
+      "service_id": "automated-manufacturing-for-legal-11185187"
+    }
+  ],
+  "hot_lead_score": 67,
+  "conversion_likelihood": "67%",
+  "timestamp": "2026-07-30T06:42:13.029528+00:00"
+}

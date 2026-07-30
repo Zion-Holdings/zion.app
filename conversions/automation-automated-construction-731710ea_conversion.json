@@ -1,0 +1,42 @@
+{
+  "service_id": "automation-automated-construction-731710ea",
+  "service_name": "Automation Automated - Construction",
+  "industry": "construction",
+  "conversion_metrics": {
+    "open_rate": "67%",
+    "click_rate": "40%",
+    "reply_rate": "26%",
+    "close_rate": "15%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, data shows construction companies using Automation Automated - Construction achieve 52%. Your baseline: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-81",
+      "service_id": "automation-automated-construction-731710ea",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Based on {company}'s profile, Automation Automated - Construction can save $18.4 million. Details: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-81",
+      "service_id": "automation-automated-construction-731710ea",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "ROI Analysis for {company}: 52% improvement, 6 months payback. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-81",
+      "service_id": "automation-automated-construction-731710ea",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:41:22.618865+00:00"
+}

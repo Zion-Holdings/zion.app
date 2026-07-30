@@ -1,0 +1,42 @@
+{
+  "service_id": "ai-powered-manufacturing-for-technology-a860eaaa",
+  "service_name": "AI-Powered Manufacturing for Technology",
+  "industry": "technology",
+  "conversion_metrics": {
+    "open_rate": "68%",
+    "click_rate": "42%",
+    "reply_rate": "28%",
+    "close_rate": "15%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, 90-day money-back guarantee on AI-Powered Manufacturing for Technology. 52% improvement, $18.4M savings. Try free: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-52",
+      "service_id": "ai-powered-manufacturing-for-technology-a860eaaa",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Risk-free trial: AI-Powered Manufacturing for Technology delivers 52% or you don't pay. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-52",
+      "service_id": "ai-powered-manufacturing-for-technology-a860eaaa",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "No risk, all reward: $18.4M savings with AI-Powered Manufacturing for Technology. 90-day guarantee. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-52",
+      "service_id": "ai-powered-manufacturing-for-technology-a860eaaa",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:45:21.710023+00:00"
+}

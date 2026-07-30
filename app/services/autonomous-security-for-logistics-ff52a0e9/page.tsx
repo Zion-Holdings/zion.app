@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Security for Logistics - Zion Tech Group",
-  description: "Transform your logistics operations with our Autonomous Security for Logistics. This AI-driven solution automates supply chain with unprecedented accuracy and e",
+  description: "Revolutionize logistics through intelligent automation. Our Autonomous Security for Logistics leverages advanced machine learning to deliver process automation ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-security-for-logistics-ff52a0e9`
   }
@@ -13,25 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Autonomous Security for Logistics</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your logistics operations with our Autonomous Security for Logistics. This AI-driven solution automates supply chain with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize logistics through intelligent automation. Our Autonomous Security for Logistics leverages advanced machine learning to deliver process automation at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Custom integrations with webhook support</li>
-            <li>Multi-region deployment with automatic failover</li>
-            <li>SOC 2 certified with security controls</li>
-            <li>Compliance monitoring with regulatory updates</li>
-            <li>Financial risk management with scenario analysis</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Document processing with OCR and NLP</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Role-based access control with SSO integration</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Reduced human error by 95% with automated processes</li>
             <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Zero manual intervention required for routine tasks</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

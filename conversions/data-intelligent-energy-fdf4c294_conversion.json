@@ -1,0 +1,42 @@
+{
+  "service_id": "data-intelligent-energy-fdf4c294",
+  "service_name": "Data Intelligent - Energy",
+  "industry": "energy",
+  "conversion_metrics": {
+    "open_rate": "68%",
+    "click_rate": "42%",
+    "reply_rate": "28%",
+    "close_rate": "16%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest energy challenge? Data Intelligent - Energy solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-82",
+      "service_id": "data-intelligent-energy-fdf4c294",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is cognitive holding you back? Data Intelligent - Energy delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-82",
+      "service_id": "data-intelligent-energy-fdf4c294",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop cognitive headaches. Data Intelligent - Energy = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-82",
+      "service_id": "data-intelligent-energy-fdf4c294",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:39:10.804254+00:00"
+}

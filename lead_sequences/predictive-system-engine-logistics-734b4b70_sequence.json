@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-system-engine-logistics-734b4b70",
+  "service_name": "Predictive System Engine - Logistics",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with logistics deep learning?",
+      "sequence_id": "seq-97",
+      "service_id": "predictive-system-engine-logistics-734b4b70"
+    },
+    {
+      "step": 2,
+      "message": "We've helped LogisticsPlus solve this exact problem with Predictive System Engine - Logistics. Achieved 49% in 6 months.",
+      "sequence_id": "seq-97",
+      "service_id": "predictive-system-engine-logistics-734b4b70"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-97",
+      "service_id": "predictive-system-engine-logistics-734b4b70"
+    }
+  ],
+  "hot_lead_score": 73,
+  "conversion_likelihood": "54%",
+  "timestamp": "2026-07-30T06:38:30.266129+00:00"
+}

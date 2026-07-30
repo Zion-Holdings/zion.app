@@ -1,0 +1,42 @@
+{
+  "service_id": "ai-document-media-edition-097cba29",
+  "service_name": "AI Document - Media Edition",
+  "industry": "media",
+  "conversion_metrics": {
+    "open_rate": "64%",
+    "click_rate": "37%",
+    "reply_rate": "24%",
+    "close_rate": "14%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, {company} can save $18.4 million with AI Document - Media Edition. Quick call? https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-35",
+      "service_id": "ai-document-media-edition-097cba29",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "$18.4M in annual savings with AI Document - Media Edition. 52% improvement in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-35",
+      "service_id": "ai-document-media-edition-097cba29",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Save $18.4 million/year. AI Document - Media Edition delivers 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-35",
+      "service_id": "ai-document-media-edition-097cba29",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:36:20.600956+00:00"
+}

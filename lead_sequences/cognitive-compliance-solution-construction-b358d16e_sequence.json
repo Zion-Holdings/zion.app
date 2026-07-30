@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-compliance-solution-construction-b358d16e",
+  "service_name": "Cognitive Compliance Solution - Construction",
+  "industry": "construction",
+  "lead_magnet": "Project Delivery Acceleration Guide",
+  "metrics": {
+    "improvement": "45%",
+    "savings": "$8.7M",
+    "timeframe": "8 months",
+    "similar": "BuildCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, BuildCo just implemented Cognitive Compliance Solution - Construction last month - 45% improvement already. Thoughts?",
+      "sequence_id": "seq-73",
+      "service_id": "cognitive-compliance-solution-construction-b358d16e"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: BuildCo saw $8.7M in savings. Your construction peers are seeing similar results.",
+      "sequence_id": "seq-73",
+      "service_id": "cognitive-compliance-solution-construction-b358d16e"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-73",
+      "service_id": "cognitive-compliance-solution-construction-b358d16e"
+    }
+  ],
+  "hot_lead_score": 83,
+  "conversion_likelihood": "40%",
+  "timestamp": "2026-07-30T06:47:20.669147+00:00"
+}

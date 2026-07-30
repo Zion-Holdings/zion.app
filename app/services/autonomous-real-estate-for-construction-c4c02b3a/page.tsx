@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Real Estate for Construction - Zion Tech Group",
-  description: "The future of construction is here with Autonomous Real Estate for Construction. Powered by cutting-edge AI, this platform delivers workflow management like nev",
+  description: "Next-generation construction solution: Autonomous Real Estate for Construction. Combines risk assessment with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-real-estate-for-construction-c4c02b3a`
   }
@@ -13,24 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Autonomous Real Estate for Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Autonomous Real Estate for Construction. Powered by cutting-edge AI, this platform delivers workflow management like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: Autonomous Real Estate for Construction. Combines risk assessment with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Document processing with OCR and NLP</li>
-            <li>Serverless functions for cost-effective scaling</li>
-            <li>Open-source friendly with plugin architecture</li>
-            <li>SOC 2 certified with security controls</li>
+            <li>Microservices deployment with container orchestration</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>Multi-language support with localization</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced human error by 95% with automated processes</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
             <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Improved quality with automated testing and validation</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>50% reduction in operational costs through automation</li>
           </ul>
         </div>
         

@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-platform-engine-real-estate-7da4f1cf",
+  "service_name": "Predictive Platform Engine - Real-Estate",
+  "industry": "real-estate",
+  "lead_magnet": "Property Management Automation Guide",
+  "metrics": {
+    "improvement": "46%",
+    "savings": "$13.4M",
+    "timeframe": "7 months",
+    "similar": "PropertyGroup"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, PropertyGroup is closing their Q3 deals this week. Want to see how Predictive Platform Engine - Real-Estate can help {company} save $13.4M?",
+      "sequence_id": "seq-19",
+      "service_id": "predictive-platform-engine-real-estate-7da4f1cf"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Predictive Platform Engine - Real-Estate delivers 46% in 7 months.",
+      "sequence_id": "seq-19",
+      "service_id": "predictive-platform-engine-real-estate-7da4f1cf"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-19",
+      "service_id": "predictive-platform-engine-real-estate-7da4f1cf"
+    }
+  ],
+  "hot_lead_score": 82,
+  "conversion_likelihood": "40%",
+  "timestamp": "2026-07-30T06:32:49.793968+00:00"
+}

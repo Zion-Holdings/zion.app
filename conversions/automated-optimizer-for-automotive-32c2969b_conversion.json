@@ -1,0 +1,42 @@
+{
+  "service_id": "automated-optimizer-for-automotive-32c2969b",
+  "service_name": "Automated Optimizer for Automotive",
+  "industry": "automotive",
+  "conversion_metrics": {
+    "open_rate": "69%",
+    "click_rate": "41%",
+    "reply_rate": "27%",
+    "close_rate": "16%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, data shows automotive companies using Automated Optimizer for Automotive achieve 52%. Your baseline: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-67",
+      "service_id": "automated-optimizer-for-automotive-32c2969b",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Based on {company}'s profile, Automated Optimizer for Automotive can save $18.4 million. Details: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-67",
+      "service_id": "automated-optimizer-for-automotive-32c2969b",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "ROI Analysis for {company}: 52% improvement, 6 months payback. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-67",
+      "service_id": "automated-optimizer-for-automotive-32c2969b",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:34:08.124903+00:00"
+}

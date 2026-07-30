@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-cloud-gaming-edition-8a858ffb",
+  "service_name": "AI Cloud - Gaming Edition",
+  "industry": "gaming",
+  "lead_magnet": "Player Retention Strategy Playbook",
+  "metrics": {
+    "improvement": "57%",
+    "savings": "$10.3M",
+    "timeframe": "5 months",
+    "similar": "GameStudio"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, GameStudio is closing their Q3 deals this week. Want to see how AI Cloud - Gaming Edition can help {company} save $10.3M?",
+      "sequence_id": "seq-4",
+      "service_id": "ai-cloud-gaming-edition-8a858ffb"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. AI Cloud - Gaming Edition delivers 57% in 5 months.",
+      "sequence_id": "seq-4",
+      "service_id": "ai-cloud-gaming-edition-8a858ffb"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-4",
+      "service_id": "ai-cloud-gaming-edition-8a858ffb"
+    }
+  ],
+  "hot_lead_score": 83,
+  "conversion_likelihood": "58%",
+  "timestamp": "2026-07-30T06:32:49.783526+00:00"
+}

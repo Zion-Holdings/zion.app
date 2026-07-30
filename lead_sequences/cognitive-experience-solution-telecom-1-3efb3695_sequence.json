@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-experience-solution-telecom-1-3efb3695",
+  "service_name": "Cognitive Experience Solution - Telecom #1",
+  "industry": "telecom",
+  "lead_magnet": "Network Optimization Cost Analysis",
+  "metrics": {
+    "improvement": "53%",
+    "savings": "$19.2M",
+    "timeframe": "5 months",
+    "similar": "TeleCom Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows telecom companies using Cognitive Experience Solution - Telecom #1 see 53% improvement. Your current process?",
+      "sequence_id": "seq-70",
+      "service_id": "cognitive-experience-solution-telecom-1-3efb3695"
+    },
+    {
+      "step": 2,
+      "message": "Based on your telecom profile, Cognitive Experience Solution - Telecom #1 could save {company} approximately $19.2M. Interested in details?",
+      "sequence_id": "seq-70",
+      "service_id": "cognitive-experience-solution-telecom-1-3efb3695"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Cognitive Experience Solution - Telecom #1 is proven to deliver 53% results.",
+      "sequence_id": "seq-70",
+      "service_id": "cognitive-experience-solution-telecom-1-3efb3695"
+    }
+  ],
+  "hot_lead_score": 80,
+  "conversion_likelihood": "63%",
+  "timestamp": "2026-07-30T06:38:30.263290+00:00"
+}

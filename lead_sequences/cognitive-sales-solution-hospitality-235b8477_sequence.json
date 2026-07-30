@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-sales-solution-hospitality-235b8477",
+  "service_name": "Cognitive Sales Solution - Hospitality",
+  "industry": "hospitality",
+  "lead_magnet": "Guest Experience Automation Blueprint",
+  "metrics": {
+    "improvement": "42%",
+    "savings": "$7.6M",
+    "timeframe": "10 months",
+    "similar": "HotelChain"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows hospitality companies using Cognitive Sales Solution - Hospitality see 42% improvement. Your current process?",
+      "sequence_id": "seq-30",
+      "service_id": "cognitive-sales-solution-hospitality-235b8477"
+    },
+    {
+      "step": 2,
+      "message": "Based on your hospitality profile, Cognitive Sales Solution - Hospitality could save {company} approximately $7.6M. Interested in details?",
+      "sequence_id": "seq-30",
+      "service_id": "cognitive-sales-solution-hospitality-235b8477"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Cognitive Sales Solution - Hospitality is proven to deliver 42% results.",
+      "sequence_id": "seq-30",
+      "service_id": "cognitive-sales-solution-hospitality-235b8477"
+    }
+  ],
+  "hot_lead_score": 78,
+  "conversion_likelihood": "68%",
+  "timestamp": "2026-07-30T06:32:49.799773+00:00"
+}

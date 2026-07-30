@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Suite for Insurance - Zion Tech Group",
-  description: "Next-generation insurance solution: Smart Suite for Insurance. Combines data quality with adaptive intelligence for optimal results.",
+  description: "Transform your insurance operations with our Smart Suite for Insurance. This AI-driven solution automates language processing with unprecedented accuracy and ef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-suite-for-insurance-d63a3618`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Suite for Insurance</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation insurance solution: Smart Suite for Insurance. Combines data quality with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your insurance operations with our Smart Suite for Insurance. This AI-driven solution automates language processing with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Manufacturing quality control with defect detection</li>
-            <li>Inventory prediction with demand forecasting</li>
-            <li>Real-time processing with streaming analytics</li>
             <li>Energy optimization with consumption tracking</li>
-            <li>Serverless functions for cost-effective scaling</li>
+            <li>Network optimization with traffic analysis</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>Performance dashboards with real-time metrics</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better market positioning with competitive analysis</li>
-            <li>Increased revenue with optimized pricing strategies</li>
-            <li>Better financial planning with predictive models</li>
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Improved sales performance with lead scoring</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Workflow Platform - Zion Tech Group",
-  description: "Revolutionize transportation through intelligent automation. Our Smart Workflow Platform leverages advanced machine learning to deliver healthcare data analytic",
+  description: "Unlock unprecedented growth with Smart Workflow Platform. This autonomous system provides data processing with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-workflow-platform-e5f74740`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Workflow Platform</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize transportation through intelligent automation. Our Smart Workflow Platform leverages advanced machine learning to deliver healthcare data analytics at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Smart Workflow Platform. This autonomous system provides data processing with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Automation opportunity identification</li>
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Healthcare data analytics with patient insights</li>
-            <li>Multi-region deployment with automatic failover</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>Open-source friendly with plugin architecture</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Logistics route optimization with traffic prediction</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Scalable to millions of transactions per second</li>
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>3x faster decision making with real-time insights</li>
-            <li>Better supply chain visibility with tracking</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

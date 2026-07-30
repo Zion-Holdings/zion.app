@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-advisor-for-telecom-f0b6c2d2",
+  "service_name": "Predictive Advisor for Telecom",
+  "industry": "telecom",
+  "lead_magnet": "Network Optimization Cost Analysis",
+  "metrics": {
+    "improvement": "53%",
+    "savings": "$19.2M",
+    "timeframe": "5 months",
+    "similar": "TeleCom Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve telecom. Our AI platform helped TeleCom Solutions achieve 53% improvement in 5 months. Quick 5-minute call?",
+      "sequence_id": "seq-11",
+      "service_id": "predictive-advisor-for-telecom-f0b6c2d2"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Predictive Advisor for Telecom typically saves $19.2M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-11",
+      "service_id": "predictive-advisor-for-telecom-f0b6c2d2"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 53% results. If not interested, just let me know!",
+      "sequence_id": "seq-11",
+      "service_id": "predictive-advisor-for-telecom-f0b6c2d2"
+    }
+  ],
+  "hot_lead_score": 81,
+  "conversion_likelihood": "40%",
+  "timestamp": "2026-07-30T06:42:13.006070+00:00"
+}

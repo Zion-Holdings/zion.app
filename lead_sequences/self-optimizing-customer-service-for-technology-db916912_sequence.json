@@ -1,0 +1,35 @@
+{
+  "service_id": "self-optimizing-customer-service-for-technology-db916912",
+  "service_name": "Self-Optimizing Customer Service for Technology",
+  "industry": "technology",
+  "lead_magnet": "AI Cost Calculator - See Your Potential Savings",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with technology customer service?",
+      "sequence_id": "seq-32",
+      "service_id": "self-optimizing-customer-service-for-technology-db916912"
+    },
+    {
+      "step": 2,
+      "message": "We've helped TechStart Inc. solve this exact problem with Self-Optimizing Customer Service for Technology. Achieved 52% in 6 months.",
+      "sequence_id": "seq-32",
+      "service_id": "self-optimizing-customer-service-for-technology-db916912"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-32",
+      "service_id": "self-optimizing-customer-service-for-technology-db916912"
+    }
+  ],
+  "hot_lead_score": 86,
+  "conversion_likelihood": "70%",
+  "timestamp": "2026-07-30T06:42:13.016484+00:00"
+}

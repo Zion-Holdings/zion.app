@@ -1,0 +1,42 @@
+{
+  "service_id": "enterprise-process-platform-althealth-25c43206",
+  "service_name": "Enterprise Process Platform - ALTHEALTH",
+  "industry": "althealth",
+  "conversion_metrics": {
+    "open_rate": "72%",
+    "click_rate": "46%",
+    "reply_rate": "32%",
+    "close_rate": "19%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, data shows althealth companies using Enterprise Process Platform - ALTHEALTH achieve 52%. Your baseline: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-88",
+      "service_id": "enterprise-process-platform-althealth-25c43206",
+      "conversion_rate": "19%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Based on {company}'s profile, Enterprise Process Platform - ALTHEALTH can save $18.4 million. Details: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-88",
+      "service_id": "enterprise-process-platform-althealth-25c43206",
+      "conversion_rate": "19%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "ROI Analysis for {company}: 52% improvement, 6 months payback. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-88",
+      "service_id": "enterprise-process-platform-althealth-25c43206",
+      "conversion_rate": "19%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:36:20.607321+00:00"
+}

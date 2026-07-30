@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-data-for-sports-d1c0c079",
+  "service_name": "Predictive Data for Sports",
+  "industry": "sports",
+  "lead_magnet": "Fan Engagement Growth Framework",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$8.9M",
+    "timeframe": "4 months",
+    "similar": "SportsTeam"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, SportsTeam just implemented Predictive Data for Sports last month - 55% improvement already. Thoughts?",
+      "sequence_id": "seq-98",
+      "service_id": "predictive-data-for-sports-d1c0c079"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: SportsTeam saw $8.9M in savings. Your sports peers are seeing similar results.",
+      "sequence_id": "seq-98",
+      "service_id": "predictive-data-for-sports-d1c0c079"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-98",
+      "service_id": "predictive-data-for-sports-d1c0c079"
+    }
+  ],
+  "hot_lead_score": 78,
+  "conversion_likelihood": "68%",
+  "timestamp": "2026-07-30T06:42:13.038403+00:00"
+}

@@ -1,0 +1,42 @@
+{
+  "service_id": "quantum-revenue-smart-e50e8ed0",
+  "service_name": "Quantum Revenue Smart",
+  "industry": "cybersecurity",
+  "conversion_metrics": {
+    "open_rate": "73%",
+    "click_rate": "47%",
+    "reply_rate": "34%",
+    "close_rate": "20%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, data shows cybersecurity companies using Quantum Revenue Smart achieve 52%. Your baseline: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-32",
+      "service_id": "quantum-revenue-smart-e50e8ed0",
+      "conversion_rate": "20%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Based on {company}'s profile, Quantum Revenue Smart can save $18.4 million. Details: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-32",
+      "service_id": "quantum-revenue-smart-e50e8ed0",
+      "conversion_rate": "20%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "ROI Analysis for {company}: 52% improvement, 6 months payback. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-32",
+      "service_id": "quantum-revenue-smart-e50e8ed0",
+      "conversion_rate": "20%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:36:20.600721+00:00"
+}

@@ -1,0 +1,42 @@
+{
+  "service_id": "intelligent-director-construction-80e41475",
+  "service_name": "Intelligent director-construction",
+  "industry": "construction",
+  "conversion_metrics": {
+    "open_rate": "67%",
+    "click_rate": "40%",
+    "reply_rate": "26%",
+    "close_rate": "15%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, data shows construction companies using Intelligent director-construction achieve 52%. Your baseline: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-95",
+      "service_id": "intelligent-director-construction-80e41475",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Based on {company}'s profile, Intelligent director-construction can save $18.4 million. Details: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-95",
+      "service_id": "intelligent-director-construction-80e41475",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "ROI Analysis for {company}: 52% improvement, 6 months payback. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-95",
+      "service_id": "intelligent-director-construction-80e41475",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:41:22.620882+00:00"
+}

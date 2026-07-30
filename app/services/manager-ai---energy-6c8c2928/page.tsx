@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Manager AI - Energy - Zion Tech Group",
-  description: "The future of energy is here with Manager AI - Energy. Powered by cutting-edge AI, this platform delivers predictive analytics like never before.",
+  description: "Transform your energy operations with our Manager AI - Energy. This AI-driven solution automates logistics route optimization with unprecedented accuracy and ef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/manager-ai---energy-6c8c2928`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Manager AI - Energy</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of energy is here with Manager AI - Energy. Powered by cutting-edge AI, this platform delivers predictive analytics like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your energy operations with our Manager AI - Energy. This AI-driven solution automates logistics route optimization with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Serverless functions for cost-effective scaling</li>
-            <li>Multi-language support with localization</li>
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>Version control with rollback capabilities</li>
-            <li>Role-based access control with SSO integration</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Open-source friendly with plugin architecture</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Healthcare data analytics with patient insights</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Better compliance with automated audit trails</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>Better risk management with predictive analytics</li>
             <li>Zero manual intervention required for routine tasks</li>
+            <li>50% reduction in operational costs through automation</li>
           </ul>
         </div>
         

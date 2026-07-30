@@ -1,0 +1,35 @@
+{
+  "service_id": "devops-smart-media-73a9de4e",
+  "service_name": "DevOps Smart - Media",
+  "industry": "media",
+  "lead_magnet": "Content Performance Optimization Guide",
+  "metrics": {
+    "improvement": "43%",
+    "savings": "$6.8M",
+    "timeframe": "9 months",
+    "similar": "MediaHouse"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with media management?",
+      "sequence_id": "seq-92",
+      "service_id": "devops-smart-media-73a9de4e"
+    },
+    {
+      "step": 2,
+      "message": "We've helped MediaHouse solve this exact problem with DevOps Smart - Media. Achieved 43% in 9 months.",
+      "sequence_id": "seq-92",
+      "service_id": "devops-smart-media-73a9de4e"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-92",
+      "service_id": "devops-smart-media-73a9de4e"
+    }
+  ],
+  "hot_lead_score": 83,
+  "conversion_likelihood": "59%",
+  "timestamp": "2026-07-30T06:38:30.265454+00:00"
+}

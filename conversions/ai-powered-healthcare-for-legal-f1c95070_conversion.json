@@ -1,0 +1,42 @@
+{
+  "service_id": "ai-powered-healthcare-for-legal-f1c95070",
+  "service_name": "AI-Powered Healthcare for Legal",
+  "industry": "legal",
+  "conversion_metrics": {
+    "open_rate": "61%",
+    "click_rate": "34%",
+    "reply_rate": "21%",
+    "close_rate": "12%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest legal challenge? AI-Powered Healthcare for Legal solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-96",
+      "service_id": "ai-powered-healthcare-for-legal-f1c95070",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is healthcare holding you back? AI-Powered Healthcare for Legal delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-96",
+      "service_id": "ai-powered-healthcare-for-legal-f1c95070",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop healthcare headaches. AI-Powered Healthcare for Legal = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-96",
+      "service_id": "ai-powered-healthcare-for-legal-f1c95070",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:48:18.408292+00:00"
+}

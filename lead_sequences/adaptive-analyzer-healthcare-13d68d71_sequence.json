@@ -1,0 +1,35 @@
+{
+  "service_id": "adaptive-analyzer-healthcare-13d68d71",
+  "service_name": "Adaptive analyzer-healthcare",
+  "industry": "healthcare",
+  "lead_magnet": "HIPAA-Compliant Automation Checklist",
+  "metrics": {
+    "improvement": "47%",
+    "savings": "$12.7M",
+    "timeframe": "9 months",
+    "similar": "HealthFirst Hospital"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows healthcare companies using Adaptive analyzer-healthcare see 47% improvement. Your current process?",
+      "sequence_id": "seq-45",
+      "service_id": "adaptive-analyzer-healthcare-13d68d71"
+    },
+    {
+      "step": 2,
+      "message": "Based on your healthcare profile, Adaptive analyzer-healthcare could save {company} approximately $12.7M. Interested in details?",
+      "sequence_id": "seq-45",
+      "service_id": "adaptive-analyzer-healthcare-13d68d71"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Adaptive analyzer-healthcare is proven to deliver 47% results.",
+      "sequence_id": "seq-45",
+      "service_id": "adaptive-analyzer-healthcare-13d68d71"
+    }
+  ],
+  "hot_lead_score": 66,
+  "conversion_likelihood": "70%",
+  "timestamp": "2026-07-30T06:32:49.806425+00:00"
+}

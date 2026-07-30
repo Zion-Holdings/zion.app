@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Insights Autonomous - Healthcare - Zion Tech Group",
-  description: "The future of healthcare is here with Insights Autonomous - Healthcare. Powered by cutting-edge AI, this platform delivers healthcare data analytics like never ",
+  description: "Unlock unprecedented growth with Insights Autonomous - Healthcare. This autonomous system provides workflow management with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/insights-autonomous---healthcare-8904d630`
   }
@@ -13,25 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Insights Autonomous - Healthcare</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of healthcare is here with Insights Autonomous - Healthcare. Powered by cutting-edge AI, this platform delivers healthcare data analytics like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Insights Autonomous - Healthcare. This autonomous system provides workflow management with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Document processing with OCR and NLP</li>
-            <li>Alerting system with intelligent notifications</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>Customer service automation with chatbot integration</li>
-            <li>Fraud detection with anomaly analysis</li>
+            <li>Image recognition with computer vision</li>
+            <li>Language processing with sentiment analysis</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Performance dashboards with real-time metrics</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>Zero manual intervention required for routine tasks</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

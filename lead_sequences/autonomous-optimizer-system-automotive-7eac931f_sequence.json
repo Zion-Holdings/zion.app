@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-optimizer-system-automotive-7eac931f",
+  "service_name": "Autonomous Optimizer System - Automotive",
+  "industry": "automotive",
+  "lead_magnet": "Supply Chain Efficiency Audit",
+  "metrics": {
+    "improvement": "50%",
+    "savings": "$14.1M",
+    "timeframe": "6 months",
+    "similar": "AutoMakers"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, AutoMakers just implemented Autonomous Optimizer System - Automotive last month - 50% improvement already. Thoughts?",
+      "sequence_id": "seq-13",
+      "service_id": "autonomous-optimizer-system-automotive-7eac931f"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: AutoMakers saw $14.1M in savings. Your automotive peers are seeing similar results.",
+      "sequence_id": "seq-13",
+      "service_id": "autonomous-optimizer-system-automotive-7eac931f"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-13",
+      "service_id": "autonomous-optimizer-system-automotive-7eac931f"
+    }
+  ],
+  "hot_lead_score": 69,
+  "conversion_likelihood": "52%",
+  "timestamp": "2026-07-30T06:32:49.790555+00:00"
+}

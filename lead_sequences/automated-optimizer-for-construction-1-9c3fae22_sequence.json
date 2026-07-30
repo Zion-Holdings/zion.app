@@ -1,0 +1,35 @@
+{
+  "service_id": "automated-optimizer-for-construction-1-9c3fae22",
+  "service_name": "Automated Optimizer for Construction #1",
+  "industry": "construction",
+  "lead_magnet": "Project Delivery Acceleration Guide",
+  "metrics": {
+    "improvement": "45%",
+    "savings": "$8.7M",
+    "timeframe": "8 months",
+    "similar": "BuildCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, BuildCo is closing their Q3 deals this week. Want to see how Automated Optimizer for Construction #1 can help {company} save $8.7M?",
+      "sequence_id": "seq-54",
+      "service_id": "automated-optimizer-for-construction-1-9c3fae22"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Automated Optimizer for Construction #1 delivers 45% in 8 months.",
+      "sequence_id": "seq-54",
+      "service_id": "automated-optimizer-for-construction-1-9c3fae22"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-54",
+      "service_id": "automated-optimizer-for-construction-1-9c3fae22"
+    }
+  ],
+  "hot_lead_score": 73,
+  "conversion_likelihood": "70%",
+  "timestamp": "2026-07-30T06:42:13.023946+00:00"
+}

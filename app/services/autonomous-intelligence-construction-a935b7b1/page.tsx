@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous intelligence-construction - Zion Tech Group",
-  description: "The future of construction is here with Autonomous intelligence-construction. Powered by cutting-edge AI, this platform delivers financial planning like never b",
+  description: "The future of construction is here with Autonomous intelligence-construction. Powered by cutting-edge AI, this platform delivers quality control like never befo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-intelligence-construction-a935b7b1`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Autonomous intelligence-construction</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Autonomous intelligence-construction. Powered by cutting-edge AI, this platform delivers financial planning like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Autonomous intelligence-construction. Powered by cutting-edge AI, this platform delivers quality control like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Logistics route optimization with traffic prediction</li>
-            <li>Data encryption at rest and in transit</li>
-            <li>Customer service automation with chatbot integration</li>
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Machine learning integration with automatic model training</li>
+            <li>Microservices deployment with container orchestration</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Healthcare data analytics with patient insights</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Cost optimization recommendations with savings analysis</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

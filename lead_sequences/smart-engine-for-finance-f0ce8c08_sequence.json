@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-engine-for-finance-f0ce8c08",
+  "service_name": "Smart Engine for Finance",
+  "industry": "finance",
+  "lead_magnet": "Regulatory Compliance Automation Guide",
+  "metrics": {
+    "improvement": "58%",
+    "savings": "$24.1M",
+    "timeframe": "5 months",
+    "similar": "Capital Group"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows finance companies using Smart Engine for Finance see 58% improvement. Your current process?",
+      "sequence_id": "seq-65",
+      "service_id": "smart-engine-for-finance-f0ce8c08"
+    },
+    {
+      "step": 2,
+      "message": "Based on your finance profile, Smart Engine for Finance could save {company} approximately $24.1M. Interested in details?",
+      "sequence_id": "seq-65",
+      "service_id": "smart-engine-for-finance-f0ce8c08"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Smart Engine for Finance is proven to deliver 58% results.",
+      "sequence_id": "seq-65",
+      "service_id": "smart-engine-for-finance-f0ce8c08"
+    }
+  ],
+  "hot_lead_score": 65,
+  "conversion_likelihood": "43%",
+  "timestamp": "2026-07-30T06:42:13.028010+00:00"
+}

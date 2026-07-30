@@ -1,0 +1,42 @@
+{
+  "service_id": "automated-analytics-for-hospitality-de9b1897",
+  "service_name": "Automated Analytics for Hospitality",
+  "industry": "hospitality",
+  "conversion_metrics": {
+    "open_rate": "63%",
+    "click_rate": "36%",
+    "reply_rate": "23%",
+    "close_rate": "13%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Q3 Special: Automated Analytics for Hospitality at 20% off. 52% improvement, $18.4M savings. Offer ends: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-6",
+      "service_id": "automated-analytics-for-hospitality-de9b1897",
+      "conversion_rate": "13%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Exclusive offer for {company}: 20% discount on Automated Analytics for Hospitality. 52% improvement guaranteed. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-6",
+      "service_id": "automated-analytics-for-hospitality-de9b1897",
+      "conversion_rate": "13%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Limited-time: Automated Analytics for Hospitality at 20% off. $18.4M savings. Book by Friday: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-6",
+      "service_id": "automated-analytics-for-hospitality-de9b1897",
+      "conversion_rate": "13%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:45:21.501572+00:00"
+}

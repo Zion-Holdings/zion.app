@@ -4,7 +4,7 @@ Hi there,
 
 I'm reaching out to introduce Predictive Orchestrator for Telecom from Zion Tech Group - an AI-powered solution that could significantly impact your business.
 
-Revolutionize telecom through intelligent automation. Our Predictive Orchestrator for Telecom leverages advanced machine learning to deliver predictive analytics at scale.
+Revolutionize telecom through intelligent automation. Our Predictive Orchestrator for Telecom leverages advanced machine learning to deliver workflow management at scale.
 
 Key Benefits:
 - AI-driven automation for faster results

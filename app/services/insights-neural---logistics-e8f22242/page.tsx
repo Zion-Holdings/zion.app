@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Insights Neural - Logistics - Zion Tech Group",
-  description: "Unlock unprecedented growth with Insights Neural - Logistics. This autonomous system provides data processing with zero manual intervention needed.",
+  description: "The future of logistics is here with Insights Neural - Logistics. Powered by cutting-edge AI, this platform delivers financial risk management like never before",
   alternates: {
     canonical: `https://ziontechgroup.com/services/insights-neural---logistics-e8f22242`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Insights Neural - Logistics</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Insights Neural - Logistics. This autonomous system provides data processing with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of logistics is here with Insights Neural - Logistics. Powered by cutting-edge AI, this platform delivers financial risk management like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Fraud detection with anomaly analysis</li>
-            <li>Real-time processing with streaming analytics</li>
-            <li>Machine learning integration with automatic model training</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Security monitoring with threat intelligence</li>
             <li>Mobile-responsive interface with offline capabilities</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Increased revenue with optimized pricing strategies</li>
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>Better compliance with automated audit trails</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

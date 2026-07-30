@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-neural-solution-logistics-42be5281",
+  "service_name": "Cognitive Neural Solution - Logistics",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows logistics companies using Cognitive Neural Solution - Logistics see 49% improvement. Your current process?",
+      "sequence_id": "seq-70",
+      "service_id": "cognitive-neural-solution-logistics-42be5281"
+    },
+    {
+      "step": 2,
+      "message": "Based on your logistics profile, Cognitive Neural Solution - Logistics could save {company} approximately $11.2M. Interested in details?",
+      "sequence_id": "seq-70",
+      "service_id": "cognitive-neural-solution-logistics-42be5281"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Cognitive Neural Solution - Logistics is proven to deliver 49% results.",
+      "sequence_id": "seq-70",
+      "service_id": "cognitive-neural-solution-logistics-42be5281"
+    }
+  ],
+  "hot_lead_score": 93,
+  "conversion_likelihood": "71%",
+  "timestamp": "2026-07-30T06:32:49.816704+00:00"
+}

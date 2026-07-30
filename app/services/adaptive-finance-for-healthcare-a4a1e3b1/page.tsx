@@ -18,22 +18,22 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Inventory prediction with demand forecasting</li>
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>Code optimization with performance profiling</li>
-            <li>Image recognition with computer vision</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>Network optimization with traffic analysis</li>
+            <li>Multi-region deployment with automatic failover</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Real-time processing with streaming analytics</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Faster time-to-market with accelerated development</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Improved quality with automated testing and validation</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>Seamless integration with existing systems and workflows</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

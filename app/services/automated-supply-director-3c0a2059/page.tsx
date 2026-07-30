@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Supply Director - Zion Tech Group",
-  description: "Unlock unprecedented growth with Automated Supply Director. This autonomous system provides document processing with zero manual intervention needed.",
+  description: "The future of construction is here with Automated Supply Director. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-supply-director-3c0a2059`
   }
@@ -13,25 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated Supply Director</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Automated Supply Director. This autonomous system provides document processing with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Automated Supply Director. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cloud-native architecture with multi-region deployment</li>
             <li>Document processing with OCR and NLP</li>
-            <li>Alerting system with intelligent notifications</li>
-            <li>GDPR compliance with data portability</li>
+            <li>Image recognition with computer vision</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>24/7 automated operations without human intervention</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>3x faster decision making with real-time insights</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Scalable to millions of transactions per second</li>
+            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

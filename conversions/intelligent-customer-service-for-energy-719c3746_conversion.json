@@ -1,0 +1,42 @@
+{
+  "service_id": "intelligent-customer-service-for-energy-719c3746",
+  "service_name": "Intelligent Customer Service for Energy",
+  "industry": "energy",
+  "conversion_metrics": {
+    "open_rate": "68%",
+    "click_rate": "42%",
+    "reply_rate": "28%",
+    "close_rate": "16%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest energy challenge? Intelligent Customer Service for Energy solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-54",
+      "service_id": "intelligent-customer-service-for-energy-719c3746",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is generator holding you back? Intelligent Customer Service for Energy delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-54",
+      "service_id": "intelligent-customer-service-for-energy-719c3746",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop generator headaches. Intelligent Customer Service for Energy = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-54",
+      "service_id": "intelligent-customer-service-for-energy-719c3746",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:39:10.797190+00:00"
+}

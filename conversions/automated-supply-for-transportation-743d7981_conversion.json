@@ -1,0 +1,42 @@
+{
+  "service_id": "automated-supply-for-transportation-743d7981",
+  "service_name": "Automated Supply for Transportation",
+  "industry": "transportation",
+  "conversion_metrics": {
+    "open_rate": "66%",
+    "click_rate": "39%",
+    "reply_rate": "25%",
+    "close_rate": "14%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest transportation challenge? Automated Supply for Transportation solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-89",
+      "service_id": "automated-supply-for-transportation-743d7981",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is supply holding you back? Automated Supply for Transportation delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-89",
+      "service_id": "automated-supply-for-transportation-743d7981",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop supply headaches. Automated Supply for Transportation = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-89",
+      "service_id": "automated-supply-for-transportation-743d7981",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:45:21.782492+00:00"
+}

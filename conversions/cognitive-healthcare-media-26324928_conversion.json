@@ -1,0 +1,42 @@
+{
+  "service_id": "cognitive-healthcare-media-26324928",
+  "service_name": "Cognitive healthcare-media",
+  "industry": "media",
+  "conversion_metrics": {
+    "open_rate": "64%",
+    "click_rate": "37%",
+    "reply_rate": "24%",
+    "close_rate": "14%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest media challenge? Cognitive healthcare-media solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-68",
+      "service_id": "cognitive-healthcare-media-26324928",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is insights holding you back? Cognitive healthcare-media delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-68",
+      "service_id": "cognitive-healthcare-media-26324928",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop insights headaches. Cognitive healthcare-media = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-68",
+      "service_id": "cognitive-healthcare-media-26324928",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:41:22.616842+00:00"
+}

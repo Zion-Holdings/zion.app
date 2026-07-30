@@ -1,0 +1,42 @@
+{
+  "service_id": "smart-management-for-retail-c255e3b6",
+  "service_name": "Smart Management for Retail",
+  "industry": "retail",
+  "conversion_metrics": {
+    "open_rate": "65%",
+    "click_rate": "38%",
+    "reply_rate": "25%",
+    "close_rate": "14%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, 90-day money-back guarantee on Smart Management for Retail. 52% improvement, $18.4M savings. Try free: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-73",
+      "service_id": "smart-management-for-retail-c255e3b6",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Risk-free trial: Smart Management for Retail delivers 52% or you don't pay. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-73",
+      "service_id": "smart-management-for-retail-c255e3b6",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "No risk, all reward: $18.4M savings with Smart Management for Retail. 90-day guarantee. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-73",
+      "service_id": "smart-management-for-retail-c255e3b6",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:48:18.402406+00:00"
+}

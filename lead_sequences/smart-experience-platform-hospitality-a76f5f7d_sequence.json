@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-experience-platform-hospitality-a76f5f7d",
+  "service_name": "Smart Experience Platform - Hospitality",
+  "industry": "hospitality",
+  "lead_magnet": "Guest Experience Automation Blueprint",
+  "metrics": {
+    "improvement": "42%",
+    "savings": "$7.6M",
+    "timeframe": "10 months",
+    "similar": "HotelChain"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows hospitality companies using Smart Experience Platform - Hospitality see 42% improvement. Your current process?",
+      "sequence_id": "seq-35",
+      "service_id": "smart-experience-platform-hospitality-a76f5f7d"
+    },
+    {
+      "step": 2,
+      "message": "Based on your hospitality profile, Smart Experience Platform - Hospitality could save {company} approximately $7.6M. Interested in details?",
+      "sequence_id": "seq-35",
+      "service_id": "smart-experience-platform-hospitality-a76f5f7d"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Smart Experience Platform - Hospitality is proven to deliver 42% results.",
+      "sequence_id": "seq-35",
+      "service_id": "smart-experience-platform-hospitality-a76f5f7d"
+    }
+  ],
+  "hot_lead_score": 65,
+  "conversion_likelihood": "44%",
+  "timestamp": "2026-07-30T06:32:49.802211+00:00"
+}

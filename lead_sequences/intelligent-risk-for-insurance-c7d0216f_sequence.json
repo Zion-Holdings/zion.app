@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-risk-for-insurance-c7d0216f",
+  "service_name": "Intelligent Risk for Insurance",
+  "industry": "insurance",
+  "lead_magnet": "Claims Processing Automation Guide",
+  "metrics": {
+    "improvement": "54%",
+    "savings": "$17.3M",
+    "timeframe": "7 months",
+    "similar": "InsurePlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows insurance companies using Intelligent Risk for Insurance see 54% improvement. Your current process?",
+      "sequence_id": "seq-45",
+      "service_id": "intelligent-risk-for-insurance-c7d0216f"
+    },
+    {
+      "step": 2,
+      "message": "Based on your insurance profile, Intelligent Risk for Insurance could save {company} approximately $17.3M. Interested in details?",
+      "sequence_id": "seq-45",
+      "service_id": "intelligent-risk-for-insurance-c7d0216f"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Intelligent Risk for Insurance is proven to deliver 54% results.",
+      "sequence_id": "seq-45",
+      "service_id": "intelligent-risk-for-insurance-c7d0216f"
+    }
+  ],
+  "hot_lead_score": 72,
+  "conversion_likelihood": "44%",
+  "timestamp": "2026-07-30T06:47:20.664378+00:00"
+}

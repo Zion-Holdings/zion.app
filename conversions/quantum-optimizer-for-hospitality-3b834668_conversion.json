@@ -1,0 +1,42 @@
+{
+  "service_id": "quantum-optimizer-for-hospitality-3b834668",
+  "service_name": "Quantum Optimizer for Hospitality",
+  "industry": "hospitality",
+  "conversion_metrics": {
+    "open_rate": "63%",
+    "click_rate": "36%",
+    "reply_rate": "23%",
+    "close_rate": "13%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest hospitality challenge? Quantum Optimizer for Hospitality solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-61",
+      "service_id": "quantum-optimizer-for-hospitality-3b834668",
+      "conversion_rate": "13%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is intelligent holding you back? Quantum Optimizer for Hospitality delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-61",
+      "service_id": "quantum-optimizer-for-hospitality-3b834668",
+      "conversion_rate": "13%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop intelligent headaches. Quantum Optimizer for Hospitality = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-61",
+      "service_id": "quantum-optimizer-for-hospitality-3b834668",
+      "conversion_rate": "13%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:36:20.604892+00:00"
+}

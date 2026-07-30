@@ -1,0 +1,42 @@
+{
+  "service_id": "hyper-accelerated-enterprise-healthcare-f0ef25dc",
+  "service_name": "Hyper-Accelerated Enterprise - Healthcare",
+  "industry": "healthcare",
+  "conversion_metrics": {
+    "open_rate": "71%",
+    "click_rate": "45%",
+    "reply_rate": "32%",
+    "close_rate": "18%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, {company} can save $18.4 million with Hyper-Accelerated Enterprise - Healthcare. Quick call? https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-42",
+      "service_id": "hyper-accelerated-enterprise-healthcare-f0ef25dc",
+      "conversion_rate": "18%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "$18.4M in annual savings with Hyper-Accelerated Enterprise - Healthcare. 52% improvement in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-42",
+      "service_id": "hyper-accelerated-enterprise-healthcare-f0ef25dc",
+      "conversion_rate": "18%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Save $18.4 million/year. Hyper-Accelerated Enterprise - Healthcare delivers 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-42",
+      "service_id": "hyper-accelerated-enterprise-healthcare-f0ef25dc",
+      "conversion_rate": "18%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:36:20.603088+00:00"
+}

@@ -1,0 +1,42 @@
+{
+  "service_id": "ai-powered-manager-for-telecom-10cc2f24",
+  "service_name": "AI-Powered Manager for Telecom",
+  "industry": "telecom",
+  "conversion_metrics": {
+    "open_rate": "72%",
+    "click_rate": "46%",
+    "reply_rate": "33%",
+    "close_rate": "19%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest telecom challenge? AI-Powered Manager for Telecom solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-33",
+      "service_id": "ai-powered-manager-for-telecom-10cc2f24",
+      "conversion_rate": "19%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is manager holding you back? AI-Powered Manager for Telecom delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-33",
+      "service_id": "ai-powered-manager-for-telecom-10cc2f24",
+      "conversion_rate": "19%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop manager headaches. AI-Powered Manager for Telecom = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-33",
+      "service_id": "ai-powered-manager-for-telecom-10cc2f24",
+      "conversion_rate": "19%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:45:21.654117+00:00"
+}

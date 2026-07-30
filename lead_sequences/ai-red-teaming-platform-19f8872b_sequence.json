@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-red-teaming-platform-19f8872b",
+  "service_name": "AI Red Teaming Platform",
+  "industry": "Security",
+  "lead_magnet": "AI Solutions Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with Security ai?",
+      "sequence_id": "seq-42",
+      "service_id": "ai-red-teaming-platform-19f8872b"
+    },
+    {
+      "step": 2,
+      "message": "We've helped TechStart Inc. solve this exact problem with AI Red Teaming Platform. Achieved 52% in 6 months.",
+      "sequence_id": "seq-42",
+      "service_id": "ai-red-teaming-platform-19f8872b"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-42",
+      "service_id": "ai-red-teaming-platform-19f8872b"
+    }
+  ],
+  "hot_lead_score": 71,
+  "conversion_likelihood": "43%",
+  "timestamp": "2026-07-30T06:38:30.260579+00:00"
+}

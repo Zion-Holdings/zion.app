@@ -1,0 +1,35 @@
+{
+  "service_id": "neural-support-for-construction-893694e1",
+  "service_name": "Neural Support for Construction",
+  "industry": "construction",
+  "lead_magnet": "Project Delivery Acceleration Guide",
+  "metrics": {
+    "improvement": "45%",
+    "savings": "$8.7M",
+    "timeframe": "8 months",
+    "similar": "BuildCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve construction. Our AI platform helped BuildCo achieve 45% improvement in 8 months. Quick 5-minute call?",
+      "sequence_id": "seq-26",
+      "service_id": "neural-support-for-construction-893694e1"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Neural Support for Construction typically saves $8.7M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-26",
+      "service_id": "neural-support-for-construction-893694e1"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 45% results. If not interested, just let me know!",
+      "sequence_id": "seq-26",
+      "service_id": "neural-support-for-construction-893694e1"
+    }
+  ],
+  "hot_lead_score": 87,
+  "conversion_likelihood": "43%",
+  "timestamp": "2026-07-30T06:42:13.013279+00:00"
+}

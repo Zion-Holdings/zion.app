@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-07-30T06:01:37Z",
+  "timestamp": "2026-07-30T06:30:43Z",
   "overall_status": "healthy",
   "errors": [],
   "warnings": [],
   "services_data_file_health": {
     "exists": true,
     "valid": true,
-    "size": 3247790,
+    "size": 678293,
     "error": null,
-    "record_count": 1965,
+    "record_count": 500,
     "ts_file": {
       "exists": true,
       "valid": true,
@@ -20,7 +20,7 @@
   "sitemap_status": {
     "exists": true,
     "valid": true,
-    "url_count": 1967,
+    "url_count": 502,
     "error": null
   },
   "service_pages_health": {

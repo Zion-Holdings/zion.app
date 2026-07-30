@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-powered-finance-logistics-c02c6836",
+  "service_name": "AI-Powered finance-logistics",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows logistics companies using AI-Powered finance-logistics see 49% improvement. Your current process?",
+      "sequence_id": "seq-10",
+      "service_id": "ai-powered-finance-logistics-c02c6836"
+    },
+    {
+      "step": 2,
+      "message": "Based on your logistics profile, AI-Powered finance-logistics could save {company} approximately $11.2M. Interested in details?",
+      "sequence_id": "seq-10",
+      "service_id": "ai-powered-finance-logistics-c02c6836"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. AI-Powered finance-logistics is proven to deliver 49% results.",
+      "sequence_id": "seq-10",
+      "service_id": "ai-powered-finance-logistics-c02c6836"
+    }
+  ],
+  "hot_lead_score": 95,
+  "conversion_likelihood": "70%",
+  "timestamp": "2026-07-30T06:32:49.787926+00:00"
+}

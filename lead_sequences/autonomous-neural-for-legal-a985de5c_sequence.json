@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-neural-for-legal-a985de5c",
+  "service_name": "Autonomous Neural for Legal",
+  "industry": "legal",
+  "lead_magnet": "Document Review Automation Checklist",
+  "metrics": {
+    "improvement": "39%",
+    "savings": "$3.1M",
+    "timeframe": "14 months",
+    "similar": "LawFirm"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows legal companies using Autonomous Neural for Legal see 39% improvement. Your current process?",
+      "sequence_id": "seq-60",
+      "service_id": "autonomous-neural-for-legal-a985de5c"
+    },
+    {
+      "step": 2,
+      "message": "Based on your legal profile, Autonomous Neural for Legal could save {company} approximately $3.1M. Interested in details?",
+      "sequence_id": "seq-60",
+      "service_id": "autonomous-neural-for-legal-a985de5c"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Autonomous Neural for Legal is proven to deliver 39% results.",
+      "sequence_id": "seq-60",
+      "service_id": "autonomous-neural-for-legal-a985de5c"
+    }
+  ],
+  "hot_lead_score": 91,
+  "conversion_likelihood": "59%",
+  "timestamp": "2026-07-30T06:38:30.262317+00:00"
+}

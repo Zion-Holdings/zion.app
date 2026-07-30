@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-security-solution-automotive-4ffa9953",
+  "service_name": "Cognitive Security Solution - Automotive",
+  "industry": "automotive",
+  "lead_magnet": "Supply Chain Efficiency Audit",
+  "metrics": {
+    "improvement": "50%",
+    "savings": "$14.1M",
+    "timeframe": "6 months",
+    "similar": "AutoMakers"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows automotive companies using Cognitive Security Solution - Automotive see 50% improvement. Your current process?",
+      "sequence_id": "seq-5",
+      "service_id": "cognitive-security-solution-automotive-4ffa9953"
+    },
+    {
+      "step": 2,
+      "message": "Based on your automotive profile, Cognitive Security Solution - Automotive could save {company} approximately $14.1M. Interested in details?",
+      "sequence_id": "seq-5",
+      "service_id": "cognitive-security-solution-automotive-4ffa9953"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Cognitive Security Solution - Automotive is proven to deliver 50% results.",
+      "sequence_id": "seq-5",
+      "service_id": "cognitive-security-solution-automotive-4ffa9953"
+    }
+  ],
+  "hot_lead_score": 68,
+  "conversion_likelihood": "70%",
+  "timestamp": "2026-07-30T06:47:20.656429+00:00"
+}

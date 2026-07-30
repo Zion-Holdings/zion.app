@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Insights Autonomous - Manufacturing - Zion Tech Group",
-  description: "The future of manufacturing is here with Insights Autonomous - Manufacturing. Powered by cutting-edge AI, this platform delivers resource optimization like neve",
+  description: "Unlock unprecedented growth with Insights Autonomous - Manufacturing. This autonomous system provides network optimization with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/insights-autonomous---manufacturing-ad2d1f6b`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Insights Autonomous - Manufacturing</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of manufacturing is here with Insights Autonomous - Manufacturing. Powered by cutting-edge AI, this platform delivers resource optimization like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Insights Autonomous - Manufacturing. This autonomous system provides network optimization with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Inventory prediction with demand forecasting</li>
             <li>Custom integrations with webhook support</li>
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>Energy optimization with consumption tracking</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Serverless functions for cost-effective scaling</li>
+            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Reduced shipping costs with route optimization</li>
-            <li>Improved customer retention with proactive service</li>
-            <li>Better risk management with predictive analytics</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

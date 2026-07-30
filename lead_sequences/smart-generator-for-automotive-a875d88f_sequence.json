@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-generator-for-automotive-a875d88f",
+  "service_name": "Smart Generator for Automotive",
+  "industry": "automotive",
+  "lead_magnet": "Supply Chain Efficiency Audit",
+  "metrics": {
+    "improvement": "50%",
+    "savings": "$14.1M",
+    "timeframe": "6 months",
+    "similar": "AutoMakers"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows automotive companies using Smart Generator for Automotive see 50% improvement. Your current process?",
+      "sequence_id": "seq-15",
+      "service_id": "smart-generator-for-automotive-a875d88f"
+    },
+    {
+      "step": 2,
+      "message": "Based on your automotive profile, Smart Generator for Automotive could save {company} approximately $14.1M. Interested in details?",
+      "sequence_id": "seq-15",
+      "service_id": "smart-generator-for-automotive-a875d88f"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Smart Generator for Automotive is proven to deliver 50% results.",
+      "sequence_id": "seq-15",
+      "service_id": "smart-generator-for-automotive-a875d88f"
+    }
+  ],
+  "hot_lead_score": 72,
+  "conversion_likelihood": "73%",
+  "timestamp": "2026-07-30T06:38:30.258084+00:00"
+}
