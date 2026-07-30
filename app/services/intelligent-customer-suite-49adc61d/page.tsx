@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Customer Suite - Zion Tech Group",
-  description: "Transform your transportation operations with our Intelligent Customer Suite. This AI-driven solution automates market analysis with unprecedented accuracy and ",
+  description: "Revolutionize sports through intelligent automation. Our Intelligent Customer Suite leverages advanced machine learning to deliver supply chain at scale.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-customer-suite-49adc61d`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Customer Suite</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your transportation operations with our Intelligent Customer Suite. This AI-driven solution automates market analysis with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize sports through intelligent automation. Our Intelligent Customer Suite leverages advanced machine learning to deliver supply chain at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>GDPR compliance with data portability</li>
-            <li>Alerting system with intelligent notifications</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Compliance monitoring with regulatory updates</li>
+            <li>Open-source friendly with plugin architecture</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced marketing costs with targeted campaigns</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>Improved quality with automated testing and validation</li>
-            <li>Reduced operational risks with predictive models</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Real-time insights and alerts for proactive management</li>
           </ul>
         </div>
         

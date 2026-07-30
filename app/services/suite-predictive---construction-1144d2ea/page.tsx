@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Suite Predictive - Construction - Zion Tech Group",
-  description: "The future of construction is here with Suite Predictive - Construction. Powered by cutting-edge AI, this platform delivers logistics route optimization like ne",
+  description: "The future of construction is here with Suite Predictive - Construction. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/suite-predictive---construction-1144d2ea`
   }
@@ -13,15 +13,16 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Suite Predictive - Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Suite Predictive - Construction. Powered by cutting-edge AI, this platform delivers logistics route optimization like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Suite Predictive - Construction. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Image recognition with computer vision</li>
-            <li>Financial risk management with scenario analysis</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Compliance monitoring with regulatory updates</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Real-time processing with streaming analytics</li>
+            <li>Microservices deployment with container orchestration</li>
+            <li>Code optimization with performance profiling</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
           </ul>
         </div>
         
@@ -30,9 +31,9 @@ export default function ServicePage() {
           <ul className="list-disc list-inside space-y-2">
             <li>3x faster decision making with real-time insights</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
             <li>Enhanced security with continuous threat monitoring</li>
-            <li>Better risk management with predictive analytics</li>
-            <li>50% reduction in operational costs through automation</li>
           </ul>
         </div>
         

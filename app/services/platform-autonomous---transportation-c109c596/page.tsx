@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Platform Autonomous - Transportation - Zion Tech Group",
-  description: "The future of transportation is here with Platform Autonomous - Transportation. Powered by cutting-edge AI, this platform delivers business intelligence like ne",
+  description: "Revolutionize transportation through intelligent automation. Our Platform Autonomous - Transportation leverages advanced machine learning to deliver sales proce",
   alternates: {
     canonical: `https://ziontechgroup.com/services/platform-autonomous---transportation-c109c596`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Platform Autonomous - Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of transportation is here with Platform Autonomous - Transportation. Powered by cutting-edge AI, this platform delivers business intelligence like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize transportation through intelligent automation. Our Platform Autonomous - Transportation leverages advanced machine learning to deliver sales process optimization at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Competitive intelligence with market share tracking</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>GDPR compliance with data portability</li>
+            <li>Performance dashboards with real-time metrics</li>
             <li>Manufacturing quality control with defect detection</li>
-            <li>Customer service automation with chatbot integration</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better market positioning with competitive analysis</li>
-            <li>Better customer experience with personalization</li>
-            <li>50% reduction in operational costs through automation</li>
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Faster time-to-market with accelerated development</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>Seamless integration with existing systems and workflows</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

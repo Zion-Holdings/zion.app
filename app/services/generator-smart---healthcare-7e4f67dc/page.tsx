@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Generator Smart - Healthcare - Zion Tech Group",
-  description: "The future of healthcare is here with Generator Smart - Healthcare. Powered by cutting-edge AI, this platform delivers business intelligence like never before.",
+  description: "The future of healthcare is here with Generator Smart - Healthcare. Powered by cutting-edge AI, this platform delivers fraud prevention like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/generator-smart---healthcare-7e4f67dc`
   }
@@ -13,27 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Generator Smart - Healthcare</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of healthcare is here with Generator Smart - Healthcare. Powered by cutting-edge AI, this platform delivers business intelligence like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of healthcare is here with Generator Smart - Healthcare. Powered by cutting-edge AI, this platform delivers fraud prevention like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Multi-language support with localization</li>
-            <li>Manufacturing quality control with defect detection</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Multi-region deployment with automatic failover</li>
-            <li>Network optimization with traffic analysis</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Image recognition with computer vision</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved conversion rates with personalization</li>
-            <li>Better financial planning with predictive models</li>
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Enhanced security posture with continuous monitoring</li>
-            <li>Better code quality with automated reviews</li>
+            <li>Seamless integration with existing systems and workflows</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

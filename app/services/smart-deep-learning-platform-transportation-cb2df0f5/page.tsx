@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Deep Learning Platform - Transportation - Zion Tech Group",
-  description: "Drive innovation in transportation with Smart Deep Learning Platform - Transportation. This AI-powered platform transforms quota optimization into a competitive advantage.",
+  description: "Drive innovation in transportation with Smart Deep Learning Platform - Transportation. This AI-powered platform transforms quota optimization into a competitive",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-deep-learning-platform-transportation-cb2df0f5`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

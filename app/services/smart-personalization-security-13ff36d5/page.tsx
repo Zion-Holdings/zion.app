@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Personalization Security - Zion Tech Group",
-  description: "Optimize your telecom workflows with Smart Personalization Security. This intelligent platform delivers sales process optimization through advanced automation and AI.",
+  description: "Optimize your telecom workflows with Smart Personalization Security. This intelligent platform delivers sales process optimization through advanced automation a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-personalization-security-13ff36d5`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

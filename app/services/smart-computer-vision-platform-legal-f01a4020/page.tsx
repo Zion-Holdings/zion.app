@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Computer Vision Platform - Legal - Zion Tech Group",
-  description: "Enhance your legal business with Smart Computer Vision Platform - Legal. Our solution provides resource allocation with enterprise-grade reliability and security.",
+  description: "Enhance your legal business with Smart Computer Vision Platform - Legal. Our solution provides resource allocation with enterprise-grade reliability and securit",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-computer-vision-platform-legal-f01a4020`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

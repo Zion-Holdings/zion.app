@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Supply Manufacturing - Zion Tech Group",
-  description: "Revolutionize legal through intelligent automation. Our Intelligent Supply Manufacturing leverages advanced machine learning to deliver resource optimization at",
+  description: "Transform your technology operations with our Intelligent Supply Manufacturing. This AI-driven solution automates compliance monitoring with unprecedented accur",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-supply-manufacturing-16a1adc0`
   }
@@ -13,14 +13,15 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Supply Manufacturing</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize legal through intelligent automation. Our Intelligent Supply Manufacturing leverages advanced machine learning to deliver resource optimization at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your technology operations with our Intelligent Supply Manufacturing. This AI-driven solution automates compliance monitoring with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Healthcare data analytics with patient insights</li>
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Data encryption at rest and in transit</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>Image recognition with computer vision</li>
+            <li>Machine learning integration with automatic model training</li>
             <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
@@ -28,9 +29,10 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved customer satisfaction with faster response times</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>Cost optimization recommendations with savings analysis</li>
             <li>50% reduction in operational costs through automation</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Seamless integration with existing systems and workflows</li>
           </ul>
         </div>
         

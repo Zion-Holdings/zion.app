@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Support Solution - Healthcare - Zion Tech Group",
-  description: "Enhance your healthcare business with Cognitive Support Solution - Healthcare. Our solution provides predictive modeling with enterprise-grade reliability and security.",
+  description: "Enhance your healthcare business with Cognitive Support Solution - Healthcare. Our solution provides predictive modeling with enterprise-grade reliability and s",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-support-solution-healthcare-56e07c31`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

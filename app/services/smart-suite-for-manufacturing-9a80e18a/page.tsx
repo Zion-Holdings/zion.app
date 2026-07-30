@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Suite for Manufacturing - Zion Tech Group",
-  description: "The future of manufacturing is here with Smart Suite for Manufacturing. Powered by cutting-edge AI, this platform delivers customer insights like never before.",
+  description: "Revolutionize manufacturing through intelligent automation. Our Smart Suite for Manufacturing leverages advanced machine learning to deliver language processing",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-suite-for-manufacturing-9a80e18a`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Suite for Manufacturing</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of manufacturing is here with Smart Suite for Manufacturing. Powered by cutting-edge AI, this platform delivers customer insights like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize manufacturing through intelligent automation. Our Smart Suite for Manufacturing leverages advanced machine learning to deliver language processing at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Data encryption at rest and in transit</li>
             <li>Multi-region deployment with automatic failover</li>
-            <li>Serverless functions for cost-effective scaling</li>
-            <li>Edge computing support for low-latency operations</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Increased revenue with optimized pricing strategies</li>
-            <li>Cost optimization recommendations with savings analysis</li>
-            <li>Scalable to millions of transactions per second</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

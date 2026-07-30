@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Customer Service for Agriculture - Zion Tech Group",
-  description: "Revolutionize agriculture through intelligent automation. Our Intelligent Customer Service for Agriculture leverages advanced machine learning to deliver user e",
+  description: "Next-generation agriculture solution: Intelligent Customer Service for Agriculture. Combines language processing with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-customer-service-for-agriculture-c58ac39b`
   }
@@ -13,26 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Customer Service for Agriculture</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize agriculture through intelligent automation. Our Intelligent Customer Service for Agriculture leverages advanced machine learning to deliver user experience at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation agriculture solution: Intelligent Customer Service for Agriculture. Combines language processing with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Alerting system with intelligent notifications</li>
-            <li>Manufacturing quality control with defect detection</li>
-            <li>Inventory prediction with demand forecasting</li>
-            <li>Edge computing support for low-latency operations</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>A/B testing framework for continuous optimization</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Multi-region deployment with automatic failover</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Increased revenue with optimized pricing strategies</li>
-            <li>Improved quality with automated testing and validation</li>
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
           </ul>
         </div>
         

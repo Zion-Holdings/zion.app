@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Coordinator Engine - Agriculture - Zion Tech Group",
-  description: "Drive innovation in agriculture with Predictive Coordinator Engine - Agriculture. This AI-powered platform transforms network optimization into a competitive advantage.",
+  description: "Drive innovation in agriculture with Predictive Coordinator Engine - Agriculture. This AI-powered platform transforms network optimization into a competitive ad",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-coordinator-engine-agriculture-da57710f`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

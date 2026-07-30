@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "DevOps Autonomous - Construction - Zion Tech Group",
-  description: "Next-generation construction solution: DevOps Autonomous - Construction. Combines data governance with adaptive intelligence for optimal results.",
+  description: "Next-generation construction solution: DevOps Autonomous - Construction. Combines document processing with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/devops-autonomous---construction-147cab15`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">DevOps Autonomous - Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: DevOps Autonomous - Construction. Combines data governance with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: DevOps Autonomous - Construction. Combines document processing with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Fraud detection with anomaly analysis</li>
-            <li>Healthcare data analytics with patient insights</li>
-            <li>Data governance with policy enforcement</li>
-            <li>Network optimization with traffic analysis</li>
-            <li>Security monitoring with threat intelligence</li>
+            <li>User experience analytics with behavior tracking</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>GDPR compliance with data portability</li>
+            <li>Language processing with sentiment analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced marketing costs with targeted campaigns</li>
-            <li>Better code quality with automated reviews</li>
-            <li>Better supply chain visibility with tracking</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Better financial planning with predictive models</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

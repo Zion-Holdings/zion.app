@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automation Automated - Hospitality - Zion Tech Group",
-  description: "Revolutionize hospitality through intelligent automation. Our Automation Automated - Hospitality leverages advanced machine learning to deliver energy managemen",
+  description: "Unlock unprecedented growth with Automation Automated - Hospitality. This autonomous system provides threat detection with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automation-automated---hospitality-677aa9e1`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automation Automated - Hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize hospitality through intelligent automation. Our Automation Automated - Hospitality leverages advanced machine learning to deliver energy management at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Automation Automated - Hospitality. This autonomous system provides threat detection with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Microservices deployment with container orchestration</li>
-            <li>Data quality with anomaly detection</li>
-            <li>Sentiment analysis with real-time monitoring</li>
-            <li>GDPR compliance with data portability</li>
-            <li>Master data management with golden records</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>50% reduction in operational costs through automation</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Improved quality with automated testing and validation</li>
           </ul>
         </div>
         

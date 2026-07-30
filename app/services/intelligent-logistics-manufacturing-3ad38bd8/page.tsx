@@ -18,22 +18,21 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Language processing with sentiment analysis</li>
-            <li>Customer journey mapping with touchpoint analysis</li>
-            <li>Alerting system with intelligent notifications</li>
-            <li>Network optimization with traffic analysis</li>
-            <li>Sentiment analysis with real-time monitoring</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>Version control with rollback capabilities</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better supply chain visibility with tracking</li>
-            <li>Reduced support tickets with self-service options</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Improved sales performance with lead scoring</li>
-            <li>Improved employee productivity with automation</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

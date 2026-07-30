@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cloud Autonomous - Construction - Zion Tech Group",
-  description: "Transform your construction operations with our Cloud Autonomous - Construction. This AI-driven solution automates code optimization with unprecedented accuracy",
+  description: "Revolutionize construction through intelligent automation. Our Cloud Autonomous - Construction leverages advanced machine learning to deliver risk assessment at",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cloud-autonomous---construction-167fb779`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cloud Autonomous - Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our Cloud Autonomous - Construction. This AI-driven solution automates code optimization with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our Cloud Autonomous - Construction leverages advanced machine learning to deliver risk assessment at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Revenue forecasting with market trend analysis</li>
-            <li>SOC 2 certified with security controls</li>
-            <li>Version control with rollback capabilities</li>
-            <li>Compliance monitoring with regulatory updates</li>
-            <li>Automation opportunity identification</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Open-source friendly with plugin architecture</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>GDPR compliance with data portability</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>50% reduction in operational costs through automation</li>
+            <li>Better risk management with predictive analytics</li>
             <li>Reduced churn with proactive customer retention</li>
-            <li>Improved conversion rates with personalization</li>
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Zero manual intervention required for routine tasks</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>Improved customer satisfaction with faster response times</li>
           </ul>
         </div>
         

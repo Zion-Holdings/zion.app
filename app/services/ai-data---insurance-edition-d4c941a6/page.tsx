@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Data - Insurance Edition - Zion Tech Group",
-  description: "Revolutionize insurance through intelligent automation. Our AI Data - Insurance Edition leverages advanced machine learning to deliver compliance monitoring at ",
+  description: "Revolutionize insurance through intelligent automation. Our AI Data - Insurance Edition leverages advanced machine learning to deliver quality control at scale.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-data---insurance-edition-d4c941a6`
   }
@@ -13,25 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Data - Insurance Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize insurance through intelligent automation. Our AI Data - Insurance Edition leverages advanced machine learning to deliver compliance monitoring at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize insurance through intelligent automation. Our AI Data - Insurance Edition leverages advanced machine learning to deliver quality control at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Alerting system with intelligent notifications</li>
-            <li>Sales process optimization with pipeline management</li>
-            <li>Language processing with sentiment analysis</li>
-            <li>SOC 2 certified with security controls</li>
-            <li>Multi-language support with localization</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Serverless functions for cost-effective scaling</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>Maintenance scheduling with predictive analytics</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
             <li>Seamless integration with existing systems and workflows</li>
             <li>ROI achieved in under 90 days with cost savings</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
           </ul>
         </div>
         

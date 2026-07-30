@@ -18,21 +18,21 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Predictive modeling with ensemble methods</li>
-            <li>Custom integrations with webhook support</li>
-            <li>Budget optimization with cost allocation</li>
-            <li>Master data management with golden records</li>
-            <li>Healthcare data analytics with patient insights</li>
+            <li>Serverless functions for cost-effective scaling</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>User experience analytics with behavior tracking</li>
+            <li>A/B testing framework for continuous optimization</li>
+            <li>Version control with rollback capabilities</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cost optimization recommendations with savings analysis</li>
-            <li>Improved employee productivity with automation</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Reduced shipping costs with route optimization</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>Seamless integration with existing systems and workflows</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
           </ul>
         </div>
         

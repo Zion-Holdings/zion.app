@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Suite - Insurance Edition - Zion Tech Group",
-  description: "Transform your insurance operations with our AI Suite - Insurance Edition. This AI-driven solution automates security monitoring with unprecedented accuracy and",
+  description: "Next-generation insurance solution: AI Suite - Insurance Edition. Combines supply chain with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-suite---insurance-edition-b5a9c2d4`
   }
@@ -13,25 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Suite - Insurance Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your insurance operations with our AI Suite - Insurance Edition. This AI-driven solution automates security monitoring with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation insurance solution: AI Suite - Insurance Edition. Combines supply chain with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Logistics route optimization with traffic prediction</li>
-            <li>Real-time processing with streaming analytics</li>
-            <li>Open-source friendly with plugin architecture</li>
-            <li>Sales process optimization with pipeline management</li>
-            <li>Maintenance scheduling with predictive analytics</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Version control with rollback capabilities</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Document processing with OCR and NLP</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Better compliance with automated audit trails</li>
             <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Reduced churn with proactive customer retention</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         

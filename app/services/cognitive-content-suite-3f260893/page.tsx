@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Content Suite - Zion Tech Group",
-  description: "Revolutionize technology through intelligent automation. Our Cognitive Content Suite leverages advanced machine learning to deliver fraud prevention at scale.",
+  description: "Revolutionize finance through intelligent automation. Our Cognitive Content Suite leverages advanced machine learning to deliver financial planning at scale.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-content-suite-3f260893`
   }
@@ -13,25 +13,23 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cognitive Content Suite</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize technology through intelligent automation. Our Cognitive Content Suite leverages advanced machine learning to deliver fraud prevention at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize finance through intelligent automation. Our Cognitive Content Suite leverages advanced machine learning to deliver financial planning at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Multi-language support with localization</li>
-            <li>Security monitoring with threat intelligence</li>
-            <li>Edge computing support for low-latency operations</li>
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>Healthcare data analytics with patient insights</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Language processing with sentiment analysis</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>ROI achieved in under 90 days with cost savings</li>
-            <li>24/7 automated operations without human intervention</li>
-            <li>Seamless integration with existing systems and workflows</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Improved customer satisfaction with faster response times</li>
             <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>

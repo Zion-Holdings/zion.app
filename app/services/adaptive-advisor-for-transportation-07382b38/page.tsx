@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Advisor for Transportation - Zion Tech Group",
-  description: "The future of transportation is here with Adaptive Advisor for Transportation. Powered by cutting-edge AI, this platform delivers inventory management like neve",
+  description: "The future of transportation is here with Adaptive Advisor for Transportation. Powered by cutting-edge AI, this platform delivers maintenance scheduling like ne",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-advisor-for-transportation-07382b38`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Adaptive Advisor for Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of transportation is here with Adaptive Advisor for Transportation. Powered by cutting-edge AI, this platform delivers inventory management like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of transportation is here with Adaptive Advisor for Transportation. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Automation opportunity identification</li>
-            <li>Document processing with OCR and NLP</li>
-            <li>Financial risk management with scenario analysis</li>
-            <li>Manufacturing quality control with defect detection</li>
-            <li>Revenue forecasting with market trend analysis</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>Compliance monitoring with regulatory updates</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>Serverless functions for cost-effective scaling</li>
+            <li>GDPR compliance with data portability</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved employee productivity with automation</li>
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>Better supply chain visibility with tracking</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Reduced churn with proactive customer retention</li>
             <li>Scalable to millions of transactions per second</li>
-            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

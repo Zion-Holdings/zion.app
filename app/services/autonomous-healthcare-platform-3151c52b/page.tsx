@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Healthcare Platform - Zion Tech Group",
-  description: "Unlock unprecedented growth with Autonomous Healthcare Platform. This autonomous system provides quality control with zero manual intervention needed.",
+  description: "Next-generation legal solution: Autonomous Healthcare Platform. Combines supply chain with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-healthcare-platform-3151c52b`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Autonomous Healthcare Platform</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Autonomous Healthcare Platform. This autonomous system provides quality control with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation legal solution: Autonomous Healthcare Platform. Combines supply chain with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Fraud detection with anomaly analysis</li>
-            <li>Energy optimization with consumption tracking</li>
-            <li>Security monitoring with threat intelligence</li>
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Logistics route optimization with traffic prediction</li>
+            <li>GDPR compliance with data portability</li>
+            <li>Custom integrations with webhook support</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
             <li>50% reduction in operational costs through automation</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>Reduced human error by 95% with automated processes</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Mining Safety & Operations Optimizer - Zion Tech Group",
-  description: "Computer vision + IoT for mining: equipment health monitoring, ventilation optimization, worker safety enforcement, and ore grade prediction. Reduces accidents ",
+  description: "Computer vision + IoT for mining: equipment health monitoring, ventilation optimization, worker safety enforcement, ore grade prediction. Reduces accidents by 5",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-mining-safety-optimizer`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Mining Safety &amp; Operations Optimizer</h1>
-        <p className="text-lg text-gray-300 mb-8">Computer vision + IoT for mining: equipment health monitoring, ventilation optimization, worker safety enforcement, and ore grade prediction. Reduces accidents by 50%.</p>
+        <p className="text-lg text-gray-300 mb-8">Computer vision + IoT for mining: equipment health monitoring, ventilation optimization, worker safety enforcement, ore grade prediction. Reduces accidents by 50%.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
@@ -40,15 +40,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$1999/month</p>
+              <p className="text-2xl font-bold mb-2">$1999</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$4999/month</p>
+              <p className="text-2xl font-bold mb-2">$4999</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$14999/month</p>
+              <p className="text-2xl font-bold mb-2">$14999</p>
             </div>
           </div>
         </div>

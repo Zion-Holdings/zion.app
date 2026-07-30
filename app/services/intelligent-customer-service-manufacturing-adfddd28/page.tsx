@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent customer service-manufacturing - Zion Tech Group",
-  description: "Revolutionize manufacturing through intelligent automation. Our Intelligent customer service-manufacturing leverages advanced machine learning to deliver sentim",
+  description: "Revolutionize manufacturing through intelligent automation. Our Intelligent customer service-manufacturing leverages advanced machine learning to deliver supply",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-customer-service-manufacturing-adfddd28`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent customer service-manufacturing</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize manufacturing through intelligent automation. Our Intelligent customer service-manufacturing leverages advanced machine learning to deliver sentiment analysis at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize manufacturing through intelligent automation. Our Intelligent customer service-manufacturing leverages advanced machine learning to deliver supply chain at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Mobile-responsive interface with offline capabilities</li>
             <li>Energy optimization with consumption tracking</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Data encryption at rest and in transit</li>
-            <li>A/B testing framework for continuous optimization</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Version control with rollback capabilities</li>
+            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better code quality with automated reviews</li>
-            <li>Better inventory management with demand forecasting</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>Enhanced decision making with data-driven insights</li>
-            <li>Improved customer satisfaction with faster response times</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Better compliance with automated audit trails</li>
           </ul>
         </div>
         

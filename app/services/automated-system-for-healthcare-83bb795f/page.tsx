@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated System for Healthcare - Zion Tech Group",
-  description: "Next-generation healthcare solution: Automated System for Healthcare. Combines compliance monitoring with adaptive intelligence for optimal results.",
+  description: "Next-generation healthcare solution: Automated System for Healthcare. Combines network optimization with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-system-for-healthcare-83bb795f`
   }
@@ -13,25 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated System for Healthcare</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation healthcare solution: Automated System for Healthcare. Combines compliance monitoring with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation healthcare solution: Automated System for Healthcare. Combines network optimization with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Code optimization with performance profiling</li>
-            <li>Sales process optimization with pipeline management</li>
-            <li>Machine learning integration with automatic model training</li>
             <li>Real-time processing with streaming analytics</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Better risk management with predictive analytics</li>
             <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         
