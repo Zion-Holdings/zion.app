@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Business Intelligence for Manufacturing - Zion Tech Group",
-  description: "Unlock unprecedented growth with Neural Business Intelligence for Manufacturing. This autonomous system provides risk assessment with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Neural Business Intelligence for Manufacturing. This autonomous system provides risk assessment with zero manual intervention n",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-business-intelligence-for-manufacturing-2e49a405`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

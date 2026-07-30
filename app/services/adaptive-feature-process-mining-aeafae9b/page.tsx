@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Feature Process Mining - Zion Tech Group",
-  description: "Revolutionize agriculture through intelligent automation. Our Adaptive Feature Process Mining leverages advanced machine learning to deliver container orchestration at scale.",
+  description: "Revolutionize agriculture through intelligent automation. Our Adaptive Feature Process Mining leverages advanced machine learning to deliver container orchestra",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-feature-process-mining-aeafae9b`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

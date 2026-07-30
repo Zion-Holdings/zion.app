@@ -1,0 +1,42 @@
+{
+  "service_id": "cognitive-manager-solution-media-d8fca2d5",
+  "service_name": "Cognitive Manager Solution - Media",
+  "industry": "media",
+  "conversion_metrics": {
+    "open_rate": "64%",
+    "click_rate": "37%",
+    "reply_rate": "24%",
+    "close_rate": "14%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Q3 Special: Cognitive Manager Solution - Media at 20% off. 52% improvement, $18.4M savings. Offer ends: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-55",
+      "service_id": "cognitive-manager-solution-media-d8fca2d5",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Exclusive offer for {company}: 20% discount on Cognitive Manager Solution - Media. 52% improvement guaranteed. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-55",
+      "service_id": "cognitive-manager-solution-media-d8fca2d5",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Limited-time: Cognitive Manager Solution - Media at 20% off. $18.4M savings. Book by Friday: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-55",
+      "service_id": "cognitive-manager-solution-media-d8fca2d5",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:01:48.909498+00:00"
+}

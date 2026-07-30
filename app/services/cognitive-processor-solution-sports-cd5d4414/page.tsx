@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Processor Solution - Sports - Zion Tech Group",
-  description: "Unlock unprecedented growth with Cognitive Processor Solution - Sports. This autonomous system provides data pipeline orchestration with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Cognitive Processor Solution - Sports. This autonomous system provides data pipeline orchestration with zero manual interventio",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-processor-solution-sports-cd5d4414`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

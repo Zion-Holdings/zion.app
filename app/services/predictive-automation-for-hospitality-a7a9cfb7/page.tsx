@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Automation for Hospitality - Zion Tech Group",
-  description: "Optimize your hospitality workflows with Predictive Automation for Hospitality. This intelligent platform delivers security monitoring through advanced automation and AI.",
+  description: "Optimize your hospitality workflows with Predictive Automation for Hospitality. This intelligent platform delivers security monitoring through advanced automati",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-automation-for-hospitality-a7a9cfb7`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

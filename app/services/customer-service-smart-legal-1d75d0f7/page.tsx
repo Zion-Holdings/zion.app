@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Customer Service Smart - Legal - Zion Tech Group",
-  description: "Revolutionize legal through intelligent automation. Our Customer Service Smart - Legal leverages advanced machine learning to deliver image recognition at scale.",
+  description: "Revolutionize legal through intelligent automation. Our Customer Service Smart - Legal leverages advanced machine learning to deliver image recognition at scale",
   alternates: {
     canonical: `https://ziontechgroup.com/services/customer-service-smart-legal-1d75d0f7`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

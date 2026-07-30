@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Computer Vision Solution - Real-Estate - Zion Tech Group",
-  description: "Revolutionize real-estate through intelligent automation. Our Cognitive Computer Vision Solution - Real-Estate leverages advanced machine learning to deliver customer service automation at scale.",
+  description: "Revolutionize real-estate through intelligent automation. Our Cognitive Computer Vision Solution - Real-Estate leverages advanced machine learning to deliver cu",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-computer-vision-solution-real-estate-94282ac0`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

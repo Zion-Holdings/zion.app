@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Director for Retail - Zion Tech Group",
-  description: "Transform your retail operations with our Smart Director for Retail. This AI-driven solution automates survey automation with unprecedented accuracy and efficiency.",
+  description: "Transform your retail operations with our Smart Director for Retail. This AI-driven solution automates survey automation with unprecedented accuracy and efficie",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-director-for-retail-fcf5da0b`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

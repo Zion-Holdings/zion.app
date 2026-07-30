@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Business Intelligence Platform - Logistics - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Smart Business Intelligence Platform - Logistics leverages advanced machine learning to deliver reputation management at scale.",
+  description: "Revolutionize logistics through intelligent automation. Our Smart Business Intelligence Platform - Logistics leverages advanced machine learning to deliver repu",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-business-intelligence-platform-logistics-4cff8648`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

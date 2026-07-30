@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Advisor Solution - Media - Zion Tech Group",
-  description: "Optimize your media workflows with Cognitive Advisor Solution - Media. This intelligent platform delivers regulatory tracking through advanced automation and AI.",
+  description: "Optimize your media workflows with Cognitive Advisor Solution - Media. This intelligent platform delivers regulatory tracking through advanced automation and AI",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-advisor-solution-media-9fc3e9be`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

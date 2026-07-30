@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Real Estate Platform - Automotive - Zion Tech Group",
-  description: "The future of automotive is here with Smart Real Estate Platform - Automotive. Powered by cutting-edge AI, this platform delivers logistics route optimization like never before.",
+  description: "The future of automotive is here with Smart Real Estate Platform - Automotive. Powered by cutting-edge AI, this platform delivers logistics route optimization l",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-real-estate-platform-automotive-f088ad18`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

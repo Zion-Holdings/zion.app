@@ -1,0 +1,42 @@
+{
+  "service_id": "ai-data-augmentation-engine-75192598",
+  "service_name": "AI Data Augmentation Engine",
+  "industry": "Data Science",
+  "conversion_metrics": {
+    "open_rate": "68%",
+    "click_rate": "42%",
+    "reply_rate": "28%",
+    "close_rate": "15%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest Data Science challenge? AI Data Augmentation Engine solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-82",
+      "service_id": "ai-data-augmentation-engine-75192598",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is ai holding you back? AI Data Augmentation Engine delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-82",
+      "service_id": "ai-data-augmentation-engine-75192598",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop ai headaches. AI Data Augmentation Engine = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-82",
+      "service_id": "ai-data-augmentation-engine-75192598",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:01:48.914260+00:00"
+}

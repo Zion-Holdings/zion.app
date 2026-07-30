@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Revenue Platform - Insurance - Zion Tech Group",
-  description: "Unlock unprecedented growth with Smart Revenue Platform - Insurance. This autonomous system provides customer journey mapping with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Smart Revenue Platform - Insurance. This autonomous system provides customer journey mapping with zero manual intervention need",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-revenue-platform-insurance-034dc79d`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

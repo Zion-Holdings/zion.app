@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive DevOps Engine - Healthcare - Zion Tech Group",
-  description: "The future of healthcare is here with Predictive DevOps Engine - Healthcare. Powered by cutting-edge AI, this platform delivers image recognition like never before.",
+  description: "The future of healthcare is here with Predictive DevOps Engine - Healthcare. Powered by cutting-edge AI, this platform delivers image recognition like never bef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-devops-engine-healthcare-87285f10`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

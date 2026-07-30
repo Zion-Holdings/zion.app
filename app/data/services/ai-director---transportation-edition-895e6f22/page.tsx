@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Director - Transportation Edition - Zion Tech Group",
-  description: "Revolutionize transportation through intelligent automation. Our AI Director - Transportation Edition leverages advanced machine learning to deliver quality control at scale.",
+  description: "Unlock unprecedented growth with AI Director - Transportation Edition. This autonomous system provides security monitoring with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-director---transportation-edition-895e6f22`
   }
@@ -13,26 +13,28 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Director - Transportation Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize transportation through intelligent automation. Our AI Director - Transportation Edition leverages advanced machine learning to deliver quality control at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with AI Director - Transportation Edition. This autonomous system provides security monitoring with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Serverless functions for cost-effective scaling</li>
-            <li>Customer service automation with chatbot integration</li>
+            <li>Energy optimization with consumption tracking</li>
             <li>Role-based access control with SSO integration</li>
-            <li>Logistics route optimization with traffic prediction</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Language processing with sentiment analysis</li>
+            <li>Multi-region deployment with automatic failover</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced churn with proactive customer retention</li>
-            <li>50% reduction in operational costs through automation</li>
-            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
             <li>Real-time insights and alerts for proactive management</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
           </ul>
         </div>
         

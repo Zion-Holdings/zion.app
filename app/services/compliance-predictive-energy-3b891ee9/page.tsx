@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Compliance Predictive - Energy - Zion Tech Group",
-  description: "Revolutionize energy through intelligent automation. Our Compliance Predictive - Energy leverages advanced machine learning to deliver data pipeline orchestration at scale.",
+  description: "Revolutionize energy through intelligent automation. Our Compliance Predictive - Energy leverages advanced machine learning to deliver data pipeline orchestrati",
   alternates: {
     canonical: `https://ziontechgroup.com/services/compliance-predictive-energy-3b891ee9`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

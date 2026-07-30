@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Suite Engine - Tech - Zion Tech Group",
-  description: "Revolutionize technology through intelligent automation. Our Predictive Suite Engine - Tech leverages advanced machine learning to deliver code optimization at scale.",
+  description: "Revolutionize technology through intelligent automation. Our Predictive Suite Engine - Tech leverages advanced machine learning to deliver code optimization at ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-suite-engine-tech-542bcd8b`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

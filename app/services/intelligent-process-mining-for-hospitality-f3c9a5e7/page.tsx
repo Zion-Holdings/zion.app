@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Process Mining for Hospitality - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Process Mining for Hospitality. This autonomous system provides performance monitoring with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Intelligent Process Mining for Hospitality. This autonomous system provides performance monitoring with zero manual interventio",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-process-mining-for-hospitality-f3c9a5e7`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

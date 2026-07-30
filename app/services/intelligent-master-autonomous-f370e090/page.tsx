@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Master Autonomous - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Intelligent Master Autonomous leverages advanced machine learning to deliver influencer identification at scale.",
+  description: "Revolutionize construction through intelligent automation. Our Intelligent Master Autonomous leverages advanced machine learning to deliver influencer identific",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-master-autonomous-f370e090`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Release Deep Learning - Zion Tech Group",
-  description: "Revolutionize transportation through intelligent automation. Our Automated Release Deep Learning leverages advanced machine learning to deliver training optimization at scale.",
+  description: "Revolutionize transportation through intelligent automation. Our Automated Release Deep Learning leverages advanced machine learning to deliver training optimiz",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-release-deep-learning-2a7e0fa9`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

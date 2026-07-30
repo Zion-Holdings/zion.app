@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Machine Learning Intelligent - Logistics - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Machine Learning Intelligent - Logistics leverages advanced machine learning to deliver scenario planning at scale.",
+  description: "Revolutionize logistics through intelligent automation. Our Machine Learning Intelligent - Logistics leverages advanced machine learning to deliver scenario pla",
   alternates: {
     canonical: `https://ziontechgroup.com/services/machine-learning-intelligent-logistics-db13926e`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

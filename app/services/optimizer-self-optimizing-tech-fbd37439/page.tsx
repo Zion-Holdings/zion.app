@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Optimizer Self-Optimizing - Tech - Zion Tech Group",
-  description: "Revolutionize technology through intelligent automation. Our Optimizer Self-Optimizing - Tech leverages advanced machine learning to deliver feedback collection at scale.",
+  description: "Revolutionize technology through intelligent automation. Our Optimizer Self-Optimizing - Tech leverages advanced machine learning to deliver feedback collection",
   alternates: {
     canonical: `https://ziontechgroup.com/services/optimizer-self-optimizing-tech-fbd37439`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

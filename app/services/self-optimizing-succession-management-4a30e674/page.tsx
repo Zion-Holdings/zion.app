@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Succession Management - Zion Tech Group",
-  description: "Revolutionize insurance through intelligent automation. Our Self-Optimizing Succession Management leverages advanced machine learning to deliver supply chain at scale.",
+  description: "Revolutionize insurance through intelligent automation. Our Self-Optimizing Succession Management leverages advanced machine learning to deliver supply chain at",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-succession-management-4a30e674`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

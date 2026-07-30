@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Performance Cognitive - Telecom - Zion Tech Group",
-  description: "Revolutionize telecom through intelligent automation. Our Performance Cognitive - Telecom leverages advanced machine learning to deliver user experience at scale.",
+  description: "Revolutionize telecom through intelligent automation. Our Performance Cognitive - Telecom leverages advanced machine learning to deliver user experience at scal",
   alternates: {
     canonical: `https://ziontechgroup.com/services/performance-cognitive-telecom-54a88f13`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

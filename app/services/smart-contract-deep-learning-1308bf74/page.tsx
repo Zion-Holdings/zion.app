@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Contract Deep Learning - Zion Tech Group",
-  description: "Optimize your agriculture workflows with Smart Contract Deep Learning. This intelligent platform delivers pipeline management through advanced automation and AI.",
+  description: "Optimize your agriculture workflows with Smart Contract Deep Learning. This intelligent platform delivers pipeline management through advanced automation and AI",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-contract-deep-learning-1308bf74`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

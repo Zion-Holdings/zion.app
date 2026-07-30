@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive NLP Engine - Finance - Zion Tech Group",
-  description: "Transform your finance operations with our Predictive NLP Engine - Finance. This AI-driven solution automates business intelligence with unprecedented accuracy and efficiency.",
+  description: "Transform your finance operations with our Predictive NLP Engine - Finance. This AI-driven solution automates business intelligence with unprecedented accuracy ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-nlp-engine-finance-a63f7bf3`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

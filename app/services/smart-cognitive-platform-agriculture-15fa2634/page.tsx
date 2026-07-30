@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Cognitive Platform - Agriculture - Zion Tech Group",
-  description: "The future of agriculture is here with Smart Cognitive Platform - Agriculture. Powered by cutting-edge AI, this platform delivers performance tuning like never before.",
+  description: "The future of agriculture is here with Smart Cognitive Platform - Agriculture. Powered by cutting-edge AI, this platform delivers performance tuning like never ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-cognitive-platform-agriculture-15fa2634`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

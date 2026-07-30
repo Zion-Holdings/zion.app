@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Suite - Automotive Edition - Zion Tech Group",
-  description: "Transform your automotive operations with our AI Suite - Automotive Edition. This AI-driven solution automates roi tracking with unprecedented accuracy and efficiency.",
+  description: "Transform your automotive operations with our AI Suite - Automotive Edition. This AI-driven solution automates roi tracking with unprecedented accuracy and effi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-suite-automotive-edition-e757592b`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

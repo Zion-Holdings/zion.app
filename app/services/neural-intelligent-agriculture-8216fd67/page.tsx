@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Intelligent - Agriculture - Zion Tech Group",
-  description: "Revolutionize agriculture through intelligent automation. Our Neural Intelligent - Agriculture leverages advanced machine learning to deliver financial planning at scale.",
+  description: "Revolutionize agriculture through intelligent automation. Our Neural Intelligent - Agriculture leverages advanced machine learning to deliver financial planning",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-intelligent-agriculture-8216fd67`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

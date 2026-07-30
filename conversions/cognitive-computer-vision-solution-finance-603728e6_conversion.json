@@ -1,0 +1,42 @@
+{
+  "service_id": "cognitive-computer-vision-solution-finance-603728e6",
+  "service_name": "Cognitive Computer Vision Solution - Finance",
+  "industry": "finance",
+  "conversion_metrics": {
+    "open_rate": "73%",
+    "click_rate": "48%",
+    "reply_rate": "35%",
+    "close_rate": "22%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest finance challenge? Cognitive Computer Vision Solution - Finance solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-19",
+      "service_id": "cognitive-computer-vision-solution-finance-603728e6",
+      "conversion_rate": "22%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is smart holding you back? Cognitive Computer Vision Solution - Finance delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-19",
+      "service_id": "cognitive-computer-vision-solution-finance-603728e6",
+      "conversion_rate": "22%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop smart headaches. Cognitive Computer Vision Solution - Finance = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-19",
+      "service_id": "cognitive-computer-vision-solution-finance-603728e6",
+      "conversion_rate": "22%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:01:48.900998+00:00"
+}

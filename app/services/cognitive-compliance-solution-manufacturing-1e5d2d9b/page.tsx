@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Compliance Solution - Manufacturing - Zion Tech Group",
-  description: "Enhance your manufacturing business with Cognitive Compliance Solution - Manufacturing. Our solution provides loyalty optimization with enterprise-grade reliability and security.",
+  description: "Enhance your manufacturing business with Cognitive Compliance Solution - Manufacturing. Our solution provides loyalty optimization with enterprise-grade reliabi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-compliance-solution-manufacturing-1e5d2d9b`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Intelligence Platform - Real-Estate - Zion Tech Group",
-  description: "Next-generation real-estate solution: Smart Intelligence Platform - Real-Estate. Combines customer journey mapping with adaptive intelligence for optimal results.",
+  description: "Next-generation real-estate solution: Smart Intelligence Platform - Real-Estate. Combines customer journey mapping with adaptive intelligence for optimal result",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-intelligence-platform-real-estate-23f316d6`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

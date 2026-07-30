@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Customer Service for Real-Estate - Zion Tech Group",
-  description: "Transform your real-estate operations with our Intelligent Customer Service for Real-Estate. This AI-driven solution automates customer journey mapping with unprecedented accuracy and efficiency.",
+  description: "Transform your real-estate operations with our Intelligent Customer Service for Real-Estate. This AI-driven solution automates customer journey mapping with unp",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-customer-service-for-real-estate-05e0b83a`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

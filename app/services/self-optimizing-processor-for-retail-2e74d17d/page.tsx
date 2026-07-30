@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Processor for Retail - Zion Tech Group",
-  description: "Unlock unprecedented growth with Self-Optimizing Processor for Retail. This autonomous system provides network optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Self-Optimizing Processor for Retail. This autonomous system provides network optimization with zero manual intervention needed",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-processor-for-retail-2e74d17d`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

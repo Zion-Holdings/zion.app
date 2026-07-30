@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Suite Platform - Automotive - Zion Tech Group",
-  description: "Drive innovation in automotive with Smart Suite Platform - Automotive. This AI-powered platform transforms healthcare data analytics into a competitive advantage.",
+  description: "Drive innovation in automotive with Smart Suite Platform - Automotive. This AI-powered platform transforms healthcare data analytics into a competitive advantag",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-suite-platform-automotive-3a043d01`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

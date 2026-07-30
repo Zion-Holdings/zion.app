@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Deep Learning Engine - Tech - Zion Tech Group",
-  description: "Transform your technology operations with our Predictive Deep Learning Engine - Tech. This AI-driven solution automates contract analysis with unprecedented accuracy and efficiency.",
+  description: "Transform your technology operations with our Predictive Deep Learning Engine - Tech. This AI-driven solution automates contract analysis with unprecedented acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-deep-learning-engine-tech-f9a628aa`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Risk Platform - Hospitality - Zion Tech Group",
-  description: "Transform your hospitality operations with our Smart Risk Platform - Hospitality. This AI-driven solution automates ml model training with unprecedented accuracy and efficiency.",
+  description: "Transform your hospitality operations with our Smart Risk Platform - Hospitality. This AI-driven solution automates ml model training with unprecedented accurac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-risk-platform-hospitality-159dad2b`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
