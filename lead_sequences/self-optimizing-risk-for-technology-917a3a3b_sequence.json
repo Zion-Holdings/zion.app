@@ -1,0 +1,35 @@
+{
+  "service_id": "self-optimizing-risk-for-technology-917a3a3b",
+  "service_name": "Self-Optimizing Risk for Technology",
+  "industry": "technology",
+  "lead_magnet": "AI Cost Calculator - See Your Potential Savings",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows technology companies using Self-Optimizing Risk for Technology see 52% improvement. Your current process?",
+      "sequence_id": "seq-45",
+      "service_id": "self-optimizing-risk-for-technology-917a3a3b"
+    },
+    {
+      "step": 2,
+      "message": "Based on your technology profile, Self-Optimizing Risk for Technology could save {company} approximately $18.4M. Interested in details?",
+      "sequence_id": "seq-45",
+      "service_id": "self-optimizing-risk-for-technology-917a3a3b"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Self-Optimizing Risk for Technology is proven to deliver 52% results.",
+      "sequence_id": "seq-45",
+      "service_id": "self-optimizing-risk-for-technology-917a3a3b"
+    }
+  ],
+  "hot_lead_score": 66,
+  "conversion_likelihood": "75%",
+  "timestamp": "2026-07-30T05:52:43.160270+00:00"
+}

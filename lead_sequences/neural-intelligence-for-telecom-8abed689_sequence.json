@@ -1,0 +1,35 @@
+{
+  "service_id": "neural-intelligence-for-telecom-8abed689",
+  "service_name": "Neural Intelligence for Telecom",
+  "industry": "telecom",
+  "lead_magnet": "Network Optimization Cost Analysis",
+  "metrics": {
+    "improvement": "53%",
+    "savings": "$19.2M",
+    "timeframe": "5 months",
+    "similar": "TeleCom Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TeleCom Solutions is closing their Q3 deals this week. Want to see how Neural Intelligence for Telecom can help {company} save $19.2M?",
+      "sequence_id": "seq-79",
+      "service_id": "neural-intelligence-for-telecom-8abed689"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Neural Intelligence for Telecom delivers 53% in 5 months.",
+      "sequence_id": "seq-79",
+      "service_id": "neural-intelligence-for-telecom-8abed689"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-79",
+      "service_id": "neural-intelligence-for-telecom-8abed689"
+    }
+  ],
+  "hot_lead_score": 79,
+  "conversion_likelihood": "58%",
+  "timestamp": "2026-07-30T05:52:43.163047+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-real-estate-for-sports-29f931f3",
+  "service_name": "Autonomous Real Estate for Sports",
+  "industry": "sports",
+  "lead_magnet": "Fan Engagement Growth Framework",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$8.9M",
+    "timeframe": "4 months",
+    "similar": "SportsTeam"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve sports. Our AI platform helped SportsTeam achieve 55% improvement in 4 months. Quick 5-minute call?",
+      "sequence_id": "seq-51",
+      "service_id": "autonomous-real-estate-for-sports-29f931f3"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Autonomous Real Estate for Sports typically saves $8.9M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-51",
+      "service_id": "autonomous-real-estate-for-sports-29f931f3"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 55% results. If not interested, just let me know!",
+      "sequence_id": "seq-51",
+      "service_id": "autonomous-real-estate-for-sports-29f931f3"
+    }
+  ],
+  "hot_lead_score": 95,
+  "conversion_likelihood": "54%",
+  "timestamp": "2026-07-30T05:52:43.160734+00:00"
+}

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "System Smart - Hospitality - Zion Tech Group",
-  description: "Transform your hospitality operations with our System Smart - Hospitality. This AI-driven solution automates resource optimization with unprecedented accuracy a",
+  description: "The future of hospitality is here with System Smart - Hospitality. Powered by cutting-edge AI, this platform delivers resource optimization like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/system-smart---hospitality-124feb52`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">System Smart - Hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your hospitality operations with our System Smart - Hospitality. This AI-driven solution automates resource optimization with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of hospitality is here with System Smart - Hospitality. Powered by cutting-edge AI, this platform delivers resource optimization like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Role-based access control with SSO integration</li>
-            <li>A/B testing framework for continuous optimization</li>
-            <li>Customer service automation with chatbot integration</li>
-            <li>Version control with rollback capabilities</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>Image recognition with computer vision</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>50% reduction in operational costs through automation</li>
-            <li>Increased revenue with optimized pricing strategies</li>
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>3x faster decision making with real-time insights</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
           </ul>
         </div>
         

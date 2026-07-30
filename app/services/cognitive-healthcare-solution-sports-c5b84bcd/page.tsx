@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Healthcare Solution - Sports - Zion Tech Group",
-  description: "Transform your sports operations with our Cognitive Healthcare Solution - Sports. This AI-driven solution automates anomaly detection with unprecedented accuracy and efficiency.",
+  description: "Transform your sports operations with our Cognitive Healthcare Solution - Sports. This AI-driven solution automates anomaly detection with unprecedented accurac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-healthcare-solution-sports-c5b84bcd`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

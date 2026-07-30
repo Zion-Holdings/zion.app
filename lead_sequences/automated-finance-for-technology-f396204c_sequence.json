@@ -1,0 +1,35 @@
+{
+  "service_id": "automated-finance-for-technology-f396204c",
+  "service_name": "Automated Finance for Technology",
+  "industry": "technology",
+  "lead_magnet": "AI Cost Calculator - See Your Potential Savings",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows technology companies using Automated Finance for Technology see 52% improvement. Your current process?",
+      "sequence_id": "seq-60",
+      "service_id": "automated-finance-for-technology-f396204c"
+    },
+    {
+      "step": 2,
+      "message": "Based on your technology profile, Automated Finance for Technology could save {company} approximately $18.4M. Interested in details?",
+      "sequence_id": "seq-60",
+      "service_id": "automated-finance-for-technology-f396204c"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Automated Finance for Technology is proven to deliver 52% results.",
+      "sequence_id": "seq-60",
+      "service_id": "automated-finance-for-technology-f396204c"
+    }
+  ],
+  "hot_lead_score": 87,
+  "conversion_likelihood": "42%",
+  "timestamp": "2026-07-30T05:52:43.161465+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-revenue-for-logistics-063e994f",
+  "service_name": "Smart Revenue for Logistics",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows logistics companies using Smart Revenue for Logistics see 49% improvement. Your current process?",
+      "sequence_id": "seq-50",
+      "service_id": "smart-revenue-for-logistics-063e994f"
+    },
+    {
+      "step": 2,
+      "message": "Based on your logistics profile, Smart Revenue for Logistics could save {company} approximately $11.2M. Interested in details?",
+      "sequence_id": "seq-50",
+      "service_id": "smart-revenue-for-logistics-063e994f"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Smart Revenue for Logistics is proven to deliver 49% results.",
+      "sequence_id": "seq-50",
+      "service_id": "smart-revenue-for-logistics-063e994f"
+    }
+  ],
+  "hot_lead_score": 74,
+  "conversion_likelihood": "44%",
+  "timestamp": "2026-07-30T05:52:43.160656+00:00"
+}

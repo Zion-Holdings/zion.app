@@ -1,0 +1,35 @@
+{
+  "service_id": "adaptive-predictor-for-construction-caac7bc8",
+  "service_name": "Adaptive Predictor for Construction",
+  "industry": "construction",
+  "lead_magnet": "Project Delivery Acceleration Guide",
+  "metrics": {
+    "improvement": "45%",
+    "savings": "$8.7M",
+    "timeframe": "8 months",
+    "similar": "BuildCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, BuildCo just implemented Adaptive Predictor for Construction last month - 45% improvement already. Thoughts?",
+      "sequence_id": "seq-63",
+      "service_id": "adaptive-predictor-for-construction-caac7bc8"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: BuildCo saw $8.7M in savings. Your construction peers are seeing similar results.",
+      "sequence_id": "seq-63",
+      "service_id": "adaptive-predictor-for-construction-caac7bc8"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-63",
+      "service_id": "adaptive-predictor-for-construction-caac7bc8"
+    }
+  ],
+  "hot_lead_score": 93,
+  "conversion_likelihood": "40%",
+  "timestamp": "2026-07-30T05:52:43.161738+00:00"
+}

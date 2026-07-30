@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Support System - Insurance - Zion Tech Group",
-  description: "The future of insurance is here with Autonomous Support System - Insurance. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.",
+  description: "The future of insurance is here with Autonomous Support System - Insurance. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-support-system-insurance-7b984baf`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-generator-for-media-4be49340",
+  "service_name": "Cognitive Generator for Media",
+  "industry": "media",
+  "lead_magnet": "Content Performance Optimization Guide",
+  "metrics": {
+    "improvement": "43%",
+    "savings": "$6.8M",
+    "timeframe": "9 months",
+    "similar": "MediaHouse"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, MediaHouse is closing their Q3 deals this week. Want to see how Cognitive Generator for Media can help {company} save $6.8M?",
+      "sequence_id": "seq-9",
+      "service_id": "cognitive-generator-for-media-4be49340"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Cognitive Generator for Media delivers 43% in 9 months.",
+      "sequence_id": "seq-9",
+      "service_id": "cognitive-generator-for-media-4be49340"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-9",
+      "service_id": "cognitive-generator-for-media-4be49340"
+    }
+  ],
+  "hot_lead_score": 72,
+  "conversion_likelihood": "69%",
+  "timestamp": "2026-07-30T05:52:43.157081+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-security-for-energy-60f32f05",
+  "service_name": "Predictive Security for Energy",
+  "industry": "energy",
+  "lead_magnet": "Energy Savings Calculator",
+  "metrics": {
+    "improvement": "48%",
+    "savings": "$16.5M",
+    "timeframe": "8 months",
+    "similar": "EnergyCorp"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve energy. Our AI platform helped EnergyCorp achieve 48% improvement in 8 months. Quick 5-minute call?",
+      "sequence_id": "seq-81",
+      "service_id": "predictive-security-for-energy-60f32f05"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Predictive Security for Energy typically saves $16.5M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-81",
+      "service_id": "predictive-security-for-energy-60f32f05"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 48% results. If not interested, just let me know!",
+      "sequence_id": "seq-81",
+      "service_id": "predictive-security-for-energy-60f32f05"
+    }
+  ],
+  "hot_lead_score": 79,
+  "conversion_likelihood": "74%",
+  "timestamp": "2026-07-30T05:52:43.163198+00:00"
+}

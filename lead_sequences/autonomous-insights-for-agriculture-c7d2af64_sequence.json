@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-insights-for-agriculture-c7d2af64",
+  "service_name": "Autonomous Insights for Agriculture",
+  "industry": "agriculture",
+  "lead_magnet": "Precision Farming ROI Analysis",
+  "metrics": {
+    "improvement": "40%",
+    "savings": "$4.2M",
+    "timeframe": "12 months",
+    "similar": "FarmTech"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows agriculture companies using Autonomous Insights for Agriculture see 40% improvement. Your current process?",
+      "sequence_id": "seq-40",
+      "service_id": "autonomous-insights-for-agriculture-c7d2af64"
+    },
+    {
+      "step": 2,
+      "message": "Based on your agriculture profile, Autonomous Insights for Agriculture could save {company} approximately $4.2M. Interested in details?",
+      "sequence_id": "seq-40",
+      "service_id": "autonomous-insights-for-agriculture-c7d2af64"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Autonomous Insights for Agriculture is proven to deliver 40% results.",
+      "sequence_id": "seq-40",
+      "service_id": "autonomous-insights-for-agriculture-c7d2af64"
+    }
+  ],
+  "hot_lead_score": 93,
+  "conversion_likelihood": "64%",
+  "timestamp": "2026-07-30T05:52:43.159878+00:00"
+}

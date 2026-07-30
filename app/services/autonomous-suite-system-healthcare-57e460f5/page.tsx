@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Suite System - Healthcare - Zion Tech Group",
-  description: "Optimize your healthcare workflows with Autonomous Suite System - Healthcare. This intelligent platform delivers process automation through advanced automation and AI.",
+  description: "Optimize your healthcare workflows with Autonomous Suite System - Healthcare. This intelligent platform delivers process automation through advanced automation ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-suite-system-healthcare-57e460f5`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

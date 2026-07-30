@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Marketing Platform - Automotive #1 - Zion Tech Group",
-  description: "Transform your automotive operations with our Smart Marketing Platform - Automotive #1. This AI-driven solution automates logistics route optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your automotive operations with our Smart Marketing Platform - Automotive #1. This AI-driven solution automates logistics route optimization with unpr",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-marketing-platform-automotive-1-7def8f85`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

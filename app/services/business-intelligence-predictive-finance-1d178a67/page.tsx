@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Business Intelligence Predictive - Finance - Zion Tech Group",
-  description: "Enhance your finance business with Business Intelligence Predictive - Finance. Our solution provides influencer identification with enterprise-grade reliability and security.",
+  description: "Enhance your finance business with Business Intelligence Predictive - Finance. Our solution provides influencer identification with enterprise-grade reliability",
   alternates: {
     canonical: `https://ziontechgroup.com/services/business-intelligence-predictive-finance-1d178a67`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

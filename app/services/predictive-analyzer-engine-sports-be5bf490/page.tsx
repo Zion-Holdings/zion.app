@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Analyzer Engine - Sports - Zion Tech Group",
-  description: "Revolutionize sports through intelligent automation. Our Predictive Analyzer Engine - Sports leverages advanced machine learning to deliver predictive analytics at scale.",
+  description: "Revolutionize sports through intelligent automation. Our Predictive Analyzer Engine - Sports leverages advanced machine learning to deliver predictive analytics",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-analyzer-engine-sports-be5bf490`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

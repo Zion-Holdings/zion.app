@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Customer Service Solution - Hospitality - Zion Tech Group",
-  description: "Next-generation hospitality solution: Cognitive Customer Service Solution - Hospitality. Combines manufacturing quality control with adaptive intelligence for optimal results.",
+  description: "Next-generation hospitality solution: Cognitive Customer Service Solution - Hospitality. Combines manufacturing quality control with adaptive intelligence for o",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-customer-service-solution-hospitality-04c4ba12`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

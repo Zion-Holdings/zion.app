@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Customer Service for Agriculture - Zion Tech Group",
-  description: "Next-generation agriculture solution: AI-Powered Customer Service for Agriculture. Combines inventory management with adaptive intelligence for optimal results.",
+  description: "Revolutionize agriculture through intelligent automation. Our AI-Powered Customer Service for Agriculture leverages advanced machine learning to deliver securit",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-customer-service-for-agriculture-537a34cc`
   }
@@ -13,16 +13,16 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI-Powered Customer Service for Agriculture</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation agriculture solution: AI-Powered Customer Service for Agriculture. Combines inventory management with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize agriculture through intelligent automation. Our AI-Powered Customer Service for Agriculture leverages advanced machine learning to deliver security monitoring at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Data encryption at rest and in transit</li>
-            <li>Open-source friendly with plugin architecture</li>
+            <li>Network optimization with traffic analysis</li>
+            <li>Logistics route optimization with traffic prediction</li>
             <li>HIPAA ready with healthcare data protection</li>
-            <li>SOC 2 certified with security controls</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         
@@ -30,9 +30,10 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Faster time-to-market with accelerated development</li>
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>Better risk management with predictive analytics</li>
             <li>Zero manual intervention required for routine tasks</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Computer Vision for Healthcare - Zion Tech Group",
-  description: "Drive innovation in healthcare with Intelligent Computer Vision for Healthcare. This AI-powered platform transforms customer journey mapping into a competitive advantage.",
+  description: "Drive innovation in healthcare with Intelligent Computer Vision for Healthcare. This AI-powered platform transforms customer journey mapping into a competitive ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-computer-vision-for-healthcare-b577309c`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Quality Solution - Transportation #3 - Zion Tech Group",
-  description: "Revolutionize transportation through intelligent automation. Our Cognitive Quality Solution - Transportation #3 leverages advanced machine learning to deliver account planning at scale.",
+  description: "Revolutionize transportation through intelligent automation. Our Cognitive Quality Solution - Transportation #3 leverages advanced machine learning to deliver a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-quality-solution-transportation-3-82b09610`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

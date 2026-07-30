@@ -1,0 +1,35 @@
+{
+  "service_id": "neural-performance-for-construction-64de8fb1",
+  "service_name": "Neural Performance for Construction",
+  "industry": "construction",
+  "lead_magnet": "Project Delivery Acceleration Guide",
+  "metrics": {
+    "improvement": "45%",
+    "savings": "$8.7M",
+    "timeframe": "8 months",
+    "similar": "BuildCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, BuildCo is closing their Q3 deals this week. Want to see how Neural Performance for Construction can help {company} save $8.7M?",
+      "sequence_id": "seq-54",
+      "service_id": "neural-performance-for-construction-64de8fb1"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Neural Performance for Construction delivers 45% in 8 months.",
+      "sequence_id": "seq-54",
+      "service_id": "neural-performance-for-construction-64de8fb1"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-54",
+      "service_id": "neural-performance-for-construction-64de8fb1"
+    }
+  ],
+  "hot_lead_score": 70,
+  "conversion_likelihood": "60%",
+  "timestamp": "2026-07-30T05:52:43.160990+00:00"
+}

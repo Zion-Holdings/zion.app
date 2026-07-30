@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Finance Platform - Real-Estate #1 - Zion Tech Group",
-  description: "Revolutionize real-estate through intelligent automation. Our Smart Finance Platform - Real-Estate #1 leverages advanced machine learning to deliver churn prediction at scale.",
+  description: "Revolutionize real-estate through intelligent automation. Our Smart Finance Platform - Real-Estate #1 leverages advanced machine learning to deliver churn predi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-finance-platform-real-estate-1-c5c952cd`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

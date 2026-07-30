@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-manufacturing-for-media-f9b1aff4",
+  "service_name": "Predictive Manufacturing for Media",
+  "industry": "media",
+  "lead_magnet": "Content Performance Optimization Guide",
+  "metrics": {
+    "improvement": "43%",
+    "savings": "$6.8M",
+    "timeframe": "9 months",
+    "similar": "MediaHouse"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, MediaHouse is closing their Q3 deals this week. Want to see how Predictive Manufacturing for Media can help {company} save $6.8M?",
+      "sequence_id": "seq-84",
+      "service_id": "predictive-manufacturing-for-media-f9b1aff4"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Predictive Manufacturing for Media delivers 43% in 9 months.",
+      "sequence_id": "seq-84",
+      "service_id": "predictive-manufacturing-for-media-f9b1aff4"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-84",
+      "service_id": "predictive-manufacturing-for-media-f9b1aff4"
+    }
+  ],
+  "hot_lead_score": 65,
+  "conversion_likelihood": "69%",
+  "timestamp": "2026-07-30T05:52:43.163698+00:00"
+}

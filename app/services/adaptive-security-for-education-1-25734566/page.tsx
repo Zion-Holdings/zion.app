@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Security for Education #1 - Zion Tech Group",
-  description: "Drive innovation in education with Adaptive Security for Education #1. This AI-powered platform transforms competitive intelligence into a competitive advantage.",
+  description: "Drive innovation in education with Adaptive Security for Education #1. This AI-powered platform transforms competitive intelligence into a competitive advantage",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-security-for-education-1-25734566`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

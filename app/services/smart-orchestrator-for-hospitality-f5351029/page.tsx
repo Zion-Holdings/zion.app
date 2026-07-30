@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Orchestrator for Hospitality - Zion Tech Group",
-  description: "Optimize your hospitality workflows with Smart Orchestrator for Hospitality. This intelligent platform delivers ml model training through advanced automation and AI.",
+  description: "Optimize your hospitality workflows with Smart Orchestrator for Hospitality. This intelligent platform delivers ml model training through advanced automation an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-orchestrator-for-hospitality-f5351029`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

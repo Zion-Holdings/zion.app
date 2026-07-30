@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Platform System - Automotive - Zion Tech Group",
-  description: "Optimize your automotive workflows with Autonomous Platform System - Automotive. This intelligent platform delivers logistics route optimization through advanced automation and AI.",
+  description: "Optimize your automotive workflows with Autonomous Platform System - Automotive. This intelligent platform delivers logistics route optimization through advance",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-platform-system-automotive-1c907b4f`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

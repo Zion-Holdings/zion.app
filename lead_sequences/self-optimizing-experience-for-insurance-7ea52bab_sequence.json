@@ -1,0 +1,35 @@
+{
+  "service_id": "self-optimizing-experience-for-insurance-7ea52bab",
+  "service_name": "Self-Optimizing Experience for Insurance",
+  "industry": "insurance",
+  "lead_magnet": "Claims Processing Automation Guide",
+  "metrics": {
+    "improvement": "54%",
+    "savings": "$17.3M",
+    "timeframe": "7 months",
+    "similar": "InsurePlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve insurance. Our AI platform helped InsurePlus achieve 54% improvement in 7 months. Quick 5-minute call?",
+      "sequence_id": "seq-1",
+      "service_id": "self-optimizing-experience-for-insurance-7ea52bab"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Self-Optimizing Experience for Insurance typically saves $17.3M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-1",
+      "service_id": "self-optimizing-experience-for-insurance-7ea52bab"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 54% results. If not interested, just let me know!",
+      "sequence_id": "seq-1",
+      "service_id": "self-optimizing-experience-for-insurance-7ea52bab"
+    }
+  ],
+  "hot_lead_score": 92,
+  "conversion_likelihood": "50%",
+  "timestamp": "2026-07-30T05:52:43.155478+00:00"
+}

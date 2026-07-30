@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Engine Solution - Logistics - Zion Tech Group",
-  description: "Transform your logistics operations with our Cognitive Engine Solution - Logistics. This AI-driven solution automates workflow management with unprecedented accuracy and efficiency.",
+  description: "Transform your logistics operations with our Cognitive Engine Solution - Logistics. This AI-driven solution automates workflow management with unprecedented acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-engine-solution-logistics-19eb21b4`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

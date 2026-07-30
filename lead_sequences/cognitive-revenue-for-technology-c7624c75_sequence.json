@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-revenue-for-technology-c7624c75",
+  "service_name": "Cognitive Revenue for Technology",
+  "industry": "technology",
+  "lead_magnet": "AI Cost Calculator - See Your Potential Savings",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TechStart Inc. just implemented Cognitive Revenue for Technology last month - 52% improvement already. Thoughts?",
+      "sequence_id": "seq-88",
+      "service_id": "cognitive-revenue-for-technology-c7624c75"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: TechStart Inc. saw $18.4M in savings. Your technology peers are seeing similar results.",
+      "sequence_id": "seq-88",
+      "service_id": "cognitive-revenue-for-technology-c7624c75"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-88",
+      "service_id": "cognitive-revenue-for-technology-c7624c75"
+    }
+  ],
+  "hot_lead_score": 77,
+  "conversion_likelihood": "67%",
+  "timestamp": "2026-07-30T05:52:43.164388+00:00"
+}

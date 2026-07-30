@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-engine-for-technology-b7ff95e1",
+  "service_name": "Cognitive Engine for Technology",
+  "industry": "technology",
+  "lead_magnet": "AI Cost Calculator - See Your Potential Savings",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TechStart Inc. is closing their Q3 deals this week. Want to see how Cognitive Engine for Technology can help {company} save $18.4M?",
+      "sequence_id": "seq-94",
+      "service_id": "cognitive-engine-for-technology-b7ff95e1"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Cognitive Engine for Technology delivers 52% in 6 months.",
+      "sequence_id": "seq-94",
+      "service_id": "cognitive-engine-for-technology-b7ff95e1"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-94",
+      "service_id": "cognitive-engine-for-technology-b7ff95e1"
+    }
+  ],
+  "hot_lead_score": 79,
+  "conversion_likelihood": "58%",
+  "timestamp": "2026-07-30T05:52:43.164880+00:00"
+}

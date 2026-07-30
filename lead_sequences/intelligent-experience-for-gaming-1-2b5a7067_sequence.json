@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-experience-for-gaming-1-2b5a7067",
+  "service_name": "Intelligent Experience for Gaming #1",
+  "industry": "gaming",
+  "lead_magnet": "Player Retention Strategy Playbook",
+  "metrics": {
+    "improvement": "57%",
+    "savings": "$10.3M",
+    "timeframe": "5 months",
+    "similar": "GameStudio"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows gaming companies using Intelligent Experience for Gaming #1 see 57% improvement. Your current process?",
+      "sequence_id": "seq-80",
+      "service_id": "intelligent-experience-for-gaming-1-2b5a7067"
+    },
+    {
+      "step": 2,
+      "message": "Based on your gaming profile, Intelligent Experience for Gaming #1 could save {company} approximately $10.3M. Interested in details?",
+      "sequence_id": "seq-80",
+      "service_id": "intelligent-experience-for-gaming-1-2b5a7067"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Intelligent Experience for Gaming #1 is proven to deliver 57% results.",
+      "sequence_id": "seq-80",
+      "service_id": "intelligent-experience-for-gaming-1-2b5a7067"
+    }
+  ],
+  "hot_lead_score": 81,
+  "conversion_likelihood": "72%",
+  "timestamp": "2026-07-30T05:52:43.163123+00:00"
+}

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing director-real-estate - Zion Tech Group",
-  description: "The future of real-estate is here with Self-Optimizing director-real-estate. Powered by cutting-edge AI, this platform delivers decision support like never before.",
+  description: "The future of real-estate is here with Self-Optimizing director-real-estate. Powered by cutting-edge AI, this platform delivers decision support like never befo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-director-real-estate-f7f82328`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

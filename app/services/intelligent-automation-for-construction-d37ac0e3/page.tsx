@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Automation for Construction - Zion Tech Group",
-  description: "Next-generation construction solution: Intelligent Automation for Construction. Combines user experience with adaptive intelligence for optimal results.",
+  description: "The future of construction is here with Intelligent Automation for Construction. Powered by cutting-edge AI, this platform delivers quality control like never b",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-automation-for-construction-d37ac0e3`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Automation for Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: Intelligent Automation for Construction. Combines user experience with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Intelligent Automation for Construction. Powered by cutting-edge AI, this platform delivers quality control like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Customer service automation with chatbot integration</li>
-            <li>Custom integrations with webhook support</li>
-            <li>Document processing with OCR and NLP</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Role-based access control with SSO integration</li>
+            <li>Image recognition with computer vision</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>Financial risk management with scenario analysis</li>
+            <li>Machine learning integration with automatic model training</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Improved customer satisfaction with faster response times</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
             <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

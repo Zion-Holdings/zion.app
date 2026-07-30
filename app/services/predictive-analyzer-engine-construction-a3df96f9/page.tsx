@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Analyzer Engine - Construction - Zion Tech Group",
-  description: "Drive innovation in construction with Predictive Analyzer Engine - Construction. This AI-powered platform transforms audit trail management into a competitive advantage.",
+  description: "Drive innovation in construction with Predictive Analyzer Engine - Construction. This AI-powered platform transforms audit trail management into a competitive a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-analyzer-engine-construction-a3df96f9`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent automation-insurance - Zion Tech Group",
-  description: "Next-generation insurance solution: Intelligent automation-insurance. Combines budget optimization with adaptive intelligence for optimal results.",
+  description: "Revolutionize insurance through intelligent automation. Our Intelligent automation-insurance leverages advanced machine learning to deliver risk assessment at s",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-automation-insurance-7d8761fa`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent automation-insurance</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation insurance solution: Intelligent automation-insurance. Combines budget optimization with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize insurance through intelligent automation. Our Intelligent automation-insurance leverages advanced machine learning to deliver risk assessment at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Master data management with golden records</li>
-            <li>Custom integrations with webhook support</li>
+            <li>Security monitoring with threat intelligence</li>
+            <li>Fraud detection with anomaly analysis</li>
             <li>Sales process optimization with pipeline management</li>
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>User experience analytics with behavior tracking</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Custom integrations with webhook support</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved brand awareness with social monitoring</li>
-            <li>Reduced human error by 95% with automated processes</li>
-            <li>3x faster decision making with real-time insights</li>
-            <li>Improved quality with automated testing and validation</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

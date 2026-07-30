@@ -1,0 +1,35 @@
+{
+  "service_id": "automated-experience-for-finance-c75f4ce6",
+  "service_name": "Automated Experience for Finance",
+  "industry": "finance",
+  "lead_magnet": "Regulatory Compliance Automation Guide",
+  "metrics": {
+    "improvement": "58%",
+    "savings": "$24.1M",
+    "timeframe": "5 months",
+    "similar": "Capital Group"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Capital Group just implemented Automated Experience for Finance last month - 58% improvement already. Thoughts?",
+      "sequence_id": "seq-13",
+      "service_id": "automated-experience-for-finance-c75f4ce6"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: Capital Group saw $24.1M in savings. Your finance peers are seeing similar results.",
+      "sequence_id": "seq-13",
+      "service_id": "automated-experience-for-finance-c75f4ce6"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-13",
+      "service_id": "automated-experience-for-finance-c75f4ce6"
+    }
+  ],
+  "hot_lead_score": 90,
+  "conversion_likelihood": "48%",
+  "timestamp": "2026-07-30T05:52:43.157449+00:00"
+}

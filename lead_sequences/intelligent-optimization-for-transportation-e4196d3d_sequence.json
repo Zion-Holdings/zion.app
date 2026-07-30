@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-optimization-for-transportation-e4196d3d",
+  "service_name": "Intelligent Optimization for Transportation",
+  "industry": "transportation",
+  "lead_magnet": "Fleet Efficiency Optimization Report",
+  "metrics": {
+    "improvement": "48%",
+    "savings": "$11.9M",
+    "timeframe": "6 months",
+    "similar": "TransitCorp"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TransitCorp just implemented Intelligent Optimization for Transportation last month - 48% improvement already. Thoughts?",
+      "sequence_id": "seq-98",
+      "service_id": "intelligent-optimization-for-transportation-e4196d3d"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: TransitCorp saw $11.9M in savings. Your transportation peers are seeing similar results.",
+      "sequence_id": "seq-98",
+      "service_id": "intelligent-optimization-for-transportation-e4196d3d"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-98",
+      "service_id": "intelligent-optimization-for-transportation-e4196d3d"
+    }
+  ],
+  "hot_lead_score": 78,
+  "conversion_likelihood": "65%",
+  "timestamp": "2026-07-30T05:52:43.165203+00:00"
+}

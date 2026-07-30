@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Revenue - Energy Edition - Zion Tech Group",
-  description: "Transform your energy operations with our AI Revenue - Energy Edition. This AI-driven solution automates manufacturing quality control with unprecedented accuracy and efficiency.",
+  description: "Transform your energy operations with our AI Revenue - Energy Edition. This AI-driven solution automates manufacturing quality control with unprecedented accura",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-revenue-energy-edition-b067f2ae`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
