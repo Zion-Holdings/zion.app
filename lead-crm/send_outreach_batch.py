@@ -2,6 +2,14 @@
 import sys, json, base64, urllib.request, urllib.parse, urllib.error, datetime, time, os
 from pathlib import Path
 
+try:
+    from scripts.utils.file_lock import single_instance
+except Exception:
+    def single_instance(lock_file, jitter=(2, 25), timeout_seconds=0):
+        class _NoOpLock:
+            def release(self): pass
+        return _NoOpLock()
+
 REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
 if not REPO.exists():
     try:
@@ -153,7 +161,7 @@ def send_mail(to_addr, subject, body, html=None, thread_id=None, message_id=None
     key = (to_key, (subject or '').strip(), thread_id or '', message_id or '')
     if key in _SENT_ROWS:
         return None, 'duplicate'
-    # 72h auto-suppress via Gmail Sent history (was 24h; adjusted for real send latency)
+    # 72h auto-suppress via Gmail Sent history
     try:
         from commands.google_workspace import gmail_sent
         if gmail_sent(to_addr, subject, within_seconds=72*3600, limit=20):
@@ -419,51 +427,41 @@ def _analyze_and_improve(rows, excluded):
     return {'improved': improved, 'summary': summary}
 
 
-def main():
-    batch_path = sys.argv[1] if len(sys.argv) > 1 else str(REPO / 'lead-crm' / 'outreach_ready_canonical.json')
-    if not Path(batch_path).exists():
-        print(json.dumps({'error': f'batch_missing:{batch_path}', 'used_default': 'outreach_ready_canonical.json'}, ensure_ascii=False))
-        return
+def _load_batch(path: Path):
+    if not path.exists():
+        return []
+    try:
+        obj = json.loads(path.read_text(encoding='utf-8'))
+    except Exception:
+        return []
+    return obj.get('recipients') or obj.get('ready') or obj.get('batch') or []
 
-    obj = json.loads(Path(batch_path).read_text())
-    rows = obj.get('recipients') or obj.get('ready') or obj.get('batch') or []
-    chat_fn = _llm_chat
-    outputs = []
-    skipped_templates = 0
-    send_allowed = os.environ.get('ZTG_SEND_ALLOWED') == '1'
-    exclusion_path = REPO / 'lead-crm' / 'exclusion-list.json'
-    excluded = set()
-    if exclusion_path.exists():
-        try:
-            excluded = {x['email'].lower() for x in json.loads(exclusion_path.read_text(encoding='utf-8')).get('addresses', []) if x.get('email')}
-        except Exception:
-            excluded = set()
-    if not send_allowed:
-        # Run analysis and improvement pass even when sending is disabled
-        analysis = _analyze_and_improve(rows, excluded)
-        improved_rows = analysis['improved']
-        analysis_summary = analysis['summary']
-        # Persist improved records back to batch_path
-        try:
-            canonical = json.loads(Path(batch_path).read_text(encoding='utf-8'))
-            ready_list = canonical.get('ready') or canonical.get('recipients') or canonical.get('batch') or []
-            improved_by_to = {r.get('to'): r for r in improved_rows if r.get('to')}
-            updated = 0
-            for item in ready_list:
-                k = item.get('to') or item.get('recipient') or item.get('email')
-                if k and k.lower() in improved_by_to:
-                    item.update(improved_by_to.pop(k.lower()))
-                    updated += 1
-            canonical['ready'] = ready_list
-            canonical['improvedAt'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
-            canonical['analysisSummary'] = analysis_summary
-            Path(batch_path).write_text(json.dumps(canonical, ensure_ascii=False, indent=2), encoding='utf-8')
-        except Exception:
-            pass
-        # Update miner_health.json with analysis metrics
-        _update_miner_health(analysis_summary, 'analyzed_no_send')
-        print(json.dumps({'generatedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'send_count': 0, 'skipped_templates': skipped_templates, 'results': [], 'note': 'SEND_DISABLED: set ZTG_SEND_ALLOWED=1 to enable outbound sends', 'analysisSummary': analysis_summary}, ensure_ascii=False))
-        return
+
+def _save_batch(path: Path, rows):
+    try:
+        obj = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
+    except Exception:
+        obj = {}
+    obj['recipients'] = rows
+    try:
+        path.write_text(json.dumps(obj, ensure_ascii=False, indent=2), encoding='utf-8')
+    except Exception:
+        pass
+
+
+def _cooldown_blocked(to_addr, subject):
+    try:
+        from commands.google_workspace import gmail_sent
+        if gmail_sent(to_addr, subject, within_seconds=72*3600, limit=20):
+            return True
+    except Exception:
+        pass
+    return False
+
+
+def _send_enabled_main(rows, outputs, excluded, batch_path):
+    real_sends = 0
+    recent_blocks = 0
     for r in rows:
         to = r.get('email') or r.get('recipient') or r.get('to')
         if not to:
@@ -473,20 +471,119 @@ def main():
         if to in excluded:
             outputs.append({'to': to, 'success': False, 'reason': 'excluded', 'error': 'excluded-by-list'})
             continue
-        tailored = _tailor_message(chat_fn, dict(r))
+        subject = (r.get('subject') or '').strip()
+        if subject and _cooldown_blocked(to, subject):
+            outputs.append({'to': to, 'success': False, 'reason': 'recent_sent_72h', 'error': 'recent_sent_72h'})
+            recent_blocks += 1
+            continue
+        tailored = _tailor_message(_llm_chat, dict(r))
         html = tailored.get('html') or r.get('html')
         subj = tailored.get('subject', tailored.get('subject','') or r.get('subject','') or '')
         body = tailored.get('body', tailored.get('body','') or r.get('body','') or '')
         try:
             mid, tid = send_mail(to, subj, body, html, thread_id=r.get('thread_id'), message_id=r.get('message_id'))
-            outputs.append({'to': to, 'success': True, 'message_id': mid, 'thread_id': tid,
+            if mid or tid:
+                real_sends += 1
+            outputs.append({'to': to, 'success': bool(mid or tid), 'message_id': mid, 'thread_id': tid,
                             'llm_provider': tailored.get('llm_provider'), 'llm_model': tailored.get('llm_model')})
         except Exception as e:
             outputs.append({'to': to, 'success': False, 'error': str(e)})
         time.sleep(0.25)
-    print(json.dumps({'generatedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(),
-                      'send_count': len(outputs), 'skipped_templates': skipped_templates,
-                      'results': outputs}))
+    return real_sends, recent_blocks
+
+
+def main():
+    lock = single_instance(REPO / 'lead-crm' / 'send_outreach_batch.lock', jitter=(2, 25), timeout_seconds=0)
+    try:
+        batch_path = sys.argv[1] if len(sys.argv) > 1 else str(REPO / 'lead-crm' / 'outreach_ready_canonical.json')
+        if not Path(batch_path).exists():
+            print(json.dumps({'error': f'batch_missing:{batch_path}', 'used_default': 'outreach_ready_canonical.json'}, ensure_ascii=False))
+            return
+
+        obj = json.loads(Path(batch_path).read_text())
+        rows = _load_batch(Path(batch_path))
+
+        chat_fn = _llm_chat
+        outputs = []
+        skipped_templates = 0
+        send_allowed = os.environ.get('ZTG_SEND_ALLOWED') == '1'
+        exclusion_path = REPO / 'lead-crm' / 'exclusion-list.json'
+        excluded = set()
+        if exclusion_path.exists():
+            try:
+                excluded = {x['email'].lower() for x in json.loads(exclusion_path.read_text(encoding='utf-8')).get('addresses', []) if x.get('email')}
+            except Exception:
+                excluded = set()
+
+        primary_rows = rows
+        if not primary_rows:
+            print(json.dumps({'generatedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'send_count': 0, 'results': [], 'note': 'no_rows_in_batch'}, ensure_ascii=False))
+            return
+
+        if not send_allowed:
+            analysis = _analyze_and_improve(primary_rows, excluded)
+            improved_rows = analysis['improved']
+            analysis_summary = analysis['summary']
+            try:
+                canonical = json.loads(Path(batch_path).read_text(encoding='utf-8')) if Path(batch_path).exists() else {}
+                ready_list = canonical.get('ready') or canonical.get('recipients') or canonical.get('batch') or []
+                improved_by_to = {r.get('to'): r for r in improved_rows if r.get('to')}
+                updated = 0
+                for item in ready_list:
+                    k = item.get('to') or item.get('recipient') or item.get('email')
+                    if k and k.lower() in improved_by_to:
+                        item.update(improved_by_to.pop(k.lower()))
+                        updated += 1
+                canonical['ready'] = ready_list
+                canonical['improvedAt'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+                canonical['analysisSummary'] = analysis_summary
+                Path(batch_path).write_text(json.dumps(canonical, ensure_ascii=False, indent=2), encoding='utf-8')
+            except Exception:
+                pass
+            _update_miner_health(analysis_summary, 'analyzed_no_send')
+            print(json.dumps({'generatedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'send_count': 0, 'skipped_templates': skipped_templates, 'results': [], 'note': 'SEND_DISABLED: set ZTG_SEND_ALLOWED=1 to enable outbound sends', 'analysisSummary': analysis_summary}, ensure_ascii=False))
+            return
+
+        real_sends, recent_blocks = _send_enabled_main(primary_rows, outputs, excluded, Path(batch_path))
+        send_total = len(outputs)
+        if send_total > 0 and real_sends == 0 and recent_blocks == send_total:
+            cold_paths = [
+                REPO / 'lead-crm' / 'outreach_ready_canonical_cold.json',
+                REPO / 'lead-crm' / 'outreach_ready_canonical.json.bak',
+                REPO / 'app' / 'data' / 'discovered_leads.json',
+            ]
+            rotated_rows = primary_rows
+            for p in cold_paths:
+                try:
+                    cold_rows = _load_batch(p)
+                    seen = {(r.get('email') or r.get('recipient') or r.get('to') or '').lower() for r in rotated_rows if (r.get('email') or r.get('recipient') or r.get('to') or '')}
+                    unqueued = []
+                    for r in cold_rows:
+                        k = (r.get('email') or r.get('recipient') or r.get('to') or '').lower()
+                        if not k or k in seen:
+                            continue
+                        if k in {x.lower() for x in excluded}:
+                            continue
+                        unqueued.append(r)
+                    if unqueued:
+                        rotated_rows = rotated_rows + unqueued
+                        break
+                except Exception:
+                    continue
+            if len(rotated_rows) > len(primary_rows):
+                outputs = []
+                _save_batch(Path(batch_path), rotated_rows)
+                real_sends, recent_blocks = _send_enabled_main(rotated_rows, outputs, excluded, Path(batch_path))
+                send_total = len(outputs)
+
+        print(json.dumps({'generatedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                          'send_count': send_total, 'skipped_templates': skipped_templates,
+                          'results': outputs}))
+    finally:
+        try:
+            lock.release()
+        except Exception:
+            pass
 
 
 if __name__ == '__main__':

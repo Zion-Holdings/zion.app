@@ -1,0 +1,284 @@
+{
+  "ts": "2026-07-30T17:17:03.216Z",
+  "host": "ziontechgroup.com",
+  "checked": 56,
+  "broken_count": 55,
+  "ok": false,
+  "broken_routes": [
+    {
+      "route": "/services",
+      "status": 301,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/5g-real-time-data-pipeline-platform-fd4cfc88",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/pricing",
+      "status": 301,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/contact",
+      "status": 301,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/about",
+      "status": 301,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/5g-ai-code-generation--optimization-cb3ddf63",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/solutions",
+      "status": 301,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-autonomous-qa-engineering",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-agent-tool-builder",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/advertising-ai-code-generation--optimization-6bc2a51d",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-ai-sales-lead-scoring-engine-abf35883",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/agentic-ai-ai-customer-churn-prediction-2fe3eba6",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/accounting-ai-powered-metaverse-experience-engine-8be4af29",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/agritech-greenhouse-automation",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-carbon-esg-footprint-tracker",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-dashboard-designer",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-cro-optimizer",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-computer-vision-shelf-monitoring",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-digital-twin-factory",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-code-reviewer-pro",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-customer-segmentation",
+      "status": 301,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-clinical-trial-design-optimizer",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-contract-review",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-driven-api-design-assistant",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-geospatial-analytics",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-financial-forecasting-engine",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-email-marketing",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-fraud-detection-finance",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-estate-will-planning-assistant",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-it-helpdesk",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-immigration-case-predictor",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-personalized-learning-platform",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-multimodal-search",
+      "status": 301,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-meeting-preread",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-powered-analytics-platform-telecommunications-ai-powered-analytics-platform-for-telecommunications",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-observability-turbo",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-knowledge-management",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-legal-document-drafter",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-low-code-integration",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-powered-data-lineage-14775438",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-predictive-customer-analytics",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-powered-performance-monitoring-47df5635",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-powered-lead-scoring--routing-0a5988c0",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-powered-edge-ai-platform-1beff167",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-powered-code-review-assistant-08a058bf",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-predictive-quality-control",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-powered-seo-content-engine-002a1b6e",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-product-launch-intelligence",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-sales-intelligence",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-services-rag-as-a-service",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-retail-recommendation-engine",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-spatial-computing",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-real-estate-valuation",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-supply-chain-intelligence",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    },
+    {
+      "route": "/services/ai-sustainable-supply-chain-radar",
+      "status": 404,
+      "error": "EMPTY_BODY"
+    }
+  ]
+}

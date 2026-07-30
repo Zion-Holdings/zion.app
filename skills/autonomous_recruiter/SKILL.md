@@ -27,11 +27,19 @@ Your goal is to source, qualify, enrich, and draft outreach messages for **IT Fi
 
 | Parameter | Type | Default | Notes |
 |---|---|---|---|
-| `TARGET_LOCATIONS` | list[str] | `["Taubaté - SP", "Campinas - SP", "São José dos Campos - SP", "Sorocaba - SP"]` | Cities/regions to source from |
+| `TARGET_LOCATIONS` | list[str] | `["Taubaté, SP", "Campinas, SP", "São José dos Campos, SP", "Sorocaba, SP"]` | Cities/regions to source from |
 | `ROLES` | list[str] | `["Técnico de Campo", "Analista de Suporte Presencial", "Técnico de Infraestrutura e Redes", "Field Support Engineer", "Field Service Engineer"]` | Target job titles |
 | `BATCH_SIZE_PER_LOCATION` | integer | `20` | Candidate records to attempt per location per execution cycle |
 
 If not provided, use the defaults above and proceed immediately.
+
+## Native Non-Interactive Runtime Requirement
+
+This skill may be invoked from automated/detached execution, so it must not rely solely on chat interactive tool wrappers.
+
+- Support standard-library HTTP parsing: `requests` + `BeautifulSoup` against public search endpoints or HTML indexes as a first-class fallback.
+- If `web_search()` is unavailable, continue with native fallbacks and log the limitation to `recruitment_errors.log`.
+- Survive interrupts on non-critical phases by logging and continuing to the next source/location.
 
 ## Execution Pipeline (per location, in parallel/concurrent batches where possible)
 

@@ -1,0 +1,264 @@
+{
+  "ts": "2026-07-30T17:29:34.239191Z",
+  "host": "ziontechgroup.com",
+  "checked": 55,
+  "broken_count": 51,
+  "ok": false,
+  "broken_routes": [
+    {
+      "route": "/industry-solutions/healthcare",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/hyperautomation-ai-powered-customer-churn-prevention-5aaa711f",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/education-student-lifecycle-manager-0d0925a4",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/neo4j-ai-powered-data-synchronization-d27ac801",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/sql-server-cloud-native-security-posture-manager-5bd862a7",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/ai-training-data-platform",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/w175-hybrid-cloud-connect",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/recruiting-ai-powered-pricing-optimization-9eee4bc7",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/redis-ai-powered-chatbot-builder-9c951699",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/scorecards-ai-social-media-content-creator-490cf712",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/cloud-zero-trust-access-ztna-8d5914d9",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/financial-risk-ai-powered-edge-ai-platform-704f20c8",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/scorecards-ai-powered-data-lake-management-5f588338",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/data-lake-ai-powered-inventory-optimization-adf6713b",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/customer-service-ai-powered-multi-cloud-management-5d6ad436",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/warehouse-robotics-ai-powered-data-integration-d0a0a4fe",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/ride-hailing-intelligent-document-processing-ai-9a23b0d3",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/intelligent-decision-support-system-for-e-commerce-d4de16e6",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/ip-ai-powered-seo-content-engine-23830bed",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/ai-powered-batch-processing-3603c342",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/it-api-gateway-ai",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/kubernetes-ai-powered-seo-content-engine-dce039c6",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/data-synthetic-data-generator",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/it-asset-management--cmdb-b63290f4",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/helpdesk-outsourcing--support-66f097c6",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/w129-healthcare-diagnostics",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/compensation-ai-powered-multi-cloud-management-65253d0f",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/financial-planning-cloud-native-security-posture-manager-84b3b571",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/edge-computing-ai-powered-customer-journey-mapping-e175960b",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/drill-down-ai-powered-batch-processing-d761da65",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/it-identity-access",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/patient-kubernetes-cluster-management-platform-736748d5",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/demand-response-ai-financial-planning--analysis-5e145c54",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/smart-grid-ai-sales-lead-scoring-engine-a6cc12f7",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/cloud-storage-class-cleaner",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/energy-retail-ai-powered-lead-scoring--routing-f2989aa5",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/predictive-intelligence-engine-for-manufacturing-c6a9847f",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/distribution-ai-powered-resume-screening-b6d4c558",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/user-experience-ai-powered-lead-scoring--routing-a4cddc93",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/ai-sales-lead-scoring-engine-b4c2b89b",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/digital-payments-ai-powered-network-security-7b888660",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/ai-automation-ai-powered-stream-processing-f5c565b9",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/data-warehousing-ai-powered-log-management-bde6edc2",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/workflow-automation-intelligent-document-processing-ai-adf0e1dc",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/enterprise-analytics-ai-powered-data-warehouse-optimization-20e339f8",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/renewable-energy-ai-powered-chatbot-builder-ee6d2815",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/proactive-care-ai-powered-microservices-management-e4ee98dc",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/container-ai-powered-etl-pipeline-optimization-8ef3e8e0",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/api-versioning-multi-cloud-cost-management-platform-82b88df9",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/student-information-systems-ai-powered-content-generation-platform-623d7b1b",
+      "status": 404,
+      "error": "404"
+    },
+    {
+      "route": "/services/portfolio-zero-trust-identity--access-manager-3f3f69b1",
+      "status": 404,
+      "error": "404"
+    }
+  ]
+}

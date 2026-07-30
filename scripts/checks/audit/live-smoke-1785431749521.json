@@ -1,0 +1,289 @@
+{
+  "ts": "2026-07-30T17:15:49.519Z",
+  "host": "ziontechgroup.com",
+  "checked": 56,
+  "broken_count": 56,
+  "ok": false,
+  "broken_routes": [
+    {
+      "route": "/",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/solutions",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/pricing",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/about",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/contact",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/5g-ai-code-generation--optimization-cb3ddf63",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/5g-real-time-data-pipeline-platform-fd4cfc88",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/accounting-ai-powered-metaverse-experience-engine-8be4af29",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/advertising-ai-code-generation--optimization-6bc2a51d",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/agentic-ai-ai-customer-churn-prediction-2fe3eba6",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/agritech-greenhouse-automation",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-agent-tool-builder",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-ai-sales-lead-scoring-engine-abf35883",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-autonomous-qa-engineering",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-carbon-esg-footprint-tracker",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-clinical-trial-design-optimizer",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-code-reviewer-pro",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-computer-vision-shelf-monitoring",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-contract-review",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-cro-optimizer",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-customer-segmentation",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-dashboard-designer",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-digital-twin-factory",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-driven-api-design-assistant",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-email-marketing",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-estate-will-planning-assistant",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-financial-forecasting-engine",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-fraud-detection-finance",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-geospatial-analytics",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-immigration-case-predictor",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-it-helpdesk",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-knowledge-management",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-legal-document-drafter",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-low-code-integration",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-meeting-preread",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-multimodal-search",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-observability-turbo",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-personalized-learning-platform",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-powered-analytics-platform-telecommunications-ai-powered-analytics-platform-for-telecommunications",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-powered-code-review-assistant-08a058bf",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-powered-data-lineage-14775438",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-powered-edge-ai-platform-1beff167",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-powered-lead-scoring--routing-0a5988c0",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-powered-performance-monitoring-47df5635",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-powered-seo-content-engine-002a1b6e",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-predictive-customer-analytics",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-predictive-quality-control",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-product-launch-intelligence",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-real-estate-valuation",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-retail-recommendation-engine",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-sales-intelligence",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-services-rag-as-a-service",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-spatial-computing",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-supply-chain-intelligence",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    },
+    {
+      "route": "/services/ai-sustainable-supply-chain-radar",
+      "status": 0,
+      "error": "The \"listener\" argument must be of type function. Received an instance of Object"
+    }
+  ]
+}

@@ -18,6 +18,8 @@ import json
 import argparse
 import re
 import hashlib
+import time
+import random
 from datetime import datetime
 from pathlib import Path
 
@@ -78,6 +80,58 @@ HYPER_DATA_SERVICES = [
     {"name": "AI Data Insights Engine", "description": "Generates actionable insights from business data using advanced AI analysis.", "category": "data", "industry": "Business Intelligence", "pricing": {"basic": "449", "pro": "1299", "enterprise": "4299"}},
     {"name": "AI Predictive Analytics", "description": "Builds predictive models from your data to forecast trends and outcomes.", "category": "data", "industry": "Analytics", "pricing": {"basic": "599", "pro": "1799", "enterprise": "5999"}},
     {"name": "AI Data Quality Monitor", "description": "Monitors data quality and automatically detects anomalies and inconsistencies.", "category": "data", "industry": "Data Quality", "pricing": {"basic": "299", "pro": "899", "enterprise": "2799"}},
+]
+
+HYPER_EMERGING_NICHES = [
+    {"name": "Autonomous Robotics Orchestrator", "description": "Orchestrates fleets of autonomous robots for warehouse, field, and industrial automation.", "category": "automation", "industry": "Robotics", "pricing": {"basic": "4999", "pro": "14999", "enterprise": "49999"}},
+    {"name": "SpaceTech Logistics Planner", "description": "Plans and optimizes satellite and space logistics, launch scheduling, and ground-station handoffs.", "category": "ai", "industry": "SpaceTech", "pricing": {"basic": "7999", "pro": "24999", "enterprise": "79999"}},
+    {"name": "Edge AI Optimization Suite", "description": "Optimizes AI inference on edge devices with model compression, caching, and offline fallback.", "category": "cloud", "industry": "Edge AI", "pricing": {"basic": "999", "pro": "3499", "enterprise": "11999"}},
+    {"name": "Quantum-Safe Cryptography Gateway", "description": "Transition-ready cryptography gateway with quantum-resistant algorithms and hybrid key exchange.", "category": "security", "industry": "Post-Quantum", "pricing": {"basic": "1999", "pro": "5999", "enterprise": "19999"}},
+    {"name": "BioTech Infrastructure Monitor", "description": "Infrastructure monitoring and compliance tooling for biotech labs and wet-lab environments.", "category": "it", "industry": "BioTech", "pricing": {"basic": "1499", "pro": "4999", "enterprise": "14999"}},
+    {"name": "Underwater Sensor Mesh Integrator", "description": "Manages underwater acoustic sensor mesh for maritime, energy, and climate telemetry.", "category": "iot", "industry": "Maritime", "pricing": {"basic": "3999", "pro": "12999", "enterprise": "39999"}},
+    {"name": "Digital Twin Plant Optimizer", "description": "Plant-level digital twin with real-time process simulation and optimization.", "category": "ai", "industry": "Manufacturing", "pricing": {"basic": "2499", "pro": "7999", "enterprise": "24999"}},
+    {"name": "Swarm Drone Fleet Manager", "description": "Fleet coordination, collision avoidance, and mission planning for drone swarms.", "category": "automation", "industry": "DroneOps", "pricing": {"basic": "2999", "pro": "9999", "enterprise": "29999"}},
+    {"name": "Carbon Credit Pipeline Auditor", "description": "Audits and tracks carbon credit pipelines with blockchain-backed proof and reporting.", "category": "data", "industry": "ClimateTech", "pricing": {"basic": "899", "pro": "2999", "enterprise": "9999"}},
+    {"name": "Zero-Trust Microsegmentation Engine", "description": "Dynamic microsegmentation for hybrid environments with zero-trust policy enforcement.", "category": "security", "industry": "Infrastructure", "pricing": {"basic": "699", "pro": "2499", "enterprise": "7999"}},
+    {"name": "Neuromorphic Inference Runtime", "description": "Runs AI inference on neuromorphic hardware with event-driven spiking models.", "category": "ai", "industry": "Neuromorphic", "pricing": {"basic": "3499", "pro": "9999", "enterprise": "34999"}},
+    {"name": "Satellite Imagery Feature Detector", "description": "Detects features from satellite imagery for agriculture, defense, and climate analytics.", "category": "ai", "industry": "GeoTech", "pricing": {"basic": "699", "pro": "2499", "enterprise": "7999"}},
+    {"name": "Autonomous Fleet Communications Hub", "description": "Vehicle-to-everything communication platform for autonomous fleets.", "category": "automation", "industry": "Mobility", "pricing": {"basic": "4999", "pro": "14999", "enterprise": "49999"}},
+    {"name": "Brain-Computer Interface Logger", "description": "Secure logging and analytics platform for BCI research and clinical data.", "category": "data", "industry": "NeuroTech", "pricing": {"basic": "4499", "pro": "13999", "enterprise": "44999"}},
+    {"name": "Cyber-Physical Power Grid Advisor", "description": "Advisory system for power-grid cyber-physical security and stability operations.", "category": "security", "industry": "Energy", "pricing": {"basic": "2999", "pro": "9999", "enterprise": "29999"}},
+    {"name": "Cold-Chain IoT Tracker", "description": "IoT tracking and compliance for healthcare cold-chain logistics and vaccines.", "category": "iot", "industry": "Healthcare", "pricing": {"basic": "599", "pro": "1999", "enterprise": "6999"}},
+    {"name": "Next-Gen Biometric Access Layer", "description": "Biometric identity and access management with liveness detection and policy orchestration.", "category": "security", "industry": "Identity", "pricing": {"basic": "999", "pro": "3499", "enterprise": "11999"}},
+    {"name": "Rural Connectivity Optimizer", "description": "Mesh routing and spectrum optimizer for rural and remote broadband deployments.", "category": "cloud", "industry": "Connectivity", "pricing": {"basic": "699", "pro": "2499", "enterprise": "7999"}},
+    {"name": "Planetary Data Lake Formatter", "description": "Normalizes planetary science datasets into searchable data lakes with metadata genealogy.", "category": "data", "industry": "Space Science", "pricing": {"basic": "899", "pro": "2999", "enterprise": "9999"}},
+    {"name": "Smart Glass Vision Pipeline", "description": "Computer vision pipeline optimized for smart glass and wearable displays.", "category": "ai", "industry": "Wearables", "pricing": {"basic": "1299", "pro": "4199", "enterprise": "12999"}},
+    {"name": "Autonomous Agriculture Swarm Brain", "description": "Central coordination for agricultural robot swarms with crop-level decisioning.", "category": "automation", "industry": "AgriTech", "pricing": {"basic": "1999", "pro": "6999", "enterprise": "19999"}},
+    {"name": "Holographic Collaboration Link", "description": "Low-latency holographic telepresence streamer for remote expert guidance.", "category": "cloud", "industry": "Collaboration", "pricing": {"basic": "999", "pro": "3499", "enterprise": "10999"}},
+    {"name": "Synthetic Biology Workflow Engine", "description": "Workflow engine for DNA assembly, simulation, and lab automation.", "category": "automation", "industry": "BioTech", "pricing": {"basic": "2499", "pro": "7999", "enterprise": "24999"}},
+    {"name": "Exabyte Velocity Transfer Stack", "description": "High-throughput data transfer stack for exabyte-scale storage and analytics.", "category": "data", "industry": "Infrastructure", "pricing": {"basic": "5999", "pro": "17999", "enterprise": "59999"}},
+    {"name": "Autonomous Security Drone Analyst", "description": "Drone-based physical security patrol analytics with incident prediction.", "category": "ai", "industry": "Physical Security", "pricing": {"basic": "3999", "pro": "12999", "enterprise": "39999"}},
+    {"name": "Privacy-Preserving Matching Layer", "description": "Enables record matching across organizations without sharing raw records.", "category": "security", "industry": "PrivacyTech", "pricing": {"basic": "1999", "pro": "6999", "enterprise": "19999"}},
+    {"name": "Waste-to-Energy Process Optimizer", "description": "Optimizes waste-to-energy plants with predictive maintenance and yield optimization.", "category": "ai", "industry": "CleanTech", "pricing": {"basic": "1499", "pro": "4999", "enterprise": "14999"}},
+    {"name": "Molecular Property Predictor", "description": "Predicts molecular properties for drug discovery with graph neural networks.", "category": "ai", "industry": "PharmaTech", "pricing": {"basic": "2999", "pro": "9999", "enterprise": "29999"}},
+    {"name": "Disaster Recovery Autopilot", "description": "Automated disaster recovery orchestrator with chaos engineering and failover.", "category": "cloud", "industry": "Resilience", "pricing": {"basic": "1999", "pro": "6999", "enterprise": "19999"}},
+    {"name": "AI Soil Health Analyst", "description": "Analyzes soil sensor data for precision agriculture and regenerative farming.", "category": "ai", "industry": "Agriculture", "pricing": {"basic": "799", "pro": "2699", "enterprise": "7999"}},
+    {"name": "Port Operations Traffic Brain", "description": "Optimizes port logistics with container, vessel, and truck traffic prediction.", "category": "ai", "industry": "Maritime Logistics", "pricing": {"basic": "3499", "pro": "10999", "enterprise": "34999"}},
+    {"name": "Solar Farm Yield Forecaster", "description": "Forecasts solar farm yield with weather models and panel-level telemetry.", "category": "ai", "industry": "Energy", "pricing": {"basic": "999", "pro": "3499", "enterprise": "9999"}},
+    {"name": "Neural Render Farm Controller", "description": "Controls GPU render farms with task scheduling, failure recovery, and cost capping.", "category": "cloud", "industry": "Media", "pricing": {"basic": "1499", "pro": "4999", "enterprise": "14999"}},
+    {"name": "Autonomous Warehouse Inventory Brain", "description": "Computer-vision-driven inventory tracking and slotting optimization for warehouses.", "category": "automation", "industry": "Logistics", "pricing": {"basic": "4999", "pro": "14999", "enterprise": "49999"}},
+    {"name": "Threat Emulation Playground", "description": "Automated threat emulation and purple-teaming playground with runtime execution traces.", "category": "security", "industry": "Cybersecurity", "pricing": {"basic": "2499", "pro": "7999", "enterprise": "24999"}},
+    {"name": "Cryogenic Telemetry Analyzer", "description": "Processes cryogenic sensor telemetry for scientific instruments and energy storage.", "category": "data", "industry": "Scientific", "pricing": {"basic": "1999", "pro": "6999", "enterprise": "19999"}},
+    {"name": "Kinetic Energy Harvester Monitor", "description": "Monitors and optimizes kinetic energy harvesters for industrial IoT sites.", "category": "iot", "industry": "Energy Harvesting", "pricing": {"basic": "699", "pro": "2499", "enterprise": "7999"}},
+    {"name": "Autonomous Elevator Maintenance Predictor", "description": "Predictive maintenance for elevator fleets using vibration and door-cycle telemetry.", "category": "ai", "industry": "Facilities", "pricing": {"basic": "899", "pro": "2999", "enterprise": "9999"}},
+    {"name": "Carbon Sequestration Verification Layer", "description": "Verifies carbon sequestration with remote sensing, soil sampling, and audit reporting.", "category": "data", "industry": "ClimateTech", "pricing": {"basic": "2999", "pro": "9999", "enterprise": "29999"}},
+    {"name": "In-Vehicle Cockpit AI Safety Layer", "description": "AI safety monitoring for vehicle cockpits with attention and drowsiness detection.", "category": "ai", "industry": "Automotive", "pricing": {"basic": "1499", "pro": "4999", "enterprise": "14999"}},
+    {"name": "Subsea Cable Health Monitor", "description": "Health and anomaly monitoring for subsea telecom and power cables.", "category": "iot", "industry": "Telecom", "pricing": {"basic": "1999", "pro": "6999", "enterprise": "19999"}},
+    {"name": "Synthetic Check Data Generator", "description": "Generates realistic synthetic check datasets for payments and healthcare claims.", "category": "data", "industry": "RegTech", "pricing": {"basic": "999", "pro": "3499", "enterprise": "10999"}},
+    {"name": "Orbital Debris Risk Mapper", "description": "Maps and predicts orbital debris risk for satellite operators and space missions.", "category": "ai", "industry": "Space Safety", "pricing": {"basic": "4999", "pro": "14999", "enterprise": "49999"}},
+    {"name": "Warehouse Fire Prediction Engine", "description": "Predicts warehouse fire risk from IoT sensors, thermal imagery, and operational patterns.", "category": "ai", "industry": "Safety", "pricing": {"basic": "1999", "pro": "6999", "enterprise": "19999"}},
+    {"name": "AI Legal Contract Generator", "description": "Generates and reviews legal contracts with clause-level risk scoring and jurisdiction rules.", "category": "ai", "industry": "LegalTech", "pricing": {"basic": "699", "pro": "2499", "enterprise": "7999"}},
+    {"name": "Genomic Variant Classifier", "description": "Classifies genomic variants for clinical diagnostics with explainable predictions.", "category": "ai", "industry": "Genomics", "pricing": {"basic": "2999", "pro": "9999", "enterprise": "29999"}},
+    {"name": "Industrial Sewage Treatment Optimizer", "description": "Optimizes industrial sewage treatment flows, chemistry dosing, and compliance reporting.", "category": "ai", "industry": "Environment", "pricing": {"basic": "1499", "pro": "4999", "enterprise": "14999"}},
+    {"name": "Meta-Learning Curriculum Designer", "description": "Designs meta-learning curricula for continuous AI model improvement across domains.", "category": "ai", "industry": "Education", "pricing": {"basic": "999", "pro": "3499", "enterprise": "10999"}},
+    {"name": "Quantum Circuit optimizer", "description": "Optimizes quantum circuits with layout, gate reduction, and noise-aware compilation.", "category": "ai", "industry": "Quantum", "pricing": {"basic": "4999", "pro": "14999", "enterprise": "49999"}},
 ]
 
 
@@ -204,6 +258,12 @@ def main():
     parser.add_argument('--batch', type=int, default=30, help='Number of services to discover (default: 30)')
     
     args = parser.parse_args()
+    
+    # Distributed startup jitter to reduce API spike collisions.
+    try:
+        time.sleep(random.randint(2, 25))
+    except Exception:
+        pass
     
     print("=" * 60)
     print("🚀 HYPER-ACCELERATED GROWTH ENGINE")

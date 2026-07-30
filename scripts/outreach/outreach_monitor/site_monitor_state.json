@@ -1,0 +1,60 @@
+{
+  "last_check": 1785416892,
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "final": "https://ziontechgroup.com/"
+    },
+    {
+      "path": "/services",
+      "status": 200,
+      "final": "https://ziontechgroup.com/services/"
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "final": "https://ziontechgroup.com/about/"
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "final": "https://ziontechgroup.com/contact/"
+    },
+    {
+      "path": "/pricing",
+      "status": 200,
+      "final": "https://ziontechgroup.com/pricing/"
+    },
+    {
+      "path": "/blog",
+      "status": 200,
+      "final": "https://ziontechgroup.com/blog/"
+    },
+    {
+      "path": "/ai-services",
+      "status": 200,
+      "final": "https://ziontechgroup.com/ai-services/"
+    },
+    {
+      "path": "/free-ai-tools",
+      "status": 200,
+      "final": "https://ziontechgroup.com/free-ai-tools/"
+    },
+    {
+      "path": "/ai-services-pricing",
+      "status": 200,
+      "final": "https://ziontechgroup.com/ai-services-pricing/"
+    },
+    {
+      "path": "/privacy",
+      "status": 200,
+      "final": "https://ziontechgroup.com/privacy/"
+    },
+    {
+      "path": "/terms",
+      "status": 200,
+      "final": "https://ziontechgroup.com/terms/"
+    }
+  ]
+}

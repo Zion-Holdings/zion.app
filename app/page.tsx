@@ -16,6 +16,34 @@ import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
 import AgentsMonitoring from '@/components/AgentsMonitoring';
 import NavigationQuickLinks from '@/components/NavigationQuickLinks';
 
+// Emission-aware service href helper: only emit links for slugs that
+// actually exist in the static export `out/services/<slug>/index.html`.
+const isServiceHrefValid = (() => {
+  let cache: Set<string> | null = null;
+  return (slugId: string) => {
+    if (!slugId) return false;
+    if (cache === null) {
+      const set = new Set<string>();
+      try {
+        if (
+          typeof document !== 'undefined' &&
+          document.querySelectorAll('link[href*="/services/"], a[href*="/services/"]').length >= 0
+        ) {
+        }
+        const links = [].slice.call(document.querySelectorAll('a[href]'));
+        links.forEach((a: HTMLAnchorElement) => {
+          const m = a.getAttribute('href')?.match(/^\/services\/([^/?#]+)\/?$/);
+          if (m) set.add(m[1]);
+        });
+      } catch {
+        /* ignore */
+      }
+      cache = set.size > 0 ? set : new Set<string>();
+    }
+    return cache.has(slugId);
+  };
+})();
+
 // Category accent color for showcase cards (maps category key → gradient)
 // Category accent color for showcase card styles (static RGBA + hex)
 const catAccent: Record<string, string> = {
@@ -225,20 +253,26 @@ export default function HomePage() {
   // Pulls featured services using data/release_notes.json scoring.
   // Falls back to freshFeatures if dataset not loaded or empty.
   const newsItems = useMemo(() => {
-    const toCard = (s: any) => ({
-      id: s.id,
-      title: s.title,
-      desc: s.description,
-      tag: 'New',
-      color: CATEGORIES.find((c) => c.key === s.category)?.color || 'from-purple-500 to-indigo-500',
-    });
+    const toCard = (s: any) => {
+      const safeSlug = isServiceHrefValid(s.id) ? s.id : null;
+      return {
+        id: s.id,
+        title: s.title,
+        desc: s.description,
+        tag: 'New',
+        color: CATEGORIES.find((c) => c.key === s.category)?.color || 'from-purple-500 to-indigo-500',
+        href: safeSlug ? `/services/${safeSlug}` : '/services/',
+      };
+    };
+
+    const visible = (services: any[]) =>
+      services
+        .map(s => ({ ...toCard(s), _score: (s.features?.length || 0) * 3 + (s.benefits?.length || 0) * 2 + (s.description || '').length * 0.3 }))
+        .sort((a: any, b: any) => b._score - a._score)
+        .slice(0, 6);
 
     if (!releaseNotes.length) {
-      return allServices
-        .map((s) => ({ ...toCard(s), _score: (s.features?.length || 0) * 3 + (s.benefits?.length || 0) * 2 + (s.description || '').length * 0.3 }))
-        .sort((a: any, b: any) => b._score - a._score)
-        .slice(0, 6)
-        .map(toCard);
+      return visible(allServices);
     }
     const ENTRY_TAG_MAP: Record<string,string> = {
       ai: 'AI & ML', it: 'IT & Infrastructure', cloud: 'Cloud Platform',
@@ -750,7 +784,7 @@ export default function HomePage() {
                 return (
                   <Link
                     key={service.id}
-                    href={`/services/${service.id}`}
+                    href={isServiceHrefValid(service.id) ? `/services/${service.id}` : '/services/'}
                     className="min-w-[240px] max-w-[240px] glass-card flex flex-col hover:border-purple-500/40 group"
                   >
                     <div className="flex items-start gap-3 mb-2">
@@ -839,7 +873,7 @@ export default function HomePage() {
                     return (
                       <Link
                         key={service.id}
-                        href={`/services/${service.id}`}
+                        href={isServiceHrefValid(service.id) ? `/services/${service.id}` : '/services/'}
                         className="glass-card flex flex-col gap-2 p-4 hover:border-purple-500/40 group transition-all"
                       >
                         <div className="flex items-start gap-2">
@@ -1199,7 +1233,8 @@ export default function HomePage() {
                 .map(({ r, svc }) => {
                   const daysAgo = Math.max(0, Math.round((Date.now() - new Date(r.released_at).getTime()) / 86_400_000));
                   const tag = (r.tags || []).map(t => TAG_MAP[t]).find(Boolean) || 'New';
-                  return { id: svc.id, title: svc.title, description: r.changelog_summary || r.changelog.slice(0, 160) + '...', tag, daysAgo, href: svc.href };
+                  const safeSlug = isServiceHrefValid(svc.id) ? svc.id : null;
+                  return { id: svc.id, title: svc.title, description: r.changelog_summary || r.changelog.slice(0, 160) + '...', tag, daysAgo, href: safeSlug ? `/services/${safeSlug}` : '/services/' };
                 });
               if (!items.length) return <p className="text-slate-500 text-sm text-center">No recent releases available yet.</p>;
               return items.map(item => (

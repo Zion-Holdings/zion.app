@@ -3,7 +3,7 @@ from pathlib import Path
 import json
 from datetime import datetime
 
-BASE = Path('C:/Users/Zion/tmp/zion-clone-test/outreach_monitor')
+BASE = Path(__file__).resolve().parent / 'outreach_monitor'
 BASE.mkdir(parents=True, exist_ok=True)
 LOG = BASE / 'site_monitor_log.jsonl'
 STATE = BASE / 'site_monitor_state.json'
