@@ -285,6 +285,30 @@ def deploy_to_github() -> bool:
             logger.error("[❌] Not a git repository")
             return False
         
+        # Fetch latest changes
+        logger.info("[📥] Fetching latest changes from GitHub...")
+        fetch_result = subprocess.run(
+            ['git', 'fetch', 'origin'],
+            cwd=BASE,
+            capture_output=True,
+            text=True
+        )
+        
+        if fetch_result.returncode != 0:
+            logger.warning(f"[⚠️] Git fetch warning: {fetch_result.stderr}")
+        
+        # Try to pull first to avoid race conditions
+        logger.info("[🔄] Pulling latest changes...")
+        pull_result = subprocess.run(
+            ['git', 'pull', 'origin', 'main'],
+            cwd=BASE,
+            capture_output=True,
+            text=True
+        )
+        
+        if pull_result.returncode != 0:
+            logger.warning(f"[⚠️] Git pull had issues (may be no changes to pull): {pull_result.stderr}")
+        
         # Add all changes
         logger.info("[📦] Adding files to git...")
         add_result = subprocess.run(
