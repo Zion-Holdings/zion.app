@@ -181,3 +181,22 @@
 {"ts": "2026-07-30T05:45:24.276418+00:00", "to": "graham.sabin@runcopycat.com", "subject": "Quick question about your stack", "message_id": "mock-mid", "status": "sent", "type": "reengagement"}
 {"ts": "2026-07-30T05:45:24.276623+00:00", "to": "paul.kimani@myworkpay.com", "subject": "Quick question about your stack", "message_id": "mock-mid", "status": "sent", "type": "reengagement"}
 {"ts": "2026-07-30T05:45:24.276975+00:00", "to": "nadia.amalia@fintelite.ai", "subject": "Quick question about your stack", "message_id": "mock-mid", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-30T08:25:17.010166+00:00", "to": "website@cambiumassessment.com", "subject": "AI implementation proposal", "message_id": "19fb220b8a19a38f", "status": "sent", "type": "initial"}
+{"ts": "2026-07-30T08:25:19.603833+00:00", "to": "ops@datapillar.com", "subject": "Growth pilot proposition", "message_id": "19fb220c08a9f2b4", "status": "sent", "type": "initial"}
+{"ts": "2026-07-30T08:25:22.292291+00:00", "to": "hello@scaleops.co", "subject": "Growth pilot proposition", "message_id": "19fb220ca422307f", "status": "sent", "type": "initial"}
+{"ts": "2026-07-30T08:25:24.860452+00:00", "to": "contact@logisticsplus.com", "subject": "Fleet automation pilot", "message_id": "19fb220d5470d173", "status": "sent", "type": "initial"}
+{"ts": "2026-07-30T08:25:28.795617+00:00", "to": "info@retailnext.ai", "subject": "Personalization and pricing", "message_id": "19fb220e12e13558", "status": "sent", "type": "initial"}
+{"ts": "2026-07-30T08:25:32.125359+00:00", "to": "partnerships@legalops.io", "subject": "Legal automation plans", "message_id": "19fb220f10a5782a", "status": "sent", "type": "initial"}
+{"ts": "2026-07-30T08:25:35.160621+00:00", "to": "james.obrien@buildrightconstruction.com", "subject": "AI implementation proposal", "message_id": "19fb220fd13d60de", "status": "sent", "type": "initial"}
+{"ts": "2026-07-30T08:25:38.000632+00:00", "to": "raj.malhotra@greenpathenergy.com", "subject": "AI implementation proposal", "message_id": "19fb221087cb62c1", "status": "sent", "type": "initial"}
+{"ts": "2026-07-30T08:25:41.168381+00:00", "to": "sarah.jenkins@logisticsplus.com", "subject": "AI implementation proposal", "message_id": "19fb221149ebb5e9", "status": "sent", "type": "initial"}
+{"ts": "2026-07-30T08:25:44.007854+00:00", "to": "david.thompson@apexmfg.com", "subject": "AI implementation proposal", "message_id": "19fb22121dbb2caf", "status": "sent", "type": "initial"}
+{"ts": "2026-07-30T08:25:46.962213+00:00", "to": "liam.johnson@fintechseed.com", "subject": "AI implementation proposal", "message_id": "19fb2212a3d615ad", "status": "sent", "type": "initial"}
+{"ts": "2026-07-30T08:25:49.499480+00:00", "to": "ethan.wright@healthnet.com", "subject": "AI implementation proposal", "message_id": "19fb22136558f6ac", "status": "sent", "type": "initial"}
+{"ts": "2026-07-30T08:25:52.557121+00:00", "to": "jane.smith@novastream.io", "subject": "AI implementation proposal", "message_id": "19fb221409af421e", "status": "sent", "type": "initial"}
+{"ts": "2026-07-30T08:25:55.641108+00:00", "to": "marcus.johnson@buildrightconstruction.com", "subject": "AI implementation proposal", "message_id": "19fb2214cca277a3", "status": "sent", "type": "initial"}
+{"ts": "2026-07-30T08:25:59.002112+00:00", "to": "elena.rodriguez@greenpathenergy.com", "subject": "AI implementation proposal", "message_id": "19fb221582b97210", "status": "sent", "type": "initial"}
+{"ts": "2026-07-30T08:26:02.039906+00:00", "to": "jortiz@legalops.io", "subject": "AI implementation proposal", "message_id": "19fb22164ab51740", "status": "sent", "type": "initial"}
+{"ts": "2026-07-30T08:26:04.966262+00:00", "to": "cquinn@logisticsplus.com", "subject": "AI implementation proposal", "message_id": "19fb2217207c2583", "status": "sent", "type": "initial"}
+{"ts": "2026-07-30T08:26:08.267870+00:00", "to": "dpatel@datapillar.com", "subject": "AI implementation proposal", "message_id": "19fb2217d11b45b1", "status": "sent", "type": "initial"}
+{"ts": "2026-07-30T08:26:11.135195+00:00", "to": "bortega@meridianai.co", "subject": "AI implementation proposal", "message_id": "19fb2218905d106f", "status": "sent", "type": "initial"}

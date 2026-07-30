@@ -89,7 +89,7 @@ function ServicesContent() {
       <div className="container-page">
         <div className="text-center mb-10">
           <h1 className="text-4xl font-bold text-white mb-2">Our Complete Service Catalog</h1>
-          <p className="section-subheading text-center">{allServices.length}+ real-world services across 10 categories</p>
+          <p className="section-subheading text-center">{allServices.length}+ actionable AI & IT services across 10 categories — most engagements ship in 2–4 weeks</p>
         </div>
         <div className="flex flex-wrap justify-center gap-3 mb-10">
           <Link href="/contact/" className="btn-primary text-base px-8 py-3">Start a Project →</Link>
@@ -136,6 +136,22 @@ function ServicesContent() {
             <p className="text-slate-400 text-sm">✉️ <a href="mailto:kleber@ziontechgroup.com" className="text-purple-300 hover:underline">kleber@ziontechgroup.com</a></p>
             <p className="text-slate-400 text-sm">📍 364 E Main St STE 1008, Middletown, DE 19709</p>
           </div>
+        </div>
+
+        <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+          {[
+            { value: '7', label: 'Case studies', hint: 'Production proof' },
+            { value: '9', label: 'Live agents', hint: '24/7 automation' },
+            { value: '35+', label: 'Outreach sends', hint: 'Verified Jul 2026' },
+            { value: '2–4 wks', label: 'Typical delivery', hint: 'Engagement speed' },
+            { value: '99.9%', label: 'SLA uptime', hint: 'Production runtime' },
+          ].map((item) => (
+            <div key={item.label} className="rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-center">
+              <div className="text-xl font-bold gradient-text">{item.value}</div>
+              <div className="text-xs text-slate-300 mt-1 font-medium">{item.label}</div>
+              <div className="text-[10px] text-slate-500 mt-0.5">{item.hint}</div>
+            </div>
+          ))}
         </div>
       </div>
     </main>
