@@ -72,7 +72,7 @@ function main() {
   let lastLines = '';
   let exitCode = 1;
   let attempted = [];
-  const buildEnv = { ...process.env, NODE_OPTIONS: '--max-old-space-size=4096' };
+  const buildEnv = { ...process.env, NODE_OPTIONS: '--max-old-space-size=12288' };
   for (const c of candidates) {
     attempted.push(c.method);
     console.log(`[build-wrapper] trying ${c.method}: ${c.cmd}`);

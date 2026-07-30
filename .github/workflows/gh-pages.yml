@@ -23,7 +23,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: 'npm'
@@ -38,6 +38,7 @@ jobs:
         id: build
         run: |
           set -euo pipefail
+          export NODE_OPTIONS="--max-old-space-size=4096"
           node scripts/build-wrapper.cjs > build.log 2>&1 || true
           echo "build_log_start"
           set +x
