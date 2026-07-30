@@ -1,0 +1,27 @@
+Subject: Transform Your Technology Operations with Multi-Cloud Kubernetes Platform
+
+Hi there,
+
+I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Multi-Cloud Kubernetes Platform.
+
+Managed Kubernetes across AWS EKS, Azure AKS, and GCP GKE. Unified control plane, security policies, and observability.
+
+**Key Benefits:**
+- Consistent K8s across clouds
+- Centralized security policies
+- Reduce operational overhead
+
+**Pricing:**
+- Basic: $1,499/month
+- Pro: $4,499/month
+- Enterprise: $Custom/month
+
+**Book a free consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
+ziontechgroup.com
+
+---
+AI/IT Solutions for the Future

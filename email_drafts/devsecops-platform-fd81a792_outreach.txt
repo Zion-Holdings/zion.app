@@ -1,0 +1,27 @@
+Subject: Transform Your DevSecOps Operations with DevSecOps Platform
+
+Hi there,
+
+I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking DevSecOps Platform.
+
+Shift-left security with automated scanning, policy enforcement, supply chain attestation, and security training for engineering teams.
+
+**Key Benefits:**
+- Catch vulnerabilities before production
+- Reduce security review bottlenecks
+- Give developers security guardrails
+
+**Pricing:**
+- Basic: $999/month
+- Pro: $2999/month
+- Enterprise: $9999/month
+
+**Book a free consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
+ziontechgroup.com
+
+---
+AI/IT Solutions for the Future

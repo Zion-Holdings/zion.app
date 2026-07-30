@@ -1,0 +1,27 @@
+Subject: Transform Your Technology Operations with Cloud Data Lake Platform
+
+Hi there,
+
+I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Cloud Data Lake Platform.
+
+Managed data lake solution on AWS S3, Azure Data Lake, or GCP Cloud Storage. Schema-on-read, data catalog, governance, and integration with analytics engines.
+
+**Key Benefits:**
+- Centralize all data in one place
+- Reduce data lake management overhead
+- Enable self-service analytics
+
+**Pricing:**
+- Basic: $999/month
+- Pro: $2,999/month
+- Enterprise: $Custom/month
+
+**Book a free consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
+ziontechgroup.com
+
+---
+AI/IT Solutions for the Future

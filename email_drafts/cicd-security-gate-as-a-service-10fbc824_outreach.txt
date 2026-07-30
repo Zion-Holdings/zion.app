@@ -1,0 +1,27 @@
+Subject: Transform Your CI/CD Operations with CI/CD Security Gate-as-a-Service
+
+Hi there,
+
+I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking CI/CD Security Gate-as-a-Service.
+
+Shift-left CI/CD security: SAST/DAST/SCA/containers per PR/push branch gate with auto-fix PRs for vulnerabilities, SBOM generation, false-positive suppression.
+
+**Key Benefits:**
+- Halt every vulnerability before it reaches staging
+- No more opening a vulnerability ticket and forgetting
+- Open-source dependency risks eliminated before deployment
+
+**Pricing:**
+- Basic: $999/month
+- Pro: $2999/month
+- Enterprise: $9999/month
+
+**Book a free consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
+ziontechgroup.com
+
+---
+AI/IT Solutions for the Future

@@ -1,0 +1,27 @@
+Subject: Transform Your Data Engineering Operations with Data Lake Platform
+
+Hi there,
+
+I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Data Lake Platform.
+
+Managed data lake platform with ingestion, cataloging, governance, and analytics capabilities. Supports structured and semi-structured data at scale.
+
+**Key Benefits:**
+- Centralize data storage
+- Enable analytics at scale
+- Govern data access
+
+**Pricing:**
+- Basic: $499/month
+- Pro: $1,499/month
+- Enterprise: $Custom/month
+
+**Book a free consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
+ziontechgroup.com
+
+---
+AI/IT Solutions for the Future
