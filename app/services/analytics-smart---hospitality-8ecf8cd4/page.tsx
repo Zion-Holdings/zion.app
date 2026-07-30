@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Analytics Smart - Hospitality - Zion Tech Group",
-  description: "Revolutionize hospitality through intelligent automation. Our Analytics Smart - Hospitality leverages advanced machine learning to deliver performance monitorin",
+  description: "The future of hospitality is here with Analytics Smart - Hospitality. Powered by cutting-edge AI, this platform delivers market intelligence like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/analytics-smart---hospitality-8ecf8cd4`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Analytics Smart - Hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize hospitality through intelligent automation. Our Analytics Smart - Hospitality leverages advanced machine learning to deliver performance monitoring at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of hospitality is here with Analytics Smart - Hospitality. Powered by cutting-edge AI, this platform delivers market intelligence like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Master data management with golden records</li>
-            <li>Process discovery with activity analysis</li>
-            <li>Edge computing support for low-latency operations</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Machine learning integration with automatic model training</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved quality with automated testing and validation</li>
-            <li>Reduced operational risks with predictive models</li>
             <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>3x faster decision making with real-time insights</li>
-            <li>Improved forecast accuracy with ML models</li>
+            <li>Scalable to millions of transactions per second</li>
+            <li>Increased revenue with optimized pricing strategies</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Analytics for Legal - Zion Tech Group",
-  description: "Next-generation legal solution: Cognitive Analytics for Legal. Combines inventory management with adaptive intelligence for optimal results.",
+  description: "Next-generation legal solution: Cognitive Analytics for Legal. Combines sales process optimization with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-analytics-for-legal-80e8c7a0`
   }
@@ -13,15 +13,15 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cognitive Analytics for Legal</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation legal solution: Cognitive Analytics for Legal. Combines inventory management with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation legal solution: Cognitive Analytics for Legal. Combines sales process optimization with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Microservices deployment with container orchestration</li>
-            <li>Process discovery with activity analysis</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Role-based access control with SSO integration</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Multi-language support with localization</li>
+            <li>Version control with rollback capabilities</li>
+            <li>Healthcare data analytics with patient insights</li>
             <li>Language processing with sentiment analysis</li>
           </ul>
         </div>
@@ -29,11 +29,9 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Reduced development time with code generation</li>
-            <li>Reduced support tickets with self-service options</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Improved product quality with automated testing</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Increased revenue with optimized pricing strategies</li>
           </ul>
         </div>
         

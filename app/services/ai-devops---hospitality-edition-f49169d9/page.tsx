@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI DevOps - Hospitality Edition - Zion Tech Group",
-  description: "Revolutionize hospitality through intelligent automation. Our AI DevOps - Hospitality Edition leverages advanced machine learning to deliver decision support at",
+  description: "Revolutionize hospitality through intelligent automation. Our AI DevOps - Hospitality Edition leverages advanced machine learning to deliver financial risk mana",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-devops---hospitality-edition-f49169d9`
   }
@@ -13,26 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI DevOps - Hospitality Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize hospitality through intelligent automation. Our AI DevOps - Hospitality Edition leverages advanced machine learning to deliver decision support at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize hospitality through intelligent automation. Our AI DevOps - Hospitality Edition leverages advanced machine learning to deliver financial risk management at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Compliance monitoring with regulatory updates</li>
-            <li>Data encryption at rest and in transit</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Healthcare data analytics with patient insights</li>
             <li>Role-based access control with SSO integration</li>
-            <li>Real-time processing with streaming analytics</li>
-            <li>GDPR compliance with data portability</li>
+            <li>A/B testing framework for continuous optimization</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Scalable to millions of transactions per second</li>
             <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Increased revenue with optimized pricing strategies</li>
           </ul>
         </div>
         

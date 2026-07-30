@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Customer Engine - Zion Tech Group",
-  description: "Transform your healthcare operations with our Smart Customer Engine. This AI-driven solution automates user experience with unprecedented accuracy and efficienc",
+  description: "Transform your real-estate operations with our Smart Customer Engine. This AI-driven solution automates risk assessment with unprecedented accuracy and efficien",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-customer-engine-a6a8cc96`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Customer Engine</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your healthcare operations with our Smart Customer Engine. This AI-driven solution automates user experience with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your real-estate operations with our Smart Customer Engine. This AI-driven solution automates risk assessment with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Budget optimization with cost allocation</li>
-            <li>Brand monitoring across social channels</li>
-            <li>Alerting system with intelligent notifications</li>
-            <li>Sentiment analysis with real-time monitoring</li>
-            <li>Role-based access control with SSO integration</li>
+            <li>Image recognition with computer vision</li>
+            <li>Document processing with OCR and NLP</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>GDPR compliance with data portability</li>
+            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved customer retention with proactive service</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Better customer experience with personalization</li>
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>Faster content creation with AI assistance</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

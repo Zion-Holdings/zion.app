@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous System for Hospitality - Zion Tech Group",
-  description: "Transform your hospitality operations with our Autonomous System for Hospitality. This AI-driven solution automates document processing with unprecedented accur",
+  description: "The future of hospitality is here with Autonomous System for Hospitality. Powered by cutting-edge AI, this platform delivers compliance monitoring like never be",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-system-for-hospitality-b47a1050`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Autonomous System for Hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your hospitality operations with our Autonomous System for Hospitality. This AI-driven solution automates document processing with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of hospitality is here with Autonomous System for Hospitality. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Sentiment analysis with real-time monitoring</li>
-            <li>Language processing with sentiment analysis</li>
-            <li>Customer journey mapping with touchpoint analysis</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Document processing with OCR and NLP</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>Multi-language support with localization</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Image recognition with computer vision</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>24/7 automated operations without human intervention</li>
             <li>3x faster decision making with real-time insights</li>
-            <li>Reduced customer acquisition costs with optimization</li>
           </ul>
         </div>
         

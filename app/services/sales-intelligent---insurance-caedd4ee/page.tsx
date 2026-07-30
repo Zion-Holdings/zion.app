@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Sales Intelligent - Insurance - Zion Tech Group",
-  description: "Next-generation insurance solution: Sales Intelligent - Insurance. Combines logistics route optimization with adaptive intelligence for optimal results.",
+  description: "The future of insurance is here with Sales Intelligent - Insurance. Powered by cutting-edge AI, this platform delivers user experience like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/sales-intelligent---insurance-caedd4ee`
   }
@@ -13,26 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Sales Intelligent - Insurance</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation insurance solution: Sales Intelligent - Insurance. Combines logistics route optimization with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of insurance is here with Sales Intelligent - Insurance. Powered by cutting-edge AI, this platform delivers user experience like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Image recognition with computer vision</li>
+            <li>SOC 2 certified with security controls</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>Budget optimization with cost allocation</li>
-            <li>Executive dashboards with drill-down capabilities</li>
-            <li>User experience analytics with behavior tracking</li>
+            <li>Serverless functions for cost-effective scaling</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better supply chain visibility with tracking</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Better code quality with automated reviews</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Scalable to millions of transactions per second</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
           </ul>
         </div>
         

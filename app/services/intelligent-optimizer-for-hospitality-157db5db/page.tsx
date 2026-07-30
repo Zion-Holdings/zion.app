@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Optimizer for Hospitality - Zion Tech Group",
-  description: "Revolutionize hospitality through intelligent automation. Our Intelligent Optimizer for Hospitality leverages advanced machine learning to deliver market intell",
+  description: "Revolutionize hospitality through intelligent automation. Our Intelligent Optimizer for Hospitality leverages advanced machine learning to deliver code optimiza",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-optimizer-for-hospitality-157db5db`
   }
@@ -13,25 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Optimizer for Hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize hospitality through intelligent automation. Our Intelligent Optimizer for Hospitality leverages advanced machine learning to deliver market intelligence at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize hospitality through intelligent automation. Our Intelligent Optimizer for Hospitality leverages advanced machine learning to deliver code optimization at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>GDPR compliance with data portability</li>
-            <li>Language processing with sentiment analysis</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Healthcare data analytics with patient insights</li>
             <li>Sales process optimization with pipeline management</li>
-            <li>Fraud detection with anomaly analysis</li>
+            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>24/7 automated operations without human intervention</li>
+            <li>Scalable to millions of transactions per second</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>Seamless integration with existing systems and workflows</li>
+            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

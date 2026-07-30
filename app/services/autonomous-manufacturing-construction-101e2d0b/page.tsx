@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous manufacturing-construction - Zion Tech Group",
-  description: "The future of construction is here with Autonomous manufacturing-construction. Powered by cutting-edge AI, this platform delivers healthcare data analytics like",
+  description: "Unlock unprecedented growth with Autonomous manufacturing-construction. This autonomous system provides data processing with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-manufacturing-construction-101e2d0b`
   }
@@ -13,16 +13,15 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Autonomous manufacturing-construction</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Autonomous manufacturing-construction. Powered by cutting-edge AI, this platform delivers healthcare data analytics like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Autonomous manufacturing-construction. This autonomous system provides data processing with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Network optimization with traffic analysis</li>
+            <li>Multi-language support with localization</li>
             <li>Language processing with sentiment analysis</li>
-            <li>Version control with rollback capabilities</li>
-            <li>Compliance monitoring with regulatory updates</li>
-            <li>Microservices deployment with container orchestration</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Energy optimization with consumption tracking</li>
           </ul>
         </div>
         
@@ -30,8 +29,8 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Real-time insights and alerts for proactive management</li>
+            <li>24/7 automated operations without human intervention</li>
             <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         
