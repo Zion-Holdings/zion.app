@@ -18,22 +18,20 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Customer journey mapping with touchpoint analysis</li>
-            <li>Brand monitoring across social channels</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Code optimization with performance profiling</li>
-            <li>Revenue forecasting with market trend analysis</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better customer experience with personalization</li>
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>3x faster decision making with real-time insights</li>
-            <li>Enhanced security posture with continuous monitoring</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
           </ul>
         </div>
         

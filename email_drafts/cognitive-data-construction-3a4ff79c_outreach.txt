@@ -4,7 +4,7 @@ Hi there,
 
 I'm reaching out to introduce Cognitive data-construction from Zion Tech Group - an AI-powered solution that could significantly impact your business.
 
-Revolutionize construction through intelligent automation. Our Cognitive data-construction leverages advanced machine learning to deliver healthcare data analytics at scale.
+Revolutionize construction through intelligent automation. Our Cognitive data-construction leverages advanced machine learning to deliver image recognition at scale.
 
 Key Benefits:
 - AI-driven automation for faster results

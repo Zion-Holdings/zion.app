@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Sales for Hospitality - Zion Tech Group",
-  description: "Revolutionize hospitality through intelligent automation. Our Intelligent Sales for Hospitality leverages advanced machine learning to deliver sentiment analysi",
+  description: "Next-generation hospitality solution: Intelligent Sales for Hospitality. Combines market intelligence with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-sales-for-hospitality-4fee9481`
   }
@@ -13,25 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Sales for Hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize hospitality through intelligent automation. Our Intelligent Sales for Hospitality leverages advanced machine learning to deliver sentiment analysis at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation hospitality solution: Intelligent Sales for Hospitality. Combines market intelligence with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Custom integrations with webhook support</li>
-            <li>Alerting system with intelligent notifications</li>
-            <li>Language processing with sentiment analysis</li>
-            <li>Customer service automation with chatbot integration</li>
-            <li>Budget optimization with cost allocation</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Network optimization with traffic analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced decision making with data-driven insights</li>
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Reduced customer acquisition costs with optimization</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
             <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>

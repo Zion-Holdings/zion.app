@@ -18,20 +18,22 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Machine learning integration with automatic model training</li>
-            <li>Network optimization with traffic analysis</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Image recognition with computer vision</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Serverless functions for cost-effective scaling</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
             <li>Enhanced security with continuous threat monitoring</li>
-            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Improved customer satisfaction with faster response times</li>
             <li>Real-time insights and alerts for proactive management</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         
