@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Logistics Platform - Zion Tech Group",
-  description: "Next-generation construction solution: Automated Logistics Platform. Combines executive dashboards with adaptive intelligence for optimal results.",
+  description: "Transform your healthcare operations with our Automated Logistics Platform. This AI-driven solution automates supply chain with unprecedented accuracy and effic",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-logistics-platform-59250e59`
   }
@@ -13,16 +13,15 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated Logistics Platform</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: Automated Logistics Platform. Combines executive dashboards with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your healthcare operations with our Automated Logistics Platform. This AI-driven solution automates supply chain with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Image recognition with computer vision</li>
-            <li>Edge computing support for low-latency operations</li>
-            <li>Data governance with policy enforcement</li>
-            <li>Process discovery with activity analysis</li>
-            <li>Budget optimization with cost allocation</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Machine learning integration with automatic model training</li>
+            <li>Real-time processing with streaming analytics</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
           </ul>
         </div>
         
@@ -30,10 +29,10 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Increased revenue with optimized pricing strategies</li>
-            <li>Better resource utilization with auto-scaling</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>Improved quality with automated testing and validation</li>
             <li>Cost optimization recommendations with savings analysis</li>
-            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

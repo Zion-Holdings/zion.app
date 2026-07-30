@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Security - Agriculture Edition - Zion Tech Group",
-  description: "The future of agriculture is here with AI Security - Agriculture Edition. Powered by cutting-edge AI, this platform delivers predictive modeling like never befo",
+  description: "The future of agriculture is here with AI Security - Agriculture Edition. Powered by cutting-edge AI, this platform delivers workflow management like never befo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-security---agriculture-edition-5d6a91d4`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Security - Agriculture Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of agriculture is here with AI Security - Agriculture Edition. Powered by cutting-edge AI, this platform delivers predictive modeling like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of agriculture is here with AI Security - Agriculture Edition. Powered by cutting-edge AI, this platform delivers workflow management like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>GDPR compliance with data portability</li>
-            <li>Sentiment analysis with real-time monitoring</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Image recognition with computer vision</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Role-based access control with SSO integration</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced decision making with data-driven insights</li>
-            <li>Improved product quality with automated testing</li>
-            <li>Reduced operational risks with predictive models</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
             <li>Seamless integration with existing systems and workflows</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
           </ul>
         </div>
         

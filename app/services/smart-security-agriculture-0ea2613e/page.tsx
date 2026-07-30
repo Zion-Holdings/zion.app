@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart security-agriculture - Zion Tech Group",
-  description: "Revolutionize agriculture through intelligent automation. Our Smart security-agriculture leverages advanced machine learning to deliver manufacturing quality co",
+  description: "Transform your agriculture operations with our Smart security-agriculture. This AI-driven solution automates logistics route optimization with unprecedented acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-security-agriculture-0ea2613e`
   }
@@ -13,15 +13,15 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart security-agriculture</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize agriculture through intelligent automation. Our Smart security-agriculture leverages advanced machine learning to deliver manufacturing quality control at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your agriculture operations with our Smart security-agriculture. This AI-driven solution automates logistics route optimization with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Fraud detection with anomaly analysis</li>
-            <li>Data encryption at rest and in transit</li>
-            <li>Manufacturing quality control with defect detection</li>
-            <li>Serverless functions for cost-effective scaling</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Document processing with OCR and NLP</li>
+            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         
@@ -29,9 +29,10 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Scalable to millions of transactions per second</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Faster time-to-market with accelerated development</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

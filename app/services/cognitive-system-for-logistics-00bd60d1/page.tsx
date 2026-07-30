@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive System for Logistics - Zion Tech Group",
-  description: "Next-generation logistics solution: Cognitive System for Logistics. Combines logistics route optimization with adaptive intelligence for optimal results.",
+  description: "Unlock unprecedented growth with Cognitive System for Logistics. This autonomous system provides manufacturing quality control with zero manual intervention nee",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-system-for-logistics-00bd60d1`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cognitive System for Logistics</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation logistics solution: Cognitive System for Logistics. Combines logistics route optimization with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Cognitive System for Logistics. This autonomous system provides manufacturing quality control with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Energy optimization with consumption tracking</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Code optimization with performance profiling</li>
-            <li>Security monitoring with threat intelligence</li>
-            <li>Edge computing support for low-latency operations</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Improved customer retention with proactive service</li>
-            <li>Improved product quality with automated testing</li>
-            <li>Real-time insights and alerts for proactive management</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>50% reduction in operational costs through automation</li>
           </ul>
         </div>
         

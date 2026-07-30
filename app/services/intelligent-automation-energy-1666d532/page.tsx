@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent automation-energy - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent automation-energy. This autonomous system provides predictive analytics with zero manual intervention needed.",
+  description: "Next-generation energy solution: Intelligent automation-energy. Combines inventory management with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-automation-energy-1666d532`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent automation-energy</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Intelligent automation-energy. This autonomous system provides predictive analytics with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation energy solution: Intelligent automation-energy. Combines inventory management with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>SOC 2 certified with security controls</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Financial risk management with scenario analysis</li>
-            <li>Customer service automation with chatbot integration</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Multi-region deployment with automatic failover</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Performance benchmarking against industry standards</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
-            <li>3x faster decision making with real-time insights</li>
-            <li>50% reduction in operational costs through automation</li>
+            <li>Scalable to millions of transactions per second</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

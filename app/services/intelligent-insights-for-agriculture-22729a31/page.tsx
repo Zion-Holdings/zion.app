@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Insights for Agriculture - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Insights for Agriculture. This autonomous system provides data processing with zero manual intervention needed.",
+  description: "Revolutionize agriculture through intelligent automation. Our Intelligent Insights for Agriculture leverages advanced machine learning to deliver energy managem",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-insights-for-agriculture-22729a31`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Insights for Agriculture</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Intelligent Insights for Agriculture. This autonomous system provides data processing with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize agriculture through intelligent automation. Our Intelligent Insights for Agriculture leverages advanced machine learning to deliver energy management at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>A/B testing framework for continuous optimization</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>GDPR compliance with data portability</li>
+            <li>Multi-language support with localization</li>
             <li>HIPAA ready with healthcare data protection</li>
-            <li>Healthcare data analytics with patient insights</li>
-            <li>Sales process optimization with pipeline management</li>
-            <li>Edge computing support for low-latency operations</li>
+            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Enhanced security with continuous threat monitoring</li>
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Improved customer satisfaction with faster response times</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
+            <li>Reduced churn with proactive customer retention</li>
             <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>

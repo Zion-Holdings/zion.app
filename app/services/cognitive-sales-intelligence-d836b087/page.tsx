@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Sales Intelligence - Zion Tech Group",
-  description: "The future of legal is here with Cognitive Sales Intelligence. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.",
+  description: "Revolutionize energy through intelligent automation. Our Cognitive Sales Intelligence leverages advanced machine learning to deliver customer service automation",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-sales-intelligence-d836b087`
   }
@@ -13,25 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cognitive Sales Intelligence</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of legal is here with Cognitive Sales Intelligence. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize energy through intelligent automation. Our Cognitive Sales Intelligence leverages advanced machine learning to deliver customer service automation at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Manufacturing quality control with defect detection</li>
-            <li>Multi-language support with localization</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>Inventory prediction with demand forecasting</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better risk management with predictive analytics</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

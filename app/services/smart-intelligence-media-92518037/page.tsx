@@ -18,21 +18,21 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Edge computing support for low-latency operations</li>
-            <li>Market analysis with buyer behavior insights</li>
-            <li>Revenue forecasting with market trend analysis</li>
-            <li>Serverless functions for cost-effective scaling</li>
-            <li>Executive dashboards with drill-down capabilities</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Financial risk management with scenario analysis</li>
+            <li>A/B testing framework for continuous optimization</li>
+            <li>Healthcare data analytics with patient insights</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better supply chain visibility with tracking</li>
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>Scalable to millions of transactions per second</li>
-            <li>Better resource utilization with auto-scaling</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>Zero manual intervention required for routine tasks</li>
           </ul>
         </div>
         
