@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Decision Marketing - Zion Tech Group",
-  description: "The future of finance is here with Predictive Decision Marketing. Powered by cutting-edge AI, this platform delivers user experience like never before.",
+  description: "Next-generation technology solution: Predictive Decision Marketing. Combines resource optimization with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-decision-marketing-ae23ad48`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Predictive Decision Marketing</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of finance is here with Predictive Decision Marketing. Powered by cutting-edge AI, this platform delivers user experience like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation technology solution: Predictive Decision Marketing. Combines resource optimization with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>Document processing with OCR and NLP</li>
             <li>Mobile-responsive interface with offline capabilities</li>
-            <li>GDPR compliance with data portability</li>
-            <li>Open-source friendly with plugin architecture</li>
-            <li>Code optimization with performance profiling</li>
-            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Improved customer retention with proactive service</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Improved forecast accuracy with ML models</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

@@ -1,0 +1,42 @@
+{
+  "service_id": "intelligent-analytics-for-insurance-3dc451d1",
+  "service_name": "Intelligent Analytics for Insurance",
+  "industry": "insurance",
+  "conversion_metrics": {
+    "open_rate": "70%",
+    "click_rate": "43%",
+    "reply_rate": "29%",
+    "close_rate": "17%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest insurance challenge? Intelligent Analytics for Insurance solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-61",
+      "service_id": "intelligent-analytics-for-insurance-3dc451d1",
+      "conversion_rate": "17%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is risk holding you back? Intelligent Analytics for Insurance delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-61",
+      "service_id": "intelligent-analytics-for-insurance-3dc451d1",
+      "conversion_rate": "17%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop risk headaches. Intelligent Analytics for Insurance = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-61",
+      "service_id": "intelligent-analytics-for-insurance-3dc451d1",
+      "conversion_rate": "17%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:07:33.252607+00:00"
+}

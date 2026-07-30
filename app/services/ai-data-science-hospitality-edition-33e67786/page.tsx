@@ -1,8 +1,8 @@
 import { } from 'next/navigation';
 
 export const metadata = {
-  title: "AI Data Science - Hospitality Edition - Zion Tech Group",
-  description: "Enhance your hospitality business with AI Data Science - Hospitality Edition. Our solution provides content generation with enterprise-grade reliability and sec",
+  title: "Ai Data Science Hospitality Edition 33E67786 - Zion Tech Group",
+  description: "",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-data-science-hospitality-edition-33e67786`
   }
@@ -12,28 +12,24 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">AI Data Science - Hospitality Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Enhance your hospitality business with AI Data Science - Hospitality Edition. Our solution provides content generation with enterprise-grade reliability and security.</p>
+        <h1 className="text-4xl font-bold mb-6">Ai Data Science Hospitality Edition 33E67786</h1>
+        <p className="text-lg text-gray-300 mb-8"></p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cost management with budget alerts</li>
-            <li>Risk quantification with scoring</li>
-            <li>Compliance monitoring with regulatory updates</li>
-            <li>SSL/TLS encryption for all connections</li>
-            <li>Micro-segmentation for security zones</li>
+            <li>AI-powered automation</li>
+            <li>Real-time analytics</li>
+            <li>Cloud-native deployment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>improved customer loyalty programs</li>
-            <li>Improved Net Promoter Score (NPS)</li>
-            <li>Improved checkout conversion rates</li>
-            <li>Improved contract renewal rates</li>
+            <li>50% reduction in operational costs</li>
+            <li>3x faster decision making</li>
+            <li>99.9% uptime guarantee</li>
           </ul>
         </div>
         
@@ -42,15 +38,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$199</p>
+              <p className="text-2xl font-bold mb-2">$299</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$499</p>
+              <p className="text-2xl font-bold mb-2">$799</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$1499</p>
+              <p className="text-2xl font-bold mb-2">$2499</p>
             </div>
           </div>
         </div>

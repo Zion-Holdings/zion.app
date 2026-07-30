@@ -1,0 +1,42 @@
+{
+  "service_id": "platform-self-optimizing-healthcare-45458097",
+  "service_name": "Platform Self-Optimizing - Healthcare",
+  "industry": "healthcare",
+  "conversion_metrics": {
+    "open_rate": "71%",
+    "click_rate": "45%",
+    "reply_rate": "32%",
+    "close_rate": "18%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest healthcare challenge? Platform Self-Optimizing - Healthcare solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-26",
+      "service_id": "platform-self-optimizing-healthcare-45458097",
+      "conversion_rate": "18%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is optimizer holding you back? Platform Self-Optimizing - Healthcare delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-26",
+      "service_id": "platform-self-optimizing-healthcare-45458097",
+      "conversion_rate": "18%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop optimizer headaches. Platform Self-Optimizing - Healthcare = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-26",
+      "service_id": "platform-self-optimizing-healthcare-45458097",
+      "conversion_rate": "18%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:07:33.238253+00:00"
+}

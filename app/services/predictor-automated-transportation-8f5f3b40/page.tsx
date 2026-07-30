@@ -1,8 +1,8 @@
 import { } from 'next/navigation';
 
 export const metadata = {
-  title: "Predictor Automated - Transportation - Zion Tech Group",
-  description: "Transform your transportation operations with our Predictor Automated - Transportation. This AI-driven solution automates scalability planning with unprecedente",
+  title: "Predictor Automated Transportation 8F5F3B40 - Zion Tech Group",
+  description: "",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictor-automated-transportation-8f5f3b40`
   }
@@ -12,28 +12,24 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Predictor Automated - Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your transportation operations with our Predictor Automated - Transportation. This AI-driven solution automates scalability planning with unprecedented accuracy and efficiency.</p>
+        <h1 className="text-4xl font-bold mb-6">Predictor Automated Transportation 8F5F3B40</h1>
+        <p className="text-lg text-gray-300 mb-8"></p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Risk quantification with scoring</li>
-            <li>Business continuity planning</li>
-            <li>Authorization with fine-grained permissions</li>
-            <li>Incident response with playbooks</li>
-            <li>Content generation with plagiarism checks</li>
+            <li>AI-powered automation</li>
+            <li>Real-time analytics</li>
+            <li>Cloud-native deployment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better employee engagement scores</li>
-            <li>Better shipping and delivery times</li>
-            <li>Reduced shipping costs with route optimization</li>
-            <li>reduced environmental impact and costs</li>
-            <li>Improved recruitment conversion rates</li>
+            <li>50% reduction in operational costs</li>
+            <li>3x faster decision making</li>
+            <li>99.9% uptime guarantee</li>
           </ul>
         </div>
         
@@ -42,15 +38,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$199</p>
+              <p className="text-2xl font-bold mb-2">$299</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$499</p>
+              <p className="text-2xl font-bold mb-2">$799</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$1499</p>
+              <p className="text-2xl font-bold mb-2">$2499</p>
             </div>
           </div>
         </div>

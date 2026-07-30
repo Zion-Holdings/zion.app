@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Management Intelligent - Hospitality - Zion Tech Group",
-  description: "Unlock unprecedented growth with Management Intelligent - Hospitality. This autonomous system provides performance monitoring with zero manual intervention need",
+  description: "The future of hospitality is here with Management Intelligent - Hospitality. Powered by cutting-edge AI, this platform delivers document processing like never b",
   alternates: {
     canonical: `https://ziontechgroup.com/services/management-intelligent---hospitality-45bb6801`
   }
@@ -13,16 +13,16 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Management Intelligent - Hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Management Intelligent - Hospitality. This autonomous system provides performance monitoring with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of hospitality is here with Management Intelligent - Hospitality. Powered by cutting-edge AI, this platform delivers document processing like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Code optimization with performance profiling</li>
-            <li>Network optimization with traffic analysis</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Fraud detection with anomaly analysis</li>
-            <li>HIPAA ready with healthcare data protection</li>
+            <li>Open-source friendly with plugin architecture</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Compliance monitoring with regulatory updates</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
           </ul>
         </div>
         
@@ -30,9 +30,8 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Increased revenue with optimized pricing strategies</li>
-            <li>3x faster decision making with real-time insights</li>
+            <li>Seamless integration with existing systems and workflows</li>
           </ul>
         </div>
         

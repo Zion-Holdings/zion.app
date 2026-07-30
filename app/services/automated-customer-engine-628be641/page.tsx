@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Customer Engine - Zion Tech Group",
-  description: "Revolutionize retail through intelligent automation. Our Automated Customer Engine leverages advanced machine learning to deliver logistics route optimization a",
+  description: "The future of finance is here with Automated Customer Engine. Powered by cutting-edge AI, this platform delivers customer service automation like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-customer-engine-628be641`
   }
@@ -13,15 +13,16 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated Customer Engine</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize retail through intelligent automation. Our Automated Customer Engine leverages advanced machine learning to deliver logistics route optimization at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of finance is here with Automated Customer Engine. Powered by cutting-edge AI, this platform delivers customer service automation like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Serverless functions for cost-effective scaling</li>
-            <li>Audit trails with compliance reporting</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>User experience analytics with behavior tracking</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Multi-region deployment with automatic failover</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Edge computing support for low-latency operations</li>
           </ul>
         </div>
         
@@ -29,8 +30,10 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>Improved quality with automated testing and validation</li>
             <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

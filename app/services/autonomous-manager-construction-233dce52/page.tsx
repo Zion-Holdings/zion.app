@@ -1,8 +1,8 @@
 import { } from 'next/navigation';
 
 export const metadata = {
-  title: "Autonomous manager-construction - Zion Tech Group",
-  description: "Drive innovation in construction with Autonomous manager-construction. This AI-powered platform transforms personalization engine into a competitive advantage.",
+  title: "Autonomous Manager Construction 233Dce52 - Zion Tech Group",
+  description: "",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-manager-construction-233dce52`
   }
@@ -12,28 +12,24 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Autonomous manager-construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Drive innovation in construction with Autonomous manager-construction. This AI-powered platform transforms personalization engine into a competitive advantage.</p>
+        <h1 className="text-4xl font-bold mb-6">Autonomous Manager Construction 233Dce52</h1>
+        <p className="text-lg text-gray-300 mb-8"></p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Usage analytics with insights</li>
-            <li>Version control with rollback capabilities</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>A/B testing framework for continuous optimization</li>
-            <li>Resource optimization with analytics</li>
+            <li>AI-powered automation</li>
+            <li>Real-time analytics</li>
+            <li>Cloud-native deployment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Reduced legal review cycles</li>
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Better risk management with predictive analytics</li>
-            <li>Improved supplier performance scores</li>
+            <li>50% reduction in operational costs</li>
+            <li>3x faster decision making</li>
+            <li>99.9% uptime guarantee</li>
           </ul>
         </div>
         
@@ -42,15 +38,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$199</p>
+              <p className="text-2xl font-bold mb-2">$299</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$499</p>
+              <p className="text-2xl font-bold mb-2">$799</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$1499</p>
+              <p className="text-2xl font-bold mb-2">$2499</p>
             </div>
           </div>
         </div>

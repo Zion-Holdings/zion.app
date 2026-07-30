@@ -1,9 +1,9 @@
 {
-  "total_services": 1000,
-  "total_sequences": 7000,
+  "total_services": 1610,
+  "total_sequences": 11270,
   "avg_open_rate": "68%",
   "avg_reply_rate": "28%",
   "avg_close_rate": "15%",
   "potential_revenue": "$1.2B+",
-  "timestamp": "2026-07-30T06:06:03.103625+00:00"
+  "timestamp": "2026-07-30T06:07:33.266199+00:00"
 }

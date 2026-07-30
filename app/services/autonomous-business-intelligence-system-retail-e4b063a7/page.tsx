@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Business Intelligence System - Retail - Zion Tech Group",
-  description: "Revolutionize retail through intelligent automation. Our Autonomous Business Intelligence System - Retail leverages advanced machine learning to deliver reputat",
+  description: "",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-business-intelligence-system-retail-e4b063a7`
   }
@@ -13,27 +13,23 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Autonomous Business Intelligence System - Retail</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize retail through intelligent automation. Our Autonomous Business Intelligence System - Retail leverages advanced machine learning to deliver reputation management at scale.</p>
+        <p className="text-lg text-gray-300 mb-8"></p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>A/B testing framework for continuous optimization</li>
-            <li>Document processing with OCR and NLP</li>
-            <li>Energy optimization with consumption tracking</li>
-            <li>Customer journey mapping with touchpoint analysis</li>
+            <li>AI-powered automation</li>
+            <li>Real-time analytics</li>
+            <li>Cloud-native deployment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced risk with early warning systems</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Reduced shipping costs with route optimization</li>
-            <li>50% reduction in operational costs through automation</li>
+            <li>50% reduction in operational costs</li>
+            <li>3x faster decision making</li>
+            <li>99.9% uptime guarantee</li>
           </ul>
         </div>
         
@@ -42,15 +38,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$199</p>
+              <p className="text-2xl font-bold mb-2">$299</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$499</p>
+              <p className="text-2xl font-bold mb-2">$799</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$1499</p>
+              <p className="text-2xl font-bold mb-2">$2499</p>
             </div>
           </div>
         </div>

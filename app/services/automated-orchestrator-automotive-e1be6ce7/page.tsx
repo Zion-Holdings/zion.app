@@ -18,10 +18,10 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Multi-language support with localization</li>
             <li>Logistics route optimization with traffic prediction</li>
-            <li>Custom integrations with webhook support</li>
-            <li>Network optimization with traffic analysis</li>
-            <li>Maintenance scheduling with predictive analytics</li>
+            <li>HIPAA ready with healthcare data protection</li>
           </ul>
         </div>
         
@@ -29,8 +29,10 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Reduced human error by 95% with automated processes</li>
-            <li>Better risk management with predictive analytics</li>
-            <li>Increased revenue with optimized pricing strategies</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>Scalable to millions of transactions per second</li>
+            <li>Seamless integration with existing systems and workflows</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
           </ul>
         </div>
         

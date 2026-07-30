@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Data Smart - Transportation - Zion Tech Group",
-  description: "The future of transportation is here with Data Smart - Transportation. Powered by cutting-edge AI, this platform delivers sentiment analysis like never before.",
+  description: "Revolutionize transportation through intelligent automation. Our Data Smart - Transportation leverages advanced machine learning to deliver financial planning a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/data-smart---transportation-e0fe853d`
   }
@@ -13,26 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Data Smart - Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of transportation is here with Data Smart - Transportation. Powered by cutting-edge AI, this platform delivers sentiment analysis like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize transportation through intelligent automation. Our Data Smart - Transportation leverages advanced machine learning to deliver financial planning at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cost reduction with process mining</li>
-            <li>Manufacturing quality control with defect detection</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Image recognition with computer vision</li>
             <li>Security monitoring with threat intelligence</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced operational risks with predictive models</li>
-            <li>Reduced customer acquisition costs with optimization</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Data Quality Monitor - Zion Tech Group",
-  description: "Monitors data quality and automatically detects anomalies and inconsistencies.",
+  description: "",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-data-quality-monitor-096d7b05`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Data Quality Monitor</h1>
-        <p className="text-lg text-gray-300 mb-8">Monitors data quality and automatically detects anomalies and inconsistencies.</p>
+        <p className="text-lg text-gray-300 mb-8"></p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
@@ -42,11 +42,11 @@ export default function ServicePage() {
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$899</p>
+              <p className="text-2xl font-bold mb-2">$799</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$2799</p>
+              <p className="text-2xl font-bold mb-2">$2499</p>
             </div>
           </div>
         </div>

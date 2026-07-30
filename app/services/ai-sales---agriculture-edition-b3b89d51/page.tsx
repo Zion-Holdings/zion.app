@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Sales - Agriculture Edition - Zion Tech Group",
-  description: "The future of agriculture is here with AI Sales - Agriculture Edition. Powered by cutting-edge AI, this platform delivers risk assessment like never before.",
+  description: "Transform your agriculture operations with our AI Sales - Agriculture Edition. This AI-driven solution automates manufacturing quality control with unprecedente",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-sales---agriculture-edition-b3b89d51`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Sales - Agriculture Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of agriculture is here with AI Sales - Agriculture Edition. Powered by cutting-edge AI, this platform delivers risk assessment like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your agriculture operations with our AI Sales - Agriculture Edition. This AI-driven solution automates manufacturing quality control with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time processing with streaming analytics</li>
+            <li>Document processing with OCR and NLP</li>
             <li>Language processing with sentiment analysis</li>
-            <li>Maintenance scheduling with predictive analytics</li>
-            <li>Fraud detection with anomaly analysis</li>
-            <li>SOC 2 certified with security controls</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cost optimization recommendations with savings analysis</li>
-            <li>Reduced human error by 95% with automated processes</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
             <li>24/7 automated operations without human intervention</li>
-            <li>Seamless integration with existing systems and workflows</li>
+            <li>Scalable to millions of transactions per second</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

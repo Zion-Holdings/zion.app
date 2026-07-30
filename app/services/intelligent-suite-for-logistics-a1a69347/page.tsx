@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Suite for Logistics - Zion Tech Group",
-  description: "Next-generation logistics solution: Intelligent Suite for Logistics. Combines predictive analytics with adaptive intelligence for optimal results.",
+  description: "Revolutionize logistics through intelligent automation. Our Intelligent Suite for Logistics leverages advanced machine learning to deliver inventory management ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-suite-for-logistics-a1a69347`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Suite for Logistics</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation logistics solution: Intelligent Suite for Logistics. Combines predictive analytics with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize logistics through intelligent automation. Our Intelligent Suite for Logistics leverages advanced machine learning to deliver inventory management at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Inventory prediction with demand forecasting</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Compliance monitoring with regulatory updates</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>GDPR compliance with data portability</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
-            <li>50% reduction in operational costs through automation</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

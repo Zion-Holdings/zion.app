@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Manufacturing Platform - Zion Tech Group",
-  description: "Transform your energy operations with our Smart Manufacturing Platform. This AI-driven solution automates user experience with unprecedented accuracy and effici",
+  description: "Revolutionize transportation through intelligent automation. Our Smart Manufacturing Platform leverages advanced machine learning to deliver maintenance schedul",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-manufacturing-platform-0dd1672f`
   }
@@ -13,26 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Manufacturing Platform</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your energy operations with our Smart Manufacturing Platform. This AI-driven solution automates user experience with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize transportation through intelligent automation. Our Smart Manufacturing Platform leverages advanced machine learning to deliver maintenance scheduling at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>SOC 2 certified with security controls</li>
-            <li>Customer service automation with chatbot integration</li>
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>GDPR compliance with data portability</li>
+            <li>Code optimization with performance profiling</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Open-source friendly with plugin architecture</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>50% reduction in operational costs through automation</li>
+            <li>3x faster decision making with real-time insights</li>
             <li>Scalable to millions of transactions per second</li>
-            <li>Better risk management with predictive analytics</li>
             <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Reduced churn with proactive customer retention</li>
+            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

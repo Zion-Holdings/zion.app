@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Advisor for Education - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Advisor for Education. This autonomous system provides manufacturing quality control with zero manual intervention needed.",
+  description: "Revolutionize education through intelligent automation. Our Intelligent Advisor for Education leverages advanced machine learning to deliver decision support at scale.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-advisor-for-education-fdca831e`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Advisor for Education</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Intelligent Advisor for Education. This autonomous system provides manufacturing quality control with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize education through intelligent automation. Our Intelligent Advisor for Education leverages advanced machine learning to deliver decision support at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Document processing with OCR and NLP</li>
             <li>Language processing with sentiment analysis</li>
-            <li>Inventory prediction with demand forecasting</li>
-            <li>Content generation with plagiarism checks</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Alerting system with intelligent notifications</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Microservices deployment with container orchestration</li>
+            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>3x faster decision making with real-time insights</li>
-            <li>50% reduction in operational costs through automation</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Cost optimization recommendations with savings analysis</li>
             <li>Reduced human error by 95% with automated processes</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

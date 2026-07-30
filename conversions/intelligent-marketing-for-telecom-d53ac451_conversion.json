@@ -1,0 +1,42 @@
+{
+  "service_id": "intelligent-marketing-for-telecom-d53ac451",
+  "service_name": "Intelligent Marketing for Telecom",
+  "industry": "telecom",
+  "conversion_metrics": {
+    "open_rate": "72%",
+    "click_rate": "46%",
+    "reply_rate": "33%",
+    "close_rate": "19%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest telecom challenge? Intelligent Marketing for Telecom solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-5",
+      "service_id": "intelligent-marketing-for-telecom-d53ac451",
+      "conversion_rate": "19%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is cloud holding you back? Intelligent Marketing for Telecom delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-5",
+      "service_id": "intelligent-marketing-for-telecom-d53ac451",
+      "conversion_rate": "19%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop cloud headaches. Intelligent Marketing for Telecom = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-5",
+      "service_id": "intelligent-marketing-for-telecom-d53ac451",
+      "conversion_rate": "19%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:07:33.228028+00:00"
+}

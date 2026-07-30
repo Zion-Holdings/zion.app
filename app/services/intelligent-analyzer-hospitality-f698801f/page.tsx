@@ -1,8 +1,8 @@
 import { } from 'next/navigation';
 
 export const metadata = {
-  title: "Intelligent analyzer-hospitality - Zion Tech Group",
-  description: "Enhance your hospitality business with Intelligent analyzer-hospitality. Our solution provides process discovery with enterprise-grade reliability and security.",
+  title: "Intelligent Analyzer Hospitality F698801F - Zion Tech Group",
+  description: "",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-analyzer-hospitality-f698801f`
   }
@@ -12,28 +12,24 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Intelligent analyzer-hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Enhance your hospitality business with Intelligent analyzer-hospitality. Our solution provides process discovery with enterprise-grade reliability and security.</p>
+        <h1 className="text-4xl font-bold mb-6">Intelligent Analyzer Hospitality F698801F</h1>
+        <p className="text-lg text-gray-300 mb-8"></p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Penetration testing with red team</li>
-            <li>Chargeback with cost allocation</li>
-            <li>FinOps with cloud financial management</li>
-            <li>Load balancing with health checks</li>
-            <li>Machine learning integration with automatic model training</li>
+            <li>AI-powered automation</li>
+            <li>Real-time analytics</li>
+            <li>Cloud-native deployment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved Net Promoter Score (NPS)</li>
-            <li>Improved conversion funnel metrics</li>
-            <li>50% reduction in operational costs through automation</li>
-            <li>Improved forecast accuracy</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>50% reduction in operational costs</li>
+            <li>3x faster decision making</li>
+            <li>99.9% uptime guarantee</li>
           </ul>
         </div>
         
@@ -42,15 +38,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$199</p>
+              <p className="text-2xl font-bold mb-2">$299</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$499</p>
+              <p className="text-2xl font-bold mb-2">$799</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$1499</p>
+              <p className="text-2xl font-bold mb-2">$2499</p>
             </div>
           </div>
         </div>
