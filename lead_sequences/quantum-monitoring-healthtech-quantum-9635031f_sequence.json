@@ -1,0 +1,35 @@
+{
+  "service_id": "quantum-monitoring-healthtech-quantum-9635031f",
+  "service_name": "Quantum Monitoring - HEALTHTECH Quantum",
+  "industry": "healthtech",
+  "lead_magnet": "Patient Workflow Automation Blueprint",
+  "metrics": {
+    "improvement": "51%",
+    "savings": "$14.8M",
+    "timeframe": "7 months",
+    "similar": "HealthTech Inc"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows healthtech companies using Quantum Monitoring - HEALTHTECH Quantum see 51% improvement. Your current process?",
+      "sequence_id": "seq-65",
+      "service_id": "quantum-monitoring-healthtech-quantum-9635031f"
+    },
+    {
+      "step": 2,
+      "message": "Based on your healthtech profile, Quantum Monitoring - HEALTHTECH Quantum could save {company} approximately $14.8M. Interested in details?",
+      "sequence_id": "seq-65",
+      "service_id": "quantum-monitoring-healthtech-quantum-9635031f"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Quantum Monitoring - HEALTHTECH Quantum is proven to deliver 51% results.",
+      "sequence_id": "seq-65",
+      "service_id": "quantum-monitoring-healthtech-quantum-9635031f"
+    }
+  ],
+  "hot_lead_score": 78,
+  "conversion_likelihood": "70%",
+  "timestamp": "2026-07-30T06:28:01.381208+00:00"
+}

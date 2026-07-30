@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-attack-surface-analyzer-64ca1b01",
+  "service_name": "AI Attack Surface Analyzer",
+  "industry": "AI Security",
+  "lead_magnet": "AI Solutions Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TechStart Inc. just implemented AI Attack Surface Analyzer last month - 52% improvement already. Thoughts?",
+      "sequence_id": "seq-98",
+      "service_id": "ai-attack-surface-analyzer-64ca1b01"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: TechStart Inc. saw $18.4M in savings. Your AI Security peers are seeing similar results.",
+      "sequence_id": "seq-98",
+      "service_id": "ai-attack-surface-analyzer-64ca1b01"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-98",
+      "service_id": "ai-attack-surface-analyzer-64ca1b01"
+    }
+  ],
+  "hot_lead_score": 81,
+  "conversion_likelihood": "64%",
+  "timestamp": "2026-07-30T06:28:01.392601+00:00"
+}

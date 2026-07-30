@@ -1,0 +1,35 @@
+{
+  "service_id": "quantum-generator-regtech-quantum-83505cb8",
+  "service_name": "Quantum Generator - REGTECH Quantum",
+  "industry": "regtech",
+  "lead_magnet": "Compliance Automation Efficiency Guide",
+  "metrics": {
+    "improvement": "53%",
+    "savings": "$15.9M",
+    "timeframe": "7 months",
+    "similar": "RegTech Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows regtech companies using Quantum Generator - REGTECH Quantum see 53% improvement. Your current process?",
+      "sequence_id": "seq-5",
+      "service_id": "quantum-generator-regtech-quantum-83505cb8"
+    },
+    {
+      "step": 2,
+      "message": "Based on your regtech profile, Quantum Generator - REGTECH Quantum could save {company} approximately $15.9M. Interested in details?",
+      "sequence_id": "seq-5",
+      "service_id": "quantum-generator-regtech-quantum-83505cb8"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Quantum Generator - REGTECH Quantum is proven to deliver 53% results.",
+      "sequence_id": "seq-5",
+      "service_id": "quantum-generator-regtech-quantum-83505cb8"
+    }
+  ],
+  "hot_lead_score": 95,
+  "conversion_likelihood": "55%",
+  "timestamp": "2026-07-30T06:28:01.357352+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "management-autonomous-real-estate-ac4c1865",
+  "service_name": "Management Autonomous - Real-Estate",
+  "industry": "real-estate",
+  "lead_magnet": "Property Management Automation Guide",
+  "metrics": {
+    "improvement": "46%",
+    "savings": "$13.4M",
+    "timeframe": "7 months",
+    "similar": "PropertyGroup"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve real-estate. Our AI platform helped PropertyGroup achieve 46% improvement in 7 months. Quick 5-minute call?",
+      "sequence_id": "seq-11",
+      "service_id": "management-autonomous-real-estate-ac4c1865"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Management Autonomous - Real-Estate typically saves $13.4M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-11",
+      "service_id": "management-autonomous-real-estate-ac4c1865"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 46% results. If not interested, just let me know!",
+      "sequence_id": "seq-11",
+      "service_id": "management-autonomous-real-estate-ac4c1865"
+    }
+  ],
+  "hot_lead_score": 87,
+  "conversion_likelihood": "50%",
+  "timestamp": "2026-07-30T06:28:01.360288+00:00"
+}

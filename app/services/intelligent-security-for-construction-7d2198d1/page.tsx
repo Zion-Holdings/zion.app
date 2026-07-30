@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Security for Construction - Zion Tech Group",
-  description: "Transform your construction operations with our Intelligent Security for Construction. This AI-driven solution automates fraud prevention with unprecedented acc",
+  description: "The future of construction is here with Intelligent Security for Construction. Powered by cutting-edge AI, this platform delivers compliance monitoring like nev",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-security-for-construction-7d2198d1`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Security for Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our Intelligent Security for Construction. This AI-driven solution automates fraud prevention with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Intelligent Security for Construction. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Sentiment analysis with real-time monitoring</li>
             <li>Healthcare data analytics with patient insights</li>
-            <li>Machine learning integration with automatic model training</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Document processing with OCR and NLP</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>Improved customer retention with proactive service</li>
-            <li>Improved sales performance with lead scoring</li>
-            <li>Real-time insights and alerts for proactive management</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

@@ -1,0 +1,42 @@
+{
+  "service_id": "processor-automated---finance-3dad70c9",
+  "service_name": null,
+  "industry": "finance",
+  "conversion_metrics": {
+    "open_rate": "73%",
+    "click_rate": "48%",
+    "reply_rate": "35%",
+    "close_rate": "22%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest finance challenge? Service solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-61",
+      "service_id": "processor-automated---finance-3dad70c9",
+      "conversion_rate": "22%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is orchestrator holding you back? Service delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-61",
+      "service_id": "processor-automated---finance-3dad70c9",
+      "conversion_rate": "22%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop orchestrator headaches. Service = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-61",
+      "service_id": "processor-automated---finance-3dad70c9",
+      "conversion_rate": "22%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:29:24.971327+00:00"
+}

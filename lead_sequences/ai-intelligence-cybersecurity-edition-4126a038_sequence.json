@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-intelligence-cybersecurity-edition-4126a038",
+  "service_name": "AI Intelligence - Cybersecurity Edition",
+  "industry": "cybersecurity",
+  "lead_magnet": "Threat Detection ROI Calculator",
+  "metrics": {
+    "improvement": "61%",
+    "savings": "$19.7M",
+    "timeframe": "4 months",
+    "similar": "SecureTech"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with cybersecurity risk?",
+      "sequence_id": "seq-7",
+      "service_id": "ai-intelligence-cybersecurity-edition-4126a038"
+    },
+    {
+      "step": 2,
+      "message": "We've helped SecureTech solve this exact problem with AI Intelligence - Cybersecurity Edition. Achieved 61% in 4 months.",
+      "sequence_id": "seq-7",
+      "service_id": "ai-intelligence-cybersecurity-edition-4126a038"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-7",
+      "service_id": "ai-intelligence-cybersecurity-edition-4126a038"
+    }
+  ],
+  "hot_lead_score": 67,
+  "conversion_likelihood": "67%",
+  "timestamp": "2026-07-30T06:28:01.358309+00:00"
+}

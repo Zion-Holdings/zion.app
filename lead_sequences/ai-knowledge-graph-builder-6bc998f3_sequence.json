@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-knowledge-graph-builder-6bc998f3",
+  "service_name": "AI Knowledge Graph Builder",
+  "industry": "Knowledge Management",
+  "lead_magnet": "AI Solutions Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows Knowledge Management companies using AI Knowledge Graph Builder see 52% improvement. Your current process?",
+      "sequence_id": "seq-90",
+      "service_id": "ai-knowledge-graph-builder-6bc998f3"
+    },
+    {
+      "step": 2,
+      "message": "Based on your Knowledge Management profile, AI Knowledge Graph Builder could save {company} approximately $18.4M. Interested in details?",
+      "sequence_id": "seq-90",
+      "service_id": "ai-knowledge-graph-builder-6bc998f3"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. AI Knowledge Graph Builder is proven to deliver 52% results.",
+      "sequence_id": "seq-90",
+      "service_id": "ai-knowledge-graph-builder-6bc998f3"
+    }
+  ],
+  "hot_lead_score": 93,
+  "conversion_likelihood": "75%",
+  "timestamp": "2026-07-30T06:28:01.389126+00:00"
+}

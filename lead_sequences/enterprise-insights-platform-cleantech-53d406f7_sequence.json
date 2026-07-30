@@ -1,0 +1,35 @@
+{
+  "service_id": "enterprise-insights-platform-cleantech-53d406f7",
+  "service_name": "Enterprise Insights Platform - CLEANTECH",
+  "industry": "cleantech",
+  "lead_magnet": "Energy Consumption Reduction Report",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$22.1M",
+    "timeframe": "5 months",
+    "similar": "CleanTech Inc"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, CleanTech Inc is closing their Q3 deals this week. Want to see how Enterprise Insights Platform - CLEANTECH can help {company} save $22.1M?",
+      "sequence_id": "seq-59",
+      "service_id": "enterprise-insights-platform-cleantech-53d406f7"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Enterprise Insights Platform - CLEANTECH delivers 55% in 5 months.",
+      "sequence_id": "seq-59",
+      "service_id": "enterprise-insights-platform-cleantech-53d406f7"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-59",
+      "service_id": "enterprise-insights-platform-cleantech-53d406f7"
+    }
+  ],
+  "hot_lead_score": 68,
+  "conversion_likelihood": "65%",
+  "timestamp": "2026-07-30T06:28:01.379568+00:00"
+}

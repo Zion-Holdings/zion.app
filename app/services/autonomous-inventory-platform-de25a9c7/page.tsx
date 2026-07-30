@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Inventory Platform - Zion Tech Group",
-  description: "The future of agriculture is here with Autonomous Inventory Platform. Powered by cutting-edge AI, this platform delivers revenue forecasting like never before.",
+  description: "Revolutionize insurance through intelligent automation. Our Autonomous Inventory Platform leverages advanced machine learning to deliver market intelligence at ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-inventory-platform-de25a9c7`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Autonomous Inventory Platform</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of agriculture is here with Autonomous Inventory Platform. Powered by cutting-edge AI, this platform delivers revenue forecasting like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize insurance through intelligent automation. Our Autonomous Inventory Platform leverages advanced machine learning to deliver market intelligence at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Version control with rollback capabilities</li>
-            <li>Data governance with policy enforcement</li>
             <li>Sales process optimization with pipeline management</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Master data management with golden records</li>
+            <li>Network optimization with traffic analysis</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Maintenance scheduling with predictive analytics</li>
+            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved product quality with automated testing</li>
-            <li>Improved forecast accuracy with ML models</li>
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Better supply chain visibility with tracking</li>
-            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>Reduced human error by 95% with automated processes</li>
           </ul>
         </div>
         

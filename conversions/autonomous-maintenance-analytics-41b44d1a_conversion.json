@@ -1,0 +1,42 @@
+{
+  "service_id": "autonomous-maintenance-analytics-41b44d1a",
+  "service_name": null,
+  "industry": "agriculture",
+  "conversion_metrics": {
+    "open_rate": "62%",
+    "click_rate": "35%",
+    "reply_rate": "22%",
+    "close_rate": "12%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest agriculture challenge? Service solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-75",
+      "service_id": "autonomous-maintenance-analytics-41b44d1a",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is manufacturing holding you back? Service delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-75",
+      "service_id": "autonomous-maintenance-analytics-41b44d1a",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop manufacturing headaches. Service = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-75",
+      "service_id": "autonomous-maintenance-analytics-41b44d1a",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:29:24.980596+00:00"
+}

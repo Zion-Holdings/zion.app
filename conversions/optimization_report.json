@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-07-30T06:29:24.941019+00:00",
+  "performance_score": 6.231,
+  "optimized_parameters": {
+    "service_generation_rate": 1724,
+    "email_templates_per_service": 5,
+    "case_studies_per_service": 1,
+    "lead_sequences_per_service": 1,
+    "conversion_sequences_per_service": 7,
+    "optimization_interval": 60,
+    "learning_rate": 0.01,
+    "exploration_rate": 0.15000000000000002,
+    "exploitation_rate": 0.9
+  },
+  "adaptive_strategy": "social_proof",
+  "artifact_counts": {
+    "services": 5930,
+    "case_studies": 16650,
+    "email_drafts": 16650,
+    "lead_sequences": 900,
+    "conversion_sequences": 1001
+  },
+  "recommendations": [
+    "Increase service generation to 1724 services/minute",
+    "Focus on social_proof strategy for next cycle",
+    "Learning rate: 0.0100",
+    "Exploration rate: 0.15"
+  ],
+  "velocity_multiplier": "x1.15"
+}

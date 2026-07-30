@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-predictive-analytics-0f7dfaac",
+  "service_name": "AI Predictive Analytics",
+  "industry": "Analytics",
+  "lead_magnet": "AI Solutions Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TechStart Inc. is closing their Q3 deals this week. Want to see how AI Predictive Analytics can help {company} save $18.4M?",
+      "sequence_id": "seq-99",
+      "service_id": "ai-predictive-analytics-0f7dfaac"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. AI Predictive Analytics delivers 52% in 6 months.",
+      "sequence_id": "seq-99",
+      "service_id": "ai-predictive-analytics-0f7dfaac"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-99",
+      "service_id": "ai-predictive-analytics-0f7dfaac"
+    }
+  ],
+  "hot_lead_score": 77,
+  "conversion_likelihood": "49%",
+  "timestamp": "2026-07-30T06:28:01.392869+00:00"
+}

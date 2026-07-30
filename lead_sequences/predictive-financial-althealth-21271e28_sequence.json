@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-financial-althealth-21271e28",
+  "service_name": "Predictive financial-althealth",
+  "industry": "althealth",
+  "lead_magnet": "Patient Care Automation Blueprint",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$13.7M",
+    "timeframe": "8 months",
+    "similar": "HealthPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve althealth. Our AI platform helped HealthPlus achieve 49% improvement in 8 months. Quick 5-minute call?",
+      "sequence_id": "seq-31",
+      "service_id": "predictive-financial-althealth-21271e28"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Predictive financial-althealth typically saves $13.7M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-31",
+      "service_id": "predictive-financial-althealth-21271e28"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 49% results. If not interested, just let me know!",
+      "sequence_id": "seq-31",
+      "service_id": "predictive-financial-althealth-21271e28"
+    }
+  ],
+  "hot_lead_score": 82,
+  "conversion_likelihood": "51%",
+  "timestamp": "2026-07-30T06:28:01.366612+00:00"
+}

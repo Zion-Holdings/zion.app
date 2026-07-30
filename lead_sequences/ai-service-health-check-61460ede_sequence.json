@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-service-health-check-61460ede",
+  "service_name": "AI Service Health Check",
+  "industry": "AI Ops",
+  "lead_magnet": "AI Solutions Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with AI Ops micro-saas?",
+      "sequence_id": "seq-72",
+      "service_id": "ai-service-health-check-61460ede"
+    },
+    {
+      "step": 2,
+      "message": "We've helped TechStart Inc. solve this exact problem with AI Service Health Check. Achieved 52% in 6 months.",
+      "sequence_id": "seq-72",
+      "service_id": "ai-service-health-check-61460ede"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-72",
+      "service_id": "ai-service-health-check-61460ede"
+    }
+  ],
+  "hot_lead_score": 83,
+  "conversion_likelihood": "70%",
+  "timestamp": "2026-07-30T06:28:01.383165+00:00"
+}

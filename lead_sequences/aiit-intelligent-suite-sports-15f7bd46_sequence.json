@@ -1,0 +1,35 @@
+{
+  "service_id": "aiit-intelligent-suite-sports-15f7bd46",
+  "service_name": "AI/IT Intelligent Suite - Sports",
+  "industry": "sports",
+  "lead_magnet": "Fan Engagement Growth Framework",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$8.9M",
+    "timeframe": "4 months",
+    "similar": "SportsTeam"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows sports companies using AI/IT Intelligent Suite - Sports see 55% improvement. Your current process?",
+      "sequence_id": "seq-40",
+      "service_id": "aiit-intelligent-suite-sports-15f7bd46"
+    },
+    {
+      "step": 2,
+      "message": "Based on your sports profile, AI/IT Intelligent Suite - Sports could save {company} approximately $8.9M. Interested in details?",
+      "sequence_id": "seq-40",
+      "service_id": "aiit-intelligent-suite-sports-15f7bd46"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. AI/IT Intelligent Suite - Sports is proven to deliver 55% results.",
+      "sequence_id": "seq-40",
+      "service_id": "aiit-intelligent-suite-sports-15f7bd46"
+    }
+  ],
+  "hot_lead_score": 74,
+  "conversion_likelihood": "52%",
+  "timestamp": "2026-07-30T06:28:01.371461+00:00"
+}

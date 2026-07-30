@@ -18,22 +18,21 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Open-source friendly with plugin architecture</li>
-            <li>Custom integrations with webhook support</li>
-            <li>Network optimization with traffic analysis</li>
-            <li>Fraud detection with anomaly analysis</li>
-            <li>Security monitoring with threat intelligence</li>
+            <li>Document processing with OCR and NLP</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Maintenance scheduling with predictive analytics</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better compliance with automated audit trails</li>
-            <li>Increased revenue with optimized pricing strategies</li>
-            <li>Scalable to millions of transactions per second</li>
+            <li>Reduced churn with proactive customer retention</li>
             <li>Seamless integration with existing systems and workflows</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         

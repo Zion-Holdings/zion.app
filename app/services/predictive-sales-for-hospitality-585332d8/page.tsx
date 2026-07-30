@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Sales for Hospitality - Zion Tech Group",
-  description: "The future of hospitality is here with Predictive Sales for Hospitality. Powered by cutting-edge AI, this platform delivers cost reduction like never before.",
+  description: "Revolutionize hospitality through intelligent automation. Our Predictive Sales for Hospitality leverages advanced machine learning to deliver financial planning",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-sales-for-hospitality-585332d8`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Predictive Sales for Hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of hospitality is here with Predictive Sales for Hospitality. Powered by cutting-edge AI, this platform delivers cost reduction like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize hospitality through intelligent automation. Our Predictive Sales for Hospitality leverages advanced machine learning to deliver financial planning at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Sentiment analysis with real-time monitoring</li>
-            <li>Image recognition with computer vision</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Compliance monitoring with regulatory updates</li>
+            <li>Document processing with OCR and NLP</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Machine learning integration with automatic model training</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Reduced customer acquisition costs with optimization</li>
-            <li>Better customer experience with personalization</li>
-            <li>Better market positioning with competitive analysis</li>
-            <li>Seamless integration with existing systems and workflows</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
           </ul>
         </div>
         

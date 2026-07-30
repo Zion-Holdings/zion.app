@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-startup-system-automotive-15d9baf4",
+  "service_name": "Autonomous Startup System - Automotive",
+  "industry": "automotive",
+  "lead_magnet": "Supply Chain Efficiency Audit",
+  "metrics": {
+    "improvement": "50%",
+    "savings": "$14.1M",
+    "timeframe": "6 months",
+    "similar": "AutoMakers"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, AutoMakers is closing their Q3 deals this week. Want to see how Autonomous Startup System - Automotive can help {company} save $14.1M?",
+      "sequence_id": "seq-69",
+      "service_id": "autonomous-startup-system-automotive-15d9baf4"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Autonomous Startup System - Automotive delivers 50% in 6 months.",
+      "sequence_id": "seq-69",
+      "service_id": "autonomous-startup-system-automotive-15d9baf4"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-69",
+      "service_id": "autonomous-startup-system-automotive-15d9baf4"
+    }
+  ],
+  "hot_lead_score": 89,
+  "conversion_likelihood": "53%",
+  "timestamp": "2026-07-30T06:28:01.382305+00:00"
+}

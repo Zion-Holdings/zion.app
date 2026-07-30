@@ -1,36 +1,36 @@
 {
   "service_id": "self-optimizing-customer-analyzer-e6425b4d",
   "service_name": null,
-  "industry": "sports",
+  "industry": "finance",
   "conversion_metrics": {
-    "open_rate": "70%",
-    "click_rate": "43%",
-    "reply_rate": "29%",
-    "close_rate": "17%"
+    "open_rate": "73%",
+    "click_rate": "48%",
+    "reply_rate": "35%",
+    "close_rate": "22%"
   },
   "variations": [
     {
       "step": 1,
-      "message": "Hi {first_name}, Industry Leader just signed - 52% improvement in 6 months. {company} next? https://calendly.com/kleber-ziontechgroup/consultation",
-      "sequence_id": "rev-seq-23",
+      "message": "Hi {first_name}, {company} - we only have 2 spots left this quarter for Service. 52% improvement, $18.4M savings. Book now: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-71",
       "service_id": "self-optimizing-customer-analyzer-e6425b4d",
-      "conversion_rate": "17%",
+      "conversion_rate": "22%",
       "expected_revenue": "$18.4M"
     },
     {
       "step": 2,
-      "message": "{company} + Industry Leader = $18.4M in annual savings. Service case study attached. Let's talk: https://calendly.com/kleber-ziontechgroup/consultation",
-      "sequence_id": "rev-seq-23",
+      "message": "Final call - Q3 budget closes Friday. Service delivers 52% in 6 months. Last chance: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-71",
       "service_id": "self-optimizing-customer-analyzer-e6425b4d",
-      "conversion_rate": "17%",
+      "conversion_rate": "22%",
       "expected_revenue": "$18.4M"
     },
     {
       "step": 3,
-      "message": "Results: Industry Leader \u2192 52% \u2192 $18.4M. Your turn? Book call: https://calendly.com/kleber-ziontechgroup/consultation",
-      "sequence_id": "rev-seq-23",
+      "message": "\u26a0\ufe0f URGENT: 52% ROI available until EOD. $18.4M savings with Service. Book: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-71",
       "service_id": "self-optimizing-customer-analyzer-e6425b4d",
-      "conversion_rate": "17%",
+      "conversion_rate": "22%",
       "expected_revenue": "$18.4M"
     }
   ],
@@ -38,5 +38,5 @@
   "conversion_likelihood": "68%",
   "expected_revenue": "$15.2M",
   "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
-  "timestamp": "2026-07-30T05:57:06.245352+00:00"
+  "timestamp": "2026-07-30T06:29:24.978072+00:00"
 }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Security for Transportation - Zion Tech Group",
-  description: "Revolutionize transportation through intelligent automation. Our Adaptive Security for Transportation leverages advanced machine learning to deliver document pr",
+  description: "Revolutionize transportation through intelligent automation. Our Adaptive Security for Transportation leverages advanced machine learning to deliver fraud preve",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-security-for-transportation-7f6e7d0c`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Adaptive Security for Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize transportation through intelligent automation. Our Adaptive Security for Transportation leverages advanced machine learning to deliver document processing at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize transportation through intelligent automation. Our Adaptive Security for Transportation leverages advanced machine learning to deliver fraud prevention at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Machine learning integration with automatic model training</li>
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>Version control with rollback capabilities</li>
-            <li>Microservices deployment with container orchestration</li>
-            <li>Maintenance scheduling with predictive analytics</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Compliance monitoring with regulatory updates</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>Document processing with OCR and NLP</li>
+            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
             <li>Reduced human error by 95% with automated processes</li>
-            <li>Scalable to millions of transactions per second</li>
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>Real-time insights and alerts for proactive management</li>
           </ul>
         </div>
         

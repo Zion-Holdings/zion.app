@@ -1,0 +1,35 @@
+{
+  "service_id": "enterprise-risk-platform-cybersecurity-c2092f7b",
+  "service_name": "Enterprise Risk Platform - Cybersecurity",
+  "industry": "cybersecurity",
+  "lead_magnet": "Threat Detection ROI Calculator",
+  "metrics": {
+    "improvement": "61%",
+    "savings": "$19.7M",
+    "timeframe": "4 months",
+    "similar": "SecureTech"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with cybersecurity security?",
+      "sequence_id": "seq-67",
+      "service_id": "enterprise-risk-platform-cybersecurity-c2092f7b"
+    },
+    {
+      "step": 2,
+      "message": "We've helped SecureTech solve this exact problem with Enterprise Risk Platform - Cybersecurity. Achieved 61% in 4 months.",
+      "sequence_id": "seq-67",
+      "service_id": "enterprise-risk-platform-cybersecurity-c2092f7b"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-67",
+      "service_id": "enterprise-risk-platform-cybersecurity-c2092f7b"
+    }
+  ],
+  "hot_lead_score": 79,
+  "conversion_likelihood": "65%",
+  "timestamp": "2026-07-30T06:28:01.381470+00:00"
+}

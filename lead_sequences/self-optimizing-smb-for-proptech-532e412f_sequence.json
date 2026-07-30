@@ -1,0 +1,35 @@
+{
+  "service_id": "self-optimizing-smb-for-proptech-532e412f",
+  "service_name": "Self-Optimizing SMB for PROPTECH",
+  "industry": "proptech",
+  "lead_magnet": "Property Valuation Automation Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$12.9M",
+    "timeframe": "6 months",
+    "similar": "PropTech Co"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with proptech platform?",
+      "sequence_id": "seq-27",
+      "service_id": "self-optimizing-smb-for-proptech-532e412f"
+    },
+    {
+      "step": 2,
+      "message": "We've helped PropTech Co solve this exact problem with Self-Optimizing SMB for PROPTECH. Achieved 52% in 6 months.",
+      "sequence_id": "seq-27",
+      "service_id": "self-optimizing-smb-for-proptech-532e412f"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-27",
+      "service_id": "self-optimizing-smb-for-proptech-532e412f"
+    }
+  ],
+  "hot_lead_score": 81,
+  "conversion_likelihood": "45%",
+  "timestamp": "2026-07-30T06:28:01.365324+00:00"
+}

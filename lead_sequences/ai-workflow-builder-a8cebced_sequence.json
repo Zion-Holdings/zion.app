@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-workflow-builder-a8cebced",
+  "service_name": "AI Workflow Builder",
+  "industry": "Productivity",
+  "lead_magnet": "AI Solutions Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TechStart Inc. just implemented AI Workflow Builder last month - 52% improvement already. Thoughts?",
+      "sequence_id": "seq-78",
+      "service_id": "ai-workflow-builder-a8cebced"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: TechStart Inc. saw $18.4M in savings. Your Productivity peers are seeing similar results.",
+      "sequence_id": "seq-78",
+      "service_id": "ai-workflow-builder-a8cebced"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-78",
+      "service_id": "ai-workflow-builder-a8cebced"
+    }
+  ],
+  "hot_lead_score": 79,
+  "conversion_likelihood": "56%",
+  "timestamp": "2026-07-30T06:28:01.385205+00:00"
+}

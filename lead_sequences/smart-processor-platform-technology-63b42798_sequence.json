@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-processor-platform-technology-63b42798",
+  "service_name": "Smart Processor Platform - TECHNOLOGY",
+  "industry": "technology",
+  "lead_magnet": "AI Cost Calculator - See Your Potential Savings",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with technology manager?",
+      "sequence_id": "seq-42",
+      "service_id": "smart-processor-platform-technology-63b42798"
+    },
+    {
+      "step": 2,
+      "message": "We've helped TechStart Inc. solve this exact problem with Smart Processor Platform - TECHNOLOGY. Achieved 52% in 6 months.",
+      "sequence_id": "seq-42",
+      "service_id": "smart-processor-platform-technology-63b42798"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-42",
+      "service_id": "smart-processor-platform-technology-63b42798"
+    }
+  ],
+  "hot_lead_score": 90,
+  "conversion_likelihood": "42%",
+  "timestamp": "2026-07-30T06:28:01.373796+00:00"
+}

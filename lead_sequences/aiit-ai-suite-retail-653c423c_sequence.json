@@ -1,0 +1,35 @@
+{
+  "service_id": "aiit-ai-suite-retail-653c423c",
+  "service_name": "AI/IT AI Suite - Retail",
+  "industry": "retail",
+  "lead_magnet": "Customer Retention Playbook",
+  "metrics": {
+    "improvement": "44%",
+    "savings": "$9.3M",
+    "timeframe": "7 months",
+    "similar": "RetailPro"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve retail. Our AI platform helped RetailPro achieve 44% improvement in 7 months. Quick 5-minute call?",
+      "sequence_id": "seq-1",
+      "service_id": "aiit-ai-suite-retail-653c423c"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the AI/IT AI Suite - Retail typically saves $9.3M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-1",
+      "service_id": "aiit-ai-suite-retail-653c423c"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 44% results. If not interested, just let me know!",
+      "sequence_id": "seq-1",
+      "service_id": "aiit-ai-suite-retail-653c423c"
+    }
+  ],
+  "hot_lead_score": 86,
+  "conversion_likelihood": "48%",
+  "timestamp": "2026-07-30T06:28:01.340747+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "risk-neural-aitech-eddccbfc",
+  "service_name": "Risk Neural - AITECH",
+  "industry": "aitech",
+  "lead_magnet": "AI Implementation Roadmap",
+  "metrics": {
+    "improvement": "58%",
+    "savings": "$25.3M",
+    "timeframe": "5 months",
+    "similar": "AI Innovators"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, AI Innovators just implemented Risk Neural - AITECH last month - 58% improvement already. Thoughts?",
+      "sequence_id": "seq-53",
+      "service_id": "risk-neural-aitech-eddccbfc"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: AI Innovators saw $25.3M in savings. Your aitech peers are seeing similar results.",
+      "sequence_id": "seq-53",
+      "service_id": "risk-neural-aitech-eddccbfc"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-53",
+      "service_id": "risk-neural-aitech-eddccbfc"
+    }
+  ],
+  "hot_lead_score": 73,
+  "conversion_likelihood": "63%",
+  "timestamp": "2026-07-30T06:28:01.377970+00:00"
+}

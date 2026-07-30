@@ -1,0 +1,35 @@
+{
+  "service_id": "next-gen-real-estate-for-insurance-f5993c2f",
+  "service_name": "Next-Gen Real Estate for Insurance",
+  "industry": "insurance",
+  "lead_magnet": "Claims Processing Automation Guide",
+  "metrics": {
+    "improvement": "54%",
+    "savings": "$17.3M",
+    "timeframe": "7 months",
+    "similar": "InsurePlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows insurance companies using Next-Gen Real Estate for Insurance see 54% improvement. Your current process?",
+      "sequence_id": "seq-35",
+      "service_id": "next-gen-real-estate-for-insurance-f5993c2f"
+    },
+    {
+      "step": 2,
+      "message": "Based on your insurance profile, Next-Gen Real Estate for Insurance could save {company} approximately $17.3M. Interested in details?",
+      "sequence_id": "seq-35",
+      "service_id": "next-gen-real-estate-for-insurance-f5993c2f"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Next-Gen Real Estate for Insurance is proven to deliver 54% results.",
+      "sequence_id": "seq-35",
+      "service_id": "next-gen-real-estate-for-insurance-f5993c2f"
+    }
+  ],
+  "hot_lead_score": 81,
+  "conversion_likelihood": "41%",
+  "timestamp": "2026-07-30T06:28:01.369772+00:00"
+}

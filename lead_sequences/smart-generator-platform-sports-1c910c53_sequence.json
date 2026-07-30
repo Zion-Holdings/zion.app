@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-generator-platform-sports-1c910c53",
+  "service_name": "Smart Generator Platform - Sports",
+  "industry": "sports",
+  "lead_magnet": "Fan Engagement Growth Framework",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$8.9M",
+    "timeframe": "4 months",
+    "similar": "SportsTeam"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, SportsTeam just implemented Smart Generator Platform - Sports last month - 55% improvement already. Thoughts?",
+      "sequence_id": "seq-13",
+      "service_id": "smart-generator-platform-sports-1c910c53"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: SportsTeam saw $8.9M in savings. Your sports peers are seeing similar results.",
+      "sequence_id": "seq-13",
+      "service_id": "smart-generator-platform-sports-1c910c53"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-13",
+      "service_id": "smart-generator-platform-sports-1c910c53"
+    }
+  ],
+  "hot_lead_score": 88,
+  "conversion_likelihood": "69%",
+  "timestamp": "2026-07-30T06:28:01.360910+00:00"
+}

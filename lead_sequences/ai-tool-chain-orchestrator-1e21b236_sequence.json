@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-tool-chain-orchestrator-1e21b236",
+  "service_name": "AI Tool Chain Orchestrator",
+  "industry": "SaaS",
+  "lead_magnet": "AI Solutions Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TechStart Inc. is closing their Q3 deals this week. Want to see how AI Tool Chain Orchestrator can help {company} save $18.4M?",
+      "sequence_id": "seq-79",
+      "service_id": "ai-tool-chain-orchestrator-1e21b236"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. AI Tool Chain Orchestrator delivers 52% in 6 months.",
+      "sequence_id": "seq-79",
+      "service_id": "ai-tool-chain-orchestrator-1e21b236"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-79",
+      "service_id": "ai-tool-chain-orchestrator-1e21b236"
+    }
+  ],
+  "hot_lead_score": 94,
+  "conversion_likelihood": "58%",
+  "timestamp": "2026-07-30T06:28:01.385472+00:00"
+}

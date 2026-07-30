@@ -11,24 +11,24 @@
   "variations": [
     {
       "step": 1,
-      "message": "Hi {first_name}, {company} - we only have 2 spots left this quarter for Service. 52% improvement, $18.4M savings. Book now: https://calendly.com/kleber-ziontechgroup/consultation",
-      "sequence_id": "rev-seq-36",
+      "message": "Hi {first_name}, data shows insurance companies using Service achieve 52%. Your baseline: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-11",
       "service_id": "ai-generator---insurance-edition-4d49dec8",
       "conversion_rate": "17%",
       "expected_revenue": "$18.4M"
     },
     {
       "step": 2,
-      "message": "Final call - Q3 budget closes Friday. Service delivers 52% in 6 months. Last chance: https://calendly.com/kleber-ziontechgroup/consultation",
-      "sequence_id": "rev-seq-36",
+      "message": "Based on {company}'s profile, Service can save $18.4 million. Details: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-11",
       "service_id": "ai-generator---insurance-edition-4d49dec8",
       "conversion_rate": "17%",
       "expected_revenue": "$18.4M"
     },
     {
       "step": 3,
-      "message": "\u26a0\ufe0f URGENT: 52% ROI available until EOD. $18.4M savings with Service. Book: https://calendly.com/kleber-ziontechgroup/consultation",
-      "sequence_id": "rev-seq-36",
+      "message": "ROI Analysis for {company}: 52% improvement, 6 months payback. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-11",
       "service_id": "ai-generator---insurance-edition-4d49dec8",
       "conversion_rate": "17%",
       "expected_revenue": "$18.4M"
@@ -38,5 +38,5 @@
   "conversion_likelihood": "68%",
   "expected_revenue": "$15.2M",
   "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
-  "timestamp": "2026-07-30T05:57:27.922841+00:00"
+  "timestamp": "2026-07-30T06:29:24.947120+00:00"
 }
