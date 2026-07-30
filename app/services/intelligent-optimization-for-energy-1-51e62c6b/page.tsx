@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Optimization for Energy #1 - Zion Tech Group",
-  description: "Transform your energy operations with our Intelligent Optimization for Energy #1. This AI-driven solution automates image recognition with unprecedented accuracy and efficiency.",
+  description: "Transform your energy operations with our Intelligent Optimization for Energy #1. This AI-driven solution automates image recognition with unprecedented accurac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-optimization-for-energy-1-51e62c6b`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Director Automated - Hospitality - Zion Tech Group",
-  description: "The future of hospitality is here with Director Automated - Hospitality. Powered by cutting-edge AI, this platform delivers image recognition like never before.",
+  description: "Revolutionize hospitality through intelligent automation. Our Director Automated - Hospitality leverages advanced machine learning to deliver decision support a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/director-automated---hospitality-ac9caabe`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Director Automated - Hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of hospitality is here with Director Automated - Hospitality. Powered by cutting-edge AI, this platform delivers image recognition like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize hospitality through intelligent automation. Our Director Automated - Hospitality leverages advanced machine learning to deliver decision support at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Network optimization with traffic analysis</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Open-source friendly with plugin architecture</li>
-            <li>Executive dashboards with drill-down capabilities</li>
-            <li>Master data management with golden records</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>Security monitoring with threat intelligence</li>
+            <li>Document processing with OCR and NLP</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>24/7 automated operations without human intervention</li>
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>Faster content creation with AI assistance</li>
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>Scalable to millions of transactions per second</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Increased revenue with optimized pricing strategies</li>
           </ul>
         </div>
         

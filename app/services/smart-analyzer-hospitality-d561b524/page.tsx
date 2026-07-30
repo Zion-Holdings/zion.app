@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart analyzer-hospitality - Zion Tech Group",
-  description: "Transform your hospitality operations with our Smart analyzer-hospitality. This AI-driven solution automates healthcare data analytics with unprecedented accura",
+  description: "Next-generation hospitality solution: Smart analyzer-hospitality. Combines customer insights with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-analyzer-hospitality-d561b524`
   }
@@ -13,25 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart analyzer-hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your hospitality operations with our Smart analyzer-hospitality. This AI-driven solution automates healthcare data analytics with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation hospitality solution: Smart analyzer-hospitality. Combines customer insights with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Open-source friendly with plugin architecture</li>
-            <li>Logistics route optimization with traffic prediction</li>
-            <li>Maintenance scheduling with predictive analytics</li>
-            <li>Inventory prediction with demand forecasting</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Machine learning integration with automatic model training</li>
+            <li>Financial risk management with scenario analysis</li>
+            <li>Sales process optimization with pipeline management</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
-            <li>3x faster decision making with real-time insights</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
           </ul>
         </div>
         

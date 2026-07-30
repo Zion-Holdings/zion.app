@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Cloud for Transportation - Zion Tech Group",
-  description: "Next-generation transportation solution: Autonomous Cloud for Transportation. Combines logistics route optimization with adaptive intelligence for optimal resul",
+  description: "Next-generation transportation solution: Autonomous Cloud for Transportation. Combines workflow management with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-cloud-for-transportation-220a8ba4`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Autonomous Cloud for Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation transportation solution: Autonomous Cloud for Transportation. Combines logistics route optimization with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation transportation solution: Autonomous Cloud for Transportation. Combines workflow management with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Logistics route optimization with traffic prediction</li>
-            <li>Financial risk management with scenario analysis</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Customer service automation with chatbot integration</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>Version control with rollback capabilities</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Increased revenue with optimized pricing strategies</li>
-            <li>Improved quality with automated testing and validation</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         

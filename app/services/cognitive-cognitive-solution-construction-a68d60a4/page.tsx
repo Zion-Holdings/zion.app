@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Cognitive Solution - Construction - Zion Tech Group",
-  description: "Enhance your construction business with Cognitive Cognitive Solution - Construction. Our solution provides sales process optimization with enterprise-grade reliability and security.",
+  description: "Enhance your construction business with Cognitive Cognitive Solution - Construction. Our solution provides sales process optimization with enterprise-grade reli",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-cognitive-solution-construction-a68d60a4`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

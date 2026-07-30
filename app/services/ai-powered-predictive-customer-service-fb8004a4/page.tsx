@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Predictive Customer Service - Zion Tech Group",
-  description: "The future of healthcare is here with AI-Powered Predictive Customer Service. Powered by cutting-edge AI, this platform delivers data processing like never before.",
+  description: "The future of healthcare is here with AI-Powered Predictive Customer Service. Powered by cutting-edge AI, this platform delivers data processing like never befo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-predictive-customer-service-fb8004a4`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

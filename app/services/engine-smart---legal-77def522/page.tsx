@@ -18,19 +18,21 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Image recognition with computer vision</li>
-            <li>Code optimization with performance profiling</li>
+            <li>Financial risk management with scenario analysis</li>
             <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>HIPAA ready with healthcare data protection</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>3x faster decision making with real-time insights</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Increased revenue with optimized pricing strategies</li>
           </ul>
         </div>
         

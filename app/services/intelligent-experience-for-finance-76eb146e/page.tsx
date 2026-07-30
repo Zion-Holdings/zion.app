@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Experience for Finance - Zion Tech Group",
-  description: "Transform your finance operations with our Intelligent Experience for Finance. This AI-driven solution automates sales forecasting with unprecedented accuracy and efficiency.",
+  description: "Transform your finance operations with our Intelligent Experience for Finance. This AI-driven solution automates sales forecasting with unprecedented accuracy a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-experience-for-finance-76eb146e`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

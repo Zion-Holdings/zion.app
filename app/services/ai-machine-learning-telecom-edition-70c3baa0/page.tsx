@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Machine Learning - Telecom Edition - Zion Tech Group",
-  description: "Transform your telecom operations with our AI Machine Learning - Telecom Edition. This AI-driven solution automates influencer identification with unprecedented accuracy and efficiency.",
+  description: "Transform your telecom operations with our AI Machine Learning - Telecom Edition. This AI-driven solution automates influencer identification with unprecedented",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-machine-learning-telecom-edition-70c3baa0`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Compliance Solution - Telecom - Zion Tech Group",
-  description: "The future of telecom is here with Cognitive Compliance Solution - Telecom. Powered by cutting-edge AI, this platform delivers energy management like never before.",
+  description: "The future of telecom is here with Cognitive Compliance Solution - Telecom. Powered by cutting-edge AI, this platform delivers energy management like never befo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-compliance-solution-telecom-8cec8033`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

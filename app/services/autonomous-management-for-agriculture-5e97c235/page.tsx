@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Management for Agriculture - Zion Tech Group",
-  description: "The future of agriculture is here with Autonomous Management for Agriculture. Powered by cutting-edge AI, this platform delivers financial risk management like ",
+  description: "Unlock unprecedented growth with Autonomous Management for Agriculture. This autonomous system provides customer service automation with zero manual interventio",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-management-for-agriculture-5e97c235`
   }
@@ -13,25 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Autonomous Management for Agriculture</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of agriculture is here with Autonomous Management for Agriculture. Powered by cutting-edge AI, this platform delivers financial risk management like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Autonomous Management for Agriculture. This autonomous system provides customer service automation with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Image recognition with computer vision</li>
+            <li>Compliance monitoring with regulatory updates</li>
             <li>Multi-region deployment with automatic failover</li>
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Serverless functions for cost-effective scaling</li>
-            <li>SOC 2 certified with security controls</li>
-            <li>Manufacturing quality control with defect detection</li>
+            <li>Maintenance scheduling with predictive analytics</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Faster time-to-market with accelerated development</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Reduced churn with proactive customer retention</li>
             <li>Better risk management with predictive analytics</li>
-            <li>Better compliance with automated audit trails</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

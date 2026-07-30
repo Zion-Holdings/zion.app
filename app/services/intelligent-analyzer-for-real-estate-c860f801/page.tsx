@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Analyzer for Real-Estate - Zion Tech Group",
-  description: "The future of real-estate is here with Intelligent Analyzer for Real-Estate. Powered by cutting-edge AI, this platform delivers invoice processing like never before.",
+  description: "The future of real-estate is here with Intelligent Analyzer for Real-Estate. Powered by cutting-edge AI, this platform delivers invoice processing like never be",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-analyzer-for-real-estate-c860f801`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

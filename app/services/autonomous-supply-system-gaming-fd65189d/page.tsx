@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Supply System - Gaming - Zion Tech Group",
-  description: "Enhance your gaming business with Autonomous Supply System - Gaming. Our solution provides personalization engine with enterprise-grade reliability and security.",
+  description: "Enhance your gaming business with Autonomous Supply System - Gaming. Our solution provides personalization engine with enterprise-grade reliability and security",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-supply-system-gaming-fd65189d`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Sourcing Analytics - Zion Tech Group",
-  description: "Transform your agriculture operations with our Automated Sourcing Analytics. This AI-driven solution automates hr analytics with unprecedented accuracy and efficiency.",
+  description: "Transform your agriculture operations with our Automated Sourcing Analytics. This AI-driven solution automates hr analytics with unprecedented accuracy and effi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-sourcing-analytics-45803948`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

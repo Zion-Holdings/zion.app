@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Sales for Manufacturing - Zion Tech Group",
-  description: "Enhance your manufacturing business with Intelligent Sales for Manufacturing. Our solution provides customer service automation with enterprise-grade reliability and security.",
+  description: "Enhance your manufacturing business with Intelligent Sales for Manufacturing. Our solution provides customer service automation with enterprise-grade reliabilit",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-sales-for-manufacturing-d26ec669`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

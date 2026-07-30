@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Predictor Solution - Manufacturing - Zion Tech Group",
-  description: "Revolutionize manufacturing through intelligent automation. Our Cognitive Predictor Solution - Manufacturing leverages advanced machine learning to deliver executive dashboards at scale.",
+  description: "Revolutionize manufacturing through intelligent automation. Our Cognitive Predictor Solution - Manufacturing leverages advanced machine learning to deliver exec",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-predictor-solution-manufacturing-a532e5d4`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

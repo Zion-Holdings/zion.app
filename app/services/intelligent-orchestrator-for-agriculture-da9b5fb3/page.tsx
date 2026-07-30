@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Orchestrator for Agriculture - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Orchestrator for Agriculture. This autonomous system provides employee engagement with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Intelligent Orchestrator for Agriculture. This autonomous system provides employee engagement with zero manual intervention nee",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-orchestrator-for-agriculture-da9b5fb3`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

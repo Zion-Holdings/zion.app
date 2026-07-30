@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Data for Retail - Zion Tech Group",
-  description: "Revolutionize retail through intelligent automation. Our Intelligent Data for Retail leverages advanced machine learning to deliver predictive modeling at scale.",
+  description: "Revolutionize retail through intelligent automation. Our Intelligent Data for Retail leverages advanced machine learning to deliver predictive modeling at scale",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-data-for-retail-7a166b9e`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

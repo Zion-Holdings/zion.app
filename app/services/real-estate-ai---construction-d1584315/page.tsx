@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Real Estate AI - Construction - Zion Tech Group",
-  description: "The future of construction is here with Real Estate AI - Construction. Powered by cutting-edge AI, this platform delivers quality control like never before.",
+  description: "Revolutionize construction through intelligent automation. Our Real Estate AI - Construction leverages advanced machine learning to deliver logistics route opti",
   alternates: {
     canonical: `https://ziontechgroup.com/services/real-estate-ai---construction-d1584315`
   }
@@ -13,25 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Real Estate AI - Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Real Estate AI - Construction. Powered by cutting-edge AI, this platform delivers quality control like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our Real Estate AI - Construction leverages advanced machine learning to deliver logistics route optimization at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Document processing with OCR and NLP</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Network optimization with traffic analysis</li>
             <li>Energy optimization with consumption tracking</li>
-            <li>Healthcare data analytics with patient insights</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Dynamic resource allocation based on demand patterns</li>
             <li>Enhanced security with continuous threat monitoring</li>
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>Reduced churn with proactive customer retention</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>50% reduction in operational costs through automation</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Decision Insights - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Decision Insights. This autonomous system provides supply chain with zero manual intervention needed.",
+  description: "The future of hospitality is here with Intelligent Decision Insights. Powered by cutting-edge AI, this platform delivers logistics route optimization like never",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-decision-insights-52f05020`
   }
@@ -13,26 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Decision Insights</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Intelligent Decision Insights. This autonomous system provides supply chain with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of hospitality is here with Intelligent Decision Insights. Powered by cutting-edge AI, this platform delivers logistics route optimization like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Machine learning integration with automatic model training</li>
-            <li>Language processing with sentiment analysis</li>
-            <li>Customer service automation with chatbot integration</li>
+            <li>Document processing with OCR and NLP</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>Serverless functions for cost-effective scaling</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>Maintenance scheduling with predictive analytics</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
             <li>Reduced churn with proactive customer retention</li>
-            <li>Zero manual intervention required for routine tasks</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         
