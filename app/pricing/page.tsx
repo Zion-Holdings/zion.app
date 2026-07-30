@@ -27,7 +27,7 @@ const models = [
 const trust = [
   { label: 'Client rating', value: '4.8 / 5' },
   { label: 'Response time', value: 'Under 1 hour' },
-  { label: 'Engagement start', value: 'Under 7 days' },
+  { label: 'Engagement start', value: '<7 days' },
   { label: 'Delivery model', value: 'US-based, 24/7 coverage' },
 ];
 
