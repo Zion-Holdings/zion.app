@@ -51,7 +51,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             <div className="bg-slate-900/60 border border-slate-700/60 rounded-xl p-5">
               <h2 className="text-white font-semibold mb-3">Features</h2>
               <ul className="space-y-2">
-                {service.features.map((f, i) => (
+                {(Array.isArray(service.features) ? service.features : []).map((f, i) => (
                   <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
                     <span className="text-purple-400 mt-1 shrink-0">•</span>
                     <span>{f}</span>
@@ -62,7 +62,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             <div className="bg-slate-900/60 border border-slate-700/60 rounded-xl p-5">
               <h2 className="text-white font-semibold mb-3">Benefits</h2>
               <ul className="space-y-2">
-                {service.benefits.map((b, i) => (
+                {(Array.isArray(service.benefits) ? service.benefits : []).map((b, i) => (
                   <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
                     <span className="text-purple-400 mt-1 shrink-0">•</span>
                     <span>{b}</span>

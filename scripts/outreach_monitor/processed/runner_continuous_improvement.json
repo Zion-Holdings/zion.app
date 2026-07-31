@@ -1,21 +1,5 @@
 [
   {
-    "ts": "2026-07-30T15:15:14.305055+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-30T15:17:14.904426+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
     "ts": "2026-07-30T15:19:15.477328+00:00",
     "contacts": 0,
     "sent": 0,
@@ -1593,6 +1577,22 @@
   },
   {
     "ts": "2026-07-30T23:00:12.470053+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-30T23:02:14.338800+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-30T23:04:14.888888+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,

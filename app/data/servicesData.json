@@ -24085,7 +24085,8 @@
       "phone": "+1 302 464 0950"
     },
     "stage": "live",
-    "industry": "Enterprise"
+    "industry": "Enterprise",
+    "href": "/services/ai-powered-form-builder"
   },
   {
     "id": "team-goal-tracking-okr",
@@ -24120,7 +24121,8 @@
       "phone": "+1 302 464 0950"
     },
     "stage": "live",
-    "industry": "Enterprise"
+    "industry": "Enterprise",
+    "href": "/services/team-goal-tracking-okr"
   },
   {
     "id": "proposal-quoting-software",
@@ -24155,7 +24157,8 @@
       "phone": "+1 302 464 0950"
     },
     "stage": "live",
-    "industry": "Enterprise"
+    "industry": "Enterprise",
+    "href": "/services/proposal-quoting-software"
   },
   {
     "id": "employee-engagement-platform",
@@ -24190,7 +24193,8 @@
       "phone": "+1 302 464 0950"
     },
     "stage": "live",
-    "industry": "Enterprise"
+    "industry": "Enterprise",
+    "href": "/services/employee-engagement-platform"
   },
   {
     "id": "digital-business-card-platform",
@@ -24225,7 +24229,8 @@
       "phone": "+1 302 464 0950"
     },
     "stage": "live",
-    "industry": "Enterprise"
+    "industry": "Enterprise",
+    "href": "/services/digital-business-card-platform"
   },
   {
     "id": "ai-data-labeling-platform",
@@ -24260,7 +24265,8 @@
       "phone": "+1 302 464 0950"
     },
     "stage": "live",
-    "industry": "Enterprise"
+    "industry": "Enterprise",
+    "href": "/services/ai-data-labeling-platform"
   },
   {
     "id": "ai-predictive-analytics-suite",
@@ -24295,7 +24301,8 @@
       "phone": "+1 302 464 0950"
     },
     "stage": "live",
-    "industry": "Enterprise"
+    "industry": "Enterprise",
+    "href": "/services/ai-predictive-analytics-suite"
   },
   {
     "id": "ai-chatbot-builder-enterprise",
@@ -24330,7 +24337,8 @@
       "phone": "+1 302 464 0950"
     },
     "stage": "live",
-    "industry": "Enterprise"
+    "industry": "Enterprise",
+    "href": "/services/ai-chatbot-builder-enterprise"
   },
   {
     "id": "ai-financial-fraud-analyst",
@@ -24365,7 +24373,8 @@
       "phone": "+1 302 464 0950"
     },
     "stage": "live",
-    "industry": "Enterprise"
+    "industry": "Enterprise",
+    "href": "/services/ai-financial-fraud-analyst"
   },
   {
     "id": "managed-dns-service",
@@ -24400,7 +24409,8 @@
       "phone": "+1 302 464 0950"
     },
     "stage": "live",
-    "industry": "Enterprise"
+    "industry": "Enterprise",
+    "href": "/services/managed-dns-service"
   },
   {
     "id": "database-as-a-service",
@@ -24435,7 +24445,8 @@
       "phone": "+1 302 464 0950"
     },
     "stage": "live",
-    "industry": "Enterprise"
+    "industry": "Enterprise",
+    "href": "/services/database-as-a-service"
   },
   {
     "id": "container-registry-scanning",
@@ -24470,7 +24481,8 @@
       "phone": "+1 302 464 0950"
     },
     "stage": "live",
-    "industry": "Enterprise"
+    "industry": "Enterprise",
+    "href": "/services/container-registry-scanning"
   },
   {
     "id": "vulnerability-management-service",
@@ -24505,7 +24517,8 @@
       "phone": "+1 302 464 0950"
     },
     "stage": "live",
-    "industry": "Enterprise"
+    "industry": "Enterprise",
+    "href": "/services/vulnerability-management-service"
   },
   {
     "id": "data-loss-prevention-service",
@@ -24540,7 +24553,8 @@
       "phone": "+1 302 464 0950"
     },
     "stage": "live",
-    "industry": "Enterprise"
+    "industry": "Enterprise",
+    "href": "/services/data-loss-prevention-service"
   },
   {
     "id": "cloud-cost-governance",
@@ -24575,7 +24589,8 @@
       "phone": "+1 302 464 0950"
     },
     "stage": "live",
-    "industry": "Enterprise"
+    "industry": "Enterprise",
+    "href": "/services/cloud-cost-governance"
   },
   {
     "id": "disaster-recovery-orchestration",
@@ -24610,7 +24625,8 @@
       "phone": "+1 302 464 0950"
     },
     "stage": "live",
-    "industry": "Enterprise"
+    "industry": "Enterprise",
+    "href": "/services/disaster-recovery-orchestration"
   },
   {
     "id": "api-security-gateway",
@@ -24645,7 +24661,8 @@
       "phone": "+1 302 464 0950"
     },
     "stage": "live",
-    "industry": "Enterprise"
+    "industry": "Enterprise",
+    "href": "/services/api-security-gateway"
   },
   {
     "id": "ai-feedback-analyzer",
@@ -24682,7 +24699,8 @@
     "stage": "published",
     "popular": false,
     "icon": "📊",
-    "color": "from-purple-500 to-indigo-500"
+    "color": "from-purple-500 to-indigo-500",
+    "href": "/services/ai-feedback-analyzer"
   },
   {
     "id": "wave126-ai-code-review",
@@ -31427,7 +31445,8 @@
       "website": "/services/micro-saas-ai-url-monitor",
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950"
-    }
+    },
+    "href": "/services/micro-saas-ai-url-monitor"
   },
   {
     "id": "micro-saas-ai-customer-feedback",
@@ -31462,7 +31481,8 @@
       "website": "/services/micro-saas-ai-customer-feedback",
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950"
-    }
+    },
+    "href": "/services/micro-saas-ai-customer-feedback"
   },
   {
     "id": "micro-saas-ai-subscription-analytics",
@@ -31497,7 +31517,8 @@
       "website": "/services/micro-saas-ai-subscription-analytics",
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950"
-    }
+    },
+    "href": "/services/micro-saas-ai-subscription-analytics"
   },
   {
     "id": "micro-saas-ai-legal-doc-review",
@@ -31532,7 +31553,8 @@
       "website": "/services/micro-saas-ai-legal-doc-review",
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950"
-    }
+    },
+    "href": "/services/micro-saas-ai-legal-doc-review"
   },
   {
     "id": "micro-saas-ai-event-planner",
@@ -31567,7 +31589,8 @@
       "website": "/services/micro-saas-ai-event-planner",
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950"
-    }
+    },
+    "href": "/services/micro-saas-ai-event-planner"
   },
   {
     "id": "it-data-warehouse",
@@ -31602,7 +31625,8 @@
       "website": "/services/it-data-warehouse",
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950"
-    }
+    },
+    "href": "/services/it-data-warehouse"
   },
   {
     "id": "it-network-monitoring",
@@ -31637,7 +31661,8 @@
       "website": "/services/it-network-monitoring",
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950"
-    }
+    },
+    "href": "/services/it-network-monitoring"
   },
   {
     "id": "it-vulnerability-management",
@@ -31672,7 +31697,8 @@
       "website": "/services/it-vulnerability-management",
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950"
-    }
+    },
+    "href": "/services/it-vulnerability-management"
   },
   {
     "id": "ai-hr-talent-analytics",
@@ -31707,7 +31733,8 @@
       "website": "/services/ai-hr-talent-analytics",
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950"
-    }
+    },
+    "href": "/services/ai-hr-talent-analytics"
   },
   {
     "id": "ai-medical-imaging-assistant",
@@ -31742,7 +31769,8 @@
       "website": "/services/ai-medical-imaging-assistant",
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950"
-    }
+    },
+    "href": "/services/ai-medical-imaging-assistant"
   },
   {
     "id": "micro-saas-ai-sales-coach",
@@ -31778,7 +31806,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-sales-coach"
   },
   {
     "id": "micro-saas-ai-content-planner",
@@ -31814,7 +31843,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-content-planner"
   },
   {
     "id": "micro-saas-ai-inventory-manager",
@@ -31850,7 +31880,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-inventory-manager"
   },
   {
     "id": "micro-saas-ai-booking-engine",
@@ -31886,7 +31917,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-booking-engine"
   },
   {
     "id": "it-saas-backup-recovery",
@@ -31922,7 +31954,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-saas-backup-recovery"
   },
   {
     "id": "it-edge-computing",
@@ -31958,7 +31991,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-edge-computing"
   },
   {
     "id": "it-itam-asset-management",
@@ -31994,7 +32028,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-itam-asset-management"
   },
   {
     "id": "ai-legal-research-assistant",
@@ -32030,7 +32065,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-legal-research-assistant"
   },
   {
     "id": "micro-saas-ai-wellness-coach",
@@ -32066,7 +32102,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-wellness-coach"
   },
   {
     "id": "micro-saas-ai-payment-reconciliation",
@@ -32102,7 +32139,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-payment-reconciliation"
   },
   {
     "id": "micro-saas-ai-facility-management",
@@ -32138,7 +32176,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-facility-management"
   },
   {
     "id": "micro-saas-ai-talent-marketplace",
@@ -32174,7 +32213,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-talent-marketplace"
   },
   {
     "id": "micro-saas-ai-sustainability-tracker",
@@ -32213,7 +32253,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-sustainability-tracker"
   },
   {
     "id": "it-cloud-migration",
@@ -32249,7 +32290,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-cloud-migration"
   },
   {
     "id": "it-digital-workplace",
@@ -32285,7 +32327,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-digital-workplace"
   },
   {
     "id": "it-data-engineering",
@@ -32321,7 +32364,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-data-engineering"
   },
   {
     "id": "it-blockchain-web3",
@@ -32357,7 +32401,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-blockchain-web3"
   },
   {
     "id": "ai-multimodal-search",
@@ -32393,7 +32438,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-multimodal-search"
   },
   {
     "id": "ai-process-mining-optimizer",
@@ -32429,7 +32475,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-process-mining-optimizer"
   },
   {
     "id": "micro-saas-ai-deal-room",
@@ -32465,7 +32512,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-deal-room"
   },
   {
     "id": "micro-saas-ai-returns-manager",
@@ -32501,7 +32549,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-returns-manager"
   },
   {
     "id": "micro-saas-ai-localization",
@@ -32537,7 +32586,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-localization"
   },
   {
     "id": "micro-saas-ai-warranty-manager",
@@ -32573,7 +32623,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-warranty-manager"
   },
   {
     "id": "it-email-security",
@@ -32609,7 +32660,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-email-security"
   },
   {
     "id": "it-hybrid-cloud",
@@ -32645,7 +32697,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-hybrid-cloud"
   },
   {
     "id": "it-identity-access",
@@ -32681,7 +32734,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-identity-access"
   },
   {
     "id": "it-network-modernization",
@@ -32717,7 +32771,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-network-modernization"
   },
   {
     "id": "it-data-protection",
@@ -32753,7 +32808,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-data-protection"
   },
   {
     "id": "ai-document-understanding",
@@ -32789,7 +32845,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-document-understanding"
   },
   {
     "id": "ai-predictive-analytics",
@@ -32825,7 +32882,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-predictive-analytics"
   },
   {
     "id": "ai-conversational-ai",
@@ -32861,7 +32919,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-conversational-ai"
   },
   {
     "id": "ai-nlp-text-analytics",
@@ -32897,7 +32956,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-nlp-text-analytics"
   },
   {
     "id": "micro-saas-ai-employee-scheduling",
@@ -32933,7 +32993,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-employee-scheduling"
   },
   {
     "id": "micro-saas-ai-knowledge-quality",
@@ -32969,7 +33030,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-knowledge-quality"
   },
   {
     "id": "micro-saas-ai-contract-comparison",
@@ -33005,7 +33067,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-contract-comparison"
   },
   {
     "id": "micro-saas-ai-community-moderation",
@@ -33041,7 +33104,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-community-moderation"
   },
   {
     "id": "it-unified-communications",
@@ -33077,7 +33141,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-unified-communications"
   },
   {
     "id": "it-data-migration",
@@ -33113,7 +33178,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-data-migration"
   },
   {
     "id": "ai-customer-segmentation",
@@ -33149,7 +33215,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-customer-segmentation"
   },
   {
     "id": "ai-digital-twin",
@@ -33185,7 +33252,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-digital-twin"
   },
   {
     "id": "micro-saas-ai-review-responder",
@@ -33221,7 +33289,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-review-responder"
   },
   {
     "id": "micro-saas-ai-workflow-automation",
@@ -33257,7 +33326,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-workflow-automation"
   },
   {
     "id": "micro-saas-ai-predictive-maintenance-lite",
@@ -33293,7 +33363,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-predictive-maintenance-lite"
   },
   {
     "id": "micro-saas-ai-candidate-screening",
@@ -33329,7 +33400,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-candidate-screening"
   },
   {
     "id": "micro-saas-ai-insurance-claims",
@@ -33365,7 +33437,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-insurance-claims"
   },
   {
     "id": "it-cybersecurity-operations",
@@ -33401,7 +33474,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-cybersecurity-operations"
   },
   {
     "id": "it-microsoft-365",
@@ -33437,7 +33511,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-microsoft-365"
   },
   {
     "id": "it-network-security",
@@ -33473,7 +33548,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-network-security"
   },
   {
     "id": "it-server-management",
@@ -33509,7 +33585,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-server-management"
   },
   {
     "id": "it-voip-telephony",
@@ -33545,7 +33622,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-voip-telephony"
   },
   {
     "id": "ai-clinical-trial-analytics",
@@ -33581,7 +33659,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-clinical-trial-analytics"
   },
   {
     "id": "ai-smart-contract-auditor",
@@ -33617,7 +33696,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-smart-contract-auditor"
   },
   {
     "id": "ai-predictive-inventory",
@@ -33653,7 +33733,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-predictive-inventory"
   },
   {
     "id": "ai-emotion-detection",
@@ -33689,7 +33770,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-emotion-detection"
   },
   {
     "id": "ai-geospatial-analytics",
@@ -33725,7 +33807,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-geospatial-analytics"
   },
   {
     "id": "micro-saas-ai-menu-optimizer",
@@ -33761,7 +33844,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-menu-optimizer"
   },
   {
     "id": "micro-saas-ai-fleet-optimizer",
@@ -33797,7 +33881,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-fleet-optimizer"
   },
   {
     "id": "micro-saas-ai-real-estate-valuation",
@@ -33833,7 +33918,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-real-estate-valuation"
   },
   {
     "id": "micro-saas-ai-personal-finance",
@@ -33869,7 +33955,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-personal-finance"
   },
   {
     "id": "micro-saas-ai-learning-platform",
@@ -33905,7 +33992,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-learning-platform"
   },
   {
     "id": "it-erp-implementation",
@@ -33941,7 +34029,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-erp-implementation"
   },
   {
     "id": "it-crm-implementation",
@@ -33977,7 +34066,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-crm-implementation"
   },
   {
     "id": "it-integration-platform",
@@ -34013,7 +34103,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-integration-platform"
   },
   {
     "id": "it-quality-assurance",
@@ -34049,7 +34140,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-quality-assurance"
   },
   {
     "id": "ai-legal-document-drafter",
@@ -34085,7 +34177,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-legal-document-drafter"
   },
   {
     "id": "ai-crop-yield-predictor",
@@ -34121,7 +34214,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-crop-yield-predictor"
   },
   {
     "id": "ai-autonomous-vehicles",
@@ -34157,7 +34251,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-autonomous-vehicles"
   },
   {
     "id": "ai-quantum-computing",
@@ -34193,7 +34288,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-quantum-computing"
   },
   {
     "id": "micro-saas-ai-podcast-producer",
@@ -34229,7 +34325,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-podcast-producer"
   },
   {
     "id": "micro-saas-ai-debt-collector",
@@ -34265,7 +34362,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-debt-collector"
   },
   {
     "id": "micro-saas-ai-sign-language",
@@ -34301,7 +34399,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-sign-language"
   },
   {
     "id": "micro-saas-ai-wildlife-monitoring",
@@ -34337,7 +34436,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-wildlife-monitoring"
   },
   {
     "id": "micro-saas-ai-sleep-optimizer",
@@ -34373,7 +34473,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/micro-saas-ai-sleep-optimizer"
   },
   {
     "id": "it-siem-security",
@@ -34409,7 +34510,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-siem-security"
   },
   {
     "id": "it-container-platform",
@@ -34445,7 +34547,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-container-platform"
   },
   {
     "id": "it-field-service-management",
@@ -34481,7 +34584,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-field-service-management"
   },
   {
     "id": "it-print-management",
@@ -34517,7 +34621,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-print-management"
   },
   {
     "id": "it-accessibility-compliance",
@@ -34553,7 +34658,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/it-accessibility-compliance"
   },
   {
     "id": "ai-synthetic-data",
@@ -34589,7 +34695,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-synthetic-data"
   },
   {
     "id": "ai-robotics-process-automation",
@@ -34625,7 +34732,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-robotics-process-automation"
   },
   {
     "id": "ai-weather-prediction",
@@ -34661,7 +34769,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-weather-prediction"
   },
   {
     "id": "ai-digital-human",
@@ -34697,7 +34806,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-digital-human"
   },
   {
     "id": "ai-predictive-safety",
@@ -34733,7 +34843,8 @@
       "email": "kleber@ziontechgroup.com",
       "phone": "+1 302 464 0950",
       "address": "364 E Main St STE 1008, Middletown, DE 19709"
-    }
+    },
+    "href": "/services/ai-predictive-safety"
   },
   {
     "id": "ai-personalized-newsletter-curation-engine",
