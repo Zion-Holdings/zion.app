@@ -1,0 +1,25 @@
+Subject: Kubernetes Security Posture Management - Kubernetes Optimization
+
+Hi Alex Morgan,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DeepLearn AI's Kubernetes operations.
+
+**Kubernetes Security Posture Management**
+Kubernetes security: image scanning, runtime threat detection, RBAC audit, policy enforcement, and supply-chain attestation for EKS/GKE/AKS clusters.
+
+**Key Benefits for Kubernetes:**
+- Prevent container-born breaches
+- Reduce misconfiguration risk
+- Meet regulated workload requirements
+
+**Pricing:**
+- Basic: 999/month
+- Pro: 2999/month  
+- Enterprise: 9999/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

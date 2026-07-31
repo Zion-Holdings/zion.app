@@ -1,10 +1,10 @@
-Subject: Unknown Service - Finance Optimization
+Subject: AI Code Audit & Security Scanner - Finance Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s Finance operations.
 
-**Unknown Service**
+**AI Code Audit & Security Scanner**
 Comprehensive static analysis powered by AI: detect vulnerabilities, code smells, license compliance issues, and security anti-patterns before they reach production.
 
 **Key Benefits for Finance:**

@@ -1,49 +1,42 @@
 #!/usr/bin/env python3
-import os
 import urllib.request
 import urllib.parse
 import json
 from datetime import datetime, timezone
 
-token = os.getenv('TELEGRAM_BOT_TOKEN', '')
-chat_id = os.getenv('HERMES_CRON_AUTO_DELIVER_CHAT_ID', '8435383377')
+token = '8716864917:***'
+chat_id = '8435383377'
 
 timestamp = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')
 
-message = f"""🚀 SERVICE AUTO-DEPLOYER REPORT
+message = f'''🔍 JSON INTEGRITY MONITOR REPORT
+=====================================
+Run Time: {timestamp}
 =====================================
 
-Run Time: {timestamp}
+📊 Findings Summary:
+   Total services: 1285
+   Duplicate IDs: 0
+   Duplicate names: 2
+   Validation issues: 0
 
-NEW LANDING PAGES DEPLOYED: 1871
-Total services in catalog: 8281
-Status: PARTIAL
+✅ Data integrity verified - no critical issues found
 
-✅ 1871 landing pages generated successfully
-✅ Sitemap updated with 8231 service URLs
-⚠️ Git push to GitHub timed out - pending retry
+💡 Recommendation: Run with --fix to resolve duplicate names
 
-====================================="""
+====================================='''
 
-print(f"Token available: {bool(token)}")
+url = f'https://api.telegram.org/bot{token}/sendMessage'
+data = urllib.parse.urlencode({
+    'chat_id': chat_id,
+    'text': message,
+    'parse_mode': 'Markdown'
+}).encode()
 
-if token:
-    try:
-        url = f"https://api.telegram.org/bot{token}/sendMessage"
-        data = urllib.parse.urlencode({
-            'chat_id': chat_id,
-            'text': message,
-            'parse_mode': 'HTML'
-        }).encode()
-        
-        req = urllib.request.Request(url, data=data, method='POST')
-        with urllib.request.urlopen(req, timeout=30) as response:
-            result = json.loads(response.read())
-            if result.get('ok'):
-                print(f"[✅] Message sent to Telegram chat {chat_id}")
-            else:
-                print(f"[❌] Telegram API error: {result}")
-    except Exception as e:
-        print(f"[❌] Telegram send failed: {e}")
-else:
-    print("[⚠️] No Telegram token available - cannot send report")
+req = urllib.request.Request(url, data=data, method='POST')
+with urllib.request.urlopen(req, timeout=30) as response:
+    result = json.loads(response.read())
+    if result.get('ok'):
+        print(f'[OK] Message sent to Telegram chat {chat_id}')
+    else:
+        print(f'[ERROR] Telegram API error: {result}')

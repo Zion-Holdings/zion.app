@@ -52,7 +52,8 @@ def main():
     """Generate the growth metrics dashboard report."""
     
     # Load data files
-    services = load_json(SERVICES_DATA) or []
+    services_data = load_json(SERVICES_DATA) or {}
+    services = services_data.get('services', []) if isinstance(services_data, dict) else services_data
     growth_metrics = load_json(GROWTH_METRICS) or {}
     sent_log = load_json(SENT_LOG) or []
     discovered_leads = load_json(DISCOVERED_LEADS) or []
@@ -62,6 +63,8 @@ def main():
     industries = Counter()
     
     for s in services:
+        if not isinstance(s, dict):
+            continue
         cat = s.get('category', 'unknown')
         categories[cat] += 1
         ind = s.get('industry', 'unknown')

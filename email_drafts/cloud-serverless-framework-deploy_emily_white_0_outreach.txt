@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: Serverless Framework Deployment - General Optimization
 
 Hi Emily White,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CloudScale Solutions's General operations.
 
-**Unknown Service**
+**Serverless Framework Deployment**
 Infrastructure-as-code for Serverless Framework: multi-stage (dev/staging/prod), CI/CD integration, DynamoDB/Lambda/API Gateway resources.
 
 **Key Benefits for General:**

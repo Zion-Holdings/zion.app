@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: Chaos Engineering as a Service - General Optimization
 
 Hi Robert Chen,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AltiCloud Services's General operations.
 
-**Unknown Service**
+**Chaos Engineering as a Service**
 Hosted chaos experiment platform: inject latency, packet loss, CPU or memory spikes, or database failover per Kubernetes namespace or instance, blast-radius boundary, auto-generated results report per scenario, and CI integration.
 
 **Key Benefits for General:**

@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: Customer Success Predictor - General Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's General operations.
 
-**Unknown Service**
+**Customer Success Predictor**
 Early churn signal detection via usage analytics + support ticket sentiment; auto-create retention playbook per at-risk account.
 
 **Key Benefits for General:**

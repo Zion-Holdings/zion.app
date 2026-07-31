@@ -1,10 +1,10 @@
-Subject: Unknown Service - Technology Optimization
+Subject: AI Code Documentation Generator - Technology Optimization
 
 Hi Dr. Michael Chen,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact HealthNet Solutions's Technology operations.
 
-**Unknown Service**
+**AI Code Documentation Generator**
 Automatically generate comprehensive documentation from source code. Produces API docs, inline comments, README files, architecture diagrams, and changelogs. Supports 30+ programming languages.
 
 **Key Benefits for Technology:**

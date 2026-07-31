@@ -1,10 +1,10 @@
-Subject: Unknown Service - Analytics Optimization
+Subject: Customer Lifetime Value Prediction - Analytics Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's Analytics operations.
 
-**Unknown Service**
+**Customer Lifetime Value Prediction**
 ML-powered CLV prediction engine that forecasts customer revenue potential using behavioral data, purchase history, and engagement metrics.
 
 **Key Benefits for Analytics:**

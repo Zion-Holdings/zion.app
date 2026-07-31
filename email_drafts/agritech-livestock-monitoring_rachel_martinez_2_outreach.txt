@@ -1,10 +1,10 @@
-Subject: Unknown Service - Agriculture Optimization
+Subject: AI Livestock Health Monitoring - Agriculture Optimization
 
 Hi Rachel Martinez,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact FinTech Dynamics's Agriculture operations.
 
-**Unknown Service**
+**AI Livestock Health Monitoring**
 IoT and AI-powered livestock health monitoring. Track animal behavior, detect illness early, monitor feeding patterns, and optimize breeding programs.
 
 **Key Benefits for Agriculture:**

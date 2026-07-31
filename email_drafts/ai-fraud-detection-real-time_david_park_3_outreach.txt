@@ -1,10 +1,10 @@
-Subject: Unknown Service - E Commerce Optimization
+Subject: Real-Time Fraud Detection - E Commerce Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's E Commerce operations.
 
-**Unknown Service**
+**Real-Time Fraud Detection**
 ML models trained on transaction data to detect anomalies in milliseconds. Adaptive learning reduces false positives over time.
 
 **Key Benefits for E Commerce:**

@@ -1,10 +1,10 @@
-Subject: Unknown Service - Technology Optimization
+Subject: Cloud Disaster Recovery-as-a-Service (DRaaS) - Technology Optimization
 
 Hi David Miller,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact NexGen Cloud's Technology operations.
 
-**Unknown Service**
+**Cloud Disaster Recovery-as-a-Service (DRaaS)**
 Automated disaster recovery for cloud and hybrid environments. Continuous replication, automated failover, and regular DR testing. RPO under 15 minutes, RTO under 1 hour.
 
 **Key Benefits for Technology:**

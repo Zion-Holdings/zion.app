@@ -1,10 +1,10 @@
-Subject: Unknown Service - Iot Security Optimization
+Subject: IoT & OT Security Platform - Iot Security Optimization
 
 Hi Kevin Patel,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CyberDefense Pro's IoT Security operations.
 
-**Unknown Service**
+**IoT & OT Security Platform**
 Security for IoT and operational technology: device profiling, anomaly detection, network segmentation, and protocol analysis. Protect what traditional IT security cannot.
 
 **Key Benefits for Iot Security:**

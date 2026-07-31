@@ -1,10 +1,10 @@
-Subject: Security Log Orchestration & Correlation - General Optimization
+Subject: Unknown Service - General Optimization
 
 Hi Amanda Foster,
 
-I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact MediCore Security's General operations.
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CryptoShield Security's General operations.
 
-**Security Log Orchestration & Correlation**
+**Unknown Service**
 Ingest logs from 200+ sources, normalise at scale, and run correlation rules across the full attack chain. Reduces alert fatigue with context-enriched triage views.
 
 **Key Benefits for General:**

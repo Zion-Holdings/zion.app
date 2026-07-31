@@ -11,10 +11,7 @@
 	<key>DuplicateSharedLibraryEnabledMarker</key>
 	<true/>
 	<key>GlobalValue</key>
-	<dict>
-		<key>isReadyForAnalysisDate</key>
-		<date>2026-07-31T06:48:20Z</date>
-	</dict>
+	<dict/>
 	<key>MigrationAction</key>
 	<dict>
 		<key>Background</key>

@@ -1,0 +1,45 @@
+{
+  "run_id": "ufmge-2026-07-31-052946",
+  "engine_version": "v2.0",
+  "timestamp": "2026-07-31 05:29:46 UTC",
+  "status": "SUCCESS",
+  "results": {
+    "services_requested": 500,
+    "services_added": 500,
+    "total_services": 8242,
+    "duration_seconds": 0.24,
+    "rate_services_per_second": 2080.8,
+    "sitemap_urls_added": 1255
+  },
+  "output_files": [
+    "/Users/klebergarciaalcatrao/zion-support.github.io/app/data/servicesData.json",
+    "/Users/klebergarciaalcatrao/sitemap.xml"
+  ],
+  "selected_industries": [
+    "manufacturing",
+    "healthcare", 
+    "tech",
+    "insurance",
+    "retail",
+    "telecom",
+    "gaming",
+    "real-estate",
+    "energy",
+    "finance",
+    "logistics",
+    "hospitality",
+    "sports",
+    "automotive",
+    "agriculture",
+    "legal",
+    "education",
+    "construction",
+    "transportation"
+  ],
+  "delivery": {
+    "platform": "telegram",
+    "chat_id": "8435383377",
+    "status": "FAILED_NO_TOKEN",
+    "fallback": "report_generated"
+  }
+}

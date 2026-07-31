@@ -1,10 +1,10 @@
-Subject: Unknown Service - Automotive Optimization
+Subject: AI Autonomous Vehicle Perception & Planning - Automotive Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s automotive operations.
 
-**Unknown Service**
+**AI Autonomous Vehicle Perception & Planning**
 AI perception and planning stack for autonomous vehicles. Object detection, path planning, and decision-making for self-driving cars, trucks, and drones.
 
 **Key Benefits for Automotive:**

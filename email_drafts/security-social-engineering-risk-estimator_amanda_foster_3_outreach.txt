@@ -1,10 +1,10 @@
-Subject: Social Engineering Risk Estimator - Awareness Optimization
+Subject: Unknown Service - Awareness Optimization
 
 Hi Amanda Foster,
 
-I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact MediCore Security's Awareness operations.
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CryptoShield Security's Awareness operations.
 
-**Social Engineering Risk Estimator**
+**Unknown Service**
 Estimates phishing and social engineering risk from email patterns, click behavior, and awareness training signals.
 
 **Key Benefits for Awareness:**

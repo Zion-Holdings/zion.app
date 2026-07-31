@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-31T07:54:44.884350",
+  "generated_at": "2026-07-31T15:46:53.491339",
   "total_templates": 10,
   "calendly_link": "https://calendly.com/kleber-ziontechgroup/consultation",
   "templates": [
@@ -14,7 +14,7 @@
         "parceria",
         "piloto"
       ],
-      "generated_at": "2026-07-31T07:54:44.883942",
+      "generated_at": "2026-07-31T15:46:53.459547",
       "template_id": "cal-001"
     },
     {
@@ -28,7 +28,7 @@
         "análise",
         "demo"
       ],
-      "generated_at": "2026-07-31T07:54:44.884256",
+      "generated_at": "2026-07-31T15:46:53.491131",
       "template_id": "cal-002"
     },
     {
@@ -42,7 +42,7 @@
         "diagnóstico",
         "IA"
       ],
-      "generated_at": "2026-07-31T07:54:44.884263",
+      "generated_at": "2026-07-31T15:46:53.491139",
       "template_id": "cal-003"
     },
     {
@@ -56,7 +56,7 @@
         "automação",
         "custos"
       ],
-      "generated_at": "2026-07-31T07:54:44.884267",
+      "generated_at": "2026-07-31T15:46:53.491144",
       "template_id": "cal-004"
     },
     {
@@ -70,7 +70,7 @@
         "preditiva",
         "follow-up"
       ],
-      "generated_at": "2026-07-31T07:54:44.884271",
+      "generated_at": "2026-07-31T15:46:53.491151",
       "template_id": "cal-005"
     },
     {
@@ -84,7 +84,7 @@
         "documentação",
         "modular"
       ],
-      "generated_at": "2026-07-31T07:54:44.884275",
+      "generated_at": "2026-07-31T15:46:53.491157",
       "template_id": "cal-006"
     },
     {
@@ -98,7 +98,7 @@
         "redução",
         "teste"
       ],
-      "generated_at": "2026-07-31T07:54:44.884278",
+      "generated_at": "2026-07-31T15:46:53.491161",
       "template_id": "cal-007"
     },
     {
@@ -112,7 +112,7 @@
         "gratuito",
         "análise"
       ],
-      "generated_at": "2026-07-31T07:54:44.884282",
+      "generated_at": "2026-07-31T15:46:53.491166",
       "template_id": "cal-008"
     },
     {
@@ -126,7 +126,7 @@
         "avaliação",
         "cases"
       ],
-      "generated_at": "2026-07-31T07:54:44.884286",
+      "generated_at": "2026-07-31T15:46:53.491170",
       "template_id": "cal-009"
     },
     {
@@ -140,7 +140,7 @@
         "diagnóstico",
         "gratuito"
       ],
-      "generated_at": "2026-07-31T07:54:44.884289",
+      "generated_at": "2026-07-31T15:46:53.491175",
       "template_id": "cal-010"
     }
   ]

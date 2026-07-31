@@ -1,10 +1,10 @@
-Subject: Unknown Service - Devops Optimization
+Subject: SRE & Reliability Consulting - Devops Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s DevOps operations.
 
-**Unknown Service**
+**SRE & Reliability Consulting**
 Site Reliability Engineering consulting: SLO design, error budgets, incident process, chaos engineering, and on-call optimization. Improve reliability by design.
 
 **Key Benefits for Devops:**

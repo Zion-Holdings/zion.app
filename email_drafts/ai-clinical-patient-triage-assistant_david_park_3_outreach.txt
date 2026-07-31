@@ -1,10 +1,10 @@
-Subject: Unknown Service - Healthcare Optimization
+Subject: AI Patient Triage & Clinical Decision Support - Healthcare Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's healthcare operations.
 
-**Unknown Service**
+**AI Patient Triage & Clinical Decision Support**
 AI-powered patient triage system analyzing symptoms, medical history, and vital signs to recommend urgency levels and care pathways.
 
 **Key Benefits for Healthcare:**

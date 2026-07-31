@@ -1,10 +1,10 @@
-Subject: Unknown Service - Technology Optimization
+Subject: Container Security Platform - Technology Optimization
 
 Hi David Miller,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact NexGen Cloud's Technology operations.
 
-**Unknown Service**
+**Container Security Platform**
 End-to-end security for containerized workloads. Image scanning, runtime protection, network policy enforcement, and compliance monitoring for Kubernetes.
 
 **Key Benefits for Technology:**

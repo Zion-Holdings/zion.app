@@ -1,10 +1,10 @@
-Subject: Unknown Service - Finance Optimization
+Subject: Enterprise API Gateway - Finance Optimization
 
 Hi Lisa Garcia,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CloudFirst Networks's Finance operations.
 
-**Unknown Service**
+**Enterprise API Gateway**
 Unified API gateway: JWT/OAuth2 auth, rate-limit, circuit-breaker, request/response transform, analytics, multi-tenant API key mgmt.
 
 **Key Benefits for Finance:**

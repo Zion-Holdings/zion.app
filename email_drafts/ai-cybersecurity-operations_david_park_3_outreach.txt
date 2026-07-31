@@ -1,10 +1,10 @@
-Subject: Unknown Service - Cybersecurity Optimization
+Subject: AI Cybersecurity Operations Center - Cybersecurity Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's Cybersecurity operations.
 
-**Unknown Service**
+**AI Cybersecurity Operations Center**
 AI-powered SOC that automates threat detection, investigation, and response. Reduce alert fatigue by 90% and mean time to respond by 80%.
 
 **Key Benefits for Cybersecurity:**

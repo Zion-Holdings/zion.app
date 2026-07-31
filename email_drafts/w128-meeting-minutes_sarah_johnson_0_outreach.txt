@@ -1,10 +1,10 @@
-Subject: Unknown Service - Technology And Saas Optimization
+Subject: AI Meeting Minutes Generator - Technology And Saas Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s technology and saas operations.
 
-**Unknown Service**
+**AI Meeting Minutes Generator**
 Real-time transcription, action item extraction, and meeting summaries. Integrates with Zoom, Teams, and Google Meet.
 
 **Key Benefits for Technology And Saas:**

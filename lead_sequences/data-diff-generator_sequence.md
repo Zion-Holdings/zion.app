@@ -46,4 +46,4 @@ Subject: 3 insights for Data leaders
 
 ---
 
-*Generated: 2026-07-31 07:36 UTC*
+*Generated: 2026-07-31 09:55 UTC*

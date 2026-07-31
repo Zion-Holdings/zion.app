@@ -1,10 +1,10 @@
-Subject: Unknown Service - Backup Optimization
+Subject: Backup / DR/BCaaS - Backup Optimization
 
 Hi Dr. Michael Chen,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact HealthNet Solutions's Backup operations.
 
-**Unknown Service**
+**Backup / DR/BCaaS**
 Managed backup and disaster recovery: 3-2-1-1-airgap policy, every-30s WORM snapshots, point-in-time restore to 90 days, failover tests every 30 min, 4-hour RTO, 15-min RPO SLA.
 
 **Key Benefits for Backup:**

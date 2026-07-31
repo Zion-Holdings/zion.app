@@ -1,10 +1,10 @@
-Subject: Unknown Service - Automotive Optimization
+Subject: AI Autonomous Vehicle Perception System - Automotive Optimization
 
 Hi Rachel Martinez,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact FinTech Dynamics's Automotive operations.
 
-**Unknown Service**
+**AI Autonomous Vehicle Perception System**
 Computer vision and sensor fusion for autonomous vehicles. Object detection, lane tracking, pedestrian prediction, and real-time decision making.
 
 **Key Benefits for Automotive:**

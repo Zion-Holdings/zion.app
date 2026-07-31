@@ -1,10 +1,10 @@
-Subject: Unknown Service - Saas Optimization
+Subject: Cloud Storage Lifecycle & Compliance - Saas Optimization
 
 Hi David Miller,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact NexGen Cloud's SaaS operations.
 
-**Unknown Service**
+**Cloud Storage Lifecycle & Compliance**
 S3/GCS/Azure Blob lifecycle: retention policy, litigation hold, WORM locking, legal export, and SaaS-data export automation.
 
 **Key Benefits for Saas:**

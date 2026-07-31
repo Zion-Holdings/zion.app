@@ -1,10 +1,10 @@
-Subject: Unknown Service - Storage Optimization
+Subject: Storage Class Cleaner - Storage Optimization
 
 Hi Emily White,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CloudScale Solutions's Storage operations.
 
-**Unknown Service**
+**Storage Class Cleaner**
 Recommends storage lifecycle rules, tier transitions, and cleanup candidates to reduce cost and exposure.
 
 **Key Benefits for Storage:**

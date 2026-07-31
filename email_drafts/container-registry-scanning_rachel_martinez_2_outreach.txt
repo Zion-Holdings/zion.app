@@ -1,10 +1,10 @@
-Subject: Container Registry & Security Scanning - Enterprise Optimization
+Subject: Unknown Service - Enterprise Optimization
 
 Hi Rachel Martinez,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact FinTech Dynamics's Enterprise operations.
 
-**Container Registry & Security Scanning**
+**Unknown Service**
 Secure container registry with vulnerability scanning, policy enforcement, and CI/CD integration. Supports Docker and OCI images with automated compliance checks.
 
 **Key Benefits for Enterprise:**

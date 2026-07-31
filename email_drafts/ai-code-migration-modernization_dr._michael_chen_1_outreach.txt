@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: AI Code Migration & Modernization - General Optimization
 
 Hi Dr. Michael Chen,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact HealthNet Solutions's General operations.
 
-**Unknown Service**
+**AI Code Migration & Modernization**
 Automatically migrate legacy codebases to modern frameworks (COBOL → Java, jQuery → React, Python 2 → Python 3) with AI-assisted refactoring.
 
 **Key Benefits for General:**

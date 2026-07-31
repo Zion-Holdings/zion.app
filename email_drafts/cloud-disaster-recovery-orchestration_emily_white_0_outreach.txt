@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: Disaster Recovery Orchestration - General Optimization
 
 Hi Emily White,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CloudScale Solutions's General operations.
 
-**Unknown Service**
+**Disaster Recovery Orchestration**
 Zero-downtime DR orchestration across regions: continuous async replication, warm-standby spin-up automation in 30 seconds, failover runbook executor with per-step human-halt, DR test runner, and RPO and RTO dashboard with graded SLA.
 
 **Key Benefits for General:**

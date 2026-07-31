@@ -1,10 +1,10 @@
-Subject: AI Port Congestion & Shipping Delay Predictor - Logistics & Supply Chain Optimization
+Subject: Unknown Service - Logistics & Supply Chain Optimization
 
 Hi Michael Lee,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DataFlow Systems's Logistics & Supply Chain operations.
 
-**AI Port Congestion & Shipping Delay Predictor**
+**Unknown Service**
 Predict port congestion 14 days ahead: vessel tracking, berth availability, customs delay prediction, and optimal routing recommendations. Used by 200+ shipping companies.
 
 **Key Benefits for Logistics & Supply Chain:**

@@ -1,10 +1,10 @@
-Subject: Unknown Service - Manufacturing Optimization
+Subject: Unified Endpoint Management (UEM) - Manufacturing Optimization
 
 Hi Dr. Michael Chen,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact HealthNet Solutions's Manufacturing operations.
 
-**Unknown Service**
+**Unified Endpoint Management (UEM)**
 Manage and secure all devices (laptops, mobile, IoT) from a single dashboard: enrollment, policy enforcement, patch management, and remote wipe.
 
 **Key Benefits for Manufacturing:**

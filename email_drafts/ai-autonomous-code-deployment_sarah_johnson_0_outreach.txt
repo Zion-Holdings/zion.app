@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: Autonomous Code Deployment Agent - General Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s General operations.
 
-**Unknown Service**
+**Autonomous Code Deployment Agent**
 Code-review finder, security scan (SAST/DAST), test-retry, feature-flag gate, rollback on error-rate spike, chat-notification on completion.
 
 **Key Benefits for General:**

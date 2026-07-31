@@ -2,7 +2,7 @@ Subject: EDR AI-Powered Cloud Governance - Edr Optimization
 
 Hi Amanda Foster,
 
-I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CryptoShield Security's EDR operations.
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact MediCore Security's EDR operations.
 
 **EDR AI-Powered Cloud Governance**
 AI-powered edr solution for cloud governance. Automated cloud governance with policy enforcement and resource control.

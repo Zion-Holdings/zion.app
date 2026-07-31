@@ -46,4 +46,4 @@ Subject: 3 insights for Ai leaders
 
 ---
 
-*Generated: 2026-07-31 05:30 UTC*
+*Generated: 2026-07-31 10:28 UTC*

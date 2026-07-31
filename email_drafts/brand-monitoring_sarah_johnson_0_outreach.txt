@@ -1,10 +1,10 @@
-Subject: Brand Monitoring & Fake Domain Detection - E Commerce Optimization
+Subject: Unknown Service - E Commerce Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s E Commerce operations.
 
-**Brand Monitoring & Fake Domain Detection**
+**Unknown Service**
 Scans global DNS+WHOIS+SSL cert feeds 24/7 for lookalike typosquatting phishing domains targeting your brand. Auto-generates registrar takedown request sent to DNS provider.
 
 **Key Benefits for E Commerce:**

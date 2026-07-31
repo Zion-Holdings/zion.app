@@ -1,10 +1,10 @@
-Subject: Unknown Service - Architecture Optimization
+Subject: Kubernetes Service Mesh - Architecture Optimization
 
 Hi David Miller,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact NexGen Cloud's Architecture operations.
 
-**Unknown Service**
+**Kubernetes Service Mesh**
 Service mesh implementation: Istio or Linkerd with traffic management, observability, security (mTLS), and canary deployments for K8s microservices.
 
 **Key Benefits for Architecture:**

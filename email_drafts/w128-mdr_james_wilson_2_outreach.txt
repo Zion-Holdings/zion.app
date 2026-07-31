@@ -1,10 +1,10 @@
-Subject: Unknown Service - Cybersecurity Optimization
+Subject: Managed Detection & Response (MDR) - Cybersecurity Optimization
 
 Hi James Wilson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DevOps Dynamics's cybersecurity operations.
 
-**Unknown Service**
+**Managed Detection & Response (MDR)**
 24/7 threat monitoring, detection, and response. SOC-as-a-service with AI-powered threat hunting and incident response.
 
 **Key Benefits for Cybersecurity:**

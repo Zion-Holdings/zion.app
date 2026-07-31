@@ -20,14 +20,21 @@ def count_services():
     """Count total services and categories."""
     try:
         with open(SERVICES_JSON, 'r') as f:
-            services = json.load(f)
+            data = json.load(f)
+        
+        # Handle nested structure: {"services": [...]} or direct list
+        if isinstance(data, dict) and 'services' in data:
+            services = data['services']
+        else:
+            services = data
         
         total = len(services)
         categories = Counter()
         
         for service in services:
-            cat = service.get('category', 'unknown')
-            categories[cat] += 1
+            if isinstance(service, dict):
+                cat = service.get('category', 'unknown')
+                categories[cat] += 1
         
         return total, dict(categories)
     except Exception as e:
@@ -66,7 +73,11 @@ def count_hot_leads_sent():
     try:
         with open(SENT_LOG, 'r') as f:
             sent_log = json.load(f)
-        return len(sent_log)
+        # Handle both dict format {email: {...}} and list format [{...}]
+        if isinstance(sent_log, dict):
+            return len(sent_log)
+        else:
+            return len(sent_log)
     except Exception as e:
         print(f"Error counting hot leads: {e}")
         return 0
@@ -89,6 +100,7 @@ def generate_report():
     
     # Count growth cycles (groups of 50)
     growth_cycles = (total_services // 50) + 1 if total_services > 0 else 0
+    print(f"   Growth cycles: {growth_cycles}")
     
     # Top 10 categories
     sorted_categories = sorted(categories.items(), key=lambda x: x[1], reverse=True)[:10]

@@ -1,10 +1,10 @@
-Subject: Computer Vision for Manufacturing - Manufacturing Optimization
+Subject: Unknown Service - Manufacturing Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s Manufacturing operations.
 
-**Computer Vision for Manufacturing**
+**Unknown Service**
 Automated visual inspection, defect detection, quality control, and process monitoring using AI computer vision. Works with existing cameras and IoT sensors.
 
 **Key Benefits for Manufacturing:**

@@ -1,10 +1,10 @@
-Subject: Unknown Service - Enterprise Optimization
+Subject: Customer Self-Service Portal Builder - Enterprise Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s Enterprise operations.
 
-**Unknown Service**
+**Customer Self-Service Portal Builder**
 Build branded customer portals where clients can manage accounts, view invoices, submit tickets, track orders, and access documentation. No-code builder with drag-and-drop widgets, SSO integration, and mobile-responsive design.
 
 **Key Benefits for Enterprise:**

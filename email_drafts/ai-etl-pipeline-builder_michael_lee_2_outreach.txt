@@ -1,10 +1,10 @@
-Subject: Unknown Service - Manufacturing Optimization
+Subject: AI ETL Pipeline Builder - Manufacturing Optimization
 
 Hi Michael Lee,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DataFlow Systems's Manufacturing operations.
 
-**Unknown Service**
+**AI ETL Pipeline Builder**
 Natural language ETL builder: describe source, target, transformation — AI generates production-ready dbt/Glue/Dataflow pipeline. Auto-tests, docs, type-map.
 
 **Key Benefits for Manufacturing:**

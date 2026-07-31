@@ -1,10 +1,10 @@
-Subject: Unknown Service - Finance Optimization
+Subject: Cloud Security Posture Management (CSPM) - Finance Optimization
 
 Hi Robert Chen,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AltiCloud Services's Finance operations.
 
-**Unknown Service**
+**Cloud Security Posture Management (CSPM)**
 Continuous cloud posture: IAM overprivilege, misconfigured S3, exposed RDS, public subnets. Drift detection + auto-remediation via Terraform per AWS/GCP/Azure.
 
 **Key Benefits for Finance:**

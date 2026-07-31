@@ -1,0 +1,25 @@
+Subject: EmailWarmup — Deliverability Engine - Marketing Optimization
+
+Hi Alex Morgan,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DeepLearn AI's Marketing operations.
+
+**EmailWarmup — Deliverability Engine**
+Email warmup and deliverability management: automated warmup sequences, domain health monitoring, blacklists checking, and DMARC optimization.
+
+**Key Benefits for Marketing:**
+- New domains warm up safely and fast
+- Blacklist monitoring catches problems early
+- DMARC optimization prevents spoofing
+
+**Pricing:**
+- Basic: $19/mo/month
+- Pro: $49/mo/month  
+- Enterprise: $149/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

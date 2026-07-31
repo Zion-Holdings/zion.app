@@ -1,10 +1,10 @@
-Subject: Unknown Service - Project Management Optimization
+Subject: KanbanPro — Project Boards - Project Management Optimization
 
 Hi Dr. Michael Chen,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact HealthNet Solutions's Project Management operations.
 
-**Unknown Service**
+**KanbanPro — Project Boards**
 Visual project management with Kanban boards, Gantt charts, time tracking, and automation rules. For teams that want simplicity, not complexity.
 
 **Key Benefits for Project Management:**

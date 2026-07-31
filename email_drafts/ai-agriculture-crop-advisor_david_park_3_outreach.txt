@@ -1,10 +1,10 @@
-Subject: Unknown Service - Agriculture Optimization
+Subject: AI Crop Diagnostic & Yield Optimizer - Agriculture Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's Agriculture operations.
 
-**Unknown Service**
+**AI Crop Diagnostic & Yield Optimizer**
 Precision agriculture: drone/satellite crop health imaging, pest detection, irrigation optimization, yield prediction. Field-level recommendations in real-time.
 
 **Key Benefits for Agriculture:**

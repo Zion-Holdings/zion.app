@@ -68,7 +68,7 @@ DOMAINS = [
     "Business Intelligence", "Process Mining"
 ]
 
-# Core functions (114 functions)
+# Core functions pool (114 functions)
 CORE_FUNCTIONS = [
     "Predictive Analytics", "Customer Insights", "Process Automation",
     "Data Processing", "Market Intelligence", "Financial Planning",
@@ -362,8 +362,8 @@ def generate_benefits() -> List[str]:
     return random.sample(BENEFITS_POOL, min(num_benefits, len(BENEFITS_POOL)))
 
 
-def create_service_entry(service_name: str, industry: str) -> Dict:
-    """Create a complete service entry."""
+def create_service_entry(service_name: str, industry: str, used_ids: Set[str]) -> Dict:
+    """Create a complete service entry with proper deduplication."""
     domain = random.choice(DOMAINS)
     core_function = random.choice(CORE_FUNCTIONS)
     service_type = random.choice([
@@ -374,7 +374,7 @@ def create_service_entry(service_name: str, industry: str) -> Dict:
     # Generate unique name
     final_name = service_name
     counter = 1
-    while final_name.lower() in existing_ids:
+    while final_name.lower() in used_ids:
         final_name = f"{service_name} #{counter}"
         counter += 1
         if counter > 100:
@@ -383,11 +383,13 @@ def create_service_entry(service_name: str, industry: str) -> Dict:
 
     service_id = generate_service_id(final_name)
 
-    # Ensure ID is unique
-    while service_id in existing_ids:
+    # Ensure ID is unique (check against used_ids, not just existing_ids)
+    while service_id in used_ids:
         service_id = generate_service_id(f"{final_name} {random.randint(1,999)}")
 
-    # Note: IDs are added to existing_ids in run_growth_cycle after validation
+    # Add to used_ids immediately to prevent duplicates
+    used_ids.add(service_id)
+    used_ids.add(final_name.lower())
 
     return {
         'id': service_id,
@@ -495,12 +497,27 @@ def run_growth_cycle(batch_size: int = 500) -> Dict[str, Any]:
     # Load existing IDs
     global existing_ids
     existing_ids = get_existing_ids()
-    current_count = len(existing_ids)
+    current_count = len(existing_ids) // 2  # Approximate unique services count
 
     logger.info(f"[ℹ️] Current services in catalog: {current_count}")
 
     # Load existing services
     services = load_services()
+
+    # Clean up any duplicates from existing services
+    seen_ids = set()
+    unique_services = []
+    for service in services:
+        if 'id' in service and service['id'] not in seen_ids:
+            seen_ids.add(service['id'])
+            unique_services.append(service)
+        elif 'id' not in service:
+            unique_services.append(service)
+
+    if len(unique_services) != len(services):
+        logger.info(f"[🧹] Cleaned up {len(services) - len(unique_services)} duplicate services")
+        services = unique_services
+        existing_ids = seen_ids.copy()
 
     # Generate new services
     new_services = []
@@ -518,20 +535,13 @@ def run_growth_cycle(batch_size: int = 500) -> Dict[str, Any]:
             service_type
         )
 
-        service = create_service_entry(base_name, industry)
+        service = create_service_entry(base_name, industry, existing_ids)
         new_services.append(service)
         logger.info(f"[✅] Generated: {service['name']} (ID: {service['id']})")
 
     # Add new services to catalog
-    added_count = 0
-    for service in new_services:
-        service_id = service['id']
-        service_name = service['name']
-        if service_id not in existing_ids:
-            services.append(service)
-            existing_ids.add(service_id)
-            existing_ids.add(service_name.lower())
-            added_count += 1
+    added_count = len(new_services)  # All generated services are unique now
+    services.extend(new_services)
 
     # Save updated services
     if services:
@@ -570,7 +580,7 @@ Rate: {added_count/duration:.1f} services/second
 Sitemap updated: {'Yes' if sitemap_updated else 'No'}
 
 Status: SUCCESS - {added_count} new services generated
-=====================================""")
+=================================""")
 
     return {
         'status': 'success',

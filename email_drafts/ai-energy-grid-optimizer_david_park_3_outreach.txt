@@ -1,10 +1,10 @@
-Subject: Unknown Service - Energy & Utilities Optimization
+Subject: AI Energy Grid Optimization Platform - Energy & Utilities Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's Energy & Utilities operations.
 
-**Unknown Service**
+**AI Energy Grid Optimization Platform**
 Grid-scale energy management: demand forecasting, renewable integration, battery dispatch optimization, real-time load balancing. Reduces energy waste by 22%.
 
 **Key Benefits for Energy & Utilities:**

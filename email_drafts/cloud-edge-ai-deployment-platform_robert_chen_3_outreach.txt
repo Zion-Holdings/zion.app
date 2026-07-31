@@ -1,10 +1,10 @@
-Subject: Unknown Service - Finance Optimization
+Subject: Edge AI Deployment Platform - Finance Optimization
 
 Hi Robert Chen,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AltiCloud Services's Finance operations.
 
-**Unknown Service**
+**Edge AI Deployment Platform**
 One-click edge AI model deployment to 50k+ global edge points-of-presence: ONNX/TensorRT/GGUF model package, auto-scaling inference, A/B model rollout, cold-warm-cache tiering, and robust offline-first sync for disconnected sites.
 
 **Key Benefits for Finance:**

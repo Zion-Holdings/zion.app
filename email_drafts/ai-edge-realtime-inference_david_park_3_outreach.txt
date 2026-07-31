@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: AI Edge & Real-Time Inference - General Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's General operations.
 
-**Unknown Service**
+**AI Edge & Real-Time Inference**
 Deploy AI at the edge and in real time. Low-latency inference, on-device models, and streaming pipelines for mission-critical applications.
 
 **Key Benefits for General:**

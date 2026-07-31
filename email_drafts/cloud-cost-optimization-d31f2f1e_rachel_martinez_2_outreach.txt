@@ -1,10 +1,10 @@
-Subject: Unknown Service - Cloud Optimization
+Subject: Cloud Cost Optimization - Cloud Optimization
 
 Hi Rachel Martinez,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact FinTech Dynamics's Cloud operations.
 
-**Unknown Service**
+**Cloud Cost Optimization**
 FinOps and cloud cost optimization: rightsizing, commitment planning, tagging governance, cross-cloud budgeting, and anomaly alerts.
 
 **Key Benefits for Cloud:**

@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: Vector Database - General Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's General operations.
 
-**Unknown Service**
+**Vector Database**
 Managed vector database for RAG pipelines, semantic search, and similarity queries with hybrid filtering, autoscaling, and multi-modal indexing.
 
 **Key Benefits for General:**

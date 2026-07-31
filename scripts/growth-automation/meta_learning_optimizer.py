@@ -117,24 +117,24 @@ def count_files_fast(directory: Path, pattern: str = '*') -> int:
         if not directory.exists():
             return 0
         
-        # For very large directories, use ls | wc -l for speed
+        # For very large directories, use find for better performance
         ext = pattern.replace('*', '').replace('.', '') if pattern.startswith('*') else ''
         if ext:
-            # Use ls -f for fast listing (unsorted)
+            # Use find for reliable counting even with large directories
             result = subprocess.run(
-                ['ls', '-f', str(directory)],
-                capture_output=True, text=True, timeout=3
+                ['find', str(directory), '-maxdepth', '1', '-name', f'*.{ext}', '-type', 'f'],
+                capture_output=True, text=True, timeout=30
             )
             if result.returncode == 0:
-                count = sum(1 for f in result.stdout.strip().split('\n') if f.endswith(ext))
+                count = len([f for f in result.stdout.strip().split('\n') if f])
                 return count
         else:
             result = subprocess.run(
-                ['ls', '-f', str(directory)],
-                capture_output=True, text=True, timeout=3
+                ['find', str(directory), '-maxdepth', '1', '-type', 'f'],
+                capture_output=True, text=True, timeout=30
             )
             if result.returncode == 0:
-                return sum(1 for f in result.stdout.strip().split('\n') if f)
+                return len([f for f in result.stdout.strip().split('\n') if f])
         return 0
     except:
         return 0

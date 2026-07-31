@@ -1,10 +1,10 @@
-Subject: Unknown Service - Agriculture Optimization
+Subject: AI Crop Disease Detector - Agriculture Optimization
 
 Hi Dr. Michael Chen,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact HealthNet Solutions's Agriculture operations.
 
-**Unknown Service**
+**AI Crop Disease Detector**
 Detect crop diseases from smartphone photos: 200+ disease types, treatment recommendations, outbreak prediction. Offline mode.
 
 **Key Benefits for Agriculture:**

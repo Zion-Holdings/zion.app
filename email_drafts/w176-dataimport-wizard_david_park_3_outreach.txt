@@ -1,10 +1,10 @@
-Subject: Unknown Service - Data Operations Optimization
+Subject: DataImport Wizard — CSV/Excel Tool - Data Operations Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's Data Operations operations.
 
-**Unknown Service**
+**DataImport Wizard — CSV/Excel Tool**
 Smart data import tool: auto-detect formats, validate, transform, map columns, and import to any database or API. Handle messy data gracefully.
 
 **Key Benefits for Data Operations:**

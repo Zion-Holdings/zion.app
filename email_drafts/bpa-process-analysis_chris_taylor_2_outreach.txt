@@ -1,10 +1,10 @@
-Subject: Business Process Analysis (BPA) - General Optimization
+Subject: Unknown Service - General Optimization
 
 Hi Chris Taylor,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact ProcessGenius's General operations.
 
-**Business Process Analysis (BPA)**
+**Unknown Service**
 Process discovery + event log mining, variant discovery, bottleneck detection, automation opportunity scoring. Output: BPMN design + automation ROI per task.
 
 **Key Benefits for General:**

@@ -1,10 +1,10 @@
-Subject: Unknown Service - Software Development Optimization
+Subject: Security Training for Developers - Software Development Optimization
 
 Hi Jennifer Adams,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact SecureNet Corp's Software Development operations.
 
-**Unknown Service**
+**Security Training for Developers**
 Developer-focused security training: OWASP Top 10, secure coding practices, threat modeling, and code review checklists. Reduce vulnerabilities at the source.
 
 **Key Benefits for Software Development:**

@@ -1,0 +1,21 @@
+🔍 JSON INTEGRITY MONITOR REPORT
+=====================================
+Run Time: 2026-07-31 14:00:00 UTC
+=====================================
+
+📊 Findings Summary:
+   Total services: 1285
+   Duplicate IDs: 0
+   Duplicate names: 2
+   Validation issues: 0
+
+✅ Data integrity verified - no critical issues found
+
+💡 Recommendation: Run with --fix to resolve duplicate names
+
+=====================================
+
+DELIVERY STATUS:
+❌ Telegram delivery failed - Bot token not available (placeholder token: 8716864917:***)
+
+Please configure TELEGRAM_BOT_TOKEN environment variable with valid bot credentials.

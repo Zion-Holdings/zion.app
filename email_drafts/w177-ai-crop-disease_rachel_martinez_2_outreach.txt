@@ -1,10 +1,10 @@
-Subject: Unknown Service - Agriculture Optimization
+Subject: AI Crop Disease Detector - Agriculture Optimization
 
 Hi Rachel Martinez,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact FinTech Dynamics's Agriculture operations.
 
-**Unknown Service**
+**AI Crop Disease Detector**
 Detect crop diseases from smartphone photos: 200+ disease types, treatment recommendations, outbreak prediction. Offline mode.
 
 **Key Benefits for Agriculture:**

@@ -46,4 +46,4 @@ Subject: 3 insights for Cloud leaders
 
 ---
 
-*Generated: 2026-07-31 07:09 UTC*
+*Generated: 2026-07-31 09:10 UTC*

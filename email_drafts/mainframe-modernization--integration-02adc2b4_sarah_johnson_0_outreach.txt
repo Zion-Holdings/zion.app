@@ -1,10 +1,10 @@
-Subject: Unknown Service - Mainframe Optimization
+Subject: Mainframe Modernization & Integration - Mainframe Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s Mainframe operations.
 
-**Unknown Service**
+**Mainframe Modernization & Integration**
 Mainframe application modernization: API enablement, data extraction, cloud migration, and hybrid integration without disrupting core banking or legacy workloads.
 
 **Key Benefits for Mainframe:**

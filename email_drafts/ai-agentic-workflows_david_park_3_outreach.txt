@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: AI Agentic Workflow Automation - General Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's General operations.
 
-**Unknown Service**
+**AI Agentic Workflow Automation**
 Autonomous AI agents that plan, execute, and monitor multi-step business workflows — from data gathering to decision execution with human-in-the-loop oversight.
 
 **Key Benefits for General:**

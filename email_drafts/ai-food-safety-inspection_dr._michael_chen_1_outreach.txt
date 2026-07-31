@@ -1,10 +1,10 @@
-Subject: Unknown Service - Food Optimization
+Subject: AI Food Safety & Quality Inspection System - Food Optimization
 
 Hi Dr. Michael Chen,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact HealthNet Solutions's food operations.
 
-**Unknown Service**
+**AI Food Safety & Quality Inspection System**
 Computer vision-based food safety inspection for restaurants, food processing plants, and supply chains.
 
 **Key Benefits for Food:**

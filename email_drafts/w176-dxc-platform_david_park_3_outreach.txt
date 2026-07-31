@@ -1,10 +1,10 @@
-Subject: Unknown Service - Software Development Optimization
+Subject: Developer Experience (DX) Platform - Software Development Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's Software Development operations.
 
-**Unknown Service**
+**Developer Experience (DX) Platform**
 Measure and improve developer experience: survey platform, metrics dashboard, bottleneck identification, and tooling recommendations.
 
 **Key Benefits for Software Development:**

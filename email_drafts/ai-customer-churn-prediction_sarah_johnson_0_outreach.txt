@@ -1,10 +1,10 @@
-Subject: Customer Churn Prediction & Prevention - Saas Optimization
+Subject: Unknown Service - Saas Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s SaaS operations.
 
-**Customer Churn Prediction & Prevention**
+**Unknown Service**
 Predict which customers are at risk of leaving, understand why, and trigger automated retention campaigns. Integrates with CRM, billing, and support systems.
 
 **Key Benefits for Saas:**

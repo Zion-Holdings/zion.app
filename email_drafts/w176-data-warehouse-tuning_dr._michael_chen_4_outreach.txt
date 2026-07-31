@@ -1,0 +1,25 @@
+Subject: Data Warehouse Performance Tuning - Data Engineering Optimization
+
+Hi Dr. Michael Chen,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact HealthNet Analytics's Data Engineering operations.
+
+**Data Warehouse Performance Tuning**
+Expert performance optimization for Snowflake, BigQuery, Redshift, and Databricks: query tuning, clustering, partitioning, and cost reduction.
+
+**Key Benefits for Data Engineering:**
+- Reduce query costs by 40-60%
+- Faster queries for better analyst productivity
+- Right-sized warehouses save money
+
+**Pricing:**
+- Basic: $499/mo/month
+- Pro: $1,499/mo/month  
+- Enterprise: $4,999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

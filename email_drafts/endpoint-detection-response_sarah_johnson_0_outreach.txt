@@ -1,10 +1,10 @@
-Subject: Unknown Service - Enterprise Optimization
+Subject: Endpoint Detection & Response (EDR) - Enterprise Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s Enterprise operations.
 
-**Unknown Service**
+**Endpoint Detection & Response (EDR)**
 Advanced endpoint protection with real-time threat detection, automated response, and forensic investigation. Monitors all endpoints (laptops, servers, mobile) for malware, ransomware, and advanced persistent threats 24/7.
 
 **Key Benefits for Enterprise:**

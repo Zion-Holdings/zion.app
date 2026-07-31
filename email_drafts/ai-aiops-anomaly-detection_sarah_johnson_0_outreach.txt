@@ -1,10 +1,10 @@
-Subject: Unknown Service - E Commerce Optimization
+Subject: AI-AIOps Anomaly Detection - E Commerce Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s E Commerce operations.
 
-**Unknown Service**
+**AI-AIOps Anomaly Detection**
 Detects infrastructure anomalies (CPU, memory, error rates) before they cause outages using unsupervised learning and seasonal decomposition.
 
 **Key Benefits for E Commerce:**

@@ -1,10 +1,10 @@
-Subject: Unknown Service - Legal Optimization
+Subject: AI Document Generation Platform - Legal Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's Legal operations.
 
-**Unknown Service**
+**AI Document Generation Platform**
 Auto-generate contracts, proposals, reports, and emails from templates and data. Conditional logic, data merging, e-signature, and lifecycle management.
 
 **Key Benefits for Legal:**

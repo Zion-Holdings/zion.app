@@ -1,10 +1,10 @@
-Subject: Unknown Service - Financial Services Optimization
+Subject: AI Bank Fraud Investigation Platform - Financial Services Optimization
 
 Hi Robert Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact ThreatGuard AI's Financial Services operations.
 
-**Unknown Service**
+**AI Bank Fraud Investigation Platform**
 Automate fraud investigation workstreams: transaction link analysis, entity resolution, SAR filing automation, and regulatory reporting. Reduces investigation time by 75%.
 
 **Key Benefits for Financial Services:**

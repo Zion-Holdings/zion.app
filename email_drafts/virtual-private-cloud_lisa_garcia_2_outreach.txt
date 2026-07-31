@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: Virtual Private Cloud - General Optimization
 
 Hi Lisa Garcia,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CloudFirst Networks's General operations.
 
-**Unknown Service**
+**Virtual Private Cloud**
 Dedicated VPC with custom CIDR, isolated network topology, private subnet routing, VPC peering, and cross-VPC transit across any cloud provider.
 
 **Key Benefits for General:**

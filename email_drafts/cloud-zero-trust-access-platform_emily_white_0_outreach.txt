@@ -1,10 +1,10 @@
-Subject: Unknown Service - E Commerce Optimization
+Subject: Zero Trust Access Platform - E Commerce Optimization
 
 Hi Emily White,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CloudScale Solutions's E Commerce operations.
 
-**Unknown Service**
+**Zero Trust Access Platform**
 Identity-first zero trust: device posture check, per-session access policy, micro-VPN per-app access, continuous auth risk scoring.
 
 **Key Benefits for E Commerce:**

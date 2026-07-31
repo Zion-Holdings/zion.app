@@ -2,7 +2,7 @@ Subject: AI-Powered Security Information & Event Management - Security Operation
 
 Hi Amanda Foster,
 
-I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CryptoShield Security's Security Operations operations.
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact MediCore Security's Security Operations operations.
 
 **AI-Powered Security Information & Event Management**
 SIEM solution with AI-driven log analysis and threat detection.

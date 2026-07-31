@@ -1,10 +1,10 @@
-Subject: Unknown Service - Marketing Optimization
+Subject: Email Campaign Generator - Marketing Optimization
 
 Hi Dr. Michael Chen,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact HealthNet Solutions's Marketing operations.
 
-**Unknown Service**
+**Email Campaign Generator**
 End-to-end email marketing: Generate sequences, personalize per recipient, A/B test subject lines, optimize send times.
 
 **Key Benefits for Marketing:**

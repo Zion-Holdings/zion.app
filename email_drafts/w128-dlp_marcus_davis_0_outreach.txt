@@ -1,10 +1,10 @@
-Subject: Unknown Service - Cybersecurity Optimization
+Subject: Data Loss Prevention (DLP) - Cybersecurity Optimization
 
 Hi Marcus Davis,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CyberShield Defense's cybersecurity operations.
 
-**Unknown Service**
+**Data Loss Prevention (DLP)**
 Comprehensive DLP across endpoints, cloud, email, and network. AI-powered classification and policy enforcement.
 
 **Key Benefits for Cybersecurity:**

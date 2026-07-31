@@ -1,10 +1,10 @@
-Subject: Software Bill-of-Materials Manager - General Optimization
+Subject: Unknown Service - General Optimization
 
 Hi Amanda Foster,
 
-I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact MediCore Security's General operations.
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CryptoShield Security's General operations.
 
-**Software Bill-of-Materials Manager**
+**Unknown Service**
 Full SBOM lifecycle management: auto-generate SPDX and Cyclone-DX per build, license-compliance check, vulnerability and CVE matching per component, attestation signing, and SBOM consumer portal per vendor release.
 
 **Key Benefits for General:**

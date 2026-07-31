@@ -1,0 +1,25 @@
+Subject: AI Knowledge Graph Search Engine - Ai Optimization
+
+Hi Alex Morgan,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DeepLearn AI's AI operations.
+
+**AI Knowledge Graph Search Engine**
+Deep semantic search across structured + unstructured corporate knowledge: auto-builds a navigable knowledge graph from Confluence, Slack, Drive, Jira, and CRM; facet navigation, path-finding between related entities, and answer synthesis with cited sources.
+
+**Key Benefits for Ai:**
+- Answer how-do-I type queries in seconds that previously took hours of searching
+- Eliminate 40-70% of repeated support tickets by surfacing canonical answers
+- Build a living knowledge graph without manual taxonomy work
+
+**Pricing:**
+- Basic: 249/month
+- Pro: 849/month  
+- Enterprise: Custom/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

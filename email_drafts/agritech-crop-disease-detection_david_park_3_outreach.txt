@@ -1,10 +1,10 @@
-Subject: Unknown Service - Agriculture Optimization
+Subject: AI Crop Disease Detection Platform - Agriculture Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's Agriculture operations.
 
-**Unknown Service**
+**AI Crop Disease Detection Platform**
 Detect crop diseases, pest infestations, and nutrient deficiencies from drone and smartphone imagery. Early detection saves 20-40% of crop yield.
 
 **Key Benefits for Agriculture:**

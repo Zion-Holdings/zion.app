@@ -1,10 +1,10 @@
-Subject: SBOM & Supply Chain Security - Manufacturing Optimization
+Subject: Unknown Service - Manufacturing Optimization
 
 Hi Amanda Foster,
 
-I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact MediCore Security's Manufacturing operations.
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CryptoShield Security's Manufacturing operations.
 
-**SBOM & Supply Chain Security**
+**Unknown Service**
 Supply chain security platform: SBOM & VEX generation (every build/build event), CVE SLSA provenance score, dependency-graph diff for every PR, SLSA Level 3 attestation, reproducible-build verification.
 
 **Key Benefits for Manufacturing:**

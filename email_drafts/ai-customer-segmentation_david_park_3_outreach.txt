@@ -1,10 +1,10 @@
-Subject: Unknown Service - Marketing Optimization
+Subject: AI Customer Segmentation & Lifetime Value Prediction - Marketing Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's marketing operations.
 
-**Unknown Service**
+**AI Customer Segmentation & Lifetime Value Prediction**
 AI-powered customer segmentation that goes beyond demographics. Behavioral clustering, lifetime value prediction, and next-best-action for each segment.
 
 **Key Benefits for Marketing:**

@@ -1,10 +1,10 @@
-Subject: Unknown Service - Education Optimization
+Subject: Education Student Lifecycle Manager - Education Optimization
 
 Hi Alex Morgan,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact WorkflowPro Systems's Education operations.
 
-**Unknown Service**
+**Education Student Lifecycle Manager**
 Full-cycle student lifecycle automation for higher ed and EdTech: inquiry-to-enrolment funnel, personalised nurture sequences, academic-risk detection, parents-and-alumni engagement, and LMS grade-imported at-risk alerts.
 
 **Key Benefits for Education:**

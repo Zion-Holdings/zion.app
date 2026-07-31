@@ -1,10 +1,10 @@
-Subject: Unknown Service - Business Intelligence Optimization
+Subject: Automated Reporting Platform - Business Intelligence Optimization
 
 Hi Michael Lee,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DataFlow Systems's Business Intelligence operations.
 
-**Unknown Service**
+**Automated Reporting Platform**
 Automate report generation and distribution: scheduled reports, dynamic parameters, multi-format output, and delivery to email, Slack, and portals.
 
 **Key Benefits for Business Intelligence:**

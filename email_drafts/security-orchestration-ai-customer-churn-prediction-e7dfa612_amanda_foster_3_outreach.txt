@@ -2,7 +2,7 @@ Subject: Security Orchestration AI Customer Churn Prediction - Security Orchestr
 
 Hi Amanda Foster,
 
-I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact MediCore Security's Security Orchestration operations.
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CryptoShield Security's Security Orchestration operations.
 
 **Security Orchestration AI Customer Churn Prediction**
 AI-powered security orchestration solution for customer success. Identifies at-risk customers before they churn using behavioral patterns and engagement metrics.

@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: Cloud Cost Anomaly Detector — ML-Powered - General Optimization
 
 Hi David Miller,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact NexGen Cloud's General operations.
 
-**Unknown Service**
+**Cloud Cost Anomaly Detector — ML-Powered**
 ML-powered cloud cost monitoring: automatically detect anomalous spend spikes, forecast monthly costs with confidence intervals, receive root-cause attribution (service + region + tag), and set auto-throttling alerts.
 
 **Key Benefits for General:**

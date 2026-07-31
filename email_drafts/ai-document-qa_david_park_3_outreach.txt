@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: AI Document Q&A Engine - General Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's General operations.
 
-**Unknown Service**
+**AI Document Q&A Engine**
 Upload PDFs, Word docs, and spreadsheets; ask natural language questions and get instant cited answers with multi-document cross-referencing and role-based access control.
 
 **Key Benefits for General:**

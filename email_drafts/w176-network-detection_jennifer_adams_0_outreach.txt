@@ -1,10 +1,10 @@
-Subject: Unknown Service - Cybersecurity Optimization
+Subject: Network Detection & Response (NDR) - Cybersecurity Optimization
 
 Hi Jennifer Adams,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact SecureNet Corp's Cybersecurity operations.
 
-**Unknown Service**
+**Network Detection & Response (NDR)**
 Network-level threat detection: traffic analysis, lateral movement detection, encrypted traffic inspection, and beacon detection. See what EDR misses.
 
 **Key Benefits for Cybersecurity:**

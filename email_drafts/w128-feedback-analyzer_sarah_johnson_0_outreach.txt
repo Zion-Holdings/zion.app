@@ -1,10 +1,10 @@
-Subject: Unknown Service - Retail And Ecommerce Optimization
+Subject: Customer Feedback Analyzer - Retail And Ecommerce Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s retail and ecommerce operations.
 
-**Unknown Service**
+**Customer Feedback Analyzer**
 NLP-powered analysis of customer reviews, surveys, and support tickets. Identifies trends, sentiment, and actionable insights.
 
 **Key Benefits for Retail And Ecommerce:**

@@ -1,10 +1,10 @@
-Subject: AI Observability & MLOps - General Optimization
+Subject: Unknown Service - General Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s General operations.
 
-**AI Observability & MLOps**
+**Unknown Service**
 Monitor, debug, and optimize AI systems at scale. End-to-end observability for LLMs, agents, and ML pipelines with tracing, evaluation, and cost an...
 
 **Key Benefits for General:**

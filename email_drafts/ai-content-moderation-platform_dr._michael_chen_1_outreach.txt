@@ -1,10 +1,10 @@
-Subject: AI Content Moderation Platform - Marketing Optimization
+Subject: Unknown Service - Marketing Optimization
 
 Hi Dr. Michael Chen,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact HealthNet Solutions's Marketing operations.
 
-**AI Content Moderation Platform**
+**Unknown Service**
 Multi-modal moderation (text/image/video): NSFW, hate-speech, PII, copyright, brand-safety classifier; moderation queue + human-review.
 
 **Key Benefits for Marketing:**

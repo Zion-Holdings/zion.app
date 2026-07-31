@@ -1,10 +1,10 @@
-Subject: Threat Intelligence Platform - General Optimization
+Subject: Unknown Service - General Optimization
 
 Hi Amanda Foster,
 
-I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact MediCore Security's General operations.
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CryptoShield Security's General operations.
 
-**Threat Intelligence Platform**
+**Unknown Service**
 Curated IOC/IOA feed, TI graph, MITRE ATT&CK mapping, automated SIEM rule generation, and TI alert enrichment pipeline.
 
 **Key Benefits for General:**

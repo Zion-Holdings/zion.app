@@ -1,10 +1,10 @@
-Subject: AI Threat Hunter - Ai Optimization
+Subject: Unknown Service - Ai Optimization
 
 Hi Amanda Foster,
 
-I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact MediCore Security's AI operations.
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CryptoShield Security's AI operations.
 
-**AI Threat Hunter**
+**Unknown Service**
 Autonomous AI-powered threat hunting: continuous behavioural anomaly detection, novel attack chain reconstruction, MITRE ATT&CK mapping, custom hunt queries, natural-language investigation interface, and auto-generated incident reports.
 
 **Key Benefits for Ai:**

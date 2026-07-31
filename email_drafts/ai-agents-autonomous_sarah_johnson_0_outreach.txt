@@ -1,10 +1,10 @@
-Subject: Unknown Service - Finance Optimization
+Subject: AI Agents & Autonomous Workflows - Finance Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s Finance operations.
 
-**Unknown Service**
+**AI Agents & Autonomous Workflows**
 Deploy autonomous AI agents that reason, plan, and act. Multi-step task execution, tool use, and human-in-the-loop controls for enterprise automation.
 
 **Key Benefits for Finance:**

@@ -2,7 +2,7 @@ Subject: SIEM AI-Powered Log Analysis - Siem Optimization
 
 Hi Amanda Foster,
 
-I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CryptoShield Security's SIEM operations.
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact MediCore Security's SIEM operations.
 
 **SIEM AI-Powered Log Analysis**
 AI-powered siem solution for devops. Automated log analysis for incident detection and root cause analysis.

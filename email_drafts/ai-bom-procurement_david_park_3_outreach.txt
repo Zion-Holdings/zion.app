@@ -1,10 +1,10 @@
-Subject: Unknown Service - Manufacturing Optimization
+Subject: AI BOM & Procurement Optimiser - Manufacturing Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's Manufacturing operations.
 
-**Unknown Service**
+**AI BOM & Procurement Optimiser**
 Multi-tier bill-of-materials analyser. Optimises part sourcing, predicts shortages, recommends alternative components, and benchmarks against global market pricing for manufacturing.
 
 **Key Benefits for Manufacturing:**

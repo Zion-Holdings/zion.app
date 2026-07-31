@@ -202,18 +202,27 @@ def get_last_processed_count() -> int:
 
 def validate_service(service: Dict) -> Dict[str, Any]:
     """Validate a service entry and return validation result."""
+    # Use title if present, otherwise name
+    service_name = service.get('title') or service.get('name', service.get('id', 'Unknown'))
+    
     validation = {
         'valid': True,
         'service_id': service.get('id'),
-        'service_name': service.get('name'),
+        'service_name': service_name,
         'issues': [],
         'quality_score': 100
     }
     
-    # Check required fields (title can be derived from name if not present)
-    required_fields = ['id', 'name', 'description', 'industry', 'features', 'benefits']
+    # Check required fields (title/name can be derived if not present)
+    required_fields = ['id', 'description', 'industry', 'features', 'benefits']
     for field in required_fields:
-        if not service.get(field):
+        if field == 'title' or field == 'name':
+            # Title/name is optional if we have the other or if service has title field
+            if not (service.get('title') or service.get('name')):
+                validation['issues'].append(f"Missing required field: {field}")
+                validation['valid'] = False
+                validation['quality_score'] -= 10
+        elif not service.get(field):
             validation['issues'].append(f"Missing required field: {field}")
             validation['valid'] = False
             validation['quality_score'] -= 10
@@ -537,6 +546,9 @@ def run_validation_cycle(batch_size: int = 50) -> Dict[str, Any]:
     
     logger.info(f"[➕] Found {len(new_services)} new services to process")
     
+    # Limit to batch_size
+    services_to_process = new_services[:batch_size]
+    
     # Process new services
     validated_count = 0
     case_studies_created = 0
@@ -544,7 +556,7 @@ def run_validation_cycle(batch_size: int = 50) -> Dict[str, Any]:
     github_items_submitted = 0
     validated_items = []  # Track items for GitHub submission
     
-    for service in new_services:
+    for service in services_to_process:
         service_id = service.get('id')
         
         # Skip if already processed

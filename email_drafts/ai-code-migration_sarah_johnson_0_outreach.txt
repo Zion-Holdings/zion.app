@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: AI Code Migration & Legacy Modernization - General Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s General operations.
 
-**Unknown Service**
+**AI Code Migration & Legacy Modernization**
 AI-powered legacy code analysis, automated migration planning, and assisted code transformation from COBOL, mainframe, and legacy frameworks to modern cloud-native stacks.
 
 **Key Benefits for General:**

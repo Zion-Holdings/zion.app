@@ -1,10 +1,10 @@
-Subject: Compliance Automation Engine - General Optimization
+Subject: Unknown Service - General Optimization
 
 Hi Jennifer Adams,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact SecureNet Corp's General operations.
 
-**Compliance Automation Engine**
+**Unknown Service**
 Rule-based compliance engine that embeds regulatory logic into your data pipelines and APIs. Automates access reviews, entitlement certifications, policy violation detection, and remediation tracking.
 
 **Key Benefits for General:**

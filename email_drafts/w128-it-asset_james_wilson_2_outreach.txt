@@ -1,10 +1,10 @@
-Subject: Unknown Service - It Infrastructure Optimization
+Subject: IT Asset Discovery & Management - It Infrastructure Optimization
 
 Hi James Wilson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DevOps Dynamics's it infrastructure operations.
 
-**Unknown Service**
+**IT Asset Discovery & Management**
 Automated network discovery, CMDB management, and IT asset lifecycle tracking. Real-time visibility into all hardware and software assets.
 
 **Key Benefits for It Infrastructure:**

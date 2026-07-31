@@ -1,10 +1,10 @@
-Subject: Unknown Service - Finance Optimization
+Subject: Serverless API Platform - Finance Optimization
 
 Hi Robert Chen,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AltiCloud Services's Finance operations.
 
-**Unknown Service**
+**Serverless API Platform**
 Zero-infrastructure serverless REST + GraphQL API layer: auto-scales to millions of RPS, pay-per-invocation billing, built-in authentication, rate-limiting, caching, and observability. Includes free tier and CI/CD auto-deploy from Git.
 
 **Key Benefits for Finance:**

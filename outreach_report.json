@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-07-31 11:00:30 UTC",
+  "execution": {
+    "script": "rapid_fire_outreach_engine_v3.py",
+    "args": "--once --batch 500",
+    "status": "completed",
+    "exit_code": 0
+  },
+  "metrics": {
+    "emails_generated": 2000,
+    "total_sent": 2250,
+    "batch_size": 500,
+    "rotation": 1,
+    "drafts_created": 73161,
+    "sent_log_entries": 2650,
+    "industries_covered": 115
+  },
+  "prospects": [
+    {"name": "Sarah Johnson", "company": "TechStart Inc."},
+    {"name": "Dr. Michael Chen", "company": "HealthNet Solutions"},
+    {"name": "Rachel Martinez", "company": "FinTech Dynamics"},
+    {"name": "David Park", "company": "AI Innovators Lab"},
+    {"name": "Emily White", "company": "CloudScale Solutions"},
+    {"name": "William Turner", "company": "FinLedger Systems"},
+    {"name": "Victoria Scott", "company": "5GWave Technologies"}
+  ],
+  "consultation_link": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "output_path": "/Users/klebergarciaalcatrao/outreach_monitor/processed/",
+  "delivery_target": "telegram:8435383377",
+  "status": "COMPLETED"
+}

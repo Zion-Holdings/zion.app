@@ -1,10 +1,10 @@
-Subject: Unknown Service - Marketing Optimization
+Subject: AI Customer Intent Prediction Engine - Marketing Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's marketing operations.
 
-**Unknown Service**
+**AI Customer Intent Prediction Engine**
 Real-time customer intent prediction using behavioral signals, browsing patterns, and historical data. Identifies buying intent, support needs, and churn risk to trigger proactive engagement.
 
 **Key Benefits for Marketing:**

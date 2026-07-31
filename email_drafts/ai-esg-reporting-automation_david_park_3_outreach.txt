@@ -1,10 +1,10 @@
-Subject: Unknown Service - Sustainability Optimization
+Subject: AI ESG Reporting & Sustainability Automation - Sustainability Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's sustainability operations.
 
-**Unknown Service**
+**AI ESG Reporting & Sustainability Automation**
 Automated ESG data collection, analysis, and reporting platform for corporate sustainability teams. Supports GRI, SASB, TCFD, and CSRD frameworks.
 
 **Key Benefits for Sustainability:**

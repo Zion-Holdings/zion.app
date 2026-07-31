@@ -1,10 +1,10 @@
-Subject: AI Pet Health & Behavior Monitor - Consumer Optimization
+Subject: Unknown Service - Consumer Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s Consumer operations.
 
-**AI Pet Health & Behavior Monitor**
+**Unknown Service**
 Computer vision + wearable data for pet health: activity tracking, anomaly detection, breed-specific health risk scoring, and vet telemedicine integration. iOS + Android apps.
 
 **Key Benefits for Consumer:**

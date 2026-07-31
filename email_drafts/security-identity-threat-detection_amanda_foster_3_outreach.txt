@@ -1,10 +1,10 @@
-Subject: Security Identity Threat Detection & Response (ITDR) - Technology Optimization
+Subject: Unknown Service - Technology Optimization
 
 Hi Amanda Foster,
 
-I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact MediCore Security's Technology operations.
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CryptoShield Security's Technology operations.
 
-**Security Identity Threat Detection & Response (ITDR)**
+**Unknown Service**
 Protect identities from compromise with AI-powered threat detection. Detect credential theft, privilege escalation, anomalous authentication, and lateral movement across cloud and on-premises.
 
 **Key Benefits for Technology:**

@@ -227,17 +227,30 @@ def update_sitemap(services: List[Dict]) -> bool:
   </url>
 '''
         
-        # Add service URLs
+        # Add service URLs - use 'id' if present, otherwise generate from 'name'
         service_count = 0
         for service in services:
-            if 'id' in service:
+            # Generate URL-safe service identifier
+            if 'id' in service and service['id']:
                 service_id = service['id']
-                sitemap_content += f'''  <url>
+            elif 'name' in service and service['name']:
+                # Generate ID from name (slugify + hash suffix for uniqueness)
+                import hashlib
+                base_name = service['name'].lower().replace(' ', '-').replace('#', '')
+                name_hash = hashlib.md5(service['name'].encode()).hexdigest()[:8]
+                # Clean up the base name for URL
+                import re
+                clean_name = re.sub(r'[^a-z0-9-]', '', base_name)
+                service_id = f"{clean_name}-{name_hash}" if clean_name else hashlib.md5(service['name'].encode()).hexdigest()
+            else:
+                continue  # Skip services without id or name
+            
+            sitemap_content += f'''  <url>
     <loc>https://ziontechgroup.com/services/{service_id}</loc>
     <lastmod>{today}</lastmod>
   </url>
 '''
-                service_count += 1
+            service_count += 1
         
         sitemap_content += '</urlset>'
         

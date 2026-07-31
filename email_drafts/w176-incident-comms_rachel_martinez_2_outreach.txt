@@ -1,10 +1,10 @@
-Subject: Unknown Service - Devops Optimization
+Subject: IncidentComms — Status & Comms - Devops Optimization
 
 Hi Rachel Martinez,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact FinTech Dynamics's DevOps operations.
 
-**Unknown Service**
+**IncidentComms — Status & Comms**
 Professional incident communication: status page, stakeholder updates, templates, and timeline. Keep customers and leadership informed during outages.
 
 **Key Benefits for Devops:**

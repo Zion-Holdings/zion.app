@@ -14,7 +14,7 @@
 		<integer>5</integer>
 	</dict>
 	<key>cloudAssetCountPerTypeLastCheckDate</key>
-	<date>2026-07-30T22:34:44Z</date>
+	<date>2026-07-31T13:52:44Z</date>
 	<key>hasBatteryBudgetKey</key>
 	<true/>
 	<key>hasCellularBudgetKey</key>
@@ -30,8 +30,12 @@
 	<key>keychainCDPEnabled</key>
 	<true/>
 	<key>lastSyncDate</key>
-	<date>2026-07-31T07:10:56Z</date>
+	<date>2026-07-31T15:51:00Z</date>
+	<key>lowDiskSpace</key>
+	<true/>
 	<key>unBlockedReason</key>
 	<integer>1</integer>
+	<key>veryLowDiskSpace</key>
+	<true/>
 </dict>
 </plist>

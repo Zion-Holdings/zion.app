@@ -142,8 +142,13 @@ def load_existing_service_ids():
         if SERVICES_JSON_FILE.exists():
             with open(SERVICES_JSON_FILE, 'r') as f:
                 data = json.load(f)
+            # Handle both array format and object with 'services' key
             if isinstance(data, list):
                 for item in data:
+                    if isinstance(item, dict) and 'id' in item:
+                        ids.add(item['id'])
+            elif isinstance(data, dict) and 'services' in data:
+                for item in data['services']:
                     if isinstance(item, dict) and 'id' in item:
                         ids.add(item['id'])
     except Exception as e:
@@ -160,13 +165,24 @@ def generate_service_id(name, category):
 
 
 def add_service_to_catalog(service):
-    """Add service to JSON catalog."""
+    """Add service to JSON catalog with atomic write."""
+    import tempfile
+    import shutil
     try:
         if SERVICES_JSON_FILE.exists():
             with open(SERVICES_JSON_FILE, 'r') as f:
-                services = json.load(f)
+                data = json.load(f)
+            
+            # Handle both array format and object with 'services' key
+            if isinstance(data, dict) and 'services' in data:
+                services = data['services']
+                existing_structure = data  # Preserve other fields
+            else:
+                services = data if isinstance(data, list) else []
+                existing_structure = None
         else:
             services = []
+            existing_structure = None
         
         if not isinstance(services, list):
             services = []
@@ -177,8 +193,18 @@ def add_service_to_catalog(service):
         
         services.append(service)
         
-        with open(SERVICES_JSON_FILE, 'w') as f:
-            json.dump(services, f, indent=2)
+        # Preserve original structure or create new one
+        if existing_structure is not None:
+            output = existing_structure.copy()
+            output['services'] = services
+        else:
+            output = services
+        
+        # Atomic write: write to temp file, then rename
+        temp_file = SERVICES_JSON_FILE.with_suffix('.tmp')
+        with open(temp_file, 'w') as f:
+            json.dump(output, f, indent=2)
+        shutil.move(str(temp_file), str(SERVICES_JSON_FILE))
         
         return True
     except Exception as e:
@@ -199,14 +225,15 @@ def run_growth_cycle(batch_size=30):
     
     print(f"[Growth] Current services in catalog: {current_count}")
     
-    # Combine all service pools
+    # Combine all service pools (including emerging niches)
     all_services = (
-        HYPER_AI_SERVICES + 
-        HYPER_CLOUD_SERVICES + 
-        HYPER_SECURITY_SERVICES + 
+        HYPER_AI_SERVICES +
+        HYPER_CLOUD_SERVICES +
+        HYPER_SECURITY_SERVICES +
         HYPER_MICRO_SAAS +
         HYPER_AUTOMATION_SERVICES +
-        HYPER_DATA_SERVICES
+        HYPER_DATA_SERVICES +
+        HYPER_EMERGING_NICHES
     )
     
     import random
@@ -231,22 +258,57 @@ def run_growth_cycle(batch_size=30):
             service_copy.setdefault('icon', '🚀')
             service_copy.setdefault('href', f'/services/{service_id}')
             service_copy.setdefault('popular', False)
-            service_copy.setdefault('createdAt', datetime.now().isoformat())
+            service_copy['createdAt'] = datetime.now().isoformat()
             new_services.append(service_copy)
             
             if len(new_services) >= batch_size:
                 break
     
+    # Load existing data structure
+    if SERVICES_JSON_FILE.exists():
+        with open(SERVICES_JSON_FILE, 'r') as f:
+            data = json.load(f)
+        if isinstance(data, dict):
+            services_list = data.get('services', [])
+            growth_metrics = data.get('growth_metrics', {'cycles_run': 0, 'total_emails_sent': 0, 'total_prospects_contacted': 0, 'meetings_booked': 0, 'revenue_generated': 0})
+        else:
+            services_list = data if isinstance(data, list) else []
+            growth_metrics = {'cycles_run': 0, 'total_emails_sent': 0, 'total_prospects_contacted': 0, 'meetings_booked': 0, 'revenue_generated': 0}
+    else:
+        services_list = []
+        growth_metrics = {'cycles_run': 0, 'total_emails_sent': 0, 'total_prospects_contacted': 0, 'meetings_booked': 0, 'revenue_generated': 0}
+    
+    # Add new services (avoiding duplicates)
     added = []
     for service in new_services:
-        if add_service_to_catalog(service):
+        service_id = service.get('id')
+        if not any(s.get('id') == service_id for s in services_list):
+            services_list.append(service)
             added.append(service['name'])
             print(f"[Growth] Added: {service['name']}")
+    
+    # Update metadata
+    growth_metrics['cycles_run'] = growth_metrics.get('cycles_run', 0) + 1
+    
+    # Write updated data
+    output = {
+        'services': services_list,
+        'last_updated': datetime.now().isoformat(),
+        'total_services': len(services_list),
+        'growth_metrics': growth_metrics
+    }
+    
+    # Atomic write
+    import shutil
+    temp_file = SERVICES_JSON_FILE.with_suffix('.tmp')
+    with open(temp_file, 'w') as f:
+        json.dump(output, f, indent=2)
+    shutil.move(str(temp_file), str(SERVICES_JSON_FILE))
     
     return {
         'services_added': len(added),
         'added_services': added,
-        'total_services': current_count + len(added),
+        'total_services': len(services_list),
         'batch_requested': batch_size
     }
 

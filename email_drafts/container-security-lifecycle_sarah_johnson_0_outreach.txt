@@ -1,10 +1,10 @@
-Subject: Container & Kubernetes Security - General Optimization
+Subject: Unknown Service - General Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s General operations.
 
-**Container & Kubernetes Security**
+**Unknown Service**
 Full container security: registry scanning (Trivy/Clair), runtime protection (Falco), OPA admission controllers, SBOM attestation per build.
 
 **Key Benefits for General:**

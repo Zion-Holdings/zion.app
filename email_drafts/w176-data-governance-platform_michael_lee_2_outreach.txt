@@ -1,10 +1,10 @@
-Subject: Unknown Service - Data Governance Optimization
+Subject: Data Governance Platform - Data Governance Optimization
 
 Hi Michael Lee,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DataFlow Systems's Data Governance operations.
 
-**Unknown Service**
+**Data Governance Platform**
 Enterprise data governance: policy management, data classification, stewardship workflows, and compliance tracking. Govern your data assets properly.
 
 **Key Benefits for Data Governance:**

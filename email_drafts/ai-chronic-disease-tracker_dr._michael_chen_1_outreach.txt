@@ -1,10 +1,10 @@
-Subject: Unknown Service - Healthcare Optimization
+Subject: AI Chronic Disease Progression Tracker - Healthcare Optimization
 
 Hi Dr. Michael Chen,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact HealthNet Solutions's Healthcare operations.
 
-**Unknown Service**
+**AI Chronic Disease Progression Tracker**
 Longitudinal patient analytics: track chronic disease progression across EHR data, lab results, and wearables. AI identifies early deterioration signals, predicts hospitalisation risk, and generates personalised care plans.
 
 **Key Benefits for Healthcare:**

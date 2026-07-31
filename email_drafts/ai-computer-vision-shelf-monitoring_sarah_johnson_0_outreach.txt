@@ -1,10 +1,10 @@
-Subject: Computer Vision Shelf Monitoring - Finance Optimization
+Subject: Unknown Service - Finance Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s Finance operations.
 
-**Computer Vision Shelf Monitoring**
+**Unknown Service**
 Retail shelf stock-out detection, facings count, planogram compliance, and out-of-stock alert to store manager via Slack/POS.
 
 **Key Benefits for Finance:**

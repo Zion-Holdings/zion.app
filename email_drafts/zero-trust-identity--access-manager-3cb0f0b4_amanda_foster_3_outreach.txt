@@ -2,7 +2,7 @@ Subject: Zero-Trust Identity & Access Manager - Enterprise Security Optimization
 
 Hi Amanda Foster,
 
-I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CryptoShield Security's Enterprise Security operations.
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact MediCore Security's Enterprise Security operations.
 
 **Zero-Trust Identity & Access Manager**
 Implements zero-trust security architecture with continuous authentication and adaptive access controls.

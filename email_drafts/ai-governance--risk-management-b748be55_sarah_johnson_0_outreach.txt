@@ -1,10 +1,10 @@
-Subject: Unknown Service - Ai Optimization
+Subject: AI Governance & Risk Management - Ai Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s AI operations.
 
-**Unknown Service**
+**AI Governance & Risk Management**
 AI risk governance, bias review, model inventory, and approval workflows for regulated AI deployments.
 
 **Key Benefits for Ai:**

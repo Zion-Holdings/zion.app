@@ -1,10 +1,10 @@
-Subject: AI-Powered Performance Monitoring - General Optimization
+Subject: Unknown Service - General Optimization
 
 Hi Dr. Michael Chen,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact HealthNet Solutions's General operations.
 
-**AI-Powered Performance Monitoring**
+**Unknown Service**
 Infrastructure + application performance monitoring powered by AI: anomaly detection, root-cause analysis, predictive alerts, and auto-remediation for microservices, databases, and cloud infrastructure.
 
 **Key Benefits for General:**

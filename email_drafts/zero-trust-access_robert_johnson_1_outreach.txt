@@ -1,10 +1,10 @@
-Subject: Unknown Service - Finance Optimization
+Subject: Zero Trust Access Gateway - Finance Optimization
 
 Hi Robert Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact ThreatGuard AI's Finance operations.
 
-**Unknown Service**
+**Zero Trust Access Gateway**
 Replace traditional VPN with continuous identity-verified access — least-privilege, device-aware, audit-logged connections to every app for hybrid and remote-first enterprises.
 
 **Key Benefits for Finance:**

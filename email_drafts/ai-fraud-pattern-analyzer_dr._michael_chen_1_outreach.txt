@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: AI Fraud Pattern Analyzer - General Optimization
 
 Hi Dr. Michael Chen,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact HealthNet Solutions's General operations.
 
-**Unknown Service**
+**AI Fraud Pattern Analyzer**
 Deep behavioral profiling: baseline per user then alerts on anomalous patterns — login geography, transaction velocity, amount/type deviation, withdrawn account signals. Links across accounts to detect ring fraud.
 
 **Key Benefits for General:**

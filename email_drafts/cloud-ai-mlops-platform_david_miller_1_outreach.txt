@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: AI/MLOps Cloud Platform - General Optimization
 
 Hi David Miller,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact NexGen Cloud's General operations.
 
-**Unknown Service**
+**AI/MLOps Cloud Platform**
 Managed Kubernetes GPU clusters, model registry (MLflow), distributed training orchestrator, LLM serving vLLM/TGI, and GPU auto-scaling.
 
 **Key Benefits for General:**

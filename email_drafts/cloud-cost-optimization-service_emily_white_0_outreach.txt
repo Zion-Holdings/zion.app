@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: Cloud Cost Optimization (FinOps) - General Optimization
 
 Hi Emily White,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CloudScale Solutions's General operations.
 
-**Unknown Service**
+**Cloud Cost Optimization (FinOps)**
 ML-driven cloud cost optimization across AWS, Azure, and GCP with right-sizing recommendations, reserved instance optimization, and anomaly detection.
 
 **Key Benefits for General:**

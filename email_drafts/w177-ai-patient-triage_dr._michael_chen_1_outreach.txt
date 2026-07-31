@@ -1,10 +1,10 @@
-Subject: Unknown Service - Healthcare Optimization
+Subject: AI Patient Triage Assistant - Healthcare Optimization
 
 Hi Dr. Michael Chen,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact HealthNet Solutions's Healthcare operations.
 
-**Unknown Service**
+**AI Patient Triage Assistant**
 AI patient triage: symptom assessment, urgency scoring, care path recommendation, ER diversion.
 
 **Key Benefits for Healthcare:**

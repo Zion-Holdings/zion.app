@@ -1,10 +1,10 @@
-Subject: Unknown Service - Analytics Optimization
+Subject: GeoAnalytics — Location Intelligence - Analytics Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s Analytics operations.
 
-**Unknown Service**
+**GeoAnalytics — Location Intelligence**
 Location analytics: geocoding, heatmaps, trade area analysis, drive-time rings, and demographic enrichment. Turn addresses into insights.
 
 **Key Benefits for Analytics:**

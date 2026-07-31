@@ -46,4 +46,4 @@ Subject: 3 insights for Security leaders
 
 ---
 
-*Generated: 2026-07-31 06:50 UTC*
+*Generated: 2026-07-31 10:28 UTC*

@@ -3,3 +3,6 @@
 	name = Hermes Agent
 [http]
 	postBuffer = 524288000
+[core]
+	fsync = false
+	fsyncObjectFiles = false

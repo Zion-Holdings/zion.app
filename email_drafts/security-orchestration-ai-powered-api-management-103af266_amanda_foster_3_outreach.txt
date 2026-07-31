@@ -2,7 +2,7 @@ Subject: Security Orchestration AI-Powered API Management - Security Orchestrati
 
 Hi Amanda Foster,
 
-I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact MediCore Security's Security Orchestration operations.
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CryptoShield Security's Security Orchestration operations.
 
 **Security Orchestration AI-Powered API Management**
 AI-powered security orchestration solution for api management. Intelligent API gateway with rate limiting, authentication, and analytics.

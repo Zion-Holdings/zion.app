@@ -1,10 +1,10 @@
-Subject: Unknown Service - Devsecops Optimization
+Subject: Software Supply Chain Security - Devsecops Optimization
 
 Hi Kevin Patel,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CyberDefense Pro's DevSecOps operations.
 
-**Unknown Service**
+**Software Supply Chain Security**
 Secure your software supply chain: dependency scanning, SBOM management, build provenance (SLSA), artifact signing, and pipeline hardening.
 
 **Key Benefits for Devsecops:**

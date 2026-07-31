@@ -1,10 +1,10 @@
-Subject: Security Event Correlator - Soc Optimization
+Subject: Unknown Service - Soc Optimization
 
 Hi Amanda Foster,
 
-I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact MediCore Security's SOC operations.
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CryptoShield Security's SOC operations.
 
-**Security Event Correlator**
+**Unknown Service**
 Correlates security telemetry from endpoints, identities, cloud, and networks into prioritized incident candidates.
 
 **Key Benefits for Soc:**

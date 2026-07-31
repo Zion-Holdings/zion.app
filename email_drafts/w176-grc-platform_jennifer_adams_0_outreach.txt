@@ -1,10 +1,10 @@
-Subject: Unknown Service - Governance Optimization
+Subject: GRC Platform (Governance, Risk, Compliance) - Governance Optimization
 
 Hi Jennifer Adams,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact SecureNet Corp's Governance operations.
 
-**Unknown Service**
+**GRC Platform (Governance, Risk, Compliance)**
 Integrated GRC platform: risk register, policy management, compliance tracking, audit management, and incident correlation. One platform for governance.
 
 **Key Benefits for Governance:**

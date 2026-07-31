@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: AI Document Intelligence - General Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's General operations.
 
-**Unknown Service**
+**AI Document Intelligence**
 End-to-end intelligent document processing with 99%+ accuracy OCR, classification, field-level data extraction, and automated workflow triggers.
 
 **Key Benefits for General:**

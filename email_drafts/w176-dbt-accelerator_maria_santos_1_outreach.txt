@@ -1,10 +1,10 @@
-Subject: Unknown Service - Analytics Engineering Optimization
+Subject: dbt Analytics Engineering Accelerator - Analytics Engineering Optimization
 
 Hi Maria Santos,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DataInsight Pro's Analytics Engineering operations.
 
-**Unknown Service**
+**dbt Analytics Engineering Accelerator**
 Accelerate dbt implementation: project setup, modeling patterns, testing framework, CI/CD, and performance optimization for dbt Core and Cloud.
 
 **Key Benefits for Analytics Engineering:**

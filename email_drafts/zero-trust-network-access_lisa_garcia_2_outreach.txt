@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: Zero-Trust Network Access (ZTNA) - General Optimization
 
 Hi Lisa Garcia,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CloudFirst Networks's General operations.
 
-**Unknown Service**
+**Zero-Trust Network Access (ZTNA)**
 Zero-trust identity-aware proxy: every connection authenticated per user/device/context. Granular per-app policies, micro-segmentation, session recording.
 
 **Key Benefits for General:**

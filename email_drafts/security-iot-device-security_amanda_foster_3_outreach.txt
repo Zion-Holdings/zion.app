@@ -1,10 +1,10 @@
-Subject: IoT Device Security Platform - Iot Optimization
+Subject: Unknown Service - Iot Optimization
 
 Hi Amanda Foster,
 
-I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact MediCore Security's IoT operations.
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CryptoShield Security's IoT operations.
 
-**IoT Device Security Platform**
+**Unknown Service**
 Secure IoT device fleets with continuous monitoring, firmware vulnerability detection, and automated patch management for industrial and consumer IoT.
 
 **Key Benefits for Iot:**

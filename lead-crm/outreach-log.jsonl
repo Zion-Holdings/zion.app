@@ -2,3 +2,8 @@
 {"ts": "2026-07-15T00:03:27.434980+00:00", "event": "send_disabled_analysis", "status": "send_disabled_improved", "tailored": 25}
 {"ts": "2026-07-15T02:06:35.074272+00:00", "event": "send_disabled_analysis", "status": "send_disabled_improved", "tailored": 25}
 {"ts": "2026-07-16T19:06:37.058809+00:00", "event": "send_disabled_analysis", "status": "send_disabled_improved", "tailored": 24}
+{"ts": "2026-07-31T09:50:23.089836+00:00", "event": "send", "to": "no-reply@updates.coursiv.co", "subject": "Parceria Zion Tech Group - Automação Inteligente", "message_id": "19fb794fe5f95bb2", "thread_id": "19b306a308355bd9", "provider": "gmail_api", "status": "sent"}
+{"ts": "2026-07-31T09:50:27.954692+00:00", "event": "send", "to": "timedemarketing@resultadosdigitaismail.com.br", "subject": "Parceria Zion Tech Group - Automação Inteligente", "message_id": "19fb79511270b216", "thread_id": "19639476121eef0a", "provider": "gmail_api", "status": "sent"}
+{"ts": "2026-07-31T09:50:32.402577+00:00", "event": "send", "to": "timedemarketing@resultadosdigitais-mkt.com.br", "subject": "Parceria Zion Tech Group - Automação Inteligente", "message_id": "19fb7952268201de", "thread_id": "1961f5c2f0ebe970", "provider": "gmail_api", "status": "sent"}
+{"ts": "2026-07-31T09:50:34.576229+00:00", "event": "send", "to": "santosdenovais@xwf.google.com", "subject": "Parceria Zion Tech Group - Automação Inteligente", "message_id": "19fb7952a63fe73f", "thread_id": "195cea773bd76f2c", "provider": "gmail_api", "status": "sent"}
+{"ts": "2026-07-31T09:50:36.802061+00:00", "event": "send", "to": "partners@cerebras.ai", "subject": "Partnership - Zion Tech Group AI Solutions", "message_id": "19fb79532ab6343e", "thread_id": "19fb79532ab6343e", "provider": "gmail_api", "status": "sent"}

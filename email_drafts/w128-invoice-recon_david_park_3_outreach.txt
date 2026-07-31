@@ -1,10 +1,10 @@
-Subject: Unknown Service - Financial Services Optimization
+Subject: Smart Invoice Reconciliation - Financial Services Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's financial services operations.
 
-**Unknown Service**
+**Smart Invoice Reconciliation**
 AI-powered invoice matching and reconciliation. Auto-matches invoices to payments, flags discrepancies, and syncs with accounting systems.
 
 **Key Benefits for Financial Services:**

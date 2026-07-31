@@ -2,7 +2,7 @@ Subject: Threat Intelligence AI-Powered Data Lineage - Threat Intelligence Optim
 
 Hi Amanda Foster,
 
-I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CryptoShield Security's Threat Intelligence operations.
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact MediCore Security's Threat Intelligence operations.
 
 **Threat Intelligence AI-Powered Data Lineage**
 AI-powered threat intelligence solution for data governance. Automated tracking of data flow from source to consumption.

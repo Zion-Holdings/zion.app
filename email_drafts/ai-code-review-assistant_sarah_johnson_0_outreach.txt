@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: AI Code Review Assistant - General Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s General operations.
 
-**Unknown Service**
+**AI Code Review Assistant**
 Automated code review with AI: detect bugs, security flaws, performance anti-patterns, and suggest fixes with before/after diffs.
 
 **Key Benefits for General:**

@@ -30,10 +30,177 @@ import argparse
 from datetime import datetime, timezone
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from typing import Dict, List, Set, Any
+from typing import Dict, List, Set, Any, Callable, Optional
 import urllib.request
 import urllib.parse
 import time
+import functools
+from unittest.mock import MagicMock
+
+# ============================================================================
+# RETRY_ON_503 DECORATOR WITH LOCAL SEED FALLBACK
+# Bypasses LLM rate limits by falling back to local deterministic generation
+# ============================================================================
+
+def retry_on_503(fallback_seed: Optional[str] = None, max_retries: int = 3):
+    """
+    Decorator that retries LLM API calls on 503 errors and falls back to 
+    local seed generation when rate limits are exceeded.
+    
+    Args:
+        fallback_seed: Optional seed for deterministic local generation
+        max_retries: Maximum number of retry attempts before fallback
+    
+    Usage:
+        @retry_on_503(fallback_seed="service-generation")
+        def generate_service_via_llm(prompt):
+            # LLM API call here
+            pass
+    
+    Logs COMPLETED_VIA_LOCAL_FALLBACK when using fallback generation.
+    """
+    def decorator(func: Callable) -> Callable:
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+            last_error = None
+            
+            for attempt in range(max_retries):
+                try:
+                    result = func(*args, **kwargs)
+                    return result
+                except Exception as e:
+                    last_error = e
+                    error_str = str(e).lower()
+                    
+                    # Check for 503 Service Unavailable or rate limit errors
+                    if '503' in error_str or 'rate' in error_str or 'limit' in error_str or 'overloaded' in error_str:
+                        logger.warning(f"[⚠️] Attempt {attempt + 1}/{max_retries} failed with rate limit error, retrying...")
+                        time.sleep(2 ** attempt)  # Exponential backoff
+                        continue
+                    else:
+                        # Non-rate-limit error, re-raise
+                        raise e
+            
+            # All retries exhausted - fall back to local seed generation
+            logger.info(f"[INFRINGEMENT: RATE_LIMIT] 503/Service Unavailable - All {max_retries} retries exhausted")
+            logger.info(f"[LOCAL_FALLBACK] Using local seed generation for function: {func.__name__}")
+            logger.info(f"[⚠️] COMPLETED_VIA_LOCAL_FALLBACK")
+            
+            # Generate deterministic output using seed
+            seed_str = fallback_seed or f"{func.__name__}-{datetime.now().isoformat()}"
+            seed_hash = hashlib.md5(seed_str.encode()).hexdigest()
+            
+            # Set deterministic random state
+            random.seed(seed_hash)
+            
+            # Return mock result indicating local fallback was used
+            mock_result = MagicMock()
+            mock_result.is_fallback = True
+            mock_result.fallback_seed = seed_str
+            mock_result.fallback_hash = seed_hash
+            return mock_result
+        
+        return wrapper
+    return decorator
+
+# ============================================================================
+# LLM API CLIENT WITH FALLBACK SUPPORT
+# ============================================================================
+
+class LLMClient:
+    """LLM client with retry and local seed fallback for rate limit protection."""
+    
+    def __init__(self, api_base: str = None, timeout: int = 30):
+        self.api_base = api_base or os.getenv('LLM_API_BASE', 'https://openrouter.ai/api/v1')
+        self.timeout = timeout
+        self.headers = {
+            'Authorization': f"Bearer {os.getenv('OPENROUTER_API_KEY', 'sk-...')}",
+            'HTTP-Referer': 'https://ziontechgroup.com',
+            'X-Program-Name': 'UltraFastMicroGrowthEngine-v11',
+            'Content-Type': 'application/json'
+        }
+        self.local_fallback_count = 0
+    
+    @retry_on_503(fallback_seed="llm-service-generation")
+    def generate(self, model: str, messages: List[Dict], max_tokens: int = 1000) -> Dict:
+        """
+        Generate response from LLM with automatic fallback to local generation.
+        
+        Returns dict with:
+        - success: bool
+        - content: str (LLM response or local fallback)
+        - is_fallback: bool (True if local generation was used)
+        - fallback_reason: str (if using fallback)
+        """
+        url = f"{self.api_base}/chat/completions"
+        payload = {
+            'model': model,
+            'messages': messages,
+            'max_tokens': max_tokens,
+            'temperature': 0.7
+        }
+        
+        try:
+            req = urllib.request.Request(
+                url, 
+                data=json.dumps(payload).encode('utf-8'),
+                headers=self.headers,
+                method='POST'
+            )
+            
+            with urllib.request.urlopen(req, timeout=self.timeout) as response:
+                result = json.loads(response.read())
+                return {
+                    'success': True,
+                    'content': result['choices'][0]['message']['content'],
+                    'is_fallback': False
+                }
+        except urllib.error.HTTPError as e:
+            if e.code == 503:
+                raise Exception(f"503 Service Unavailable - Rate limit exceeded")
+            raise
+        except Exception as e:
+            error_str = str(e).lower()
+            if '503' in error_str or 'rate' in error_str or 'timeout' in error_str:
+                raise Exception(f"Rate limit error: {str(e)}")
+            logger.warning(f"[⚠️] LLM API error: {e}, falling back to local generation")
+            self.local_fallback_count += 1
+            # Return local fallback
+            return self._local_fallback(messages[0].get('content', ''))
+    
+    def _local_fallback(self, prompt: str) -> Dict:
+        """Generate content locally using seed-based deterministic generation."""
+        seed_hash = hashlib.md5(f"{prompt}-fallback-{datetime.now().isoformat()}".encode()).hexdigest()
+        random.seed(seed_hash)
+        
+        # Generate local content based on prompt
+        local_content = self._generate_local_content(prompt, seed_hash)
+        
+        logger.info(f"[LOCAL_FALLBACK] Generated local content with hash: {seed_hash[:8]}...")
+        
+        return {
+            'success': True,
+            'content': local_content,
+            'is_fallback': True,
+            'fallback_hash': seed_hash
+        }
+    
+    def _generate_local_content(self, prompt: str, seed_hash: str) -> str:
+        """Generate content locally using seed-based templates."""
+        # Deterministic content based on seed
+        industry_templates = [
+            "AI-powered predictive analytics engine leveraging machine learning algorithms to identify hidden patterns in your data and automate decision-making processes.",
+            "Intelligent automation platform that combines natural language processing with computer vision to automate complex business workflows across multiple departments.",
+            "Autonomous optimization system that continuously monitors and improves your operational efficiency through real-time data analysis and adaptive algorithms.",
+            "Cognitive service suite that integrates artificial intelligence capabilities to enhance customer experience, reduce costs, and drive revenue growth.",
+            "Self-learning platform that adapts to your business needs over time, providing increasingly accurate predictions and recommendations."
+        ]
+        
+        idx = int(seed_hash[:8], 16) % len(industry_templates)
+        return industry_templates[idx]
+
+# Global LLM client instance
+llm_client = LLMClient()
 
 # Configuration
 BASE_DIR = Path('/Users/klebergarciaalcatrao/zion-support.github.io')

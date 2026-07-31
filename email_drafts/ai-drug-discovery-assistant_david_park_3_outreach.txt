@@ -1,10 +1,10 @@
-Subject: Unknown Service - Healthcare Optimization
+Subject: AI Drug Discovery & Molecular Design Assistant - Healthcare Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's Healthcare operations.
 
-**Unknown Service**
+**AI Drug Discovery & Molecular Design Assistant**
 AI platform for early drug discovery: molecular generation, target binding affinity prediction, ADMET forecasting, patent landscape analysis, and pre-clinical trial candidate ranking powered by graph neural networks.
 
 **Key Benefits for Healthcare:**

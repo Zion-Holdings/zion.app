@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: AI Customer Support Agent - General Optimization
 
 Hi David Park,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's General operations.
 
-**Unknown Service**
+**AI Customer Support Agent**
 Fully automated 24/7 customer support using RAG + LLMs: answer FAQs, troubleshoot issues, process returns, and escalate complex tickets with context handoff.
 
 **Key Benefits for General:**

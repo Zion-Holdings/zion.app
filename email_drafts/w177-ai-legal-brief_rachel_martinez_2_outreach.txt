@@ -1,10 +1,10 @@
-Subject: Unknown Service - Legal Optimization
+Subject: AI Legal Brief Analyzer - Legal Optimization
 
 Hi Rachel Martinez,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact FinTech Dynamics's Legal operations.
 
-**Unknown Service**
+**AI Legal Brief Analyzer**
 Analyze legal briefs: argument extraction, precedent matching, strength scoring, counter-argument suggestions.
 
 **Key Benefits for Legal:**

@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: Container Registry + Trivy Scan - General Optimization
 
 Hi Robert Chen,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AltiCloud Services's General operations.
 
-**Unknown Service**
+**Container Registry + Trivy Scan**
 Private container registry with built-in Trivy CVE scanning, SBOM generation, image signing, and promotion pipeline (dev→staging→prod).
 
 **Key Benefits for General:**

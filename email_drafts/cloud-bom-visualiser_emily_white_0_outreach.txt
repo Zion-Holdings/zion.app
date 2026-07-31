@@ -1,10 +1,10 @@
-Subject: Unknown Service - General Optimization
+Subject: Cloud BOM & Dependency Visualiser - General Optimization
 
 Hi Emily White,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CloudScale Solutions's General operations.
 
-**Unknown Service**
+**Cloud BOM & Dependency Visualiser**
 Map every cloud dependency from DNS records and load balancers to container images and Lambda layers. Visual graph with change impact analysis.
 
 **Key Benefits for General:**

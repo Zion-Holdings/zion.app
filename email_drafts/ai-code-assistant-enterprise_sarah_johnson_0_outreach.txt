@@ -1,10 +1,10 @@
-Subject: Unknown Service - Finance Optimization
+Subject: AI Code Assistant (Enterprise) - Finance Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s Finance operations.
 
-**Unknown Service**
+**AI Code Assistant (Enterprise)**
 Private, fine-tuned AI coding copilot trained on your internal repositories with role-based access and SOC 2 compliance.
 
 **Key Benefits for Finance:**

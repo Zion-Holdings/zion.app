@@ -1,10 +1,10 @@
-Subject: Unknown Service - Finance Optimization
+Subject: AI Expense Categorisation & Audit - Finance Optimization
 
 Hi Sarah Johnson,
 
 I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s Finance operations.
 
-**Unknown Service**
+**AI Expense Categorisation & Audit**
 ML engine auto-categorises business expenses by GL code, flags policy violations, and generates audit-ready reports for your finance team.
 
 **Key Benefits for Finance:**
