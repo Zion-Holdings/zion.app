@@ -387,14 +387,14 @@ export default function HomePage() {
             <ServiceCounter /> real-world AI, IT, cloud, security, data, automation, micro-SaaS, DevOps, blockchain, and IoT services — from machine learning to cybersecurity, CRM to 5G networks.
             Get a free, custom proposal in minutes.
           </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <Link href="/configurator" className="btn-primary text-lg px-10 py-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+              <Link href="/contact/" className="btn-primary text-lg px-10 py-4">
                 ⚡ Get Your Custom Proposal →
               </Link>
               <Link href="/services/" className="btn-secondary text-lg px-10 py-4">
                 {`🛠️ Explore All ${serviceCount}+ Services`}
               </Link>
-              <a href="tel:+13024640950" className="btn-secondary text-lg px-10 py-4">
+              <a href="tel:+130****0950" className="btn-secondary text-lg px-10 py-4">
                 ☎ +1 302 464 0950
               </a>
             </div>
@@ -1130,7 +1130,7 @@ export default function HomePage() {
                 >
                   View Full Page →
                 </Link>
-                <Link href="/configurator" className="btn-secondary px-6 py-3 text-sm" onClick={() => setQuickView(null)}>
+                <Link href="/contact/" className="btn-secondary px-6 py-3 text-sm" onClick={() => setQuickView(null)}>
                   ⚙️ Configure This Service
                 </Link>
                 <a href="mailto:kleber@ziontechgroup.com" className="text-sm text-purple-300 hover:text-purple-200 px-4 py-3 self-center">
@@ -1199,7 +1199,7 @@ export default function HomePage() {
               Delivered to your inbox as a PDF within 24 hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/configurator" className="btn-primary text-lg px-10 py-4">
+              <Link href="/contact/" className="btn-primary text-lg px-10 py-4">
                 ⚙️ Start Configurator →
               </Link>
               <a href="mailto:kleber@ziontechgroup.com" className="btn-secondary text-lg px-10 py-4">
@@ -1297,7 +1297,7 @@ export default function HomePage() {
             <Link href="/faq/" className="hover:text-purple-400 transition">❓ FAQ</Link>
             <Link href="/industry-solutions/" className="hover:text-purple-400 transition">🏭 Industry Solutions</Link>
             <Link href="/services/" className="hover:text-purple-400 transition">🛠️ All Services</Link>
-            <Link href="/configurator" className="hover:text-purple-400 transition">⚙️ Configurator</Link>
+            <Link href="/contact/" className="hover:text-purple-400 transition">⚙️ Configurator</Link>
             <Link href="/proposals/" className="hover:text-purple-400 transition">📄 Proposals</Link>
             <Link href="/partners/" className="hover:text-purple-400 transition">🤝 Partners</Link>
             <Link href="/status/" className="hover:text-green-400 transition">● System Status</Link>
