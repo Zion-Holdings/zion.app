@@ -1,0 +1,25 @@
+Subject: Managed Endpoint Detection & Response (EDR) - General Optimization
+
+Hi Alex Morgan,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DeepLearn AI's General operations.
+
+**Managed Endpoint Detection & Response (EDR)**
+24/7 monitored EDR service with threat hunting, ransomware rollback, and 15-minute SLA for critical alerts. Includes managed SOC.
+
+**Key Benefits for General:**
+- Reduce costs with managed endpoint detection & response (edr)
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $299/mo/month
+- Pro: $899/mo/month  
+- Enterprise: $2,999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

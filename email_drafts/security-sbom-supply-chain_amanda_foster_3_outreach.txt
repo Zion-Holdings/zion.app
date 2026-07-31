@@ -1,0 +1,25 @@
+Subject: SBOM & Supply Chain Security - Manufacturing Optimization
+
+Hi Amanda Foster,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact MediCore Security's Manufacturing operations.
+
+**SBOM & Supply Chain Security**
+Supply chain security platform: SBOM & VEX generation (every build/build event), CVE SLSA provenance score, dependency-graph diff for every PR, SLSA Level 3 attestation, reproducible-build verification.
+
+**Key Benefits for Manufacturing:**
+- Reduce costs with sbom & supply chain security
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $299/mo/month
+- Pro: $899/mo/month  
+- Enterprise: $2,999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

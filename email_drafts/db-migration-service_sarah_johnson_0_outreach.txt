@@ -1,0 +1,25 @@
+Subject: Database Migration Service - Finance Optimization
+
+Hi Sarah Johnson,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s Finance operations.
+
+**Database Migration Service**
+Homogeneous and heterogeneous database migrations — on-prem to cloud, between engines (Oracle→Postgres, MySQL→CockroachDB) with zero-downtime cutovers.
+
+**Key Benefits for Finance:**
+- Reduce costs with database migration service
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $499/mo/month
+- Pro: $1,499/mo/month  
+- Enterprise: $4,999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

@@ -1,0 +1,25 @@
+Subject: Unknown Service - Infrastructure Optimization
+
+Hi David Miller,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact NexGen Cloud's Infrastructure operations.
+
+**Unknown Service**
+Deploy and manage edge applications: IoT data processing, CDN functions, low-latency compute at 300+ global PoPs.
+
+**Key Benefits for Infrastructure:**
+- Sub-10ms latency globally
+- IoT processing at edge reduces bandwidth
+- Edge functions for real-time logic
+
+**Pricing:**
+- Basic: $199/mo/month
+- Pro: $599/mo/month  
+- Enterprise: $1,999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

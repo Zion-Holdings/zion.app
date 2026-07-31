@@ -1,0 +1,25 @@
+Subject: Network Security & Zero Trust - Network Optimization
+
+Hi David Park,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's Network operations.
+
+**Network Security & Zero Trust**
+Zero trust network access, microsegmentation, DNS security, and threat prevention for hybrid and remote environments.
+
+**Key Benefits for Network:**
+- Reduce lateral movement risk
+- Secure remote access without VPN sprawl
+- Protect DNS layer from exfiltration
+
+**Pricing:**
+- Basic: 999/month
+- Pro: 2999/month  
+- Enterprise: 9999/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

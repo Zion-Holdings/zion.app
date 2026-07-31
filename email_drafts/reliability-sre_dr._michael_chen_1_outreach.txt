@@ -1,0 +1,25 @@
+Subject: Unknown Service - Finance Optimization
+
+Hi Dr. Michael Chen,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact HealthNet Solutions's Finance operations.
+
+**Unknown Service**
+SRE as a Service: SLO and SLI and SLA design, error-budget management, incident command, postmortem facilitation, and runbook automation. 99.9% uptime guarantee for regulated digital services.
+
+**Key Benefits for Finance:**
+- Reduce costs with reliability platform & sre enablement
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $299/mo/month
+- Pro: $899/mo/month  
+- Enterprise: $2,999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

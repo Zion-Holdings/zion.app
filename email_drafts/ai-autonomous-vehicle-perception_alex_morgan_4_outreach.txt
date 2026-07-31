@@ -1,0 +1,25 @@
+Subject: AI Autonomous Vehicle Perception System - Automotive Optimization
+
+Hi Alex Morgan,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DeepLearn AI's Automotive operations.
+
+**AI Autonomous Vehicle Perception System**
+Computer vision and sensor fusion for autonomous vehicles. Object detection, lane tracking, pedestrian prediction, and real-time decision making.
+
+**Key Benefits for Automotive:**
+- Improve autonomous driving safety
+- Reduce perception latency
+- Handle edge cases with AI
+
+**Pricing:**
+- Basic: $9,999/mo/month
+- Pro: $29,999/mo/month  
+- Enterprise: Custom/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

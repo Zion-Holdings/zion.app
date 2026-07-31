@@ -24,7 +24,7 @@ from datetime import datetime
 from pathlib import Path
 
 # Configuration
-BASE_DIR = Path('/Users/klebergarciaalcatrao/zion-techgroup')
+BASE_DIR = Path('/Users/klebergarciaalcatrao/zion-support.github.io')
 SERVICES_JSON_FILE = BASE_DIR / 'app' / 'data' / 'servicesData.json'
 
 # Hyper-accelerated service pools

@@ -1,0 +1,25 @@
+Subject: Database Optimization & DBA Support - Database Optimization
+
+Hi Sarah Johnson,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s Database operations.
+
+**Database Optimization & DBA Support**
+Performance tuning, indexing, query optimization, HA/DR design, and managed DBA support for SQL and NoSQL databases.
+
+**Key Benefits for Database:**
+- Reduce database latency
+- Improve query throughput
+- Keep databases available with tested DR
+
+**Pricing:**
+- Basic: 999/month
+- Pro: 2999/month  
+- Enterprise: 9999/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

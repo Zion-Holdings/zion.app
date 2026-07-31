@@ -1,0 +1,25 @@
+Subject: Unknown Service - Hybrid Optimization
+
+Hi Rachel Martinez,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact FinTech Dynamics's Hybrid operations.
+
+**Unknown Service**
+Cross-cloud orchestration, workload placement, policy automation, cost visibility, and governance across AWS, Azure, and GCP.
+
+**Key Benefits for Hybrid:**
+- Run workloads in the right cloud
+- Reduce cross-cloud management cost
+- Govern multi-cloud without slowdowns
+
+**Pricing:**
+- Basic: 999/month
+- Pro: 2999/month  
+- Enterprise: 9999/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

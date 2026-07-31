@@ -1,0 +1,25 @@
+Subject: Unknown Service - General Optimization
+
+Hi David Miller,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact NexGen Cloud's General operations.
+
+**Unknown Service**
+Unified networking across private DC + public clouds: VPC peering, VPN/Direct Connect/Interconnect, centralized routing, cloud firewall, Istio/Linkerd cross-cloud mesh.
+
+**Key Benefits for General:**
+- Reduce costs with hybrid multi-cloud networking
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $99/mo/month
+- Pro: $349/mo/month  
+- Enterprise: $1,299/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

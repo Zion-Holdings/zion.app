@@ -1,0 +1,25 @@
+Subject: Unknown Service - Saas Optimization
+
+Hi David Miller,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact NexGen Cloud's SaaS operations.
+
+**Unknown Service**
+S3/GCS/Azure Blob lifecycle: retention policy, litigation hold, WORM locking, legal export, and SaaS-data export automation.
+
+**Key Benefits for Saas:**
+- Reduce costs with cloud storage lifecycle & compliance
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $99/mo/month
+- Pro: $349/mo/month  
+- Enterprise: $1,299/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

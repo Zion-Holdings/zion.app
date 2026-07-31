@@ -1,0 +1,25 @@
+Subject: Unknown Service - Data Engineering Optimization
+
+Hi Andrew Brooks,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact Insight360 Group's Data Engineering operations.
+
+**Unknown Service**
+Self-service data preparation: cleaning, transformation, deduplication, enrichment. No-code for analysts.
+
+**Key Benefits for Data Engineering:**
+- Self-service prep reduces analyst wait time
+- Deduplication improves data quality
+- Enrichment adds context to raw data
+
+**Pricing:**
+- Basic: $99/mo/month
+- Pro: $299/mo/month  
+- Enterprise: $999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

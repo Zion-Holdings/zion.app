@@ -1,0 +1,25 @@
+Subject: Unknown Service - Finance Optimization
+
+Hi Alex Morgan,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact WorkflowPro Systems's Finance operations.
+
+**Unknown Service**
+Event-log based process discovery: take event-logs from ERP, CRM, BPM systems, discover actual vs. intended process maps, identify bottleneck and deviation, quantify handoff wait time, change-impact simulation.
+
+**Key Benefits for Finance:**
+- Reduce costs with process mining intelligence
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $99/mo/month
+- Pro: $299/mo/month  
+- Enterprise: $999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

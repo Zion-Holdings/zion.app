@@ -1,0 +1,25 @@
+Subject: Unknown Service - Identity Optimization
+
+Hi Jennifer Adams,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact SecureNet Corp's Identity operations.
+
+**Unknown Service**
+Enterprise identity governance: access reviews, role mining, segregation of duties, and privileged access management. Ensure least privilege at scale.
+
+**Key Benefits for Identity:**
+- Ensure least privilege across 1000s of identities
+- Automated reviews replace manual access audits
+- SoD enforcement prevents fraud
+
+**Pricing:**
+- Basic: $999/mo/month
+- Pro: $2,999/mo/month  
+- Enterprise: $9,999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

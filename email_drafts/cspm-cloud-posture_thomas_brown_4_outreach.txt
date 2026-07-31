@@ -1,0 +1,25 @@
+Subject: Cloud Security Posture Management (CSPM) - Finance Optimization
+
+Hi Thomas Brown,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact LogiTech Cloud's Finance operations.
+
+**Cloud Security Posture Management (CSPM)**
+Continuous cloud posture: IAM overprivilege, misconfigured S3, exposed RDS, public subnets. Drift detection + auto-remediation via Terraform per AWS/GCP/Azure.
+
+**Key Benefits for Finance:**
+- Reduce costs with cloud security posture management (cspm)
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $99/mo/month
+- Pro: $349/mo/month  
+- Enterprise: $1,299/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

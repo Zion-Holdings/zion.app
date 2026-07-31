@@ -1,0 +1,25 @@
+Subject: Unknown Service - Software Development Optimization
+
+Hi Rachel Martinez,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact FinTech Dynamics's Software Development operations.
+
+**Unknown Service**
+Autonomous AI coding agent that plans, writes, tests, and debugs entire features. Reads codebase context, follows project conventions, opens PRs with passing tests. Like Cursor/Copilot but fully autonomous.
+
+**Key Benefits for Software Development:**
+- Ship features 10x faster with AI doing the coding
+- Tests written automatically alongside code
+- Follows your conventions, not generic patterns
+
+**Pricing:**
+- Basic: $99/mo/month
+- Pro: $299/mo/month  
+- Enterprise: $999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

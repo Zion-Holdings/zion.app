@@ -1,0 +1,25 @@
+Subject: Security Identity Threat Detection & Response (ITDR) - Technology Optimization
+
+Hi William Turner,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact FinLedger Security's Technology operations.
+
+**Security Identity Threat Detection & Response (ITDR)**
+Protect identities from compromise with AI-powered threat detection. Detect credential theft, privilege escalation, anomalous authentication, and lateral movement across cloud and on-premises.
+
+**Key Benefits for Technology:**
+- Prevent identity-based attacks
+- Detect compromised credentials in minutes
+- Automated threat response
+
+**Pricing:**
+- Basic: $999/mo/month
+- Pro: $2,999/mo/month  
+- Enterprise: Custom/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

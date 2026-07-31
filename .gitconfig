@@ -1,0 +1,5 @@
+[user]
+	email = hermes@ziontechgroup.com
+	name = Hermes Agent
+[http]
+	postBuffer = 524288000

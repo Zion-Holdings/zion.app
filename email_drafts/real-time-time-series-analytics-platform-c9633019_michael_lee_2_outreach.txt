@@ -1,0 +1,25 @@
+Subject: Unknown Service - Real Time Optimization
+
+Hi Michael Lee,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DataFlow Systems's Real Time operations.
+
+**Unknown Service**
+High-throughput real-time analytics for IoT, monitoring, and business metrics: stores, aggregates, and queries billions of events per day at <200ms p99 latency. Includes alert rules, anomaly detection, SQL + Python query engine, dashboards, and Grafana/PostgreSQL-compatible endpoints.
+
+**Key Benefits for Real Time:**
+- Query 10 billion time-series events in under 2 seconds — no pre-aggregation required
+- P99 query latency <200 ms means SLA dashboards feel instantaneous to ops teams
+- Alert fatigue drops 60% vs dumb-threshold alerts because anomaly-detection rules adapt to seasonality
+
+**Pricing:**
+- Basic: 149/month
+- Pro: 599/month  
+- Enterprise: Custom/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

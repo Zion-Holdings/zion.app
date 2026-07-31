@@ -1,0 +1,25 @@
+Subject: Unknown Service - General Optimization
+
+Hi Sarah Johnson,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s General operations.
+
+**Unknown Service**
+End-to-end video understanding pipeline: per-frame CLIP + action recognition, temporal scene segmentation, automatic transcript + OCR extraction, chapter/time-stamped topic indexing, and natural-language search across full video library.
+
+**Key Benefits for General:**
+- Reduce costs with multimodal video understanding engine
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $79/mo/month
+- Pro: $249/mo/month  
+- Enterprise: $799/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

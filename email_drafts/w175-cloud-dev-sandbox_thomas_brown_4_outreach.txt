@@ -1,0 +1,25 @@
+Subject: Cloud Developer Sandboxes - Developer Tools Optimization
+
+Hi Thomas Brown,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact LogiTech Cloud's Developer Tools operations.
+
+**Cloud Developer Sandboxes**
+Self-service cloud sandboxes for developers: pre-configured environments, auto-cleanup, cost caps, and production-like data. Dev without breaking prod.
+
+**Key Benefits for Developer Tools:**
+- Developers get environments in seconds
+- Auto-cleanup prevents cloud sprawl
+- Cost caps prevent runaway spend
+
+**Pricing:**
+- Basic: $49/dev/mo/month
+- Pro: $99/dev/mo/month  
+- Enterprise: $199/dev/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

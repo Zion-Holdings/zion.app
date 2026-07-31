@@ -1,0 +1,25 @@
+Subject: Data Science Platform (Managed) - General Optimization
+
+Hi Maria Santos,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DataInsight Pro's General operations.
+
+**Data Science Platform (Managed)**
+Managed data science on Kubernetes: MLflow tracking, model registry, managed feature store, KServe/Seldon inference, model CI/CD, GPU scheduling. Batch + real-time inference.
+
+**Key Benefits for General:**
+- Reduce costs with data science platform (managed)
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $149/mo/month
+- Pro: $449/mo/month  
+- Enterprise: $1,499/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

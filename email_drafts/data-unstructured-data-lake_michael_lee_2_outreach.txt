@@ -1,0 +1,25 @@
+Subject: Unstructured Data Lake - General Optimization
+
+Hi Michael Lee,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DataFlow Systems's General operations.
+
+**Unstructured Data Lake**
+Unstructured data pipeline and lake: ingest PDF, Images, Audio, and Video at scale; auto-classify per document schema; OCR, ASR, object-detection hooks per file type; natural-language query with cited source passages.
+
+**Key Benefits for General:**
+- Reduce costs with unstructured data lake
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $399/mo/month
+- Pro: $1,299/mo/month  
+- Enterprise: $3,999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

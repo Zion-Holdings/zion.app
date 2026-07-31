@@ -1,0 +1,25 @@
+Subject: Unknown Service - Business Continuity Optimization
+
+Hi Dr. Michael Chen,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact HealthNet Solutions's Business Continuity operations.
+
+**Unknown Service**
+DR strategy, design, and testing: BIA, RTO/RPO analysis, runbook development, and regular DR test execution. Prove your recovery capabilities.
+
+**Key Benefits for Business Continuity:**
+- Know your recovery capabilities, not just plans
+- Regular testing proves recovery works
+- Runbooks ensure consistent execution
+
+**Pricing:**
+- Basic: $4,999/month
+- Pro: $14,999/month  
+- Enterprise: Custom/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

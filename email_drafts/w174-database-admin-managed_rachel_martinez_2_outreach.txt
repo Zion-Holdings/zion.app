@@ -1,0 +1,25 @@
+Subject: Unknown Service - Data Operations Optimization
+
+Hi Rachel Martinez,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact FinTech Dynamics's Data Operations operations.
+
+**Unknown Service**
+Expert DBA services for PostgreSQL, MySQL, SQL Server, Oracle, and MongoDB. Performance tuning, HA/DR setup, migrations, and 24/7 monitoring.
+
+**Key Benefits for Data Operations:**
+- Expert DBA support without hiring
+- 24/7 monitoring catches issues before outage
+- Performance tuning reduces cloud costs
+
+**Pricing:**
+- Basic: $499/mo/month
+- Pro: $1,499/mo/month  
+- Enterprise: $4,999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

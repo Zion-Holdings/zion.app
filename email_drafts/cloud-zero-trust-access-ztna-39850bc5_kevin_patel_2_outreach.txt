@@ -1,0 +1,25 @@
+Subject: Unknown Service - Cloud Optimization
+
+Hi Kevin Patel,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CyberDefense Pro's Cloud operations.
+
+**Unknown Service**
+Zero trust network access for cloud and on-prem resources: per-application least-privilege policy, device posture context, 1-click revoke per identity, 75% faster access time for legitimate users, full session recording.
+
+**Key Benefits for Cloud:**
+- Users blessedly fast SSH and HTTPS access without tear-down VPN
+- 1-click revocation keeps compromised identity blast-radius strictly bounded
+- Privileged access introduced with per-session fine-grained token and audit trail
+
+**Pricing:**
+- Basic: 999/month
+- Pro: 2999/month  
+- Enterprise: 9999/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

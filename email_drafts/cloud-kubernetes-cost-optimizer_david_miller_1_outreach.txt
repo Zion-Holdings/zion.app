@@ -1,0 +1,25 @@
+Subject: Unknown Service - General Optimization
+
+Hi David Miller,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact NexGen Cloud's General operations.
+
+**Unknown Service**
+K8s cluster cost engine: per-container CPU and RAM right-sizing via VPA plus workload profiling, spot-compatible scheduling for bursty workloads, cost attribution per team or namespace, idle resource crawler, and budget alerts.
+
+**Key Benefits for General:**
+- Reduce costs with kubernetes cost optimizer
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $299/mo/month
+- Pro: $899/mo/month  
+- Enterprise: $2,999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

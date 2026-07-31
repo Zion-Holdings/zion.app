@@ -1,0 +1,25 @@
+Subject: Unknown Service - Manufacturing Optimization
+
+Hi Maria Santos,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DataInsight Pro's Manufacturing operations.
+
+**Unknown Service**
+Column-level freshness, volume, distribution drift, and schema-change detection across every pipeline and warehouse table with auto-generated lineage.
+
+**Key Benefits for Manufacturing:**
+- Reduce costs with data observability & quality monitor
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $99/mo/month
+- Pro: $299/mo/month  
+- Enterprise: $999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

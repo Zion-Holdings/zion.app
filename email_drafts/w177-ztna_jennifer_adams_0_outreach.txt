@@ -1,0 +1,25 @@
+Subject: Unknown Service - Cybersecurity Optimization
+
+Hi Jennifer Adams,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact SecureNet Corp's Cybersecurity operations.
+
+**Unknown Service**
+ZTNA replaces VPN: identity-based access, device posture verification, per-application access, no network trust.
+
+**Key Benefits for Cybersecurity:**
+- Replace VPN with zero trust
+- Device posture blocks non-compliant devices
+- Per-application access limits blast radius
+
+**Pricing:**
+- Basic: $8/user/mo/month
+- Pro: $15/user/mo/month  
+- Enterprise: $25/user/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

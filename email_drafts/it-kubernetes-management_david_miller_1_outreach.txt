@@ -1,0 +1,25 @@
+Subject: Unknown Service - Finance Optimization
+
+Hi David Miller,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact NexGen Cloud's Finance operations.
+
+**Unknown Service**
+Enterprise Kubernetes deployment, management, and optimization — multi-cluster orchestration, GitOps workflows, and service mesh implementation.
+
+**Key Benefits for Finance:**
+- Reduce costs with container orchestration & kubernetes management
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $299/mo/month
+- Pro: $899/mo/month  
+- Enterprise: $2,999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

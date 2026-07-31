@@ -1,0 +1,25 @@
+Subject: Unknown Service - General Optimization
+
+Hi Patricia Kim,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DataSphere Analytics's General operations.
+
+**Unknown Service**
+Visual ETL/ELT builder with 400+ connectors, scheduled or event-triggered pipelines, schema drift handling, and data quality checks.
+
+**Key Benefits for General:**
+- Reduce costs with batch etl platform
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $199/mo/month
+- Pro: $599/mo/month  
+- Enterprise: $1,999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

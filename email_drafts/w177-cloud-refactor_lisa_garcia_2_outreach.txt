@@ -1,0 +1,25 @@
+Subject: Unknown Service - Cloud Computing Optimization
+
+Hi Lisa Garcia,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CloudFirst Networks's Cloud Computing operations.
+
+**Unknown Service**
+Refactor legacy apps for cloud: containerization, microservices decomposition, serverless conversion, data migration.
+
+**Key Benefits for Cloud Computing:**
+- Modernize legacy apps for cloud scale
+- Containerization improves deployment
+- Microservices enable independent teams
+
+**Pricing:**
+- Basic: $9,999/month
+- Pro: $29,999/month  
+- Enterprise: Custom/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

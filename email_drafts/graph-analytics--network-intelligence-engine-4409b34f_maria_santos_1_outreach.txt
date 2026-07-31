@@ -1,0 +1,25 @@
+Subject: Unknown Service - Graph Optimization
+
+Hi Maria Santos,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DataInsight Pro's Graph operations.
+
+**Unknown Service**
+Enterprise graph analytics for fraud, risk, ESG, and recommendations: ingest tabular data to build dynamic relationship graphs, community detection, shortest-path analysis, centrality scoring, and interactive visual exploration with Cypher-like query language.
+
+**Key Benefits for Graph:**
+- Surface hidden fraud rings and risk clusters invisible in tabular reports
+- Reduce analyst investigation time 50% vs. manual relationship tracing in spreadsheets
+- Build recommendation engines faster — no custom graph DB admin required
+
+**Pricing:**
+- Basic: 149/month
+- Pro: 599/month  
+- Enterprise: Custom/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

@@ -1,0 +1,25 @@
+Subject: ETL Pipeline Optimization & Modernization - General Optimization
+
+Hi Sarah Johnson,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s General operations.
+
+**ETL Pipeline Optimization & Modernization**
+Accelerate and stabilize data pipelines (batch & streaming): refactor legacy ETL, migrate to Airflow/DBT, add observability, and reduce cost.
+
+**Key Benefits for General:**
+- Reduce costs with etl pipeline optimization & modernization
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $299/mo/month
+- Pro: $899/mo/month  
+- Enterprise: $2,999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

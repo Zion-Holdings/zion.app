@@ -1,0 +1,25 @@
+Subject: Container & Kubernetes Security - General Optimization
+
+Hi David Park,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact AI Innovators Lab's General operations.
+
+**Container & Kubernetes Security**
+Full container security: registry scanning (Trivy/Clair), runtime protection (Falco), OPA admission controllers, SBOM attestation per build.
+
+**Key Benefits for General:**
+- Reduce costs with container & kubernetes security
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $399/mo/month
+- Pro: $999/mo/month  
+- Enterprise: $2,999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

@@ -1,0 +1,22 @@
+{
+  "serviceCount": 85,
+  "categoryCount": 9,
+  "agentCount": 9,
+  "waveCount": 60,
+  "uptime": "99.97%",
+  "publishedCount": 85,
+  "betaCount": 0,
+  "plannedCount": 0,
+  "activeAgents": [
+    "Carol",
+    "Kilo",
+    "Tablet",
+    "Quel",
+    "Rocket",
+    "Swell",
+    "Kilo AI",
+    "Kleber",
+    "Cloud"
+  ],
+  "totalActions": 50
+}

@@ -1,0 +1,25 @@
+Subject: Supply Chain SBOM & Vulnerability Intelligence - Manufacturing Optimization
+
+Hi William Turner,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact FinLedger Security's Manufacturing operations.
+
+**Supply Chain SBOM & Vulnerability Intelligence**
+Automated SBOM generation, dependency attestation, real-time CVE/SSVC scoring, exploitability prediction, automated PR patch suggestions, and SLSA provenance verification — closing the software supply-chain attack window at build time.
+
+**Key Benefits for Manufacturing:**
+- Reduce costs with supply chain sbom & vulnerability intelligence
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $299/mo/month
+- Pro: $899/mo/month  
+- Enterprise: $2,999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

@@ -1,0 +1,24 @@
+Subject: Unknown Service - Technology Optimization
+
+Hi David Miller,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact NexGen Cloud's Technology operations.
+
+**Unknown Service**
+Managed Kubernetes with auto-scrolling, service mesh, GitOps, multi-cluster management.
+
+**Key Benefits for Technology:**
+- 80% less complexity
+- Multi-cloud portable
+
+**Pricing:**
+- Basic: $299/mo/month
+- Pro: $799/mo/month  
+- Enterprise: $2,499/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

@@ -1,0 +1,25 @@
+Subject: Unknown Service - Data Operations Optimization
+
+Hi Patricia Kim,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DataSphere Analytics's Data Operations operations.
+
+**Unknown Service**
+Monitor data pipelines for anomalies: volume, schema, freshness, distribution, and lineage. Catch data issues before they corrupt downstream models and decisions.
+
+**Key Benefits for Data Operations:**
+- Catch data issues before business impact
+- Lineage tracks data from source to dashboard
+- Statistical drift catches subtle data changes
+
+**Pricing:**
+- Basic: $399/mo/month
+- Pro: $1,199/mo/month  
+- Enterprise: $3,999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

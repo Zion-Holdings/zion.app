@@ -1,0 +1,25 @@
+Subject: Unknown Service - Manufacturing Optimization
+
+Hi Maria Santos,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DataInsight Pro's Manufacturing operations.
+
+**Unknown Service**
+Sensor TS ingestion, anomaly detection (IsolationForest/Prophet), failure-prediction XGBoost, and work-order auto-creation.
+
+**Key Benefits for Manufacturing:**
+- Reduce costs with predictive maintenance (time-series)
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $149/mo/month
+- Pro: $449/mo/month  
+- Enterprise: $1,499/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

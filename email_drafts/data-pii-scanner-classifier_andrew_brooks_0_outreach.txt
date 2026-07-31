@@ -1,0 +1,25 @@
+Subject: Unknown Service - Manufacturing Optimization
+
+Hi Andrew Brooks,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact Insight360 Group's Manufacturing operations.
+
+**Unknown Service**
+Column-level PII detection (name/SSN/email/phone/address) across data warehouses, with automatic masking policies and compliance report.
+
+**Key Benefits for Manufacturing:**
+- Reduce costs with pii scanner & classifier
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $149/mo/month
+- Pro: $449/mo/month  
+- Enterprise: $1,499/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

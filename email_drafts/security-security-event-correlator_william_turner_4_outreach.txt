@@ -1,0 +1,22 @@
+Subject: Security Event Correlator - Soc Optimization
+
+Hi William Turner,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact FinLedger Security's SOC operations.
+
+**Security Event Correlator**
+Correlates security telemetry from endpoints, identities, cloud, and networks into prioritized incident candidates.
+
+**Key Benefits for Soc:**
+
+**Pricing:**
+- Basic: $299/month
+- Pro: $799/month  
+- Enterprise: $2,499/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

@@ -1,0 +1,25 @@
+Subject: Unknown Service - Data Engineering Optimization
+
+Hi Maria Santos,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DataInsight Pro's Data Engineering operations.
+
+**Unknown Service**
+Expert data migration: schema migration, data transformation, validation, and zero-downtime cutover. Migrate between any data platforms.
+
+**Key Benefits for Data Engineering:**
+- Zero data loss guaranteed
+- Validation ensures correctness at every step
+- Zero-downtime cutover for production systems
+
+**Pricing:**
+- Basic: $4,999/month
+- Pro: $14,999/month  
+- Enterprise: Custom/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

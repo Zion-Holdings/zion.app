@@ -1,0 +1,25 @@
+Subject: Unknown Service - Observability Optimization
+
+Hi Dr. Michael Chen,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact HealthNet Solutions's Observability operations.
+
+**Unknown Service**
+Unified metrics, logs, traces, and synthetic monitoring with AI anomaly detection, SLO management, and incident correlation for engineering teams.
+
+**Key Benefits for Observability:**
+- Reduce MTTR with connected context
+- Predict issues before pages
+- Deliver SLO evidence without manual work
+
+**Pricing:**
+- Basic: 999/month
+- Pro: 2999/month  
+- Enterprise: 9999/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

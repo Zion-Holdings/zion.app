@@ -1,0 +1,25 @@
+Subject: Unknown Service - Devsecops Optimization
+
+Hi Dr. Michael Chen,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact HealthNet Solutions's DevSecOps operations.
+
+**Unknown Service**
+Shift-left security with automated scanning, policy enforcement, supply chain attestation, and security training for engineering teams.
+
+**Key Benefits for Devsecops:**
+- Catch vulnerabilities before production
+- Reduce security review bottlenecks
+- Give developers security guardrails
+
+**Pricing:**
+- Basic: 999/month
+- Pro: 2999/month  
+- Enterprise: 9999/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

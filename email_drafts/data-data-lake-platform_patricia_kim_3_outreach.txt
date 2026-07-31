@@ -1,0 +1,25 @@
+Subject: Unknown Service - Data Engineering Optimization
+
+Hi Patricia Kim,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DataSphere Analytics's Data Engineering operations.
+
+**Unknown Service**
+Managed data lake platform with ingestion, cataloging, governance, and analytics capabilities. Supports structured and semi-structured data at scale.
+
+**Key Benefits for Data Engineering:**
+- Centralize data storage
+- Enable analytics at scale
+- Govern data access
+
+**Pricing:**
+- Basic: $499/mo/month
+- Pro: $1,499/mo/month  
+- Enterprise: Custom/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

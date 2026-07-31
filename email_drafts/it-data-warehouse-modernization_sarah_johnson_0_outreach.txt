@@ -1,0 +1,25 @@
+Subject: Unknown Service - Manufacturing Optimization
+
+Hi Sarah Johnson,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact TechStart Inc.'s Manufacturing operations.
+
+**Unknown Service**
+Migration from legacy data warehouses (Oracle, Teradata) to modern cloud-native stacks (Snowflake, BigQuery, Databricks) with zero downtime.
+
+**Key Benefits for Manufacturing:**
+- Reduce costs with data warehouse modernization
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $299/mo/month
+- Pro: $899/mo/month  
+- Enterprise: $2,999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

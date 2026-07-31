@@ -1,0 +1,25 @@
+Subject: Endpoint Security & Compliance Monitor - Healthcare Optimization
+
+Hi Alex Morgan,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DeepLearn AI's Healthcare operations.
+
+**Endpoint Security & Compliance Monitor**
+Endpoint security continuous monitoring: EDR detection + endpoint firewall + exploit prevention, CVE auto-fix via patch catalog, compliance posture for HIPAA/PCI/SOX/ISO27001 with automated audit evidence export.
+
+**Key Benefits for Healthcare:**
+- Reduce costs with endpoint security & compliance monitor
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $399/mo/month
+- Pro: $999/mo/month  
+- Enterprise: $2,999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

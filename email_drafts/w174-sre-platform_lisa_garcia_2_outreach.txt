@@ -1,0 +1,25 @@
+Subject: Unknown Service - Devops Optimization
+
+Hi Lisa Garcia,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact CloudFirst Networks's DevOps operations.
+
+**Unknown Service**
+Site Reliability Engineering platform: SLO definition, error budgets, incident management, chaos engineering, and reliability dashboards. Ship features without sacrificing stability.
+
+**Key Benefits for Devops:**
+- Ship features faster with error budget insight
+- Chaos engineering finds weaknesses before users do
+- Release readiness score prevents bad deployments
+
+**Pricing:**
+- Basic: $599/mo/month
+- Pro: $1,799/mo/month  
+- Enterprise: $5,999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

@@ -1,0 +1,25 @@
+Subject: Unknown Service - Finance Optimization
+
+Hi Patricia Kim,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact DataSphere Analytics's Finance operations.
+
+**Unknown Service**
+Enterprise graph analytics for fraud, risk, ESG, and recommendations: ingest tabular data to build dynamic relationship graphs, community detection, shortest-path analysis, centrality scoring, and interactive visual exploration with Cypher-like query language.
+
+**Key Benefits for Finance:**
+- Reduce costs with graph analytics & network intelligence engine
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $149/mo/month
+- Pro: $449/mo/month  
+- Enterprise: $1,499/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

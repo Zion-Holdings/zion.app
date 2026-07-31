@@ -1,0 +1,25 @@
+Subject: Enterprise Data Loss Prevention (DLP) - Finance Optimization
+
+Hi Robert Johnson,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact ThreatGuard AI's Finance operations.
+
+**Enterprise Data Loss Prevention (DLP)**
+Prevent data exfiltration at rest, in transit, in-use: endpoint DLP, network DLP, cloud DLP (S3/GDrive/SharePoint/Box). Content inspection + policy enforcement + remediation.
+
+**Key Benefits for Finance:**
+- Reduce costs with enterprise data loss prevention (dlp)
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $299/mo/month
+- Pro: $899/mo/month  
+- Enterprise: $2,999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

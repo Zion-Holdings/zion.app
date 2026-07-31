@@ -1,0 +1,25 @@
+Subject: Unknown Service - Networking Optimization
+
+Hi Dr. Michael Chen,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact HealthNet Solutions's Networking operations.
+
+**Unknown Service**
+Automate network configuration with intent-based networking. Define desired state, platform enforces it. Eliminate config drift and manual CLI errors.
+
+**Key Benefits for Networking:**
+- Eliminate manual CLI configuration errors
+- Intent-based: describe what, not how
+- Automated drift remediation keeps network compliant
+
+**Pricing:**
+- Basic: $799/mo/month
+- Pro: $2,499/mo/month  
+- Enterprise: $7,999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

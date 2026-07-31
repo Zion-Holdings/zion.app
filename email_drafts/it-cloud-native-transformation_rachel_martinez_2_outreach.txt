@@ -1,0 +1,25 @@
+Subject: Unknown Service - Technology Optimization
+
+Hi Rachel Martinez,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact FinTech Dynamics's Technology operations.
+
+**Unknown Service**
+End-to-end cloud-native transformation: containerization, microservices decomposition, CI/CD pipeline setup, and Kubernetes adoption. From legacy monolith to cloud-native architecture.
+
+**Key Benefits for Technology:**
+- Modernize legacy applications at scale
+- Improve deployment frequency 10x
+- Reduce infrastructure costs
+
+**Pricing:**
+- Basic: $4,999/mo/month
+- Pro: $14,999/mo/month  
+- Enterprise: Custom/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

@@ -1,0 +1,25 @@
+Subject: Unknown Service - Api Management Optimization
+
+Hi Andrew Brooks,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact Insight360 Group's API Management operations.
+
+**Unknown Service**
+Turn any data source into a REST or GraphQL API: auto-generated, documented, secured, monitored. Data as a product.
+
+**Key Benefits for Api Management:**
+- Turn data into APIs in minutes
+- Authentication and rate limiting built in
+- Documentation auto-generated
+
+**Pricing:**
+- Basic: $99/mo/month
+- Pro: $299/mo/month  
+- Enterprise: $999/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com

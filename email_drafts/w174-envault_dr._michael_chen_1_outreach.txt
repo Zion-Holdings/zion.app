@@ -1,0 +1,25 @@
+Subject: Unknown Service - Developer Tools Optimization
+
+Hi Dr. Michael Chen,
+
+I'm Kleber from Zion Tech Group, and I wanted to reach out with a solution that could significantly impact HealthNet Solutions's Developer Tools operations.
+
+**Unknown Service**
+Manage application configuration and environment variables across dev/staging/prod. Encrypted at rest, audit trails, and instant rollback. Like Doppler/Envkey for teams.
+
+**Key Benefits for Developer Tools:**
+- Never leak .env files again
+- Environment promotion eliminates copy-paste errors
+- Audit trail for compliance and debugging
+
+**Pricing:**
+- Basic: $15/mo/month
+- Pro: $49/mo/month  
+- Enterprise: $149/mo/month
+
+**Book a free 30-minute consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatão
+CEO, Zion Tech Group
+ziontechgroup.com
