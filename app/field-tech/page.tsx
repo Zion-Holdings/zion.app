@@ -18,6 +18,7 @@ export default function FieldTechRecruitingPage() {
           <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
             <Link href="/contact/" className="btn-primary text-lg">Request Candidates</Link>
             <Link href="/field-tech-rate-card/" className="btn-secondary text-lg">View Rate Card</Link>
+            <Link href="/ai-it-consulting/" className="btn-secondary text-lg">AI & IT Consulting</Link>
             <Link href="/services/" className="btn-secondary text-lg">Our Services</Link>
           </div>
         </header>
