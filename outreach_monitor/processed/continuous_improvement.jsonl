@@ -1,1 +1,0 @@
-{"ts": 1783442312, "event": "known_send_failure", "detail": "flavio.miranda@persistiq.com returned Gmail 404 from AI API wrapper", "fix": "skip this contact until user retries auth"}

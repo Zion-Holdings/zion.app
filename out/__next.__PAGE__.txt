@@ -1,9 +1,0 @@
-1:"$Sreact.fragment"
-2:I[1304,[],"ClientPageRoot"]
-3:I[6919,["98500","static/chunks/98500-c8281fcb5646115a.js","99034","static/chunks/99034-8e7406bb6cd65927.js","7557","static/chunks/7557-380dded6250b8a2b.js","53545","static/chunks/53545-3fdcfd2ee096358b.js","73321","static/chunks/73321-6c5205d644abfd1a.js","73665","static/chunks/app/page-f3956634-b38ed7ed4daf5bea.js","50002","static/chunks/app/page-2146f75f-697bdd44c92ce64d.js","67667","static/chunks/app/page-82df9a11-2f8d0f6bb3900e40.js"],"default"]
-6:I[484,[],"OutletBoundary"]
-7:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],null,["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zion-tech-group-v1"}
-4:{}
-5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
-8:null

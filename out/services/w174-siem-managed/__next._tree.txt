@@ -1,2 +1,0 @@
-:HL["/_next/static/css/65f5ac9b8245f6f7.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":20,"slots":{"children":{"name":"services","param":null,"prefetchHints":0,"slots":{"children":{"name":"id","param":{"type":"d","key":"w174-siem-managed","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"zion-tech-group-v1"}

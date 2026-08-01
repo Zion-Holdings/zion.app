@@ -1,5 +1,0 @@
-lead_index,lead_title,stage,subject,template,service_ids,review_status
-1,Operations — industrial IoT and remote sites,day0_stage1,Quick IT win for {company},draft_generic,it-engineering-management,pending
-2,RevOps / SaaS metrics,day0_stage1,Founder revenue intelligence in one view,draft_microsaas_revenue_dashboard,micro-saas-revenue-dashboard,pending
-2,RevOps / SaaS metrics,day0_stage2,Vendor performance tracking before renewal,draft_microsaas_vendor_monitor,micro-saas-sla-uptime-monitor,pending
-3,Legal Ops / contract review,day0_stage1,Founder revenue intelligence in one view,draft_microsaas_revenue_dashboard,micro-saas-revenue-dashboard,pending
