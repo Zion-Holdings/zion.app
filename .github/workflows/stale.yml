@@ -20,7 +20,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Stale action
-        uses: actions/stale@v10
+        uses: actions/stale@v11
         with:
           stale-issue-message: >
             This issue has been automatically marked as stale because it has not had
