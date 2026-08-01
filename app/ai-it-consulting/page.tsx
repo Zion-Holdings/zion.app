@@ -18,6 +18,7 @@ export default function AiItConsultingPage() {
           <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
             <Link href="/contact/" className="btn-primary text-lg">Book a Consultation</Link>
             <Link href="/managed-ai-it-support/" className="btn-secondary text-lg">Managed Support</Link>
+            <Link href="/ai-implementation/" className="btn-secondary text-lg">AI Implementation</Link>
             <Link href="/services/" className="btn-secondary text-lg">Our Services</Link>
           </div>
         </header>
