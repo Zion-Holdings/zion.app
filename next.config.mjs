@@ -95,6 +95,8 @@ const nextConfig = {
       { source: '/services/fleet-management-gps-tracking/', destination: '/services/', permanent: true },
       { source: '/services/lead-generation-outreach-automation', destination: '/services/', permanent: true },
       { source: '/services/lead-generation-outreach-automation/', destination: '/services/', permanent: true },
+      { source: '/field-tech-recruiting', destination: '/field-tech', permanent: true },
+      { source: '/field-tech-recruiting/', destination: '/field-tech/', permanent: true },
     ];
   },
 };
