@@ -1,11 +1,5 @@
-/tools/favicon-generator/  /tools/favicon-generator/index.html  200
-
-# Canonical sitemap
-/sitemap.xml  /sitemap-0.xml  301
-
-/case-studies/    /contact/    301
-/industries/    /services/    301
-/free-tools-hub/    /tools/    301
+/free-tools-hub    /free-ai-it-tools/  301
+/free-tools-hub/  /free-ai-it-tools/  301
 /products/    /services/    301
 /consultation/    /contact/    301
 /site-map/    /    301
@@ -14,21 +8,53 @@
 /configurator/    /contact/    301
 /dashboard/    /contact/    301
 /docs/    /    301
-/automation/  /services/ai-workflow-automation/  301
-/free-ai-itools/ /free-ai-it-tools/ 302
-/free-ai-itools /free-ai-it-tools/ 302
+/free-ai-itools /free-ai-it-tools/ 301
+/free-ai-itools/ /free-ai-it-tools/ 301
 /careers/  /contact/  301
+
 /free-consultation /free-consultation/index.html 200
 /free-consultation/ /free-consultation/index.html 200
-/free-audit /free-audit/index.html 200
-/free-audit/ /free-audit/index.html 200
-/proposal /proposal/index.html 200
-/proposal/ /proposal/index.html 200
 /industries/insurance/ /industries/insurance/index.html 200
 /industries/healthcare/ /industries/healthcare/index.html 200
 /industries/legal/ /industries/legal/index.html 200
+/industries/financial-services /industries/financial-services/index.html 200
+/industries/financial-services/ /industries/financial-services/index.html 200
 /tools/ai-quick-audit /tools/ai-quick-audit/index.html 200
 /tools/ai-quick-audit/ /tools/ai-quick-audit/index.html 200
 /tools/phishing-analyzer /tools/phishing-analyzer/index.html 200
 /tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200
 /assets/js/conversion-events.js /assets/js/conversion-events.js 200
+
+# Live fallback routes
+/mobile-app  /mobile-app/index.html  200
+/desktop-app  /desktop-app/index.html  200
+/plugin-marketplace  /plugin-marketplace/index.html  200
+/changelogs  /changelogs/index.html  200
+/public-roadmap  /roadmap/  301
+/public-roadmap/ /roadmap/ 301
+/status-page  /status-page/index.html  200
+/status-page/ /status-page/index.html 200
+/use-cases /use-cases/index.html 200
+/use-cases/ /use-cases/index.html 200
+/computer-vision-services/ /computer-vision-services/index.html 200
+/machine-learning-ops/ /machine-learning-ops/index.html 200
+/intelligent-document-processing/ /intelligent-document-processing/index.html 200
+/generative-ai-enterprise/ /generative-ai-enterprise/index.html 200
+/computer-vision-services/ /computer-vision-services/index.html 200
+/machine-learning-ops/ /machine-learning-ops/index.html 200
+/intelligent-document-processing/ /intelligent-document-processing/index.html 200
+/generative-ai-enterprise/ /generative-ai-enterprise/index.html 200
+/ai-customer-360/ /ai-customer-360/index.html 200
+/ai-recommendation-engine/ /ai-recommendation-engine/index.html 200
+/ai-price-optimizer/ /ai-price-optimizer/index.html 200
+/ai-chatbot-customer-service/index/ 200 /ai-chatbot-customer-service/index/
+/ai-content-generation-enterprise/index/ 200 /ai-content-generation-enterprise/index/
+/ai-supply-chain-optimization/index/ 200 /ai-supply-chain-optimization/index/
+/ai-human-resources-automation/index/ 200 /ai-human-resources-automation/index/
+/ai-cybersecurity-threat-detection/index/ 200 /ai-cybersecurity-threat-detection/index/
+
+/free-ai-consultation /free-ai-consultation/index.html 200
+/free-ai-consultation/ /free-ai-consultation/index.html 200
+
+/ai-roi-calculator /ai-roi-calculator/index.html 200
+/ai-roi-calculator/ /ai-roi-calculator/index.html 200

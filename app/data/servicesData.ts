@@ -1,6 +1,6 @@
 type Service = Record<string, any>;
 
-const rawObject = require('./servicesData.json') as { services?: Service[] };
+import rawObject from './servicesData.json';
 const rawData: Service[] = Array.isArray(rawObject) ? rawObject : (rawObject.services || []);
 
 // Normalize services data - ensure both 'name' and 'title' fields exist

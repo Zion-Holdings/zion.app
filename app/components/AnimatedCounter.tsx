@@ -9,8 +9,8 @@ interface AnimatedCounterProps {
   prefix?: string;
 }
 
-export default function AnimatedCounter({ target, duration = 2000, suffix = '+', prefix = '' }: AnimatedCounterProps) {
-  const [count, setCount] = useState(0);
+export default function AnimatedCounter({ target, duration = 2000, suffix = '+', prefix = '', fallback }: AnimatedCounterProps & { fallback?: string }) {
+  const [count, setCount] = useState(target);
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
 
@@ -25,7 +25,7 @@ export default function AnimatedCounter({ target, duration = 2000, suffix = '+',
 
   useEffect(() => {
     if (!isVisible) return;
-    let start = 0;
+    let start = target > 0 ? 0 : target;
     const increment = target / (duration / 16);
     const timer = setInterval(() => {
       start += increment;
@@ -40,4 +40,4 @@ export default function AnimatedCounter({ target, duration = 2000, suffix = '+',
   }, [isVisible, target, duration]);
 
   return <span ref={ref}>{prefix}{count.toLocaleString()}{suffix}</span>;
-}
+}

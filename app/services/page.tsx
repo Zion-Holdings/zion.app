@@ -1,7 +1,7 @@
 // app/services/page.tsx - Full Service Catalog
 'use client';
 
-import { useState, useMemo, Suspense, useMemo as useMemoRef } from 'react';
+import { useState, useMemo, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import SmartSearchBar from '@/components/SmartSearchBar';
@@ -10,18 +10,8 @@ import { ServiceGridSkeleton } from '@/components/Skeletons';
 import { allServices } from '../data/servicesData';
 import type { Service } from '../data/servicesData';
 
-const VALID_SERVICE_SLUGS = useMemoRef(() => {
-  if (typeof document === 'undefined') return new Set<string>();
-  const set = new Set<string>();
-  document.querySelectorAll('a[href]').forEach((a: HTMLAnchorElement) => {
-    const m = a.getAttribute('href')?.match(/^\/services\/([^/?#]+)\/?$/);
-    if (m) set.add(m[1]);
-  });
-  return set.size > 0 ? set : new Set<string>();
-}, []);
-
 const serviceHref = (id: string, fallback = '/services/') =>
-  VALID_SERVICE_SLUGS.has(id) ? `/services/${id}` : fallback;
+  `/services/${id}`;
 
 const SVC_CAT_LABELS: Record<string,string> = { ai: 'AI Services', it: 'IT', cloud: 'Cloud', security: 'Security', data: 'Data & Analytics', automation: 'Automation', 'micro-saas': 'Micro-SaaS', devops: 'DevOps', blockchain: 'Blockchain', iot: 'IoT & Edge', 'email-intelligence': 'Email Intelligence', observability: 'Observability', identity: 'Identity & Access', cms: 'CMS & Content', ecommerce: 'E-Commerce', documentation: 'Documentation', 'ai-ml-ops': 'AI/ML Ops', devsecops: 'DevSecOps', fintech: 'FinTech', edtech: 'EdTech', 'healthcare-it': 'Healthcare IT', 'data-streaming': 'Data Streaming', search: 'Search', api: 'API Management' };
 const CATEGORIES = [

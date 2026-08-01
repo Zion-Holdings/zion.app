@@ -49,6 +49,7 @@ const nextConfig = {
       { source: '/services/ai-services', destination: '/services/?category=ai', permanent: true },
       { source: '/services/cloud-services', destination: '/services/?category=cloud', permanent: true },
       { source: '/services/cybersecurity', destination: '/services/?category=security', permanent: true },
+      { source: '/services/cybersecurity-soc-automation/', destination: '/services/?category=security', permanent: true },
       { source: '/services/data-analytics', destination: '/services/?category=data', permanent: true },
       { source: '/services/devops-services', destination: '/services/?category=devops', permanent: true },
       { source: '/services/iot-platform', destination: '/services/?category=iot', permanent: true },

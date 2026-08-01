@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 import SmartRecommendationEngineComponent from '@/components/SmartRecommendationEngine';
-import { INDUSTRY_SERVICES } from '@/components/SmartRecommendationEngine';
+import { INDUSTRY_SERVICES } from '@/data/industryServices';
 import { allServices } from '@/data/servicesData';
 
 const INDUSTRY_CONFIG = [
@@ -153,7 +153,7 @@ export default function IndustrySolutionsPage() {
             {INDUSTRY_CONFIG.map((industry) => (
               <Link
                 key={industry.key}
-                href={`/services/?category=${industry.services.services[0]?.split('-')[0] || 'ai'}`}
+                href={`/services/?category=${industry.services?.services?.[0]?.split('-')[0] || 'ai'}`}
                 className="group block rounded-2xl border border-slate-800 bg-slate-900/50 hover:bg-slate-800/80 hover:border-purple-500/40 p-6 transition-all duration-300"
               >
                 <div className="flex items-start justify-between mb-4">
@@ -177,7 +177,7 @@ export default function IndustrySolutionsPage() {
 
                 <div className="border-t border-slate-700/50 pt-3">
                   <span className="text-xs text-slate-500">
-                    {industry.services.services.length} services in this category
+                    {industry.services?.services?.length || 0} services in this category
                   </span>
                   <span className="text-purple-300 text-xs float-right font-medium">
                     Explore →
