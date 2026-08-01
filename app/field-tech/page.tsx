@@ -3,7 +3,7 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Field Tech Recruiting | Zion Tech Group',
   description: 'Hire vetted field technicians fast through Zion Tech Group. We source, qualify, and deliver field-ready IT support talent on demand.',
-  alternates: { canonical: '/field-tech-recruiting/' },
+  alternates: { canonical: '/field-tech/' },
 };
 
 export default function FieldTechRecruitingPage() {
@@ -20,7 +20,6 @@ export default function FieldTechRecruitingPage() {
             <Link href="/services/" className="btn-secondary text-lg">Our Services</Link>
           </div>
         </header>
-
         <section className="mb-12">
           <h2 className="text-2xl font-semibold text-white mb-4 text-center">Why Zion</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -38,12 +37,9 @@ export default function FieldTechRecruitingPage() {
             </div>
           </div>
         </section>
-
         <section className="cta-section text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Ready to strengthen your field team?</h2>
-          <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
-            Tell us your requirements and we’ll deliver qualified candidates fast.
-          </p>
+          <p className="text-slate-300 mb-8 max-w-2xl mx-auto">Tell us your requirements and we’ll deliver qualified candidates fast.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact/" className="btn-primary text-lg">Talk to Us</Link>
             <a href="tel:+13024640950" className="btn-secondary text-lg">Call +1 302 464 0950</a>
