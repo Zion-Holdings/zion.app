@@ -19,6 +19,7 @@ export default function AiItConsultingPage() {
             <Link href="/contact/" className="btn-primary text-lg">Book a Consultation</Link>
             <Link href="/managed-ai-it-support/" className="btn-secondary text-lg">Managed Support</Link>
             <Link href="/ai-implementation/" className="btn-secondary text-lg">AI Implementation</Link>
+            <Link href="/ai-support-for-startups/" className="btn-secondary text-lg">Startup Support</Link>
             <Link href="/services/" className="btn-secondary text-lg">Our Services</Link>
           </div>
         </header>
