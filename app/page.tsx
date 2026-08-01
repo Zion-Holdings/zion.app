@@ -1294,6 +1294,7 @@ export default function HomePage() {
         <div className="container-page">
           <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-500">
             <Link href="/faq/" className="hover:text-purple-400 transition">❓ FAQ</Link>
+            <Link href="/field-tech-recruiting/" className="hover:text-purple-400 transition">👷 Field Tech Recruiting</Link>
             <Link href="/industry-solutions/" className="hover:text-purple-400 transition">🏭 Industry Solutions</Link>
             <Link href="/services/" className="hover:text-purple-400 transition">🛠️ All Services</Link>
             <Link href="/configurator" className="hover:text-purple-400 transition">⚙️ Configurator</Link>
