@@ -1,5 +1,5 @@
 1:"$Sreact.fragment"
-2:I[9933,["1362","static/chunks/app/leads/page-9a25c791888b37a9.js"],"default"]
+2:I[9933,["1362","static/chunks/app/leads/page-4c1555d7a0cc9a44.js"],"default"]
 3:I[484,[],"OutletBoundary"]
 4:"$Sreact.suspense"
 :HL["/_next/static/css/f863ad17f38e48a5.css","style"]
