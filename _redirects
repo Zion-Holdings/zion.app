@@ -32,3 +32,9 @@
 /tools/phishing-analyzer /tools/phishing-analyzer/index.html 200
 /tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200
 /assets/js/conversion-events.js /assets/js/conversion-events.js 200
+
+# Fix stale service references
+/services/ai-computer-vision-quality-inspection/  /services/ai-computer-vision-inspection/  301
+/services/ai-knowledge-base-rag-platform/  /services/  301
+/services/cyber-incident-response-retainer/  /services/  301
+/services/managed-observability-247/  /services/  301
