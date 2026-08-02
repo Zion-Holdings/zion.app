@@ -2,12 +2,6 @@
 
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'AI Automation Playbook | Zion Tech Group',
-  description: 'A practical AI automation playbook for IT and services companies: use-case prioritization, pilot rollout, observability, and scaling to production.',
-  alternates: { canonical: '/ai-automation-playbook/' },
-};
-
 const steps = [
   { title: 'Map high-impact use cases', body: 'Start with support, security, cloud cost, and document workflows where automation shows ROI fastest.' },
   { title: 'Build one production-ready pilot', body: 'Avoid slide decks. Deliver an integrated pilot with monitoring, retry logic, and clear ownership.' },

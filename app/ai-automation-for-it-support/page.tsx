@@ -2,12 +2,6 @@
 
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'AI Automation for IT Support | Zion Tech Group',
-  description: 'AI automation for IT support: ticket triage, knowledge-base assistants, alert routing, and escalation that reduce resolution time and support cost.',
-  alternates: { canonical: '/ai-automation-for-it-support/' },
-};
-
 const benefits = [
   { title: 'Faster ticket resolution', body: 'AI triage and routing get requests to the right owner faster, cutting first-response time.' },
   { title: 'Lower support cost', body: 'Deflect repetitive tickets with knowledge-base answers and structured self-service flows.' },
