@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-04T15:07:54.492Z",
-  "count": 1614,
+  "generated": "2026-08-01T19:26:46.802Z",
+  "count": 1615,
   "categories": {
-    "ai": 660,
+    "ai": 661,
     "security": 135,
     "automation": 97,
     "cloud": 130,
@@ -6548,6 +6548,34 @@
         "Enterprise security out of the box"
       ],
       "href": "/services/ai-knowledge-base-rag",
+      "source": "json"
+    },
+    {
+      "id": "ai-knowledge-base-rag-platform",
+      "title": "AI Knowledge Base & RAG Platform",
+      "description": "AI Knowledge Base Rag — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "category": "ai",
+      "basic": "$149/mo",
+      "pro": "$399/mo",
+      "enterprise": "$1,299/mo",
+      "popular": false,
+      "features": [
+        "AI-powered knowledge base rag automation",
+        "Real-time analytics and monitoring",
+        "Enterprise-grade security (SOC2, HIPAA ready)",
+        "REST API and webhooks for integrations",
+        "Multi-tenant SaaS architecture",
+        "Role-based access control",
+        "Custom dashboards and reporting",
+        "99.9% uptime SLA"
+      ],
+      "benefits": [
+        "Reduce manual effort in knowledge base rag by 80%",
+        "Make data-driven decisions in real-time",
+        "Scale without adding headcount",
+        "Enterprise security out of the box"
+      ],
+      "href": "/services/ai-knowledge-base-rag-platform",
       "source": "json"
     },
     {
