@@ -10,8 +10,6 @@ import ServiceSpotlight from '@/components/ServiceSpotlight';
 import ServiceGridWithSearch from '@/components/ServiceGridWithSearch';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import ContactFunnel from '@/components/ContactFunnel';
-import ServiceCounter from '@/components/ServiceCounter';
-import FloatingActionDock from '@/components/FloatingActionDock';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
 import AgentsMonitoring from '@/components/AgentsMonitoring';
 import NavigationQuickLinks from '@/components/NavigationQuickLinks';
@@ -344,14 +342,14 @@ export default function HomePage() {
         <div className="relative container-page pt-32 pb-24">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm mb-6">
-              <span className="text-green-400">●</span> <ServiceCounter /> Services — Live Now
+              <span className="text-green-400">●</span> {serviceCount}+ Services — Live Now
             </div>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
             <span className="gradient-text">AI & IT Services</span><br />
             <span className="text-white">for Your Business</span>
           </h1>
           <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-            <ServiceCounter /> real-world AI, IT, cloud, security, data, automation, micro-SaaS, DevOps, blockchain, and IoT services — from machine learning to cybersecurity, CRM to 5G networks.
+            {serviceCount}+ real-world AI, IT, cloud, security, data, automation, micro-SaaS, DevOps, blockchain, and IoT services — from machine learning to cybersecurity, CRM to 5G networks.
             Get a free, custom proposal in minutes.
           </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -631,11 +629,6 @@ export default function HomePage() {
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {[
-              { title: 'AI Computer Vision Quality Inspection', slug: '/services/ai-computer-vision-quality-inspection', emoji: '👁️', color: 'from-blue-500 to-cyan-500' },
-              { title: 'AI Knowledge Base & RAG Platform', slug: '/services/ai-knowledge-base-rag-platform', emoji: '📚', color: 'from-green-500 to-emerald-500' },
-              { title: 'Cyber Incident Response Retainer', slug: '/services/cyber-incident-response-retainer', emoji: '🛡️', color: 'from-red-500 to-orange-500' },
-              { title: 'Cloud Cost Optimization Platform', slug: '/services/cloud-cost-optimization-platform', emoji: '☁️', color: 'from-sky-400 to-blue-600' },
-              { title: 'Managed Observability 24/7', slug: '/services/managed-observability-247', emoji: '📡', color: 'from-cyan-500 to-blue-500' },
             ].map((item) => (
               <Link key={item.slug} href={item.slug} className={`rounded-2xl p-5 border bg-slate-900/70 hover:border-white/30 transition-all group`}>
                 <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center text-2xl shadow-lg mb-3 group-hover:scale-110 transition-transform`}>{item.emoji}</div>
@@ -1458,7 +1451,6 @@ export default function HomePage() {
         </div>
       </section>
       <HomepageEnhancements />
-    <FloatingActionDock />
     </main>
   );
 }
