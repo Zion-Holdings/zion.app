@@ -31,7 +31,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
     )
   }
 
-  const firstTier = (pricing: Record<string, string>) => Object.values(pricing)[0] || 'Contact for Quote'
+  const firstTier = (pricing: Record<string, string> = {}) => Object.values(pricing)[0] || 'Contact for Quote'
 
   return (
     <main className="min-h-screen bg-slate-950 py-20">
@@ -51,7 +51,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             <div className="bg-slate-900/60 border border-slate-700/60 rounded-xl p-5">
               <h2 className="text-white font-semibold mb-3">Features</h2>
               <ul className="space-y-2">
-                {service.features.map((f, i) => (
+                {(service.features || []).map((f, i) => (
                   <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
                     <span className="text-purple-400 mt-1 shrink-0">•</span>
                     <span>{f}</span>
@@ -62,7 +62,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
             <div className="bg-slate-900/60 border border-slate-700/60 rounded-xl p-5">
               <h2 className="text-white font-semibold mb-3">Benefits</h2>
               <ul className="space-y-2">
-                {service.benefits.map((b, i) => (
+                {(service.benefits || []).map((b, i) => (
                   <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
                     <span className="text-purple-400 mt-1 shrink-0">•</span>
                     <span>{b}</span>
@@ -74,8 +74,8 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
           <div className="flex flex-wrap items-center gap-4">
             <span className="text-purple-300 text-sm font-medium">Starting at {firstTier(service.pricing)}</span>
-            <a href={`mailto:${service.contactInfo.email}?subject=${encodeURIComponent(service.title)}`} className="btn-primary">Contact Us</a>
-            <a href={service.contactInfo.website} className="text-sm text-purple-400 hover:underline inline-flex items-center gap-1">Visit Service Site →</a>
+            <a href={`mailto:${service.contactInfo?.email || 'info@ziontechgroup.com'}?subject=${encodeURIComponent(service.title)}`} className="btn-primary">Contact Us</a>
+            <a href={service.contactInfo?.website || '#'} className="text-sm text-purple-400 hover:underline inline-flex items-center gap-1">Visit Service Site →</a>
           </div>
         </div>
       </div>

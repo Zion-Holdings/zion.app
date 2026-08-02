@@ -101,7 +101,7 @@ export default function RootLayout({
         <body className="antialiased font-sans">
           <Analytics />
           <CtaTracking />
-          <div className="flex min-h-screen flex-col bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">
+          <div className="flex min-h-screen flex-col bg-gradient-to-br from-slate-900 via-slate-900 to-slate-900">
             <EnhancedSkipLink />
             <ReadingProgressBar />
             <Header />

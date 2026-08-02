@@ -241,7 +241,7 @@ export default function HomePage() {
   }, [allServices, releaseNotes]);
 
   return (
-    <main className="min-h-screen bg-slate-950">
+    <main className="min-h-screen bg-slate-900">
       {/* ── JSON-LD: Organization + WebSite ── */}
       <script
         type="application/ld+json"
@@ -503,7 +503,7 @@ export default function HomePage() {
       </section>
 
       {/* ── AI Agent Monitoring Dashboard — Prominent Feature Section ── */}
-      <section className="py-20 bg-gradient-to-b from-slate-950 via-purple-950/20 to-slate-950">
+      <section className="py-20 bg-gradient-to-b from-slate-900 via-purple-950/20 to-slate-900">
         <div className="container-page">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-10">
@@ -575,7 +575,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Service Match Quiz — Interactive AI Tool ── */}
-      <section className="py-12 bg-gradient-to-b from-slate-950 via-slate-900/40 to-slate-950">
+      <section className="py-12 bg-gradient-to-b from-slate-900 via-slate-900/40 to-slate-900">
         <div className="container-page">
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-1.5 mb-4">
@@ -589,11 +589,6 @@ export default function HomePage() {
           </div>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {[
-              { title: 'AI Computer Vision Quality Inspection', slug: '/services/ai-computer-vision-quality-inspection', emoji: '👁️', color: 'from-blue-500 to-cyan-500' },
-              { title: 'AI Knowledge Base & RAG Platform', slug: '/services/ai-knowledge-base-rag-platform', emoji: '📚', color: 'from-green-500 to-emerald-500' },
-              { title: 'Cyber Incident Response Retainer', slug: '/services/cyber-incident-response-retainer', emoji: '🛡️', color: 'from-red-500 to-orange-500' },
-              { title: 'Cloud Cost Optimization Platform', slug: '/services/cloud-cost-optimization-platform', emoji: '☁️', color: 'from-sky-400 to-blue-600' },
-              { title: 'Managed Observability 24/7', slug: '/services/managed-observability-247', emoji: '📡', color: 'from-cyan-500 to-blue-500' },
             ].map((item) => (
               <Link key={item.slug} href={item.slug} className={`rounded-2xl p-5 border bg-slate-900/70 hover:border-white/30 transition-all group`}>
                 <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center text-2xl shadow-lg mb-3 group-hover:scale-110 transition-transform`}>{item.emoji}</div>
@@ -810,7 +805,7 @@ export default function HomePage() {
       </section>
 
       {/* ── AI Agent Fleet — Live Operations ── */}
-      <section className="py-20 bg-gradient-to-b from-slate-950 via-purple-950/20 to-slate-950 border-t border-slate-800/60 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-b from-slate-900 via-purple-950/20 to-slate-900 border-t border-slate-800/60 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />

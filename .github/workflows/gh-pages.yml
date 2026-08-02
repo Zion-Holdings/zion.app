@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
         with:
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: Setup Node.js
         uses: actions/setup-node@v5
@@ -87,23 +87,23 @@ jobs:
           if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f docs/robots.txt ]; then cp -f docs/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
           if [ ! -f "$ARTIFACT_DIR/sitemap.xml" ] && [ -f docs/sitemap.xml ]; then cp -f docs/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
           # Promote key fallback pages from docs/ to artifact root so Pages can serve them.
-          for f in \\
-            case-studies/index.html \\
-            industries/index.html \\
-            testimonials/index.html \\
-            automation/index.html \\
-            services/ai-workflow-automation/index.html \\
-            services/ai-email-intelligence/index.html \\
-            services/ai-smart-global-campaign/index.html \\
-            ai-agency-growth-engine/index.html \\
-            autonomous-ai-implementation-services/index.html \\
-            ai-partnership-program/index.html \\
-            ai-revenue-accelerator-program/index.html \\
-            ai-ready-infrastructure/index.html \\
-            ai-roi-calculator/index.html \\
-            implementation-roadmap/index.html \\
-            start-here/index.html \\
-            status-page/index.html \\
+          for f in \
+            case-studies/index.html \
+            industries/index.html \
+            testimonials/index.html \
+            automation/index.html \
+            services/ai-workflow-automation/index.html \
+            services/ai-email-intelligence/index.html \
+            services/ai-smart-global-campaign/index.html \
+            ai-agency-growth-engine/index.html \
+            autonomous-ai-implementation-services/index.html \
+            ai-partnership-program/index.html \
+            ai-revenue-accelerator-program/index.html \
+            ai-ready-infrastructure/index.html \
+            ai-roi-calculator/index.html \
+            implementation-roadmap/index.html \
+            start-here/index.html \
+            status-page/index.html \
             roadmap/index.html; do
             mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
             if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
