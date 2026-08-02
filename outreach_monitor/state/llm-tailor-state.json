@@ -1,5 +1,0 @@
-{
-  "last_check": 1783443529,
-  "cooldown_note": "Same-subject cooldown added; generic reply replaced by LLM-tailored responses",
-  "next_action": "Retry limited outbound from merged_contacts after per-contact subject cooldown expires"
-}
