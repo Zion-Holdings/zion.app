@@ -1,0 +1,675 @@
+{
+  "ts": "2026-08-03T16:54:35.559702Z",
+  "status": "degraded",
+  "route_count": 749,
+  "href_audit": {
+    "total_hrefs": 322,
+    "broken": [
+      {
+        "href": "/services/ai-document-processing/",
+        "files": [
+          "app/academy/page.tsx"
+        ]
+      },
+      {
+        "href": "/tools/json-formatter/",
+        "files": [
+          "app/seo/ai-free-services-and-tools/page.tsx"
+        ]
+      },
+      {
+        "href": "/services#automation",
+        "files": [
+          "app/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/page.tsx",
+          "app/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/page.tsx",
+          "app/blog/ai-agentic-workflow-automation-reduce-manual-work-hours/page.tsx",
+          "app/blog/ai-agentic-workflow-automation-reduce-manual-work-hours/page.tsx",
+          "app/blog/ai-automation-and-low-code-for-brazilian-enterprises-in-2026/page.tsx",
+          "app/blog/ai-automation-and-low-code-for-brazilian-enterprises-in-2026/page.tsx",
+          "app/blog/ai-commercial-operations-automation-and-revenue-intelligence/page.tsx",
+          "app/blog/ai-commercial-operations-automation-and-revenue-intelligence/page.tsx",
+          "app/blog/ai-contract-review-and-legal-operations-automation-2026/page.tsx",
+          "app/blog/ai-contract-review-and-legal-operations-automation-2026/page.tsx",
+          "app/blog/ai-devops-ai-automation-platform-engineering-in-2026/page.tsx",
+          "app/blog/ai-devops-ai-automation-platform-engineering-in-2026/page.tsx",
+          "app/blog/ai-devops-and-platform-engineering-automation-in-2026/page.tsx",
+          "app/blog/ai-devops-and-platform-engineering-automation-in-2026/page.tsx",
+          "app/blog/ai-document-processing-automation-guide/page.tsx",
+          "app/blog/ai-document-processing-automation-guide/page.tsx",
+          "app/blog/ai-email-outreach-automation-for-msps-2026/page.tsx",
+          "app/blog/ai-email-outreach-automation-for-msps-2026/page.tsx",
+          "app/blog/ai-field-service-management-and-workforce-automation-for-it-in-2026/page.tsx",
+          "app/blog/ai-field-service-management-and-workforce-automation-for-it-in-2026/page.tsx",
+          "app/blog/ai-financial-engineering-and-portfolio-automation-in-2026/page.tsx",
+          "app/blog/ai-financial-engineering-and-portfolio-automation-in-2026/page.tsx",
+          "app/blog/ai-first-low-code-workflow-automation-for-brazilian-it-in-2026/page.tsx",
+          "app/blog/ai-first-low-code-workflow-automation-for-brazilian-it-in-2026/page.tsx",
+          "app/blog/ai-for-it-compliance-automation-and-policy-governance/page.tsx",
+          "app/blog/ai-for-it-compliance-automation-and-policy-governance/page.tsx",
+          "app/blog/ai-low-code-workflow-automation-guide-brazilian-enterprises/page.tsx",
+          "app/blog/ai-low-code-workflow-automation-guide-brazilian-enterprises/page.tsx",
+          "app/blog/ai-partnership-automation-framework-for-it-companies-2026/page.tsx",
+          "app/blog/ai-partnership-automation-framework-for-it-companies-2026/page.tsx",
+          "app/blog/ai-plus-devops-automation-for-it-services/page.tsx",
+          "app/blog/ai-plus-devops-automation-for-it-services/page.tsx",
+          "app/blog/ai-virtual-cfo-and-financial-operations-automation-in-2026/page.tsx",
+          "app/blog/ai-virtual-cfo-and-financial-operations-automation-in-2026/page.tsx",
+          "app/blog/ai-workflow-automation-patterns-for-enterprises-in-2026/page.tsx",
+          "app/blog/ai-workflow-automation-patterns-for-enterprises-in-2026/page.tsx",
+          "app/blog/generative-ai-automation-playbook-for-enterprise/page.tsx",
+          "app/blog/generative-ai-automation-playbook-for-enterprise/page.tsx",
+          "app/blog/healthcare-crm-automation-ai-patient-workflows-2026/page.tsx",
+          "app/blog/healthcare-crm-automation-ai-patient-workflows-2026/page.tsx",
+          "app/blog/ai-insurance-claims-automation-guide-for-operations-leaders/page.tsx",
+          "app/blog/ai-insurance-claims-automation-guide-for-operations-leaders/page.tsx",
+          "app/blog/enterprise-document-processing-ocr-automation-guide/page.tsx",
+          "app/blog/enterprise-document-processing-ocr-automation-guide/page.tsx",
+          "app/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining/page.tsx",
+          "app/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining/page.tsx",
+          "app/blog/ai-powered-incident-remediation-from-alert-to-fix-in-minutes/page.tsx",
+          "app/blog/ai-powered-incident-remediation-from-alert-to-fix-in-minutes/page.tsx",
+          "app/blog/document-processing-automation-extract-data-invoices-contracts-forms/page.tsx",
+          "app/blog/document-processing-automation-extract-data-invoices-contracts-forms/page.tsx"
+        ]
+      },
+      {
+        "href": "/services#ai",
+        "files": [
+          "app/blog/ai-aiops-instant-response-and-remediation-workflows-for-it-leaders/page.tsx",
+          "app/blog/ai-aiops-instant-response-and-remediation-workflows-for-it-leaders/page.tsx",
+          "app/blog/ai-anti-fraud-and-payment-intelligence-for-fintech-in-2026/page.tsx",
+          "app/blog/ai-anti-fraud-and-payment-intelligence-for-fintech-in-2026/page.tsx",
+          "app/blog/ai-ci-execution-and-ci-cd-ai-automation/page.tsx",
+          "app/blog/ai-ci-execution-and-ci-cd-ai-automation/page.tsx",
+          "app/blog/ai-client-retention-tactics-for-it-and-ai-services-companies-in-2026/page.tsx",
+          "app/blog/ai-client-retention-tactics-for-it-and-ai-services-companies-in-2026/page.tsx",
+          "app/blog/ai-computer-vision-quality-inspection/page.tsx",
+          "app/blog/ai-computer-vision-quality-inspection/page.tsx",
+          "app/blog/ai-consulting-services-for-enterprise-it-in-2026/page.tsx",
+          "app/blog/ai-consulting-services-for-enterprise-it-in-2026/page.tsx",
+          "app/blog/ai-consulting-vs-ai-implementation-services-in-2026/page.tsx",
+          "app/blog/ai-consulting-vs-ai-implementation-services-in-2026/page.tsx",
+          "app/blog/ai-cost-optimization-for-it-operations-2026/page.tsx",
+          "app/blog/ai-cost-optimization-for-it-operations-2026/page.tsx",
+          "app/blog/ai-customer-success-churn-prevention-guide-saas/page.tsx",
+          "app/blog/ai-customer-success-churn-prevention-guide-saas/page.tsx",
+          "app/blog/ai-cybersecurity-platform-for-msp-and-managed-security/page.tsx",
+          "app/blog/ai-cybersecurity-platform-for-msp-and-managed-security/page.tsx",
+          "app/blog/ai-driven-supply-chain-risk-management-for-operations-leaders/page.tsx",
+          "app/blog/ai-driven-supply-chain-risk-management-for-operations-leaders/page.tsx",
+          "app/blog/ai-enterprise-integration-patterns-for-saas-and-erp-in-2026/page.tsx",
+          "app/blog/ai-enterprise-integration-patterns-for-saas-and-erp-in-2026/page.tsx",
+          "app/blog/ai-enterprise-readiness-assessment-for-latam-in-2026/page.tsx",
+          "app/blog/ai-enterprise-readiness-assessment-for-latam-in-2026/page.tsx",
+          "app/blog/ai-ethernet-switching-and-network-deployment-readiness-for-it-teams-in-2026/page.tsx",
+          "app/blog/ai-ethernet-switching-and-network-deployment-readiness-for-it-teams-in-2026/page.tsx",
+          "app/blog/ai-first-HR-and-talent-intelligence-in-2026/page.tsx",
+          "app/blog/ai-first-HR-and-talent-intelligence-in-2026/page.tsx",
+          "app/blog/ai-first-anti-fraud-and-payment-intelligence-in-2026/page.tsx",
+          "app/blog/ai-first-anti-fraud-and-payment-intelligence-in-2026/page.tsx",
+          "app/blog/ai-first-capacity-planning-and-resource-forecasting-for-it-in-2026/page.tsx",
+          "app/blog/ai-first-capacity-planning-and-resource-forecasting-for-it-in-2026/page.tsx",
+          "app/blog/ai-first-cdn-and-edge-computing-for-brazilian-it-in-2026/page.tsx",
+          "app/blog/ai-first-cdn-and-edge-computing-for-brazilian-it-in-2026/page.tsx",
+          "app/blog/ai-first-channel-partner-and-reseller-enablement-in-2026/page.tsx",
+          "app/blog/ai-first-channel-partner-and-reseller-enablement-in-2026/page.tsx",
+          "app/blog/ai-first-cloud-cost-management-and-finops-in-2026/page.tsx",
+          "app/blog/ai-first-cloud-cost-management-and-finops-in-2026/page.tsx",
+          "app/blog/ai-first-connectivity-private-5g-and-sase-in-2026/page.tsx",
+          "app/blog/ai-first-connectivity-private-5g-and-sase-in-2026/page.tsx",
+          "app/blog/ai-first-customer-success-and-churn-prevention-for-saas-in-2026/page.tsx",
+          "app/blog/ai-first-customer-success-and-churn-prevention-for-saas-in-2026/page.tsx",
+          "app/blog/ai-first-customer-success-and-renewal-intelligence-in-2026/page.tsx",
+          "app/blog/ai-first-customer-success-and-renewal-intelligence-in-2026/page.tsx",
+          "app/blog/ai-first-device-management-and-iot-operations-in-2026/page.tsx",
+          "app/blog/ai-first-device-management-and-iot-operations-in-2026/page.tsx",
+          "app/blog/ai-first-digital-twin-platforms-for-asset-simulation-in-2026/page.tsx",
+          "app/blog/ai-first-digital-twin-platforms-for-asset-simulation-in-2026/page.tsx",
+          "app/blog/ai-first-digital-twins-and-asset-simulation-for-industry-in-2026/page.tsx",
+          "app/blog/ai-first-digital-twins-and-asset-simulation-for-industry-in-2026/page.tsx",
+          "app/blog/ai-first-digital-twins-and-asset-simulation-in-2026/page.tsx",
+          "app/blog/ai-first-digital-twins-and-asset-simulation-in-2026/page.tsx",
+          "app/blog/ai-first-education-platforms-and-learning-intelligence-in-2026/page.tsx",
+          "app/blog/ai-first-education-platforms-and-learning-intelligence-in-2026/page.tsx",
+          "app/blog/ai-first-end-user-computing-and-modern-workplace-in-2026/page.tsx",
+          "app/blog/ai-first-end-user-computing-and-modern-workplace-in-2026/page.tsx",
+          "app/blog/ai-first-indoor-mapping-and-location-intelligence-for-enterprises-in-2026/page.tsx",
+          "app/blog/ai-first-indoor-mapping-and-location-intelligence-for-enterprises-in-2026/page.tsx",
+          "app/blog/ai-first-insurance-claims-and-damage-intelligence-in-2026/page.tsx",
+          "app/blog/ai-first-insurance-claims-and-damage-intelligence-in-2026/page.tsx",
+          "app/blog/ai-first-it-asset-management-and-discovery-in-2026/page.tsx",
+          "app/blog/ai-first-it-asset-management-and-discovery-in-2026/page.tsx",
+          "app/blog/ai-first-knowledge-management-and-enterprise-search-in-2026/page.tsx",
+          "app/blog/ai-first-knowledge-management-and-enterprise-search-in-2026/page.tsx",
+          "app/blog/ai-first-loan-origination-and-credit-intelligence-in-2026/page.tsx",
+          "app/blog/ai-first-loan-origination-and-credit-intelligence-in-2026/page.tsx",
+          "app/blog/ai-first-smart-city-and-urban-intelligence-in-2026/page.tsx",
+          "app/blog/ai-first-smart-city-and-urban-intelligence-in-2026/page.tsx",
+          "app/blog/ai-fraud-prevention-and-identity-intelligence-for-brazilian-companies-in-2026/page.tsx",
+          "app/blog/ai-fraud-prevention-and-identity-intelligence-for-brazilian-companies-in-2026/page.tsx",
+          "app/blog/ai-identity-and-zero-trust-for-brazilian-it-teams-in-2026/page.tsx",
+          "app/blog/ai-identity-and-zero-trust-for-brazilian-it-teams-in-2026/page.tsx",
+          "app/blog/ai-it-cost-optimization-for-micro-saas/page.tsx",
+          "app/blog/ai-it-cost-optimization-for-micro-saas/page.tsx",
+          "app/blog/ai-it-partnership-growth-playbook-2026/page.tsx",
+          "app/blog/ai-it-partnership-growth-playbook-2026/page.tsx",
+          "app/blog/ai-led-energy-management-and-carbon-optimization-in-2026/page.tsx",
+          "app/blog/ai-led-energy-management-and-carbon-optimization-in-2026/page.tsx",
+          "app/blog/ai-managed-services-and-outsourcing-for-latam-enterprises/page.tsx",
+          "app/blog/ai-managed-services-and-outsourcing-for-latam-enterprises/page.tsx",
+          "app/blog/ai-native-backup-disaster-recovery-making-software-defined-in-2026/page.tsx",
+          "app/blog/ai-native-backup-disaster-recovery-making-software-defined-in-2026/page.tsx",
+          "app/blog/ai-operational-readiness-for-brazilian-it-companies-in-2026/page.tsx",
+          "app/blog/ai-operational-readiness-for-brazilian-it-companies-in-2026/page.tsx",
+          "app/blog/ai-partnership-models-for-latam-growth-in-2026/page.tsx",
+          "app/blog/ai-partnership-models-for-latam-growth-in-2026/page.tsx",
+          "app/blog/ai-platform-engineering-patterns-for-scale-in-2026/page.tsx",
+          "app/blog/ai-platform-engineering-patterns-for-scale-in-2026/page.tsx",
+          "app/blog/ai-soc-aiops-platform-engineering-for-latam-it-teams-in-2026/page.tsx",
+          "app/blog/ai-soc-aiops-platform-engineering-for-latam-it-teams-in-2026/page.tsx",
+          "app/blog/ai-vendor-channel-partnership-model-for-latam/page.tsx",
+          "app/blog/ai-vendor-channel-partnership-model-for-latam/page.tsx",
+          "app/blog/ai-voice-assistant-integration-for-business-communications-in-2026/page.tsx",
+          "app/blog/ai-voice-assistant-integration-for-business-communications-in-2026/page.tsx",
+          "app/blog/ai-web-accessibility-inclusive-design-for-brazilian-digital-services-in-2026/page.tsx",
+          "app/blog/ai-web-accessibility-inclusive-design-for-brazilian-digital-services-in-2026/page.tsx",
+          "app/blog/aiops-reduce-incident-resolution-time-for-ceos/page.tsx",
+          "app/blog/aiops-reduce-incident-resolution-time-for-ceos/page.tsx",
+          "app/blog/edge-ai-video-analytics-for-retail-operations-in-2026/page.tsx",
+          "app/blog/edge-ai-video-analytics-for-retail-operations-in-2026/page.tsx",
+          "app/blog/edge-ai-video-analytics-retail-operations/page.tsx",
+          "app/blog/edge-ai-video-analytics-retail-operations/page.tsx",
+          "app/blog/enterprise-ai-integration-roadmap-for-2026/page.tsx",
+          "app/blog/enterprise-ai-integration-roadmap-for-2026/page.tsx",
+          "app/blog/how-to-build-ai-partnerships-that-close-deals-2026/page.tsx",
+          "app/blog/how-to-build-ai-partnerships-that-close-deals-2026/page.tsx",
+          "app/blog/ai-first-legal-tech-and-contract-intelligence-in-2026/page.tsx",
+          "app/blog/ai-first-legal-tech-and-contract-intelligence-in-2026/page.tsx",
+          "app/blog/ai-first-occupational-health-and-safety-intelligence-in-2026/page.tsx",
+          "app/blog/ai-first-occupational-health-and-safety-intelligence-in-2026/page.tsx",
+          "app/blog/ai-first-procurement-and-vendor-risk-in-latam-in-2026/page.tsx",
+          "app/blog/ai-first-procurement-and-vendor-risk-in-latam-in-2026/page.tsx",
+          "app/blog/ai-first-sase-and-secure-access-for-distributed-it-teams-in-2026/page.tsx",
+          "app/blog/ai-first-sase-and-secure-access-for-distributed-it-teams-in-2026/page.tsx",
+          "app/blog/ai-first-supply-chain-forecasting-and-logistics-intelligence-in-2026/page.tsx",
+          "app/blog/ai-first-supply-chain-forecasting-and-logistics-intelligence-in-2026/page.tsx",
+          "app/blog/ai-first-vulnerability-management-and-patch-intelligence-in-2026/page.tsx",
+          "app/blog/ai-first-vulnerability-management-and-patch-intelligence-in-2026/page.tsx",
+          "app/blog/ai-for-document-intelligence-and-intelligent-automation/page.tsx",
+          "app/blog/ai-for-document-intelligence-and-intelligent-automation/page.tsx",
+          "app/blog/ai-for-it-asset-lifecycle-management/page.tsx",
+          "app/blog/ai-for-it-asset-lifecycle-management/page.tsx",
+          "app/blog/ai-for-it-change-management-and-release-risk-reduction/page.tsx",
+          "app/blog/ai-for-it-change-management-and-release-risk-reduction/page.tsx",
+          "app/blog/ai-for-it-service-analytics-and-reporting/page.tsx",
+          "app/blog/ai-for-it-service-analytics-and-reporting/page.tsx",
+          "app/blog/ai-for-it-vendor-management-and-procurement/page.tsx",
+          "app/blog/ai-for-it-vendor-management-and-procurement/page.tsx",
+          "app/blog/ai-government-and-public-sector-opportunities-for-it-companies-in-brazil-in-2026/page.tsx",
+          "app/blog/ai-government-and-public-sector-opportunities-for-it-companies-in-brazil-in-2026/page.tsx",
+          "app/blog/ai-integration-patterns-for-saas-products-in-2026/page.tsx",
+          "app/blog/ai-integration-patterns-for-saas-products-in-2026/page.tsx",
+          "app/blog/ai-itsm-modernization-playbook-2026/page.tsx",
+          "app/blog/ai-itsm-modernization-playbook-2026/page.tsx",
+          "app/blog/ai-knowledge-management-and-enterprise-search-in-2026/page.tsx",
+          "app/blog/ai-knowledge-management-and-enterprise-search-in-2026/page.tsx",
+          "app/blog/ai-managed-it-services-and-msp-automation/page.tsx",
+          "app/blog/ai-managed-it-services-and-msp-automation/page.tsx",
+          "app/blog/ai-outsourcing-vs-in-house-it-latam/page.tsx",
+          "app/blog/ai-outsourcing-vs-in-house-it-latam/page.tsx",
+          "app/blog/ai-outsourcing-vs-inhouse-it-teams-2026/page.tsx",
+          "app/blog/ai-outsourcing-vs-inhouse-it-teams-2026/page.tsx",
+          "app/blog/ai-phone-agent-for-small-business-free-tools-2026/page.tsx",
+          "app/blog/ai-phone-agent-for-small-business-free-tools-2026/page.tsx",
+          "app/blog/ai-platform-engineering-2026-services-guide/page.tsx",
+          "app/blog/ai-platform-engineering-2026-services-guide/page.tsx",
+          "app/blog/ai-powered-change-management-for-it-teams-2026/page.tsx",
+          "app/blog/ai-powered-change-management-for-it-teams-2026/page.tsx",
+          "app/blog/ai-text-to-sql-platforms-for-business-intelligence-in-2026/page.tsx",
+          "app/blog/ai-text-to-sql-platforms-for-business-intelligence-in-2026/page.tsx",
+          "app/blog/ai-user-research-and-ux-insights-for-brazilian-products-in-2026/page.tsx",
+          "app/blog/ai-user-research-and-ux-insights-for-brazilian-products-in-2026/page.tsx",
+          "app/blog/ai-vendor-due-diligence-checklist-for-latam-in-2026/page.tsx",
+          "app/blog/ai-vendor-due-diligence-checklist-for-latam-in-2026/page.tsx",
+          "app/blog/cyber-incident-response-retainer-ready-before-breach/page.tsx",
+          "app/blog/cyber-incident-response-retainer-ready-before-breach/page.tsx",
+          "app/blog/free-ai-readiness-audit-checklist-for-it-managers-2026/page.tsx",
+          "app/blog/free-ai-readiness-audit-checklist-for-it-managers-2026/page.tsx",
+          "app/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy/page.tsx",
+          "app/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy/page.tsx",
+          "app/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate/page.tsx",
+          "app/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate/page.tsx",
+          "app/blog/ai-governance-framework-audit-explain-model-decisions-2026/page.tsx",
+          "app/blog/ai-governance-framework-audit-explain-model-decisions-2026/page.tsx",
+          "app/blog/edge-ai-tinyml-run-models-microcontrollers-iot-devices/page.tsx",
+          "app/blog/edge-ai-tinyml-run-models-microcontrollers-iot-devices/page.tsx",
+          "app/blog/vector-database-architecture-pinecone-weaviate-pgvector-compared/page.tsx",
+          "app/blog/vector-database-architecture-pinecone-weaviate-pgvector-compared/page.tsx",
+          "app/blog/computer-vision-retail-shelf-monitoring-foot-traffic-loss-prevention/page.tsx",
+          "app/blog/computer-vision-retail-shelf-monitoring-foot-traffic-loss-prevention/page.tsx",
+          "app/blog/latam-ai-partnership-playbook-for-tech-companies-2026/page.tsx",
+          "app/blog/latam-ai-partnership-playbook-for-tech-companies-2026/page.tsx",
+          "app/blog/managed-ai-ops-platform-for-it-service-providers/page.tsx",
+          "app/blog/managed-ai-ops-platform-for-it-service-providers/page.tsx",
+          "app/blog/managed-socaas-pricing-model-small-business/page.tsx",
+          "app/blog/managed-socaas-pricing-model-small-business/page.tsx",
+          "app/blog/nebius-latam-ai-partnership-opportunity-2026/page.tsx",
+          "app/blog/nebius-latam-ai-partnership-opportunity-2026/page.tsx",
+          "app/blog/nebius-partnership-and-ai-vendor-co-selling-2026/page.tsx",
+          "app/blog/nebius-partnership-and-ai-vendor-co-selling-2026/page.tsx",
+          "app/blog/mlops-pipeline-llms-fine-tuning-production-deployment/page.tsx",
+          "app/blog/mlops-pipeline-llms-fine-tuning-production-deployment/page.tsx",
+          "app/blog/multimodal-ai-architecture-text-image-voice-enterprise-stack/page.tsx",
+          "app/blog/multimodal-ai-architecture-text-image-voice-enterprise-stack/page.tsx",
+          "app/blog/nebius-latam-ai-cloud-partnership-guide/page.tsx",
+          "app/blog/nebius-latam-ai-cloud-partnership-guide/page.tsx",
+          "app/blog/nebius-partnership-latam-expansion-guide/page.tsx",
+          "app/blog/nebius-partnership-latam-expansion-guide/page.tsx",
+          "app/blog/ai-customer-churn-prediction-identify-at-risk-accounts-before-they-leave/page.tsx",
+          "app/blog/ai-customer-churn-prediction-identify-at-risk-accounts-before-they-leave/page.tsx",
+          "app/blog/free-ai-tools-technology-companies-should-use-in-2026/page.tsx",
+          "app/blog/free-ai-tools-technology-companies-should-use-in-2026/page.tsx",
+          "app/blog/nebius-ai-cloud-partnership-model-for-latam/page.tsx",
+          "app/blog/nebius-ai-cloud-partnership-model-for-latam/page.tsx",
+          "app/blog/ai-code-review-automation-enforce-standards-find-vulnerabilities-before-merge/page.tsx",
+          "app/blog/ai-code-review-automation-enforce-standards-find-vulnerabilities-before-merge/page.tsx",
+          "app/blog/prompt-engineering-at-scale-version-test-deploy-prompts-code/page.tsx",
+          "app/blog/prompt-engineering-at-scale-version-test-deploy-prompts-code/page.tsx",
+          "app/blog/ai-model-fine-tuning-strategy-when-to-fine-tune-vs-rag-vs-prompting/page.tsx",
+          "app/blog/ai-model-fine-tuning-strategy-when-to-fine-tune-vs-rag-vs-prompting/page.tsx"
+        ]
+      },
+      {
+        "href": "/services#support",
+        "files": [
+          "app/blog/ai-chatops-and-agentic-support-automation-in-2026/page.tsx",
+          "app/blog/ai-chatops-and-agentic-support-automation-in-2026/page.tsx",
+          "app/blog/ai-email-intelligence-and-reply-automation-for-support-teams-2026/page.tsx",
+          "app/blog/ai-email-intelligence-and-reply-automation-for-support-teams-2026/page.tsx",
+          "app/blog/ai-for-it-remote-support-and-endpoint-assistance/page.tsx",
+          "app/blog/ai-for-it-remote-support-and-endpoint-assistance/page.tsx",
+          "app/blog/ai-it-support-automation-and-managed-help-desk/page.tsx",
+          "app/blog/ai-it-support-automation-and-managed-help-desk/page.tsx",
+          "app/blog/ai-support-automation-ai-chat-and-ticket-intelligence-in-2026/page.tsx",
+          "app/blog/ai-support-automation-ai-chat-and-ticket-intelligence-in-2026/page.tsx",
+          "app/blog/ai-support-automation-playbook-2026/page.tsx",
+          "app/blog/ai-support-automation-playbook-2026/page.tsx",
+          "app/blog/ai-first-managed-it-support-playbook-for-startups-in-2026/page.tsx",
+          "app/blog/ai-first-managed-it-support-playbook-for-startups-in-2026/page.tsx",
+          "app/blog/ai-first-msp-pricing-model-for-ai-support-automation-in-2026/page.tsx",
+          "app/blog/ai-first-msp-pricing-model-for-ai-support-automation-in-2026/page.tsx",
+          "app/blog/ai-human-handoff-playbook-for-support-teams-2026/page.tsx",
+          "app/blog/ai-human-handoff-playbook-for-support-teams-2026/page.tsx",
+          "app/blog/ai-support-automation-for-brazilian-companies-in-2026/page.tsx",
+          "app/blog/ai-support-automation-for-brazilian-companies-in-2026/page.tsx",
+          "app/blog/ai-support-automation-playbook-for-msps-and-it-teams-2026/page.tsx",
+          "app/blog/ai-support-automation-playbook-for-msps-and-it-teams-2026/page.tsx",
+          "app/blog/ai-support-outsourcing-for-ecommerce-in-2026/page.tsx",
+          "app/blog/ai-support-outsourcing-for-ecommerce-in-2026/page.tsx",
+          "app/blog/ai-voice-and-multichannel-support-automation/page.tsx",
+          "app/blog/ai-voice-and-multichannel-support-automation/page.tsx",
+          "app/blog/managed-ai-cloud-support-for-startups-and-enterprises-in-2026/page.tsx",
+          "app/blog/managed-ai-cloud-support-for-startups-and-enterprises-in-2026/page.tsx",
+          "app/blog/proactive-customer-support-ai-predict-issues-before-tickets-open/page.tsx",
+          "app/blog/proactive-customer-support-ai-predict-issues-before-tickets-open/page.tsx",
+          "app/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support/page.tsx",
+          "app/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support/page.tsx"
+        ]
+      },
+      {
+        "href": "/services#data",
+        "files": [
+          "app/blog/ai-data-engineering-patterns-for-latam-in-2026/page.tsx",
+          "app/blog/ai-data-engineering-patterns-for-latam-in-2026/page.tsx",
+          "app/blog/ai-data-pipeline-lakehouse-platform-engineering-in-2026/page.tsx",
+          "app/blog/ai-data-pipeline-lakehouse-platform-engineering-in-2026/page.tsx",
+          "app/blog/ai-first-data-center-operations-and-hybrid-infrastructure-in-2026/page.tsx",
+          "app/blog/ai-first-data-center-operations-and-hybrid-infrastructure-in-2026/page.tsx",
+          "app/blog/ai-for-clinical-trial-operations-and-data-quality/page.tsx",
+          "app/blog/ai-for-clinical-trial-operations-and-data-quality/page.tsx",
+          "app/blog/feature-store-machine-learning-centralize-features-training-inference/page.tsx",
+          "app/blog/feature-store-machine-learning-centralize-features-training-inference/page.tsx",
+          "app/blog/real-time-analytics-dashboard-sub-second-queries-billion-row-datasets/page.tsx",
+          "app/blog/real-time-analytics-dashboard-sub-second-queries-billion-row-datasets/page.tsx",
+          "app/blog/data-privacy-engineering-anonymization-tokenization-differential-privacy/page.tsx",
+          "app/blog/data-privacy-engineering-anonymization-tokenization-differential-privacy/page.tsx",
+          "app/blog/analytics-engineering-dbt-transform-data-warehouse-like-software/page.tsx",
+          "app/blog/analytics-engineering-dbt-transform-data-warehouse-like-software/page.tsx",
+          "app/blog/real-time-data-streaming-kafka-flink-event-driven-architecture/page.tsx",
+          "app/blog/real-time-data-streaming-kafka-flink-event-driven-architecture/page.tsx",
+          "app/blog/synthetic-data-generation-for-compliance-and-model-training/page.tsx",
+          "app/blog/synthetic-data-generation-for-compliance-and-model-training/page.tsx",
+          "app/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure/page.tsx",
+          "app/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure/page.tsx",
+          "app/blog/data-lakehouse-snowflake-databricks-when-to-choose-which/page.tsx",
+          "app/blog/data-lakehouse-snowflake-databricks-when-to-choose-which/page.tsx",
+          "app/blog/data-contracts-analytics-engineering-enforce-schema-quality-between-teams/page.tsx",
+          "app/blog/data-contracts-analytics-engineering-enforce-schema-quality-between-teams/page.tsx",
+          "app/blog/time-series-analytics-iot-ingest-store-query-sensor-data-scale/page.tsx",
+          "app/blog/time-series-analytics-iot-ingest-store-query-sensor-data-scale/page.tsx",
+          "app/blog/data-observability-detect-quality-issues-schema-drift-anomalies-automatically/page.tsx",
+          "app/blog/data-observability-detect-quality-issues-schema-drift-anomalies-automatically/page.tsx"
+        ]
+      },
+      {
+        "href": "/services#observability",
+        "files": [
+          "app/blog/ai-observability-aiops-platform-engineering-for-latam-in-2026/page.tsx",
+          "app/blog/ai-observability-aiops-platform-engineering-for-latam-in-2026/page.tsx",
+          "app/blog/ai-observability-and-incident-response-for-modern-it-teams/page.tsx",
+          "app/blog/ai-observability-and-incident-response-for-modern-it-teams/page.tsx",
+          "app/blog/ai-first-low-latency-observability-and-edge-monitoring-for-it-in-2026/page.tsx",
+          "app/blog/ai-first-low-latency-observability-and-edge-monitoring-for-it-in-2026/page.tsx",
+          "app/blog/ai-it-observability-and-incident-management-in-2026/page.tsx",
+          "app/blog/ai-it-observability-and-incident-management-in-2026/page.tsx",
+          "app/blog/ai-observability-and-incident-management-in-2026/page.tsx",
+          "app/blog/ai-observability-and-incident-management-in-2026/page.tsx",
+          "app/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh/page.tsx",
+          "app/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh/page.tsx",
+          "app/blog/ai-observability-for-llm-applications-tracing-and-cost-control/page.tsx",
+          "app/blog/ai-observability-for-llm-applications-tracing-and-cost-control/page.tsx",
+          "app/blog/platform-engineering-and-ai-observability-in-2026/page.tsx",
+          "app/blog/platform-engineering-and-ai-observability-in-2026/page.tsx",
+          "app/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere/page.tsx",
+          "app/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere/page.tsx",
+          "app/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis/page.tsx",
+          "app/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis/page.tsx",
+          "app/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability/page.tsx",
+          "app/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability/page.tsx"
+        ]
+      },
+      {
+        "href": "/services#security",
+        "files": [
+          "app/blog/ai-platform-security-and-data-governance-for-enterprises/page.tsx",
+          "app/blog/ai-platform-security-and-data-governance-for-enterprises/page.tsx",
+          "app/blog/ai-first-security-operations-and-soc-automation-in-2026/page.tsx",
+          "app/blog/ai-first-security-operations-and-soc-automation-in-2026/page.tsx",
+          "app/blog/ai-security-and-compliance-for-brazilian-companies-in-2026/page.tsx",
+          "app/blog/ai-security-and-compliance-for-brazilian-companies-in-2026/page.tsx",
+          "app/blog/identity-security-playbook-ciam-pam-zero-trust-identity-combined/page.tsx",
+          "app/blog/identity-security-playbook-ciam-pam-zero-trust-identity-combined/page.tsx",
+          "app/blog/attack-surface-management-continuous-discovery-exposure-validation/page.tsx",
+          "app/blog/attack-surface-management-continuous-discovery-exposure-validation/page.tsx",
+          "app/blog/ransomware-resilience-playbook-immutable-backups-isolated-recovery-environments/page.tsx",
+          "app/blog/ransomware-resilience-playbook-immutable-backups-isolated-recovery-environments/page.tsx",
+          "app/blog/ot-iot-security-manufacturing-protecting-legacy-plcs-sensors/page.tsx",
+          "app/blog/ot-iot-security-manufacturing-protecting-legacy-plcs-sensors/page.tsx",
+          "app/blog/software-supply-chain-security-sbom-signing-provenance-2026/page.tsx",
+          "app/blog/software-supply-chain-security-sbom-signing-provenance-2026/page.tsx",
+          "app/blog/vulnerability-management-prioritization-cvss-not-enough-exploitability-scoring/page.tsx",
+          "app/blog/vulnerability-management-prioritization-cvss-not-enough-exploitability-scoring/page.tsx",
+          "app/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime/page.tsx",
+          "app/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime/page.tsx",
+          "app/blog/zero-trust-for-ai-workloads-guardrails-for-model-access-and-data/page.tsx",
+          "app/blog/zero-trust-for-ai-workloads-guardrails-for-model-access-and-data/page.tsx",
+          "app/blog/soc-2-automation-continuous-compliance-monitoring-audit-evidence-collection/page.tsx",
+          "app/blog/soc-2-automation-continuous-compliance-monitoring-audit-evidence-collection/page.tsx",
+          "app/blog/zero-trust-saas-applications-secure-third-party-access-integrations/page.tsx",
+          "app/blog/zero-trust-saas-applications-secure-third-party-access-integrations/page.tsx",
+          "app/blog/endpoint-detection-response-remote-workers-beyond-vpn-protection/page.tsx",
+          "app/blog/endpoint-detection-response-remote-workers-beyond-vpn-protection/page.tsx",
+          "app/blog/data-loss-prevention-ai-prevent-confidential-data-leaks-llm-apis/page.tsx",
+          "app/blog/data-loss-prevention-ai-prevent-confidential-data-leaks-llm-apis/page.tsx",
+          "app/blog/ai-model-security-defend-against-adversarial-attacks-prompt-injection/page.tsx",
+          "app/blog/ai-model-security-defend-against-adversarial-attacks-prompt-injection/page.tsx"
+        ]
+      },
+      {
+        "href": "/services#it",
+        "files": [
+          "app/blog/aiops-automated-root-cause-analysis-for-it-operations/page.tsx",
+          "app/blog/aiops-automated-root-cause-analysis-for-it-operations/page.tsx",
+          "app/blog/aiops-event-correlation-and-intelligent-incident-triage-for-it-leaders/page.tsx",
+          "app/blog/aiops-event-correlation-and-intelligent-incident-triage-for-it-leaders/page.tsx",
+          "app/blog/cyber-incident-response-retainer-services-for-it-teams-in-2026/page.tsx",
+          "app/blog/cyber-incident-response-retainer-services-for-it-teams-in-2026/page.tsx",
+          "app/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks/page.tsx",
+          "app/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks/page.tsx",
+          "app/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration/page.tsx",
+          "app/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration/page.tsx",
+          "app/blog/it-cost-optimization-report-for-managed-cloud-spend/page.tsx",
+          "app/blog/it-cost-optimization-report-for-managed-cloud-spend/page.tsx"
+        ]
+      },
+      {
+        "href": "/services#cloud",
+        "files": [
+          "app/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s/page.tsx",
+          "app/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s/page.tsx",
+          "app/blog/terraform-iac-security-scan-terraform-cloudformation-pulumi-misconfigurations/page.tsx",
+          "app/blog/terraform-iac-security-scan-terraform-cloudformation-pulumi-misconfigurations/page.tsx",
+          "app/blog/cloud-exit-strategy-avoid-vendor-lock-in-portable-architecture-patterns/page.tsx",
+          "app/blog/cloud-exit-strategy-avoid-vendor-lock-in-portable-architecture-patterns/page.tsx",
+          "app/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization/page.tsx",
+          "app/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization/page.tsx",
+          "app/blog/multi-cloud-governance-manage-aws-azure-gcp-one-control-plane/page.tsx",
+          "app/blog/multi-cloud-governance-manage-aws-azure-gcp-one-control-plane/page.tsx",
+          "app/blog/serverless-enterprise-when-to-use-lambda-azure-functions-cloud-run/page.tsx",
+          "app/blog/serverless-enterprise-when-to-use-lambda-azure-functions-cloud-run/page.tsx",
+          "app/blog/cloud-migration-regulated-industries-hipaa-pci-gdpr-aws-azure/page.tsx",
+          "app/blog/cloud-migration-regulated-industries-hipaa-pci-gdpr-aws-azure/page.tsx",
+          "app/blog/container-security-at-scale-image-scanning-runtime-protection-policy-enforcement/page.tsx",
+          "app/blog/container-security-at-scale-image-scanning-runtime-protection-policy-enforcement/page.tsx",
+          "app/blog/edge-cloud-architecture-deploy-low-latency-apps-edge-cloudflare-aws/page.tsx",
+          "app/blog/edge-cloud-architecture-deploy-low-latency-apps-edge-cloudflare-aws/page.tsx",
+          "app/blog/disaster-recovery-automation-tested-failover-multiple-cloud-regions/page.tsx",
+          "app/blog/disaster-recovery-automation-tested-failover-multiple-cloud-regions/page.tsx"
+        ]
+      }
+    ]
+  },
+  "brand_consistency": {
+    "bad_files": [
+      {
+        "file": "app/page.tsx",
+        "hits": [
+          "text-cyan-400",
+          "border-cyan-500",
+          "hover:border-cyan"
+        ]
+      },
+      {
+        "file": "app/components/AgentDashboard.tsx",
+        "hits": [
+          "text-cyan-400",
+          "border-cyan-500"
+        ]
+      },
+      {
+        "file": "app/components/AgentsMonitoring.tsx",
+        "hits": [
+          "text-cyan-400",
+          "border-cyan-500",
+          "hover:border-cyan"
+        ]
+      },
+      {
+        "file": "app/components/HealthDashboard.tsx",
+        "hits": [
+          "text-cyan-400"
+        ]
+      },
+      {
+        "file": "app/components/LeadsControl.tsx",
+        "hits": [
+          "text-cyan-400",
+          "border-cyan-500"
+        ]
+      },
+      {
+        "file": "app/components/V1006V1010Showcase.tsx",
+        "hits": [
+          "text-cyan-400",
+          "border-cyan-500",
+          "hover:border-cyan"
+        ]
+      },
+      {
+        "file": "app/components/V871V875Showcase.tsx",
+        "hits": [
+          "from-cyan-900"
+        ]
+      },
+      {
+        "file": "app/components/V881V885Showcase.tsx",
+        "hits": [
+          "text-cyan-400",
+          "border-cyan-500",
+          "hover:border-cyan"
+        ]
+      },
+      {
+        "file": "app/components/V886V890Showcase.tsx",
+        "hits": [
+          "text-cyan-400"
+        ]
+      },
+      {
+        "file": "app/blog/ai-observability-for-enterprise-it-teams-2026/page.tsx",
+        "hits": [
+          "border-cyan-500",
+          "from-cyan-900"
+        ]
+      },
+      {
+        "file": "app/ai-services/ai-rag-knowledge-systems/page.tsx",
+        "hits": [
+          "text-cyan-400"
+        ]
+      },
+      {
+        "file": "app/ai-services/document-processing/page.tsx",
+        "hits": [
+          "text-cyan-400"
+        ]
+      }
+    ]
+  },
+  "phone_numbers": {
+    "files_with_masked_or_bad_tel": [
+      "app/page.tsx",
+      "app/ai-lab/page.tsx",
+      "app/ai-services/page.tsx",
+      "app/client-portal/page.tsx",
+      "app/components/AIBusinessIntelligenceDashboard.tsx",
+      "app/components/AIServiceMatcher.tsx",
+      "app/components/ContactFunnel.tsx",
+      "app/components/EmailCoachingShowcase.tsx",
+      "app/components/Footer.tsx",
+      "app/components/IntegrationHubShowcase.tsx",
+      "app/components/LeadsControl.tsx",
+      "app/components/PricingEstimator.tsx",
+      "app/components/SecurityComplianceShowcase.tsx",
+      "app/components/ServiceCompare.tsx",
+      "app/components/ServiceConfigurator.tsx",
+      "app/components/ServiceFinderChat.tsx",
+      "app/components/ServiceStatsWidget.tsx",
+      "app/components/ServiceStatusDashboard.tsx",
+      "app/components/V1001V1005Showcase.tsx",
+      "app/components/V1006V1010Showcase.tsx",
+      "app/components/V1011V1015Showcase.tsx",
+      "app/components/V1016V1020Showcase.tsx",
+      "app/components/V1021V1025Showcase.tsx",
+      "app/components/V1031V1035Showcase.tsx",
+      "app/components/V881V885Showcase.tsx",
+      "app/components/V886V890Showcase.tsx",
+      "app/components/V891V895Showcase.tsx",
+      "app/components/VoiceVideoShowcase.tsx",
+      "app/consulting/page.tsx",
+      "app/email-intelligence/page.tsx",
+      "app/proposal-generator/page.tsx",
+      "app/services/page.tsx",
+      "app/services/ai-chronic-disease-tracker/page.tsx"
+    ]
+  },
+  "duplicate_titles": {
+    "duplicate_titles": [
+      {
+        "title": "AI Chatbot Builder | Zion Tech Group",
+        "count": 2,
+        "files": [
+          "app/ai-chatbot-builder/page.tsx",
+          "app/services/ai-chatbot-builder/page.tsx"
+        ]
+      },
+      {
+        "title": "AI Customer Support Pro | Zion Tech Group",
+        "count": 2,
+        "files": [
+          "app/ai-customer-support-pro/page.tsx",
+          "app/services/ai-customer-support-pro/page.tsx"
+        ]
+      },
+      {
+        "title": "AI Fraud Detection | Zion Tech Group",
+        "count": 2,
+        "files": [
+          "app/ai-fraud-detection/page.tsx",
+          "app/seo/ai-fraud-detection/page.tsx"
+        ]
+      },
+      {
+        "title": "AI Supply Chain Optimization | Zion Tech Group",
+        "count": 3,
+        "files": [
+          "app/ai-supply-chain/page.tsx",
+          "app/services/ai-supply-chain-optimization/page.tsx",
+          "app/seo/ai-supply-chain/page.tsx"
+        ]
+      },
+      {
+        "title": "Contact Zion Tech Group | AI & IT Services",
+        "count": 2,
+        "files": [
+          "app/contact/page.tsx",
+          "app/free-contact/page.tsx"
+        ]
+      },
+      {
+        "title": "Free Developer Tools & Utilities | Zion Tech Group",
+        "count": 2,
+        "files": [
+          "app/free-tools/page.tsx",
+          "app/tools/page.tsx"
+        ]
+      },
+      {
+        "title": "Healthcare & Life Sciences",
+        "count": 2,
+        "files": [
+          "app/industry-solutions/page.tsx",
+          "app/industry-solutions/[industry]/page.tsx"
+        ]
+      },
+      {
+        "title": "AI Insurance Claims Automation | Zion Tech Group",
+        "count": 2,
+        "files": [
+          "app/services/ai-insurance-claims-automation/page.tsx",
+          "app/seo/ai-insurance-claims/page.tsx"
+        ]
+      },
+      {
+        "title": "IT Automation Free Tools and Scripts | Zion Tech Group",
+        "count": 2,
+        "files": [
+          "app/seo/it-automation-free-tools-scripts/page.tsx",
+          "app/seo/it-automation-free-tools/page.tsx"
+        ]
+      }
+    ]
+  },
+  "empty_hrefs": {
+    "empty_href_files": []
+  },
+  "blog_quality": {
+    "total_blog_posts": 296,
+    "invalid": [],
+    "thin_count": 0
+  },
+  "content_gaps": {
+    "queue_size": 0,
+    "next_topics": []
+  }
+}
