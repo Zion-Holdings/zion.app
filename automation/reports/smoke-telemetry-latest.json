@@ -1,11 +1,11 @@
 {
-  "ts": "2026-08-03T20:48:13.736115+00:00",
-  "status": "degraded",
+  "ts": "2026-08-03T20:50:04.697118+00:00",
+  "status": "ok",
   "details": {
     "pagesWatchdog": {
-      "stdout": "",
-      "stderr": "File not found: automation/scripts/pages_watchdog.py",
-      "exit_code": 1
+      "stdout": "{\"ts\": \"2026-08-03T20:49:44.749301+00:00\", \"routes_checked\": 10, \"routes_ok\": 10, \"routes_broken\": 0, \"fail\": false, \"report\": \"/data/data/com.termux/files/home/zion-support.github.io/automation/reports/pages-watchdog-latest.json\"}",
+      "stderr": null,
+      "exit_code": 0
     }
   }
 }
