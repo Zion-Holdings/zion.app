@@ -33,17 +33,17 @@ export default function BlogPost() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key business outcomes</h2>
           <ul className="list-disc list-inside space-y-2 text-gray-300">
-            <li>Cut manual processing time by 27% while improving accuracy</li>
-            <li>Reduce operational costs by 64% within the first 4 months</li>
-            <li>Decrease system downtime by 55% with predictive monitoring</li>
+            <li>Cut manual processing time by 56% while improving accuracy</li>
+            <li>Accelerate time-to-market by 29% with automated workflows</li>
+            <li>Reduce compliance violations by 49% with automated controls</li>
           </ul>
         </div>
 
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Performance benchmarks</h2>
           <ul className="list-disc list-inside space-y-2 text-gray-300">
-            <li>Efficiency gains of 32% across key workflows</li>
-            <li>Cost savings of $17M annually for enterprise clients</li>
+            <li>Data accuracy improved from 3% to 0%</li>
+            <li>Processing speed improved from 3s to 1s</li>
           </ul>
         </div>
 
@@ -65,7 +65,7 @@ export default function BlogPost() {
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
           >
-            Book a free consultation to see how this applies to your operations.
+            Talk to our solutions team about a pilot program today.
           </a>
         </div>
       </div>
