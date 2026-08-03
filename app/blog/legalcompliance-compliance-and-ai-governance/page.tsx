@@ -1,9 +1,9 @@
 export const metadata = {
-  title: '{Industry} Compliance and AI Governance | Zion Tech Group',
+  title: 'Legal Compliance and AI Governance | Zion Tech Group',
   description: 'Explore how Legal & Compliance teams use AI to cut costs, improve outcomes, and scale operations in 2026.',
   alternates: { canonical: '/blog/legalcompliance-compliance-and-ai-governance/' },
   openGraph: {
-    title: '{Industry} Compliance and AI Governance',
+    title: 'Legal Compliance and AI Governance',
     description: 'Explore how Legal & Compliance teams use AI to cut costs, improve outcomes, and scale operations in 2026.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/legalcompliance-compliance-and-ai-governance/',
