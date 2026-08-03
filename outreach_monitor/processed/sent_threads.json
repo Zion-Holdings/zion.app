@@ -24,5 +24,14 @@
     "provider": "gmail",
     "sent_at": "2026-07-14T00:00:00Z",
     "status": "sent"
+  },
+  {
+    "thread_id": "19edf026a1318750",
+    "message_id": "19fc8eaea82c336b",
+    "to": "rohit.singh@cockroachlabs.com",
+    "subject": "Re: Vector DB Partnership - LATAM",
+    "provider": "gmail",
+    "sent_at": "2026-08-03T18:37:59.252546+00:00",
+    "status": "sent"
   }
 ]
