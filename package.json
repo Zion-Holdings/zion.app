@@ -1,0 +1,7 @@
+{
+  "name": "zion-pages",
+  "private": true,
+  "scripts": {
+    "build": "echo 'skip-next-build' && exit 0"
+  }
+}
