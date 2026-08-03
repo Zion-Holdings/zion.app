@@ -1,39 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" href="/favicon.ico" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zion Tech Group</title>
-  <meta name="robots" content="index,follow" />
-  <meta name="description" content="Zion Tech Group provides IT services, AI solutions, free developer tools, cloud optimization, DevOps automation, and outreach automation for modern teams." />
+  <title>Zion Tech Group — AI & IT Services</title>
+  <meta name="description" content="Zion Tech Group delivers 600+ AI, IT, cloud, security, data, automation, micro-SaaS, DevOps, blockchain, and IoT services with measurable outcomes." />
   <link rel="canonical" href="https://ziontechgroup.com/" />
   <style>
     :root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
     * { box-sizing: border-box; }
-    body { margin: 0; padding: 0; color: #0f172a; background: #ffffff; }
-    header { border-bottom: 1px solid #e5e7eb; }
+    body { margin: 0; background: #0b1221; color: #e2e8f0; }
+    a { color: inherit; }
+    header { border-bottom: 1px solid #1f2937; }
     .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
     nav { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
-    .brand { font-weight: 700; letter-spacing: -0.02em; font-size: 18px; }
-    .links a { margin-left: 14px; color: #2563eb; text-decoration: none; font-weight: 500; }
-    .links a:hover { text-decoration: underline; }
-    .hero { padding: 64px 24px; }
-    h1 { font-size: clamp(28px, 4vw, 48px); line-height: 1.1; margin: 0 0 14px; letter-spacing: -0.03em; }
-    p.lead { font-size: 18px; color: #334155; max-width: 760px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; padding: 24px 0; }
-    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px; text-decoration: none; color: inherit; display: block; }
-    .card:hover { border-color: #2563eb; }
-    .card h3 { margin: 0 0 8px; font-size: 16px; color: #0f172a; }
-    .card p { margin: 0; color: #334155; font-size: 14px; }
-    .section { padding: 24px; }
-    .section-title { font-size: 22px; margin: 0 0 10px; }
-    .section-lead { color: #334155; max-width: 760px; margin: 0 0 14px; }
-    footer { border-top: 1px solid #e5e7eb; padding: 24px; color: #475569; font-size: 13px; }
-    .btn { display: inline-block; padding: 12px 16px; border-radius: 10px; background: #0f172a; color: #fff; text-decoration: none; font-weight: 600; }
-    .btn.secondary { background: #ffffff; color: #0f172a; border: 1px solid #e5e7eb; }
+    .brand { font-weight: 700; letter-spacing: -0.02em; font-size: 18px; background: linear-gradient(90deg,#34d399,#22d3ee); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .links a { margin-left: 14px; color: #cbd5e1; text-decoration: none; font-weight: 500; }
+    .links a:hover { color: #a78bfa; }
+    .btn { display: inline-block; padding: 12px 16px; border-radius: 10px; background: #0f172a; color: #fff; text-decoration: none; font-weight: 600; border: 1px solid #334155; }
+    .btn.secondary { background: #0b1221; color: #e2e8f0; border: 1px solid #334155; }
     .cta-row { margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero { padding: 80px 24px 40px; }
+    h1 { font-size: clamp(28px, 4vw, 56px); line-height: 1.1; margin: 0 0 14px; letter-spacing: -0.03em; }
+    .lead { font-size: 18px; color: #cbd5e1; max-width: 760px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; padding: 24px 0; }
+    .card { border: 1px solid #1f2937; border-radius: 14px; padding: 18px; text-decoration: none; color: inherit; display: block; background: #0f172a; }
+    .card:hover { border-color: #7c3aed; background: #111827; }
+    .card h3 { margin: 0 0 8px; font-size: 16px; color: #f8fafc; }
+    .card p { margin: 0; color: #94a3b8; font-size: 14px; }
+    .section { padding: 24px; }
+    .section-title { font-size: 22px; margin: 0 0 10px; color: #f8fafc; }
+    .section-lead { color: #cbd5e1; max-width: 760px; margin: 0 0 14px; }
+    footer { border-top: 1px solid #1f2937; padding: 24px; color: #94a3b8; font-size: 13px; }
+    .pill { display:inline-flex; align-items:center; gap: 8px; padding: 8px 12px; border-radius: 999px; background:#111827; border:1px solid #1f2937; color:#cbd5e1; font-size: 12px; }
+    .stat { background:#0b1221; border:1px solid #1f2937; border-radius: 14px; padding: 18px; }
+    .stat-value { font-size: 28px; font-weight: 700; background: linear-gradient(90deg,#a78bfa,#38bdf8); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .stat-label { color:#94a3b8; font-size: 13px; margin-top: 6px; }
   </style>
 </head>
 <body>
@@ -50,106 +52,187 @@
       </nav>
     </div>
   </header>
+
   <main>
-    <section class="hero">
+    <section class="hero" style="background:radial-gradient(ellipse at 50% 30%, rgba(124,58,237,0.18), rgba(15,23,42,0.92)), radial-gradient(ellipse at 80% 80%, rgba(59,130,246,0.12), transparent 60%)">
       <div class="container">
-        <h1>IT services and AI-powered growth systems</h1>
-        <p class="lead">We help teams ship faster with modern infrastructure, automation, and applied AI that moves revenue.</p>
-        <div class="cta-row">
-          <a class="btn" href="/contact/">Start a project</a>
-          <a class="btn secondary" href="/services/">See services</a>
-          <a class="btn secondary" href="/tools/">Free tools</a>
+        <div style="text-align:center; max-width: 1100px; margin: 0 auto;">
+          <div class="pill" style="margin-bottom: 18px;">
+            <span style="color:#34d399;">●</span>
+            <span>600+ Services — Live Now</span>
+          </div>
+
+          <h1>
+            <span style="background: linear-gradient(90deg,#a78bfa,#38bdf8); -webkit-background-clip:text; background-clip:text; color:transparent;">AI & IT Services</span><br />
+            <span style="color:#f8fafc;">for Your Business</span>
+          </h1>
+
+          <p class="lead" style="margin: 18px auto 24px;">
+            600+ real-world AI, IT, cloud, security, data, automation, micro-SaaS, DevOps, blockchain, and IoT services — from machine learning to cybersecurity, CRM to IoT. Get a free, custom proposal in minutes.
+          </p>
+
+          <div class="cta-row" style="justify-content:center;">
+            <a class="btn" href="/contact/">Get Your Custom Proposal</a>
+            <a class="btn secondary" href="/services/">Explore Services</a>
+            <a class="btn secondary" href="tel:+13024640950">+1 302 464 0950</a>
+          </div>
+
+          <div class="cta-row" style="justify-content:center; margin-top: 14px;">
+            <a class="btn secondary" href="/dashboard" style="font-size:13px;">Agent Dashboard</a>
+            <a class="btn secondary" href="/services/" style="font-size:13px;">Search Services</a>
+            <a class="btn secondary" href="/pricing/" style="font-size:13px;">Pricing</a>
+          </div>
+
+          <div style="margin-top: 28px; display:flex; flex-wrap:wrap; justify-content:center; gap: 14px; color:#94a3b8; font-size: 14px;">
+            <span>🏆 Industry Leading</span>
+            <span>🔒 SOC 2 Compliant</span>
+            <span>⚡ 24/7 Support</span>
+            <span>🇺🇸 US-Based Team</span>
+            <span>🔐 HIPAA Ready</span>
+            <span>✅ 99.9% SLA</span>
+          </div>
+
+          <div class="grid" style="max-width: 1100px; margin: 32px auto 0;">
+            <div class="stat">
+              <div class="stat-value">600+</div>
+              <div class="stat-label">Services & Solutions</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">16</div>
+              <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">24/7</div>
+              <div class="stat-label">Monitoring & Support</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">99.9%</div>
+              <div class="stat-label">SLA Uptime Guarantee</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-    <section class="section">
+
+    <section class="section" style="background:#0b1221;">
       <div class="container">
-        <h2 class="section-title">What we deliver</h2>
-        <p class="section-lead">Outcomes over reports.</p>
+        <h2 class="section-title" style="text-align:center;">What we deliver</h2>
+        <p class="section-lead" style="text-align:center; margin: 0 auto 18px;">Outcomes over reports.</p>
         <div class="grid">
           <a class="card" href="/services/ai-help-desk-automation/">
-            <h3>Help Desk Automation</h3>
-            <p>Reduce ticket load with triage, answers, and routing.</p>
+            <h3>AI Implementation</h3>
+            <p>Automation-first AI pilots with workflow integration, measurable ROI, and production-ready delivery.</p>
           </a>
-          <a class="card" href="/services/ai-development-acceleration/">
-            <h3>AI Development Acceleration</h3>
-            <p>Ship AI features with reusable components and safer deploys.</p>
+          <a class="card" href="/services/cloud-cost-optimization-platform/">
+            <h3>Managed IT & Support</h3>
+            <p>Help desk, endpoint management, identity, and operations coverage for growing teams.</p>
           </a>
-          <a class="card" href="/services/lead-generation-outreach-automation/">
-            <h3>Outreach Automation</h3>
-            <p>Qualified pipeline, follow-up sequences, and LLM tailoring.</p>
+          <a class="card" href="/services/security/">
+            <h3>Cybersecurity & SOC</h3>
+            <p>Security operations, detection/response, and compliance posture aligned to business risk.</p>
           </a>
           <a class="card" href="/services/cloud-cost-optimization-platform/">
             <h3>Cloud Cost Optimization</h3>
-            <p>Usage-aware governance, right-sizing, and guardrails.</p>
-          </a>
-          <a class="card" href="/services/devops-automation-consulting/">
-            <h3>DevOps Automation</h3>
-            <p>CI/CD, monitoring, and incident response automation.</p>
-          </a>
-          <a class="card" href="/services/fleet-management-gps-tracking/">
-            <h3>Fleet Management</h3>
-            <p>Real-time visibility for operations and logistics.</p>
-          </a>
-          <a class="card" href="/tools/">
-            <h3>Free Tools</h3>
-            <p>Developer utilities to format, encode, test, and generate.</p>
-          </a>
-          <a class="card" href="/services/customer-success-management/">
-            <h3>Customer Success Management</h3>
-            <p>Health monitoring, adoption measurement, renewal risk alerts, and growth planning.</p>
-          </a>
-          <a class="card" href="/pricing/">
-            <h3>Pricing</h3>
-            <p>Start free, scale engagements to growth and enterprise.</p>
+            <p>Rightsizing, waste removal, reserved planning, and FinOps practices that cut spend fast.</p>
           </a>
         </div>
       </div>
     </section>
-    <section class="section" style="background:#f8fafc">
+
+    <section class="section" style="background:#0f172a;">
       <div class="container">
-        <h2 class="section-title">Ready to move?</h2>
-        <p class="section-lead">Tell us your use case and we’ll return a concrete plan.</p>
-        <div class="cta-row">
+        <h2 class="section-title" style="text-align:center;">New AI Services</h2>
+        <p class="section-lead" style="text-align:center; margin: 0 auto 18px;">Fresh capabilities across RevOps, field service, observability, and more.</p>
+        <div class="grid">
+          <a class="card" href="/services/ai-revenue-operations-assistant/">
+            <div style="font-size: 24px;">💰</div>
+            <h3>AI Revenue Operations Assistant</h3>
+            <p>Automates billing follow-up, dunning, and collections.</p>
+          </a>
+          <a class="card" href="/services/ai-partner-co-sell-platform/">
+            <div style="font-size: 24px;">🤝</div>
+            <h3>AI Partner Co-Sell Assistant</h3>
+            <p>Coordinates partner deal registration and co-sell attribution.</p>
+          </a>
+          <a class="card" href="/services/ai-procurement-cost-optimizer/">
+            <div style="font-size: 24px;">🏷️</div>
+            <h3>AI Procurement Cost Optimizer</h3>
+            <p>Finds vendor savings, renewal risks, and consolidation opportunities.</p>
+          </a>
+          <a class="card" href="/services/ai-field-service-scheduler/">
+            <div style="font-size: 24px;">📅</div>
+            <h3>AI Field Service Scheduler</h3>
+            <p>Skill-aware, SLA-aware dispatch planning with route optimization.</p>
+          </a>
+        </div>
+        <div style="text-align:center; margin-top: 18px;">
+          <a class="btn" href="/services/">Browse all services</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:#0b1221;">
+      <div class="container">
+        <h2 class="section-title" style="text-align:center;">Ready to move?</h2>
+        <p class="section-lead" style="text-align:center; margin: 0 auto 18px;">Tell us your use case and we’ll return a concrete plan.</p>
+        <div class="cta-row" style="justify-content:center;">
           <a class="btn" href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noopener">Book a call</a>
-          <a class="btn secondary" href="https://meet.google.com/ouu-khao-kuy" target="_blank" rel="noopener">Google Meet</a>
           <a class="btn secondary" href="/contact/">Contact form</a>
-        </div>
-        <div class="card">
-          <h3>VIP Onboarding</h3>
-          <p>Concierge enterprise onboarding with a dedicated team, 30-day pilot, and measurable KPIs.</p>
-          <a class="cta secondary" href="/vip-onboarding/">Start pilot</a>
-        </div>
-        <div class="card">
-          <h3>Why Zion</h3>
-          <p>Measurable outcomes, AI-first delivery, and accountable execution—from pilot to production.</p>
-          <a class="cta secondary" href="/why-zion/">See why</a>
-        </div>
-        <div class="card">
-          <h3>AI Pilot Program</h3>
-          <p>Low-risk AI pilot with a scoped workflow, weekly reviews, measurable KPIs, and fast go/no-go decisioning.</p>
-          <a class="cta secondary" href="/ai-pilot-program/">Start an AI pilot</a>
-        </div>
-        <div class="card">
-          <h3>Rapid AI Adoption</h3>
-          <p>Organizational change support to move from pilot to production without disruption.</p>
-          <a class="cta secondary" href="/rapid-ai-adoption/">Plan adoption</a>
         </div>
       </div>
     </section>
   </main>
+
   <footer>
     <div class="container">
-      <div>© <span id="year"></span> Zion Tech Group · <a href="/">ziontechgroup.com</a></div>
-      <div style="margin-top:8px;">
-        <a href="/contact/" style="color:#334155;text-decoration:none;">Contact</a>
-        <span style="margin:0 8px;color:#cbd5e1;">·</span>
-        <a href="/pricing/" style="color:#334155;text-decoration:none;">Pricing</a>
-        <span style="margin:0 8px;color:#cbd5e1;">·</span>
-        <a href="https://meet.google.com/ouu-khao-kuy" target="_blank" rel="noopener" style="color:#334155;text-decoration:none;">Google Meet</a> · <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noopener" style="color:#334155;text-decoration:none;">Calendly</a>
+      <div style="display:flex; flex-wrap:wrap; gap: 18px; justify-content:space-between;">
+        <div>
+          <div class="brand" style="font-size: 18px;">Zion Tech Group</div>
+          <p style="color:#94a3b8; max-width: 520px; margin-top: 8px;">
+            Enterprise AI services, IT solutions, and Micro SAAS platforms — from machine learning and cybersecurity to cloud infrastructure and automation.
+          </p>
+        </div>
+        <div style="display:flex; gap: 24px; flex-wrap: wrap;">
+          <div>
+            <div style="font-weight:700; color:#f8fafc; margin-bottom: 8px;">Services</div>
+            <div style="display:flex; flex-direction:column; gap: 6px;">
+              <a href="/services/" style="color:#94a3b8; text-decoration:none;">All Services</a>
+              <a href="/services/?category=ai" style="color:#94a3b8; text-decoration:none;">AI Services</a>
+              <a href="/services/?category=cloud" style="color:#94a3b8; text-decoration:none;">Cloud</a>
+              <a href="/services/?category=security" style="color:#94a3b8; text-decoration:none;">Security</a>
+              <a href="/pricing/" style="color:#94a3b8; text-decoration:none;">Pricing</a>
+            </div>
+          </div>
+          <div>
+            <div style="font-weight:700; color:#f8fafc; margin-bottom: 8px;">Company</div>
+            <div style="display:flex; flex-direction:column; gap: 6px;">
+              <a href="/about" style="color:#94a3b8; text-decoration:none;">About Us</a>
+              <a href="/blog" style="color:#94a3b8; text-decoration:none;">Blog</a>
+              <a href="/careers" style="color:#94a3b8; text-decoration:none;">Careers</a>
+              <a href="/partners" style="color:#94a3b8; text-decoration:none;">Partners</a>
+              <a href="/contact" style="color:#94a3b8; text-decoration:none;">Contact</a>
+            </div>
+          </div>
+          <div>
+            <div style="font-weight:700; color:#f8fafc; margin-bottom: 8px;">Legal</div>
+            <div style="display:flex; flex-direction:column; gap: 6px;">
+              <a href="/privacy" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
+              <a href="/terms" style="color:#94a3b8; text-decoration:none;">Terms of Service</a>
+              <a href="/cookies" style="color:#94a3b8; text-decoration:none;">Cookie Policy</a>
+              <a href="/sla" style="color:#94a3b8; text-decoration:none;">SLA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="border-top:1px solid #1f2937; margin-top: 22px; padding-top: 16px; display:flex; flex-wrap:wrap; justify-content:space-between; gap: 12px; color:#64748b; font-size: 13px;">
+        <span>© <span id="y"></span> Zion Tech Group. All rights reserved.</span>
+        <span>Powered by AI Agents</span>
       </div>
     </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
