@@ -74,6 +74,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
               <li><Link href="/blog/overview-of-dns-security-policy-microsoft-learn">Overview Of Dns Security Policy Microsoft Learn</Link></li>
               <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-10">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 10</Link></li>
               <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-2">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 2</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-6">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 6</Link></li>
+              <li><Link href="/blog/service-desk-dns-voice-91">Service Desk Dns Voice 91</Link></li>
+              <li><Link href="/blog/api-on-call-ide-497">Api On Call Ide 497</Link></li>
+              <li><Link href="/blog/automation-support-qa-field-service-269">Automation Support Qa Field Service 269</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

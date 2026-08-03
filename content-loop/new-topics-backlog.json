@@ -4372,5 +4372,1405 @@
     "cta": "services",
     "differentiation_hook": "",
     "rationale": ""
+  },
+  {
+    "title": "Catalog Voice-Agent Security: 2026 Playbook",
+    "slug": "catalog-voice-agent-security-992",
+    "cluster": "Security",
+    "intent": "best-practices",
+    "description": "Practical guide covering catalog, voice-agent, and security for enterprise teams in 2026."
+  },
+  {
+    "title": "Platform Aiops Edge: 2026 Playbook",
+    "slug": "platform-aiops-edge-151",
+    "cluster": "Observability",
+    "intent": "runbook",
+    "description": "Practical guide covering platform, aiops, and edge for enterprise teams in 2026."
+  },
+  {
+    "title": "Data Quantum Supply-Chain: 2026 Playbook",
+    "slug": "data-quantum-supply-chain-133",
+    "cluster": "Cloud",
+    "intent": "maturity-model",
+    "description": "Practical guide covering data, quantum, and supply-chain for enterprise teams in 2026."
+  },
+  {
+    "title": "Automation Anomaly Cloud: 2026 Playbook",
+    "slug": "automation-anomaly-cloud-456",
+    "cluster": "Security",
+    "intent": "strategy",
+    "description": "Practical guide covering automation, anomaly, and cloud for enterprise teams in 2026."
+  },
+  {
+    "title": "Erp Quantum Workflow: 2026 Playbook",
+    "slug": "erp-quantum-workflow-752",
+    "cluster": "IT",
+    "intent": "strategy",
+    "description": "Practical guide covering erp, quantum, and workflow for enterprise teams in 2026."
+  },
+  {
+    "title": "Rollback Anomaly Soc: 2026 Playbook",
+    "slug": "rollback-anomaly-soc-447",
+    "cluster": "AI",
+    "intent": "guide",
+    "description": "Practical guide covering rollback, anomaly, and soc for enterprise teams in 2026."
+  },
+  {
+    "title": "Voice Data Supply-Chain: 2026 Playbook",
+    "slug": "voice-data-supply-chain-353",
+    "cluster": "IT",
+    "intent": "maturity-model",
+    "description": "Practical guide covering voice, data, and supply-chain for enterprise teams in 2026."
+  },
+  {
+    "title": "Integration Cloud Government: 2026 Playbook",
+    "slug": "integration-cloud-government-98",
+    "cluster": "IT",
+    "intent": "strategy",
+    "description": "Practical guide covering integration, cloud, and government for enterprise teams in 2026."
+  },
+  {
+    "title": "Identity Edge Monitor: 2026 Playbook",
+    "slug": "identity-edge-monitor-807",
+    "cluster": "Data",
+    "intent": "checklist",
+    "description": "Practical guide covering identity, edge, and monitor for enterprise teams in 2026."
+  },
+  {
+    "title": "Flink Workspace Lineage: 2026 Playbook",
+    "slug": "flink-workspace-lineage-754",
+    "cluster": "Automation",
+    "intent": "checklist",
+    "description": "Practical guide covering flink, workspace, and lineage for enterprise teams in 2026."
+  },
+  {
+    "title": "Quality Llm Healthcare: 2026 Playbook",
+    "slug": "quality-llm-healthcare-618",
+    "cluster": "Security",
+    "intent": "roi",
+    "description": "Practical guide covering quality, llm, and healthcare for enterprise teams in 2026."
+  },
+  {
+    "title": "Gpu Warehouse Credential: 2026 Playbook",
+    "slug": "gpu-warehouse-credential-290",
+    "cluster": "Cloud",
+    "intent": "roi",
+    "description": "Practical guide covering gpu, warehouse, and credential for enterprise teams in 2026."
+  },
+  {
+    "title": "Chatops Schema Chaos: 2026 Playbook",
+    "slug": "chatops-schema-chaos-616",
+    "cluster": "Observability",
+    "intent": "checklist",
+    "description": "Practical guide covering chatops, schema, and chaos for enterprise teams in 2026."
+  },
+  {
+    "title": "It-Asset Kb Reliability: 2026 Playbook",
+    "slug": "it-asset-kb-reliability-518",
+    "cluster": "Observability",
+    "intent": "roi",
+    "description": "Practical guide covering it-asset, kb, and reliability for enterprise teams in 2026."
+  },
+  {
+    "title": "Kb Mlops Api: 2026 Playbook",
+    "slug": "kb-mlops-api-859",
+    "cluster": "AI",
+    "intent": "architecture",
+    "description": "Practical guide covering kb, mlops, and api for enterprise teams in 2026."
+  },
+  {
+    "title": "Customer-Success Stream Access: 2026 Playbook",
+    "slug": "customer-success-stream-access-612",
+    "cluster": "AI",
+    "intent": "strategy",
+    "description": "Practical guide covering customer-success, stream, and access for enterprise teams in 2026."
+  },
+  {
+    "title": "Lineage Erp Proactive-Support: 2026 Playbook",
+    "slug": "lineage-erp-proactive-support-162",
+    "cluster": "Cloud",
+    "intent": "runbook",
+    "description": "Practical guide covering lineage, erp, and proactive-support for enterprise teams in 2026."
+  },
+  {
+    "title": "Kubernetes Schema Energy: 2026 Playbook",
+    "slug": "kubernetes-schema-energy-470",
+    "cluster": "Observability",
+    "intent": "strategy",
+    "description": "Practical guide covering kubernetes, schema, and energy for enterprise teams in 2026."
+  },
+  {
+    "title": "Security Budget Erp: 2026 Playbook",
+    "slug": "security-budget-erp-885",
+    "cluster": "IT",
+    "intent": "best-practices",
+    "description": "Practical guide covering security, budget, and erp for enterprise teams in 2026."
+  },
+  {
+    "title": "Access Zero-Trust Stream: 2026 Playbook",
+    "slug": "access-zero-trust-stream-123",
+    "cluster": "Automation",
+    "intent": "checklist",
+    "description": "Practical guide covering access, zero-trust, and stream for enterprise teams in 2026."
+  },
+  {
+    "title": "Lineage Observability Zero-Trust: 2026 Playbook",
+    "slug": "lineage-observability-zero-trust-126",
+    "cluster": "AI",
+    "intent": "runbook",
+    "description": "Practical guide covering lineage, observability, and zero-trust for enterprise teams in 2026."
+  },
+  {
+    "title": "Catalog Workflow Service-Desk: 2026 Playbook",
+    "slug": "catalog-workflow-service-desk-104",
+    "cluster": "Observability",
+    "intent": "runbook",
+    "description": "Practical guide covering catalog, workflow, and service-desk for enterprise teams in 2026."
+  },
+  {
+    "title": "Integration Remote Llm: 2026 Playbook",
+    "slug": "integration-remote-llm-501",
+    "cluster": "Data",
+    "intent": "roi",
+    "description": "Practical guide covering integration, remote, and llm for enterprise teams in 2026."
+  },
+  {
+    "title": "Event Flink Legal: 2026 Playbook",
+    "slug": "event-flink-legal-584",
+    "cluster": "IT",
+    "intent": "best-practices",
+    "description": "Practical guide covering event, flink, and legal for enterprise teams in 2026."
+  },
+  {
+    "title": "Invoice Proactive-Support Log: 2026 Playbook",
+    "slug": "invoice-proactive-support-log-335",
+    "cluster": "Cloud",
+    "intent": "runbook",
+    "description": "Practical guide covering invoice, proactive-support, and log for enterprise teams in 2026."
+  },
+  {
+    "title": "Passwordless Legal Cloud: 2026 Playbook",
+    "slug": "passwordless-legal-cloud-515",
+    "cluster": "Cloud",
+    "intent": "runbook",
+    "description": "Practical guide covering passwordless, legal, and cloud for enterprise teams in 2026."
+  },
+  {
+    "title": "Proactive-Support Utility Hyperautomation: 2026 Playbook",
+    "slug": "proactive-support-utility-hyperautomation-453",
+    "cluster": "Automation",
+    "intent": "architecture",
+    "description": "Practical guide covering proactive-support, utility, and hyperautomation for enterprise teams in 2026."
+  },
+  {
+    "title": "Ideation Credential Governance: 2026 Playbook",
+    "slug": "ideation-credential-governance-449",
+    "cluster": "Observability",
+    "intent": "best-practices",
+    "description": "Practical guide covering ideation, credential, and governance for enterprise teams in 2026."
+  },
+  {
+    "title": "Warehouse Flink Deployment: 2026 Playbook",
+    "slug": "warehouse-flink-deployment-289",
+    "cluster": "SRE",
+    "intent": "architecture",
+    "description": "Practical guide covering warehouse, flink, and deployment for enterprise teams in 2026."
+  },
+  {
+    "title": "Voice Kafka Telecom: 2026 Playbook",
+    "slug": "voice-kafka-telecom-977",
+    "cluster": "SRE",
+    "intent": "best-practices",
+    "description": "Practical guide covering voice, kafka, and telecom for enterprise teams in 2026."
+  },
+  {
+    "title": "Process-Mining Zero-Trust Lineage: 2026 Playbook",
+    "slug": "process-mining-zero-trust-lineage-317",
+    "cluster": "Automation",
+    "intent": "maturity-model",
+    "description": "Practical guide covering process-mining, zero-trust, and lineage for enterprise teams in 2026."
+  },
+  {
+    "title": "Integration Hyperautomation Edge: 2026 Playbook",
+    "slug": "integration-hyperautomation-edge-964",
+    "cluster": "Data",
+    "intent": "runbook",
+    "description": "Practical guide covering integration, hyperautomation, and edge for enterprise teams in 2026."
+  },
+  {
+    "title": "Government Integration Synthetic: 2026 Playbook",
+    "slug": "government-integration-synthetic-94",
+    "cluster": "IT",
+    "intent": "runbook",
+    "description": "Practical guide covering government, integration, and synthetic for enterprise teams in 2026."
+  },
+  {
+    "title": "Voice-Agent Voice Invoice: 2026 Playbook",
+    "slug": "voice-agent-voice-invoice-622",
+    "cluster": "Observability",
+    "intent": "best-practices",
+    "description": "Practical guide covering voice-agent, voice, and invoice for enterprise teams in 2026."
+  },
+  {
+    "title": "Quantum Integration Deployment: 2026 Playbook",
+    "slug": "quantum-integration-deployment-622",
+    "cluster": "Cloud",
+    "intent": "strategy",
+    "description": "Practical guide covering quantum, integration, and deployment for enterprise teams in 2026."
+  },
+  {
+    "title": "Hyperautomation Rag Catalog: 2026 Playbook",
+    "slug": "hyperautomation-rag-catalog-759",
+    "cluster": "Automation",
+    "intent": "architecture",
+    "description": "Practical guide covering hyperautomation, rag, and catalog for enterprise teams in 2026."
+  },
+  {
+    "title": "Chatbot Mlops Ide: 2026 Playbook",
+    "slug": "chatbot-mlops-ide-663",
+    "cluster": "Security",
+    "intent": "checklist",
+    "description": "Practical guide covering chatbot, mlops, and ide for enterprise teams in 2026."
+  },
+  {
+    "title": "Remote Ai Lineage: 2026 Playbook",
+    "slug": "remote-ai-lineage-525",
+    "cluster": "Security",
+    "intent": "guide",
+    "description": "Practical guide covering remote, ai, and lineage for enterprise teams in 2026."
+  },
+  {
+    "title": "Deployment Rollback Deployment: 2026 Playbook",
+    "slug": "deployment-rollback-deployment-28",
+    "cluster": "SRE",
+    "intent": "strategy",
+    "description": "Practical guide covering deployment, rollback, and deployment for enterprise teams in 2026."
+  },
+  {
+    "title": "Finops Identity Release: 2026 Playbook",
+    "slug": "finops-identity-release-435",
+    "cluster": "Cloud",
+    "intent": "roi",
+    "description": "Practical guide covering finops, identity, and release for enterprise teams in 2026."
+  },
+  {
+    "title": "Voice Flink Flink: 2026 Playbook",
+    "slug": "voice-flink-flink-536",
+    "cluster": "Security",
+    "intent": "guide",
+    "description": "Practical guide covering voice, flink, and flink for enterprise teams in 2026."
+  },
+  {
+    "title": "Log Finance Rollback: 2026 Playbook",
+    "slug": "log-finance-rollback-970",
+    "cluster": "Security",
+    "intent": "maturity-model",
+    "description": "Practical guide covering log, finance, and rollback for enterprise teams in 2026."
+  },
+  {
+    "title": "Hyperautomation Stream Incident: 2026 Playbook",
+    "slug": "hyperautomation-stream-incident-684",
+    "cluster": "Data",
+    "intent": "maturity-model",
+    "description": "Practical guide covering hyperautomation, stream, and incident for enterprise teams in 2026."
+  },
+  {
+    "title": "Compliance Voice Metadata: 2026 Playbook",
+    "slug": "compliance-voice-metadata-624",
+    "cluster": "SRE",
+    "intent": "strategy",
+    "description": "Practical guide covering compliance, voice, and metadata for enterprise teams in 2026."
+  },
+  {
+    "title": "Remote Orchestration Quality: 2026 Playbook",
+    "slug": "remote-orchestration-quality-939",
+    "cluster": "Automation",
+    "intent": "architecture",
+    "description": "Practical guide covering remote, orchestration, and quality for enterprise teams in 2026."
+  },
+  {
+    "title": "Finops Field-Service Mlops: 2026 Playbook",
+    "slug": "finops-field-service-mlops-477",
+    "cluster": "Observability",
+    "intent": "roi",
+    "description": "Practical guide covering finops, field-service, and mlops for enterprise teams in 2026."
+  },
+  {
+    "title": "Catalog Identity Event: 2026 Playbook",
+    "slug": "catalog-identity-event-411",
+    "cluster": "Security",
+    "intent": "guide",
+    "description": "Practical guide covering catalog, identity, and event for enterprise teams in 2026."
+  },
+  {
+    "title": "Workspace On-Call Healthcare: 2026 Playbook",
+    "slug": "workspace-on-call-healthcare-352",
+    "cluster": "Cloud",
+    "intent": "strategy",
+    "description": "Practical guide covering workspace, on-call, and healthcare for enterprise teams in 2026."
+  },
+  {
+    "title": "Edge Ai Rollback: 2026 Playbook",
+    "slug": "edge-ai-rollback-163",
+    "cluster": "Observability",
+    "intent": "best-practices",
+    "description": "Practical guide covering edge, ai, and rollback for enterprise teams in 2026."
+  },
+  {
+    "title": "Orchestration Integration Supply-Chain: 2026 Playbook",
+    "slug": "orchestration-integration-supply-chain-302",
+    "cluster": "Data",
+    "intent": "architecture",
+    "description": "Practical guide covering orchestration, integration, and supply-chain for enterprise teams in 2026."
+  },
+  {
+    "title": "Customer-Success Aiops Rag: 2026 Playbook",
+    "slug": "customer-success-aiops-rag-603",
+    "cluster": "Security",
+    "intent": "checklist",
+    "description": "Practical guide covering customer-success, aiops, and rag for enterprise teams in 2026."
+  },
+  {
+    "title": "Master-Data Synthetic Voice: 2026 Playbook",
+    "slug": "master-data-synthetic-voice-536",
+    "cluster": "Observability",
+    "intent": "architecture",
+    "description": "Practical guide covering master-data, synthetic, and voice for enterprise teams in 2026."
+  },
+  {
+    "title": "Observability On-Call Voice: 2026 Playbook",
+    "slug": "observability-on-call-voice-542",
+    "cluster": "SRE",
+    "intent": "runbook",
+    "description": "Practical guide covering observability, on-call, and voice for enterprise teams in 2026."
+  },
+  {
+    "title": "Api Multi-Agent Security: 2026 Playbook",
+    "slug": "api-multi-agent-security-935",
+    "cluster": "Observability",
+    "intent": "checklist",
+    "description": "Practical guide covering api, multi-agent, and security for enterprise teams in 2026."
+  },
+  {
+    "title": "Orchestration Master-Data Field-Service: 2026 Playbook",
+    "slug": "orchestration-master-data-field-service-224",
+    "cluster": "Data",
+    "intent": "runbook",
+    "description": "Practical guide covering orchestration, master-data, and field-service for enterprise teams in 2026."
+  },
+  {
+    "title": "Anomaly Schema Invoice: 2026 Playbook",
+    "slug": "anomaly-schema-invoice-104",
+    "cluster": "IT",
+    "intent": "guide",
+    "description": "Practical guide covering anomaly, schema, and invoice for enterprise teams in 2026."
+  },
+  {
+    "title": "Rollback Document Cloud: 2026 Playbook",
+    "slug": "rollback-document-cloud-821",
+    "cluster": "Security",
+    "intent": "architecture",
+    "description": "Practical guide covering rollback, document, and cloud for enterprise teams in 2026."
+  },
+  {
+    "title": "Warehouse Hyperautomation Pipeline: 2026 Playbook",
+    "slug": "warehouse-hyperautomation-pipeline-521",
+    "cluster": "Automation",
+    "intent": "roi",
+    "description": "Practical guide covering warehouse, hyperautomation, and pipeline for enterprise teams in 2026."
+  },
+  {
+    "title": "Llm Pipeline Quantum: 2026 Playbook",
+    "slug": "llm-pipeline-quantum-421",
+    "cluster": "SRE",
+    "intent": "roi",
+    "description": "Practical guide covering llm, pipeline, and quantum for enterprise teams in 2026."
+  },
+  {
+    "title": "Kafka Rag Hyperautomation: 2026 Playbook",
+    "slug": "kafka-rag-hyperautomation-805",
+    "cluster": "Data",
+    "intent": "best-practices",
+    "description": "Practical guide covering kafka, rag, and hyperautomation for enterprise teams in 2026."
+  },
+  {
+    "title": "Ideation Hyperautomation Gpu: 2026 Playbook",
+    "slug": "ideation-hyperautomation-gpu-295",
+    "cluster": "Security",
+    "intent": "architecture",
+    "description": "Practical guide covering ideation, hyperautomation, and gpu for enterprise teams in 2026."
+  },
+  {
+    "title": "Access Reliability Process-Mining: 2026 Playbook",
+    "slug": "access-reliability-process-mining-660",
+    "cluster": "Data",
+    "intent": "architecture",
+    "description": "Practical guide covering access, reliability, and process-mining for enterprise teams in 2026."
+  },
+  {
+    "title": "Chatops Supply-Chain Platform: 2026 Playbook",
+    "slug": "chatops-supply-chain-platform-513",
+    "cluster": "AI",
+    "intent": "runbook",
+    "description": "Practical guide covering chatops, supply-chain, and platform for enterprise teams in 2026."
+  },
+  {
+    "title": "Lineage Finance Governance: 2026 Playbook",
+    "slug": "lineage-finance-governance-768",
+    "cluster": "SRE",
+    "intent": "strategy",
+    "description": "Practical guide covering lineage, finance, and governance for enterprise teams in 2026."
+  },
+  {
+    "title": "Supply-Chain Education Ai: 2026 Playbook",
+    "slug": "supply-chain-education-ai-202",
+    "cluster": "Security",
+    "intent": "roi",
+    "description": "Practical guide covering supply-chain, education, and ai for enterprise teams in 2026."
+  },
+  {
+    "title": "Cloud Schema Anomaly: 2026 Playbook",
+    "slug": "cloud-schema-anomaly-299",
+    "cluster": "Security",
+    "intent": "architecture",
+    "description": "Practical guide covering cloud, schema, and anomaly for enterprise teams in 2026."
+  },
+  {
+    "title": "Api On-Call Ide: 2026 Playbook",
+    "slug": "api-on-call-ide-497",
+    "cluster": "Automation",
+    "intent": "best-practices",
+    "description": "Practical guide covering api, on-call, and ide for enterprise teams in 2026."
+  },
+  {
+    "title": "Governance Zero-Trust Security: 2026 Playbook",
+    "slug": "governance-zero-trust-security-365",
+    "cluster": "Cloud",
+    "intent": "runbook",
+    "description": "Practical guide covering governance, zero-trust, and security for enterprise teams in 2026."
+  },
+  {
+    "title": "Kafka Dns Edge: 2026 Playbook",
+    "slug": "kafka-dns-edge-353",
+    "cluster": "Automation",
+    "intent": "best-practices",
+    "description": "Practical guide covering kafka, dns, and edge for enterprise teams in 2026."
+  },
+  {
+    "title": "Compliance Voice Government: 2026 Playbook",
+    "slug": "compliance-voice-government-931",
+    "cluster": "Automation",
+    "intent": "runbook",
+    "description": "Practical guide covering compliance, voice, and government for enterprise teams in 2026."
+  },
+  {
+    "title": "Chaos Runbook Flink: 2026 Playbook",
+    "slug": "chaos-runbook-flink-923",
+    "cluster": "AI",
+    "intent": "checklist",
+    "description": "Practical guide covering chaos, runbook, and flink for enterprise teams in 2026."
+  },
+  {
+    "title": "Incident Stream Energy: 2026 Playbook",
+    "slug": "incident-stream-energy-655",
+    "cluster": "Automation",
+    "intent": "guide",
+    "description": "Practical guide covering incident, stream, and energy for enterprise teams in 2026."
+  },
+  {
+    "title": "Ai Finops Flink: 2026 Playbook",
+    "slug": "ai-finops-flink-656",
+    "cluster": "Data",
+    "intent": "checklist",
+    "description": "Practical guide covering ai, finops, and flink for enterprise teams in 2026."
+  },
+  {
+    "title": "Service-Desk Observability Flink: 2026 Playbook",
+    "slug": "service-desk-observability-flink-746",
+    "cluster": "IT",
+    "intent": "architecture",
+    "description": "Practical guide covering service-desk, observability, and flink for enterprise teams in 2026."
+  },
+  {
+    "title": "Supply-Chain Warehouse Energy: 2026 Playbook",
+    "slug": "supply-chain-warehouse-energy-445",
+    "cluster": "Data",
+    "intent": "checklist",
+    "description": "Practical guide covering supply-chain, warehouse, and energy for enterprise teams in 2026."
+  },
+  {
+    "title": "Data On-Call Synthetic: 2026 Playbook",
+    "slug": "data-on-call-synthetic-425",
+    "cluster": "Observability",
+    "intent": "strategy",
+    "description": "Practical guide covering data, on-call, and synthetic for enterprise teams in 2026."
+  },
+  {
+    "title": "Slo Metadata Kb: 2026 Playbook",
+    "slug": "slo-metadata-kb-412",
+    "cluster": "AI",
+    "intent": "guide",
+    "description": "Practical guide covering slo, metadata, and kb for enterprise teams in 2026."
+  },
+  {
+    "title": "Rag Budget Workspace: 2026 Playbook",
+    "slug": "rag-budget-workspace-858",
+    "cluster": "Observability",
+    "intent": "checklist",
+    "description": "Practical guide covering rag, budget, and workspace for enterprise teams in 2026."
+  },
+  {
+    "title": "Anomaly Budget Slo: 2026 Playbook",
+    "slug": "anomaly-budget-slo-518",
+    "cluster": "Automation",
+    "intent": "architecture",
+    "description": "Practical guide covering anomaly, budget, and slo for enterprise teams in 2026."
+  },
+  {
+    "title": "Healthcare Rag Rollback: 2026 Playbook",
+    "slug": "healthcare-rag-rollback-648",
+    "cluster": "Data",
+    "intent": "runbook",
+    "description": "Practical guide covering healthcare, rag, and rollback for enterprise teams in 2026."
+  },
+  {
+    "title": "Event Kb Quality: 2026 Playbook",
+    "slug": "event-kb-quality-424",
+    "cluster": "Observability",
+    "intent": "roi",
+    "description": "Practical guide covering event, kb, and quality for enterprise teams in 2026."
+  },
+  {
+    "title": "Flink Integration Orchestration: 2026 Playbook",
+    "slug": "flink-integration-orchestration-618",
+    "cluster": "Cloud",
+    "intent": "checklist",
+    "description": "Practical guide covering flink, integration, and orchestration for enterprise teams in 2026."
+  },
+  {
+    "title": "Observability Schema Education: 2026 Playbook",
+    "slug": "observability-schema-education-956",
+    "cluster": "AI",
+    "intent": "guide",
+    "description": "Practical guide covering observability, schema, and education for enterprise teams in 2026."
+  },
+  {
+    "title": "Anomaly Rollback Orchestration: 2026 Playbook",
+    "slug": "anomaly-rollback-orchestration-460",
+    "cluster": "Automation",
+    "intent": "architecture",
+    "description": "Practical guide covering anomaly, rollback, and orchestration for enterprise teams in 2026."
+  },
+  {
+    "title": "Warehouse Lineage Field-Service: 2026 Playbook",
+    "slug": "warehouse-lineage-field-service-196",
+    "cluster": "Data",
+    "intent": "strategy",
+    "description": "Practical guide covering warehouse, lineage, and field-service for enterprise teams in 2026."
+  },
+  {
+    "title": "Workflow Kb Supply-Chain: 2026 Playbook",
+    "slug": "workflow-kb-supply-chain-649",
+    "cluster": "Observability",
+    "intent": "checklist",
+    "description": "Practical guide covering workflow, kb, and supply-chain for enterprise teams in 2026."
+  },
+  {
+    "title": "Proactive-Support Governance Reliability: 2026 Playbook",
+    "slug": "proactive-support-governance-reliability-49",
+    "cluster": "Security",
+    "intent": "strategy",
+    "description": "Practical guide covering proactive-support, governance, and reliability for enterprise teams in 2026."
+  },
+  {
+    "title": "Service-Desk Dns Voice: 2026 Playbook",
+    "slug": "service-desk-dns-voice-91",
+    "cluster": "Security",
+    "intent": "roi",
+    "description": "Practical guide covering service-desk, dns, and voice for enterprise teams in 2026."
+  },
+  {
+    "title": "Ide Document Security: 2026 Playbook",
+    "slug": "ide-document-security-921",
+    "cluster": "Automation",
+    "intent": "checklist",
+    "description": "Practical guide covering ide, document, and security for enterprise teams in 2026."
+  },
+  {
+    "title": "Metadata It-Asset Mlops: 2026 Playbook",
+    "slug": "metadata-it-asset-mlops-517",
+    "cluster": "Security",
+    "intent": "runbook",
+    "description": "Practical guide covering metadata, it-asset, and mlops for enterprise teams in 2026."
+  },
+  {
+    "title": "Ai Runbook Supply-Chain: 2026 Playbook",
+    "slug": "ai-runbook-supply-chain-921",
+    "cluster": "Data",
+    "intent": "runbook",
+    "description": "Practical guide covering ai, runbook, and supply-chain for enterprise teams in 2026."
+  },
+  {
+    "title": "Stream Ide Runbook: 2026 Playbook",
+    "slug": "stream-ide-runbook-721",
+    "cluster": "Cloud",
+    "intent": "best-practices",
+    "description": "Practical guide covering stream, ide, and runbook for enterprise teams in 2026."
+  },
+  {
+    "title": "Api Mlops Schema: 2026 Playbook",
+    "slug": "api-mlops-schema-899",
+    "cluster": "Automation",
+    "intent": "guide",
+    "description": "Practical guide covering api, mlops, and schema for enterprise teams in 2026."
+  },
+  {
+    "title": "Mlops Lineage Platform: 2026 Playbook",
+    "slug": "mlops-lineage-platform-820",
+    "cluster": "Observability",
+    "intent": "strategy",
+    "description": "Practical guide covering mlops, lineage, and platform for enterprise teams in 2026."
+  },
+  {
+    "title": "Llm Soc Quantum: 2026 Playbook",
+    "slug": "llm-soc-quantum-541",
+    "cluster": "SRE",
+    "intent": "maturity-model",
+    "description": "Practical guide covering llm, soc, and quantum for enterprise teams in 2026."
+  },
+  {
+    "title": "Proactive-Support Proactive-Support Master-Data: 2026 Playbook",
+    "slug": "proactive-support-proactive-support-master-data-753",
+    "cluster": "AI",
+    "intent": "architecture",
+    "description": "Practical guide covering proactive-support, proactive-support, and master-data for enterprise teams in 2026."
+  },
+  {
+    "title": "Remote Schema Voice: 2026 Playbook",
+    "slug": "remote-schema-voice-176",
+    "cluster": "SRE",
+    "intent": "architecture",
+    "description": "Practical guide covering remote, schema, and voice for enterprise teams in 2026."
+  },
+  {
+    "title": "It-Asset Remote Budget: 2026 Playbook",
+    "slug": "it-asset-remote-budget-949",
+    "cluster": "Cloud",
+    "intent": "strategy",
+    "description": "Practical guide covering it-asset, remote, and budget for enterprise teams in 2026."
+  },
+  {
+    "title": "Rollback Chatbot Finops: 2026 Playbook",
+    "slug": "rollback-chatbot-finops-456",
+    "cluster": "Automation",
+    "intent": "best-practices",
+    "description": "Practical guide covering rollback, chatbot, and finops for enterprise teams in 2026."
+  },
+  {
+    "title": "Itsm Compliance Access: 2026 Playbook",
+    "slug": "itsm-compliance-access-710",
+    "cluster": "SRE",
+    "intent": "guide",
+    "description": "Practical guide covering itsm, compliance, and access for enterprise teams in 2026."
+  },
+  {
+    "title": "Voice-Agent Reliability Runbook: 2026 Playbook",
+    "slug": "voice-agent-reliability-runbook-825",
+    "cluster": "Automation",
+    "intent": "runbook",
+    "description": "Practical guide covering voice-agent, reliability, and runbook for enterprise teams in 2026."
+  },
+  {
+    "title": "Chatops Erp Log: 2026 Playbook",
+    "slug": "chatops-erp-log-313",
+    "cluster": "Security",
+    "intent": "architecture",
+    "description": "Practical guide covering chatops, erp, and log for enterprise teams in 2026."
+  },
+  {
+    "title": "Rollback Ide It-Asset: 2026 Playbook",
+    "slug": "rollback-ide-it-asset-624",
+    "cluster": "SRE",
+    "intent": "strategy",
+    "description": "Practical guide covering rollback, ide, and it-asset for enterprise teams in 2026."
+  },
+  {
+    "title": "Document Orchestration Quantum: 2026 Playbook",
+    "slug": "document-orchestration-quantum-267",
+    "cluster": "SRE",
+    "intent": "checklist",
+    "description": "Practical guide covering document, orchestration, and quantum for enterprise teams in 2026."
+  },
+  {
+    "title": "Itsm Utility Monitor: 2026 Playbook",
+    "slug": "itsm-utility-monitor-122",
+    "cluster": "Cloud",
+    "intent": "roi",
+    "description": "Practical guide covering itsm, utility, and monitor for enterprise teams in 2026."
+  },
+  {
+    "title": "Budget Utility Lineage: 2026 Playbook",
+    "slug": "budget-utility-lineage-797",
+    "cluster": "SRE",
+    "intent": "roi",
+    "description": "Practical guide covering budget, utility, and lineage for enterprise teams in 2026."
+  },
+  {
+    "title": "Itsm Invoice Event: 2026 Playbook",
+    "slug": "itsm-invoice-event-482",
+    "cluster": "SRE",
+    "intent": "maturity-model",
+    "description": "Practical guide covering itsm, invoice, and event for enterprise teams in 2026."
+  },
+  {
+    "title": "Flink Zero-Trust Governance: 2026 Playbook",
+    "slug": "flink-zero-trust-governance-25",
+    "cluster": "AI",
+    "intent": "best-practices",
+    "description": "Practical guide covering flink, zero-trust, and governance for enterprise teams in 2026."
+  },
+  {
+    "title": "Workspace Rag Runbook: 2026 Playbook",
+    "slug": "workspace-rag-runbook-68",
+    "cluster": "Automation",
+    "intent": "maturity-model",
+    "description": "Practical guide covering workspace, rag, and runbook for enterprise teams in 2026."
+  },
+  {
+    "title": "Supply-Chain Stream Runbook: 2026 Playbook",
+    "slug": "supply-chain-stream-runbook-705",
+    "cluster": "IT",
+    "intent": "strategy",
+    "description": "Practical guide covering supply-chain, stream, and runbook for enterprise teams in 2026."
+  },
+  {
+    "title": "Identity Mlops Utility: 2026 Playbook",
+    "slug": "identity-mlops-utility-674",
+    "cluster": "Cloud",
+    "intent": "maturity-model",
+    "description": "Practical guide covering identity, mlops, and utility for enterprise teams in 2026."
+  },
+  {
+    "title": "Workspace Monitor Telecom: 2026 Playbook",
+    "slug": "workspace-monitor-telecom-550",
+    "cluster": "IT",
+    "intent": "checklist",
+    "description": "Practical guide covering workspace, monitor, and telecom for enterprise teams in 2026."
+  },
+  {
+    "title": "It-Asset Voice-Agent Master-Data: 2026 Playbook",
+    "slug": "it-asset-voice-agent-master-data-154",
+    "cluster": "Data",
+    "intent": "best-practices",
+    "description": "Practical guide covering it-asset, voice-agent, and master-data for enterprise teams in 2026."
+  },
+  {
+    "title": "Energy Chatops Chaos: 2026 Playbook",
+    "slug": "energy-chatops-chaos-750",
+    "cluster": "SRE",
+    "intent": "checklist",
+    "description": "Practical guide covering energy, chatops, and chaos for enterprise teams in 2026."
+  },
+  {
+    "title": "Lakehouse Workflow Soc: 2026 Playbook",
+    "slug": "lakehouse-workflow-soc-790",
+    "cluster": "Observability",
+    "intent": "roi",
+    "description": "Practical guide covering lakehouse, workflow, and soc for enterprise teams in 2026."
+  },
+  {
+    "title": "Api Multi-Agent Education: 2026 Playbook",
+    "slug": "api-multi-agent-education-452",
+    "cluster": "Cloud",
+    "intent": "best-practices",
+    "description": "Practical guide covering api, multi-agent, and education for enterprise teams in 2026."
+  },
+  {
+    "title": "Cost Cloud Chatbot: 2026 Playbook",
+    "slug": "cost-cloud-chatbot-571",
+    "cluster": "Data",
+    "intent": "architecture",
+    "description": "Practical guide covering cost, cloud, and chatbot for enterprise teams in 2026."
+  },
+  {
+    "title": "Lakehouse Mlops Data: 2026 Playbook",
+    "slug": "lakehouse-mlops-data-176",
+    "cluster": "Data",
+    "intent": "maturity-model",
+    "description": "Practical guide covering lakehouse, mlops, and data for enterprise teams in 2026."
+  },
+  {
+    "title": "Voice Governance Governance: 2026 Playbook",
+    "slug": "voice-governance-governance-920",
+    "cluster": "Data",
+    "intent": "runbook",
+    "description": "Practical guide covering voice, governance, and governance for enterprise teams in 2026."
+  },
+  {
+    "title": "Mesh Cost Governance: 2026 Playbook",
+    "slug": "mesh-cost-governance-395",
+    "cluster": "Data",
+    "intent": "guide",
+    "description": "Practical guide covering mesh, cost, and governance for enterprise teams in 2026."
+  },
+  {
+    "title": "Healthcare Telecom Pipeline: 2026 Playbook",
+    "slug": "healthcare-telecom-pipeline-277",
+    "cluster": "Observability",
+    "intent": "runbook",
+    "description": "Practical guide covering healthcare, telecom, and pipeline for enterprise teams in 2026."
+  },
+  {
+    "title": "Finance Utility Hyperautomation: 2026 Playbook",
+    "slug": "finance-utility-hyperautomation-219",
+    "cluster": "IT",
+    "intent": "best-practices",
+    "description": "Practical guide covering finance, utility, and hyperautomation for enterprise teams in 2026."
+  },
+  {
+    "title": "Security Ide Identity: 2026 Playbook",
+    "slug": "security-ide-identity-325",
+    "cluster": "Cloud",
+    "intent": "runbook",
+    "description": "Practical guide covering security, ide, and identity for enterprise teams in 2026."
+  },
+  {
+    "title": "Release Stream Stream: 2026 Playbook",
+    "slug": "release-stream-stream-481",
+    "cluster": "IT",
+    "intent": "guide",
+    "description": "Practical guide covering release, stream, and stream for enterprise teams in 2026."
+  },
+  {
+    "title": "Proactive-Support Healthcare Reliability: 2026 Playbook",
+    "slug": "proactive-support-healthcare-reliability-535",
+    "cluster": "Data",
+    "intent": "strategy",
+    "description": "Practical guide covering proactive-support, healthcare, and reliability for enterprise teams in 2026."
+  },
+  {
+    "title": "Catalog It-Asset Credential: 2026 Playbook",
+    "slug": "catalog-it-asset-credential-191",
+    "cluster": "Security",
+    "intent": "guide",
+    "description": "Practical guide covering catalog, it-asset, and credential for enterprise teams in 2026."
+  },
+  {
+    "title": "Synthetic Quantum Cloud: 2026 Playbook",
+    "slug": "synthetic-quantum-cloud-722",
+    "cluster": "Automation",
+    "intent": "runbook",
+    "description": "Practical guide covering synthetic, quantum, and cloud for enterprise teams in 2026."
+  },
+  {
+    "title": "Lineage Runbook Schema: 2026 Playbook",
+    "slug": "lineage-runbook-schema-477",
+    "cluster": "Data",
+    "intent": "guide",
+    "description": "Practical guide covering lineage, runbook, and schema for enterprise teams in 2026."
+  },
+  {
+    "title": "Healthcare Healthcare Quantum: 2026 Playbook",
+    "slug": "healthcare-healthcare-quantum-140",
+    "cluster": "AI",
+    "intent": "roi",
+    "description": "Practical guide covering healthcare, healthcare, and quantum for enterprise teams in 2026."
+  },
+  {
+    "title": "Ai Field-Service Quantum: 2026 Playbook",
+    "slug": "ai-field-service-quantum-675",
+    "cluster": "Security",
+    "intent": "strategy",
+    "description": "Practical guide covering ai, field-service, and quantum for enterprise teams in 2026."
+  },
+  {
+    "title": "Field-Service Erp Erp: 2026 Playbook",
+    "slug": "field-service-erp-erp-945",
+    "cluster": "Observability",
+    "intent": "maturity-model",
+    "description": "Practical guide covering field-service, erp, and erp for enterprise teams in 2026."
+  },
+  {
+    "title": "Automation Support-Qa Field-Service: 2026 Playbook",
+    "slug": "automation-support-qa-field-service-269",
+    "cluster": "Security",
+    "intent": "best-practices",
+    "description": "Practical guide covering automation, support-qa, and field-service for enterprise teams in 2026."
+  },
+  {
+    "title": "Ai Deployment Rollback: 2026 Playbook",
+    "slug": "ai-deployment-rollback-594",
+    "cluster": "Cloud",
+    "intent": "best-practices",
+    "description": "Practical guide covering ai, deployment, and rollback for enterprise teams in 2026."
+  },
+  {
+    "title": "Ai Reliability Supply-Chain: 2026 Playbook",
+    "slug": "ai-reliability-supply-chain-796",
+    "cluster": "SRE",
+    "intent": "architecture",
+    "description": "Practical guide covering ai, reliability, and supply-chain for enterprise teams in 2026."
+  },
+  {
+    "title": "Metric Event Mlops: 2026 Playbook",
+    "slug": "metric-event-mlops-366",
+    "cluster": "Observability",
+    "intent": "maturity-model",
+    "description": "Practical guide covering metric, event, and mlops for enterprise teams in 2026."
+  },
+  {
+    "title": "Mesh Multi-Agent Observability: 2026 Playbook",
+    "slug": "mesh-multi-agent-observability-67",
+    "cluster": "Observability",
+    "intent": "checklist",
+    "description": "Practical guide covering mesh, multi-agent, and observability for enterprise teams in 2026."
+  },
+  {
+    "title": "Voice Kubernetes Master-Data: 2026 Playbook",
+    "slug": "voice-kubernetes-master-data-807",
+    "cluster": "Security",
+    "intent": "best-practices",
+    "description": "Practical guide covering voice, kubernetes, and master-data for enterprise teams in 2026."
+  },
+  {
+    "title": "Reliability Release Platform: 2026 Playbook",
+    "slug": "reliability-release-platform-331",
+    "cluster": "Observability",
+    "intent": "roi",
+    "description": "Practical guide covering reliability, release, and platform for enterprise teams in 2026."
+  },
+  {
+    "title": "Voice Slo Retail: 2026 Playbook",
+    "slug": "voice-slo-retail-944",
+    "cluster": "SRE",
+    "intent": "architecture",
+    "description": "Practical guide covering voice, slo, and retail for enterprise teams in 2026."
+  },
+  {
+    "title": "Voice-Agent Chatops Automation: 2026 Playbook",
+    "slug": "voice-agent-chatops-automation-708",
+    "cluster": "SRE",
+    "intent": "runbook",
+    "description": "Practical guide covering voice-agent, chatops, and automation for enterprise teams in 2026."
+  },
+  {
+    "title": "Runbook Utility Service-Desk: 2026 Playbook",
+    "slug": "runbook-utility-service-desk-765",
+    "cluster": "Cloud",
+    "intent": "strategy",
+    "description": "Practical guide covering runbook, utility, and service-desk for enterprise teams in 2026."
+  },
+  {
+    "title": "On-Call Government Platform: 2026 Playbook",
+    "slug": "on-call-government-platform-773",
+    "cluster": "Automation",
+    "intent": "strategy",
+    "description": "Practical guide covering on-call, government, and platform for enterprise teams in 2026."
+  },
+  {
+    "title": "Data Quantum Customer-Success: 2026 Playbook",
+    "slug": "data-quantum-customer-success-560",
+    "cluster": "Observability",
+    "intent": "checklist",
+    "description": "Practical guide covering data, quantum, and customer-success for enterprise teams in 2026."
+  },
+  {
+    "title": "Tracing Government Workflow: 2026 Playbook",
+    "slug": "tracing-government-workflow-403",
+    "cluster": "AI",
+    "intent": "strategy",
+    "description": "Practical guide covering tracing, government, and workflow for enterprise teams in 2026."
+  },
+  {
+    "title": "Soc Incident Warehouse: 2026 Playbook",
+    "slug": "soc-incident-warehouse-812",
+    "cluster": "AI",
+    "intent": "maturity-model",
+    "description": "Practical guide covering soc, incident, and warehouse for enterprise teams in 2026."
+  },
+  {
+    "title": "Quality Monitor Pipeline: 2026 Playbook",
+    "slug": "quality-monitor-pipeline-157",
+    "cluster": "AI",
+    "intent": "checklist",
+    "description": "Practical guide covering quality, monitor, and pipeline for enterprise teams in 2026."
+  },
+  {
+    "title": "Rag Mlops Lineage: 2026 Playbook",
+    "slug": "rag-mlops-lineage-479",
+    "cluster": "IT",
+    "intent": "best-practices",
+    "description": "Practical guide covering rag, mlops, and lineage for enterprise teams in 2026."
+  },
+  {
+    "title": "Tracing Low-Code Pipeline: 2026 Playbook",
+    "slug": "tracing-low-code-pipeline-234",
+    "cluster": "Security",
+    "intent": "roi",
+    "description": "Practical guide covering tracing, low-code, and pipeline for enterprise teams in 2026."
+  },
+  {
+    "title": "Flink Process-Mining Platform: 2026 Playbook",
+    "slug": "flink-process-mining-platform-933",
+    "cluster": "AI",
+    "intent": "runbook",
+    "description": "Practical guide covering flink, process-mining, and platform for enterprise teams in 2026."
+  },
+  {
+    "title": "Supply-Chain Itsm Master-Data: 2026 Playbook",
+    "slug": "supply-chain-itsm-master-data-907",
+    "cluster": "IT",
+    "intent": "architecture",
+    "description": "Practical guide covering supply-chain, itsm, and master-data for enterprise teams in 2026."
+  },
+  {
+    "title": "Governance Workspace Edge: 2026 Playbook",
+    "slug": "governance-workspace-edge-331",
+    "cluster": "Security",
+    "intent": "runbook",
+    "description": "Practical guide covering governance, workspace, and edge for enterprise teams in 2026."
+  },
+  {
+    "title": "Retail Llm Quantum: 2026 Playbook",
+    "slug": "retail-llm-quantum-338",
+    "cluster": "Security",
+    "intent": "runbook",
+    "description": "Practical guide covering retail, llm, and quantum for enterprise teams in 2026."
+  },
+  {
+    "title": "Stream Identity Customer-Success: 2026 Playbook",
+    "slug": "stream-identity-customer-success-276",
+    "cluster": "Cloud",
+    "intent": "guide",
+    "description": "Practical guide covering stream, identity, and customer-success for enterprise teams in 2026."
+  },
+  {
+    "title": "Data Chatops Cloud: 2026 Playbook",
+    "slug": "data-chatops-cloud-233",
+    "cluster": "Observability",
+    "intent": "roi",
+    "description": "Practical guide covering data, chatops, and cloud for enterprise teams in 2026."
+  },
+  {
+    "title": "Lakehouse Release Monitor: 2026 Playbook",
+    "slug": "lakehouse-release-monitor-885",
+    "cluster": "SRE",
+    "intent": "runbook",
+    "description": "Practical guide covering lakehouse, release, and monitor for enterprise teams in 2026."
+  },
+  {
+    "title": "Cloud Lakehouse Slo: 2026 Playbook",
+    "slug": "cloud-lakehouse-slo-151",
+    "cluster": "AI",
+    "intent": "roi",
+    "description": "Practical guide covering cloud, lakehouse, and slo for enterprise teams in 2026."
+  },
+  {
+    "title": "Finops Chaos Field-Service: 2026 Playbook",
+    "slug": "finops-chaos-field-service-834",
+    "cluster": "Data",
+    "intent": "architecture",
+    "description": "Practical guide covering finops, chaos, and field-service for enterprise teams in 2026."
+  },
+  {
+    "title": "Access Flink Lineage: 2026 Playbook",
+    "slug": "access-flink-lineage-883",
+    "cluster": "AI",
+    "intent": "roi",
+    "description": "Practical guide covering access, flink, and lineage for enterprise teams in 2026."
+  },
+  {
+    "title": "Ideation Ai Lakehouse: 2026 Playbook",
+    "slug": "ideation-ai-lakehouse-215",
+    "cluster": "Automation",
+    "intent": "guide",
+    "description": "Practical guide covering ideation, ai, and lakehouse for enterprise teams in 2026."
+  },
+  {
+    "title": "Pipeline Platform Gpu: 2026 Playbook",
+    "slug": "pipeline-platform-gpu-422",
+    "cluster": "AI",
+    "intent": "checklist",
+    "description": "Practical guide covering pipeline, platform, and gpu for enterprise teams in 2026."
+  },
+  {
+    "title": "Observability Kb Api: 2026 Playbook",
+    "slug": "observability-kb-api-371",
+    "cluster": "Observability",
+    "intent": "best-practices",
+    "description": "Practical guide covering observability, kb, and api for enterprise teams in 2026."
+  },
+  {
+    "title": "Slo Api Workspace: 2026 Playbook",
+    "slug": "slo-api-workspace-830",
+    "cluster": "Cloud",
+    "intent": "checklist",
+    "description": "Practical guide covering slo, api, and workspace for enterprise teams in 2026."
+  },
+  {
+    "title": "Lakehouse Field-Service Remote: 2026 Playbook",
+    "slug": "lakehouse-field-service-remote-428",
+    "cluster": "Automation",
+    "intent": "best-practices",
+    "description": "Practical guide covering lakehouse, field-service, and remote for enterprise teams in 2026."
+  },
+  {
+    "title": "Ai Runbook Lakehouse: 2026 Playbook",
+    "slug": "ai-runbook-lakehouse-256",
+    "cluster": "AI",
+    "intent": "checklist",
+    "description": "Practical guide covering ai, runbook, and lakehouse for enterprise teams in 2026."
+  },
+  {
+    "title": "Budget Rollback Aiops: 2026 Playbook",
+    "slug": "budget-rollback-aiops-486",
+    "cluster": "Security",
+    "intent": "roi",
+    "description": "Practical guide covering budget, rollback, and aiops for enterprise teams in 2026."
+  },
+  {
+    "title": "Workspace Remote Metric: 2026 Playbook",
+    "slug": "workspace-remote-metric-316",
+    "cluster": "IT",
+    "intent": "strategy",
+    "description": "Practical guide covering workspace, remote, and metric for enterprise teams in 2026."
+  },
+  {
+    "title": "Itsm Proactive-Support Chaos: 2026 Playbook",
+    "slug": "itsm-proactive-support-chaos-468",
+    "cluster": "Security",
+    "intent": "best-practices",
+    "description": "Practical guide covering itsm, proactive-support, and chaos for enterprise teams in 2026."
+  },
+  {
+    "title": "Legal Document Customer-Success: 2026 Playbook",
+    "slug": "legal-document-customer-success-28",
+    "cluster": "Observability",
+    "intent": "guide",
+    "description": "Practical guide covering legal, document, and customer-success for enterprise teams in 2026."
+  },
+  {
+    "title": "Identity Proactive-Support Healthcare: 2026 Playbook",
+    "slug": "identity-proactive-support-healthcare-367",
+    "cluster": "SRE",
+    "intent": "architecture",
+    "description": "Practical guide covering identity, proactive-support, and healthcare for enterprise teams in 2026."
+  },
+  {
+    "title": "Energy Dns Erp: 2026 Playbook",
+    "slug": "energy-dns-erp-676",
+    "cluster": "Cloud",
+    "intent": "best-practices",
+    "description": "Practical guide covering energy, dns, and erp for enterprise teams in 2026."
+  },
+  {
+    "title": "Runbook Service-Desk Anomaly: 2026 Playbook",
+    "slug": "runbook-service-desk-anomaly-311",
+    "cluster": "Observability",
+    "intent": "checklist",
+    "description": "Practical guide covering runbook, service-desk, and anomaly for enterprise teams in 2026."
+  },
+  {
+    "title": "Credential Finance Access: 2026 Playbook",
+    "slug": "credential-finance-access-153",
+    "cluster": "Observability",
+    "intent": "best-practices",
+    "description": "Practical guide covering credential, finance, and access for enterprise teams in 2026."
+  },
+  {
+    "title": "Metadata Aiops Slo: 2026 Playbook",
+    "slug": "metadata-aiops-slo-900",
+    "cluster": "SRE",
+    "intent": "architecture",
+    "description": "Practical guide covering metadata, aiops, and slo for enterprise teams in 2026."
+  },
+  {
+    "title": "Ide Api Event: 2026 Playbook",
+    "slug": "ide-api-event-777",
+    "cluster": "IT",
+    "intent": "runbook",
+    "description": "Practical guide covering ide, api, and event for enterprise teams in 2026."
+  },
+  {
+    "title": "Supply-Chain Erp Supply-Chain: 2026 Playbook",
+    "slug": "supply-chain-erp-supply-chain-139",
+    "cluster": "AI",
+    "intent": "roi",
+    "description": "Practical guide covering supply-chain, erp, and supply-chain for enterprise teams in 2026."
+  },
+  {
+    "title": "Observability Zero-Trust Voice: 2026 Playbook",
+    "slug": "observability-zero-trust-voice-321",
+    "cluster": "Security",
+    "intent": "checklist",
+    "description": "Practical guide covering observability, zero-trust, and voice for enterprise teams in 2026."
+  },
+  {
+    "title": "Soc Flink Passwordless: 2026 Playbook",
+    "slug": "soc-flink-passwordless-858",
+    "cluster": "Observability",
+    "intent": "checklist",
+    "description": "Practical guide covering soc, flink, and passwordless for enterprise teams in 2026."
+  },
+  {
+    "title": "Ide Schema Slo: 2026 Playbook",
+    "slug": "ide-schema-slo-946",
+    "cluster": "Observability",
+    "intent": "guide",
+    "description": "Practical guide covering ide, schema, and slo for enterprise teams in 2026."
+  },
+  {
+    "title": "Gpu Reliability Erp: 2026 Playbook",
+    "slug": "gpu-reliability-erp-431",
+    "cluster": "Cloud",
+    "intent": "best-practices",
+    "description": "Practical guide covering gpu, reliability, and erp for enterprise teams in 2026."
+  },
+  {
+    "title": "Security Metadata Reliability: 2026 Playbook",
+    "slug": "security-metadata-reliability-853",
+    "cluster": "Data",
+    "intent": "runbook",
+    "description": "Practical guide covering security, metadata, and reliability for enterprise teams in 2026."
+  },
+  {
+    "title": "Pipeline Warehouse Hyperautomation: 2026 Playbook",
+    "slug": "pipeline-warehouse-hyperautomation-912",
+    "cluster": "Automation",
+    "intent": "best-practices",
+    "description": "Practical guide covering pipeline, warehouse, and hyperautomation for enterprise teams in 2026."
+  },
+  {
+    "title": "Erp Document Erp: 2026 Playbook",
+    "slug": "erp-document-erp-941",
+    "cluster": "AI",
+    "intent": "strategy",
+    "description": "Practical guide covering erp, document, and erp for enterprise teams in 2026."
+  },
+  {
+    "title": "Release Low-Code Field-Service: 2026 Playbook",
+    "slug": "release-low-code-field-service-194",
+    "cluster": "IT",
+    "intent": "runbook",
+    "description": "Practical guide covering release, low-code, and field-service for enterprise teams in 2026."
+  },
+  {
+    "title": "Invoice Kb Metric: 2026 Playbook",
+    "slug": "invoice-kb-metric-871",
+    "cluster": "Observability",
+    "intent": "roi",
+    "description": "Practical guide covering invoice, kb, and metric for enterprise teams in 2026."
+  },
+  {
+    "title": "Erp Flink Cost: 2026 Playbook",
+    "slug": "erp-flink-cost-150",
+    "cluster": "Observability",
+    "intent": "checklist",
+    "description": "Practical guide covering erp, flink, and cost for enterprise teams in 2026."
+  },
+  {
+    "title": "Tracing Multi-Agent Reliability: 2026 Playbook",
+    "slug": "tracing-multi-agent-reliability-558",
+    "cluster": "Observability",
+    "intent": "best-practices",
+    "description": "Practical guide covering tracing, multi-agent, and reliability for enterprise teams in 2026."
+  },
+  {
+    "title": "Rollback Observability Finance: 2026 Playbook",
+    "slug": "rollback-observability-finance-73",
+    "cluster": "IT",
+    "intent": "roi",
+    "description": "Practical guide covering rollback, observability, and finance for enterprise teams in 2026."
+  },
+  {
+    "title": "Observability It-Asset Ide: 2026 Playbook",
+    "slug": "observability-it-asset-ide-930",
+    "cluster": "IT",
+    "intent": "guide",
+    "description": "Practical guide covering observability, it-asset, and ide for enterprise teams in 2026."
+  },
+  {
+    "title": "Integration Slo Master-Data: 2026 Playbook",
+    "slug": "integration-slo-master-data-105",
+    "cluster": "SRE",
+    "intent": "roi",
+    "description": "Practical guide covering integration, slo, and master-data for enterprise teams in 2026."
+  },
+  {
+    "title": "Invoice Incident Stream: 2026 Playbook",
+    "slug": "invoice-incident-stream-79",
+    "cluster": "Cloud",
+    "intent": "runbook",
+    "description": "Practical guide covering invoice, incident, and stream for enterprise teams in 2026."
+  },
+  {
+    "title": "Integration Observability Document: 2026 Playbook",
+    "slug": "integration-observability-document-949",
+    "cluster": "Automation",
+    "intent": "runbook",
+    "description": "Practical guide covering integration, observability, and document for enterprise teams in 2026."
+  },
+  {
+    "title": "Finance Multi-Agent Kafka: 2026 Playbook",
+    "slug": "finance-multi-agent-kafka-184",
+    "cluster": "AI",
+    "intent": "architecture",
+    "description": "Practical guide covering finance, multi-agent, and kafka for enterprise teams in 2026."
+  },
+  {
+    "title": "Finops Finops Data: 2026 Playbook",
+    "slug": "finops-finops-data-200",
+    "cluster": "Cloud",
+    "intent": "maturity-model",
+    "description": "Practical guide covering finops, finops, and data for enterprise teams in 2026."
+  },
+  {
+    "title": "Compliance Integration Energy: 2026 Playbook",
+    "slug": "compliance-integration-energy-417",
+    "cluster": "Observability",
+    "intent": "architecture",
+    "description": "Practical guide covering compliance, integration, and energy for enterprise teams in 2026."
+  },
+  {
+    "title": "Rollback Automation Orchestration: 2026 Playbook",
+    "slug": "rollback-automation-orchestration-886",
+    "cluster": "Security",
+    "intent": "checklist",
+    "description": "Practical guide covering rollback, automation, and orchestration for enterprise teams in 2026."
+  },
+  {
+    "title": "Tracing Kafka Rollback: 2026 Playbook",
+    "slug": "tracing-kafka-rollback-861",
+    "cluster": "SRE",
+    "intent": "runbook",
+    "description": "Practical guide covering tracing, kafka, and rollback for enterprise teams in 2026."
+  },
+  {
+    "title": "Schema Finance Rag: 2026 Playbook",
+    "slug": "schema-finance-rag-126",
+    "cluster": "IT",
+    "intent": "maturity-model",
+    "description": "Practical guide covering schema, finance, and rag for enterprise teams in 2026."
+  },
+  {
+    "title": "Utility Catalog Metadata: 2026 Playbook",
+    "slug": "utility-catalog-metadata-557",
+    "cluster": "IT",
+    "intent": "architecture",
+    "description": "Practical guide covering utility, catalog, and metadata for enterprise teams in 2026."
+  },
+  {
+    "title": "Multi-Agent It-Asset Manufacturing: 2026 Playbook",
+    "slug": "multi-agent-it-asset-manufacturing-422",
+    "cluster": "Data",
+    "intent": "best-practices",
+    "description": "Practical guide covering multi-agent, it-asset, and manufacturing for enterprise teams in 2026."
+  },
+  {
+    "title": "Stream Metric Document: 2026 Playbook",
+    "slug": "stream-metric-document-671",
+    "cluster": "IT",
+    "intent": "best-practices",
+    "description": "Practical guide covering stream, metric, and document for enterprise teams in 2026."
   }
 ]

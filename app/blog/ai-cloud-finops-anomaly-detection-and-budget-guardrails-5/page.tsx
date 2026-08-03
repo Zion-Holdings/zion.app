@@ -74,6 +74,10 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
               <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-9">Mlops Pipeline Llms Fine Tuning Production Deployment 9</Link></li>
               <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-10">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 10</Link></li>
               <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere</Link></li>
+              <li><Link href="/blog/identity-mlops-utility-674">Identity Mlops Utility 674</Link></li>
+              <li><Link href="/blog/workspace-remote-metric-316">Workspace Remote Metric 316</Link></li>
+              <li><Link href="/blog/observability-schema-education-956">Observability Schema Education 956</Link></li>
+              <li><Link href="/blog/retail-llm-quantum-338">Retail Llm Quantum 338</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
