@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Dynamic Pricing lifted revenue 19% without margin erosion - Case Study | Zion Tech Group",
-  description: "See how Coastal Retail Group achieved $6.8M annual savings with 19% Revenue Lift using Zion Tech Group.",
-  alternates: { canonical: `https://ziontechgroup.com/case-studies/retail-dynamic-pricing-lifted-revenue-19%-without-margin-erosion` },
+  title: 'Dynamic Pricing lifted revenue 19% without margin erosion - Case Study | Zion Tech Group',
+  description: 'See how Coastal Retail Group achieved $6.8M annual savings with 19% Revenue Lift using Zion Tech Group.',
+  alternates: { canonical: 'https://ziontechgroup.com/case-studies/retail-dynamic-pricing-lifted-revenue-19%-without-margin-erosion' },
 };
 
 export default function CaseStudy() {
@@ -51,7 +51,9 @@ export default function CaseStudy() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Results</h2>
           <ul className="list-disc list-inside space-y-2 text-gray-300">
-            <li>Markdowns reduced 24%</li><li>Inventory turns improved 18%</li><li>Customer satisfaction up 12%</li>
+            <li>Markdowns reduced 24%</li>
+            <li>Inventory turns improved 18%</li>
+            <li>Customer satisfaction up 12%</li>
           </ul>
         </div>
 
