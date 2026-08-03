@@ -1,0 +1,49 @@
+name: Autonomous Content Loop
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  content-cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Hermes CLI
+        run: |
+          npm install -g @nousresearch/hermes-agent || true
+          hermes --version || true
+
+      - name: Run content cycle
+        run: |
+          hermes -y run "Run one GitHub content cycle in C:\Users\Zion\tmp\zion-clone-test2 using the github-content-loop skill. Generate 6 assets, update content/queue.md with 3 new seeds, commit and push to origin main, and return a concise cycle summary."
+
+      - name: Push changes
+        run: |
+          git config user.name "hermes-content-bot"
+          git config user.email "hermes@ziontechgroup.com"
+          git add content/
+          git commit -m "content: automated cycle $(date +%Y-%m-%d_%H-%M)" || true
+          git push origin HEAD:main || true
+
+      - name: Report summary
+        if: always()
+        run: |
+          echo "## Content Cycle Summary" >> $GITHUB_STEP_SUMMARY
+          echo "Status: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+          ls -la content/posts || true
+          tail -n 20 content/queue.md || true
