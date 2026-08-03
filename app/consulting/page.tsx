@@ -91,7 +91,7 @@ export default function ConsultingPage() {
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <Link href="/services/" className="btn-secondary px-4 py-2 text-sm">Browse Services</Link>
-              <Link href="/configurator/" className="btn-primary px-4 py-2 text-sm">Custom Proposal</Link>
+              <Link href="/configurator" className="btn-primary px-4 py-2 text-sm">Custom Proposal</Link>
             </div>
           </div>
         </section>

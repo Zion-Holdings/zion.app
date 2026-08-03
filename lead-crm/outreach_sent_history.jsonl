@@ -1,1 +1,2 @@
 {"ts": "2026-07-15T14:48:34.438628+00:00", "event": "analysis_only", "send_allowed": false, "total_records": 25, "internal_hits": 2, "status": "send_blocked_analysis"}
+{"ts": "2026-08-03T16:42:17.719000+00:00", "to": "thomas@gakenholz.de", "subject": "Parceria tecnológica Gakenholz + Zion Tech Group", "message_id": "19fc881356bc5c6e", "thread_id": "19fc881356bc5c6e", "provider": "gmail_api", "status": "sent"}

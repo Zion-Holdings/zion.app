@@ -22,7 +22,7 @@ export default function Academy() {
           <div className="card">
             <h3>Cloud & Security</h3>
             <p>Implement safer cloud and zero-trust architectures.</p>
-            <Link href="/services/zero-trust-network-access/">Zero Trust Access</Link>
+            <Link href="/services/zero-trust-network-access">Zero Trust Access</Link>
           </div>
           <div className="card">
             <h3>Operations</h3>

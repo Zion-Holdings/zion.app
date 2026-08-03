@@ -12,7 +12,7 @@ export default function AiClaimsAutomationRedirect() {
         <link rel="canonical" href="https://ziontechgroup.com/services/ai-insurance-claims-automation/" />
       </head>
       <body>
-        <p>Redirecting to <a href="/services/ai-insurance-claims-automation/">AI Insurance Claims Automation</a>...</p>
+        <p>Redirecting to <a href="/services/ai-insurance-claims-automation">AI Insurance Claims Automation</a>...</p>
       </body>
     </html>
   );

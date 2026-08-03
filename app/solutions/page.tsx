@@ -27,7 +27,7 @@ export default function SolutionsPage() {
       </p>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {(industries).map((ind) => (
-          <Link key={ind.name} href="/industry-solutions/" className="glass-card">
+          <Link key={ind.name} href="/industry-solutions" className="glass-card">
             <h3 className="font-semibold text-white mb-2">{ind.name}</h3>
             <p className="text-slate-400 text-sm">{ind.desc}</p>
             <span className="text-purple-400 text-xs mt-3 inline-block">Learn more →</span>

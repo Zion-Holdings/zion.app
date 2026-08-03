@@ -227,7 +227,7 @@ export default function CustomerSuccessPlatform() {
               📧 Request Full Analysis
             </a>
             <a
-              href="/services/ai-powered-customer-success/"
+              href="/services/ai-customer-success-churn-prevention"
               className="flex-1 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all text-center"
             >
               🌟 Learn More About Platform

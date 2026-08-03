@@ -161,7 +161,7 @@ export default function PricingEstimator({ categories, categoryCounts, categoryP
                       <span className="text-emerald-400 ml-2">(Save ${estimate.savings.toLocaleString()}/yr)</span>
                     )}
                   </p>
-                  <Link href="/configurator/" className="btn-primary text-lg px-10 py-4 inline-block">
+                  <Link href="/configurator" className="btn-primary text-lg px-10 py-4 inline-block">
                     ⚡ Get Exact Quote →
                   </Link>
                   <p className="text-[11px] text-slate-500 mt-4">

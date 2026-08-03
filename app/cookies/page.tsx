@@ -13,7 +13,7 @@ export default function CookiesPage() {
     <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
         <div className="max-w-3xl mx-auto">
-          <Link href="/privacy/" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">
+          <Link href="/privacy" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">
             ← Privacy Policy
           </Link>
 
@@ -23,7 +23,7 @@ export default function CookiesPage() {
           <p className="text-slate-400 mb-10">
             Zion Tech Group uses cookies and similar technologies on <Link href="/" className="text-purple-400 hover:underline">ziontechgroup.com</Link>.
             This policy explains what types of cookies we use, why we use them, and how you can manage your preferences.
-            For information about how we handle your personal data, please see our <Link href="/privacy/" className="text-purple-400 hover:underline">Privacy Policy</Link>.
+            For information about how we handle your personal data, please see our <Link href="/privacy" className="text-purple-400 hover:underline">Privacy Policy</Link>.
           </p>
 
           <Section num="1" title="What Are Cookies?">

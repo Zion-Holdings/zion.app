@@ -180,7 +180,7 @@ export default function PortScannerPage() {
         </div>
 
         <div className="mt-8 text-center">
-          <Link href="/services/ai-insurance-claims-automation/" className="text-purple-400 hover:underline text-sm">
+          <Link href="/services/ai-insurance-claims-automation" className="text-purple-400 hover:underline text-sm">
             Need full infrastructure security monitoring? → Insurance Claims Automation
           </Link>
         </div>

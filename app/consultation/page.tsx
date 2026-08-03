@@ -1,13 +1,37 @@
-import type { Metadata } from 'next';
-import { redirect } from 'next/navigation';
+import Link from 'next/link';
 
 export const metadata = {
-  title: 'Free IT/AI Strategy Consultation | Zion Tech Group',
-  description:
-    'Book a free IT/AI strategy consultation with Zion Tech Group. Same-day proposal roadmap, ROI outline, and implementation plan for your business.',
-
+  title: 'Consultation | Zion Tech Group',
+  description: 'Book a strategy consultation with Zion Tech Group to review your AI, cloud, or security roadmap.',
 };
 
-export default function ConsultationPage() {
-  redirect('/consulting/');
+export default function Page() {
+  return (
+    <div className="container-page py-20">
+      <h1 className="text-4xl font-bold mb-4 text-white">Consultation</h1>
+      <p className="mb-6 text-slate-300">A focused session to review your current state, risks, and highest-impact next actions.</p>
+      <div className="grid gap-6 sm:grid-cols-2">
+        <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
+          <h2 className="mb-2 text-xl font-bold text-white">Agenda</h2>
+          <ul className="list-disc pl-6 text-slate-300 space-y-2">
+            <li>Current architecture review</li>
+            <li>Risk and gap identification</li>
+            <li>Prioritized action plan</li>
+          </ul>
+        </div>
+        <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
+          <h2 className="mb-2 text-xl font-bold text-white">Outcomes</h2>
+          <ul className="list-disc pl-6 text-slate-300 space-y-2">
+            <li>Clear executive summary</li>
+            <li>Recommended pilot scope</li>
+            <li>Success criteria</li>
+          </ul>
+        </div>
+      </div>
+      <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+        <Link href="/contact" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Book consultation</Link>
+        <Link href="/services" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Our services</Link>
+      </div>
+    </div>
+  );
 }

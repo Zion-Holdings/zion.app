@@ -1,0 +1,106 @@
+[
+  {
+    "title": "AI SOC Modernization for MSSPs in 2026",
+    "slug": "ai-soc-modernization-for-mssps-in-2026",
+    "cluster": "security",
+    "intent": "solution",
+    "differentiation_hook": "MSSP-specific playbook with tooling comparisons",
+    "rationale": "Rising demand for managed detection and response with constrained SOC staff"
+  },
+  {
+    "title": "Business Observability: Connect Metrics to Revenue, Conversion, and CX",
+    "slug": "business-observability-connect-metrics-to-revenue-conversion-and-cx",
+    "cluster": "observability",
+    "intent": "guide",
+    "differentiation_hook": "Business outcome mapping for technical telemetry",
+    "rationale": "Engineering metrics need business translation"
+  },
+  {
+    "title": "AI Data Pipeline Observability: Lineage, Freshness, and Quality in 2026",
+    "slug": "ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026",
+    "cluster": "data",
+    "intent": "guide",
+    "differentiation_hook": "End-to-end data trust playbook",
+    "rationale": "Bad pipelines undermine AI initiatives"
+  },
+  {
+    "title": "Automated Provisioning and Deprovisioning: Identity and Access Lifecycle Automation",
+    "slug": "automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation",
+    "cluster": "it",
+    "intent": "guide",
+    "differentiation_hook": "Joiner/mover/leaver playbooks with audit trails",
+    "rationale": "Manual access changes are a top security and operational risk"
+  },
+  {
+    "title": "Email and Calendar Automation with AI Agents: Schedule, Follow Up, and Summarize",
+    "slug": "email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize",
+    "cluster": "automation",
+    "intent": "solution",
+    "differentiation_hook": "Practical workflow integration instead of generic assistant demos",
+    "rationale": "Time lost to scheduling and follow-up remains high"
+  },
+  {
+    "title": "AI Credential Hygiene and Secret Rotation in CI/CD",
+    "slug": "ai-credential-hygiene-and-secret-rotation-in-ci-cd",
+    "cluster": "security",
+    "intent": "guide",
+    "differentiation_hook": "Automated rotation with minimal developer friction",
+    "rationale": "Hardcoded credentials remain a common breach vector"
+  },
+  {
+    "title": "AI Capacity Planning for SaaS and Cloud Platforms in 2026",
+    "slug": "ai-capacity-planning-for-saas-and-cloud-platforms-in-2026",
+    "cluster": "cloud",
+    "intent": "guide",
+    "differentiation_hook": "Demand forecasting and reservation optimization",
+    "rationale": "Overprovisioning and throttling both hurt service quality"
+  },
+  {
+    "title": "AI Cloud FinOps: Anomaly Detection and Budget Guardrails",
+    "slug": "ai-cloud-finops-anomaly-detection-and-budget-guardrails",
+    "cluster": "cloud",
+    "intent": "solution",
+    "differentiation_hook": "Finance and engineering collaboration with automated alerts",
+    "rationale": "Cloud costs still surprise many organizations monthly"
+  },
+  {
+    "title": "Distributed Tracing with Jaeger and Zipkin: Debug Microservices Without Log Dumps",
+    "slug": "distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps",
+    "cluster": "observability",
+    "intent": "guide",
+    "differentiation_hook": "Practical instrumentation and sampling strategy",
+    "rationale": "Microservices debugging remains a major operational burden"
+  },
+  {
+    "title": "Customer Success Automation: Trigger Health Checks, Outreach, and Product Signals",
+    "slug": "customer-success-automation-trigger-health-checks-outreach-and-product-signals",
+    "cluster": "support",
+    "intent": "solution",
+    "differentiation_hook": "Health-based playbooks and intervention timing",
+    "rationale": "CS outcomes improve with proactive, data-driven outreach"
+  },
+  {
+    "title": "AI Support Quality Assurance: Score Tickets, Detect Escalations, and Coach Agents",
+    "slug": "ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents",
+    "cluster": "support",
+    "intent": "solution",
+    "differentiation_hook": "Quality scoring and coaching without full QA staffing",
+    "rationale": "Support quality is hard to measure and improve at scale"
+  },
+  {
+    "title": "AI Network Detection and Response for Hybrid Infrastructures in 2026",
+    "slug": "ai-network-detection-and-response-for-hybrid-infrastructures-in-2026",
+    "cluster": "security",
+    "intent": "guide",
+    "differentiation_hook": "Network telemetry plus endpoint and identity signals",
+    "rationale": "Network-only detection is insufficient for hybrid environments"
+  },
+  {
+    "title": "AI Observability Pipeline for Kubernetes and Cloud in 2026",
+    "slug": "ai-observability-pipeline-for-kubernetes-and-cloud-in-2026",
+    "cluster": "observability",
+    "intent": "guide",
+    "differentiation_hook": "Unified metrics, logs, traces, and events pipeline",
+    "rationale": "Observability fragmentation increases mean time to resolution"
+  }
+]

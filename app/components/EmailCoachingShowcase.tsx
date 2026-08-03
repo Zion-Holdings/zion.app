@@ -122,7 +122,7 @@ export default function EmailCoachingShowcase() {
                 </div>
                 <div className="mt-8 flex gap-4">
                   <a
-                    href="/services/ai-email-coaching-platform"
+                    href="/services/ai-email-intelligence"
                     className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition-all shadow-lg hover:shadow-purple-500/50"
                   >
                     Learn More →
@@ -288,7 +288,7 @@ export default function EmailCoachingShowcase() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/services/ai-email-coaching-platform"
+                href="/services/ai-email-intelligence"
                 className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-lg transition-all shadow-lg hover:shadow-purple-500/50 inline-flex items-center justify-center gap-2"
               >
                 <span>Start Free Trial</span>

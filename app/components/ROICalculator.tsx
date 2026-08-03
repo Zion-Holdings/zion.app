@@ -105,7 +105,7 @@ export default function ROICalculator({ serviceTitle, category }: ROICalculatorP
                 </div>
               </div>
               <div className="text-center">
-                <Link href="/configurator/" className="btn-primary text-lg px-10 py-4 inline-block">
+                <Link href="/configurator" className="btn-primary text-lg px-10 py-4 inline-block">
                   ⚡ Get Your Custom ROI Analysis →
                 </Link>
                 <p className="text-[11px] text-slate-500 mt-3">
