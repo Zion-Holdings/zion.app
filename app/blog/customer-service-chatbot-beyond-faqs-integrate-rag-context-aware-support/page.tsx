@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-first-end-user-computing-and-modern-workplace-in-2026">Ai First End User Computing And Modern Workplace In 2026</Link></li>
               <li><Link href="/blog/enterprise-ai-integration-roadmap-for-2026">Enterprise Ai Integration Roadmap For 2026</Link></li>
               <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-soc-teams-2026">Ai Threat Intelligence Integration Soc Teams 2026</Link></li>
+              <li><Link href="/blog/data-observability-detect-quality-issues-schema-drift-anomalies-automatically">Data Observability Detect Quality Issues Schema Drift Anomalies Automatically</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-product-signals">Customer Success Automation Trigger Health Checks Outreach Product Signals</Link></li>
+              <li><Link href="/blog/ai-retail-automation-guide-for-enterprise-teams-in-2026">Ai Retail Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/comparing-ai-threat-intelligence-integration-for-soc-teams-vendors-and-build-vs-buy">Comparing Ai Threat Intelligence Integration For Soc Teams Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/how-to-implement-document-processing-automation-extract-data-from-invoices-contracts-and-forms-without-disrupting-operations">How To Implement Document Processing Automation Extract Data From Invoices Contracts And Forms Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-costs-roi-and-hidden-risks">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-and-improve-retrieval-accuracy-costs-roi-and-hidden-risks">Rag Optimization Playbook Reduce Hallucination And Improve Retrieval Accuracy Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/ai-fraud-prevention-and-identity-intelligence-for-brazilian-companies-in-2026">Ai Fraud Prevention And Identity Intelligence For Brazilian Companies In 2026</Link></li>
+              <li><Link href="/blog/ai-for-itsm-and-service-management">Ai For Itsm And Service Management</Link></li>
+              <li><Link href="/blog/ai-security-operations-center-modernization-for-mssps-checklist-for-it-and-security-leaders">Ai Security Operations Center Modernization For Mssps Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-cloud-migration-for-regulated-industries-hipaa-pci-and-gdpr-on-aws-azure">Common Mistakes When Rolling Out Cloud Migration For Regulated Industries Hipaa Pci And Gdpr On Aws Azure</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/how-healthcarelifesciences-leaders-cut-costs-with-ai">How Healthcarelifesciences Leaders Cut Costs With Ai</Link></li>
               <li><Link href="/blog/ai-for-managed-it-services-and-msp-automation">Ai For Managed It Services And Msp Automation</Link></li>
               <li><Link href="/blog/ai-for-clinical-trial-operations-and-data-quality">Ai For Clinical Trial Operations And Data Quality</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy</Link></li>
+              <li><Link href="/blog/ai-for-it-project-delivery-and-implementation-services">Ai For It Project Delivery And Implementation Services</Link></li>
+              <li><Link href="/blog/vulnerability-management-prioritization-cvss-not-enough-exploitability-scoring">Vulnerability Management Prioritization Cvss Not Enough Exploitability Scoring</Link></li>
+              <li><Link href="/blog/attack-surface-management-continuous-discovery-exposure-validation">Attack Surface Management Continuous Discovery Exposure Validation</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-and-sso-integration-checklist-for-it-and-security-leaders">Passwordless Authentication Strategy Fido2 Passkeys And Sso Integration Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment">Mlops Pipeline Llms Fine Tuning Production Deployment</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-and-improve-retrieval-accuracy-for-ai-teams">Rag Optimization Playbook Reduce Hallucination And Improve Retrieval Accuracy For Ai Teams</Link></li>
+              <li><Link href="/blog/cloud-migration-regulated-industries-hipaa-pci-gdpr-aws-azure">Cloud Migration Regulated Industries Hipaa Pci Gdpr Aws Azure</Link></li>
+              <li><Link href="/blog/case-study-document-processing-automation-extract-data-from-invoices-contracts-and-forms-in-production">Case Study Document Processing Automation Extract Data From Invoices Contracts And Forms In Production</Link></li>
+              <li><Link href="/blog/comparing-it-financial-management-showback-chargeback-and-cloud-cost-allocation-vendors-and-build-vs-buy">Comparing It Financial Management Showback Chargeback And Cloud Cost Allocation Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/ai-model-security-defend-against-adversarial-attacks-and-prompt-injection-costs-roi-and-hidden-risks">Ai Model Security Defend Against Adversarial Attacks And Prompt Injection Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/comparing-automated-provisioning-and-de-provisioning-identity-and-access-lifecycle-automation-vendors-and-build-vs-buy">Comparing Automated Provisioning And De Provisioning Identity And Access Lifecycle Automation Vendors And Build Vs Buy</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

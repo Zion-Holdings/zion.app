@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-zero-trust-access">Remote Work Enablement Secure Vpn Alternatives Zero Trust Access</Link></li>
               <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation</Link></li>
               <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s">Kubernetes Platform Engineering Build Internal Developer Platform K8S</Link></li>
+              <li><Link href="/blog/ransomware-resilience-playbook-immutable-backups-isolated-recovery-environments">Ransomware Resilience Playbook Immutable Backups Isolated Recovery Environments</Link></li>
+              <li><Link href="/blog/multimodal-ai-architecture-text-image-voice-enterprise-stack">Multimodal Ai Architecture Text Image Voice Enterprise Stack</Link></li>
+              <li><Link href="/blog/ai-support-automation-for-brazilian-companies-in-2026">Ai Support Automation For Brazilian Companies In 2026</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-quality-2026">Ai Data Pipeline Observability Lineage Freshness Quality 2026</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-cloud-exit-strategy-avoid-vendor-lock-in-with-portable-architecture-patterns">Common Mistakes When Rolling Out Cloud Exit Strategy Avoid Vendor Lock In With Portable Architecture Patterns</Link></li>
+              <li><Link href="/blog/identity-security-playbook-ciam-pam-and-zero-trust-identity-combined-2026-playbook">Identity Security Playbook Ciam Pam And Zero Trust Identity Combined 2026 Playbook</Link></li>
+              <li><Link href="/blog/time-series-analytics-for-iot-ingest-store-and-query-sensor-data-at-scale-for-data-teams">Time Series Analytics For Iot Ingest Store And Query Sensor Data At Scale For Data Teams</Link></li>
+              <li><Link href="/blog/ai-legal-contract-review-operations-automation">Ai Legal Contract Review Operations Automation</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-or-zipkin-debug-microservices-without-log-dumps-2026-playbook">Distributed Tracing With Jaeger Or Zipkin Debug Microservices Without Log Dumps 2026 Playbook</Link></li>
+              <li><Link href="/blog/ai-anti-fraud-and-payment-intelligence-for-fintech-in-2026">Ai Anti Fraud And Payment Intelligence For Fintech In 2026</Link></li>
+              <li><Link href="/blog/analytics-engineering-with-dbt-transform-data-in-your-warehouse-like-software-costs-roi-and-hidden-risks">Analytics Engineering With Dbt Transform Data In Your Warehouse Like Software Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/ai-it-observability-and-incident-management-in-2026">Ai It Observability And Incident Management In 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

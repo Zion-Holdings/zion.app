@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/process-mining-operations-discover-bottlenecks-automate-what-matters">Process Mining Operations Discover Bottlenecks Automate What Matters</Link></li>
               <li><Link href="/blog/ai-soc-modernization-mssps-2026">Ai Soc Modernization Mssps 2026</Link></li>
               <li><Link href="/blog/ai-cybersecurity-operations-for-msp">Ai Cybersecurity Operations For Msp</Link></li>
+              <li><Link href="/blog/enterprise-document-processing-ocr-automation-guide">Enterprise Document Processing Ocr Automation Guide</Link></li>
+              <li><Link href="/blog/computer-vision-retail-shelf-monitoring-foot-traffic-loss-prevention">Computer Vision Retail Shelf Monitoring Foot Traffic Loss Prevention</Link></li>
+              <li><Link href="/blog/ai-fraud-prevention-and-identity-intelligence-for-brazilian-companies-in-2026">Ai Fraud Prevention And Identity Intelligence For Brazilian Companies In 2026</Link></li>
+              <li><Link href="/blog/ai-predictive-analytics">Ai Predictive Analytics</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-checklist-for-it-and-security-leaders">Ai Customer Journey Analytics From Click To Retention Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-or-zipkin-debug-microservices-without-log-dumps-checklist-for-it-and-security-leaders">Distributed Tracing With Jaeger Or Zipkin Debug Microservices Without Log Dumps Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/identity-security-playbook-ciam-pam-and-zero-trust-identity-combined-2026-playbook">Identity Security Playbook Ciam Pam And Zero Trust Identity Combined 2026 Playbook</Link></li>
+              <li><Link href="/blog/ai-for-it-infrastructure-and-data-center-operations-2026">Ai For It Infrastructure And Data Center Operations 2026</Link></li>
+              <li><Link href="/blog/ai-driven-supply-chain-risk-management-for-operations-leaders">Ai Driven Supply Chain Risk Management For Operations Leaders</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026">Common Mistakes When Rolling Out Ai Data Pipeline Observability Lineage Freshness And Quality In 2026</Link></li>
+              <li><Link href="/blog/ai-for-it-vendor-management-and-procurement">Ai For It Vendor Management And Procurement</Link></li>
+              <li><Link href="/blog/case-study-endpoint-detection-and-response-for-remote-workers-beyond-vpn-protection-in-production">Case Study Endpoint Detection And Response For Remote Workers Beyond Vpn Protection In Production</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

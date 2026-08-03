@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-model-security-defend-against-adversarial-attacks-prompt-injection">Ai Model Security Defend Against Adversarial Attacks Prompt Injection</Link></li>
               <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it">Ai Desktop Support Automation For Enterprise It</Link></li>
               <li><Link href="/blog/data-contracts-analytics-engineering-enforce-schema-quality-between-teams">Data Contracts Analytics Engineering Enforce Schema Quality Between Teams</Link></li>
+              <li><Link href="/blog/ai-first-education-platforms-and-learning-intelligence-in-2026">Ai First Education Platforms And Learning Intelligence In 2026</Link></li>
+              <li><Link href="/blog/serverless-enterprise-when-to-use-lambda-azure-functions-cloud-run">Serverless Enterprise When To Use Lambda Azure Functions Cloud Run</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely">Ai Application Modernization Monolith To Microservices Safely</Link></li>
+              <li><Link href="/blog/data-observability-detect-quality-issues-schema-drift-anomalies-automatically">Data Observability Detect Quality Issues Schema Drift Anomalies Automatically</Link></li>
+              <li><Link href="/blog/aiops-for-incident-detection-reduce-mttr-with-anomaly-detection-and-root-cause-analysis-checklist-for-it-and-security-leaders">Aiops For Incident Detection Reduce Mttr With Anomaly Detection And Root Cause Analysis Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/ai-enterprise-readiness-assessment-for-latam-in-2026">Ai Enterprise Readiness Assessment For Latam In 2026</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-and-build-features-without-breaking-reliability-costs-roi-and-hidden-risks">Slo Driven Development Set Error Budgets And Build Features Without Breaking Reliability Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-data-privacy-engineering-anonymization-tokenization-and-differential-privacy">Common Mistakes When Rolling Out Data Privacy Engineering Anonymization Tokenization And Differential Privacy</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-checklist-for-it-and-security-leaders">Ai Support Quality Assurance Score Tickets Detect Escalations Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/analytics-engineering-with-dbt-transform-data-in-your-warehouse-like-software-for-data-teams">Analytics Engineering With Dbt Transform Data In Your Warehouse Like Software For Data Teams</Link></li>
+              <li><Link href="/blog/how-to-implement-kubernetes-platform-engineering-build-an-internal-developer-platform-on-k8s-without-disrupting-operations">How To Implement Kubernetes Platform Engineering Build An Internal Developer Platform On K8S Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-and-process-mining-checklist-for-it-and-security-leaders">Hyperautomation Strategy 2026 Combine Rpa Ai And Process Mining Checklist For It And Security Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

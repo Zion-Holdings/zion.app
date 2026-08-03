@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open">Proactive Customer Support Ai Predict Issues Before Tickets Open</Link></li>
               <li><Link href="/blog/ai-predictive-analytics">Ai Predictive Analytics</Link></li>
               <li><Link href="/blog/scaling-ai-across-healthcarelifesciences-operations">Scaling Ai Across Healthcarelifesciences Operations</Link></li>
+              <li><Link href="/blog/defense-ai-logistics-optimization">Defense Ai Logistics Optimization</Link></li>
+              <li><Link href="/blog/data-observability-detect-quality-issues-schema-drift-anomalies-automatically">Data Observability Detect Quality Issues Schema Drift Anomalies Automatically</Link></li>
+              <li><Link href="/blog/ai-operational-readiness-for-brazilian-it-companies-in-2026">Ai Operational Readiness For Brazilian It Companies In 2026</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-and-sso-integration-checklist-for-it-and-security-leaders">Passwordless Authentication Strategy Fido2 Passkeys And Sso Integration Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/how-to-implement-process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-without-disrupting-operations">How To Implement Process Mining For Operations Discover Bottlenecks And Automate What Matters Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/case-study-distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-in-production">Case Study Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps In Production</Link></li>
+              <li><Link href="/blog/soc-2-automation-continuous-compliance-monitoring-and-audit-evidence-collection-2026-playbook">Soc 2 Automation Continuous Compliance Monitoring And Audit Evidence Collection 2026 Playbook</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-2026-playbook">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 2026 Playbook</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-costs-roi-and-hidden-risks">Ai Credential Hygiene And Secret Rotation In Ci Cd Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/ai-first-digital-twin-platforms-for-asset-simulation-in-2026">Ai First Digital Twin Platforms For Asset Simulation In 2026</Link></li>
+              <li><Link href="/blog/case-study-customer-success-automation-trigger-health-checks-outreach-and-product-signals-in-production">Case Study Customer Success Automation Trigger Health Checks Outreach And Product Signals In Production</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

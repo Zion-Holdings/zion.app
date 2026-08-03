@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-workflow-automation-patterns-for-enterprises-in-2026">Ai Workflow Automation Patterns For Enterprises In 2026</Link></li>
               <li><Link href="/blog/ai-chatbot-builder">Ai Chatbot Builder</Link></li>
               <li><Link href="/blog/free-ai-tools-for-it-support-and-msps-2026">Free Ai Tools For It Support And Msps 2026</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-secret-rotation-cicd-2026">Ai Credential Hygiene Secret Rotation Cicd 2026</Link></li>
+              <li><Link href="/blog/how-manufacturing-leaders-cut-costs-with-ai">How Manufacturing Leaders Cut Costs With Ai</Link></li>
+              <li><Link href="/blog/ai-web-accessibility-inclusive-design-for-brazilian-digital-services-in-2026">Ai Web Accessibility Inclusive Design For Brazilian Digital Services In 2026</Link></li>
+              <li><Link href="/blog/ai-first-data-center-operations-and-hybrid-infrastructure-in-2026">Ai First Data Center Operations And Hybrid Infrastructure In 2026</Link></li>
+              <li><Link href="/blog/ai-model-security-defend-against-adversarial-attacks-and-prompt-injection-for-security-teams">Ai Model Security Defend Against Adversarial Attacks And Prompt Injection For Security Teams</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-and-improve-retrieval-accuracy-2026-playbook">Rag Optimization Playbook Reduce Hallucination And Improve Retrieval Accuracy 2026 Playbook</Link></li>
+              <li><Link href="/blog/how-to-implement-identity-security-playbook-ciam-pam-and-zero-trust-identity-combined-without-disrupting-operations">How To Implement Identity Security Playbook Ciam Pam And Zero Trust Identity Combined Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation">Common Mistakes When Rolling Out Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation</Link></li>
+              <li><Link href="/blog/edge-cloud-architecture-deploy-low-latency-apps-at-the-edge-with-cloudflare-and-aws-checklist-for-it-and-security-leaders">Edge Cloud Architecture Deploy Low Latency Apps At The Edge With Cloudflare And Aws Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/ai-enterprise-readiness-assessment-for-latam-in-2026">Ai Enterprise Readiness Assessment For Latam In 2026</Link></li>
+              <li><Link href="/blog/comparing-ai-cloud-finops-with-anomaly-detection-and-budget-guardrails-vendors-and-build-vs-buy">Comparing Ai Cloud Finops With Anomaly Detection And Budget Guardrails Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-enforce-standards-and-find-vulnerabilities-before-merge-checklist-for-it-and-security-leaders">Ai Code Review Automation Enforce Standards And Find Vulnerabilities Before Merge Checklist For It And Security Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

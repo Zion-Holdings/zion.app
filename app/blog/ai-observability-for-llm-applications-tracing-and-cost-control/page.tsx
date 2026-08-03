@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-finops-for-it-service-providers">Ai Finops For It Service Providers</Link></li>
               <li><Link href="/blog/defense-ai-logistics-optimization">Defense Ai Logistics Optimization</Link></li>
               <li><Link href="/blog/serverless-enterprise-when-to-use-lambda-azure-functions-cloud-run">Serverless Enterprise When To Use Lambda Azure Functions Cloud Run</Link></li>
+              <li><Link href="/blog/healthcare-crm-automation-ai-patient-workflows-2026">Healthcare Crm Automation Ai Patient Workflows 2026</Link></li>
+              <li><Link href="/blog/soc-2-automation-continuous-compliance-monitoring-audit-evidence-collection">Soc 2 Automation Continuous Compliance Monitoring Audit Evidence Collection</Link></li>
+              <li><Link href="/blog/ai-first-supply-chain-forecasting-and-logistics-intelligence-in-2026">Ai First Supply Chain Forecasting And Logistics Intelligence In 2026</Link></li>
+              <li><Link href="/blog/ai-outsourcing-vs-inhouse-it-teams-2026">Ai Outsourcing Vs Inhouse It Teams 2026</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-2026-playbook">Ai Soc Modernization For Mssps In 2026 2026 Playbook</Link></li>
+              <li><Link href="/blog/process-mining-operations-discover-bottlenecks-automate-what-matters">Process Mining Operations Discover Bottlenecks Automate What Matters</Link></li>
+              <li><Link href="/blog/computer-vision-retail-shelf-monitoring-foot-traffic-loss-prevention">Computer Vision Retail Shelf Monitoring Foot Traffic Loss Prevention</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-checklist-for-it-and-security-leaders">Ai Customer Journey Analytics From Click To Retention Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/ai-msp-playbook-for-it-support-teams-2026">Ai Msp Playbook For It Support Teams 2026</Link></li>
+              <li><Link href="/blog/data-observability-detect-quality-issues-schema-drift-and-anomalies-automatically-checklist-for-it-and-security-leaders">Data Observability Detect Quality Issues Schema Drift And Anomalies Automatically Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-2026-playbook">Ai Data Engineering Strategy For Latam Enterprises In 2026 2026 Playbook</Link></li>
+              <li><Link href="/blog/how-to-implement-analytics-engineering-with-dbt-transform-data-in-your-warehouse-like-software-without-disrupting-operations">How To Implement Analytics Engineering With Dbt Transform Data In Your Warehouse Like Software Without Disrupting Operations</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

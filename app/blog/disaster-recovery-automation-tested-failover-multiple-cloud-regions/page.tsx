@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-soc-aiops-platform-engineering-for-latam-it-teams-in-2026">Ai Soc Aiops Platform Engineering For Latam It Teams In 2026</Link></li>
               <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-customer-experience">Business Observability Connect Metrics To Revenue Conversion Customer Experience</Link></li>
               <li><Link href="/blog/ai-hospitality-automation-guide-for-enterprise-teams-in-2026">Ai Hospitality Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/ai-for-msp-growth-and-it-outsourcing-automation">Ai For Msp Growth And It Outsourcing Automation</Link></li>
+              <li><Link href="/blog/ai-native-backup-disaster-recovery-making-software-defined-in-2026">Ai Native Backup Disaster Recovery Making Software Defined In 2026</Link></li>
+              <li><Link href="/blog/ai-it-cost-optimization-for-micro-saas">Ai It Cost Optimization For Micro Saas</Link></li>
+              <li><Link href="/blog/attack-surface-management-continuous-discovery-exposure-validation">Attack Surface Management Continuous Discovery Exposure Validation</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-2026-playbook">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 2026 Playbook</Link></li>
+              <li><Link href="/blog/multi-cloud-governance-manage-aws-azure-and-gcp-from-one-control-plane-checklist-for-it-and-security-leaders">Multi Cloud Governance Manage Aws Azure And Gcp From One Control Plane Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/data-contracts-for-analytics-engineering-enforce-schema-and-quality-between-teams-for-data-teams">Data Contracts For Analytics Engineering Enforce Schema And Quality Between Teams For Data Teams</Link></li>
+              <li><Link href="/blog/aiops-for-incident-detection-reduce-mttr-with-anomaly-detection-and-root-cause-analysis-checklist-for-it-and-security-leaders">Aiops For Incident Detection Reduce Mttr With Anomaly Detection And Root Cause Analysis Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/case-study-ai-data-engineering-strategy-for-latam-enterprises-in-2026-in-production">Case Study Ai Data Engineering Strategy For Latam Enterprises In 2026 In Production</Link></li>
+              <li><Link href="/blog/chaos-engineering-for-kubernetes-proactively-test-resilience-with-litmus-or-chaos-mesh-for-observability-teams">Chaos Engineering For Kubernetes Proactively Test Resilience With Litmus Or Chaos Mesh For Observability Teams</Link></li>
+              <li><Link href="/blog/ai-it-observability-and-incident-management-in-2026">Ai It Observability And Incident Management In 2026</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-real-time-analytics-dashboard-sub-second-queries-on-billion-row-datasets">Common Mistakes When Rolling Out Real Time Analytics Dashboard Sub Second Queries On Billion Row Datasets</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

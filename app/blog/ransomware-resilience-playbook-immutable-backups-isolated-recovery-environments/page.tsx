@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-phone-agent-for-small-business-free-tools-2026">Ai Phone Agent For Small Business Free Tools 2026</Link></li>
               <li><Link href="/blog/how-healthcarelifesciences-leaders-cut-costs-with-ai">How Healthcarelifesciences Leaders Cut Costs With Ai</Link></li>
               <li><Link href="/blog/ai-msp-playbook-for-it-support-teams-2026">Ai Msp Playbook For It Support Teams 2026</Link></li>
+              <li><Link href="/blog/terraform-iac-security-scan-terraform-cloudformation-pulumi-misconfigurations">Terraform Iac Security Scan Terraform Cloudformation Pulumi Misconfigurations</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting">Cloud Cost Governance With Ai Anomaly Detection And Forecasting</Link></li>
+              <li><Link href="/blog/ai-for-outsourced-it-support-automation">Ai For Outsourced It Support Automation</Link></li>
+              <li><Link href="/blog/ai-for-it-infrastructure-and-data-center-operations-2026">Ai For It Infrastructure And Data Center Operations 2026</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps">Common Mistakes When Rolling Out Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-governance-framework-audit-explain-and-govern-model-decisions-in-2026">Common Mistakes When Rolling Out Ai Governance Framework Audit Explain And Govern Model Decisions In 2026</Link></li>
+              <li><Link href="/blog/case-study-ai-governance-framework-audit-explain-and-govern-model-decisions-in-2026-in-production">Case Study Ai Governance Framework Audit Explain And Govern Model Decisions In 2026 In Production</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-with-self-serve-infrastructure-checklist-for-it-and-security-leaders">Data Mesh Implementation Domain Owned Data Products With Self Serve Infrastructure Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/ai-msp-growth-and-it-outsourcing-automation">Ai Msp Growth And It Outsourcing Automation</Link></li>
+              <li><Link href="/blog/ai-observability-pipeline-kubernetes-cloud-2026">Ai Observability Pipeline Kubernetes Cloud 2026</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-quality-2026">Ai Data Pipeline Observability Lineage Freshness Quality 2026</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-costs-roi-and-hidden-risks">It Asset Management Automation Track Hardware Software And Licenses In Real Time Costs Roi And Hidden Risks</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

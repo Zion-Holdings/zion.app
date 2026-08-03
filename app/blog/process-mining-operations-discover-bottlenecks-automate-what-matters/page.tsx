@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/channel-partner-reseller-program-ai-services">Channel Partner Reseller Program Ai Services</Link></li>
               <li><Link href="/blog/ai-healthcare-automation-guide-for-enterprise-teams-in-2026">Ai Healthcare Automation Guide For Enterprise Teams In 2026</Link></li>
               <li><Link href="/blog/ai-first-customer-success-and-renewal-intelligence-in-2026">Ai First Customer Success And Renewal Intelligence In 2026</Link></li>
+              <li><Link href="/blog/managed-socaas-pricing-model-small-business">Managed Socaas Pricing Model Small Business</Link></li>
+              <li><Link href="/blog/ai-document-processing-automation-guide">Ai Document Processing Automation Guide</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths">Ai Platform Engineering Patterns Idp Backstage And Golden Paths</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-costs-roi-and-hidden-risks">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/ai-chatops-and-agentic-support-automation-in-2026">Ai Chatops And Agentic Support Automation In 2026</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-for-post-quantum-threats-today-costs-roi-and-hidden-risks">Quantum Safe Cryptography Prepare For Post Quantum Threats Today Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/financial-services-ai-fraud-risk-automation">Financial Services Ai Fraud Risk Automation</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-costs-roi-and-hidden-risks">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/comparing-chaos-engineering-for-kubernetes-proactively-test-resilience-with-litmus-or-chaos-mesh-vendors-and-build-vs-buy">Comparing Chaos Engineering For Kubernetes Proactively Test Resilience With Litmus Or Chaos Mesh Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/ai-predictive-analytics">Ai Predictive Analytics</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026">Ai Data Engineering Strategy For Latam Enterprises In 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

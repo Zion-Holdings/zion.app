@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/field-service-ai-optimization-predict-service-times-optimize-technician-routes">Field Service Ai Optimization Predict Service Times Optimize Technician Routes</Link></li>
               <li><Link href="/blog/ai-phone-agent-for-small-business-free-tools-2026">Ai Phone Agent For Small Business Free Tools 2026</Link></li>
               <li><Link href="/blog/ai-capacity-planning-saas-cloud-platforms-2026">Ai Capacity Planning Saas Cloud Platforms 2026</Link></li>
+              <li><Link href="/blog/computer-vision-retail-shelf-monitoring-foot-traffic-loss-prevention">Computer Vision Retail Shelf Monitoring Foot Traffic Loss Prevention</Link></li>
+              <li><Link href="/blog/terraform-iac-security-scan-terraform-cloudformation-pulumi-misconfigurations">Terraform Iac Security Scan Terraform Cloudformation Pulumi Misconfigurations</Link></li>
+              <li><Link href="/blog/time-series-analytics-iot-ingest-store-query-sensor-data-scale">Time Series Analytics Iot Ingest Store Query Sensor Data Scale</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026</Link></li>
+              <li><Link href="/blog/comparing-digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-vendors-and-build-vs-buy">Comparing Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/time-series-analytics-for-iot-ingest-store-and-query-sensor-data-at-scale-2026-playbook">Time Series Analytics For Iot Ingest Store And Query Sensor Data At Scale 2026 Playbook</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-that-actually-collaborate-for-ai-teams">Agentic Ai Orchestration Build Multi Agent Systems That Actually Collaborate For Ai Teams</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-costs-roi-and-hidden-risks">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-mlops-pipeline-for-llms-from-fine-tuning-to-production-deployment">Common Mistakes When Rolling Out Mlops Pipeline For Llms From Fine Tuning To Production Deployment</Link></li>
+              <li><Link href="/blog/endpoint-detection-response-remote-workers-beyond-vpn-protection">Endpoint Detection Response Remote Workers Beyond Vpn Protection</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters">Process Mining For Operations Discover Bottlenecks And Automate What Matters</Link></li>
+              <li><Link href="/blog/ransomware-resilience-playbook-immutable-backups-and-isolated-recovery-environments-2026-playbook">Ransomware Resilience Playbook Immutable Backups And Isolated Recovery Environments 2026 Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

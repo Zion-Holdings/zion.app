@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/feature-store-machine-learning-centralize-features-training-inference">Feature Store Machine Learning Centralize Features Training Inference</Link></li>
               <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-product-signals">Customer Success Automation Trigger Health Checks Outreach Product Signals</Link></li>
               <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability</Link></li>
+              <li><Link href="/blog/ai-first-smart-city-and-urban-intelligence-in-2026">Ai First Smart City And Urban Intelligence In 2026</Link></li>
+              <li><Link href="/blog/free-ai-readiness-audit-checklist-for-it-managers-2026">Free Ai Readiness Audit Checklist For It Managers 2026</Link></li>
+              <li><Link href="/blog/ai-document-processing">Ai Document Processing</Link></li>
+              <li><Link href="/blog/ai-it-infrastructure-automation-and-cloud-operations">Ai It Infrastructure Automation And Cloud Operations</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-ai-agents-that-schedule-follow-up-and-summarize-checklist-for-it-and-security-leaders">Email And Calendar Automation Ai Agents That Schedule Follow Up And Summarize Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/ai-first-end-user-computing-and-modern-workplace-in-2026">Ai First End User Computing And Modern Workplace In 2026</Link></li>
+              <li><Link href="/blog/comparing-process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-vendors-and-build-vs-buy">Comparing Process Mining For Operations Discover Bottlenecks And Automate What Matters Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/computer-vision-for-retail-shelf-monitoring-foot-traffic-and-loss-prevention-checklist-for-it-and-security-leaders">Computer Vision For Retail Shelf Monitoring Foot Traffic And Loss Prevention Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-costs-roi-and-hidden-risks">Ai Capacity Planning For Saas And Cloud Platforms Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-document-processing-automation-extract-data-from-invoices-contracts-and-forms">Common Mistakes When Rolling Out Document Processing Automation Extract Data From Invoices Contracts And Forms</Link></li>
+              <li><Link href="/blog/how-to-implement-ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-without-disrupting-operations">How To Implement Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/ai-cybersecurity-platform-for-msp-and-managed-security">Ai Cybersecurity Platform For Msp And Managed Security</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

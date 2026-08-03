@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-email-outreach-automation-for-msps-2026">Ai Email Outreach Automation For Msps 2026</Link></li>
               <li><Link href="/blog/ai-chatbot-builder">Ai Chatbot Builder</Link></li>
               <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access</Link></li>
+              <li><Link href="/blog/ai-for-it-support-automation-and-managed-help-desk">Ai For It Support Automation And Managed Help Desk</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-secret-rotation-cicd-2026">Ai Credential Hygiene Secret Rotation Cicd 2026</Link></li>
+              <li><Link href="/blog/edge-ai-tinyml-run-models-microcontrollers-iot-devices">Edge Ai Tinyml Run Models Microcontrollers Iot Devices</Link></li>
+              <li><Link href="/blog/ai-for-it-servicedesk-and-workplace-technicians">Ai For It Servicedesk And Workplace Technicians</Link></li>
+              <li><Link href="/blog/ai-first-cdn-and-edge-computing-for-brazilian-it-in-2026">Ai First Cdn And Edge Computing For Brazilian It In 2026</Link></li>
+              <li><Link href="/blog/case-study-mlops-pipeline-for-llms-from-fine-tuning-to-production-deployment-in-production">Case Study Mlops Pipeline For Llms From Fine Tuning To Production Deployment In Production</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-for-automation-teams">Process Mining For Operations Discover Bottlenecks And Automate What Matters For Automation Teams</Link></li>
+              <li><Link href="/blog/vector-database-architecture-pinecone-weaviate-and-pgvector-compared-costs-roi-and-hidden-risks">Vector Database Architecture Pinecone Weaviate And Pgvector Compared Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/case-study-ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-in-production">Case Study Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents In Production</Link></li>
+              <li><Link href="/blog/ai-vendor-channel-partnership-model-for-latam">Ai Vendor Channel Partnership Model For Latam</Link></li>
+              <li><Link href="/blog/ransomware-resilience-playbook-immutable-backups-and-isolated-recovery-environments-for-security-teams">Ransomware Resilience Playbook Immutable Backups And Isolated Recovery Environments For Security Teams</Link></li>
+              <li><Link href="/blog/real-time-analytics-dashboard-sub-second-queries-on-billion-row-datasets-for-data-teams">Real Time Analytics Dashboard Sub Second Queries On Billion Row Datasets For Data Teams</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

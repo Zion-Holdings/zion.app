@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-support-automation-ai-chat-and-ticket-intelligence-in-2026">Ai Support Automation Ai Chat And Ticket Intelligence In 2026</Link></li>
               <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026">Ai Capacity Planning For Saas And Cloud Platforms In 2026</Link></li>
               <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-quality-2026">Ai Data Pipeline Observability Lineage Freshness Quality 2026</Link></li>
+              <li><Link href="/blog/financial-services-ai-fraud-risk-automation">Financial Services Ai Fraud Risk Automation</Link></li>
+              <li><Link href="/blog/ai-it-support-automation">Ai It Support Automation</Link></li>
+              <li><Link href="/blog/ai-cost-optimization-for-it-operations-2026">Ai Cost Optimization For It Operations 2026</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-2026-playbook">Ai Capacity Planning For Saas And Cloud Platforms In 2026 2026 Playbook</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-enterprise-it-2026">Ai Desktop Support Automation Enterprise It 2026</Link></li>
+              <li><Link href="/blog/mlops-pipeline-for-llms-from-fine-tuning-to-production-deployment-checklist-for-it-and-security-leaders">Mlops Pipeline For Llms From Fine Tuning To Production Deployment Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-for-automation-teams">Ai Code Review Automation Security Style And Architecture Gates For Automation Teams</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-costs-roi-and-hidden-risks">Ai Threat Intelligence Integration For Soc Teams Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/ai-data-engineering-patterns-for-latam-in-2026">Ai Data Engineering Patterns For Latam In 2026</Link></li>
+              <li><Link href="/blog/proactive-customer-support-with-ai-predict-issues-before-tickets-open-2026-playbook">Proactive Customer Support With Ai Predict Issues Before Tickets Open 2026 Playbook</Link></li>
+              <li><Link href="/blog/comparing-edge-ai-with-tinyml-run-models-on-microcontrollers-and-iot-devices-vendors-and-build-vs-buy">Comparing Edge Ai With Tinyml Run Models On Microcontrollers And Iot Devices Vendors And Build Vs Buy</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

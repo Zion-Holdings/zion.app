@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-msp-growth-and-it-outsourcing-automation">Ai Msp Growth And It Outsourcing Automation</Link></li>
               <li><Link href="/blog/ai-platform-engineering-2026-services-guide">Ai Platform Engineering 2026 Services Guide</Link></li>
               <li><Link href="/blog/it-asset-management-automation-track-hardware-software-licenses-real-time">It Asset Management Automation Track Hardware Software Licenses Real Time</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis</Link></li>
+              <li><Link href="/blog/scaling-ai-across-healthcarelifesciences-operations">Scaling Ai Across Healthcarelifesciences Operations</Link></li>
+              <li><Link href="/blog/ai-cybersecurity-platform-for-msp-and-managed-security">Ai Cybersecurity Platform For Msp And Managed Security</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-mssps-2026">Ai Soc Modernization Mssps 2026</Link></li>
+              <li><Link href="/blog/zero-trust-for-ai-workloads-guardrails-for-model-access-and-data-for-security-teams">Zero Trust For Ai Workloads Guardrails For Model Access And Data For Security Teams</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-multimodal-ai-architecture-text-image-and-voice-in-one-enterprise-stack">Common Mistakes When Rolling Out Multimodal Ai Architecture Text Image And Voice In One Enterprise Stack</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-enforce-standards-and-find-vulnerabilities-before-merge-2026-playbook">Ai Code Review Automation Enforce Standards And Find Vulnerabilities Before Merge 2026 Playbook</Link></li>
+              <li><Link href="/blog/enterprise-document-processing-ocr-automation-guide">Enterprise Document Processing Ocr Automation Guide</Link></li>
+              <li><Link href="/blog/ai-first-cloud-cost-management-and-finops-in-2026">Ai First Cloud Cost Management And Finops In 2026</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-and-build-features-without-breaking-reliability-for-observability-teams">Slo Driven Development Set Error Budgets And Build Features Without Breaking Reliability For Observability Teams</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-security-operations-center-modernization-for-mssps">Common Mistakes When Rolling Out Ai Security Operations Center Modernization For Mssps</Link></li>
+              <li><Link href="/blog/ai-text-to-sql-platforms-for-business-intelligence-in-2026">Ai Text To Sql Platforms For Business Intelligence In 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

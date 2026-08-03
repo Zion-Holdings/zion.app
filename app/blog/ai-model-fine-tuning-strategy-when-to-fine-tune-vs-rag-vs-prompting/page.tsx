@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration</Link></li>
               <li><Link href="/blog/ai-support-outsourcing-for-ecommerce-in-2026">Ai Support Outsourcing For Ecommerce In 2026</Link></li>
               <li><Link href="/blog/ai-text-to-sql-platforms-for-business-intelligence-in-2026">Ai Text To Sql Platforms For Business Intelligence In 2026</Link></li>
+              <li><Link href="/blog/ai-partnership-models-for-latam-growth-in-2026">Ai Partnership Models For Latam Growth In 2026</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure</Link></li>
+              <li><Link href="/blog/ai-identity-and-zero-trust-for-brazilian-it-teams-in-2026">Ai Identity And Zero Trust For Brazilian It Teams In 2026</Link></li>
+              <li><Link href="/blog/how-energyutilities-leaders-cut-costs-with-ai">How Energyutilities Leaders Cut Costs With Ai</Link></li>
+              <li><Link href="/blog/ai-cybersecurity-operations-for-msp">Ai Cybersecurity Operations For Msp</Link></li>
+              <li><Link href="/blog/ai-government-and-public-sector-opportunities-for-it-companies-in-brazil-in-2026">Ai Government And Public Sector Opportunities For It Companies In Brazil In 2026</Link></li>
+              <li><Link href="/blog/edge-ai-with-tinyml-run-models-on-microcontrollers-and-iot-devices-2026-playbook">Edge Ai With Tinyml Run Models On Microcontrollers And Iot Devices 2026 Playbook</Link></li>
+              <li><Link href="/blog/multi-cloud-governance-manage-aws-azure-and-gcp-from-one-control-plane-costs-roi-and-hidden-risks">Multi Cloud Governance Manage Aws Azure And Gcp From One Control Plane Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/how-to-implement-ai-code-review-automation-security-style-and-architecture-gates-without-disrupting-operations">How To Implement Ai Code Review Automation Security Style And Architecture Gates Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-data-contracts-for-analytics-engineering-enforce-schema-and-quality-between-teams">Common Mistakes When Rolling Out Data Contracts For Analytics Engineering Enforce Schema And Quality Between Teams</Link></li>
+              <li><Link href="/blog/comparing-software-supply-chain-security-sbom-signing-and-provenance-in-2026-vendors-and-build-vs-buy">Comparing Software Supply Chain Security Sbom Signing And Provenance In 2026 Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/case-study-ai-cloud-finops-anomaly-detection-and-budget-guardrails-in-production">Case Study Ai Cloud Finops Anomaly Detection And Budget Guardrails In Production</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/cloud-exit-strategy-avoid-vendor-lock-in-portable-architecture-patterns">Cloud Exit Strategy Avoid Vendor Lock In Portable Architecture Patterns</Link></li>
               <li><Link href="/blog/ai-model-fine-tuning-strategy-when-to-fine-tune-vs-rag-vs-prompting">Ai Model Fine Tuning Strategy When To Fine Tune Vs Rag Vs Prompting</Link></li>
               <li><Link href="/blog/ai-soc-modernization-mssps-2026">Ai Soc Modernization Mssps 2026</Link></li>
+              <li><Link href="/blog/data-loss-prevention-ai-prevent-confidential-data-leaks-llm-apis">Data Loss Prevention Ai Prevent Confidential Data Leaks Llm Apis</Link></li>
+              <li><Link href="/blog/ai-msp-playbook-for-it-support-teams-2026">Ai Msp Playbook For It Support Teams 2026</Link></li>
+              <li><Link href="/blog/ai-first-device-management-and-iot-operations-in-2026">Ai First Device Management And Iot Operations In 2026</Link></li>
+              <li><Link href="/blog/ai-first-customer-success-and-churn-prevention-for-saas-in-2026">Ai First Customer Success And Churn Prevention For Saas In 2026</Link></li>
+              <li><Link href="/blog/aiops-for-incident-detection-reduce-mttr-with-anomaly-detection-and-root-cause-analysis-costs-roi-and-hidden-risks">Aiops For Incident Detection Reduce Mttr With Anomaly Detection And Root Cause Analysis Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/how-to-implement-mlops-pipeline-for-llms-from-fine-tuning-to-production-deployment-without-disrupting-operations">How To Implement Mlops Pipeline For Llms From Fine Tuning To Production Deployment Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/ai-first-insurance-claims-and-damage-intelligence-in-2026">Ai First Insurance Claims And Damage Intelligence In 2026</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-costs-roi-and-hidden-risks">Ai Credential Hygiene And Secret Rotation In Ci Cd Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-ai-agents-that-schedule-follow-up-and-summarize-for-automation-teams">Email And Calendar Automation Ai Agents That Schedule Follow Up And Summarize For Automation Teams</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-and-process-mining-costs-roi-and-hidden-risks">Hyperautomation Strategy 2026 Combine Rpa Ai And Process Mining Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/case-study-field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-in-production">Case Study Field Service Ai Optimization Predict Service Times And Optimize Technician Routes In Production</Link></li>
+              <li><Link href="/blog/how-to-implement-ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-without-disrupting-operations">How To Implement Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 Without Disrupting Operations</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

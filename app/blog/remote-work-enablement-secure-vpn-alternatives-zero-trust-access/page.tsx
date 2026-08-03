@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps</Link></li>
               <li><Link href="/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization">5 Proven Ai Automation Strategies For Enterprise Workflow Optimization</Link></li>
               <li><Link href="/blog/ai-customer-churn-prediction-identify-at-risk-accounts-before-they-leave">Ai Customer Churn Prediction Identify At Risk Accounts Before They Leave</Link></li>
+              <li><Link href="/blog/ai-partnership-models-for-latam-growth-in-2026">Ai Partnership Models For Latam Growth In 2026</Link></li>
+              <li><Link href="/blog/ai-first-cdn-and-edge-computing-for-brazilian-it-in-2026">Ai First Cdn And Edge Computing For Brazilian It In 2026</Link></li>
+              <li><Link href="/blog/ai-data-engineering-patterns-for-latam-in-2026">Ai Data Engineering Patterns For Latam In 2026</Link></li>
+              <li><Link href="/blog/ai-for-managed-it-services-and-msp-automation">Ai For Managed It Services And Msp Automation</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-from-code-to-runtime-costs-roi-and-hidden-risks">Cnapp Strategy 2026 Cloud Native Application Protection From Code To Runtime Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/how-to-implement-business-observability-connect-metrics-to-revenue-conversion-and-cx-without-disrupting-operations">How To Implement Business Observability Connect Metrics To Revenue Conversion And Cx Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/ai-first-education-platforms-and-learning-intelligence-in-2026">Ai First Education Platforms And Learning Intelligence In 2026</Link></li>
+              <li><Link href="/blog/case-study-invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-in-production">Case Study Invoice Processing Automation From Receipt To Payment With Ai Extraction In Production</Link></li>
+              <li><Link href="/blog/case-study-proactive-customer-support-with-ai-predict-issues-before-tickets-open-in-production">Case Study Proactive Customer Support With Ai Predict Issues Before Tickets Open In Production</Link></li>
+              <li><Link href="/blog/channel-partner-reseller-program-ai-services">Channel Partner Reseller Program Ai Services</Link></li>
+              <li><Link href="/blog/how-to-implement-ai-credential-hygiene-and-secret-rotation-for-ci-cd-without-disrupting-operations">How To Implement Ai Credential Hygiene And Secret Rotation For Ci Cd Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/ai-first-connectivity-private-5g-and-sase-in-2026">Ai First Connectivity Private 5G And Sase In 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

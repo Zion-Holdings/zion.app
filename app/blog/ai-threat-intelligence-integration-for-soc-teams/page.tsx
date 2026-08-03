@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-voice-and-multichannel-support-automation">Ai Voice And Multichannel Support Automation</Link></li>
               <li><Link href="/blog/ai-financial-engineering-and-portfolio-automation-in-2026">Ai Financial Engineering And Portfolio Automation In 2026</Link></li>
               <li><Link href="/blog/ai-for-it-remote-support-and-endpoint-assistance">Ai For It Remote Support And Endpoint Assistance</Link></li>
+              <li><Link href="/blog/ai-real-estate-market-intelligence-automation">Ai Real Estate Market Intelligence Automation</Link></li>
+              <li><Link href="/blog/ai-first-customer-success-and-renewal-intelligence-in-2026">Ai First Customer Success And Renewal Intelligence In 2026</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-product-signals">Customer Success Automation Trigger Health Checks Outreach Product Signals</Link></li>
+              <li><Link href="/blog/ai-for-it-vendor-management-and-procurement">Ai For It Vendor Management And Procurement</Link></li>
+              <li><Link href="/blog/platform-engineering-and-ai-observability-in-2026">Platform Engineering And Ai Observability In 2026</Link></li>
+              <li><Link href="/blog/how-to-implement-rag-optimization-playbook-reduce-hallucination-and-improve-retrieval-accuracy-without-disrupting-operations">How To Implement Rag Optimization Playbook Reduce Hallucination And Improve Retrieval Accuracy Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/how-to-implement-cloud-migration-for-regulated-industries-hipaa-pci-and-gdpr-on-aws-azure-without-disrupting-operations">How To Implement Cloud Migration For Regulated Industries Hipaa Pci And Gdpr On Aws Azure Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-email-and-calendar-automation-ai-agents-that-schedule-follow-up-and-summarize">Common Mistakes When Rolling Out Email And Calendar Automation Ai Agents That Schedule Follow Up And Summarize</Link></li>
+              <li><Link href="/blog/ai-first-legal-tech-and-contract-intelligence-in-2026">Ai First Legal Tech And Contract Intelligence In 2026</Link></li>
+              <li><Link href="/blog/proactive-customer-support-with-ai-predict-issues-before-tickets-open-costs-roi-and-hidden-risks">Proactive Customer Support With Ai Predict Issues Before Tickets Open Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/ai-virtual-cfo-and-financial-operations-automation-in-2026">Ai Virtual Cfo And Financial Operations Automation In 2026</Link></li>
+              <li><Link href="/blog/feature-store-for-machine-learning-centralize-features-for-training-and-inference-checklist-for-it-and-security-leaders">Feature Store For Machine Learning Centralize Features For Training And Inference Checklist For It And Security Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

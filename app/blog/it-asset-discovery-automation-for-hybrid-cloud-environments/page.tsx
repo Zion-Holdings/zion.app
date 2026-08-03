@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026">Ai Observability Pipeline For Kubernetes And Cloud In 2026</Link></li>
               <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026">Ai Soc Modernization For Mssps In 2026</Link></li>
               <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention">Ai Customer Journey Analytics From Click To Retention</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation">It Financial Management Showback Chargeback And Cloud Cost Allocation</Link></li>
+              <li><Link href="/blog/nebius-partnership-and-ai-vendor-co-selling-2026">Nebius Partnership And Ai Vendor Co Selling 2026</Link></li>
+              <li><Link href="/blog/ai-it-infrastructure-automation-and-cloud-operations">Ai It Infrastructure Automation And Cloud Operations</Link></li>
+              <li><Link href="/blog/ot-iot-security-for-manufacturing-protecting-legacy-plcs-and-sensors-for-security-teams">Ot Iot Security For Manufacturing Protecting Legacy Plcs And Sensors For Security Teams</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-and-export-anywhere-costs-roi-and-hidden-risks">Opentelemetry Implementation Guide Instrument Any Language And Export Anywhere Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-analytics-engineering-with-dbt-transform-data-in-your-warehouse-like-software">Common Mistakes When Rolling Out Analytics Engineering With Dbt Transform Data In Your Warehouse Like Software</Link></li>
+              <li><Link href="/blog/zero-trust-for-saas-applications-secure-third-party-access-and-integrations-checklist-for-it-and-security-leaders">Zero Trust For Saas Applications Secure Third Party Access And Integrations Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/aiops-event-correlation-and-intelligent-incident-triage-for-it-leaders">Aiops Event Correlation And Intelligent Incident Triage For It Leaders</Link></li>
+              <li><Link href="/blog/comparing-ransomware-resilience-playbook-immutable-backups-and-isolated-recovery-environments-vendors-and-build-vs-buy">Comparing Ransomware Resilience Playbook Immutable Backups And Isolated Recovery Environments Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization">Finops Maturity Model Cloud Cost Visibility To Automated Optimization</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-checklist-for-it-and-security-leaders">Cloud Cost Governance With Ai Anomaly Detection And Forecasting Checklist For It And Security Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

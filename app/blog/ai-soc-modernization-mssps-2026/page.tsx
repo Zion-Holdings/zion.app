@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime</Link></li>
               <li><Link href="/blog/ai-for-it-support-automation-and-managed-help-desk">Ai For It Support Automation And Managed Help Desk</Link></li>
               <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks</Link></li>
+              <li><Link href="/blog/ai-it-observability-and-incident-management-in-2026">Ai It Observability And Incident Management In 2026</Link></li>
+              <li><Link href="/blog/multi-cloud-governance-manage-aws-azure-gcp-one-control-plane">Multi Cloud Governance Manage Aws Azure Gcp One Control Plane</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-optimize-technician-routes">Field Service Ai Optimization Predict Service Times Optimize Technician Routes</Link></li>
+              <li><Link href="/blog/ai-telecom-automation-guide-for-enterprise-teams-in-2026">Ai Telecom Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-or-zipkin-debug-microservices-without-log-dumps-checklist-for-it-and-security-leaders">Distributed Tracing With Jaeger Or Zipkin Debug Microservices Without Log Dumps Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-it-financial-management-showback-chargeback-and-cloud-cost-allocation">Common Mistakes When Rolling Out It Financial Management Showback Chargeback And Cloud Cost Allocation</Link></li>
+              <li><Link href="/blog/case-study-rag-optimization-playbook-reduce-hallucination-and-improve-retrieval-accuracy-in-production">Case Study Rag Optimization Playbook Reduce Hallucination And Improve Retrieval Accuracy In Production</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-2026-playbook">Ai Capacity Planning For Saas And Cloud Platforms In 2026 2026 Playbook</Link></li>
+              <li><Link href="/blog/ai-commercial-operations-automation-and-revenue-intelligence">Ai Commercial Operations Automation And Revenue Intelligence</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-for-security-teams">Ai Threat Intelligence Integration For Soc Teams For Security Teams</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-from-code-to-runtime-checklist-for-it-and-security-leaders">Cnapp Strategy 2026 Cloud Native Application Protection From Code To Runtime Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-from-code-to-runtime-for-security-teams">Cnapp Strategy 2026 Cloud Native Application Protection From Code To Runtime For Security Teams</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

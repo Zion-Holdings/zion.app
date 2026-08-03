@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-it-infrastructure-automation-and-cloud-operations">Ai It Infrastructure Automation And Cloud Operations</Link></li>
               <li><Link href="/blog/edge-cloud-architecture-deploy-low-latency-apps-edge-cloudflare-aws">Edge Cloud Architecture Deploy Low Latency Apps Edge Cloudflare Aws</Link></li>
               <li><Link href="/blog/ai-agentic-workflow-automation-reduce-manual-work-hours">Ai Agentic Workflow Automation Reduce Manual Work Hours</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code</Link></li>
+              <li><Link href="/blog/financial-services-ai-fraud-risk-automation">Financial Services Ai Fraud Risk Automation</Link></li>
+              <li><Link href="/blog/ai-first-sase-and-secure-access-for-distributed-it-teams-in-2026">Ai First Sase And Secure Access For Distributed It Teams In 2026</Link></li>
+              <li><Link href="/blog/logisticssupplychain-ai-automation-roadmap">Logisticssupplychain Ai Automation Roadmap</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-security-operations-center-modernization-for-mssps">Common Mistakes When Rolling Out Ai Security Operations Center Modernization For Mssps</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-costs-roi-and-hidden-risks">Cloud Cost Governance With Ai Anomaly Detection And Forecasting Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/comparing-ai-cloud-finops-anomaly-detection-and-budget-guardrails-vendors-and-build-vs-buy">Comparing Ai Cloud Finops Anomaly Detection And Budget Guardrails Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/ai-financial-engineering-and-portfolio-automation-in-2026">Ai Financial Engineering And Portfolio Automation In 2026</Link></li>
+              <li><Link href="/blog/comparing-ai-application-modernization-monolith-to-microservices-safely-vendors-and-build-vs-buy">Comparing Ai Application Modernization Monolith To Microservices Safely Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/case-study-edge-ai-deployment-patterns-for-retail-and-manufacturing-in-production">Case Study Edge Ai Deployment Patterns For Retail And Manufacturing In Production</Link></li>
+              <li><Link href="/blog/multimodal-ai-architecture-text-image-and-voice-in-one-enterprise-stack-checklist-for-it-and-security-leaders">Multimodal Ai Architecture Text Image And Voice In One Enterprise Stack Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/case-study-finops-maturity-model-from-cloud-cost-visibility-to-automated-optimization-in-production">Case Study Finops Maturity Model From Cloud Cost Visibility To Automated Optimization In Production</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

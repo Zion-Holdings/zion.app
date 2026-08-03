@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-cost-optimization-for-it-operations-2026">Ai Cost Optimization For It Operations 2026</Link></li>
               <li><Link href="/blog/nebius-latam-ai-cloud-partnership-guide">Nebius Latam Ai Cloud Partnership Guide</Link></li>
               <li><Link href="/blog/ai-outsourcing-vs-inhouse-it-teams-2026">Ai Outsourcing Vs Inhouse It Teams 2026</Link></li>
+              <li><Link href="/blog/ai-first-capacity-planning-and-resource-forecasting-for-it-in-2026">Ai First Capacity Planning And Resource Forecasting For It In 2026</Link></li>
+              <li><Link href="/blog/ai-it-observability-and-incident-management-in-2026">Ai It Observability And Incident Management In 2026</Link></li>
+              <li><Link href="/blog/serverless-enterprise-when-to-use-lambda-azure-functions-cloud-run">Serverless Enterprise When To Use Lambda Azure Functions Cloud Run</Link></li>
+              <li><Link href="/blog/ai-first-vulnerability-management-and-patch-intelligence-in-2026">Ai First Vulnerability Management And Patch Intelligence In 2026</Link></li>
+              <li><Link href="/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization">5 Proven Ai Automation Strategies For Enterprise Workflow Optimization</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-data-engineering-strategy-for-latam-enterprises-in-2026">Common Mistakes When Rolling Out Ai Data Engineering Strategy For Latam Enterprises In 2026</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time">It Asset Management Automation Track Hardware Software And Licenses In Real Time</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-or-zipkin-debug-microservices-without-log-dumps-2026-playbook">Distributed Tracing With Jaeger Or Zipkin Debug Microservices Without Log Dumps 2026 Playbook</Link></li>
+              <li><Link href="/blog/ai-powered-incident-remediation-from-alert-to-fix-in-minutes-checklist-for-it-and-security-leaders">Ai Powered Incident Remediation From Alert To Fix In Minutes Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/managed-socaas-pricing-model-small-business">Managed Socaas Pricing Model Small Business</Link></li>
+              <li><Link href="/blog/case-study-endpoint-detection-and-response-for-remote-workers-beyond-vpn-protection-in-production">Case Study Endpoint Detection And Response For Remote Workers Beyond Vpn Protection In Production</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-2026-playbook">Edge Ai Deployment Patterns For Retail And Manufacturing 2026 Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-first-digital-twins-and-asset-simulation-for-industry-in-2026">Ai First Digital Twins And Asset Simulation For Industry In 2026</Link></li>
               <li><Link href="/blog/ai-ethernet-switching-and-network-deployment-readiness-for-it-teams-in-2026">Ai Ethernet Switching And Network Deployment Readiness For It Teams In 2026</Link></li>
               <li><Link href="/blog/ot-iot-security-manufacturing-protecting-legacy-plcs-sensors">Ot Iot Security Manufacturing Protecting Legacy Plcs Sensors</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open">Proactive Customer Support Ai Predict Issues Before Tickets Open</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-optimize-technician-routes">Field Service Ai Optimization Predict Service Times Optimize Technician Routes</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment">Mlops Pipeline Llms Fine Tuning Production Deployment</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-and-build-features-without-breaking-reliability-2026-playbook">Slo Driven Development Set Error Budgets And Build Features Without Breaking Reliability 2026 Playbook</Link></li>
+              <li><Link href="/blog/mlops-pipeline-for-llms-from-fine-tuning-to-production-deployment-costs-roi-and-hidden-risks">Mlops Pipeline For Llms From Fine Tuning To Production Deployment Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/ai-model-fine-tuning-strategy-when-to-fine-tune-vs-rag-vs-prompting-costs-roi-and-hidden-risks">Ai Model Fine Tuning Strategy When To Fine Tune Vs Rag Vs Prompting Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/how-to-implement-computer-vision-for-retail-shelf-monitoring-foot-traffic-and-loss-prevention-without-disrupting-operations">How To Implement Computer Vision For Retail Shelf Monitoring Foot Traffic And Loss Prevention Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-enforce-standards-and-find-vulnerabilities-before-merge-2026-playbook">Ai Code Review Automation Enforce Standards And Find Vulnerabilities Before Merge 2026 Playbook</Link></li>
+              <li><Link href="/blog/case-study-itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-in-production">Case Study Itsm Modernization From Jira Service Management To Ai Augmented Service Desks In Production</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-checklist-for-it-and-security-leaders">Low Code Automation Platforms Build Internal Tools Without Full Engineering Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/prompt-engineering-at-scale-version-test-and-deploy-prompts-like-code-checklist-for-it-and-security-leaders">Prompt Engineering At Scale Version Test And Deploy Prompts Like Code Checklist For It And Security Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-web-accessibility-inclusive-design-for-brazilian-digital-services-in-2026">Ai Web Accessibility Inclusive Design For Brazilian Digital Services In 2026</Link></li>
               <li><Link href="/blog/ai-observability-and-incident-management-in-2026">Ai Observability And Incident Management In 2026</Link></li>
               <li><Link href="/blog/ai-first-vulnerability-management-and-patch-intelligence-in-2026">Ai First Vulnerability Management And Patch Intelligence In 2026</Link></li>
+              <li><Link href="/blog/enterprise-ai-integration-roadmap-for-2026">Enterprise Ai Integration Roadmap For 2026</Link></li>
+              <li><Link href="/blog/cyber-incident-response-retainer-ready-before-breach">Cyber Incident Response Retainer Ready Before Breach</Link></li>
+              <li><Link href="/blog/ai-outsourcing-vs-in-house-it-latam">Ai Outsourcing Vs In House It Latam</Link></li>
+              <li><Link href="/blog/ransomware-resilience-playbook-immutable-backups-isolated-recovery-environments">Ransomware Resilience Playbook Immutable Backups Isolated Recovery Environments</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-attack-surface-management-continuous-discovery-and-exposure-validation">Common Mistakes When Rolling Out Attack Surface Management Continuous Discovery And Exposure Validation</Link></li>
+              <li><Link href="/blog/how-to-implement-email-and-calendar-automation-ai-agents-that-schedule-follow-up-and-summarize-without-disrupting-operations">How To Implement Email And Calendar Automation Ai Agents That Schedule Follow Up And Summarize Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026">Ai Observability Pipeline For Kubernetes And Cloud In 2026</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-for-security-teams">Ai Network Detection And Response For Hybrid Infrastructures For Security Teams</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps">Common Mistakes When Rolling Out Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps</Link></li>
+              <li><Link href="/blog/cyber-incident-response-retainer-services-for-it-teams-in-2026">Cyber Incident Response Retainer Services For It Teams In 2026</Link></li>
+              <li><Link href="/blog/analytics-engineering-with-dbt-transform-data-in-your-warehouse-like-software-2026-playbook">Analytics Engineering With Dbt Transform Data In Your Warehouse Like Software 2026 Playbook</Link></li>
+              <li><Link href="/blog/case-study-ai-capacity-planning-for-saas-and-cloud-platforms-in-production">Case Study Ai Capacity Planning For Saas And Cloud Platforms In Production</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

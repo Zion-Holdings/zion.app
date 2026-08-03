@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-customer-churn-prediction-identify-at-risk-accounts-before-they-leave">Ai Customer Churn Prediction Identify At Risk Accounts Before They Leave</Link></li>
               <li><Link href="/blog/ai-platform-engineering-patterns-for-scale-in-2026">Ai Platform Engineering Patterns For Scale In 2026</Link></li>
               <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026">Ai Capacity Planning For Saas And Cloud Platforms In 2026</Link></li>
+              <li><Link href="/blog/ai-managed-services-and-outsourcing-for-latam-enterprises">Ai Managed Services And Outsourcing For Latam Enterprises</Link></li>
+              <li><Link href="/blog/logisticssupplychain-ai-automation-roadmap">Logisticssupplychain Ai Automation Roadmap</Link></li>
+              <li><Link href="/blog/ai-native-backup-disaster-recovery-making-software-defined-in-2026">Ai Native Backup Disaster Recovery Making Software Defined In 2026</Link></li>
+              <li><Link href="/blog/zero-trust-saas-applications-secure-third-party-access-integrations">Zero Trust Saas Applications Secure Third Party Access Integrations</Link></li>
+              <li><Link href="/blog/case-study-ai-data-pipeline-observability-lineage-freshness-and-quality-in-production">Case Study Ai Data Pipeline Observability Lineage Freshness And Quality In Production</Link></li>
+              <li><Link href="/blog/comparing-vulnerability-management-prioritization-cvss-isn-t-enough-use-exploitability-scoring-vendors-and-build-vs-buy">Comparing Vulnerability Management Prioritization Cvss Isn T Enough Use Exploitability Scoring Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/how-to-implement-zero-trust-for-ai-workloads-guardrails-for-model-access-and-data-without-disrupting-operations">How To Implement Zero Trust For Ai Workloads Guardrails For Model Access And Data Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/data-loss-prevention-ai-prevent-confidential-data-leaks-llm-apis">Data Loss Prevention Ai Prevent Confidential Data Leaks Llm Apis</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-or-zipkin-debug-microservices-without-log-dumps-checklist-for-it-and-security-leaders">Distributed Tracing With Jaeger Or Zipkin Debug Microservices Without Log Dumps Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/how-healthcarelifesciences-leaders-cut-costs-with-ai">How Healthcarelifesciences Leaders Cut Costs With Ai</Link></li>
+              <li><Link href="/blog/comparing-ai-cloud-finops-with-anomaly-detection-and-budget-guardrails-vendors-and-build-vs-buy">Comparing Ai Cloud Finops With Anomaly Detection And Budget Guardrails Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-budget-guardrails-2026">Ai Cloud Finops Anomaly Detection Budget Guardrails 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

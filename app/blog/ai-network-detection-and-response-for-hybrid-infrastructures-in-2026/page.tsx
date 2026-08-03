@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-first-sase-and-secure-access-for-distributed-it-teams-in-2026">Ai First Sase And Secure Access For Distributed It Teams In 2026</Link></li>
               <li><Link href="/blog/ai-driven-supply-chain-risk-management-for-operations-leaders">Ai Driven Supply Chain Risk Management For Operations Leaders</Link></li>
               <li><Link href="/blog/free-ai-readiness-audit-for-it-services-companies">Free Ai Readiness Audit For It Services Companies</Link></li>
+              <li><Link href="/blog/ai-workflow-automation-patterns-for-enterprises-in-2026">Ai Workflow Automation Patterns For Enterprises In 2026</Link></li>
+              <li><Link href="/blog/ai-ecommerce-predictive-lead-inventory-optimization">Ai Ecommerce Predictive Lead Inventory Optimization</Link></li>
+              <li><Link href="/blog/ai-first-cloud-cost-management-and-finops-in-2026">Ai First Cloud Cost Management And Finops In 2026</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-quality-2026">Ai Data Pipeline Observability Lineage Freshness Quality 2026</Link></li>
+              <li><Link href="/blog/how-to-implement-digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-without-disrupting-operations">How To Implement Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-ai-agents-that-schedule-follow-up-and-summarize-2026-playbook">Email And Calendar Automation Ai Agents That Schedule Follow Up And Summarize 2026 Playbook</Link></li>
+              <li><Link href="/blog/how-to-implement-business-observability-connect-metrics-to-revenue-conversion-and-customer-experience-without-disrupting-operations">How To Implement Business Observability Connect Metrics To Revenue Conversion And Customer Experience Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/ai-for-managed-it-services-and-msp-automation">Ai For Managed It Services And Msp Automation</Link></li>
+              <li><Link href="/blog/comparing-synthetic-data-generation-for-compliance-and-model-training-vendors-and-build-vs-buy">Comparing Synthetic Data Generation For Compliance And Model Training Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/comparing-document-processing-automation-extract-data-from-invoices-contracts-and-forms-vendors-and-build-vs-buy">Comparing Document Processing Automation Extract Data From Invoices Contracts And Forms Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/serverless-for-enterprise-when-to-use-lambda-azure-functions-and-cloud-run-2026-playbook">Serverless For Enterprise When To Use Lambda Azure Functions And Cloud Run 2026 Playbook</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-field-service-ai-optimization-predict-service-times-and-optimize-technician-routes">Common Mistakes When Rolling Out Field Service Ai Optimization Predict Service Times And Optimize Technician Routes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

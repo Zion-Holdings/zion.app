@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-first-capacity-planning-and-resource-forecasting-for-it-in-2026">Ai First Capacity Planning And Resource Forecasting For It In 2026</Link></li>
               <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s">Kubernetes Platform Engineering Build Internal Developer Platform K8S</Link></li>
               <li><Link href="/blog/ai-for-it-vendor-management-and-procurement">Ai For It Vendor Management And Procurement</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-licenses-real-time">It Asset Management Automation Track Hardware Software Licenses Real Time</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-enforce-standards-find-vulnerabilities-before-merge">Ai Code Review Automation Enforce Standards Find Vulnerabilities Before Merge</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments">It Asset Discovery Automation For Hybrid Cloud Environments</Link></li>
+              <li><Link href="/blog/ai-for-it-change-management-and-release-risk-reduction">Ai For It Change Management And Release Risk Reduction</Link></li>
+              <li><Link href="/blog/attack-surface-management-continuous-discovery-and-exposure-validation-for-security-teams">Attack Surface Management Continuous Discovery And Exposure Validation For Security Teams</Link></li>
+              <li><Link href="/blog/case-study-kubernetes-platform-engineering-build-an-internal-developer-platform-on-k8s-in-production">Case Study Kubernetes Platform Engineering Build An Internal Developer Platform On K8S In Production</Link></li>
+              <li><Link href="/blog/how-to-implement-ai-customer-onboarding-automation-reduce-time-to-value-without-disrupting-operations">How To Implement Ai Customer Onboarding Automation Reduce Time To Value Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/comparing-customer-success-automation-trigger-health-checks-outreach-and-product-signals-vendors-and-build-vs-buy">Comparing Customer Success Automation Trigger Health Checks Outreach And Product Signals Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/free-ai-tools-technology-companies-should-use-in-2026">Free Ai Tools Technology Companies Should Use In 2026</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments">Common Mistakes When Rolling Out Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-checklist-for-it-and-security-leaders">Ai Customer Onboarding Automation Reduce Time To Value Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/how-to-implement-mlops-pipeline-for-llms-from-fine-tuning-to-production-deployment-without-disrupting-operations">How To Implement Mlops Pipeline For Llms From Fine Tuning To Production Deployment Without Disrupting Operations</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

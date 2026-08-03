@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-plus-devops-automation-for-it-services">Ai Plus Devops Automation For It Services</Link></li>
               <li><Link href="/blog/ai-first-msp-pricing-model-for-ai-support-automation-in-2026">Ai First Msp Pricing Model For Ai Support Automation In 2026</Link></li>
               <li><Link href="/blog/ai-observability-pipeline-kubernetes-cloud-2026">Ai Observability Pipeline Kubernetes Cloud 2026</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters">Process Mining For Operations Discover Bottlenecks And Automate What Matters</Link></li>
+              <li><Link href="/blog/ai-first-low-latency-observability-and-edge-monitoring-for-it-in-2026">Ai First Low Latency Observability And Edge Monitoring For It In 2026</Link></li>
+              <li><Link href="/blog/ai-for-it-servicedesk-and-workplace-technicians">Ai For It Servicedesk And Workplace Technicians</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-2026-playbook">Low Code Automation Platforms Build Internal Tools Without Full Engineering 2026 Playbook</Link></li>
+              <li><Link href="/blog/comparing-process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-vendors-and-build-vs-buy">Comparing Process Mining For Operations Discover Bottlenecks And Automate What Matters Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/ransomware-resilience-playbook-immutable-backups-and-isolated-recovery-environments-2026-playbook">Ransomware Resilience Playbook Immutable Backups And Isolated Recovery Environments 2026 Playbook</Link></li>
+              <li><Link href="/blog/ai-governance-framework-audit-explain-and-govern-model-decisions-in-2026-for-ai-teams">Ai Governance Framework Audit Explain And Govern Model Decisions In 2026 For Ai Teams</Link></li>
+              <li><Link href="/blog/case-study-distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-in-production">Case Study Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps In Production</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-checklist-for-it-and-security-leaders">Ai Soc Modernization For Mssps In 2026 Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/case-study-computer-vision-for-retail-shelf-monitoring-foot-traffic-and-loss-prevention-in-production">Case Study Computer Vision For Retail Shelf Monitoring Foot Traffic And Loss Prevention In Production</Link></li>
+              <li><Link href="/blog/time-series-analytics-for-iot-ingest-store-and-query-sensor-data-at-scale-2026-playbook">Time Series Analytics For Iot Ingest Store And Query Sensor Data At Scale 2026 Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

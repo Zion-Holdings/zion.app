@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/free-ai-readiness-audit-checklist-for-it-managers-2026">Free Ai Readiness Audit Checklist For It Managers 2026</Link></li>
               <li><Link href="/blog/ai-manufacturing-automation-guide-for-enterprise-teams-in-20">Ai Manufacturing Automation Guide For Enterprise Teams In 20</Link></li>
               <li><Link href="/blog/prompt-engineering-at-scale-version-test-deploy-prompts-code">Prompt Engineering At Scale Version Test Deploy Prompts Code</Link></li>
+              <li><Link href="/blog/ai-first-supply-chain-forecasting-and-logistics-intelligence-in-2026">Ai First Supply Chain Forecasting And Logistics Intelligence In 2026</Link></li>
+              <li><Link href="/blog/ai-government-and-public-sector-opportunities-for-it-companies-in-brazil-in-2026">Ai Government And Public Sector Opportunities For It Companies In Brazil In 2026</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere</Link></li>
+              <li><Link href="/blog/ai-first-loan-origination-and-credit-intelligence-in-2026">Ai First Loan Origination And Credit Intelligence In 2026</Link></li>
+              <li><Link href="/blog/how-to-implement-ai-capacity-planning-for-saas-and-cloud-platforms-without-disrupting-operations">How To Implement Ai Capacity Planning For Saas And Cloud Platforms Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/comparing-customer-success-automation-trigger-health-checks-outreach-and-product-signals-vendors-and-build-vs-buy">Comparing Customer Success Automation Trigger Health Checks Outreach And Product Signals Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-observability-for-llm-applications-tracing-and-cost-control">Common Mistakes When Rolling Out Ai Observability For Llm Applications Tracing And Cost Control</Link></li>
+              <li><Link href="/blog/case-study-vector-database-architecture-pinecone-weaviate-and-pgvector-compared-in-production">Case Study Vector Database Architecture Pinecone Weaviate And Pgvector Compared In Production</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-checklist-for-it-and-security-leaders">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/case-study-identity-security-playbook-ciam-pam-and-zero-trust-identity-combined-in-production">Case Study Identity Security Playbook Ciam Pam And Zero Trust Identity Combined In Production</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-enforce-standards-and-find-vulnerabilities-before-merge-checklist-for-it-and-security-leaders">Ai Code Review Automation Enforce Standards And Find Vulnerabilities Before Merge Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/ai-soc-aiops-platform-engineering-for-latam-it-teams-in-2026">Ai Soc Aiops Platform Engineering For Latam It Teams In 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

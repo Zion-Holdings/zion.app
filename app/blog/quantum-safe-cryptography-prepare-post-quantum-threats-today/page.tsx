@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/computer-vision-retail-shelf-monitoring-foot-traffic-loss-prevention">Computer Vision Retail Shelf Monitoring Foot Traffic Loss Prevention</Link></li>
               <li><Link href="/blog/attack-surface-management-continuous-discovery-exposure-validation">Attack Surface Management Continuous Discovery Exposure Validation</Link></li>
               <li><Link href="/blog/ai-field-service-management-and-workforce-automation-for-it-in-2026">Ai Field Service Management And Workforce Automation For It In 2026</Link></li>
+              <li><Link href="/blog/cloud-exit-strategy-avoid-vendor-lock-in-portable-architecture-patterns">Cloud Exit Strategy Avoid Vendor Lock In Portable Architecture Patterns</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates">Ai Code Review Automation Security Style And Architecture Gates</Link></li>
+              <li><Link href="/blog/ai-first-sase-and-secure-access-for-distributed-it-teams-in-2026">Ai First Sase And Secure Access For Distributed It Teams In 2026</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-for-scale-in-2026">Ai Platform Engineering Patterns For Scale In 2026</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-budget-guardrails-2026">Ai Cloud Finops Anomaly Detection Budget Guardrails 2026</Link></li>
+              <li><Link href="/blog/ai-for-it-change-management-and-release-risk-reduction">Ai For It Change Management And Release Risk Reduction</Link></li>
+              <li><Link href="/blog/ai-support-automation-for-brazilian-companies-in-2026">Ai Support Automation For Brazilian Companies In 2026</Link></li>
+              <li><Link href="/blog/serverless-enterprise-when-to-use-lambda-azure-functions-cloud-run">Serverless Enterprise When To Use Lambda Azure Functions Cloud Run</Link></li>
+              <li><Link href="/blog/ai-for-msps-and-it-support-teams-in-2026">Ai For Msps And It Support Teams In 2026</Link></li>
+              <li><Link href="/blog/ai-for-document-intelligence-and-intelligent-automation">Ai For Document Intelligence And Intelligent Automation</Link></li>
+              <li><Link href="/blog/comparing-analytics-engineering-with-dbt-transform-data-in-your-warehouse-like-software-vendors-and-build-vs-buy">Comparing Analytics Engineering With Dbt Transform Data In Your Warehouse Like Software Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/ai-it-cost-optimization-for-micro-saas">Ai It Cost Optimization For Micro Saas</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

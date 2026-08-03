@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-phone-agent-for-small-business-free-tools-2026">Ai Phone Agent For Small Business Free Tools 2026</Link></li>
               <li><Link href="/blog/data-privacy-engineering-anonymization-tokenization-differential-privacy">Data Privacy Engineering Anonymization Tokenization Differential Privacy</Link></li>
               <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing">Edge Ai Deployment Patterns For Retail And Manufacturing</Link></li>
+              <li><Link href="/blog/synthetic-data-generation-for-compliance-and-model-training">Synthetic Data Generation For Compliance And Model Training</Link></li>
+              <li><Link href="/blog/ai-real-estate-market-intelligence-automation">Ai Real Estate Market Intelligence Automation</Link></li>
+              <li><Link href="/blog/ai-voice-and-multichannel-support-automation">Ai Voice And Multichannel Support Automation</Link></li>
+              <li><Link href="/blog/ai-vendor-due-diligence-checklist-for-latam-in-2026">Ai Vendor Due Diligence Checklist For Latam In 2026</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-an-internal-developer-platform-on-k8s-costs-roi-and-hidden-risks">Kubernetes Platform Engineering Build An Internal Developer Platform On K8S Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/how-to-implement-ai-credential-hygiene-and-secret-rotation-in-ci-cd-without-disrupting-operations">How To Implement Ai Credential Hygiene And Secret Rotation In Ci Cd Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-checklist-for-it-and-security-leaders">Customer Success Automation Trigger Health Checks Outreach And Product Signals Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/case-study-multimodal-ai-architecture-text-image-and-voice-in-one-enterprise-stack-in-production">Case Study Multimodal Ai Architecture Text Image And Voice In One Enterprise Stack In Production</Link></li>
+              <li><Link href="/blog/ai-network-detection-response-hybrid-infrastructures-2026">Ai Network Detection Response Hybrid Infrastructures 2026</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-email-and-calendar-automation-ai-agents-that-schedule-follow-up-and-summarize">Common Mistakes When Rolling Out Email And Calendar Automation Ai Agents That Schedule Follow Up And Summarize</Link></li>
+              <li><Link href="/blog/ai-finance-automation-guide-for-enterprise-teams-in-2026">Ai Finance Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-2026-playbook">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 2026 Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

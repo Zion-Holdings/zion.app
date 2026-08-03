@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value">Ai Customer Onboarding Automation Reduce Time To Value</Link></li>
               <li><Link href="/blog/ai-legal-contract-review-operations-automation">Ai Legal Contract Review Operations Automation</Link></li>
               <li><Link href="/blog/ai-plus-devops-automation-for-it-services">Ai Plus Devops Automation For It Services</Link></li>
+              <li><Link href="/blog/free-ai-readiness-audit-for-it-services-companies">Free Ai Readiness Audit For It Services Companies</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering">Low Code Automation Platforms Build Internal Tools Without Full Engineering</Link></li>
+              <li><Link href="/blog/ai-vendor-channel-partnership-model-for-latam">Ai Vendor Channel Partnership Model For Latam</Link></li>
+              <li><Link href="/blog/data-observability-detect-quality-issues-schema-drift-anomalies-automatically">Data Observability Detect Quality Issues Schema Drift Anomalies Automatically</Link></li>
+              <li><Link href="/blog/case-study-business-observability-connect-metrics-to-revenue-conversion-and-cx-in-production">Case Study Business Observability Connect Metrics To Revenue Conversion And Cx In Production</Link></li>
+              <li><Link href="/blog/container-security-at-scale-image-scanning-runtime-protection-and-policy-enforcement-costs-roi-and-hidden-risks">Container Security At Scale Image Scanning Runtime Protection And Policy Enforcement Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/how-to-implement-cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-without-disrupting-operations">How To Implement Cloud Cost Governance With Ai Anomaly Detection And Forecasting Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/ai-governance-framework-audit-explain-and-govern-model-decisions-in-2026-for-ai-teams">Ai Governance Framework Audit Explain And Govern Model Decisions In 2026 For Ai Teams</Link></li>
+              <li><Link href="/blog/ai-for-it-infrastructure-and-data-center-operations-2026">Ai For It Infrastructure And Data Center Operations 2026</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-for-ci-cd-costs-roi-and-hidden-risks">Ai Credential Hygiene And Secret Rotation For Ci Cd Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/comparing-ai-platform-engineering-patterns-idp-backstage-and-golden-paths-vendors-and-build-vs-buy">Comparing Ai Platform Engineering Patterns Idp Backstage And Golden Paths Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/latam-ai-partnership-playbook-for-tech-companies-2026">Latam Ai Partnership Playbook For Tech Companies 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

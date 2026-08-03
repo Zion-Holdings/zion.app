@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/it-financial-management-showback-chargeback-cloud-cost-allocation">It Financial Management Showback Chargeback Cloud Cost Allocation</Link></li>
               <li><Link href="/blog/nebius-latam-ai-partnership-opportunity-2026">Nebius Latam Ai Partnership Opportunity 2026</Link></li>
               <li><Link href="/blog/ai-for-it-project-delivery-and-implementation-services">Ai For It Project Delivery And Implementation Services</Link></li>
+              <li><Link href="/blog/data-lakehouse-snowflake-databricks-when-to-choose-which">Data Lakehouse Snowflake Databricks When To Choose Which</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-customer-experience">Business Observability Connect Metrics To Revenue Conversion Customer Experience</Link></li>
+              <li><Link href="/blog/ai-first-low-code-workflow-automation-for-brazilian-it-in-2026">Ai First Low Code Workflow Automation For Brazilian It In 2026</Link></li>
+              <li><Link href="/blog/managed-socaas-pricing-model-small-business">Managed Socaas Pricing Model Small Business</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-customer-experience-for-observability-teams">Business Observability Connect Metrics To Revenue Conversion And Customer Experience For Observability Teams</Link></li>
+              <li><Link href="/blog/case-study-edge-cloud-architecture-deploy-low-latency-apps-at-the-edge-with-cloudflare-and-aws-in-production">Case Study Edge Cloud Architecture Deploy Low Latency Apps At The Edge With Cloudflare And Aws In Production</Link></li>
+              <li><Link href="/blog/vulnerability-management-prioritization-cvss-isn-t-enough-use-exploitability-scoring-costs-roi-and-hidden-risks">Vulnerability Management Prioritization Cvss Isn T Enough Use Exploitability Scoring Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/terraform-iac-security-scan-terraform-cloudformation-pulumi-misconfigurations">Terraform Iac Security Scan Terraform Cloudformation Pulumi Misconfigurations</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-software-supply-chain-security-sbom-signing-and-provenance-in-2026">Common Mistakes When Rolling Out Software Supply Chain Security Sbom Signing And Provenance In 2026</Link></li>
+              <li><Link href="/blog/comparing-terraform-and-iac-security-scan-terraform-cloudformation-and-pulumi-for-misconfigurations-vendors-and-build-vs-buy">Comparing Terraform And Iac Security Scan Terraform Cloudformation And Pulumi For Misconfigurations Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/ai-powered-incident-remediation-from-alert-to-fix-in-minutes-2026-playbook">Ai Powered Incident Remediation From Alert To Fix In Minutes 2026 Playbook</Link></li>
+              <li><Link href="/blog/how-healthcarelifesciences-leaders-cut-costs-with-ai">How Healthcarelifesciences Leaders Cut Costs With Ai</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

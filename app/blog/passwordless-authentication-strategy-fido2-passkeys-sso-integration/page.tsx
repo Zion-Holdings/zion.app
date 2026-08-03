@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-support-automation-playbook-for-msps-and-it-teams-2026">Ai Support Automation Playbook For Msps And It Teams 2026</Link></li>
               <li><Link href="/blog/computer-vision-retail-shelf-monitoring-foot-traffic-loss-prevention">Computer Vision Retail Shelf Monitoring Foot Traffic Loss Prevention</Link></li>
               <li><Link href="/blog/enterprise-ai-integration-roadmap-for-2026">Enterprise Ai Integration Roadmap For 2026</Link></li>
+              <li><Link href="/blog/ai-customer-churn-prediction-identify-at-risk-accounts-before-they-leave">Ai Customer Churn Prediction Identify At Risk Accounts Before They Leave</Link></li>
+              <li><Link href="/blog/logisticssupplychain-ai-automation-roadmap">Logisticssupplychain Ai Automation Roadmap</Link></li>
+              <li><Link href="/blog/prompt-engineering-at-scale-version-test-deploy-prompts-code">Prompt Engineering At Scale Version Test Deploy Prompts Code</Link></li>
+              <li><Link href="/blog/nebius-latam-ai-cloud-partnership-guide">Nebius Latam Ai Cloud Partnership Guide</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely">Ai Application Modernization Monolith To Microservices Safely</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-kubernetes-platform-engineering-build-an-internal-developer-platform-on-k8s">Common Mistakes When Rolling Out Kubernetes Platform Engineering Build An Internal Developer Platform On K8S</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-costs-roi-and-hidden-risks">Ai Customer Journey Analytics From Click To Retention Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/disaster-recovery-automation-tested-failover-across-multiple-cloud-regions-for-cloud-teams">Disaster Recovery Automation Tested Failover Across Multiple Cloud Regions For Cloud Teams</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-powered-incident-remediation-from-alert-to-fix-in-minutes">Common Mistakes When Rolling Out Ai Powered Incident Remediation From Alert To Fix In Minutes</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-credential-hygiene-and-secret-rotation-for-ci-cd">Common Mistakes When Rolling Out Ai Credential Hygiene And Secret Rotation For Ci Cd</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-checklist-for-it-and-security-leaders">Ai Capacity Planning For Saas And Cloud Platforms Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/comparing-field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-vendors-and-build-vs-buy">Comparing Field Service Ai Optimization Predict Service Times And Optimize Technician Routes Vendors And Build Vs Buy</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

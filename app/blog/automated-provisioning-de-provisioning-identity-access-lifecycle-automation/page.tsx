@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open">Proactive Customer Support Ai Predict Issues Before Tickets Open</Link></li>
               <li><Link href="/blog/ai-healthcare-document-automation">Ai Healthcare Document Automation</Link></li>
               <li><Link href="/blog/ai-managed-services-and-outsourcing-for-latam-enterprises">Ai Managed Services And Outsourcing For Latam Enterprises</Link></li>
+              <li><Link href="/blog/ai-document-processing-automation-guide">Ai Document Processing Automation Guide</Link></li>
+              <li><Link href="/blog/ai-government-and-public-sector-opportunities-for-it-companies-in-brazil-in-2026">Ai Government And Public Sector Opportunities For It Companies In Brazil In 2026</Link></li>
+              <li><Link href="/blog/vulnerability-management-prioritization-cvss-not-enough-exploitability-scoring">Vulnerability Management Prioritization Cvss Not Enough Exploitability Scoring</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026">Ai Capacity Planning For Saas And Cloud Platforms In 2026</Link></li>
+              <li><Link href="/blog/multimodal-ai-architecture-text-image-and-voice-in-one-enterprise-stack-2026-playbook">Multimodal Ai Architecture Text Image And Voice In One Enterprise Stack 2026 Playbook</Link></li>
+              <li><Link href="/blog/container-security-at-scale-image-scanning-runtime-protection-and-policy-enforcement-costs-roi-and-hidden-risks">Container Security At Scale Image Scanning Runtime Protection And Policy Enforcement Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-2026-playbook">Business Observability Connect Metrics To Revenue Conversion And Cx 2026 Playbook</Link></li>
+              <li><Link href="/blog/how-to-implement-terraform-and-iac-security-scan-terraform-cloudformation-and-pulumi-for-misconfigurations-without-disrupting-operations">How To Implement Terraform And Iac Security Scan Terraform Cloudformation And Pulumi For Misconfigurations Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-checklist-for-it-and-security-leaders">Edge Ai Deployment Patterns For Retail And Manufacturing Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/ai-model-security-defend-against-adversarial-attacks-and-prompt-injection-checklist-for-it-and-security-leaders">Ai Model Security Defend Against Adversarial Attacks And Prompt Injection Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/how-to-implement-ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-without-disrupting-operations">How To Implement Ai Network Detection And Response For Hybrid Infrastructures In 2026 Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/case-study-zero-trust-for-saas-applications-secure-third-party-access-and-integrations-in-production">Case Study Zero Trust For Saas Applications Secure Third Party Access And Integrations In Production</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

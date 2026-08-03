@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-for-it-compliance-and-risk-operations">Ai For It Compliance And Risk Operations</Link></li>
               <li><Link href="/blog/ai-first-capacity-planning-and-resource-forecasting-for-it-in-2026">Ai First Capacity Planning And Resource Forecasting For It In 2026</Link></li>
               <li><Link href="/blog/ai-partnership-models-for-latam-growth-in-2026">Ai Partnership Models For Latam Growth In 2026</Link></li>
+              <li><Link href="/blog/disaster-recovery-automation-tested-failover-multiple-cloud-regions">Disaster Recovery Automation Tested Failover Multiple Cloud Regions</Link></li>
+              <li><Link href="/blog/prompt-engineering-at-scale-version-test-deploy-prompts-code">Prompt Engineering At Scale Version Test Deploy Prompts Code</Link></li>
+              <li><Link href="/blog/ai-network-detection-response-hybrid-infrastructures-2026">Ai Network Detection Response Hybrid Infrastructures 2026</Link></li>
+              <li><Link href="/blog/ai-governance-framework-audit-explain-model-decisions-2026">Ai Governance Framework Audit Explain Model Decisions 2026</Link></li>
+              <li><Link href="/blog/ai-security-operations-center-modernization-for-mssps-costs-roi-and-hidden-risks">Ai Security Operations Center Modernization For Mssps Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/soc-2-automation-continuous-compliance-monitoring-and-audit-evidence-collection-checklist-for-it-and-security-leaders">Soc 2 Automation Continuous Compliance Monitoring And Audit Evidence Collection Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-2026-playbook">Ai Threat Intelligence Integration For Soc Teams 2026 Playbook</Link></li>
+              <li><Link href="/blog/case-study-email-and-calendar-automation-ai-agents-that-schedule-follow-up-and-summarize-in-production">Case Study Email And Calendar Automation Ai Agents That Schedule Follow Up And Summarize In Production</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-data-pipeline-observability-lineage-freshness-and-quality">Common Mistakes When Rolling Out Ai Data Pipeline Observability Lineage Freshness And Quality</Link></li>
+              <li><Link href="/blog/computer-vision-retail-shelf-monitoring-foot-traffic-loss-prevention">Computer Vision Retail Shelf Monitoring Foot Traffic Loss Prevention</Link></li>
+              <li><Link href="/blog/ai-for-clinical-trial-operations-and-data-quality">Ai For Clinical Trial Operations And Data Quality</Link></li>
+              <li><Link href="/blog/ai-first-digital-twins-and-asset-simulation-in-2026">Ai First Digital Twins And Asset Simulation In 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

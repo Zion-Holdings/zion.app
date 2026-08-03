@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps</Link></li>
               <li><Link href="/blog/field-service-ai-optimization-predict-service-times-optimize-technician-routes">Field Service Ai Optimization Predict Service Times Optimize Technician Routes</Link></li>
               <li><Link href="/blog/ai-soc-aiops-platform-engineering-for-latam-it-teams-in-2026">Ai Soc Aiops Platform Engineering For Latam It Teams In 2026</Link></li>
+              <li><Link href="/blog/ai-for-it-cost-optimization-and-finops">Ai For It Cost Optimization And Finops</Link></li>
+              <li><Link href="/blog/how-manufacturing-leaders-cut-costs-with-ai">How Manufacturing Leaders Cut Costs With Ai</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization">Finops Maturity Model Cloud Cost Visibility To Automated Optimization</Link></li>
+              <li><Link href="/blog/ai-first-it-asset-management-and-discovery-in-2026">Ai First It Asset Management And Discovery In 2026</Link></li>
+              <li><Link href="/blog/ai-support-automation-playbook-2026">Ai Support Automation Playbook 2026</Link></li>
+              <li><Link href="/blog/ai-fraud-prevention-and-identity-intelligence-for-brazilian-companies-in-2026">Ai Fraud Prevention And Identity Intelligence For Brazilian Companies In 2026</Link></li>
+              <li><Link href="/blog/attack-surface-management-continuous-discovery-exposure-validation">Attack Surface Management Continuous Discovery Exposure Validation</Link></li>
+              <li><Link href="/blog/platform-engineering-and-ai-observability-in-2026">Platform Engineering And Ai Observability In 2026</Link></li>
+              <li><Link href="/blog/ai-first-digital-twin-platforms-for-asset-simulation-in-2026">Ai First Digital Twin Platforms For Asset Simulation In 2026</Link></li>
+              <li><Link href="/blog/ai-vendor-due-diligence-checklist-for-latam-in-2026">Ai Vendor Due Diligence Checklist For Latam In 2026</Link></li>
+              <li><Link href="/blog/how-to-implement-customer-service-chatbot-beyond-faqs-integrate-rag-for-context-aware-support-without-disrupting-operations">How To Implement Customer Service Chatbot Beyond Faqs Integrate Rag For Context Aware Support Without Disrupting Operations</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

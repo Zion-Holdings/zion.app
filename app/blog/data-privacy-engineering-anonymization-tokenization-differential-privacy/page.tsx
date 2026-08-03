@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/how-energyutilities-leaders-cut-costs-with-ai">How Energyutilities Leaders Cut Costs With Ai</Link></li>
               <li><Link href="/blog/ai-for-devops-automation-and-it-services">Ai For Devops Automation And It Services</Link></li>
               <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals">Customer Success Automation Trigger Health Checks Outreach And Product Signals</Link></li>
+              <li><Link href="/blog/ai-first-it-asset-management-and-discovery-in-2026">Ai First It Asset Management And Discovery In 2026</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting">Cloud Cost Governance With Ai Anomaly Detection And Forecasting</Link></li>
+              <li><Link href="/blog/ai-msp-playbook-for-it-support-teams-2026">Ai Msp Playbook For It Support Teams 2026</Link></li>
+              <li><Link href="/blog/ai-text-to-sql-platforms-for-business-intelligence-in-2026">Ai Text To Sql Platforms For Business Intelligence In 2026</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-2026-playbook">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 2026 Playbook</Link></li>
+              <li><Link href="/blog/comparing-customer-service-chatbot-beyond-faqs-integrate-rag-for-context-aware-support-vendors-and-build-vs-buy">Comparing Customer Service Chatbot Beyond Faqs Integrate Rag For Context Aware Support Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-2026-playbook">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 2026 Playbook</Link></li>
+              <li><Link href="/blog/finops-maturity-model-from-cloud-cost-visibility-to-automated-optimization-for-cloud-teams">Finops Maturity Model From Cloud Cost Visibility To Automated Optimization For Cloud Teams</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-2026-playbook">Ai Capacity Planning For Saas And Cloud Platforms 2026 Playbook</Link></li>
+              <li><Link href="/blog/comparing-ai-credential-hygiene-and-secret-rotation-for-ci-cd-vendors-and-build-vs-buy">Comparing Ai Credential Hygiene And Secret Rotation For Ci Cd Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/comparing-ai-model-fine-tuning-strategy-when-to-fine-tune-vs-rag-vs-prompting-vendors-and-build-vs-buy">Comparing Ai Model Fine Tuning Strategy When To Fine Tune Vs Rag Vs Prompting Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-cloud-exit-strategy-avoid-vendor-lock-in-with-portable-architecture-patterns">Common Mistakes When Rolling Out Cloud Exit Strategy Avoid Vendor Lock In With Portable Architecture Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

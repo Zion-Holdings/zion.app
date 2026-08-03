@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments">It Asset Discovery Automation For Hybrid Cloud Environments</Link></li>
               <li><Link href="/blog/automated-provisioning-de-provisioning-identity-access-lifecycle-automation">Automated Provisioning De Provisioning Identity Access Lifecycle Automation</Link></li>
               <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes</Link></li>
+              <li><Link href="/blog/ai-first-vulnerability-management-and-patch-intelligence-in-2026">Ai First Vulnerability Management And Patch Intelligence In 2026</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-enterprise-it-2026">Ai Desktop Support Automation Enterprise It 2026</Link></li>
+              <li><Link href="/blog/it-cost-optimization-report-for-managed-cloud-spend">It Cost Optimization Report For Managed Cloud Spend</Link></li>
+              <li><Link href="/blog/edge-ai-tinyml-run-models-microcontrollers-iot-devices">Edge Ai Tinyml Run Models Microcontrollers Iot Devices</Link></li>
+              <li><Link href="/blog/identity-security-playbook-ciam-pam-zero-trust-identity-combined">Identity Security Playbook Ciam Pam Zero Trust Identity Combined</Link></li>
+              <li><Link href="/blog/how-to-implement-low-code-automation-platforms-build-internal-tools-without-full-engineering-without-disrupting-operations">How To Implement Low Code Automation Platforms Build Internal Tools Without Full Engineering Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/case-study-cloud-exit-strategy-avoid-vendor-lock-in-with-portable-architecture-patterns-in-production">Case Study Cloud Exit Strategy Avoid Vendor Lock In With Portable Architecture Patterns In Production</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-data-privacy-engineering-anonymization-tokenization-and-differential-privacy">Common Mistakes When Rolling Out Data Privacy Engineering Anonymization Tokenization And Differential Privacy</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms">Document Processing Automation Extract Data Invoices Contracts Forms</Link></li>
+              <li><Link href="/blog/ai-observability-pipeline-design-for-kubernetes-and-cloud-for-observability-teams">Ai Observability Pipeline Design For Kubernetes And Cloud For Observability Teams</Link></li>
+              <li><Link href="/blog/channel-partner-reseller-program-ai-services">Channel Partner Reseller Program Ai Services</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

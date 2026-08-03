@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-hospitality-automation-guide-for-enterprise-teams-in-2026">Ai Hospitality Automation Guide For Enterprise Teams In 2026</Link></li>
               <li><Link href="/blog/ai-document-processing">Ai Document Processing</Link></li>
               <li><Link href="/blog/ai-first-channel-partner-and-reseller-enablement-in-2026">Ai First Channel Partner And Reseller Enablement In 2026</Link></li>
+              <li><Link href="/blog/ai-first-customer-success-and-renewal-intelligence-in-2026">Ai First Customer Success And Renewal Intelligence In 2026</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s">Kubernetes Platform Engineering Build Internal Developer Platform K8S</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026</Link></li>
+              <li><Link href="/blog/ai-first-capacity-planning-and-resource-forecasting-for-it-in-2026">Ai First Capacity Planning And Resource Forecasting For It In 2026</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-with-kafka-and-flink-event-driven-architecture-checklist-for-it-and-security-leaders">Real Time Data Streaming With Kafka And Flink Event Driven Architecture Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/how-to-implement-data-lakehouse-on-snowflake-or-databricks-when-to-choose-which-without-disrupting-operations">How To Implement Data Lakehouse On Snowflake Or Databricks When To Choose Which Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/ai-managed-it-services-and-msp-automation">Ai Managed It Services And Msp Automation</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-2026-playbook">It Financial Management Showback Chargeback And Cloud Cost Allocation 2026 Playbook</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-ai-extraction">Invoice Processing Automation From Receipt To Payment Ai Extraction</Link></li>
+              <li><Link href="/blog/how-to-implement-cloud-exit-strategy-avoid-vendor-lock-in-with-portable-architecture-patterns-without-disrupting-operations">How To Implement Cloud Exit Strategy Avoid Vendor Lock In With Portable Architecture Patterns Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-ai-agents-that-schedule-follow-up-and-summarize-for-automation-teams">Email And Calendar Automation Ai Agents That Schedule Follow Up And Summarize For Automation Teams</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value">Ai Customer Onboarding Automation Reduce Time To Value</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

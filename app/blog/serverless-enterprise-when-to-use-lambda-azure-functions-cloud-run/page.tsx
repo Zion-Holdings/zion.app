@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/synthetic-data-generation-for-compliance-and-model-training">Synthetic Data Generation For Compliance And Model Training</Link></li>
               <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction">Invoice Processing Automation From Receipt To Payment With Ai Extraction</Link></li>
               <li><Link href="/blog/ai-cybersecurity-platform-for-msp-and-managed-security">Ai Cybersecurity Platform For Msp And Managed Security</Link></li>
+              <li><Link href="/blog/logisticssupplychain-ai-automation-roadmap">Logisticssupplychain Ai Automation Roadmap</Link></li>
+              <li><Link href="/blog/endpoint-detection-response-remote-workers-beyond-vpn-protection">Endpoint Detection Response Remote Workers Beyond Vpn Protection</Link></li>
+              <li><Link href="/blog/ai-observability-aiops-platform-engineering-for-latam-in-2026">Ai Observability Aiops Platform Engineering For Latam In 2026</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-optimize-technician-routes">Field Service Ai Optimization Predict Service Times Optimize Technician Routes</Link></li>
+              <li><Link href="/blog/comparing-multimodal-ai-architecture-text-image-and-voice-in-one-enterprise-stack-vendors-and-build-vs-buy">Comparing Multimodal Ai Architecture Text Image And Voice In One Enterprise Stack Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-zero-trust-for-ai-workloads-guardrails-for-model-access-and-data">Common Mistakes When Rolling Out Zero Trust For Ai Workloads Guardrails For Model Access And Data</Link></li>
+              <li><Link href="/blog/ai-enterprise-integration-patterns-for-saas-and-erp-in-2026">Ai Enterprise Integration Patterns For Saas And Erp In 2026</Link></li>
+              <li><Link href="/blog/case-study-data-privacy-engineering-anonymization-tokenization-and-differential-privacy-in-production">Case Study Data Privacy Engineering Anonymization Tokenization And Differential Privacy In Production</Link></li>
+              <li><Link href="/blog/comparing-computer-vision-for-retail-shelf-monitoring-foot-traffic-and-loss-prevention-vendors-and-build-vs-buy">Comparing Computer Vision For Retail Shelf Monitoring Foot Traffic And Loss Prevention Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/aiops-automated-root-cause-analysis-for-it-operations">Aiops Automated Root Cause Analysis For It Operations</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents">Common Mistakes When Rolling Out Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents</Link></li>
+              <li><Link href="/blog/ai-first-cdn-and-edge-computing-for-brazilian-it-in-2026">Ai First Cdn And Edge Computing For Brazilian It In 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

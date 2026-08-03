@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/how-manufacturing-leaders-cut-costs-with-ai">How Manufacturing Leaders Cut Costs With Ai</Link></li>
               <li><Link href="/blog/multi-cloud-governance-manage-aws-azure-gcp-one-control-plane">Multi Cloud Governance Manage Aws Azure Gcp One Control Plane</Link></li>
               <li><Link href="/blog/ai-cybersecurity-msps-2026">Ai Cybersecurity Msps 2026</Link></li>
+              <li><Link href="/blog/ransomware-resilience-playbook-immutable-backups-isolated-recovery-environments">Ransomware Resilience Playbook Immutable Backups Isolated Recovery Environments</Link></li>
+              <li><Link href="/blog/ai-outsourcing-vs-inhouse-it-teams-2026">Ai Outsourcing Vs Inhouse It Teams 2026</Link></li>
+              <li><Link href="/blog/ai-first-msp-pricing-model-for-ai-support-automation-in-2026">Ai First Msp Pricing Model For Ai Support Automation In 2026</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd">Ai Credential Hygiene And Secret Rotation In Ci Cd</Link></li>
+              <li><Link href="/blog/how-to-implement-digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-without-disrupting-operations">How To Implement Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/ai-for-it-support-automation-and-managed-help-desk">Ai For It Support Automation And Managed Help Desk</Link></li>
+              <li><Link href="/blog/ai-for-managed-it-services-and-msp-automation">Ai For Managed It Services And Msp Automation</Link></li>
+              <li><Link href="/blog/ai-ethernet-switching-and-network-deployment-readiness-for-it-teams-in-2026">Ai Ethernet Switching And Network Deployment Readiness For It Teams In 2026</Link></li>
+              <li><Link href="/blog/vulnerability-management-prioritization-cvss-isn-t-enough-use-exploitability-scoring-2026-playbook">Vulnerability Management Prioritization Cvss Isn T Enough Use Exploitability Scoring 2026 Playbook</Link></li>
+              <li><Link href="/blog/ai-finance-automation-guide-for-enterprise-teams-in-2026">Ai Finance Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/case-study-ai-data-pipeline-observability-lineage-freshness-and-quality-in-production">Case Study Ai Data Pipeline Observability Lineage Freshness And Quality In Production</Link></li>
+              <li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-costs-roi-and-hidden-risks">Ai Observability Pipeline For Kubernetes And Cloud In 2026 Costs Roi And Hidden Risks</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

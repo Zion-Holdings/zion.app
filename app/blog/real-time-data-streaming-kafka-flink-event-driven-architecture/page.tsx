@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/email-calendar-automation-ai-agents-schedule-follow-up-summarize">Email Calendar Automation Ai Agents Schedule Follow Up Summarize</Link></li>
               <li><Link href="/blog/ai-identity-and-zero-trust-for-brazilian-it-teams-in-2026">Ai Identity And Zero Trust For Brazilian It Teams In 2026</Link></li>
               <li><Link href="/blog/ai-automation-and-low-code-for-brazilian-enterprises-in-2026">Ai Automation And Low Code For Brazilian Enterprises In 2026</Link></li>
+              <li><Link href="/blog/soc-2-automation-continuous-compliance-monitoring-audit-evidence-collection">Soc 2 Automation Continuous Compliance Monitoring Audit Evidence Collection</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access</Link></li>
+              <li><Link href="/blog/edge-ai-video-analytics-for-retail-operations-in-2026">Edge Ai Video Analytics For Retail Operations In 2026</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026</Link></li>
+              <li><Link href="/blog/ai-for-it-incident-management-and-response">Ai For It Incident Management And Response</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-data-pipeline-observability-lineage-freshness-and-quality">Common Mistakes When Rolling Out Ai Data Pipeline Observability Lineage Freshness And Quality</Link></li>
+              <li><Link href="/blog/ai-first-HR-and-talent-intelligence-in-2026">Ai First Hr And Talent Intelligence In 2026</Link></li>
+              <li><Link href="/blog/ai-insurance-claims-automation-guide-for-operations-leaders">Ai Insurance Claims Automation Guide For Operations Leaders</Link></li>
+              <li><Link href="/blog/ai-platform-security-and-data-governance-for-enterprises">Ai Platform Security And Data Governance For Enterprises</Link></li>
+              <li><Link href="/blog/nebius-latam-ai-cloud-partnership-guide">Nebius Latam Ai Cloud Partnership Guide</Link></li>
+              <li><Link href="/blog/comparing-feature-store-for-machine-learning-centralize-features-for-training-and-inference-vendors-and-build-vs-buy">Comparing Feature Store For Machine Learning Centralize Features For Training And Inference Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/ai-finance-automation-guide-for-enterprise-teams-in-2026">Ai Finance Automation Guide For Enterprise Teams In 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

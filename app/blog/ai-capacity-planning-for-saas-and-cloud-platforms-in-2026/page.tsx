@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining</Link></li>
               <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization">Finops Maturity Model Cloud Cost Visibility To Automated Optimization</Link></li>
               <li><Link href="/blog/ai-aiops-instant-response-and-remediation-workflows-for-it-leaders">Ai Aiops Instant Response And Remediation Workflows For It Leaders</Link></li>
+              <li><Link href="/blog/ai-for-it-compliance-automation-and-policy-governance">Ai For It Compliance Automation And Policy Governance</Link></li>
+              <li><Link href="/blog/ai-predictive-analytics">Ai Predictive Analytics</Link></li>
+              <li><Link href="/blog/ai-partnership-models-for-latam-growth-in-2026">Ai Partnership Models For Latam Growth In 2026</Link></li>
+              <li><Link href="/blog/ai-manufacturing-predictive-quality-2026">Ai Manufacturing Predictive Quality 2026</Link></li>
+              <li><Link href="/blog/comparing-cloud-exit-strategy-avoid-vendor-lock-in-with-portable-architecture-patterns-vendors-and-build-vs-buy">Comparing Cloud Exit Strategy Avoid Vendor Lock In With Portable Architecture Patterns Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/ai-powered-incident-remediation-from-alert-to-fix-in-minutes-costs-roi-and-hidden-risks">Ai Powered Incident Remediation From Alert To Fix In Minutes Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/case-study-computer-vision-for-retail-shelf-monitoring-foot-traffic-and-loss-prevention-in-production">Case Study Computer Vision For Retail Shelf Monitoring Foot Traffic And Loss Prevention In Production</Link></li>
+              <li><Link href="/blog/finops-maturity-model-from-cloud-cost-visibility-to-automated-optimization-checklist-for-it-and-security-leaders">Finops Maturity Model From Cloud Cost Visibility To Automated Optimization Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/ai-commercial-operations-automation-and-revenue-intelligence">Ai Commercial Operations Automation And Revenue Intelligence</Link></li>
+              <li><Link href="/blog/comparing-vector-database-architecture-pinecone-weaviate-and-pgvector-compared-vendors-and-build-vs-buy">Comparing Vector Database Architecture Pinecone Weaviate And Pgvector Compared Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-agentic-ai-orchestration-build-multi-agent-systems-that-actually-collaborate">Common Mistakes When Rolling Out Agentic Ai Orchestration Build Multi Agent Systems That Actually Collaborate</Link></li>
+              <li><Link href="/blog/sustainable-it-and-green-cloud-measure-and-reduce-carbon-footprint-of-infrastructure-costs-roi-and-hidden-risks">Sustainable It And Green Cloud Measure And Reduce Carbon Footprint Of Infrastructure Costs Roi And Hidden Risks</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-financial-engineering-and-portfolio-automation-in-2026">Ai Financial Engineering And Portfolio Automation In 2026</Link></li>
               <li><Link href="/blog/healthcare-crm-automation-ai-patient-workflows-2026">Healthcare Crm Automation Ai Patient Workflows 2026</Link></li>
               <li><Link href="/blog/ai-observability-pipeline-kubernetes-cloud-2026">Ai Observability Pipeline Kubernetes Cloud 2026</Link></li>
+              <li><Link href="/blog/ai-partner-offer-with-tech-giants">Ai Partner Offer With Tech Giants</Link></li>
+              <li><Link href="/blog/ai-agentic-workflow-automation-reduce-manual-work-hours">Ai Agentic Workflow Automation Reduce Manual Work Hours</Link></li>
+              <li><Link href="/blog/ai-enterprise-integration-patterns-for-saas-and-erp-in-2026">Ai Enterprise Integration Patterns For Saas And Erp In 2026</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments</Link></li>
+              <li><Link href="/blog/aiops-for-incident-detection-reduce-mttr-with-anomaly-detection-and-root-cause-analysis-for-observability-teams">Aiops For Incident Detection Reduce Mttr With Anomaly Detection And Root Cause Analysis For Observability Teams</Link></li>
+              <li><Link href="/blog/ai-observability-pipeline-design-for-kubernetes-and-cloud-checklist-for-it-and-security-leaders">Ai Observability Pipeline Design For Kubernetes And Cloud Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/ai-first-legal-tech-and-contract-intelligence-in-2026">Ai First Legal Tech And Contract Intelligence In 2026</Link></li>
+              <li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-2026-playbook">Ai Observability Pipeline For Kubernetes And Cloud In 2026 2026 Playbook</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-optimize-technician-routes">Field Service Ai Optimization Predict Service Times Optimize Technician Routes</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-edge-ai-with-tinyml-run-models-on-microcontrollers-and-iot-devices">Common Mistakes When Rolling Out Edge Ai With Tinyml Run Models On Microcontrollers And Iot Devices</Link></li>
+              <li><Link href="/blog/comparing-vulnerability-management-prioritization-cvss-isn-t-enough-use-exploitability-scoring-vendors-and-build-vs-buy">Comparing Vulnerability Management Prioritization Cvss Isn T Enough Use Exploitability Scoring Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/data-lakehouse-on-snowflake-or-databricks-when-to-choose-which-for-data-teams">Data Lakehouse On Snowflake Or Databricks When To Choose Which For Data Teams</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

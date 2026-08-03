@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-for-clinical-trial-operations-and-data-quality">Ai For Clinical Trial Operations And Data Quality</Link></li>
               <li><Link href="/blog/ai-first-education-platforms-and-learning-intelligence-in-2026">Ai First Education Platforms And Learning Intelligence In 2026</Link></li>
               <li><Link href="/blog/data-loss-prevention-ai-prevent-confidential-data-leaks-llm-apis">Data Loss Prevention Ai Prevent Confidential Data Leaks Llm Apis</Link></li>
+              <li><Link href="/blog/disaster-recovery-automation-tested-failover-multiple-cloud-regions">Disaster Recovery Automation Tested Failover Multiple Cloud Regions</Link></li>
+              <li><Link href="/blog/ai-observability-and-incident-response-for-modern-it-teams">Ai Observability And Incident Response For Modern It Teams</Link></li>
+              <li><Link href="/blog/ai-support-automation-playbook-2026">Ai Support Automation Playbook 2026</Link></li>
+              <li><Link href="/blog/it-cost-optimization-report-for-managed-cloud-spend">It Cost Optimization Report For Managed Cloud Spend</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-cloud-exit-strategy-avoid-vendor-lock-in-with-portable-architecture-patterns">Common Mistakes When Rolling Out Cloud Exit Strategy Avoid Vendor Lock In With Portable Architecture Patterns</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-checklist-for-it-and-security-leaders">Customer Success Automation Trigger Health Checks Outreach And Product Signals Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/ai-automation-and-low-code-for-brazilian-enterprises-in-2026">Ai Automation And Low Code For Brazilian Enterprises In 2026</Link></li>
+              <li><Link href="/blog/ai-powered-incident-remediation-from-alert-to-fix-in-minutes">Ai Powered Incident Remediation From Alert To Fix In Minutes</Link></li>
+              <li><Link href="/blog/aiops-reduce-incident-resolution-time-for-ceos">Aiops Reduce Incident Resolution Time For Ceos</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters">Process Mining For Operations Discover Bottlenecks And Automate What Matters</Link></li>
+              <li><Link href="/blog/attack-surface-management-continuous-discovery-and-exposure-validation-2026-playbook">Attack Surface Management Continuous Discovery And Exposure Validation 2026 Playbook</Link></li>
+              <li><Link href="/blog/data-lakehouse-on-snowflake-or-databricks-when-to-choose-which-2026-playbook">Data Lakehouse On Snowflake Or Databricks When To Choose Which 2026 Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

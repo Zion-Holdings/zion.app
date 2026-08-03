@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-email-outreach-automation-for-msps-2026">Ai Email Outreach Automation For Msps 2026</Link></li>
               <li><Link href="/blog/edge-cloud-architecture-deploy-low-latency-apps-edge-cloudflare-aws">Edge Cloud Architecture Deploy Low Latency Apps Edge Cloudflare Aws</Link></li>
               <li><Link href="/blog/autonomous-it-staff-augmentation-ai-copilots-2026">Autonomous It Staff Augmentation Ai Copilots 2026</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-golden-paths">Ai Platform Engineering Patterns Idp Backstage Golden Paths</Link></li>
+              <li><Link href="/blog/platform-engineering-and-ai-observability-in-2026">Platform Engineering And Ai Observability In 2026</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-zero-trust-access">Remote Work Enablement Secure Vpn Alternatives Zero Trust Access</Link></li>
+              <li><Link href="/blog/automated-provisioning-de-provisioning-identity-access-lifecycle-automation">Automated Provisioning De Provisioning Identity Access Lifecycle Automation</Link></li>
+              <li><Link href="/blog/case-study-feature-store-for-machine-learning-centralize-features-for-training-and-inference-in-production">Case Study Feature Store For Machine Learning Centralize Features For Training And Inference In Production</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-serverless-for-enterprise-when-to-use-lambda-azure-functions-and-cloud-run">Common Mistakes When Rolling Out Serverless For Enterprise When To Use Lambda Azure Functions And Cloud Run</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-2026-playbook">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 2026 Playbook</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-costs-roi-and-hidden-risks">It Financial Management Showback Chargeback And Cloud Cost Allocation Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/case-study-identity-security-playbook-ciam-pam-and-zero-trust-identity-combined-in-production">Case Study Identity Security Playbook Ciam Pam And Zero Trust Identity Combined In Production</Link></li>
+              <li><Link href="/blog/how-to-implement-identity-security-playbook-ciam-pam-and-zero-trust-identity-combined-without-disrupting-operations">How To Implement Identity Security Playbook Ciam Pam And Zero Trust Identity Combined Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/how-to-implement-ai-governance-framework-audit-explain-and-govern-model-decisions-in-2026-without-disrupting-operations">How To Implement Ai Governance Framework Audit Explain And Govern Model Decisions In 2026 Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/comparing-data-loss-prevention-for-ai-prevent-confidential-data-leaks-to-llm-apis-vendors-and-build-vs-buy">Comparing Data Loss Prevention For Ai Prevent Confidential Data Leaks To Llm Apis Vendors And Build Vs Buy</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

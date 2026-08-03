@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-support-automation-for-brazilian-companies-in-2026">Ai Support Automation For Brazilian Companies In 2026</Link></li>
               <li><Link href="/blog/ai-for-clinical-trial-operations-and-data-quality">Ai For Clinical Trial Operations And Data Quality</Link></li>
               <li><Link href="/blog/edge-cloud-architecture-deploy-low-latency-apps-edge-cloudflare-aws">Edge Cloud Architecture Deploy Low Latency Apps Edge Cloudflare Aws</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure</Link></li>
+              <li><Link href="/blog/ai-it-support-automation">Ai It Support Automation</Link></li>
+              <li><Link href="/blog/ai-first-connectivity-private-5g-and-sase-in-2026">Ai First Connectivity Private 5G And Sase In 2026</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026">Ai Capacity Planning For Saas And Cloud Platforms In 2026</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-for-automation-teams">Ai Platform Engineering Patterns Idp Backstage And Golden Paths For Automation Teams</Link></li>
+              <li><Link href="/blog/ai-soc-aiops-platform-engineering-for-latam-it-teams-in-2026">Ai Soc Aiops Platform Engineering For Latam It Teams In 2026</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-capacity-planning-for-saas-and-cloud-platforms-in-2026">Common Mistakes When Rolling Out Ai Capacity Planning For Saas And Cloud Platforms In 2026</Link></li>
+              <li><Link href="/blog/ransomware-resilience-playbook-immutable-backups-and-isolated-recovery-environments-2026-playbook">Ransomware Resilience Playbook Immutable Backups And Isolated Recovery Environments 2026 Playbook</Link></li>
+              <li><Link href="/blog/case-study-feature-store-for-machine-learning-centralize-features-for-training-and-inference-in-production">Case Study Feature Store For Machine Learning Centralize Features For Training And Inference In Production</Link></li>
+              <li><Link href="/blog/ai-for-aiops-and-incident-response">Ai For Aiops And Incident Response</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-2026-playbook">Ai Application Modernization Monolith To Microservices Safely 2026 Playbook</Link></li>
+              <li><Link href="/blog/how-manufacturing-leaders-cut-costs-with-ai">How Manufacturing Leaders Cut Costs With Ai</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

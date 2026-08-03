@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-product-signals">Customer Success Automation Trigger Health Checks Outreach Product Signals</Link></li>
               <li><Link href="/blog/ai-document-processing">Ai Document Processing</Link></li>
               <li><Link href="/blog/ai-human-handoff-playbook-for-support-teams-2026">Ai Human Handoff Playbook For Support Teams 2026</Link></li>
+              <li><Link href="/blog/serverless-enterprise-when-to-use-lambda-azure-functions-cloud-run">Serverless Enterprise When To Use Lambda Azure Functions Cloud Run</Link></li>
+              <li><Link href="/blog/ai-real-estate-market-intelligence-automation">Ai Real Estate Market Intelligence Automation</Link></li>
+              <li><Link href="/blog/ai-it-infrastructure-automation-and-cloud-operations">Ai It Infrastructure Automation And Cloud Operations</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-optimize-technician-routes">Field Service Ai Optimization Predict Service Times Optimize Technician Routes</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-that-actually-collaborate-for-ai-teams">Agentic Ai Orchestration Build Multi Agent Systems That Actually Collaborate For Ai Teams</Link></li>
+              <li><Link href="/blog/ai-managed-it-services-and-msp-automation">Ai Managed It Services And Msp Automation</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-checklist-for-it-and-security-leaders">Ai Data Engineering Strategy For Latam Enterprises In 2026 Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/how-to-implement-it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-without-disrupting-operations">How To Implement It Asset Management Automation Track Hardware Software And Licenses In Real Time Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/sustainable-it-and-green-cloud-measure-and-reduce-carbon-footprint-of-infrastructure-for-emerging-teams">Sustainable It And Green Cloud Measure And Reduce Carbon Footprint Of Infrastructure For Emerging Teams</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-data-mesh-implementation-domain-owned-data-products-with-self-serve-infrastructure">Common Mistakes When Rolling Out Data Mesh Implementation Domain Owned Data Products With Self Serve Infrastructure</Link></li>
+              <li><Link href="/blog/logisticssupplychain-ai-automation-roadmap">Logisticssupplychain Ai Automation Roadmap</Link></li>
+              <li><Link href="/blog/ai-support-automation-playbook-2026">Ai Support Automation Playbook 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/platform-engineering-and-ai-observability-in-2026">Platform Engineering And Ai Observability In 2026</Link></li>
               <li><Link href="/blog/ai-first-security-operations-and-soc-automation-in-2026">Ai First Security Operations And Soc Automation In 2026</Link></li>
               <li><Link href="/blog/cloud-migration-regulated-industries-hipaa-pci-gdpr-aws-azure">Cloud Migration Regulated Industries Hipaa Pci Gdpr Aws Azure</Link></li>
+              <li><Link href="/blog/ai-for-msp-growth-and-it-outsourcing-automation">Ai For Msp Growth And It Outsourcing Automation</Link></li>
+              <li><Link href="/blog/ai-first-loan-origination-and-credit-intelligence-in-2026">Ai First Loan Origination And Credit Intelligence In 2026</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value">Ai Customer Onboarding Automation Reduce Time To Value</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s">Kubernetes Platform Engineering Build Internal Developer Platform K8S</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-for-data-teams">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 For Data Teams</Link></li>
+              <li><Link href="/blog/cloud-migration-for-regulated-industries-hipaa-pci-and-gdpr-on-aws-azure-2026-playbook">Cloud Migration For Regulated Industries Hipaa Pci And Gdpr On Aws Azure 2026 Playbook</Link></li>
+              <li><Link href="/blog/comparing-distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-vendors-and-build-vs-buy">Comparing Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-from-invoices-contracts-and-forms-for-automation-teams">Document Processing Automation Extract Data From Invoices Contracts And Forms For Automation Teams</Link></li>
+              <li><Link href="/blog/comparing-feature-store-for-machine-learning-centralize-features-for-training-and-inference-vendors-and-build-vs-buy">Comparing Feature Store For Machine Learning Centralize Features For Training And Inference Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/data-lakehouse-on-snowflake-or-databricks-when-to-choose-which-checklist-for-it-and-security-leaders">Data Lakehouse On Snowflake Or Databricks When To Choose Which Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere</Link></li>
+              <li><Link href="/blog/ai-security-operations-center-modernization-for-mssps-costs-roi-and-hidden-risks">Ai Security Operations Center Modernization For Mssps Costs Roi And Hidden Risks</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

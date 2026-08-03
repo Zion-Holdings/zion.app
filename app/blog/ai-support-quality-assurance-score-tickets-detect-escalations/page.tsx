@@ -71,6 +71,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-cost-optimization-for-it-operations-2026">Ai Cost Optimization For It Operations 2026</Link></li>
               <li><Link href="/blog/ceo-partnership-negotiation-email-templates">Ceo Partnership Negotiation Email Templates</Link></li>
               <li><Link href="/blog/how-to-build-ai-partnerships-that-close-deals-2026">How To Build Ai Partnerships That Close Deals 2026</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters">Process Mining For Operations Discover Bottlenecks And Automate What Matters</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates">Ai Code Review Automation Security Style And Architecture Gates</Link></li>
+              <li><Link href="/blog/ai-for-outsourced-it-support-automation">Ai For Outsourced It Support Automation</Link></li>
+              <li><Link href="/blog/ai-healthcare-automation-guide-for-enterprise-teams-in-2026">Ai Healthcare Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/comparing-quantum-safe-cryptography-prepare-for-post-quantum-threats-today-vendors-and-build-vs-buy">Comparing Quantum Safe Cryptography Prepare For Post Quantum Threats Today Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/multi-cloud-governance-manage-aws-azure-and-gcp-from-one-control-plane-checklist-for-it-and-security-leaders">Multi Cloud Governance Manage Aws Azure And Gcp From One Control Plane Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/comparing-serverless-for-enterprise-when-to-use-lambda-azure-functions-and-cloud-run-vendors-and-build-vs-buy">Comparing Serverless For Enterprise When To Use Lambda Azure Functions And Cloud Run Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/case-study-hyperautomation-strategy-2026-combine-rpa-ai-and-process-mining-in-production">Case Study Hyperautomation Strategy 2026 Combine Rpa Ai And Process Mining In Production</Link></li>
+              <li><Link href="/blog/data-loss-prevention-for-ai-prevent-confidential-data-leaks-to-llm-apis-checklist-for-it-and-security-leaders">Data Loss Prevention For Ai Prevent Confidential Data Leaks To Llm Apis Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/comparing-terraform-and-iac-security-scan-terraform-cloudformation-and-pulumi-for-misconfigurations-vendors-and-build-vs-buy">Comparing Terraform And Iac Security Scan Terraform Cloudformation And Pulumi For Misconfigurations Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/how-to-implement-cnapp-strategy-2026-cloud-native-application-protection-from-code-to-runtime-without-disrupting-operations">How To Implement Cnapp Strategy 2026 Cloud Native Application Protection From Code To Runtime Without Disrupting Operations</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

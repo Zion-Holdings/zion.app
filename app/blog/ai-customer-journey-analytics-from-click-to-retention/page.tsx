@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/disaster-recovery-automation-tested-failover-multiple-cloud-regions">Disaster Recovery Automation Tested Failover Multiple Cloud Regions</Link></li>
               <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths">Ai Platform Engineering Patterns Idp Backstage And Golden Paths</Link></li>
               <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd">Ai Credential Hygiene And Secret Rotation In Ci Cd</Link></li>
+              <li><Link href="/blog/ai-automation-and-low-code-for-brazilian-enterprises-in-2026">Ai Automation And Low Code For Brazilian Enterprises In 2026</Link></li>
+              <li><Link href="/blog/edge-ai-video-analytics-for-retail-operations-in-2026">Edge Ai Video Analytics For Retail Operations In 2026</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration</Link></li>
+              <li><Link href="/blog/ai-aiops-instant-response-and-remediation-workflows-for-it-leaders">Ai Aiops Instant Response And Remediation Workflows For It Leaders</Link></li>
+              <li><Link href="/blog/aiops-for-incident-detection-reduce-mttr-with-anomaly-detection-and-root-cause-analysis-checklist-for-it-and-security-leaders">Aiops For Incident Detection Reduce Mttr With Anomaly Detection And Root Cause Analysis Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/ai-support-outsourcing-roi-enterprise">Ai Support Outsourcing Roi Enterprise</Link></li>
+              <li><Link href="/blog/nebius-partnership-and-ai-vendor-co-selling-2026">Nebius Partnership And Ai Vendor Co Selling 2026</Link></li>
+              <li><Link href="/blog/case-study-ai-soc-modernization-for-mssps-in-2026-in-production">Case Study Ai Soc Modernization For Mssps In 2026 In Production</Link></li>
+              <li><Link href="/blog/ai-for-aiops-and-incident-response">Ai For Aiops And Incident Response</Link></li>
+              <li><Link href="/blog/ceo-partnership-negotiation-email-templates">Ceo Partnership Negotiation Email Templates</Link></li>
+              <li><Link href="/blog/ai-powered-incident-remediation-from-alert-to-fix-in-minutes-costs-roi-and-hidden-risks">Ai Powered Incident Remediation From Alert To Fix In Minutes Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/case-study-process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-in-production">Case Study Process Mining For Operations Discover Bottlenecks And Automate What Matters In Production</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

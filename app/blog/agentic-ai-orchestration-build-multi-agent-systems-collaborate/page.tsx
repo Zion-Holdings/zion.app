@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction">Invoice Processing Automation From Receipt To Payment With Ai Extraction</Link></li>
               <li><Link href="/blog/ai-document-processing-automation-guide">Ai Document Processing Automation Guide</Link></li>
               <li><Link href="/blog/data-privacy-engineering-anonymization-tokenization-differential-privacy">Data Privacy Engineering Anonymization Tokenization Differential Privacy</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open">Proactive Customer Support Ai Predict Issues Before Tickets Open</Link></li>
+              <li><Link href="/blog/ai-contract-review-and-legal-operations-automation-2026">Ai Contract Review And Legal Operations Automation 2026</Link></li>
+              <li><Link href="/blog/identity-security-playbook-ciam-pam-zero-trust-identity-combined">Identity Security Playbook Ciam Pam Zero Trust Identity Combined</Link></li>
+              <li><Link href="/blog/logisticssupplychain-ai-automation-roadmap">Logisticssupplychain Ai Automation Roadmap</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-for-support-teams">Ai Support Quality Assurance Score Tickets Detect Escalations For Support Teams</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-and-export-anywhere-costs-roi-and-hidden-risks">Opentelemetry Implementation Guide Instrument Any Language And Export Anywhere Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-ai-agents-that-schedule-follow-up-and-summarize-costs-roi-and-hidden-risks">Email And Calendar Automation Ai Agents That Schedule Follow Up And Summarize Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-feature-store-for-machine-learning-centralize-features-for-training-and-inference">Common Mistakes When Rolling Out Feature Store For Machine Learning Centralize Features For Training And Inference</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-and-build-features-without-breaking-reliability-2026-playbook">Slo Driven Development Set Error Budgets And Build Features Without Breaking Reliability 2026 Playbook</Link></li>
+              <li><Link href="/blog/ai-virtual-cfo-and-financial-operations-automation-in-2026">Ai Virtual Cfo And Financial Operations Automation In 2026</Link></li>
+              <li><Link href="/blog/how-to-implement-ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-without-disrupting-operations">How To Implement Ai Capacity Planning For Saas And Cloud Platforms In 2026 Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/case-study-ai-desktop-support-automation-for-enterprise-it-in-production">Case Study Ai Desktop Support Automation For Enterprise It In Production</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

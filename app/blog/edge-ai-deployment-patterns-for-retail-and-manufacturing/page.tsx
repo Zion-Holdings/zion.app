@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-for-managed-service-provider-operations">Ai For Managed Service Provider Operations</Link></li>
               <li><Link href="/blog/ai-finance-automation-guide-for-enterprise-teams-in-2026">Ai Finance Automation Guide For Enterprise Teams In 2026</Link></li>
               <li><Link href="/blog/ai-for-it-remote-support-and-endpoint-assistance">Ai For It Remote Support And Endpoint Assistance</Link></li>
+              <li><Link href="/blog/ai-vendor-due-diligence-checklist-for-latam-in-2026">Ai Vendor Due Diligence Checklist For Latam In 2026</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting">Cloud Cost Governance With Ai Anomaly Detection And Forecasting</Link></li>
+              <li><Link href="/blog/edge-ai-video-analytics-for-retail-operations-in-2026">Edge Ai Video Analytics For Retail Operations In 2026</Link></li>
+              <li><Link href="/blog/ai-low-code-workflow-automation-guide-brazilian-enterprises">Ai Low Code Workflow Automation Guide Brazilian Enterprises</Link></li>
+              <li><Link href="/blog/ai-first-legal-tech-and-contract-intelligence-in-2026">Ai First Legal Tech And Contract Intelligence In 2026</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-customer-onboarding-automation-reduce-time-to-value">Common Mistakes When Rolling Out Ai Customer Onboarding Automation Reduce Time To Value</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-and-sso-integration-costs-roi-and-hidden-risks">Passwordless Authentication Strategy Fido2 Passkeys And Sso Integration Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/comparing-process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-vendors-and-build-vs-buy">Comparing Process Mining For Operations Discover Bottlenecks And Automate What Matters Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/it-cost-optimization-report-for-managed-cloud-spend">It Cost Optimization Report For Managed Cloud Spend</Link></li>
+              <li><Link href="/blog/ai-anti-fraud-and-payment-intelligence-for-fintech-in-2026">Ai Anti Fraud And Payment Intelligence For Fintech In 2026</Link></li>
+              <li><Link href="/blog/case-study-ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-in-production">Case Study Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 In Production</Link></li>
+              <li><Link href="/blog/data-loss-prevention-for-ai-prevent-confidential-data-leaks-to-llm-apis-checklist-for-it-and-security-leaders">Data Loss Prevention For Ai Prevent Confidential Data Leaks To Llm Apis Checklist For It And Security Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

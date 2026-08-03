@@ -83,6 +83,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ceo-partnership-negotiation-email-templates">Ceo Partnership Negotiation Email Templates</Link></li>
               <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks</Link></li>
               <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention">Ai Customer Journey Analytics From Click To Retention</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters">Process Mining For Operations Discover Bottlenecks And Automate What Matters</Link></li>
+              <li><Link href="/blog/defense-ai-logistics-optimization">Defense Ai Logistics Optimization</Link></li>
+              <li><Link href="/blog/ransomware-resilience-playbook-immutable-backups-isolated-recovery-environments">Ransomware Resilience Playbook Immutable Backups Isolated Recovery Environments</Link></li>
+              <li><Link href="/blog/case-study-vulnerability-management-prioritization-cvss-isn-t-enough-use-exploitability-scoring-in-production">Case Study Vulnerability Management Prioritization Cvss Isn T Enough Use Exploitability Scoring In Production</Link></li>
+              <li><Link href="/blog/ai-driven-supply-chain-risk-management-for-operations-leaders">Ai Driven Supply Chain Risk Management For Operations Leaders</Link></li>
+              <li><Link href="/blog/ai-for-it-support-automation-and-managed-help-desk">Ai For It Support Automation And Managed Help Desk</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-costs-roi-and-hidden-risks">Ai Desktop Support Automation For Enterprise It Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-customer-experience-2026-playbook">Business Observability Connect Metrics To Revenue Conversion And Customer Experience 2026 Playbook</Link></li>
+              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-code-review-automation-enforce-standards-and-find-vulnerabilities-before-merge">Common Mistakes When Rolling Out Ai Code Review Automation Enforce Standards And Find Vulnerabilities Before Merge</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-2026-playbook">Customer Success Automation Trigger Health Checks Outreach And Product Signals 2026 Playbook</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-for-data-teams">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 For Data Teams</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
