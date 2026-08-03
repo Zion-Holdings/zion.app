@@ -7,7 +7,7 @@ const fs = require('fs');
 const path = require('path');
 
 const SITE_URL = process.env.SITE_URL || 'https://ziontechgroup.com';
-const outDir = path.join(process.cwd(), 'out');
+const outDir = path.join(process.cwd(), 'public');
 
 // ---- helpers ----
 

@@ -30,15 +30,23 @@ jobs:
 
       - name: Run content cycle
         run: |
-          hermes -y run "Run one GitHub content cycle in C:\Users\Zion\tmp\zion-clone-test2 using the github-content-loop skill. Generate 6 assets, update content/queue.md with 3 new seeds, commit and push to origin main, and return a concise cycle summary."
+          echo 'Content is generated locally. This workflow builds and deploys the current repo state.'
 
-      - name: Push changes
+      - name: Build site
         run: |
-          git config user.name "hermes-content-bot"
-          git config user.email "hermes@ziontechgroup.com"
-          git add content/
-          git commit -m "content: automated cycle $(date +%Y-%m-%d_%H-%M)" || true
-          git push origin HEAD:main || true
+          npm ci
+          npm run build -- --webpack
+          node scripts/generate-sitemap-feed.cjs
+          node scripts/write-clean-sitemap.cjs
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          destination_dir: .
+          keep_files: true
+          enable_jekyll: false
 
       - name: Report summary
         if: always()

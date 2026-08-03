@@ -1,8 +1,8 @@
 # Content Queue — GitHub Pages Loop
 
 ## Cycle Counter
-- Last cycle: 3
-- Next slug prefix: 4
+- Last cycle: 4
+- Next slug prefix: 5
 
 ## Seed Queue
 1. When to buy Micro-SaaS vs build internally: a decision framework
