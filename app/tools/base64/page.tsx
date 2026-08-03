@@ -1,3 +1,0 @@
-import Link from 'next/link';
-export const metadata = { title: 'Base64 Tools | Zion Tech Group', description: 'Base64 encoding and decoding utilities for developers and IT teams.' };
-export default function Page() { return (<div className="container-page py-20"><h1 className="text-4xl font-bold mb-4 text-white">Base64 Tools</h1><p className="mb-6 text-slate-300">Quick utilities for encoding, decoding, and validating Base64 content.</p><div className="mt-10 flex flex-col gap-3 sm:flex-row"><Link href="/tools" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">All tools</Link><Link href="/contact" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Contact us</Link></div></div>); }
