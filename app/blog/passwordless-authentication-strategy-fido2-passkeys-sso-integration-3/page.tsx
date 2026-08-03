@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-7">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 7</Link></li><li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-7">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 7</Link></li><li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-4">Kubernetes Platform Engineering Build Internal Developer Platform K8S 4</Link></li><li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-6">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 6</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-5">Ai Soc Modernization For Mssps In 2026 5</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-6">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 6</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-10">It Asset Management Automation Track Hardware Software And Licenses In Real Time 10</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-6">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 6</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-9">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 9</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-4">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 4</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-10">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 10</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-8">Real Time Data Streaming Kafka Flink Event Driven Architecture 8</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-5">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 5</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-5">Ai Incident Response Orchestration Triage Runbooks Chatops 5</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

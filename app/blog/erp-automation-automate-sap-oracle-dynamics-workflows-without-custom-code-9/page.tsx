@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-2">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 2</Link></li><li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-5">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 5</Link></li><li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-5">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 5</Link></li><li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-8">It Asset Management Automation Track Hardware Software And Licenses In Real Time 8</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-9">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 9</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-5">Ai Application Modernization Monolith To Microservices Safely 5</Link></li>
+              <li><Link href="/blog/ai-legal-automation-guide-for-enterprise-teams-in-2026">Ai Legal Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-9">Business Observability Connect Metrics To Revenue Conversion And Cx 9</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-5">Proactive Customer Support Ai Predict Issues Before Tickets Open 5</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-10">Invoice Processing Automation From Receipt To Payment With Ai Extraction 10</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-8">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 8</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value">Ai Customer Onboarding Automation Reduce Time To Value</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-10">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 10</Link></li>
+              <li><Link href="/blog/top-10-best-dns-security-services-2026-buyer-x27-s-guide">Top 10 Best Dns Security Services 2026 Buyer X27 S Guide</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-3">Ai Network Detection And Response For Hybrid Infrastructures In 2026 3</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure</Link></li><li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-5">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 5</Link></li><li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-2">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 2</Link></li><li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-4">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 4</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-2">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 2</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-9">Invoice Processing Automation From Receipt To Payment With Ai Extraction 9</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-7">Ai Application Modernization Monolith To Microservices Safely 7</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-9">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 9</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy</Link></li>
+              <li><Link href="/blog/ai-hospitality-automation-guide-for-enterprise-teams-in-2026">Ai Hospitality Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026">Ai Capacity Planning For Saas And Cloud Platforms In 2026</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-2">Real Time Data Streaming Kafka Flink Event Driven Architecture 2</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-7">Ai Code Review Automation Security Style And Architecture Gates 7</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-4">Ai Customer Onboarding Automation Reduce Time To Value 4</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-8">Invoice Processing Automation From Receipt To Payment With Ai Extraction 8</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-3">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 3</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

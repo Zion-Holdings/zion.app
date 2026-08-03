@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-5">Invoice Processing Automation From Receipt To Payment With Ai Extraction 5</Link></li><li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-2">Ai Desktop Support Automation For Enterprise It 2</Link></li><li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-3">Ai Credential Hygiene And Secret Rotation In Ci Cd 3</Link></li><li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-8">Quantum Safe Cryptography Prepare Post Quantum Threats Today 8</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-3">Ai Network Detection And Response For Hybrid Infrastructures In 2026 3</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-9">Ai Data Engineering Strategy For Latam Enterprises In 2026 9</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-5">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 5</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-8">Document Processing Automation Extract Data Invoices Contracts Forms 8</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-4">Mlops Pipeline Llms Fine Tuning Production Deployment 4</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-10">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 10</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-10">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 10</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-5">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 5</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-3">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 3</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-4">Ai Soc Modernization For Mssps In 2026 4</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-7">Ai Network Detection And Response For Hybrid Infrastructures In 2026 7</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-9">Ai Credential Hygiene And Secret Rotation In Ci Cd 9</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

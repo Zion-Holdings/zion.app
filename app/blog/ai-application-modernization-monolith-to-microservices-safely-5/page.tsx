@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-9">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 9</Link></li><li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-8">Mlops Pipeline Llms Fine Tuning Production Deployment 8</Link></li><li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops">Ai Incident Response Orchestration Triage Runbooks Chatops</Link></li><li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-3">Ai Credential Hygiene And Secret Rotation In Ci Cd 3</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-10">It Financial Management Showback Chargeback And Cloud Cost Allocation 10</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-9">It Asset Management Automation Track Hardware Software And Licenses In Real Time 9</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-9">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 9</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-3">Quantum Safe Cryptography Prepare Post Quantum Threats Today 3</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-6">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 6</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-5">Ai Incident Response Orchestration Triage Runbooks Chatops 5</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-2">Document Processing Automation Extract Data Invoices Contracts Forms 2</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-5">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 5</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-6">Business Observability Connect Metrics To Revenue Conversion And Cx 6</Link></li>
+              <li><Link href="/blog/disaster-recovery-testing-checklist-2025-arphost">Disaster Recovery Testing Checklist 2025 Arphost</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-3">It Financial Management Showback Chargeback And Cloud Cost Allocation 3</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-4">Real Time Data Streaming Kafka Flink Event Driven Architecture 4</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

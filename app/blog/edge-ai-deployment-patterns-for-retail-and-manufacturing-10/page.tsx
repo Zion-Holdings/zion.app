@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-7">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 7</Link></li><li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026">Ai Soc Modernization For Mssps In 2026</Link></li><li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy</Link></li><li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx">Business Observability Connect Metrics To Revenue Conversion And Cx</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value">Ai Customer Onboarding Automation Reduce Time To Value</Link></li>
+              <li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-9">Ai Observability Pipeline For Kubernetes And Cloud In 2026 9</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-4">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 4</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-2">It Financial Management Showback Chargeback And Cloud Cost Allocation 2</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-3">Real Time Data Streaming Kafka Flink Event Driven Architecture 3</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-2">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 2</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-10">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 10</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-7">Ai Threat Intelligence Integration For Soc Teams 7</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-3">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 3</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-2">Process Mining For Operations Discover Bottlenecks And Automate What Matters 2</Link></li>
+              <li><Link href="/blog/ai-hospitality-automation-guide-for-enterprise-teams-in-2026">Ai Hospitality Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-10">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 10</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

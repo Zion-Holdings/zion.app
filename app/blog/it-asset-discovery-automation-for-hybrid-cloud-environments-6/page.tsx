@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-8">Ai Customer Journey Analytics From Click To Retention 8</Link></li><li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-10">Invoice Processing Automation From Receipt To Payment With Ai Extraction 10</Link></li><li><Link href="/blog/ai-hospitality-automation-guide-for-enterprise-teams-in-2026">Ai Hospitality Automation Guide For Enterprise Teams In 2026</Link></li><li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-7">Ai Customer Onboarding Automation Reduce Time To Value 7</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-8">It Asset Management Automation Track Hardware Software And Licenses In Real Time 8</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-3">It Financial Management Showback Chargeback And Cloud Cost Allocation 3</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-9">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 9</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-4">Ai Data Engineering Strategy For Latam Enterprises In 2026 4</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-8">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 8</Link></li>
+              <li><Link href="/blog/ask-hn-using-ai-llm-apis-makes-me-want-to-give-up-what-am-i-doing-wrong">Ask Hn Using Ai Llm Apis Makes Me Want To Give Up What Am I Doing Wrong</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-5">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 5</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-7">Ai Customer Journey Analytics From Click To Retention 7</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-5">Invoice Processing Automation From Receipt To Payment With Ai Extraction 5</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-7">It Asset Management Automation Track Hardware Software And Licenses In Real Time 7</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-2">Document Processing Automation Extract Data Invoices Contracts Forms 2</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

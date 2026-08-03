@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-8">It Financial Management Showback Chargeback And Cloud Cost Allocation 8</Link></li><li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-10">It Asset Management Automation Track Hardware Software And Licenses In Real Time 10</Link></li><li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-8">Proactive Customer Support Ai Predict Issues Before Tickets Open 8</Link></li><li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-5">Ai Code Review Automation Security Style And Architecture Gates 5</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-9">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 9</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-3">Quantum Safe Cryptography Prepare Post Quantum Threats Today 3</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-2">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 2</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-2">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 2</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-5">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 5</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-2">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 2</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-10">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 10</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-5">Invoice Processing Automation From Receipt To Payment With Ai Extraction 5</Link></li>
+              <li><Link href="/blog/zero-trust-kubernetes-architecture-github">Zero Trust Kubernetes Architecture Github</Link></li>
+              <li><Link href="/blog/pdf-smb-pain-points-and-msp-solutions-mirazon-com">Pdf Smb Pain Points And Msp Solutions Mirazon Com</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-10">Edge Ai Deployment Patterns For Retail And Manufacturing 10</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

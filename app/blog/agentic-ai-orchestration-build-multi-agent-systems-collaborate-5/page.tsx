@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-3">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 3</Link></li><li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-3">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 3</Link></li><li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-2">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 2</Link></li><li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-6">Invoice Processing Automation From Receipt To Payment With Ai Extraction 6</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-7">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 7</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-4">Ai Customer Onboarding Automation Reduce Time To Value 4</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-8">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 8</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-6">Mlops Pipeline Llms Fine Tuning Production Deployment 6</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-10">It Asset Discovery Automation For Hybrid Cloud Environments 10</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-7">Document Processing Automation Extract Data Invoices Contracts Forms 7</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-5">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 5</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-5">Ai Credential Hygiene And Secret Rotation In Ci Cd 5</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-8">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 8</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-3">Ai Credential Hygiene And Secret Rotation In Ci Cd 3</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-8">Quantum Safe Cryptography Prepare Post Quantum Threats Today 8</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-7">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 7</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

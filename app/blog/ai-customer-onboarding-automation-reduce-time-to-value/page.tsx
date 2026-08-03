@@ -79,6 +79,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it">Ai Desktop Support Automation For Enterprise It</Link></li>
               <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths">Ai Platform Engineering Patterns Idp Backstage And Golden Paths</Link></li>
               <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals">Customer Success Automation Trigger Health Checks Outreach And Product Signals</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-2">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 2</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-4">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 4</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-5">Edge Ai Deployment Patterns For Retail And Manufacturing 5</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops">Ai Incident Response Orchestration Triage Runbooks Chatops</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-8">Proactive Customer Support Ai Predict Issues Before Tickets Open 8</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-2">Ai Customer Journey Analytics From Click To Retention 2</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-2">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 2</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-8">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 8</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-2">It Asset Management Automation Track Hardware Software And Licenses In Real Time 2</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-3">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 3</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-3">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 3</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-5">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 5</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

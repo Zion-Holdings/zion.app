@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-3">Ai Network Detection And Response For Hybrid Infrastructures In 2026 3</Link></li><li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-2">Ai Network Detection And Response For Hybrid Infrastructures In 2026 2</Link></li><li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-3">Business Observability Connect Metrics To Revenue Conversion And Cx 3</Link></li><li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-8">Document Processing Automation Extract Data Invoices Contracts Forms 8</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting">Cloud Cost Governance With Ai Anomaly Detection And Forecasting</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-5">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 5</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-8">Ai Customer Onboarding Automation Reduce Time To Value 8</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-5">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 5</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-2">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 2</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-8">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 8</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-6">Document Processing Automation Extract Data Invoices Contracts Forms 6</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-7">Mlops Pipeline Llms Fine Tuning Production Deployment 7</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-6">Kubernetes Platform Engineering Build Internal Developer Platform K8S 6</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-3">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 3</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-4">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 4</Link></li>
+              <li><Link href="/blog/vcio-advisory-and-it-strategy-services-terra-dygital">Vcio Advisory And It Strategy Services Terra Dygital</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

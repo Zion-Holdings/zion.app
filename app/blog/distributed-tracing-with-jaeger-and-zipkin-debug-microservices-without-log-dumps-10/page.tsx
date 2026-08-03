@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-6">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 6</Link></li><li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-3">Process Mining For Operations Discover Bottlenecks And Automate What Matters 3</Link></li><li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s">Kubernetes Platform Engineering Build Internal Developer Platform K8S</Link></li><li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-10">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 10</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-3">Customer Success Automation Trigger Health Checks Outreach And Product Signals 3</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-10">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 10</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-9">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 9</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-7">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 7</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-9">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 9</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-2">Ai Network Detection And Response For Hybrid Infrastructures In 2026 2</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-3">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 3</Link></li>
+              <li><Link href="/blog/domain-resilience-lessons-from-the-m365-outage">Domain Resilience Lessons From The M365 Outage</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-4">Ai Credential Hygiene And Secret Rotation In Ci Cd 4</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-7">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 7</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-10">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 10</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

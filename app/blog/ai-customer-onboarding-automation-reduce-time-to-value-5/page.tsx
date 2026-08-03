@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-9">Kubernetes Platform Engineering Build Internal Developer Platform K8S 9</Link></li><li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-7">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 7</Link></li><li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support</Link></li><li><Link href="/blog/ai-telecom-automation-guide-for-enterprise-teams-in-2026">Ai Telecom Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-2">Edge Ai Deployment Patterns For Retail And Manufacturing 2</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-3">Ai Credential Hygiene And Secret Rotation In Ci Cd 3</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-4">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 4</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-4">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 4</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-8">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 8</Link></li>
+              <li><Link href="/blog/data-backup-amp-recovery-testing-your-checklist-template">Data Backup Amp Recovery Testing Your Checklist Template</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open">Proactive Customer Support Ai Predict Issues Before Tickets Open</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-3">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 3</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails">Ai Cloud Finops Anomaly Detection And Budget Guardrails</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-9">Quantum Safe Cryptography Prepare Post Quantum Threats Today 9</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-8">Ai Cloud Finops Anomaly Detection And Budget Guardrails 8</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

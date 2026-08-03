@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops">Ai Incident Response Orchestration Triage Runbooks Chatops</Link></li><li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-10">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 10</Link></li><li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-10">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 10</Link></li><li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-7">Ai Credential Hygiene And Secret Rotation In Ci Cd 7</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-10">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 10</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-2">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 2</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-10">Real Time Data Streaming Kafka Flink Event Driven Architecture 10</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-5">It Asset Discovery Automation For Hybrid Cloud Environments 5</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-4">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 4</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters">Process Mining For Operations Discover Bottlenecks And Automate What Matters</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-7">Low Code Automation Platforms Build Internal Tools Without Full Engineering 7</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-5">Invoice Processing Automation From Receipt To Payment With Ai Extraction 5</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-8">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 8</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-5">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 5</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-8">Ai Threat Intelligence Integration For Soc Teams 8</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-2">Ai Credential Hygiene And Secret Rotation In Ci Cd 2</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

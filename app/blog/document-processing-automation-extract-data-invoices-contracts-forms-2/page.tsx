@@ -58,6 +58,18 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops">Ai Incident Response Orchestration Triage Runbooks Chatops</Link></li><li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-6">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 6</Link></li><li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-9">Ai Data Engineering Strategy For Latam Enterprises In 2026 9</Link></li><li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx">Business Observability Connect Metrics To Revenue Conversion And Cx</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-2">Ai Incident Response Orchestration Triage Runbooks Chatops 2</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-9">Invoice Processing Automation From Receipt To Payment With Ai Extraction 9</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-10">Ai Network Detection And Response For Hybrid Infrastructures In 2026 10</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-7">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 7</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-6">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 6</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-5">Invoice Processing Automation From Receipt To Payment With Ai Extraction 5</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-2">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 2</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-5">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 5</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-3">Edge Ai Deployment Patterns For Retail And Manufacturing 3</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms">Document Processing Automation Extract Data Invoices Contracts Forms</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-2">Edge Ai Deployment Patterns For Retail And Manufacturing 2</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-7">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 7</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

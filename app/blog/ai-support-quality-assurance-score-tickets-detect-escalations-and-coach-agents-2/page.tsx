@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-7">Process Mining For Operations Discover Bottlenecks And Automate What Matters 7</Link></li><li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-5">It Financial Management Showback Chargeback And Cloud Cost Allocation 5</Link></li><li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams">Ai Threat Intelligence Integration For Soc Teams</Link></li><li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value">Ai Customer Onboarding Automation Reduce Time To Value</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-3">Invoice Processing Automation From Receipt To Payment With Ai Extraction 3</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-2">Mlops Pipeline Llms Fine Tuning Production Deployment 2</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-5">Ai Credential Hygiene And Secret Rotation In Ci Cd 5</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-4">Ai Data Engineering Strategy For Latam Enterprises In 2026 4</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-10">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 10</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-5">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 5</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-7">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 7</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-8">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 8</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-10">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 10</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-2">Edge Ai Deployment Patterns For Retail And Manufacturing 2</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-4">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 4</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

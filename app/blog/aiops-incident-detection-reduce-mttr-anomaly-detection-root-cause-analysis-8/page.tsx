@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-5">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 5</Link></li><li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-4">Ai Desktop Support Automation For Enterprise It 4</Link></li><li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-3">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 3</Link></li><li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-9">It Financial Management Showback Chargeback And Cloud Cost Allocation 9</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-8">Real Time Data Streaming Kafka Flink Event Driven Architecture 8</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-9">Mlops Pipeline Llms Fine Tuning Production Deployment 9</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation">It Financial Management Showback Chargeback And Cloud Cost Allocation</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-8">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 8</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-9">Low Code Automation Platforms Build Internal Tools Without Full Engineering 9</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-2">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 2</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-6">Document Processing Automation Extract Data Invoices Contracts Forms 6</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-5">Ai Customer Onboarding Automation Reduce Time To Value 5</Link></li>
+              <li><Link href="/blog/databricks-reference-architectures-download">Databricks Reference Architectures Download</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-10">Quantum Safe Cryptography Prepare Post Quantum Threats Today 10</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-6">Low Code Automation Platforms Build Internal Tools Without Full Engineering 6</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-7">Ai Customer Journey Analytics From Click To Retention 7</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-7">It Asset Discovery Automation For Hybrid Cloud Environments 7</Link></li><li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026">Ai Capacity Planning For Saas And Cloud Platforms In 2026</Link></li><li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-8">Proactive Customer Support Ai Predict Issues Before Tickets Open 8</Link></li><li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing">Edge Ai Deployment Patterns For Retail And Manufacturing</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-8">Ai Customer Journey Analytics From Click To Retention 8</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-6">It Asset Management Automation Track Hardware Software And Licenses In Real Time 6</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-6">Ai Cloud Finops Anomaly Detection And Budget Guardrails 6</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-10">Quantum Safe Cryptography Prepare Post Quantum Threats Today 10</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention">Ai Customer Journey Analytics From Click To Retention</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-5">Low Code Automation Platforms Build Internal Tools Without Full Engineering 5</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-6">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 6</Link></li>
+              <li><Link href="/blog/cicd-sec-6-insufficient-credential-hygiene-owasp-foundation">Cicd Sec 6 Insufficient Credential Hygiene Owasp Foundation</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-5">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 5</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-8">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 8</Link></li>
+              <li><Link href="/blog/vcio-advisory-and-it-strategy-services-terra-dygital">Vcio Advisory And It Strategy Services Terra Dygital</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

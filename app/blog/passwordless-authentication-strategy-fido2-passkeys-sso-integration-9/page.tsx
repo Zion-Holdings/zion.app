@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-6">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 6</Link></li><li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes</Link></li><li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-2">Invoice Processing Automation From Receipt To Payment With Ai Extraction 2</Link></li><li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-7">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 7</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-5">Ai Code Review Automation Security Style And Architecture Gates 5</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization">Finops Maturity Model Cloud Cost Visibility To Automated Optimization</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-6">Edge Ai Deployment Patterns For Retail And Manufacturing 6</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-7">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 7</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-5">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 5</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-5">Quantum Safe Cryptography Prepare Post Quantum Threats Today 5</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-5">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 5</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-2">Ai Capacity Planning For Saas And Cloud Platforms In 2026 2</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-10">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 10</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-3">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 3</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-6">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 6</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-6">It Asset Discovery Automation For Hybrid Cloud Environments 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

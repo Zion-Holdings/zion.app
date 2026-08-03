@@ -79,6 +79,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-healthcare-automation-guide-for-enterprise-teams-in-2026">Ai Healthcare Automation Guide For Enterprise Teams In 2026</Link></li>
               <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely">Ai Application Modernization Monolith To Microservices Safely</Link></li>
               <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-5">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 5</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-9">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 9</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-7">Ai Customer Onboarding Automation Reduce Time To Value 7</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-10">Ai Threat Intelligence Integration For Soc Teams 10</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-10">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 10</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-6">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 6</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-5">Ai Data Engineering Strategy For Latam Enterprises In 2026 5</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-9">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 9</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-9">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 9</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-6">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 6</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-6">Customer Success Automation Trigger Health Checks Outreach And Product Signals 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

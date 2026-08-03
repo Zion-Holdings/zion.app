@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-2">Ai Soc Modernization For Mssps In 2026 2</Link></li><li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-9">Ai Threat Intelligence Integration For Soc Teams 9</Link></li><li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-2">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 2</Link></li><li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-6">Edge Ai Deployment Patterns For Retail And Manufacturing 6</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-8">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 8</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-4">Proactive Customer Support Ai Predict Issues Before Tickets Open 4</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-4">Kubernetes Platform Engineering Build Internal Developer Platform K8S 4</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-10">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 10</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-2">Ai Data Engineering Strategy For Latam Enterprises In 2026 2</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-6">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 6</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-9">Ai Data Engineering Strategy For Latam Enterprises In 2026 9</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-9">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 9</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-8">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 8</Link></li>
+              <li><Link href="/blog/show-hn-qgen-turn-documents-into-ai-ready-q-a-datasets-saas-and-on-prem">Show Hn Qgen Turn Documents Into Ai Ready Q A Datasets Saas And On Prem</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-5">Ai Capacity Planning For Saas And Cloud Platforms In 2026 5</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

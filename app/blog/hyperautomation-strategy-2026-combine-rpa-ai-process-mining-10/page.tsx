@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction">Invoice Processing Automation From Receipt To Payment With Ai Extraction</Link></li><li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-7">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 7</Link></li><li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-2">Ai Soc Modernization For Mssps In 2026 2</Link></li><li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-10">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 10</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-4">Document Processing Automation Extract Data Invoices Contracts Forms 4</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-8">Ai Threat Intelligence Integration For Soc Teams 8</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-10">Customer Success Automation Trigger Health Checks Outreach And Product Signals 10</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-5">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 5</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-2">Edge Ai Deployment Patterns For Retail And Manufacturing 2</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms">Document Processing Automation Extract Data Invoices Contracts Forms</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-9">Ai Incident Response Orchestration Triage Runbooks Chatops 9</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-4">Invoice Processing Automation From Receipt To Payment With Ai Extraction 4</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-5">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 5</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-5">Proactive Customer Support Ai Predict Issues Before Tickets Open 5</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd">Ai Credential Hygiene And Secret Rotation In Ci Cd</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

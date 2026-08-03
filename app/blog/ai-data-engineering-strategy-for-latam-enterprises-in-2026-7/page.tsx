@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-9">Ai Threat Intelligence Integration For Soc Teams 9</Link></li><li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-9">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 9</Link></li><li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-9">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 9</Link></li><li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-9">Low Code Automation Platforms Build Internal Tools Without Full Engineering 9</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-9">Ai Soc Modernization For Mssps In 2026 9</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-4">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 4</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-7">Ai Customer Journey Analytics From Click To Retention 7</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-8">Process Mining For Operations Discover Bottlenecks And Automate What Matters 8</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-2">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 2</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-2">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 2</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-10">Ai Threat Intelligence Integration For Soc Teams 10</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-8">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 8</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-8">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 8</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-4">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 4</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-9">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 9</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-10">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 10</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-telecom-automation-guide-for-enterprise-teams-in-2026">Ai Telecom Automation Guide For Enterprise Teams In 2026</Link></li><li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-10">Proactive Customer Support Ai Predict Issues Before Tickets Open 10</Link></li><li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-7">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 7</Link></li><li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization">Finops Maturity Model Cloud Cost Visibility To Automated Optimization</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-10">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 10</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-6">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 6</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-6">Quantum Safe Cryptography Prepare Post Quantum Threats Today 6</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-8">Real Time Data Streaming Kafka Flink Event Driven Architecture 8</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-8">Mlops Pipeline Llms Fine Tuning Production Deployment 8</Link></li>
+              <li><Link href="/blog/finops-for-kubernetes-cost-visibility-in-stateless-architectures">Finops For Kubernetes Cost Visibility In Stateless Architectures</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-6">Ai Customer Onboarding Automation Reduce Time To Value 6</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-10">Invoice Processing Automation From Receipt To Payment With Ai Extraction 10</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-10">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 10</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-2">It Financial Management Showback Chargeback And Cloud Cost Allocation 2</Link></li>
+              <li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-10">Ai Observability Pipeline For Kubernetes And Cloud In 2026 10</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-8">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 8</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

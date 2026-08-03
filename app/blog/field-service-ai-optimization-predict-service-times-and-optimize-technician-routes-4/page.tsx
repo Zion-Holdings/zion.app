@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-9">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 9</Link></li><li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-7">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 7</Link></li><li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining</Link></li><li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-3">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 3</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-4">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 4</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-8">Customer Success Automation Trigger Health Checks Outreach And Product Signals 8</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-2">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 2</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-3">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 3</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-4">Process Mining For Operations Discover Bottlenecks And Automate What Matters 4</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-7">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 7</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails">Ai Cloud Finops Anomaly Detection And Budget Guardrails</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-4">Ai Code Review Automation Security Style And Architecture Gates 4</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-5">Ai Application Modernization Monolith To Microservices Safely 5</Link></li>
+              <li><Link href="/blog/kubernetes-observability-with-opentelemetry">Kubernetes Observability With Opentelemetry</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-2">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 2</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention">Ai Customer Journey Analytics From Click To Retention</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

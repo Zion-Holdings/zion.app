@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-8">Mlops Pipeline Llms Fine Tuning Production Deployment 8</Link></li><li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-8">Customer Success Automation Trigger Health Checks Outreach And Product Signals 8</Link></li><li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-4">Mlops Pipeline Llms Fine Tuning Production Deployment 4</Link></li><li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-2">Ai Code Review Automation Security Style And Architecture Gates 2</Link></li>
+              <li><Link href="/blog/ai-healthcare-automation-guide-for-enterprise-teams-in-2026">Ai Healthcare Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-10">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 10</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-7">It Asset Management Automation Track Hardware Software And Licenses In Real Time 7</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-7">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 7</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-4">Invoice Processing Automation From Receipt To Payment With Ai Extraction 4</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-9">Ai Cloud Finops Anomaly Detection And Budget Guardrails 9</Link></li>
+              <li><Link href="/blog/data-lakehouse-architecture-databricks">Data Lakehouse Architecture Databricks</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-10">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 10</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-2">Ai Capacity Planning For Saas And Cloud Platforms In 2026 2</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-2">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 2</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-5">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 5</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-7">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 7</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-4">Ai Observability Pipeline For Kubernetes And Cloud In 2026 4</Link></li><li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-3">Real Time Data Streaming Kafka Flink Event Driven Architecture 3</Link></li><li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-7">Ai Incident Response Orchestration Triage Runbooks Chatops 7</Link></li><li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-4">Ai Network Detection And Response For Hybrid Infrastructures In 2026 4</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters">Process Mining For Operations Discover Bottlenecks And Automate What Matters</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-3">Business Observability Connect Metrics To Revenue Conversion And Cx 3</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-3">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 3</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-6">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 6</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value">Ai Customer Onboarding Automation Reduce Time To Value</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments">It Asset Discovery Automation For Hybrid Cloud Environments</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-10">Kubernetes Platform Engineering Build Internal Developer Platform K8S 10</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-4">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 4</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-3">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 3</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-2">Real Time Data Streaming Kafka Flink Event Driven Architecture 2</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-5">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 5</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-4">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 4</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

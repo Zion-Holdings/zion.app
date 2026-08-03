@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-6">Document Processing Automation Extract Data Invoices Contracts Forms 6</Link></li><li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-9">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 9</Link></li><li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-8">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 8</Link></li><li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-8">Ai Threat Intelligence Integration For Soc Teams 8</Link></li>
+              <li><Link href="/blog/how-to-choose-an-ai-automation-platform-for-enterprise-it">How To Choose An Ai Automation Platform For Enterprise It</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-9">Ai Customer Onboarding Automation Reduce Time To Value 9</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-8">Business Observability Connect Metrics To Revenue Conversion And Cx 8</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-4">Customer Success Automation Trigger Health Checks Outreach And Product Signals 4</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-5">Ai Data Engineering Strategy For Latam Enterprises In 2026 5</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-6">Quantum Safe Cryptography Prepare Post Quantum Threats Today 6</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-2">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 2</Link></li>
+              <li><Link href="/blog/what-is-disaster-recovery-testing-scenarios-methods-and-best-datto">What Is Disaster Recovery Testing Scenarios Methods And Best Datto</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-10">Real Time Data Streaming Kafka Flink Event Driven Architecture 10</Link></li>
+              <li><Link href="/blog/ai-retail-automation-guide-for-enterprise-teams-in-2026">Ai Retail Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/show-hn-kbai-build-hybrid-ai-with-deterministic-reasoning">Show Hn Kbai Build Hybrid Ai With Deterministic Reasoning</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-8">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 8</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments">It Asset Discovery Automation For Hybrid Cloud Environments</Link></li><li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-10">Edge Ai Deployment Patterns For Retail And Manufacturing 10</Link></li><li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-6">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 6</Link></li><li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today">Quantum Safe Cryptography Prepare Post Quantum Threats Today</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-3">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 3</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-3">Kubernetes Platform Engineering Build Internal Developer Platform K8S 3</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-6">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 6</Link></li>
+              <li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-7">Ai Observability Pipeline For Kubernetes And Cloud In 2026 7</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-9">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 9</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-5">Ai Code Review Automation Security Style And Architecture Gates 5</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-9">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 9</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-4">Process Mining For Operations Discover Bottlenecks And Automate What Matters 4</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-5">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 5</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-10">Customer Success Automation Trigger Health Checks Outreach And Product Signals 10</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-10">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 10</Link></li>
+              <li><Link href="/blog/finops-for-kubernetes-a-practical-cost-optimization-guide">Finops For Kubernetes A Practical Cost Optimization Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

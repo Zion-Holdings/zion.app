@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-5">Ai Data Engineering Strategy For Latam Enterprises In 2026 5</Link></li><li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-3">Real Time Data Streaming Kafka Flink Event Driven Architecture 3</Link></li><li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-10">Ai Data Engineering Strategy For Latam Enterprises In 2026 10</Link></li><li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-2">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 2</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-5">It Asset Management Automation Track Hardware Software And Licenses In Real Time 5</Link></li>
+              <li><Link href="/blog/predictable-ai-roi-in-education">Predictable Ai Roi In Education</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-5">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 5</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-3">Invoice Processing Automation From Receipt To Payment With Ai Extraction 3</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-5">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 5</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing">Edge Ai Deployment Patterns For Retail And Manufacturing</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-7">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 7</Link></li>
+              <li><Link href="/blog/how-to-choose-an-ai-automation-platform-for-enterprise-it">How To Choose An Ai Automation Platform For Enterprise It</Link></li>
+              <li><Link href="/blog/launch-hn-tavus-yc-s21-ai-generated-personalized-videos-for-sales-outreach">Launch Hn Tavus Yc S21 Ai Generated Personalized Videos For Sales Outreach</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-8">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 8</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-4">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 4</Link></li>
+              <li><Link href="/blog/show-hn-qgen-turn-documents-into-ai-ready-q-a-datasets-saas-and-on-prem">Show Hn Qgen Turn Documents Into Ai Ready Q A Datasets Saas And On Prem</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

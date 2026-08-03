@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-8">Edge Ai Deployment Patterns For Retail And Manufacturing 8</Link></li><li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-9">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 9</Link></li><li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value">Ai Customer Onboarding Automation Reduce Time To Value</Link></li><li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-3">Ai Observability Pipeline For Kubernetes And Cloud In 2026 3</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-4">Ai Data Engineering Strategy For Latam Enterprises In 2026 4</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-6">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 6</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-10">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 10</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-8">It Asset Discovery Automation For Hybrid Cloud Environments 8</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026">Ai Network Detection And Response For Hybrid Infrastructures In 2026</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-7">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 7</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026">Ai Capacity Planning For Saas And Cloud Platforms In 2026</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-3">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 3</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-5">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 5</Link></li>
+              <li><Link href="/blog/dns-protection-ddos-defense-for-authoritative-dns-imperva">Dns Protection Ddos Defense For Authoritative Dns Imperva</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-7">Ai Data Engineering Strategy For Latam Enterprises In 2026 7</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-4">Document Processing Automation Extract Data Invoices Contracts Forms 4</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

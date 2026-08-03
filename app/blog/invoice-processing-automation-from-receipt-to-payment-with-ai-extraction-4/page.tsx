@@ -58,6 +58,18 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention">Ai Customer Journey Analytics From Click To Retention</Link></li><li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-3">Kubernetes Platform Engineering Build Internal Developer Platform K8S 3</Link></li><li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-3">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 3</Link></li><li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-5">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 5</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-7">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 7</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-10">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 10</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-9">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 9</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-10">Document Processing Automation Extract Data Invoices Contracts Forms 10</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-10">Kubernetes Platform Engineering Build Internal Developer Platform K8S 10</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-6">Kubernetes Platform Engineering Build Internal Developer Platform K8S 6</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-6">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 6</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-4">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 4</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters">Process Mining For Operations Discover Bottlenecks And Automate What Matters</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-10">Ai Application Modernization Monolith To Microservices Safely 10</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-8">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 8</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-2">Real Time Data Streaming Kafka Flink Event Driven Architecture 2</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

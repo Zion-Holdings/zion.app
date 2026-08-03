@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-9">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 9</Link></li><li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-4">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 4</Link></li><li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-9">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 9</Link></li><li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-9">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 9</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-10">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 10</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-2">Document Processing Automation Extract Data Invoices Contracts Forms 2</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-10">It Financial Management Showback Chargeback And Cloud Cost Allocation 10</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-4">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 4</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-3">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 3</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-6">Ai Soc Modernization For Mssps In 2026 6</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction">Invoice Processing Automation From Receipt To Payment With Ai Extraction</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-7">Ai Data Engineering Strategy For Latam Enterprises In 2026 7</Link></li>
+              <li><Link href="/blog/monitoring-k8s-using-a-combo-of-daemonset-deployment-of-opentelemetry-collector">Monitoring K8S Using A Combo Of Daemonset Deployment Of Opentelemetry Collector</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-6">It Financial Management Showback Chargeback And Cloud Cost Allocation 6</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support</Link></li>
+              <li><Link href="/blog/ai-telecom-automation-guide-for-enterprise-teams-in-2026">Ai Telecom Automation Guide For Enterprise Teams In 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

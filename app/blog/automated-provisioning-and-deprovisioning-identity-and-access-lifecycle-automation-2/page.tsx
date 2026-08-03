@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops">Ai Incident Response Orchestration Triage Runbooks Chatops</Link></li><li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026</Link></li><li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails">Ai Cloud Finops Anomaly Detection And Budget Guardrails</Link></li><li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-3">It Financial Management Showback Chargeback And Cloud Cost Allocation 3</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-5">Ai Data Engineering Strategy For Latam Enterprises In 2026 5</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-7">Ai Customer Journey Analytics From Click To Retention 7</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-7">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 7</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-5">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 5</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering">Low Code Automation Platforms Build Internal Tools Without Full Engineering</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-4">Ai Cloud Finops Anomaly Detection And Budget Guardrails 4</Link></li>
+              <li><Link href="/blog/pdf-smb-pain-points-and-msp-solutions-mirazon-com">Pdf Smb Pain Points And Msp Solutions Mirazon Com</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-10">Ai Capacity Planning For Saas And Cloud Platforms In 2026 10</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-5">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 5</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-7">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 7</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-2">Ai Desktop Support Automation For Enterprise It 2</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

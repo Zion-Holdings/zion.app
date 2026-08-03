@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-7">It Financial Management Showback Chargeback And Cloud Cost Allocation 7</Link></li><li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-2">Ai Soc Modernization For Mssps In 2026 2</Link></li><li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-4">Edge Ai Deployment Patterns For Retail And Manufacturing 4</Link></li><li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-4">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 4</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-8">Ai Soc Modernization For Mssps In 2026 8</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-2">Ai Code Review Automation Security Style And Architecture Gates 2</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-4">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 4</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-2">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 2</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-10">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 10</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-2">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 2</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-9">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 9</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-3">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 3</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-4">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 4</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-10">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 10</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-4">Real Time Data Streaming Kafka Flink Event Driven Architecture 4</Link></li>
+              <li><Link href="/blog/arcadedb-cloud-observability-opentelemetry-tracing-structured-logging-k8s">Arcadedb Cloud Observability Opentelemetry Tracing Structured Logging K8S</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

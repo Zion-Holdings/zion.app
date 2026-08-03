@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-5">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 5</Link></li><li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-7">Document Processing Automation Extract Data Invoices Contracts Forms 7</Link></li><li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-10">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 10</Link></li><li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-4">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 4</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-6">Edge Ai Deployment Patterns For Retail And Manufacturing 6</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-3">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 3</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-2">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 2</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-7">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 7</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-3">Ai Soc Modernization For Mssps In 2026 3</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-8">Ai Data Engineering Strategy For Latam Enterprises In 2026 8</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-10">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 10</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-3">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 3</Link></li>
+              <li><Link href="/blog/show-hn-qgen-turn-documents-into-ai-ready-q-a-datasets-saas-and-on-prem">Show Hn Qgen Turn Documents Into Ai Ready Q A Datasets Saas And On Prem</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-4">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 4</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-6">Quantum Safe Cryptography Prepare Post Quantum Threats Today 6</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-4">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 4</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

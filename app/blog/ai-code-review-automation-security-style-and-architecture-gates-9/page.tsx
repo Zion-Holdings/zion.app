@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-3">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 3</Link></li><li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-8">Ai Cloud Finops Anomaly Detection And Budget Guardrails 8</Link></li><li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-10">Ai Data Engineering Strategy For Latam Enterprises In 2026 10</Link></li><li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-10">It Asset Discovery Automation For Hybrid Cloud Environments 10</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-4">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 4</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-10">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 10</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-9">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 9</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-7">Proactive Customer Support Ai Predict Issues Before Tickets Open 7</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction">Invoice Processing Automation From Receipt To Payment With Ai Extraction</Link></li>
+              <li><Link href="/blog/ecommerce-cac-keeps-rising-so-we-built-evolvoom-io-to-fix-it">Ecommerce Cac Keeps Rising So We Built Evolvoom Io To Fix It</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-6">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 6</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-5">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 5</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-6">Real Time Data Streaming Kafka Flink Event Driven Architecture 6</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-2">Ai Soc Modernization For Mssps In 2026 2</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-8">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 8</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

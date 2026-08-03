@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-3">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 3</Link></li><li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-4">Ai Capacity Planning For Saas And Cloud Platforms In 2026 4</Link></li><li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-5">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 5</Link></li><li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-3">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 3</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-3">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 3</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-9">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 9</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-7">Ai Incident Response Orchestration Triage Runbooks Chatops 7</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-2">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 2</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-9">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 9</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-3">Edge Ai Deployment Patterns For Retail And Manufacturing 3</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-2">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 2</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-10">Ai Incident Response Orchestration Triage Runbooks Chatops 10</Link></li>
+              <li><Link href="/blog/overview-of-dns-security-policy-microsoft-learn">Overview Of Dns Security Policy Microsoft Learn</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-10">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 10</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-8">Ai Application Modernization Monolith To Microservices Safely 8</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-10">It Asset Management Automation Track Hardware Software And Licenses In Real Time 10</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-4">Ai Network Detection And Response For Hybrid Infrastructures In 2026 4</Link></li><li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-7">Ai Observability Pipeline For Kubernetes And Cloud In 2026 7</Link></li><li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-9">Ai Network Detection And Response For Hybrid Infrastructures In 2026 9</Link></li><li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction">Invoice Processing Automation From Receipt To Payment With Ai Extraction</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-4">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 4</Link></li>
+              <li><Link href="/blog/predictable-ai-roi-in-education">Predictable Ai Roi In Education</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation">It Financial Management Showback Chargeback And Cloud Cost Allocation</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-6">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 6</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-10">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 10</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-3">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 3</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-3">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 3</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-3">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 3</Link></li>
+              <li><Link href="/blog/kaseya-x27-s-saas-report-identifies-critical-vulnerabilities-threatening">Kaseya X27 S Saas Report Identifies Critical Vulnerabilities Threatening</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-6">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 6</Link></li>
+              <li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-5">Ai Observability Pipeline For Kubernetes And Cloud In 2026 5</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-2">Invoice Processing Automation From Receipt To Payment With Ai Extraction 2</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

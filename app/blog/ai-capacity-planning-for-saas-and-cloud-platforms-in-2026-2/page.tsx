@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure</Link></li><li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-2">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 2</Link></li><li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-2">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 2</Link></li><li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-8">Invoice Processing Automation From Receipt To Payment With Ai Extraction 8</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-2">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 2</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-6">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 6</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-3">Proactive Customer Support Ai Predict Issues Before Tickets Open 3</Link></li>
+              <li><Link href="/blog/ai-legal-automation-guide-for-enterprise-teams-in-2026">Ai Legal Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-8">Ai Cloud Finops Anomaly Detection And Budget Guardrails 8</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-7">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 7</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-5">Customer Success Automation Trigger Health Checks Outreach And Product Signals 5</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-4">Ai Network Detection And Response For Hybrid Infrastructures In 2026 4</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-9">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 9</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-5">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 5</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

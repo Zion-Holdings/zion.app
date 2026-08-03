@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-4">Real Time Data Streaming Kafka Flink Event Driven Architecture 4</Link></li><li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-4">Ai Customer Journey Analytics From Click To Retention 4</Link></li><li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms">Document Processing Automation Extract Data Invoices Contracts Forms</Link></li><li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it">Ai Desktop Support Automation For Enterprise It</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-5">Ai Cloud Finops Anomaly Detection And Budget Guardrails 5</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-5">Quantum Safe Cryptography Prepare Post Quantum Threats Today 5</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-9">Edge Ai Deployment Patterns For Retail And Manufacturing 9</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-9">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 9</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-2">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 2</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-10">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 10</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-5">Ai Network Detection And Response For Hybrid Infrastructures In 2026 5</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing">Edge Ai Deployment Patterns For Retail And Manufacturing</Link></li>
+              <li><Link href="/blog/finops-for-kubernetes-cost-visibility-in-stateless-architectures">Finops For Kubernetes Cost Visibility In Stateless Architectures</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-4">Business Observability Connect Metrics To Revenue Conversion And Cx 4</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-7">It Financial Management Showback Chargeback And Cloud Cost Allocation 7</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-4">Edge Ai Deployment Patterns For Retail And Manufacturing 4</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

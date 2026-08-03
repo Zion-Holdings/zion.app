@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-7">Ai Credential Hygiene And Secret Rotation In Ci Cd 7</Link></li><li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-3">Ai Observability Pipeline For Kubernetes And Cloud In 2026 3</Link></li><li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-7">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 7</Link></li><li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-5">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 5</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-4">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 4</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-2">Business Observability Connect Metrics To Revenue Conversion And Cx 2</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-2">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 2</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-4">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 4</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-5">Low Code Automation Platforms Build Internal Tools Without Full Engineering 5</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-3">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 3</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-6">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 6</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-3">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 3</Link></li>
+              <li><Link href="/blog/zero-trust-kubernetes-architecture-github">Zero Trust Kubernetes Architecture Github</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-4">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 4</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-2">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 2</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-4">Ai Desktop Support Automation For Enterprise It 4</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

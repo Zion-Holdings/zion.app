@@ -26,7 +26,11 @@ export default function Page() {
         <p>Cloud spend grows faster than usage when cost visibility is weak. Modern FinOps combines tagging, anomaly detection, and automated recommendations to keep growth efficient.</p>
       <h2>Quick wins</h2><ul><li>Enable budgets and anomaly alerts</li><li>Right-size compute and database tiers</li><li>Reserve steady-state capacity</li><li>Remove orphaned storage and snapshots</li></ul>
       <h2>Governance</h2><p>Weekly cost reviews, tagging standards, and accountable team ownership make savings durable.</p>
-      </article>
+                <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+              <Link href="/contact" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
+              <Link href="/services" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Services</Link>
+            </div>
+        </article>
     </PageShell>
   );
 }

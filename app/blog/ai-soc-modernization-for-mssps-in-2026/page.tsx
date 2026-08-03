@@ -79,6 +79,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize</Link></li>
               <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today">Quantum Safe Cryptography Prepare Post Quantum Threats Today</Link></li>
               <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-9">Ai Threat Intelligence Integration For Soc Teams 9</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-8">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 8</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention">Ai Customer Journey Analytics From Click To Retention</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments</Link></li>
+              <li><Link href="/blog/zero-trust-in-kubernetes-principles-architecture-amp-best-practices">Zero Trust In Kubernetes Principles Architecture Amp Best Practices</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-3">Process Mining For Operations Discover Bottlenecks And Automate What Matters 3</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-3">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 3</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-5">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 5</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-7">Ai Application Modernization Monolith To Microservices Safely 7</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-4">Ai Credential Hygiene And Secret Rotation In Ci Cd 4</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-5">Ai Credential Hygiene And Secret Rotation In Ci Cd 5</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-6">It Asset Management Automation Track Hardware Software And Licenses In Real Time 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

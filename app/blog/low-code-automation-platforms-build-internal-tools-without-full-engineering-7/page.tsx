@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-4">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 4</Link></li><li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-8">Ai Customer Journey Analytics From Click To Retention 8</Link></li><li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes</Link></li><li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-10">It Financial Management Showback Chargeback And Cloud Cost Allocation 10</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-6">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 6</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-4">Mlops Pipeline Llms Fine Tuning Production Deployment 4</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-5">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 5</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-6">Real Time Data Streaming Kafka Flink Event Driven Architecture 6</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-8">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 8</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-6">Document Processing Automation Extract Data Invoices Contracts Forms 6</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-2">Quantum Safe Cryptography Prepare Post Quantum Threats Today 2</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-2">Ai Threat Intelligence Integration For Soc Teams 2</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-7">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 7</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-9">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 9</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-4">Customer Success Automation Trigger Health Checks Outreach And Product Signals 4</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-7">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 7</Link></li><li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-2">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 2</Link></li><li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-7">It Financial Management Showback Chargeback And Cloud Cost Allocation 7</Link></li><li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-5">Invoice Processing Automation From Receipt To Payment With Ai Extraction 5</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-3">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 3</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-10">Quantum Safe Cryptography Prepare Post Quantum Threats Today 10</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-6">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 6</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-9">Low Code Automation Platforms Build Internal Tools Without Full Engineering 9</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-6">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 6</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-6">Customer Success Automation Trigger Health Checks Outreach And Product Signals 6</Link></li>
+              <li><Link href="/blog/why-every-smb-needs-an-msp-real-pain-points-and-how-thunder-rock">Why Every Smb Needs An Msp Real Pain Points And How Thunder Rock</Link></li>
+              <li><Link href="/blog/arcadedb-cloud-observability-opentelemetry-tracing-structured-logging-k8s">Arcadedb Cloud Observability Opentelemetry Tracing Structured Logging K8S</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-4">Document Processing Automation Extract Data Invoices Contracts Forms 4</Link></li>
+              <li><Link href="/blog/launch-hn-chamber-yc-w26-an-ai-teammate-for-gpu-infrastructure">Launch Hn Chamber Yc W26 An Ai Teammate For Gpu Infrastructure</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-8">Real Time Data Streaming Kafka Flink Event Driven Architecture 8</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

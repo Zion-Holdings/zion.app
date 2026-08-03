@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-5">Ai Desktop Support Automation For Enterprise It 5</Link></li><li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-5">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 5</Link></li><li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-10">Ai Customer Journey Analytics From Click To Retention 10</Link></li><li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-3">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 3</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-5">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 5</Link></li>
+              <li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-9">Ai Observability Pipeline For Kubernetes And Cloud In 2026 9</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization">Finops Maturity Model Cloud Cost Visibility To Automated Optimization</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-4">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 4</Link></li>
+              <li><Link href="/blog/cloud-cost-optimization-checklist-for-startups-scaling-on-aws">Cloud Cost Optimization Checklist For Startups Scaling On Aws</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-5">Ai Code Review Automation Security Style And Architecture Gates 5</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-8">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 8</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-10">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 10</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-5">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 5</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-6">Document Processing Automation Extract Data Invoices Contracts Forms 6</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-7">Mlops Pipeline Llms Fine Tuning Production Deployment 7</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

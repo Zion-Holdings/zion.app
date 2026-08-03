@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents</Link></li><li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-6">Real Time Data Streaming Kafka Flink Event Driven Architecture 6</Link></li><li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-5">Ai Data Engineering Strategy For Latam Enterprises In 2026 5</Link></li><li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-3">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 3</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-7">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 7</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-7">Ai Desktop Support Automation For Enterprise It 7</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-10">It Asset Discovery Automation For Hybrid Cloud Environments 10</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-5">Ai Code Review Automation Security Style And Architecture Gates 5</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-6">Edge Ai Deployment Patterns For Retail And Manufacturing 6</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-8">Ai Application Modernization Monolith To Microservices Safely 8</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-9">Ai Credential Hygiene And Secret Rotation In Ci Cd 9</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-3">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 3</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-3">Ai Data Engineering Strategy For Latam Enterprises In 2026 3</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-3">Edge Ai Deployment Patterns For Retail And Manufacturing 3</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-9">Document Processing Automation Extract Data Invoices Contracts Forms 9</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

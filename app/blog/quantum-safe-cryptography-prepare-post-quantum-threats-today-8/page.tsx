@@ -58,6 +58,18 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-9">It Asset Management Automation Track Hardware Software And Licenses In Real Time 9</Link></li><li><Link href="/blog/logisticssupplychain-ai-automation-roadmap">Logisticssupplychain Ai Automation Roadmap</Link></li><li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-9">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 9</Link></li><li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-7">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 7</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-3">It Financial Management Showback Chargeback And Cloud Cost Allocation 3</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-6">Ai Desktop Support Automation For Enterprise It 6</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-4">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 4</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-9">Ai Credential Hygiene And Secret Rotation In Ci Cd 9</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-2">Kubernetes Platform Engineering Build Internal Developer Platform K8S 2</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-3">Document Processing Automation Extract Data Invoices Contracts Forms 3</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-7">Kubernetes Platform Engineering Build Internal Developer Platform K8S 7</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-7">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 7</Link></li>
+              <li><Link href="/blog/ai-customer-support-automation-roi-in-90-days">Ai Customer Support Automation Roi In 90 Days</Link></li>
+              <li><Link href="/blog/ai-finance-automation-guide-for-enterprise-teams-in-2026">Ai Finance Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-7">Process Mining For Operations Discover Bottlenecks And Automate What Matters 7</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-4">Edge Ai Deployment Patterns For Retail And Manufacturing 4</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

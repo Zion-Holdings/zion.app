@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-8">Kubernetes Platform Engineering Build Internal Developer Platform K8S 8</Link></li><li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-9">Ai Capacity Planning For Saas And Cloud Platforms In 2026 9</Link></li><li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-3">Ai Network Detection And Response For Hybrid Infrastructures In 2026 3</Link></li><li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-7">Ai Capacity Planning For Saas And Cloud Platforms In 2026 7</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms">Document Processing Automation Extract Data Invoices Contracts Forms</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing">Edge Ai Deployment Patterns For Retail And Manufacturing</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-6">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 6</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-8">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 8</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-6">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 6</Link></li>
+              <li><Link href="/blog/predictable-ai-roi-in-education">Predictable Ai Roi In Education</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-7">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 7</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-3">Kubernetes Platform Engineering Build Internal Developer Platform K8S 3</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-9">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 9</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-7">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 7</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-6">Ai Data Engineering Strategy For Latam Enterprises In 2026 6</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-9">Proactive Customer Support Ai Predict Issues Before Tickets Open 9</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

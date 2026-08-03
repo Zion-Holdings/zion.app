@@ -79,6 +79,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely">Ai Application Modernization Monolith To Microservices Safely</Link></li>
               <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization">Finops Maturity Model Cloud Cost Visibility To Automated Optimization</Link></li>
               <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd">Ai Credential Hygiene And Secret Rotation In Ci Cd</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-3">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 3</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-10">Real Time Data Streaming Kafka Flink Event Driven Architecture 10</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-6">Ai Cloud Finops Anomaly Detection And Budget Guardrails 6</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-8">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 8</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-8">Invoice Processing Automation From Receipt To Payment With Ai Extraction 8</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-4">Edge Ai Deployment Patterns For Retail And Manufacturing 4</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-3">It Financial Management Showback Chargeback And Cloud Cost Allocation 3</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-7">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 7</Link></li>
+              <li><Link href="/blog/predictable-ai-roi-in-education">Predictable Ai Roi In Education</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-3">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 3</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-4">Ai Customer Onboarding Automation Reduce Time To Value 4</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

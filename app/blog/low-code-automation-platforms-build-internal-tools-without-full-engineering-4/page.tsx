@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-6">Ai Soc Modernization For Mssps In 2026 6</Link></li><li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-10">Edge Ai Deployment Patterns For Retail And Manufacturing 10</Link></li><li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-10">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 10</Link></li><li><Link href="/blog/ai-retail-automation-guide-for-enterprise-teams-in-2026">Ai Retail Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-9">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 9</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-6">Ai Customer Onboarding Automation Reduce Time To Value 6</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-2">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 2</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-4">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 4</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-10">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 10</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-8">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 8</Link></li>
+              <li><Link href="/blog/show-hn-imbi-automations">Show Hn Imbi Automations</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026">Ai Data Engineering Strategy For Latam Enterprises In 2026</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-6">Proactive Customer Support Ai Predict Issues Before Tickets Open 6</Link></li>
+              <li><Link href="/blog/finops-for-kubernetes-a-practical-cost-optimization-guide">Finops For Kubernetes A Practical Cost Optimization Guide</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting">Cloud Cost Governance With Ai Anomaly Detection And Forecasting</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-6">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

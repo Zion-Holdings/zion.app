@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-9">Business Observability Connect Metrics To Revenue Conversion And Cx 9</Link></li><li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-8">Ai Customer Journey Analytics From Click To Retention 8</Link></li><li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-9">It Financial Management Showback Chargeback And Cloud Cost Allocation 9</Link></li><li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-7">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 7</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-3">Ai Capacity Planning For Saas And Cloud Platforms In 2026 3</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-4">Ai Capacity Planning For Saas And Cloud Platforms In 2026 4</Link></li>
+              <li><Link href="/blog/ai-hospitality-automation-guide-for-enterprise-teams-in-2026">Ai Hospitality Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-7">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 7</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-4">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 4</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-10">Ai Cloud Finops Anomaly Detection And Budget Guardrails 10</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-10">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 10</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-8">Business Observability Connect Metrics To Revenue Conversion And Cx 8</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-3">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 3</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value">Ai Customer Onboarding Automation Reduce Time To Value</Link></li>
+              <li><Link href="/blog/data-and-ai-governance-databricks-on-aws">Data And Ai Governance Databricks On Aws</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

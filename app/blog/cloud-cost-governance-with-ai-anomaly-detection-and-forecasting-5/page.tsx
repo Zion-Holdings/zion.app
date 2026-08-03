@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-6">Business Observability Connect Metrics To Revenue Conversion And Cx 6</Link></li><li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-10">Customer Success Automation Trigger Health Checks Outreach And Product Signals 10</Link></li><li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time">It Asset Management Automation Track Hardware Software And Licenses In Real Time</Link></li><li><Link href="/blog/predictable-ai-roi-in-education">Predictable Ai Roi In Education</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-2">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 2</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-5">It Asset Discovery Automation For Hybrid Cloud Environments 5</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-4">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 4</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-7">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 7</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-2">Ai Code Review Automation Security Style And Architecture Gates 2</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-3">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 3</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-3">Ai Threat Intelligence Integration For Soc Teams 3</Link></li>
+              <li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-2">Ai Observability Pipeline For Kubernetes And Cloud In 2026 2</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-6">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 6</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-10">Ai Soc Modernization For Mssps In 2026 10</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-2">Ai Customer Onboarding Automation Reduce Time To Value 2</Link></li>
+              <li><Link href="/blog/cloud-cost-optimization-checklist-for-startups-scaling-on-aws">Cloud Cost Optimization Checklist For Startups Scaling On Aws</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

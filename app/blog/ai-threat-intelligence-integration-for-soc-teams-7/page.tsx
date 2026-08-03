@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-8">Proactive Customer Support Ai Predict Issues Before Tickets Open 8</Link></li><li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-2">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 2</Link></li><li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-9">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 9</Link></li><li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-2">Ai Cloud Finops Anomaly Detection And Budget Guardrails 2</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-2">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 2</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-4">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 4</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-7">It Asset Management Automation Track Hardware Software And Licenses In Real Time 7</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-7">Ai Customer Journey Analytics From Click To Retention 7</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-5">Ai Incident Response Orchestration Triage Runbooks Chatops 5</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-2">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 2</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-5">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 5</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-6">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 6</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates">Ai Code Review Automation Security Style And Architecture Gates</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-2">Business Observability Connect Metrics To Revenue Conversion And Cx 2</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-5">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 5</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-7">Proactive Customer Support Ai Predict Issues Before Tickets Open 7</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

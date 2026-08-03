@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps</Link></li><li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-9">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 9</Link></li><li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-2">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 2</Link></li><li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-4">Ai Cloud Finops Anomaly Detection And Budget Guardrails 4</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-5">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 5</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-8">Edge Ai Deployment Patterns For Retail And Manufacturing 8</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time">It Asset Management Automation Track Hardware Software And Licenses In Real Time</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-9">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 9</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-6">It Financial Management Showback Chargeback And Cloud Cost Allocation 6</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-8">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 8</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-10">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 10</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-9">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 9</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-10">Ai Incident Response Orchestration Triage Runbooks Chatops 10</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-7">Ai Incident Response Orchestration Triage Runbooks Chatops 7</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-5">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 5</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-4">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 4</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

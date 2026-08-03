@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-7">Low Code Automation Platforms Build Internal Tools Without Full Engineering 7</Link></li><li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops">Ai Incident Response Orchestration Triage Runbooks Chatops</Link></li><li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-9">It Asset Discovery Automation For Hybrid Cloud Environments 9</Link></li><li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-8">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 8</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-6">Ai Customer Journey Analytics From Click To Retention 6</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-5">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 5</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-2">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 2</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-6">Customer Success Automation Trigger Health Checks Outreach And Product Signals 6</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-3">Ai Data Engineering Strategy For Latam Enterprises In 2026 3</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-8">Document Processing Automation Extract Data Invoices Contracts Forms 8</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-6">Ai Network Detection And Response For Hybrid Infrastructures In 2026 6</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-4">It Asset Discovery Automation For Hybrid Cloud Environments 4</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-4">Quantum Safe Cryptography Prepare Post Quantum Threats Today 4</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-6">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 6</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-5">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 5</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-2">Ai Code Review Automation Security Style And Architecture Gates 2</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

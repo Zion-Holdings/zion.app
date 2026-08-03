@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-7">Ai Threat Intelligence Integration For Soc Teams 7</Link></li><li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-10">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 10</Link></li><li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-10">It Financial Management Showback Chargeback And Cloud Cost Allocation 10</Link></li><li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today">Quantum Safe Cryptography Prepare Post Quantum Threats Today</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-8">Ai Desktop Support Automation For Enterprise It 8</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-9">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 9</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-5">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 5</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-9">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 9</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-4">Ai Cloud Finops Anomaly Detection And Budget Guardrails 4</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-9">Kubernetes Platform Engineering Build Internal Developer Platform K8S 9</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-6">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 6</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-5">Ai Incident Response Orchestration Triage Runbooks Chatops 5</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-4">It Asset Management Automation Track Hardware Software And Licenses In Real Time 4</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-3">It Financial Management Showback Chargeback And Cloud Cost Allocation 3</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-7">Process Mining For Operations Discover Bottlenecks And Automate What Matters 7</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-10">Ai Incident Response Orchestration Triage Runbooks Chatops 10</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

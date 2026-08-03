@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-4">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 4</Link></li><li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-2">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 2</Link></li><li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-10">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 10</Link></li><li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-6">Mlops Pipeline Llms Fine Tuning Production Deployment 6</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-7">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 7</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-2">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 2</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-6">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 6</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-7">Document Processing Automation Extract Data Invoices Contracts Forms 7</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-9">Ai Cloud Finops Anomaly Detection And Budget Guardrails 9</Link></li>
+              <li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-7">Ai Observability Pipeline For Kubernetes And Cloud In 2026 7</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-4">Process Mining For Operations Discover Bottlenecks And Automate What Matters 4</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-7">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 7</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-4">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 4</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-3">It Asset Discovery Automation For Hybrid Cloud Environments 3</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-6">Document Processing Automation Extract Data Invoices Contracts Forms 6</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-3">Quantum Safe Cryptography Prepare Post Quantum Threats Today 3</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

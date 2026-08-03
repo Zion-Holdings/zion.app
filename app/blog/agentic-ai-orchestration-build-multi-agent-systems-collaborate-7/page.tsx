@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps</Link></li><li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-6">Proactive Customer Support Ai Predict Issues Before Tickets Open 6</Link></li><li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-8">Mlops Pipeline Llms Fine Tuning Production Deployment 8</Link></li><li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-6">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 6</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-8">Ai Desktop Support Automation For Enterprise It 8</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-4">Ai Capacity Planning For Saas And Cloud Platforms In 2026 4</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-3">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 3</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-2">Ai Incident Response Orchestration Triage Runbooks Chatops 2</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-6">Ai Data Engineering Strategy For Latam Enterprises In 2026 6</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-4">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 4</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-8">Ai Threat Intelligence Integration For Soc Teams 8</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-2">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 2</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-3">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 3</Link></li>
+              <li><Link href="/blog/disaster-recovery-testing-a-practical-step-by-step-guide">Disaster Recovery Testing A Practical Step By Step Guide</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting">Cloud Cost Governance With Ai Anomaly Detection And Forecasting</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

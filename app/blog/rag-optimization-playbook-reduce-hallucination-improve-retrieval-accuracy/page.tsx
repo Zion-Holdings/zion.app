@@ -79,6 +79,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates">Ai Code Review Automation Security Style And Architecture Gates</Link></li>
               <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation</Link></li>
               <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026">Ai Capacity Planning For Saas And Cloud Platforms In 2026</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-9">Ai Code Review Automation Security Style And Architecture Gates 9</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering">Low Code Automation Platforms Build Internal Tools Without Full Engineering</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-8">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 8</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-8">Document Processing Automation Extract Data Invoices Contracts Forms 8</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-4">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 4</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-4">Quantum Safe Cryptography Prepare Post Quantum Threats Today 4</Link></li>
+              <li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-8">Ai Observability Pipeline For Kubernetes And Cloud In 2026 8</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-2">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 2</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-5">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 5</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-7">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 7</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-6">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

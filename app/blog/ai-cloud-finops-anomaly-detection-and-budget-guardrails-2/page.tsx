@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure</Link></li><li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-9">It Asset Discovery Automation For Hybrid Cloud Environments 9</Link></li><li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-5">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 5</Link></li><li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-9">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 9</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-4">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 4</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-9">Ai Capacity Planning For Saas And Cloud Platforms In 2026 9</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-6">Ai Credential Hygiene And Secret Rotation In Ci Cd 6</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-2">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 2</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-5">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 5</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-8">Ai Customer Onboarding Automation Reduce Time To Value 8</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-8">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 8</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-10">Real Time Data Streaming Kafka Flink Event Driven Architecture 10</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-8">Ai Desktop Support Automation For Enterprise It 8</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-9">Ai Application Modernization Monolith To Microservices Safely 9</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-10">It Asset Management Automation Track Hardware Software And Licenses In Real Time 10</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

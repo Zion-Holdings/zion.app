@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-5">Low Code Automation Platforms Build Internal Tools Without Full Engineering 5</Link></li><li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-5">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 5</Link></li><li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-6">Ai Application Modernization Monolith To Microservices Safely 6</Link></li><li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-3">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 3</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-5">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 5</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-6">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 6</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-5">Process Mining For Operations Discover Bottlenecks And Automate What Matters 5</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-5">Ai Capacity Planning For Saas And Cloud Platforms In 2026 5</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-9">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 9</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-7">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 7</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-4">Ai Desktop Support Automation For Enterprise It 4</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-6">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 6</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-9">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 9</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-9">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 9</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-4">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 4</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-9">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 9</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

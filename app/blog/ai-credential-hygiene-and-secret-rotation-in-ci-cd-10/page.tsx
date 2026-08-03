@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open">Proactive Customer Support Ai Predict Issues Before Tickets Open</Link></li><li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026">Ai Observability Pipeline For Kubernetes And Cloud In 2026</Link></li><li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime</Link></li><li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time">It Asset Management Automation Track Hardware Software And Licenses In Real Time</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-8">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 8</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-8">Proactive Customer Support Ai Predict Issues Before Tickets Open 8</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-7">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 7</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment">Mlops Pipeline Llms Fine Tuning Production Deployment</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-2">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 2</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-5">Business Observability Connect Metrics To Revenue Conversion And Cx 5</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-3">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 3</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-4">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 4</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-3">Process Mining For Operations Discover Bottlenecks And Automate What Matters 3</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-4">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 4</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-9">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 9</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-6">Business Observability Connect Metrics To Revenue Conversion And Cx 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-10">Customer Success Automation Trigger Health Checks Outreach And Product Signals 10</Link></li><li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-6">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 6</Link></li><li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-10">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 10</Link></li><li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-7">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 7</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-10">It Asset Discovery Automation For Hybrid Cloud Environments 10</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-7">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 7</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-5">Ai Network Detection And Response For Hybrid Infrastructures In 2026 5</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-9">Document Processing Automation Extract Data Invoices Contracts Forms 9</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-6">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 6</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-6">Edge Ai Deployment Patterns For Retail And Manufacturing 6</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-2">Real Time Data Streaming Kafka Flink Event Driven Architecture 2</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-2">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 2</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-6">Ai Threat Intelligence Integration For Soc Teams 6</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-6">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 6</Link></li>
+              <li><Link href="/blog/launch-hn-onyx-yc-w24-open-source-chat-ui">Launch Hn Onyx Yc W24 Open Source Chat Ui</Link></li>
+              <li><Link href="/blog/launch-hn-inspectmind-yc-w24-ai-agent-for-reviewing-construction-drawings">Launch Hn Inspectmind Yc W24 Ai Agent For Reviewing Construction Drawings</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

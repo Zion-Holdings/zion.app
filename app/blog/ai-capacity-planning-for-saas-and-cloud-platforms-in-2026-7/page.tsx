@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-9">Ai Cloud Finops Anomaly Detection And Budget Guardrails 9</Link></li><li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-4">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 4</Link></li><li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths">Ai Platform Engineering Patterns Idp Backstage And Golden Paths</Link></li><li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-9">Ai Customer Journey Analytics From Click To Retention 9</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-2">Ai Code Review Automation Security Style And Architecture Gates 2</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-7">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 7</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-8">Ai Code Review Automation Security Style And Architecture Gates 8</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-3">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 3</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-8">Real Time Data Streaming Kafka Flink Event Driven Architecture 8</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-8">Business Observability Connect Metrics To Revenue Conversion And Cx 8</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-4">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 4</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-4">Invoice Processing Automation From Receipt To Payment With Ai Extraction 4</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-6">Ai Code Review Automation Security Style And Architecture Gates 6</Link></li>
+              <li><Link href="/blog/kaseya-x27-s-saas-report-identifies-critical-vulnerabilities-threatening">Kaseya X27 S Saas Report Identifies Critical Vulnerabilities Threatening</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-10">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 10</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-3">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 3</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

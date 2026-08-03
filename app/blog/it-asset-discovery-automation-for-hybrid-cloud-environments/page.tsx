@@ -79,6 +79,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code</Link></li>
               <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026</Link></li>
               <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops">Ai Incident Response Orchestration Triage Runbooks Chatops</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026">Ai Network Detection And Response For Hybrid Infrastructures In 2026</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-2">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 2</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-10">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 10</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-3">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 3</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-3">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 3</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-2">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 2</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-5">It Asset Discovery Automation For Hybrid Cloud Environments 5</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-10">It Asset Discovery Automation For Hybrid Cloud Environments 10</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-9">Ai Cloud Finops Anomaly Detection And Budget Guardrails 9</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-2">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 2</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-8">Ai Customer Onboarding Automation Reduce Time To Value 8</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-9">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 9</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

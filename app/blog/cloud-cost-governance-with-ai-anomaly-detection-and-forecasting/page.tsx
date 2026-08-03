@@ -79,6 +79,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation">It Financial Management Showback Chargeback And Cloud Cost Allocation</Link></li>
               <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals">Customer Success Automation Trigger Health Checks Outreach And Product Signals</Link></li>
               <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate">Agentic Ai Orchestration Build Multi Agent Systems Collaborate</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-10">Ai Soc Modernization For Mssps In 2026 10</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-6">Edge Ai Deployment Patterns For Retail And Manufacturing 6</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-7">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 7</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-2">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 2</Link></li>
+              <li><Link href="/blog/ai-voice-agent-use-cases-for-support-and-sales-in-2026">Ai Voice Agent Use Cases For Support And Sales In 2026</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-10">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 10</Link></li>
+              <li><Link href="/blog/launch-hn-screenpipe-yc-s26-record-how-you-work-and-turn-that-into-agents">Launch Hn Screenpipe Yc S26 Record How You Work And Turn That Into Agents</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-3">Proactive Customer Support Ai Predict Issues Before Tickets Open 3</Link></li>
+              <li><Link href="/blog/launch-hn-tavus-yc-s21-ai-generated-personalized-videos-for-sales-outreach">Launch Hn Tavus Yc S21 Ai Generated Personalized Videos For Sales Outreach</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-3">Ai Customer Onboarding Automation Reduce Time To Value 3</Link></li>
+              <li><Link href="/blog/launch-hn-inspectmind-yc-w24-ai-agent-for-reviewing-construction-drawings">Launch Hn Inspectmind Yc W24 Ai Agent For Reviewing Construction Drawings</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-4">Document Processing Automation Extract Data Invoices Contracts Forms 4</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

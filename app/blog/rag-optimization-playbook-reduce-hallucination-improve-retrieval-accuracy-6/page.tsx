@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-2">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 2</Link></li><li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-6">Ai Threat Intelligence Integration For Soc Teams 6</Link></li><li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-3">Ai Application Modernization Monolith To Microservices Safely 3</Link></li><li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-9">Ai Incident Response Orchestration Triage Runbooks Chatops 9</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-3">Ai Network Detection And Response For Hybrid Infrastructures In 2026 3</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-4">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 4</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-2">Ai Cloud Finops Anomaly Detection And Budget Guardrails 2</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-2">Ai Customer Onboarding Automation Reduce Time To Value 2</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-9">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 9</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-7">Process Mining For Operations Discover Bottlenecks And Automate What Matters 7</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-4">Ai Customer Onboarding Automation Reduce Time To Value 4</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-2">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 2</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-3">Ai Capacity Planning For Saas And Cloud Platforms In 2026 3</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-6">Low Code Automation Platforms Build Internal Tools Without Full Engineering 6</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-6">Ai Customer Onboarding Automation Reduce Time To Value 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-7">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 7</Link></li><li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today">Quantum Safe Cryptography Prepare Post Quantum Threats Today</Link></li><li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-7">Ai Cloud Finops Anomaly Detection And Budget Guardrails 7</Link></li><li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-5">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 5</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-6">Real Time Data Streaming Kafka Flink Event Driven Architecture 6</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-2">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 2</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-8">Invoice Processing Automation From Receipt To Payment With Ai Extraction 8</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-9">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 9</Link></li>
+              <li><Link href="/blog/ai-adoption-roadmap-for-enterprise-it-teams">Ai Adoption Roadmap For Enterprise It Teams</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining</Link></li>
+              <li><Link href="/blog/github-nfroze-zero-trust-kubernetes-architecture">Github Nfroze Zero Trust Kubernetes Architecture</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-3">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 3</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-8">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 8</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-6">Ai Customer Journey Analytics From Click To Retention 6</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-4">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 4</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

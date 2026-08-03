@@ -79,6 +79,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining</Link></li>
               <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes</Link></li>
               <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd">Ai Credential Hygiene And Secret Rotation In Ci Cd</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-4">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 4</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-4">Invoice Processing Automation From Receipt To Payment With Ai Extraction 4</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-4">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 4</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-7">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 7</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-8">Ai Data Engineering Strategy For Latam Enterprises In 2026 8</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-4">Ai Customer Onboarding Automation Reduce Time To Value 4</Link></li>
+              <li><Link href="/blog/launch-hn-relari-yc-w24-identify-the-root-cause-of-problems-in-llm-apps">Launch Hn Relari Yc W24 Identify The Root Cause Of Problems In Llm Apps</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-10">Ai Desktop Support Automation For Enterprise It 10</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-9">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 9</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-6">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 6</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-8">Ai Credential Hygiene And Secret Rotation In Ci Cd 8</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-6">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

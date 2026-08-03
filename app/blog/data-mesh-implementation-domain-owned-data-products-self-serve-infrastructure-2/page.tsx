@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today">Quantum Safe Cryptography Prepare Post Quantum Threats Today</Link></li><li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-8">It Asset Management Automation Track Hardware Software And Licenses In Real Time 8</Link></li><li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026">Ai Observability Pipeline For Kubernetes And Cloud In 2026</Link></li><li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-4">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 4</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-3">Ai Data Engineering Strategy For Latam Enterprises In 2026 3</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-2">Low Code Automation Platforms Build Internal Tools Without Full Engineering 2</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-2">Customer Success Automation Trigger Health Checks Outreach And Product Signals 2</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-3">It Asset Management Automation Track Hardware Software And Licenses In Real Time 3</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment">Mlops Pipeline Llms Fine Tuning Production Deployment</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-6">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 6</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-7">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 7</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-7">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 7</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-7">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 7</Link></li>
+              <li><Link href="/blog/launch-hn-screenpipe-yc-s26-record-how-you-work-and-turn-that-into-agents">Launch Hn Screenpipe Yc S26 Record How You Work And Turn That Into Agents</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-6">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

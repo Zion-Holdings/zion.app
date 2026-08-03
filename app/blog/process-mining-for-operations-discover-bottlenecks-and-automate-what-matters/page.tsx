@@ -79,6 +79,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-finance-automation-guide-for-enterprise-teams-in-2026">Ai Finance Automation Guide For Enterprise Teams In 2026</Link></li>
               <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate">Agentic Ai Orchestration Build Multi Agent Systems Collaborate</Link></li>
               <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time">It Asset Management Automation Track Hardware Software And Licenses In Real Time</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-9">It Asset Management Automation Track Hardware Software And Licenses In Real Time 9</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-2">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 2</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-10">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 10</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-10">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 10</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-9">It Asset Discovery Automation For Hybrid Cloud Environments 9</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-9">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 9</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-4">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 4</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-7">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 7</Link></li>
+              <li><Link href="/blog/cicd-sec-6-insufficient-credential-hygiene-owasp-foundation">Cicd Sec 6 Insufficient Credential Hygiene Owasp Foundation</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-8">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 8</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-6">Real Time Data Streaming Kafka Flink Event Driven Architecture 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

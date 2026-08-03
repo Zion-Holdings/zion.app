@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-6">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 6</Link></li><li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-4">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 4</Link></li><li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting">Cloud Cost Governance With Ai Anomaly Detection And Forecasting</Link></li><li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-2">Kubernetes Platform Engineering Build Internal Developer Platform K8S 2</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-3">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 3</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-9">Kubernetes Platform Engineering Build Internal Developer Platform K8S 9</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-9">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 9</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-3">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 3</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-7">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 7</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-8">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 8</Link></li>
+              <li><Link href="/blog/show-hn-imbi-automations">Show Hn Imbi Automations</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-8">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 8</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-6">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 6</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-3">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 3</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

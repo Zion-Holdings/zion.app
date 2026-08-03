@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere</Link></li><li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026">Ai Network Detection And Response For Hybrid Infrastructures In 2026</Link></li><li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh</Link></li><li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing">Edge Ai Deployment Patterns For Retail And Manufacturing</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-5">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 5</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-6">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 6</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-3">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 3</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-2">Ai Cloud Finops Anomaly Detection And Budget Guardrails 2</Link></li>
+              <li><Link href="/blog/show-hn-openkiwi-knowledge-integration-and-workflow-intelligence">Show Hn Openkiwi Knowledge Integration And Workflow Intelligence</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-7">Low Code Automation Platforms Build Internal Tools Without Full Engineering 7</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-7">Customer Success Automation Trigger Health Checks Outreach And Product Signals 7</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-2">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 2</Link></li>
+              <li><Link href="/blog/show-hn-helixdb-open-source-vector-graph-database-for-ai-applications-rust">Show Hn Helixdb Open Source Vector Graph Database For Ai Applications Rust</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-5">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 5</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-2">Low Code Automation Platforms Build Internal Tools Without Full Engineering 2</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

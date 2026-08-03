@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-7">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 7</Link></li><li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-2">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 2</Link></li><li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy</Link></li><li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters">Process Mining For Operations Discover Bottlenecks And Automate What Matters</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-5">Ai Capacity Planning For Saas And Cloud Platforms In 2026 5</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-7">Ai Credential Hygiene And Secret Rotation In Ci Cd 7</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-6">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 6</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-2">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 2</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-7">Low Code Automation Platforms Build Internal Tools Without Full Engineering 7</Link></li>
+              <li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026">Ai Observability Pipeline For Kubernetes And Cloud In 2026</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-8">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 8</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-9">Ai Cloud Finops Anomaly Detection And Budget Guardrails 9</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-6">Process Mining For Operations Discover Bottlenecks And Automate What Matters 6</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-2">Invoice Processing Automation From Receipt To Payment With Ai Extraction 2</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-7">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 7</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-6">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

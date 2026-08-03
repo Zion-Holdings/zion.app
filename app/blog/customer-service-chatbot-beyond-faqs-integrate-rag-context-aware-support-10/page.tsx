@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-3">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 3</Link></li><li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-2">Kubernetes Platform Engineering Build Internal Developer Platform K8S 2</Link></li><li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-6">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 6</Link></li><li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-3">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 3</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-4">Ai Capacity Planning For Saas And Cloud Platforms In 2026 4</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-2">Ai Cloud Finops Anomaly Detection And Budget Guardrails 2</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-5">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 5</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-4">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 4</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-4">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 4</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-10">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 10</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-2">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 2</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-7">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 7</Link></li>
+              <li><Link href="/blog/cloud-cost-optimization-checklist-for-startups-scaling-on-aws">Cloud Cost Optimization Checklist For Startups Scaling On Aws</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-5">It Asset Discovery Automation For Hybrid Cloud Environments 5</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-2">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 2</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

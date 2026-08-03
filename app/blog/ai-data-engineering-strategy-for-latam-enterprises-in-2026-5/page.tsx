@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-4">Ai Threat Intelligence Integration For Soc Teams 4</Link></li><li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing">Edge Ai Deployment Patterns For Retail And Manufacturing</Link></li><li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026</Link></li><li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026">Ai Soc Modernization For Mssps In 2026</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-3">It Financial Management Showback Chargeback And Cloud Cost Allocation 3</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-5">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 5</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-8">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 8</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-2">Proactive Customer Support Ai Predict Issues Before Tickets Open 2</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-3">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 3</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-5">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 5</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-2">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 2</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-5">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 5</Link></li>
+              <li><Link href="/blog/how-to-verify-your-backups-actually-restore-novabackup">How To Verify Your Backups Actually Restore Novabackup</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-9">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 9</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-7">Business Observability Connect Metrics To Revenue Conversion And Cx 7</Link></li>
+              <li><Link href="/blog/ask-hn-can-no-code-ai-workflow-tools-replace-runbooks">Ask Hn Can No Code Ai Workflow Tools Replace Runbooks</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

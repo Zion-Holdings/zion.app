@@ -58,6 +58,18 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-9">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 9</Link></li><li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-7">Ai Capacity Planning For Saas And Cloud Platforms In 2026 7</Link></li><li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-7">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 7</Link></li><li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-10">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 10</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-6">It Asset Discovery Automation For Hybrid Cloud Environments 6</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis</Link></li>
+              <li><Link href="/blog/logisticssupplychain-ai-automation-roadmap">Logisticssupplychain Ai Automation Roadmap</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-2">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 2</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-8">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 8</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-7">Document Processing Automation Extract Data Invoices Contracts Forms 7</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-5">It Asset Management Automation Track Hardware Software And Licenses In Real Time 5</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-5">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 5</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-2">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 2</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-2">Process Mining For Operations Discover Bottlenecks And Automate What Matters 2</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-10">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 10</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-4">Ai Capacity Planning For Saas And Cloud Platforms In 2026 4</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

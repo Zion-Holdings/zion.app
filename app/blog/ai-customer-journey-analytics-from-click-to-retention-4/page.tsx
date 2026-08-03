@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-9">It Asset Discovery Automation For Hybrid Cloud Environments 9</Link></li><li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-7">It Financial Management Showback Chargeback And Cloud Cost Allocation 7</Link></li><li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-8">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 8</Link></li><li><Link href="/blog/ai-retail-automation-guide-for-enterprise-teams-in-2026">Ai Retail Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-2">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 2</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-2">Low Code Automation Platforms Build Internal Tools Without Full Engineering 2</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-3">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 3</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-7">Invoice Processing Automation From Receipt To Payment With Ai Extraction 7</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-7">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 7</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-4">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 4</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-8">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 8</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-5">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 5</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-9">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 9</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-6">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 6</Link></li>
+              <li><Link href="/blog/show-hn-yobulk-ai-open-source-react-sdk-for-data-cleansing">Show Hn Yobulk Ai Open Source React Sdk For Data Cleansing</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-2">Ai Code Review Automation Security Style And Architecture Gates 2</Link></li><li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-3">Quantum Safe Cryptography Prepare Post Quantum Threats Today 3</Link></li><li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-3">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 3</Link></li><li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-5">Edge Ai Deployment Patterns For Retail And Manufacturing 5</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-6">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 6</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-9">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 9</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-4">Ai Threat Intelligence Integration For Soc Teams 4</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-2">Ai Credential Hygiene And Secret Rotation In Ci Cd 2</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-3">Document Processing Automation Extract Data Invoices Contracts Forms 3</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-3">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 3</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-8">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 8</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-5">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 5</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-2">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 2</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-5">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 5</Link></li>
+              <li><Link href="/blog/the-rise-of-virtual-cios-vcios-and-what-it-means-for-smbs">The Rise Of Virtual Cios Vcios And What It Means For Smbs</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

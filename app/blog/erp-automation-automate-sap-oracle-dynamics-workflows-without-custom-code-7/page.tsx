@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-3">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 3</Link></li><li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-2">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 2</Link></li><li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-7">Customer Success Automation Trigger Health Checks Outreach And Product Signals 7</Link></li><li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-10">Ai Threat Intelligence Integration For Soc Teams 10</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-5">Ai Customer Onboarding Automation Reduce Time To Value 5</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-4">Document Processing Automation Extract Data Invoices Contracts Forms 4</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-4">Proactive Customer Support Ai Predict Issues Before Tickets Open 4</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-2">Ai Threat Intelligence Integration For Soc Teams 2</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-3">Ai Threat Intelligence Integration For Soc Teams 3</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-3">It Financial Management Showback Chargeback And Cloud Cost Allocation 3</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-4">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 4</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-6">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 6</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-5">Ai Credential Hygiene And Secret Rotation In Ci Cd 5</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-7">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 7</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-4">Ai Network Detection And Response For Hybrid Infrastructures In 2026 4</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-10">Ai Soc Modernization For Mssps In 2026 10</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

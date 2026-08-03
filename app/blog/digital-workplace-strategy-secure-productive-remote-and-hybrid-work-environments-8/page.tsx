@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-5">Business Observability Connect Metrics To Revenue Conversion And Cx 5</Link></li><li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value">Ai Customer Onboarding Automation Reduce Time To Value</Link></li><li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-6">Edge Ai Deployment Patterns For Retail And Manufacturing 6</Link></li><li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing">Edge Ai Deployment Patterns For Retail And Manufacturing</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-10">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 10</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-2">Ai Soc Modernization For Mssps In 2026 2</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-8">Customer Success Automation Trigger Health Checks Outreach And Product Signals 8</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-8">It Asset Management Automation Track Hardware Software And Licenses In Real Time 8</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-2">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 2</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-5">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 5</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-2">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 2</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-7">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 7</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-3">Ai Incident Response Orchestration Triage Runbooks Chatops 3</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

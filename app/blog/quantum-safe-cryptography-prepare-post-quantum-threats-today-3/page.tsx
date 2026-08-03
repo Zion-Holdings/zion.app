@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-6">It Asset Management Automation Track Hardware Software And Licenses In Real Time 6</Link></li><li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-9">Ai Observability Pipeline For Kubernetes And Cloud In 2026 9</Link></li><li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-3">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 3</Link></li><li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-6">Ai Incident Response Orchestration Triage Runbooks Chatops 6</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-7">Ai Desktop Support Automation For Enterprise It 7</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-7">Ai Network Detection And Response For Hybrid Infrastructures In 2026 7</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-9">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 9</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-5">Quantum Safe Cryptography Prepare Post Quantum Threats Today 5</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-4">Proactive Customer Support Ai Predict Issues Before Tickets Open 4</Link></li>
+              <li><Link href="/blog/ai-finance-automation-guide-for-enterprise-teams-in-2026">Ai Finance Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-7">Ai Code Review Automation Security Style And Architecture Gates 7</Link></li>
+              <li><Link href="/blog/how-energyutilities-leaders-cut-costs-with-ai">How Energyutilities Leaders Cut Costs With Ai</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-2">Ai Cloud Finops Anomaly Detection And Budget Guardrails 2</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-4">Ai Network Detection And Response For Hybrid Infrastructures In 2026 4</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

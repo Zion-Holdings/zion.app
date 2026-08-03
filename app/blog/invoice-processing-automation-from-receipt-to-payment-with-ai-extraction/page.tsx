@@ -79,6 +79,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails">Ai Cloud Finops Anomaly Detection And Budget Guardrails</Link></li>
               <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops">Ai Incident Response Orchestration Triage Runbooks Chatops</Link></li>
               <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd">Ai Credential Hygiene And Secret Rotation In Ci Cd</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-4">It Asset Management Automation Track Hardware Software And Licenses In Real Time 4</Link></li>
+              <li><Link href="/blog/ai-healthcare-automation-guide-for-enterprise-teams-in-2026">Ai Healthcare Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-9">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 9</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-3">Ai Threat Intelligence Integration For Soc Teams 3</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-10">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 10</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-7">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 7</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-5">Real Time Data Streaming Kafka Flink Event Driven Architecture 5</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments">It Asset Discovery Automation For Hybrid Cloud Environments</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-3">Proactive Customer Support Ai Predict Issues Before Tickets Open 3</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-2">It Financial Management Showback Chargeback And Cloud Cost Allocation 2</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-9">Ai Capacity Planning For Saas And Cloud Platforms In 2026 9</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-6">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

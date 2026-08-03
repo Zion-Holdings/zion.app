@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it">Ai Desktop Support Automation For Enterprise It</Link></li><li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-4">It Asset Discovery Automation For Hybrid Cloud Environments 4</Link></li><li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-8">Document Processing Automation Extract Data Invoices Contracts Forms 8</Link></li><li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-9">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 9</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-8">Invoice Processing Automation From Receipt To Payment With Ai Extraction 8</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-8">Ai Customer Onboarding Automation Reduce Time To Value 8</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-3">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 3</Link></li>
+              <li><Link href="/blog/finops-for-kubernetes-cost-visibility-in-stateless-architectures">Finops For Kubernetes Cost Visibility In Stateless Architectures</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-4">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 4</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-6">Ai Application Modernization Monolith To Microservices Safely 6</Link></li>
+              <li><Link href="/blog/ai-healthcare-automation-guide-for-enterprise-teams-in-2026">Ai Healthcare Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-5">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 5</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-2">Ai Soc Modernization For Mssps In 2026 2</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-7">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 7</Link></li>
+              <li><Link href="/blog/ask-hn-using-ai-llm-apis-makes-me-want-to-give-up-what-am-i-doing-wrong">Ask Hn Using Ai Llm Apis Makes Me Want To Give Up What Am I Doing Wrong</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

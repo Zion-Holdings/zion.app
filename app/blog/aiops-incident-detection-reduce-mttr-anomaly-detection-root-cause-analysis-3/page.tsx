@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-5">Ai Customer Onboarding Automation Reduce Time To Value 5</Link></li><li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation">It Financial Management Showback Chargeback And Cloud Cost Allocation</Link></li><li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention">Ai Customer Journey Analytics From Click To Retention</Link></li><li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-2">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 2</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-7">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 7</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-4">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 4</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-10">Process Mining For Operations Discover Bottlenecks And Automate What Matters 10</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-8">It Asset Discovery Automation For Hybrid Cloud Environments 8</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-3">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 3</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-3">Invoice Processing Automation From Receipt To Payment With Ai Extraction 3</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-2">Ai Customer Onboarding Automation Reduce Time To Value 2</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-4">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 4</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-9">Real Time Data Streaming Kafka Flink Event Driven Architecture 9</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-8">Ai Application Modernization Monolith To Microservices Safely 8</Link></li>
+              <li><Link href="/blog/ai-agents-that-execute-business-workflows-claude-code-for-erp">Ai Agents That Execute Business Workflows Claude Code For Erp</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-7">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 7</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

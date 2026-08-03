@@ -79,6 +79,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture">Real Time Data Streaming Kafka Flink Event Driven Architecture</Link></li>
               <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments</Link></li>
               <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention">Ai Customer Journey Analytics From Click To Retention</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-3">Ai Capacity Planning For Saas And Cloud Platforms In 2026 3</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-6">Ai Application Modernization Monolith To Microservices Safely 6</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-9">It Asset Management Automation Track Hardware Software And Licenses In Real Time 9</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-5">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 5</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-4">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 4</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-4">Ai Credential Hygiene And Secret Rotation In Ci Cd 4</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-4">Ai Data Engineering Strategy For Latam Enterprises In 2026 4</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-4">Ai Threat Intelligence Integration For Soc Teams 4</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-10">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 10</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-8">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 8</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing">Edge Ai Deployment Patterns For Retail And Manufacturing</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-8">Ai Application Modernization Monolith To Microservices Safely 8</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

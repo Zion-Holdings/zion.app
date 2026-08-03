@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-7">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 7</Link></li><li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026">Ai Capacity Planning For Saas And Cloud Platforms In 2026</Link></li><li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026">Ai Data Engineering Strategy For Latam Enterprises In 2026</Link></li><li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026">Ai Network Detection And Response For Hybrid Infrastructures In 2026</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-8">Ai Customer Journey Analytics From Click To Retention 8</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-10">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 10</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-3">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 3</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-4">Ai Incident Response Orchestration Triage Runbooks Chatops 4</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-9">Ai Customer Journey Analytics From Click To Retention 9</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-9">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 9</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-4">Ai Application Modernization Monolith To Microservices Safely 4</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-3">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 3</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-7">Kubernetes Platform Engineering Build Internal Developer Platform K8S 7</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-7">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 7</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-5">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 5</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-2">Ai Cloud Finops Anomaly Detection And Budget Guardrails 2</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

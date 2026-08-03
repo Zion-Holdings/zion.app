@@ -79,6 +79,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd">Ai Credential Hygiene And Secret Rotation In Ci Cd</Link></li>
               <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing">Edge Ai Deployment Patterns For Retail And Manufacturing</Link></li>
               <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates">Ai Code Review Automation Security Style And Architecture Gates</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-4">Invoice Processing Automation From Receipt To Payment With Ai Extraction 4</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-6">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 6</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-6">It Financial Management Showback Chargeback And Cloud Cost Allocation 6</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-5">Ai Network Detection And Response For Hybrid Infrastructures In 2026 5</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-3">Ai Application Modernization Monolith To Microservices Safely 3</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-2">It Asset Discovery Automation For Hybrid Cloud Environments 2</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-4">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 4</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-8">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 8</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-8">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 8</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-7">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 7</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-2">Ai Customer Onboarding Automation Reduce Time To Value 2</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-4">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 4</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks</Link></li><li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-8">It Asset Discovery Automation For Hybrid Cloud Environments 8</Link></li><li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis</Link></li><li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-5">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 5</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-7">It Asset Discovery Automation For Hybrid Cloud Environments 7</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-7">Ai Threat Intelligence Integration For Soc Teams 7</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-10">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 10</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-10">Quantum Safe Cryptography Prepare Post Quantum Threats Today 10</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-5">Mlops Pipeline Llms Fine Tuning Production Deployment 5</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-9">Ai Cloud Finops Anomaly Detection And Budget Guardrails 9</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-5">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 5</Link></li>
+              <li><Link href="/blog/oscar-six-radar-vulnerability-scanner-with-native-a2a-agent-to-agent-support">Oscar Six Radar Vulnerability Scanner With Native A2A Agent To Agent Support</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-8">Proactive Customer Support Ai Predict Issues Before Tickets Open 8</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention">Ai Customer Journey Analytics From Click To Retention</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-2">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 2</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-4">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 4</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-7">It Financial Management Showback Chargeback And Cloud Cost Allocation 7</Link></li><li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-5">Ai Customer Onboarding Automation Reduce Time To Value 5</Link></li><li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access</Link></li><li><Link href="/blog/ai-healthcare-automation-guide-for-enterprise-teams-in-2026">Ai Healthcare Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-4">It Asset Management Automation Track Hardware Software And Licenses In Real Time 4</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms">Document Processing Automation Extract Data Invoices Contracts Forms</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-7">Ai Soc Modernization For Mssps In 2026 7</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-9">Low Code Automation Platforms Build Internal Tools Without Full Engineering 9</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-4">Ai Soc Modernization For Mssps In 2026 4</Link></li>
+              <li><Link href="/blog/ai-hospitality-automation-guide-for-enterprise-teams-in-2026">Ai Hospitality Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-2">Ai Data Engineering Strategy For Latam Enterprises In 2026 2</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-5">Ai Code Review Automation Security Style And Architecture Gates 5</Link></li>
+              <li><Link href="/blog/logisticssupplychain-ai-automation-roadmap">Logisticssupplychain Ai Automation Roadmap</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-7">Mlops Pipeline Llms Fine Tuning Production Deployment 7</Link></li>
+              <li><Link href="/blog/dns-outage-causes-impact-and-prevention-strategies">Dns Outage Causes Impact And Prevention Strategies</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

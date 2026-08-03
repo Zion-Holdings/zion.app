@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure</Link></li><li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026">Ai Capacity Planning For Saas And Cloud Platforms In 2026</Link></li><li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining</Link></li><li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams">Ai Threat Intelligence Integration For Soc Teams</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-6">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 6</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-2">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 2</Link></li>
+              <li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-10">Ai Observability Pipeline For Kubernetes And Cloud In 2026 10</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-8">Ai Data Engineering Strategy For Latam Enterprises In 2026 8</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-2">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 2</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-2">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 2</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention">Ai Customer Journey Analytics From Click To Retention</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-4">Edge Ai Deployment Patterns For Retail And Manufacturing 4</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-2">Edge Ai Deployment Patterns For Retail And Manufacturing 2</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-6">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 6</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-2">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 2</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

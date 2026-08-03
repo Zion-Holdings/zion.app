@@ -1,0 +1,11 @@
+{
+  "ts": "2026-08-03T20:48:13.736115+00:00",
+  "status": "degraded",
+  "details": {
+    "pagesWatchdog": {
+      "stdout": "",
+      "stderr": "File not found: automation/scripts/pages_watchdog.py",
+      "exit_code": 1
+    }
+  }
+}

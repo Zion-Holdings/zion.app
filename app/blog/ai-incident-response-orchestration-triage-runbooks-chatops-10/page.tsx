@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-7">Document Processing Automation Extract Data Invoices Contracts Forms 7</Link></li><li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-3">Ai Soc Modernization For Mssps In 2026 3</Link></li><li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-2">Low Code Automation Platforms Build Internal Tools Without Full Engineering 2</Link></li><li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-4">Ai Customer Journey Analytics From Click To Retention 4</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-7">Ai Customer Journey Analytics From Click To Retention 7</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-9">Process Mining For Operations Discover Bottlenecks And Automate What Matters 9</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-10">Edge Ai Deployment Patterns For Retail And Manufacturing 10</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-8">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 8</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-6">It Asset Management Automation Track Hardware Software And Licenses In Real Time 6</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-3">Ai Customer Journey Analytics From Click To Retention 3</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-9">Ai Incident Response Orchestration Triage Runbooks Chatops 9</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments</Link></li>
+              <li><Link href="/blog/vcio-services-for-smbs-build-a-future-ready-it-strategy">Vcio Services For Smbs Build A Future Ready It Strategy</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-9">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 9</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-2">Edge Ai Deployment Patterns For Retail And Manufacturing 2</Link></li>
+              <li><Link href="/blog/kaseya-x27-s-saas-report-identifies-critical-vulnerabilities-threatening">Kaseya X27 S Saas Report Identifies Critical Vulnerabilities Threatening</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

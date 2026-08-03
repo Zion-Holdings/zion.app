@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access</Link></li><li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-2">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 2</Link></li><li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-10">Ai Code Review Automation Security Style And Architecture Gates 10</Link></li><li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-9">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 9</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-9">It Financial Management Showback Chargeback And Cloud Cost Allocation 9</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-4">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 4</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-4">Real Time Data Streaming Kafka Flink Event Driven Architecture 4</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-5">Process Mining For Operations Discover Bottlenecks And Automate What Matters 5</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-9">Proactive Customer Support Ai Predict Issues Before Tickets Open 9</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-5">Ai Data Engineering Strategy For Latam Enterprises In 2026 5</Link></li>
+              <li><Link href="/blog/zero-trust-kubernetes-architecture-github">Zero Trust Kubernetes Architecture Github</Link></li>
+              <li><Link href="/blog/predictable-ai-roi-in-education">Predictable Ai Roi In Education</Link></li>
+              <li><Link href="/blog/establish-ongoing-credential-rotation-and-hygiene-process">Establish Ongoing Credential Rotation And Hygiene Process</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today">Quantum Safe Cryptography Prepare Post Quantum Threats Today</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-3">It Asset Management Automation Track Hardware Software And Licenses In Real Time 3</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

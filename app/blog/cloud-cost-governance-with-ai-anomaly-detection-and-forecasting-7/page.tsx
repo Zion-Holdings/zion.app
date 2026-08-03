@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-9">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 9</Link></li><li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-6">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 6</Link></li><li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-6">Kubernetes Platform Engineering Build Internal Developer Platform K8S 6</Link></li><li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention">Ai Customer Journey Analytics From Click To Retention</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment">Mlops Pipeline Llms Fine Tuning Production Deployment</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-4">Real Time Data Streaming Kafka Flink Event Driven Architecture 4</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-2">Process Mining For Operations Discover Bottlenecks And Automate What Matters 2</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-4">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 4</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-2">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 2</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-6">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 6</Link></li>
+              <li><Link href="/blog/msp-pain-points-and-solutions-10-proven-best-practices-2026">Msp Pain Points And Solutions 10 Proven Best Practices 2026</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-10">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 10</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-3">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 3</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-8">Customer Success Automation Trigger Health Checks Outreach And Product Signals 8</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-4">Ai Credential Hygiene And Secret Rotation In Ci Cd 4</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-9">Mlops Pipeline Llms Fine Tuning Production Deployment 9</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

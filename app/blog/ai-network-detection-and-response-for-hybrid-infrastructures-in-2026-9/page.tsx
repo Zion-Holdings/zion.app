@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd">Ai Credential Hygiene And Secret Rotation In Ci Cd</Link></li><li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-10">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 10</Link></li><li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-5">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 5</Link></li><li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-6">Ai Soc Modernization For Mssps In 2026 6</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-9">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 9</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-8">Kubernetes Platform Engineering Build Internal Developer Platform K8S 8</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-10">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 10</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-5">It Asset Management Automation Track Hardware Software And Licenses In Real Time 5</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-4">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 4</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture">Real Time Data Streaming Kafka Flink Event Driven Architecture</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-2">Ai Threat Intelligence Integration For Soc Teams 2</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-7">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 7</Link></li>
+              <li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-2">Ai Observability Pipeline For Kubernetes And Cloud In 2026 2</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-9">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 9</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-9">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 9</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-10">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 10</Link></li><li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-4">Ai Desktop Support Automation For Enterprise It 4</Link></li><li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-10">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 10</Link></li><li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026">Ai Network Detection And Response For Hybrid Infrastructures In 2026</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-4">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 4</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-3">Low Code Automation Platforms Build Internal Tools Without Full Engineering 3</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-9">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 9</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-5">It Asset Discovery Automation For Hybrid Cloud Environments 5</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-8">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 8</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-8">Ai Credential Hygiene And Secret Rotation In Ci Cd 8</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-10">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 10</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-3">Edge Ai Deployment Patterns For Retail And Manufacturing 3</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-5">Ai Network Detection And Response For Hybrid Infrastructures In 2026 5</Link></li>
+              <li><Link href="/blog/logisticssupplychain-ai-automation-roadmap">Logisticssupplychain Ai Automation Roadmap</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-5">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 5</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-5">Ai Code Review Automation Security Style And Architecture Gates 5</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

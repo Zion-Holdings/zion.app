@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-5">Ai Data Engineering Strategy For Latam Enterprises In 2026 5</Link></li><li><Link href="/blog/ai-healthcare-automation-guide-for-enterprise-teams-in-2026">Ai Healthcare Automation Guide For Enterprise Teams In 2026</Link></li><li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-9">Ai Customer Journey Analytics From Click To Retention 9</Link></li><li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-2">Ai Cloud Finops Anomaly Detection And Budget Guardrails 2</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-2">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 2</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-3">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 3</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-3">Customer Success Automation Trigger Health Checks Outreach And Product Signals 3</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-9">It Financial Management Showback Chargeback And Cloud Cost Allocation 9</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-8">Ai Customer Journey Analytics From Click To Retention 8</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-7">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 7</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-8">Ai Credential Hygiene And Secret Rotation In Ci Cd 8</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-10">Real Time Data Streaming Kafka Flink Event Driven Architecture 10</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely">Ai Application Modernization Monolith To Microservices Safely</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-10">Ai Capacity Planning For Saas And Cloud Platforms In 2026 10</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-4">Ai Capacity Planning For Saas And Cloud Platforms In 2026 4</Link></li>
+              <li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-5">Ai Observability Pipeline For Kubernetes And Cloud In 2026 5</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

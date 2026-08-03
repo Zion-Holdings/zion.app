@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-10">Ai Credential Hygiene And Secret Rotation In Ci Cd 10</Link></li><li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-6">It Asset Management Automation Track Hardware Software And Licenses In Real Time 6</Link></li><li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-4">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 4</Link></li><li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-2">Ai Customer Journey Analytics From Click To Retention 2</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-6">Ai Data Engineering Strategy For Latam Enterprises In 2026 6</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-8">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 8</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation">It Financial Management Showback Chargeback And Cloud Cost Allocation</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-3">Document Processing Automation Extract Data Invoices Contracts Forms 3</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-7">Proactive Customer Support Ai Predict Issues Before Tickets Open 7</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-5">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 5</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-4">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 4</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-3">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 3</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-6">Customer Success Automation Trigger Health Checks Outreach And Product Signals 6</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-6">Edge Ai Deployment Patterns For Retail And Manufacturing 6</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-10">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 10</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-7">Ai Incident Response Orchestration Triage Runbooks Chatops 7</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

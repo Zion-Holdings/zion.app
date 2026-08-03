@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-7">Document Processing Automation Extract Data Invoices Contracts Forms 7</Link></li><li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents</Link></li><li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-8">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 8</Link></li><li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-8">Ai Customer Journey Analytics From Click To Retention 8</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-6">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 6</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-6">Ai Code Review Automation Security Style And Architecture Gates 6</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-7">Ai Incident Response Orchestration Triage Runbooks Chatops 7</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-8">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 8</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-9">Ai Capacity Planning For Saas And Cloud Platforms In 2026 9</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-2">Ai Threat Intelligence Integration For Soc Teams 2</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-10">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 10</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-3">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 3</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-6">Ai Desktop Support Automation For Enterprise It 6</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-9">Invoice Processing Automation From Receipt To Payment With Ai Extraction 9</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it">Ai Desktop Support Automation For Enterprise It</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-10">Ai Observability Pipeline For Kubernetes And Cloud In 2026 10</Link></li><li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-2">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 2</Link></li><li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-6">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 6</Link></li><li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx">Business Observability Connect Metrics To Revenue Conversion And Cx</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-10">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 10</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-7">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 7</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-7">Ai Incident Response Orchestration Triage Runbooks Chatops 7</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-8">Low Code Automation Platforms Build Internal Tools Without Full Engineering 8</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-8">Ai Capacity Planning For Saas And Cloud Platforms In 2026 8</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-6">It Financial Management Showback Chargeback And Cloud Cost Allocation 6</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-8">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 8</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-6">Ai Cloud Finops Anomaly Detection And Budget Guardrails 6</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-10">Edge Ai Deployment Patterns For Retail And Manufacturing 10</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-7">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 7</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-4">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 4</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-4">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 4</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

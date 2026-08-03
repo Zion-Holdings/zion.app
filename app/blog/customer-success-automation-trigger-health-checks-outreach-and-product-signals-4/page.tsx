@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-7">Ai Incident Response Orchestration Triage Runbooks Chatops 7</Link></li><li><Link href="/blog/ai-hospitality-automation-guide-for-enterprise-teams-in-2026">Ai Hospitality Automation Guide For Enterprise Teams In 2026</Link></li><li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-7">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 7</Link></li><li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-8">Ai Observability Pipeline For Kubernetes And Cloud In 2026 8</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-2">Ai Threat Intelligence Integration For Soc Teams 2</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-2">Quantum Safe Cryptography Prepare Post Quantum Threats Today 2</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-7">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 7</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-8">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 8</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-5">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 5</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-6">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 6</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-3">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 3</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails">Ai Cloud Finops Anomaly Detection And Budget Guardrails</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-7">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 7</Link></li>
+              <li><Link href="/blog/monitoring-k8s-using-a-combo-of-daemonset-deployment-of-opentelemetry-collector">Monitoring K8S Using A Combo Of Daemonset Deployment Of Opentelemetry Collector</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction">Invoice Processing Automation From Receipt To Payment With Ai Extraction</Link></li>
+              <li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-5">Ai Observability Pipeline For Kubernetes And Cloud In 2026 5</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

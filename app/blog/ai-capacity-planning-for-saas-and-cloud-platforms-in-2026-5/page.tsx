@@ -58,6 +58,18 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-2">Process Mining For Operations Discover Bottlenecks And Automate What Matters 2</Link></li><li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-3">Ai Desktop Support Automation For Enterprise It 3</Link></li><li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-10">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 10</Link></li><li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-3">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 3</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-2">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 2</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-4">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 4</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-2">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 2</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention">Ai Customer Journey Analytics From Click To Retention</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-7">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 7</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-4">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 4</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-10">Ai Desktop Support Automation For Enterprise It 10</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-2">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 2</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate">Agentic Ai Orchestration Build Multi Agent Systems Collaborate</Link></li>
+              <li><Link href="/blog/show-hn-1-844-hey-vapi-voice-ai-platform-for-developers">Show Hn 1 844 Hey Vapi Voice Ai Platform For Developers</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-9">Ai Credential Hygiene And Secret Rotation In Ci Cd 9</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-8">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 8</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

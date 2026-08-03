@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access</Link></li><li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-10">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 10</Link></li><li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining</Link></li><li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams">Ai Threat Intelligence Integration For Soc Teams</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-9">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 9</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation">It Financial Management Showback Chargeback And Cloud Cost Allocation</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-9">It Financial Management Showback Chargeback And Cloud Cost Allocation 9</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-5">Ai Credential Hygiene And Secret Rotation In Ci Cd 5</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-7">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 7</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks</Link></li>
+              <li><Link href="/blog/show-hn-imbi-automations">Show Hn Imbi Automations</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-2">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 2</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths">Ai Platform Engineering Patterns Idp Backstage And Golden Paths</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-10">Ai Code Review Automation Security Style And Architecture Gates 10</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-10">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 10</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-9">Ai Capacity Planning For Saas And Cloud Platforms In 2026 9</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-5">Business Observability Connect Metrics To Revenue Conversion And Cx 5</Link></li><li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-7">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 7</Link></li><li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-9">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 9</Link></li><li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-4">Process Mining For Operations Discover Bottlenecks And Automate What Matters 4</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-2">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 2</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-10">Invoice Processing Automation From Receipt To Payment With Ai Extraction 10</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-5">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 5</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-4">Business Observability Connect Metrics To Revenue Conversion And Cx 4</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-4">Ai Threat Intelligence Integration For Soc Teams 4</Link></li>
+              <li><Link href="/blog/finops-for-kubernetes-a-practical-cost-optimization-guide">Finops For Kubernetes A Practical Cost Optimization Guide</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-6">Business Observability Connect Metrics To Revenue Conversion And Cx 6</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths">Ai Platform Engineering Patterns Idp Backstage And Golden Paths</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-5">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 5</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-5">Quantum Safe Cryptography Prepare Post Quantum Threats Today 5</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-5">Invoice Processing Automation From Receipt To Payment With Ai Extraction 5</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-5">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 5</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

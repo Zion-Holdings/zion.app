@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-10">Process Mining For Operations Discover Bottlenecks And Automate What Matters 10</Link></li><li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability</Link></li><li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-6">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 6</Link></li><li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-7">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 7</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time">It Asset Management Automation Track Hardware Software And Licenses In Real Time</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-10">Business Observability Connect Metrics To Revenue Conversion And Cx 10</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-9">It Financial Management Showback Chargeback And Cloud Cost Allocation 9</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-8">Business Observability Connect Metrics To Revenue Conversion And Cx 8</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals">Customer Success Automation Trigger Health Checks Outreach And Product Signals</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-2">Ai Capacity Planning For Saas And Cloud Platforms In 2026 2</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-9">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 9</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-9">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 9</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-5">Ai Soc Modernization For Mssps In 2026 5</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-3">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 3</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-5">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 5</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-9">Ai Desktop Support Automation For Enterprise It 9</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access</Link></li><li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-6">Ai Threat Intelligence Integration For Soc Teams 6</Link></li><li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams">Ai Threat Intelligence Integration For Soc Teams</Link></li><li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-6">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 6</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-7">Ai Threat Intelligence Integration For Soc Teams 7</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-4">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 4</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-9">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 9</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-8">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 8</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-7">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 7</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-3">Process Mining For Operations Discover Bottlenecks And Automate What Matters 3</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-5">Ai Code Review Automation Security Style And Architecture Gates 5</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-4">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 4</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-5">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 5</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops">Ai Incident Response Orchestration Triage Runbooks Chatops</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-2">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 2</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-6">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

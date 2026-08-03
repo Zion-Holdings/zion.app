@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-2">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 2</Link></li><li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-7">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 7</Link></li><li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value">Ai Customer Onboarding Automation Reduce Time To Value</Link></li><li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-7">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 7</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-6">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 6</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-6">Real Time Data Streaming Kafka Flink Event Driven Architecture 6</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx">Business Observability Connect Metrics To Revenue Conversion And Cx</Link></li>
+              <li><Link href="/blog/smb-pain-points-amp-msp-solutions-a-side-by-side-breakdown-free-mirazon">Smb Pain Points Amp Msp Solutions A Side By Side Breakdown Free Mirazon</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-8">Real Time Data Streaming Kafka Flink Event Driven Architecture 8</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-10">Ai Code Review Automation Security Style And Architecture Gates 10</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-8">Customer Success Automation Trigger Health Checks Outreach And Product Signals 8</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-8">Business Observability Connect Metrics To Revenue Conversion And Cx 8</Link></li>
+              <li><Link href="/blog/top-10-best-dns-security-services-2026-buyer-x27-s-guide">Top 10 Best Dns Security Services 2026 Buyer X27 S Guide</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-3">Business Observability Connect Metrics To Revenue Conversion And Cx 3</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-10">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 10</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

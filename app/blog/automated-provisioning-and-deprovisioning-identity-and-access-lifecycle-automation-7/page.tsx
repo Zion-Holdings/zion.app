@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails">Ai Cloud Finops Anomaly Detection And Budget Guardrails</Link></li><li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-3">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 3</Link></li><li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-7">It Financial Management Showback Chargeback And Cloud Cost Allocation 7</Link></li><li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026">Ai Data Engineering Strategy For Latam Enterprises In 2026</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-3">Ai Incident Response Orchestration Triage Runbooks Chatops 3</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-3">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 3</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-10">Process Mining For Operations Discover Bottlenecks And Automate What Matters 10</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-10">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 10</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-7">Low Code Automation Platforms Build Internal Tools Without Full Engineering 7</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-4">Ai Desktop Support Automation For Enterprise It 4</Link></li>
+              <li><Link href="/blog/show-hn-qgen-turn-documents-into-ai-ready-q-a-datasets-saas-and-on-prem">Show Hn Qgen Turn Documents Into Ai Ready Q A Datasets Saas And On Prem</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-6">Ai Customer Journey Analytics From Click To Retention 6</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-3">Customer Success Automation Trigger Health Checks Outreach And Product Signals 3</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-8">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 8</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-6">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

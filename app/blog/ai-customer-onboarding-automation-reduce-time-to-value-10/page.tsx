@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-9">Real Time Data Streaming Kafka Flink Event Driven Architecture 9</Link></li><li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-9">Process Mining For Operations Discover Bottlenecks And Automate What Matters 9</Link></li><li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-10">Ai Observability Pipeline For Kubernetes And Cloud In 2026 10</Link></li><li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-6">Low Code Automation Platforms Build Internal Tools Without Full Engineering 6</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-4">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 4</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-6">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 6</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-2">Ai Credential Hygiene And Secret Rotation In Ci Cd 2</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-10">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 10</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-10">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 10</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-2">Ai Application Modernization Monolith To Microservices Safely 2</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-5">Edge Ai Deployment Patterns For Retail And Manufacturing 5</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-2">Ai Data Engineering Strategy For Latam Enterprises In 2026 2</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-9">It Asset Discovery Automation For Hybrid Cloud Environments 9</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-9">Edge Ai Deployment Patterns For Retail And Manufacturing 9</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-6">Proactive Customer Support Ai Predict Issues Before Tickets Open 6</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-6">Customer Success Automation Trigger Health Checks Outreach And Product Signals 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-6">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 6</Link></li><li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-4">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 4</Link></li><li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-10">Document Processing Automation Extract Data Invoices Contracts Forms 10</Link></li><li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-3">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 3</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-7">Document Processing Automation Extract Data Invoices Contracts Forms 7</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-5">Ai Customer Journey Analytics From Click To Retention 5</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-10">Ai Code Review Automation Security Style And Architecture Gates 10</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-2">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 2</Link></li>
+              <li><Link href="/blog/ai-adoption-roadmap-for-enterprise-it-teams">Ai Adoption Roadmap For Enterprise It Teams</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access</Link></li>
+              <li><Link href="/blog/data-lakehouse-architecture-complete-guide-for-2026">Data Lakehouse Architecture Complete Guide For 2026</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-2">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 2</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-3">Ai Application Modernization Monolith To Microservices Safely 3</Link></li>
+              <li><Link href="/blog/ask-hn-can-no-code-ai-workflow-tools-replace-runbooks">Ask Hn Can No Code Ai Workflow Tools Replace Runbooks</Link></li>
+              <li><Link href="/blog/7-smb-cybersecurity-statistics-for-2026-ninjaone">7 Smb Cybersecurity Statistics For 2026 Ninjaone</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-3">Document Processing Automation Extract Data Invoices Contracts Forms 3</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

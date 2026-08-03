@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction">Invoice Processing Automation From Receipt To Payment With Ai Extraction</Link></li><li><Link href="/blog/ai-telecom-automation-guide-for-enterprise-teams-in-2026">Ai Telecom Automation Guide For Enterprise Teams In 2026</Link></li><li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-7">Document Processing Automation Extract Data Invoices Contracts Forms 7</Link></li><li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails">Ai Cloud Finops Anomaly Detection And Budget Guardrails</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-9">Ai Credential Hygiene And Secret Rotation In Ci Cd 9</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-9">Document Processing Automation Extract Data Invoices Contracts Forms 9</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-5">Ai Customer Onboarding Automation Reduce Time To Value 5</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-3">Edge Ai Deployment Patterns For Retail And Manufacturing 3</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-10">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 10</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-2">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 2</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-10">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 10</Link></li>
+              <li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-5">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 5</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-8">Low Code Automation Platforms Build Internal Tools Without Full Engineering 8</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-3">Kubernetes Platform Engineering Build Internal Developer Platform K8S 3</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-10">It Asset Discovery Automation For Hybrid Cloud Environments 10</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-8">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 8</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

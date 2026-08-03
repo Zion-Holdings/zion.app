@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-9">Mlops Pipeline Llms Fine Tuning Production Deployment 9</Link></li><li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-8">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 8</Link></li><li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-6">Kubernetes Platform Engineering Build Internal Developer Platform K8S 6</Link></li><li><Link href="/blog/predictable-ai-roi-in-education">Predictable Ai Roi In Education</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates">Ai Code Review Automation Security Style And Architecture Gates</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-7">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 7</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-5">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 5</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-7">It Asset Management Automation Track Hardware Software And Licenses In Real Time 7</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-9">Process Mining For Operations Discover Bottlenecks And Automate What Matters 9</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-4">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 4</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-8">Low Code Automation Platforms Build Internal Tools Without Full Engineering 8</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-9">Ai Network Detection And Response For Hybrid Infrastructures In 2026 9</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-6">Ai Cloud Finops Anomaly Detection And Budget Guardrails 6</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-7">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 7</Link></li>
+              <li><Link href="/blog/boosting-kubernetes-container-runtime-observability-with-opentelemetry">Boosting Kubernetes Container Runtime Observability With Opentelemetry</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-6">Ai Desktop Support Automation For Enterprise It 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

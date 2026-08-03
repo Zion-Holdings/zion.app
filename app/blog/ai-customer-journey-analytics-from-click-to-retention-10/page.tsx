@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-3">Document Processing Automation Extract Data Invoices Contracts Forms 3</Link></li><li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026">Ai Soc Modernization For Mssps In 2026</Link></li><li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-6">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 6</Link></li><li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-7">Ai Observability Pipeline For Kubernetes And Cloud In 2026 7</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-8">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 8</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-2">Document Processing Automation Extract Data Invoices Contracts Forms 2</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-5">Ai Capacity Planning For Saas And Cloud Platforms In 2026 5</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-7">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 7</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-3">Ai Threat Intelligence Integration For Soc Teams 3</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-3">Ai Network Detection And Response For Hybrid Infrastructures In 2026 3</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-3">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 3</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-3">Invoice Processing Automation From Receipt To Payment With Ai Extraction 3</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-3">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 3</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-2">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 2</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-8">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 8</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-6">Kubernetes Platform Engineering Build Internal Developer Platform K8S 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

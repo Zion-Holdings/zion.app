@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-10">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 10</Link></li><li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-10">Ai Code Review Automation Security Style And Architecture Gates 10</Link></li><li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-7">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 7</Link></li><li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-8">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 8</Link></li>
+              <li><Link href="/blog/ai-finance-automation-guide-for-enterprise-teams-in-2026">Ai Finance Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-2">Ai Threat Intelligence Integration For Soc Teams 2</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-2">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 2</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-5">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 5</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-7">Customer Success Automation Trigger Health Checks Outreach And Product Signals 7</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-8">It Asset Discovery Automation For Hybrid Cloud Environments 8</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-6">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 6</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-10">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 10</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-7">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 7</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-4">Ai Customer Journey Analytics From Click To Retention 4</Link></li>
+              <li><Link href="/blog/show-hn-fastest-http-cache-and-reverse-proxy-open-source">Show Hn Fastest Http Cache And Reverse Proxy Open Source</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-3">Ai Network Detection And Response For Hybrid Infrastructures In 2026 3</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

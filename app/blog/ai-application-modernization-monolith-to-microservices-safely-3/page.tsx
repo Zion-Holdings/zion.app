@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-2">Ai Cloud Finops Anomaly Detection And Budget Guardrails 2</Link></li><li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-8">Ai Customer Journey Analytics From Click To Retention 8</Link></li><li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code</Link></li><li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-10">Customer Success Automation Trigger Health Checks Outreach And Product Signals 10</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-9">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 9</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-7">Proactive Customer Support Ai Predict Issues Before Tickets Open 7</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-10">Mlops Pipeline Llms Fine Tuning Production Deployment 10</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-3">Business Observability Connect Metrics To Revenue Conversion And Cx 3</Link></li>
+              <li><Link href="/blog/ai-healthcare-automation-guide-for-enterprise-teams-in-2026">Ai Healthcare Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-4">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 4</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-4">Ai Customer Onboarding Automation Reduce Time To Value 4</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-6">Ai Customer Journey Analytics From Click To Retention 6</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-2">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 2</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-3">Process Mining For Operations Discover Bottlenecks And Automate What Matters 3</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-6">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 6</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-9">Ai Desktop Support Automation For Enterprise It 9</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

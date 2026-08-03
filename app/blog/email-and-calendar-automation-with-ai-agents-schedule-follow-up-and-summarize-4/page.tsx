@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-3">Proactive Customer Support Ai Predict Issues Before Tickets Open 3</Link></li><li><Link href="/blog/ai-retail-automation-guide-for-enterprise-teams-in-2026">Ai Retail Automation Guide For Enterprise Teams In 2026</Link></li><li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-2">Ai Soc Modernization For Mssps In 2026 2</Link></li><li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-7">Ai Soc Modernization For Mssps In 2026 7</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-2">Process Mining For Operations Discover Bottlenecks And Automate What Matters 2</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-3">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 3</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-7">Low Code Automation Platforms Build Internal Tools Without Full Engineering 7</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-6">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 6</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-7">Ai Customer Journey Analytics From Click To Retention 7</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-9">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 9</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-4">Business Observability Connect Metrics To Revenue Conversion And Cx 4</Link></li>
+              <li><Link href="/blog/disaster-recovery-testing-a-practical-step-by-step-guide">Disaster Recovery Testing A Practical Step By Step Guide</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-8">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 8</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-7">Mlops Pipeline Llms Fine Tuning Production Deployment 7</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-10">Process Mining For Operations Discover Bottlenecks And Automate What Matters 10</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

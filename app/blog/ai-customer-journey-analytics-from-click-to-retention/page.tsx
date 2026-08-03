@@ -79,6 +79,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals">Customer Success Automation Trigger Health Checks Outreach And Product Signals</Link></li>
               <li><Link href="/blog/ai-manufacturing-automation-guide-for-enterprise-teams-in-20">Ai Manufacturing Automation Guide For Enterprise Teams In 20</Link></li>
               <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026">Ai Capacity Planning For Saas And Cloud Platforms In 2026</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-2">It Asset Discovery Automation For Hybrid Cloud Environments 2</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-9">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 9</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-3">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 3</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-5">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 5</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-8">Ai Incident Response Orchestration Triage Runbooks Chatops 8</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-4">Mlops Pipeline Llms Fine Tuning Production Deployment 4</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-8">Proactive Customer Support Ai Predict Issues Before Tickets Open 8</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-5">Ai Credential Hygiene And Secret Rotation In Ci Cd 5</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026">Ai Soc Modernization For Mssps In 2026</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-7">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 7</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-9">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 9</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

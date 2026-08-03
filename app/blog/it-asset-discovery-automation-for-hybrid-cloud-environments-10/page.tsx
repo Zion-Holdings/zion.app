@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-2">Invoice Processing Automation From Receipt To Payment With Ai Extraction 2</Link></li><li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-10">Process Mining For Operations Discover Bottlenecks And Automate What Matters 10</Link></li><li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate">Agentic Ai Orchestration Build Multi Agent Systems Collaborate</Link></li><li><Link href="/blog/aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis-3">Aiops Incident Detection Reduce Mttr Anomaly Detection Root Cause Analysis 3</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-7">Ai Data Engineering Strategy For Latam Enterprises In 2026 7</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-9">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 9</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-4">It Asset Discovery Automation For Hybrid Cloud Environments 4</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-3">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 3</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-9">Mlops Pipeline Llms Fine Tuning Production Deployment 9</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-6">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 6</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-8">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 8</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-9">Low Code Automation Platforms Build Internal Tools Without Full Engineering 9</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-5">Kubernetes Platform Engineering Build Internal Developer Platform K8S 5</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-9">Ai Credential Hygiene And Secret Rotation In Ci Cd 9</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-8">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 8</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-2">Quantum Safe Cryptography Prepare Post Quantum Threats Today 2</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

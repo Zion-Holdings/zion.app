@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-4">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 4</Link></li><li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-8">It Asset Management Automation Track Hardware Software And Licenses In Real Time 8</Link></li><li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents</Link></li><li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-4">Ai Threat Intelligence Integration For Soc Teams 4</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-5">Ai Threat Intelligence Integration For Soc Teams 5</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates">Ai Code Review Automation Security Style And Architecture Gates</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-2">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 2</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-5">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 5</Link></li>
+              <li><Link href="/blog/data-backup-amp-recovery-testing-your-checklist-template">Data Backup Amp Recovery Testing Your Checklist Template</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-9">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 9</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-4">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 4</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-5">It Financial Management Showback Chargeback And Cloud Cost Allocation 5</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-10">Business Observability Connect Metrics To Revenue Conversion And Cx 10</Link></li>
+              <li><Link href="/blog/ai-telecom-automation-guide-for-enterprise-teams-in-2026">Ai Telecom Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-7">Ai Code Review Automation Security Style And Architecture Gates 7</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

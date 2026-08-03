@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams">Ai Threat Intelligence Integration For Soc Teams</Link></li><li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-9">Proactive Customer Support Ai Predict Issues Before Tickets Open 9</Link></li><li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd">Ai Credential Hygiene And Secret Rotation In Ci Cd</Link></li><li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-6">Real Time Data Streaming Kafka Flink Event Driven Architecture 6</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-8">Ai Code Review Automation Security Style And Architecture Gates 8</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-10">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 10</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-10">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 10</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-2">Mlops Pipeline Llms Fine Tuning Production Deployment 2</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-5">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 5</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-8">Business Observability Connect Metrics To Revenue Conversion And Cx 8</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-5">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 5</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-10">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 10</Link></li>
+              <li><Link href="/blog/ai-retail-automation-guide-for-enterprise-teams-in-2026">Ai Retail Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-6">Kubernetes Platform Engineering Build Internal Developer Platform K8S 6</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-7">Edge Ai Deployment Patterns For Retail And Manufacturing 7</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

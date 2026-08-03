@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-3">Business Observability Connect Metrics To Revenue Conversion And Cx 3</Link></li><li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-10">Customer Success Automation Trigger Health Checks Outreach And Product Signals 10</Link></li><li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-10">Low Code Automation Platforms Build Internal Tools Without Full Engineering 10</Link></li><li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it">Ai Desktop Support Automation For Enterprise It</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-8">Invoice Processing Automation From Receipt To Payment With Ai Extraction 8</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-5">Ai Cloud Finops Anomaly Detection And Budget Guardrails 5</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-10">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 10</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-2">Ai Threat Intelligence Integration For Soc Teams 2</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-10">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 10</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-9">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 9</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-8">Customer Success Automation Trigger Health Checks Outreach And Product Signals 8</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-8">Quantum Safe Cryptography Prepare Post Quantum Threats Today 8</Link></li>
+              <li><Link href="/blog/data-lakehouse-architecture-complete-guide-for-2026">Data Lakehouse Architecture Complete Guide For 2026</Link></li>
+              <li><Link href="/blog/show-hn-fastest-http-cache-and-reverse-proxy-open-source">Show Hn Fastest Http Cache And Reverse Proxy Open Source</Link></li>
+              <li><Link href="/blog/when-vcio-services-for-smbs-make-sense-mpoweredit">When Vcio Services For Smbs Make Sense Mpoweredit</Link></li>
+              <li><Link href="/blog/smb-pain-points-amp-msp-solutions-a-side-by-side-breakdown-free-mirazon">Smb Pain Points Amp Msp Solutions A Side By Side Breakdown Free Mirazon</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-telecom-automation-guide-for-enterprise-teams-in-2026">Ai Telecom Automation Guide For Enterprise Teams In 2026</Link></li><li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation">It Financial Management Showback Chargeback And Cloud Cost Allocation</Link></li><li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-7">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 7</Link></li><li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-4">It Asset Discovery Automation For Hybrid Cloud Environments 4</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-9">Invoice Processing Automation From Receipt To Payment With Ai Extraction 9</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-2">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 2</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-2">Ai Network Detection And Response For Hybrid Infrastructures In 2026 2</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-6">Ai Network Detection And Response For Hybrid Infrastructures In 2026 6</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-4">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 4</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-7">Low Code Automation Platforms Build Internal Tools Without Full Engineering 7</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-8">It Financial Management Showback Chargeback And Cloud Cost Allocation 8</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-9">Ai Desktop Support Automation For Enterprise It 9</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-5">Ai Application Modernization Monolith To Microservices Safely 5</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-10">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 10</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-10">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 10</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-5">Quantum Safe Cryptography Prepare Post Quantum Threats Today 5</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

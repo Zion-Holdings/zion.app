@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-5">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 5</Link></li><li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-2">It Financial Management Showback Chargeback And Cloud Cost Allocation 2</Link></li><li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-3">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 3</Link></li><li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-2">Ai Data Engineering Strategy For Latam Enterprises In 2026 2</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-4">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 4</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops">Ai Incident Response Orchestration Triage Runbooks Chatops</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-8">Ai Application Modernization Monolith To Microservices Safely 8</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-6">Document Processing Automation Extract Data Invoices Contracts Forms 6</Link></li>
+              <li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-10">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 10</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-3">Ai Cloud Finops Anomaly Detection And Budget Guardrails 3</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-5">Ai Customer Onboarding Automation Reduce Time To Value 5</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-4">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 4</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026</Link></li>
+              <li><Link href="/blog/ai-adoption-roadmap-for-enterprise-it-teams">Ai Adoption Roadmap For Enterprise It Teams</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-8">Real Time Data Streaming Kafka Flink Event Driven Architecture 8</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-8">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 8</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

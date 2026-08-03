@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-2">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 2</Link></li><li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-7">Ai Credential Hygiene And Secret Rotation In Ci Cd 7</Link></li><li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026</Link></li><li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-10">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 10</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-4">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 4</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-2">Ai Customer Onboarding Automation Reduce Time To Value 2</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths">Ai Platform Engineering Patterns Idp Backstage And Golden Paths</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-4">Edge Ai Deployment Patterns For Retail And Manufacturing 4</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-4">Ai Cloud Finops Anomaly Detection And Budget Guardrails 4</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-8">Ai Code Review Automation Security Style And Architecture Gates 8</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-10">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 10</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-4">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 4</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-5">It Financial Management Showback Chargeback And Cloud Cost Allocation 5</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-7">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 7</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing">Edge Ai Deployment Patterns For Retail And Manufacturing</Link></li>
+              <li><Link href="/blog/what-is-insufficient-credential-hygiene-palo-alto-networks">What Is Insufficient Credential Hygiene Palo Alto Networks</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

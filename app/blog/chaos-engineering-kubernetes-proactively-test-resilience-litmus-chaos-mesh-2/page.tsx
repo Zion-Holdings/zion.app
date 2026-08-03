@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-7">Business Observability Connect Metrics To Revenue Conversion And Cx 7</Link></li><li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-8">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 8</Link></li><li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-9">Ai Cloud Finops Anomaly Detection And Budget Guardrails 9</Link></li><li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-10">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 10</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-4">Invoice Processing Automation From Receipt To Payment With Ai Extraction 4</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-4">Ai Cloud Finops Anomaly Detection And Budget Guardrails 4</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-3">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 3</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-7">Ai Code Review Automation Security Style And Architecture Gates 7</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-10">Document Processing Automation Extract Data Invoices Contracts Forms 10</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-10">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 10</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-8">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 8</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-9">Customer Success Automation Trigger Health Checks Outreach And Product Signals 9</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-6">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 6</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-10">Process Mining For Operations Discover Bottlenecks And Automate What Matters 10</Link></li>
+              <li><Link href="/blog/devsecops-best-practices-in-azure-ci-cd-pipelines">Devsecops Best Practices In Azure Ci Cd Pipelines</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-9">Ai Network Detection And Response For Hybrid Infrastructures In 2026 9</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

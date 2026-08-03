@@ -58,6 +58,18 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-8">Kubernetes Platform Engineering Build Internal Developer Platform K8S 8</Link></li><li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-9">Mlops Pipeline Llms Fine Tuning Production Deployment 9</Link></li><li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-3">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 3</Link></li><li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-5">Kubernetes Platform Engineering Build Internal Developer Platform K8S 5</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-5">Edge Ai Deployment Patterns For Retail And Manufacturing 5</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026">Ai Network Detection And Response For Hybrid Infrastructures In 2026</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-10">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 10</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability</Link></li>
+              <li><Link href="/blog/pdf-smb-pain-points-and-msp-solutions-mirazon-com">Pdf Smb Pain Points And Msp Solutions Mirazon Com</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-5">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 5</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-2">Ai Network Detection And Response For Hybrid Infrastructures In 2026 2</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-8">Process Mining For Operations Discover Bottlenecks And Automate What Matters 8</Link></li>
+              <li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-7">Ai Customer Onboarding Automation Reduce Time To Value 7</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-9">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 9</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

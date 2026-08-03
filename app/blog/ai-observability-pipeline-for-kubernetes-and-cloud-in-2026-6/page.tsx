@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-7">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 7</Link></li><li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths">Ai Platform Engineering Patterns Idp Backstage And Golden Paths</Link></li><li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-10">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 10</Link></li><li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026">Ai Network Detection And Response For Hybrid Infrastructures In 2026</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-10">Invoice Processing Automation From Receipt To Payment With Ai Extraction 10</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-10">Ai Soc Modernization For Mssps In 2026 10</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-5">Quantum Safe Cryptography Prepare Post Quantum Threats Today 5</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-9">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 9</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-5">Ai Capacity Planning For Saas And Cloud Platforms In 2026 5</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-5">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 5</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-3">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 3</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-7">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 7</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-6">It Asset Management Automation Track Hardware Software And Licenses In Real Time 6</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-4">Ai Incident Response Orchestration Triage Runbooks Chatops 4</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-7">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 7</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-3">Ai Customer Journey Analytics From Click To Retention 3</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

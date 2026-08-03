@@ -55,6 +55,18 @@ If this matches your current initiative, the next step is a short scoping call a
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-7">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 7</Link></li><li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-8">Ai Code Review Automation Security Style And Architecture Gates 8</Link></li><li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-7">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 7</Link></li><li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-9">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 9</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-7">Ai Incident Response Orchestration Triage Runbooks Chatops 7</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-6">Ai Desktop Support Automation For Enterprise It 6</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-10">It Financial Management Showback Chargeback And Cloud Cost Allocation 10</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-4">Ai Cloud Finops Anomaly Detection And Budget Guardrails 4</Link></li>
+              <li><Link href="/blog/launch-hn-onyx-yc-w24-open-source-chat-ui">Launch Hn Onyx Yc W24 Open Source Chat Ui</Link></li>
+              <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-10">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 10</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-9">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 9</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-6">Business Observability Connect Metrics To Revenue Conversion And Cx 6</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-7">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 7</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-2">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 2</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-10">Ai Capacity Planning For Saas And Cloud Platforms In 2026 10</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-3">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 3</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -58,6 +58,18 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support-6">Customer Service Chatbot Beyond Faqs Integrate Rag Context Aware Support 6</Link></li><li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-2">Ai Incident Response Orchestration Triage Runbooks Chatops 2</Link></li><li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-9">Mlops Pipeline Llms Fine Tuning Production Deployment 9</Link></li><li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-10">Invoice Processing Automation From Receipt To Payment With Ai Extraction 10</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-2">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 2</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-8">Ai Customer Journey Analytics From Click To Retention 8</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-3">Proactive Customer Support Ai Predict Issues Before Tickets Open 3</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-10">Ai Data Engineering Strategy For Latam Enterprises In 2026 10</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-3">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 3</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-5">Ai Desktop Support Automation For Enterprise It 5</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-8">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 8</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-7">Ai Code Review Automation Security Style And Architecture Gates 7</Link></li>
+              <li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-3">Business Observability Connect Metrics To Revenue Conversion And Cx 3</Link></li>
+              <li><Link href="/blog/launch-hn-tavus-yc-s21-ai-generated-personalized-videos-for-sales-outreach">Launch Hn Tavus Yc S21 Ai Generated Personalized Videos For Sales Outreach</Link></li>
+              <li><Link href="/blog/disaster-recovery-testing-a-practical-step-by-step-guide">Disaster Recovery Testing A Practical Step By Step Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

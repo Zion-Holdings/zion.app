@@ -79,6 +79,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh</Link></li>
               <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026">Ai Data Engineering Strategy For Latam Enterprises In 2026</Link></li>
               <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-3">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 3</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-3">Real Time Data Streaming Kafka Flink Event Driven Architecture 3</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-3">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 3</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-10">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 10</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-6">Edge Ai Deployment Patterns For Retail And Manufacturing 6</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-2">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 2</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-9">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 9</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-9">Ai Data Engineering Strategy For Latam Enterprises In 2026 9</Link></li>
+              <li><Link href="/blog/the-rise-of-virtual-cios-vcios-and-what-it-means-for-smbs">The Rise Of Virtual Cios Vcios And What It Means For Smbs</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-5">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 5</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-8">Customer Success Automation Trigger Health Checks Outreach And Product Signals 8</Link></li>
+              <li><Link href="/blog/monitoring-k8s-using-a-combo-of-daemonset-deployment-of-opentelemetry-collector">Monitoring K8S Using A Combo Of Daemonset Deployment Of Opentelemetry Collector</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

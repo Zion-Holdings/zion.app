@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-finance-automation-guide-for-enterprise-teams-in-2026">Ai Finance Automation Guide For Enterprise Teams In 2026</Link></li><li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-9">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 9</Link></li><li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-10">Ai Desktop Support Automation For Enterprise It 10</Link></li><li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time">It Asset Management Automation Track Hardware Software And Licenses In Real Time</Link></li>
+              <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-9">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 9</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-8">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 8</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-10">Edge Ai Deployment Patterns For Retail And Manufacturing 10</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-2">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 2</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-8">Real Time Data Streaming Kafka Flink Event Driven Architecture 8</Link></li>
+              <li><Link href="/blog/data-backup-amp-recovery-testing-your-checklist-template">Data Backup Amp Recovery Testing Your Checklist Template</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-3">Mlops Pipeline Llms Fine Tuning Production Deployment 3</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-5">Ai Desktop Support Automation For Enterprise It 5</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-7">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 7</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-3">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 3</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-2">Edge Ai Deployment Patterns For Retail And Manufacturing 2</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-3">Ai Cloud Finops Anomaly Detection And Budget Guardrails 3</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -58,6 +58,18 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026</Link></li><li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-5">Business Observability Connect Metrics To Revenue Conversion And Cx 5</Link></li><li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-6">Edge Ai Deployment Patterns For Retail And Manufacturing 6</Link></li><li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-7">Customer Success Automation Trigger Health Checks Outreach And Product Signals 7</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-2">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 2</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-8">Ai Soc Modernization For Mssps In 2026 8</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-5">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 5</Link></li>
+              <li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-7">It Asset Discovery Automation For Hybrid Cloud Environments 7</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms">Document Processing Automation Extract Data Invoices Contracts Forms</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-5">Document Processing Automation Extract Data Invoices Contracts Forms 5</Link></li>
+              <li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-3">Proactive Customer Support Ai Predict Issues Before Tickets Open 3</Link></li>
+              <li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-6">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 6</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-7">Ai Incident Response Orchestration Triage Runbooks Chatops 7</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-8">Ai Incident Response Orchestration Triage Runbooks Chatops 8</Link></li>
+              <li><Link href="/blog/why-every-smb-needs-an-msp-real-pain-points-and-how-thunder-rock">Why Every Smb Needs An Msp Real Pain Points And How Thunder Rock</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-10">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 10</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

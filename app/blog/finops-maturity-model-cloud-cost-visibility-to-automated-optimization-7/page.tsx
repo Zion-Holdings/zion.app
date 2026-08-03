@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-manufacturing-automation-guide-for-enterprise-teams-in-20">Ai Manufacturing Automation Guide For Enterprise Teams In 20</Link></li><li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture">Real Time Data Streaming Kafka Flink Event Driven Architecture</Link></li><li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-9">Proactive Customer Support Ai Predict Issues Before Tickets Open 9</Link></li><li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-3">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 3</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-5">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 5</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-5">Mlops Pipeline Llms Fine Tuning Production Deployment 5</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-10">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 10</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-5">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 5</Link></li>
+              <li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-3">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 3</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-3">Ai Soc Modernization For Mssps In 2026 3</Link></li>
+              <li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-4">Low Code Automation Platforms Build Internal Tools Without Full Engineering 4</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-7">Real Time Data Streaming Kafka Flink Event Driven Architecture 7</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-9">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 9</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-5">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 5</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-2">Invoice Processing Automation From Receipt To Payment With Ai Extraction 2</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-6">Ai Application Modernization Monolith To Microservices Safely 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

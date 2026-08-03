@@ -58,6 +58,18 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks</Link></li><li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates">Ai Code Review Automation Security Style And Architecture Gates</Link></li><li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-10">Edge Ai Deployment Patterns For Retail And Manufacturing 10</Link></li><li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-7">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 7</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-3">Ai Application Modernization Monolith To Microservices Safely 3</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-10">Ai Customer Journey Analytics From Click To Retention 10</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely">Ai Application Modernization Monolith To Microservices Safely</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-6">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 6</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-2">Customer Success Automation Trigger Health Checks Outreach And Product Signals 2</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-9">Ai Application Modernization Monolith To Microservices Safely 9</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-8">Ai Threat Intelligence Integration For Soc Teams 8</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-4">Ai Credential Hygiene And Secret Rotation In Ci Cd 4</Link></li>
+              <li><Link href="/blog/arcadedb-cloud-observability-opentelemetry-tracing-structured-logging-k8s">Arcadedb Cloud Observability Opentelemetry Tracing Structured Logging K8S</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-9">Quantum Safe Cryptography Prepare Post Quantum Threats Today 9</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-2">Ai Application Modernization Monolith To Microservices Safely 2</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-5">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 5</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

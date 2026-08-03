@@ -79,6 +79,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/ai-legal-automation-guide-for-enterprise-teams-in-2026">Ai Legal Automation Guide For Enterprise Teams In 2026</Link></li>
               <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation">It Financial Management Showback Chargeback And Cloud Cost Allocation</Link></li>
               <li><Link href="/blog/logisticssupplychain-ai-automation-roadmap">Logisticssupplychain Ai Automation Roadmap</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-7">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 7</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-6">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 6</Link></li>
+              <li><Link href="/blog/ai-retail-automation-guide-for-enterprise-teams-in-2026">Ai Retail Automation Guide For Enterprise Teams In 2026</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-4">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 4</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-5">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 5</Link></li>
+              <li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-3">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 3</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops">Ai Incident Response Orchestration Triage Runbooks Chatops</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-2">Quantum Safe Cryptography Prepare Post Quantum Threats Today 2</Link></li>
+              <li><Link href="/blog/boosting-kubernetes-container-runtime-observability-with-opentelemetry">Boosting Kubernetes Container Runtime Observability With Opentelemetry</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-4">Ai Incident Response Orchestration Triage Runbooks Chatops 4</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-6">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 6</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-10">Ai Network Detection And Response For Hybrid Infrastructures In 2026 10</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

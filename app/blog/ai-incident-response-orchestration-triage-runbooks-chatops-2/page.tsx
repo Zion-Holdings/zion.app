@@ -58,6 +58,18 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-7">Ai Network Detection And Response For Hybrid Infrastructures In 2026 7</Link></li><li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-5">Ai Desktop Support Automation For Enterprise It 5</Link></li><li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-6">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 6</Link></li><li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-9">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 9</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-10">Ai Desktop Support Automation For Enterprise It 10</Link></li>
+              <li><Link href="/blog/quantum-safe-cryptography-prepare-post-quantum-threats-today-10">Quantum Safe Cryptography Prepare Post Quantum Threats Today 10</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-8">Ai Capacity Planning For Saas And Cloud Platforms In 2026 8</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-3">It Asset Management Automation Track Hardware Software And Licenses In Real Time 3</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-9">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 9</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-3">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 3</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-8">Ai Application Modernization Monolith To Microservices Safely 8</Link></li>
+              <li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-8">Invoice Processing Automation From Receipt To Payment With Ai Extraction 8</Link></li>
+              <li><Link href="/blog/vcio-advisory-and-it-strategy-services-terra-dygital">Vcio Advisory And It Strategy Services Terra Dygital</Link></li>
+              <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents</Link></li>
+              <li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-8">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 8</Link></li>
+              <li><Link href="/blog/show-hn-crazy-lessons-from-6-months-of-building-extradock">Show Hn Crazy Lessons From 6 Months Of Building Extradock</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

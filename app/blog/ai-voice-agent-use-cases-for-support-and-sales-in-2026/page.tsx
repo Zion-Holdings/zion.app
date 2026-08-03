@@ -26,7 +26,11 @@ export default function Page() {
         <p>AI adoption is accelerating across enterprises, but most programs stall without clear ownership, guardrails, and measurable outcomes.</p>
       <h2>What works</h2><ul><li>Start with low-risk, high-value workflows</li><li>Use production data, not demos</li><li>Create operator runbooks and escalation paths</li><li>Review model behavior weekly</li></ul>
       <h2>Outcome</h2><p>With strong governance, AI moves from experiment to reliable operating layer.</p>
-      </article>
+                <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+              <Link href="/contact" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
+              <Link href="/services" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Services</Link>
+            </div>
+        </article>
     </PageShell>
   );
 }

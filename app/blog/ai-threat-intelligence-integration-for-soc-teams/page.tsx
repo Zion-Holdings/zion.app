@@ -79,6 +79,18 @@ Buyers are evaluating vendors around measurable outcomes, not feature lists. Thi
               <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining</Link></li>
               <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops">Ai Incident Response Orchestration Triage Runbooks Chatops</Link></li>
               <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting">Cloud Cost Governance With Ai Anomaly Detection And Forecasting</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-5">Real Time Data Streaming Kafka Flink Event Driven Architecture 5</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-5">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 5</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-7">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 7</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-7">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 7</Link></li>
+              <li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-9">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 9</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-4">Ai Customer Journey Analytics From Click To Retention 4</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-2">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 2</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-6">Ai Threat Intelligence Integration For Soc Teams 6</Link></li>
+              <li><Link href="/blog/show-hn-openkiwi-knowledge-integration-and-workflow-intelligence">Show Hn Openkiwi Knowledge Integration And Workflow Intelligence</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-4">Edge Ai Deployment Patterns For Retail And Manufacturing 4</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments</Link></li>
+              <li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-10">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 10</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

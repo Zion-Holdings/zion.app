@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-6">Ai Soc Modernization For Mssps In 2026 6</Link></li><li><Link href="/blog/chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh-4">Chaos Engineering Kubernetes Proactively Test Resilience Litmus Chaos Mesh 4</Link></li><li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-9">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 9</Link></li><li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-7">Ai Credential Hygiene And Secret Rotation In Ci Cd 7</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-3">Ai Incident Response Orchestration Triage Runbooks Chatops 3</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-9">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 9</Link></li>
+              <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-4">Document Processing Automation Extract Data Invoices Contracts Forms 4</Link></li>
+              <li><Link href="/blog/top-smb-pain-points-solved-by-managed-service-provider-msp-solutions">Top Smb Pain Points Solved By Managed Service Provider Msp Solutions</Link></li>
+              <li><Link href="/blog/ai-credential-hygiene-and-secret-rotation-in-ci-cd-2">Ai Credential Hygiene And Secret Rotation In Ci Cd 2</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-10">Ai Soc Modernization For Mssps In 2026 10</Link></li>
+              <li><Link href="/blog/show-hn-qgen-turn-documents-into-ai-ready-q-a-datasets-saas-and-on-prem">Show Hn Qgen Turn Documents Into Ai Ready Q A Datasets Saas And On Prem</Link></li>
+              <li><Link href="/blog/ai-code-review-automation-security-style-and-architecture-gates-3">Ai Code Review Automation Security Style And Architecture Gates 3</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization">Finops Maturity Model Cloud Cost Visibility To Automated Optimization</Link></li>
+              <li><Link href="/blog/cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime-6">Cnapp Strategy 2026 Cloud Native Application Protection Code To Runtime 6</Link></li>
+              <li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-5">It Financial Management Showback Chargeback And Cloud Cost Allocation 5</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

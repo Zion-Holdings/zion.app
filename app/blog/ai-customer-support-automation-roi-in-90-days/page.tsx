@@ -28,7 +28,11 @@ export default function Page() {
       <ul><li>Pick one high-volume, repetitive workflow</li><li>Define success metrics before deploying</li><li>Add human escalation rules from day one</li><li>Measure weekly and tune prompts or routing</li></ul>
       <h2>Common pitfalls</h2><p>Automation without governance creates noise. Avoid broad rollout before proving containment quality and escalation accuracy.</p>
       <h2>Next step</h2><p>Start with a scoped pilot, validate ROI in 30 days, and scale what works.</p>
-      </article>
+                <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+              <Link href="/contact" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
+              <Link href="/services" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Services</Link>
+            </div>
+        </article>
     </PageShell>
   );
 }

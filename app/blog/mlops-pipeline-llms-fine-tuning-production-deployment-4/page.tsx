@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-5">Ai Data Engineering Strategy For Latam Enterprises In 2026 5</Link></li><li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-10">Proactive Customer Support Ai Predict Issues Before Tickets Open 10</Link></li><li><Link href="/blog/low-code-automation-platforms-build-internal-tools-without-full-engineering-4">Low Code Automation Platforms Build Internal Tools Without Full Engineering 4</Link></li><li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-8">Mlops Pipeline Llms Fine Tuning Production Deployment 8</Link></li>
+              <li><Link href="/blog/ai-threat-intelligence-integration-for-soc-teams-5">Ai Threat Intelligence Integration For Soc Teams 5</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-10">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 10</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-3">Kubernetes Platform Engineering Build Internal Developer Platform K8S 3</Link></li>
+              <li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-6">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 6</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-6">Ai Data Engineering Strategy For Latam Enterprises In 2026 6</Link></li>
+              <li><Link href="/blog/zero-trust-in-kubernetes-principles-architecture-amp-best-practices">Zero Trust In Kubernetes Principles Architecture Amp Best Practices</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-7">Ai Desktop Support Automation For Enterprise It 7</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-6">It Asset Management Automation Track Hardware Software And Licenses In Real Time 6</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-3">Ai Capacity Planning For Saas And Cloud Platforms In 2026 3</Link></li>
+              <li><Link href="/blog/finops-maturity-model-cloud-cost-visibility-to-automated-optimization-4">Finops Maturity Model Cloud Cost Visibility To Automated Optimization 4</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting">Cloud Cost Governance With Ai Anomaly Detection And Forecasting</Link></li>
+              <li><Link href="/blog/mlops-pipeline-llms-fine-tuning-production-deployment-6">Mlops Pipeline Llms Fine Tuning Production Deployment 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -58,6 +58,18 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-6">Edge Ai Deployment Patterns For Retail And Manufacturing 6</Link></li><li><Link href="/blog/proactive-customer-support-ai-predict-issues-before-tickets-open-6">Proactive Customer Support Ai Predict Issues Before Tickets Open 6</Link></li><li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-6">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 6</Link></li><li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-9">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 9</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-4">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 4</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-4">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 4</Link></li>
+              <li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-10">Ai Customer Journey Analytics From Click To Retention 10</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-7">Ai Cloud Finops Anomaly Detection And Budget Guardrails 7</Link></li>
+              <li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-2">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 2</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-8">Ai Application Modernization Monolith To Microservices Safely 8</Link></li>
+              <li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-5">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 5</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-4">Real Time Data Streaming Kafka Flink Event Driven Architecture 4</Link></li>
+              <li><Link href="/blog/data-and-ai-governance-databricks-on-aws">Data And Ai Governance Databricks On Aws</Link></li>
+              <li><Link href="/blog/top-10-best-dns-security-services-2026-buyer-x27-s-guide">Top 10 Best Dns Security Services 2026 Buyer X27 S Guide</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-10">Ai Network Detection And Response For Hybrid Infrastructures In 2026 10</Link></li>
+              <li><Link href="/blog/ai-agents-that-execute-business-workflows-claude-code-for-erp">Ai Agents That Execute Business Workflows Claude Code For Erp</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -410,5 +410,661 @@
     "intent": "solution",
     "slug": "proactive-customer-support-ai-predict-issues-before-tickets-open",
     "title": "Proactive Customer Support with AI: Predict Issues Before Tickets Open"
+  },
+  {
+    "title": "Show HN: OpenKIWI (Knowledge Integration and Workflow Intelligence)",
+    "slug": "show-hn-openkiwi-knowledge-integration-and-workflow-intelligence",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Show HN: Imbi-Automations",
+    "slug": "show-hn-imbi-automations",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "ECommerce – CAC keeps rising, so we built Evolvoom.io to fix it",
+    "slug": "ecommerce-cac-keeps-rising-so-we-built-evolvoom-io-to-fix-it",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "AI Orchestration Market Witnesses Surge in Use Across Healthcare and BFSI",
+    "slug": "ai-orchestration-market-witnesses-surge-in-use-across-healthcare-and-bfsi",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Show HN: 1-844-HEY-VAPI – voice AI platform for developers",
+    "slug": "show-hn-1-844-hey-vapi-voice-ai-platform-for-developers",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Ask HN: Using AI/LLM APIs makes me want to give up. What am I doing wrong?",
+    "slug": "ask-hn-using-ai-llm-apis-makes-me-want-to-give-up-what-am-i-doing-wrong",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Show HN: DeepReel – AI Video Agent that turns blogs/docs into polished videos",
+    "slug": "show-hn-deepreel-ai-video-agent-that-turns-blogs-docs-into-polished-videos",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "The Evolution of CLM Software: Tracing the Transformative Journey",
+    "slug": "the-evolution-of-clm-software-tracing-the-transformative-journey",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Launch HN: Screenpipe (YC S26) – Record how you work and turn that into agents",
+    "slug": "launch-hn-screenpipe-yc-s26-record-how-you-work-and-turn-that-into-agents",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "PDF SMB Pain Points and MSP Solutions - mirazon.com",
+    "slug": "pdf-smb-pain-points-and-msp-solutions-mirazon-com",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "SMB Pain Points &amp; MSP Solutions: A Side-by-Side Breakdown, Free Mirazon ...",
+    "slug": "smb-pain-points-amp-msp-solutions-a-side-by-side-breakdown-free-mirazon",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "MSP Pain Points and Solutions: 10 Proven Best Practices (2026)",
+    "slug": "msp-pain-points-and-solutions-10-proven-best-practices-2026",
+    "cluster": "ai",
+    "intent": "guide",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Top SMB Pain Points Solved by Managed Service Provider (MSP) Solutions",
+    "slug": "top-smb-pain-points-solved-by-managed-service-provider-msp-solutions",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Why Every SMB Needs an MSP: Real Pain Points (and How Thunder Rock ...",
+    "slug": "why-every-smb-needs-an-msp-real-pain-points-and-how-thunder-rock",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Kaseya&#x27;s SaaS report identifies critical vulnerabilities threatening ...",
+    "slug": "kaseya-x27-s-saas-report-identifies-critical-vulnerabilities-threatening",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "FinOps for Kubernetes: Cost Visibility in Stateless Architectures",
+    "slug": "finops-for-kubernetes-cost-visibility-in-stateless-architectures",
+    "cluster": "cloud",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "FinOps for Kubernetes: A Practical Cost Optimization Guide",
+    "slug": "finops-for-kubernetes-a-practical-cost-optimization-guide",
+    "cluster": "cloud",
+    "intent": "guide",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Zero Trust Kubernetes Architecture - GitHub",
+    "slug": "zero-trust-kubernetes-architecture-github",
+    "cluster": "security",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Zero Trust in Kubernetes: Principles, Architecture &amp; Best Practices",
+    "slug": "zero-trust-in-kubernetes-principles-architecture-amp-best-practices",
+    "cluster": "security",
+    "intent": "guide",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "GitHub - nfroze/Zero-Trust-Kubernetes-Architecture",
+    "slug": "github-nfroze-zero-trust-kubernetes-architecture",
+    "cluster": "cloud",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "PDF FinOps for Kubernetes",
+    "slug": "pdf-finops-for-kubernetes",
+    "cluster": "cloud",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Launch HN: Relari (YC W24) – Identify the root cause of problems in LLM apps",
+    "slug": "launch-hn-relari-yc-w24-identify-the-root-cause-of-problems-in-llm-apps",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Launch HN: Onyx (YC W24) – Open-source chat UI",
+    "slug": "launch-hn-onyx-yc-w24-open-source-chat-ui",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Launch HN: Mentat (YC F24) – Controlling LLMs with Runtime Intervention",
+    "slug": "launch-hn-mentat-yc-f24-controlling-llms-with-runtime-intervention",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Show HN: HelixDB – Open-source vector-graph database for AI applications (Rust)",
+    "slug": "show-hn-helixdb-open-source-vector-graph-database-for-ai-applications-rust",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Show HN: QGen – turn documents into AI-ready Q&A datasets(SaaS and on-prem)",
+    "slug": "show-hn-qgen-turn-documents-into-ai-ready-q-a-datasets-saas-and-on-prem",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Oscar Six Radar – vulnerability scanner with native A2A (agent-to-agent) support",
+    "slug": "oscar-six-radar-vulnerability-scanner-with-native-a2a-agent-to-agent-support",
+    "cluster": "support",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "How to test your disaster recovery plan without disrupting business",
+    "slug": "how-to-test-your-disaster-recovery-plan-without-disrupting-business",
+    "cluster": "it",
+    "intent": "guide",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "10-step guide for testing a backup and recovery plan - TechTarget",
+    "slug": "10-step-guide-for-testing-a-backup-and-recovery-plan-techtarget",
+    "cluster": "it",
+    "intent": "guide",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Disaster Recovery Testing: A Practical Step-by-Step Guide",
+    "slug": "disaster-recovery-testing-a-practical-step-by-step-guide",
+    "cluster": "it",
+    "intent": "guide",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Data Backup &amp; Recovery Testing: Your Checklist Template",
+    "slug": "data-backup-amp-recovery-testing-your-checklist-template",
+    "cluster": "data",
+    "intent": "guide",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "What is disaster recovery testing? Scenarios, methods and best ... - Datto",
+    "slug": "what-is-disaster-recovery-testing-scenarios-methods-and-best-datto",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Disaster Recovery Testing Checklist 2025 - ARPHost",
+    "slug": "disaster-recovery-testing-checklist-2025-arphost",
+    "cluster": "it",
+    "intent": "guide",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Data and AI governance - Azure Databricks | Microsoft Learn",
+    "slug": "data-and-ai-governance-azure-databricks-microsoft-learn",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Data Lakehouse Architecture: Complete Guide for 2026",
+    "slug": "data-lakehouse-architecture-complete-guide-for-2026",
+    "cluster": "data",
+    "intent": "guide",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Data and AI governance - Databricks on AWS",
+    "slug": "data-and-ai-governance-databricks-on-aws",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Databricks reference architectures (download)",
+    "slug": "databricks-reference-architectures-download",
+    "cluster": "data",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Data Lakehouse Architecture - Databricks",
+    "slug": "data-lakehouse-architecture-databricks",
+    "cluster": "data",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "7 SMB Cybersecurity Statistics for 2026 | NinjaOne",
+    "slug": "7-smb-cybersecurity-statistics-for-2026-ninjaone",
+    "cluster": "security",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "How to Implement FinOps for Kubernetes Cost Optimization",
+    "slug": "how-to-implement-finops-for-kubernetes-cost-optimization",
+    "cluster": "cloud",
+    "intent": "guide",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Kubernetes Cost Optimization: From Cloud Bill Shock to FinOps Mastery",
+    "slug": "kubernetes-cost-optimization-from-cloud-bill-shock-to-finops-mastery",
+    "cluster": "cloud",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "How to Verify Your Backups Actually Restore | NovaBACKUP",
+    "slug": "how-to-verify-your-backups-actually-restore-novabackup",
+    "cluster": "it",
+    "intent": "guide",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "CICD-SEC-6: Insufficient Credential Hygiene - OWASP Foundation",
+    "slug": "cicd-sec-6-insufficient-credential-hygiene-owasp-foundation",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "OWASP CI/CD Part 6: Insufficient Credential Hygiene",
+    "slug": "owasp-ci-cd-part-6-insufficient-credential-hygiene",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Establish ongoing credential rotation and hygiene process",
+    "slug": "establish-ongoing-credential-rotation-and-hygiene-process",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "What Is Insufficient Credential Hygiene? - Palo Alto Networks",
+    "slug": "what-is-insufficient-credential-hygiene-palo-alto-networks",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "DevSecOps - Best Practices in Azure CI/CD Pipelines",
+    "slug": "devsecops-best-practices-in-azure-ci-cd-pipelines",
+    "cluster": "data",
+    "intent": "guide",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "DevOps Credential Hygiene: How to Eliminate CI/CD Secrets with Teleport",
+    "slug": "devops-credential-hygiene-how-to-eliminate-ci-cd-secrets-with-teleport",
+    "cluster": "it",
+    "intent": "guide",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "ArcadeDB Cloud Observability: OpenTelemetry Tracing, Structured Logging, K8s",
+    "slug": "arcadedb-cloud-observability-opentelemetry-tracing-structured-logging-k8s",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Open Source Observability on Kubernetes Using eBPF/OpenTelemetry",
+    "slug": "open-source-observability-on-kubernetes-using-ebpf-opentelemetry",
+    "cluster": "cloud",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Kubernetes Observability with OpenTelemetry Helm Charts [A guide I wish I had",
+    "slug": "kubernetes-observability-with-opentelemetry-helm-charts-a-guide-i-wish-i-had",
+    "cluster": "cloud",
+    "intent": "guide",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Kubernetes Observability with OpenTelemetry",
+    "slug": "kubernetes-observability-with-opentelemetry",
+    "cluster": "cloud",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Monitoring K8s using a combo of daemonset/deployment of OpenTelemetry Collector",
+    "slug": "monitoring-k8s-using-a-combo-of-daemonset-deployment-of-opentelemetry-collector",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Unlocking Kubernetes Observability with the OpenTelemetry Operator",
+    "slug": "unlocking-kubernetes-observability-with-the-opentelemetry-operator",
+    "cluster": "cloud",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Boosting Kubernetes container runtime observability with OpenTelemetry",
+    "slug": "boosting-kubernetes-container-runtime-observability-with-opentelemetry",
+    "cluster": "cloud",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Ask HN: Are You Using OpenTelemetry?",
+    "slug": "ask-hn-are-you-using-opentelemetry",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Show HN: Fastest HTTP Cache and Reverse Proxy (Open Source)",
+    "slug": "show-hn-fastest-http-cache-and-reverse-proxy-open-source",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Show HN: OneUptime – Open-source observability that auto-fixes incidents with AI",
+    "slug": "show-hn-oneuptime-open-source-observability-that-auto-fixes-incidents-with-ai",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Ask HN: Can no-code AI workflow tools replace runbooks?",
+    "slug": "ask-hn-can-no-code-ai-workflow-tools-replace-runbooks",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Show HN: UnSkript – Generate SRE Runbooks Using ChatGPT and Jupyter Notebooks",
+    "slug": "show-hn-unskript-generate-sre-runbooks-using-chatgpt-and-jupyter-notebooks",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "vCIO Advisory and IT Strategy Services | Terra Dygital",
+    "slug": "vcio-advisory-and-it-strategy-services-terra-dygital",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "The Rise of Virtual CIOs (vCIOs) and What It Means for SMBs",
+    "slug": "the-rise-of-virtual-cios-vcios-and-what-it-means-for-smbs",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "When vCIO Services for SMBs Make Sense - mPoweredIT",
+    "slug": "when-vcio-services-for-smbs-make-sense-mpoweredit",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "How vCIO Services Help Small Businesses Navigate IT Compliance",
+    "slug": "how-vcio-services-help-small-businesses-navigate-it-compliance",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "The Complete Guide to vCIO Services: Strategy ... - LinkedIn",
+    "slug": "the-complete-guide-to-vcio-services-strategy-linkedin",
+    "cluster": "it",
+    "intent": "guide",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "vCIO Services for SMBs: Build a Future-Ready IT Strategy",
+    "slug": "vcio-services-for-smbs-build-a-future-ready-it-strategy",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Domain Resilience: Lessons from the M365 Outage",
+    "slug": "domain-resilience-lessons-from-the-m365-outage",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "DNS Outage: Causes, Impact, and Prevention Strategies",
+    "slug": "dns-outage-causes-impact-and-prevention-strategies",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Top 10 Best Dns Security Services - 2026 Buyer&#x27;s Guide",
+    "slug": "top-10-best-dns-security-services-2026-buyer-x27-s-guide",
+    "cluster": "security",
+    "intent": "guide",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Overview of DNS security policy | Microsoft Learn",
+    "slug": "overview-of-dns-security-policy-microsoft-learn",
+    "cluster": "security",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Protecting DNS Zones and Records - Azure DNS | Microsoft Learn",
+    "slug": "protecting-dns-zones-and-records-azure-dns-microsoft-learn",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "DNS Protection: DDoS Defense for Authoritative DNS | Imperva",
+    "slug": "dns-protection-ddos-defense-for-authoritative-dns-imperva",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Show HN: Strada – Cloud IDE for Connecting SaaS APIs",
+    "slug": "show-hn-strada-cloud-ide-for-connecting-saas-apis",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Launch HN: Chamber (YC W26) – An AI Teammate for GPU Infrastructure",
+    "slug": "launch-hn-chamber-yc-w26-an-ai-teammate-for-gpu-infrastructure",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Show HN: KBAI – Build Hybrid AI with Deterministic Reasoning",
+    "slug": "show-hn-kbai-build-hybrid-ai-with-deterministic-reasoning",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Launch HN: BitBoard (YC P25) – AI agents for healthcare back-offices",
+    "slug": "launch-hn-bitboard-yc-p25-ai-agents-for-healthcare-back-offices",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Launch HN: InspectMind (YC W24) – AI agent for reviewing construction drawings",
+    "slug": "launch-hn-inspectmind-yc-w24-ai-agent-for-reviewing-construction-drawings",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Show HN: Workflow86 - An AI business analyst and automation engineer",
+    "slug": "show-hn-workflow86-an-ai-business-analyst-and-automation-engineer",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Show HN: YoBulk AI – Open Source React SDK for data cleansing",
+    "slug": "show-hn-yobulk-ai-open-source-react-sdk-for-data-cleansing",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Show HN: Crazy lessons from 6 months of building extraDock",
+    "slug": "show-hn-crazy-lessons-from-6-months-of-building-extradock",
+    "cluster": "it",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "Launch HN: Tavus (YC S21) – AI-generated personalized videos for sales outreach",
+    "slug": "launch-hn-tavus-yc-s21-ai-generated-personalized-videos-for-sales-outreach",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
+  },
+  {
+    "title": "AI Agents That Execute Business Workflows (Claude Code for ERP)",
+    "slug": "ai-agents-that-execute-business-workflows-claude-code-for-erp",
+    "cluster": "ai",
+    "intent": "solution",
+    "differentiation_hook": "Real question from current search/discussion data",
+    "rationale": "Web-discovered topic with demonstrated search interest"
   }
 ]

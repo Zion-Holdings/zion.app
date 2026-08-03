@@ -14,7 +14,7 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 
-REPO = Path('/data/data/com.termux/files/home/ztg/repo')
+REPO = Path('.')
 BLOG_ROOT = REPO / 'app' / 'blog'
 DOCS_ROOT = REPO / 'docs' / 'blog'
 TOPICS_FILE = REPO / 'content-loop' / 'topics.json'
