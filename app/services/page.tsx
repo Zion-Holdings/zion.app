@@ -5,10 +5,17 @@ import { useState, useMemo, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import SmartSearchBar from '@/components/SmartSearchBar';
+import Breadcrumb from '@/components/Breadcrumb';
 import JsonLd from '@/components/JsonLd';
-import { ServiceGridSkeleton } from '@/components/Skeletons';
+import { ServiceGridSkeleton } from '@/components/Skeletons/ServiceGridSkeleton';
 import { allServices } from '../data/servicesData';
 import type { Service } from '../data/servicesData';
+
+export const metadata = {
+  title: 'Services | Zion Tech Group',
+  description: 'Browse AI, IT, cloud, security, data, automation, and DevOps services across multiple categories.',
+  alternates: { canonical: '/services' },
+};
 
 const SVC_CAT_LABELS: Record<string,string> = { ai: 'AI Services', it: 'IT', cloud: 'Cloud', security: 'Security', data: 'Data & Analytics', automation: 'Automation', 'micro-saas': 'Micro-SaaS', devops: 'DevOps', blockchain: 'Blockchain', iot: 'IoT & Edge', 'email-intelligence': 'Email Intelligence', observability: 'Observability', identity: 'Identity & Access', cms: 'CMS & Content', ecommerce: 'E-Commerce', documentation: 'Documentation', 'ai-ml-ops': 'AI/ML Ops', devsecops: 'DevSecOps', fintech: 'FinTech', edtech: 'EdTech', 'healthcare-it': 'Healthcare IT', 'data-streaming': 'Data Streaming', search: 'Search', api: 'API Management' };
 const CATEGORIES = [
@@ -87,8 +94,15 @@ function ServicesContent() {
       />
     <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
+        <Breadcrumb
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Services', href: '/services' },
+          ]}
+          className="mb-8"
+        />
         <h1 className="text-4xl font-bold text-white mb-2 text-center">Our Complete Service Catalog</h1>
-        <p className="section-subheading text-center">{allServices.length}+ real-world services across 10 categories</p>
+        <p className="section-subheading text-center">{allServices.length}+ real-world services across multiple categories</p>
         {/* Smart Fuzzy Search Bar */}
         <div className="max-w-3xl mx-auto mt-8">
           <SmartSearchBar
@@ -124,7 +138,7 @@ function ServicesContent() {
           ))}
         </div>
         <div className="text-center mt-16">
-          <Link href="/configurator/" className="btn-primary text-lg">Get Your Custom Proposal →</Link>
+          <Link href="/contact/" className="btn-primary text-lg">Get Your Custom Proposal →</Link>
           <div className="mt-6 space-y-2">
             <p className="text-slate-400 text-sm">📞 <a href="tel:+130****0950" className="text-purple-300 hover:underline">+1 302 464 0950</a></p>
             <p className="text-slate-400 text-sm">✉️ <a href="mailto:kleber@ziontechgroup.com" className="text-purple-300 hover:underline">kleber@ziontechgroup.com</a></p>
