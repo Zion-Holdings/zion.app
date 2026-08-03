@@ -34,5 +34,32 @@
     "calendly": "https://calendly.com/kleber-ziontechgroup",
     "status": "prior_drafts_prevent_reconsideration",
     "prevent_reconsideration": true
+  },
+  {
+    "thread_id": "19fbbda398bf1630",
+    "to": "jortiz@legalops.io",
+    "subject": "Quick question about your stack",
+    "when": "2026-07-31T22:44:28-0700",
+    "status": "prior_drafts_prevent_reconsideration",
+    "prevent_reconsideration": true,
+    "added_at": "2026-08-03T07:26:13.601209+00:00"
+  },
+  {
+    "thread_id": "19fb6afe930a1a54",
+    "to": "sophia@dataprotect.com",
+    "subject": "Autonomous Sales Platform - Boost insurance Operations with AI",
+    "when": "2026-07-31T01:40:09-0400",
+    "status": "prior_drafts_prevent_reconsideration",
+    "prevent_reconsideration": true,
+    "added_at": "2026-08-03T07:26:13.601209+00:00"
+  },
+  {
+    "thread_id": "19fb633bc8502bc1",
+    "to": "marcus@cybershield.com",
+    "subject": "Autonomous optimization-education #1 - Boost education Operations with AI",
+    "when": "2026-07-30T20:24:31-0700",
+    "status": "prior_drafts_prevent_reconsideration",
+    "prevent_reconsideration": true,
+    "added_at": "2026-08-03T07:26:13.601209+00:00"
   }
 ]

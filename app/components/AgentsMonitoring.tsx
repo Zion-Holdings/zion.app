@@ -134,8 +134,8 @@ export default function AgentsMonitoring() {
 
   const activeBots = AGENTS.filter(a => a.status === 'active').length;
   const totalActions = actions.length;
-  const totalWaves = 83;
-  const totalServices = 850;
+  const totalWaves = Math.max(totalActions, 1);
+  const totalServices = AGENTS.reduce((sum, a) => sum + a.actions, 0);
   const avgUptime = '99.97%';
 
   const filteredActions = actions.filter(a =>

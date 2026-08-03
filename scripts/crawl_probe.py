@@ -12,7 +12,7 @@ OUT_PATH = os.path.join(OUT_DIR, f"crawl-{today}.json")
 
 def curl_probe(path):
     url = BASE + path
-    cmd = ["curl", "-s", "-o", "/dev/null", "-w", "%{http_code} %{size_download}", "--max-time", "15", "--location", url]
+    cmd = ["curl", "-s", "-o", "NUL", "-w", "%{http_code} %{size_download}", "--max-time", "15", "--location", url]
     try:
         p = subprocess.run(cmd, capture_output=True, text=True, timeout=20)
         out = p.stdout.strip().split()
