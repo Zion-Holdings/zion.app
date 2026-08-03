@@ -1,30 +1,28 @@
-import Link from 'next/link';
+import EnergyUtilitiesServiceTemplate from '@/components/EnergyUtilitiesServiceTemplate';
 
 export const metadata = {
   title: 'Services - Ai Energy Utilities Operations | Zion Tech Group',
-  description: 'Services - Ai Energy Utilities Operations page from Zion Tech Group.',
+  description: 'AI-powered operations management, control-room optimization, and asset reliability for utilities.',
+  alternates: { canonical: '/services/ai-energy-utilities-operations' },
 };
 
 export default function Page() {
   return (
-    <div className="container-page py-20">
-      <h1 className="text-4xl font-bold mb-4 text-white">Services - Ai Energy Utilities Operations</h1>
-      <p className="mb-6 text-slate-300">Services - Ai Energy Utilities Operations page from Zion Tech Group.</p>
-            <div className="grid gap-6 sm:grid-cols-2">
-        <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
-          <h2 className="mb-2 text-xl font-bold text-white">Overview</h2>
-          <p className="text-slate-300">This page provides information about Services - Ai Energy Utilities Operations.</p>
-        </div>
-        <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
-          <h2 className="mb-2 text-xl font-bold text-white">Next steps</h2>
-          <p className="text-slate-300">Contact us to discuss your requirements.</p>
-        </div>
-      </div>
-
-      <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-        <Link href="/contact" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Contact us</Link>
-        <Link href="/services" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Our services</Link>
-      </div>
-    </div>
+    <EnergyUtilitiesServiceTemplate
+      title="AI Energy & Utilities Operations"
+      description="Optimize control-room operations, asset reliability, and workforce execution for energy and utility operators."
+      features={[
+        'Control-room decision support',
+        'Asset reliability and maintenance planning',
+        'Workforce and field operations optimization',
+        'Real-time operational dashboards',
+      ]}
+      benefits={[
+        'Faster operational decisions',
+        'Lower unplanned downtime',
+        'Better workforce utilization',
+        'Improved safety and incident response',
+      ]}
+    />
   );
 }
