@@ -1,9 +1,9 @@
 export const metadata = {
-  title: 'Predictable AI ROI in {Industry} | Zion Tech Group',
+  title: 'Predictable AI ROI in Education | Zion Tech Group',
   description: 'Explore how Education & EdTech teams use AI to cut costs, improve outcomes, and scale operations in 2026.',
   alternates: { canonical: '/blog/predictable-ai-roi-in-education/' },
   openGraph: {
-    title: 'Predictable AI ROI in {Industry}',
+    title: 'Predictable AI ROI in Education',
     description: 'Explore how Education & EdTech teams use AI to cut costs, improve outcomes, and scale operations in 2026.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/predictable-ai-roi-in-education/',
