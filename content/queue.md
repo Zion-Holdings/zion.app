@@ -1,8 +1,8 @@
 # Content Queue — GitHub Pages Loop
 
 ## Cycle Counter
-- Last cycle: 2
-- Next slug prefix: 3
+- Last cycle: 3
+- Next slug prefix: 4
 
 ## Seed Queue
 1. When to buy Micro-SaaS vs build internally: a decision framework
@@ -20,3 +20,7 @@
 13. Micro-SaaS pricing strategies for founders in 2026
 14. How to evaluate no-code platforms for internal business tools
 15. AI-native SaaS vendor due diligence checklist for IT teams
+16. Micro-SaaS security audit checklist for small engineering teams
+17. How to price a Micro-SaaS tool in a consolidating market
+18. Build-vs-buy for AI features: when to embed vs integrate
+19. IT stack simplification: removing redundant tools without breaking workflows
