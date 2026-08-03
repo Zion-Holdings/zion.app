@@ -1,0 +1,764 @@
+[
+  {
+    "cluster": "automation",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "hyperautomation-strategy-2026-combine-rpa-ai-process-mining",
+    "title": "Hyperautomation Strategy 2026: Combine RPA, AI, and Process Mining"
+  },
+  {
+    "cluster": "security",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "zero-trust-saas-applications-secure-third-party-access-integrations",
+    "title": "Zero Trust for SaaS Applications: Secure Third-Party Access and Integrations"
+  },
+  {
+    "cluster": "cloud",
+    "cta": "contact",
+    "intent": "solution",
+    "slug": "ai-capacity-planning-saas-cloud-platforms-2026",
+    "title": "AI Capacity Planning for SaaS and Cloud Platforms"
+  },
+  {
+    "cluster": "it",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "it-asset-management-automation-track-hardware-software-licenses-real-time",
+    "title": "IT Asset Management Automation: Track Hardware, Software, and Licenses in Real Time"
+  },
+  {
+    "cluster": "ai",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "multimodal-ai-architecture-text-image-voice-enterprise-stack",
+    "title": "Multimodal AI Architecture: Text, Image, and Voice in One Enterprise Stack"
+  },
+  {
+    "cluster": "cloud",
+    "differentiation_hook": "Demand forecasting and reservation optimization",
+    "intent": "guide",
+    "rationale": "Overprovisioning and throttling both hurt service quality",
+    "slug": "ai-capacity-planning-for-saas-and-cloud-platforms-in-2026",
+    "title": "AI Capacity Planning for SaaS and Cloud Platforms in 2026"
+  },
+  {
+    "cluster": "cloud",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "container-security-at-scale-image-scanning-runtime-protection-policy-enforcement",
+    "title": "Container Security at Scale: Image Scanning, Runtime Protection, and Policy Enforcement"
+  },
+  {
+    "cluster": "security",
+    "differentiation_hook": "Network telemetry plus endpoint and identity signals",
+    "intent": "guide",
+    "rationale": "Network-only detection is insufficient for hybrid environments",
+    "slug": "ai-network-detection-and-response-for-hybrid-infrastructures-in-2026",
+    "title": "AI Network Detection and Response for Hybrid Infrastructures in 2026"
+  },
+  {
+    "cluster": "data",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "real-time-analytics-dashboard-sub-second-queries-billion-row-datasets",
+    "title": "Real-Time Analytics Dashboard: Sub-Second Queries on Billion-Row Datasets"
+  },
+  {
+    "cluster": "it",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "it-asset-discovery-automation-for-hybrid-cloud-environments",
+    "title": "IT Asset Discovery Automation for Hybrid Cloud Environments"
+  },
+  {
+    "cluster": "security",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "vulnerability-management-prioritization-cvss-not-enough-exploitability-scoring",
+    "title": "Vulnerability Management Prioritization: CVSS Isn't Enough—Use Exploitability Scoring"
+  },
+  {
+    "cluster": "it",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks",
+    "title": "ITSM Modernization: From Jira Service Management to AI-Augmented Service Desks"
+  },
+  {
+    "cluster": "ai",
+    "cta": "contact",
+    "intent": "solution",
+    "slug": "ai-customer-journey-analytics-from-click-to-retention",
+    "title": "AI Customer Journey Analytics: From Click to Retention"
+  },
+  {
+    "cluster": "data",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "real-time-data-streaming-kafka-flink-event-driven-architecture",
+    "title": "Real-Time Data Streaming with Kafka and Flink: Event-Driven Architecture"
+  },
+  {
+    "cluster": "support",
+    "differentiation_hook": "Quality scoring and coaching without full QA staffing",
+    "intent": "solution",
+    "rationale": "Support quality is hard to measure and improve at scale",
+    "slug": "ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents",
+    "title": "AI Support Quality Assurance: Score Tickets, Detect Escalations, and Coach Agents"
+  },
+  {
+    "cluster": "automation",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "invoice-processing-automation-from-receipt-to-payment-ai-extraction",
+    "title": "Invoice Processing Automation: From Receipt to Payment with AI Extraction"
+  },
+  {
+    "cluster": "automation",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "document-processing-automation-extract-data-invoices-contracts-forms",
+    "title": "Document Processing Automation: Extract Data from Invoices, Contracts, and Forms"
+  },
+  {
+    "cluster": "ai",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy",
+    "title": "RAG Optimization Playbook: Reduce Hallucination and Improve Retrieval Accuracy"
+  },
+  {
+    "cluster": "data",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "analytics-engineering-dbt-transform-data-warehouse-like-software",
+    "title": "Analytics Engineering with dbt: Transform Data in Your Warehouse Like Software"
+  },
+  {
+    "cluster": "ai",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "mlops-pipeline-llms-fine-tuning-production-deployment",
+    "title": "MLOps Pipeline for LLMs: From Fine-Tuning to Production Deployment"
+  },
+  {
+    "cluster": "automation",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "ai-customer-onboarding-automation-reduce-time-to-value",
+    "title": "AI Customer Onboarding Automation: Reduce Time-to-Value"
+  },
+  {
+    "cluster": "automation",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "email-calendar-automation-ai-agents-schedule-follow-up-summarize",
+    "title": "Email and Calendar Automation: AI Agents That Schedule, Follow Up, and Summarize"
+  },
+  {
+    "cluster": "observability",
+    "differentiation_hook": "Business outcome mapping for technical telemetry",
+    "intent": "guide",
+    "rationale": "Engineering metrics need business translation",
+    "slug": "business-observability-connect-metrics-to-revenue-conversion-and-cx",
+    "title": "Business Observability: Connect Metrics to Revenue, Conversion, and CX"
+  },
+  {
+    "cluster": "cloud",
+    "cta": "contact",
+    "intent": "solution",
+    "slug": "ai-cloud-finops-anomaly-detection-budget-guardrails-2026",
+    "title": "AI Cloud FinOps with Anomaly Detection and Budget Guardrails"
+  },
+  {
+    "cluster": "observability",
+    "differentiation_hook": "Unified metrics, logs, traces, and events pipeline",
+    "intent": "guide",
+    "rationale": "Observability fragmentation increases mean time to resolution",
+    "slug": "ai-observability-pipeline-for-kubernetes-and-cloud-in-2026",
+    "title": "AI Observability Pipeline for Kubernetes and Cloud in 2026"
+  },
+  {
+    "cluster": "security",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime",
+    "title": "CNAPP Strategy 2026: Cloud-Native Application Protection from Code to Runtime"
+  },
+  {
+    "cluster": "observability",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "distributed-tracing-jaeger-zipkin-debug-microservices-without-log-dumps",
+    "title": "Distributed Tracing with Jaeger or Zipkin: Debug Microservices Without Log Dumps"
+  },
+  {
+    "cluster": "ai",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "edge-ai-tinyml-run-models-microcontrollers-iot-devices",
+    "title": "Edge AI with TinyML: Run Models on Microcontrollers and IoT Devices"
+  },
+  {
+    "cluster": "cloud",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "finops-maturity-model-cloud-cost-visibility-to-automated-optimization",
+    "title": "FinOps Maturity Model: From Cloud Cost Visibility to Automated Optimization"
+  },
+  {
+    "cluster": "it",
+    "differentiation_hook": "Joiner/mover/leaver playbooks with audit trails",
+    "intent": "guide",
+    "rationale": "Manual access changes are a top security and operational risk",
+    "slug": "automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation",
+    "title": "Automated Provisioning and Deprovisioning: Identity and Access Lifecycle Automation"
+  },
+  {
+    "cluster": "emerging",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure",
+    "title": "Sustainable IT and Green Cloud: Measure and Reduce Carbon Footprint of Infrastructure"
+  },
+  {
+    "cluster": "data",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "feature-store-machine-learning-centralize-features-training-inference",
+    "title": "Feature Store for Machine Learning: Centralize Features for Training and Inference"
+  },
+  {
+    "cluster": "security",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "ransomware-resilience-playbook-immutable-backups-isolated-recovery-environments",
+    "title": "Ransomware Resilience Playbook: Immutable Backups and Isolated Recovery Environments"
+  },
+  {
+    "cluster": "data",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "data-privacy-engineering-anonymization-tokenization-differential-privacy",
+    "title": "Data Privacy Engineering: Anonymization, Tokenization, and Differential Privacy"
+  },
+  {
+    "cluster": "security",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "soc-2-automation-continuous-compliance-monitoring-audit-evidence-collection",
+    "title": "SOC 2 Automation: Continuous Compliance Monitoring and Audit Evidence Collection"
+  },
+  {
+    "cluster": "security",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "data-loss-prevention-ai-prevent-confidential-data-leaks-llm-apis",
+    "title": "Data Loss Prevention for AI: Prevent Confidential Data Leaks to LLM APIs"
+  },
+  {
+    "cluster": "security",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "ai-model-security-defend-against-adversarial-attacks-prompt-injection",
+    "title": "AI Model Security: Defend Against Adversarial Attacks and Prompt Injection"
+  },
+  {
+    "cluster": "ai",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "prompt-engineering-at-scale-version-test-deploy-prompts-code",
+    "title": "Prompt Engineering at Scale: Version, Test, and Deploy Prompts Like Code"
+  },
+  {
+    "cluster": "it",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "ai-application-modernization-monolith-to-microservices-safely",
+    "title": "AI Application Modernization: Monolith to Microservices Safely"
+  },
+  {
+    "cluster": "support",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "ai-desktop-support-automation-enterprise-it-2026",
+    "title": "AI Desktop Support Automation for Enterprise IT"
+  },
+  {
+    "cluster": "it",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "remote-work-enablement-secure-vpn-alternatives-zero-trust-access",
+    "title": "Remote Work Enablement: Secure VPN Alternatives and Zero Trust Access"
+  },
+  {
+    "cluster": "cloud",
+    "differentiation_hook": "Finance and engineering collaboration with automated alerts",
+    "intent": "solution",
+    "rationale": "Cloud costs still surprise many organizations monthly",
+    "slug": "ai-cloud-finops-anomaly-detection-and-budget-guardrails",
+    "title": "AI Cloud FinOps: Anomaly Detection and Budget Guardrails"
+  },
+  {
+    "cluster": "ai",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "vector-database-architecture-pinecone-weaviate-pgvector-compared",
+    "title": "Vector Database Architecture: Pinecone, Weaviate, and pgvector Compared"
+  },
+  {
+    "cluster": "support",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "customer-success-automation-trigger-health-checks-outreach-product-signals",
+    "title": "Customer Success Automation: Trigger Health Checks and Outreach from Product Signals"
+  },
+  {
+    "cluster": "observability",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "slo-driven-development-set-error-budgets-build-features-without-breaking-reliability",
+    "title": "SLO-Driven Development: Set Error Budgets and Build Features Without Breaking Reliability"
+  },
+  {
+    "cluster": "cloud",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "cloud-exit-strategy-avoid-vendor-lock-in-portable-architecture-patterns",
+    "title": "Cloud Exit Strategy: Avoid Vendor Lock-In with Portable Architecture Patterns"
+  },
+  {
+    "cluster": "observability",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh",
+    "title": "Chaos Engineering for Kubernetes: Proactively Test Resilience with Litmus or Chaos Mesh"
+  },
+  {
+    "cluster": "automation",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "process-mining-operations-discover-bottlenecks-automate-what-matters",
+    "title": "Process Mining for Operations: Discover Bottlenecks and Automate What Matters"
+  },
+  {
+    "cluster": "support",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "field-service-ai-optimization-predict-service-times-optimize-technician-routes",
+    "title": "Field Service AI Optimization: Predict Service Times and Optimize Technician Routes"
+  },
+  {
+    "cluster": "cloud",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "cloud-migration-regulated-industries-hipaa-pci-gdpr-aws-azure",
+    "title": "Cloud Migration for Regulated Industries: HIPAA, PCI, and GDPR on AWS/Azure"
+  },
+  {
+    "cluster": "security",
+    "differentiation_hook": "MSSP-specific playbook with tooling comparisons",
+    "intent": "solution",
+    "rationale": "Rising demand for managed detection and response with constrained SOC staff",
+    "slug": "ai-soc-modernization-for-mssps-in-2026",
+    "title": "AI SOC Modernization for MSSPs in 2026"
+  },
+  {
+    "cluster": "ai",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "edge-ai-deployment-patterns-for-retail-and-manufacturing",
+    "title": "Edge AI Deployment Patterns for Retail and Manufacturing"
+  },
+  {
+    "cluster": "observability",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "ai-observability-pipeline-kubernetes-cloud-2026",
+    "title": "AI Observability Pipeline Design for Kubernetes and Cloud"
+  },
+  {
+    "cluster": "data",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "synthetic-data-generation-for-compliance-and-model-training",
+    "title": "Synthetic Data Generation for Compliance and Model Training"
+  },
+  {
+    "cluster": "emerging",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "quantum-safe-cryptography-prepare-post-quantum-threats-today",
+    "title": "Quantum-Safe Cryptography: Prepare for Post-Quantum Threats Today"
+  },
+  {
+    "cluster": "cloud",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "terraform-iac-security-scan-terraform-cloudformation-pulumi-misconfigurations",
+    "title": "Terraform and IaC Security: Scan Terraform, CloudFormation, and Pulumi for Misconfigurations"
+  },
+  {
+    "cluster": "cloud",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "serverless-enterprise-when-to-use-lambda-azure-functions-cloud-run",
+    "title": "Serverless for Enterprise: When to Use Lambda, Azure Functions, and Cloud Run"
+  },
+  {
+    "cluster": "automation",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "low-code-automation-platforms-build-internal-tools-without-full-engineering",
+    "title": "Low-Code Automation Platforms: Build Internal Tools Without Full Engineering"
+  },
+  {
+    "cluster": "data",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "time-series-analytics-iot-ingest-store-query-sensor-data-scale",
+    "title": "Time Series Analytics for IoT: Ingest, Store, and Query Sensor Data at Scale"
+  },
+  {
+    "cluster": "ai",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "ai-code-review-automation-enforce-standards-find-vulnerabilities-before-merge",
+    "title": "AI Code Review Automation: Enforce Standards and Find Vulnerabilities Before Merge"
+  },
+  {
+    "cluster": "observability",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "opentelemetry-implementation-guide-instrument-any-language-export-anywhere",
+    "title": "OpenTelemetry Implementation Guide: Instrument Any Language and Export Anywhere"
+  },
+  {
+    "cluster": "automation",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "ai-platform-engineering-patterns-idp-backstage-golden-paths",
+    "title": "AI Platform Engineering Patterns: IDP, Backstage, and Golden Paths"
+  },
+  {
+    "cluster": "automation",
+    "differentiation_hook": "Practical workflow integration instead of generic assistant demos",
+    "intent": "solution",
+    "rationale": "Time lost to scheduling and follow-up remains high",
+    "slug": "email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize",
+    "title": "Email and Calendar Automation with AI Agents: Schedule, Follow Up, and Summarize"
+  },
+  {
+    "cluster": "security",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "ai-credential-hygiene-secret-rotation-cicd-2026",
+    "title": "AI Credential Hygiene and Secret Rotation for CI/CD"
+  },
+  {
+    "cluster": "automation",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code",
+    "title": "ERP Automation: Automate SAP, Oracle, or Dynamics Workflows Without Custom Code"
+  },
+  {
+    "cluster": "cloud",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "multi-cloud-governance-manage-aws-azure-gcp-one-control-plane",
+    "title": "Multi-Cloud Governance: Manage AWS, Azure, and GCP from One Control Plane"
+  },
+  {
+    "cluster": "support",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "ai-support-quality-assurance-score-tickets-detect-escalations",
+    "title": "AI Support Quality Assurance: Score Tickets, Detect Escalations"
+  },
+  {
+    "cluster": "automation",
+    "cta": "contact",
+    "intent": "solution",
+    "slug": "ai-powered-incident-remediation-from-alert-to-fix-in-minutes",
+    "title": "AI-Powered Incident Remediation: From Alert to Fix in Minutes"
+  },
+  {
+    "cluster": "data",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "data-contracts-analytics-engineering-enforce-schema-quality-between-teams",
+    "title": "Data Contracts for Analytics Engineering: Enforce Schema and Quality Between Teams"
+  },
+  {
+    "cluster": "security",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "ai-soc-modernization-mssps-2026",
+    "title": "AI Security Operations Center Modernization for MSSPs"
+  },
+  {
+    "cluster": "automation",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "automated-provisioning-de-provisioning-identity-access-lifecycle-automation",
+    "title": "Automated Provisioning and De-provisioning: Identity and Access Lifecycle Automation"
+  },
+  {
+    "cluster": "cloud",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "disaster-recovery-automation-tested-failover-multiple-cloud-regions",
+    "title": "Disaster Recovery Automation: Tested Failover Across Multiple Cloud Regions"
+  },
+  {
+    "cluster": "observability",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "business-observability-connect-metrics-to-revenue-conversion-customer-experience",
+    "title": "Business Observability: Connect Metrics to Revenue, Conversion, and Customer Experience"
+  },
+  {
+    "cluster": "security",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "ot-iot-security-manufacturing-protecting-legacy-plcs-sensors",
+    "title": "OT/IoT Security for Manufacturing: Protecting Legacy PLCs and Sensors"
+  },
+  {
+    "cluster": "data",
+    "differentiation_hook": "End-to-end data trust playbook",
+    "intent": "guide",
+    "rationale": "Bad pipelines undermine AI initiatives",
+    "slug": "ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026",
+    "title": "AI Data Pipeline Observability: Lineage, Freshness, and Quality in 2026"
+  },
+  {
+    "cluster": "data",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure",
+    "title": "Data Mesh Implementation: Domain-Owned Data Products with Self-Serve Infrastructure"
+  },
+  {
+    "cluster": "data",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "data-observability-detect-quality-issues-schema-drift-anomalies-automatically",
+    "title": "Data Observability: Detect Quality Issues, Schema Drift, and Anomalies Automatically"
+  },
+  {
+    "cluster": "cloud",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "kubernetes-platform-engineering-build-internal-developer-platform-k8s",
+    "title": "Kubernetes Platform Engineering: Build an Internal Developer Platform on K8s"
+  },
+  {
+    "cluster": "ai",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "ai-customer-churn-prediction-identify-at-risk-accounts-before-they-leave",
+    "title": "AI for Customer Churn Prediction: Identify At-Risk Accounts Before They Leave"
+  },
+  {
+    "cluster": "data",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "data-lakehouse-snowflake-databricks-when-to-choose-which",
+    "title": "Data Lakehouse on Snowflake or Databricks: When to Choose Which"
+  },
+  {
+    "cluster": "security",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "zero-trust-for-ai-workloads-guardrails-for-model-access-and-data",
+    "title": "Zero Trust for AI Workloads: Guardrails for Model Access and Data"
+  },
+  {
+    "cluster": "security",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "identity-security-playbook-ciam-pam-zero-trust-identity-combined",
+    "title": "Identity Security Playbook: CIAM, PAM, and Zero Trust Identity Combined"
+  },
+  {
+    "cluster": "ai",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "computer-vision-retail-shelf-monitoring-foot-traffic-loss-prevention",
+    "title": "Computer Vision for Retail: Shelf Monitoring, Foot Traffic, and Loss Prevention"
+  },
+  {
+    "cluster": "security",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "attack-surface-management-continuous-discovery-exposure-validation",
+    "title": "Attack Surface Management: Continuous Discovery and Exposure Validation"
+  },
+  {
+    "cluster": "data",
+    "cta": "contact",
+    "intent": "solution",
+    "slug": "ai-data-pipeline-observability-lineage-freshness-quality-2026",
+    "title": "AI Data Pipeline Observability: Lineage, Freshness, and Quality"
+  },
+  {
+    "cluster": "cloud",
+    "cta": "contact",
+    "intent": "tool",
+    "slug": "cloud-cost-governance-with-ai-anomaly-detection-and-forecasting",
+    "title": "Cloud Cost Governance with AI: Anomaly Detection and Forecasting"
+  },
+  {
+    "cluster": "support",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support",
+    "title": "Customer Service Chatbot Beyond FAQs: Integrate RAG for Context-Aware Support"
+  },
+  {
+    "cluster": "security",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "software-supply-chain-security-sbom-signing-provenance-2026",
+    "title": "Software Supply Chain Security: SBOM, Signing, and Provenance in 2026"
+  },
+  {
+    "cluster": "security",
+    "differentiation_hook": "Automated rotation with minimal developer friction",
+    "intent": "guide",
+    "rationale": "Hardcoded credentials remain a common breach vector",
+    "slug": "ai-credential-hygiene-and-secret-rotation-in-ci-cd",
+    "title": "AI Credential Hygiene and Secret Rotation in CI/CD"
+  },
+  {
+    "cluster": "it",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "digital-workplace-strategy-secure-productive-remote-hybrid-work-environments",
+    "title": "Digital Workplace Strategy: Secure, Productive Remote and Hybrid Work Environments"
+  },
+  {
+    "cluster": "support",
+    "differentiation_hook": "Health-based playbooks and intervention timing",
+    "intent": "solution",
+    "rationale": "CS outcomes improve with proactive, data-driven outreach",
+    "slug": "customer-success-automation-trigger-health-checks-outreach-and-product-signals",
+    "title": "Customer Success Automation: Trigger Health Checks, Outreach, and Product Signals"
+  },
+  {
+    "cluster": "it",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "passwordless-authentication-strategy-fido2-passkeys-sso-integration",
+    "title": "Passwordless Authentication Strategy: FIDO2, Passkeys, and SSO Integration"
+  },
+  {
+    "cluster": "cloud",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "edge-cloud-architecture-deploy-low-latency-apps-edge-cloudflare-aws",
+    "title": "Edge Cloud Architecture: Deploy Low-Latency Apps at the Edge with Cloudflare and AWS"
+  },
+  {
+    "cluster": "observability",
+    "differentiation_hook": "Practical instrumentation and sampling strategy",
+    "intent": "guide",
+    "rationale": "Microservices debugging remains a major operational burden",
+    "slug": "distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps",
+    "title": "Distributed Tracing with Jaeger and Zipkin: Debug Microservices Without Log Dumps"
+  },
+  {
+    "cluster": "ai",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "agentic-ai-orchestration-build-multi-agent-systems-collaborate",
+    "title": "Agentic AI Orchestration: Build Multi-Agent Systems That Actually Collaborate"
+  },
+  {
+    "cluster": "observability",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "ai-incident-response-orchestration-triage-runbooks-chatops",
+    "title": "AI Incident Response Orchestration: Triage, Runbooks, and Chatops"
+  },
+  {
+    "cluster": "security",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "ai-network-detection-response-hybrid-infrastructures-2026",
+    "title": "AI Network Detection and Response for Hybrid Infrastructures"
+  },
+  {
+    "cluster": "observability",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis",
+    "title": "AIOps for Incident Detection: Reduce MTTR with Anomaly Detection and Root Cause Analysis"
+  },
+  {
+    "cluster": "security",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "endpoint-detection-response-remote-workers-beyond-vpn-protection",
+    "title": "Endpoint Detection and Response for Remote Workers: Beyond VPN Protection"
+  },
+  {
+    "cluster": "data",
+    "cta": "contact",
+    "intent": "guide",
+    "slug": "ai-data-engineering-strategy-latam-enterprises-2026",
+    "title": "AI Data Engineering Strategy for LATAM Enterprises in 2026"
+  },
+  {
+    "cluster": "observability",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "ai-observability-for-llm-applications-tracing-and-cost-control",
+    "title": "AI Observability for LLM Applications: Tracing and Cost Control"
+  },
+  {
+    "cluster": "support",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "proactive-customer-support-ai-predict-issues-before-tickets-open",
+    "title": "Proactive Customer Support with AI: Predict Issues Before Tickets Open"
+  },
+  {
+    "cluster": "automation",
+    "cta": "services",
+    "intent": "tool",
+    "slug": "ai-code-review-automation-security-style-and-architecture-gates",
+    "title": "AI Code Review Automation: Security, Style, and Architecture Gates"
+  },
+  {
+    "cluster": "ai",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "ai-governance-framework-audit-explain-model-decisions-2026",
+    "title": "AI Governance Framework: Audit, Explain, and Govern Model Decisions in 2026"
+  },
+  {
+    "cluster": "security",
+    "cta": "services",
+    "intent": "solution",
+    "slug": "ai-threat-intelligence-integration-soc-teams-2026",
+    "title": "AI Threat Intelligence Integration for SOC Teams"
+  },
+  {
+    "cluster": "ai",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "ai-model-fine-tuning-strategy-when-to-fine-tune-vs-rag-vs-prompting",
+    "title": "AI Model Fine-Tuning Strategy: When to Fine-Tune vs. RAG vs. Prompting"
+  },
+  {
+    "cluster": "it",
+    "cta": "services",
+    "intent": "guide",
+    "slug": "it-financial-management-showback-chargeback-cloud-cost-allocation",
+    "title": "IT Financial Management: Showback, Chargeback, and Cloud Cost Allocation"
+  }
+]
