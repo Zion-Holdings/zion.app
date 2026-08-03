@@ -21,6 +21,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
+        if: exists('package.json')
         uses: actions/setup-node@v5
         with:
           node-version: '20'
@@ -30,12 +31,14 @@ jobs:
           NODE_OPTIONS: --max-old-space-size=4096
 
       - name: Install dependencies
+        if: exists('package.json')
         run: npm install --no-audit --fund=false
         env:
           NODE_EXTRA_ARGS: --max-old-space-size=4096
 
       - name: Build Next export
         id: build
+        if: exists('package.json')
         run: |
           set -euo pipefail
           npm run build > build.log 2>&1 || true

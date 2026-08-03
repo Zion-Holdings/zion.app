@@ -12,7 +12,7 @@ const path = require('node:path');
 const crypto = require('node:crypto');
 
 const REPO = process.cwd();
-const BLOG_DIR = path.join(REPO, 'docs', 'blog');
+const BLOG_DIR = path.join(REPO, 'blog');
 const GENERATED_LOG = path.join(REPO, 'automation', 'content-loop', 'generated', 'log.jsonl');
 const LOCK_FILES = ['.git/index.lock', '.git/HEAD.lock', '.git/index.stash.lock'];
 const SHOULD_PUSH = String(process.env.HERMES_CONTENT_LOOP_PUSH || '').toLowerCase() === 'true';
