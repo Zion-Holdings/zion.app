@@ -7,7 +7,7 @@ interface EnergyServiceTemplateProps {
   benefits: string[];
 }
 
-export default function EnergyServiceTemplate({
+export default function EnergyUtilitiesServiceTemplate({
   title,
   description,
   features,

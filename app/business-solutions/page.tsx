@@ -1,3 +1,20 @@
-import Link from 'next/link';
-export const metadata = { title: 'Business Solutions | Zion Tech Group', description: 'Explore business-focused AI, IT, and security solutions designed for measurable outcomes.' };
-export default function Page() { return (<div className="container-page py-20"><h1 className="text-4xl font-bold mb-4 text-white">Business Solutions</h1><p className="mb-6 text-slate-300">Outcome-driven solutions for operations, support, security, and growth.</p><div className="grid gap-6 sm:grid-cols-2"><div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6"><h2 className="mb-2 text-xl font-bold text-white">Focus areas</h2><ul className="list-disc pl-6 text-slate-300 space-y-2"><li>Operational efficiency</li><li>Customer experience</li><li>Revenue intelligence</li></ul></div><div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6"><h2 className="mb-2 text-xl font-bold text-white">Delivery</h2><ul className="list-disc pl-6 text-slate-300 space-y-2"><li>30- to 90-day pilots</li><li>Measurable success criteria</li><li>Runbooks for scaling</li></ul></div></div><div className="mt-10 flex flex-col gap-3 sm:flex-row"><Link href="/contact" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Talk to us</Link><Link href="/blog" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Case studies</Link></div></div>); }
+import MarketingPageTemplate from '@/components/MarketingPageTemplate';
+
+export const metadata = {
+  title: 'Business Solutions | Zion Tech Group',
+  description: 'Explore outcome-driven AI, IT, and security solutions for measurable operational and revenue impact.',
+  alternates: { canonical: '/business-solutions' },
+};
+
+export default function Page() {
+  return (
+    <MarketingPageTemplate
+      title="Business Solutions"
+      description="Outcome-driven solutions for operations, support, security, and growth."
+      backLabel="← Back to Home"
+      backHref="/"
+      primaryCta={{ label: 'Talk to us', href: '/contact' }}
+      secondaryCta={{ label: 'Our services', href: '/services' }}
+    />
+  );
+}

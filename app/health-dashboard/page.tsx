@@ -1,3 +1,20 @@
-import Link from 'next/link';
-export const metadata = { title: 'Health Dashboard | Zion Tech Group', description: 'Operational health dashboard and monitoring overview for client environments and services.' };
-export default function Page() { return (<div className="container-page py-20"><h1 className="text-4xl font-bold mb-4 text-white">Health Dashboard</h1><p className="mb-6 text-slate-300">Monitor system health, incidents, and service performance at a glance.</p><div className="grid gap-6 sm:grid-cols-2"><div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6"><h2 className="mb-2 text-xl font-bold text-white">Metrics</h2><ul className="list-disc pl-6 text-slate-300 space-y-2"><li>Availability</li><li>Response time</li><li>Incident count</li></ul></div><div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6"><h2 className="mb-2 text-xl font-bold text-white">Actions</h2><ul className="list-disc pl-6 text-slate-300 space-y-2"><li>Open support request</li><li>Review runbooks</li><li>Escalate incident</li></ul></div></div><div className="mt-10 flex flex-col gap-3 sm:flex-row"><Link href="/contact" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get support</Link><Link href="/services/ai-observability" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Observability services</Link></div></div>); }
+import MarketingPageTemplate from '@/components/MarketingPageTemplate';
+
+export const metadata = {
+  title: 'Health Dashboard | Zion Tech Group',
+  description: 'Operational health dashboard and metrics for managed IT and security services.',
+  alternates: { canonical: '/health-dashboard' },
+};
+
+export default function Page() {
+  return (
+    <MarketingPageTemplate
+      title="Health Dashboard"
+      description="Real-time health signals, reliability metrics, and incident status for your environment."
+      backLabel="← Back to Home"
+      backHref="/"
+      primaryCta={{ label: 'Contact us', href: '/contact' }}
+      secondaryCta={{ label: 'Our services', href: '/services' }}
+    />
+  );
+}
