@@ -1,59 +1,108 @@
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import Link from 'next/link';
-import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import ArticleStructuredData from '@/components/ArticleStructuredData';
 
 export const metadata = {
-  title: 'AI Phone Agent for Small Business: Free Tools and Practical Setup | Zion Tech Group',
-  description: 'AI phone agent solutions for small business: free tools, practical setup steps, and real use cases for support, scheduling, and intake automation.',
+  title: 'Ai Phone Agent For Small Business Free Tools 2026 | Zion Tech Group',
+  description: 'Ai Phone Agent For Small Business Free Tools 2026: practical execution model, measurable guardrails, and next actions for IT and AI leaders.',
   openGraph: {
-    title: 'AI Phone Agent for Small Business: Free Tools and Practical Setup | Zion Tech Group',
-    description: 'AI phone agent solutions for small business: free tools, practical setup steps, and real use cases for support, scheduling, and intake automation.',
+    title: 'Ai Phone Agent For Small Business Free Tools 2026',
+    description: 'Ai Phone Agent For Small Business Free Tools 2026: practical execution model, measurable guardrails, and next actions for IT and AI leaders.',
     url: 'https://ziontechgroup.com/blog/ai-phone-agent-for-small-business-free-tools-2026',
-    siteName: 'Zion Tech Group',
     type: 'article',
-    images: [{ url: '/og-ai-phone-agent-small-business.png', width: 1200, height: 630, alt: 'AI Phone Agent for Small Business' }]
   },
-
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-phone-agent-for-small-business-free-tools-2026',
+  },
 };
 
-export default function AIPhoneAgentSmallBusinessPage() {
+export default function Page() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-slate-50">
-      <ArticleStructuredData
-        title="AI Phone Agent for Small Business"
-        description="AI phone agent solutions for small business: free tools, practical setup steps, and real use cases for support, scheduling, and intake automation."
-        url="https://ziontechgroup.com/blog/ai-phone-agent-for-small-business-free-tools-2026"
-        datePublished="2026-07-07"
-        authorName="Kleber Garcia Alcatrão"
-        publisherName="Zion Tech Group"
-      />
-      <SiteBreadcrumbs
-        items={[
-          { label: 'Home', href: '/' },
-          { label: 'Blog', href: '/blog' },
-          { label: 'AI Phone Agent for Small Business', href: '/blog/ai-phone-agent-for-small-business-free-tools-2026' }
-        ]}
-      />
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">AI Phone Agent for Small Business: Free Tools and Practical Setup</h1>
-        <p className="text-lg text-gray-600 mb-6">Deploy an AI phone agent with free or low-cost tools, automate intake and scheduling, and reduce missed calls without hiring extra staff.</p>
-        <div className="bg-blue-50 border border-blue-200 rounded-xl p-6 mb-8">
-          <h2 className="text-xl font-semibold mb-2">What an AI phone agent can do</h2>
-          <p className="text-gray-700">Answer calls, route inquiries, collect intake data, book appointments, and escalate when needed — 24/7.</p>
-        </div>
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
-          {['Call screening', 'Appointment booking', 'FAQ automation', 'CRM handoff'].map((item) => (
-            <div key={item} className="bg-white border border-gray-200 rounded-lg p-4">
-              <h3 className="font-semibold text-blue-700 mb-1">{item}</h3>
-              <p className="text-gray-600">Practical workflow with free tools and clear integration steps.</p>
-            </div>
-          ))}
-        </div>
-        <Link href="/contact" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-          Get the Free Setup Checklist
-        </Link>
+    <div className="relative min-h-screen bg-slate-950">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div className="absolute -top-16 left-[-9rem] h-[26rem] w-[26rem] rounded-full bg-violet-500/20 blur-3xl" />
+        <div className="absolute right-[-10rem] top-24 h-[28rem] w-[28rem] rounded-full bg-indigo-500/15 blur-3xl" />
       </div>
+
+      <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        <SiteBreadcrumbs
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Blog', href: '/blog' },
+            { label: 'Ai Phone Agent For Small Business Free Tools 2026' }
+          ]}
+          className="mb-8"
+        />
+
+        <header className="mb-12">
+          <div className="mb-4 flex-wrap items-center gap-3 text-sm flex">
+            <time dateTime="2026-08-03" className="text-slate-400">2026-08-03</time>
+            <span className="rounded-full border border-violet-400/40 bg-violet-500/15 px-3 py-1 text-xs font-medium text-violet-200">Guide</span>
+          </div>
+          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Ai Phone Agent For Small Business Free Tools 2026</h1>
+          <p className="mt-4 text-lg text-slate-300">Ai Phone Agent For Small Business Free Tools 2026 requires measurable guardrails, repeatable workflows, and clear ownership.</p>
+        </header>
+
+        <div className="prose-invert max-w-none space-y-10">
+          <section>
+            <h2 className="mb-4 text-2xl font-bold text-white">Where this adds value</h2>
+            <p className="mb-4 leading-relaxed text-slate-300">Focus on adoption sequencing, pilot evidence, and outcome measurement. Start with a small owned workflow, measure weekly, and expand only after the first workflow shows consistent improvement.</p>
+            <ul className="list-disc pl-6 text-slate-300 space-y-2">
+              <li>Reduce manual work without removing review checkpoints</li>
+              <li>Create a repeatable baseline before expanding automation</li>
+              <li>Connect improvements to measurable outcomes stakeholders can track</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="mb-4 text-2xl font-bold text-white">How Zion Tech Group helps</h2>
+            <p className="mb-4 leading-relaxed text-slate-300">Zion Tech Group delivers practical AI/IT solutions with measurable outcomes, clear ownership, and integration with existing tooling.</p>
+          </section>
+
+          <section>
+            <h2 className="mb-4 text-2xl font-bold text-white">Next step</h2>
+            <p className="mb-4 leading-relaxed text-slate-300">
+              If you want a practical plan, let’s discuss it. Browse our services at
+              {' '}
+              <Link href="/services#ai" className="text-violet-300 underline">
+                AI services
+              </Link>
+              , explore free tools at
+              {' '}
+              <Link href="https://ziontechgroup.com" className="text-violet-300 underline">
+                https://ziontechgroup.com
+              </Link>
+              , or schedule a call at
+              {' '}
+              <Link href="https://calendly.com/kleber-ziontechgroup" className="text-violet-300 underline">
+                https://calendly.com/kleber-ziontechgroup
+              </Link>
+              .
+            </p>
+          </section>
+        </div>
+
+        <div className="mt-16 rounded-3xl border border-violet-500/30 bg-gradient-to-r from-violet-900/40 via-indigo-900/30 to-blue-900/40 p-8 text-center shadow-2xl sm:p-12">
+          <h2 className="text-2xl font-bold text-white sm:text-3xl">Want a practical execution plan?</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-slate-200">Get a short plan with the highest-impact first step.</p>
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+            <Link href="https://calendly.com/kleber-ziontechgroup" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">
+              Book Strategy Call
+            </Link>
+            <Link href="/services#ai" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+              AI services
+            </Link>
+          </div>
+        </div>
+
+        <div className="mt-12 border-t border-slate-800 pt-8">
+          <Link href="/blog/" className="text-sm font-medium text-violet-300 transition hover:text-violet-200">
+            &larr; Back to all articles
+          </Link>
+        </div>
+      </article>
     </div>
   );
 }
+

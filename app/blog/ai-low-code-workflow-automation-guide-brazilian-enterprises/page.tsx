@@ -1,41 +1,108 @@
-import { Metadata } from 'next'
-import Link from 'next/link'
+import { Metadata } from 'next';
+import Link from 'next/link';
+import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import ArticleStructuredData from '@/components/ArticleStructuredData';
 
 export const metadata = {
-  title: 'AI Low-Code Workflow Automation Guide for Brazilian Enterprises | Zion Tech Group',
-  description: 'A practical AI low-code workflow automation guide for Brazilian enterprises covering rapid deployment, governance, and measurable operational outcomes.',
-}
+  title: 'Ai Low Code Workflow Automation Guide Brazilian Enterprises | Zion Tech Group',
+  description: 'Ai Low Code Workflow Automation Guide Brazilian Enterprises: practical execution model, measurable guardrails, and next actions for IT and AI leaders.',
+  openGraph: {
+    title: 'Ai Low Code Workflow Automation Guide Brazilian Enterprises',
+    description: 'Ai Low Code Workflow Automation Guide Brazilian Enterprises: practical execution model, measurable guardrails, and next actions for IT and AI leaders.',
+    url: 'https://ziontechgroup.com/blog/ai-low-code-workflow-automation-guide-brazilian-enterprises',
+    type: 'article',
+  },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-low-code-workflow-automation-guide-brazilian-enterprises',
+  },
+};
 
-export default function AiLowCodeWorkflowAutomationGuideBrazilianEnterprisesPage() {
+export default function Page() {
   return (
-    <article className="max-w-4xl mx-auto px-6 py-16 leading-relaxed">
-      <h1 className="text-4xl font-bold mb-6">AI Low-Code Workflow Automation Guide for Brazilian Enterprises</h1>
-
-      <p className="text-lg mb-8">
-        Brazilian enterprises often need faster deployment, lower change-management cost, and clearer compliance mapping than
-        traditional software allows. AI low-code workflow automation can help teams move from idea to production without
-        sacrificing audit trails, data governance, or operational control.
-      </p>
-
-      <h2 className="text-2xl font-semibold mt-10 mb-4">Practical approach</h2>
-      <ul className="list-disc pl-6 mb-6 space-y-2">
-        <li>Start with one high-friction workflow: onboarding, approvals, or incident triage.</li>
-        <li>Use structured outputs and guardrails so automation stays predictable.</li>
-        <li>Combine AI-assisted drafting with human review paths for regulated decisions.</li>
-        <li>Measure cycle time, error rate, and user retention to prove value.</li>
-      </ul>
-
-      <h2 className="text-2xl font-semibold mt-10 mb-4">CTAs and next steps</h2>
-      <p className="mb-4">
-        Zion Tech Group helps enterprises adopt practical AI low-code automation with measurable outcomes and governance-first design.
-      </p>
-
-      <div className="flex flex-wrap gap-4">
-        <Link href="/services" className="underline text-blue-600">Explore managed services</Link>
-        <Link href="/tools" className="underline text-blue-600">Open free tools</Link>
-        <Link href="https://ziontechgroup.com" className="underline text-blue-600" target="_blank" rel="noreferrer">ziontechgroup.com</Link>
-        <Link href="https://calendly.com/kleber-ziontechgroup" className="underline text-blue-600" target="_blank" rel="noreferrer">Schedule a 15-minute alignment</Link>
+    <div className="relative min-h-screen bg-slate-950">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div className="absolute -top-16 left-[-9rem] h-[26rem] w-[26rem] rounded-full bg-violet-500/20 blur-3xl" />
+        <div className="absolute right-[-10rem] top-24 h-[28rem] w-[28rem] rounded-full bg-indigo-500/15 blur-3xl" />
       </div>
-    </article>
-  )
+
+      <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        <SiteBreadcrumbs
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Blog', href: '/blog' },
+            { label: 'Ai Low Code Workflow Automation Guide Brazilian Enterprises' }
+          ]}
+          className="mb-8"
+        />
+
+        <header className="mb-12">
+          <div className="mb-4 flex-wrap items-center gap-3 text-sm flex">
+            <time dateTime="2026-08-03" className="text-slate-400">2026-08-03</time>
+            <span className="rounded-full border border-violet-400/40 bg-violet-500/15 px-3 py-1 text-xs font-medium text-violet-200">Guide</span>
+          </div>
+          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Ai Low Code Workflow Automation Guide Brazilian Enterprises</h1>
+          <p className="mt-4 text-lg text-slate-300">Ai Low Code Workflow Automation Guide Brazilian Enterprises requires measurable guardrails, repeatable workflows, and clear ownership.</p>
+        </header>
+
+        <div className="prose-invert max-w-none space-y-10">
+          <section>
+            <h2 className="mb-4 text-2xl font-bold text-white">Where this adds value</h2>
+            <p className="mb-4 leading-relaxed text-slate-300">Focus on adoption sequencing, pilot evidence, and outcome measurement. Start with a small owned workflow, measure weekly, and expand only after the first workflow shows consistent improvement.</p>
+            <ul className="list-disc pl-6 text-slate-300 space-y-2">
+              <li>Reduce manual work without removing review checkpoints</li>
+              <li>Create a repeatable baseline before expanding automation</li>
+              <li>Connect improvements to measurable outcomes stakeholders can track</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="mb-4 text-2xl font-bold text-white">How Zion Tech Group helps</h2>
+            <p className="mb-4 leading-relaxed text-slate-300">Zion Tech Group delivers practical AI/IT solutions with measurable outcomes, clear ownership, and integration with existing tooling.</p>
+          </section>
+
+          <section>
+            <h2 className="mb-4 text-2xl font-bold text-white">Next step</h2>
+            <p className="mb-4 leading-relaxed text-slate-300">
+              If you want a practical plan, let’s discuss it. Browse our services at
+              {' '}
+              <Link href="/services#automation" className="text-violet-300 underline">
+                Automation services
+              </Link>
+              , explore free tools at
+              {' '}
+              <Link href="https://ziontechgroup.com" className="text-violet-300 underline">
+                https://ziontechgroup.com
+              </Link>
+              , or schedule a call at
+              {' '}
+              <Link href="https://calendly.com/kleber-ziontechgroup" className="text-violet-300 underline">
+                https://calendly.com/kleber-ziontechgroup
+              </Link>
+              .
+            </p>
+          </section>
+        </div>
+
+        <div className="mt-16 rounded-3xl border border-violet-500/30 bg-gradient-to-r from-violet-900/40 via-indigo-900/30 to-blue-900/40 p-8 text-center shadow-2xl sm:p-12">
+          <h2 className="text-2xl font-bold text-white sm:text-3xl">Want a practical execution plan?</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-slate-200">Get a short plan with the highest-impact first step.</p>
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+            <Link href="https://calendly.com/kleber-ziontechgroup" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">
+              Book Strategy Call
+            </Link>
+            <Link href="/services#automation" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+              Automation services
+            </Link>
+          </div>
+        </div>
+
+        <div className="mt-12 border-t border-slate-800 pt-8">
+          <Link href="/blog/" className="text-sm font-medium text-violet-300 transition hover:text-violet-200">
+            &larr; Back to all articles
+          </Link>
+        </div>
+      </article>
+    </div>
+  );
 }
+

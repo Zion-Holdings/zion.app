@@ -1,0 +1,142 @@
+[
+  {
+    "slug": "mlops-pipeline-llms-fine-tuning-production-deployment",
+    "title": "MLOps Pipeline for LLMs: From Fine-Tuning to Production Deployment",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "slug": "rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy",
+    "title": "RAG Optimization Playbook: Reduce Hallucination and Improve Retrieval Accuracy",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "slug": "agentic-ai-orchestration-build-multi-agent-systems-collaborate",
+    "title": "Agentic AI Orchestration: Build Multi-Agent Systems That Actually Collaborate",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "slug": "cnapp-strategy-2026-cloud-native-application-protection-code-to-runtime",
+    "title": "CNAPP Strategy 2026: Cloud-Native Application Protection from Code to Runtime",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "slug": "finops-maturity-model-cloud-cost-visibility-to-automated-optimization",
+    "title": "FinOps Maturity Model: From Cloud Cost Visibility to Automated Optimization",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "slug": "kubernetes-platform-engineering-build-internal-developer-platform-k8s",
+    "title": "Kubernetes Platform Engineering: Build an Internal Developer Platform on K8s",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "slug": "data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure",
+    "title": "Data Mesh Implementation: Domain-Owned Data Products with Self-Serve Infrastructure",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "slug": "real-time-data-streaming-kafka-flink-event-driven-architecture",
+    "title": "Real-Time Data Streaming with Kafka and Flink: Event-Driven Architecture",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "slug": "hyperautomation-strategy-2026-combine-rpa-ai-process-mining",
+    "title": "Hyperautomation Strategy 2026: Combine RPA, AI, and Process Mining",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "slug": "document-processing-automation-extract-data-invoices-contracts-forms",
+    "title": "Document Processing Automation: Extract Data from Invoices, Contracts, and Forms",
+    "cluster": "automation",
+    "intent": "solution",
+    "cta": "services"
+  },
+  {
+    "slug": "opentelemetry-implementation-guide-instrument-any-language-export-anywhere",
+    "title": "OpenTelemetry Implementation Guide: Instrument Any Language and Export Anywhere",
+    "cluster": "observability",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "slug": "aiops-incident-detection-reduce-mttr-anomaly-detection-root-cause-analysis",
+    "title": "AIOps for Incident Detection: Reduce MTTR with Anomaly Detection and Root Cause Analysis",
+    "cluster": "observability",
+    "intent": "solution",
+    "cta": "services"
+  },
+  {
+    "slug": "chaos-engineering-kubernetes-proactively-test-resilience-litmus-chaos-mesh",
+    "title": "Chaos Engineering for Kubernetes: Proactively Test Resilience with Litmus or Chaos Mesh",
+    "cluster": "observability",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "slug": "slo-driven-development-set-error-budgets-build-features-without-breaking-reliability",
+    "title": "SLO-Driven Development: Set Error Budgets and Build Features Without Breaking Reliability",
+    "cluster": "observability",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "slug": "proactive-customer-support-ai-predict-issues-before-tickets-open",
+    "title": "Proactive Customer Support with AI: Predict Issues Before Tickets Open",
+    "cluster": "support",
+    "intent": "solution",
+    "cta": "services"
+  },
+  {
+    "slug": "customer-service-chatbot-beyond-faqs-integrate-rag-context-aware-support",
+    "title": "Customer Service Chatbot Beyond FAQs: Integrate RAG for Context-Aware Support",
+    "cluster": "support",
+    "intent": "solution",
+    "cta": "services"
+  },
+  {
+    "slug": "itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks",
+    "title": "ITSM Modernization: From Jira Service Management to AI-Augmented Service Desks",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "slug": "passwordless-authentication-strategy-fido2-passkeys-sso-integration",
+    "title": "Passwordless Authentication Strategy: FIDO2, Passkeys, and SSO Integration",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "slug": "quantum-safe-cryptography-prepare-post-quantum-threats-today",
+    "title": "Quantum-Safe Cryptography: Prepare for Post-Quantum Threats Today",
+    "cluster": "emerging",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "slug": "sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure",
+    "title": "Sustainable IT and Green Cloud: Measure and Reduce Carbon Footprint of Infrastructure",
+    "cluster": "emerging",
+    "intent": "guide",
+    "cta": "services"
+  }
+]
