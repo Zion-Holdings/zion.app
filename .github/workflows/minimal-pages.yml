@@ -74,6 +74,9 @@ jobs:
           if [ -d docs ]; then
             cp -a docs/. "$ARTIFACT_DIR"/
           fi
+          if [ -d blog ]; then
+            cp -a blog/. "$ARTIFACT_DIR"/blog/
+          fi
           docs_index=.github/docs_index.html
           if [ ! -f "$ARTIFACT_DIR/index.html" ] && [ -f "$docs_index" ]; then
             cp -a "$docs_index" "$ARTIFACT_DIR/index.html"
@@ -114,7 +117,7 @@ jobs:
           echo "Deployed URL: ${{ steps.deployment.outputs.page_url }}"
           sleep 20
           curl -sf "${{ steps.deployment.outputs.page_url }}/" > /dev/null && echo "✓ Homepage" || echo "✗ Homepage"
-          for p in /services/ /contact/ /tools/ /blog /services/ai-customer-support-pro/; do
+          for p in /services/ /contact/ /tools/ /blog /blog/ai-customer-support-automation-roi-in-90-days/ /services/ai-customer-support-pro/; do
             code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "${{ steps.deployment.outputs.page_url }}${p}" || true)
             echo "$p -> $code"
           done
