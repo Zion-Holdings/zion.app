@@ -60,7 +60,7 @@ export default function AIServicesPage() {
             {aiServices.length}+ AI-powered services — from chatbots to computer vision, predictive analytics to autonomous agents.
           </p>
           <Link
-            href="/configurator/"
+            href="/configurator"
             className="btn-primary text-lg px-10 py-4 inline-block"
           >
             ⚡ Get Your Custom AI Proposal →

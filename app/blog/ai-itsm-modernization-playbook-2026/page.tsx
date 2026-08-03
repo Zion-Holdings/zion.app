@@ -59,6 +59,10 @@ export default function Page() {
           Strategy call: <Link href="https://calendly.com/kleber-ziontechgroup">https://calendly.com/kleber-ziontechgroup</Link>
         </p>
       </section>
-    </article>
+              <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+              <Link href="/contact" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
+              <Link href="/services" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Services</Link>
+            </div>
+        </article>
   );
 }

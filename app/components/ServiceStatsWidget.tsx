@@ -50,7 +50,7 @@ export default function ServiceStatsWidget() {
         <p className="section-subheading">
           Real-time analytics from {stats.total_services}+ micro-SaaS, AI, IT, Cloud & Security services
         </p>
-        <Link href="/health-dashboard/" className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-lg bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm hover:bg-purple-800/40 transition-all">
+        <Link href="/health-dashboard" className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-lg bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm hover:bg-purple-800/40 transition-all">
           🏥 View Full Health Dashboard →
         </Link>
       </div>

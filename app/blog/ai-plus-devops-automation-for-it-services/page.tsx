@@ -39,6 +39,10 @@ export default function AiPlusDevOpsForITPage() {
         Browse our AI services at <a href="https://ziontechgroup.com/services">https://ziontechgroup.com/services</a> or explore free tools and resources at <a href="https://ziontechgroup.com">https://ziontechgroup.com</a>.
         If useful, pick a short call here: <a href="https://calendly.com/kleber-ziontechgroup">https://calendly.com/kleber-ziontechgroup</a>.
       </p>
-    </article>
+              <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+              <Link href="/contact" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
+              <Link href="/services" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Services</Link>
+            </div>
+        </article>
   );
 }

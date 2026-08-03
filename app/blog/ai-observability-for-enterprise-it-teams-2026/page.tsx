@@ -65,7 +65,11 @@ export default function Page() {
         <div className="mt-12 border-t border-slate-800 pt-8">
           <Link href="/blog/" className="text-sm font-medium text-violet-300 transition hover:text-violet-200">&larr; Back to all articles</Link>
         </div>
-      </article>
+                <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+              <Link href="/contact" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
+              <Link href="/services" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Services</Link>
+            </div>
+        </article>
     </div>
   );
 }

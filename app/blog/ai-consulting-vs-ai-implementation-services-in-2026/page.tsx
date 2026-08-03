@@ -15,6 +15,10 @@ export default function Page() {
           __html: `<p>Comparing AI consulting versus AI implementation services for enterprises.</p><ul><li>Local AI/IT delivery models</li><li>Governance, cost control, and observability</li><li>Partnership and resell opportunities</li></ul><p><a href="/services">Explore AI services</a></p><p><a href="/contact">Contact us</a></p>`,
         }}
       />
-    </article>
+              <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+              <Link href="/contact" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
+              <Link href="/services" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Services</Link>
+            </div>
+        </article>
   );
 }
