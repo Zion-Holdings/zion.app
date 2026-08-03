@@ -34,7 +34,7 @@ export default function Page() {
             </span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Predictable AI ROI in {Industry}
+            Predictable AI ROI in Education
           </h1>
         </header>
 

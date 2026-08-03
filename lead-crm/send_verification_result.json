@@ -1,0 +1,16 @@
+{
+  "send_count": 0,
+  "sent_to": null,
+  "subject": null,
+  "httpStatus": null,
+  "message_id": null,
+  "thread_id": null,
+  "liveSentCheck": false,
+  "note": "send_disabled",
+  "error": "SEND_DISABLED: ZTG_SEND_ALLOWED != 1",
+  "blockers": [
+    "ZTG_SEND_ALLOWED env var is unset",
+    "lead-crm/outreach_config.json is missing",
+    "outreach_ready_canonical.json has send_blocked=true (no_explicit_opt_in_consent_flag)"
+  ]
+}

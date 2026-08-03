@@ -1,0 +1,21 @@
+{
+  "ts": "2026-08-03T23:15:58.780674+00:00",
+  "status": "degraded",
+  "details": {
+    "deployWatchdog": {
+      "stdout": "{\n  \"checkedAt\": \"2026-08-03T23:16:12.685Z\",\n  \"outExists\": false,\n  \"indexHtmlExists\": false,\n  \"artifacts\": null,\n  \"sourceReports\": []\n}\n",
+      "stderr": null,
+      "exit_code": 0
+    },
+    "smokeRoutes": {
+      "stdout": "config/smoke-routes.txt missing; skipped live catalog fallback",
+      "stderr": null,
+      "exit_code": 0
+    },
+    "homepageAiSync": {
+      "stdout": "",
+      "stderr": "homepage-ai-sync-check.cjs not present; skipped",
+      "exit_code": 0
+    }
+  }
+}

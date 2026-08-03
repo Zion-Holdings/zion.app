@@ -1,9 +1,9 @@
 export const metadata = {
-  title: 'AI-First {Industry} Playbook for 2026 | Zion Tech Group',
+  title: 'AI-First Legal Compliance Playbook for 2026 | Zion Tech Group',
   description: 'Explore how Legal & Compliance teams use AI to cut costs, improve outcomes, and scale operations in 2026.',
   alternates: { canonical: '/blog/ai-first-legalcompliance-playbook-2026/' },
   openGraph: {
-    title: 'AI-First {Industry} Playbook for 2026',
+    title: 'AI-First Legal Compliance Playbook for 2026',
     description: 'Explore how Legal & Compliance teams use AI to cut costs, improve outcomes, and scale operations in 2026.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-first-legalcompliance-playbook-2026/',
@@ -34,7 +34,7 @@ export default function Page() {
             </span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            AI-First {Industry} Playbook for 2026
+            AI-First Legal Compliance Playbook for 2026
           </h1>
         </header>
 

@@ -34,7 +34,7 @@ export default function Page() {
             </span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            How {Industry} Leaders Cut Costs With AI
+            How Healthcare and Life Sciences Leaders Cut Costs With AI
           </h1>
         </header>
 

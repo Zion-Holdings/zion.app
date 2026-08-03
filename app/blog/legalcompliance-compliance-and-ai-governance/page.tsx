@@ -34,7 +34,7 @@ export default function Page() {
             </span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            {Industry} Compliance and AI Governance
+            Legal Compliance and AI Governance
           </h1>
         </header>
 
