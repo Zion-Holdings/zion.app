@@ -1,0 +1,15 @@
+# Mappings for legacy and missing routes
+/blog/* /docs/blog/:splat 302
+/services/ai-accessibility-inclusive-design /docs/services/ai-accessibility-inclusive-design/index.html 302
+/services/ai-accessibility-inclusive-design/ /docs/services/ai-accessibility-inclusive-design/index.html 302
+/services/ai-energy-utilities-analytics /docs/services/ai-energy-utilities-analytics/index.html 302
+/services/ai-energy-utilities-analytics/ /docs/services/ai-energy-utilities-analytics/index.html 302
+/industries/healthcare-life-sciences /docs/industries/healthcare/index.html 302
+/industries/retail-ecommerce /docs/industries/retail/index.html 302
+/industries/legal-compliance /docs/industries/legal/index.html 302
+/industries/manufacturing /docs/industries/manufacturing/index.html 302
+/industries/insurance /docs/industries/insurance/index.html 302
+/solutions/cyber-threat-intelligence /docs/solutions/index.html 302
+/case-studies/manufacturing-predictive-maintenance-cut-unplanned-downtime-47% /docs/case-studies/manufacturing-predictive-maintenance/index.html 302
+/case-studies/logistics-route-optimization-cut-fuel-spend-22% /docs/case-studies/logistics-route-optimization/index.html 302
+/case-studies/retail-dynamic-pricing-lifted-revenue-19%-without-margin-erosion /docs/case-studies/retail-personalization-engine/index.html 302
