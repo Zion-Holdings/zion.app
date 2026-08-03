@@ -1,0 +1,1 @@
+{"ts":"2026-08-03T19:52:00Z","to":null,"subject":null,"status":"blocked","reason":"consent_not_present","errors":["missing_env: OUTREACH_OPT_IN","missing_env: LEAD_OUTREACH_OPT_IN","missing_workspace: lead-crm/outreach_config.json"],"provider":null,"batch_file":"lead-crm/outreach_ready_canonical.json"}

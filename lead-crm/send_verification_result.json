@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-08-03T19:52:00Z",
+  "sendBlocked": true,
+  "blockReason": "consent_not_present",
+  "errors": [
+    "missing_env: OUTREACH_OPT_IN",
+    "missing_env: LEAD_OUTREACH_OPT_IN",
+    "missing_workspace: lead-crm/outreach_config.json"
+  ],
+  "candidateBatchFile": "lead-crm/outreach_ready_canonical.json",
+  "sendCount": 0,
+  "note": "Blocked by cron consent gate. Set env vars or create outreach_config.json to unblock."
+}
