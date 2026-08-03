@@ -5,7 +5,8 @@ from pathlib import Path
 REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
 sys.path.insert(0, str(REPO))
 
-BATCH_PATH = REPO / 'lead-crm' / 'outreach_ready_canonical.json'
+NEXT_WAVE_PATH = REPO / 'lead-crm' / 'outreach_next_wave.json'
+BATCH_PATH = NEXT_WAVE_PATH if NEXT_WAVE_PATH.exists() else REPO / 'lead-crm' / 'outreach_ready_canonical.json'
 EXCLUSION_PATH = REPO / 'lead-crm' / 'exclusion-list.json'
 SEND_LOG = REPO / 'lead-crm' / 'outreach_sent_history.jsonl'
 VERIFICATION_PATH = REPO / 'lead-crm' / 'send_verification_result.json'
