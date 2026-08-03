@@ -1,9 +1,9 @@
 export const metadata = {
-  title: 'Legal Compliance and AI Governance | Zion Tech Group',
+  title: '{Industry} Compliance and AI Governance | Zion Tech Group',
   description: 'Explore how Legal & Compliance teams use AI to cut costs, improve outcomes, and scale operations in 2026.',
   alternates: { canonical: '/blog/legalcompliance-compliance-and-ai-governance/' },
   openGraph: {
-    title: 'Legal Compliance and AI Governance',
+    title: '{Industry} Compliance and AI Governance',
     description: 'Explore how Legal & Compliance teams use AI to cut costs, improve outcomes, and scale operations in 2026.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/legalcompliance-compliance-and-ai-governance/',
@@ -34,7 +34,7 @@ export default function Page() {
             </span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Legal Compliance and AI Governance
+            {Industry} Compliance and AI Governance
           </h1>
         </header>
 
@@ -113,11 +113,7 @@ export default function Page() {
             ← Back to all articles
           </a>
         </div>
-                <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-              <Link href="/contact" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
-              <Link href="/services" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Services</Link>
-            </div>
-        </article>
+      </article>
     </div>
   );
 }

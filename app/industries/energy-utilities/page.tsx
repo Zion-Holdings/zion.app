@@ -3,12 +3,17 @@ import Link from 'next/link';
 export const metadata = {
   title: 'AI Solutions for Energy & Utilities | Zion Tech Group',
   description: 'AI and IT solutions for Energy & Utilities: automation, analytics, compliance, and integration services with measurable ROI.',
-  keywords: 'grid optimization, predictive maintenance, carbon tracking',
+  keywords: 'grid optimization, predictive maintenance, carbon tracking, renewable forecasting',
   alternates: { canonical: '/industries/energy-utilities' },
 };
 
 const SERVICES = [
-  {"title": "Intelligent Operations Platform", "slug": "/services/ai-energy-utilities-operations", "description": "Unified AI operations platform for energy & utilities: monitoring, automation, and optimization.", "icon": "\u2699\ufe0f", "roi": "20% energy waste reduction"}, {"title": "Analytics & Decision Intelligence", "slug": "/services/ai-energy-utilities-analytics", "description": "Decision-grade analytics and forecasting tailored to energy & utilities data models.", "icon": "\ud83d\udcca", "roi": "35% outage prediction improvement"}, {"title": "Workflow Automation Suite", "slug": "/services/ai-energy-utilities-automation", "description": "End-to-end automation with human-in-the-loop governance for energy & utilities workflows.", "icon": "\ud83e\udd16", "roi": "$8M operational savings"}, {"title": "Predictive Intelligence", "slug": "/services/ai-energy-utilities-predictive", "description": "Predictive models for demand, risk, and maintenance in energy & utilities environments.", "icon": "\ud83d\udcc8", "roi": "20% waste reduction"}, {"title": "Compliance & Security Layer", "slug": "/services/ai-energy-utilities-compliance", "description": "Compliance automation, audit logging, and security controls for energy & utilities.", "icon": "\ud83d\udee1\ufe0f", "roi": "95% audit readiness"}, {"title": "Integration Hub", "slug": "/services/ai-energy-utilities-integration", "description": "Connect ERPs, CRMs, and legacy systems with an AI-ready integration layer.", "icon": "\ud83d\udd17", "roi": "50% faster integration"}
+  {"title": "Intelligent Operations Platform", "slug": "/services/ai-energy-utilities-operations", "description": "Unified AI operations platform for energy & utilities: monitoring, automation, and optimization.", "icon": "\u2699\ufe0f", "roi": "20% energy waste reduction"},
+    {"title": "Analytics & Decision Intelligence", "slug": "/services/ai-energy-utilities-analytics", "description": "Decision-grade analytics and forecasting tailored to energy & utilities data models.", "icon": "\ud83d\udcca", "roi": "35% outage prediction improvement"},
+    {"title": "Workflow Automation Suite", "slug": "/services/ai-energy-utilities-automation", "description": "End-to-end automation with human-in-the-loop governance for energy & utilities workflows.", "icon": "\ud83e\udd16", "roi": "$8M operational savings"},
+    {"title": "Predictive Intelligence", "slug": "/services/ai-energy-utilities-predictive", "description": "Predictive models for demand, risk, and maintenance in energy & utilities environments.", "icon": "\ud83d\udcc8", "roi": "20% waste reduction"},
+    {"title": "Compliance & Security Layer", "slug": "/services/ai-energy-utilities-compliance", "description": "Compliance automation, audit logging, and security controls for energy & utilities.", "icon": "\ud83d\udee1\ufe0f", "roi": "95% audit readiness"},
+    {"title": "Integration Hub", "slug": "/services/ai-energy-utilities-integration", "description": "Connect ERPs, CRMs, and legacy systems with an AI-ready integration layer.", "icon": "\ud83d\udd17", "roi": "50% faster integration"}
 ];
 
 export default function Page() {
@@ -40,84 +45,12 @@ export default function Page() {
               </Link>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              
-          <Link
-            key="/services/ai-energy-utilities-operations"
-            href="/services/ai-energy-utilities-operations"
-            className="group bg-slate-900/50 border border-slate-700/50 rounded-2xl p-6 hover:border-green-500/40 transition-all"
-          >
-            <div className="text-3xl mb-3">⚙️</div>
-            <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-green-300 transition-colors">
-              Intelligent Operations Platform
-            </h3>
-            <p className="text-slate-400 text-sm mb-3 line-clamp-3">Unified AI operations platform for energy & utilities: monitoring, automation, and optimization.</p>
-            <div className="text-xs text-green-400 font-medium">20% energy waste reduction</div>
-          </Link>
-
-          <Link
-            key="/services/ai-energy-utilities-analytics"
-            href="/services/ai-energy-utilities-analytics"
-            className="group bg-slate-900/50 border border-slate-700/50 rounded-2xl p-6 hover:border-green-500/40 transition-all"
-          >
-            <div className="text-3xl mb-3">📊</div>
-            <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-green-300 transition-colors">
-              Analytics & Decision Intelligence
-            </h3>
-            <p className="text-slate-400 text-sm mb-3 line-clamp-3">Decision-grade analytics and forecasting tailored to energy & utilities data models.</p>
-            <div className="text-xs text-green-400 font-medium">35% outage prediction improvement</div>
-          </Link>
-
-          <Link
-            key="/services/ai-energy-utilities-automation"
-            href="/services/ai-energy-utilities-automation"
-            className="group bg-slate-900/50 border border-slate-700/50 rounded-2xl p-6 hover:border-green-500/40 transition-all"
-          >
-            <div className="text-3xl mb-3">🤖</div>
-            <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-green-300 transition-colors">
-              Workflow Automation Suite
-            </h3>
-            <p className="text-slate-400 text-sm mb-3 line-clamp-3">End-to-end automation with human-in-the-loop governance for energy & utilities workflows.</p>
-            <div className="text-xs text-green-400 font-medium">$8M operational savings</div>
-          </Link>
-
-          <Link
-            key="/services/ai-energy-utilities-predictive"
-            href="/services/ai-energy-utilities-predictive"
-            className="group bg-slate-900/50 border border-slate-700/50 rounded-2xl p-6 hover:border-green-500/40 transition-all"
-          >
-            <div className="text-3xl mb-3">📈</div>
-            <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-green-300 transition-colors">
-              Predictive Intelligence
-            </h3>
-            <p className="text-slate-400 text-sm mb-3 line-clamp-3">Predictive models for demand, risk, and maintenance in energy & utilities environments.</p>
-            <div className="text-xs text-green-400 font-medium">20% waste reduction</div>
-          </Link>
-
-          <Link
-            key="/services/ai-energy-utilities-compliance"
-            href="/services/ai-energy-utilities-compliance"
-            className="group bg-slate-900/50 border border-slate-700/50 rounded-2xl p-6 hover:border-green-500/40 transition-all"
-          >
-            <div className="text-3xl mb-3">🛡️</div>
-            <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-green-300 transition-colors">
-              Compliance & Security Layer
-            </h3>
-            <p className="text-slate-400 text-sm mb-3 line-clamp-3">Compliance automation, audit logging, and security controls for energy & utilities.</p>
-            <div className="text-xs text-green-400 font-medium">95% audit readiness</div>
-          </Link>
-
-          <Link
-            key="/services/ai-energy-utilities-integration"
-            href="/services/ai-energy-utilities-integration"
-            className="group bg-slate-900/50 border border-slate-700/50 rounded-2xl p-6 hover:border-green-500/40 transition-all"
-          >
-            <div className="text-3xl mb-3">🔗</div>
-            <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-green-300 transition-colors">
-              Integration Hub
-            </h3>
-            <p className="text-slate-400 text-sm mb-3 line-clamp-3">Connect ERPs, CRMs, and legacy systems with an AI-ready integration layer.</p>
-            <div className="text-xs text-green-400 font-medium">50% faster integration</div>
-          </Link>
+              {[0,1,2].map((i) => (
+                <div key={i} className="bg-slate-900/60 rounded-xl p-6 border border-slate-700/50">
+                  <div className="text-2xl font-bold text-green-400 mb-1">{SERVICES[i]['roi']}</div>
+                  <div className="text-sm text-slate-400">Measurable impact</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -148,7 +81,7 @@ export default function Page() {
                   {service.title}
                 </h3>
                 <p className="text-slate-400 text-sm mb-3 line-clamp-3">{service.description}</p>
-                <div className="text-xs text-green-400 font-medium">{service.ROI}</div>
+                <div className="text-xs text-green-400 font-medium">{service.roi}</div>
               </Link>
             ))}
           </div>

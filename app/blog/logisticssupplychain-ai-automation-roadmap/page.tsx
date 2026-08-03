@@ -1,9 +1,9 @@
 export const metadata = {
-  title: 'Logistics and Supply Chain AI Automation Roadmap | Zion Tech Group',
+  title: '{Industry} AI Automation Roadmap | Zion Tech Group',
   description: 'Explore how Logistics & Supply Chain teams use AI to cut costs, improve outcomes, and scale operations in 2026.',
   alternates: { canonical: '/blog/logisticssupplychain-ai-automation-roadmap/' },
   openGraph: {
-    title: 'Logistics and Supply Chain AI Automation Roadmap',
+    title: '{Industry} AI Automation Roadmap',
     description: 'Explore how Logistics & Supply Chain teams use AI to cut costs, improve outcomes, and scale operations in 2026.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/logisticssupplychain-ai-automation-roadmap/',
@@ -34,7 +34,7 @@ export default function Page() {
             </span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Logistics and Supply Chain AI Automation Roadmap
+            {Industry} AI Automation Roadmap
           </h1>
         </header>
 
@@ -113,11 +113,7 @@ export default function Page() {
             ← Back to all articles
           </a>
         </div>
-                <div className="mt-4 flex flex-col gap-3 sm:flex-row">
-              <Link href="/contact" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
-              <Link href="/services" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Services</Link>
-            </div>
-        </article>
+      </article>
     </div>
   );
 }
