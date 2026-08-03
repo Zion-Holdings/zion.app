@@ -1,0 +1,33 @@
+{"ts":"2026-08-03T15:14:07.863Z","event":"generated","count":32}
+{"ts":"2026-08-03T15:17:08.596Z","event":"generated","count":32}
+{"ts":"2026-08-03T15:19:20.116Z","event":"generated","count":32}
+{"ts":"2026-08-03T15:19:20.502Z","event":"start"}
+{"ts":"2026-08-03T15:19:21.678Z","event":"generated","count":32}
+{"ts":"2026-08-03T15:19:21.933Z","event":"generate","ok":true,"newPages":0}
+{"ts":"2026-08-03T15:19:42.134Z","event":"push","ok":false,"error":"error: invalid path 'NUL'\nerror: unable to add 'NUL' to index\nfatal: adding files failed\n"}
+{"ts":"2026-08-03T15:19:55.124Z","event":"start"}
+{"ts":"2026-08-03T15:19:55.293Z","event":"generated","count":32}
+{"ts":"2026-08-03T15:19:55.572Z","event":"generate","ok":true,"newPages":0}
+{"ts":"2026-08-03T15:25:27.140Z","event":"start"}
+{"ts":"2026-08-03T15:25:27.385Z","event":"generated","count":32}
+{"ts":"2026-08-03T15:25:27.694Z","event":"generate","ok":true,"newPages":0}
+{"ts":"2026-08-03T15:25:28.255Z","event":"push","ok":false,"error":"fatal: Unable to create 'C:/Users/Zion/tmp/zion-clone-test2/.git/index.lock': File exists.\n\nAnother git process seems to be running in this repository, or the lock file may be stale\n"}
+{"ts":"2026-08-03T15:25:56.647Z","event":"start"}
+{"ts":"2026-08-03T15:25:56.910Z","event":"generated","count":32}
+{"ts":"2026-08-03T15:25:56.975Z","event":"generate","ok":true,"newPages":0}
+{"ts":"2026-08-03T15:28:38.805Z","event":"start"}
+{"ts":"2026-08-03T15:28:39.157Z","event":"generated","count":32}
+{"ts":"2026-08-03T15:28:39.302Z","event":"generate","ok":true,"newPages":0}
+{"ts":"2026-08-03T15:28:39.304Z","event":"push","ok":true,"skipped":true,"reason":"push disabled"}
+{"ts":"2026-08-03T15:28:59.332Z","event":"start"}
+{"ts":"2026-08-03T15:28:59.695Z","event":"generated","count":32}
+{"ts":"2026-08-03T15:28:59.731Z","event":"generate","ok":true,"newPages":0}
+{"ts":"2026-08-03T15:28:59.957Z","event":"push","ok":false,"error":"fatal: Unable to create 'C:/Users/Zion/tmp/zion-clone-test2/.git/index.lock': File exists.\n\nAnother git process seems to be running in this repository, or the lock file may be stale\n"}
+{"ts":"2026-08-03T16:12:27.579Z","event":"start"}
+{"ts":"2026-08-03T16:12:27.696Z","event":"generate","ok":true,"created":[{"slug":"ai-customer-support-automation-roi-in-90-days","file":"C:\\Users\\Zion\\tmp\\zion-clone-test2\\app\\blog\\ai-customer-support-automation-roi-in-90-days\\page.tsx"},{"slug":"cloud-cost-optimization-for-startups-scaling-on-aws","file":"C:\\Users\\Zion\\tmp\\zion-clone-test2\\app\\blog\\cloud-cost-optimization-for-startups-scaling-on-aws\\page.tsx"},{"slug":"ai-voice-agent-use-cases-for-support-and-sales-in-2026","file":"C:\\Users\\Zion\\tmp\\zion-clone-test2\\app\\blog\\ai-voice-agent-use-cases-for-support-and-sales-in-2026\\page.tsx"},{"slug":"how-to-choose-an-ai-automation-platform-for-enterprise-it","file":"C:\\Users\\Zion\\tmp\\zion-clone-test2\\app\\blog\\how-to-choose-an-ai-automation-platform-for-enterprise-it\\page.tsx"}]}
+{"ts":"2026-08-03T16:12:27.699Z","event":"push","ok":true,"skipped":true,"reason":"push disabled"}
+{"ts":"2026-08-03T16:15:34.126Z","event":"start"}
+{"ts":"2026-08-03T16:15:35.386Z","event":"generate","ok":true,"created":[{"slug":"cybersecurity-soc-modernization-with-ai","file":"C:\\Users\\Zion\\tmp\\zion-clone-test2\\app\\blog\\cybersecurity-soc-modernization-with-ai\\page.tsx"},{"slug":"micro-saas-vs-internal-build-a-decision-framework","file":"C:\\Users\\Zion\\tmp\\zion-clone-test2\\app\\blog\\micro-saas-vs-internal-build-a-decision-framework\\page.tsx"},{"slug":"ai-powered-it-field-service-management","file":"C:\\Users\\Zion\\tmp\\zion-clone-test2\\app\\blog\\ai-powered-it-field-service-management\\page.tsx"}]}
+{"ts":"2026-08-03T16:15:35.610Z","event":"push","ok":false,"error":"fatal: Unable to create 'C:/Users/Zion/tmp/zion-clone-test2/.git/index.lock': File exists.\n\nAnother git process seems to be running in this repository, or the lock file may be stale\n"}
+{"ts":"2026-08-03T16:16:11.294Z","event":"start"}
+{"ts":"2026-08-03T16:16:11.354Z","event":"generate","ok":true,"created":[{"slug":"modern-data-lakehouse-patterns-for-analytics-teams","file":"C:\\Users\\Zion\\tmp\\zion-clone-test2\\app\\blog\\modern-data-lakehouse-patterns-for-analytics-teams\\page.tsx"}]}

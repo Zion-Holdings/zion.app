@@ -17,3 +17,6 @@
 10. How to set up AWS Cost Anomaly Detection without hiring a FinOps engineer
 11. Reserved Instances vs Savings Plans for startups: which saves more in 2026
 12. Hidden AWS bills explained: data transfer, NAT Gateway, and EBS snapshot traps
+13. Micro-SaaS pricing strategies for founders in 2026
+14. How to evaluate no-code platforms for internal business tools
+15. AI-native SaaS vendor due diligence checklist for IT teams
