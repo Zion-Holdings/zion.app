@@ -182,12 +182,12 @@ function gitPush(created) {
 
   if (!SHOULD_PUSH) return { ok: true, committed: true, pushed: false, reason: 'push disabled' };
 
-  const push = run('git push origin main');
+  const push = run('git push origin gh-pages');
   if (!push.ok) {
     const pull = run('git pull --rebase origin main');
     if (!pull.ok) return { ok: false, error: pull.out };
     cleanLocks();
-    const retry = run('git push origin main');
+    const retry = run('git push origin gh-pages');
     if (!retry.ok) return { ok: false, error: retry.out };
   }
   return { ok: true, pushed: true };
