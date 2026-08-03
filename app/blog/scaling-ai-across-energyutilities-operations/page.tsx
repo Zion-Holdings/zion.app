@@ -1,9 +1,9 @@
 export const metadata = {
-  title: 'Scaling AI Across {Industry} Operations | Zion Tech Group',
+  title: 'Scaling AI Across Energy & Utilities Operations | Zion Tech Group',
   description: 'Explore how Energy & Utilities teams use AI to cut costs, improve outcomes, and scale operations in 2026.',
   alternates: { canonical: '/blog/scaling-ai-across-energyutilities-operations/' },
   openGraph: {
-    title: 'Scaling AI Across {Industry} Operations',
+    title: 'Scaling AI Across Energy & Utilities Operations',
     description: 'Explore how Energy & Utilities teams use AI to cut costs, improve outcomes, and scale operations in 2026.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/scaling-ai-across-energyutilities-operations/',
@@ -34,7 +34,7 @@ export default function Page() {
             </span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Scaling AI Across {Industry} Operations
+            Scaling AI Across Energy & Utilities Operations
           </h1>
         </header>
 

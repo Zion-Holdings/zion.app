@@ -1,9 +1,9 @@
 export const metadata = {
-  title: 'How {Industry} Leaders Cut Costs With AI | Zion Tech Group',
+  title: 'How Healthcare & Life Sciences Leaders Cut Costs With AI | Zion Tech Group',
   description: 'Explore how Healthcare & Life Sciences teams use AI to cut costs, improve outcomes, and scale operations in 2026.',
   alternates: { canonical: '/blog/how-healthcarelifesciences-leaders-cut-costs-with-ai/' },
   openGraph: {
-    title: 'How {Industry} Leaders Cut Costs With AI',
+    title: 'How Healthcare & Life Sciences Leaders Cut Costs With AI',
     description: 'Explore how Healthcare & Life Sciences teams use AI to cut costs, improve outcomes, and scale operations in 2026.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/how-healthcarelifesciences-leaders-cut-costs-with-ai/',
@@ -34,7 +34,7 @@ export default function Page() {
             </span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            How {Industry} Leaders Cut Costs With AI
+            How Healthcare & Life Sciences Leaders Cut Costs With AI
           </h1>
         </header>
 
