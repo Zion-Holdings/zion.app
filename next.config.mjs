@@ -9,6 +9,9 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
+  outputFileTracingExcludes: {
+    '**/*.html': ['**/_next/static/**/pages/**', '**/_next/static/**/*.js'],
+  },
   images: {
     unoptimized: true,
     remotePatterns: [{ protocol: 'https', hostname: '**' }],
