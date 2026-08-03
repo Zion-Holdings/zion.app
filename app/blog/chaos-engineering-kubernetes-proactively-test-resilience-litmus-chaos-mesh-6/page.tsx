@@ -67,6 +67,10 @@ If this matches your current initiative, the next step is a short scoping call a
               <li><Link href="/blog/kubernetes-cost-optimization-from-cloud-bill-shock-to-finops-mastery">Kubernetes Cost Optimization From Cloud Bill Shock To Finops Mastery</Link></li>
               <li><Link href="/blog/pdf-smb-pain-points-and-msp-solutions-mirazon-com">Pdf Smb Pain Points And Msp Solutions Mirazon Com</Link></li>
               <li><Link href="/blog/show-hn-openkiwi-knowledge-integration-and-workflow-intelligence">Show Hn Openkiwi Knowledge Integration And Workflow Intelligence</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-3">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 3</Link></li>
+              <li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-10">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 10</Link></li>
+              <li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-6">Ai Observability Pipeline For Kubernetes And Cloud In 2026 6</Link></li>
+              <li><Link href="/blog/top-smb-pain-points-solved-by-managed-service-provider-msp-solutions">Top Smb Pain Points Solved By Managed Service Provider Msp Solutions</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

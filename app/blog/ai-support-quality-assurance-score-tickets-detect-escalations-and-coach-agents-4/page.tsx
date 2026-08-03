@@ -70,6 +70,10 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
               <li><Link href="/blog/show-hn-strada-cloud-ide-for-connecting-saas-apis">Show Hn Strada Cloud Ide For Connecting Saas Apis</Link></li>
               <li><Link href="/blog/devops-credential-hygiene-how-to-eliminate-ci-cd-secrets-with-teleport">Devops Credential Hygiene How To Eliminate Ci Cd Secrets With Teleport</Link></li>
               <li><Link href="/blog/show-hn-imbi-automations">Show Hn Imbi Automations</Link></li>
+              <li><Link href="/blog/edge-ai-deployment-patterns-for-retail-and-manufacturing-2">Edge Ai Deployment Patterns For Retail And Manufacturing 2</Link></li>
+              <li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-8">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 8</Link></li>
+              <li><Link href="/blog/why-every-smb-needs-an-msp-real-pain-points-and-how-thunder-rock">Why Every Smb Needs An Msp Real Pain Points And How Thunder Rock</Link></li>
+              <li><Link href="/blog/when-vcio-services-for-smbs-make-sense-mpoweredit">When Vcio Services For Smbs Make Sense Mpoweredit</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -62,6 +62,10 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
               <li><Link href="/blog/the-complete-guide-to-vcio-services-strategy-linkedin">The Complete Guide To Vcio Services Strategy Linkedin</Link></li>
               <li><Link href="/blog/show-hn-unskript-generate-sre-runbooks-using-chatgpt-and-jupyter-notebooks">Show Hn Unskript Generate Sre Runbooks Using Chatgpt And Jupyter Notebooks</Link></li>
               <li><Link href="/blog/databricks-reference-architectures-download">Databricks Reference Architectures Download</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-2">Ai Soc Modernization For Mssps In 2026 2</Link></li>
+              <li><Link href="/blog/cloud-cost-governance-with-ai-anomaly-detection-and-forecasting-9">Cloud Cost Governance With Ai Anomaly Detection And Forecasting 9</Link></li>
+              <li><Link href="/blog/real-time-data-streaming-kafka-flink-event-driven-architecture-7">Real Time Data Streaming Kafka Flink Event Driven Architecture 7</Link></li>
+              <li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-10">Ai Application Modernization Monolith To Microservices Safely 10</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

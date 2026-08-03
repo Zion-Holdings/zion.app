@@ -62,6 +62,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
               <li><Link href="/blog/ai-support-quality-assurance-score-tickets-detect-escalations-and-coach-agents-4">Ai Support Quality Assurance Score Tickets Detect Escalations And Coach Agents 4</Link></li>
               <li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-3">Document Processing Automation Extract Data Invoices Contracts Forms 3</Link></li>
               <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-2">Customer Success Automation Trigger Health Checks Outreach And Product Signals 2</Link></li>
+              <li><Link href="/blog/field-service-ai-optimization-predict-service-times-and-optimize-technician-routes-4">Field Service Ai Optimization Predict Service Times And Optimize Technician Routes 4</Link></li>
+              <li><Link href="/blog/7-smb-cybersecurity-statistics-for-2026-ninjaone">7 Smb Cybersecurity Statistics For 2026 Ninjaone</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration</Link></li>
+              <li><Link href="/blog/ai-orchestration-market-witnesses-surge-in-use-across-healthcare-and-bfsi">Ai Orchestration Market Witnesses Surge In Use Across Healthcare And Bfsi</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

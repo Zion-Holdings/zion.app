@@ -1,11 +1,11 @@
 {
   "status": "ok",
   "error": null,
-  "ran_at": "2026-08-03T20:42:45.759927+00:00",
+  "ran_at": "2026-08-03T20:52:52.897240+00:00",
   "contacts_mined": 24,
   "classified": 24,
   "notes": "Analysis and improvement completed without sending. send_outreach_batch.py missing; used local improver.",
-  "ts": "2026-08-03T20:42:45.759927+00:00",
+  "ts": "2026-08-03T20:52:52.897240+00:00",
   "last_analysis_status": "success_improved",
   "last_analysis_summary": {
     "contacts": 24,
