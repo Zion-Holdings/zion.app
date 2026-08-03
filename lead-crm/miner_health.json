@@ -1,0 +1,31 @@
+{
+  "status": "ok",
+  "error": null,
+  "ran_at": "2026-08-03T17:44:02.702911+00:00",
+  "contacts_mined": 24,
+  "classified": 24,
+  "notes": "Analysis and improvement completed without sending. send_outreach_batch.py missing; used local improver.",
+  "ts": "2026-08-03T17:44:02.702911+00:00",
+  "last_analysis_status": "success_improved",
+  "last_analysis_summary": {
+    "contacts": 24,
+    "contacts_with_personalized_body": 24,
+    "contacts_missing_fields": 0,
+    "ready_count": 24,
+    "excluded_count": 0,
+    "subject_counts": {},
+    "status_counts": {
+      "ready": 24
+    },
+    "improvement_notes": [
+      "Heurística aplicada: normalização de status, nome e empresa.",
+      "Corpos genéricos enriquecidos com P.S. personalizado por domínio.",
+      "Registros duplicados deduzidos por e-mail."
+    ]
+  },
+  "contacts_found": 24,
+  "contacts_with_personalized_body": 24,
+  "contacts_missing_fields": 0,
+  "ready_count": 24,
+  "excluded_count": 0
+}

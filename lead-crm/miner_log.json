@@ -1,0 +1,20 @@
+{
+  "entries": [
+    {
+      "ts": "2026-08-03T16:52:10.882052+00:00",
+      "event": "run_attempt",
+      "detail": "python3 lead-crm/historical_email_miner.py",
+      "result": "error",
+      "error_fact": "No such file or directory: lead-crm/historical_email_miner.py",
+      "emails_sent": 0
+    },
+    {
+      "ts": "2026-08-03T17:42:30.967473+00:00",
+      "event": "run_attempt",
+      "detail": "python3 lead-crm/historical_email_miner.py",
+      "result": "error",
+      "error_fact": "No such file or directory: lead-crm/historical_email_miner.py",
+      "emails_sent": 0
+    }
+  ]
+}
