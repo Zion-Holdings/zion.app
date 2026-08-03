@@ -30,7 +30,7 @@ export default function Page() {
           <div className="mb-4 flex-wrap items-center gap-3 text-sm flex">
             <time dateTime="2026-08-03" className="text-slate-400">August 03, 2026</time>
             <span className="rounded-full border border-purple-400/40 bg-purple-500/15 px-3 py-1 text-xs font-medium text-purple-200">
-              Automation
+              ROI
             </span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
