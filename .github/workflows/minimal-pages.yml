@@ -1,7 +1,7 @@
 name: Minimal Pages Deploy
 on:
   push:
-    branches: [ main ]
+    branches: [ gh-pages ]
   workflow_dispatch:
 permissions:
   contents: read
