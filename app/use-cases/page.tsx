@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Use Cases | Zion Tech Group',
+  title: 'Use Cases',
   description: 'Measurable AI and IT use cases across support, revenue, infrastructure, security, data, and operations.',
   alternates: { canonical: '/use-cases/' },
 };

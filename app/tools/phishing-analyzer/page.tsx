@@ -3,6 +3,12 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'Phishing Email Analyzer',
+  description: 'Free tool to analyze emails for phishing indicators, suspicious links, and social engineering patterns.',
+  alternates: { canonical: '/tools/phishing-analyzer/' },
+};
+
 const SEVERITY_STYLES: Record<string, string> = {
   high: 'bg-red-500/10 border-red-500/20',
   medium: 'bg-amber-500/10 border-amber-500/20',
