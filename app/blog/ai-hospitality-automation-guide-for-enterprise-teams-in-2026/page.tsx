@@ -33,17 +33,17 @@ export default function BlogPost() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key business outcomes</h2>
           <ul className="list-disc list-inside space-y-2 text-gray-300">
-            <li>Improve customer satisfaction scores by 27 points</li>
-            <li>Shorten onboarding time by 46% with intelligent automation</li>
-            <li>Accelerate time-to-market by 25% with automated workflows</li>
+            <li>Reduce operational costs by 32% within the first 8 months</li>
+            <li>Accelerate time-to-market by 62% with automated workflows</li>
+            <li>Improve customer satisfaction scores by 60 points</li>
           </ul>
         </div>
 
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Performance benchmarks</h2>
           <ul className="list-disc list-inside space-y-2 text-gray-300">
-            <li>Efficiency gains of 37% across key workflows</li>
-            <li>Throughput increased by 25% without additional headcount</li>
+            <li>Efficiency gains of 41% across key workflows</li>
+            <li>Data accuracy improved from 7% to 1%</li>
           </ul>
         </div>
 
@@ -65,7 +65,7 @@ export default function BlogPost() {
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
           >
-            Request a tailored proposal with timeline and pricing.
+            Book a free consultation to see how this applies to your operations.
           </a>
         </div>
       </div>
