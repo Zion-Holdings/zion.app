@@ -1,5 +1,7 @@
 name: Continuous Pages Deploy
 on:
+  schedule:
+    - cron: '*/30 * * * *'
   push:
     branches: [ gh-pages ]
   workflow_dispatch:
@@ -13,13 +15,12 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v5
         with:
-          fetch-depth: 0
-
+          fetch-depth: 1
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
@@ -28,20 +29,18 @@ jobs:
           cache-dependency-path: package-lock.json
         env:
           NODE_OPTIONS: --max-old-space-size=4096
-
       - name: Install dependencies
         run: npm install --no-audit --fund=false
         env:
           NODE_OPTIONS: --max-old-space-size=4096
-
       - name: Build Next export
         id: build
         run: |
           set -euo pipefail
           npm run build > build.log 2>&1 || echo "Build failed or skipped, continuing with static files"
-          echo '---- BUILD LOG TAIL ----'
-          tail -n 400 build.log || true
-          echo '---- /BUILD LOG TAIL ----'
+          echo "---- BUILD LOG TAIL ----"
+          tail -n 200 build.log || true
+          echo "---- /BUILD LOG TAIL ----"
           if [ -d out ]; then
             PAGES=$(find out -name 'index.html' | wc -l)
             SIZE=$(du -sh out | awk '{print $1}')
@@ -54,44 +53,25 @@ jobs:
             echo "production_out_exists=0" >> "$GITHUB_OUTPUT"
           fi
           echo "artifacts_uploaded=1" >> "$GITHUB_OUTPUT"
-
-      - name: Upload build diagnostics on failure
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-diagnostics-${{ github.run_number }}
-          path: |
-            build.log
-            automation/reports/build-state.json
-            out
-
       - name: Prepare Pages artifact
         run: |
           set -euo pipefail
           ARTIFACT_DIR="${GITHUB_WORKSPACE:-.}/artifacts/pages"
           mkdir -p "$ARTIFACT_DIR"
           mkdir -p "$ARTIFACT_DIR/docs"
-          if [ -d docs ]; then
-            cp -a docs/. "$ARTIFACT_DIR"/
-          fi
-          if [ -d out ]; then
-            cp -a out/. "$ARTIFACT_DIR"/ || true
-          fi
-          if [ -d public ]; then
-            cp -a public/. "$ARTIFACT_DIR"/
-          fi
+          if [ -d docs ]; then cp -a docs/. "$ARTIFACT_DIR"/; fi
+          if [ -d out ]; then cp -a out/. "$ARTIFACT_DIR"/ || true; fi
+          if [ -d public ]; then cp -a public/. "$ARTIFACT_DIR"/; fi
           if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f docs/robots.txt ]; then cp -f docs/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
           if [ ! -f "$ARTIFACT_DIR/sitemap.xml" ] && [ -f docs/sitemap.xml ]; then cp -f docs/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
           PAGES=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)
           echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
           echo 'manifest:'
           find "$ARTIFACT_DIR" -maxdepth 2 -type f | sed -n '1,120p'
-
       - name: Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
           path: artifacts/pages
-
   deploy:
     needs: build
     if: success() && (needs.build.outputs.production_out_exists == '1' || needs.build.outputs.artifacts_uploaded == '1')
@@ -104,7 +84,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4.0.5
-
       - name: Verify deployment
         run: |
           echo "Deployed URL: ${{ steps.deployment.outputs.page_url }}"
