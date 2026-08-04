@@ -30,7 +30,13 @@ jobs:
           NODE_OPTIONS: --max-old-space-size=4096
 
       - name: Install dependencies
-        run: npm install --no-audit --fund=false
+        run: |
+          set -euo pipefail
+          if [ ! -f package.json ]; then
+            echo "No package.json present; skipping npm install."
+          else
+            npm install --no-audit --fund=false
+          fi
         env:
           NODE_OPTIONS: --max-old-space-size=4096
 
@@ -38,6 +44,14 @@ jobs:
         id: build
         run: |
           set -euo pipefail
+          if [ ! -f package.json ]; then
+            echo "No package.json present; skipping npm build."
+            echo "npm_run_build_failed=" >> "$GITHUB_OUTPUT"
+            echo "pages=0" >> "$GITHUB_OUTPUT"
+            echo "size=none" >> "$GITHUB_OUTPUT"
+            echo "production_out_exists=0" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           npm run build > build.log 2>&1 || {
             echo "npm_run_build_failed=1" >> "$GITHUB_OUTPUT"
             echo "build_log_start"
