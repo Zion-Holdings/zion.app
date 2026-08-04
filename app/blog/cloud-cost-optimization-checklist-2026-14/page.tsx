@@ -33,7 +33,11 @@ export default function Page() {
         <h2>Outcome</h2>
         <p>With strong governance, cloud cost optimization becomes reliable infrastructure.</p>
         <p><Link href="/contact" className="text-purple-400 hover:underline">Talk to Zion Tech Group →</Link></p>
-      </article>
+                <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+              <Link href="/contact" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
+              <Link href="/services" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Services</Link>
+            </div>
+        </article>
     </PageShell>
   );
 }
