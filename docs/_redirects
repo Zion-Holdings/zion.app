@@ -1,19 +1,26 @@
 /tools/favicon-generator/  /tools/favicon-generator/index.html  200
 
-# Root and core paths
-/    /index.html  200
-/services/    /services/index.html  200
-/blog/    /blog/index.html  200
-/case-studies/    /case-studies/index.html  200
-/industries/    /industries/index.html  200
-/solutions/    /solutions/index.html  200
-/contact/    /contact/index.html  200
-/pricing/    /pricing/index.html  200
-/about/    /about/index.html  200
-/faq/    /faq/index.html  200
-/careers/    /careers/index.html  200
-/partners/    /partnerships/index.html  200
-/portal/    /portal/index.html  200
-/dashboard/    /contact/index.html  200
-/agents-monitoring/    /agents-monitoring/index.html  200
-/tools/    /tools/index.html  200
+# Canonical sitemap
+/sitemap.xml  /sitemap-0.xml  301
+
+# Legacy aliases that do not have equivalent content pages
+/free-ai-itools /free-ai-it-tools/ 302
+/free-ai-itools/ /free-ai-it-tools/ 302
+
+/free-consultation /free-consultation/index.html 200
+/free-consultation/ /free-consultation/index.html 200
+/free-audit /free-audit/index.html 200
+/free-audit/ /free-audit/index.html 200
+/proposal /proposal/index.html 200
+/proposal/ /proposal/index.html 200
+
+/industries/insurance/ /industries/insurance/index.html 200
+/industries/healthcare/ /industries/healthcare/index.html 200
+/industries/legal/ /industries/legal/index.html 200
+
+/tools/ai-quick-audit /tools/ai-quick-audit/index.html 200
+/tools/ai-quick-audit/ /tools/ai-quick-audit/index.html 200
+/tools/phishing-analyzer /tools/phishing-analyzer/index.html 200
+/tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200
+
+/assets/js/conversion-events.js /assets/js/conversion-events.js 200
