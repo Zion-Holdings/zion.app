@@ -613,10 +613,10 @@
       "improved_at": "2026-08-04T12:35:00+00:00"
     }
   ],
-  "improvedAt": "2026-08-03T17:44:02.700330+00:00",
+  "improvedAt": "2026-08-04T15:51:05.128546+00:00",
   "analysisSummary": {
     "contacts": 24,
-    "contacts_with_personalized_body": 24,
+    "contacts_with_personalized_body": 0,
     "contacts_missing_fields": 0,
     "ready_count": 24,
     "excluded_count": 0,
@@ -625,9 +625,7 @@
       "ready": 24
     },
     "improvement_notes": [
-      "Heurística aplicada: normalização de status, nome e empresa.",
-      "Corpos genéricos enriquecidos com P.S. personalizado por domínio.",
-      "Registros duplicados deduzidos por e-mail."
+      "Bodies gerados heurísticos para contatos sem thread_body personalizado."
     ]
   }
 }
