@@ -113,7 +113,7 @@ jobs:
           fi
           # Merge gh-pages branch content so redirects and static fallbacks are included.
           gh_dir=$(mktemp -d)
-          git clone --depth=1 --branch=gh-pages "$GITHUB_REPOSITORY_URL" "$gh_dir" >/dev/null 2>&1 || true
+          git clone --depth=1 --branch=gh-pages "https://github.com/Zion-support/zion-support.github.io.git" "$gh_dir" >/dev/null 2>&1 || true
           if [ -d "$gh_dir" ]; then
             if [ -f "$gh_dir/_redirects" ]; then cp -f "$gh_dir/_redirects" "$ARTIFACT_DIR/_redirects"; fi
             if [ -d "$gh_dir/public" ]; then cp -a "$gh_dir/public/." "$ARTIFACT_DIR/public/"; fi
