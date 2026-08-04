@@ -27,10 +27,6 @@ jobs:
         env:
           NODE_OPTIONS: --max-old-space-size=4096
 
-      - name: Install dependencies
-        if: exists('package.json')
-        run: npm install --no-audit --fund=false
-        env:
           NODE_OPTIONS: --max-old-space-size=4096
 
       - name: Build Next export
