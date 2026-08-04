@@ -1,5 +1,5 @@
 # Content Queue
 
-Last cycle: 240
-Next slug prefix: 241
+Last cycle: 300
+Next slug prefix: 301
 Seeds ready: 69
