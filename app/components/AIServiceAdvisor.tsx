@@ -104,7 +104,7 @@ export default function AIServiceAdvisor() {
     { role: 'assistant', content: GREETINGS.join('\n\n'), timestamp: new Date() },
   ]);
   const [input, setInput] = useState('');
-  const [isTyping, setIsTyping] = useState(false');
+  const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 

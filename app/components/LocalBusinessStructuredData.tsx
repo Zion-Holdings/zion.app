@@ -6,7 +6,7 @@ import { CONTACT_INFO, SITE_URL } from '@/utils/seoConstants';
 
 const PHONE = CONTACT_INFO.phone;
 const EMAIL = CONTACT_INFO.email;
-const { street, city, state, zipCode, country } = CONTACT_INFO.address;
+const { street, city, state, zipCode } = CONTACT_INFO.address;
 
 export function LocalBusinessJsonLd() {
   const schema = {
@@ -23,7 +23,7 @@ export function LocalBusinessJsonLd() {
       addressLocality: city,
       addressRegion: state,
       postalCode: zipCode,
-      addressCountry: country,
+      addressCountry: 'US',
     },
     geo: {
       '@type': 'GeoCoordinates',
