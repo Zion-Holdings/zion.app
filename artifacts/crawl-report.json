@@ -1,0 +1,66 @@
+{
+  "generatedAt": "2026-08-04T00:05:32.005Z",
+  "base": "https://ziontechgroup.com",
+  "checked": 12,
+  "healthy": 11,
+  "failed": 1,
+  "results": [
+    {
+      "url": "https://ziontechgroup.com/",
+      "code": "200",
+      "ok": true
+    },
+    {
+      "url": "https://ziontechgroup.com/services/",
+      "code": "200",
+      "ok": true
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/",
+      "code": "200",
+      "ok": true
+    },
+    {
+      "url": "https://ziontechgroup.com/case-studies/",
+      "code": "200",
+      "ok": true
+    },
+    {
+      "url": "https://ziontechgroup.com/about/",
+      "code": "200",
+      "ok": true
+    },
+    {
+      "url": "https://ziontechgroup.com/contact/"
+Crawl complete: 11 healthy, 1 failed
+Report: C:\Users\Zion\tmp\zion-gh-publish\artifacts\crawl-report.json
+  "code": "200",
+      "ok": true
+    },
+    {
+      "url": "https://ziontechgroup.com/services/ai-customer-support-pro/",
+      "code": "200",
+      "ok": true
+    },
+    {
+      "url": "https://ziontechgroup.com/services/cloud-cost-optimization-platform/",
+      "code": "200",
+      "ok": true
+    },
+    {
+      "url": "https://ziontechgroup.com/services/siem-security-platform/",
+      "code": "200",
+      "ok": true
+    },
+    {
+      "url": "https://ziontechgroup.com/services/managed-it/",
+      "code": "404",
+      "ok": false
+    },
+    {
+      "url": "https://ziontechgroup.com/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/",
+      "code": "200",
+      "ok": true
+    }
+  ]
+}
