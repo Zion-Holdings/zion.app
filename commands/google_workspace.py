@@ -12,7 +12,8 @@ from pathlib import Path
 
 WORKSPACE = Path('/data/data/com.termux/files/home/.openclaw/workspace')
 FALLBACK_WORKSPACE = Path('/Users/miami2/zion.app/lead-crm')
-TOKENS_FILE = WORKSPACE / 'gog_tokens.json' if (WORKSPACE / 'gog_tokens.json').exists() else (FALLBACK_WORKSPACE / 'gog_tokens.json')
+HOME = Path.home()
+TOKENS_FILE = WORKSPACE / 'gog_tokens.json' if (WORKSPACE / 'gog_tokens.json').exists() else (FALLBACK_WORKSPACE / 'gog_tokens.json' if (FALLBACK_WORKSPACE / 'gog_tokens.json').exists() else (HOME / '.openclaw/workspace/gog_tokens.json'))
 
 def load_gog_tokens():
     with open(TOKENS_FILE) as f:

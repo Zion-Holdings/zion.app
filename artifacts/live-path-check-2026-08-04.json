@@ -1,0 +1,79 @@
+{
+  "timestamp": "2026-08-04T14:44:42.815915+00:00",
+  "origin": "https://ziontechgroup.com",
+  "results": [
+    {
+      "path": "/",
+      "url": "https://ziontechgroup.com/",
+      "final_url": "https://ziontechgroup.com/",
+      "status_code": 200,
+      "size_download": 279367,
+      "status": "ok",
+      "error": ""
+    },
+    {
+      "path": "/services/",
+      "url": "https://ziontechgroup.com/services/",
+      "final_url": "https://ziontechgroup.com/services/",
+      "status_code": 200,
+      "size_download": 25561,
+      "status": "ok",
+      "error": ""
+    },
+    {
+      "path": "/tools/",
+      "url": "https://ziontechgroup.com/tools/",
+      "final_url": "https://ziontechgroup.com/tools/",
+      "status_code": 200,
+      "size_download": 35314,
+      "status": "ok",
+      "error": ""
+    },
+    {
+      "path": "/contact/",
+      "url": "https://ziontechgroup.com/contact/",
+      "final_url": "https://ziontechgroup.com/contact/",
+      "status_code": 200,
+      "size_download": 866,
+      "status": "ok",
+      "error": ""
+    },
+    {
+      "path": "/pricing/",
+      "url": "https://ziontechgroup.com/pricing/",
+      "final_url": "https://ziontechgroup.com/pricing/",
+      "status_code": 200,
+      "size_download": 24727,
+      "status": "ok",
+      "error": ""
+    },
+    {
+      "path": "/solutions/",
+      "url": "https://ziontechgroup.com/solutions/",
+      "final_url": "https://ziontechgroup.com/solutions/",
+      "status_code": 200,
+      "size_download": 22238,
+      "status": "ok",
+      "error": ""
+    },
+    {
+      "path": "/blog/",
+      "url": "https://ziontechgroup.com/blog/",
+      "final_url": "https://ziontechgroup.com/blog/",
+      "status_code": 200,
+      "size_download": 43458,
+      "status": "ok",
+      "error": ""
+    },
+    {
+      "path": "/about/",
+      "url": "https://ziontechgroup.com/about/",
+      "final_url": "https://ziontechgroup.com/about/",
+      "status_code": 200,
+      "size_download": 36063,
+      "status": "ok",
+      "error": ""
+    }
+  ],
+  "broken": []
+}
