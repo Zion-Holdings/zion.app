@@ -96,7 +96,7 @@ jobs:
           ARTIFACT_DIR="${GITHUB_WORKSPACE:-.}/artifacts/pages"
           mkdir -p "$ARTIFACT_DIR"
           mkdir -p "$ARTIFACT_DIR/docs"
-          # Always include docs/ static content as deploy base.
+          # Base: docs/ from main branch.
           if [ -d docs ]; then
             cp -a docs/. "$ARTIFACT_DIR"/
           fi
@@ -111,8 +111,21 @@ jobs:
           if [ -d public ]; then
             cp -a public/. "$ARTIFACT_DIR"/
           fi
+          # Merge gh-pages branch content so redirects and static fallbacks are included.
+          gh_dir=$(mktemp -d)
+          git clone --depth=1 --branch=gh-pages "$GITHUB_REPOSITORY_URL" "$gh_dir" >/dev/null 2>&1 || true
+          if [ -d "$gh_dir" ]; then
+            if [ -f "$gh_dir/_redirects" ]; then cp -f "$gh_dir/_redirects" "$ARTIFACT_DIR/_redirects"; fi
+            if [ -d "$gh_dir/public" ]; then cp -a "$gh_dir/public/." "$ARTIFACT_DIR/public/"; fi
+            if [ -d "$gh_dir/docs" ]; then
+              mkdir -p "$ARTIFACT_DIR/docs"
+              cp -a "$gh_dir/docs/." "$ARTIFACT_DIR/docs/"
+            fi
+            if [ -f "$gh_dir/robots.txt" ] && [ ! -f "$ARTIFACT_DIR/robots.txt" ]; then cp -f "$gh_dir/robots.txt" "$ARTIFACT_DIR/robots.txt"; fi
+            if [ -f "$gh_dir/sitemap.xml" ] && [ ! -f "$ARTIFACT_DIR/sitemap.xml" ]; then cp -f "$gh_dir/sitemap.xml" "$ARTIFACT_DIR/sitemap.xml"; fi
+          fi
           # Include root redirects and SEO files.
-          if [ -f _redirects ]; then cp -f _redirects "$ARTIFACT_DIR/_redirects"; fi
+          if [ -f _redirects ] && [ ! -f "$ARTIFACT_DIR/_redirects" ]; then cp -f _redirects "$ARTIFACT_DIR/_redirects"; fi
           if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f docs/robots.txt ]; then cp -f docs/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
           if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f public/robots.txt ]; then cp -f public/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
           if [ ! -f "$ARTIFACT_DIR/sitemap.xml" ] && [ -f docs/sitemap.xml ]; then cp -f docs/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
