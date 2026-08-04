@@ -4,6 +4,8 @@ name: Continuous Pages Deploy
     branches: [ main ]
   workflow_dispatch:
 permissions:
+pages: write
+  id-token: write
   contents: read
 concurrency:
   group: continuous-pages-deploy-${{ github.ref }}
