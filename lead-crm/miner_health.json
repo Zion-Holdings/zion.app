@@ -1,31 +1,25 @@
 {
-  "status": "error",
-  "error": "missing_script",
-  "ran_at": "2026-08-04T12:22:00+00:00",
-  "contacts_mined": 0,
-  "classified": 0,
-  "notes": "Run aborted: historical_email_miner.py missing.",
-  "ts": "2026-08-04T15:22:06.651420+00:00",
-  "last_analysis_status": "success_improved",
-  "last_analysis_summary": {
-    "contacts": 24,
-    "contacts_with_personalized_body": 24,
-    "contacts_missing_fields": 0,
-    "ready_count": 24,
-    "excluded_count": 0,
-    "subject_counts": {},
-    "status_counts": {
-      "ready": 24
-    },
-    "improvement_notes": [
-      "Heurística aplicada: normalização de status, nome e empresa.",
-      "Corpos genéricos enriquecidos com P.S. personalizado por domínio.",
-      "Registros duplicados deduzidos por e-mail."
-    ]
+  "last_run": "2026-08-04T12:35:00+00:00",
+  "send_policy": {
+    "ztg_send_allowed": false,
+    "raw_value": "",
+    "action": "analysis_only"
   },
-  "contacts_found": 24,
-  "contacts_with_personalized_body": 24,
-  "contacts_missing_fields": 0,
-  "ready_count": 24,
-  "excluded_count": 0
+  "batch_file": "outreach_ready_canonical.json",
+  "contacts": {
+    "total_unique": 24,
+    "recipients_count": 24,
+    "ready_count": 24,
+    "duplicates_removed": 0,
+    "excluded_count": 0
+  },
+  "quality": {
+    "ps_duplicates_fixed": true,
+    "records_improved": 24,
+    "missing_name_count": 4,
+    "generic_body_count": 21,
+    "personalized_body_count": 3
+  },
+  "status": "ok",
+  "note": "Send disabled by ZTG_SEND_ALLOWED policy. Records improved and health updated."
 }
