@@ -1,21 +1,21 @@
 {
-  "ts": "2026-08-04T05:15:42.541607+00:00",
+  "ts": "2026-08-04T06:15:53.279098+00:00",
   "status": "ok",
   "details": {
-    "deployWatchdog": {
-      "stdout": "{\"ts\": \"2026-08-04T05:15:42.541607+00:00\", \"routes_checked\": 10, \"routes_ok\": 10, \"routes_broken\": 0, \"fail\": false, \"report\": \"/data/data/com.termux/files/home/zion-support.github.io/automation/reports/pages-watchdog-latest.json\"}",
+    "pagesWatchdog": {
+      "stdout": "{\"ts\": \"2026-08-04T06:15:53.279098+00:00\", \"routes_checked\": 10, \"routes_ok\": 10, \"routes_broken\": 0, \"fail\": false, \"report\": \"/data/data/com.termux/files/home/zion-support.github.io/automation/reports/pages-watchdog-latest.json\"}\n",
       "stderr": null,
       "exit_code": 0
     },
     "smokeRoutes": {
-      "stdout": "",
+      "stdout": null,
       "stderr": null,
-      "exit_code": 0
+      "exit_code": null
     },
     "homepageAiSync": {
-      "stdout": "",
+      "stdout": null,
       "stderr": null,
-      "exit_code": 0
+      "exit_code": null
     }
   }
 }

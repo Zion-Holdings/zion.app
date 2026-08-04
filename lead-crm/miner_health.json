@@ -1,11 +1,11 @@
 {
   "status": "analyzed",
-  "ts": "2026-08-04T05:32:10.874202+00:00",
   "error": "missing_script",
-  "error_message": "Cannot open lead-crm/historical_email_miner.py: [Errno 2] No such file or directory",
+  "ran_at": "2026-08-04T06:21:56.432779+00:00",
   "contacts_mined": 0,
   "classified": 0,
-  "sent": 0,
+  "notes": "lead-crm/historical_email_miner.py is absent; cannot mine or classify.",
+  "ts": "2026-08-04T06:32:26.147751+00:00",
   "last_analysis_status": "analyzed_no_send",
   "last_analysis_summary": {
     "contacts": 24,
@@ -25,7 +25,5 @@
   "contacts_with_personalized_body": 0,
   "contacts_missing_fields": 0,
   "ready_count": 24,
-  "excluded_count": 0,
-  "cron_run_ts": "2026-08-04T05:31:36+00:00",
-  "cron_run_result": "missing_script"
+  "excluded_count": 0
 }

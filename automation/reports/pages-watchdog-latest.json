@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-08-04T05:32:43.067660+00:00",
+  "checked_at": "2026-08-04T06:15:53.279098+00:00",
   "routes_checked": 10,
   "routes_ok": 10,
   "routes_broken": 0,
@@ -34,7 +34,7 @@
       "status": 200,
       "error": null,
       "ok": true,
-      "broken_since": null
+      "broken_since": "2026-08-04T05:45:50.125846+00:00"
     },
     {
       "url": "https://ziontechgroup.com/contact/",
@@ -50,7 +50,7 @@
       "status": 200,
       "error": null,
       "ok": true,
-      "broken_since": null
+      "broken_since": "2026-08-04T05:45:50.434440+00:00"
     },
     {
       "url": "https://ziontechgroup.com/pricing/",
@@ -74,7 +74,7 @@
       "status": 200,
       "error": null,
       "ok": true,
-      "broken_since": null
+      "broken_since": "2026-08-04T05:45:50.894301+00:00"
     },
     {
       "url": "https://ziontechgroup.com/services/cloud-cost-optimization-service/",
@@ -82,7 +82,7 @@
       "status": 200,
       "error": null,
       "ok": true,
-      "broken_since": null
+      "broken_since": "2026-08-04T05:45:51.051544+00:00"
     }
   ]
 }
