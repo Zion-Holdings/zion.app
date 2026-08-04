@@ -65,4 +65,5 @@ export default function Page() {
           </div>
         </section>
       </div>
-    </main>
+    </main>
+  </div>
