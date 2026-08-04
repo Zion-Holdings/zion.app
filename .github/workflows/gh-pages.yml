@@ -27,6 +27,14 @@ jobs:
         env:
           NODE_OPTIONS: --max-old-space-size=4096
 
+      - name: Install dependencies
+        run: |
+          if [ -f package.json ]; then
+            npm install --no-audit --fund=false
+          else
+            echo "No package.json, skipping install"
+          fi
+        env:
           NODE_OPTIONS: --max-old-space-size=4096
 
       - name: Build Next export
