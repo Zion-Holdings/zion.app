@@ -81,7 +81,7 @@ export default function RetailEcommercePage() {
               for retailers and online stores. Drive sales, reduce waste, and improve customer experience.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <Link href="/configurator" className="btn-primary text-lg px-10 py-4">
+              <Link href="/configurator/" className="btn-primary text-lg px-10 py-4">
                 ⚡ Get Sales Boost Analysis →
               </Link>
               <Link href="/services" className="btn-secondary text-lg px-10 py-4">

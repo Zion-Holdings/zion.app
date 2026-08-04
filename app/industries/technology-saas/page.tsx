@@ -82,7 +82,7 @@ export default function TechnologySaaSPage() {
               Scale infrastructure, reduce costs, and ship features faster with autonomous AI agents.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <Link href="/configurator" className="btn-primary text-lg px-10 py-4">
+              <Link href="/configurator/" className="btn-primary text-lg px-10 py-4">
                 ⚡ Get Custom Recommendations →
               </Link>
               <Link href="/services" className="btn-secondary text-lg px-10 py-4">
