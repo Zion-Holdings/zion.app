@@ -190,6 +190,14 @@ try:
 except Exception as _e:
     print(f"⚠️ V25: V23 module import failed: {_e}", flush=True)
     SenderProfileLearnerV23 = None
+    ContextualMemoryBankV23 = None
+    IntentConfidenceScorerV23 = None
+    ResponseQualityCheckerV23 = None
+    AutoCategorizerV23 = None
+    SmartFollowUpSchedulerV23 = None
+    ActionItemExtractorV23 = None
+    analyze_tone = None
+    generate_adapted_response = None
 
 try:
     from email_decision import from_email_data, decide_reply_all, always_cc
@@ -303,6 +311,19 @@ try:
     M1_ORCHESTRATOR_ENABLED = True
 except Exception as _ex_m1:
     print(f"⚠️ M1: orchestrator import failed: {_ex_m1}", flush=True)
+    # Define fallback functions
+    def classify_thread(*args, **kwargs):
+        return {}
+    def add_to_result(email, additional_fields):
+        result = email.copy()
+        result.update(additional_fields)
+        return result
+    def decode_reply_all(*args, **kwargs):
+        return {}
+    def bind(*args, **kwargs):
+        return {}
+    def orchestrate(*args, **kwargs):
+        pass
     M1_ORCHESTRATOR_ENABLED = False
 
 # ─── w2-02 / w3-01 / w3-02 / w3-03 ───────────────────────────
@@ -1351,9 +1372,28 @@ class V26Responder:
         snip      = email["snippet"]          # ← V29 FIX: use email["snippet"]
         name      = self._get_name(sender)
         lang      = tone_data.get("language", "pt")
-        use_cc    = ""
+        # Get reply-all policy for this intent
+        policy = _INTENT_POLICIES.get(intent_label, _INTENT_POLICIES.get("default", {}))
+        reply_all_desired = policy.get("reply_all_default", False)
+
+        # Determine CC header for reply
+        original_cc = email.get("cc", "")
+        if reply_all_desired:
+            # For reply-all, preserve original CC
+            use_cc = original_cc
+        else:
+            # For reply-to-sender, clear CC
+            use_cc = ""
+            
+        # Log the decision for improvement tracking
+        if not dry_run:
+            try:
+                telegram_send(f"[REPLY-ALL-DECISION] Intent: {intent_label}, Reply-all: {reply_all_desired}, Reason: {policy.get('reply_all_reason', 'default')}")
+            except Exception:
+                pass  # Fail silently if telegram not available
         attach_info = attach_info or {"has_attachments": False, "attachment_summary": ""}
-        reply_all = False
+        # Use intent-policy-based reply-all preference
+        reply_all = policy.get("reply_all_default", False)
 
         # ① Tone — already computed
         t_response = f"Fast-path ({intent_cat}) response for {name}."
@@ -2003,7 +2043,15 @@ class V26Responder:
 
         # ⑨ Template selection + ⑩ Compose
         tpl_body = TEMPLATES.get(lang, TEMPLATES["en"]).get(intent_cat, TEMPLATES["en"]["general"])
-        adapted  = generate_adapted_response(name, intent_label, tone_data)
+        body = tpl_body.format(name=name, close="—", signature="")
+        adapted = None
+        if generate_adapted_response:
+            try:
+                adapted = generate_adapted_response(name, intent_label, tone_data)
+            except Exception:
+                pass
+        if adapted:
+            body = f"{adapted}\\n\\n{body}"
 
         # Wave 9: full-pipeline RTFB
         rtfb_result = None
@@ -2249,7 +2297,7 @@ class V26Responder:
         try:
             import re as _re_partial
             _low = body.lower().strip()
-            _phrases = ['partial', \"i'll answer\", 'coming soon', 'follow up',
+            _phrases = ['partial', "i'll answer", 'coming soon', 'follow up',
                 'briefly', 'in progress', 'work in progress', 'reply shortly',
                 'get back to you', 'short answer', 'tl;dr']
             _words = _re_partial.findall(r'\w+', body)

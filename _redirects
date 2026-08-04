@@ -1,97 +1,117 @@
-/blog/ /docs/blog/index.html 200
-/blog/* /docs/blog/:splat 200
-/contact /docs/contact/index.html 200
-/contact/ /docs/contact/index.html 200
+# Service and content routes
 /services/ai-cybersecurity/ /docs/services/ai-cybersecurity/index.html 200
 /services/ai-development-acceleration/ /docs/services/ai-development-acceleration/index.html 200
 /services/ai-email-intelligence/ /docs/services/ai-email-intelligence/index.html 200
 /services/cloud-cost-optimization-platform/ /docs/services/cloud-cost-optimization-platform/index.html 200
-/tools/base64/ /docs/tools/base64/index.html 200
-/tools/json-formatter/ /docs/tools/json-formatter/index.html 200
-/tools/roi-calculator/ /docs/tools/roi-calculator/index.html 200
-/tools/unit-converter/ /docs/tools/unit-converter/index.html 200
-/tools/favicon-generator/ /tools/favicon-generator/index.html 200
 
-# Search routes
+# Core site routes
+/ /docs/index.html 200
+/services/ /docs/services/index.html 200
+/blog/ /docs/blog/index.html 200
+/contact /docs/contact/index.html 200
+/contact/ /docs/contact/index.html 200
 /search /docs/search/index.html 200
 /search/ /docs/search/index.html 200
-
-# Canonical sitemap
-/sitemap.xml /sitemap-0.xml 301
-
-# Legacy aliases that do not have equivalent content pages
-/free-ai-itools /free-ai-it-tools/ 302
-/free-ai-itools/ /free-ai-it-tools/ 302
-
-/free-consultation /free-consultation/index.html 200
-/free-consultation/ /free-consultation/index.html 200
-/free-audit /free-audit/index.html 200
-/free-audit/ /free-audit/index.html 200
-/proposal /proposal/index.html 200
-/proposal/ /proposal/index.html 200
-
-/industries/insurance/ /industries/insurance/index.html 200
-/industries/healthcare/ /industries/healthcare/index.html 200
-/industries/legal/ /industries/legal/index.html 200
-
-/tools/ai-quick-audit /tools/ai-quick-audit/index.html 200
-/tools/ai-quick-audit/ /tools/ai-quick-audit/index.html 200
-/tools/phishing-analyzer /tools/phishing-analyzer/index.html 200
-/tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200
-
-# Category filters -> services home anchors
-/services /services/ 301
-/services?category=ai /services/#ai 301
-/services?category=it /services/#it 301
-/services?category=cloud /services/#cloud 301
-/services?category=security /services/#security 301
-/services?category=data /services/#data 301
-/services?category=automation /services/#automation 301
-/services?category=micro-saas /services/#micro-saas 301
-/services?category=devops /services/#devops 301
-/services?category=blockchain /services/#blockchain 301
-/services?category=iot /services/#iot 301
-/services?category=seo /services/ 301
-/services/ai-customer-support-pro/ /services/ 301
-/solutions/pricing/ /pricing/ 301
-
-# New fallback routes
-/ai /docs/ai/index.html 200
-/ai/ /docs/ai/index.html 200
-/services/ai-observability/ /docs/services/ai-observability/index.html 200
-/services/ai-msp-security-and-compliance-automation/ /docs/services/ai-msp-security-and-compliance-automation/index.html 200
-/services/ai-data-lakehouse-pipelines/ /docs/services/ai-data-lakehouse-pipelines/index.html 200
-/services/ai-customer-success-churn-prevention/ /docs/services/ai-customer-success-churn-prevention/index.html 200
-/5g-solutions/ /docs/5g-solutions/index.html 200
-/analytics/ /docs/analytics/index.html 200
 /api-development/ /docs/api-development/index.html 200
 /blockchain-solutions/ /docs/blockchain-solutions/index.html 200
-/cybersecurity/ /docs/cybersecurity/index.html 200
-/data-analytics/ /docs/data-analytics/index.html 200
-/iot-platform/ /docs/iot-platform/index.html 200
-/it-services/ /docs/it-services/index.html 200
-/micro-saas-services/ /docs/micro-saas-services/index.html 200
-/security-services/ /docs/security-services/index.html 200
+/analytics/ /docs/analytics/index.html 200
 
-# Feed fallback
-/feed.xml /sitemap.xml 301
-
-# Old blog slug aliases
-/blog/how-energyutilities-leaders-cut-costs-with-ai /blog/ai-energy-utilities-optimization-2026-playbook/ 301
-/blog/how-healthcarelifesciences-leaders-cut-costs-with-ai /blog/ai-healthcare-automation-2026-playbook/ 301
-/blog/how-manufacturing-leaders-cut-costs-with-ai /blog/ai-manufacturing-automation-2026-playbook/ 301
-/blog/legalcompliance-compliance-and-ai-governance /blog/ai-compliance-and-governance-2026-playbook/ 301
-/blog/logisticssupplychain-ai-automation-roadmap /blog/ai-logistics-fulfillment-2026-playbook/ 301
-/blog/predictable-ai-roi-in-education /blog/ai-education-technology-2026-playbook/ 301
-/blog/scaling-ai-across-energyutilities-operations /blog/ai-energy-utilities-optimization-for-enterprise-teams/ 301
-/blog/scaling-ai-across-healthcarelifesciences-operations /blog/ai-healthcare-automation-for-enterprise-teams/ 301
-/blog/scaling-ai-across-manufacturing-operations /blog/ai-manufacturing-automation-for-enterprise-teams/ 301
-/blog/ai-first-legalcompliance-playbook-2026 /blog/ai-compliance-and-governance-2026-playbook/ 301
-
-# Missing root pages -> home
-/health / 301
-
-/assets/js/conversion-events.js /assets/js/conversion-events.js 200
-
-# Free tools aliases
-/free-ai-tools/ /free-tools/ 301
+# Direct service page mappings
+/services/automation-multi-channel-campaign-orchestrator/ /docs/services/automation-multi-channel-campaign-orchestrator/index.html 200
+/services/it-backup-disaster-recovery-solution/ /docs/services/it-backup-disaster-recovery-solution/index.html 200
+/services/cloud-data-lakehouse-platform/ /docs/services/cloud-data-lakehouse-platform/index.html 200
+/services/cloud-edge-ai-deployment-platform/ /docs/services/cloud-edge-ai-deployment-platform/index.html 200
+/services/automation-integrated-commerce-flows/ /docs/services/automation-integrated-commerce-flows/index.html 200
+/services/data-graph-analytics-platform/ /docs/services/data-graph-analytics-platform/index.html 200
+/services/automation-document-intelligence-pipeline/ /docs/services/automation-document-intelligence-pipeline/index.html 200
+/services/security-web-application-firewall/ /docs/services/security-web-application-firewall/index.html 200
+/services/data-realtime-trending-aggregator/ /docs/services/data-realtime-trending-aggregator/index.html 200
+/services/it-api-management-gateway/ /docs/services/it-api-management-gateway/index.html 200
+/services/security-supply-chain-sbom-manager/ /docs/services/security-supply-chain-sbom-manager/index.html 200
+/services/cloud-event-driven-microservices/ /docs/services/cloud-event-driven-microservices/index.html 200
+/services/automation-multi-channel-campaign-manager/ /docs/services/automation-multi-channel-campaign-manager/index.html 200
+/services/ai-sustainable-supply-chain-radar/ /docs/services/ai-sustainable-supply-chain-radar/index.html 200
+/services/ai-fintech-fraud-graph/ /docs/services/ai-fintech-fraud-graph/index.html 200
+/services/security-sbom-supply-chain/ /docs/services/security-sbom-supply-chain/index.html 200
+/services/it-api-gateway-openapi/ /docs/services/it-api-gateway-openapi/index.html 200
+/services/cloud-hybrid-multicloud-networking/ /docs/services/cloud-hybrid-multicloud-networking/index.html 200
+/services/it-backup-dr-bc-as-a-service/ /docs/services/it-backup-dr-bc-as-a-service/index.html 200
+/services/ai-contract-lifecycle-intelligence/ /docs/services/ai-contract-lifecycle-intelligence/index.html 200
+/services/cloud-migration/ /docs/services/cloud-migration/index.html 200
+/services/cybersecurity/ /docs/services/cybersecurity/index.html 200
+/services/devops-cicd/ /docs/services/devops-cicd/index.html 200
+/services/micro-saas-ai-translation-engine/ /docs/services/micro-saas-ai-translation-engine/index.html 200
+/services/micro-saas-ai-expense-tracker/ /docs/services/micro-saas-ai-expense-tracker/index.html 200
+/services/micro-saas-ai-hr-recruitment/ /docs/services/micro-saas-ai-hr-recruitment/index.html 200
+/services/micro-saas-ai-customer-onboarding/ /docs/services/micro-saas-ai-customer-onboarding/index.html 200
+/services/micro-saas-ai-social-media-manager/ /docs/services/micro-saas-ai-social-media-manager/index.html 200
+/services/advanced-ai-enterprise-intelligence-hub/ /docs/services/advanced-ai-enterprise-intelligence-hub/index.html 200
+/services/ai-3d-asset-generator/ /docs/services/ai-3d-asset-generator/index.html 200
+/services/ai-accessibility-auditor/ /docs/services/ai-accessibility-auditor/index.html 200
+/services/ai-accessibility-optimizer/ /docs/services/ai-accessibility-optimizer/index.html 200
+/services/ai-ad-copy-generator/ /docs/services/ai-ad-copy-generator/index.html 200
+/services/ai-agent-safety-evaluation/ /docs/services/ai-agent-safety-evaluation/index.html 200
+/services/ai-agent-tool-builder/ /docs/services/ai-agent-tool-builder/index.html 200
+/services/ai-agentic-workflows/ /docs/services/ai-agentic-workflows/index.html 200
+/services/ai-agents-autonomous/ /docs/services/ai-agents-autonomous/index.html 200
+/services/ai-aiops-anomaly-detection/ /docs/services/ai-aiops-anomaly-detection/index.html 200
+/services/ai-api-orchestration-layer/ /docs/services/ai-api-orchestration-layer/index.html 200
+/services/ai-automated-reporting/ /docs/services/ai-automated-reporting/index.html 200
+/services/ai-automation/ /docs/services/ai-automation/index.html 200
+/services/ai-autonomous-code-deployment/ /docs/services/ai-autonomous-code-deployment/index.html 200
+/services/ai-autonomous-qa-engineering/ /docs/services/ai-autonomous-qa-engineering/index.html 200
+/services/ai-bdr-sdr/ /docs/services/ai-bdr-sdr/index.html 200
+/services/ai-bom-procurement/ /docs/services/ai-bom-procurement/index.html 200
+/services/ai-brand-voice-guardian/ /docs/services/ai-brand-voice-guardian/index.html 200
+/services/accessibility-compliance/ /docs/services/accessibility-compliance/index.html 200
+/services/ai-performance-monitoring/ /docs/services/ai-performance-monitoring/index.html 200
+/services/api-gateway-management/ /docs/services/api-gateway-management/index.html 200
+/services/api-integration/ /docs/services/api-integration/index.html 200
+/services/api-management-gateway/ /docs/services/api-management-gateway/index.html 200
+/services/apm-application-performance/ /docs/services/apm-application-performance/index.html 200
+/services/chaos-engineering-svc/ /docs/services/chaos-engineering-svc/index.html 200
+/services/cloud-cost-ai-optimizer/ /docs/services/cloud-cost-ai-optimizer/index.html 200
+/services/cloud-finops-1/ /docs/services/cloud-finops-1/index.html 200
+/services/cloud-native-app-dev/ /docs/services/cloud-native-app-dev/index.html 200
+/services/container-security-lifecycle/ /docs/services/container-security-lifecycle/index.html 200
+/services/cyber-threat-intelligence/ /docs/services/cyber-threat-intelligence/index.html 200
+/services/data-warehouse-modernization/ /docs/services/data-warehouse-modernization/index.html 200
+/services/db-migration-service/ /docs/services/db-migration-service/index.html 200
+/services/devops-gen-ai-ci-cd/ /docs/services/devops-gen-ai-ci-cd/index.html 200
+/services/devsecops-pipeline/ /docs/services/devsecops-pipeline/index.html 200
+/services/edge-computing-deploy/ /docs/services/edge-computing-deploy/index.html 200
+/services/endpoint-management/ /docs/services/endpoint-management/index.html 200
+/services/enterprise-backup-dr/ /docs/services/enterprise-backup-dr/index.html 200
+/services/etl-pipeline-optimization/ /docs/services/etl-pipeline-optimization/index.html 200
+/services/event-driven-architecture/ /docs/services/event-driven-architecture/index.html 200
+/services/evm-smart-contract-audit/ /docs/services/evm-smart-contract-audit/index.html 200
+/services/graphql-federation-platform/ /docs/services/graphql-federation-platform/index.html 200
+/services/incident-response-retainer/ /docs/services/incident-response-retainer/index.html 200
+/services/it-api-gateway-ai/ /docs/services/it-api-gateway-ai/index.html 200
+/services/it-api-gateway-management/ /docs/services/it-api-gateway-management/index.html 200
+/services/it-api-performance-testing/ /docs/services/it-api-performance-testing/index.html 200
+/services/it-apisec-testing/ /docs/services/it-apisec-testing/index.html 200
+/services/micro-saas-ai-data-backup/ /docs/services/micro-saas-ai-data-backup/index.html 200
+/services/api-development/ /docs/services/api-development/index.html 200
+/services/aws-serverless-migration/ /docs/services/aws-serverless-migration/index.html 200
+/services/backup-disaster-recovery/ /docs/services/backup-disaster-recovery/index.html 200
+/services/cdn-edge-cache/ /docs/services/cdn-edge-cache/index.html 200
+/services/cloud-ai-mlops-platform/ /docs/services/cloud-ai-mlops-platform/index.html 200
+/services/cloud-api-gateway-enterprise/ /docs/services/cloud-api-gateway-enterprise/index.html 200
+/services/cloud-blob-intelligent-tiering/ /docs/services/cloud-blob-intelligent-tiering/index.html 200
+/services/cloud-bom-visualiser/ /docs/services/cloud-bom-visualiser/index.html 200
+/services/cloud-chaos-engineering-platform/ /docs/services/cloud-chaos-engineering-platform/index.html 200
+/services/cloud-container-registry-trivy-scan/ /docs/services/cloud-container-registry-trivy-scan/index.html 200
+/services/cloud-cost-anomaly-detector/ /docs/services/cloud-cost-anomaly-detector/index.html 200
+/services/cloud-cost-anomaly-detector-ml/ /docs/services/cloud-cost-anomaly-detector-ml/index.html 200
+/services/cloud-cost-optimization-service/ /docs/services/cloud-cost-optimization-service/index.html 200
+/services/cloud-data-lakehouse-platform/ /docs/services/cloud-data-lakehouse-platform/index.html 200
+/services/cloud-disaster-recovery-orchestration/ /docs/services/cloud-disaster-recovery-orchestration/index.html 200
+/services/cloud-edge-ai-deployment-platform/ /docs/services/cloud-edge-ai-deployment-platform/index.html 200
+/services/cloud-edge-computing-global/ /docs/services/cloud-edge-computing-global/index.html 200
+/services/cloud-event-driven-microservices/ /docs/services/cloud-event-driven-microservices/index.html 200
+/services/cloud-gitops-enterprise-platform/ /docs/services/cloud-gitops-enterprise-platform/index.html 200
+/services/cloud-hybrid-multi-cloud-orchestrator/ /docs/services/cloud-hybrid-multi-cloud-orchestrator/index.html 200
+/services/cloud-hybrid-multicloud-networking/ /docs/services/cloud-hybrid-multicloud-networking/index.html 200
+/services/cloud-kubernetes-cost-optimizer/ /docs/services/cloud-kubernetes-cost-optimizer/index.html 200
+/services/cloud-kubernetes-gitops-platform/ /docs/services/cloud-kubernetes-gitops-platform/index.html 200
