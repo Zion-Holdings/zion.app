@@ -10,7 +10,7 @@ FIXED for proper conversation threading
 import urllib.request, urllib.parse, json, datetime, sys, time, base64
 from pathlib import Path
 
-WORKSPACE = Path('/root/.openclaw/workspace')
+WORKSPACE = Path.home() / '.openclaw' / 'workspace'
 TOKENS_FILE = WORKSPACE / 'gog_tokens.json'
 
 def load_gog_tokens():
@@ -68,6 +68,34 @@ def gmail_thread_get(thread_id):
     req = urllib.request.Request(url, headers=gog_headers())
     resp = json.loads(urllib.request.urlopen(req).read())
     return resp.get('messages', [])
+
+def gmail_sent(to_addr: str, subject: str, within_seconds: int = 24*3600, limit: int = 20) -> bool:
+    """Return True if we sent a message to `to_addr` with matching subject within the window."""
+    try:
+        q = f'in:anywhere to:{to_addr} subject:"{subject}" in:sent'
+        hits = gmail_search(q, limit=limit)
+        now = int(time.time())
+        for m in hits:
+            try:
+                full = gmail_get(m.get('id'))
+            except Exception:
+                continue
+            headers = {h['name']: h['value'] for h in full.get('payload', {}).get('headers', [])}
+            ts_str = headers.get('Date', '')
+            ts = 0
+            if ts_str:
+                try:
+                    ts = int(datetime.datetime.strptime(ts_str.split(' -')[0].split(' +')[0], '%a, %d %b %Y %H:%M:%S').replace(tzinfo=datetime.timezone.utc).timestamp())
+                except Exception:
+                    pass
+            if now - ts > within_seconds:
+                continue
+            actual_to = headers.get('To', '')
+            if actual_to and actual_to.lower() == to_addr.lower():
+                return True
+    except Exception:
+        pass
+    return False
 
 
 # ── Gmail Labels & Batch Modify ─────────────────────────────────────
