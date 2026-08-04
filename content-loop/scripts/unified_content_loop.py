@@ -151,7 +151,6 @@ def stable_seed(slug: str) -> int:
 
 
 def unique_permutations(base: str, max_variants: int = 10) -> list[str]:
-    """Turn one topic into up to max_variants unique slugs."""
     templates = [
         f"{base} 2026 playbook",
         f"how to implement {base} without disrupting operations",
@@ -167,7 +166,6 @@ def unique_permutations(base: str, max_variants: int = 10) -> list[str]:
     out = []
     for t in templates[:max_variants]:
         out.append(clean(t))
-    # dedupe while preserving order
     seen = set()
     deduped = []
     for s in out:
@@ -178,11 +176,10 @@ def unique_permutations(base: str, max_variants: int = 10) -> list[str]:
 
 
 def build_sections(slug: str, h1: str, cluster: str) -> list[dict]:
-    """Return 5 rotated section payloads chosen by stable hash."""
     seed = stable_seed(slug)
     pools = [
         [
-            ("Operational pressure", f"In 2026, {cluster} organizations face pressure to do more with fewer resources. AI is no longer experimental: it is becoming the default operating layer for forecasting, automation, and customer experience."),
+            ("Operational pressure", f"In 2026, {cluster} teams face pressure to do more with fewer resources. AI is no longer experimental: it is becoming the default operating layer for forecasting, automation, and customer experience."),
             ("Quantified gains", "Teams adopting this approach report measurable improvements in speed, quality, and cost. Zion Tech Group designs these capabilities as production-ready modules, not pilots."),
         ],
         [
@@ -328,9 +325,6 @@ def write_feed(slugs: list[str]) -> None:
 
 
 def prune_duplicate_and_truncated(existing: set[str], keep: set[str]) -> int:
-    """Remove duplicate numbered suffixes and truncated slugs that match a canonical prefix."""
-    canonical = {s for s in keep if not re.search(r"(-\w){3,}$", s)}
-    # heurística: se um slug é prefixo curto de outro longo, o curto pode ser versão truncada
     pruned = set()
     count = 0
     for path in APP_BLOG.iterdir():
@@ -341,14 +335,12 @@ def prune_duplicate_and_truncated(existing: set[str], keep: set[str]) -> int:
             continue
         if slug in pruned:
             continue
-        # if duplicated numbered variant
         m = re.match(r"^(.*)-\w{3,8}$", slug)
         if m:
             base = m.group(1)
             if base in existing or base in keep:
                 pruned.add(slug)
                 continue
-        # remove if already superseded by longer keep set
         if slug not in keep:
             pruned.add(slug)
     for slug in pruned:
@@ -404,7 +396,6 @@ def main() -> None:
         variants = unique_permutations(topic, max_variants=10)
         if not variants:
             continue
-        # use first variant as primary, others as secondary angles
         primary = variants[0]
         secondary = variants[1:]
         related = [primary] + secondary[:3]

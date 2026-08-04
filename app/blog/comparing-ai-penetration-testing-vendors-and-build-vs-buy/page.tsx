@@ -32,7 +32,7 @@ export default function Page() {
           <section>
             <h2 className="mb-4 text-2xl font-bold text-white">Operational pressure</h2>
             <p className="mb-4 leading-relaxed text-slate-300">
-              In 2026, Ai Penetration Testing organizations face pressure to do more with fewer resources. AI is no longer experimental: it is becoming the default operating layer for forecasting, automation, and customer experience.
+              In 2026, Ai Penetration Testing teams face pressure to do more with fewer resources. AI is no longer experimental: it is becoming the default operating layer for forecasting, automation, and customer experience.
             </p>
           </section>
           <section>
