@@ -15,40 +15,12 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v5
         with:
           fetch-depth: 1
-      - name: Setup Node.js
-        uses: actions/setup-node@v5
-        with:
-          node-version: '20'
-      - name: Install dependencies
-        run: npm install --no-audit --fund=false
-        env:
-          NODE_OPTIONS: --max-old-space-size=4096
-      - name: Build Next export
-        id: build
-        run: |
-          set -euo pipefail
-          npm run build > build.log 2>&1 || echo "Build failed or skipped, continuing with static files"
-          echo "---- BUILD LOG TAIL ----"
-          tail -n 200 build.log || true
-          echo "---- /BUILD LOG TAIL ----"
-          if [ -d out ]; then
-            PAGES=$(find out -name 'index.html' | wc -l)
-            SIZE=$(du -sh out | awk '{print $1}')
-            echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
-            echo "size=$SIZE" >> "$GITHUB_OUTPUT"
-            echo "production_out_exists=1" >> "$GITHUB_OUTPUT"
-          else
-            echo "pages=0" >> "$GITHUB_OUTPUT"
-            echo "size=none" >> "$GITHUB_OUTPUT"
-            echo "production_out_exists=0" >> "$GITHUB_OUTPUT"
-          fi
-          echo "artifacts_uploaded=1" >> "$GITHUB_OUTPUT"
       - name: Prepare Pages artifact
         run: |
           set -euo pipefail
@@ -56,13 +28,14 @@ jobs:
           mkdir -p "$ARTIFACT_DIR"
           mkdir -p "$ARTIFACT_DIR/docs"
           if [ -d docs ]; then cp -a docs/. "$ARTIFACT_DIR"/; fi
-          if [ -d out ]; then cp -a out/. "$ARTIFACT_DIR"/ || true; fi
-          if [ -d public ]; then cp -a public/. "$ARTIFACT_DIR"/; fi
           if [ -d blog ]; then cp -a blog/. "$ARTIFACT_DIR"/blog/; fi
+          if [ ! -f "$ARTIFACT_DIR/index.html" ] && [ -f docs/index.html ]; then cp -f docs/index.html "$ARTIFACT_DIR/index.html"; fi
+          if [ -d public ]; then cp -a public/. "$ARTIFACT_DIR"/; fi
           if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f docs/robots.txt ]; then cp -f docs/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
           if [ ! -f "$ARTIFACT_DIR/sitemap.xml" ] && [ -f docs/sitemap.xml ]; then cp -f docs/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
           PAGES=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)
           echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
+          echo "artifacts_uploaded=1" >> "$GITHUB_OUTPUT"
           echo 'manifest:'
           find "$ARTIFACT_DIR" -maxdepth 2 -type f | sed -n '1,120p'
       - name: Pages artifact
@@ -71,12 +44,9 @@ jobs:
           path: artifacts/pages
   deploy:
     needs: build
-    if: success() && (needs.build.outputs.production_out_exists == '1' || needs.build.outputs.artifacts_uploaded == '1')
+    if: success() && needs.build.outputs.artifacts_uploaded == '1'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    timeout-minutes: 10
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
@@ -86,7 +56,7 @@ jobs:
           echo "Deployed URL: ${{ steps.deployment.outputs.page_url }}"
           sleep 20
           curl -sf "${{ steps.deployment.outputs.page_url }}/" > /dev/null && echo "✓ Homepage" || echo "✗ Homepage"
-          for p in /services/ /contact/ /tools/ /blog /blog/ai-customer-support-automation-roi-in-90-days/; do
+          for p in /blog /blog/ai-customer-support-automation-roi-in-90-days/ /services/ /contact/; do
             code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "${{ steps.deployment.outputs.page_url }}${p}" || true)
             echo "$p -> $code"
           done
