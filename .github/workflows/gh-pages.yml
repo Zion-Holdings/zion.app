@@ -113,8 +113,10 @@ jobs:
           if [ -d public ]; then
             cp -a public/. "$ARTIFACT_DIR"/
           fi
-          # Ensure SEO files exist whichever path produced them.
+          # Include root redirects and SEO files.
+          if [ -f _redirects ]; then cp -f _redirects "$ARTIFACT_DIR/_redirects"; fi
           if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f docs/robots.txt ]; then cp -f docs/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
+          if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f public/robots.txt ]; then cp -f public/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
           if [ ! -f "$ARTIFACT_DIR/sitemap.xml" ] && [ -f docs/sitemap.xml ]; then cp -f docs/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
           PAGES=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)
           echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
@@ -143,7 +145,7 @@ jobs:
         run: |
           echo "Deployed URL: ${{ steps.deployment.outputs.page_url }}"
           sleep 20
-          curl -sf "${{ steps.deployment.outputs.page_url }}/" > /dev/null && echo "✓ Homepage" || echo "✗ Homepage"
+          curl -sf "${{ steps.deployment.outputs.page_url }}/" > /dev/null && echo "Homepage OK" || echo "Homepage FAIL"
           for p in /services/ /solutions/ /pricing/ /contact/ /tools/ /about /blog /careers /partners /portal /ai-services-index /free-ai-it-tools /automation/ /services/ai-customer-support-pro/; do
             code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "${{ steps.deployment.outputs.page_url }}${p}" || true)
             echo "$p -> $code"
