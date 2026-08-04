@@ -244,9 +244,9 @@ export default function Page() {{
         </section>
 
         <script
-          type=\"application/ld+json\"
+          type="application/ld+json"
           dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
-        />
+        ></script>
       </article>
     </div>
   );
