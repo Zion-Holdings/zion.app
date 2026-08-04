@@ -1,63 +1,27 @@
 import Link from 'next/link';
-import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Blog',
-  description:
-    'Insights on AI, automation, enterprise IT, and digital transformation from the Zion Tech Group team.',
+export const metadata = {
+  title: 'Blog | Zion Tech Group',
+  description: 'IT and AI insights from Zion Tech Group.',
   alternates: { canonical: '/blog/' },
 };
 
-export default function BlogIndexPage() {
-  const POSTS = [
-    { slug: '5-proven-ai-automation-strategies-for-enterprise-workflow-optimization', title: '5 Proven AI Automation Strategies for Enterprise Workflow Optimization' },
-    { slug: 'ai-agent-frameworks-for-business-automation', title: 'AI Agent Frameworks for Business Automation' },
-    { slug: 'ai-finops-and-cloud-cost-optimization-with-machine-learning', title: 'AI FinOps: Cloud Cost Optimization with Machine Learning' },
-    { slug: 'ai-for-audit-and-compliance-automation', title: 'AI for Audit and Compliance Automation' },
-    { slug: 'ai-for-compliance-and-regulatory-reporting', title: 'AI for Compliance and Regulatory Reporting' },
-    { slug: 'ai-for-conversation-and-customer-analytics', title: 'AI for Conversation and Customer Analytics' },
-    { slug: 'ai-for-customer-service-and-support-automation', title: 'AI for Customer Service and Support Automation' },
-    { slug: 'ai-for-cybersecurity-operations-and-threat-hunting', title: 'AI for Cybersecurity Operations and Threat Hunting' },
-    { slug: 'ai-for-data-engineering-and-pipeline-automation', title: 'AI for Data Engineering and Pipeline Automation' },
-    { slug: 'ai-for-devops-and-incident-response', title: 'AI for DevOps and Incident Response' },
-    { slug: 'ai-for-it-operations-and-observability', title: 'AI for IT Operations and Observability' },
-    { slug: 'ai-for-managed-it-and-enterprise-support', title: 'AI for Managed IT and Enterprise Support' },
-    { slug: 'ai-for-network-operations-and-telecom-automation', title: 'AI for Network Operations and Telecom Automation' },
-    { slug: 'ai-for-project-management-and-delivery', title: 'AI for Project Management and Delivery' },
-    { slug: 'ai-for-quality-assurance-and-testing', title: 'AI for Quality Assurance and Testing' },
-    { slug: 'ai-for-revenue-operations-and-business-intelligence', title: 'AI for Revenue Operations and Business Intelligence' },
-    { slug: 'ai-for-sales-automation-and-crm-intelligence', title: 'AI for Sales Automation and CRM Intelligence' },
-    { slug: 'ai-for-security-operations-and-compliance', title: 'AI for Security Operations and Compliance' },
-    { slug: 'ai-for-service-desk-and-support-automation', title: 'AI for Service Desk and Support Automation' },
-    { slug: 'ai-predictive-maintenance-for-infrastructure', title: 'AI Predictive Maintenance for Infrastructure' },
-  ];
+const slugs = ['5-proven-ai-automation-strategies-for-enterprise-workflow-optimization','ai-aerospace-defense-10','ai-aerospace-defense-2','ai-aerospace-defense-2026-playbook','ai-aerospace-defense-3','ai-aerospace-defense-4','ai-aerospace-defense-5','ai-aerospace-defense-6','ai-aerospace-defense-7','ai-aerospace-defense-8','ai-aerospace-defense-9','ai-aerospace-defense-checklist-for-it-and-security-leaders','ai-aerospace-defense-costs-roi-and-hidden-risks','ai-aerospace-defense-for-enterprise-teams','ai-aerospace-defense-policy-compliance-and-vendor-management','ai-agent-frameworks-for-business-automation','ai-agriculture-technology-10','ai-agriculture-technology-2','ai-agriculture-technology-2026-playbook','ai-agriculture-technology-3','ai-agriculture-technology-4','ai-agriculture-technology-5','ai-agriculture-technology-6','ai-agriculture-technology-7','ai-agriculture-technology-8','ai-agriculture-technology-9','ai-agriculture-technology-checklist-for-it-and-security-leaders','ai-agriculture-technology-costs-roi-and-hidden-risks','ai-agriculture-technology-for-enterprise-teams','ai-agriculture-technology-policy-compliance-and-vendor-management','ai-asset-management-10','ai-asset-management-2','ai-asset-management-2026-playbook','ai-asset-management-3','ai-asset-management-4','ai-asset-management-5','ai-asset-management-6','ai-asset-management-7','ai-asset-management-8','ai-asset-management-9','ai-asset-management-checklist-for-it-and-security-leaders','ai-asset-management-costs-roi-and-hidden-risks','ai-asset-management-for-enterprise-teams','ai-asset-management-policy-compliance-and-vendor-management','ai-audit-compliance-10','ai-audit-compliance-2','ai-audit-compliance-2026-playbook','ai-audit-compliance-3','ai-audit-compliance-4','ai-audit-compliance-5','ai-audit-compliance-6','ai-audit-compliance-7','ai-audit-compliance-8','ai-audit-compliance-9','ai-audit-compliance-checklist-for-it-and-security-leaders','ai-audit-compliance-costs-roi-and-hidden-risks','ai-audit-compliance-for-enterprise-teams','ai-audit-compliance-policy-compliance-and-vendor-management','ai-automotive-manufacturing-10','ai-automotive-manufacturing-2','ai-automotive-manufacturing-2026-playbook','ai-automotive-manufacturing-3','ai-automotive-manufacturing-4','ai-automotive-manufacturing-5','ai-automotive-manufacturing-6','ai-automotive-manufacturing-7','ai-automotive-manufacturing-8','ai-automotive-manufacturing-9','ai-automotive-manufacturing-checklist-for-it-and-security-leaders','ai-automotive-manufacturing-costs-roi-and-hidden-risks','ai-automotive-manufacturing-for-enterprise-teams','ai-automotive-manufacturing-policy-compliance-and-vendor-management','ai-backup-disaster-recovery-10','ai-backup-disaster-recovery-2','ai-backup-disaster-recovery-2026-playbook','ai-backup-disaster-recovery-3','ai-backup-disaster-recovery-4','ai-backup-disaster-recovery-5','ai-backup-disaster-recovery-6','ai-backup-disaster-recovery-7','ai-backup-disaster-recovery-8','ai-backup-disaster-recovery-9','ai-backup-disaster-recovery-checklist-for-it-and-security-leaders','ai-backup-disaster-recovery-costs-roi-and-hidden-risks','ai-backup-disaster-recovery-for-enterprise-teams','ai-backup-disaster-recovery-policy-compliance-and-vendor-management','ai-banking-automation-10','ai-banking-automation-2','ai-banking-automation-2026-playbook','ai-banking-automation-3','ai-banking-automation-4','ai-banking-automation-5','ai-banking-automation-6','ai-banking-automation-7','ai-banking-automation-8','ai-banking-automation-9','ai-banking-automation-checklist-for-it-and-security-leaders','ai-banking-automation-costs-roi-and-hidden-risks','ai-banking-automation-for-enterprise-teams','ai-banking-automation-policy-compliance-and-vendor-management','ai-blockchain-integration-10','ai-blockchain-integration-2','ai-blockchain-integration-2026-playbook','ai-blockchain-integration-3','ai-blockchain-integration-4','ai-blockchain-integration-5','ai-blockchain-integration-6','ai-blockchain-integration-7','ai-blockchain-integration-8','ai-blockchain-integration-9','ai-blockchain-integration-checklist-for-it-and-security-leaders','ai-blockchain-integration-costs-roi-and-hidden-risks','ai-blockchain-integration-for-enterprise-teams','ai-blockchain-integration-policy-compliance-and-vendor-management','ai-business-continuity-10','ai-business-continuity-2','ai-business-continuity-2026-playbook','ai-business-continuity-3','ai-business-continuity-4','ai-business-continuity-5','ai-business-continuity-6','ai-business-continuity-7','ai-business-continuity-8','ai-business-continuity-9','ai-business-continuity-checklist-for-it-and-security-leaders','ai-business-continuity-costs-roi-and-hidden-risks','ai-business-continuity-for-enterprise-teams','ai-business-continuity-policy-compliance-and-vendor-management','ai-capacity-planning-10','ai-capacity-planning-2','ai-capacity-planning-2026-playbook','ai-capacity-planning-3','ai-capacity-planning-4','ai-capacity-planning-5','ai-capacity-planning-6','ai-capacity-planning-7','ai-capacity-planning-8','ai-capacity-planning-9','ai-capacity-planning-checklist-for-it-and-security-leaders','ai-capacity-planning-costs-roi-and-hidden-risks','ai-capacity-planning-for-enterprise-teams','ai-capacity-planning-policy-compliance-and-vendor-management','ai-change-management-10','ai-change-management-2','ai-change-management-2026-playbook','ai-change-management-3','ai-change-management-4','ai-change-management-5','ai-change-management-6','ai-change-management-7','ai-change-management-8','ai-change-management-9','ai-change-management-checklist-for-it-and-security-leaders','ai-change-management-costs-roi-and-hidden-risks','ai-change-management-for-enterprise-teams','ai-change-management-policy-compliance-and-vendor-management','ai-cloud-cost-optimization-10','ai-cloud-cost-optimization-2','ai-cloud-cost-optimization-2026-playbook','ai-cloud-cost-optimization-3','ai-cloud-cost-optimization-4','ai-cloud-cost-optimization-5','ai-cloud-cost-optimization-6','ai-cloud-cost-optimization-7','ai-cloud-cost-optimization-8','ai-cloud-cost-optimization-9','ai-cloud-cost-optimization-checklist-for-it-and-security-leaders','ai-cloud-cost-optimization-costs-roi-and-hidden-risks','ai-cloud-cost-optimization-for-enterprise-teams','ai-cloud-cost-optimization-policy-compliance-and-vendor-management','ai-cloud-security-10','ai-cloud-security-2','ai-cloud-security-2026-playbook','ai-cloud-security-3','ai-cloud-security-4','ai-cloud-security-5','ai-cloud-security-6','ai-cloud-security-7','ai-cloud-security-8','ai-cloud-security-9','ai-cloud-security-checklist-for-it-and-security-leaders','ai-cloud-security-costs-roi-and-hidden-risks','ai-cloud-security-for-enterprise-teams','ai-cloud-security-policy-compliance-and-vendor-management','ai-compliance-and-governance-10','ai-compliance-and-governance-2','ai-compliance-and-governance-2026-playbook','ai-compliance-and-governance-3','ai-compliance-and-governance-4','ai-compliance-and-governance-5','ai-compliance-and-governance-6','ai-compliance-and-governance-7','ai-compliance-and-governance-8','ai-compliance-and-governance-9','ai-compliance-and-governance-checklist-for-it-and-security-leaders','ai-compliance-and-governance-costs-roi-and-hidden-risks','ai-compliance-and-governance-for-enterprise-teams','ai-compliance-and-governance-policy-compliance-and-vendor-management','ai-configuration-management-10','ai-configuration-management-2','ai-configuration-management-2026-playbook','ai-configuration-management-3','ai-configuration-management-4','ai-configuration-management-5','ai-configuration-management-6','ai-configuration-management-7','ai-configuration-management-8','ai-configuration-management-9','ai-configuration-management-checklist-for-it-and-security-leaders','ai-configuration-management-costs-roi-and-hidden-risks','ai-configuration-management-for-enterprise-teams','ai-configuration-management-policy-compliance-and-vendor-management','ai-construction-automation-10','ai-construction-automation-2','ai-construction-automation-2026-playbook','ai-construction-automation-3','ai-construction-automation-4','ai-construction-automation-5','ai-construction-automation-6','ai-construction-automation-7','ai-construction-automation-8','ai-construction-automation-9','ai-construction-automation-checklist-for-it-and-security-leaders','ai-construction-automation-costs-roi-and-hidden-risks','ai-construction-automation-for-enterprise-teams','ai-construction-automation-policy-compliance-and-vendor-management','ai-container-security-10','ai-container-security-2','ai-container-security-2026-playbook','ai-container-security-3','ai-container-security-4','ai-container-security-5','ai-container-security-6','ai-container-security-7','ai-container-security-8','ai-container-security-9','ai-container-security-checklist-for-it-and-security-leaders','ai-container-security-costs-roi-and-hidden-risks','ai-container-security-for-enterprise-teams','ai-container-security-policy-compliance-and-vendor-management','ai-credit-scoring-10','ai-credit-scoring-2','ai-credit-scoring-2026-playbook','ai-credit-scoring-3','ai-credit-scoring-4','ai-credit-scoring-5','ai-credit-scoring-6','ai-credit-scoring-7','ai-credit-scoring-8','ai-credit-scoring-9'];
 
+export default function Page() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
-      <div className="container-page">
-        <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Blog</h1>
-          <p className="text-slate-400 text-lg max-w-2xl">
-            Insights on AI, automation, enterprise IT, and digital transformation.
-          </p>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {POSTS.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/blog/${post.slug}/`}
-              className="glass-card group hover:border-purple-500/40 transition-colors block"
-            >
-              <h3 className="text-white font-semibold mb-2 group-hover:text-purple-300 transition-colors leading-snug">
-                {post.title}
-              </h3>
-              <span className="text-purple-400 text-sm inline-flex items-center gap-1">
-                Read more <span aria-hidden="true">→</span>
-              </span>
-            </Link>
+    <div className="relative min-h-screen bg-slate-950">
+      <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+        <h1 className="text-3xl font-bold text-white">Blog</h1>
+        <p className="mt-2 text-slate-300">Latest posts.</p>
+        <ul className="mt-8 space-y-2">
+          {slugs.map((slug) => (
+            <li key={slug}>
+              <Link href={`/blog/${slug}/`} className="text-violet-300 underline">{slug.replace(/-/g, ' ')}</Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
-    </main>
+    </div>
   );
 }
