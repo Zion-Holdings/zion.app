@@ -1,3 +1,7 @@
 /managed-it /services/it-managed-it-ops 301
 /services/managed-it /services/it-managed-it-ops 301
 /consultation /contact 301
+
+# Search
+/search /docs/search/index.html 200
+/search/ /docs/search/index.html 200
