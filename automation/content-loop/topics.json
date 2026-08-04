@@ -1,0 +1,52 @@
+{
+  "blogs": [
+    {
+      "title": "IT Field Service Automation: Reduce Dispatch Time by 40%",
+      "excerpt": "How AI-assisted dispatch and mobile-first workflows cut truck rolls, improve SLA compliance, and scale IT field operations without adding headcount.",
+      "keywords": ["field service automation", "IT dispatch", "SLA compliance", "truck roll reduction", "mobile workforce", "AI scheduling"],
+      "category": "it"
+    },
+    {
+      "title": "Cloud Cost Optimization for MSPs: FinOps Without the Headcount",
+      "excerpt": "A practical FinOps playbook for managed service providers to control multi-cloud spend, right-size workloads, and pass savings back to clients.",
+      "keywords": ["FinOps", "cloud cost optimization", "MSP", "multi-cloud", "cost governance", "right-sizing"],
+      "category": "cloud"
+    },
+    {
+      "title": "Micro-SaaS Buying Guide: Build vs Integrate for IT Operations",
+      "excerpt": "A decision framework for IT leaders choosing between building custom tools, buying point solutions, or integrating platforms in 2026.",
+      "keywords": ["micro-SaaS", "IT operations", "buy vs build", "integration", "software buying guide", "platform strategy"],
+      "category": "micro-saas"
+    },
+    {
+      "title": "AI-Powered Security Operations: Detection to Response in Minutes",
+      "excerpt": "How AI-assisted SOC workflows reduce mean time to detect and contain threats while lowering analyst burnout in 2026.",
+      "keywords": ["AI security", "SOC automation", "MTTR", "threat detection", "security operations", "analyst burnout"],
+      "category": "security"
+    },
+    {
+      "title": "Smart Office IT: IoT Monitoring and Predictive Maintenance",
+      "excerpt": "Proactive IT monitoring with IoT sensors and predictive analytics prevents downtime, extends hardware life, and cuts break-fix costs.",
+      "keywords": ["IoT monitoring", "predictive maintenance", "smart office", "IT infrastructure", "proactive support", "downtime prevention"],
+      "category": "it"
+    },
+    {
+      "title": "AI-first IT asset discovery and lifecycle management for MSPs",
+      "excerpt": "Automate discovery, inventory, and lifecycle tracking across client environments. Reduce audit time, cut license waste, and improve security posture with AI-driven asset intelligence.",
+      "keywords": ["IT asset discovery", "lifecycle management", "MSP", "inventory automation", "license compliance", "AI asset tracking"],
+      "category": "it"
+    },
+    {
+      "title": "AI-first patch management and vulnerability remediation automation",
+      "excerpt": "Close the gap between vulnerability disclosure and remediation. AI-driven patch prioritization and automated deployment reduce exposure time while cutting technician workload.",
+      "keywords": ["patch management", "vulnerability remediation", "MSP", "CVE prioritization", "automated patching", "AI security"],
+      "category": "security"
+    },
+    {
+      "title": "AI-first remote workforce enablement and endpoint monitoring",
+      "excerpt": "Support distributed teams with proactive endpoint health checks, automated software deployment, and AI-driven user experience monitoring—without expanding your NOC headcount.",
+      "keywords": ["remote workforce", "endpoint monitoring", "MSP", "distributed teams", "proactive support", "AI monitoring"],
+      "category": "it"
+    }
+  ]
+}
