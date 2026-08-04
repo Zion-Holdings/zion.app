@@ -1,0 +1,5 @@
+gitignore missing; create minimal one
+out/
+.next/
+node_modules/
+.cache/
