@@ -72,8 +72,8 @@ If this guide matches your cloud migration services deployment patterns initiati
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
-        />
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
+        ></script>
       </article>
     </div>
   );

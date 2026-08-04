@@ -72,8 +72,8 @@ If this guide matches your endpoint management roi and cost model initiative, th
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
-        />
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
+        ></script>
       </article>
     </div>
   );

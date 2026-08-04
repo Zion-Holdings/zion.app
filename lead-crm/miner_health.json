@@ -1,0 +1,32 @@
+{
+  "send_allowed": false,
+  "ztg_send_allowed_env": null,
+  "last_check": "2026-08-04T14:28:13.053634+00:00",
+  "total_records": 24,
+  "improved_records": 21,
+  "issues_found": [],
+  "actions_taken": [
+    "dedup_ps:editors@channelpronetwork.com",
+    "dedup_ps:mweiss@procurri.com",
+    "dedup_ps:mauro.faria@fgv.br",
+    "dedup_ps:avinash.r@hcl.com",
+    "dedup_ps:ishukohli@hcl.com",
+    "dedup_ps:jason.guidry@hcl.com",
+    "dedup_ps:arulnathan.k@hcl.com",
+    "dedup_ps:greivinantonio.garci@hcl.com",
+    "dedup_ps:mohitg@hcl.com",
+    "dedup_ps:whibbert@solyssey.com",
+    "dedup_ps:mrodrigues@solyssey.com",
+    "dedup_ps:rsingh@solyssey.com",
+    "dedup_ps:balaji-kalimireddi@hcl.com",
+    "dedup_ps:sugandha_s@hcl.com",
+    "dedup_ps:suruchi.g@hcl.com",
+    "dedup_ps:hugo.sousa@dekra.com",
+    "dedup_ps:ingrid.ciarelli@dekra.com",
+    "dedup_ps:infraestrutura@dekra.com",
+    "dedup_ps:gmailgenius@wordzen.com",
+    "dedup_ps:bob@scrubly.com",
+    "dedup_ps:hi@app.kilocode.ai"
+  ],
+  "status": "analyzed_no_send"
+}

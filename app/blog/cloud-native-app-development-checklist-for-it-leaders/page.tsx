@@ -75,8 +75,8 @@ Leading indicators for cloud native app development: checklist for it leaders: w
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
-        />
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
+        ></script>
       </article>
     </div>
   );

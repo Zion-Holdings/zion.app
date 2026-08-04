@@ -75,8 +75,8 @@ Leading indicators for genai devops cicd roi and cost model: workflow completion
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
-        />
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
+        ></script>
       </article>
     </div>
   );

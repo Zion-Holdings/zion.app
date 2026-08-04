@@ -72,8 +72,8 @@ If this guide matches your devops cicd security and governance initiative, the n
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
-        />
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
+        ></script>
       </article>
     </div>
   );

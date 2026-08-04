@@ -6,6 +6,6 @@
   "message_id": null,
   "thread_id": null,
   "liveSentCheck": false,
-  "note": null,
-  "error": null
+  "note": "send_disabled",
+  "error": "SEND_DISABLED: ZTG_SEND_ALLOWED != 1"
 }
