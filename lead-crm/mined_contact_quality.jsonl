@@ -117,3 +117,120 @@
 {"ts": "2026-08-04T00:00:49.553679+00:00", "email": "robin.prothmann@egg-ai.com", "msg_id": "19f2a03c60308e41", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
 {"ts": "2026-08-04T00:00:50.693328+00:00", "email": "marcus.purzer@egg-ai.com", "msg_id": "19f2a03bd67e9874", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
 {"ts": "2026-08-04T00:00:51.103889+00:00", "email": "yuva.kumar@getdockup.com", "msg_id": "19f2a03b5cd869b8", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:31:50.908738+00:00", "email": "assespro@assespropr.org.br", "msg_id": "19fca0d8a9fb39de", "query": "subject:parceria", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:31:50.909736+00:00", "email": "kleber@ziontechgroup.com", "msg_id": "19fca0d8a9fb39de", "query": "subject:parceria", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:31:51.303976+00:00", "email": "thiago@germanbusiness.com.br", "msg_id": "19fc9d2e9172cbc2", "query": "subject:parceria", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:31:51.714650+00:00", "email": "postmaster@hcl.com", "msg_id": "19fc98444a7556bb", "query": "subject:parceria", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:31:52.119622+00:00", "email": "jason.guidry@hcl.com", "msg_id": "19fc983394a1d014", "query": "subject:parceria", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:31:52.594387+00:00", "email": "ishukohli@hcl.com", "msg_id": "19fc952765141b04", "query": "subject:parceria", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:31:53.006673+00:00", "email": "avinash.r@hcl.com", "msg_id": "19fc939b9c61bb67", "query": "subject:parceria", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:31:53.459624+00:00", "email": "postmaster@procurri.com", "msg_id": "19fc9200db0d0ddb", "query": "subject:parceria", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:31:54.020833+00:00", "email": "mweiss@procurri.com", "msg_id": "19fc91fddb71bc00", "query": "subject:parceria", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:31:54.507227+00:00", "email": "djean.axt@ztg.com.br", "msg_id": "19fc8d05eacf564b", "query": "subject:parceria", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:31:54.894395+00:00", "email": "thomas@gakenholz.de", "msg_id": "19fc881356bc5c6e", "query": "subject:parceria", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:31:55.347038+00:00", "email": "valmy.gonzalez@shervacom.com", "msg_id": "19fc4ce6bb6200c1", "query": "subject:parceria", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:31:56.687337+00:00", "email": "santosdenovais@xwf.google.com", "msg_id": "19fb7952a63fe73f", "query": "subject:parceria", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:31:57.459688+00:00", "email": "naoresponda@rdstation.com", "msg_id": "19fb79526781fb12", "query": "subject:parceria", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:31:58.021218+00:00", "email": "timedemarketing@resultadosdigitais-mkt.com.br", "msg_id": "19fb7952268201de", "query": "subject:parceria", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:31:58.527893+00:00", "email": "timedemarketing@resultadosdigitaismail.com.br", "msg_id": "19fb79511270b216", "query": "subject:parceria", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:01.112316+00:00", "email": "commercial@ziontechgroup.com", "msg_id": "19fa9d1ec43523d5", "query": "subject:proposta", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:01.112939+00:00", "email": "administracao@drm.rj.gov.br", "msg_id": "19fa9d1ec43523d5", "query": "subject:proposta", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:02.479581+00:00", "email": "carlos@ziontechgroup.com", "msg_id": "19fa201f8d2e3bf2", "query": "subject:proposta", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:10.049901+00:00", "email": "jsegatto@saopaulo.sp.leg.br", "msg_id": "19f3e4f6fde49de5", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:10.603061+00:00", "email": "joao.aguiar@seguranca.mg.gov.br", "msg_id": "19f3dff5313ce9bc", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:11.432417+00:00", "email": "ti@cavalera.com.br", "msg_id": "19f1b228d60a7300", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:11.433095+00:00", "email": "sdm@ziontechgroup.com", "msg_id": "19f1b228d60a7300", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:11.433445+00:00", "email": "renan.amorim@cavalera.com.br", "msg_id": "19f1b228d60a7300", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:11.831693+00:00", "email": "saude@rioparanaiba.mg.gov.br", "msg_id": "19f1b15f1d516d9c", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:12.248290+00:00", "email": "marcio.coutrin@school360.com.br", "msg_id": "19f1b0b5b8ded3f5", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:12.659749+00:00", "email": "marcos.maciel@novaengevix.com.br", "msg_id": "19f1b03e8a5af420", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:13.223739+00:00", "email": "celi.vasconcelos@wyntech.inf.br", "msg_id": "19f1ab9a621169d1", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:13.655712+00:00", "email": "fabio.mesquita@vspsolution.com.br", "msg_id": "19f1a32d6ee161a3", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:14.047558+00:00", "email": "wagner.dias@logicnet.com.br", "msg_id": "19f1a2d4c5f0048a", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:14.508471+00:00", "email": "herbert.azevedo@la.logicalis.com", "msg_id": "19f1a278068e3275", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:14.932937+00:00", "email": "almir.nascimento@grupomassa.com.br", "msg_id": "19f1a13a6cc5d556", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:14.933566+00:00", "email": "bruno.garcia@grupomassa.com.br", "msg_id": "19f1a13a6cc5d556", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:14.934022+00:00", "email": "rosana.padilha@grupomassa.com.br", "msg_id": "19f1a13a6cc5d556", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:14.934406+00:00", "email": "alia.bianco@grupomassa.com.br", "msg_id": "19f1a13a6cc5d556", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:14.934738+00:00", "email": "jonny.soares@redemassa.com.br", "msg_id": "19f1a13a6cc5d556", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:15.367714+00:00", "email": "patricia.rodrigues@vivara.com.br", "msg_id": "19f1a125c239eabe", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:15.847127+00:00", "email": "pedro.cavalcanti@gvs.com", "msg_id": "19f18f325bfb0acb", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:16.260996+00:00", "email": "eduardo.ornelas@social.mg.gov.br", "msg_id": "19f18ef046a54266", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:16.710581+00:00", "email": "julia.andrade@seguranca.mg.gov.br", "msg_id": "19f18eb2fe8de031", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:17.246195+00:00", "email": "sandra.laschet@ima.sp.gov.br", "msg_id": "19f18e13ddee8464", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:17.246948+00:00", "email": "salete@ziontechgroup.com", "msg_id": "19f18e13ddee8464", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:17.247404+00:00", "email": "mariana.pimentel@ziontechgroup.com", "msg_id": "19f18e13ddee8464", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:18.332899+00:00", "email": "mauricio.sunamoto@vesuvius.com", "msg_id": "19f18a1f10f1cfb0", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:18.723091+00:00", "email": "luciana.onha@atento.com", "msg_id": "19f184b019d89ce1", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:18.723757+00:00", "email": "administracaocasa@atento.com.br", "msg_id": "19f184b019d89ce1", "query": "subject:orçamento", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:19.731520+00:00", "email": "contato@sieg.com", "msg_id": "19ebb3f2b7245800", "query": "subject:reunião", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:20.320530+00:00", "email": "contato@comunicacao.serasaexperian.com.br", "msg_id": "19ebb3f20924ea51", "query": "subject:reunião", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:20.701152+00:00", "email": "mkt@knl.digital", "msg_id": "19ebb3f13d0fd387", "query": "subject:reunião", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:22.812048+00:00", "email": "will.cesar@dealwise.com.br", "msg_id": "19d40214c8cff7a1", "query": "subject:reunião", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:23.265772+00:00", "email": "notifications@youcanbook.me", "msg_id": "19c2d759a1228741", "query": "subject:reunião", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:23.724855+00:00", "email": "infra@ingaia.com.br", "msg_id": "19c28864131426a7", "query": "subject:reunião", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:24.283945+00:00", "email": "calendar-notification@google.com", "msg_id": "19c1e3060581ea5c", "query": "subject:reunião", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:24.732938+00:00", "email": "cassia.barbosa@kenlo.com", "msg_id": "19c10746d3190776", "query": "subject:reunião", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:24.733459+00:00", "email": "veronica.oliveira@i-value.com.br", "msg_id": "19c10746d3190776", "query": "subject:reunião", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:26.052711+00:00", "email": "natalia.diniz@dealwise.com.br", "msg_id": "19b0d6b1be79d282", "query": "subject:reunião", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:26.888010+00:00", "email": "felipe.palmeiro@mkt.placehub.io", "msg_id": "199f2593371a4d79", "query": "subject:reunião", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:28.182026+00:00", "email": "cmsilveira@suzano.com.br", "msg_id": "197673734834f729", "query": "subject:reunião", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:28.182543+00:00", "email": "ofini.fernandes@ziontechgroup.com", "msg_id": "197673734834f729", "query": "subject:reunião", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:29.920563+00:00", "email": "rogerio.rocha@vbr2.com.br", "msg_id": "19df2a74f3fb2ea1", "query": "subject:diagnóstico", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:30.329118+00:00", "email": "marketing@addee.com.br", "msg_id": "19cddd81dbf4a732", "query": "subject:diagnóstico", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:30.330633+00:00", "email": "luiz.campagner@ziontechgroup.com", "msg_id": "19cddd81dbf4a732", "query": "subject:diagnóstico", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:30.742642+00:00", "email": "tcharles.godoi@ziontechgroup.com", "msg_id": "19cdae98eb41096e", "query": "subject:diagnóstico", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:31.221067+00:00", "email": "coface.latinamerica@go.coface.com", "msg_id": "19976735b7afab8d", "query": "subject:diagnóstico", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:31.623681+00:00", "email": "alexandre.souza@outmarketing.com.br", "msg_id": "1995cc95c85bdf10", "query": "subject:diagnóstico", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:32.661732+00:00", "email": "tatiana.sciencio@bcrcx.com", "msg_id": "1980b902c27d6c7c", "query": "subject:diagnóstico", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:33.500200+00:00", "email": "paulo.volpis@vetorzero.com.br", "msg_id": "1958590645153fd3", "query": "subject:diagnóstico", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:38.025957+00:00", "email": "kleber@ztg.com.br", "msg_id": "1778bec0f410df34", "query": "subject:diagnóstico", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:38.974331+00:00", "email": "contato@granatum.com.br", "msg_id": "175282bac66c38ed", "query": "subject:diagnóstico", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:42.463463+00:00", "email": "george@georgegarza.com", "msg_id": "19fc9290c3a514d4", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:43.951554+00:00", "email": "zion-support.github.io@noreply.github.com", "msg_id": "19fc91da7492bf2b", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:43.952165+00:00", "email": "state_change@noreply.github.com", "msg_id": "19fc91da7492bf2b", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:44.353993+00:00", "email": "rohit.singh@cockroachlabs.com", "msg_id": "19fc8eaea82c336b", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:44.768761+00:00", "email": "editors@channelpronetwork.com", "msg_id": "19fc8e9b16543971", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:46.108198+00:00", "email": "messages-noreply@linkedin.com", "msg_id": "19fc87ab886631c3", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:46.526397+00:00", "email": "mauro.faria@fgv.br", "msg_id": "19fc7e786edc2c57", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:47.297586+00:00", "email": "reinhart.hermanus@finnix.id", "msg_id": "19fc64b6a65e9d13", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:47.709390+00:00", "email": "nirmit.arora@ritivel.com", "msg_id": "19fc64b615923d9a", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:48.107044+00:00", "email": "everett.ivy@xtraffic.com", "msg_id": "19fc64b56002ab31", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:48.661118+00:00", "email": "aurelia.song@nectome.com", "msg_id": "19fc64b4cf150a37", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:52.553423+00:00", "email": "author@noreply.github.com", "msg_id": "19fca213e47fd653", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:59.006021+00:00", "email": "contatordp@phicube.com.br", "msg_id": "19f1dea345552448", "query": "subject:automação", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:32:59.406116+00:00", "email": "alvaro@sigapregao.com.br", "msg_id": "19f1dea2c1d6365e", "query": "subject:automação", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:01.053658+00:00", "email": "hi@pricelabs.co", "msg_id": "19f1de9f1b483c25", "query": "subject:automação", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:01.466437+00:00", "email": "leticiam.sdr@econodata.com.br", "msg_id": "19f1de9ba56530cd", "query": "subject:automação", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:03.193369+00:00", "email": "juliana.geglio@lastro.co", "msg_id": "19f1de994beebed2", "query": "subject:automação", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:08.438276+00:00", "email": "paulina.xu@agenticfabriq.com", "msg_id": "19f8a5ad7433964b", "query": "subject:\"incident response\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:08.842664+00:00", "email": "ci_activity@noreply.github.com", "msg_id": "1986b72a04b0dc09", "query": "subject:\"incident response\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:08.843232+00:00", "email": "zion.app@noreply.github.com", "msg_id": "1986b72a04b0dc09", "query": "subject:\"incident response\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:09.576007+00:00", "email": "list@wordfence.com", "msg_id": "179ec11fcc05c404", "query": "subject:\"incident response\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:10.412615+00:00", "email": "marketing@ziontechgroup.com", "msg_id": "164857920454cea6", "query": "subject:\"incident response\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:10.919645+00:00", "email": "computerworld_resources@cwresources.computerworld.com", "msg_id": "15af1d297812cfa7", "query": "subject:\"incident response\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:12.275121+00:00", "email": "newsletters@nl.technologyadvice.com", "msg_id": "19fc71ccfeee23b3", "query": "subject:managed services", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:12.739385+00:00", "email": "info@manag.com", "msg_id": "19f91a9aa3ed723a", "query": "subject:managed services", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:13.175626+00:00", "email": "sales@omc.cloud", "msg_id": "19f147388cd43cdd", "query": "subject:managed services", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:13.624613+00:00", "email": "jason.l@quali.com", "msg_id": "19f14731f5ae1bfa", "query": "subject:managed services", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:14.408708+00:00", "email": "learnmore@visualedgeit.com", "msg_id": "19ce780d92fa73e7", "query": "subject:managed services", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:14.921524+00:00", "email": "donotreply@wordpress.com", "msg_id": "19653443d65e14f4", "query": "subject:managed services", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:22.600218+00:00", "email": "sophia@dataprotect.com", "msg_id": "19fb70f27bb8d10f", "query": "subject:devops", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:23.467916+00:00", "email": "marcus@cybershield.com", "msg_id": "19fb5feabe398e12", "query": "subject:devops", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:23.880187+00:00", "email": "michael@healthnet.com", "msg_id": "19fb33411c9ff7b6", "query": "subject:devops", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:28.347618+00:00", "email": "sarah@techstart.com", "msg_id": "19fb2216205c5f7a", "query": "subject:devops", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:30.955066+00:00", "email": "carlos.feliciano@tryterracotta.com", "msg_id": "19f2a042f4944556", "query": "subject:devops", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:32.642738+00:00", "email": "support@rundoo.ai", "msg_id": "19f13c448c590d2a", "query": "subject:sase", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:33.065007+00:00", "email": "info@connect.arubanetworks.com", "msg_id": "18c630e02a9e74e2", "query": "subject:sase", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:36.186445+00:00", "email": "fabian.lindfors@specific.dev", "msg_id": "19f2a04222d3b465", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:36.629322+00:00", "email": "tomas.barreto@okayhq.com", "msg_id": "19f2a0410adb4d44", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:37.035984+00:00", "email": "andrios.robert@hoop.dev", "msg_id": "19f2a0407206f327", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:37.552690+00:00", "email": "david.ruescas@sequentech.io", "msg_id": "19f2a03fedd45b35", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:38.016898+00:00", "email": "eduardo.robles@sequentech.io", "msg_id": "19f2a03f65f7903c", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:38.422512+00:00", "email": "shai.bargil@sequentech.io", "msg_id": "19f2a03ed9cd48e7", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:39.336327+00:00", "email": "alex.polvi@coreos.com", "msg_id": "19f2a03e837f6ab5", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:39.761016+00:00", "email": "sam.alba@mendral.com", "msg_id": "19f2a03d0e220372", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:40.210040+00:00", "email": "sascha.kuzins@ninite.com", "msg_id": "19f2a03cbc8e636a", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:40.729697+00:00", "email": "robin.prothmann@egg-ai.com", "msg_id": "19f2a03c60308e41", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:41.118658+00:00", "email": "marcus.purzer@egg-ai.com", "msg_id": "19f2a03bd67e9874", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:33:41.539962+00:00", "email": "yuva.kumar@getdockup.com", "msg_id": "19f2a03b5cd869b8", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}

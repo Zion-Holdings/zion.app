@@ -24,3 +24,18 @@
 /tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200
 
 /assets/js/conversion-events.js /assets/js/conversion-events.js 200
+
+# Explicit blog fallbacks for short slugs
+/blog/how-manufacturing-leaders-cut-costs-with-ai/ /docs/blog/2026-buyer-s-guide-to-how-manufacturing-leaders-cut-costs-with-ai/index.html 200
+/blog/scaling-ai-across-manufacturing-operations/ /docs/blog/2026-buyer-s-guide-to-scaling-ai-across-manufacturing-operations/index.html 200
+/blog/ai-first-legalcompliance-playbook-2026/ /docs/blog/2026-buyer-s-guide-to-ai-first-legalcompliance-playbook-2026/index.html 200
+/blog/how-energyutilities-leaders-cut-costs-with-ai/ /docs/blog/2026-buyer-s-guide-to-how-energyutilities-leaders-cut-costs-with-ai/index.html 200
+/blog/logisticssupplychain-ai-automation-roadmap/ /docs/blog/2026-buyer-s-guide-to-logisticssupplychain-ai-automation-roadmap/index.html 200
+/blog/predictable-ai-roi-in-education/ /docs/blog/2026-buyer-s-guide-to-predictable-ai-roi-in-education/index.html 200
+/blog/scaling-ai-across-healthcarelifesciences-operations/ /docs/blog/2026-buyer-s-guide-to-scaling-ai-across-healthcarelifesciences-operations/index.html 200
+/blog/scaling-ai-across-energyutilities-operations/ /docs/blog/2026-buyer-s-guide-to-scaling-ai-across-energyutilities-operations/index.html 200
+/blog/how-healthcarelifesciences-leaders-cut-costs-with-ai/ /docs/blog/2026-buyer-s-guide-to-how-healthcarelifesciences-leaders-cut-costs-with-ai/index.html 200
+/blog/legalcompliance-compliance-and-ai-governance/ /docs/blog/2026-buyer-s-guide-to-legalcompliance-compliance-and-ai-governance/index.html 200
+
+# Service fallback for referenced energy utilities analytics path
+/services/ai-energy-utilities-analytics/ /services/ 302
