@@ -51,7 +51,7 @@ class EmailInteractionAgent:
         """
         try:
             result = subprocess.run(
-                self.gog_cmd + ["list", "--query", "is:unread"],
+                self.gog_cmd + ["search", "is:unread", "--account", "kleber@ziontechgroup.com", "--no-input", "--max", "20"],
                 capture_output=True, text=True, timeout=30
             )
             if result.returncode != 0:
@@ -85,7 +85,7 @@ class EmailInteractionAgent:
         """
         try:
             result = subprocess.run(
-                self.gog_cmd + ["get", email_id, "--format", "raw"],
+                self.gog_cmd + ["get", email_id, "--account", "kleber@ziontechgroup.com"],
                 capture_output=True, text=True, timeout=30
             )
             if result.returncode != 0:

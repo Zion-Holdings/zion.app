@@ -42,7 +42,7 @@ from commands.v40_modules.thread_headroom_lock import ThreadHeadroomLock
 POLICY_DB = IntentPolicyDB.load(str(DATA / "policies" / "intent_policies.json"))
 POLICY_LOOKUP = IntentPolicyLookup(POLICY_DB)
 # V40-C: ThreadHeadroomLock — shared lock for per-thread conveyor-belt gate.
-_head_lock = ThreadHeadroomLock(POLICY_DB)
+_head_lock = ThreadHeadroomLock()
 # Drop-in replacement: .get(label, default) mirrors V26 semantics
 
 
@@ -182,6 +182,7 @@ except Exception as _ex:
     format_availability      = None
 
 
+from response_uniqueness_checker import check_uniqueness
 # ─── V30: CaseRouter + ResponseImprover ─────────────────────
 try:
     from case_router          import CaseRouter
@@ -1371,6 +1372,30 @@ class V26Responder:
 
         # ③ Trim grammar check
         g_score, g_issues = _fast_grammar_check(body)
+
+        # --- Response Uniqueness Check ---
+        uniqueness_score = check_uniqueness(tid, body)
+        if uniqueness_score < 0.2:
+            result = add_to_result(email, {
+                "thread_intent": thread_intent_label,
+                "action": "review",
+                "reason": f"low_response_uniqueness_{uniqueness_score:.2f}",
+                "tone": tone_data,
+                "elapsed_ms": round((time.monotonic() - t0) * 1000, 1)
+            })
+            return result
+
+        # --- Response Uniqueness Check ---
+        uniqueness_score = check_uniqueness(tid, body)
+        if uniqueness_score < 0.2:
+            result = add_to_result(email, {
+                "thread_intent": thread_intent_label,
+                "action": "review",
+                "reason": f"low_response_uniqueness_{uniqueness_score:.2f}",
+                "tone": tone_data,
+                "elapsed_ms": round((time.monotonic() - fast_ms_start) * 1000, 1)
+            })
+            return result
 
         # V30: CaseRouter gates after grammar check (before detector + escalation)
         if V30_ROUTER_ENABLED and self.case_router:
