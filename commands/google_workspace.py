@@ -10,8 +10,9 @@ FIXED for proper conversation threading
 import urllib.request, urllib.parse, json, datetime, sys, time, base64
 from pathlib import Path
 
-WORKSPACE = Path('/root/.openclaw/workspace')
-TOKENS_FILE = WORKSPACE / 'gog_tokens.json'
+WORKSPACE = Path('/data/data/com.termux/files/home/.openclaw/workspace')
+FALLBACK_WORKSPACE = Path('/Users/miami2/zion.app/lead-crm')
+TOKENS_FILE = WORKSPACE / 'gog_tokens.json' if (WORKSPACE / 'gog_tokens.json').exists() else (FALLBACK_WORKSPACE / 'gog_tokens.json')
 
 def load_gog_tokens():
     with open(TOKENS_FILE) as f:
@@ -50,8 +51,11 @@ def gog_headers():
 
 # ── Gmail ──────────────────────────────────────────────────────────────────
 
-def gmail_search(query, limit=20):
-    q = query + ' label:INBOX'
+def gmail_search(query, limit=20, all_folders=False):
+    if all_folders:
+        q = f'in:anywhere {query}'
+    else:
+        q = query + ' label:INBOX'
     url = ('https://gmail.googleapis.com/gmail/v1/users/me/messages'
            f'?q={urllib.parse.quote(q)}&maxResults={limit}')
     req = urllib.request.Request(url, headers=gog_headers())
