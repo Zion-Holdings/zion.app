@@ -1,0 +1,7 @@
+# Hermes/automation runtime artifacts
+lead-crm/
+automation/
+outreach_monitor/processed/
+scripts/checks/
+commands/
+check_hot_followup.py
