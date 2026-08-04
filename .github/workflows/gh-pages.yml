@@ -5,8 +5,6 @@ name: Continuous Pages Deploy
   workflow_dispatch:
 permissions:
   contents: read
-  pages: write
-  id-token: write
 concurrency:
   group: continuous-pages-deploy-${{ github.ref }}
   cancel-in-progress: false
