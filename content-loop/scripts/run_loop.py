@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Unified exponential content loop runner."""
+"""Unified exponential content loop runner with long-form page generation."""
 from __future__ import annotations
 
 import hashlib
@@ -120,6 +120,197 @@ def related_slugs(current: str, limit: int = 4) -> list[str]:
     return candidates[:limit]
 
 
+def paragraph(topic: str, cluster: str, key: str) -> str:
+    topic = topic.replace('-', ' ').lower()
+    c = cluster.replace('_', ' ').lower()
+    topic_cap = topic.title()
+    paragraphs = {
+        'Why this matters now': [
+            f'Buyers evaluating {topic} in 2026 are prioritizing measurable outcomes over feature checklists.',
+            f'This guide focuses on practical adoption, risk reduction, and ROI because generic {c} marketing no longer converts informed buyers.',
+            f'Teams that invest in {topic} with clear success metrics and phased delivery consistently outperform teams that chase experimental AI hype.',
+            f'The organizations that win in 2026 will treat {topic} as a durable capability, not a one-off project, and they will instrument execution from day one.',
+            f'If your team is still debating whether {topic} is worth investing in, use this guide to build the business case with evidence rather than vendor claims.'
+        ],
+        'Executive summary': [
+            f'This post gives executives a concise view of {topic}: value drivers, adoption blockers, realistic timelines, and the ownership model required for success.',
+            f'The bottom line: {topic} can shorten delivery cycles, reduce manual exceptions, and improve customer outcomes when scoped correctly and operated responsibly.',
+            f'Recommendation: start with one workflow, assign ownership, define success metrics, and review after 30 days before broader rollout.',
+            f'Use this guide to align leadership, set expectations, and avoid the common mistake of piloting without service ownership or alerting.'
+        ],
+        'Recommended approach': [
+            f'For {topic}, we recommend a phased approach: pilot, instrument, stabilize, then expand.',
+            f'Start with one high-friction workflow, automate the lowest-risk step first, and add observability before expanding scope.',
+            f'Each phase should have a defined owner, success criteria, and rollback plan so the program remains reversible and low-risk.',
+            f'Document runbooks early and train operators before scaling; otherwise, expansion creates unrecoverable backlogs and stakeholder distrust.',
+            f'Keep changes small and reversible until metrics prove stability, then scale deliberately with the same discipline.'
+        ],
+        'Common pitfalls': [
+            f'Common mistakes in {topic} include weak scope, over-automation, brittle integrations, missing rollback criteria, and unclear ownership.',
+            f'Another frequent failure is piloting without service ownership; alerts and incidents need a named owner or the program stalls during the first production issue.',
+            f'Teams also over-index on proofs of concept instead of production readiness: access control, monitoring, change management, and escalation paths are often missing.',
+            f'Fix these before launch and you will dramatically improve adoption, reliability, and stakeholder confidence in the program.'
+        ],
+        'Next actions': [
+            f'Review your highest-friction workflow, contact Zion Tech Group for a scoped pilot, and start with one measurable outcome.',
+            f'Set a 30-day review date, define success metrics, assign an owner, and document rollback criteria before expanding.',
+            f'If this matches your current initiative, the next step is a short scoping call and a concrete pilot plan.',
+            f'The organizations that move fastest in 2026 are the ones that combine clear intent with disciplined execution.'
+        ],
+        'Current state': [
+            f'Most organizations already have data, tools, and manual workflows for {topic}.',
+            f'The missing piece is usually orchestration, clear ownership, and a repeatable operating model that can scale beyond a pilot.',
+            f'Understanding the current state is essential: map workflows, measure cycle times, and identify bottlenecks before proposing automation.',
+            f'A realistic baseline prevents unrealistic promises and helps leadership see the real gap between current state and target outcomes.',
+            f'Spend time in discovery before committing to a roadmap; the best automation plans come from deep operational knowledge.'
+        ],
+        'Opportunities': [
+            f'High-impact opportunities for {topic} usually cluster around onboarding, quality assurance, cost visibility, and escalation handling.',
+            f'Focus on workflows with high volume, high error rates, or slow handoffs; these produce the clearest ROI and fastest adoption.',
+            f'Map each opportunity to a business outcome so stakeholders understand the why behind the investment.',
+            f'Choose one opportunity, measure the current state, then design an automation or augmentation that reduces rework.',
+            f'Track opportunity value over time so you can prioritize the next wave after the first success.'
+        ],
+        'Implementation roadmap': [
+            f'Phase one should deliver a single measurable win in 30 days for {topic}.',
+            f'Phase two adds reliability controls: monitoring, access management, runbooks, and escalation criteria.',
+            f'Phase three expands scope only after validated adoption, stable operations, and clear ownership across teams.',
+            f'Each phase should include a retrospective so lessons learned feed the next phase rather than repeating the same mistakes.',
+            f'Keep the roadmap visible to stakeholders and update it as the program matures; transparency builds trust and funding continuity.'
+        ],
+        'Risks and mitigations': [
+            f'Main risks for {topic} include data quality gaps, over-automation, brittle integrations, missing rollback criteria, and unclear ownership.',
+            f'Data quality gaps can be reduced with lightweight validation and clearly defined data contracts before automation begins.',
+            f'Over-automation is best avoided with guardrails, approval flows, and human escalation paths for exceptions.',
+            f'Weak rollback plans can be fixed with staged rollout criteria and synthetic monitors that trigger alerts before customers are affected.',
+            f'Ownership gaps are solved by naming a primary owner, a backup owner, and an escalation path before launch.'
+        ],
+        'Outcomes to measure': [
+            f'Leading indicators for {topic}: workflow completion rate, escalation rate, time-to-resolution, and user satisfaction.',
+            f'Lagging indicators: revenue trend, cost trend, customer retention, and operational efficiency.',
+            f'Track both leading and lagging indicators so you can explain progress to leadership before financial results appear.',
+            f'Use a rolling 90-day window and re-baseline monthly; this keeps the program accountable without demanding perfection on day one.',
+            f'Publish metrics in a shared dashboard so the whole team sees progress, not just the program sponsor.'
+        ],
+        'Business context': [
+            f'Strong investments in {topic} reduce manual work, improve customer experience, and create faster feedback loops between operations and revenue.',
+            f'The best programs tie capability building to business outcomes: faster throughput, fewer preventable incidents, and clearer accountability.',
+            f'Leadership support increases when {topic} is framed as strategic capability rather than an experimental cost center.',
+            f'Focus on durable value: scalable processes, reusable integrations, and measurable outcomes that survive turnover and budget cycles.',
+            f'When business context is clear, funding and staffing decisions become easier because stakeholders understand the expected return.'
+        ],
+        'Technical considerations': [
+            f'For {topic}, prefer services with documented APIs, webhooks, and role-based access control.',
+            f'Avoid point solutions that become brittle after the pilot; choose platforms designed for production workloads and operational visibility.',
+            f'Centralize data contracts and use lightweight integration points so you can adapt when requirements change.',
+            f'Retain fallback paths for exceptions and edge cases; resilient systems handle failure modes gracefully instead of breaking end-to-end.',
+            f'Document interfaces and ownership so future teams can extend the system without rewriting core logic.'
+        ],
+        'Operational rollout': [
+            f'Pilot {topic} with one team, document runbooks, train operators, then expand.',
+            f'Broad rollouts without ownership create unrecoverable backlogs and erode trust in automation.',
+            f'Operational readiness should be checked before expansion: alerting, on-call coverage, incident response, and change management.',
+            f'Make success visible through dashboards and weekly reviews so momentum builds from real progress, not slide decks.',
+            f'Operational excellence is built during the pilot, not after a failed broad rollout.'
+        ],
+        'Success signals': [
+            f'A successful rollout of {topic} produces clearer metrics, faster execution, and fewer preventable incidents.',
+            f'If those outcomes do not appear, revisit scope and workflow design instead of adding more tooling.',
+            f'Look for consistent adoption, stable error rates, and positive operator feedback before declaring success.',
+            f'Sustained success requires continuous improvement, not a one-time implementation project.',
+            f'Celebrate evidence-based wins publicly; they build momentum for the next phase.'
+        ],
+        'Problem definition': [
+            f'Teams frequently over-index on proofs of concept without production guardrails for {topic}: monitoring, access control, incident response, and change management.',
+            f'Without these guardrails, promising pilots become operational liabilities that consume more time than they save.',
+            f'A clear problem definition separates experiments from production-ready programs by stating the exact outcome, constraints, and success criteria.',
+            f'Invest time in problem definition before automation; it pays back in faster delivery and fewer rework cycles.',
+            f'Write the problem statement in one paragraph and share it with stakeholders to align expectations before work begins.'
+        ],
+        'Architecture overview': [
+            f'For {topic}, start with lightweight integration points, centralize data contracts, and expose only the actions required for human approval or escalation.',
+            f'Composable architectures outperform monolith replacements because they let teams evolve individual capabilities without disrupting the whole system.',
+            f'Keep the architecture observable: logs, metrics, and traces should answer why an action occurred, not just that it occurred.',
+            f'Avoid hidden coupling between services; explicit interfaces and clear ownership reduce coordination costs as the system scales.',
+            f'Revisit architecture after each phase and refactor coupling points before they become hard dependencies.'
+        ],
+        'Deployment patterns': [
+            f'Use staged rollout for {topic} with explicit rollback criteria, synthetic monitors for critical paths, and defined ownership for alerts and incidents.',
+            f'Small, reversible changes reduce blast radius and make incidents easier to diagnose and recover from.',
+            f'Deployments should be boring by design: predictable, automated, and reversible with one command or control plane action.',
+            f'Pair deployment automation with canary or blue-green strategies when user-facing behavior changes.',
+            f'Track deployment frequency, failure rate, and recovery time; these metrics predict long-term operational health.'
+        ],
+        'Cost and ROI': [
+            f'Calculate ROI for {topic} using saved hours, avoided incidents, faster throughput, or improved conversion.',
+            f'Use a rolling 90-day window and re-baseline monthly so stakeholders see real trend data rather than one-time estimates.',
+            f'Include operational costs: monitoring, on-call coverage, training, and exception handling. Ignoring these creates unrealistic ROI models.',
+            f'ROI should be owned by the program sponsor and reviewed publicly; transparency keeps teams accountable and funding intact.',
+            f'Update the ROI model after each phase so it reflects actual performance, not optimistic assumptions.'
+        ],
+        'Market signal': [
+            f'Demand is rising for durable {topic} capabilities rather than one-off automations.',
+            f'Buyers want measurable outcomes, stable operations, and vendor partnerships that grow with their environment.',
+            f'The strongest programs differentiate themselves with operational maturity, not feature breadth.',
+            f'Focus on outcomes, roadmap clarity, and evidence-based improvements rather than generic AI marketing.',
+            f'Use market signal analysis to prioritize investments that align with buyer expectations and competitive positioning.'
+        ],
+        'Capability map': [
+            f'Map capabilities against current workflow friction for {topic}.',
+            f'Highest-ROI automations reduce handoffs and rework rather than simply digitizing existing handoffs.',
+            f'A capability map makes priorities visible to leadership and creates a shared view of where automation should start.',
+            f'Revisit the map quarterly; new opportunities emerge as teams mature and data quality improves.',
+            f'Share the map with operators and validate assumptions before investing in automation.'
+        ],
+        'Execution playbook': [
+            '1) Define success metrics. 2) Choose one primary workflow. 3) Automate the lowest-risk step first. 4) Add observability. 5) Expand only after stable operation.',
+            'Document decisions, owners, dates, and metrics in a shared workspace so progress remains visible to all stakeholders.',
+            'Review the playbook after each phase and update it with lessons learned; the playbook becomes organizational memory.',
+            'Repeatable execution separates successful teams from teams that rely on heroics and undocumented workarounds.',
+            'Keep the playbook short and actionable; long strategy documents rarely change behavior on the ground.'
+        ],
+        'Action checklist': [
+            f'For {topic}: pick one workflow, assign ownership, define success metrics, instrument execution, and set a 30-day review date.',
+            f'Write the checklist down and share it with stakeholders so expectations are explicit.',
+            f'Before launch, verify access controls, monitoring, rollback criteria, and on-call coverage.',
+            f'After launch, review metrics weekly and escalate deviations immediately; small drifts become large incidents when ignored.',
+            f'Use the checklist as a living document and update it as the program learns from real operation.'
+        ],
+        'Recommended next step': [
+            'Start with one workflow, one owner, and one success metric.',
+            'Expansion should follow evidence, not enthusiasm.',
+            'A focused pilot beats a scattered roadmap because it produces proof points that stakeholders can verify.',
+            'If this matches your current initiative, the next step is a short scoping call and a concrete pilot plan.'
+        ],
+        'Conversion path': [
+            f'If this guide matches your {topic} initiative, the next step is a scoping call with Zion Tech Group.',
+            'We will define one measurable outcome, identify dependencies, and outline a pilot plan you can start in days.',
+            'Contact us to move from assessment to execution with a timeline and success criteria already in place.'
+        ],
+    }
+    vals = paragraphs.get(key, [f'{key}: {topic} requires clear ownership, measurable success criteria, and phased execution to deliver sustainable value.'])
+    return ' '.join(vals)
+
+
+def build_section_body(title: str, cluster: str) -> str:
+    h = int(hashlib.sha1(title.encode('utf-8')).hexdigest()[:6], 16)
+    variants = [
+        ['Why this matters now', 'Executive summary', 'Recommended approach', 'Common pitfalls', 'Next actions'],
+        ['Current state', 'Opportunities', 'Implementation roadmap', 'Risks and mitigations', 'Outcomes to measure'],
+        ['Business context', 'Technical considerations', 'Operational rollout', 'Success signals', 'Recommended next step'],
+        ['Problem definition', 'Architecture overview', 'Deployment patterns', 'Cost and ROI', 'Action checklist'],
+        ['Market signal', 'Capability map', 'Execution playbook', ' ', 'Conversion path'],
+    ]
+    sections = variants[h % len(variants)]
+    parts = []
+    for section in sections:
+        section = section.strip()
+        if not section:
+            continue
+        parts.append(f'## {section}\n{paragraph(title, cluster, section)}\n')
+    return '\n'.join(parts)
+
+
 def build_page(topic: dict) -> str:
     title = to_title(topic.get('title', topic.get('slug', 'Untitled')))
     slug = topic.get('slug') or to_slug(title)
@@ -131,50 +322,7 @@ def build_page(topic: dict) -> str:
     related_links = '\n'.join(
         f'<li><Link href="/blog/{r}">{r.replace("-", " ").title()}</Link></li>' for r in related
     ) or '<li>Coming soon</li>'
-
-    h = int(hashlib.sha1(title.encode('utf-8')).hexdigest()[:6], 16)
-    section_variants = [
-        ['Why this matters now', 'Executive summary', 'Recommended approach', 'Common pitfalls', 'Next actions'],
-        ['Current state', 'Opportunities', 'Implementation roadmap', 'Risks and mitigations', 'Outcomes to measure'],
-        ['Business context', 'Technical considerations', 'Operational rollout', 'Success signals', 'Recommended next step'],
-        ['Problem definition', 'Architecture overview', 'Deployment patterns', 'Cost and ROI', 'Action checklist'],
-        ['Market signal', 'Capability map', 'Execution playbook', ' ', 'Conversion path'],
-    ]
-    sections = section_variants[h % len(section_variants)]
-    body_map = {
-        'Why this matters now': f'{cluster.replace("_", " ").title()} buyers are shifting from feature comparisons to outcome-based buying in 2026. This guide prioritizes execution, risk reduction, and measurable improvement.',
-        'Current state': f'Most teams in {cluster.replace("_", " ").lower()} already have data, tools, and manual workflows. The gap is usually orchestration, ownership, and a repeatable operating model.',
-        'Business context': f'The best {cluster.replace("_", " ").lower()} investments reduce manual work, improve customer experience, and create faster feedback loops between operations and revenue.',
-        'Problem definition': f'Teams frequently over-index on proofs of concept without production guardrails: monitoring, access control, incident response, and change management.',
-        'Market signal': f'Demand is rising for durable {cluster.replace("_", " ").lower()} capabilities rather than one-off automations. Buyers want measurable outcomes, not experimental pilots.',
-        'Opportunities': 'High-impact opportunities usually cluster around onboarding, quality assurance, cost visibility, and escalation handling.',
-        'Capability map': 'Map capabilities against current workflow friction. Highest-ROI automations tend to reduce handoffs, not simply digitize existing handoffs.',
-        'Architecture overview': 'Start with lightweight integration points, centralize data contracts, and expose only the actions required for human approval or escalation.',
-        'Technical considerations': 'Prefer services with documented APIs, webhooks, and role-based access. Avoid point solutions that become brittle after the pilot.',
-        'Implementation roadmap': 'Phase one should deliver a single measurable win in 30 days. Phase two adds reliability controls. Phase three expands scope only after validated adoption.',
-        'Deployment patterns': 'Use staged rollout with rollback criteria, synthetic monitors for critical paths, and defined ownership for alerts and incidents.',
-        'Operational rollout': 'Pilot with one team, document runbooks, train operators, then expand. Broad rollouts without ownership create unrecoverable backlogs.',
-        'Recommended approach': 'Start with a small pilot, instrument everything, and only scale after you can explain the before/after metrics clearly.',
-        'Execution playbook': '1) Define success metrics. 2) Choose one primary workflow. 3) Automate the lowest-risk step first. 4) Add observability. 5) Expand only after stable operation.',
-        'Risks and mitigations': 'Main risks are data quality gaps, over-automation, weak rollback plans, and unclear ownership. Each can be reduced with lightweight pre-launch checks.',
-        'Cost and ROI': 'Calculate ROI using saved hours, avoided incidents, faster throughput, or improved conversion. Use a rolling 90-day window and re-baseline monthly.',
-        'Outcomes to measure': 'Leading indicators: workflow completion rate, escalation rate, time-to-resolution, and user satisfaction. Lagging indicator: revenue or cost trend.',
-        'Success signals': 'A successful rollout produces clearer metrics, faster execution, and fewer preventable incidents. If those do not appear, revisit scope, not tooling.',
-        'Common pitfalls': 'Avoid generic AI experiments, fragile integrations, manual exception handling, and piloting without service ownership or alerting.',
-        'Action checklist': 'Pick one workflow, assign ownership, define success metrics, instrument execution, and set a 30-day review date before expanding.',
-        'Next actions': 'Review your highest-friction workflow, contact Zion Tech Group for a scoped pilot, and start with a single measurable outcome.',
-        'Recommended next step': 'Start with one workflow, one owner, and one success metric. Expansion should follow evidence, not enthusiasm.',
-        'Conversion path': 'If this matches your current initiative, the next step is a short scoping call and a concrete pilot plan.',
-    }
-    body_parts = []
-    for section in sections:
-        section = section.strip()
-        if not section:
-            continue
-        body_parts.append(f'## {section}\n{body_map.get(section, section + ": build a short practical note focused on outcomes, not features.")}\n')
-    body = '\n'.join(body_parts)
-
-    json_ld = {
+    json_ld = json.dumps({
         '@context': 'https://schema.org',
         '@type': 'TechArticle',
         'headline': title,
@@ -184,7 +332,7 @@ def build_page(topic: dict) -> str:
         'datePublished': now,
         'dateModified': now,
         'mainEntityOfPage': f'{SITE_URL}/blog/{slug}/',
-    }
+    }, ensure_ascii=False)
     return f"""import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
@@ -203,7 +351,7 @@ export const metadata = {{
   alternates: {{ canonical: '/blog/{slug}/' }},
 }};
 
-const jsonLd = {json.dumps(json_ld, ensure_ascii=False)};
+const jsonLd = {json_ld};
 
 export default function Page() {{
   return (
@@ -223,7 +371,7 @@ export default function Page() {{
         </header>
 
         <section className=\"prose prose-invert max-w-none\">
-{body}
+{build_section_body(title, cluster)}
         </section>
 
         <section className=\"mt-12 grid gap-6 sm:grid-cols-2\">
@@ -244,9 +392,9 @@ export default function Page() {{
         </section>
 
         <script
-          type="application/ld+json"
+          type=\"application/ld+json\"
           dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
-        ></script>
+        />
       </article>
     </div>
   );
@@ -273,6 +421,7 @@ def write_fallback(slug: str, topic: dict) -> Path | None:
     }, ensure_ascii=False)
     related = related_slugs(slug)
     related_items = '\n'.join([f'<li><a href="/blog/{r}/">{r.replace("-", " ").title()}</a></li>' for r in related[:4]]) or '<li>Coming soon</li>'
+    body = build_section_body(title, cluster)
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -299,6 +448,7 @@ def write_fallback(slug: str, topic: dict) -> Path | None:
     <h1>{title}</h1>
     <p class="meta">By Zion Tech Group • IT and AI insights • {datetime.now(timezone.utc).year}</p>
     <p>{description}</p>
+    {body}
     <ul>
       {related_items}
     </ul>
@@ -348,8 +498,8 @@ def write_blog_index(slugs: list[str]) -> None:
 
 def write_sitemap(slugs: list[str]) -> None:
     urls = [f'  <url><loc>{SITE_URL}/blog/{s}/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>' for s in slugs]
-    xml = f"""<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">
+    xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {''.join(urls)}
 </urlset>
 """
@@ -360,11 +510,11 @@ def write_feed(slugs: list[str]) -> None:
     items = []
     for s in slugs[:50]:
         title = s.replace('-', ' ').title()
-        items.append(f'<entry><title>{title}</title><link href=\"{SITE_URL}/blog/{s}/\"/></entry>')
-    xml = f"""<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<feed xmlns=\"http://www.w3.org/2005/Atom\">
+        items.append(f'<entry><title>{title}</title><link href="{SITE_URL}/blog/{s}/"/></entry>')
+    xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
   <title>Zion Tech Group Blog</title>
-  <link href=\"{SITE_URL}/blog/\"/>
+  <link href="{SITE_URL}/blog/"/>
   <updated>{datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z')}</updated>
   {''.join(items)}
 </feed>
