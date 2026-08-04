@@ -124,7 +124,7 @@ jobs:
           PAGES=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)
           echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
           echo 'manifest:'
-          find "$ARTIFACT_DIR" -maxdepth 2 -type f | sed -n '1,120p'
+          find "$ARTIFACT_DIR" -type f | sed -n '1,120p'
 
       - name: Pages artifact
         uses: actions/upload-pages-artifact@v4
