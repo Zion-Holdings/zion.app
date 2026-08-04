@@ -50,6 +50,7 @@ jobs:
             echo "npm_run_build_failed=" >> "$GITHUB_OUTPUT"
             echo "pages=0" >> "$GITHUB_OUTPUT"
             echo "size=none" >> "$GITHUB_OUTPUT"
+            echo "artifacts_uploaded=1" >> "$GITHUB_OUTPUT"
             echo "production_out_exists=0" >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -67,7 +68,8 @@ jobs:
             else
               echo "pages=0" >> "$GITHUB_OUTPUT"
               echo "size=none" >> "$GITHUB_OUTPUT"
-              echo "production_out_exists=0" >> "$GITHUB_OUTPUT"
+              echo "artifacts_uploaded=1" >> "$GITHUB_OUTPUT"
+            echo "production_out_exists=0" >> "$GITHUB_OUTPUT"
             fi
             echo "artifacts_uploaded=1" >> "$GITHUB_OUTPUT"
             exit 1
@@ -82,6 +84,7 @@ jobs:
           else
             echo "pages=0" >> "$GITHUB_OUTPUT"
             echo "size=none" >> "$GITHUB_OUTPUT"
+            echo "artifacts_uploaded=1" >> "$GITHUB_OUTPUT"
             echo "production_out_exists=0" >> "$GITHUB_OUTPUT"
           fi
 
