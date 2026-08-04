@@ -1,0 +1,10 @@
+{
+  "status": "blocked",
+  "timestamp": "2026-08-04T10:20:00Z",
+  "error": "Required files missing: lead-crm/send_outreach_batch.py and/or lead-crm/outreach_ready_canonical.json",
+  "run_mode": "cron",
+  "send_allowed": false,
+  "contacts_mined": 0,
+  "classifications": 0,
+  "attempted_fix": "Searched project for outreach scripts and JSON; no actionable input data found in lead-crm/"
+}
