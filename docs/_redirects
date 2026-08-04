@@ -1,3 +1,11 @@
+/services/ai-cybersecurity/ /docs/services/ai-cybersecurity/index.html 200
+/services/ai-development-acceleration/ /docs/services/ai-development-acceleration/index.html 200
+/services/ai-email-intelligence/ /docs/services/ai-email-intelligence/index.html 200
+/services/cloud-cost-optimization-platform/ /docs/services/cloud-cost-optimization-platform/index.html 200
+/tools/base64/ /docs/tools/base64/index.html 200
+/tools/json-formatter/ /docs/tools/json-formatter/index.html 200
+/tools/roi-calculator/ /docs/tools/roi-calculator/index.html 200
+/tools/unit-converter/ /docs/tools/unit-converter/index.html 200
 /blog/* /blog/:splat 200
 /tools/favicon-generator/  /tools/favicon-generator/index.html  200
 
