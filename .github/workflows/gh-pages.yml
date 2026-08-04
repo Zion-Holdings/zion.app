@@ -62,6 +62,7 @@ jobs:
           if [ -d docs ]; then cp -a docs/. "$ARTIFACT_DIR"/; fi
           if [ -d out ]; then cp -a out/. "$ARTIFACT_DIR"/ || true; fi
           if [ -d public ]; then cp -a public/. "$ARTIFACT_DIR"/; fi
+          if [ -d blog ]; then cp -a blog/. "$ARTIFACT_DIR"/blog/; fi
           if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f docs/robots.txt ]; then cp -f docs/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
           if [ ! -f "$ARTIFACT_DIR/sitemap.xml" ] && [ -f docs/sitemap.xml ]; then cp -f docs/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
           PAGES=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)
@@ -89,7 +90,7 @@ jobs:
           echo "Deployed URL: ${{ steps.deployment.outputs.page_url }}"
           sleep 20
           curl -sf "${{ steps.deployment.outputs.page_url }}/" > /dev/null && echo "✓ Homepage" || echo "✗ Homepage"
-          for p in /services/ /contact/ /tools/ /blog /services/ai-customer-support-pro/; do
+          for p in /services/ /contact/ /tools/ /blog /blog/ai-customer-support-automation-roi-in-90-days/; do
             code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "${{ steps.deployment.outputs.page_url }}${p}" || true)
             echo "$p -> $code"
           done
