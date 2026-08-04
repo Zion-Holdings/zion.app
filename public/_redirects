@@ -1,0 +1,9 @@
+/ /index.html 200
+/contact/ /docs/contact/index.html 200
+/services/ /docs/services/index.html 200
+/tools/ /docs/tools/index.html 200
+/free-ai-tools/ /docs/free-ai-tools/index.html 200
+/free-resources/ /docs/free-resources/index.html 200
+/services/ai-compliance/ /docs/services/ai-compliance/index.html 200
+/blog/ /docs/blog/index.html 200
+/blog/* /docs/blog/:splat 200
