@@ -426,7 +426,12 @@ def main():
         return
 
     obj = json.loads(Path(batch_path).read_text())
-    rows = obj.get('recipients') or obj.get('ready') or obj.get('batch') or []
+    if isinstance(obj, list):
+        rows = obj
+        canonical = obj
+    else:
+        rows = obj.get('recipients') or obj.get('ready') or obj.get('batch') or []
+        canonical = obj
     chat_fn = _llm_chat
     outputs = []
     skipped_templates = 0
@@ -446,18 +451,29 @@ def main():
         # Persist improved records back to batch_path
         try:
             canonical = json.loads(Path(batch_path).read_text(encoding='utf-8'))
-            ready_list = canonical.get('ready') or canonical.get('recipients') or canonical.get('batch') or []
-            improved_by_to = {r.get('to'): r for r in improved_rows if r.get('to')}
-            updated = 0
-            for item in ready_list:
-                k = item.get('to') or item.get('recipient') or item.get('email')
-                if k and k.lower() in improved_by_to:
-                    item.update(improved_by_to.pop(k.lower()))
-                    updated += 1
-            canonical['ready'] = ready_list
-            canonical['improvedAt'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
-            canonical['analysisSummary'] = analysis_summary
-            Path(batch_path).write_text(json.dumps(canonical, ensure_ascii=False, indent=2), encoding='utf-8')
+            if isinstance(canonical, list):
+                ready_list = canonical
+                improved_by_to = {r.get('to'): r for r in improved_rows if r.get('to')}
+                updated = 0
+                for item in ready_list:
+                    k = item.get('to') or item.get('recipient') or item.get('email')
+                    if k and k.lower() in improved_by_to:
+                        item.update(improved_by_to.pop(k.lower()))
+                        updated += 1
+                Path(batch_path).write_text(json.dumps(canonical, ensure_ascii=False, indent=2), encoding='utf-8')
+            else:
+                ready_list = canonical.get('ready') or canonical.get('recipients') or canonical.get('batch') or []
+                improved_by_to = {r.get('to'): r for r in improved_rows if r.get('to')}
+                updated = 0
+                for item in ready_list:
+                    k = item.get('to') or item.get('recipient') or item.get('email')
+                    if k and k.lower() in improved_by_to:
+                        item.update(improved_by_to.pop(k.lower()))
+                        updated += 1
+                canonical['ready'] = ready_list
+                canonical['improvedAt'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+                canonical['analysisSummary'] = analysis_summary
+                Path(batch_path).write_text(json.dumps(canonical, ensure_ascii=False, indent=2), encoding='utf-8')
         except Exception:
             pass
         # Update miner_health.json with analysis metrics

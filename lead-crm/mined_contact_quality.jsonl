@@ -74,3 +74,46 @@
 {"ts": "2026-08-03T23:47:00.217170+00:00", "email": "editors@channelpronetwork.com", "msg_id": "19fc8e9b16543971", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
 {"ts": "2026-08-03T23:47:01.504898+00:00", "email": "messages-noreply@linkedin.com", "msg_id": "19fc87ab886631c3", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
 {"ts": "2026-08-03T23:47:01.950273+00:00", "email": "mauro.faria@fgv.br", "msg_id": "19fc7e786edc2c57", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:02.564774+00:00", "email": "reinhart.hermanus@finnix.id", "msg_id": "19fc64b6a65e9d13", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:03.025907+00:00", "email": "nirmit.arora@ritivel.com", "msg_id": "19fc64b615923d9a", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:03.588730+00:00", "email": "everett.ivy@xtraffic.com", "msg_id": "19fc64b56002ab31", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:04.119588+00:00", "email": "aurelia.song@nectome.com", "msg_id": "19fc64b4cf150a37", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:04.511701+00:00", "email": "karthik.raman@persist-ai.com", "msg_id": "19fc64b44e0f8792", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:06.304832+00:00", "email": "express@airbnb.com", "msg_id": "19fca0309ac27544", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:13.779438+00:00", "email": "author@noreply.github.com", "msg_id": "19fc9f3c2121c87f", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:15.465054+00:00", "email": "contatordp@phicube.com.br", "msg_id": "19f1dea345552448", "query": "subject:automação", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:15.879843+00:00", "email": "alvaro@sigapregao.com.br", "msg_id": "19f1dea2c1d6365e", "query": "subject:automação", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:17.209588+00:00", "email": "hi@pricelabs.co", "msg_id": "19f1de9f1b483c25", "query": "subject:automação", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:17.822682+00:00", "email": "leticiam.sdr@econodata.com.br", "msg_id": "19f1de9ba56530cd", "query": "subject:automação", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:19.517300+00:00", "email": "juliana.geglio@lastro.co", "msg_id": "19f1de994beebed2", "query": "subject:automação", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:25.347517+00:00", "email": "paulina.xu@agenticfabriq.com", "msg_id": "19f8a5ad7433964b", "query": "subject:\"incident response\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:26.233924+00:00", "email": "zion.app@noreply.github.com", "msg_id": "1986b72a04b0dc09", "query": "subject:\"incident response\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:26.234726+00:00", "email": "ci_activity@noreply.github.com", "msg_id": "1986b72a04b0dc09", "query": "subject:\"incident response\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:26.680600+00:00", "email": "list@wordfence.com", "msg_id": "179ec11fcc05c404", "query": "subject:\"incident response\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:27.551078+00:00", "email": "marketing@ziontechgroup.com", "msg_id": "164857920454cea6", "query": "subject:\"incident response\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:28.165730+00:00", "email": "computerworld_resources@cwresources.computerworld.com", "msg_id": "15af1d297812cfa7", "query": "subject:\"incident response\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:29.774640+00:00", "email": "newsletters@nl.technologyadvice.com", "msg_id": "19fc71ccfeee23b3", "query": "subject:managed services", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:30.250542+00:00", "email": "info@manag.com", "msg_id": "19f91a9aa3ed723a", "query": "subject:managed services", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:30.647748+00:00", "email": "sales@omc.cloud", "msg_id": "19f147388cd43cdd", "query": "subject:managed services", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:31.034999+00:00", "email": "jason.l@quali.com", "msg_id": "19f14731f5ae1bfa", "query": "subject:managed services", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:31.500270+00:00", "email": "learnmore@visualedgeit.com", "msg_id": "19ce780d92fa73e7", "query": "subject:managed services", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:31.953425+00:00", "email": "donotreply@wordpress.com", "msg_id": "19653443d65e14f4", "query": "subject:managed services", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:39.633893+00:00", "email": "sophia@dataprotect.com", "msg_id": "19fb70f27bb8d10f", "query": "subject:devops", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:40.452027+00:00", "email": "marcus@cybershield.com", "msg_id": "19fb5feabe398e12", "query": "subject:devops", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:41.015224+00:00", "email": "michael@healthnet.com", "msg_id": "19fb33411c9ff7b6", "query": "subject:devops", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:45.786552+00:00", "email": "sarah@techstart.com", "msg_id": "19fb2216205c5f7a", "query": "subject:devops", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:48.807725+00:00", "email": "carlos.feliciano@tryterracotta.com", "msg_id": "19f2a042f4944556", "query": "subject:devops", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:50.590280+00:00", "email": "support@rundoo.ai", "msg_id": "19f13c448c590d2a", "query": "subject:sase", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-03T23:47:51.159199+00:00", "email": "info@connect.arubanetworks.com", "msg_id": "18c630e02a9e74e2", "query": "subject:sase", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:00:45.687403+00:00", "email": "fabian.lindfors@specific.dev", "msg_id": "19f2a04222d3b465", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:00:46.091405+00:00", "email": "tomas.barreto@okayhq.com", "msg_id": "19f2a0410adb4d44", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:00:46.481456+00:00", "email": "andrios.robert@hoop.dev", "msg_id": "19f2a0407206f327", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:00:46.904205+00:00", "email": "david.ruescas@sequentech.io", "msg_id": "19f2a03fedd45b35", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:00:47.313327+00:00", "email": "eduardo.robles@sequentech.io", "msg_id": "19f2a03f65f7903c", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:00:47.875232+00:00", "email": "shai.bargil@sequentech.io", "msg_id": "19f2a03ed9cd48e7", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:00:48.303681+00:00", "email": "alex.polvi@coreos.com", "msg_id": "19f2a03e837f6ab5", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:00:48.742385+00:00", "email": "sam.alba@mendral.com", "msg_id": "19f2a03d0e220372", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:00:49.126046+00:00", "email": "sascha.kuzins@ninite.com", "msg_id": "19f2a03cbc8e636a", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:00:49.553679+00:00", "email": "robin.prothmann@egg-ai.com", "msg_id": "19f2a03c60308e41", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:00:50.693328+00:00", "email": "marcus.purzer@egg-ai.com", "msg_id": "19f2a03bd67e9874", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-04T00:00:51.103889+00:00", "email": "yuva.kumar@getdockup.com", "msg_id": "19f2a03b5cd869b8", "query": "subject:\"platform engineering\"", "confidence": 2, "high_signal": true}

@@ -252,7 +252,6 @@ def expand_seeds(extra_per_seed: int = 6) -> list[dict]:
         lambda t: (f"{t['title']} checklist for IT and security leaders", t["cluster"], "checklist", "services"),
         lambda t: (f"Automation and scaling patterns for {t['title']}", t["cluster"], "solution", "services"),
         lambda t: (f"{t['title']}: policy, compliance, and vendor management", t["cluster"], "guide", "contact"),
-        lambda t: (f"2026 buyer's guide to {t['title']}", t["cluster"], "guide", "services"),
         lambda t: (f"{t['title']}: architecture, risks, and roadmap", t["cluster"], "guide", "consultation"),
     ]
 
