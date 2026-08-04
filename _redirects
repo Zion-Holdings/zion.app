@@ -1,3 +1,4 @@
+/blog/* /docs/blog/:splat 200
 /blog/* /blog/:splat 200
 /tools/favicon-generator/  /tools/favicon-generator/index.html  200
 
