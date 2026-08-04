@@ -1,7 +1,7 @@
 name: Continuous Pages Deploy
 on:
   push:
-    branches: [ main ]
+    branches: [ gh-pages ]
   workflow_dispatch:
 permissions:
   contents: read
@@ -38,7 +38,7 @@ jobs:
         id: build
         run: |
           set -euo pipefail
-          npm run build > build.log 2>&1 || true
+          npm run build > build.log 2>&1 || echo "Build failed or skipped, continuing with static files"
           echo '---- BUILD LOG TAIL ----'
           tail -n 400 build.log || true
           echo '---- /BUILD LOG TAIL ----'
