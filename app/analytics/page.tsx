@@ -1,11 +1,11 @@
-// app/analytics/page.tsx
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Data Analytics & BI',
   description: 'Executive BI dashboards, predictive forecasting, embedded analytics, and self-serve analytics platforms.',
-  alternates: { canonical: '/analytics' },};
+  alternates: { canonical: '/analytics' },
+};
 
 export default function Page() {
   return (
@@ -20,7 +20,7 @@ export default function Page() {
         </nav>
 
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-6xl mb-4 block">{">📊"}</span>
+          <span className="text-6xl mb-4 block">{'📊'}</span>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Analytics & Business Intelligence</h1>
           <p className="text-xl text-slate-300 leading-relaxed mb-6">Data analytics, BI dashboards, predictive insights, and AI-powered reporting.</p>
           <div className="flex flex-wrap justify-center gap-2 mb-6">
@@ -33,7 +33,7 @@ export default function Page() {
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-white mb-6">Capabilities</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[<div className="glass-card"><span className="text-3xl block mb-3">📈</span><h3 className="text-lg font-semibold text-white mb-2">BI Dashboards</h3><p className="text-slate-400 text-sm">Real-time interactive dashboards with drill-down analytics, custom metrics, and automated reporting across your data sources.</p></div>,<div className="glass-card"><span className="text-3xl block mb-3">🔮</span><h3 className="text-lg font-semibold text-white mb-2">Predictive Analytics</h3><p className="text-slate-400 text-sm">ML-driven forecasting, trend analysis, and anomaly detection to anticipate business outcomes before they happen.</p></div>,<div className="glass-card"><span className="text-3xl block mb-3">📊</span><h3 className="text-lg font-semibold text-white mb-2">Data Visualization</h3><p className="text-slate-400 text-sm">Rich visual analytics with charts, heatmaps, geo-maps, and custom data storytelling for executive and operational audiences.</p></div>].map((item, i) => <div key={i}>{item}</div>)}
+            {[<div className="glass-card"><span className="text-3xl block mb-3">📈</span><h3 className="text-lg font-semibold text-white mb-2">BI Dashboards</h3><p className="text-slate-400 text-sm">Executive dashboards with real-time KPIs, drill-down analytics, and role-based access.</p></div>,<div className="glass-card"><span className="text-3xl block mb-3">🔮</span><h3 className="text-lg font-semibold text-white mb-2">Predictive Analytics</h3><p className="text-slate-400 text-sm">Forecasting models for demand, revenue, churn, and operational risk.</p></div>,<div className="glass-card"><span className="text-3xl block mb-3">🧠</span><h3 className="text-lg font-semibold text-white mb-2">AI Insights</h3><p className="text-slate-400 text-sm">Automated anomaly detection, natural language queries, and insight recommendations.</p></div>].map((item, i) => <div key={i}>{item}</div>)}
           </div>
         </div>
 
@@ -41,7 +41,7 @@ export default function Page() {
         <div className="mb-16 glass-card p-8">
           <h2 className="text-2xl font-bold text-white mb-6">Why Zion Tech Group</h2>
           <ul className="space-y-3">
-            {[<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">Proven expertise across BI, ML, and data engineering</span></li>,<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">End-to-end delivery from data pipeline to executive dashboards</span></li>,<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">Custom solutions tailored to your industry and scale</span></li>].map((item, i) => <div key={i}>{item}</div>)}
+            {[<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">Proven analytics implementations across finance, retail, and healthcare</span></li>,<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">Embedded analytics and white-label BI solutions</span></li>,<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">From dashboard design to data pipeline and ML model deployment</span></li>].map((item, i) => <div key={i}>{item}</div>)}
           </ul>
         </div>
 
@@ -66,4 +66,5 @@ export default function Page() {
         </section>
       </div>
     </main>
-  </div>
+  );
+}

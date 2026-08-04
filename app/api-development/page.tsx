@@ -1,11 +1,11 @@
-// app/api-development/page.tsx
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'API Development & Integration',
   description: 'REST, GraphQL, and gRPC API development with OpenAPI docs, SDKs, event-driven architecture, API gateway.',
-  alternates: { canonical: '/api-development' },};
+  alternates: { canonical: '/api-development' },
+};
 
 export default function Page() {
   return (
@@ -20,7 +20,7 @@ export default function Page() {
         </nav>
 
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-6xl mb-4 block">{">🔧"}</span>
+          <span className="text-6xl mb-4 block">{'🔧'}</span>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">API Development & Integration</h1>
           <p className="text-xl text-slate-300 leading-relaxed mb-6">RESTful and GraphQL API design, microservices integration, API gateway management.</p>
           <div className="flex flex-wrap justify-center gap-2 mb-6">
@@ -66,4 +66,5 @@ export default function Page() {
         </section>
       </div>
     </main>
-  </div>
+  );
+}

@@ -1,11 +1,11 @@
-// app/blockchain-solutions/page.tsx
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Blockchain & Web3 Solutions',
-  description: 'Enterprise blockchain for supply chain, identity, smart contracts, and TCR programs — auditable and lawful.',
-  alternates: { canonical: '/blockchain-solutions' },};
+  title: 'Blockchain Solutions',
+  description: 'Enterprise blockchain, smart contracts, Web3 operations, and tokenized infrastructure.',
+  alternates: { canonical: '/blockchain-solutions' },
+};
 
 export default function Page() {
   return (
@@ -16,15 +16,15 @@ export default function Page() {
           <span className="mx-2">/</span>
           <Link href="/services/" className="hover:text-purple-400 transition">Services</Link>
           <span className="mx-2">/</span>
-          <span className="text-slate-300">Blockchain & Web3 Solutions</span>
+          <span className="text-slate-300">Blockchain Solutions</span>
         </nav>
 
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-6xl mb-4 block">{">⛓"}</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Blockchain & Web3 Solutions</h1>
-          <p className="text-xl text-slate-300 leading-relaxed mb-6">Enterprise blockchain for supply chain, identity, smart contracts, and TCR programs.</p>
+          <span className="text-6xl mb-4 block">{'🔗'}</span>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Blockchain Solutions</h1>
+          <p className="text-xl text-slate-300 leading-relaxed mb-6">Enterprise blockchain strategy, smart contract development, and Web3 infrastructure.</p>
           <div className="flex flex-wrap justify-center gap-2 mb-6">
-            {[<span key="Smart Contracts" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Smart Contracts</span>,<span key="Supply Chain" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Supply Chain</span>,<span key="Identity" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Identity</span>,<span key="Web3" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Web3</span>].map(tag => tag)}
+            {[<span key="Smart Contracts" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Smart Contracts</span>,<span key="Web3" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Web3</span>,<span key="Tokenization" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Tokenization</span>,<span key="DLT" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">DLT</span>].map(tag => tag)}
           </div>
           <Link href="/configurator/" className="btn-primary text-lg px-10 py-4 inline-block">⚡ Get Your Custom Proposal →</Link>
         </div>
@@ -33,7 +33,7 @@ export default function Page() {
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-white mb-6">Capabilities</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[<div className="glass-card"><span className="text-3xl block mb-3">📋</span><h3 className="text-lg font-semibold text-white mb-2">Smart Contract Development</h3><p className="text-slate-400 text-sm">Custom Solidity/Rust smart contracts with formal verification, gas optimization, and comprehensive security auditing.</p></div>,<div className="glass-card"><span className="text-3xl block mb-3">🔗</span><h3 className="text-lg font-semibold text-white mb-2">Supply Chain Blockchain</h3><p className="text-slate-400 text-sm">Immutable ledger for provenance tracking, supplier verification, and automated compliance across multi-tier supply chains.</p></div>,<div className="glass-card"><span className="text-3xl block mb-3">🆔</span><h3 className="text-lg font-semibold text-white mb-2">Decentralized Identity</h3><p className="text-slate-400 text-sm">Self-sovereign identity solutions with verifiable credentials, DID management, and privacy-preserving attribute sharing.</p></div>].map((item, i) => <div key={i}>{item}</div>)}
+            {[<div className="glass-card"><span className="text-3xl block mb-3">🕸️</span><h3 className="text-lg font-semibold text-white mb-2">Smart Contract Development</h3><p className="text-slate-400 text-sm">Secure, audited smart contracts for Ethereum, Solana, and enterprise chains.</p></div>,<div className="glass-card"><span className="text-3xl block mb-3">🏛️</span><h3 className="text-lg font-semibold text-white mb-2">Enterprise DLT</h3><p className="text-slate-400 text-sm">Permissioned blockchain networks for supply chain, finance, and identity.</p></div>,<div className="glass-card"><span className="text-3xl block mb-3">🔐</span><h3 className="text-lg font-semibold text-white mb-2">Web3 Security</h3><p className="text-slate-400 text-sm">Security audits, key management, and compliance for decentralized systems.</p></div>].map((item, i) => <div key={i}>{item}</div>)}
           </div>
         </div>
 
@@ -41,7 +41,7 @@ export default function Page() {
         <div className="mb-16 glass-card p-8">
           <h2 className="text-2xl font-bold text-white mb-6">Why Zion Tech Group</h2>
           <ul className="space-y-3">
-            {[<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">Enterprise-grade blockchain expertise with production deployments</span></li>,<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">Regulatory-compliant solutions for financial and supply chain use cases</span></li>,<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">Full lifecycle from PoC to mainnet deployment and managed operations</span></li>].map((item, i) => <div key={i}>{item}</div>)}
+            {[<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">Production-grade blockchain expertise with real deployments</span></li>,<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">Regulatory-compliant tokenization and smart contract frameworks</span></li>,<li className="flex items-start gap-3 text-slate-300"><span className="text-purple-400 mt-1 shrink-0">✓</span><span className="text-sm">End-to-end delivery from PoC to mainnet and managed operations</span></li>].map((item, i) => <div key={i}>{item}</div>)}
           </ul>
         </div>
 
@@ -66,6 +66,5 @@ export default function Page() {
         </section>
       </div>
     </main>
-
-  </div>
-</main>
+  );
+}

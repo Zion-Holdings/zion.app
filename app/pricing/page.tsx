@@ -1,75 +1,41 @@
-// app/pricing/page.tsx
 import Link from 'next/link';
+import type { Metadata } from 'next';
 
-export const metadata = {
-  title: 'Pricing — Zion Tech Group',
-  description: 'Transparent pricing tiers for AI, IT, and Micro-SaaS services. From startup to enterprise.',
-  alternates: { canonical: '/pricing' },
+export const metadata: Metadata = {
+  title: 'Pricing',
+  description: 'Flexible pricing for managed IT, AI, cloud, and cybersecurity services.',
+  alternates: { canonical: '/pricing/' },
 };
+
+const PLANS = [
+  { name: 'Starter', price: '$999/mo', features: ['Monitoring', 'Helpdesk', 'Basic security'] },
+  { name: 'Growth', price: '$2,499/mo', features: ['SOC', 'Cloud management', 'Automation'] },
+  { name: 'Enterprise', price: 'Custom', features: ['Dedicated team', 'Custom AI', 'Compliance'] },
+];
 
 export default function PricingPage() {
   return (
-    <div className="container-page py-16">
-      <h1 className="text-4xl font-bold text-white mb-4">Pricing</h1>
-      <p className="text-slate-400 mb-12 max-w-2xl">
-        Every engagement is custom — but here's a general view of our pricing tiers.
-        Use the <Link href="/pricing-calculator/" className="text-purple-400 underline">Pricing Calculator</Link> for an instant estimate.
-      </p>
-      <div className="grid gap-6 md:grid-cols-3">
-        {[
-          {
-            tier: 'Starter',
-            price: '$2,500',
-            period: '/month',
-            features: ['Up to 5 services', 'Email support', 'Monthly report', 'Standard SLA'],
-          },
-          {
-            tier: 'Professional',
-            price: '$7,500',
-            period: '/month',
-            features: ['Up to 20 services', 'Priority support', 'Weekly report', '99.9% SLA', 'Dedicated account manager'],
-            featured: true,
-          },
-          {
-            tier: 'Enterprise',
-            price: 'Custom',
-            period: '',
-            features: ['Unlimited services', '24/7 support', 'Real-time reporting', '99.99% SLA', 'Custom integrations', 'On-premise options'],
-          },
-        ].map((plan) => (
-          <div
-            key={plan.tier}
-            className={`rounded-2xl border p-6 ${
-              plan.featured
-                ? 'border-purple-500/50 bg-purple-900/10 shadow-lg shadow-purple-500/10'
-                : 'border-slate-700/50 bg-slate-900/40'
-            }`}
-          >
-            <div className="text-slate-400 text-sm font-medium mb-1">{plan.tier}</div>
-            <div className="text-3xl font-bold text-white mb-1">
-              {plan.price}<span className="text-sm text-slate-500">{plan.period}</span>
+    <main className="min-h-screen bg-slate-950 py-20">
+      <div className="container-page">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Pricing</h1>
+          <p className="text-xl text-slate-300 leading-relaxed">Transparent plans for every stage of growth.</p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {PLANS.map((plan) => (
+            <div key={plan.name} className="glass-card p-6">
+              <h3 className="text-white font-semibold text-xl mb-2">{plan.name}</h3>
+              <p className="text-purple-300 text-3xl font-bold mb-4">{plan.price}</p>
+              <ul className="space-y-2 mb-6">
+                {plan.features.map((f) => (
+                  <li key={f} className="text-slate-300 text-sm">{f}</li>
+                ))}
+              </ul>
+              <Link href="/contact/" className="btn-primary w-full text-center block">Get Started</Link>
             </div>
-            <ul className="mt-4 space-y-2">
-              {plan.features.map((f) => (
-                <li key={f} className="flex items-start gap-2 text-sm text-slate-300">
-                  <span className="text-purple-400 mt-0.5" aria-hidden="true">✓</span>
-                  {f}
-                </li>
-              ))}
-            </ul>
-            <Link
-              href="/contact/"
-              className={`mt-6 block text-center rounded-full px-6 py-2.5 text-sm font-semibold ${
-                plan.featured
-                  ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
-                  : 'border border-slate-600 text-slate-300 hover:border-purple-500 hover:text-white'
-              }`}
-            >
-              Get Started
-            </Link>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-      <div className="mt-12 text-center">
-        <p className="text-slate-400 mb-4">Need a custom solution? Let us build a tailored proposal.</p>
-        <Link href="/proposal-generator/" className="btn-primary">Generate Custom Proposal</Link>
+    </main>
+  );
+}
