@@ -56,6 +56,7 @@ jobs:
             if [ -d out ]; then
               PAGES=$(find out -name 'index.html' | wc -l)
               echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
+          echo "artifacts_uploaded=1" >> "$GITHUB_OUTPUT"
               echo "size=$(du -sh out | awk '{print $1}')" >> "$GITHUB_OUTPUT"
               echo "production_out_exists=1" >> "$GITHUB_OUTPUT"
             else
@@ -70,6 +71,7 @@ jobs:
             PAGES=$(find out -name 'index.html' | wc -l)
             SIZE=$(du -sh out | awk '{print $1}')
             echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
+          echo "artifacts_uploaded=1" >> "$GITHUB_OUTPUT"
             echo "size=$SIZE" >> "$GITHUB_OUTPUT"
             echo "production_out_exists=1" >> "$GITHUB_OUTPUT"
           else
@@ -116,6 +118,7 @@ jobs:
           if [ ! -f "$ARTIFACT_DIR/sitemap.xml" ] && [ -f docs/sitemap.xml ]; then cp -f docs/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
           PAGES=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)
           echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
+          echo "artifacts_uploaded=1" >> "$GITHUB_OUTPUT"
           echo 'manifest:'
           find "$ARTIFACT_DIR" -maxdepth 2 -type f | sed -n '1,120p'
 
