@@ -46,6 +46,17 @@ if os.path.isdir('src/app'):
                     route = '/'
                 route_paths.add(route)
 
+# Include docs/ fallbacks as valid live routes for Pages deployments
+if os.path.isdir('docs'):
+    for root, dirs, filenames in os.walk('docs'):
+        if '/node_modules' in root:
+            continue
+        for f in filenames:
+            if f == 'index.html':
+                rel = os.path.relpath(root, 'docs')
+                route = '/' + (rel if rel != '.' else '')
+                route_paths.add(route)
+
 existing_files = {}
 for route in route_paths:
     path = None
@@ -60,6 +71,8 @@ for route in route_paths:
             if os.path.exists(candidate):
                 path = candidate
                 break
+        if path is None and os.path.exists(f'docs/{rel}/index.html'):
+            path = f'docs/{rel}/index.html'
     existing_files[route] = path
 
 internal = {h for h in hrefs if h.startswith('/') and not h.startswith('//') and ':' not in urlparse(h).netloc}
