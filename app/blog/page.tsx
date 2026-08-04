@@ -110,4 +110,9 @@ export default function BlogIndexPage() {
             className="inline-flex items-center rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 px-8 py-4 text-base font-semibold text-white hover:opacity-90 transition-opacity"
           >
             Get Free Consultation →
-          </Link>
+          </Link>
+
+      </div>
+    </main>
+  </div>
+</main>
