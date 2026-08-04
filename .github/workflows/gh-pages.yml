@@ -44,6 +44,7 @@ jobs:
 
       - name: Build Next export
         id: build
+        continue-on-error: true
         run: |
           set -euo pipefail
           if [ ! -f package.json ]; then
