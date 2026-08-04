@@ -75,7 +75,7 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>
