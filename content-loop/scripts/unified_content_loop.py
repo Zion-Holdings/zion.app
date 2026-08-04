@@ -13,6 +13,7 @@ from pathlib import Path
 REPO = Path("/data/data/com.termux/files/home/zion-support.github.io")
 APP_BLOG = REPO / "app/blog"
 DOCS_BLOG = REPO / "docs/blog"
+PUBLIC_BLOG = REPO / "public/blog"
 TOPICS_FILE = REPO / "content-loop/topics.json"
 SITEMAP_FILE = REPO / "sitemap.xml"
 FEED_FILE = REPO / "feed.xml"
@@ -258,6 +259,9 @@ def write_fallback(slug: str, h1: str, cluster: str, related: list[str]) -> None
     out = DOCS_BLOG / slug / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html, encoding="utf-8")
+    pub = PUBLIC_BLOG / slug / "index.html"
+    pub.parent.mkdir(parents=True, exist_ok=True)
+    pub.write_text(html, encoding="utf-8")
 
 
 def load_topics() -> list[str]:
