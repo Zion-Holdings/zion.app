@@ -72,6 +72,10 @@
 /it-services/ /docs/it-services/index.html 200
 /micro-saas-services/ /docs/micro-saas-services/index.html 200
 /security-services/ /docs/security-services/index.html 200
+/services/cloud-migration-services-2026-1121/ /services/cloud-migration-services-2026-500/ 301
+/blog/cloud-migration-services-2026-1121/ /blog/cloud-migration-services-2026-500/ 301
+/services/enterprise-ai-intelligence-hub-2026-1143/ /services/enterprise-ai-intelligence-hub-2026-507/ 301
+/blog/enterprise-ai-intelligence-hub-2026-1143/ /blog/enterprise-ai-intelligence-hub-2026-507/ 301
 
 # Feed fallback
 /feed.xml /sitemap.xml 301
