@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-government-services-2/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "How to implement AI government services without disrupting operations", "description": "How to implement AI government services without disrupting operations", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:09Z", "dateModified": "2026-08-04T13:01:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-government-services-2/", "wordCount": 2075};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "How to implement AI government services without disrupting operations", "description": "How to implement AI government services without disrupting operations", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:02:00Z", "dateModified": "2026-08-04T13:02:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-government-services-2/", "wordCount": 1740};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/how-to-implement-ai-vulnerability-management-without-disrupting-operations">How To Implement Ai Vulnerability Management Without Disrupting Operations</Link></li>
-<li><Link href="/blog/comparing-ai-retail-automation-vendors-and-build-vs-buy">Comparing Ai Retail Automation Vendors And Build Vs Buy</Link></li>
-<li><Link href="/blog/ai-vendor-management-2">Ai Vendor Management 2</Link></li>
-<li><Link href="/blog/ai-onboarding-automation-5">Ai Onboarding Automation 5</Link></li>
-              <li><Link href="/blog/ai-retail-automation-costs-roi-and-hidden-risks">Ai Retail Automation Costs Roi And Hidden Risks</Link></li>
-              <li><Link href="/blog/cloud-cost-optimization-checklist-2026-14">Cloud Cost Optimization Checklist 2026 14</Link></li>
-              <li><Link href="/blog/ai-for-retail-analytics-and-personalization">Ai For Retail Analytics And Personalization</Link></li>
-              <li><Link href="/blog/ai-telecom-automation-costs-roi-and-hidden-risks">Ai Telecom Automation Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/comparing-ai-capacity-planning-vendors-and-build-vs-buy">Comparing Ai Capacity Planning Vendors And Build Vs Buy</Link></li>
+<li><Link href="/blog/ai-real-estate-automation-policy-compliance-and-vendor-management">Ai Real Estate Automation Policy Compliance And Vendor Management</Link></li>
+<li><Link href="/blog/ai-security-awareness-for-enterprise-teams">Ai Security Awareness For Enterprise Teams</Link></li>
+<li><Link href="/blog/ai-database-automation-5">Ai Database Automation 5</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

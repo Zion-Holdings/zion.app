@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-hospitality-automation-10/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI hospitality automation: policy, compliance, and vendor management", "description": "AI hospitality automation: policy, compliance, and vendor management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:14Z", "dateModified": "2026-08-04T13:01:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-hospitality-automation-10/", "wordCount": 1682};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI hospitality automation: policy, compliance, and vendor management", "description": "AI hospitality automation: policy, compliance, and vendor management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:02:06Z", "dateModified": "2026-08-04T13:02:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-hospitality-automation-10/", "wordCount": 1782};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-construction-automation-9">Ai Construction Automation 9</Link></li>
-<li><Link href="/blog/case-study-ai-sales-enablement-in-production">Case Study Ai Sales Enablement In Production</Link></li>
-<li><Link href="/blog/ai-agriculture-technology-checklist-for-it-and-security-leaders">Ai Agriculture Technology Checklist For It And Security Leaders</Link></li>
-<li><Link href="/blog/ai-real-estate-automation-checklist-for-it-and-security-leaders">Ai Real Estate Automation Checklist For It And Security Leaders</Link></li>
-              <li><Link href="/blog/ai-credit-scoring">Ai Credit Scoring</Link></li>
-              <li><Link href="/blog/ai-sla-management-4">Ai Sla Management 4</Link></li>
-              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-credit-scoring">Common Mistakes When Rolling Out Ai Credit Scoring</Link></li>
-              <li><Link href="/blog/how-to-implement-ai-change-management-without-disrupting-operations">How To Implement Ai Change Management Without Disrupting Operations</Link></li>
+              <li><Link href="/blog/case-study-ai-business-continuity-in-production">Case Study Ai Business Continuity In Production</Link></li>
+<li><Link href="/blog/ai-micro-saas-automation-3">Ai Micro Saas Automation 3</Link></li>
+<li><Link href="/blog/ai-customer-support-automation-4">Ai Customer Support Automation 4</Link></li>
+<li><Link href="/blog/ai-soc-automation-2">Ai Soc Automation 2</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

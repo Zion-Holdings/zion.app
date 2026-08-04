@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-automotive-manufacturing-7/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Common mistakes when rolling out AI automotive manufacturing", "description": "Common mistakes when rolling out AI automotive manufacturing", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:03Z", "dateModified": "2026-08-04T13:01:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-automotive-manufacturing-7/", "wordCount": 1997};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Common mistakes when rolling out AI automotive manufacturing", "description": "Common mistakes when rolling out AI automotive manufacturing", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:53Z", "dateModified": "2026-08-04T13:01:53Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-automotive-manufacturing-7/", "wordCount": 1633};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-soc-automation-for-enterprise-teams">Ai Soc Automation For Enterprise Teams</Link></li>
-<li><Link href="/blog/ai-for-procurement-and-vendor-management">Ai For Procurement And Vendor Management</Link></li>
-<li><Link href="/blog/ai-compliance-and-governance-2">Ai Compliance And Governance 2</Link></li>
-<li><Link href="/blog/ai-data-privacy-9">Ai Data Privacy 9</Link></li>
-              <li><Link href="/blog/ai-supply-chain-security-costs-roi-and-hidden-risks">Ai Supply Chain Security Costs Roi And Hidden Risks</Link></li>
-              <li><Link href="/blog/ai-micro-saas-automation-5">Ai Micro Saas Automation 5</Link></li>
-              <li><Link href="/blog/ai-zero-trust-security-10">Ai Zero Trust Security 10</Link></li>
-              <li><Link href="/blog/ai-education-technology-8">Ai Education Technology 8</Link></li>
+              <li><Link href="/blog/ai-iot-platform-9">Ai Iot Platform 9</Link></li>
+<li><Link href="/blog/ai-penetration-testing-4">Ai Penetration Testing 4</Link></li>
+<li><Link href="/blog/ai-asset-management-policy-compliance-and-vendor-management">Ai Asset Management Policy Compliance And Vendor Management</Link></li>
+<li><Link href="/blog/ai-warehouse-automation-6">Ai Warehouse Automation 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

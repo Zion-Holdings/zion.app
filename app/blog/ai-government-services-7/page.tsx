@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-government-services-7/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Common mistakes when rolling out AI government services", "description": "Common mistakes when rolling out AI government services", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:11Z", "dateModified": "2026-08-04T13:01:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-government-services-7/", "wordCount": 1743};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Common mistakes when rolling out AI government services", "description": "Common mistakes when rolling out AI government services", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:02:02Z", "dateModified": "2026-08-04T13:02:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-government-services-7/", "wordCount": 1519};
 
 export default function Page() {
   return (
@@ -54,14 +54,10 @@ If this matches your current initiative, the next step is a short scoping call a
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-financial-services-automation">Ai Financial Services Automation</Link></li>
-<li><Link href="/blog/ai-secret-rotation-4">Ai Secret Rotation 4</Link></li>
-<li><Link href="/blog/how-to-implement-ai-revenue-operations-without-disrupting-operations">How To Implement Ai Revenue Operations Without Disrupting Operations</Link></li>
-<li><Link href="/blog/ai-cybersecurity-automation-2">Ai Cybersecurity Automation 2</Link></li>
-              <li><Link href="/blog/ai-business-continuity-9">Ai Business Continuity 9</Link></li>
-              <li><Link href="/blog/comparing-ai-pharma-life-sciences-vendors-and-build-vs-buy">Comparing Ai Pharma Life Sciences Vendors And Build Vs Buy</Link></li>
-              <li><Link href="/blog/comparing-ai-endpoint-protection-vendors-and-build-vs-buy">Comparing Ai Endpoint Protection Vendors And Build Vs Buy</Link></li>
-              <li><Link href="/blog/comparing-ai-credit-scoring-vendors-and-build-vs-buy">Comparing Ai Credit Scoring Vendors And Build Vs Buy</Link></li>
+              <li><Link href="/blog/ai-security-awareness-3">Ai Security Awareness 3</Link></li>
+<li><Link href="/blog/ai-insurance-automation">Ai Insurance Automation</Link></li>
+<li><Link href="/blog/ai-configuration-management-9">Ai Configuration Management 9</Link></li>
+<li><Link href="/blog/common-mistakes-when-rolling-out-ai-customer-support-automation">Common Mistakes When Rolling Out Ai Customer Support Automation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

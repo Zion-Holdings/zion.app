@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-government-services-4/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Comparing AI government services vendors and build vs buy", "description": "Comparing AI government services vendors and build vs buy", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:10Z", "dateModified": "2026-08-04T13:01:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-government-services-4/", "wordCount": 2129};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Comparing AI government services vendors and build vs buy", "description": "Comparing AI government services vendors and build vs buy", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:02:01Z", "dateModified": "2026-08-04T13:02:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-government-services-4/", "wordCount": 1718};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-offboarding-automation-9">Ai Offboarding Automation 9</Link></li>
-<li><Link href="/blog/ai-construction-automation-checklist-for-it-and-security-leaders">Ai Construction Automation Checklist For It And Security Leaders</Link></li>
-<li><Link href="/blog/ai-insurance-automation-5">Ai Insurance Automation 5</Link></li>
-<li><Link href="/blog/common-mistakes-when-rolling-out-ai-automotive-manufacturing">Common Mistakes When Rolling Out Ai Automotive Manufacturing</Link></li>
-              <li><Link href="/blog/how-to-implement-ai-data-analytics-platform-without-disrupting-operations">How To Implement Ai Data Analytics Platform Without Disrupting Operations</Link></li>
-              <li><Link href="/blog/ai-transportation-automation-10">Ai Transportation Automation 10</Link></li>
-              <li><Link href="/blog/ai-non-profit-automation-9">Ai Non Profit Automation 9</Link></li>
-              <li><Link href="/blog/case-study-ai-iot-platform-in-production">Case Study Ai Iot Platform In Production</Link></li>
+              <li><Link href="/blog/case-study-ai-recovery-testing-in-production">Case Study Ai Recovery Testing In Production</Link></li>
+<li><Link href="/blog/how-to-implement-ai-network-automation-without-disrupting-operations">How To Implement Ai Network Automation Without Disrupting Operations</Link></li>
+<li><Link href="/blog/ai-security-operations-center-5">Ai Security Operations Center 5</Link></li>
+<li><Link href="/blog/automation-and-scaling-patterns-for-ai-recovery-testing">Automation And Scaling Patterns For Ai Recovery Testing</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

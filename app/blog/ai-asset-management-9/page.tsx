@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-asset-management-9/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation and scaling patterns for AI asset management", "description": "Automation and scaling patterns for AI asset management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:00:58Z", "dateModified": "2026-08-04T13:00:58Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-asset-management-9/", "wordCount": 1561};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation and scaling patterns for AI asset management", "description": "Automation and scaling patterns for AI asset management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:47Z", "dateModified": "2026-08-04T13:01:47Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-asset-management-9/", "wordCount": 1913};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automation-and-scaling-patterns-for-ai-revenue-operations">Automation And Scaling Patterns For Ai Revenue Operations</Link></li>
-<li><Link href="/blog/ai-endpoint-protection-7">Ai Endpoint Protection 7</Link></li>
-<li><Link href="/blog/ai-licensing-management-checklist-for-it-and-security-leaders">Ai Licensing Management Checklist For It And Security Leaders</Link></li>
-<li><Link href="/blog/ai-security-operations-center-costs-roi-and-hidden-risks">Ai Security Operations Center Costs Roi And Hidden Risks</Link></li>
-              <li><Link href="/blog/ai-qa-automation-6">Ai Qa Automation 6</Link></li>
-              <li><Link href="/blog/ai-smart-cities-3">Ai Smart Cities 3</Link></li>
-              <li><Link href="/blog/ai-penetration-testing-3">Ai Penetration Testing 3</Link></li>
-              <li><Link href="/blog/ai-supply-chain-automation-5">Ai Supply Chain Automation 5</Link></li>
+              <li><Link href="/blog/ai-security-awareness-6">Ai Security Awareness 6</Link></li>
+<li><Link href="/blog/automation-and-scaling-patterns-for-ai-manufacturing-automation">Automation And Scaling Patterns For Ai Manufacturing Automation</Link></li>
+<li><Link href="/blog/ai-financial-services-automation-8">Ai Financial Services Automation 8</Link></li>
+<li><Link href="/blog/ai-media-entertainment-2">Ai Media Entertainment 2</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

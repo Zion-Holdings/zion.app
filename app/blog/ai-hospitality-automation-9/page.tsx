@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-hospitality-automation-9/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation and scaling patterns for AI hospitality automation", "description": "Automation and scaling patterns for AI hospitality automation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:14Z", "dateModified": "2026-08-04T13:01:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-hospitality-automation-9/", "wordCount": 1438};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation and scaling patterns for AI hospitality automation", "description": "Automation and scaling patterns for AI hospitality automation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:02:06Z", "dateModified": "2026-08-04T13:02:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-hospitality-automation-9/", "wordCount": 1649};
 
 export default function Page() {
   return (
@@ -54,14 +54,10 @@ If this matches your current initiative, the next step is a short scoping call a
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-document-processing-2">Ai Document Processing 2</Link></li>
-<li><Link href="/blog/ai-credit-scoring-policy-compliance-and-vendor-management">Ai Credit Scoring Policy Compliance And Vendor Management</Link></li>
-<li><Link href="/blog/ai-soc-automation-for-enterprise-teams">Ai Soc Automation For Enterprise Teams</Link></li>
-<li><Link href="/blog/ai-supply-chain-security-10">Ai Supply Chain Security 10</Link></li>
-              <li><Link href="/blog/ai-knowledge-management-6">Ai Knowledge Management 6</Link></li>
-              <li><Link href="/blog/comparing-ai-automotive-manufacturing-vendors-and-build-vs-buy">Comparing Ai Automotive Manufacturing Vendors And Build Vs Buy</Link></li>
-              <li><Link href="/blog/ai-email-intelligence-2026-playbook">Ai Email Intelligence 2026 Playbook</Link></li>
-              <li><Link href="/blog/case-study-ai-education-technology-in-production">Case Study Ai Education Technology In Production</Link></li>
+              <li><Link href="/blog/ai-for-food-and-beverage-operations">Ai For Food And Beverage Operations</Link></li>
+<li><Link href="/blog/ai-workflow-orchestration">Ai Workflow Orchestration</Link></li>
+<li><Link href="/blog/comparing-ai-devops-automation-vendors-and-build-vs-buy">Comparing Ai Devops Automation Vendors And Build Vs Buy</Link></li>
+<li><Link href="/blog/ai-knowledge-management-5">Ai Knowledge Management 5</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

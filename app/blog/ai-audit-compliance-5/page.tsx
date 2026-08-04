@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-audit-compliance-5/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI audit compliance for It teams", "description": "AI audit compliance for It teams", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:00Z", "dateModified": "2026-08-04T13:01:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-audit-compliance-5/", "wordCount": 1772};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI audit compliance for It teams", "description": "AI audit compliance for It teams", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:49Z", "dateModified": "2026-08-04T13:01:49Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-audit-compliance-5/", "wordCount": 1809};
 
 export default function Page() {
   return (
@@ -54,14 +54,10 @@ If this matches your current initiative, the next step is a short scoping call a
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-smart-cities-2">Ai Smart Cities 2</Link></li>
-<li><Link href="/blog/comparing-ai-cybersecurity-automation-vendors-and-build-vs-buy">Comparing Ai Cybersecurity Automation Vendors And Build Vs Buy</Link></li>
-<li><Link href="/blog/automation-and-scaling-patterns-for-ai-security-awareness">Automation And Scaling Patterns For Ai Security Awareness</Link></li>
-<li><Link href="/blog/common-mistakes-when-rolling-out-ai-sla-management">Common Mistakes When Rolling Out Ai Sla Management</Link></li>
-              <li><Link href="/blog/ai-knowledge-management-3">Ai Knowledge Management 3</Link></li>
-              <li><Link href="/blog/automation-and-scaling-patterns-for-ai-soc-automation">Automation And Scaling Patterns For Ai Soc Automation</Link></li>
-              <li><Link href="/blog/how-to-implement-ai-procurement-automation-without-disrupting-operations">How To Implement Ai Procurement Automation Without Disrupting Operations</Link></li>
-              <li><Link href="/blog/ai-blockchain-integration-7">Ai Blockchain Integration 7</Link></li>
+              <li><Link href="/blog/ai-onboarding-automation-for-enterprise-teams">Ai Onboarding Automation For Enterprise Teams</Link></li>
+<li><Link href="/blog/ai-knowledge-management-8">Ai Knowledge Management 8</Link></li>
+<li><Link href="/blog/ai-cybersecurity-automation-checklist-for-it-and-security-leaders">Ai Cybersecurity Automation Checklist For It And Security Leaders</Link></li>
+<li><Link href="/blog/ai-telecom-automation-7">Ai Telecom Automation 7</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

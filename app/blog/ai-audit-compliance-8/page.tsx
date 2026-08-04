@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-audit-compliance-8/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI audit compliance checklist for IT and security leaders", "description": "AI audit compliance checklist for IT and security leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:01Z", "dateModified": "2026-08-04T13:01:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-audit-compliance-8/", "wordCount": 1866};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI audit compliance checklist for IT and security leaders", "description": "AI audit compliance checklist for IT and security leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:50Z", "dateModified": "2026-08-04T13:01:50Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-audit-compliance-8/", "wordCount": 2169};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-logistics-fulfillment-costs-roi-and-hidden-risks">Ai Logistics Fulfillment Costs Roi And Hidden Risks</Link></li>
-<li><Link href="/blog/ai-cybersecurity-automation-5">Ai Cybersecurity Automation 5</Link></li>
-<li><Link href="/blog/automation-and-scaling-patterns-for-ai-aerospace-defense">Automation And Scaling Patterns For Ai Aerospace Defense</Link></li>
-<li><Link href="/blog/ai-non-profit-automation-5">Ai Non Profit Automation 5</Link></li>
-              <li><Link href="/blog/ai-penetration-testing-4">Ai Penetration Testing 4</Link></li>
-              <li><Link href="/blog/ai-supply-chain-automation-policy-compliance-and-vendor-management">Ai Supply Chain Automation Policy Compliance And Vendor Management</Link></li>
-              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-penetration-testing">Common Mistakes When Rolling Out Ai Penetration Testing</Link></li>
-              <li><Link href="/blog/ai-meeting-automation-2026-playbook">Ai Meeting Automation 2026 Playbook</Link></li>
+              <li><Link href="/blog/how-to-implement-ai-sentiment-analysis-without-disrupting-operations">How To Implement Ai Sentiment Analysis Without Disrupting Operations</Link></li>
+<li><Link href="/blog/ai-mining-automation-5">Ai Mining Automation 5</Link></li>
+<li><Link href="/blog/ai-it-operations-automation-2026-13">Ai It Operations Automation 2026 13</Link></li>
+<li><Link href="/blog/ai-warehouse-automation-for-enterprise-teams">Ai Warehouse Automation For Enterprise Teams</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

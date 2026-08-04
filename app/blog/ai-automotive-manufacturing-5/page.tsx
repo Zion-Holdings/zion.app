@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-automotive-manufacturing-5/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI automotive manufacturing for It teams", "description": "AI automotive manufacturing for It teams", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:02Z", "dateModified": "2026-08-04T13:01:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-automotive-manufacturing-5/", "wordCount": 1982};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI automotive manufacturing for It teams", "description": "AI automotive manufacturing for It teams", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:52Z", "dateModified": "2026-08-04T13:01:52Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-automotive-manufacturing-5/", "wordCount": 1414};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-revenue-operations-policy-compliance-and-vendor-management">Ai Revenue Operations Policy Compliance And Vendor Management</Link></li>
-<li><Link href="/blog/ai-security-operations-center-7">Ai Security Operations Center 7</Link></li>
-<li><Link href="/blog/ai-vulnerability-management-7">Ai Vulnerability Management 7</Link></li>
-<li><Link href="/blog/how-to-implement-ai-recovery-testing-without-disrupting-operations">How To Implement Ai Recovery Testing Without Disrupting Operations</Link></li>
-              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-recovery-testing">Common Mistakes When Rolling Out Ai Recovery Testing</Link></li>
-              <li><Link href="/blog/ai-data-analytics-platform-2">Ai Data Analytics Platform 2</Link></li>
-              <li><Link href="/blog/automation-and-scaling-patterns-for-ai-procurement-automation">Automation And Scaling Patterns For Ai Procurement Automation</Link></li>
-              <li><Link href="/blog/ai-mining-automation-3">Ai Mining Automation 3</Link></li>
+              <li><Link href="/blog/ai-data-privacy-3">Ai Data Privacy 3</Link></li>
+<li><Link href="/blog/ai-media-entertainment">Ai Media Entertainment</Link></li>
+<li><Link href="/blog/common-mistakes-when-rolling-out-ai-energy-utilities-optimization">Common Mistakes When Rolling Out Ai Energy Utilities Optimization</Link></li>
+<li><Link href="/blog/case-study-ai-non-profit-automation-in-production">Case Study Ai Non Profit Automation In Production</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

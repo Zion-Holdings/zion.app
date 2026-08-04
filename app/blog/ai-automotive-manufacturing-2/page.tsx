@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-automotive-manufacturing-2/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "How to implement AI automotive manufacturing without disrupting operations", "description": "How to implement AI automotive manufacturing without disrupting operations", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:02Z", "dateModified": "2026-08-04T13:01:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-automotive-manufacturing-2/", "wordCount": 1966};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "How to implement AI automotive manufacturing without disrupting operations", "description": "How to implement AI automotive manufacturing without disrupting operations", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:51Z", "dateModified": "2026-08-04T13:01:51Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-automotive-manufacturing-2/", "wordCount": 1876};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-supply-chain-security-costs-roi-and-hidden-risks">Ai Supply Chain Security Costs Roi And Hidden Risks</Link></li>
-<li><Link href="/blog/ai-database-automation">Ai Database Automation</Link></li>
-<li><Link href="/blog/ai-threat-detection-5">Ai Threat Detection 5</Link></li>
-<li><Link href="/blog/ai-enterprise-integration-costs-roi-and-hidden-risks">Ai Enterprise Integration Costs Roi And Hidden Risks</Link></li>
-              <li><Link href="/blog/ai-banking-automation-costs-roi-and-hidden-risks">Ai Banking Automation Costs Roi And Hidden Risks</Link></li>
-              <li><Link href="/blog/ai-observability-platform-costs-roi-and-hidden-risks">Ai Observability Platform Costs Roi And Hidden Risks</Link></li>
-              <li><Link href="/blog/ai-soc-automation-9">Ai Soc Automation 9</Link></li>
-              <li><Link href="/blog/ai-payments-automation-5">Ai Payments Automation 5</Link></li>
+              <li><Link href="/blog/ai-aerospace-defense-2026-playbook">Ai Aerospace Defense 2026 Playbook</Link></li>
+<li><Link href="/blog/ai-devops-automation-costs-roi-and-hidden-risks">Ai Devops Automation Costs Roi And Hidden Risks</Link></li>
+<li><Link href="/blog/ai-security-operations-center-7">Ai Security Operations Center 7</Link></li>
+<li><Link href="/blog/ai-marketing-automation-9">Ai Marketing Automation 9</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

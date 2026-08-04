@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-email-monitoring-5/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI email monitoring for It teams", "description": "AI email monitoring for It teams", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:08Z", "dateModified": "2026-08-04T13:01:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-monitoring-5/", "wordCount": 1902};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI email monitoring for It teams", "description": "AI email monitoring for It teams", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:58Z", "dateModified": "2026-08-04T13:01:58Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-monitoring-5/", "wordCount": 2016};
 
 export default function Page() {
   return (
@@ -54,14 +54,10 @@ If this matches your current initiative, the next step is a short scoping call a
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-telecom-automation-for-enterprise-teams">Ai Telecom Automation For Enterprise Teams</Link></li>
-<li><Link href="/blog/ai-blockchain-integration">Ai Blockchain Integration</Link></li>
-<li><Link href="/blog/ai-endpoint-protection-2026-playbook">Ai Endpoint Protection 2026 Playbook</Link></li>
-<li><Link href="/blog/common-mistakes-when-rolling-out-ai-observability-platform">Common Mistakes When Rolling Out Ai Observability Platform</Link></li>
-              <li><Link href="/blog/ai-policy-enforcement-9">Ai Policy Enforcement 9</Link></li>
-              <li><Link href="/blog/ai-database-automation-10">Ai Database Automation 10</Link></li>
-              <li><Link href="/blog/ai-for-compliance-and-regulatory-reporting">Ai For Compliance And Regulatory Reporting</Link></li>
-              <li><Link href="/blog/ai-email-intelligence-2026-playbook">Ai Email Intelligence 2026 Playbook</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-4">Ai Capacity Planning 4</Link></li>
+<li><Link href="/blog/common-mistakes-when-rolling-out-ai-revenue-operations">Common Mistakes When Rolling Out Ai Revenue Operations</Link></li>
+<li><Link href="/blog/automation-and-scaling-patterns-for-ai-cloud-security">Automation And Scaling Patterns For Ai Cloud Security</Link></li>
+<li><Link href="/blog/ai-secret-rotation-10">Ai Secret Rotation 10</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

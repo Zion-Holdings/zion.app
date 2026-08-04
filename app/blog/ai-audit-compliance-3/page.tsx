@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-audit-compliance-3/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI audit compliance: costs, ROI, and hidden risks", "description": "AI audit compliance: costs, ROI, and hidden risks", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:00:59Z", "dateModified": "2026-08-04T13:00:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-audit-compliance-3/", "wordCount": 1817};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI audit compliance: costs, ROI, and hidden risks", "description": "AI audit compliance: costs, ROI, and hidden risks", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:49Z", "dateModified": "2026-08-04T13:01:49Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-audit-compliance-3/", "wordCount": 1746};
 
 export default function Page() {
   return (
@@ -54,14 +54,10 @@ If this matches your current initiative, the next step is a short scoping call a
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-identity-governance-2">Ai Identity Governance 2</Link></li>
-<li><Link href="/blog/automation-and-scaling-patterns-for-ai-data-analytics-platform">Automation And Scaling Patterns For Ai Data Analytics Platform</Link></li>
-<li><Link href="/blog/automation-and-scaling-patterns-for-ai-supply-chain-automation">Automation And Scaling Patterns For Ai Supply Chain Automation</Link></li>
-<li><Link href="/blog/ai-licensing-management-4">Ai Licensing Management 4</Link></li>
-              <li><Link href="/blog/ai-data-privacy">Ai Data Privacy</Link></li>
-              <li><Link href="/blog/ai-smart-cities-checklist-for-it-and-security-leaders">Ai Smart Cities Checklist For It And Security Leaders</Link></li>
-              <li><Link href="/blog/ai-transportation-automation-10">Ai Transportation Automation 10</Link></li>
-              <li><Link href="/blog/ai-meeting-automation-4">Ai Meeting Automation 4</Link></li>
+              <li><Link href="/blog/ai-penetration-testing">Ai Penetration Testing</Link></li>
+<li><Link href="/blog/ai-sla-management-5">Ai Sla Management 5</Link></li>
+<li><Link href="/blog/ai-cybersecurity-automation-8">Ai Cybersecurity Automation 8</Link></li>
+<li><Link href="/blog/ai-document-processing-4">Ai Document Processing 4</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

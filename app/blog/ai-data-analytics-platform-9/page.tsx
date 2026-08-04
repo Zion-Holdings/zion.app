@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-data-analytics-platform-9/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation and scaling patterns for AI data analytics platform", "description": "Automation and scaling patterns for AI data analytics platform", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:06Z", "dateModified": "2026-08-04T13:01:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-analytics-platform-9/", "wordCount": 2062};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation and scaling patterns for AI data analytics platform", "description": "Automation and scaling patterns for AI data analytics platform", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:56Z", "dateModified": "2026-08-04T13:01:56Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-analytics-platform-9/", "wordCount": 1862};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-soc-automation-9">Ai Soc Automation 9</Link></li>
-<li><Link href="/blog/ai-oil-gas-energy-policy-compliance-and-vendor-management">Ai Oil Gas Energy Policy Compliance And Vendor Management</Link></li>
-<li><Link href="/blog/ai-business-continuity-10">Ai Business Continuity 10</Link></li>
-<li><Link href="/blog/common-mistakes-when-rolling-out-ai-sentiment-analysis">Common Mistakes When Rolling Out Ai Sentiment Analysis</Link></li>
-              <li><Link href="/blog/ai-service-catalog-8">Ai Service Catalog 8</Link></li>
-              <li><Link href="/blog/ai-manufacturing-automation-policy-compliance-and-vendor-management">Ai Manufacturing Automation Policy Compliance And Vendor Management</Link></li>
-              <li><Link href="/blog/ai-blockchain-integration-4">Ai Blockchain Integration 4</Link></li>
-              <li><Link href="/blog/ai-cloud-security-for-enterprise-teams">Ai Cloud Security For Enterprise Teams</Link></li>
+              <li><Link href="/blog/ai-zero-trust-security-checklist-for-it-and-security-leaders">Ai Zero Trust Security Checklist For It And Security Leaders</Link></li>
+<li><Link href="/blog/automation-and-scaling-patterns-for-ai-energy-utilities-optimization">Automation And Scaling Patterns For Ai Energy Utilities Optimization</Link></li>
+<li><Link href="/blog/how-to-implement-ai-qa-automation-without-disrupting-operations">How To Implement Ai Qa Automation Without Disrupting Operations</Link></li>
+<li><Link href="/blog/ai-banking-automation-8">Ai Banking Automation 8</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

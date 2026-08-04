@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-government-services-8/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI government services checklist for IT and security leaders", "description": "AI government services checklist for IT and security leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:11Z", "dateModified": "2026-08-04T13:01:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-government-services-8/", "wordCount": 1599};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI government services checklist for IT and security leaders", "description": "AI government services checklist for IT and security leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:02:02Z", "dateModified": "2026-08-04T13:02:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-government-services-8/", "wordCount": 1470};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/comparing-ai-banking-automation-vendors-and-build-vs-buy">Comparing Ai Banking Automation Vendors And Build Vs Buy</Link></li>
-<li><Link href="/blog/common-mistakes-when-rolling-out-ai-document-processing">Common Mistakes When Rolling Out Ai Document Processing</Link></li>
-<li><Link href="/blog/ai-banking-automation-checklist-for-it-and-security-leaders">Ai Banking Automation Checklist For It And Security Leaders</Link></li>
-<li><Link href="/blog/common-mistakes-when-rolling-out-ai-security-operations-center">Common Mistakes When Rolling Out Ai Security Operations Center</Link></li>
-              <li><Link href="/blog/ai-legal-tech-automation-costs-roi-and-hidden-risks">Ai Legal Tech Automation Costs Roi And Hidden Risks</Link></li>
-              <li><Link href="/blog/ai-automotive-manufacturing-2026-playbook">Ai Automotive Manufacturing 2026 Playbook</Link></li>
-              <li><Link href="/blog/comparing-ai-licensing-management-vendors-and-build-vs-buy">Comparing Ai Licensing Management Vendors And Build Vs Buy</Link></li>
-              <li><Link href="/blog/ai-construction-automation-for-enterprise-teams">Ai Construction Automation For Enterprise Teams</Link></li>
+              <li><Link href="/blog/ai-capacity-planning-9">Ai Capacity Planning 9</Link></li>
+<li><Link href="/blog/ai-workflow-orchestration-5">Ai Workflow Orchestration 5</Link></li>
+<li><Link href="/blog/comparing-ai-document-processing-vendors-and-build-vs-buy">Comparing Ai Document Processing Vendors And Build Vs Buy</Link></li>
+<li><Link href="/blog/ai-predictive-maintenance-for-enterprise-teams">Ai Predictive Maintenance For Enterprise Teams</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

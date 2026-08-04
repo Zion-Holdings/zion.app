@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-email-monitoring-10/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI email monitoring: policy, compliance, and vendor management", "description": "AI email monitoring: policy, compliance, and vendor management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:09Z", "dateModified": "2026-08-04T13:01:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-monitoring-10/", "wordCount": 1757};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI email monitoring: policy, compliance, and vendor management", "description": "AI email monitoring: policy, compliance, and vendor management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:02:00Z", "dateModified": "2026-08-04T13:02:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-monitoring-10/", "wordCount": 1640};
 
 export default function Page() {
   return (
@@ -54,14 +54,10 @@ If this matches your current initiative, the next step is a short scoping call a
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-banking-automation-2026-playbook">Ai Banking Automation 2026 Playbook</Link></li>
-<li><Link href="/blog/ai-identity-governance-5">Ai Identity Governance 5</Link></li>
-<li><Link href="/blog/ai-supply-chain-automation">Ai Supply Chain Automation</Link></li>
-<li><Link href="/blog/common-mistakes-when-rolling-out-ai-devops-automation">Common Mistakes When Rolling Out Ai Devops Automation</Link></li>
-              <li><Link href="/blog/ai-hospitality-automation-checklist-for-it-and-security-leaders">Ai Hospitality Automation Checklist For It And Security Leaders</Link></li>
-              <li><Link href="/blog/ai-payments-automation-2026-playbook">Ai Payments Automation 2026 Playbook</Link></li>
-              <li><Link href="/blog/ai-smart-cities-checklist-for-it-and-security-leaders">Ai Smart Cities Checklist For It And Security Leaders</Link></li>
-              <li><Link href="/blog/ai-zero-trust-security-costs-roi-and-hidden-risks">Ai Zero Trust Security Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/case-study-ai-data-privacy-in-production">Case Study Ai Data Privacy In Production</Link></li>
+<li><Link href="/blog/case-study-ai-credit-scoring-in-production">Case Study Ai Credit Scoring In Production</Link></li>
+<li><Link href="/blog/low-code-and-no-code-ai-for-rapid-deployment">Low Code And No Code Ai For Rapid Deployment</Link></li>
+<li><Link href="/blog/ai-email-monitoring-5">Ai Email Monitoring 5</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

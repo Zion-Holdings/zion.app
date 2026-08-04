@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-government-services-10/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI government services: policy, compliance, and vendor management", "description": "AI government services: policy, compliance, and vendor management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:12Z", "dateModified": "2026-08-04T13:01:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-government-services-10/", "wordCount": 1761};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI government services: policy, compliance, and vendor management", "description": "AI government services: policy, compliance, and vendor management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:02:03Z", "dateModified": "2026-08-04T13:02:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-government-services-10/", "wordCount": 1576};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/comparing-ai-pharma-life-sciences-vendors-and-build-vs-buy">Comparing Ai Pharma Life Sciences Vendors And Build Vs Buy</Link></li>
-<li><Link href="/blog/ai-managed-it-services-6">Ai Managed It Services 6</Link></li>
-<li><Link href="/blog/ai-energy-utilities-optimization-8">Ai Energy Utilities Optimization 8</Link></li>
-<li><Link href="/blog/ai-sales-enablement-6">Ai Sales Enablement 6</Link></li>
-              <li><Link href="/blog/ai-customer-success-costs-roi-and-hidden-risks">Ai Customer Success Costs Roi And Hidden Risks</Link></li>
-              <li><Link href="/blog/how-to-implement-ai-non-profit-automation-without-disrupting-operations">How To Implement Ai Non Profit Automation Without Disrupting Operations</Link></li>
-              <li><Link href="/blog/ai-cloud-cost-optimization-2026-playbook">Ai Cloud Cost Optimization 2026 Playbook</Link></li>
-              <li><Link href="/blog/ai-predictive-maintenance-9">Ai Predictive Maintenance 9</Link></li>
+              <li><Link href="/blog/ai-cloud-cost-optimization-for-enterprise-teams">Ai Cloud Cost Optimization For Enterprise Teams</Link></li>
+<li><Link href="/blog/ai-zero-trust-security-2026-playbook">Ai Zero Trust Security 2026 Playbook</Link></li>
+<li><Link href="/blog/ai-telecom-automation-7">Ai Telecom Automation 7</Link></li>
+<li><Link href="/blog/comparing-ai-document-processing-vendors-and-build-vs-buy">Comparing Ai Document Processing Vendors And Build Vs Buy</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

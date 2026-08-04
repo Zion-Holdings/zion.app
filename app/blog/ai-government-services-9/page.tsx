@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-government-services-9/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation and scaling patterns for AI government services", "description": "Automation and scaling patterns for AI government services", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:11Z", "dateModified": "2026-08-04T13:01:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-government-services-9/", "wordCount": 1622};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation and scaling patterns for AI government services", "description": "Automation and scaling patterns for AI government services", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:02:03Z", "dateModified": "2026-08-04T13:02:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-government-services-9/", "wordCount": 1880};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-database-automation-8">Ai Database Automation 8</Link></li>
-<li><Link href="/blog/how-to-implement-ai-transportation-automation-without-disrupting-operations">How To Implement Ai Transportation Automation Without Disrupting Operations</Link></li>
-<li><Link href="/blog/ai-supply-chain-automation-8">Ai Supply Chain Automation 8</Link></li>
-<li><Link href="/blog/ai-logistics-fulfillment-costs-roi-and-hidden-risks">Ai Logistics Fulfillment Costs Roi And Hidden Risks</Link></li>
-              <li><Link href="/blog/ai-supply-chain-automation-policy-compliance-and-vendor-management">Ai Supply Chain Automation Policy Compliance And Vendor Management</Link></li>
-              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-supply-chain-automation">Common Mistakes When Rolling Out Ai Supply Chain Automation</Link></li>
-              <li><Link href="/blog/ai-email-intelligence-8">Ai Email Intelligence 8</Link></li>
-              <li><Link href="/blog/ai-vulnerability-management-7">Ai Vulnerability Management 7</Link></li>
+              <li><Link href="/blog/ai-government-services-2026-playbook">Ai Government Services 2026 Playbook</Link></li>
+<li><Link href="/blog/ai-email-monitoring-6">Ai Email Monitoring 6</Link></li>
+<li><Link href="/blog/ai-qa-automation-4">Ai Qa Automation 4</Link></li>
+<li><Link href="/blog/common-mistakes-when-rolling-out-ai-release-management">Common Mistakes When Rolling Out Ai Release Management</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

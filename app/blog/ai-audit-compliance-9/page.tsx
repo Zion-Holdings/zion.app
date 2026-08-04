@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-audit-compliance-9/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation and scaling patterns for AI audit compliance", "description": "Automation and scaling patterns for AI audit compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:01Z", "dateModified": "2026-08-04T13:01:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-audit-compliance-9/", "wordCount": 1727};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation and scaling patterns for AI audit compliance", "description": "Automation and scaling patterns for AI audit compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:50Z", "dateModified": "2026-08-04T13:01:50Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-audit-compliance-9/", "wordCount": 2171};
 
 export default function Page() {
   return (
@@ -54,14 +54,10 @@ If this matches your current initiative, the next step is a short scoping call a
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-warehouse-automation-policy-compliance-and-vendor-management">Ai Warehouse Automation Policy Compliance And Vendor Management</Link></li>
-<li><Link href="/blog/ai-email-intelligence-6">Ai Email Intelligence 6</Link></li>
-<li><Link href="/blog/ai-endpoint-protection-checklist-for-it-and-security-leaders">Ai Endpoint Protection Checklist For It And Security Leaders</Link></li>
-<li><Link href="/blog/multimodal-ai-vision-and-language-models-in-enterprise">Multimodal Ai Vision And Language Models In Enterprise</Link></li>
-              <li><Link href="/blog/ai-network-automation-8">Ai Network Automation 8</Link></li>
-              <li><Link href="/blog/how-to-implement-ai-cybersecurity-automation-without-disrupting-operations">How To Implement Ai Cybersecurity Automation Without Disrupting Operations</Link></li>
-              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-predictive-maintenance">Common Mistakes When Rolling Out Ai Predictive Maintenance</Link></li>
-              <li><Link href="/blog/ai-sales-enablement-4">Ai Sales Enablement 4</Link></li>
+              <li><Link href="/blog/ai-real-estate-automation-policy-compliance-and-vendor-management">Ai Real Estate Automation Policy Compliance And Vendor Management</Link></li>
+<li><Link href="/blog/ai-configuration-management-3">Ai Configuration Management 3</Link></li>
+<li><Link href="/blog/ai-oil-gas-energy-4">Ai Oil Gas Energy 4</Link></li>
+<li><Link href="/blog/comparing-ai-offboarding-automation-vendors-and-build-vs-buy">Comparing Ai Offboarding Automation Vendors And Build Vs Buy</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-data-analytics-platform-5/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI data analytics platform for It teams", "description": "AI data analytics platform for It teams", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:05Z", "dateModified": "2026-08-04T13:01:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-analytics-platform-5/", "wordCount": 1552};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI data analytics platform for It teams", "description": "AI data analytics platform for It teams", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:55Z", "dateModified": "2026-08-04T13:01:55Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-analytics-platform-5/", "wordCount": 1613};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-construction-automation-costs-roi-and-hidden-risks">Ai Construction Automation Costs Roi And Hidden Risks</Link></li>
-<li><Link href="/blog/ai-offboarding-automation-costs-roi-and-hidden-risks">Ai Offboarding Automation Costs Roi And Hidden Risks</Link></li>
-<li><Link href="/blog/common-mistakes-when-rolling-out-ai-healthcare-automation">Common Mistakes When Rolling Out Ai Healthcare Automation</Link></li>
-<li><Link href="/blog/ai-oil-gas-energy-4">Ai Oil Gas Energy 4</Link></li>
-              <li><Link href="/blog/ai-offboarding-automation-for-enterprise-teams">Ai Offboarding Automation For Enterprise Teams</Link></li>
-              <li><Link href="/blog/ai-education-technology-8">Ai Education Technology 8</Link></li>
-              <li><Link href="/blog/case-study-ai-secret-rotation-in-production">Case Study Ai Secret Rotation In Production</Link></li>
-              <li><Link href="/blog/ai-supply-chain-automation-7">Ai Supply Chain Automation 7</Link></li>
+              <li><Link href="/blog/ai-aerospace-defense-6">Ai Aerospace Defense 6</Link></li>
+<li><Link href="/blog/ai-backup-disaster-recovery-policy-compliance-and-vendor-management">Ai Backup Disaster Recovery Policy Compliance And Vendor Management</Link></li>
+<li><Link href="/blog/comparing-ai-warehouse-automation-vendors-and-build-vs-buy">Comparing Ai Warehouse Automation Vendors And Build Vs Buy</Link></li>
+<li><Link href="/blog/ai-email-intelligence-8">Ai Email Intelligence 8</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

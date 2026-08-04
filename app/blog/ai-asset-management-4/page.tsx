@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-asset-management-4/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Comparing AI asset management vendors and build vs buy", "description": "Comparing AI asset management vendors and build vs buy", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:00:57Z", "dateModified": "2026-08-04T13:00:57Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-asset-management-4/", "wordCount": 1542};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Comparing AI asset management vendors and build vs buy", "description": "Comparing AI asset management vendors and build vs buy", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:46Z", "dateModified": "2026-08-04T13:01:46Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-asset-management-4/", "wordCount": 2002};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-security-operations-center-7">Ai Security Operations Center 7</Link></li>
-<li><Link href="/blog/comparing-ai-procurement-automation-vendors-and-build-vs-buy">Comparing Ai Procurement Automation Vendors And Build Vs Buy</Link></li>
-<li><Link href="/blog/ai-financial-services-automation-3">Ai Financial Services Automation 3</Link></li>
-<li><Link href="/blog/ai-financial-services-automation-2">Ai Financial Services Automation 2</Link></li>
-              <li><Link href="/blog/ai-business-continuity-9">Ai Business Continuity 9</Link></li>
-              <li><Link href="/blog/ai-offboarding-automation-7">Ai Offboarding Automation 7</Link></li>
-              <li><Link href="/blog/ai-edge-computing-for-enterprise-teams">Ai Edge Computing For Enterprise Teams</Link></li>
-              <li><Link href="/blog/ai-offboarding-automation-4">Ai Offboarding Automation 4</Link></li>
+              <li><Link href="/blog/ai-predictive-maintenance-3">Ai Predictive Maintenance 3</Link></li>
+<li><Link href="/blog/case-study-ai-edge-computing-in-production">Case Study Ai Edge Computing In Production</Link></li>
+<li><Link href="/blog/ai-pharma-life-sciences-10">Ai Pharma Life Sciences 10</Link></li>
+<li><Link href="/blog/ai-ticket-automation-8">Ai Ticket Automation 8</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

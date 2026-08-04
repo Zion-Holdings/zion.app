@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-asset-management-7/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Common mistakes when rolling out AI asset management", "description": "Common mistakes when rolling out AI asset management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:00:58Z", "dateModified": "2026-08-04T13:00:58Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-asset-management-7/", "wordCount": 2141};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Common mistakes when rolling out AI asset management", "description": "Common mistakes when rolling out AI asset management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:46Z", "dateModified": "2026-08-04T13:01:46Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-asset-management-7/", "wordCount": 2099};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/case-study-ai-secret-rotation-in-production">Case Study Ai Secret Rotation In Production</Link></li>
-<li><Link href="/blog/ai-threat-detection-costs-roi-and-hidden-risks">Ai Threat Detection Costs Roi And Hidden Risks</Link></li>
-<li><Link href="/blog/ai-agriculture-technology-policy-compliance-and-vendor-management">Ai Agriculture Technology Policy Compliance And Vendor Management</Link></li>
-<li><Link href="/blog/ai-revenue-operations-9">Ai Revenue Operations 9</Link></li>
-              <li><Link href="/blog/ai-customer-support-automation-3">Ai Customer Support Automation 3</Link></li>
-              <li><Link href="/blog/ai-mining-automation">Ai Mining Automation</Link></li>
-              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-micro-saas-automation">Common Mistakes When Rolling Out Ai Micro Saas Automation</Link></li>
-              <li><Link href="/blog/automation-and-scaling-patterns-for-ai-aerospace-defense">Automation And Scaling Patterns For Ai Aerospace Defense</Link></li>
+              <li><Link href="/blog/ai-micro-saas-automation-4">Ai Micro Saas Automation 4</Link></li>
+<li><Link href="/blog/comparing-ai-audit-compliance-vendors-and-build-vs-buy">Comparing Ai Audit Compliance Vendors And Build Vs Buy</Link></li>
+<li><Link href="/blog/ai-identity-governance-2">Ai Identity Governance 2</Link></li>
+<li><Link href="/blog/ai-release-management-10">Ai Release Management 10</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

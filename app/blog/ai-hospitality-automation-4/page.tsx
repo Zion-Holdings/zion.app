@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-hospitality-automation-4/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Comparing AI hospitality automation vendors and build vs buy", "description": "Comparing AI hospitality automation vendors and build vs buy", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:13Z", "dateModified": "2026-08-04T13:01:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-hospitality-automation-4/", "wordCount": 2197};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Comparing AI hospitality automation vendors and build vs buy", "description": "Comparing AI hospitality automation vendors and build vs buy", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:02:04Z", "dateModified": "2026-08-04T13:02:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-hospitality-automation-4/", "wordCount": 1516};
 
 export default function Page() {
   return (
@@ -54,14 +54,10 @@ If this matches your current initiative, the next step is a short scoping call a
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-predictive-maintenance-checklist-for-it-and-security-leaders">Ai Predictive Maintenance Checklist For It And Security Leaders</Link></li>
-<li><Link href="/blog/comparing-ai-risk-management-vendors-and-build-vs-buy">Comparing Ai Risk Management Vendors And Build Vs Buy</Link></li>
-<li><Link href="/blog/how-to-implement-ai-document-processing-without-disrupting-operations">How To Implement Ai Document Processing Without Disrupting Operations</Link></li>
-<li><Link href="/blog/ai-telecom-automation-3">Ai Telecom Automation 3</Link></li>
-              <li><Link href="/blog/cloud-cost-optimization-checklist-2026-14">Cloud Cost Optimization Checklist 2026 14</Link></li>
-              <li><Link href="/blog/ai-cloud-security-2">Ai Cloud Security 2</Link></li>
-              <li><Link href="/blog/case-study-ai-marketing-automation-in-production">Case Study Ai Marketing Automation In Production</Link></li>
-              <li><Link href="/blog/automation-and-scaling-patterns-for-ai-onboarding-automation">Automation And Scaling Patterns For Ai Onboarding Automation</Link></li>
+              <li><Link href="/blog/ai-banking-automation">Ai Banking Automation</Link></li>
+<li><Link href="/blog/ai-penetration-testing-policy-compliance-and-vendor-management">Ai Penetration Testing Policy Compliance And Vendor Management</Link></li>
+<li><Link href="/blog/ai-cybersecurity-automation">Ai Cybersecurity Automation</Link></li>
+<li><Link href="/blog/ai-document-processing-10">Ai Document Processing 10</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

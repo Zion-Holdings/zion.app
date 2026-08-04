@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-asset-management-10/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI asset management: policy, compliance, and vendor management", "description": "AI asset management: policy, compliance, and vendor management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:00:59Z", "dateModified": "2026-08-04T13:00:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-asset-management-10/", "wordCount": 1799};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI asset management: policy, compliance, and vendor management", "description": "AI asset management: policy, compliance, and vendor management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:47Z", "dateModified": "2026-08-04T13:01:47Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-asset-management-10/", "wordCount": 1710};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-qa-automation">Ai Qa Automation</Link></li>
-<li><Link href="/blog/automation-and-scaling-patterns-for-ai-aerospace-defense">Automation And Scaling Patterns For Ai Aerospace Defense</Link></li>
-<li><Link href="/blog/ai-credit-scoring-5">Ai Credit Scoring 5</Link></li>
-<li><Link href="/blog/ai-credit-scoring-for-enterprise-teams">Ai Credit Scoring For Enterprise Teams</Link></li>
-              <li><Link href="/blog/ai-asset-management-5">Ai Asset Management 5</Link></li>
-              <li><Link href="/blog/ai-non-profit-automation-2026-playbook">Ai Non Profit Automation 2026 Playbook</Link></li>
-              <li><Link href="/blog/ai-iot-platform-for-enterprise-teams">Ai Iot Platform For Enterprise Teams</Link></li>
-              <li><Link href="/blog/automation-and-scaling-patterns-for-ai-network-automation">Automation And Scaling Patterns For Ai Network Automation</Link></li>
+              <li><Link href="/blog/ai-procurement-automation-3">Ai Procurement Automation 3</Link></li>
+<li><Link href="/blog/ai-capacity-planning-9">Ai Capacity Planning 9</Link></li>
+<li><Link href="/blog/ai-backup-disaster-recovery-4">Ai Backup Disaster Recovery 4</Link></li>
+<li><Link href="/blog/ai-marketing-automation-policy-compliance-and-vendor-management">Ai Marketing Automation Policy Compliance And Vendor Management</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

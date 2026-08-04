@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-automotive-manufacturing-10/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI automotive manufacturing: policy, compliance, and vendor management", "description": "AI automotive manufacturing: policy, compliance, and vendor management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:04Z", "dateModified": "2026-08-04T13:01:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-automotive-manufacturing-10/", "wordCount": 1764};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI automotive manufacturing: policy, compliance, and vendor management", "description": "AI automotive manufacturing: policy, compliance, and vendor management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:54Z", "dateModified": "2026-08-04T13:01:54Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-automotive-manufacturing-10/", "wordCount": 1780};
 
 export default function Page() {
   return (
@@ -54,14 +54,10 @@ If this matches your current initiative, the next step is a short scoping call a
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/how-to-implement-ai-licensing-management-without-disrupting-operations">How To Implement Ai Licensing Management Without Disrupting Operations</Link></li>
-<li><Link href="/blog/common-mistakes-when-rolling-out-ai-service-catalog">Common Mistakes When Rolling Out Ai Service Catalog</Link></li>
-<li><Link href="/blog/how-to-implement-ai-workflow-orchestration-without-disrupting-operations">How To Implement Ai Workflow Orchestration Without Disrupting Operations</Link></li>
-<li><Link href="/blog/automation-and-scaling-patterns-for-ai-qa-automation">Automation And Scaling Patterns For Ai Qa Automation</Link></li>
-              <li><Link href="/blog/comparing-ai-identity-governance-vendors-and-build-vs-buy">Comparing Ai Identity Governance Vendors And Build Vs Buy</Link></li>
-              <li><Link href="/blog/ai-supply-chain-automation-costs-roi-and-hidden-risks">Ai Supply Chain Automation Costs Roi And Hidden Risks</Link></li>
-              <li><Link href="/blog/ai-insurance-automation-costs-roi-and-hidden-risks">Ai Insurance Automation Costs Roi And Hidden Risks</Link></li>
-              <li><Link href="/blog/ai-enterprise-integration-8">Ai Enterprise Integration 8</Link></li>
+              <li><Link href="/blog/ai-blockchain-integration">Ai Blockchain Integration</Link></li>
+<li><Link href="/blog/ai-construction-automation-7">Ai Construction Automation 7</Link></li>
+<li><Link href="/blog/ai-for-fleet-and-logistics-operations">Ai For Fleet And Logistics Operations</Link></li>
+<li><Link href="/blog/common-mistakes-when-rolling-out-ai-education-technology">Common Mistakes When Rolling Out Ai Education Technology</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

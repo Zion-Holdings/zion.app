@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-hospitality-automation-5/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI hospitality automation for It teams", "description": "AI hospitality automation for It teams", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:13Z", "dateModified": "2026-08-04T13:01:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-hospitality-automation-5/", "wordCount": 1461};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI hospitality automation for It teams", "description": "AI hospitality automation for It teams", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:02:04Z", "dateModified": "2026-08-04T13:02:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-hospitality-automation-5/", "wordCount": 1752};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-endpoint-protection-policy-compliance-and-vendor-management">Ai Endpoint Protection Policy Compliance And Vendor Management</Link></li>
-<li><Link href="/blog/ai-knowledge-management-policy-compliance-and-vendor-management">Ai Knowledge Management Policy Compliance And Vendor Management</Link></li>
-<li><Link href="/blog/ai-managed-it-services-5">Ai Managed It Services 5</Link></li>
-<li><Link href="/blog/ai-change-management-4">Ai Change Management 4</Link></li>
-              <li><Link href="/blog/how-to-implement-ai-data-privacy-without-disrupting-operations">How To Implement Ai Data Privacy Without Disrupting Operations</Link></li>
-              <li><Link href="/blog/ai-soc-automation-6">Ai Soc Automation 6</Link></li>
-              <li><Link href="/blog/comparing-ai-qa-automation-vendors-and-build-vs-buy">Comparing Ai Qa Automation Vendors And Build Vs Buy</Link></li>
-              <li><Link href="/blog/ai-endpoint-protection">Ai Endpoint Protection</Link></li>
+              <li><Link href="/blog/ai-observability-platform-10">Ai Observability Platform 10</Link></li>
+<li><Link href="/blog/ai-vulnerability-management-2">Ai Vulnerability Management 2</Link></li>
+<li><Link href="/blog/ai-media-entertainment-2">Ai Media Entertainment 2</Link></li>
+<li><Link href="/blog/ai-data-analytics-platform-for-enterprise-teams">Ai Data Analytics Platform For Enterprise Teams</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

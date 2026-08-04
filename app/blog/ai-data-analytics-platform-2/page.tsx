@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-data-analytics-platform-2/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "How to implement AI data analytics platform without disrupting operations", "description": "How to implement AI data analytics platform without disrupting operations", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:04Z", "dateModified": "2026-08-04T13:01:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-analytics-platform-2/", "wordCount": 1472};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "How to implement AI data analytics platform without disrupting operations", "description": "How to implement AI data analytics platform without disrupting operations", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:54Z", "dateModified": "2026-08-04T13:01:54Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-analytics-platform-2/", "wordCount": 1593};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-database-automation">Ai Database Automation</Link></li>
-<li><Link href="/blog/ai-manufacturing-automation-2">Ai Manufacturing Automation 2</Link></li>
-<li><Link href="/blog/ai-network-automation-4">Ai Network Automation 4</Link></li>
-<li><Link href="/blog/ai-in-pharmaceuticals-and-life-sciences">Ai In Pharmaceuticals And Life Sciences</Link></li>
-              <li><Link href="/blog/ai-legal-tech-automation-6">Ai Legal Tech Automation 6</Link></li>
-              <li><Link href="/blog/ai-threat-detection-2">Ai Threat Detection 2</Link></li>
-              <li><Link href="/blog/ai-revenue-operations-3">Ai Revenue Operations 3</Link></li>
-              <li><Link href="/blog/ai-release-management-9">Ai Release Management 9</Link></li>
+              <li><Link href="/blog/ai-government-services-costs-roi-and-hidden-risks">Ai Government Services Costs Roi And Hidden Risks</Link></li>
+<li><Link href="/blog/ai-procurement-automation-5">Ai Procurement Automation 5</Link></li>
+<li><Link href="/blog/ai-offboarding-automation-for-enterprise-teams">Ai Offboarding Automation For Enterprise Teams</Link></li>
+<li><Link href="/blog/comparing-ai-financial-services-automation-vendors-and-build-vs-buy">Comparing Ai Financial Services Automation Vendors And Build Vs Buy</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

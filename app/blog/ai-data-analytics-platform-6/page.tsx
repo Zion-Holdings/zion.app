@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-data-analytics-platform-6/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Case study: AI data analytics platform in production", "description": "Case study: AI data analytics platform in production", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:05Z", "dateModified": "2026-08-04T13:01:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-analytics-platform-6/", "wordCount": 1485};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Case study: AI data analytics platform in production", "description": "Case study: AI data analytics platform in production", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:55Z", "dateModified": "2026-08-04T13:01:55Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-analytics-platform-6/", "wordCount": 1778};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-workflow-orchestration-costs-roi-and-hidden-risks">Ai Workflow Orchestration Costs Roi And Hidden Risks</Link></li>
-<li><Link href="/blog/ai-security-operations-center-7">Ai Security Operations Center 7</Link></li>
-<li><Link href="/blog/ai-mining-automation-7">Ai Mining Automation 7</Link></li>
-<li><Link href="/blog/how-to-implement-ai-security-operations-center-without-disrupting-operations">How To Implement Ai Security Operations Center Without Disrupting Operations</Link></li>
-              <li><Link href="/blog/how-to-implement-ai-risk-management-without-disrupting-operations">How To Implement Ai Risk Management Without Disrupting Operations</Link></li>
-              <li><Link href="/blog/ai-backup-disaster-recovery-4">Ai Backup Disaster Recovery 4</Link></li>
-              <li><Link href="/blog/ai-endpoint-protection-2026-playbook">Ai Endpoint Protection 2026 Playbook</Link></li>
-              <li><Link href="/blog/ai-knowledge-management-checklist-for-it-and-security-leaders">Ai Knowledge Management Checklist For It And Security Leaders</Link></li>
+              <li><Link href="/blog/ai-sales-enablement-9">Ai Sales Enablement 9</Link></li>
+<li><Link href="/blog/ai-edge-computing-3">Ai Edge Computing 3</Link></li>
+<li><Link href="/blog/common-mistakes-when-rolling-out-ai-network-automation">Common Mistakes When Rolling Out Ai Network Automation</Link></li>
+<li><Link href="/blog/ai-revenue-operations-5">Ai Revenue Operations 5</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

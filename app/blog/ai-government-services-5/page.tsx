@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-government-services-5/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI government services for It teams", "description": "AI government services for It teams", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:10Z", "dateModified": "2026-08-04T13:01:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-government-services-5/", "wordCount": 1528};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI government services for It teams", "description": "AI government services for It teams", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:02:01Z", "dateModified": "2026-08-04T13:02:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-government-services-5/", "wordCount": 1849};
 
 export default function Page() {
   return (
@@ -54,14 +54,10 @@ If this matches your current initiative, the next step is a short scoping call a
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-government-services-for-enterprise-teams">Ai Government Services For Enterprise Teams</Link></li>
-<li><Link href="/blog/common-mistakes-when-rolling-out-ai-soc-automation">Common Mistakes When Rolling Out Ai Soc Automation</Link></li>
-<li><Link href="/blog/automation-and-scaling-patterns-for-ai-offboarding-automation">Automation And Scaling Patterns For Ai Offboarding Automation</Link></li>
-<li><Link href="/blog/ai-education-technology-5">Ai Education Technology 5</Link></li>
-              <li><Link href="/blog/ai-capacity-planning-7">Ai Capacity Planning 7</Link></li>
-              <li><Link href="/blog/ai-sla-management-policy-compliance-and-vendor-management">Ai Sla Management Policy Compliance And Vendor Management</Link></li>
-              <li><Link href="/blog/ai-document-processing-6">Ai Document Processing 6</Link></li>
-              <li><Link href="/blog/ai-cloud-security-6">Ai Cloud Security 6</Link></li>
+              <li><Link href="/blog/ai-business-continuity-7">Ai Business Continuity 7</Link></li>
+<li><Link href="/blog/ai-payments-automation-checklist-for-it-and-security-leaders">Ai Payments Automation Checklist For It And Security Leaders</Link></li>
+<li><Link href="/blog/case-study-ai-document-processing-in-production">Case Study Ai Document Processing In Production</Link></li>
+<li><Link href="/blog/ai-endpoint-protection-10">Ai Endpoint Protection 10</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

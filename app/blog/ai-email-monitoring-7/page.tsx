@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-email-monitoring-7/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Common mistakes when rolling out AI email monitoring", "description": "Common mistakes when rolling out AI email monitoring", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:08Z", "dateModified": "2026-08-04T13:01:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-monitoring-7/", "wordCount": 2120};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Common mistakes when rolling out AI email monitoring", "description": "Common mistakes when rolling out AI email monitoring", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:59Z", "dateModified": "2026-08-04T13:01:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-monitoring-7/", "wordCount": 1519};
 
 export default function Page() {
   return (
@@ -54,14 +54,10 @@ If this matches your current initiative, the next step is a short scoping call a
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-payments-automation">Ai Payments Automation</Link></li>
-<li><Link href="/blog/case-study-ai-retail-automation-in-production">Case Study Ai Retail Automation In Production</Link></li>
-<li><Link href="/blog/case-study-ai-edge-computing-in-production">Case Study Ai Edge Computing In Production</Link></li>
-<li><Link href="/blog/ai-for-warehousing-and-inventory-optimization">Ai For Warehousing And Inventory Optimization</Link></li>
-              <li><Link href="/blog/ai-education-technology-2026-playbook">Ai Education Technology 2026 Playbook</Link></li>
-              <li><Link href="/blog/ai-meeting-automation-3">Ai Meeting Automation 3</Link></li>
-              <li><Link href="/blog/ai-ticket-automation-5">Ai Ticket Automation 5</Link></li>
-              <li><Link href="/blog/ai-email-monitoring-9">Ai Email Monitoring 9</Link></li>
+              <li><Link href="/blog/ai-offboarding-automation-2">Ai Offboarding Automation 2</Link></li>
+<li><Link href="/blog/ai-sentiment-analysis-for-enterprise-teams">Ai Sentiment Analysis For Enterprise Teams</Link></li>
+<li><Link href="/blog/ai-secret-rotation-for-enterprise-teams">Ai Secret Rotation For Enterprise Teams</Link></li>
+<li><Link href="/blog/ai-non-profit-automation-9">Ai Non Profit Automation 9</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

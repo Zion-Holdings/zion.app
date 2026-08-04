@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-hospitality-automation-8/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI hospitality automation checklist for IT and security leaders", "description": "AI hospitality automation checklist for IT and security leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:14Z", "dateModified": "2026-08-04T13:01:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-hospitality-automation-8/", "wordCount": 1699};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI hospitality automation checklist for IT and security leaders", "description": "AI hospitality automation checklist for IT and security leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:02:05Z", "dateModified": "2026-08-04T13:02:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-hospitality-automation-8/", "wordCount": 2042};
 
 export default function Page() {
   return (
@@ -54,14 +54,10 @@ If this matches your current initiative, the next step is a short scoping call a
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/comparing-ai-soc-automation-vendors-and-build-vs-buy">Comparing Ai Soc Automation Vendors And Build Vs Buy</Link></li>
-<li><Link href="/blog/ai-predictive-maintenance-for-enterprise-teams">Ai Predictive Maintenance For Enterprise Teams</Link></li>
-<li><Link href="/blog/ai-cybersecurity-automation-2">Ai Cybersecurity Automation 2</Link></li>
-<li><Link href="/blog/ai-licensing-management-7">Ai Licensing Management 7</Link></li>
-              <li><Link href="/blog/ai-supply-chain-security-6">Ai Supply Chain Security 6</Link></li>
-              <li><Link href="/blog/automation-and-scaling-patterns-for-ai-customer-success">Automation And Scaling Patterns For Ai Customer Success</Link></li>
-              <li><Link href="/blog/ai-meeting-automation-9">Ai Meeting Automation 9</Link></li>
-              <li><Link href="/blog/ai-threat-detection-2">Ai Threat Detection 2</Link></li>
+              <li><Link href="/blog/ai-media-entertainment-6">Ai Media Entertainment 6</Link></li>
+<li><Link href="/blog/ai-for-blockchain-and-web3-operations">Ai For Blockchain And Web3 Operations</Link></li>
+<li><Link href="/blog/ai-aerospace-defense-2026-playbook">Ai Aerospace Defense 2026 Playbook</Link></li>
+<li><Link href="/blog/ai-risk-management-8">Ai Risk Management 8</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-audit-compliance-6/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Case study: AI audit compliance in production", "description": "Case study: AI audit compliance in production", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:00Z", "dateModified": "2026-08-04T13:01:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-audit-compliance-6/", "wordCount": 2167};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Case study: AI audit compliance in production", "description": "Case study: AI audit compliance in production", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:50Z", "dateModified": "2026-08-04T13:01:50Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-audit-compliance-6/", "wordCount": 1923};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/how-to-implement-ai-data-analytics-platform-without-disrupting-operations">How To Implement Ai Data Analytics Platform Without Disrupting Operations</Link></li>
-<li><Link href="/blog/ai-business-continuity-9">Ai Business Continuity 9</Link></li>
-<li><Link href="/blog/ai-business-continuity-6">Ai Business Continuity 6</Link></li>
-<li><Link href="/blog/ai-cybersecurity-automation-policy-compliance-and-vendor-management">Ai Cybersecurity Automation Policy Compliance And Vendor Management</Link></li>
-              <li><Link href="/blog/automation-and-scaling-patterns-for-ai-education-technology">Automation And Scaling Patterns For Ai Education Technology</Link></li>
-              <li><Link href="/blog/ai-automotive-manufacturing-for-enterprise-teams">Ai Automotive Manufacturing For Enterprise Teams</Link></li>
-              <li><Link href="/blog/ai-meeting-automation-costs-roi-and-hidden-risks">Ai Meeting Automation Costs Roi And Hidden Risks</Link></li>
-              <li><Link href="/blog/ai-micro-saas-automation-7">Ai Micro Saas Automation 7</Link></li>
+              <li><Link href="/blog/ai-risk-management-5">Ai Risk Management 5</Link></li>
+<li><Link href="/blog/ai-iot-platform-policy-compliance-and-vendor-management">Ai Iot Platform Policy Compliance And Vendor Management</Link></li>
+<li><Link href="/blog/ai-payments-automation">Ai Payments Automation</Link></li>
+<li><Link href="/blog/ai-data-privacy-4">Ai Data Privacy 4</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

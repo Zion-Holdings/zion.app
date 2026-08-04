@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-audit-compliance-4/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Comparing AI audit compliance vendors and build vs buy", "description": "Comparing AI audit compliance vendors and build vs buy", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:00:59Z", "dateModified": "2026-08-04T13:00:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-audit-compliance-4/", "wordCount": 1440};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Comparing AI audit compliance vendors and build vs buy", "description": "Comparing AI audit compliance vendors and build vs buy", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:49Z", "dateModified": "2026-08-04T13:01:49Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-audit-compliance-4/", "wordCount": 1919};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-predictive-maintenance-4">Ai Predictive Maintenance 4</Link></li>
-<li><Link href="/blog/automation-and-scaling-patterns-for-ai-cloud-cost-optimization">Automation And Scaling Patterns For Ai Cloud Cost Optimization</Link></li>
-<li><Link href="/blog/ai-energy-utilities-optimization-4">Ai Energy Utilities Optimization 4</Link></li>
-<li><Link href="/blog/ai-credit-scoring">Ai Credit Scoring</Link></li>
-              <li><Link href="/blog/ai-onboarding-automation-checklist-for-it-and-security-leaders">Ai Onboarding Automation Checklist For It And Security Leaders</Link></li>
-              <li><Link href="/blog/ai-enterprise-integration-7">Ai Enterprise Integration 7</Link></li>
-              <li><Link href="/blog/ai-for-compliance-and-regulatory-reporting">Ai For Compliance And Regulatory Reporting</Link></li>
-              <li><Link href="/blog/ai-network-automation-5">Ai Network Automation 5</Link></li>
+              <li><Link href="/blog/cloud-cost-optimization-checklist-2026-8">Cloud Cost Optimization Checklist 2026 8</Link></li>
+<li><Link href="/blog/ai-in-aviation-and-aerospace-operations">Ai In Aviation And Aerospace Operations</Link></li>
+<li><Link href="/blog/ai-smart-cities-2026-playbook">Ai Smart Cities 2026 Playbook</Link></li>
+<li><Link href="/blog/common-mistakes-when-rolling-out-ai-observability-platform">Common Mistakes When Rolling Out Ai Observability Platform</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

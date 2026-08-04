@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-automotive-manufacturing-9/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation and scaling patterns for AI automotive manufacturing", "description": "Automation and scaling patterns for AI automotive manufacturing", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:04Z", "dateModified": "2026-08-04T13:01:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-automotive-manufacturing-9/", "wordCount": 2149};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation and scaling patterns for AI automotive manufacturing", "description": "Automation and scaling patterns for AI automotive manufacturing", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:53Z", "dateModified": "2026-08-04T13:01:53Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-automotive-manufacturing-9/", "wordCount": 1430};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-education-technology-costs-roi-and-hidden-risks">Ai Education Technology Costs Roi And Hidden Risks</Link></li>
-<li><Link href="/blog/ai-iot-platform-6">Ai Iot Platform 6</Link></li>
-<li><Link href="/blog/ai-penetration-testing-for-enterprise-teams">Ai Penetration Testing For Enterprise Teams</Link></li>
-<li><Link href="/blog/ai-cloud-security-6">Ai Cloud Security 6</Link></li>
-              <li><Link href="/blog/ai-backup-disaster-recovery-6">Ai Backup Disaster Recovery 6</Link></li>
-              <li><Link href="/blog/ai-pharma-life-sciences-7">Ai Pharma Life Sciences 7</Link></li>
-              <li><Link href="/blog/ai-media-entertainment-9">Ai Media Entertainment 9</Link></li>
-              <li><Link href="/blog/ai-financial-services-automation-9">Ai Financial Services Automation 9</Link></li>
+              <li><Link href="/blog/ai-document-processing-for-enterprise-teams">Ai Document Processing For Enterprise Teams</Link></li>
+<li><Link href="/blog/ai-hospitality-automation-8">Ai Hospitality Automation 8</Link></li>
+<li><Link href="/blog/automation-and-scaling-patterns-for-ai-supply-chain-automation">Automation And Scaling Patterns For Ai Supply Chain Automation</Link></li>
+<li><Link href="/blog/ai-for-conversation-and-customer-analytics">Ai For Conversation And Customer Analytics</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

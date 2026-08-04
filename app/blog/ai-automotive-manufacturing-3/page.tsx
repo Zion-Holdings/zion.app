@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-automotive-manufacturing-3/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI automotive manufacturing: costs, ROI, and hidden risks", "description": "AI automotive manufacturing: costs, ROI, and hidden risks", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:02Z", "dateModified": "2026-08-04T13:01:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-automotive-manufacturing-3/", "wordCount": 2152};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI automotive manufacturing: costs, ROI, and hidden risks", "description": "AI automotive manufacturing: costs, ROI, and hidden risks", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:52Z", "dateModified": "2026-08-04T13:01:52Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-automotive-manufacturing-3/", "wordCount": 2172};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automation-and-scaling-patterns-for-ai-healthcare-automation">Automation And Scaling Patterns For Ai Healthcare Automation</Link></li>
-<li><Link href="/blog/ai-data-privacy-9">Ai Data Privacy 9</Link></li>
-<li><Link href="/blog/how-to-implement-ai-retail-automation-without-disrupting-operations">How To Implement Ai Retail Automation Without Disrupting Operations</Link></li>
-<li><Link href="/blog/ai-for-real-estate-and-property-management">Ai For Real Estate And Property Management</Link></li>
-              <li><Link href="/blog/ai-customer-success-9">Ai Customer Success 9</Link></li>
-              <li><Link href="/blog/ai-manufacturing-automation-3">Ai Manufacturing Automation 3</Link></li>
-              <li><Link href="/blog/ai-security-operations-center-5">Ai Security Operations Center 5</Link></li>
-              <li><Link href="/blog/ai-blockchain-integration-5">Ai Blockchain Integration 5</Link></li>
+              <li><Link href="/blog/ai-business-continuity-5">Ai Business Continuity 5</Link></li>
+<li><Link href="/blog/ai-change-management-3">Ai Change Management 3</Link></li>
+<li><Link href="/blog/ai-offboarding-automation-7">Ai Offboarding Automation 7</Link></li>
+<li><Link href="/blog/automation-and-scaling-patterns-for-ai-aerospace-defense">Automation And Scaling Patterns For Ai Aerospace Defense</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

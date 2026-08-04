@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-automotive-manufacturing-8/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI automotive manufacturing checklist for IT and security leaders", "description": "AI automotive manufacturing checklist for IT and security leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:03Z", "dateModified": "2026-08-04T13:01:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-automotive-manufacturing-8/", "wordCount": 1434};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI automotive manufacturing checklist for IT and security leaders", "description": "AI automotive manufacturing checklist for IT and security leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:53Z", "dateModified": "2026-08-04T13:01:53Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-automotive-manufacturing-8/", "wordCount": 2050};
 
 export default function Page() {
   return (
@@ -54,14 +54,10 @@ If this matches your current initiative, the next step is a short scoping call a
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-supply-chain-automation">Ai Supply Chain Automation</Link></li>
-<li><Link href="/blog/ai-pharma-life-sciences-4">Ai Pharma Life Sciences 4</Link></li>
-<li><Link href="/blog/how-to-implement-ai-meeting-automation-without-disrupting-operations">How To Implement Ai Meeting Automation Without Disrupting Operations</Link></li>
-<li><Link href="/blog/ai-government-services-costs-roi-and-hidden-risks">Ai Government Services Costs Roi And Hidden Risks</Link></li>
-              <li><Link href="/blog/ai-financial-services-automation-5">Ai Financial Services Automation 5</Link></li>
-              <li><Link href="/blog/ai-customer-success">Ai Customer Success</Link></li>
-              <li><Link href="/blog/ai-data-analytics-platform-2026-playbook">Ai Data Analytics Platform 2026 Playbook</Link></li>
-              <li><Link href="/blog/ai-real-estate-automation">Ai Real Estate Automation</Link></li>
+              <li><Link href="/blog/ai-backup-disaster-recovery-checklist-for-it-and-security-leaders">Ai Backup Disaster Recovery Checklist For It And Security Leaders</Link></li>
+<li><Link href="/blog/ai-education-technology">Ai Education Technology</Link></li>
+<li><Link href="/blog/case-study-ai-predictive-maintenance-in-production">Case Study Ai Predictive Maintenance In Production</Link></li>
+<li><Link href="/blog/ai-observability-platform-for-enterprise-teams">Ai Observability Platform For Enterprise Teams</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

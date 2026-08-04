@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-automotive-manufacturing-4/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Comparing AI automotive manufacturing vendors and build vs buy", "description": "Comparing AI automotive manufacturing vendors and build vs buy", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:02Z", "dateModified": "2026-08-04T13:01:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-automotive-manufacturing-4/", "wordCount": 1760};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Comparing AI automotive manufacturing vendors and build vs buy", "description": "Comparing AI automotive manufacturing vendors and build vs buy", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:52Z", "dateModified": "2026-08-04T13:01:52Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-automotive-manufacturing-4/", "wordCount": 1697};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-media-entertainment">Common Mistakes When Rolling Out Ai Media Entertainment</Link></li>
-<li><Link href="/blog/ai-legal-tech-automation">Ai Legal Tech Automation</Link></li>
-<li><Link href="/blog/ai-vulnerability-management-6">Ai Vulnerability Management 6</Link></li>
-<li><Link href="/blog/ai-incident-response-policy-compliance-and-vendor-management">Ai Incident Response Policy Compliance And Vendor Management</Link></li>
-              <li><Link href="/blog/comparing-ai-construction-automation-vendors-and-build-vs-buy">Comparing Ai Construction Automation Vendors And Build Vs Buy</Link></li>
-              <li><Link href="/blog/ai-offboarding-automation">Ai Offboarding Automation</Link></li>
-              <li><Link href="/blog/how-to-implement-ai-telecom-automation-without-disrupting-operations">How To Implement Ai Telecom Automation Without Disrupting Operations</Link></li>
-              <li><Link href="/blog/ai-smart-cities-2">Ai Smart Cities 2</Link></li>
+              <li><Link href="/blog/comparing-ai-manufacturing-automation-vendors-and-build-vs-buy">Comparing Ai Manufacturing Automation Vendors And Build Vs Buy</Link></li>
+<li><Link href="/blog/automation-and-scaling-patterns-for-ai-licensing-management">Automation And Scaling Patterns For Ai Licensing Management</Link></li>
+<li><Link href="/blog/automation-and-scaling-patterns-for-ai-manufacturing-automation">Automation And Scaling Patterns For Ai Manufacturing Automation</Link></li>
+<li><Link href="/blog/ai-policy-enforcement-2026-playbook">Ai Policy Enforcement 2026 Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

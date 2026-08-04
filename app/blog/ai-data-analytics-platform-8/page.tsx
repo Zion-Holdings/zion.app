@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-data-analytics-platform-8/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI data analytics platform checklist for IT and security leaders", "description": "AI data analytics platform checklist for IT and security leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:06Z", "dateModified": "2026-08-04T13:01:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-analytics-platform-8/", "wordCount": 2048};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI data analytics platform checklist for IT and security leaders", "description": "AI data analytics platform checklist for IT and security leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:56Z", "dateModified": "2026-08-04T13:01:56Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-analytics-platform-8/", "wordCount": 1957};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-cybersecurity-automation-for-enterprise-teams">Ai Cybersecurity Automation For Enterprise Teams</Link></li>
-<li><Link href="/blog/ai-logistics-fulfillment-3">Ai Logistics Fulfillment 3</Link></li>
-<li><Link href="/blog/ai-for-procurement-and-vendor-management">Ai For Procurement And Vendor Management</Link></li>
-<li><Link href="/blog/common-mistakes-when-rolling-out-ai-construction-automation">Common Mistakes When Rolling Out Ai Construction Automation</Link></li>
-              <li><Link href="/blog/ai-devops-automation-9">Ai Devops Automation 9</Link></li>
-              <li><Link href="/blog/ai-managed-it-services-8">Ai Managed It Services 8</Link></li>
-              <li><Link href="/blog/ai-customer-success-6">Ai Customer Success 6</Link></li>
-              <li><Link href="/blog/ai-it-operations-automation-2026-13">Ai It Operations Automation 2026 13</Link></li>
+              <li><Link href="/blog/ai-service-catalog-2">Ai Service Catalog 2</Link></li>
+<li><Link href="/blog/ai-backup-disaster-recovery-10">Ai Backup Disaster Recovery 10</Link></li>
+<li><Link href="/blog/automation-and-scaling-patterns-for-ai-energy-utilities-optimization">Automation And Scaling Patterns For Ai Energy Utilities Optimization</Link></li>
+<li><Link href="/blog/ai-onboarding-automation-10">Ai Onboarding Automation 10</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

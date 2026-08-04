@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-email-monitoring-8/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI email monitoring checklist for IT and security leaders", "description": "AI email monitoring checklist for IT and security leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:09Z", "dateModified": "2026-08-04T13:01:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-monitoring-8/", "wordCount": 1526};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI email monitoring checklist for IT and security leaders", "description": "AI email monitoring checklist for IT and security leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:59Z", "dateModified": "2026-08-04T13:01:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-monitoring-8/", "wordCount": 1668};
 
 export default function Page() {
   return (
@@ -54,14 +54,10 @@ If this matches your current initiative, the next step is a short scoping call a
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-and-mlops-best-practices">Ai Observability And Mlops Best Practices</Link></li>
-<li><Link href="/blog/ai-identity-governance-10">Ai Identity Governance 10</Link></li>
-<li><Link href="/blog/ai-education-technology-checklist-for-it-and-security-leaders">Ai Education Technology Checklist For It And Security Leaders</Link></li>
-<li><Link href="/blog/how-to-implement-ai-security-awareness-without-disrupting-operations">How To Implement Ai Security Awareness Without Disrupting Operations</Link></li>
-              <li><Link href="/blog/ai-financial-services-automation-10">Ai Financial Services Automation 10</Link></li>
-              <li><Link href="/blog/ai-media-entertainment-7">Ai Media Entertainment 7</Link></li>
-              <li><Link href="/blog/ai-zero-trust-security-2">Ai Zero Trust Security 2</Link></li>
-              <li><Link href="/blog/ai-risk-management-10">Ai Risk Management 10</Link></li>
+              <li><Link href="/blog/ai-retail-automation-2026-playbook">Ai Retail Automation 2026 Playbook</Link></li>
+<li><Link href="/blog/ai-incident-remediation-5">Ai Incident Remediation 5</Link></li>
+<li><Link href="/blog/comparing-ai-automotive-manufacturing-vendors-and-build-vs-buy">Comparing Ai Automotive Manufacturing Vendors And Build Vs Buy</Link></li>
+<li><Link href="/blog/ai-it-operations-automation-2026-13">Ai It Operations Automation 2026 13</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-audit-compliance-7/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Common mistakes when rolling out AI audit compliance", "description": "Common mistakes when rolling out AI audit compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:00Z", "dateModified": "2026-08-04T13:01:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-audit-compliance-7/", "wordCount": 1665};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Common mistakes when rolling out AI audit compliance", "description": "Common mistakes when rolling out AI audit compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:50Z", "dateModified": "2026-08-04T13:01:50Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-audit-compliance-7/", "wordCount": 1761};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-energy-utilities-optimization-8">Ai Energy Utilities Optimization 8</Link></li>
-<li><Link href="/blog/case-study-ai-managed-it-services-in-production">Case Study Ai Managed It Services In Production</Link></li>
-<li><Link href="/blog/ai-oil-gas-energy-4">Ai Oil Gas Energy 4</Link></li>
-<li><Link href="/blog/how-to-implement-ai-insurance-automation-without-disrupting-operations">How To Implement Ai Insurance Automation Without Disrupting Operations</Link></li>
-              <li><Link href="/blog/ai-observability-platform">Ai Observability Platform</Link></li>
-              <li><Link href="/blog/ai-education-technology-policy-compliance-and-vendor-management">Ai Education Technology Policy Compliance And Vendor Management</Link></li>
-              <li><Link href="/blog/case-study-ai-blockchain-integration-in-production">Case Study Ai Blockchain Integration In Production</Link></li>
-              <li><Link href="/blog/ai-cloud-cost-optimization-6">Ai Cloud Cost Optimization 6</Link></li>
+              <li><Link href="/blog/case-study-ai-energy-utilities-optimization-in-production">Case Study Ai Energy Utilities Optimization In Production</Link></li>
+<li><Link href="/blog/ai-marketing-automation-checklist-for-it-and-security-leaders">Ai Marketing Automation Checklist For It And Security Leaders</Link></li>
+<li><Link href="/blog/ai-non-profit-automation-7">Ai Non Profit Automation 7</Link></li>
+<li><Link href="/blog/ai-telecom-automation-2026-playbook">Ai Telecom Automation 2026 Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

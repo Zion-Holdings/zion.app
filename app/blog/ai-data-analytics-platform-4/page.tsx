@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-data-analytics-platform-4/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Comparing AI data analytics platform vendors and build vs buy", "description": "Comparing AI data analytics platform vendors and build vs buy", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:05Z", "dateModified": "2026-08-04T13:01:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-analytics-platform-4/", "wordCount": 1731};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Comparing AI data analytics platform vendors and build vs buy", "description": "Comparing AI data analytics platform vendors and build vs buy", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:55Z", "dateModified": "2026-08-04T13:01:55Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-analytics-platform-4/", "wordCount": 1766};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/comparing-ai-business-continuity-vendors-and-build-vs-buy">Comparing Ai Business Continuity Vendors And Build Vs Buy</Link></li>
-<li><Link href="/blog/ai-manufacturing-automation">Ai Manufacturing Automation</Link></li>
-<li><Link href="/blog/ai-enterprise-integration-costs-roi-and-hidden-risks">Ai Enterprise Integration Costs Roi And Hidden Risks</Link></li>
-<li><Link href="/blog/ai-service-catalog-costs-roi-and-hidden-risks">Ai Service Catalog Costs Roi And Hidden Risks</Link></li>
-              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-wealth-management">Common Mistakes When Rolling Out Ai Wealth Management</Link></li>
-              <li><Link href="/blog/ai-manufacturing-automation-policy-compliance-and-vendor-management">Ai Manufacturing Automation Policy Compliance And Vendor Management</Link></li>
-              <li><Link href="/blog/ai-iot-platform-9">Ai Iot Platform 9</Link></li>
-              <li><Link href="/blog/ai-construction-automation-for-enterprise-teams">Ai Construction Automation For Enterprise Teams</Link></li>
+              <li><Link href="/blog/ai-payments-automation-checklist-for-it-and-security-leaders">Ai Payments Automation Checklist For It And Security Leaders</Link></li>
+<li><Link href="/blog/ai-logistics-fulfillment-2026-playbook">Ai Logistics Fulfillment 2026 Playbook</Link></li>
+<li><Link href="/blog/ai-sales-enablement-7">Ai Sales Enablement 7</Link></li>
+<li><Link href="/blog/ai-financial-services-automation-6">Ai Financial Services Automation 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

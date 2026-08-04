@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-data-analytics-platform-7/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Common mistakes when rolling out AI data analytics platform", "description": "Common mistakes when rolling out AI data analytics platform", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:06Z", "dateModified": "2026-08-04T13:01:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-analytics-platform-7/", "wordCount": 1750};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Common mistakes when rolling out AI data analytics platform", "description": "Common mistakes when rolling out AI data analytics platform", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:56Z", "dateModified": "2026-08-04T13:01:56Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-analytics-platform-7/", "wordCount": 1682};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-audit-compliance-costs-roi-and-hidden-risks">Ai Audit Compliance Costs Roi And Hidden Risks</Link></li>
-<li><Link href="/blog/automation-and-scaling-patterns-for-ai-recovery-testing">Automation And Scaling Patterns For Ai Recovery Testing</Link></li>
-<li><Link href="/blog/ai-government-services-costs-roi-and-hidden-risks">Ai Government Services Costs Roi And Hidden Risks</Link></li>
-<li><Link href="/blog/case-study-ai-it-operations-management-in-production">Case Study Ai It Operations Management In Production</Link></li>
-              <li><Link href="/blog/ai-manufacturing-automation-10">Ai Manufacturing Automation 10</Link></li>
-              <li><Link href="/blog/ai-customer-support-automation-checklist-for-it-and-security-leaders">Ai Customer Support Automation Checklist For It And Security Leaders</Link></li>
-              <li><Link href="/blog/ai-licensing-management-2026-playbook">Ai Licensing Management 2026 Playbook</Link></li>
-              <li><Link href="/blog/ai-education-technology">Ai Education Technology</Link></li>
+              <li><Link href="/blog/comparing-ai-incident-response-vendors-and-build-vs-buy">Comparing Ai Incident Response Vendors And Build Vs Buy</Link></li>
+<li><Link href="/blog/automation-and-scaling-patterns-for-ai-incident-response">Automation And Scaling Patterns For Ai Incident Response</Link></li>
+<li><Link href="/blog/ai-mining-automation-checklist-for-it-and-security-leaders">Ai Mining Automation Checklist For It And Security Leaders</Link></li>
+<li><Link href="/blog/comparing-ai-compliance-and-governance-vendors-and-build-vs-buy">Comparing Ai Compliance And Governance Vendors And Build Vs Buy</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

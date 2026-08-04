@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-data-analytics-platform-10/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI data analytics platform: policy, compliance, and vendor management", "description": "AI data analytics platform: policy, compliance, and vendor management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:06Z", "dateModified": "2026-08-04T13:01:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-analytics-platform-10/", "wordCount": 2110};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI data analytics platform: policy, compliance, and vendor management", "description": "AI data analytics platform: policy, compliance, and vendor management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:57Z", "dateModified": "2026-08-04T13:01:57Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-analytics-platform-10/", "wordCount": 2177};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/case-study-ai-ticket-automation-in-production">Case Study Ai Ticket Automation In Production</Link></li>
-<li><Link href="/blog/common-mistakes-when-rolling-out-ai-compliance-and-governance">Common Mistakes When Rolling Out Ai Compliance And Governance</Link></li>
-<li><Link href="/blog/ai-cloud-cost-optimization-4">Ai Cloud Cost Optimization 4</Link></li>
-<li><Link href="/blog/comparing-ai-knowledge-management-vendors-and-build-vs-buy">Comparing Ai Knowledge Management Vendors And Build Vs Buy</Link></li>
-              <li><Link href="/blog/ai-in-construction-and-project-management">Ai In Construction And Project Management</Link></li>
-              <li><Link href="/blog/ai-credit-scoring">Ai Credit Scoring</Link></li>
-              <li><Link href="/blog/ai-compliance-and-governance-checklist-for-it-and-security-leaders">Ai Compliance And Governance Checklist For It And Security Leaders</Link></li>
-              <li><Link href="/blog/ai-iot-platform-3">Ai Iot Platform 3</Link></li>
+              <li><Link href="/blog/how-to-implement-ai-mining-automation-without-disrupting-operations">How To Implement Ai Mining Automation Without Disrupting Operations</Link></li>
+<li><Link href="/blog/ai-it-operations-automation-2026-7">Ai It Operations Automation 2026 7</Link></li>
+<li><Link href="/blog/common-mistakes-when-rolling-out-ai-sla-management">Common Mistakes When Rolling Out Ai Sla Management</Link></li>
+<li><Link href="/blog/ai-retail-automation">Ai Retail Automation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

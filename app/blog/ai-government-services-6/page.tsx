@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-government-services-6/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Case study: AI government services in production", "description": "Case study: AI government services in production", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:11Z", "dateModified": "2026-08-04T13:01:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-government-services-6/", "wordCount": 1725};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Case study: AI government services in production", "description": "Case study: AI government services in production", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:02:02Z", "dateModified": "2026-08-04T13:02:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-government-services-6/", "wordCount": 2154};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-compliance-and-regulatory-reporting">Ai For Compliance And Regulatory Reporting</Link></li>
-<li><Link href="/blog/ai-in-education-and-learning-systems">Ai In Education And Learning Systems</Link></li>
-<li><Link href="/blog/ai-network-automation-9">Ai Network Automation 9</Link></li>
-<li><Link href="/blog/how-to-implement-ai-licensing-management-without-disrupting-operations">How To Implement Ai Licensing Management Without Disrupting Operations</Link></li>
-              <li><Link href="/blog/ai-non-profit-automation-10">Ai Non Profit Automation 10</Link></li>
-              <li><Link href="/blog/comparing-ai-sla-management-vendors-and-build-vs-buy">Comparing Ai Sla Management Vendors And Build Vs Buy</Link></li>
-              <li><Link href="/blog/ai-compliance-and-governance-2026-playbook">Ai Compliance And Governance 2026 Playbook</Link></li>
-              <li><Link href="/blog/ai-offboarding-automation">Ai Offboarding Automation</Link></li>
+              <li><Link href="/blog/ai-service-catalog-5">Ai Service Catalog 5</Link></li>
+<li><Link href="/blog/ai-cybersecurity-automation-4">Ai Cybersecurity Automation 4</Link></li>
+<li><Link href="/blog/how-to-implement-ai-logistics-fulfillment-without-disrupting-operations">How To Implement Ai Logistics Fulfillment Without Disrupting Operations</Link></li>
+<li><Link href="/blog/ai-micro-saas-automation-2">Ai Micro Saas Automation 2</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

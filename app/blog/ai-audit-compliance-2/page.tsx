@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-audit-compliance-2/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "How to implement AI audit compliance without disrupting operations", "description": "How to implement AI audit compliance without disrupting operations", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:00:59Z", "dateModified": "2026-08-04T13:00:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-audit-compliance-2/", "wordCount": 1750};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "How to implement AI audit compliance without disrupting operations", "description": "How to implement AI audit compliance without disrupting operations", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:48Z", "dateModified": "2026-08-04T13:01:48Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-audit-compliance-2/", "wordCount": 1905};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-procurement-automation-5">Ai Procurement Automation 5</Link></li>
-<li><Link href="/blog/ai-capacity-planning-10">Ai Capacity Planning 10</Link></li>
-<li><Link href="/blog/ai-knowledge-management-for-enterprise-teams">Ai Knowledge Management For Enterprise Teams</Link></li>
-<li><Link href="/blog/ai-asset-management-7">Ai Asset Management 7</Link></li>
-              <li><Link href="/blog/ai-security-operations-center">Ai Security Operations Center</Link></li>
-              <li><Link href="/blog/ai-for-insurance-claims-and-underwriting">Ai For Insurance Claims And Underwriting</Link></li>
-              <li><Link href="/blog/comparing-ai-email-monitoring-vendors-and-build-vs-buy">Comparing Ai Email Monitoring Vendors And Build Vs Buy</Link></li>
-              <li><Link href="/blog/ai-manufacturing-automation-for-enterprise-teams">Ai Manufacturing Automation For Enterprise Teams</Link></li>
+              <li><Link href="/blog/comparing-ai-risk-management-vendors-and-build-vs-buy">Comparing Ai Risk Management Vendors And Build Vs Buy</Link></li>
+<li><Link href="/blog/ai-banking-automation-5">Ai Banking Automation 5</Link></li>
+<li><Link href="/blog/ai-security-awareness-9">Ai Security Awareness 9</Link></li>
+<li><Link href="/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization">5 Proven Ai Automation Strategies For Enterprise Workflow Optimization</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

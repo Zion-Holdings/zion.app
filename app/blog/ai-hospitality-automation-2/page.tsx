@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-hospitality-automation-2/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "How to implement AI hospitality automation without disrupting operations", "description": "How to implement AI hospitality automation without disrupting operations", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:12Z", "dateModified": "2026-08-04T13:01:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-hospitality-automation-2/", "wordCount": 1610};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "How to implement AI hospitality automation without disrupting operations", "description": "How to implement AI hospitality automation without disrupting operations", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:02:04Z", "dateModified": "2026-08-04T13:02:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-hospitality-automation-2/", "wordCount": 1434};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-government-services-for-enterprise-teams">Ai Government Services For Enterprise Teams</Link></li>
-<li><Link href="/blog/automation-and-scaling-patterns-for-ai-micro-saas-automation">Automation And Scaling Patterns For Ai Micro Saas Automation</Link></li>
-<li><Link href="/blog/ai-procurement-automation-2026-playbook">Ai Procurement Automation 2026 Playbook</Link></li>
-<li><Link href="/blog/how-to-implement-ai-zero-trust-security-without-disrupting-operations">How To Implement Ai Zero Trust Security Without Disrupting Operations</Link></li>
-              <li><Link href="/blog/ai-healthcare-automation-policy-compliance-and-vendor-management">Ai Healthcare Automation Policy Compliance And Vendor Management</Link></li>
-              <li><Link href="/blog/ai-observability-and-mlops-best-practices">Ai Observability And Mlops Best Practices</Link></li>
-              <li><Link href="/blog/ai-data-privacy-3">Ai Data Privacy 3</Link></li>
-              <li><Link href="/blog/ai-healthcare-automation-4">Ai Healthcare Automation 4</Link></li>
+              <li><Link href="/blog/ai-release-management">Ai Release Management</Link></li>
+<li><Link href="/blog/case-study-ai-email-monitoring-in-production">Case Study Ai Email Monitoring In Production</Link></li>
+<li><Link href="/blog/how-to-implement-ai-logistics-fulfillment-without-disrupting-operations">How To Implement Ai Logistics Fulfillment Without Disrupting Operations</Link></li>
+<li><Link href="/blog/ai-incident-response-2">Ai Incident Response 2</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-hospitality-automation-3/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI hospitality automation: costs, ROI, and hidden risks", "description": "AI hospitality automation: costs, ROI, and hidden risks", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:12Z", "dateModified": "2026-08-04T13:01:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-hospitality-automation-3/", "wordCount": 1911};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI hospitality automation: costs, ROI, and hidden risks", "description": "AI hospitality automation: costs, ROI, and hidden risks", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:02:04Z", "dateModified": "2026-08-04T13:02:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-hospitality-automation-3/", "wordCount": 1804};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-ticket-automation">Common Mistakes When Rolling Out Ai Ticket Automation</Link></li>
-<li><Link href="/blog/ai-financial-services-automation-5">Ai Financial Services Automation 5</Link></li>
-<li><Link href="/blog/ai-government-services-6">Ai Government Services 6</Link></li>
-<li><Link href="/blog/ai-capacity-planning-policy-compliance-and-vendor-management">Ai Capacity Planning Policy Compliance And Vendor Management</Link></li>
-              <li><Link href="/blog/ai-for-quantum-computing-and-hybrid-workloads">Ai For Quantum Computing And Hybrid Workloads</Link></li>
-              <li><Link href="/blog/automation-and-scaling-patterns-for-ai-financial-services-automation">Automation And Scaling Patterns For Ai Financial Services Automation</Link></li>
-              <li><Link href="/blog/case-study-ai-fraud-detection-in-production">Case Study Ai Fraud Detection In Production</Link></li>
-              <li><Link href="/blog/case-study-ai-sentiment-analysis-in-production">Case Study Ai Sentiment Analysis In Production</Link></li>
+              <li><Link href="/blog/ai-agriculture-technology-7">Ai Agriculture Technology 7</Link></li>
+<li><Link href="/blog/ai-risk-management">Ai Risk Management</Link></li>
+<li><Link href="/blog/automation-and-scaling-patterns-for-ai-payments-automation">Automation And Scaling Patterns For Ai Payments Automation</Link></li>
+<li><Link href="/blog/ai-onboarding-automation">Ai Onboarding Automation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-audit-compliance-10/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI audit compliance: policy, compliance, and vendor management", "description": "AI audit compliance: policy, compliance, and vendor management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:01Z", "dateModified": "2026-08-04T13:01:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-audit-compliance-10/", "wordCount": 2125};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI audit compliance: policy, compliance, and vendor management", "description": "AI audit compliance: policy, compliance, and vendor management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:51Z", "dateModified": "2026-08-04T13:01:51Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-audit-compliance-10/", "wordCount": 1681};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-mining-automation-9">Ai Mining Automation 9</Link></li>
-<li><Link href="/blog/ai-manufacturing-automation-6">Ai Manufacturing Automation 6</Link></li>
-<li><Link href="/blog/ai-supply-chain-security-checklist-for-it-and-security-leaders">Ai Supply Chain Security Checklist For It And Security Leaders</Link></li>
-<li><Link href="/blog/ai-blockchain-integration-3">Ai Blockchain Integration 3</Link></li>
-              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-secret-rotation">Common Mistakes When Rolling Out Ai Secret Rotation</Link></li>
-              <li><Link href="/blog/ai-knowledge-management-costs-roi-and-hidden-risks">Ai Knowledge Management Costs Roi And Hidden Risks</Link></li>
-              <li><Link href="/blog/ai-supply-chain-automation-policy-compliance-and-vendor-management">Ai Supply Chain Automation Policy Compliance And Vendor Management</Link></li>
-              <li><Link href="/blog/ai-incident-remediation">Ai Incident Remediation</Link></li>
+              <li><Link href="/blog/ai-aerospace-defense-6">Ai Aerospace Defense 6</Link></li>
+<li><Link href="/blog/ai-healthcare-automation-9">Ai Healthcare Automation 9</Link></li>
+<li><Link href="/blog/ai-asset-management-policy-compliance-and-vendor-management">Ai Asset Management Policy Compliance And Vendor Management</Link></li>
+<li><Link href="/blog/how-to-implement-ai-aerospace-defense-without-disrupting-operations">How To Implement Ai Aerospace Defense Without Disrupting Operations</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-automotive-manufacturing-6/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Case study: AI automotive manufacturing in production", "description": "Case study: AI automotive manufacturing in production", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:03Z", "dateModified": "2026-08-04T13:01:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-automotive-manufacturing-6/", "wordCount": 1516};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Case study: AI automotive manufacturing in production", "description": "Case study: AI automotive manufacturing in production", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:53Z", "dateModified": "2026-08-04T13:01:53Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-automotive-manufacturing-6/", "wordCount": 1791};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-healthcare-automation">Ai Healthcare Automation</Link></li>
-<li><Link href="/blog/ai-ticket-automation-policy-compliance-and-vendor-management">Ai Ticket Automation Policy Compliance And Vendor Management</Link></li>
-<li><Link href="/blog/ai-managed-it-services-2026-playbook">Ai Managed It Services 2026 Playbook</Link></li>
-<li><Link href="/blog/automation-and-scaling-patterns-for-ai-incident-remediation">Automation And Scaling Patterns For Ai Incident Remediation</Link></li>
-              <li><Link href="/blog/ai-workflow-orchestration-2026-playbook">Ai Workflow Orchestration 2026 Playbook</Link></li>
-              <li><Link href="/blog/ai-predictive-maintenance-8">Ai Predictive Maintenance 8</Link></li>
-              <li><Link href="/blog/ai-aerospace-defense-5">Ai Aerospace Defense 5</Link></li>
-              <li><Link href="/blog/ai-financial-services-automation-for-enterprise-teams">Ai Financial Services Automation For Enterprise Teams</Link></li>
+              <li><Link href="/blog/ai-non-profit-automation-4">Ai Non Profit Automation 4</Link></li>
+<li><Link href="/blog/ai-fraud-detection-2">Ai Fraud Detection 2</Link></li>
+<li><Link href="/blog/ai-supply-chain-automation-5">Ai Supply Chain Automation 5</Link></li>
+<li><Link href="/blog/ai-incident-remediation">Ai Incident Remediation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-asset-management-8/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI asset management checklist for IT and security leaders", "description": "AI asset management checklist for IT and security leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:00:58Z", "dateModified": "2026-08-04T13:00:58Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-asset-management-8/", "wordCount": 1733};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI asset management checklist for IT and security leaders", "description": "AI asset management checklist for IT and security leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:47Z", "dateModified": "2026-08-04T13:01:47Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-asset-management-8/", "wordCount": 1710};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Pick one workflow, assign ownership, define success metrics, instrument executio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-supply-chain-automation-3">Ai Supply Chain Automation 3</Link></li>
-<li><Link href="/blog/ai-threat-detection-5">Ai Threat Detection 5</Link></li>
-<li><Link href="/blog/ai-media-entertainment-4">Ai Media Entertainment 4</Link></li>
-<li><Link href="/blog/ai-devops-automation-6">Ai Devops Automation 6</Link></li>
-              <li><Link href="/blog/ai-oil-gas-energy-9">Ai Oil Gas Energy 9</Link></li>
-              <li><Link href="/blog/ai-service-catalog-2026-playbook">Ai Service Catalog 2026 Playbook</Link></li>
-              <li><Link href="/blog/ai-revenue-operations-5">Ai Revenue Operations 5</Link></li>
-              <li><Link href="/blog/ai-meeting-automation-costs-roi-and-hidden-risks">Ai Meeting Automation Costs Roi And Hidden Risks</Link></li>
+              <li><Link href="/blog/ai-risk-management-3">Ai Risk Management 3</Link></li>
+<li><Link href="/blog/ai-observability-platform-2">Ai Observability Platform 2</Link></li>
+<li><Link href="/blog/common-mistakes-when-rolling-out-ai-recovery-testing">Common Mistakes When Rolling Out Ai Recovery Testing</Link></li>
+<li><Link href="/blog/ai-customer-support-automation-checklist-for-it-and-security-leaders">Ai Customer Support Automation Checklist For It And Security Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

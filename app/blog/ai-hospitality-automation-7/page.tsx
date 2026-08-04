@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-hospitality-automation-7/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Common mistakes when rolling out AI hospitality automation", "description": "Common mistakes when rolling out AI hospitality automation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:14Z", "dateModified": "2026-08-04T13:01:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-hospitality-automation-7/", "wordCount": 1593};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Common mistakes when rolling out AI hospitality automation", "description": "Common mistakes when rolling out AI hospitality automation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:02:05Z", "dateModified": "2026-08-04T13:02:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-hospitality-automation-7/", "wordCount": 2099};
 
 export default function Page() {
   return (
@@ -54,14 +54,10 @@ If this matches your current initiative, the next step is a short scoping call a
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/comparing-ai-media-entertainment-vendors-and-build-vs-buy">Comparing Ai Media Entertainment Vendors And Build Vs Buy</Link></li>
-<li><Link href="/blog/ai-offboarding-automation-checklist-for-it-and-security-leaders">Ai Offboarding Automation Checklist For It And Security Leaders</Link></li>
-<li><Link href="/blog/ai-sales-enablement-10">Ai Sales Enablement 10</Link></li>
-<li><Link href="/blog/ai-email-monitoring-checklist-for-it-and-security-leaders">Ai Email Monitoring Checklist For It And Security Leaders</Link></li>
-              <li><Link href="/blog/ai-onboarding-automation-8">Ai Onboarding Automation 8</Link></li>
-              <li><Link href="/blog/how-to-implement-ai-secret-rotation-without-disrupting-operations">How To Implement Ai Secret Rotation Without Disrupting Operations</Link></li>
-              <li><Link href="/blog/ai-mining-automation-2">Ai Mining Automation 2</Link></li>
-              <li><Link href="/blog/ai-security-awareness-5">Ai Security Awareness 5</Link></li>
+              <li><Link href="/blog/ai-procurement-automation-8">Ai Procurement Automation 8</Link></li>
+<li><Link href="/blog/ai-asset-management-6">Ai Asset Management 6</Link></li>
+<li><Link href="/blog/ai-non-profit-automation-costs-roi-and-hidden-risks">Ai Non Profit Automation Costs Roi And Hidden Risks</Link></li>
+<li><Link href="/blog/automation-and-scaling-patterns-for-ai-fraud-detection">Automation And Scaling Patterns For Ai Fraud Detection</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-asset-management-5/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI asset management for It teams", "description": "AI asset management for It teams", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:00:57Z", "dateModified": "2026-08-04T13:00:57Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-asset-management-5/", "wordCount": 1762};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI asset management for It teams", "description": "AI asset management for It teams", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:46Z", "dateModified": "2026-08-04T13:01:46Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-asset-management-5/", "wordCount": 1696};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-data-privacy">Common Mistakes When Rolling Out Ai Data Privacy</Link></li>
-<li><Link href="/blog/ai-media-entertainment-3">Ai Media Entertainment 3</Link></li>
-<li><Link href="/blog/how-to-implement-ai-marketing-automation-without-disrupting-operations">How To Implement Ai Marketing Automation Without Disrupting Operations</Link></li>
-<li><Link href="/blog/how-to-implement-ai-wealth-management-without-disrupting-operations">How To Implement Ai Wealth Management Without Disrupting Operations</Link></li>
-              <li><Link href="/blog/ai-agriculture-technology-costs-roi-and-hidden-risks">Ai Agriculture Technology Costs Roi And Hidden Risks</Link></li>
-              <li><Link href="/blog/ai-offboarding-automation-6">Ai Offboarding Automation 6</Link></li>
-              <li><Link href="/blog/how-to-implement-ai-financial-services-automation-without-disrupting-operations">How To Implement Ai Financial Services Automation Without Disrupting Operations</Link></li>
-              <li><Link href="/blog/ai-fraud-detection-2026-playbook">Ai Fraud Detection 2026 Playbook</Link></li>
+              <li><Link href="/blog/ai-security-operations-center-for-enterprise-teams">Ai Security Operations Center For Enterprise Teams</Link></li>
+<li><Link href="/blog/ai-manufacturing-automation-checklist-for-it-and-security-leaders">Ai Manufacturing Automation Checklist For It And Security Leaders</Link></li>
+<li><Link href="/blog/ai-ticket-automation-for-enterprise-teams">Ai Ticket Automation For Enterprise Teams</Link></li>
+<li><Link href="/blog/ai-release-management-8">Ai Release Management 8</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

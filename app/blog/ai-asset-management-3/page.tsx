@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-asset-management-3/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI asset management: costs, ROI, and hidden risks", "description": "AI asset management: costs, ROI, and hidden risks", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:00:57Z", "dateModified": "2026-08-04T13:00:57Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-asset-management-3/", "wordCount": 1674};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI asset management: costs, ROI, and hidden risks", "description": "AI asset management: costs, ROI, and hidden risks", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:45Z", "dateModified": "2026-08-04T13:01:45Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-asset-management-3/", "wordCount": 1553};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-policy-enforcement-8">Ai Policy Enforcement 8</Link></li>
-<li><Link href="/blog/ai-meeting-automation-9">Ai Meeting Automation 9</Link></li>
-<li><Link href="/blog/ai-sla-management-2026-playbook">Ai Sla Management 2026 Playbook</Link></li>
-<li><Link href="/blog/ai-financial-services-automation-4">Ai Financial Services Automation 4</Link></li>
-              <li><Link href="/blog/comparing-ai-energy-utilities-optimization-vendors-and-build-vs-buy">Comparing Ai Energy Utilities Optimization Vendors And Build Vs Buy</Link></li>
-              <li><Link href="/blog/ai-recovery-testing-7">Ai Recovery Testing 7</Link></li>
-              <li><Link href="/blog/ai-vendor-management-3">Ai Vendor Management 3</Link></li>
-              <li><Link href="/blog/ai-procurement-automation-policy-compliance-and-vendor-management">Ai Procurement Automation Policy Compliance And Vendor Management</Link></li>
+              <li><Link href="/blog/ai-risk-management-2026-playbook">Ai Risk Management 2026 Playbook</Link></li>
+<li><Link href="/blog/ai-licensing-management-8">Ai Licensing Management 8</Link></li>
+<li><Link href="/blog/ai-recovery-testing-checklist-for-it-and-security-leaders">Ai Recovery Testing Checklist For It And Security Leaders</Link></li>
+<li><Link href="/blog/ai-threat-detection-6">Ai Threat Detection 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-government-services-3/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI government services: costs, ROI, and hidden risks", "description": "AI government services: costs, ROI, and hidden risks", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:01:10Z", "dateModified": "2026-08-04T13:01:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-government-services-3/", "wordCount": 1603};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI government services: costs, ROI, and hidden risks", "description": "AI government services: costs, ROI, and hidden risks", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-04T13:02:01Z", "dateModified": "2026-08-04T13:02:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-government-services-3/", "wordCount": 2009};
 
 export default function Page() {
   return (
@@ -57,14 +57,10 @@ Leading indicators: workflow completion rate, escalation rate, time-to-resolutio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-iot-platform-6">Ai Iot Platform 6</Link></li>
-<li><Link href="/blog/ai-telecom-automation-2">Ai Telecom Automation 2</Link></li>
-<li><Link href="/blog/case-study-ai-onboarding-automation-in-production">Case Study Ai Onboarding Automation In Production</Link></li>
-<li><Link href="/blog/ai-workflow-orchestration-9">Ai Workflow Orchestration 9</Link></li>
-              <li><Link href="/blog/comparing-ai-asset-management-vendors-and-build-vs-buy">Comparing Ai Asset Management Vendors And Build Vs Buy</Link></li>
-              <li><Link href="/blog/common-mistakes-when-rolling-out-ai-email-monitoring">Common Mistakes When Rolling Out Ai Email Monitoring</Link></li>
-              <li><Link href="/blog/ai-risk-management-7">Ai Risk Management 7</Link></li>
-              <li><Link href="/blog/ai-media-entertainment-8">Ai Media Entertainment 8</Link></li>
+              <li><Link href="/blog/ai-email-intelligence-8">Ai Email Intelligence 8</Link></li>
+<li><Link href="/blog/ai-meeting-automation-2">Ai Meeting Automation 2</Link></li>
+<li><Link href="/blog/ai-vendor-management-10">Ai Vendor Management 10</Link></li>
+<li><Link href="/blog/comparing-ai-construction-automation-vendors-and-build-vs-buy">Comparing Ai Construction Automation Vendors And Build Vs Buy</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
