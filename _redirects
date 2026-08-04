@@ -1,6 +1,7 @@
+/blog/ /docs/blog/index.html 200
+/blog/* /docs/blog/:splat 200
 /contact /docs/contact/index.html 200
 /contact/ /docs/contact/index.html 200
-/blog/ /docs/blog/index.html 200
 /services/ai-cybersecurity/ /docs/services/ai-cybersecurity/index.html 200
 /services/ai-development-acceleration/ /docs/services/ai-development-acceleration/index.html 200
 /services/ai-email-intelligence/ /docs/services/ai-email-intelligence/index.html 200
@@ -9,7 +10,6 @@
 /tools/json-formatter/ /docs/tools/json-formatter/index.html 200
 /tools/roi-calculator/ /docs/tools/roi-calculator/index.html 200
 /tools/unit-converter/ /docs/tools/unit-converter/index.html 200
-/blog/* /blog/:splat 200
 /tools/favicon-generator/  /tools/favicon-generator/index.html  200
 
 # Canonical sitemap
@@ -34,6 +34,37 @@
 /tools/ai-quick-audit/ /tools/ai-quick-audit/index.html 200
 /tools/phishing-analyzer /tools/phishing-analyzer/index.html 200
 /tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200
+
+# Category filters -> services home anchors
+/services /services/ 301
+/services?category=ai /services/#ai 301
+/services?category=it /services/#it 301
+/services?category=cloud /services/#cloud 301
+/services?category=security /services/#security 301
+/services?category=data /services/#data 301
+/services?category=automation /services/#automation 301
+/services?category=micro-saas /services/#micro-saas 301
+/services?category=devops /services/#devops 301
+/services?category=blockchain /services/#blockchain 301
+/services?category=iot /services/#iot 301
+/services?category=seo /services/ 301
+/services/ai-customer-support-pro/ /services/ 301
+/solutions/pricing/ /pricing/ 301
+
+# Old blog slug aliases
+/blog/how-energyutilities-leaders-cut-costs-with-ai /blog/ai-energy-utilities-optimization-2026-playbook/ 301
+/blog/how-healthcarelifesciences-leaders-cut-costs-with-ai /blog/ai-healthcare-automation-2026-playbook/ 301
+/blog/how-manufacturing-leaders-cut-costs-with-ai /blog/ai-manufacturing-automation-2026-playbook/ 301
+/blog/legalcompliance-compliance-and-ai-governance /blog/ai-compliance-and-governance-2026-playbook/ 301
+/blog/logisticssupplychain-ai-automation-roadmap /blog/ai-logistics-fulfillment-2026-playbook/ 301
+/blog/predictable-ai-roi-in-education /blog/ai-education-technology-2026-playbook/ 301
+/blog/scaling-ai-across-energyutilities-operations /blog/ai-energy-utilities-optimization-for-enterprise-teams/ 301
+/blog/scaling-ai-across-healthcarelifesciences-operations /blog/ai-healthcare-automation-for-enterprise-teams/ 301
+/blog/scaling-ai-across-manufacturing-operations /blog/ai-manufacturing-automation-for-enterprise-teams/ 301
+/blog/ai-first-legalcompliance-playbook-2026 /blog/ai-compliance-and-governance-2026-playbook/ 301
+
+# Missing root pages -> home
+/health / 301
 
 /assets/js/conversion-events.js /assets/js/conversion-events.js 200
 
