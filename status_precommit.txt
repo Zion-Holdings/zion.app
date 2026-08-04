@@ -1,0 +1,8 @@
+## fix/content-repair-and-exponential-loop-2026-08-04
+ D docs/free-ai-tools/index.html/.hermes-tmp.r6z7qp
+ D docs/free-resources/index.html/.hermes-tmp.5sLbmM
+ D docs/services/ai-compliance/index.html/.hermes-tmp.HO8JRk
+?? public/free-ai-tools/
+?? public/free-resources/
+?? public/services/ai-compliance/
+?? status_precommit.txt
