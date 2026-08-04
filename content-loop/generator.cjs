@@ -19,7 +19,7 @@ function ensureDir(dir) {
 function loadQueue() {
   try {
     const txt = fs.readFileSync(QUEUE_FILE, 'utf8');
-    const m = txt.match(/cycle counter updated to (\d+)/i);
+    const m = txt.match(/Last cycle:\s*(\d+)/i);
     return m ? parseInt(m[1], 10) : 0;
   } catch {
     return 0;
