@@ -172,8 +172,7 @@ function gitPush(created) {
   const add = run('git add -- "' + filesToAdd.join('" "') + '"');
   if (!add.ok) return { ok: false, error: add.out };
 
-  const status = run('git status --short');
-  if (!status.ok) return { ok: false, error: status.out };
+  const status = run('git status --short') || { ok: true, out: '' };
   if (!status.out.trim()) return { ok: true, skipped: true };
 
   const hash = crypto.randomBytes(6).toString('hex');
