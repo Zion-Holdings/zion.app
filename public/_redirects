@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 / /index.html 200
 /contact/ /docs/contact/index.html 200
 /services/ /docs/services/index.html 200
@@ -13,3 +14,17 @@
 /industries/ /docs/industries/index.html 200
 /search/ /docs/search/index.html 200
 /solutions/ /docs/solutions/index.html 200
+=======
+/managed-it /services/it-managed-it-ops 301
+/services/managed-it /services/it-managed-it-ops 301
+/consultation /contact 301
+/services/cloud-migration-services-2026-1121/ /services/cloud-migration-services-2026-500/ 301
+/blog/cloud-migration-services-2026-1121/ /blog/cloud-migration-services-2026-500/ 301
+/services/enterprise-ai-intelligence-hub-2026-1143/ /services/enterprise-ai-intelligence-hub-2026-507/ 301
+/blog/enterprise-ai-intelligence-hub-2026-1143/ /blog/enterprise-ai-intelligence-hub-2026-507/ 301
+
+# Search
+/search /docs/search/index.html 200
+/search/ /docs/search/index.html 200
+2026-08-04T16:45:49Z
+>>>>>>> c89101ceb6175f0e09522b52352eb3d5c4182e81

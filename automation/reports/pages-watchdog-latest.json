@@ -1,40 +1,40 @@
 {
-  "checked_at": "2026-08-05T00:46:09.493148+00:00",
+  "checked_at": "2026-08-05T01:15:52.685152+00:00",
   "routes_checked": 10,
-  "routes_ok": 9,
-  "routes_broken": 1,
+  "routes_ok": 1,
+  "routes_broken": 9,
   "routes": [
     {
       "url": "https://ziontechgroup.com/",
       "final_url": "https://ziontechgroup.com/",
-      "status": 200,
+      "status": 404,
       "error": null,
-      "ok": true,
-      "broken_since": null
+      "ok": false,
+      "broken_since": "2026-08-05T01:15:51.305309+00:00"
     },
     {
       "url": "https://ziontechgroup.com/about/",
       "final_url": "https://ziontechgroup.com/about/",
-      "status": 200,
+      "status": 404,
       "error": null,
-      "ok": true,
-      "broken_since": "2026-08-05T00:16:16.707633+00:00"
+      "ok": false,
+      "broken_since": "2026-08-05T01:15:51.449999+00:00"
     },
     {
       "url": "https://ziontechgroup.com/blog/",
       "final_url": "https://ziontechgroup.com/blog/",
-      "status": 200,
+      "status": 404,
       "error": null,
-      "ok": true,
-      "broken_since": "2026-08-05T00:16:16.857717+00:00"
+      "ok": false,
+      "broken_since": "2026-08-05T01:15:51.603359+00:00"
     },
     {
       "url": "https://ziontechgroup.com/careers/",
       "final_url": "https://ziontechgroup.com/careers/",
-      "status": 200,
+      "status": 404,
       "error": null,
-      "ok": true,
-      "broken_since": "2026-08-05T00:16:17.000113+00:00"
+      "ok": false,
+      "broken_since": "2026-08-05T01:15:51.774263+00:00"
     },
     {
       "url": "https://ziontechgroup.com/contact/",
@@ -42,15 +42,15 @@
       "status": 200,
       "error": null,
       "ok": true,
-      "broken_since": "2026-08-05T00:16:17.148117+00:00"
+      "broken_since": null
     },
     {
       "url": "https://ziontechgroup.com/partners/",
       "final_url": "https://ziontechgroup.com/partners/",
-      "status": 200,
+      "status": 404,
       "error": null,
-      "ok": true,
-      "broken_since": "2026-08-05T00:16:17.326279+00:00"
+      "ok": false,
+      "broken_since": "2026-08-05T01:15:52.097597+00:00"
     },
     {
       "url": "https://ziontechgroup.com/pricing/",
@@ -63,26 +63,26 @@
     {
       "url": "https://ziontechgroup.com/services/",
       "final_url": "https://ziontechgroup.com/services/",
-      "status": 200,
+      "status": 404,
       "error": null,
-      "ok": true,
-      "broken_since": null
+      "ok": false,
+      "broken_since": "2026-08-05T01:15:52.384788+00:00"
     },
     {
       "url": "https://ziontechgroup.com/services/ai-agents-autonomous/",
       "final_url": "https://ziontechgroup.com/services/ai-agents-autonomous/",
-      "status": 200,
+      "status": 404,
       "error": null,
-      "ok": true,
-      "broken_since": "2026-08-05T00:16:17.788843+00:00"
+      "ok": false,
+      "broken_since": "2026-08-05T01:15:52.532944+00:00"
     },
     {
       "url": "https://ziontechgroup.com/services/cloud-cost-optimization-service/",
       "final_url": "https://ziontechgroup.com/services/cloud-cost-optimization-service/",
-      "status": 200,
+      "status": 404,
       "error": null,
-      "ok": true,
-      "broken_since": "2026-08-05T00:16:17.951863+00:00"
+      "ok": false,
+      "broken_since": "2026-08-05T01:15:52.681208+00:00"
     }
   ]
 }

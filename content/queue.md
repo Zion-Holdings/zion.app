@@ -1,5 +1,6 @@
 # Content Queue
 
+<<<<<<< HEAD
 ## Pending
 
 1. Cloud Cost Optimization for MSPs: FinOps Without the Headcount
@@ -16,3 +17,8 @@
 ## Completed
 
 - IT Field Service Automation: Reduce Dispatch Time by 40% (2026-08-04 cycle 1)
+=======
+Last cycle: 7110
+Next slug prefix: 7111
+Seeds ready: 69
+>>>>>>> c89101ceb6175f0e09522b52352eb3d5c4182e81

@@ -29,9 +29,19 @@ def personalize_body(rec):
     company = rec.get('company') or rec.get('company_name') or rec.get('domain', '')
     if not is_generic(body):
         return body, 0.9
+    # Deduplicate any existing P.S. personalization lines to avoid repeating on re-runs.
+    ps_prefix = 'P.S.: pesquisei brevemente sobre'
+    # Remove lines that start with the known P.S. personalization prefix (with or without extra whitespace)
+    lines = body.splitlines()
+    cleaned = []
+    for line in lines:
+        if line.strip().startswith(ps_prefix):
+            continue
+        cleaned.append(line)
+    body = '\n'.join(cleaned).rstrip()
     # Append a personalized line referencing the company/domain.
     line = f"\n\nP.S.: pesquisei brevemente sobre {company} ({rec.get('domain', '')}) e acredito que automação + IA podem acelerar resultados específicos de vocês."
-    new_body = body.rstrip() + line
+    new_body = body + line
     return new_body, 0.75
 
 def improve_record(rec):

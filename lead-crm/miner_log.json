@@ -119,5 +119,15 @@
     "contacts_mined": 0,
     "classified": 0,
     "sent": 0
+  },
+  {
+    "ts": "2026-08-04T21:48:00+00:00",
+    "event": "run_attempt",
+    "command": "python3 lead-crm/historical_email_miner.py",
+    "error": "missing_script",
+    "message": "[Errno 2] No such file or directory: lead-crm/historical_email_miner.py",
+    "contacts_mined": 0,
+    "classified": 0,
+    "sent": 0
   }
 ]

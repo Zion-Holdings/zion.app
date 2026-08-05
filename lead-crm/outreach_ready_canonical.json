@@ -14,7 +14,7 @@
       "status": "ready",
       "company_name": "Shervacom",
       "personalization_score": 0.9,
-      "improved_at": "2026-08-05T00:45:18.595759+00:00"
+      "improved_at": "2026-08-05T01:12:49.499462+00:00"
     },
     {
       "to": "thomas@gakenholz.de",
@@ -30,7 +30,7 @@
       "status": "ready",
       "company_name": "Gakenholz",
       "personalization_score": 0.9,
-      "improved_at": "2026-08-05T00:45:18.595848+00:00"
+      "improved_at": "2026-08-05T01:12:49.499564+00:00"
     },
     {
       "to": "djean.axt@ztg.com.br",
@@ -46,7 +46,7 @@
       "status": "ready",
       "company_name": "ZTG Brazil",
       "personalization_score": 0.9,
-      "improved_at": "2026-08-05T00:45:18.595888+00:00"
+      "improved_at": "2026-08-05T01:12:49.499607+00:00"
     },
     {
       "to": "editors@channelpronetwork.com",
@@ -54,7 +54,7 @@
       "company": "ChannelProNetwork",
       "domain": "channelpronetwork.com",
       "subject": "Colaboração ChannelProNetwork + Zion Tech Group",
-      "body": "Olá, sou Kleber Garcia Alcatrão, CEO da Zion Tech Group. Vejo oportunidade de parceria editorial/tecnológica entre ChannelProNetwork e Zion em AI/IT LATAM. Podemos estruturar um piloto de conteúdo + soluções com ferramentas gratuitas. Saiba mais: https://ziontechgroup.com | Agende: https://calendly.com/kleber-ziontechgroup\n\nP.S.: pesquisei brevemente sobre ChannelProNetwork (channelpronetwork.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre ChannelProNetwork (channelpronetwork.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá, sou Kleber Garcia Alcatrão, CEO da Zion Tech Group. Vejo oportunidade de parceria editorial/tecnológica entre ChannelProNetwork e Zion em AI/IT LATAM. Podemos estruturar um piloto de conteúdo + soluções com ferramentas gratuitas. Saiba mais: https://ziontechgroup.com | Agende: https://calendly.com/kleber-ziontechgroup\n\nP.S.: pesquisei brevemente sobre ChannelProNetwork (channelpronetwork.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "website": "https://ziontechgroup.com",
       "calendly": "https://calendly.com/kleber-ziontechgroup",
       "llm_provider": "hermes-cli",
@@ -62,7 +62,7 @@
       "status": "ready",
       "company_name": "ChannelProNetwork",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.595931+00:00"
+      "improved_at": "2026-08-05T01:12:49.499678+00:00"
     },
     {
       "to": "mweiss@procurri.com",
@@ -70,11 +70,11 @@
       "domain": "procurri.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Procurri",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Procurri atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Procurri (procurri.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Procurri (procurri.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Procurri atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Procurri (procurri.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Mweiss",
       "company": "Procurri",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.595975+00:00"
+      "improved_at": "2026-08-05T01:12:49.499742+00:00"
     },
     {
       "to": "mauro.faria@fgv.br",
@@ -82,11 +82,11 @@
       "domain": "fgv.br",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Fgv",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Fgv atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Fgv (fgv.br) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Fgv (fgv.br) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Fgv atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Fgv (fgv.br) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Mauro Faria",
       "company": "Fgv",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596015+00:00"
+      "improved_at": "2026-08-05T01:12:49.499796+00:00"
     },
     {
       "to": "avinash.r@hcl.com",
@@ -94,11 +94,11 @@
       "domain": "hcl.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Hcl",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Avinash R",
       "company": "Hcl",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596055+00:00"
+      "improved_at": "2026-08-05T01:12:49.499853+00:00"
     },
     {
       "to": "ishukohli@hcl.com",
@@ -106,11 +106,11 @@
       "domain": "hcl.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Hcl",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Ishukohli",
       "company": "Hcl",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596092+00:00"
+      "improved_at": "2026-08-05T01:12:49.499904+00:00"
     },
     {
       "to": "jason.guidry@hcl.com",
@@ -118,11 +118,11 @@
       "domain": "hcl.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Hcl",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Jason Guidry",
       "company": "Hcl",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596126+00:00"
+      "improved_at": "2026-08-05T01:12:49.499955+00:00"
     },
     {
       "to": "arulnathan.k@hcl.com",
@@ -130,11 +130,11 @@
       "domain": "hcl.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Hcl",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Arulnathan K",
       "company": "Hcl",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596163+00:00"
+      "improved_at": "2026-08-05T01:12:49.500006+00:00"
     },
     {
       "to": "greivinantonio.garci@hcl.com",
@@ -142,11 +142,11 @@
       "domain": "hcl.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Hcl",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Greivinantonio Garci",
       "company": "Hcl",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596199+00:00"
+      "improved_at": "2026-08-05T01:12:49.500059+00:00"
     },
     {
       "to": "mohitg@hcl.com",
@@ -154,11 +154,11 @@
       "domain": "hcl.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Hcl",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Mohitg",
       "company": "Hcl",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596234+00:00"
+      "improved_at": "2026-08-05T01:12:49.500109+00:00"
     },
     {
       "to": "whibbert@solyssey.com",
@@ -166,11 +166,11 @@
       "domain": "solyssey.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Solyssey",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Solyssey atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Solyssey (solyssey.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Solyssey (solyssey.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Solyssey atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Solyssey (solyssey.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Whibbert",
       "company": "Solyssey",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596268+00:00"
+      "improved_at": "2026-08-05T01:12:49.500160+00:00"
     },
     {
       "to": "mrodrigues@solyssey.com",
@@ -178,11 +178,11 @@
       "domain": "solyssey.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Solyssey",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Solyssey atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Solyssey (solyssey.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Solyssey (solyssey.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Solyssey atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Solyssey (solyssey.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Mrodrigues",
       "company": "Solyssey",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596299+00:00"
+      "improved_at": "2026-08-05T01:12:49.500211+00:00"
     },
     {
       "to": "rsingh@solyssey.com",
@@ -190,11 +190,11 @@
       "domain": "solyssey.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Solyssey",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Solyssey atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Solyssey (solyssey.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Solyssey (solyssey.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Solyssey atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Solyssey (solyssey.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Rsingh",
       "company": "Solyssey",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596331+00:00"
+      "improved_at": "2026-08-05T01:12:49.500261+00:00"
     },
     {
       "to": "balaji-kalimireddi@hcl.com",
@@ -202,11 +202,11 @@
       "domain": "hcl.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Hcl",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Balaji Kalimireddi",
       "company": "Hcl",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596365+00:00"
+      "improved_at": "2026-08-05T01:12:49.500311+00:00"
     },
     {
       "to": "sugandha_s@hcl.com",
@@ -214,11 +214,11 @@
       "domain": "hcl.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Hcl",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Sugandha S",
       "company": "Hcl",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596397+00:00"
+      "improved_at": "2026-08-05T01:12:49.500361+00:00"
     },
     {
       "to": "suruchi.g@hcl.com",
@@ -226,11 +226,11 @@
       "domain": "hcl.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Hcl",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Suruchi G",
       "company": "Hcl",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596429+00:00"
+      "improved_at": "2026-08-05T01:12:49.500410+00:00"
     },
     {
       "to": "hugo.sousa@dekra.com",
@@ -238,11 +238,11 @@
       "domain": "dekra.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Dekra",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Dekra atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Dekra (dekra.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Dekra (dekra.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Dekra atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Dekra (dekra.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Hugo Sousa",
       "company": "Dekra",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596466+00:00"
+      "improved_at": "2026-08-05T01:12:49.500471+00:00"
     },
     {
       "to": "ingrid.ciarelli@dekra.com",
@@ -250,11 +250,11 @@
       "domain": "dekra.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Dekra",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Dekra atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Dekra (dekra.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Dekra (dekra.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Dekra atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Dekra (dekra.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Ingrid Ciarelli",
       "company": "Dekra",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596503+00:00"
+      "improved_at": "2026-08-05T01:12:49.500523+00:00"
     },
     {
       "to": "infraestrutura@dekra.com",
@@ -262,11 +262,11 @@
       "domain": "dekra.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Dekra",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Dekra atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Dekra (dekra.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Dekra (dekra.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Dekra atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Dekra (dekra.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Infraestrutura",
       "company": "Dekra",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596537+00:00"
+      "improved_at": "2026-08-05T01:12:49.500573+00:00"
     },
     {
       "to": "gmailgenius@wordzen.com",
@@ -274,11 +274,11 @@
       "domain": "wordzen.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Wordzen",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Wordzen atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Wordzen (wordzen.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Wordzen (wordzen.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Wordzen atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Wordzen (wordzen.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Gmailgenius",
       "company": "Wordzen",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596569+00:00"
+      "improved_at": "2026-08-05T01:12:49.500623+00:00"
     },
     {
       "to": "bob@scrubly.com",
@@ -286,11 +286,11 @@
       "domain": "scrubly.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Scrubly",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Scrubly atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Scrubly (scrubly.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Scrubly (scrubly.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Scrubly atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Scrubly (scrubly.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Bob",
       "company": "Scrubly",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596602+00:00"
+      "improved_at": "2026-08-05T01:12:49.500673+00:00"
     },
     {
       "to": "hi@app.kilocode.ai",
@@ -298,11 +298,11 @@
       "domain": "app.kilocode.ai",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para App",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a App atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre App (app.kilocode.ai) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre App (app.kilocode.ai) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a App atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre App (app.kilocode.ai) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Hi",
       "company": "App",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596637+00:00"
+      "improved_at": "2026-08-05T01:12:49.500722+00:00"
     }
   ],
   "generatedAt": "2026-08-03T16:35:44.108574+00:00",
@@ -322,7 +322,7 @@
       "status": "ready",
       "company_name": "Shervacom",
       "personalization_score": 0.9,
-      "improved_at": "2026-08-05T00:45:18.595759+00:00"
+      "improved_at": "2026-08-05T01:12:49.499462+00:00"
     },
     {
       "to": "thomas@gakenholz.de",
@@ -338,7 +338,7 @@
       "status": "ready",
       "company_name": "Gakenholz",
       "personalization_score": 0.9,
-      "improved_at": "2026-08-05T00:45:18.595848+00:00"
+      "improved_at": "2026-08-05T01:12:49.499564+00:00"
     },
     {
       "to": "djean.axt@ztg.com.br",
@@ -354,7 +354,7 @@
       "status": "ready",
       "company_name": "ZTG Brazil",
       "personalization_score": 0.9,
-      "improved_at": "2026-08-05T00:45:18.595888+00:00"
+      "improved_at": "2026-08-05T01:12:49.499607+00:00"
     },
     {
       "to": "editors@channelpronetwork.com",
@@ -362,7 +362,7 @@
       "company": "ChannelProNetwork",
       "domain": "channelpronetwork.com",
       "subject": "Colaboração ChannelProNetwork + Zion Tech Group",
-      "body": "Olá, sou Kleber Garcia Alcatrão, CEO da Zion Tech Group. Vejo oportunidade de parceria editorial/tecnológica entre ChannelProNetwork e Zion em AI/IT LATAM. Podemos estruturar um piloto de conteúdo + soluções com ferramentas gratuitas. Saiba mais: https://ziontechgroup.com | Agende: https://calendly.com/kleber-ziontechgroup\n\nP.S.: pesquisei brevemente sobre ChannelProNetwork (channelpronetwork.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre ChannelProNetwork (channelpronetwork.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá, sou Kleber Garcia Alcatrão, CEO da Zion Tech Group. Vejo oportunidade de parceria editorial/tecnológica entre ChannelProNetwork e Zion em AI/IT LATAM. Podemos estruturar um piloto de conteúdo + soluções com ferramentas gratuitas. Saiba mais: https://ziontechgroup.com | Agende: https://calendly.com/kleber-ziontechgroup\n\nP.S.: pesquisei brevemente sobre ChannelProNetwork (channelpronetwork.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "website": "https://ziontechgroup.com",
       "calendly": "https://calendly.com/kleber-ziontechgroup",
       "llm_provider": "hermes-cli",
@@ -370,7 +370,7 @@
       "status": "ready",
       "company_name": "ChannelProNetwork",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.595931+00:00"
+      "improved_at": "2026-08-05T01:12:49.499678+00:00"
     },
     {
       "to": "mweiss@procurri.com",
@@ -378,11 +378,11 @@
       "domain": "procurri.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Procurri",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Procurri atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Procurri (procurri.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Procurri (procurri.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Procurri atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Procurri (procurri.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Mweiss",
       "company": "Procurri",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.595975+00:00"
+      "improved_at": "2026-08-05T01:12:49.499742+00:00"
     },
     {
       "to": "mauro.faria@fgv.br",
@@ -390,11 +390,11 @@
       "domain": "fgv.br",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Fgv",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Fgv atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Fgv (fgv.br) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Fgv (fgv.br) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Fgv atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Fgv (fgv.br) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Mauro Faria",
       "company": "Fgv",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596015+00:00"
+      "improved_at": "2026-08-05T01:12:49.499796+00:00"
     },
     {
       "to": "avinash.r@hcl.com",
@@ -402,11 +402,11 @@
       "domain": "hcl.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Hcl",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Avinash R",
       "company": "Hcl",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596055+00:00"
+      "improved_at": "2026-08-05T01:12:49.499853+00:00"
     },
     {
       "to": "ishukohli@hcl.com",
@@ -414,11 +414,11 @@
       "domain": "hcl.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Hcl",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Ishukohli",
       "company": "Hcl",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596092+00:00"
+      "improved_at": "2026-08-05T01:12:49.499904+00:00"
     },
     {
       "to": "jason.guidry@hcl.com",
@@ -426,11 +426,11 @@
       "domain": "hcl.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Hcl",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Jason Guidry",
       "company": "Hcl",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596126+00:00"
+      "improved_at": "2026-08-05T01:12:49.499955+00:00"
     },
     {
       "to": "arulnathan.k@hcl.com",
@@ -438,11 +438,11 @@
       "domain": "hcl.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Hcl",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Arulnathan K",
       "company": "Hcl",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596163+00:00"
+      "improved_at": "2026-08-05T01:12:49.500006+00:00"
     },
     {
       "to": "greivinantonio.garci@hcl.com",
@@ -450,11 +450,11 @@
       "domain": "hcl.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Hcl",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Greivinantonio Garci",
       "company": "Hcl",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596199+00:00"
+      "improved_at": "2026-08-05T01:12:49.500059+00:00"
     },
     {
       "to": "mohitg@hcl.com",
@@ -462,11 +462,11 @@
       "domain": "hcl.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Hcl",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Mohitg",
       "company": "Hcl",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596234+00:00"
+      "improved_at": "2026-08-05T01:12:49.500109+00:00"
     },
     {
       "to": "whibbert@solyssey.com",
@@ -474,11 +474,11 @@
       "domain": "solyssey.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Solyssey",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Solyssey atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Solyssey (solyssey.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Solyssey (solyssey.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Solyssey atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Solyssey (solyssey.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Whibbert",
       "company": "Solyssey",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596268+00:00"
+      "improved_at": "2026-08-05T01:12:49.500160+00:00"
     },
     {
       "to": "mrodrigues@solyssey.com",
@@ -486,11 +486,11 @@
       "domain": "solyssey.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Solyssey",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Solyssey atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Solyssey (solyssey.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Solyssey (solyssey.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Solyssey atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Solyssey (solyssey.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Mrodrigues",
       "company": "Solyssey",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596299+00:00"
+      "improved_at": "2026-08-05T01:12:49.500211+00:00"
     },
     {
       "to": "rsingh@solyssey.com",
@@ -498,11 +498,11 @@
       "domain": "solyssey.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Solyssey",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Solyssey atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Solyssey (solyssey.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Solyssey (solyssey.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Solyssey atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Solyssey (solyssey.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Rsingh",
       "company": "Solyssey",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596331+00:00"
+      "improved_at": "2026-08-05T01:12:49.500261+00:00"
     },
     {
       "to": "balaji-kalimireddi@hcl.com",
@@ -510,11 +510,11 @@
       "domain": "hcl.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Hcl",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Balaji Kalimireddi",
       "company": "Hcl",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596365+00:00"
+      "improved_at": "2026-08-05T01:12:49.500311+00:00"
     },
     {
       "to": "sugandha_s@hcl.com",
@@ -522,11 +522,11 @@
       "domain": "hcl.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Hcl",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Sugandha S",
       "company": "Hcl",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596397+00:00"
+      "improved_at": "2026-08-05T01:12:49.500361+00:00"
     },
     {
       "to": "suruchi.g@hcl.com",
@@ -534,11 +534,11 @@
       "domain": "hcl.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Hcl",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Hcl atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Hcl (hcl.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Suruchi G",
       "company": "Hcl",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596429+00:00"
+      "improved_at": "2026-08-05T01:12:49.500410+00:00"
     },
     {
       "to": "hugo.sousa@dekra.com",
@@ -546,11 +546,11 @@
       "domain": "dekra.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Dekra",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Dekra atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Dekra (dekra.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Dekra (dekra.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Dekra atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Dekra (dekra.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Hugo Sousa",
       "company": "Dekra",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596466+00:00"
+      "improved_at": "2026-08-05T01:12:49.500471+00:00"
     },
     {
       "to": "ingrid.ciarelli@dekra.com",
@@ -558,11 +558,11 @@
       "domain": "dekra.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Dekra",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Dekra atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Dekra (dekra.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Dekra (dekra.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Dekra atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Dekra (dekra.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Ingrid Ciarelli",
       "company": "Dekra",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596503+00:00"
+      "improved_at": "2026-08-05T01:12:49.500523+00:00"
     },
     {
       "to": "infraestrutura@dekra.com",
@@ -570,11 +570,11 @@
       "domain": "dekra.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Dekra",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Dekra atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Dekra (dekra.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Dekra (dekra.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Dekra atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Dekra (dekra.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Infraestrutura",
       "company": "Dekra",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596537+00:00"
+      "improved_at": "2026-08-05T01:12:49.500573+00:00"
     },
     {
       "to": "gmailgenius@wordzen.com",
@@ -582,11 +582,11 @@
       "domain": "wordzen.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Wordzen",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Wordzen atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Wordzen (wordzen.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Wordzen (wordzen.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Wordzen atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Wordzen (wordzen.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Gmailgenius",
       "company": "Wordzen",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596569+00:00"
+      "improved_at": "2026-08-05T01:12:49.500623+00:00"
     },
     {
       "to": "bob@scrubly.com",
@@ -594,11 +594,11 @@
       "domain": "scrubly.com",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para Scrubly",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Scrubly atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Scrubly (scrubly.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre Scrubly (scrubly.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a Scrubly atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre Scrubly (scrubly.com) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Bob",
       "company": "Scrubly",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596602+00:00"
+      "improved_at": "2026-08-05T01:12:49.500673+00:00"
     },
     {
       "to": "hi@app.kilocode.ai",
@@ -606,17 +606,17 @@
       "domain": "app.kilocode.ai",
       "status": "ready",
       "subject": "Parceria Zion Tech Group — operações e eficiência para App",
-      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a App atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre App (app.kilocode.ai) e acredito que automação + IA podem acelerar resultados específicos de vocês.\n\nP.S.: pesquisei brevemente sobre App (app.kilocode.ai) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
+      "body": "Olá,\n\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\nVi que a App atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\nGostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n1. Avaliação rápida de operações de TI com foco em eficiência\n2. Projeto piloto em uma área com gargalo conhecido\n3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\nSe quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\nConheça mais aqui: https://ziontechgroup.com\n\nP.S.: pesquisei brevemente sobre App (app.kilocode.ai) e acredito que automação + IA podem acelerar resultados específicos de vocês.",
       "name": "Hi",
       "company": "App",
       "personalization_score": 0.75,
-      "improved_at": "2026-08-05T00:45:18.596637+00:00"
+      "improved_at": "2026-08-05T01:12:49.500722+00:00"
     }
   ],
-  "improvedAt": "2026-08-05T00:45:18.596648+00:00",
+  "improvedAt": "2026-08-05T19:47:23.713434+00:00",
   "analysisSummary": {
     "contacts": 24,
-    "contacts_with_personalized_body": 24,
+    "contacts_with_personalized_body": 0,
     "contacts_missing_fields": 0,
     "ready_count": 24,
     "excluded_count": 0,
@@ -625,9 +625,7 @@
       "ready": 24
     },
     "improvement_notes": [
-      "Heurística aplicada: normalização de status, nome e empresa.",
-      "Corpos genéricos enriquecidos com P.S. personalizado por domínio.",
-      "Registros duplicados deduzidos por e-mail."
+      "Bodies gerados heurísticos para contatos sem thread_body personalizado."
     ]
   }
 }

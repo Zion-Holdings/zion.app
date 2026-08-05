@@ -1,15 +1,15 @@
 {
-  "status": "ok",
+  "status": "analyzed",
   "error": null,
-  "ran_at": "2026-08-05T00:45:18.598606+00:00",
+  "ran_at": "2026-08-05T01:12:49.502823+00:00",
   "contacts_mined": 24,
   "classified": 24,
-  "notes": "Analysis and improvement completed without sending. send_outreach_batch.py missing; used local improver.",
-  "ts": "2026-08-05T00:45:18.598606+00:00",
-  "last_analysis_status": "success_improved",
+  "notes": "Analysis completed via send_outreach_batch.py without sending. Records improved and duplicate P.S. lines deduplicated.",
+  "ts": "2026-08-05T19:47:23.715831+00:00",
+  "last_analysis_status": "analyzed_no_send",
   "last_analysis_summary": {
     "contacts": 24,
-    "contacts_with_personalized_body": 24,
+    "contacts_with_personalized_body": 0,
     "contacts_missing_fields": 0,
     "ready_count": 24,
     "excluded_count": 0,
@@ -18,13 +18,11 @@
       "ready": 24
     },
     "improvement_notes": [
-      "Heurística aplicada: normalização de status, nome e empresa.",
-      "Corpos genéricos enriquecidos com P.S. personalizado por domínio.",
-      "Registros duplicados deduzidos por e-mail."
+      "Bodies gerados heurísticos para contatos sem thread_body personalizado."
     ]
   },
   "contacts_found": 24,
-  "contacts_with_personalized_body": 24,
+  "contacts_with_personalized_body": 0,
   "contacts_missing_fields": 0,
   "ready_count": 24,
   "excluded_count": 0
