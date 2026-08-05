@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regex Tester | Zion Tech Group Free Tools</title>
+  <meta name="description" content>Test regular expressions against text. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/regex-tester/" />
+</head>
+<body>
+  <main>
+    <h1>Regex Tester</h1>
+    <input id="regex" type="text" placeholder="Enter regex" value="[a-zA-Z0-9]+" style="width: 100%;" />
+    <textarea id="text" rows="3" placeholder="Enter text to test">Hello123World456</textarea>
+    <button onclick="test()">Test</button>
+    <p id="result"></p>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function test(){
+        const regexStr = document.getElementById('regex').value;
+        const text = document.getElementById('text').value;
+        const res = document.getElementById('result');
+        try {
+          const regex = new RegExp(regexStr);
+          const match = text.match(regex);
+          if (match) res.innerHTML = 'Match found: <strong>' + match[0] + '</strong>';
+          else res.textContent = 'No match found';
+        } catch(e) {
+          res.textContent = 'Invalid regex: ' + e.message;
+        }
+      }
+    </script>
+  </main>
+</body>
+</html>
