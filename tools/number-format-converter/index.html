@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Number Format Converter | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Convert numbers between different formats (binary, octal, hex, decimal). Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/number-format-converter/" />
+</head>
+<body>
+  <main>
+    <h1>Number Format Converter</h1>
+    <input id="number" type="text" placeholder="Enter number" style="width: 100%;" />
+    <select id="from">
+      <option value="decimal">Decimal</option>
+      <option value="binary">Binary</option>
+      <option value="octal">Octal</option>
+      <option value="hex">Hexadecimal</option>
+    </select>
+    <button onclick="convert()">Convert</button>
+    <div id="result" style="margin-top: 10px;"></div>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function convert(){
+        const num = document.getElementById('number').value;
+        const from = document.getElementById('from').value;
+        const res = document.getElementById('result');
+        let dec;
+        if (from === 'decimal') dec = parseInt(num, 10);
+        else if (from === 'binary') dec = parseInt(num, 2);
+        else if (from === 'octal') dec = parseInt(num, 8);
+        else if (from === 'hex') dec = parseInt(num, 16);
+        if (isNaN(dec)) return res.textContent = 'Invalid number';
+        res.innerHTML = '<p>Decimal: ' + dec + '</p><p>Binary: ' + dec.toString(2) + '</p><p>Octal: ' + dec.toString(8) + '</p><p>Hex: ' + dec.toString(16).toUpperCase() + '</p>';
+      }
+    </script>
+  </main>
+</body>
+</html>

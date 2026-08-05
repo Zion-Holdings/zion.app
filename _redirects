@@ -1,107 +1,65 @@
-/blog/ /docs/blog/index.html 200
-/blog/* /docs/blog/:splat 200
-/contact /docs/contact/index.html 200
-/contact/ /docs/contact/index.html 200
-/services/ai-cybersecurity/ /docs/services/ai-cybersecurity/index.html 200
-/services/ai-development-acceleration/ /docs/services/ai-development-acceleration/index.html 200
-/services/ai-email-intelligence/ /docs/services/ai-email-intelligence/index.html 200
-/services/cloud-cost-optimization-platform/ /docs/services/cloud-cost-optimization-platform/index.html 200
-/tools/base64/ /docs/tools/base64/index.html 200
-/tools/json-formatter/ /docs/tools/json-formatter/index.html 200
-/tools/roi-calculator/ /docs/tools/roi-calculator/index.html 200
-/tools/unit-converter/ /docs/tools/unit-converter/index.html 200
-/tools/favicon-generator/ /tools/favicon-generator/index.html 200
-
-# Search routes
-/search /docs/search/index.html 200
-/search/ /docs/search/index.html 200
-
-# Canonical sitemap
-/sitemap.xml /sitemap-0.xml 301
-
-# Legacy aliases that do not have equivalent content pages
-/free-ai-itools /free-ai-it-tools/ 302
-/free-ai-itools/ /free-ai-it-tools/ 302
+/free-tools-hub    /free-ai-it-tools/  301
+/free-tools-hub/  /free-ai-it-tools/  301
+/products/    /services/    301
+/consultation/    /contact/    301
+/site-map/    /    301
+/faq/    /about/    301
+/status/    /    301
+/configurator/    /contact/    301
+/dashboard/    /contact/    301
+/docs/    /    301
+/free-ai-itools /free-ai-it-tools/ 301
+/free-ai-itools/ /free-ai-it-tools/ 301
+/careers/  /contact/  301
 
 /free-consultation /free-consultation/index.html 200
 /free-consultation/ /free-consultation/index.html 200
-/free-audit /free-audit/index.html 200
-/free-audit/ /free-audit/index.html 200
-/proposal /proposal/index.html 200
-/proposal/ /proposal/index.html 200
-
 /industries/insurance/ /industries/insurance/index.html 200
 /industries/healthcare/ /industries/healthcare/index.html 200
 /industries/legal/ /industries/legal/index.html 200
-
+/industries/financial-services /industries/financial-services/index.html 200
+/industries/financial-services/ /industries/financial-services/index.html 200
 /tools/ai-quick-audit /tools/ai-quick-audit/index.html 200
 /tools/ai-quick-audit/ /tools/ai-quick-audit/index.html 200
 /tools/phishing-analyzer /tools/phishing-analyzer/index.html 200
 /tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200
-
-# Category filters -> services home anchors
-/services /services/ 301
-/services?category=ai /services/#ai 301
-/services?category=it /services/#it 301
-/services?category=cloud /services/#cloud 301
-/services?category=security /services/#security 301
-/services?category=data /services/#data 301
-/services?category=automation /services/#automation 301
-/services?category=micro-saas /services/#micro-saas 301
-/services?category=devops /services/#devops 301
-/services?category=blockchain /services/#blockchain 301
-/services?category=iot /services/#iot 301
-/services?category=seo /services/ 301
-/services/ai-customer-support-pro/ /services/ 301
-/solutions/pricing/ /pricing/ 301
-
-# New fallback routes
-/ai /docs/ai/index.html 200
-/ai/ /docs/ai/index.html 200
-/services/ai-observability/ /docs/services/ai-observability/index.html 200
-/services/ai-msp-security-and-compliance-automation/ /docs/services/ai-msp-security-and-compliance-automation/index.html 200
-/services/ai-data-lakehouse-pipelines/ /docs/services/ai-data-lakehouse-pipelines/index.html 200
-/services/ai-customer-success-churn-prevention/ /docs/services/ai-customer-success-churn-prevention/index.html 200
-/5g-solutions/ /docs/5g-solutions/index.html 200
-/analytics/ /docs/analytics/index.html 200
-/api-development/ /docs/api-development/index.html 200
-/blockchain-solutions/ /docs/blockchain-solutions/index.html 200
-/cybersecurity/ /docs/cybersecurity/index.html 200
-/data-analytics/ /docs/data-analytics/index.html 200
-/iot-platform/ /docs/iot-platform/index.html 200
-/it-services/ /docs/it-services/index.html 200
-/micro-saas-services/ /docs/micro-saas-services/index.html 200
-/security-services/ /docs/security-services/index.html 200
-/services/cloud-migration-services-2026-1121/ /services/cloud-migration-services-2026-500/ 301
-/blog/cloud-migration-services-2026-1121/ /blog/cloud-migration-services-2026-500/ 301
-/services/enterprise-ai-intelligence-hub-2026-1143/ /services/enterprise-ai-intelligence-hub-2026-507/ 301
-/blog/enterprise-ai-intelligence-hub-2026-1143/ /blog/enterprise-ai-intelligence-hub-2026-507/ 301
-/services/ai-agentic-workflows-2026-583/ /services/ai-agentic-workflows-2026-583/ 301
-/blog/ai-agentic-workflows-2026-583/ /blog/ai-agentic-workflows-2026-583/ 301
-/services/cloud-cost-ai-optimizer-2026-600/ /services/cloud-cost-ai-optimizer-2026-600/ 301
-/blog/cloud-cost-ai-optimizer-2026-600/ /blog/cloud-cost-ai-optimizer-2026-600/ 301
-/services/ai-data-backup-2026-552/ /services/ai-data-backup-2026-552/ 301
-/blog/ai-data-backup-2026-552/ /blog/ai-data-backup-2026-552/ 301
-
-# Feed fallback
-/feed.xml /sitemap.xml 301
-
-# Old blog slug aliases
-/blog/how-energyutilities-leaders-cut-costs-with-ai /blog/ai-energy-utilities-optimization-2026-playbook/ 301
-/blog/how-healthcarelifesciences-leaders-cut-costs-with-ai /blog/ai-healthcare-automation-2026-playbook/ 301
-/blog/how-manufacturing-leaders-cut-costs-with-ai /blog/ai-manufacturing-automation-2026-playbook/ 301
-/blog/legalcompliance-compliance-and-ai-governance /blog/ai-compliance-and-governance-2026-playbook/ 301
-/blog/logisticssupplychain-ai-automation-roadmap /blog/ai-logistics-fulfillment-2026-playbook/ 301
-/blog/predictable-ai-roi-in-education /blog/ai-education-technology-2026-playbook/ 301
-/blog/scaling-ai-across-energyutilities-operations /blog/ai-energy-utilities-optimization-for-enterprise-teams/ 301
-/blog/scaling-ai-across-healthcarelifesciences-operations /blog/ai-healthcare-automation-for-enterprise-teams/ 301
-/blog/scaling-ai-across-manufacturing-operations /blog/ai-manufacturing-automation-for-enterprise-teams/ 301
-/blog/ai-first-legalcompliance-playbook-2026 /blog/ai-compliance-and-governance-2026-playbook/ 301
-
-# Missing root pages -> home
-/health / 301
-
 /assets/js/conversion-events.js /assets/js/conversion-events.js 200
 
-# Free tools aliases
-/free-ai-tools/ /free-tools/ 301
+# Live fallback routes
+/mobile-app  /mobile-app/index.html  200
+/desktop-app  /desktop-app/index.html  200
+/plugin-marketplace  /plugin-marketplace/index.html  200
+/changelogs  /changelogs/index.html  200
+/public-roadmap  /roadmap/  301
+/public-roadmap/ /roadmap/ 301
+/status-page  /status-page/index.html  200
+/status-page/ /status-page/index.html 200
+/use-cases /use-cases/index.html 200
+/use-cases/ /use-cases/index.html 200
+/computer-vision-services/ /computer-vision-services/index.html 200
+/machine-learning-ops/ /machine-learning-ops/index.html 200
+/intelligent-document-processing/ /intelligent-document-processing/index.html 200
+/generative-ai-enterprise/ /generative-ai-enterprise/index.html 200
+/computer-vision-services/ /computer-vision-services/index.html 200
+/machine-learning-ops/ /machine-learning-ops/index.html 200
+/intelligent-document-processing/ /intelligent-document-processing/index.html 200
+/generative-ai-enterprise/ /generative-ai-enterprise/index.html 200
+/ai-customer-360/ /ai-customer-360/index.html 200
+/ai-recommendation-engine/ /ai-recommendation-engine/index.html 200
+/ai-price-optimizer/ /ai-price-optimizer/index.html 200
+/ai-chatbot-customer-service/index/ 200 /ai-chatbot-customer-service/index/
+/ai-content-generation-enterprise/index/ 200 /ai-content-generation-enterprise/index/
+/ai-supply-chain-optimization/index/ 200 /ai-supply-chain-optimization/index/
+/ai-human-resources-automation/index/ 200 /ai-human-resources-automation/index/
+/ai-cybersecurity-threat-detection/index/ 200 /ai-cybersecurity-threat-detection/index/
+
+/free-ai-consultation /free-ai-consultation/index.html 200
+/free-ai-consultation/ /free-ai-consultation/index.html 200
+
+/ai-roi-calculator /ai-roi-calculator/index.html 200
+/ai-roi-calculator/ /ai-roi-calculator/index.html 200
+
+# Missing routes fix - added for stale Pages 404s
+/about/ /about/index.html 200
+/faq/ /faq/index.html 200
+/agents/ /agents/index.html 200

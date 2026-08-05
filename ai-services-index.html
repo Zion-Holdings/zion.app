@@ -1,0 +1,9 @@
+<!DOCTYPE html><!-- ztg-cache-buster 20260710170712 --><html lang="en"><head><meta charset="utf-8"/><meta http-equiv="refresh" content="0;url=/services/"/><link rel="canonical" href="https://ziontechgroup.com/services/"/><script>location.replace('/services/');</script></head><body>Redirecting to <a href="/services/">/services/</a>...</body></html>
+EOF && echo '=== fix workflow npm ci -> npm install ===' && python3 - <<'PY'
+from pathlib import Path
+p=Path('.github/workflows/gh-pages.yml')
+s=p.read_text()
+s=s.replace('    - run: npm ci','    - run: npm install --no-audit --fund=false')
+p.write_text(s)
+PY
+echo '=== verify workflow change ===' && grep -n 'npm ' .github/workflows/gh-pages.yml && echo '=== commit ===' && git add -A docs/ .github/workflows/gh-pages.yml && git status --short | sed -n '1,20p' && git commit -m "fix(pages/ci): add remaining docs redirects and switch workflow to npm install" && git push origin main

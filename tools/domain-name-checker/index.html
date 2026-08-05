@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Domain Name Checker | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Check domain name availability. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/domain-name-checker/" />
+</head>
+<body>
+  <main>
+    <h1>Domain Name Checker</h1>
+    <input id="domain" type="text" placeholder="Enter domain name (e.g., example.com)" style="width: 100%;" />
+    <button onclick="check()">Check</button>
+    <p id="result"></p>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function check(){
+        const domain = document.getElementById('domain').value;
+        const res = document.getElementById('result');
+        const re = /^[a-z0-9-]+(\.[a-z]{2,})+$/i;
+        if (re.test(domain)) {
+          res.innerHTML = '<span style="color: green;">✓ Valid domain: ' + domain + '</span>';
+        } else {
+          res.innerHTML = '<span style="color: red;">✗ Invalid domain name</span>';
+        }
+      }
+    </script>
+  </main>
+</body>
+</html>

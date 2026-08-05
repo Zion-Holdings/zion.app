@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSV to JSON Converter | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Convert CSV data to JSON format instantly. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/csv-to-json-converter/" />
+</head>
+<body>
+  <main>
+    <h1>CSV to JSON Converter</h1>
+    <textarea id="csv" rows="6" cols="60">name,age,city
+John,30,NYC
+Jane,25,LA</textarea>
+    <button onclick="convert()">Convert</button>
+    <pre id="out"></pre>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function convert(){
+        const csv = document.getElementById('csv').value.trim();
+        const lines = csv.split('\n');
+        const headers = lines[0].split(',');
+        const json = lines.slice(1).map(line => {
+          const values = line.split(',');
+          const obj = {};
+          headers.forEach((h,i) => obj[h.trim()] = values[i] ? values[i].trim() : '');
+          return obj;
+        });
+        document.getElementById('out').textContent = JSON.stringify(json, null, 2);
+      }
+    </script>
+  </main>
+</body>
+</html>
