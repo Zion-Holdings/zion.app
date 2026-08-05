@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * content-loop/generator.cjs — site-growing content loop
+ * content-loop/generator.cjs - site-growing content loop
  * Generates actual Next.js pages and markdown assets.
  */
 const fs = require('fs');
@@ -136,7 +136,7 @@ export default function ServicePage() {
 function assetBundle(topic, n) {
   const slug = `${topic.slug}-${n}`;
   const title = topic.title;
-  return `# ${title} — assets cycle ${n}
+  return `# ${title} - assets cycle ${n}
 
 ## Social carousel
 1) Hook: "Most ${title} programs stall after pilot."
@@ -146,7 +146,7 @@ function assetBundle(topic, n) {
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: ${title} — a practical path from pilot to production
+Subject: ${title} - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework
@@ -178,7 +178,11 @@ function runCycle() {
   fs.writeFileSync(path.join(ASSETS_DIR, `cycle-${n}-${blogSlug}.md`), assetBundle(topic, n));
 
   saveQueue(n);
+  cycle = n;
   console.log(`content loop: cycle ${n} -> blog/${blogSlug}, services/${svcSlug}`);
 }
 
-runCycle();
+const CYCLES_PER_RUN = 100;
+for (let i = 0; i < CYCLES_PER_RUN; i++) {
+  runCycle();
+}

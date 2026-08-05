@@ -3,7 +3,7 @@
  * content-loop/auto-deploy.cjs
  * Reads GH token, commits pending changes, pushes master+main, and dispatches Pages workflow.
  */
-const { execSync } = require('child_process');
+const { spawnSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
@@ -11,11 +11,13 @@ const REPO_DIR = path.resolve(__dirname, '..');
 const TOKEN_PATH = path.resolve(process.env.HOME || process.env.USERPROFILE || '~', '.gh_token');
 
 function run(cmd, opts = {}) {
+  const shell = process.platform === 'win32' ? 'bash' : undefined;
+  const args = typeof cmd === 'string' ? cmd : cmd.join(' ');
   try {
-    return execSync(cmd, { cwd: REPO_DIR, encoding: 'utf8', stdio: 'pipe', ...opts }).trim();
+    return spawnSync('bash', ['-lc', args], { cwd: REPO_DIR, encoding: 'utf8', stdio: 'pipe', shell, ...opts }).stdout.trim();
   } catch (e) {
     if (opts.allowFail) return '';
-    throw new Error(`Command failed: ${cmd}\n${e.message}`);
+    throw new Error(`Command failed: ${args}\n${e.message}`);
   }
 }
 
@@ -43,7 +45,7 @@ async function main() {
     return;
   }
   const payload = JSON.stringify({ ref: 'main' });
-  const curl = `curl -s -X POST -H "Authorization: token ${token}" -H "Accept: application/vnd.github+json" -H "Content-Type: application/json" https://api.github.com/repos/Zion-support/zion-support.github.io/actions/workflows/gh-pages.yml/dispatches -d '${payload}'`;
+  const curl = `curl -s -X POST -H "Authorization: token ***" -H "Accept: application/vnd.github+json" -H "Content-Type: application/json" https://api.github.com/repos/Zion-support/zion-support.github.io/actions/workflows/gh-pages.yml/dispatches -d '${payload}'`;
   run(curl, { allowFail: true });
   console.log('Deploy complete.');
 }
