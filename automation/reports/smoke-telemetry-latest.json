@@ -1,0 +1,11 @@
+{
+  "ts": "2026-08-05T00:16:53.670250+00:00",
+  "status": "degraded",
+  "details": {
+    "pagesWatchdog": {
+      "stdout": "{\"ts\": \"2026-08-05T00:16:17.955317+00:00\", \"routes_checked\": 10, \"routes_ok\": 2, \"routes_broken\": 8, \"fail\": true, \"report\": \"automation/reports/pages-watchdog-latest.json\"}",
+      "stderr": null,
+      "exit_code": 3
+    }
+  }
+}
