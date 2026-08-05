@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Credit Card Validator | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Validate credit card numbers. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/credit-card-validator/" />
+</head>
+<body>
+  <main>
+    <h1>Credit Card Validator</h1>
+    <input id="card" type="text" placeholder="Enter card number" style="width: 100%;" />
+    <button onclick="validate()">Validate</button>
+    <p id="result"></p>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function validate(){
+        const card = document.getElementById('card').value.replace(/\s+/g,'');
+        const res = document.getElementById('result');
+        let sum = 0;
+        let alternate = false;
+        for (let i = card.length - 1; i >= 0; i--) {
+          let n = parseInt(card.charAt(i), 10);
+          if (alternate) n *= 2;
+          sum += n > 9 ? n - 9 : n;
+          alternate = !alternate;
+        }
+        if (sum % 10 === 0 && card.length >= 13) {
+          res.innerHTML = '<span style="color: green;">✓ Valid card number</span>';
+        } else {
+          res.innerHTML = '<span style="color: red;">✗ Invalid card number</span>';
+        }
+      }
+    </script>
+  </main>
+</body>
+</html>
