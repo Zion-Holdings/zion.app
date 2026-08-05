@@ -97,6 +97,8 @@ const nextConfig = {
       { source: '/services/fleet-management-gps-tracking/', destination: '/services/', permanent: true },
       { source: '/services/lead-generation-outreach-automation', destination: '/services/', permanent: true },
       { source: '/services/lead-generation-outreach-automation/', destination: '/services/', permanent: true },
+      { source: '/free-tools', destination: '/tools/', permanent: true },
+      { source: '/free-tools/', destination: '/tools/', permanent: true },
     ];
   },
 };
