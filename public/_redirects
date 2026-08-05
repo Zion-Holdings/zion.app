@@ -7,3 +7,9 @@
 /services/ai-compliance/ /docs/services/ai-compliance/index.html 200
 /blog/ /docs/blog/index.html 200
 /blog/* /docs/blog/:splat 200
+/about/ /docs/about/index.html 200
+/pricing/ /docs/pricing/index.html 200
+/case-studies/ /docs/case-studies/index.html 200
+/industries/ /docs/industries/index.html 200
+/search/ /docs/search/index.html 200
+/solutions/ /docs/solutions/index.html 200

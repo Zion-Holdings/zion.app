@@ -7,4 +7,5 @@
 /pricing/ /docs/pricing/index.html 200
 /industries/ /docs/industries/index.html 200
 /search/ /docs/search/index.html 200
-/solutions/ /docs/solutions/index.html 200
+|/solutions/ /docs/solutions/index.html 200
+|/ai-resources/ /docs/ai-resources/index.html 200
