@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Finance for Hospitality #2 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Adaptive Finance for Hospitality #2. This autonomous system provides performance monitoring with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Adaptive Finance for Hospitality #2. This autonomous system provides performance monitoring with zero manual intervention neede",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-finance-for-hospitality-2-cbdc8679`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Fraud detection with anomaly analysis</li>
             <li>Sales process optimization with pipeline management</li>
             <li>Serverless functions for cost-effective scaling</li>
-            <li>Custom integrations with webhook support</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved customer satisfaction with faster response times</li>
             <li>Improved brand awareness with social monitoring</li>
             <li>Enhanced decision making with data-driven insights</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
           </ul>
         </div>
         

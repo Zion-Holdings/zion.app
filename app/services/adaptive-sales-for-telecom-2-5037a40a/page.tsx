@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data encryption at rest and in transit</li>
             <li>Role-based access control with SSO integration</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Better customer experience with personalization</li>
             <li>Increased revenue with optimized pricing strategies</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
           </ul>
         </div>
         

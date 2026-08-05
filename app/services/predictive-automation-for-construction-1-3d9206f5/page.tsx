@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Automation for Construction #1 - Zion Tech Group",
-  description: "Transform your construction operations with our Predictive Automation for Construction #1. This AI-driven solution automates risk assessment with unprecedented accuracy and efficiency.",
+  description: "Transform your construction operations with our Predictive Automation for Construction #1. This AI-driven solution automates risk assessment with unprecedented ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-automation-for-construction-1-3d9206f5`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data governance with policy enforcement</li>
             <li>Budget optimization with cost allocation</li>
             <li>Competitive intelligence with market share tracking</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         

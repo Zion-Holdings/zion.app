@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Custom integrations with webhook support</li>
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Predictive modeling with ensemble methods</li>
-            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         

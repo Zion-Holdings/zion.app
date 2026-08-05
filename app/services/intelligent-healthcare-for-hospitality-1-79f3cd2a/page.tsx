@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Healthcare for Hospitality #1 - Zion Tech Group",
-  description: "Transform your hospitality operations with our Intelligent Healthcare for Hospitality #1. This AI-driven solution automates user experience with unprecedented accuracy and efficiency.",
+  description: "Transform your hospitality operations with our Intelligent Healthcare for Hospitality #1. This AI-driven solution automates user experience with unprecedented a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-healthcare-for-hospitality-1-79f3cd2a`
   }

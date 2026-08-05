@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Network optimization with traffic analysis</li>
             <li>Brand monitoring across social channels</li>
             <li>SOC 2 certified with security controls</li>
-            <li>A/B testing framework for continuous optimization</li>
           </ul>
         </div>
         

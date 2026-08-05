@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Manufacturing for Legal #1 - Zion Tech Group",
-  description: "Revolutionize legal through intelligent automation. Our Predictive Manufacturing for Legal #1 leverages advanced machine learning to deliver compliance monitoring at scale.",
+  description: "Revolutionize legal through intelligent automation. Our Predictive Manufacturing for Legal #1 leverages advanced machine learning to deliver compliance monitori",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-manufacturing-for-legal-1-6bd3603f`
   }

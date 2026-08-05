@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Experience for Automotive - Zion Tech Group",
-  description: "Transform your automotive operations with our Automated Experience for Automotive. This AI-driven solution automates network optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your automotive operations with our Automated Experience for Automotive. This AI-driven solution automates network optimization with unprecedented acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-experience-for-automotive-4021217a`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Document processing with OCR and NLP</li>
             <li>Inventory prediction with demand forecasting</li>
             <li>Healthcare data analytics with patient insights</li>
-            <li>Language processing with sentiment analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced development time with code generation</li>
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Zero manual intervention required for routine tasks</li>
-            <li>Reduced shipping costs with route optimization</li>
           </ul>
         </div>
         

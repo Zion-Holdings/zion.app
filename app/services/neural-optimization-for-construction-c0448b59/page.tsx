@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Optimization for Construction - Zion Tech Group",
-  description: "Transform your construction operations with our Neural Optimization for Construction. This AI-driven solution automates fraud prevention with unprecedented accuracy and efficiency.",
+  description: "Transform your construction operations with our Neural Optimization for Construction. This AI-driven solution automates fraud prevention with unprecedented accu",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-optimization-for-construction-c0448b59`
   }

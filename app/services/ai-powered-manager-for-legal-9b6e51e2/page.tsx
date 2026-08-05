@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Healthcare data analytics with patient insights</li>
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Language processing with sentiment analysis</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Alerting system with intelligent notifications</li>
             <li>Maintenance scheduling with predictive analytics</li>
             <li>Document processing with OCR and NLP</li>
-            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         

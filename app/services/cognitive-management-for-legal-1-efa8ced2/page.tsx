@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Management for Legal #1 - Zion Tech Group",
-  description: "Transform your legal operations with our Cognitive Management for Legal #1. This AI-driven solution automates financial planning with unprecedented accuracy and efficiency.",
+  description: "Transform your legal operations with our Cognitive Management for Legal #1. This AI-driven solution automates financial planning with unprecedented accuracy and",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-management-for-legal-1-efa8ced2`
   }

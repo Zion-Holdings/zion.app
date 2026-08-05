@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Revenue for Agriculture - Zion Tech Group",
-  description: "Transform your agriculture operations with our Automated Revenue for Agriculture. This AI-driven solution automates threat detection with unprecedented accuracy and efficiency.",
+  description: "Transform your agriculture operations with our Automated Revenue for Agriculture. This AI-driven solution automates threat detection with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-revenue-for-agriculture-1e8afcc0`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Real-time processing with streaming analytics</li>
             <li>Financial risk management with scenario analysis</li>
             <li>Market analysis with buyer behavior insights</li>
-            <li>Logistics route optimization with traffic prediction</li>
           </ul>
         </div>
         

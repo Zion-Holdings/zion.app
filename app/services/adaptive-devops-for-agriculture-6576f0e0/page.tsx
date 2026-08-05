@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Language processing with sentiment analysis</li>
             <li>Serverless functions for cost-effective scaling</li>
             <li>Multi-language support with localization</li>
-            <li>Machine learning integration with automatic model training</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Scalable to millions of transactions per second</li>
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Cost optimization recommendations with savings analysis</li>
-            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Optimization for Hospitality #1 - Zion Tech Group",
-  description: "The future of hospitality is here with Automated Optimization for Hospitality #1. Powered by cutting-edge AI, this platform delivers inventory management like never before.",
+  description: "The future of hospitality is here with Automated Optimization for Hospitality #1. Powered by cutting-edge AI, this platform delivers inventory management like n",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-optimization-for-hospitality-1-8b5d1bc5`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Language processing with sentiment analysis</li>
             <li>Microservices deployment with container orchestration</li>
             <li>Competitive intelligence with market share tracking</li>
-            <li>Real-time processing with streaming analytics</li>
           </ul>
         </div>
         

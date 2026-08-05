@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Coordinator for Energy - Zion Tech Group",
-  description: "Revolutionize energy through intelligent automation. Our AI-Powered Coordinator for Energy leverages advanced machine learning to deliver sales process optimization at scale.",
+  description: "Revolutionize energy through intelligent automation. Our AI-Powered Coordinator for Energy leverages advanced machine learning to deliver sales process optimiza",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-coordinator-for-energy-64b28c52`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced human error by 95% with automated processes</li>
             <li>Better risk management with predictive analytics</li>
             <li>Reduced customer acquisition costs with optimization</li>
-            <li>Reduced development time with code generation</li>
           </ul>
         </div>
         

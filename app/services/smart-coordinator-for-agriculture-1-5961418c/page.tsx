@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Coordinator for Agriculture #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Smart Coordinator for Agriculture #1. This autonomous system provides network optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Smart Coordinator for Agriculture #1. This autonomous system provides network optimization with zero manual intervention needed",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-coordinator-for-agriculture-1-5961418c`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Microservices deployment with container orchestration</li>
             <li>User experience analytics with behavior tracking</li>
             <li>HIPAA ready with healthcare data protection</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         

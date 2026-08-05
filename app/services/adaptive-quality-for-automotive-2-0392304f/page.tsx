@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>50% reduction in operational costs through automation</li>
             <li>Real-time insights and alerts for proactive management</li>
             <li>Reduced marketing costs with targeted campaigns</li>
-            <li>Improved customer retention with proactive service</li>
           </ul>
         </div>
         

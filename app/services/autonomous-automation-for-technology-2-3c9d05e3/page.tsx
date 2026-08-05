@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Automation for Technology #2 - Zion Tech Group",
-  description: "Revolutionize technology through intelligent automation. Our Autonomous Automation for Technology #2 leverages advanced machine learning to deliver content generation at scale.",
+  description: "Revolutionize technology through intelligent automation. Our Autonomous Automation for Technology #2 leverages advanced machine learning to deliver content gene",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-automation-for-technology-2-3c9d05e3`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Business intelligence with KPI dashboards</li>
             <li>Maintenance scheduling with predictive analytics</li>
             <li>Content generation with plagiarism checks</li>
-            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Faster time-to-market with accelerated development</li>
             <li>Real-time insights and alerts for proactive management</li>
             <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

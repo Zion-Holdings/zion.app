@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Performance for Automotive #1 - Zion Tech Group",
-  description: "Transform your automotive operations with our Adaptive Performance for Automotive #1. This AI-driven solution automates customer service automation with unprecedented accuracy and efficiency.",
+  description: "Transform your automotive operations with our Adaptive Performance for Automotive #1. This AI-driven solution automates customer service automation with unprece",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-performance-for-automotive-1-30fc3d39`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data quality with anomaly detection</li>
             <li>Healthcare data analytics with patient insights</li>
             <li>Compliance monitoring with regulatory updates</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         

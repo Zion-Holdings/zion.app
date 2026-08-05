@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Coordinator for Hospitality - Zion Tech Group",
-  description: "Transform your hospitality operations with our Self-Optimizing Coordinator for Hospitality. This AI-driven solution automates network optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your hospitality operations with our Self-Optimizing Coordinator for Hospitality. This AI-driven solution automates network optimization with unpreced",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-coordinator-for-hospitality-d0ba79d2`
   }

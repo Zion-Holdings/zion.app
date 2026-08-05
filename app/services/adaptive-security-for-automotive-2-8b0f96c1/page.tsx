@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Security for Automotive #2 - Zion Tech Group",
-  description: "The future of automotive is here with Adaptive Security for Automotive #2. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.",
+  description: "The future of automotive is here with Adaptive Security for Automotive #2. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-security-for-automotive-2-8b0f96c1`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sales process optimization with pipeline management</li>
             <li>Multi-language support with localization</li>
             <li>Real-time processing with streaming analytics</li>
-            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         

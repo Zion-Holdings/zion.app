@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Compliance for Finance - Zion Tech Group",
-  description: "Transform your finance operations with our Autonomous Compliance for Finance. This AI-driven solution automates customer insights with unprecedented accuracy and efficiency.",
+  description: "Transform your finance operations with our Autonomous Compliance for Finance. This AI-driven solution automates customer insights with unprecedented accuracy an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-compliance-for-finance-fb83194e`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Customer service automation with chatbot integration</li>
             <li>Image recognition with computer vision</li>
-            <li>Edge computing support for low-latency operations</li>
           </ul>
         </div>
         

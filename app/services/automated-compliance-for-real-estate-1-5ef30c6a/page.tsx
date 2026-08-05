@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced operational risks with predictive models</li>
             <li>Seamless integration with existing systems and workflows</li>
             <li>Faster content creation with AI assistance</li>
-            <li>Better market positioning with competitive analysis</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Security for Manufacturing - Zion Tech Group",
-  description: "The future of manufacturing is here with Autonomous Security for Manufacturing. Powered by cutting-edge AI, this platform delivers market intelligence like never before.",
+  description: "The future of manufacturing is here with Autonomous Security for Manufacturing. Powered by cutting-edge AI, this platform delivers market intelligence like neve",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-security-for-manufacturing-65cd472c`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced human error by 95% with automated processes</li>
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Faster time-to-market with accelerated development</li>
-            <li>Reduced support tickets with self-service options</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-language support with localization</li>
             <li>Logistics route optimization with traffic prediction</li>
             <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Role-based access control with SSO integration</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>99.9% uptime guarantee with redundant architecture</li>
             <li>Scalable to millions of transactions per second</li>
             <li>50% reduction in operational costs through automation</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         

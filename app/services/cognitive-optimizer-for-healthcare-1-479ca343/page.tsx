@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Optimizer for Healthcare #1 - Zion Tech Group",
-  description: "Revolutionize healthcare through intelligent automation. Our Cognitive Optimizer for Healthcare #1 leverages advanced machine learning to deliver supply chain at scale.",
+  description: "Revolutionize healthcare through intelligent automation. Our Cognitive Optimizer for Healthcare #1 leverages advanced machine learning to deliver supply chain a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-optimizer-for-healthcare-1-479ca343`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Alerting system with intelligent notifications</li>
             <li>Data encryption at rest and in transit</li>
             <li>Revenue forecasting with market trend analysis</li>
-            <li>Master data management with golden records</li>
           </ul>
         </div>
         

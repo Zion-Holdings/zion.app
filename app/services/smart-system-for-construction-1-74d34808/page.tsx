@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Zero manual intervention required for routine tasks</li>
             <li>Better compliance with automated audit trails</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Suite for Automotive - Zion Tech Group",
-  description: "Revolutionize automotive through intelligent automation. Our Cognitive Suite for Automotive leverages advanced machine learning to deliver risk assessment at scale.",
+  description: "Revolutionize automotive through intelligent automation. Our Cognitive Suite for Automotive leverages advanced machine learning to deliver risk assessment at sc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-suite-for-automotive-bbbd83fa`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced decision making with data-driven insights</li>
             <li>Improved customer satisfaction with faster response times</li>
             <li>Real-time insights and alerts for proactive management</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
           </ul>
         </div>
         

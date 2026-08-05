@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Processor for Real-Estate - Zion Tech Group",
-  description: "The future of real-estate is here with Self-Optimizing Processor for Real-Estate. Powered by cutting-edge AI, this platform delivers code optimization like never before.",
+  description: "The future of real-estate is here with Self-Optimizing Processor for Real-Estate. Powered by cutting-edge AI, this platform delivers code optimization like neve",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-processor-for-real-estate-80a90fc5`
   }

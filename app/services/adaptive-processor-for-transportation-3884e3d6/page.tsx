@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Processor for Transportation - Zion Tech Group",
-  description: "Transform your transportation operations with our Adaptive Processor for Transportation. This AI-driven solution automates sales forecasting with unprecedented accuracy and efficiency.",
+  description: "Transform your transportation operations with our Adaptive Processor for Transportation. This AI-driven solution automates sales forecasting with unprecedented ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-processor-for-transportation-3884e3d6`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved quality with automated testing and validation</li>
             <li>Seamless integration with existing systems and workflows</li>
             <li>Enhanced security with continuous threat monitoring</li>
-            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Compliance for Transportation - Zion Tech Group",
-  description: "Revolutionize transportation through intelligent automation. Our Adaptive Compliance for Transportation leverages advanced machine learning to deliver customer insights at scale.",
+  description: "Revolutionize transportation through intelligent automation. Our Adaptive Compliance for Transportation leverages advanced machine learning to deliver customer ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-compliance-for-transportation-3af6a634`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better supply chain visibility with tracking</li>
             <li>Enhanced security with continuous threat monitoring</li>
             <li>Reduced marketing costs with targeted campaigns</li>
-            <li>Improved product quality with automated testing</li>
           </ul>
         </div>
         

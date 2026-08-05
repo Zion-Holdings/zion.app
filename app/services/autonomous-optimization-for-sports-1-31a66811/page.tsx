@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Predictive modeling with ensemble methods</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         

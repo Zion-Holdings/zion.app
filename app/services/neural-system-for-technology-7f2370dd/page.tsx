@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural System for Technology - Zion Tech Group",
-  description: "Transform your technology operations with our Neural System for Technology. This AI-driven solution automates resource optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your technology operations with our Neural System for Technology. This AI-driven solution automates resource optimization with unprecedented accuracy ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-system-for-technology-7f2370dd`
   }

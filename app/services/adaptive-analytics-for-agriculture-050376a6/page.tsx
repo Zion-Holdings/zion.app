@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Analytics for Agriculture - Zion Tech Group",
-  description: "Revolutionize agriculture through intelligent automation. Our Adaptive Analytics for Agriculture leverages advanced machine learning to deliver supply chain at scale.",
+  description: "Revolutionize agriculture through intelligent automation. Our Adaptive Analytics for Agriculture leverages advanced machine learning to deliver supply chain at ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-analytics-for-agriculture-050376a6`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Energy optimization with consumption tracking</li>
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Competitive intelligence with market share tracking</li>
-            <li>Network optimization with traffic analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved employee productivity with automation</li>
             <li>Better customer experience with personalization</li>
             <li>Improved sales performance with lead scoring</li>
-            <li>Reduced risk with early warning systems</li>
           </ul>
         </div>
         

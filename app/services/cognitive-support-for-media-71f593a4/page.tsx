@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Market analysis with buyer behavior insights</li>
             <li>Inventory prediction with demand forecasting</li>
             <li>Serverless functions for cost-effective scaling</li>
-            <li>Maintenance scheduling with predictive analytics</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better customer experience with personalization</li>
             <li>24/7 automated operations without human intervention</li>
             <li>Reduced development time with code generation</li>
-            <li>Improved quality with automated testing and validation</li>
           </ul>
         </div>
         

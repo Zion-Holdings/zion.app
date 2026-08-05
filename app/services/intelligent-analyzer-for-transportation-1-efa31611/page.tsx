@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Analyzer for Transportation #1 - Zion Tech Group",
-  description: "The future of transportation is here with Intelligent Analyzer for Transportation #1. Powered by cutting-edge AI, this platform delivers language processing like never before.",
+  description: "The future of transportation is here with Intelligent Analyzer for Transportation #1. Powered by cutting-edge AI, this platform delivers language processing lik",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-analyzer-for-transportation-1-efa31611`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Director for Legal - Zion Tech Group",
-  description: "Transform your legal operations with our Smart Director for Legal. This AI-driven solution automates resource optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your legal operations with our Smart Director for Legal. This AI-driven solution automates resource optimization with unprecedented accuracy and effic",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-director-for-legal-53c4f90a`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>A/B testing framework for continuous optimization</li>
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Process discovery with activity analysis</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         

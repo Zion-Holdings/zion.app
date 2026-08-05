@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Processor for Automotive #1 - Zion Tech Group",
-  description: "The future of automotive is here with Autonomous Processor for Automotive #1. Powered by cutting-edge AI, this platform delivers energy management like never before.",
+  description: "The future of automotive is here with Autonomous Processor for Automotive #1. Powered by cutting-edge AI, this platform delivers energy management like never be",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-processor-for-automotive-1-532b7850`
   }

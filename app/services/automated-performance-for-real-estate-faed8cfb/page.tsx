@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Performance for Real-Estate - Zion Tech Group",
-  description: "Next-generation real-estate solution: Automated Performance for Real-Estate. Combines customer service automation with adaptive intelligence for optimal results.",
+  description: "Next-generation real-estate solution: Automated Performance for Real-Estate. Combines customer service automation with adaptive intelligence for optimal results",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-performance-for-real-estate-faed8cfb`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Brand monitoring across social channels</li>
             <li>Language processing with sentiment analysis</li>
             <li>A/B testing framework for continuous optimization</li>
-            <li>Image recognition with computer vision</li>
           </ul>
         </div>
         

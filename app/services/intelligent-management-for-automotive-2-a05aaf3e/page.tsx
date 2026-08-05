@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>User experience analytics with behavior tracking</li>
             <li>A/B testing framework for continuous optimization</li>
-            <li>Cost reduction with process mining</li>
           </ul>
         </div>
         

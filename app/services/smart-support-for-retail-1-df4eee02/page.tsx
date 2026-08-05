@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Content generation with plagiarism checks</li>
-            <li>Machine learning integration with automatic model training</li>
           </ul>
         </div>
         

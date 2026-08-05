@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Insights for Manufacturing #3 - Zion Tech Group",
-  description: "Transform your manufacturing operations with our Autonomous Insights for Manufacturing #3. This AI-driven solution automates workflow management with unprecedented accuracy and efficiency.",
+  description: "Transform your manufacturing operations with our Autonomous Insights for Manufacturing #3. This AI-driven solution automates workflow management with unpreceden",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-insights-for-manufacturing-3-5e61c250`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Microservices deployment with container orchestration</li>
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Machine learning integration with automatic model training</li>
-            <li>Customer journey mapping with touchpoint analysis</li>
           </ul>
         </div>
         

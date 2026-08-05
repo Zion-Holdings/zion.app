@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Optimizer for Manufacturing #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Optimizer for Manufacturing #1. This autonomous system provides predictive analytics with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Intelligent Optimizer for Manufacturing #1. This autonomous system provides predictive analytics with zero manual intervention ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-optimizer-for-manufacturing-1-bf7653a9`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Role-based access control with SSO integration</li>
             <li>Competitive intelligence with market share tracking</li>
             <li>Version control with rollback capabilities</li>
-            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>50% reduction in operational costs through automation</li>
             <li>Better inventory management with demand forecasting</li>
             <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Reduced operational risks with predictive models</li>
           </ul>
         </div>
         

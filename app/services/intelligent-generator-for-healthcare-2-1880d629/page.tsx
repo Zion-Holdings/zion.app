@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Content generation with plagiarism checks</li>
             <li>Energy optimization with consumption tracking</li>
             <li>Microservices deployment with container orchestration</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         

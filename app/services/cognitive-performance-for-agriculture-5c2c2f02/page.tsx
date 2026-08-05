@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Performance for Agriculture - Zion Tech Group",
-  description: "Revolutionize agriculture through intelligent automation. Our Cognitive Performance for Agriculture leverages advanced machine learning to deliver financial planning at scale.",
+  description: "Revolutionize agriculture through intelligent automation. Our Cognitive Performance for Agriculture leverages advanced machine learning to deliver financial pla",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-performance-for-agriculture-5c2c2f02`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Logistics route optimization with traffic prediction</li>
             <li>Version control with rollback capabilities</li>
             <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         

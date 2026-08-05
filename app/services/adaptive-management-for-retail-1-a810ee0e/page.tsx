@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Role-based access control with SSO integration</li>
           </ul>
         </div>
         

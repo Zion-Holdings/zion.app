@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cost reduction with process mining</li>
             <li>Multi-language support with localization</li>
             <li>Master data management with golden records</li>
-            <li>Revenue forecasting with market trend analysis</li>
           </ul>
         </div>
         

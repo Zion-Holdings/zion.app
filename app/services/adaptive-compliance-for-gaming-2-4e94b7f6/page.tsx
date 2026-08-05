@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automation opportunity identification</li>
             <li>Budget optimization with cost allocation</li>
             <li>Market analysis with buyer behavior insights</li>
-            <li>Network optimization with traffic analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>50% reduction in operational costs through automation</li>
             <li>Reduced development time with code generation</li>
             <li>Reduced customer acquisition costs with optimization</li>
-            <li>Improved customer retention with proactive service</li>
           </ul>
         </div>
         

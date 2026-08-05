@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Analytics for Education #2 - Zion Tech Group",
-  description: "Transform your education operations with our Neural Analytics for Education #2. This AI-driven solution automates sales process optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your education operations with our Neural Analytics for Education #2. This AI-driven solution automates sales process optimization with unprecedented ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-analytics-for-education-2-28336b49`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Edge computing support for low-latency operations</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Real-time processing with streaming analytics</li>
-            <li>Multi-region deployment with automatic failover</li>
           </ul>
         </div>
         

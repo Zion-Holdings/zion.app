@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Coordinator for Finance - Zion Tech Group",
-  description: "Unlock unprecedented growth with Self-Optimizing Coordinator for Finance. This autonomous system provides sales process optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Self-Optimizing Coordinator for Finance. This autonomous system provides sales process optimization with zero manual interventi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-coordinator-for-finance-01b29d9f`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better compliance with automated audit trails</li>
             <li>Better supply chain visibility with tracking</li>
             <li>Better customer experience with personalization</li>
-            <li>Reduced customer acquisition costs with optimization</li>
           </ul>
         </div>
         

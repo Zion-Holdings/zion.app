@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Supply for Energy - Zion Tech Group",
-  description: "Transform your energy operations with our Self-Optimizing Supply for Energy. This AI-driven solution automates fraud prevention with unprecedented accuracy and efficiency.",
+  description: "Transform your energy operations with our Self-Optimizing Supply for Energy. This AI-driven solution automates fraud prevention with unprecedented accuracy and ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-supply-for-energy-fc13dc21`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Maintenance scheduling with predictive analytics</li>
             <li>Real-time processing with streaming analytics</li>
             <li>Data encryption at rest and in transit</li>
-            <li>Budget optimization with cost allocation</li>
           </ul>
         </div>
         

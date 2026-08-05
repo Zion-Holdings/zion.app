@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Analyzer for Transportation #1 - Zion Tech Group",
-  description: "The future of transportation is here with Predictive Analyzer for Transportation #1. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.",
+  description: "The future of transportation is here with Predictive Analyzer for Transportation #1. Powered by cutting-edge AI, this platform delivers sales forecasting like n",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-analyzer-for-transportation-1-75a06162`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Market analysis with buyer behavior insights</li>
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Network optimization with traffic analysis</li>
-            <li>Energy optimization with consumption tracking</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Predictive maintenance scheduling to prevent downtime</li>
             <li>Zero manual intervention required for routine tasks</li>
             <li>Reduced risk with early warning systems</li>
-            <li>Enhanced decision making with data-driven insights</li>
           </ul>
         </div>
         

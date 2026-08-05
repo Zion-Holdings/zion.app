@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cost reduction with process mining</li>
             <li>Open-source friendly with plugin architecture</li>
             <li>Language processing with sentiment analysis</li>
-            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         

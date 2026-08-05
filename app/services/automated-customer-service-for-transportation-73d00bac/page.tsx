@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Customer Service for Transportation - Zion Tech Group",
-  description: "Unlock unprecedented growth with Automated Customer Service for Transportation. This autonomous system provides financial planning with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Automated Customer Service for Transportation. This autonomous system provides financial planning with zero manual intervention",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-customer-service-for-transportation-73d00bac`
   }

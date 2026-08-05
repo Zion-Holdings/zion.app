@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Predictor for Construction #1 - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Adaptive Predictor for Construction #1 leverages advanced machine learning to deliver resource optimization at scale.",
+  description: "Revolutionize construction through intelligent automation. Our Adaptive Predictor for Construction #1 leverages advanced machine learning to deliver resource op",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-predictor-for-construction-1-27877cda`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>SOC 2 certified with security controls</li>
             <li>Multi-region deployment with automatic failover</li>
             <li>Image recognition with computer vision</li>
-            <li>Master data management with golden records</li>
           </ul>
         </div>
         

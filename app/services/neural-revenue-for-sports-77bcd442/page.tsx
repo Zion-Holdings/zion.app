@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>A/B testing framework for continuous optimization</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Document processing with OCR and NLP</li>
-            <li>Process discovery with activity analysis</li>
           </ul>
         </div>
         

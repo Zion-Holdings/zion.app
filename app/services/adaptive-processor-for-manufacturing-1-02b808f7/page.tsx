@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Processor for Manufacturing #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Adaptive Processor for Manufacturing #1. This autonomous system provides customer insights with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Adaptive Processor for Manufacturing #1. This autonomous system provides customer insights with zero manual intervention needed",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-processor-for-manufacturing-1-02b808f7`
   }

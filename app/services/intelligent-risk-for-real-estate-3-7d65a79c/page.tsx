@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Risk for Real-Estate #3 - Zion Tech Group",
-  description: "Transform your real-estate operations with our Intelligent Risk for Real-Estate #3. This AI-driven solution automates performance monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your real-estate operations with our Intelligent Risk for Real-Estate #3. This AI-driven solution automates performance monitoring with unprecedented ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-risk-for-real-estate-3-7d65a79c`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved sales performance with lead scoring</li>
             <li>Enhanced decision making with data-driven insights</li>
             <li>Better risk management with predictive analytics</li>
-            <li>Reduced human error by 95% with automated processes</li>
           </ul>
         </div>
         

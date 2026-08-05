@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Risk for Agriculture #1 - Zion Tech Group",
-  description: "Revolutionize agriculture through intelligent automation. Our Automated Risk for Agriculture #1 leverages advanced machine learning to deliver compliance monitoring at scale.",
+  description: "Revolutionize agriculture through intelligent automation. Our Automated Risk for Agriculture #1 leverages advanced machine learning to deliver compliance monito",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-risk-for-agriculture-1-37d85d4f`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Role-based access control with SSO integration</li>
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Manufacturing quality control with defect detection</li>
-            <li>Audit trails with compliance reporting</li>
           </ul>
         </div>
         

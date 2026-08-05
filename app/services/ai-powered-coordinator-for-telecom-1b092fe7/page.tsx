@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Coordinator for Telecom - Zion Tech Group",
-  description: "Transform your telecom operations with our AI-Powered Coordinator for Telecom. This AI-driven solution automates sales forecasting with unprecedented accuracy and efficiency.",
+  description: "Transform your telecom operations with our AI-Powered Coordinator for Telecom. This AI-driven solution automates sales forecasting with unprecedented accuracy a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-coordinator-for-telecom-1b092fe7`
   }

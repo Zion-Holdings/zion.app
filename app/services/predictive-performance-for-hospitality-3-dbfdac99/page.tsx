@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Performance for Hospitality #3 - Zion Tech Group",
-  description: "The future of hospitality is here with Predictive Performance for Hospitality #3. Powered by cutting-edge AI, this platform delivers security monitoring like never before.",
+  description: "The future of hospitality is here with Predictive Performance for Hospitality #3. Powered by cutting-edge AI, this platform delivers security monitoring like ne",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-performance-for-hospitality-3-dbfdac99`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sales process optimization with pipeline management</li>
             <li>Process discovery with activity analysis</li>
             <li>Data governance with policy enforcement</li>
-            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         

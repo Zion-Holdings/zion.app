@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better resource utilization with auto-scaling</li>
             <li>Better financial planning with predictive models</li>
             <li>Seamless integration with existing systems and workflows</li>
-            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

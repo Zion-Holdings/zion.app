@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Supply for Education - Zion Tech Group",
-  description: "Revolutionize education through intelligent automation. Our AI-Powered Supply for Education leverages advanced machine learning to deliver resource optimization at scale.",
+  description: "Revolutionize education through intelligent automation. Our AI-Powered Supply for Education leverages advanced machine learning to deliver resource optimization",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-supply-for-education-6f44513f`
   }

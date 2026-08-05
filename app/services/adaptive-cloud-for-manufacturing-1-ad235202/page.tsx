@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Cloud for Manufacturing #1 - Zion Tech Group",
-  description: "Revolutionize manufacturing through intelligent automation. Our Adaptive Cloud for Manufacturing #1 leverages advanced machine learning to deliver data processing at scale.",
+  description: "Revolutionize manufacturing through intelligent automation. Our Adaptive Cloud for Manufacturing #1 leverages advanced machine learning to deliver data processi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-cloud-for-manufacturing-1-ad235202`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Process discovery with activity analysis</li>
             <li>Code optimization with performance profiling</li>
             <li>Audit trails with compliance reporting</li>
-            <li>Role-based access control with SSO integration</li>
           </ul>
         </div>
         

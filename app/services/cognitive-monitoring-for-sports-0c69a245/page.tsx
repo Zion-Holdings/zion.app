@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Monitoring for Sports - Zion Tech Group",
-  description: "Revolutionize sports through intelligent automation. Our Cognitive Monitoring for Sports leverages advanced machine learning to deliver customer insights at scale.",
+  description: "Revolutionize sports through intelligent automation. Our Cognitive Monitoring for Sports leverages advanced machine learning to deliver customer insights at sca",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-monitoring-for-sports-0c69a245`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Security monitoring with threat intelligence</li>
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Budget optimization with cost allocation</li>
-            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         

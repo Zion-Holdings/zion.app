@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Security for Gaming #1 - Zion Tech Group",
-  description: "Transform your gaming operations with our Predictive Security for Gaming #1. This AI-driven solution automates decision support with unprecedented accuracy and efficiency.",
+  description: "Transform your gaming operations with our Predictive Security for Gaming #1. This AI-driven solution automates decision support with unprecedented accuracy and ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-security-for-gaming-1-cfedd62b`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>GDPR compliance with data portability</li>
             <li>Budget optimization with cost allocation</li>
             <li>Image recognition with computer vision</li>
-            <li>Automation opportunity identification</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Real-time insights and alerts for proactive management</li>
             <li>ROI achieved in under 90 days with cost savings</li>
             <li>Reduced marketing costs with targeted campaigns</li>
-            <li>Seamless integration with existing systems and workflows</li>
           </ul>
         </div>
         

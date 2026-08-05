@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data governance with policy enforcement</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Advisor for Hospitality - Zion Tech Group",
-  description: "The future of hospitality is here with Automated Advisor for Hospitality. Powered by cutting-edge AI, this platform delivers predictive analytics like never before.",
+  description: "The future of hospitality is here with Automated Advisor for Hospitality. Powered by cutting-edge AI, this platform delivers predictive analytics like never bef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-advisor-for-hospitality-a070126f`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Open-source friendly with plugin architecture</li>
             <li>Business intelligence with KPI dashboards</li>
             <li>Fraud detection with anomaly analysis</li>
-            <li>Version control with rollback capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved employee productivity with automation</li>
             <li>Reduced operational risks with predictive models</li>
             <li>Improved customer satisfaction with faster response times</li>
-            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         

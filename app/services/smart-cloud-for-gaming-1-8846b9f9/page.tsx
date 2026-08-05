@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Open-source friendly with plugin architecture</li>
             <li>HIPAA ready with healthcare data protection</li>
             <li>Custom integrations with webhook support</li>
-            <li>A/B testing framework for continuous optimization</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better inventory management with demand forecasting</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>24/7 automated operations without human intervention</li>
-            <li>50% reduction in operational costs through automation</li>
           </ul>
         </div>
         

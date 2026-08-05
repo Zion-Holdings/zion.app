@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Suite for Insurance - Zion Tech Group",
-  description: "Revolutionize insurance through intelligent automation. Our Cognitive Suite for Insurance leverages advanced machine learning to deliver customer service automation at scale.",
+  description: "Revolutionize insurance through intelligent automation. Our Cognitive Suite for Insurance leverages advanced machine learning to deliver customer service automa",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-suite-for-insurance-71fd75bb`
   }

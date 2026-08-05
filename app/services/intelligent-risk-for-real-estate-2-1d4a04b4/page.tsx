@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Revenue forecasting with market trend analysis</li>
             <li>Serverless functions for cost-effective scaling</li>
             <li>Data quality with anomaly detection</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Automated compliance reporting for regulatory requirements</li>
             <li>Reduced human error by 95% with automated processes</li>
             <li>Reduced support tickets with self-service options</li>
-            <li>Reduced risk with early warning systems</li>
           </ul>
         </div>
         

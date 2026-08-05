@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Engine for Automotive - Zion Tech Group",
-  description: "Revolutionize automotive through intelligent automation. Our Adaptive Engine for Automotive leverages advanced machine learning to deliver process automation at scale.",
+  description: "Revolutionize automotive through intelligent automation. Our Adaptive Engine for Automotive leverages advanced machine learning to deliver process automation at",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-engine-for-automotive-30a6733d`
   }

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Serverless functions for cost-effective scaling</li>
             <li>GDPR compliance with data portability</li>
             <li>Executive dashboards with drill-down capabilities</li>
-            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         

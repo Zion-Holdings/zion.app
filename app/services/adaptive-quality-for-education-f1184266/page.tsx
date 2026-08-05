@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Quality for Education - Zion Tech Group",
-  description: "Transform your education operations with our Adaptive Quality for Education. This AI-driven solution automates supply chain with unprecedented accuracy and efficiency.",
+  description: "Transform your education operations with our Adaptive Quality for Education. This AI-driven solution automates supply chain with unprecedented accuracy and effi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-quality-for-education-f1184266`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Logistics route optimization with traffic prediction</li>
             <li>Inventory prediction with demand forecasting</li>
             <li>Sales process optimization with pipeline management</li>
-            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         

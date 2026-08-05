@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Data governance with policy enforcement</li>
             <li>Customer journey mapping with touchpoint analysis</li>
-            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced decision making with data-driven insights</li>
             <li>Better market positioning with competitive analysis</li>
             <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Reduced customer acquisition costs with optimization</li>
           </ul>
         </div>
         

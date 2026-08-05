@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Generator for Media #1 - Zion Tech Group",
-  description: "Revolutionize media through intelligent automation. Our Adaptive Generator for Media #1 leverages advanced machine learning to deliver inventory management at scale.",
+  description: "Revolutionize media through intelligent automation. Our Adaptive Generator for Media #1 leverages advanced machine learning to deliver inventory management at s",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-generator-for-media-1-c8e6440d`
   }

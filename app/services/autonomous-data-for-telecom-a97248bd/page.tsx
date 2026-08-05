@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Data for Telecom - Zion Tech Group",
-  description: "Transform your telecom operations with our Autonomous Data for Telecom. This AI-driven solution automates document processing with unprecedented accuracy and efficiency.",
+  description: "Transform your telecom operations with our Autonomous Data for Telecom. This AI-driven solution automates document processing with unprecedented accuracy and ef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-data-for-telecom-a97248bd`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Document processing with OCR and NLP</li>
             <li>Network optimization with traffic analysis</li>
             <li>Cost reduction with process mining</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Real-time insights and alerts for proactive management</li>
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
           </ul>
         </div>
         

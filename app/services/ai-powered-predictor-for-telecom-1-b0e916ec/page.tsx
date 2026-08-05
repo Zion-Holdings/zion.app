@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Predictor for Telecom #1 - Zion Tech Group",
-  description: "Revolutionize telecom through intelligent automation. Our AI-Powered Predictor for Telecom #1 leverages advanced machine learning to deliver risk assessment at scale.",
+  description: "Revolutionize telecom through intelligent automation. Our AI-Powered Predictor for Telecom #1 leverages advanced machine learning to deliver risk assessment at ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-predictor-for-telecom-1-b0e916ec`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Open-source friendly with plugin architecture</li>
             <li>Language processing with sentiment analysis</li>
             <li>Microservices deployment with container orchestration</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         

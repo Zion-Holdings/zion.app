@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Audit trails with compliance reporting</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Comprehensive monitoring with custom dashboards</li>
-            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>24/7 automated operations without human intervention</li>
             <li>Improved quality with automated testing and validation</li>
             <li>Performance benchmarking against industry standards</li>
-            <li>Better supply chain visibility with tracking</li>
           </ul>
         </div>
         

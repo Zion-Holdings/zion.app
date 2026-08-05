@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Monitoring for Sports #2 - Zion Tech Group",
-  description: "The future of sports is here with Self-Optimizing Monitoring for Sports #2. Powered by cutting-edge AI, this platform delivers risk assessment like never before.",
+  description: "The future of sports is here with Self-Optimizing Monitoring for Sports #2. Powered by cutting-edge AI, this platform delivers risk assessment like never before",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-monitoring-for-sports-2-678d0913`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved sales performance with lead scoring</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
             <li>Faster content creation with AI assistance</li>
-            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

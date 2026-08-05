@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Management for Finance #1 - Zion Tech Group",
-  description: "The future of finance is here with Adaptive Management for Finance #1. Powered by cutting-edge AI, this platform delivers network optimization like never before.",
+  description: "The future of finance is here with Adaptive Management for Finance #1. Powered by cutting-edge AI, this platform delivers network optimization like never before",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-management-for-finance-1-46df55f3`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Serverless functions for cost-effective scaling</li>
             <li>Real-time processing with streaming analytics</li>
             <li>Microservices deployment with container orchestration</li>
-            <li>A/B testing framework for continuous optimization</li>
           </ul>
         </div>
         

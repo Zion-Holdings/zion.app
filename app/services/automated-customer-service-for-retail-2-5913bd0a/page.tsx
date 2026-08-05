@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Customer Service for Retail #2 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Automated Customer Service for Retail #2. This autonomous system provides document processing with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Automated Customer Service for Retail #2. This autonomous system provides document processing with zero manual intervention nee",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-customer-service-for-retail-2-5913bd0a`
   }

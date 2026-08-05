@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Performance for Construction - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our AI-Powered Performance for Construction leverages advanced machine learning to deliver predictive analytics at scale.",
+  description: "Revolutionize construction through intelligent automation. Our AI-Powered Performance for Construction leverages advanced machine learning to deliver predictive",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-performance-for-construction-802ae509`
   }

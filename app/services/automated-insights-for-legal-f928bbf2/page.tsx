@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Insights for Legal - Zion Tech Group",
-  description: "Transform your legal operations with our Automated Insights for Legal. This AI-driven solution automates financial planning with unprecedented accuracy and efficiency.",
+  description: "Transform your legal operations with our Automated Insights for Legal. This AI-driven solution automates financial planning with unprecedented accuracy and effi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-insights-for-legal-f928bbf2`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Open-source friendly with plugin architecture</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Revenue forecasting with market trend analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved forecast accuracy with ML models</li>
             <li>Improved conversion rates with personalization</li>
             <li>3x faster decision making with real-time insights</li>
-            <li>Seamless integration with existing systems and workflows</li>
           </ul>
         </div>
         

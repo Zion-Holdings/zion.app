@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Customer Service for Technology - Zion Tech Group",
-  description: "Revolutionize technology through intelligent automation. Our AI-Powered Customer Service for Technology leverages advanced machine learning to deliver content generation at scale.",
+  description: "Revolutionize technology through intelligent automation. Our AI-Powered Customer Service for Technology leverages advanced machine learning to deliver content g",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-customer-service-for-technology-e8f44256`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>User experience analytics with behavior tracking</li>
             <li>Competitive intelligence with market share tracking</li>
             <li>Cost reduction with process mining</li>
-            <li>Logistics route optimization with traffic prediction</li>
           </ul>
         </div>
         

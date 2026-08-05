@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Cost optimization recommendations with savings analysis</li>
             <li>Better customer experience with personalization</li>
             <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

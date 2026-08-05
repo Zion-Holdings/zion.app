@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Cloud for Insurance - Zion Tech Group",
-  description: "Revolutionize insurance through intelligent automation. Our Autonomous Cloud for Insurance leverages advanced machine learning to deliver fraud prevention at scale.",
+  description: "Revolutionize insurance through intelligent automation. Our Autonomous Cloud for Insurance leverages advanced machine learning to deliver fraud prevention at sc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-cloud-for-insurance-10b0a067`
   }

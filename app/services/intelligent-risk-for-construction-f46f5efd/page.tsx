@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Risk for Construction - Zion Tech Group",
-  description: "The future of construction is here with Intelligent Risk for Construction. Powered by cutting-edge AI, this platform delivers performance monitoring like never before.",
+  description: "The future of construction is here with Intelligent Risk for Construction. Powered by cutting-edge AI, this platform delivers performance monitoring like never ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-risk-for-construction-f46f5efd`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Microservices deployment with container orchestration</li>
             <li>Data quality with anomaly detection</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>Real-time processing with streaming analytics</li>
           </ul>
         </div>
         

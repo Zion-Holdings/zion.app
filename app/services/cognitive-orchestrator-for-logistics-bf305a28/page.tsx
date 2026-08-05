@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Orchestrator for Logistics - Zion Tech Group",
-  description: "The future of logistics is here with Cognitive Orchestrator for Logistics. Powered by cutting-edge AI, this platform delivers fraud prevention like never before.",
+  description: "The future of logistics is here with Cognitive Orchestrator for Logistics. Powered by cutting-edge AI, this platform delivers fraud prevention like never before",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-orchestrator-for-logistics-bf305a28`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Healthcare data analytics with patient insights</li>
             <li>Brand monitoring across social channels</li>
-            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         

@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Improved conversion rates with personalization</li>
-            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

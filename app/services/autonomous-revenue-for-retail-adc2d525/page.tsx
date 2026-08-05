@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Healthcare data analytics with patient insights</li>
             <li>Customer journey mapping with touchpoint analysis</li>
-            <li>Version control with rollback capabilities</li>
           </ul>
         </div>
         

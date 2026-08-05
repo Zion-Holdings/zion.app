@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Coordinator for Insurance - Zion Tech Group",
-  description: "The future of insurance is here with Adaptive Coordinator for Insurance. Powered by cutting-edge AI, this platform delivers sales process optimization like never before.",
+  description: "The future of insurance is here with Adaptive Coordinator for Insurance. Powered by cutting-edge AI, this platform delivers sales process optimization like neve",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-coordinator-for-insurance-65af4ed8`
   }

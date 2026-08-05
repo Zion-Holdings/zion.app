@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data governance with policy enforcement</li>
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Financial risk management with scenario analysis</li>
-            <li>Sentiment analysis with real-time monitoring</li>
           </ul>
         </div>
         

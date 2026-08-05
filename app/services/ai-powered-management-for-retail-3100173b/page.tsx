@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Management for Retail - Zion Tech Group",
-  description: "Revolutionize retail through intelligent automation. Our AI-Powered Management for Retail leverages advanced machine learning to deliver risk assessment at scale.",
+  description: "Revolutionize retail through intelligent automation. Our AI-Powered Management for Retail leverages advanced machine learning to deliver risk assessment at scal",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-management-for-retail-3100173b`
   }

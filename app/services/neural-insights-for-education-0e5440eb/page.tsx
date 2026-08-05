@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Open-source friendly with plugin architecture</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Inventory prediction with demand forecasting</li>
-            <li>Customer service automation with chatbot integration</li>
           </ul>
         </div>
         

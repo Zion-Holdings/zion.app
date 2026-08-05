@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Manufacturing for Legal #1 - Zion Tech Group",
-  description: "Transform your legal operations with our Cognitive Manufacturing for Legal #1. This AI-driven solution automates decision support with unprecedented accuracy and efficiency.",
+  description: "Transform your legal operations with our Cognitive Manufacturing for Legal #1. This AI-driven solution automates decision support with unprecedented accuracy an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-manufacturing-for-legal-1-ecf55288`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Maintenance scheduling with predictive analytics</li>
             <li>Fraud detection with anomaly analysis</li>
             <li>Manufacturing quality control with defect detection</li>
-            <li>Language processing with sentiment analysis</li>
           </ul>
         </div>
         

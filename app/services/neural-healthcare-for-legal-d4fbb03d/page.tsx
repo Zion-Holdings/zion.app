@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Healthcare for Legal - Zion Tech Group",
-  description: "Transform your legal operations with our Neural Healthcare for Legal. This AI-driven solution automates network optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your legal operations with our Neural Healthcare for Legal. This AI-driven solution automates network optimization with unprecedented accuracy and eff",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-healthcare-for-legal-d4fbb03d`
   }

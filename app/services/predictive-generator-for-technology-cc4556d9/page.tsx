@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Generator for Technology - Zion Tech Group",
-  description: "Revolutionize technology through intelligent automation. Our Predictive Generator for Technology leverages advanced machine learning to deliver predictive analytics at scale.",
+  description: "Revolutionize technology through intelligent automation. Our Predictive Generator for Technology leverages advanced machine learning to deliver predictive analy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-generator-for-technology-cc4556d9`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced operational risks with predictive models</li>
             <li>Enhanced decision making with data-driven insights</li>
             <li>Reduced marketing costs with targeted campaigns</li>
-            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

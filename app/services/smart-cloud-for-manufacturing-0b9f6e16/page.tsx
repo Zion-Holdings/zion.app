@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Machine learning integration with automatic model training</li>
             <li>Logistics route optimization with traffic prediction</li>
             <li>Version control with rollback capabilities</li>
-            <li>Audit trails with compliance reporting</li>
           </ul>
         </div>
         

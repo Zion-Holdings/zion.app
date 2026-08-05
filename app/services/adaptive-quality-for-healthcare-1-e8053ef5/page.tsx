@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Quality for Healthcare #1 - Zion Tech Group",
-  description: "Transform your healthcare operations with our Adaptive Quality for Healthcare #1. This AI-driven solution automates sales process optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your healthcare operations with our Adaptive Quality for Healthcare #1. This AI-driven solution automates sales process optimization with unprecedente",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-quality-for-healthcare-1-e8053ef5`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Faster content creation with AI assistance</li>
             <li>Improved quality with automated testing and validation</li>
             <li>50% reduction in operational costs through automation</li>
-            <li>Improved customer retention with proactive service</li>
           </ul>
         </div>
         

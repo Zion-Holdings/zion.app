@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Maintenance scheduling with predictive analytics</li>
             <li>Security monitoring with threat intelligence</li>
             <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Logistics route optimization with traffic prediction</li>
           </ul>
         </div>
         

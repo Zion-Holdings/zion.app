@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Intelligence for Construction - Zion Tech Group",
-  description: "The future of construction is here with Neural Intelligence for Construction. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.",
+  description: "The future of construction is here with Neural Intelligence for Construction. Powered by cutting-edge AI, this platform delivers sales forecasting like never be",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-intelligence-for-construction-33c0c71a`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Business intelligence with KPI dashboards</li>
             <li>Competitive intelligence with market share tracking</li>
-            <li>Data quality with anomaly detection</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent System for Energy #2 - Zion Tech Group",
-  description: "Revolutionize energy through intelligent automation. Our Intelligent System for Energy #2 leverages advanced machine learning to deliver quality control at scale.",
+  description: "Revolutionize energy through intelligent automation. Our Intelligent System for Energy #2 leverages advanced machine learning to deliver quality control at scal",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-system-for-energy-2-6aad7416`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Data encryption at rest and in transit</li>
-            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         

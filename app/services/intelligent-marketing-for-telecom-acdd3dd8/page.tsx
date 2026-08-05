@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>User experience analytics with behavior tracking</li>
             <li>Business intelligence with KPI dashboards</li>
             <li>Executive dashboards with drill-down capabilities</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>3x faster decision making with real-time insights</li>
             <li>Reduced customer acquisition costs with optimization</li>
             <li>Improved employee productivity with automation</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
           </ul>
         </div>
         

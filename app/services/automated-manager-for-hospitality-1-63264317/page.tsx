@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Manager for Hospitality #1 - Zion Tech Group",
-  description: "Transform your hospitality operations with our Automated Manager for Hospitality #1. This AI-driven solution automates customer service automation with unprecedented accuracy and efficiency.",
+  description: "Transform your hospitality operations with our Automated Manager for Hospitality #1. This AI-driven solution automates customer service automation with unpreced",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-manager-for-hospitality-1-63264317`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sales process optimization with pipeline management</li>
             <li>Image recognition with computer vision</li>
             <li>Business intelligence with KPI dashboards</li>
-            <li>Automation opportunity identification</li>
           </ul>
         </div>
         

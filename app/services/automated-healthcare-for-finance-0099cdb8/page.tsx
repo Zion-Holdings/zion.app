@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Process discovery with activity analysis</li>
             <li>Serverless functions for cost-effective scaling</li>
             <li>Version control with rollback capabilities</li>
-            <li>Image recognition with computer vision</li>
           </ul>
         </div>
         

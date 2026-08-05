@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Role-based access control with SSO integration</li>
             <li>Serverless functions for cost-effective scaling</li>
             <li>Edge computing support for low-latency operations</li>
-            <li>Energy optimization with consumption tracking</li>
           </ul>
         </div>
         

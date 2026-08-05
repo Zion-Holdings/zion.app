@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Process discovery with activity analysis</li>
             <li>Financial risk management with scenario analysis</li>
             <li>Sales process optimization with pipeline management</li>
-            <li>Business intelligence with KPI dashboards</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Real Estate for Technology - Zion Tech Group",
-  description: "Revolutionize technology through intelligent automation. Our Intelligent Real Estate for Technology leverages advanced machine learning to deliver language processing at scale.",
+  description: "Revolutionize technology through intelligent automation. Our Intelligent Real Estate for Technology leverages advanced machine learning to deliver language proc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-real-estate-for-technology-4e902ded`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Microservices deployment with container orchestration</li>
             <li>Budget optimization with cost allocation</li>
             <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better resource utilization with auto-scaling</li>
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Seamless integration with existing systems and workflows</li>
-            <li>Enhanced decision making with data-driven insights</li>
           </ul>
         </div>
         

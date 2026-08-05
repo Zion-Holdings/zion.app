@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Data encryption at rest and in transit</li>
             <li>Version control with rollback capabilities</li>
-            <li>Process discovery with activity analysis</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Analyzer for Gaming - Zion Tech Group",
-  description: "Revolutionize gaming through intelligent automation. Our Adaptive Analyzer for Gaming leverages advanced machine learning to deliver security monitoring at scale.",
+  description: "Revolutionize gaming through intelligent automation. Our Adaptive Analyzer for Gaming leverages advanced machine learning to deliver security monitoring at scal",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-analyzer-for-gaming-d06d7020`
   }

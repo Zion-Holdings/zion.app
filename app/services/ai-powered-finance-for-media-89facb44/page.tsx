@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Role-based access control with SSO integration</li>
             <li>Customer service automation with chatbot integration</li>
             <li>Predictive modeling with ensemble methods</li>
-            <li>Competitive intelligence with market share tracking</li>
           </ul>
         </div>
         

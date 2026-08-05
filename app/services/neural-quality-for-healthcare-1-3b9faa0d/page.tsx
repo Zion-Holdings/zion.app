@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Quality for Healthcare #1 - Zion Tech Group",
-  description: "Revolutionize healthcare through intelligent automation. Our Neural Quality for Healthcare #1 leverages advanced machine learning to deliver threat detection at scale.",
+  description: "Revolutionize healthcare through intelligent automation. Our Neural Quality for Healthcare #1 leverages advanced machine learning to deliver threat detection at",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-quality-for-healthcare-1-3b9faa0d`
   }

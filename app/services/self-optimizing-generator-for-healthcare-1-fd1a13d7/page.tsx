@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Generator for Healthcare #1 - Zion Tech Group",
-  description: "Transform your healthcare operations with our Self-Optimizing Generator for Healthcare #1. This AI-driven solution automates document processing with unprecedented accuracy and efficiency.",
+  description: "Transform your healthcare operations with our Self-Optimizing Generator for Healthcare #1. This AI-driven solution automates document processing with unpreceden",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-generator-for-healthcare-1-fd1a13d7`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Custom integrations with webhook support</li>
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Multi-language support with localization</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better customer experience with personalization</li>
             <li>Reduced customer acquisition costs with optimization</li>
             <li>Better supply chain visibility with tracking</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
           </ul>
         </div>
         

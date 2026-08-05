@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Coordinator for Legal #1 - Zion Tech Group",
-  description: "Revolutionize legal through intelligent automation. Our Cognitive Coordinator for Legal #1 leverages advanced machine learning to deliver financial planning at scale.",
+  description: "Revolutionize legal through intelligent automation. Our Cognitive Coordinator for Legal #1 leverages advanced machine learning to deliver financial planning at ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-coordinator-for-legal-1-c2d84fc2`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Role-based access control with SSO integration</li>
             <li>HIPAA ready with healthcare data protection</li>
             <li>Budget optimization with cost allocation</li>
-            <li>Image recognition with computer vision</li>
           </ul>
         </div>
         

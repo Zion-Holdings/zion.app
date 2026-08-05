@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Director for Agriculture #1 - Zion Tech Group",
-  description: "Revolutionize agriculture through intelligent automation. Our Smart Director for Agriculture #1 leverages advanced machine learning to deliver threat detection at scale.",
+  description: "Revolutionize agriculture through intelligent automation. Our Smart Director for Agriculture #1 leverages advanced machine learning to deliver threat detection ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-director-for-agriculture-1-5431c769`
   }

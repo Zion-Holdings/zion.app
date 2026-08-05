@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Optimizer for Construction - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Self-Optimizing Optimizer for Construction leverages advanced machine learning to deliver sales process optimization at scale.",
+  description: "Revolutionize construction through intelligent automation. Our Self-Optimizing Optimizer for Construction leverages advanced machine learning to deliver sales p",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-optimizer-for-construction-d1b47cf5`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Code optimization with performance profiling</li>
-            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Real-time insights and alerts for proactive management</li>
             <li>Reduced shipping costs with route optimization</li>
             <li>Faster content creation with AI assistance</li>
-            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

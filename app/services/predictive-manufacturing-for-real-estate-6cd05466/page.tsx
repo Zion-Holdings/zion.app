@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Manufacturing for Real-Estate - Zion Tech Group",
-  description: "Transform your real-estate operations with our Predictive Manufacturing for Real-Estate. This AI-driven solution automates fraud prevention with unprecedented accuracy and efficiency.",
+  description: "Transform your real-estate operations with our Predictive Manufacturing for Real-Estate. This AI-driven solution automates fraud prevention with unprecedented a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-manufacturing-for-real-estate-6cd05466`
   }

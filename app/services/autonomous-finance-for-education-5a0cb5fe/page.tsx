@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Finance for Education - Zion Tech Group",
-  description: "Transform your education operations with our Autonomous Finance for Education. This AI-driven solution automates workflow management with unprecedented accuracy and efficiency.",
+  description: "Transform your education operations with our Autonomous Finance for Education. This AI-driven solution automates workflow management with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-finance-for-education-5a0cb5fe`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better supply chain visibility with tracking</li>
             <li>24/7 automated operations without human intervention</li>
             <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Better compliance with automated audit trails</li>
           </ul>
         </div>
         

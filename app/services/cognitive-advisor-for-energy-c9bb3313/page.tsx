@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Edge computing support for low-latency operations</li>
             <li>Multi-language support with localization</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Healthcare data analytics with patient insights</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Compliance for Hospitality #1 - Zion Tech Group",
-  description: "Transform your hospitality operations with our Self-Optimizing Compliance for Hospitality #1. This AI-driven solution automates user experience with unprecedented accuracy and efficiency.",
+  description: "Transform your hospitality operations with our Self-Optimizing Compliance for Hospitality #1. This AI-driven solution automates user experience with unprecedent",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-compliance-for-hospitality-1-d8026c91`
   }

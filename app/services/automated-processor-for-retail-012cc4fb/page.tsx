@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Image recognition with computer vision</li>
             <li>Manufacturing quality control with defect detection</li>
-            <li>Market analysis with buyer behavior insights</li>
           </ul>
         </div>
         

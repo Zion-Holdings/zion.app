@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Real Estate for Manufacturing #1 - Zion Tech Group",
-  description: "The future of manufacturing is here with Cognitive Real Estate for Manufacturing #1. Powered by cutting-edge AI, this platform delivers inventory management like never before.",
+  description: "The future of manufacturing is here with Cognitive Real Estate for Manufacturing #1. Powered by cutting-edge AI, this platform delivers inventory management lik",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-real-estate-for-manufacturing-1-fba6abfe`
   }

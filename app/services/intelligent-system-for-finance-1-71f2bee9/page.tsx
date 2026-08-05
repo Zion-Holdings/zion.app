@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Budget optimization with cost allocation</li>
             <li>Maintenance scheduling with predictive analytics</li>
             <li>Data encryption at rest and in transit</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better resource utilization with auto-scaling</li>
             <li>Improved employee productivity with automation</li>
             <li>Improved quality with automated testing and validation</li>
-            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

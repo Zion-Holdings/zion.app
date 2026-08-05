@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Healthcare for Manufacturing #1 - Zion Tech Group",
-  description: "The future of manufacturing is here with Predictive Healthcare for Manufacturing #1. Powered by cutting-edge AI, this platform delivers process automation like never before.",
+  description: "The future of manufacturing is here with Predictive Healthcare for Manufacturing #1. Powered by cutting-edge AI, this platform delivers process automation like ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-healthcare-for-manufacturing-1-24c75093`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Version control with rollback capabilities</li>
             <li>HIPAA ready with healthcare data protection</li>
             <li>Cost reduction with process mining</li>
-            <li>Competitive intelligence with market share tracking</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Better inventory management with demand forecasting</li>
             <li>Reduced churn with proactive customer retention</li>
-            <li>Reduced shipping costs with route optimization</li>
           </ul>
         </div>
         

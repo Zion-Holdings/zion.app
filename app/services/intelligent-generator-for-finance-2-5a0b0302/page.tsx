@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Generator for Finance #2 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Generator for Finance #2. This autonomous system provides resource optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Intelligent Generator for Finance #2. This autonomous system provides resource optimization with zero manual intervention neede",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-generator-for-finance-2-5a0b0302`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Open-source friendly with plugin architecture</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>Language processing with sentiment analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better risk management with predictive analytics</li>
             <li>Enhanced decision making with data-driven insights</li>
             <li>Reduced human error by 95% with automated processes</li>
-            <li>Reduced development time with code generation</li>
           </ul>
         </div>
         

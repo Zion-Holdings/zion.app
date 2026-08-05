@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Coordinator for Finance - Zion Tech Group",
-  description: "Transform your finance operations with our AI-Powered Coordinator for Finance. This AI-driven solution automates security monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your finance operations with our AI-Powered Coordinator for Finance. This AI-driven solution automates security monitoring with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-coordinator-for-finance-4f9c26a4`
   }

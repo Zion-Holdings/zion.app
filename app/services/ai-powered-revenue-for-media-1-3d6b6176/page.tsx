@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-region deployment with automatic failover</li>
             <li>Content generation with plagiarism checks</li>
             <li>Automation opportunity identification</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
           </ul>
         </div>
         

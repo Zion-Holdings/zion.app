@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Revenue for Telecom - Zion Tech Group",
-  description: "Transform your telecom operations with our Self-Optimizing Revenue for Telecom. This AI-driven solution automates financial planning with unprecedented accuracy and efficiency.",
+  description: "Transform your telecom operations with our Self-Optimizing Revenue for Telecom. This AI-driven solution automates financial planning with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-revenue-for-telecom-e3e0bc0a`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-region deployment with automatic failover</li>
             <li>Manufacturing quality control with defect detection</li>
             <li>Data encryption at rest and in transit</li>
-            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         

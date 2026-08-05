@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Marketing for Gaming #1 - Zion Tech Group",
-  description: "Revolutionize gaming through intelligent automation. Our Neural Marketing for Gaming #1 leverages advanced machine learning to deliver workflow management at scale.",
+  description: "Revolutionize gaming through intelligent automation. Our Neural Marketing for Gaming #1 leverages advanced machine learning to deliver workflow management at sc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-marketing-for-gaming-1-fb111e30`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer service automation with chatbot integration</li>
             <li>HIPAA ready with healthcare data protection</li>
             <li>Manufacturing quality control with defect detection</li>
-            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Increased revenue with optimized pricing strategies</li>
             <li>Better supply chain visibility with tracking</li>
             <li>Enhanced security with continuous threat monitoring</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
           </ul>
         </div>
         

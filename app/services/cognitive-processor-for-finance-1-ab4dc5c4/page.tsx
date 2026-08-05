@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Processor for Finance #1 - Zion Tech Group",
-  description: "Revolutionize finance through intelligent automation. Our Cognitive Processor for Finance #1 leverages advanced machine learning to deliver inventory management at scale.",
+  description: "Revolutionize finance through intelligent automation. Our Cognitive Processor for Finance #1 leverages advanced machine learning to deliver inventory management",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-processor-for-finance-1-ab4dc5c4`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Manufacturing quality control with defect detection</li>
             <li>Serverless functions for cost-effective scaling</li>
             <li>Sales process optimization with pipeline management</li>
-            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         

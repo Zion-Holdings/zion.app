@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Quality for Manufacturing - Zion Tech Group",
-  description: "The future of manufacturing is here with AI-Powered Quality for Manufacturing. Powered by cutting-edge AI, this platform delivers decision support like never before.",
+  description: "The future of manufacturing is here with AI-Powered Quality for Manufacturing. Powered by cutting-edge AI, this platform delivers decision support like never be",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-quality-for-manufacturing-ba2374b1`
   }

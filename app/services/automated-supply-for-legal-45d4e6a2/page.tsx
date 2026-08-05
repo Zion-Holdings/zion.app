@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data quality with anomaly detection</li>
             <li>User experience analytics with behavior tracking</li>
             <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better market positioning with competitive analysis</li>
             <li>Seamless integration with existing systems and workflows</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

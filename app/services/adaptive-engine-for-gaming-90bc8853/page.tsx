@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Alerting system with intelligent notifications</li>
             <li>Real-time processing with streaming analytics</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         

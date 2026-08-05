@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Automation for Media - Zion Tech Group",
-  description: "Revolutionize media through intelligent automation. Our Self-Optimizing Automation for Media leverages advanced machine learning to deliver sales process optimization at scale.",
+  description: "Revolutionize media through intelligent automation. Our Self-Optimizing Automation for Media leverages advanced machine learning to deliver sales process optimi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-automation-for-media-27a85a13`
   }

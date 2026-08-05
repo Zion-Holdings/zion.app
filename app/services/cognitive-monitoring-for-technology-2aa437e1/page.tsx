@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Monitoring for Technology - Zion Tech Group",
-  description: "Revolutionize technology through intelligent automation. Our Cognitive Monitoring for Technology leverages advanced machine learning to deliver document processing at scale.",
+  description: "Revolutionize technology through intelligent automation. Our Cognitive Monitoring for Technology leverages advanced machine learning to deliver document process",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-monitoring-for-technology-2aa437e1`
   }

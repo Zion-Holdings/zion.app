@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Edge computing support for low-latency operations</li>
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Sales process optimization with pipeline management</li>
-            <li>Revenue forecasting with market trend analysis</li>
           </ul>
         </div>
         

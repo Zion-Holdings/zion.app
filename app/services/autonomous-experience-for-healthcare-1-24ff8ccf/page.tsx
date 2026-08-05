@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Experience for Healthcare #1 - Zion Tech Group",
-  description: "Next-generation healthcare solution: Autonomous Experience for Healthcare #1. Combines customer service automation with adaptive intelligence for optimal results.",
+  description: "Next-generation healthcare solution: Autonomous Experience for Healthcare #1. Combines customer service automation with adaptive intelligence for optimal result",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-experience-for-healthcare-1-24ff8ccf`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>3x faster decision making with real-time insights</li>
             <li>Reduced risk with early warning systems</li>
             <li>Better inventory management with demand forecasting</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Market analysis with buyer behavior insights</li>
             <li>Machine learning integration with automatic model training</li>
             <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Scalable to millions of transactions per second</li>
             <li>24/7 automated operations without human intervention</li>
             <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
           </ul>
         </div>
         

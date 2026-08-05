@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced risk with early warning systems</li>
             <li>Reduced churn with proactive customer retention</li>
             <li>Enhanced decision making with data-driven insights</li>
-            <li>50% reduction in operational costs through automation</li>
           </ul>
         </div>
         

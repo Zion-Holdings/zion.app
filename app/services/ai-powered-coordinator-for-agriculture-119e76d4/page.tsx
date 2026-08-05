@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Coordinator for Agriculture - Zion Tech Group",
-  description: "Revolutionize agriculture through intelligent automation. Our AI-Powered Coordinator for Agriculture leverages advanced machine learning to deliver sales forecasting at scale.",
+  description: "Revolutionize agriculture through intelligent automation. Our AI-Powered Coordinator for Agriculture leverages advanced machine learning to deliver sales foreca",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-coordinator-for-agriculture-119e76d4`
   }

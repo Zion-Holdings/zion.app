@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Cost reduction with process mining</li>
             <li>Predictive modeling with ensemble methods</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security posture with continuous monitoring</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
             <li>Better resource utilization with auto-scaling</li>
-            <li>50% reduction in operational costs through automation</li>
           </ul>
         </div>
         

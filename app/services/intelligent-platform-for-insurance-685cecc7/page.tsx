@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Content generation with plagiarism checks</li>
             <li>Code optimization with performance profiling</li>
             <li>Language processing with sentiment analysis</li>
-            <li>Budget optimization with cost allocation</li>
           </ul>
         </div>
         

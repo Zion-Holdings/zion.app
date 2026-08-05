@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Optimizer for Hospitality #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Optimizer for Hospitality #1. This autonomous system provides fraud prevention with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Intelligent Optimizer for Hospitality #1. This autonomous system provides fraud prevention with zero manual intervention needed",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-optimizer-for-hospitality-1-5128963d`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Competitive intelligence with market share tracking</li>
             <li>Security monitoring with threat intelligence</li>
             <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         

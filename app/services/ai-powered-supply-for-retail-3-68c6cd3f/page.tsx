@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Supply for Retail #3 - Zion Tech Group",
-  description: "Transform your retail operations with our AI-Powered Supply for Retail #3. This AI-driven solution automates predictive analytics with unprecedented accuracy and efficiency.",
+  description: "Transform your retail operations with our AI-Powered Supply for Retail #3. This AI-driven solution automates predictive analytics with unprecedented accuracy an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-supply-for-retail-3-68c6cd3f`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sentiment analysis with real-time monitoring</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Network optimization with traffic analysis</li>
-            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Scalable to millions of transactions per second</li>
             <li>Improved product quality with automated testing</li>
             <li>Improved conversion rates with personalization</li>
-            <li>Better supply chain visibility with tracking</li>
           </ul>
         </div>
         

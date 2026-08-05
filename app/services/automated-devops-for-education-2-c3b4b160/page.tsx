@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Market analysis with buyer behavior insights</li>
             <li>Language processing with sentiment analysis</li>
             <li>A/B testing framework for continuous optimization</li>
-            <li>Logistics route optimization with traffic prediction</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>99.9% uptime guarantee with redundant architecture</li>
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Improved quality with automated testing and validation</li>
-            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

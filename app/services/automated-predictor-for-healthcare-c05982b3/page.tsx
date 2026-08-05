@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Predictor for Healthcare - Zion Tech Group",
-  description: "The future of healthcare is here with Automated Predictor for Healthcare. Powered by cutting-edge AI, this platform delivers financial planning like never before.",
+  description: "The future of healthcare is here with Automated Predictor for Healthcare. Powered by cutting-edge AI, this platform delivers financial planning like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-predictor-for-healthcare-c05982b3`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Competitive intelligence with market share tracking</li>
             <li>Alerting system with intelligent notifications</li>
             <li>Content generation with plagiarism checks</li>
-            <li>Customer journey mapping with touchpoint analysis</li>
           </ul>
         </div>
         

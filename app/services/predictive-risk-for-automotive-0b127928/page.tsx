@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Predictive modeling with ensemble methods</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Sales process optimization with pipeline management</li>
-            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         

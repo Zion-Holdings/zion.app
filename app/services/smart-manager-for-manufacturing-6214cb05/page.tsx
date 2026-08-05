@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Revenue forecasting with market trend analysis</li>
             <li>SOC 2 certified with security controls</li>
             <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Sentiment analysis with real-time monitoring</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Optimizer for Automotive #1 - Zion Tech Group",
-  description: "Revolutionize automotive through intelligent automation. Our Adaptive Optimizer for Automotive #1 leverages advanced machine learning to deliver market intelligence at scale.",
+  description: "Revolutionize automotive through intelligent automation. Our Adaptive Optimizer for Automotive #1 leverages advanced machine learning to deliver market intellig",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-optimizer-for-automotive-1-a4219e99`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Predictive modeling with ensemble methods</li>
             <li>Edge computing support for low-latency operations</li>
             <li>Master data management with golden records</li>
-            <li>Maintenance scheduling with predictive analytics</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security posture with continuous monitoring</li>
             <li>Improved customer satisfaction with faster response times</li>
             <li>Improved sales performance with lead scoring</li>
-            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

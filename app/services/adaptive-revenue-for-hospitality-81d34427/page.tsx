@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Revenue for Hospitality - Zion Tech Group",
-  description: "Transform your hospitality operations with our Adaptive Revenue for Hospitality. This AI-driven solution automates sales process optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your hospitality operations with our Adaptive Revenue for Hospitality. This AI-driven solution automates sales process optimization with unprecedented",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-revenue-for-hospitality-81d34427`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Performance benchmarking against industry standards</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Improved employee productivity with automation</li>
-            <li>Enhanced decision making with data-driven insights</li>
           </ul>
         </div>
         

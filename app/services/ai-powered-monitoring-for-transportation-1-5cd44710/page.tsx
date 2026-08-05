@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Monitoring for Transportation #1 - Zion Tech Group",
-  description: "Revolutionize transportation through intelligent automation. Our AI-Powered Monitoring for Transportation #1 leverages advanced machine learning to deliver energy management at scale.",
+  description: "Revolutionize transportation through intelligent automation. Our AI-Powered Monitoring for Transportation #1 leverages advanced machine learning to deliver ener",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-monitoring-for-transportation-1-5cd44710`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cost reduction with process mining</li>
             <li>Master data management with golden records</li>
             <li>Security monitoring with threat intelligence</li>
-            <li>Maintenance scheduling with predictive analytics</li>
           </ul>
         </div>
         

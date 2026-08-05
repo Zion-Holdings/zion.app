@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Optimization for Media - Zion Tech Group",
-  description: "Transform your media operations with our Autonomous Optimization for Media. This AI-driven solution automates predictive analytics with unprecedented accuracy and efficiency.",
+  description: "Transform your media operations with our Autonomous Optimization for Media. This AI-driven solution automates predictive analytics with unprecedented accuracy a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-optimization-for-media-1d802afd`
   }

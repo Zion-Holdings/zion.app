@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automation opportunity identification</li>
             <li>Microservices deployment with container orchestration</li>
             <li>User experience analytics with behavior tracking</li>
-            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         

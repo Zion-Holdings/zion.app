@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Healthcare for Real-Estate #2 - Zion Tech Group",
-  description: "The future of real-estate is here with Predictive Healthcare for Real-Estate #2. Powered by cutting-edge AI, this platform delivers supply chain like never before.",
+  description: "The future of real-estate is here with Predictive Healthcare for Real-Estate #2. Powered by cutting-edge AI, this platform delivers supply chain like never befo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-healthcare-for-real-estate-2-6395ec2e`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-region deployment with automatic failover</li>
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Budget optimization with cost allocation</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         

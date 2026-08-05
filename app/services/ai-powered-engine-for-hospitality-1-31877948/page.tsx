@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Engine for Hospitality #1 - Zion Tech Group",
-  description: "The future of hospitality is here with AI-Powered Engine for Hospitality #1. Powered by cutting-edge AI, this platform delivers financial planning like never before.",
+  description: "The future of hospitality is here with AI-Powered Engine for Hospitality #1. Powered by cutting-edge AI, this platform delivers financial planning like never be",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-engine-for-hospitality-1-31877948`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data quality with anomaly detection</li>
             <li>Financial risk management with scenario analysis</li>
             <li>Security monitoring with threat intelligence</li>
-            <li>Edge computing support for low-latency operations</li>
           </ul>
         </div>
         

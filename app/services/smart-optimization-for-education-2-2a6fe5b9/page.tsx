@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better code quality with automated reviews</li>
             <li>Scalable to millions of transactions per second</li>
             <li>Better customer experience with personalization</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
           </ul>
         </div>
         

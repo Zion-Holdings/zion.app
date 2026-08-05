@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Predictor for Hospitality - Zion Tech Group",
-  description: "Revolutionize hospitality through intelligent automation. Our Predictive Predictor for Hospitality leverages advanced machine learning to deliver network optimization at scale.",
+  description: "Revolutionize hospitality through intelligent automation. Our Predictive Predictor for Hospitality leverages advanced machine learning to deliver network optimi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-predictor-for-hospitality-9ceccd56`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Content generation with plagiarism checks</li>
             <li>Language processing with sentiment analysis</li>
-            <li>Network optimization with traffic analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced development time with code generation</li>
             <li>Zero manual intervention required for routine tasks</li>
             <li>Improved product quality with automated testing</li>
-            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

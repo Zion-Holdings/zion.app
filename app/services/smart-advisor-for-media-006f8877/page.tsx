@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Security monitoring with threat intelligence</li>
             <li>Microservices deployment with container orchestration</li>
             <li>Custom integrations with webhook support</li>
-            <li>Budget optimization with cost allocation</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Orchestrator for Telecom #1 - Zion Tech Group",
-  description: "Revolutionize telecom through intelligent automation. Our Neural Orchestrator for Telecom #1 leverages advanced machine learning to deliver fraud prevention at scale.",
+  description: "Revolutionize telecom through intelligent automation. Our Neural Orchestrator for Telecom #1 leverages advanced machine learning to deliver fraud prevention at ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-orchestrator-for-telecom-1-76e7c80d`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Compliance monitoring with regulatory updates</li>
             <li>Manufacturing quality control with defect detection</li>
             <li>SOC 2 certified with security controls</li>
-            <li>Executive dashboards with drill-down capabilities</li>
           </ul>
         </div>
         

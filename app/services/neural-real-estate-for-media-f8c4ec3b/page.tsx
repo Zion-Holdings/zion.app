@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-region deployment with automatic failover</li>
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>Faster content creation with AI assistance</li>
             <li>Reduced marketing costs with targeted campaigns</li>
-            <li>Enhanced decision making with data-driven insights</li>
           </ul>
         </div>
         

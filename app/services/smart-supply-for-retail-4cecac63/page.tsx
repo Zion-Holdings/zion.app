@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Business intelligence with KPI dashboards</li>
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Content generation with plagiarism checks</li>
-            <li>Audit trails with compliance reporting</li>
           </ul>
         </div>
         

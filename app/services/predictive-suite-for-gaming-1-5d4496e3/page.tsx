@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Suite for Gaming #1 - Zion Tech Group",
-  description: "Transform your gaming operations with our Predictive Suite for Gaming #1. This AI-driven solution automates compliance monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your gaming operations with our Predictive Suite for Gaming #1. This AI-driven solution automates compliance monitoring with unprecedented accuracy an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-suite-for-gaming-1-5d4496e3`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Alerting system with intelligent notifications</li>
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Network optimization with traffic analysis</li>
-            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         

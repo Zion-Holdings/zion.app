@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Quality for Gaming - Zion Tech Group",
-  description: "Transform your gaming operations with our Cognitive Quality for Gaming. This AI-driven solution automates document processing with unprecedented accuracy and efficiency.",
+  description: "Transform your gaming operations with our Cognitive Quality for Gaming. This AI-driven solution automates document processing with unprecedented accuracy and ef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-quality-for-gaming-123e464b`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Code optimization with performance profiling</li>
             <li>Brand monitoring across social channels</li>
             <li>Real-time processing with streaming analytics</li>
-            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security posture with continuous monitoring</li>
             <li>Dynamic resource allocation based on demand patterns</li>
             <li>Better compliance with automated audit trails</li>
-            <li>Improved conversion rates with personalization</li>
           </ul>
         </div>
         

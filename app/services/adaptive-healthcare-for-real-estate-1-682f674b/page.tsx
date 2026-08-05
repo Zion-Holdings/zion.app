@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Healthcare for Real-Estate #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Adaptive Healthcare for Real-Estate #1. This autonomous system provides network optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Adaptive Healthcare for Real-Estate #1. This autonomous system provides network optimization with zero manual intervention need",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-healthcare-for-real-estate-1-682f674b`
   }

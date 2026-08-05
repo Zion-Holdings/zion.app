@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Sales for Hospitality - Zion Tech Group",
-  description: "Revolutionize hospitality through intelligent automation. Our Self-Optimizing Sales for Hospitality leverages advanced machine learning to deliver energy management at scale.",
+  description: "Revolutionize hospitality through intelligent automation. Our Self-Optimizing Sales for Hospitality leverages advanced machine learning to deliver energy manage",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-sales-for-hospitality-d8590c17`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Security monitoring with threat intelligence</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>HIPAA ready with healthcare data protection</li>
-            <li>Version control with rollback capabilities</li>
           </ul>
         </div>
         

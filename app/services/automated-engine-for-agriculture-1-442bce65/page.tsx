@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Engine for Agriculture #1 - Zion Tech Group",
-  description: "Revolutionize agriculture through intelligent automation. Our Automated Engine for Agriculture #1 leverages advanced machine learning to deliver energy management at scale.",
+  description: "Revolutionize agriculture through intelligent automation. Our Automated Engine for Agriculture #1 leverages advanced machine learning to deliver energy manageme",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-engine-for-agriculture-1-442bce65`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Logistics route optimization with traffic prediction</li>
             <li>Customer service automation with chatbot integration</li>
             <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Language processing with sentiment analysis</li>
           </ul>
         </div>
         

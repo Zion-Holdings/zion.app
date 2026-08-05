@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved customer satisfaction with faster response times</li>
             <li>Reduced churn with proactive customer retention</li>
             <li>Reduced operational risks with predictive models</li>
-            <li>Improved forecast accuracy with ML models</li>
           </ul>
         </div>
         

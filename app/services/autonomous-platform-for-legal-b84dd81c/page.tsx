@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Logistics route optimization with traffic prediction</li>
             <li>Image recognition with computer vision</li>
-            <li>Financial risk management with scenario analysis</li>
           </ul>
         </div>
         

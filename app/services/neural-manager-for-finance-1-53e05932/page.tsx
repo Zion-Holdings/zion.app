@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Manager for Finance #1 - Zion Tech Group",
-  description: "Revolutionize finance through intelligent automation. Our Neural Manager for Finance #1 leverages advanced machine learning to deliver threat detection at scale.",
+  description: "Revolutionize finance through intelligent automation. Our Neural Manager for Finance #1 leverages advanced machine learning to deliver threat detection at scale",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-manager-for-finance-1-53e05932`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Competitive intelligence with market share tracking</li>
             <li>Version control with rollback capabilities</li>
             <li>Market analysis with buyer behavior insights</li>
-            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced shipping costs with route optimization</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

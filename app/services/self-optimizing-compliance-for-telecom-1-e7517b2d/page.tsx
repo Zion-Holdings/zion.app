@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Compliance for Telecom #1 - Zion Tech Group",
-  description: "Transform your telecom operations with our Self-Optimizing Compliance for Telecom #1. This AI-driven solution automates document processing with unprecedented accuracy and efficiency.",
+  description: "Transform your telecom operations with our Self-Optimizing Compliance for Telecom #1. This AI-driven solution automates document processing with unprecedented a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-compliance-for-telecom-1-e7517b2d`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Energy optimization with consumption tracking</li>
             <li>A/B testing framework for continuous optimization</li>
-            <li>Customer journey mapping with touchpoint analysis</li>
           </ul>
         </div>
         

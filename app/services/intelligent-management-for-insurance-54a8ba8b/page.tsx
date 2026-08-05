@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Management for Insurance - Zion Tech Group",
-  description: "Revolutionize insurance through intelligent automation. Our Intelligent Management for Insurance leverages advanced machine learning to deliver network optimization at scale.",
+  description: "Revolutionize insurance through intelligent automation. Our Intelligent Management for Insurance leverages advanced machine learning to deliver network optimiza",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-management-for-insurance-54a8ba8b`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Better code quality with automated reviews</li>
             <li>Enhanced security with continuous threat monitoring</li>
-            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Content generation with plagiarism checks</li>
             <li>GDPR compliance with data portability</li>
             <li>Machine learning integration with automatic model training</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         

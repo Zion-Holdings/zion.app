@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Advisor for Transportation - Zion Tech Group",
-  description: "Transform your transportation operations with our Adaptive Advisor for Transportation. This AI-driven solution automates predictive analytics with unprecedented accuracy and efficiency.",
+  description: "Transform your transportation operations with our Adaptive Advisor for Transportation. This AI-driven solution automates predictive analytics with unprecedented",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-advisor-for-transportation-b44e47fd`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Audit trails with compliance reporting</li>
             <li>Financial risk management with scenario analysis</li>
             <li>Data quality with anomaly detection</li>
-            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         

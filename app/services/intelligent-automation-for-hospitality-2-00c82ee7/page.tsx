@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Financial risk management with scenario analysis</li>
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Machine learning integration with automatic model training</li>
           </ul>
         </div>
         

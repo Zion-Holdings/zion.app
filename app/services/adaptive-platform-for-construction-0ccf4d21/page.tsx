@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Platform for Construction - Zion Tech Group",
-  description: "Transform your construction operations with our Adaptive Platform for Construction. This AI-driven solution automates maintenance scheduling with unprecedented accuracy and efficiency.",
+  description: "Transform your construction operations with our Adaptive Platform for Construction. This AI-driven solution automates maintenance scheduling with unprecedented ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-platform-for-construction-0ccf4d21`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>GDPR compliance with data portability</li>
             <li>Master data management with golden records</li>
             <li>Custom integrations with webhook support</li>
-            <li>Data quality with anomaly detection</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better financial planning with predictive models</li>
             <li>Enhanced security with continuous threat monitoring</li>
             <li>Reduced support tickets with self-service options</li>
-            <li>Better compliance with automated audit trails</li>
           </ul>
         </div>
         

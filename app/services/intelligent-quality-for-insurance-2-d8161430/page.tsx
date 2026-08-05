@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Quality for Insurance #2 - Zion Tech Group",
-  description: "Transform your insurance operations with our Intelligent Quality for Insurance #2. This AI-driven solution automates risk assessment with unprecedented accuracy and efficiency.",
+  description: "Transform your insurance operations with our Intelligent Quality for Insurance #2. This AI-driven solution automates risk assessment with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-quality-for-insurance-2-d8161430`
   }

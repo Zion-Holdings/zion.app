@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cost reduction with process mining</li>
             <li>Data quality with anomaly detection</li>
             <li>Automation opportunity identification</li>
-            <li>Version control with rollback capabilities</li>
           </ul>
         </div>
         

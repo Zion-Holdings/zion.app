@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Serverless functions for cost-effective scaling</li>
             <li>Content generation with plagiarism checks</li>
             <li>Document processing with OCR and NLP</li>
-            <li>Revenue forecasting with market trend analysis</li>
           </ul>
         </div>
         

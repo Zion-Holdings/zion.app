@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Optimization for Education #1 - Zion Tech Group",
-  description: "The future of education is here with Predictive Optimization for Education #1. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.",
+  description: "The future of education is here with Predictive Optimization for Education #1. Powered by cutting-edge AI, this platform delivers maintenance scheduling like ne",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-optimization-for-education-1-da258f88`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Edge computing support for low-latency operations</li>
             <li>Multi-region deployment with automatic failover</li>
             <li>Open-source friendly with plugin architecture</li>
-            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         

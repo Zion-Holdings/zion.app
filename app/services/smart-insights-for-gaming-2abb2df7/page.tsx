@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>Better resource utilization with auto-scaling</li>
             <li>50% reduction in operational costs through automation</li>
-            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

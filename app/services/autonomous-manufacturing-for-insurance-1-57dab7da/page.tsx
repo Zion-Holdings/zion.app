@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>GDPR compliance with data portability</li>
             <li>Custom integrations with webhook support</li>
             <li>User experience analytics with behavior tracking</li>
-            <li>Executive dashboards with drill-down capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Reduced operational risks with predictive models</li>
             <li>Improved quality with automated testing and validation</li>
-            <li>Improved customer retention with proactive service</li>
           </ul>
         </div>
         

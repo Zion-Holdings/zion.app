@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Management for Manufacturing #2 - Zion Tech Group",
-  description: "Revolutionize manufacturing through intelligent automation. Our Self-Optimizing Management for Manufacturing #2 leverages advanced machine learning to deliver financial planning at scale.",
+  description: "Revolutionize manufacturing through intelligent automation. Our Self-Optimizing Management for Manufacturing #2 leverages advanced machine learning to deliver f",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-management-for-manufacturing-2-5c6a66c7`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>User experience analytics with behavior tracking</li>
             <li>Cost reduction with process mining</li>
             <li>Process discovery with activity analysis</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
           </ul>
         </div>
         

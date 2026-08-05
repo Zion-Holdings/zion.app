@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Marketing for Transportation #2 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Smart Marketing for Transportation #2. This autonomous system provides compliance monitoring with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Smart Marketing for Transportation #2. This autonomous system provides compliance monitoring with zero manual intervention need",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-marketing-for-transportation-2-583a306e`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-language support with localization</li>
             <li>Energy optimization with consumption tracking</li>
             <li>Executive dashboards with drill-down capabilities</li>
-            <li>Image recognition with computer vision</li>
           </ul>
         </div>
         

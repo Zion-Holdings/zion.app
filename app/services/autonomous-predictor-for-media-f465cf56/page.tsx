@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Predictor for Media - Zion Tech Group",
-  description: "Transform your media operations with our Autonomous Predictor for Media. This AI-driven solution automates risk assessment with unprecedented accuracy and efficiency.",
+  description: "Transform your media operations with our Autonomous Predictor for Media. This AI-driven solution automates risk assessment with unprecedented accuracy and effic",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-predictor-for-media-f465cf56`
   }

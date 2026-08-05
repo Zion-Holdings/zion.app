@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Manufacturing for Telecom - Zion Tech Group",
-  description: "Transform your telecom operations with our Self-Optimizing Manufacturing for Telecom. This AI-driven solution automates compliance monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your telecom operations with our Self-Optimizing Manufacturing for Telecom. This AI-driven solution automates compliance monitoring with unprecedented",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-manufacturing-for-telecom-ec839518`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Compliance monitoring with regulatory updates</li>
             <li>Role-based access control with SSO integration</li>
             <li>GDPR compliance with data portability</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
           </ul>
         </div>
         

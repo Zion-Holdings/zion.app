@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Document processing with OCR and NLP</li>
             <li>Manufacturing quality control with defect detection</li>
             <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Sentiment analysis with real-time monitoring</li>
           </ul>
         </div>
         

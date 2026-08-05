@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Automation for Media #1 - Zion Tech Group",
-  description: "The future of media is here with Self-Optimizing Automation for Media #1. Powered by cutting-edge AI, this platform delivers predictive analytics like never before.",
+  description: "The future of media is here with Self-Optimizing Automation for Media #1. Powered by cutting-edge AI, this platform delivers predictive analytics like never bef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-automation-for-media-1-b3f15e97`
   }

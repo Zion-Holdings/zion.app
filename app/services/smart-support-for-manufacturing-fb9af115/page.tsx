@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Support for Manufacturing - Zion Tech Group",
-  description: "Transform your manufacturing operations with our Smart Support for Manufacturing. This AI-driven solution automates performance monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your manufacturing operations with our Smart Support for Manufacturing. This AI-driven solution automates performance monitoring with unprecedented ac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-support-for-manufacturing-fb9af115`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Security monitoring with threat intelligence</li>
             <li>SOC 2 certified with security controls</li>
             <li>Data encryption at rest and in transit</li>
-            <li>Custom integrations with webhook support</li>
           </ul>
         </div>
         

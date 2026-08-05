@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Intelligence for Technology - Zion Tech Group",
-  description: "Transform your technology operations with our Predictive Intelligence for Technology. This AI-driven solution automates image recognition with unprecedented accuracy and efficiency.",
+  description: "Transform your technology operations with our Predictive Intelligence for Technology. This AI-driven solution automates image recognition with unprecedented acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-intelligence-for-technology-6d9612b0`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sales process optimization with pipeline management</li>
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Revenue forecasting with market trend analysis</li>
-            <li>Security monitoring with threat intelligence</li>
           </ul>
         </div>
         

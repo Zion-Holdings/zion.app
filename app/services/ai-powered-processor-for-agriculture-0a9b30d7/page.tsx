@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Processor for Agriculture - Zion Tech Group",
-  description: "Transform your agriculture operations with our AI-Powered Processor for Agriculture. This AI-driven solution automates language processing with unprecedented accuracy and efficiency.",
+  description: "Transform your agriculture operations with our AI-Powered Processor for Agriculture. This AI-driven solution automates language processing with unprecedented ac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-processor-for-agriculture-0a9b30d7`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Competitive intelligence with market share tracking</li>
             <li>User experience analytics with behavior tracking</li>
             <li>Cost reduction with process mining</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         

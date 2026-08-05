@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Optimizer for Automotive #1 - Zion Tech Group",
-  description: "Revolutionize automotive through intelligent automation. Our Smart Optimizer for Automotive #1 leverages advanced machine learning to deliver process automation at scale.",
+  description: "Revolutionize automotive through intelligent automation. Our Smart Optimizer for Automotive #1 leverages advanced machine learning to deliver process automation",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-optimizer-for-automotive-1-d62d4a31`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Machine learning integration with automatic model training</li>
             <li>Image recognition with computer vision</li>
-            <li>Healthcare data analytics with patient insights</li>
           </ul>
         </div>
         

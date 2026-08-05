@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Processor for Healthcare #1 - Zion Tech Group",
-  description: "The future of healthcare is here with Predictive Processor for Healthcare #1. Powered by cutting-edge AI, this platform delivers risk assessment like never before.",
+  description: "The future of healthcare is here with Predictive Processor for Healthcare #1. Powered by cutting-edge AI, this platform delivers risk assessment like never befo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-processor-for-healthcare-1-e6a033dd`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved quality with automated testing and validation</li>
             <li>Automated compliance reporting for regulatory requirements</li>
             <li>Enhanced security with continuous threat monitoring</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
           </ul>
         </div>
         

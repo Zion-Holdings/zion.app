@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Platform for Telecom - Zion Tech Group",
-  description: "Revolutionize telecom through intelligent automation. Our Cognitive Platform for Telecom leverages advanced machine learning to deliver customer service automation at scale.",
+  description: "Revolutionize telecom through intelligent automation. Our Cognitive Platform for Telecom leverages advanced machine learning to deliver customer service automat",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-platform-for-telecom-35c09218`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Open-source friendly with plugin architecture</li>
             <li>Audit trails with compliance reporting</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Data quality with anomaly detection</li>
           </ul>
         </div>
         

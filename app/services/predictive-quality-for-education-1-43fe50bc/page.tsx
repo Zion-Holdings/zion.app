@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Quality for Education #1 - Zion Tech Group",
-  description: "Transform your education operations with our Predictive Quality for Education #1. This AI-driven solution automates data processing with unprecedented accuracy and efficiency.",
+  description: "Transform your education operations with our Predictive Quality for Education #1. This AI-driven solution automates data processing with unprecedented accuracy ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-quality-for-education-1-43fe50bc`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-region deployment with automatic failover</li>
             <li>Security monitoring with threat intelligence</li>
             <li>Data quality with anomaly detection</li>
-            <li>Language processing with sentiment analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>24/7 automated operations without human intervention</li>
             <li>Better financial planning with predictive models</li>
             <li>Better customer experience with personalization</li>
-            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

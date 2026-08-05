@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Real Estate for Real-Estate #2 - Zion Tech Group",
-  description: "Revolutionize real-estate through intelligent automation. Our AI-Powered Real Estate for Real-Estate #2 leverages advanced machine learning to deliver financial planning at scale.",
+  description: "Revolutionize real-estate through intelligent automation. Our AI-Powered Real Estate for Real-Estate #2 leverages advanced machine learning to deliver financial",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-real-estate-for-real-estate-2-689ee032`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Network optimization with traffic analysis</li>
             <li>Fraud detection with anomaly analysis</li>
             <li>GDPR compliance with data portability</li>
-            <li>Brand monitoring across social channels</li>
           </ul>
         </div>
         

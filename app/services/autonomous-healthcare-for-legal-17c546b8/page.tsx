@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Multi-language support with localization</li>
             <li>Edge computing support for low-latency operations</li>
-            <li>Budget optimization with cost allocation</li>
           </ul>
         </div>
         

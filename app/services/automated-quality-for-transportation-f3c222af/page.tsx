@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Quality for Transportation - Zion Tech Group",
-  description: "Transform your transportation operations with our Automated Quality for Transportation. This AI-driven solution automates sales process optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your transportation operations with our Automated Quality for Transportation. This AI-driven solution automates sales process optimization with unprec",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-quality-for-transportation-f3c222af`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Data governance with policy enforcement</li>
             <li>Audit trails with compliance reporting</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         

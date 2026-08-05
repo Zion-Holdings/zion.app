@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Machine learning integration with automatic model training</li>
             <li>Multi-language support with localization</li>
             <li>Data quality with anomaly detection</li>
-            <li>Image recognition with computer vision</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Cost optimization recommendations with savings analysis</li>
             <li>Improved sales performance with lead scoring</li>
             <li>Automated compliance reporting for regulatory requirements</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
           </ul>
         </div>
         

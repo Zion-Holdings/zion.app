@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Suite for Insurance - Zion Tech Group",
-  description: "Transform your insurance operations with our Adaptive Suite for Insurance. This AI-driven solution automates predictive analytics with unprecedented accuracy and efficiency.",
+  description: "Transform your insurance operations with our Adaptive Suite for Insurance. This AI-driven solution automates predictive analytics with unprecedented accuracy an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-suite-for-insurance-c3b163e9`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Logistics route optimization with traffic prediction</li>
             <li>Master data management with golden records</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Finance for Legal #1 - Zion Tech Group",
-  description: "Transform your legal operations with our Neural Finance for Legal #1. This AI-driven solution automates language processing with unprecedented accuracy and efficiency.",
+  description: "Transform your legal operations with our Neural Finance for Legal #1. This AI-driven solution automates language processing with unprecedented accuracy and effi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-finance-for-legal-1-b854e91e`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data quality with anomaly detection</li>
             <li>Audit trails with compliance reporting</li>
             <li>HIPAA ready with healthcare data protection</li>
-            <li>Budget optimization with cost allocation</li>
           </ul>
         </div>
         

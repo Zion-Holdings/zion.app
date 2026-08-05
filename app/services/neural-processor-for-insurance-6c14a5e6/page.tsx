@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Security monitoring with threat intelligence</li>
             <li>Network optimization with traffic analysis</li>
             <li>Multi-language support with localization</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
           </ul>
         </div>
         

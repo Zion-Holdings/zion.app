@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Analyzer for Construction - Zion Tech Group",
-  description: "Unlock unprecedented growth with AI-Powered Analyzer for Construction. This autonomous system provides resource optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with AI-Powered Analyzer for Construction. This autonomous system provides resource optimization with zero manual intervention neede",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-analyzer-for-construction-3405ef95`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Maintenance scheduling with predictive analytics</li>
             <li>Data governance with policy enforcement</li>
             <li>Brand monitoring across social channels</li>
-            <li>HIPAA ready with healthcare data protection</li>
           </ul>
         </div>
         

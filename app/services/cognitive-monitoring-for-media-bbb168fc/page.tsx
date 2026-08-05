@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Monitoring for Media - Zion Tech Group",
-  description: "Transform your media operations with our Cognitive Monitoring for Media. This AI-driven solution automates security monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your media operations with our Cognitive Monitoring for Media. This AI-driven solution automates security monitoring with unprecedented accuracy and e",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-monitoring-for-media-bbb168fc`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Automation opportunity identification</li>
             <li>Network optimization with traffic analysis</li>
-            <li>Multi-language support with localization</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Seamless integration with existing systems and workflows</li>
             <li>Better customer experience with personalization</li>
             <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
           </ul>
         </div>
         

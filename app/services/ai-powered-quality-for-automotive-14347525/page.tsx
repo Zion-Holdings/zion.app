@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Quality for Automotive - Zion Tech Group",
-  description: "The future of automotive is here with AI-Powered Quality for Automotive. Powered by cutting-edge AI, this platform delivers document processing like never before.",
+  description: "The future of automotive is here with AI-Powered Quality for Automotive. Powered by cutting-edge AI, this platform delivers document processing like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-quality-for-automotive-14347525`
   }

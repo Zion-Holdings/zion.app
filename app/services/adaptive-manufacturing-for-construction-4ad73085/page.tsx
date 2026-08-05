@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Manufacturing for Construction - Zion Tech Group",
-  description: "Transform your construction operations with our Adaptive Manufacturing for Construction. This AI-driven solution automates market intelligence with unprecedented accuracy and efficiency.",
+  description: "Transform your construction operations with our Adaptive Manufacturing for Construction. This AI-driven solution automates market intelligence with unprecedente",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-manufacturing-for-construction-4ad73085`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Compliance monitoring with regulatory updates</li>
             <li>GDPR compliance with data portability</li>
             <li>Real-time processing with streaming analytics</li>
-            <li>Multi-language support with localization</li>
           </ul>
         </div>
         

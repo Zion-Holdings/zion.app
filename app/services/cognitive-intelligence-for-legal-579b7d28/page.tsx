@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Intelligence for Legal - Zion Tech Group",
-  description: "Revolutionize legal through intelligent automation. Our Cognitive Intelligence for Legal leverages advanced machine learning to deliver performance monitoring at scale.",
+  description: "Revolutionize legal through intelligent automation. Our Cognitive Intelligence for Legal leverages advanced machine learning to deliver performance monitoring a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-intelligence-for-legal-579b7d28`
   }

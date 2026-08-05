@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing DevOps for Hospitality #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Self-Optimizing DevOps for Hospitality #1. This autonomous system provides risk assessment with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Self-Optimizing DevOps for Hospitality #1. This autonomous system provides risk assessment with zero manual intervention needed",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-devops-for-hospitality-1-43ebc8cc`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Revenue forecasting with market trend analysis</li>
             <li>Business intelligence with KPI dashboards</li>
-            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         

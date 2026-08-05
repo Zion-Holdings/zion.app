@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Revenue for Healthcare - Zion Tech Group",
-  description: "Revolutionize healthcare through intelligent automation. Our Automated Revenue for Healthcare leverages advanced machine learning to deliver customer service automation at scale.",
+  description: "Revolutionize healthcare through intelligent automation. Our Automated Revenue for Healthcare leverages advanced machine learning to deliver customer service au",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-revenue-for-healthcare-4d901518`
   }

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Energy optimization with consumption tracking</li>
             <li>Real-time processing with streaming analytics</li>
             <li>A/B testing framework for continuous optimization</li>
-            <li>Network optimization with traffic analysis</li>
           </ul>
         </div>
         

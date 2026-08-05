@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Healthcare for Sports - Zion Tech Group",
-  description: "Transform your sports operations with our Neural Healthcare for Sports. This AI-driven solution automates document processing with unprecedented accuracy and efficiency.",
+  description: "Transform your sports operations with our Neural Healthcare for Sports. This AI-driven solution automates document processing with unprecedented accuracy and ef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-healthcare-for-sports-477a80e1`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Predictive modeling with ensemble methods</li>
             <li>Process discovery with activity analysis</li>
             <li>Role-based access control with SSO integration</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
           </ul>
         </div>
         

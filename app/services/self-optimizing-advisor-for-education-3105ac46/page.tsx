@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Advisor for Education - Zion Tech Group",
-  description: "Revolutionize education through intelligent automation. Our Self-Optimizing Advisor for Education leverages advanced machine learning to deliver energy management at scale.",
+  description: "Revolutionize education through intelligent automation. Our Self-Optimizing Advisor for Education leverages advanced machine learning to deliver energy manageme",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-advisor-for-education-3105ac46`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Healthcare data analytics with patient insights</li>
             <li>Process discovery with activity analysis</li>
             <li>A/B testing framework for continuous optimization</li>
-            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Insights for Manufacturing #2 - Zion Tech Group",
-  description: "The future of manufacturing is here with Autonomous Insights for Manufacturing #2. Powered by cutting-edge AI, this platform delivers process automation like never before.",
+  description: "The future of manufacturing is here with Autonomous Insights for Manufacturing #2. Powered by cutting-edge AI, this platform delivers process automation like ne",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-insights-for-manufacturing-2-425bf942`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-language support with localization</li>
             <li>Alerting system with intelligent notifications</li>
             <li>Content generation with plagiarism checks</li>
-            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>3x faster decision making with real-time insights</li>
             <li>Better customer experience with personalization</li>
             <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
           </ul>
         </div>
         

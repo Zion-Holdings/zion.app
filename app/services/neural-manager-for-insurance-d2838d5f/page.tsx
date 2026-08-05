@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Manager for Insurance - Zion Tech Group",
-  description: "Revolutionize insurance through intelligent automation. Our Neural Manager for Insurance leverages advanced machine learning to deliver network optimization at scale.",
+  description: "Revolutionize insurance through intelligent automation. Our Neural Manager for Insurance leverages advanced machine learning to deliver network optimization at ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-manager-for-insurance-d2838d5f`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>GDPR compliance with data portability</li>
             <li>Alerting system with intelligent notifications</li>
             <li>Multi-language support with localization</li>
-            <li>Market analysis with buyer behavior insights</li>
           </ul>
         </div>
         

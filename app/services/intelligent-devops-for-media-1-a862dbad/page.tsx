@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent DevOps for Media #1 - Zion Tech Group",
-  description: "Transform your media operations with our Intelligent DevOps for Media #1. This AI-driven solution automates risk assessment with unprecedented accuracy and efficiency.",
+  description: "Transform your media operations with our Intelligent DevOps for Media #1. This AI-driven solution automates risk assessment with unprecedented accuracy and effi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-devops-for-media-1-a862dbad`
   }

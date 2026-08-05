@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Revenue for Automotive - Zion Tech Group",
-  description: "Revolutionize automotive through intelligent automation. Our Smart Revenue for Automotive leverages advanced machine learning to deliver data processing at scale.",
+  description: "Revolutionize automotive through intelligent automation. Our Smart Revenue for Automotive leverages advanced machine learning to deliver data processing at scal",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-revenue-for-automotive-76014a94`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>50% reduction in operational costs through automation</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
             <li>Better resource utilization with auto-scaling</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
           </ul>
         </div>
         

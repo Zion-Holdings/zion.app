@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Role-based access control with SSO integration</li>
             <li>Custom integrations with webhook support</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Machine learning integration with automatic model training</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved quality with automated testing and validation</li>
             <li>Better resource utilization with auto-scaling</li>
             <li>Reduced development time with code generation</li>
-            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

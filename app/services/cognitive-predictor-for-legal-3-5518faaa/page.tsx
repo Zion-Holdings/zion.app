@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Master data management with golden records</li>
             <li>Data quality with anomaly detection</li>
             <li>User experience analytics with behavior tracking</li>
-            <li>Cost reduction with process mining</li>
           </ul>
         </div>
         

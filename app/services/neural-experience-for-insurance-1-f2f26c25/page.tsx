@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Experience for Insurance #1 - Zion Tech Group",
-  description: "Revolutionize insurance through intelligent automation. Our Neural Experience for Insurance #1 leverages advanced machine learning to deliver maintenance scheduling at scale.",
+  description: "Revolutionize insurance through intelligent automation. Our Neural Experience for Insurance #1 leverages advanced machine learning to deliver maintenance schedu",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-experience-for-insurance-1-f2f26c25`
   }

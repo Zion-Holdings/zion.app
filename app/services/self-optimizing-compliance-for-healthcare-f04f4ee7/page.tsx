@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Compliance for Healthcare - Zion Tech Group",
-  description: "Revolutionize healthcare through intelligent automation. Our Self-Optimizing Compliance for Healthcare leverages advanced machine learning to deliver workflow management at scale.",
+  description: "Revolutionize healthcare through intelligent automation. Our Self-Optimizing Compliance for Healthcare leverages advanced machine learning to deliver workflow m",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-compliance-for-healthcare-f04f4ee7`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Code optimization with performance profiling</li>
             <li>Network optimization with traffic analysis</li>
-            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Dynamic resource allocation based on demand patterns</li>
             <li>50% reduction in operational costs through automation</li>
             <li>Reduced support tickets with self-service options</li>
-            <li>Reduced customer acquisition costs with optimization</li>
           </ul>
         </div>
         

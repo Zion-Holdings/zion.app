@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Optimizer for Transportation #1 - Zion Tech Group",
-  description: "Revolutionize transportation through intelligent automation. Our Autonomous Optimizer for Transportation #1 leverages advanced machine learning to deliver fraud prevention at scale.",
+  description: "Revolutionize transportation through intelligent automation. Our Autonomous Optimizer for Transportation #1 leverages advanced machine learning to deliver fraud",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-optimizer-for-transportation-1-d69b6233`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Manufacturing quality control with defect detection</li>
             <li>Multi-region deployment with automatic failover</li>
             <li>Data encryption at rest and in transit</li>
-            <li>Predictive modeling with ensemble methods</li>
           </ul>
         </div>
         

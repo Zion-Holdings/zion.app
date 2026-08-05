@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced development time with code generation</li>
             <li>Faster content creation with AI assistance</li>
             <li>Reduced churn with proactive customer retention</li>
-            <li>Improved product quality with automated testing</li>
           </ul>
         </div>
         

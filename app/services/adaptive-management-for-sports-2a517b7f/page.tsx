@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Cost optimization recommendations with savings analysis</li>
             <li>Zero manual intervention required for routine tasks</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Reduced human error by 95% with automated processes</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Quality for Manufacturing - Zion Tech Group",
-  description: "Revolutionize manufacturing through intelligent automation. Our Neural Quality for Manufacturing leverages advanced machine learning to deliver user experience at scale.",
+  description: "Revolutionize manufacturing through intelligent automation. Our Neural Quality for Manufacturing leverages advanced machine learning to deliver user experience ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-quality-for-manufacturing-9115253c`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced customer acquisition costs with optimization</li>
             <li>ROI achieved in under 90 days with cost savings</li>
             <li>Reduced human error by 95% with automated processes</li>
-            <li>50% reduction in operational costs through automation</li>
           </ul>
         </div>
         

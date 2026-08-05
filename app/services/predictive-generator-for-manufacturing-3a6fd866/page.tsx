@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Generator for Manufacturing - Zion Tech Group",
-  description: "Unlock unprecedented growth with Predictive Generator for Manufacturing. This autonomous system provides security monitoring with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Predictive Generator for Manufacturing. This autonomous system provides security monitoring with zero manual intervention neede",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-generator-for-manufacturing-3a6fd866`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data governance with policy enforcement</li>
             <li>HIPAA ready with healthcare data protection</li>
             <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Automation opportunity identification</li>
           </ul>
         </div>
         

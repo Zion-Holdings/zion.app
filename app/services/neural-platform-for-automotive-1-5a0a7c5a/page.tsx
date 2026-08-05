@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Microservices deployment with container orchestration</li>
             <li>Brand monitoring across social channels</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>Financial risk management with scenario analysis</li>
           </ul>
         </div>
         

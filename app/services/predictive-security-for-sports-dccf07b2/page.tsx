@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Role-based access control with SSO integration</li>
             <li>Version control with rollback capabilities</li>
             <li>Serverless functions for cost-effective scaling</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Platform for Real-Estate - Zion Tech Group",
-  description: "Revolutionize real-estate through intelligent automation. Our Neural Platform for Real-Estate leverages advanced machine learning to deliver resource optimization at scale.",
+  description: "Revolutionize real-estate through intelligent automation. Our Neural Platform for Real-Estate leverages advanced machine learning to deliver resource optimizati",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-platform-for-real-estate-76a4f967`
   }

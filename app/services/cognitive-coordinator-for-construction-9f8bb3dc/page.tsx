@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Role-based access control with SSO integration</li>
             <li>Competitive intelligence with market share tracking</li>
             <li>Revenue forecasting with market trend analysis</li>
-            <li>Data quality with anomaly detection</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better code quality with automated reviews</li>
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Better supply chain visibility with tracking</li>
-            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

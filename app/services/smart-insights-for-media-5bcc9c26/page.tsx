@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Insights for Media - Zion Tech Group",
-  description: "Transform your media operations with our Smart Insights for Media. This AI-driven solution automates predictive analytics with unprecedented accuracy and efficiency.",
+  description: "Transform your media operations with our Smart Insights for Media. This AI-driven solution automates predictive analytics with unprecedented accuracy and effici",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-insights-for-media-5bcc9c26`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Language processing with sentiment analysis</li>
             <li>Code optimization with performance profiling</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         

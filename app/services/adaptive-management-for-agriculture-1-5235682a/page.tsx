@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Management for Agriculture #1 - Zion Tech Group",
-  description: "Revolutionize agriculture through intelligent automation. Our Adaptive Management for Agriculture #1 leverages advanced machine learning to deliver threat detection at scale.",
+  description: "Revolutionize agriculture through intelligent automation. Our Adaptive Management for Agriculture #1 leverages advanced machine learning to deliver threat detec",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-management-for-agriculture-1-5235682a`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-region deployment with automatic failover</li>
             <li>Custom integrations with webhook support</li>
             <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Predictive modeling with ensemble methods</li>
           </ul>
         </div>
         

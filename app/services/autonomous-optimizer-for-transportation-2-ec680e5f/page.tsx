@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Optimizer for Transportation #2 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Autonomous Optimizer for Transportation #2. This autonomous system provides compliance monitoring with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Autonomous Optimizer for Transportation #2. This autonomous system provides compliance monitoring with zero manual intervention",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-optimizer-for-transportation-2-ec680e5f`
   }

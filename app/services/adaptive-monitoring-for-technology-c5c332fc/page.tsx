@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-language support with localization</li>
             <li>Role-based access control with SSO integration</li>
             <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Version control with rollback capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved forecast accuracy with ML models</li>
             <li>Reduced development time with code generation</li>
             <li>Improved product quality with automated testing</li>
-            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

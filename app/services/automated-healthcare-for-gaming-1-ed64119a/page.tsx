@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Healthcare for Gaming #1 - Zion Tech Group",
-  description: "Transform your gaming operations with our Automated Healthcare for Gaming #1. This AI-driven solution automates inventory management with unprecedented accuracy and efficiency.",
+  description: "Transform your gaming operations with our Automated Healthcare for Gaming #1. This AI-driven solution automates inventory management with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-healthcare-for-gaming-1-ed64119a`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Logistics route optimization with traffic prediction</li>
             <li>Sales process optimization with pipeline management</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Finance for Real-Estate #1 - Zion Tech Group",
-  description: "The future of real-estate is here with Smart Finance for Real-Estate #1. Powered by cutting-edge AI, this platform delivers performance monitoring like never before.",
+  description: "The future of real-estate is here with Smart Finance for Real-Estate #1. Powered by cutting-edge AI, this platform delivers performance monitoring like never be",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-finance-for-real-estate-1-3284ce3c`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Automation opportunity identification</li>
-            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         

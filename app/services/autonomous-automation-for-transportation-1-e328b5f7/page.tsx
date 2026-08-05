@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Automation for Transportation #1 - Zion Tech Group",
-  description: "The future of transportation is here with Autonomous Automation for Transportation #1. Powered by cutting-edge AI, this platform delivers security monitoring like never before.",
+  description: "The future of transportation is here with Autonomous Automation for Transportation #1. Powered by cutting-edge AI, this platform delivers security monitoring li",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-automation-for-transportation-1-e328b5f7`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Alerting system with intelligent notifications</li>
             <li>User experience analytics with behavior tracking</li>
             <li>Brand monitoring across social channels</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced churn with proactive customer retention</li>
             <li>Improved product quality with automated testing</li>
             <li>Reduced support tickets with self-service options</li>
-            <li>Faster content creation with AI assistance</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated System for Healthcare #1 - Zion Tech Group",
-  description: "The future of healthcare is here with Automated System for Healthcare #1. Powered by cutting-edge AI, this platform delivers resource optimization like never before.",
+  description: "The future of healthcare is here with Automated System for Healthcare #1. Powered by cutting-edge AI, this platform delivers resource optimization like never be",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-system-for-healthcare-1-d90ff90a`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Market analysis with buyer behavior insights</li>
             <li>Data encryption at rest and in transit</li>
             <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security posture with continuous monitoring</li>
             <li>Better supply chain visibility with tracking</li>
             <li>Cost optimization recommendations with savings analysis</li>
-            <li>Reduced risk with early warning systems</li>
           </ul>
         </div>
         

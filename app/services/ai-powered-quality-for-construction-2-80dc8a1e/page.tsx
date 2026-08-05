@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Quality for Construction #2 - Zion Tech Group",
-  description: "Unlock unprecedented growth with AI-Powered Quality for Construction #2. This autonomous system provides performance monitoring with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with AI-Powered Quality for Construction #2. This autonomous system provides performance monitoring with zero manual intervention ne",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-quality-for-construction-2-80dc8a1e`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Brand monitoring across social channels</li>
             <li>Process discovery with activity analysis</li>
             <li>Document processing with OCR and NLP</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         

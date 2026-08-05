@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Analyzer for Healthcare - Zion Tech Group",
-  description: "Transform your healthcare operations with our Cognitive Analyzer for Healthcare. This AI-driven solution automates sales process optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your healthcare operations with our Cognitive Analyzer for Healthcare. This AI-driven solution automates sales process optimization with unprecedented",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-analyzer-for-healthcare-0e122883`
   }

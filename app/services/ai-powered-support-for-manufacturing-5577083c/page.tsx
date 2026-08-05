@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Support for Manufacturing - Zion Tech Group",
-  description: "Transform your manufacturing operations with our AI-Powered Support for Manufacturing. This AI-driven solution automates process automation with unprecedented accuracy and efficiency.",
+  description: "Transform your manufacturing operations with our AI-Powered Support for Manufacturing. This AI-driven solution automates process automation with unprecedented a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-support-for-manufacturing-5577083c`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Compliance monitoring with regulatory updates</li>
             <li>Code optimization with performance profiling</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Machine learning integration with automatic model training</li>
             <li>Image recognition with computer vision</li>
             <li>Healthcare data analytics with patient insights</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         

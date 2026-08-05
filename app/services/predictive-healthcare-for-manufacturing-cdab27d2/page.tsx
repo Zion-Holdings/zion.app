@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Sentiment analysis with real-time monitoring</li>
-            <li>Customer service automation with chatbot integration</li>
           </ul>
         </div>
         

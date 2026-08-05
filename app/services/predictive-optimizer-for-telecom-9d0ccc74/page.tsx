@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Optimizer for Telecom - Zion Tech Group",
-  description: "Revolutionize telecom through intelligent automation. Our Predictive Optimizer for Telecom leverages advanced machine learning to deliver content generation at scale.",
+  description: "Revolutionize telecom through intelligent automation. Our Predictive Optimizer for Telecom leverages advanced machine learning to deliver content generation at ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-optimizer-for-telecom-9d0ccc74`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cost reduction with process mining</li>
             <li>Multi-region deployment with automatic failover</li>
             <li>Language processing with sentiment analysis</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         

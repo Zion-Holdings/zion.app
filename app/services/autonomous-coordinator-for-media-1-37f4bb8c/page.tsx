@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Master data management with golden records</li>
             <li>Content generation with plagiarism checks</li>
             <li>Edge computing support for low-latency operations</li>
-            <li>Customer service automation with chatbot integration</li>
           </ul>
         </div>
         

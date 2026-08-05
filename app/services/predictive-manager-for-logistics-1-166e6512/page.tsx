@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Manager for Logistics #1 - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Predictive Manager for Logistics #1 leverages advanced machine learning to deliver decision support at scale.",
+  description: "Revolutionize logistics through intelligent automation. Our Predictive Manager for Logistics #1 leverages advanced machine learning to deliver decision support ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-manager-for-logistics-1-166e6512`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Code optimization with performance profiling</li>
             <li>Predictive modeling with ensemble methods</li>
             <li>Data encryption at rest and in transit</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         

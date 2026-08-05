@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Logistics route optimization with traffic prediction</li>
-            <li>Customer service automation with chatbot integration</li>
           </ul>
         </div>
         

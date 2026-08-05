@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>User experience analytics with behavior tracking</li>
             <li>Sales process optimization with pipeline management</li>
             <li>Security monitoring with threat intelligence</li>
-            <li>Brand monitoring across social channels</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved customer retention with proactive service</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Better market positioning with competitive analysis</li>
           </ul>
         </div>
         

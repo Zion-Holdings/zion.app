@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Intelligence for Hospitality - Zion Tech Group",
-  description: "The future of hospitality is here with Neural Intelligence for Hospitality. Powered by cutting-edge AI, this platform delivers predictive analytics like never before.",
+  description: "The future of hospitality is here with Neural Intelligence for Hospitality. Powered by cutting-edge AI, this platform delivers predictive analytics like never b",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-intelligence-for-hospitality-0e240e46`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Document processing with OCR and NLP</li>
             <li>Maintenance scheduling with predictive analytics</li>
             <li>Multi-language support with localization</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced development time with code generation</li>
             <li>Zero manual intervention required for routine tasks</li>
             <li>Reduced shipping costs with route optimization</li>
-            <li>Better resource utilization with auto-scaling</li>
           </ul>
         </div>
         

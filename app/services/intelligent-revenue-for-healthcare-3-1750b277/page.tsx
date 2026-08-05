@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Revenue for Healthcare #3 - Zion Tech Group",
-  description: "Revolutionize healthcare through intelligent automation. Our Intelligent Revenue for Healthcare #3 leverages advanced machine learning to deliver risk assessment at scale.",
+  description: "Revolutionize healthcare through intelligent automation. Our Intelligent Revenue for Healthcare #3 leverages advanced machine learning to deliver risk assessmen",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-revenue-for-healthcare-3-1750b277`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Alerting system with intelligent notifications</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Automation opportunity identification</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security with continuous threat monitoring</li>
             <li>Better inventory management with demand forecasting</li>
             <li>Improved brand awareness with social monitoring</li>
-            <li>Improved employee productivity with automation</li>
           </ul>
         </div>
         

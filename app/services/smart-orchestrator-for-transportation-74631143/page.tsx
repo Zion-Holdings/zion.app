@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Orchestrator for Transportation - Zion Tech Group",
-  description: "Transform your transportation operations with our Smart Orchestrator for Transportation. This AI-driven solution automates decision support with unprecedented accuracy and efficiency.",
+  description: "Transform your transportation operations with our Smart Orchestrator for Transportation. This AI-driven solution automates decision support with unprecedented a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-orchestrator-for-transportation-74631143`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automation opportunity identification</li>
             <li>Market analysis with buyer behavior insights</li>
             <li>Data encryption at rest and in transit</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
           </ul>
         </div>
         

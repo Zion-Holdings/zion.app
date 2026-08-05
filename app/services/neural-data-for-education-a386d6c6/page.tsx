@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automation opportunity identification</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Predictive modeling with ensemble methods</li>
-            <li>Energy optimization with consumption tracking</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved product quality with automated testing</li>
             <li>Improved customer satisfaction with faster response times</li>
             <li>Better customer experience with personalization</li>
-            <li>Reduced risk with early warning systems</li>
           </ul>
         </div>
         

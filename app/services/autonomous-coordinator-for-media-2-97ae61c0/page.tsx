@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Coordinator for Media #2 - Zion Tech Group",
-  description: "The future of media is here with Autonomous Coordinator for Media #2. Powered by cutting-edge AI, this platform delivers customer service automation like never before.",
+  description: "The future of media is here with Autonomous Coordinator for Media #2. Powered by cutting-edge AI, this platform delivers customer service automation like never ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-coordinator-for-media-2-97ae61c0`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Open-source friendly with plugin architecture</li>
             <li>Master data management with golden records</li>
-            <li>GDPR compliance with data portability</li>
           </ul>
         </div>
         

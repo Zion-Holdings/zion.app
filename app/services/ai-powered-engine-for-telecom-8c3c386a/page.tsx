@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>GDPR compliance with data portability</li>
             <li>Budget optimization with cost allocation</li>
             <li>Edge computing support for low-latency operations</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better resource utilization with auto-scaling</li>
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Improved brand awareness with social monitoring</li>
-            <li>Better supply chain visibility with tracking</li>
           </ul>
         </div>
         

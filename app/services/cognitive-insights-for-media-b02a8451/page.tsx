@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data governance with policy enforcement</li>
             <li>SOC 2 certified with security controls</li>
             <li>Revenue forecasting with market trend analysis</li>
-            <li>Document processing with OCR and NLP</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>3x faster decision making with real-time insights</li>
-            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

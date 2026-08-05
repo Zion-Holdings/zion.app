@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced support tickets with self-service options</li>
             <li>Improved forecast accuracy with ML models</li>
             <li>Cost optimization recommendations with savings analysis</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
           </ul>
         </div>
         

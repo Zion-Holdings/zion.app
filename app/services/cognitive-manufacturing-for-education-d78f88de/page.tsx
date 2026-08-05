@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better resource utilization with auto-scaling</li>
             <li>24/7 automated operations without human intervention</li>
             <li>3x faster decision making with real-time insights</li>
-            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

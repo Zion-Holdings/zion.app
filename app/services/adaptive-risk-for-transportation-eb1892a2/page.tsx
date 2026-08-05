@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-region deployment with automatic failover</li>
             <li>Inventory prediction with demand forecasting</li>
             <li>Logistics route optimization with traffic prediction</li>
-            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved quality with automated testing and validation</li>
             <li>Enhanced security with continuous threat monitoring</li>
             <li>Cost optimization recommendations with savings analysis</li>
-            <li>Better supply chain visibility with tracking</li>
           </ul>
         </div>
         

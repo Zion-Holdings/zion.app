@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data quality with anomaly detection</li>
             <li>Inventory prediction with demand forecasting</li>
             <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Sales process optimization with pipeline management</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved customer satisfaction with faster response times</li>
             <li>Reduced support tickets with self-service options</li>
             <li>Automated compliance reporting for regulatory requirements</li>
-            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         

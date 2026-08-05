@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>50% reduction in operational costs through automation</li>
             <li>Reduced shipping costs with route optimization</li>
             <li>Improved customer satisfaction with faster response times</li>
-            <li>Reduced development time with code generation</li>
           </ul>
         </div>
         

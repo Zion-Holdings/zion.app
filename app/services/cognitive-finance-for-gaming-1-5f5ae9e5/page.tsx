@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automation opportunity identification</li>
             <li>Document processing with OCR and NLP</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced churn with proactive customer retention</li>
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Reduced human error by 95% with automated processes</li>
-            <li>Better inventory management with demand forecasting</li>
           </ul>
         </div>
         

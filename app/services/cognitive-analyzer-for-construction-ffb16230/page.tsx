@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Analyzer for Construction - Zion Tech Group",
-  description: "The future of construction is here with Cognitive Analyzer for Construction. Powered by cutting-edge AI, this platform delivers quality control like never before.",
+  description: "The future of construction is here with Cognitive Analyzer for Construction. Powered by cutting-edge AI, this platform delivers quality control like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-analyzer-for-construction-ffb16230`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Manufacturing quality control with defect detection</li>
             <li>Healthcare data analytics with patient insights</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>50% reduction in operational costs through automation</li>
             <li>Better code quality with automated reviews</li>
             <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

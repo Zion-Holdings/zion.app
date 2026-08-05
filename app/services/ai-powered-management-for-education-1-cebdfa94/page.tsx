@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Management for Education #1 - Zion Tech Group",
-  description: "Transform your education operations with our AI-Powered Management for Education #1. This AI-driven solution automates compliance monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your education operations with our AI-Powered Management for Education #1. This AI-driven solution automates compliance monitoring with unprecedented ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-management-for-education-1-cebdfa94`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Custom integrations with webhook support</li>
             <li>Data quality with anomaly detection</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         

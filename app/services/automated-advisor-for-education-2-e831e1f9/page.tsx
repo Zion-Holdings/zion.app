@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Advisor for Education #2 - Zion Tech Group",
-  description: "Revolutionize education through intelligent automation. Our Automated Advisor for Education #2 leverages advanced machine learning to deliver supply chain at scale.",
+  description: "Revolutionize education through intelligent automation. Our Automated Advisor for Education #2 leverages advanced machine learning to deliver supply chain at sc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-advisor-for-education-2-e831e1f9`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Multi-language support with localization</li>
             <li>Version control with rollback capabilities</li>
-            <li>Data governance with policy enforcement</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security with continuous threat monitoring</li>
             <li>Faster content creation with AI assistance</li>
             <li>Increased revenue with optimized pricing strategies</li>
-            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

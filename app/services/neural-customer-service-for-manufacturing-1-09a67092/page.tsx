@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Image recognition with computer vision</li>
             <li>Data encryption at rest and in transit</li>
             <li>User experience analytics with behavior tracking</li>
-            <li>Financial risk management with scenario analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Dynamic resource allocation based on demand patterns</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Improved forecast accuracy with ML models</li>
-            <li>Improved brand awareness with social monitoring</li>
           </ul>
         </div>
         

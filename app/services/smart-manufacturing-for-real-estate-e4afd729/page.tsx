@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Increased revenue with optimized pricing strategies</li>
             <li>Enhanced decision making with data-driven insights</li>
             <li>Scalable to millions of transactions per second</li>
-            <li>Improved brand awareness with social monitoring</li>
           </ul>
         </div>
         

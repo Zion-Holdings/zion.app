@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Director for Retail #1 - Zion Tech Group",
-  description: "Transform your retail operations with our AI-Powered Director for Retail #1. This AI-driven solution automates content generation with unprecedented accuracy and efficiency.",
+  description: "Transform your retail operations with our AI-Powered Director for Retail #1. This AI-driven solution automates content generation with unprecedented accuracy an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-director-for-retail-1-043d8053`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Language processing with sentiment analysis</li>
             <li>Microservices deployment with container orchestration</li>
-            <li>Data governance with policy enforcement</li>
           </ul>
         </div>
         

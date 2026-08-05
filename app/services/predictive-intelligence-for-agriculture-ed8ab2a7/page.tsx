@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Intelligence for Agriculture - Zion Tech Group",
-  description: "Transform your agriculture operations with our Predictive Intelligence for Agriculture. This AI-driven solution automates language processing with unprecedented accuracy and efficiency.",
+  description: "Transform your agriculture operations with our Predictive Intelligence for Agriculture. This AI-driven solution automates language processing with unprecedented",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-intelligence-for-agriculture-ed8ab2a7`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Healthcare data analytics with patient insights</li>
             <li>Logistics route optimization with traffic prediction</li>
             <li>Document processing with OCR and NLP</li>
-            <li>Image recognition with computer vision</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved customer satisfaction with faster response times</li>
             <li>Improved brand awareness with social monitoring</li>
             <li>Better code quality with automated reviews</li>
-            <li>Real-time insights and alerts for proactive management</li>
           </ul>
         </div>
         

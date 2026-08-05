@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Energy optimization with consumption tracking</li>
             <li>SOC 2 certified with security controls</li>
-            <li>Brand monitoring across social channels</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Performance benchmarking against industry standards</li>
             <li>Increased revenue with optimized pricing strategies</li>
             <li>Reduced development time with code generation</li>
-            <li>Enhanced decision making with data-driven insights</li>
           </ul>
         </div>
         

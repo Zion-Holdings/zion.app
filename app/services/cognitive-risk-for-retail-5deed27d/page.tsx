@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Image recognition with computer vision</li>
             <li>Fraud detection with anomaly analysis</li>
             <li>Security monitoring with threat intelligence</li>
-            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         

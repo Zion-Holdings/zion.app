@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Predictor for Healthcare - Zion Tech Group",
-  description: "Revolutionize healthcare through intelligent automation. Our Neural Predictor for Healthcare leverages advanced machine learning to deliver data processing at scale.",
+  description: "Revolutionize healthcare through intelligent automation. Our Neural Predictor for Healthcare leverages advanced machine learning to deliver data processing at s",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-predictor-for-healthcare-f6677d0f`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data encryption at rest and in transit</li>
             <li>Machine learning integration with automatic model training</li>
             <li>Market analysis with buyer behavior insights</li>
-            <li>Cost reduction with process mining</li>
           </ul>
         </div>
         

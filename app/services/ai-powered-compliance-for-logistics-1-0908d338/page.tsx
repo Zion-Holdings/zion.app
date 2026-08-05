@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Compliance for Logistics #1 - Zion Tech Group",
-  description: "Transform your logistics operations with our AI-Powered Compliance for Logistics #1. This AI-driven solution automates network optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your logistics operations with our AI-Powered Compliance for Logistics #1. This AI-driven solution automates network optimization with unprecedented a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-compliance-for-logistics-1-0908d338`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Role-based access control with SSO integration</li>
             <li>Competitive intelligence with market share tracking</li>
-            <li>Executive dashboards with drill-down capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced development time with code generation</li>
             <li>Automated compliance reporting for regulatory requirements</li>
             <li>Improved customer satisfaction with faster response times</li>
-            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Coordinator for Telecom #2 - Zion Tech Group",
-  description: "Revolutionize telecom through intelligent automation. Our Intelligent Coordinator for Telecom #2 leverages advanced machine learning to deliver user experience at scale.",
+  description: "Revolutionize telecom through intelligent automation. Our Intelligent Coordinator for Telecom #2 leverages advanced machine learning to deliver user experience ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-coordinator-for-telecom-2-4d40e947`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Inventory prediction with demand forecasting</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
           </ul>
         </div>
         

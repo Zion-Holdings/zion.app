@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>User experience analytics with behavior tracking</li>
             <li>Version control with rollback capabilities</li>
-            <li>Data governance with policy enforcement</li>
           </ul>
         </div>
         

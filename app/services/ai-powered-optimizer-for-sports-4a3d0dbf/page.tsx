@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Optimizer for Sports - Zion Tech Group",
-  description: "Revolutionize sports through intelligent automation. Our AI-Powered Optimizer for Sports leverages advanced machine learning to deliver sales process optimization at scale.",
+  description: "Revolutionize sports through intelligent automation. Our AI-Powered Optimizer for Sports leverages advanced machine learning to deliver sales process optimizati",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-optimizer-for-sports-4a3d0dbf`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Serverless functions for cost-effective scaling</li>
             <li>Cost reduction with process mining</li>
             <li>Multi-language support with localization</li>
-            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Predictive maintenance scheduling to prevent downtime</li>
             <li>Cost optimization recommendations with savings analysis</li>
             <li>Reduced support tickets with self-service options</li>
-            <li>Reduced development time with code generation</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data governance with policy enforcement</li>
             <li>Edge computing support for low-latency operations</li>
             <li>Multi-region deployment with automatic failover</li>
-            <li>Financial risk management with scenario analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved conversion rates with personalization</li>
             <li>Better customer experience with personalization</li>
             <li>Seamless integration with existing systems and workflows</li>
-            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Supply for Insurance - Zion Tech Group",
-  description: "Transform your insurance operations with our Autonomous Supply for Insurance. This AI-driven solution automates image recognition with unprecedented accuracy and efficiency.",
+  description: "Transform your insurance operations with our Autonomous Supply for Insurance. This AI-driven solution automates image recognition with unprecedented accuracy an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-supply-for-insurance-d24e1b31`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Network optimization with traffic analysis</li>
             <li>Serverless functions for cost-effective scaling</li>
             <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Multi-region deployment with automatic failover</li>
           </ul>
         </div>
         

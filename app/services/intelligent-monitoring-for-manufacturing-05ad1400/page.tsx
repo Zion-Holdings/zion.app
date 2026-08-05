@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Monitoring for Manufacturing - Zion Tech Group",
-  description: "The future of manufacturing is here with Intelligent Monitoring for Manufacturing. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.",
+  description: "The future of manufacturing is here with Intelligent Monitoring for Manufacturing. Powered by cutting-edge AI, this platform delivers sales forecasting like nev",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-monitoring-for-manufacturing-05ad1400`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security posture with continuous monitoring</li>
             <li>Reduced development time with code generation</li>
             <li>Better compliance with automated audit trails</li>
-            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Machine learning integration with automatic model training</li>
             <li>Business intelligence with KPI dashboards</li>
-            <li>Automation opportunity identification</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Faster content creation with AI assistance</li>
             <li>Reduced risk with early warning systems</li>
             <li>Improved sales performance with lead scoring</li>
-            <li>Reduced customer acquisition costs with optimization</li>
           </ul>
         </div>
         

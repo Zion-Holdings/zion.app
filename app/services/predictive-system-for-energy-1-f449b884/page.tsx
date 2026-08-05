@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive System for Energy #1 - Zion Tech Group",
-  description: "Transform your energy operations with our Predictive System for Energy #1. This AI-driven solution automates risk assessment with unprecedented accuracy and efficiency.",
+  description: "Transform your energy operations with our Predictive System for Energy #1. This AI-driven solution automates risk assessment with unprecedented accuracy and eff",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-system-for-energy-1-f449b884`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Machine learning integration with automatic model training</li>
             <li>Cost reduction with process mining</li>
             <li>Healthcare data analytics with patient insights</li>
-            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved customer retention with proactive service</li>
             <li>Real-time insights and alerts for proactive management</li>
             <li>Seamless integration with existing systems and workflows</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Inventory prediction with demand forecasting</li>
             <li>Predictive modeling with ensemble methods</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         

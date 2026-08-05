@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Customer Service for Energy - Zion Tech Group",
-  description: "Transform your energy operations with our Autonomous Customer Service for Energy. This AI-driven solution automates network optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your energy operations with our Autonomous Customer Service for Energy. This AI-driven solution automates network optimization with unprecedented accu",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-customer-service-for-energy-bd670f7d`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data quality with anomaly detection</li>
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Sales process optimization with pipeline management</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced operational risks with predictive models</li>
             <li>Reduced shipping costs with route optimization</li>
             <li>Improved quality with automated testing and validation</li>
-            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

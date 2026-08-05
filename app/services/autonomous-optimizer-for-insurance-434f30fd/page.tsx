@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Optimizer for Insurance - Zion Tech Group",
-  description: "Transform your insurance operations with our Autonomous Optimizer for Insurance. This AI-driven solution automates customer insights with unprecedented accuracy and efficiency.",
+  description: "Transform your insurance operations with our Autonomous Optimizer for Insurance. This AI-driven solution automates customer insights with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-optimizer-for-insurance-434f30fd`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Competitive intelligence with market share tracking</li>
             <li>Code optimization with performance profiling</li>
             <li>Machine learning integration with automatic model training</li>
-            <li>Multi-language support with localization</li>
           </ul>
         </div>
         

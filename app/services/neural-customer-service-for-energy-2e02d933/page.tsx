@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Customer Service for Energy - Zion Tech Group",
-  description: "Transform your energy operations with our Neural Customer Service for Energy. This AI-driven solution automates supply chain with unprecedented accuracy and efficiency.",
+  description: "Transform your energy operations with our Neural Customer Service for Energy. This AI-driven solution automates supply chain with unprecedented accuracy and eff",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-customer-service-for-energy-2e02d933`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Serverless functions for cost-effective scaling</li>
             <li>Content generation with plagiarism checks</li>
             <li>Data encryption at rest and in transit</li>
-            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced shipping costs with route optimization</li>
             <li>Dynamic resource allocation based on demand patterns</li>
             <li>Reduced development time with code generation</li>
-            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

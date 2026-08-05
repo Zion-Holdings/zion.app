@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Image recognition with computer vision</li>
             <li>Financial risk management with scenario analysis</li>
             <li>Real-time processing with streaming analytics</li>
-            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Increased revenue with optimized pricing strategies</li>
             <li>3x faster decision making with real-time insights</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         

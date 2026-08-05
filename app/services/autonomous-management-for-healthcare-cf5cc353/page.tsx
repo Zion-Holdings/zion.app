@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Management for Healthcare - Zion Tech Group",
-  description: "The future of healthcare is here with Autonomous Management for Healthcare. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before.",
+  description: "The future of healthcare is here with Autonomous Management for Healthcare. Powered by cutting-edge AI, this platform delivers compliance monitoring like never ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-management-for-healthcare-cf5cc353`
   }

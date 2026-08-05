@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Finance for Real-Estate #1 - Zion Tech Group",
-  description: "Revolutionize real-estate through intelligent automation. Our Predictive Finance for Real-Estate #1 leverages advanced machine learning to deliver risk assessment at scale.",
+  description: "Revolutionize real-estate through intelligent automation. Our Predictive Finance for Real-Estate #1 leverages advanced machine learning to deliver risk assessme",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-finance-for-real-estate-1-e8df514b`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Performance benchmarking against industry standards</li>
             <li>Improved sales performance with lead scoring</li>
             <li>Reduced development time with code generation</li>
-            <li>Better supply chain visibility with tracking</li>
           </ul>
         </div>
         

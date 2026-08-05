@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Revenue for Media #2 - Zion Tech Group",
-  description: "The future of media is here with Autonomous Revenue for Media #2. Powered by cutting-edge AI, this platform delivers customer service automation like never before.",
+  description: "The future of media is here with Autonomous Revenue for Media #2. Powered by cutting-edge AI, this platform delivers customer service automation like never befo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-revenue-for-media-2-0315b31b`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Business intelligence with KPI dashboards</li>
             <li>Alerting system with intelligent notifications</li>
             <li>Process discovery with activity analysis</li>
-            <li>Logistics route optimization with traffic prediction</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Optimizer for Healthcare - Zion Tech Group",
-  description: "The future of healthcare is here with Cognitive Optimizer for Healthcare. Powered by cutting-edge AI, this platform delivers energy management like never before.",
+  description: "The future of healthcare is here with Cognitive Optimizer for Healthcare. Powered by cutting-edge AI, this platform delivers energy management like never before",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-optimizer-for-healthcare-efc3e36a`
   }

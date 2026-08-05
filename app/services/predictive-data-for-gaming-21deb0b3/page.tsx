@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Data for Gaming - Zion Tech Group",
-  description: "Transform your gaming operations with our Predictive Data for Gaming. This AI-driven solution automates predictive analytics with unprecedented accuracy and efficiency.",
+  description: "Transform your gaming operations with our Predictive Data for Gaming. This AI-driven solution automates predictive analytics with unprecedented accuracy and eff",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-data-for-gaming-21deb0b3`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Language processing with sentiment analysis</li>
             <li>Open-source friendly with plugin architecture</li>
             <li>Market analysis with buyer behavior insights</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         

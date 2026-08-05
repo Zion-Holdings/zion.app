@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Supply for Manufacturing - Zion Tech Group",
-  description: "Transform your manufacturing operations with our Autonomous Supply for Manufacturing. This AI-driven solution automates code optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your manufacturing operations with our Autonomous Supply for Manufacturing. This AI-driven solution automates code optimization with unprecedented acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-supply-for-manufacturing-b7017303`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Budget optimization with cost allocation</li>
             <li>Energy optimization with consumption tracking</li>
             <li>Logistics route optimization with traffic prediction</li>
-            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         

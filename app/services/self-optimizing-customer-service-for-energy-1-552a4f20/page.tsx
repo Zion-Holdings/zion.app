@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Customer Service for Energy #1 - Zion Tech Group",
-  description: "Revolutionize energy through intelligent automation. Our Self-Optimizing Customer Service for Energy #1 leverages advanced machine learning to deliver compliance monitoring at scale.",
+  description: "Revolutionize energy through intelligent automation. Our Self-Optimizing Customer Service for Energy #1 leverages advanced machine learning to deliver complianc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-customer-service-for-energy-1-552a4f20`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Audit trails with compliance reporting</li>
             <li>GDPR compliance with data portability</li>
             <li>User experience analytics with behavior tracking</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>50% reduction in operational costs through automation</li>
             <li>Performance benchmarking against industry standards</li>
             <li>Improved employee productivity with automation</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
           </ul>
         </div>
         

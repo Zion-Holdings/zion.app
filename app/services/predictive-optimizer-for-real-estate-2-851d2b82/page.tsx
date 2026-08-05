@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Optimizer for Real-Estate #2 - Zion Tech Group",
-  description: "Revolutionize real-estate through intelligent automation. Our Predictive Optimizer for Real-Estate #2 leverages advanced machine learning to deliver financial planning at scale.",
+  description: "Revolutionize real-estate through intelligent automation. Our Predictive Optimizer for Real-Estate #2 leverages advanced machine learning to deliver financial p",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-optimizer-for-real-estate-2-851d2b82`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Budget optimization with cost allocation</li>
-            <li>Security monitoring with threat intelligence</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better compliance with automated audit trails</li>
             <li>Reduced churn with proactive customer retention</li>
             <li>Enhanced security with continuous threat monitoring</li>
-            <li>Improved customer satisfaction with faster response times</li>
           </ul>
         </div>
         

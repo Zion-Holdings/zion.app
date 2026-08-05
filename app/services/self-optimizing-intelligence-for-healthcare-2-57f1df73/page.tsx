@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Intelligence for Healthcare #2 - Zion Tech Group",
-  description: "Transform your healthcare operations with our Self-Optimizing Intelligence for Healthcare #2. This AI-driven solution automates process automation with unprecedented accuracy and efficiency.",
+  description: "Transform your healthcare operations with our Self-Optimizing Intelligence for Healthcare #2. This AI-driven solution automates process automation with unpreced",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-intelligence-for-healthcare-2-57f1df73`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sales process optimization with pipeline management</li>
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Multi-language support with localization</li>
-            <li>Process discovery with activity analysis</li>
           </ul>
         </div>
         

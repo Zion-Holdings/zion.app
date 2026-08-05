@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Financial risk management with scenario analysis</li>
             <li>Market analysis with buyer behavior insights</li>
             <li>Code optimization with performance profiling</li>
-            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Director for Insurance - Zion Tech Group",
-  description: "The future of insurance is here with AI-Powered Director for Insurance. Powered by cutting-edge AI, this platform delivers network optimization like never before.",
+  description: "The future of insurance is here with AI-Powered Director for Insurance. Powered by cutting-edge AI, this platform delivers network optimization like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-director-for-insurance-a65a98cc`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Faster content creation with AI assistance</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
           </ul>
         </div>
         

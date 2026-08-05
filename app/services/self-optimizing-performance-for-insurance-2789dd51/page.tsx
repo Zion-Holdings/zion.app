@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Performance for Insurance - Zion Tech Group",
-  description: "Revolutionize insurance through intelligent automation. Our Self-Optimizing Performance for Insurance leverages advanced machine learning to deliver security monitoring at scale.",
+  description: "Revolutionize insurance through intelligent automation. Our Self-Optimizing Performance for Insurance leverages advanced machine learning to deliver security mo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-performance-for-insurance-2789dd51`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer service automation with chatbot integration</li>
             <li>Audit trails with compliance reporting</li>
             <li>Image recognition with computer vision</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
           </ul>
         </div>
         

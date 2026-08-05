@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Manufacturing for Technology #1 - Zion Tech Group",
-  description: "The future of technology is here with Smart Manufacturing for Technology #1. Powered by cutting-edge AI, this platform delivers customer service automation like never before.",
+  description: "The future of technology is here with Smart Manufacturing for Technology #1. Powered by cutting-edge AI, this platform delivers customer service automation like",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-manufacturing-for-technology-1-326a9741`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Maintenance scheduling with predictive analytics</li>
             <li>SOC 2 certified with security controls</li>
             <li>Financial risk management with scenario analysis</li>
-            <li>Executive dashboards with drill-down capabilities</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Version control with rollback capabilities</li>
             <li>Alerting system with intelligent notifications</li>
             <li>Brand monitoring across social channels</li>
-            <li>Security monitoring with threat intelligence</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Faster time-to-market with accelerated development</li>
             <li>Improved customer satisfaction with faster response times</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Improved product quality with automated testing</li>
           </ul>
         </div>
         

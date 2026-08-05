@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Orchestrator for Healthcare - Zion Tech Group",
-  description: "Transform your healthcare operations with our AI-Powered Orchestrator for Healthcare. This AI-driven solution automates customer service automation with unprecedented accuracy and efficiency.",
+  description: "Transform your healthcare operations with our AI-Powered Orchestrator for Healthcare. This AI-driven solution automates customer service automation with unprece",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-orchestrator-for-healthcare-d9d5619b`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Market analysis with buyer behavior insights</li>
             <li>A/B testing framework for continuous optimization</li>
             <li>Data encryption at rest and in transit</li>
-            <li>Maintenance scheduling with predictive analytics</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced development time with code generation</li>
             <li>Improved conversion rates with personalization</li>
             <li>Improved forecast accuracy with ML models</li>
-            <li>Reduced customer acquisition costs with optimization</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Director for Agriculture #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Cognitive Director for Agriculture #1. This autonomous system provides customer service automation with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Cognitive Director for Agriculture #1. This autonomous system provides customer service automation with zero manual interventio",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-director-for-agriculture-1-9129be2f`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data encryption at rest and in transit</li>
             <li>SOC 2 certified with security controls</li>
             <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         

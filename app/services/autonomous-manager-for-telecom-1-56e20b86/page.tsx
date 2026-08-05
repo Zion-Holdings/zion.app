@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Financial risk management with scenario analysis</li>
             <li>Data governance with policy enforcement</li>
             <li>Customer service automation with chatbot integration</li>
-            <li>Revenue forecasting with market trend analysis</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Monitoring for Transportation #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Self-Optimizing Monitoring for Transportation #1. This autonomous system provides quality control with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Self-Optimizing Monitoring for Transportation #1. This autonomous system provides quality control with zero manual intervention",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-monitoring-for-transportation-1-7e5f6054`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved product quality with automated testing</li>
             <li>Reduced shipping costs with route optimization</li>
             <li>Improved customer retention with proactive service</li>
-            <li>Enhanced decision making with data-driven insights</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Analytics for Logistics - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Autonomous Analytics for Logistics leverages advanced machine learning to deliver resource optimization at scale.",
+  description: "Revolutionize logistics through intelligent automation. Our Autonomous Analytics for Logistics leverages advanced machine learning to deliver resource optimizat",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-analytics-for-logistics-0702c291`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better customer experience with personalization</li>
             <li>Improved employee productivity with automation</li>
             <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Increased revenue with optimized pricing strategies</li>
           </ul>
         </div>
         

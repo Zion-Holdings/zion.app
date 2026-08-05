@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Risk for Telecom #1 - Zion Tech Group",
-  description: "Transform your telecom operations with our Automated Risk for Telecom #1. This AI-driven solution automates customer service automation with unprecedented accuracy and efficiency.",
+  description: "Transform your telecom operations with our Automated Risk for Telecom #1. This AI-driven solution automates customer service automation with unprecedented accur",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-risk-for-telecom-1-9c0be893`
   }

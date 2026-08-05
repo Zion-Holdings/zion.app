@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Custom integrations with webhook support</li>
             <li>Role-based access control with SSO integration</li>
             <li>Customer service automation with chatbot integration</li>
-            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better resource utilization with auto-scaling</li>
             <li>Reduced operational risks with predictive models</li>
             <li>Better code quality with automated reviews</li>
-            <li>Real-time insights and alerts for proactive management</li>
           </ul>
         </div>
         

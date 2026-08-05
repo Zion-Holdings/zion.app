@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated System for Hospitality #1 - Zion Tech Group",
-  description: "The future of hospitality is here with Automated System for Hospitality #1. Powered by cutting-edge AI, this platform delivers financial planning like never before.",
+  description: "The future of hospitality is here with Automated System for Hospitality #1. Powered by cutting-edge AI, this platform delivers financial planning like never bef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-system-for-hospitality-1-421cca2d`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Support for Sports #1 - Zion Tech Group",
-  description: "Transform your sports operations with our Neural Support for Sports #1. This AI-driven solution automates process automation with unprecedented accuracy and efficiency.",
+  description: "Transform your sports operations with our Neural Support for Sports #1. This AI-driven solution automates process automation with unprecedented accuracy and eff",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-support-for-sports-1-3eeafa5f`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Competitive intelligence with market share tracking</li>
             <li>Audit trails with compliance reporting</li>
-            <li>Cost reduction with process mining</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>3x faster decision making with real-time insights</li>
             <li>Better code quality with automated reviews</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive DevOps for Finance - Zion Tech Group",
-  description: "Revolutionize finance through intelligent automation. Our Cognitive DevOps for Finance leverages advanced machine learning to deliver performance monitoring at scale.",
+  description: "Revolutionize finance through intelligent automation. Our Cognitive DevOps for Finance leverages advanced machine learning to deliver performance monitoring at ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-devops-for-finance-fa81f3d6`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Business intelligence with KPI dashboards</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Document processing with OCR and NLP</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
           </ul>
         </div>
         

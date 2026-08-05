@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Supply for Manufacturing - Zion Tech Group",
-  description: "Revolutionize manufacturing through intelligent automation. Our Intelligent Supply for Manufacturing leverages advanced machine learning to deliver language processing at scale.",
+  description: "Revolutionize manufacturing through intelligent automation. Our Intelligent Supply for Manufacturing leverages advanced machine learning to deliver language pro",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-supply-for-manufacturing-1f848d84`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Manager for Gaming - Zion Tech Group",
-  description: "Transform your gaming operations with our Adaptive Manager for Gaming. This AI-driven solution automates predictive analytics with unprecedented accuracy and efficiency.",
+  description: "Transform your gaming operations with our Adaptive Manager for Gaming. This AI-driven solution automates predictive analytics with unprecedented accuracy and ef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-manager-for-gaming-c0bc6d89`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Fraud detection with anomaly analysis</li>
             <li>Code optimization with performance profiling</li>
-            <li>Custom integrations with webhook support</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security posture with continuous monitoring</li>
             <li>Performance benchmarking against industry standards</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Zero manual intervention required for routine tasks</li>
           </ul>
         </div>
         

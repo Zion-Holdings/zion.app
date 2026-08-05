@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>Security monitoring with threat intelligence</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better code quality with automated reviews</li>
             <li>Improved employee productivity with automation</li>
             <li>Reduced churn with proactive customer retention</li>
-            <li>Better market positioning with competitive analysis</li>
           </ul>
         </div>
         

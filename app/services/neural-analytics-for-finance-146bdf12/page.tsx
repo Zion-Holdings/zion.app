@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Analytics for Finance - Zion Tech Group",
-  description: "Revolutionize finance through intelligent automation. Our Neural Analytics for Finance leverages advanced machine learning to deliver process automation at scale.",
+  description: "Revolutionize finance through intelligent automation. Our Neural Analytics for Finance leverages advanced machine learning to deliver process automation at scal",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-analytics-for-finance-146bdf12`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Security monitoring with threat intelligence</li>
             <li>Market analysis with buyer behavior insights</li>
-            <li>Document processing with OCR and NLP</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Enhanced security posture with continuous monitoring</li>
             <li>Cost optimization recommendations with savings analysis</li>
-            <li>Reduced support tickets with self-service options</li>
           </ul>
         </div>
         

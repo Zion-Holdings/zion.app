@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer service automation with chatbot integration</li>
             <li>Predictive modeling with ensemble methods</li>
             <li>Financial risk management with scenario analysis</li>
-            <li>Sentiment analysis with real-time monitoring</li>
           </ul>
         </div>
         

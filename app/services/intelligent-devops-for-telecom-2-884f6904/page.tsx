@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent DevOps for Telecom #2 - Zion Tech Group",
-  description: "The future of telecom is here with Intelligent DevOps for Telecom #2. Powered by cutting-edge AI, this platform delivers performance monitoring like never before.",
+  description: "The future of telecom is here with Intelligent DevOps for Telecom #2. Powered by cutting-edge AI, this platform delivers performance monitoring like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-devops-for-telecom-2-884f6904`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Logistics route optimization with traffic prediction</li>
             <li>Language processing with sentiment analysis</li>
             <li>Data encryption at rest and in transit</li>
-            <li>Network optimization with traffic analysis</li>
           </ul>
         </div>
         

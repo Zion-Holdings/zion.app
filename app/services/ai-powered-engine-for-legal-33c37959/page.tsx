@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Audit trails with compliance reporting</li>
             <li>Market analysis with buyer behavior insights</li>
             <li>Document processing with OCR and NLP</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced customer acquisition costs with optimization</li>
             <li>Improved customer retention with proactive service</li>
             <li>Improved employee productivity with automation</li>
-            <li>Better inventory management with demand forecasting</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Market analysis with buyer behavior insights</li>
             <li>Logistics route optimization with traffic prediction</li>
             <li>Executive dashboards with drill-down capabilities</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         

@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced human error by 95% with automated processes</li>
             <li>Dynamic resource allocation based on demand patterns</li>
             <li>Reduced shipping costs with route optimization</li>
-            <li>Improved customer retention with proactive service</li>
           </ul>
         </div>
         

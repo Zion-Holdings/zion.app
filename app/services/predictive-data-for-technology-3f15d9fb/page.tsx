@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Real-time insights and alerts for proactive management</li>
             <li>Better risk management with predictive analytics</li>
             <li>Faster content creation with AI assistance</li>
-            <li>Improved product quality with automated testing</li>
           </ul>
         </div>
         

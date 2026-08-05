@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Automation for Agriculture - Zion Tech Group",
-  description: "Revolutionize agriculture through intelligent automation. Our Neural Automation for Agriculture leverages advanced machine learning to deliver user experience at scale.",
+  description: "Revolutionize agriculture through intelligent automation. Our Neural Automation for Agriculture leverages advanced machine learning to deliver user experience a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-automation-for-agriculture-98fc223c`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Serverless functions for cost-effective scaling</li>
             <li>Code optimization with performance profiling</li>
             <li>Data governance with policy enforcement</li>
-            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         

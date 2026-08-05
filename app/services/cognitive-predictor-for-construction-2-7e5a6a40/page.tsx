@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Predictor for Construction #2 - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Cognitive Predictor for Construction #2 leverages advanced machine learning to deliver threat detection at scale.",
+  description: "Revolutionize construction through intelligent automation. Our Cognitive Predictor for Construction #2 leverages advanced machine learning to deliver threat det",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-predictor-for-construction-2-7e5a6a40`
   }

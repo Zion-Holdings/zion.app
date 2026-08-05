@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better inventory management with demand forecasting</li>
             <li>Reduced support tickets with self-service options</li>
             <li>Better market positioning with competitive analysis</li>
-            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         

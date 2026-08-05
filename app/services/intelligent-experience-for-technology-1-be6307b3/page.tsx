@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Experience for Technology #1 - Zion Tech Group",
-  description: "Revolutionize technology through intelligent automation. Our Intelligent Experience for Technology #1 leverages advanced machine learning to deliver fraud prevention at scale.",
+  description: "Revolutionize technology through intelligent automation. Our Intelligent Experience for Technology #1 leverages advanced machine learning to deliver fraud preve",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-experience-for-technology-1-be6307b3`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cost reduction with process mining</li>
             <li>Audit trails with compliance reporting</li>
             <li>Custom integrations with webhook support</li>
-            <li>Maintenance scheduling with predictive analytics</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Predictive maintenance scheduling to prevent downtime</li>
             <li>Better supply chain visibility with tracking</li>
             <li>Reduced shipping costs with route optimization</li>
-            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

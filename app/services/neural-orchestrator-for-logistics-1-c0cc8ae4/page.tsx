@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Orchestrator for Logistics #1 - Zion Tech Group",
-  description: "The future of logistics is here with Neural Orchestrator for Logistics #1. Powered by cutting-edge AI, this platform delivers market intelligence like never before.",
+  description: "The future of logistics is here with Neural Orchestrator for Logistics #1. Powered by cutting-edge AI, this platform delivers market intelligence like never bef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-orchestrator-for-logistics-1-c0cc8ae4`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Better risk management with predictive analytics</li>
             <li>Reduced operational risks with predictive models</li>
-            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         

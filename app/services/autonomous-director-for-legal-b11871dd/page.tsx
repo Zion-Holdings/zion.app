@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Director for Legal - Zion Tech Group",
-  description: "Revolutionize legal through intelligent automation. Our Autonomous Director for Legal leverages advanced machine learning to deliver workflow management at scale.",
+  description: "Revolutionize legal through intelligent automation. Our Autonomous Director for Legal leverages advanced machine learning to deliver workflow management at scal",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-director-for-legal-b11871dd`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automation opportunity identification</li>
             <li>Predictive modeling with ensemble methods</li>
             <li>Brand monitoring across social channels</li>
-            <li>Data governance with policy enforcement</li>
           </ul>
         </div>
         

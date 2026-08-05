@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart DevOps for Telecom #1 - Zion Tech Group",
-  description: "Revolutionize telecom through intelligent automation. Our Smart DevOps for Telecom #1 leverages advanced machine learning to deliver compliance monitoring at scale.",
+  description: "Revolutionize telecom through intelligent automation. Our Smart DevOps for Telecom #1 leverages advanced machine learning to deliver compliance monitoring at sc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-devops-for-telecom-1-c5520c47`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data governance with policy enforcement</li>
             <li>Custom integrations with webhook support</li>
             <li>Cost reduction with process mining</li>
-            <li>Revenue forecasting with market trend analysis</li>
           </ul>
         </div>
         

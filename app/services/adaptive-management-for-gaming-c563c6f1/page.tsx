@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Compliance monitoring with regulatory updates</li>
             <li>Audit trails with compliance reporting</li>
             <li>Revenue forecasting with market trend analysis</li>
-            <li>Security monitoring with threat intelligence</li>
           </ul>
         </div>
         

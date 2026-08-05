@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Healthcare data analytics with patient insights</li>
             <li>Predictive modeling with ensemble methods</li>
             <li>Financial risk management with scenario analysis</li>
-            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced churn with proactive customer retention</li>
             <li>3x faster decision making with real-time insights</li>
             <li>Improved forecast accuracy with ML models</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         

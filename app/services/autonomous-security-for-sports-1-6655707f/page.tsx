@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Security for Sports #1 - Zion Tech Group",
-  description: "The future of sports is here with Autonomous Security for Sports #1. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.",
+  description: "The future of sports is here with Autonomous Security for Sports #1. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-security-for-sports-1-6655707f`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Compliance monitoring with regulatory updates</li>
             <li>Competitive intelligence with market share tracking</li>
             <li>Serverless functions for cost-effective scaling</li>
-            <li>Document processing with OCR and NLP</li>
           </ul>
         </div>
         

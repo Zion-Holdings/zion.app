@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Optimizer for Construction #1 - Zion Tech Group",
-  description: "The future of construction is here with Cognitive Optimizer for Construction #1. Powered by cutting-edge AI, this platform delivers workflow management like never before.",
+  description: "The future of construction is here with Cognitive Optimizer for Construction #1. Powered by cutting-edge AI, this platform delivers workflow management like nev",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-optimizer-for-construction-1-57fdf475`
   }

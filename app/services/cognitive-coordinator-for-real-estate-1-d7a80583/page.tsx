@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Coordinator for Real-Estate #1 - Zion Tech Group",
-  description: "Transform your real-estate operations with our Cognitive Coordinator for Real-Estate #1. This AI-driven solution automates predictive analytics with unprecedented accuracy and efficiency.",
+  description: "Transform your real-estate operations with our Cognitive Coordinator for Real-Estate #1. This AI-driven solution automates predictive analytics with unprecedent",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-coordinator-for-real-estate-1-d7a80583`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Microservices deployment with container orchestration</li>
             <li>Image recognition with computer vision</li>
             <li>SOC 2 certified with security controls</li>
-            <li>GDPR compliance with data portability</li>
           </ul>
         </div>
         

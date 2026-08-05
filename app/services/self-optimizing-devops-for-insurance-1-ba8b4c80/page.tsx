@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing DevOps for Insurance #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Self-Optimizing DevOps for Insurance #1. This autonomous system provides image recognition with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Self-Optimizing DevOps for Insurance #1. This autonomous system provides image recognition with zero manual intervention needed",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-devops-for-insurance-1-ba8b4c80`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Healthcare data analytics with patient insights</li>
             <li>Machine learning integration with automatic model training</li>
             <li>GDPR compliance with data portability</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         

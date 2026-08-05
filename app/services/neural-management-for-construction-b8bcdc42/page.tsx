@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Energy optimization with consumption tracking</li>
             <li>Business intelligence with KPI dashboards</li>
             <li>Image recognition with computer vision</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Real-time insights and alerts for proactive management</li>
             <li>Seamless integration with existing systems and workflows</li>
             <li>Improved brand awareness with social monitoring</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

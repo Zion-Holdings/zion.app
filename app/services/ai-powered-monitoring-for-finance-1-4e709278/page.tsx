@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Monitoring for Finance #1 - Zion Tech Group",
-  description: "Revolutionize finance through intelligent automation. Our AI-Powered Monitoring for Finance #1 leverages advanced machine learning to deliver customer insights at scale.",
+  description: "Revolutionize finance through intelligent automation. Our AI-Powered Monitoring for Finance #1 leverages advanced machine learning to deliver customer insights ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-monitoring-for-finance-1-4e709278`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Market analysis with buyer behavior insights</li>
             <li>GDPR compliance with data portability</li>
             <li>Revenue forecasting with market trend analysis</li>
-            <li>Document processing with OCR and NLP</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Risk for Sports #1 - Zion Tech Group",
-  description: "Transform your sports operations with our Cognitive Risk for Sports #1. This AI-driven solution automates customer insights with unprecedented accuracy and efficiency.",
+  description: "Transform your sports operations with our Cognitive Risk for Sports #1. This AI-driven solution automates customer insights with unprecedented accuracy and effi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-risk-for-sports-1-41f6466f`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Serverless functions for cost-effective scaling</li>
             <li>Budget optimization with cost allocation</li>
             <li>Customer journey mapping with touchpoint analysis</li>
-            <li>Cost reduction with process mining</li>
           </ul>
         </div>
         

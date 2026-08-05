@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Management for Legal #1 - Zion Tech Group",
-  description: "Revolutionize legal through intelligent automation. Our AI-Powered Management for Legal #1 leverages advanced machine learning to deliver network optimization at scale.",
+  description: "Revolutionize legal through intelligent automation. Our AI-Powered Management for Legal #1 leverages advanced machine learning to deliver network optimization a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-management-for-legal-1-919b6649`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Increased revenue with optimized pricing strategies</li>
             <li>Reduced human error by 95% with automated processes</li>
             <li>Reduced shipping costs with route optimization</li>
-            <li>Reduced operational risks with predictive models</li>
           </ul>
         </div>
         

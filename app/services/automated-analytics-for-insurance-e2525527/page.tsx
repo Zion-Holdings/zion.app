@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Budget optimization with cost allocation</li>
             <li>Fraud detection with anomaly analysis</li>
             <li>Business intelligence with KPI dashboards</li>
-            <li>Edge computing support for low-latency operations</li>
           </ul>
         </div>
         

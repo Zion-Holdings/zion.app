@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data encryption at rest and in transit</li>
             <li>Budget optimization with cost allocation</li>
             <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Version control with rollback capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced customer acquisition costs with optimization</li>
             <li>Real-time insights and alerts for proactive management</li>
             <li>Better market positioning with competitive analysis</li>
-            <li>Improved sales performance with lead scoring</li>
           </ul>
         </div>
         

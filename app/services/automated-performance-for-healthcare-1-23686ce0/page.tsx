@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Performance for Healthcare #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Automated Performance for Healthcare #1. This autonomous system provides customer insights with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Automated Performance for Healthcare #1. This autonomous system provides customer insights with zero manual intervention needed",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-performance-for-healthcare-1-23686ce0`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>User experience analytics with behavior tracking</li>
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Microservices deployment with container orchestration</li>
-            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         

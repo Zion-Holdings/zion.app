@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Orchestrator for Telecom #1 - Zion Tech Group",
-  description: "The future of telecom is here with AI-Powered Orchestrator for Telecom #1. Powered by cutting-edge AI, this platform delivers energy management like never before.",
+  description: "The future of telecom is here with AI-Powered Orchestrator for Telecom #1. Powered by cutting-edge AI, this platform delivers energy management like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-orchestrator-for-telecom-1-f70826c7`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Compliance for Education - Zion Tech Group",
-  description: "Transform your education operations with our Adaptive Compliance for Education. This AI-driven solution automates data processing with unprecedented accuracy and efficiency.",
+  description: "Transform your education operations with our Adaptive Compliance for Education. This AI-driven solution automates data processing with unprecedented accuracy an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-compliance-for-education-2dd5ba63`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data encryption at rest and in transit</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Custom integrations with webhook support</li>
-            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-region deployment with automatic failover</li>
             <li>Microservices deployment with container orchestration</li>
             <li>Multi-language support with localization</li>
-            <li>Sales process optimization with pipeline management</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved customer satisfaction with faster response times</li>
             <li>Reduced support tickets with self-service options</li>
             <li>Better customer experience with personalization</li>
-            <li>Better code quality with automated reviews</li>
           </ul>
         </div>
         

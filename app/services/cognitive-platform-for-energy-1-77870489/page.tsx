@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Platform for Energy #1 - Zion Tech Group",
-  description: "Transform your energy operations with our Cognitive Platform for Energy #1. This AI-driven solution automates network optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your energy operations with our Cognitive Platform for Energy #1. This AI-driven solution automates network optimization with unprecedented accuracy a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-platform-for-energy-1-77870489`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better market positioning with competitive analysis</li>
             <li>Better risk management with predictive analytics</li>
             <li>Real-time insights and alerts for proactive management</li>
-            <li>Better resource utilization with auto-scaling</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Manager for Agriculture - Zion Tech Group",
-  description: "Transform your agriculture operations with our Autonomous Manager for Agriculture. This AI-driven solution automates energy management with unprecedented accuracy and efficiency.",
+  description: "Transform your agriculture operations with our Autonomous Manager for Agriculture. This AI-driven solution automates energy management with unprecedented accura",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-manager-for-agriculture-379128e5`
   }

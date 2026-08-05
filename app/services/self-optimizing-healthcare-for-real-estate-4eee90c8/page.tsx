@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Healthcare for Real-Estate - Zion Tech Group",
-  description: "The future of real-estate is here with Self-Optimizing Healthcare for Real-Estate. Powered by cutting-edge AI, this platform delivers inventory management like never before.",
+  description: "The future of real-estate is here with Self-Optimizing Healthcare for Real-Estate. Powered by cutting-edge AI, this platform delivers inventory management like ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-healthcare-for-real-estate-4eee90c8`
   }

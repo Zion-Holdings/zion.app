@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Customer Service for Finance - Zion Tech Group",
-  description: "Transform your finance operations with our Autonomous Customer Service for Finance. This AI-driven solution automates sales forecasting with unprecedented accuracy and efficiency.",
+  description: "Transform your finance operations with our Autonomous Customer Service for Finance. This AI-driven solution automates sales forecasting with unprecedented accur",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-customer-service-for-finance-d5c185ad`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Open-source friendly with plugin architecture</li>
             <li>Data quality with anomaly detection</li>
             <li>Custom integrations with webhook support</li>
-            <li>Multi-region deployment with automatic failover</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced shipping costs with route optimization</li>
             <li>Better resource utilization with auto-scaling</li>
             <li>Enhanced security with continuous threat monitoring</li>
-            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         

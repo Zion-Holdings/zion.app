@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Fraud detection with anomaly analysis</li>
             <li>Language processing with sentiment analysis</li>
             <li>Automation opportunity identification</li>
-            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         

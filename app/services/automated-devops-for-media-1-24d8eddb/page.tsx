@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Financial risk management with scenario analysis</li>
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Open-source friendly with plugin architecture</li>
-            <li>Master data management with golden records</li>
           </ul>
         </div>
         

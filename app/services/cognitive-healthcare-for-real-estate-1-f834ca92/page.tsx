@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Healthcare for Real-Estate #1 - Zion Tech Group",
-  description: "The future of real-estate is here with Cognitive Healthcare for Real-Estate #1. Powered by cutting-edge AI, this platform delivers supply chain like never before.",
+  description: "The future of real-estate is here with Cognitive Healthcare for Real-Estate #1. Powered by cutting-edge AI, this platform delivers supply chain like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-healthcare-for-real-estate-1-f834ca92`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Version control with rollback capabilities</li>
             <li>Multi-language support with localization</li>
             <li>Budget optimization with cost allocation</li>
-            <li>Financial risk management with scenario analysis</li>
           </ul>
         </div>
         

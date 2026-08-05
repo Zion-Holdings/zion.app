@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Inventory prediction with demand forecasting</li>
             <li>Market analysis with buyer behavior insights</li>
-            <li>Business intelligence with KPI dashboards</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>99.9% uptime guarantee with redundant architecture</li>
             <li>Improved customer retention with proactive service</li>
             <li>Reduced support tickets with self-service options</li>
-            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

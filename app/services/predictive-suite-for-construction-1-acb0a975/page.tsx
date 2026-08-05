@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Suite for Construction #1 - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Predictive Suite for Construction #1 leverages advanced machine learning to deliver performance monitoring at scale.",
+  description: "Revolutionize construction through intelligent automation. Our Predictive Suite for Construction #1 leverages advanced machine learning to deliver performance m",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-suite-for-construction-1-acb0a975`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Fraud detection with anomaly analysis</li>
             <li>Language processing with sentiment analysis</li>
             <li>Data quality with anomaly detection</li>
-            <li>Multi-region deployment with automatic failover</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Enhanced security with continuous threat monitoring</li>
             <li>Improved product quality with automated testing</li>
-            <li>Reduced human error by 95% with automated processes</li>
           </ul>
         </div>
         

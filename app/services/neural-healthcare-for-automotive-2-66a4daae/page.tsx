@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Healthcare for Automotive #2 - Zion Tech Group",
-  description: "Revolutionize automotive through intelligent automation. Our Neural Healthcare for Automotive #2 leverages advanced machine learning to deliver performance monitoring at scale.",
+  description: "Revolutionize automotive through intelligent automation. Our Neural Healthcare for Automotive #2 leverages advanced machine learning to deliver performance moni",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-healthcare-for-automotive-2-66a4daae`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sales process optimization with pipeline management</li>
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Revenue forecasting with market trend analysis</li>
-            <li>Master data management with golden records</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>50% reduction in operational costs through automation</li>
             <li>Reduced support tickets with self-service options</li>
             <li>Improved brand awareness with social monitoring</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
           </ul>
         </div>
         

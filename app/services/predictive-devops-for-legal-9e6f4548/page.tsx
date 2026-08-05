@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Edge computing support for low-latency operations</li>
             <li>Automation opportunity identification</li>
             <li>Serverless functions for cost-effective scaling</li>
-            <li>Document processing with OCR and NLP</li>
           </ul>
         </div>
         

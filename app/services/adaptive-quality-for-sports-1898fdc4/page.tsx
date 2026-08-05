@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>HIPAA ready with healthcare data protection</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Sentiment analysis with real-time monitoring</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved customer retention with proactive service</li>
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Improved customer satisfaction with faster response times</li>
-            <li>Reduced operational risks with predictive models</li>
           </ul>
         </div>
         

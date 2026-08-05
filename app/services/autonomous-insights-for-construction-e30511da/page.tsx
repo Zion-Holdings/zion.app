@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Insights for Construction - Zion Tech Group",
-  description: "Transform your construction operations with our Autonomous Insights for Construction. This AI-driven solution automates content generation with unprecedented accuracy and efficiency.",
+  description: "Transform your construction operations with our Autonomous Insights for Construction. This AI-driven solution automates content generation with unprecedented ac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-insights-for-construction-e30511da`
   }

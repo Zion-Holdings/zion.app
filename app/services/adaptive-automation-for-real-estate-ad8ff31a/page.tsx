@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Customer service automation with chatbot integration</li>
             <li>A/B testing framework for continuous optimization</li>
-            <li>Multi-region deployment with automatic failover</li>
           </ul>
         </div>
         

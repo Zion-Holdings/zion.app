@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Security for Legal #1 - Zion Tech Group",
-  description: "Revolutionize legal through intelligent automation. Our Automated Security for Legal #1 leverages advanced machine learning to deliver image recognition at scale.",
+  description: "Revolutionize legal through intelligent automation. Our Automated Security for Legal #1 leverages advanced machine learning to deliver image recognition at scal",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-security-for-legal-1-6cf4e7d8`
   }

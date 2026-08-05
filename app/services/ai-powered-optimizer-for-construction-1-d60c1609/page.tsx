@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Custom integrations with webhook support</li>
             <li>Executive dashboards with drill-down capabilities</li>
             <li>A/B testing framework for continuous optimization</li>
-            <li>Competitive intelligence with market share tracking</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better risk management with predictive analytics</li>
             <li>Better resource utilization with auto-scaling</li>
             <li>Improved sales performance with lead scoring</li>
-            <li>Improved forecast accuracy with ML models</li>
           </ul>
         </div>
         

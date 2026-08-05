@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Risk for Education - Zion Tech Group",
-  description: "Revolutionize education through intelligent automation. Our Cognitive Risk for Education leverages advanced machine learning to deliver process automation at scale.",
+  description: "Revolutionize education through intelligent automation. Our Cognitive Risk for Education leverages advanced machine learning to deliver process automation at sc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-risk-for-education-d51d91f0`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Code optimization with performance profiling</li>
             <li>User experience analytics with behavior tracking</li>
             <li>Language processing with sentiment analysis</li>
-            <li>Data quality with anomaly detection</li>
           </ul>
         </div>
         

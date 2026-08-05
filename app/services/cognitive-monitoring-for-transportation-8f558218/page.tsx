@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>SOC 2 certified with security controls</li>
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>GDPR compliance with data portability</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved brand awareness with social monitoring</li>
             <li>Better financial planning with predictive models</li>
             <li>50% reduction in operational costs through automation</li>
-            <li>Increased revenue with optimized pricing strategies</li>
           </ul>
         </div>
         

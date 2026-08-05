@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Image recognition with computer vision</li>
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>Network optimization with traffic analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced support tickets with self-service options</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>24/7 automated operations without human intervention</li>
-            <li>Seamless integration with existing systems and workflows</li>
           </ul>
         </div>
         

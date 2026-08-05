@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer service automation with chatbot integration</li>
             <li>GDPR compliance with data portability</li>
             <li>Open-source friendly with plugin architecture</li>
-            <li>Healthcare data analytics with patient insights</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security posture with continuous monitoring</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>Increased revenue with optimized pricing strategies</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Microservices deployment with container orchestration</li>
             <li>Process discovery with activity analysis</li>
             <li>Customer service automation with chatbot integration</li>
-            <li>Predictive modeling with ensemble methods</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better risk management with predictive analytics</li>
             <li>Better financial planning with predictive models</li>
             <li>Increased revenue with optimized pricing strategies</li>
-            <li>Better inventory management with demand forecasting</li>
           </ul>
         </div>
         

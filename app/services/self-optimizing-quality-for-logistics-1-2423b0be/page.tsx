@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Quality for Logistics #1 - Zion Tech Group",
-  description: "Transform your logistics operations with our Self-Optimizing Quality for Logistics #1. This AI-driven solution automates compliance monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your logistics operations with our Self-Optimizing Quality for Logistics #1. This AI-driven solution automates compliance monitoring with unprecedente",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-quality-for-logistics-1-2423b0be`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Automated compliance reporting for regulatory requirements</li>
             <li>Improved product quality with automated testing</li>
             <li>Seamless integration with existing systems and workflows</li>
-            <li>Improved sales performance with lead scoring</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data quality with anomaly detection</li>
             <li>Audit trails with compliance reporting</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved brand awareness with social monitoring</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
             <li>Zero manual intervention required for routine tasks</li>
-            <li>Enhanced security posture with continuous monitoring</li>
           </ul>
         </div>
         

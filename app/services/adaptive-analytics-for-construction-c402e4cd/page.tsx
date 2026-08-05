@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Analytics for Construction - Zion Tech Group",
-  description: "The future of construction is here with Adaptive Analytics for Construction. Powered by cutting-edge AI, this platform delivers user experience like never before.",
+  description: "The future of construction is here with Adaptive Analytics for Construction. Powered by cutting-edge AI, this platform delivers user experience like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-analytics-for-construction-c402e4cd`
   }

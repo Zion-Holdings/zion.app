@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous System for Logistics - Zion Tech Group",
-  description: "Transform your logistics operations with our Autonomous System for Logistics. This AI-driven solution automates threat detection with unprecedented accuracy and efficiency.",
+  description: "Transform your logistics operations with our Autonomous System for Logistics. This AI-driven solution automates threat detection with unprecedented accuracy and",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-system-for-logistics-b446071d`
   }

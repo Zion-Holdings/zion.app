@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data quality with anomaly detection</li>
             <li>Serverless functions for cost-effective scaling</li>
             <li>Predictive modeling with ensemble methods</li>
-            <li>Automation opportunity identification</li>
           </ul>
         </div>
         

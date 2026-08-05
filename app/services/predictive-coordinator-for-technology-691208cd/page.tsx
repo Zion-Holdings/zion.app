@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Coordinator for Technology - Zion Tech Group",
-  description: "Unlock unprecedented growth with Predictive Coordinator for Technology. This autonomous system provides sales process optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Predictive Coordinator for Technology. This autonomous system provides sales process optimization with zero manual intervention",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-coordinator-for-technology-691208cd`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Sales process optimization with pipeline management</li>
             <li>Image recognition with computer vision</li>
-            <li>Audit trails with compliance reporting</li>
           </ul>
         </div>
         

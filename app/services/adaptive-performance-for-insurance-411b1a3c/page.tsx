@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Version control with rollback capabilities</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Cost reduction with process mining</li>
-            <li>Multi-region deployment with automatic failover</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced decision making with data-driven insights</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         

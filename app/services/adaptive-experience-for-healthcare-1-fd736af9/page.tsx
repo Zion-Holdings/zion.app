@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved customer retention with proactive service</li>
             <li>Zero manual intervention required for routine tasks</li>
             <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Better resource utilization with auto-scaling</li>
           </ul>
         </div>
         

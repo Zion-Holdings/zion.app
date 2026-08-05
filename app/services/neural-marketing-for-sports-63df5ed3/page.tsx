@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Financial risk management with scenario analysis</li>
             <li>Automation opportunity identification</li>
             <li>Cost reduction with process mining</li>
-            <li>GDPR compliance with data portability</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent DevOps for Manufacturing #2 - Zion Tech Group",
-  description: "The future of manufacturing is here with Intelligent DevOps for Manufacturing #2. Powered by cutting-edge AI, this platform delivers code optimization like never before.",
+  description: "The future of manufacturing is here with Intelligent DevOps for Manufacturing #2. Powered by cutting-edge AI, this platform delivers code optimization like neve",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-devops-for-manufacturing-2-a73d4da7`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Alerting system with intelligent notifications</li>
             <li>Serverless functions for cost-effective scaling</li>
             <li>Content generation with plagiarism checks</li>
-            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         

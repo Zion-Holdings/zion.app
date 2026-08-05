@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Process discovery with activity analysis</li>
             <li>GDPR compliance with data portability</li>
             <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Increased revenue with optimized pricing strategies</li>
             <li>Better inventory management with demand forecasting</li>
             <li>Improved sales performance with lead scoring</li>
-            <li>Improved employee productivity with automation</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data encryption at rest and in transit</li>
             <li>Image recognition with computer vision</li>
             <li>Healthcare data analytics with patient insights</li>
-            <li>HIPAA ready with healthcare data protection</li>
           </ul>
         </div>
         

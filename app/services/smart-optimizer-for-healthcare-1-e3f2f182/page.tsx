@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Optimizer for Healthcare #1 - Zion Tech Group",
-  description: "Transform your healthcare operations with our Smart Optimizer for Healthcare #1. This AI-driven solution automates supply chain with unprecedented accuracy and efficiency.",
+  description: "Transform your healthcare operations with our Smart Optimizer for Healthcare #1. This AI-driven solution automates supply chain with unprecedented accuracy and ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-optimizer-for-healthcare-1-e3f2f182`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Version control with rollback capabilities</li>
             <li>Security monitoring with threat intelligence</li>
             <li>Master data management with golden records</li>
-            <li>Market analysis with buyer behavior insights</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Dynamic resource allocation based on demand patterns</li>
             <li>Better financial planning with predictive models</li>
             <li>Improved employee productivity with automation</li>
-            <li>Improved product quality with automated testing</li>
           </ul>
         </div>
         

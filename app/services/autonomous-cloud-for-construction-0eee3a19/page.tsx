@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>99.9% uptime guarantee with redundant architecture</li>
             <li>Reduced customer acquisition costs with optimization</li>
             <li>Faster time-to-market with accelerated development</li>
-            <li>Improved quality with automated testing and validation</li>
           </ul>
         </div>
         

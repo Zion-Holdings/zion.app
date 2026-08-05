@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart DevOps for Healthcare #1 - Zion Tech Group",
-  description: "Revolutionize healthcare through intelligent automation. Our Smart DevOps for Healthcare #1 leverages advanced machine learning to deliver quality control at scale.",
+  description: "Revolutionize healthcare through intelligent automation. Our Smart DevOps for Healthcare #1 leverages advanced machine learning to deliver quality control at sc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-devops-for-healthcare-1-78955837`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Better risk management with predictive analytics</li>
             <li>Better inventory management with demand forecasting</li>
-            <li>Increased revenue with optimized pricing strategies</li>
           </ul>
         </div>
         

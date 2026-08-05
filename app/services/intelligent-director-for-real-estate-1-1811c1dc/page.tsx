@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Director for Real-Estate #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Director for Real-Estate #1. This autonomous system provides sales forecasting with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Intelligent Director for Real-Estate #1. This autonomous system provides sales forecasting with zero manual intervention needed",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-director-for-real-estate-1-1811c1dc`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>HIPAA ready with healthcare data protection</li>
             <li>Machine learning integration with automatic model training</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>Language processing with sentiment analysis</li>
           </ul>
         </div>
         

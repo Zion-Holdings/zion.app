@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automation opportunity identification</li>
             <li>Audit trails with compliance reporting</li>
             <li>Energy optimization with consumption tracking</li>
-            <li>Cost reduction with process mining</li>
           </ul>
         </div>
         

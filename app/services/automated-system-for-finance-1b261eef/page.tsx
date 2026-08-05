@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Maintenance scheduling with predictive analytics</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Sentiment analysis with real-time monitoring</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better compliance with automated audit trails</li>
             <li>Improved brand awareness with social monitoring</li>
             <li>Better market positioning with competitive analysis</li>
-            <li>Improved forecast accuracy with ML models</li>
           </ul>
         </div>
         

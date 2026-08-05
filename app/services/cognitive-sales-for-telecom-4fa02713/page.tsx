@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better supply chain visibility with tracking</li>
             <li>Performance benchmarking against industry standards</li>
             <li>Improved brand awareness with social monitoring</li>
-            <li>Better code quality with automated reviews</li>
           </ul>
         </div>
         

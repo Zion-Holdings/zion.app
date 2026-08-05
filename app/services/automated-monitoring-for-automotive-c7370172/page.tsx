@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Real-time insights and alerts for proactive management</li>
             <li>Reduced support tickets with self-service options</li>
             <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Better market positioning with competitive analysis</li>
           </ul>
         </div>
         

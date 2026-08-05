@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Energy optimization with consumption tracking</li>
             <li>Multi-region deployment with automatic failover</li>
             <li>Mobile-responsive interface with offline capabilities</li>
-            <li>HIPAA ready with healthcare data protection</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better resource utilization with auto-scaling</li>
             <li>Better risk management with predictive analytics</li>
             <li>Reduced development time with code generation</li>
-            <li>Better financial planning with predictive models</li>
           </ul>
         </div>
         

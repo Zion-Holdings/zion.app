@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Customer Service for Healthcare - Zion Tech Group",
-  description: "The future of healthcare is here with Cognitive Customer Service for Healthcare. Powered by cutting-edge AI, this platform delivers financial planning like never before.",
+  description: "The future of healthcare is here with Cognitive Customer Service for Healthcare. Powered by cutting-edge AI, this platform delivers financial planning like neve",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-customer-service-for-healthcare-20ddf1f0`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>A/B testing framework for continuous optimization</li>
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>SOC 2 certified with security controls</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Increased revenue with optimized pricing strategies</li>
             <li>3x faster decision making with real-time insights</li>
             <li>Better financial planning with predictive models</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

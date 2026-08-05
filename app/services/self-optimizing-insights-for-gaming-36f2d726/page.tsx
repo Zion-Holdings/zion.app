@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Insights for Gaming - Zion Tech Group",
-  description: "Revolutionize gaming through intelligent automation. Our Self-Optimizing Insights for Gaming leverages advanced machine learning to deliver compliance monitoring at scale.",
+  description: "Revolutionize gaming through intelligent automation. Our Self-Optimizing Insights for Gaming leverages advanced machine learning to deliver compliance monitorin",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-insights-for-gaming-36f2d726`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>A/B testing framework for continuous optimization</li>
             <li>Alerting system with intelligent notifications</li>
             <li>Cost reduction with process mining</li>
-            <li>Edge computing support for low-latency operations</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Energy optimization with consumption tracking</li>
             <li>Manufacturing quality control with defect detection</li>
             <li>Edge computing support for low-latency operations</li>
-            <li>Data quality with anomaly detection</li>
           </ul>
         </div>
         

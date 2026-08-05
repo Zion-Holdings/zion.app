@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automation opportunity identification</li>
             <li>GDPR compliance with data portability</li>
             <li>Budget optimization with cost allocation</li>
-            <li>Version control with rollback capabilities</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Compliance for Agriculture - Zion Tech Group",
-  description: "The future of agriculture is here with Smart Compliance for Agriculture. Powered by cutting-edge AI, this platform delivers security monitoring like never before.",
+  description: "The future of agriculture is here with Smart Compliance for Agriculture. Powered by cutting-edge AI, this platform delivers security monitoring like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-compliance-for-agriculture-25a913d0`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Energy optimization with consumption tracking</li>
             <li>Alerting system with intelligent notifications</li>
             <li>User experience analytics with behavior tracking</li>
-            <li>Healthcare data analytics with patient insights</li>
           </ul>
         </div>
         

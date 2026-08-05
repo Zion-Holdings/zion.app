@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Content generation with plagiarism checks</li>
             <li>Logistics route optimization with traffic prediction</li>
             <li>Data quality with anomaly detection</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Reduced shipping costs with route optimization</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

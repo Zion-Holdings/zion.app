@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Image recognition with computer vision</li>
             <li>Alerting system with intelligent notifications</li>
             <li>Machine learning integration with automatic model training</li>
-            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         

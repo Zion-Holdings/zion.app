@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Microservices deployment with container orchestration</li>
             <li>Language processing with sentiment analysis</li>
-            <li>Executive dashboards with drill-down capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Real-time insights and alerts for proactive management</li>
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Reduced risk with early warning systems</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

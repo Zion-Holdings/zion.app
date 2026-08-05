@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Support for Transportation #1 - Zion Tech Group",
-  description: "Transform your transportation operations with our Predictive Support for Transportation #1. This AI-driven solution automates quality control with unprecedented accuracy and efficiency.",
+  description: "Transform your transportation operations with our Predictive Support for Transportation #1. This AI-driven solution automates quality control with unprecedented",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-support-for-transportation-1-60a2c3ad`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Energy optimization with consumption tracking</li>
             <li>Audit trails with compliance reporting</li>
-            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         

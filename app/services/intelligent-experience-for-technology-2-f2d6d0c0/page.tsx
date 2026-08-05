@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Experience for Technology #2 - Zion Tech Group",
-  description: "Revolutionize technology through intelligent automation. Our Intelligent Experience for Technology #2 leverages advanced machine learning to deliver quality control at scale.",
+  description: "Revolutionize technology through intelligent automation. Our Intelligent Experience for Technology #2 leverages advanced machine learning to deliver quality con",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-experience-for-technology-2-f2d6d0c0`
   }

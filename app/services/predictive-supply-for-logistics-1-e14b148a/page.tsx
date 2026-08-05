@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Supply for Logistics #1 - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Predictive Supply for Logistics #1 leverages advanced machine learning to deliver document processing at scale.",
+  description: "Revolutionize logistics through intelligent automation. Our Predictive Supply for Logistics #1 leverages advanced machine learning to deliver document processin",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-supply-for-logistics-1-e14b148a`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Version control with rollback capabilities</li>
             <li>Brand monitoring across social channels</li>
             <li>Language processing with sentiment analysis</li>
-            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         

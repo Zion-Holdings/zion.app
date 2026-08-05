@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Risk for Transportation - Zion Tech Group",
-  description: "The future of transportation is here with Cognitive Risk for Transportation. Powered by cutting-edge AI, this platform delivers market intelligence like never before.",
+  description: "The future of transportation is here with Cognitive Risk for Transportation. Powered by cutting-edge AI, this platform delivers market intelligence like never b",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-risk-for-transportation-0ed60296`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Compliance monitoring with regulatory updates</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Inventory prediction with demand forecasting</li>
-            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Analyzer for Construction #2 - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Adaptive Analyzer for Construction #2 leverages advanced machine learning to deliver compliance monitoring at scale.",
+  description: "Revolutionize construction through intelligent automation. Our Adaptive Analyzer for Construction #2 leverages advanced machine learning to deliver compliance m",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-analyzer-for-construction-2-b5dd9350`
   }

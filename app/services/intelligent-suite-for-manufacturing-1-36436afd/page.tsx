@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Suite for Manufacturing #1 - Zion Tech Group",
-  description: "The future of manufacturing is here with Intelligent Suite for Manufacturing #1. Powered by cutting-edge AI, this platform delivers inventory management like never before.",
+  description: "The future of manufacturing is here with Intelligent Suite for Manufacturing #1. Powered by cutting-edge AI, this platform delivers inventory management like ne",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-suite-for-manufacturing-1-36436afd`
   }

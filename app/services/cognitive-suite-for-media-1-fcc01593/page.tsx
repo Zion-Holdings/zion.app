@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Master data management with golden records</li>
             <li>Energy optimization with consumption tracking</li>
             <li>Version control with rollback capabilities</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved brand awareness with social monitoring</li>
             <li>Better market positioning with competitive analysis</li>
             <li>Increased revenue with optimized pricing strategies</li>
-            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

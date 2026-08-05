@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Analytics for Logistics - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Neural Analytics for Logistics leverages advanced machine learning to deliver sales forecasting at scale.",
+  description: "Revolutionize logistics through intelligent automation. Our Neural Analytics for Logistics leverages advanced machine learning to deliver sales forecasting at s",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-analytics-for-logistics-80c424e2`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Manufacturing quality control with defect detection</li>
             <li>Predictive modeling with ensemble methods</li>
             <li>Logistics route optimization with traffic prediction</li>
-            <li>Automation opportunity identification</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Improved customer retention with proactive service</li>
             <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Reduced risk with early warning systems</li>
           </ul>
         </div>
         

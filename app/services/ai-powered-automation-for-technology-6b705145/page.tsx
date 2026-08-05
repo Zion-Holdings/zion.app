@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Revenue forecasting with market trend analysis</li>
             <li>Custom integrations with webhook support</li>
             <li>Content generation with plagiarism checks</li>
-            <li>Machine learning integration with automatic model training</li>
           </ul>
         </div>
         

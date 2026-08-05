@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Process discovery with activity analysis</li>
             <li>Security monitoring with threat intelligence</li>
-            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         

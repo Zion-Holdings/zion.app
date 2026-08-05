@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Zero manual intervention required for routine tasks</li>
             <li>Faster content creation with AI assistance</li>
             <li>Improved forecast accuracy with ML models</li>
-            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

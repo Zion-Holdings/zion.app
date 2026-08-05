@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Platform for Logistics #1 - Zion Tech Group",
-  description: "The future of logistics is here with Intelligent Platform for Logistics #1. Powered by cutting-edge AI, this platform delivers risk assessment like never before.",
+  description: "The future of logistics is here with Intelligent Platform for Logistics #1. Powered by cutting-edge AI, this platform delivers risk assessment like never before",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-platform-for-logistics-1-850ef170`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Revenue forecasting with market trend analysis</li>
             <li>Cost reduction with process mining</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>Predictive modeling with ensemble methods</li>
           </ul>
         </div>
         

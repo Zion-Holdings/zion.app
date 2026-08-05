@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Revenue forecasting with market trend analysis</li>
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Business intelligence with KPI dashboards</li>
-            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better compliance with automated audit trails</li>
             <li>Better resource utilization with auto-scaling</li>
             <li>Reduced human error by 95% with automated processes</li>
-            <li>Real-time insights and alerts for proactive management</li>
           </ul>
         </div>
         

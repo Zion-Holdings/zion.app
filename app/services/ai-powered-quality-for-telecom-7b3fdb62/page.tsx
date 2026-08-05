@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Process discovery with activity analysis</li>
             <li>Inventory prediction with demand forecasting</li>
             <li>Network optimization with traffic analysis</li>
-            <li>Data governance with policy enforcement</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved product quality with automated testing</li>
             <li>Dynamic resource allocation based on demand patterns</li>
             <li>Improved sales performance with lead scoring</li>
-            <li>Better customer experience with personalization</li>
           </ul>
         </div>
         

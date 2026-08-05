@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Version control with rollback capabilities</li>
             <li>Market analysis with buyer behavior insights</li>
             <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Sales process optimization with pipeline management</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced churn with proactive customer retention</li>
             <li>Zero manual intervention required for routine tasks</li>
             <li>50% reduction in operational costs through automation</li>
-            <li>Improved brand awareness with social monitoring</li>
           </ul>
         </div>
         

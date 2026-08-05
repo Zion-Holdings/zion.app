@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>SOC 2 certified with security controls</li>
             <li>Energy optimization with consumption tracking</li>
-            <li>Sentiment analysis with real-time monitoring</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better market positioning with competitive analysis</li>
             <li>Better risk management with predictive analytics</li>
             <li>Better supply chain visibility with tracking</li>
-            <li>Improved product quality with automated testing</li>
           </ul>
         </div>
         

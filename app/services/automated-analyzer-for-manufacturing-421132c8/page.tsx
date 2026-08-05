@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Financial risk management with scenario analysis</li>
             <li>Process discovery with activity analysis</li>
             <li>Brand monitoring across social channels</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         

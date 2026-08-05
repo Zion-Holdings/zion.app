@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Analyzer for Insurance #1 - Zion Tech Group",
-  description: "Revolutionize insurance through intelligent automation. Our Self-Optimizing Analyzer for Insurance #1 leverages advanced machine learning to deliver inventory management at scale.",
+  description: "Revolutionize insurance through intelligent automation. Our Self-Optimizing Analyzer for Insurance #1 leverages advanced machine learning to deliver inventory m",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-analyzer-for-insurance-1-e1e89ee6`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Image recognition with computer vision</li>
             <li>Version control with rollback capabilities</li>
-            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better financial planning with predictive models</li>
             <li>Reduced shipping costs with route optimization</li>
             <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Improved customer retention with proactive service</li>
           </ul>
         </div>
         

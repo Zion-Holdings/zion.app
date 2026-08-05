@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Finance for Manufacturing #1 - Zion Tech Group",
-  description: "Revolutionize manufacturing through intelligent automation. Our Automated Finance for Manufacturing #1 leverages advanced machine learning to deliver document processing at scale.",
+  description: "Revolutionize manufacturing through intelligent automation. Our Automated Finance for Manufacturing #1 leverages advanced machine learning to deliver document p",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-finance-for-manufacturing-1-b9d12881`
   }

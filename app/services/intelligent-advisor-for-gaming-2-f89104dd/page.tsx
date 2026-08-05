@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Logistics route optimization with traffic prediction</li>
             <li>Version control with rollback capabilities</li>
             <li>Cost reduction with process mining</li>
-            <li>Security monitoring with threat intelligence</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Enhanced security posture with continuous monitoring</li>
             <li>Better supply chain visibility with tracking</li>
-            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Audit trails with compliance reporting</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>Competitive intelligence with market share tracking</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security posture with continuous monitoring</li>
             <li>Improved product quality with automated testing</li>
             <li>Better customer experience with personalization</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
           </ul>
         </div>
         

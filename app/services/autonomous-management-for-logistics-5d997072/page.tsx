@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Management for Logistics - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Autonomous Management for Logistics leverages advanced machine learning to deliver compliance monitoring at scale.",
+  description: "Revolutionize logistics through intelligent automation. Our Autonomous Management for Logistics leverages advanced machine learning to deliver compliance monito",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-management-for-logistics-5d997072`
   }

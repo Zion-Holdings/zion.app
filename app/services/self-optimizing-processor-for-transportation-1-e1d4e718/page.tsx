@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Processor for Transportation #1 - Zion Tech Group",
-  description: "Transform your transportation operations with our Self-Optimizing Processor for Transportation #1. This AI-driven solution automates threat detection with unprecedented accuracy and efficiency.",
+  description: "Transform your transportation operations with our Self-Optimizing Processor for Transportation #1. This AI-driven solution automates threat detection with unpre",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-processor-for-transportation-1-e1d4e718`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>50% reduction in operational costs through automation</li>
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Faster content creation with AI assistance</li>
           </ul>
         </div>
         

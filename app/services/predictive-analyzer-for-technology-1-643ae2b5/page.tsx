@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Analyzer for Technology #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Predictive Analyzer for Technology #1. This autonomous system provides language processing with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Predictive Analyzer for Technology #1. This autonomous system provides language processing with zero manual intervention needed",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-analyzer-for-technology-1-643ae2b5`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Role-based access control with SSO integration</li>
             <li>Content generation with plagiarism checks</li>
-            <li>Maintenance scheduling with predictive analytics</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved sales performance with lead scoring</li>
             <li>Reduced human error by 95% with automated processes</li>
             <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Reduced shipping costs with route optimization</li>
           </ul>
         </div>
         

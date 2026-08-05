@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Brand monitoring across social channels</li>
             <li>Audit trails with compliance reporting</li>
             <li>Multi-region deployment with automatic failover</li>
-            <li>Multi-language support with localization</li>
           </ul>
         </div>
         

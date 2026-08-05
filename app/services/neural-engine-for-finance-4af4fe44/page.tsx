@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Engine for Finance - Zion Tech Group",
-  description: "Transform your finance operations with our Neural Engine for Finance. This AI-driven solution automates security monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your finance operations with our Neural Engine for Finance. This AI-driven solution automates security monitoring with unprecedented accuracy and effi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-engine-for-finance-4af4fe44`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced risk with early warning systems</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>50% reduction in operational costs through automation</li>
-            <li>Improved employee productivity with automation</li>
           </ul>
         </div>
         

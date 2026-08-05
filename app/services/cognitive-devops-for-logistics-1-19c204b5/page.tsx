@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Energy optimization with consumption tracking</li>
             <li>Sales process optimization with pipeline management</li>
             <li>Data governance with policy enforcement</li>
-            <li>Process discovery with activity analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Performance benchmarking against industry standards</li>
             <li>Better supply chain visibility with tracking</li>
             <li>Cost optimization recommendations with savings analysis</li>
-            <li>Improved customer satisfaction with faster response times</li>
           </ul>
         </div>
         

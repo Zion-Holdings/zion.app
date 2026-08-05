@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Optimization for Telecom #3 - Zion Tech Group",
-  description: "The future of telecom is here with Predictive Optimization for Telecom #3. Powered by cutting-edge AI, this platform delivers customer insights like never before.",
+  description: "The future of telecom is here with Predictive Optimization for Telecom #3. Powered by cutting-edge AI, this platform delivers customer insights like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-optimization-for-telecom-3-bed0206d`
   }

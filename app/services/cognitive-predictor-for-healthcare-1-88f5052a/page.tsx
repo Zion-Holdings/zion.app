@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Fraud detection with anomaly analysis</li>
             <li>Open-source friendly with plugin architecture</li>
             <li>Content generation with plagiarism checks</li>
-            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         

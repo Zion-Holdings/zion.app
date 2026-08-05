@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Market analysis with buyer behavior insights</li>
             <li>Open-source friendly with plugin architecture</li>
             <li>Document processing with OCR and NLP</li>
-            <li>Competitive intelligence with market share tracking</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>99.9% uptime guarantee with redundant architecture</li>
             <li>Better financial planning with predictive models</li>
             <li>Reduced development time with code generation</li>
-            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

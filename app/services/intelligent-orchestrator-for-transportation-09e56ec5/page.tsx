@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Orchestrator for Transportation - Zion Tech Group",
-  description: "Revolutionize transportation through intelligent automation. Our Intelligent Orchestrator for Transportation leverages advanced machine learning to deliver risk assessment at scale.",
+  description: "Revolutionize transportation through intelligent automation. Our Intelligent Orchestrator for Transportation leverages advanced machine learning to deliver risk",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-orchestrator-for-transportation-09e56ec5`
   }

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Machine learning integration with automatic model training</li>
             <li>Financial risk management with scenario analysis</li>
             <li>Business intelligence with KPI dashboards</li>
-            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         

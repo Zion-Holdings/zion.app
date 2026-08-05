@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>HIPAA ready with healthcare data protection</li>
             <li>Executive dashboards with drill-down capabilities</li>
-            <li>Security monitoring with threat intelligence</li>
           </ul>
         </div>
         

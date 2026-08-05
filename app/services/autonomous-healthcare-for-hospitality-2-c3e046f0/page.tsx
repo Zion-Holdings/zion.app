@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>24/7 automated operations without human intervention</li>
             <li>Seamless integration with existing systems and workflows</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
           </ul>
         </div>
         

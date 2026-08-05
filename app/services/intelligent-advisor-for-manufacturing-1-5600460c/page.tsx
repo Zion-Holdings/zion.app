@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Advisor for Manufacturing #1 - Zion Tech Group",
-  description: "The future of manufacturing is here with Intelligent Advisor for Manufacturing #1. Powered by cutting-edge AI, this platform delivers fraud prevention like never before.",
+  description: "The future of manufacturing is here with Intelligent Advisor for Manufacturing #1. Powered by cutting-edge AI, this platform delivers fraud prevention like neve",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-advisor-for-manufacturing-1-5600460c`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Code optimization with performance profiling</li>
             <li>Revenue forecasting with market trend analysis</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>A/B testing framework for continuous optimization</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better risk management with predictive analytics</li>
             <li>Reduced churn with proactive customer retention</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Improved brand awareness with social monitoring</li>
           </ul>
         </div>
         

@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Improved product quality with automated testing</li>
             <li>Reduced customer acquisition costs with optimization</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
           </ul>
         </div>
         

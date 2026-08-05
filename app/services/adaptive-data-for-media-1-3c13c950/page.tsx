@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced support tickets with self-service options</li>
             <li>Better compliance with automated audit trails</li>
             <li>50% reduction in operational costs through automation</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
           </ul>
         </div>
         

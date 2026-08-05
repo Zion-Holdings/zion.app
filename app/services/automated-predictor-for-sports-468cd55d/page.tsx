@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data governance with policy enforcement</li>
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Customer journey mapping with touchpoint analysis</li>
-            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         

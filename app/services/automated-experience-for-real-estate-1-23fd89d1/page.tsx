@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Experience for Real-Estate #1 - Zion Tech Group",
-  description: "Next-generation real-estate solution: Automated Experience for Real-Estate #1. Combines customer service automation with adaptive intelligence for optimal results.",
+  description: "Next-generation real-estate solution: Automated Experience for Real-Estate #1. Combines customer service automation with adaptive intelligence for optimal resul",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-experience-for-real-estate-1-23fd89d1`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Healthcare data analytics with patient insights</li>
             <li>Budget optimization with cost allocation</li>
             <li>Manufacturing quality control with defect detection</li>
-            <li>Executive dashboards with drill-down capabilities</li>
           </ul>
         </div>
         

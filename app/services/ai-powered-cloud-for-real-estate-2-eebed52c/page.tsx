@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Cloud for Real-Estate #2 - Zion Tech Group",
-  description: "Transform your real-estate operations with our AI-Powered Cloud for Real-Estate #2. This AI-driven solution automates workflow management with unprecedented accuracy and efficiency.",
+  description: "Transform your real-estate operations with our AI-Powered Cloud for Real-Estate #2. This AI-driven solution automates workflow management with unprecedented acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-cloud-for-real-estate-2-eebed52c`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Version control with rollback capabilities</li>
             <li>Image recognition with computer vision</li>
             <li>Edge computing support for low-latency operations</li>
-            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>50% reduction in operational costs through automation</li>
             <li>Zero manual intervention required for routine tasks</li>
             <li>Reduced risk with early warning systems</li>
-            <li>Improved conversion rates with personalization</li>
           </ul>
         </div>
         

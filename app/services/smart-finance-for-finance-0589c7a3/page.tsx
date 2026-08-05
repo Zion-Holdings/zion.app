@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer service automation with chatbot integration</li>
             <li>SOC 2 certified with security controls</li>
             <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Network optimization with traffic analysis</li>
           </ul>
         </div>
         

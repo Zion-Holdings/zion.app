@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Management for Real-Estate #1 - Zion Tech Group",
-  description: "Revolutionize real-estate through intelligent automation. Our Smart Management for Real-Estate #1 leverages advanced machine learning to deliver risk assessment at scale.",
+  description: "Revolutionize real-estate through intelligent automation. Our Smart Management for Real-Estate #1 leverages advanced machine learning to deliver risk assessment",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-management-for-real-estate-1-63d57cce`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Maintenance scheduling with predictive analytics</li>
             <li>A/B testing framework for continuous optimization</li>
             <li>Master data management with golden records</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Increased revenue with optimized pricing strategies</li>
             <li>Improved conversion rates with personalization</li>
             <li>Reduced risk with early warning systems</li>
-            <li>Zero manual intervention required for routine tasks</li>
           </ul>
         </div>
         

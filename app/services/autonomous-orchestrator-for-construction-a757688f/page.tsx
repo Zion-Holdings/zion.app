@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Orchestrator for Construction - Zion Tech Group",
-  description: "The future of construction is here with Autonomous Orchestrator for Construction. Powered by cutting-edge AI, this platform delivers inventory management like never before.",
+  description: "The future of construction is here with Autonomous Orchestrator for Construction. Powered by cutting-edge AI, this platform delivers inventory management like n",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-orchestrator-for-construction-a757688f`
   }

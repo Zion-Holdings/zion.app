@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Support for Logistics - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Automated Support for Logistics leverages advanced machine learning to deliver risk assessment at scale.",
+  description: "Revolutionize logistics through intelligent automation. Our Automated Support for Logistics leverages advanced machine learning to deliver risk assessment at sc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-support-for-logistics-f0ae1bb9`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved employee productivity with automation</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
             <li>50% reduction in operational costs through automation</li>
-            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

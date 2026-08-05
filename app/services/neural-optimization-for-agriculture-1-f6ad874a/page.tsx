@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Language processing with sentiment analysis</li>
             <li>Data quality with anomaly detection</li>
             <li>Version control with rollback capabilities</li>
-            <li>Multi-language support with localization</li>
           </ul>
         </div>
         

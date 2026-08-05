@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Automation for Insurance - Zion Tech Group",
-  description: "Transform your insurance operations with our Automated Automation for Insurance. This AI-driven solution automates market intelligence with unprecedented accuracy and efficiency.",
+  description: "Transform your insurance operations with our Automated Automation for Insurance. This AI-driven solution automates market intelligence with unprecedented accura",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-automation-for-insurance-a830b3b4`
   }

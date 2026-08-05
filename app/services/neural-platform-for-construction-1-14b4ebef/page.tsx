@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Compliance monitoring with regulatory updates</li>
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Competitive intelligence with market share tracking</li>
-            <li>Brand monitoring across social channels</li>
           </ul>
         </div>
         

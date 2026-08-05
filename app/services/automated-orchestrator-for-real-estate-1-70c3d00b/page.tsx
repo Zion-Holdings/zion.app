@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Orchestrator for Real-Estate #1 - Zion Tech Group",
-  description: "Revolutionize real-estate through intelligent automation. Our Automated Orchestrator for Real-Estate #1 leverages advanced machine learning to deliver performance monitoring at scale.",
+  description: "Revolutionize real-estate through intelligent automation. Our Automated Orchestrator for Real-Estate #1 leverages advanced machine learning to deliver performan",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-orchestrator-for-real-estate-1-70c3d00b`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Predictive maintenance scheduling to prevent downtime</li>
             <li>Enhanced security posture with continuous monitoring</li>
             <li>Zero manual intervention required for routine tasks</li>
-            <li>Improved product quality with automated testing</li>
           </ul>
         </div>
         

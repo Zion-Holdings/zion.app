@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Fraud detection with anomaly analysis</li>
             <li>Master data management with golden records</li>
             <li>Cost reduction with process mining</li>
-            <li>Multi-region deployment with automatic failover</li>
           </ul>
         </div>
         

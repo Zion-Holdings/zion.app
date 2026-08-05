@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Language processing with sentiment analysis</li>
             <li>Financial risk management with scenario analysis</li>
             <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Logistics route optimization with traffic prediction</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced support tickets with self-service options</li>
             <li>Increased revenue with optimized pricing strategies</li>
             <li>Faster time-to-market with accelerated development</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
           </ul>
         </div>
         

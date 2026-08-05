@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Generator for Healthcare - Zion Tech Group",
-  description: "The future of healthcare is here with Predictive Generator for Healthcare. Powered by cutting-edge AI, this platform delivers language processing like never before.",
+  description: "The future of healthcare is here with Predictive Generator for Healthcare. Powered by cutting-edge AI, this platform delivers language processing like never bef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-generator-for-healthcare-fa8e5436`
   }

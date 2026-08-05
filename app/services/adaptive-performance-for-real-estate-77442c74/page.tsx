@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Code optimization with performance profiling</li>
             <li>Logistics route optimization with traffic prediction</li>
             <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Data quality with anomaly detection</li>
           </ul>
         </div>
         

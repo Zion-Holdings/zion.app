@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Real Estate for Manufacturing #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Smart Real Estate for Manufacturing #1. This autonomous system provides sales process optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Smart Real Estate for Manufacturing #1. This autonomous system provides sales process optimization with zero manual interventio",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-real-estate-for-manufacturing-1-83e72cf8`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better resource utilization with auto-scaling</li>
             <li>Reduced development time with code generation</li>
             <li>Better inventory management with demand forecasting</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
           </ul>
         </div>
         

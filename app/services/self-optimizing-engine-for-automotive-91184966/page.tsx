@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Engine for Automotive - Zion Tech Group",
-  description: "Transform your automotive operations with our Self-Optimizing Engine for Automotive. This AI-driven solution automates document processing with unprecedented accuracy and efficiency.",
+  description: "Transform your automotive operations with our Self-Optimizing Engine for Automotive. This AI-driven solution automates document processing with unprecedented ac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-engine-for-automotive-91184966`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Energy optimization with consumption tracking</li>
             <li>Process discovery with activity analysis</li>
             <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Automation opportunity identification</li>
           </ul>
         </div>
         

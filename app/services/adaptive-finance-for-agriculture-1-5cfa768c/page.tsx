@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Finance for Agriculture #1 - Zion Tech Group",
-  description: "Transform your agriculture operations with our Adaptive Finance for Agriculture #1. This AI-driven solution automates code optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your agriculture operations with our Adaptive Finance for Agriculture #1. This AI-driven solution automates code optimization with unprecedented accur",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-finance-for-agriculture-1-5cfa768c`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data quality with anomaly detection</li>
             <li>SOC 2 certified with security controls</li>
             <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Sentiment analysis with real-time monitoring</li>
           </ul>
         </div>
         

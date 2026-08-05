@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Intelligence for Transportation - Zion Tech Group",
-  description: "Next-generation transportation solution: Intelligent Intelligence for Transportation. Combines sales process optimization with adaptive intelligence for optimal results.",
+  description: "Next-generation transportation solution: Intelligent Intelligence for Transportation. Combines sales process optimization with adaptive intelligence for optimal",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-intelligence-for-transportation-b2a35f3a`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Audit trails with compliance reporting</li>
             <li>Multi-region deployment with automatic failover</li>
             <li>SOC 2 certified with security controls</li>
-            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Security for Media #2 - Zion Tech Group",
-  description: "Transform your media operations with our Self-Optimizing Security for Media #2. This AI-driven solution automates decision support with unprecedented accuracy and efficiency.",
+  description: "Transform your media operations with our Self-Optimizing Security for Media #2. This AI-driven solution automates decision support with unprecedented accuracy a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-security-for-media-2-0b4e6033`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Financial risk management with scenario analysis</li>
             <li>Image recognition with computer vision</li>
             <li>Inventory prediction with demand forecasting</li>
-            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         

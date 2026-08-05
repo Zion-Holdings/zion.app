@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Security for Real-Estate #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Security for Real-Estate #1. This autonomous system provides code optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Intelligent Security for Real-Estate #1. This autonomous system provides code optimization with zero manual intervention needed",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-security-for-real-estate-1-ab1d461c`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Open-source friendly with plugin architecture</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Revenue forecasting with market trend analysis</li>
-            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         

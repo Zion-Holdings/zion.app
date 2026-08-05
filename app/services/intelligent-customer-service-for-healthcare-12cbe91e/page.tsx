@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Customer Service for Healthcare - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Customer Service for Healthcare. This autonomous system provides sales process optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Intelligent Customer Service for Healthcare. This autonomous system provides sales process optimization with zero manual interv",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-customer-service-for-healthcare-12cbe91e`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Language processing with sentiment analysis</li>
             <li>Version control with rollback capabilities</li>
             <li>Image recognition with computer vision</li>
-            <li>Real-time processing with streaming analytics</li>
           </ul>
         </div>
         

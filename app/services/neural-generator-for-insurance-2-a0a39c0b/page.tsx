@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-language support with localization</li>
             <li>Brand monitoring across social channels</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         

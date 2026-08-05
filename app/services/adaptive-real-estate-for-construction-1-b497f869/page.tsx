@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Real Estate for Construction #1 - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Adaptive Real Estate for Construction #1 leverages advanced machine learning to deliver workflow management at scale.",
+  description: "Revolutionize construction through intelligent automation. Our Adaptive Real Estate for Construction #1 leverages advanced machine learning to deliver workflow ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-real-estate-for-construction-1-b497f869`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Version control with rollback capabilities</li>
             <li>Data encryption at rest and in transit</li>
-            <li>Data governance with policy enforcement</li>
           </ul>
         </div>
         

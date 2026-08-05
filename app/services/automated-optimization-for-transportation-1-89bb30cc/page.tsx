@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Optimization for Transportation #1 - Zion Tech Group",
-  description: "The future of transportation is here with Automated Optimization for Transportation #1. Powered by cutting-edge AI, this platform delivers network optimization like never before.",
+  description: "The future of transportation is here with Automated Optimization for Transportation #1. Powered by cutting-edge AI, this platform delivers network optimization ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-optimization-for-transportation-1-89bb30cc`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Revenue forecasting with market trend analysis</li>
             <li>Sales process optimization with pipeline management</li>
             <li>User experience analytics with behavior tracking</li>
-            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Faster content creation with AI assistance</li>
             <li>Improved employee productivity with automation</li>
             <li>Better resource utilization with auto-scaling</li>
-            <li>Reduced shipping costs with route optimization</li>
           </ul>
         </div>
         

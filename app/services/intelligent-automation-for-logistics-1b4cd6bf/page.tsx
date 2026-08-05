@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Automation for Logistics - Zion Tech Group",
-  description: "The future of logistics is here with Intelligent Automation for Logistics. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.",
+  description: "The future of logistics is here with Intelligent Automation for Logistics. Powered by cutting-edge AI, this platform delivers sales forecasting like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-automation-for-logistics-1b4cd6bf`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Custom integrations with webhook support</li>
             <li>Network optimization with traffic analysis</li>
             <li>Image recognition with computer vision</li>
-            <li>HIPAA ready with healthcare data protection</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>Automated compliance reporting for regulatory requirements</li>
             <li>Reduced risk with early warning systems</li>
-            <li>Reduced shipping costs with route optimization</li>
           </ul>
         </div>
         

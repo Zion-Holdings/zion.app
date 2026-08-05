@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Supply for Logistics #2 - Zion Tech Group",
-  description: "Transform your logistics operations with our Automated Supply for Logistics #2. This AI-driven solution automates security monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your logistics operations with our Automated Supply for Logistics #2. This AI-driven solution automates security monitoring with unprecedented accurac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-supply-for-logistics-2-b4585912`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Manufacturing quality control with defect detection</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Healthcare data analytics with patient insights</li>
-            <li>Business intelligence with KPI dashboards</li>
           </ul>
         </div>
         

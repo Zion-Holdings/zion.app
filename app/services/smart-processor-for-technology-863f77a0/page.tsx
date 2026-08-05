@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Processor for Technology - Zion Tech Group",
-  description: "Transform your technology operations with our Smart Processor for Technology. This AI-driven solution automates compliance monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your technology operations with our Smart Processor for Technology. This AI-driven solution automates compliance monitoring with unprecedented accurac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-processor-for-technology-863f77a0`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data encryption at rest and in transit</li>
             <li>Open-source friendly with plugin architecture</li>
             <li>Microservices deployment with container orchestration</li>
-            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Generator for Education #1 - Zion Tech Group",
-  description: "Revolutionize education through intelligent automation. Our AI-Powered Generator for Education #1 leverages advanced machine learning to deliver workflow management at scale.",
+  description: "Revolutionize education through intelligent automation. Our AI-Powered Generator for Education #1 leverages advanced machine learning to deliver workflow manage",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-generator-for-education-1-ab3edd54`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Content generation with plagiarism checks</li>
             <li>Customer service automation with chatbot integration</li>
             <li>Language processing with sentiment analysis</li>
-            <li>Custom integrations with webhook support</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Platform for Manufacturing - Zion Tech Group",
-  description: "The future of manufacturing is here with Autonomous Platform for Manufacturing. Powered by cutting-edge AI, this platform delivers decision support like never before.",
+  description: "The future of manufacturing is here with Autonomous Platform for Manufacturing. Powered by cutting-edge AI, this platform delivers decision support like never b",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-platform-for-manufacturing-94f4051d`
   }

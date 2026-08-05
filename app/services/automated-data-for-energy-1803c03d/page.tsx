@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Revenue forecasting with market trend analysis</li>
             <li>Fraud detection with anomaly analysis</li>
             <li>Data encryption at rest and in transit</li>
-            <li>Executive dashboards with drill-down capabilities</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Insights for Logistics #1 - Zion Tech Group",
-  description: "The future of logistics is here with Self-Optimizing Insights for Logistics #1. Powered by cutting-edge AI, this platform delivers customer service automation like never before.",
+  description: "The future of logistics is here with Self-Optimizing Insights for Logistics #1. Powered by cutting-edge AI, this platform delivers customer service automation l",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-insights-for-logistics-1-9fcd4899`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Audit trails with compliance reporting</li>
             <li>Machine learning integration with automatic model training</li>
             <li>Network optimization with traffic analysis</li>
-            <li>Data quality with anomaly detection</li>
           </ul>
         </div>
         

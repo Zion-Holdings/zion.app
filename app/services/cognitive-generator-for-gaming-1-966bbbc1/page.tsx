@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data quality with anomaly detection</li>
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Automation opportunity identification</li>
-            <li>A/B testing framework for continuous optimization</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Machine learning integration with automatic model training</li>
             <li>Data quality with anomaly detection</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>Competitive intelligence with market share tracking</li>
           </ul>
         </div>
         

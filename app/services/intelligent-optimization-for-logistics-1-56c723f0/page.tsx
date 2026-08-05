@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Optimization for Logistics #1 - Zion Tech Group",
-  description: "Transform your logistics operations with our Intelligent Optimization for Logistics #1. This AI-driven solution automates image recognition with unprecedented accuracy and efficiency.",
+  description: "Transform your logistics operations with our Intelligent Optimization for Logistics #1. This AI-driven solution automates image recognition with unprecedented a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-optimization-for-logistics-1-56c723f0`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sales process optimization with pipeline management</li>
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>SOC 2 certified with security controls</li>
-            <li>Predictive modeling with ensemble methods</li>
           </ul>
         </div>
         

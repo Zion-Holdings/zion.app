@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer service automation with chatbot integration</li>
             <li>Language processing with sentiment analysis</li>
             <li>HIPAA ready with healthcare data protection</li>
-            <li>Competitive intelligence with market share tracking</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced decision making with data-driven insights</li>
             <li>Improved forecast accuracy with ML models</li>
             <li>Better market positioning with competitive analysis</li>
-            <li>Reduced shipping costs with route optimization</li>
           </ul>
         </div>
         

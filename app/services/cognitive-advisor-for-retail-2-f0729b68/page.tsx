@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Advisor for Retail #2 - Zion Tech Group",
-  description: "Transform your retail operations with our Cognitive Advisor for Retail #2. This AI-driven solution automates customer service automation with unprecedented accuracy and efficiency.",
+  description: "Transform your retail operations with our Cognitive Advisor for Retail #2. This AI-driven solution automates customer service automation with unprecedented accu",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-advisor-for-retail-2-f0729b68`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Compliance monitoring with regulatory updates</li>
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Version control with rollback capabilities</li>
-            <li>Executive dashboards with drill-down capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved customer retention with proactive service</li>
             <li>Reduced support tickets with self-service options</li>
             <li>Reduced human error by 95% with automated processes</li>
-            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

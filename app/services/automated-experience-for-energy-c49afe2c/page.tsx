@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Experience for Energy - Zion Tech Group",
-  description: "Transform your energy operations with our Automated Experience for Energy. This AI-driven solution automates energy management with unprecedented accuracy and efficiency.",
+  description: "Transform your energy operations with our Automated Experience for Energy. This AI-driven solution automates energy management with unprecedented accuracy and e",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-experience-for-energy-c49afe2c`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Code optimization with performance profiling</li>
             <li>Sales process optimization with pipeline management</li>
             <li>Cost reduction with process mining</li>
-            <li>HIPAA ready with healthcare data protection</li>
           </ul>
         </div>
         

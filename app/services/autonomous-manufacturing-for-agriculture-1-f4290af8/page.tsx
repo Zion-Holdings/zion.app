@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Manufacturing for Agriculture #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Autonomous Manufacturing for Agriculture #1. This autonomous system provides image recognition with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Autonomous Manufacturing for Agriculture #1. This autonomous system provides image recognition with zero manual intervention ne",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-manufacturing-for-agriculture-1-f4290af8`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data quality with anomaly detection</li>
             <li>Sales process optimization with pipeline management</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Predictive modeling with ensemble methods</li>
           </ul>
         </div>
         

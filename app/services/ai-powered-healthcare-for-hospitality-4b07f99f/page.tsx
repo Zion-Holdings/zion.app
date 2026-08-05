@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Healthcare for Hospitality - Zion Tech Group",
-  description: "The future of hospitality is here with AI-Powered Healthcare for Hospitality. Powered by cutting-edge AI, this platform delivers predictive analytics like never before.",
+  description: "The future of hospitality is here with AI-Powered Healthcare for Hospitality. Powered by cutting-edge AI, this platform delivers predictive analytics like never",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-healthcare-for-hospitality-4b07f99f`
   }

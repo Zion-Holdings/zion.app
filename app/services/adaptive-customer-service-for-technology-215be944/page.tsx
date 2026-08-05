@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Customer Service for Technology - Zion Tech Group",
-  description: "Revolutionize technology through intelligent automation. Our Adaptive Customer Service for Technology leverages advanced machine learning to deliver image recognition at scale.",
+  description: "Revolutionize technology through intelligent automation. Our Adaptive Customer Service for Technology leverages advanced machine learning to deliver image recog",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-customer-service-for-technology-215be944`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Healthcare data analytics with patient insights</li>
             <li>Network optimization with traffic analysis</li>
             <li>Executive dashboards with drill-down capabilities</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         

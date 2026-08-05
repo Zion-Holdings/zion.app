@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Customer Service for Agriculture #1 - Zion Tech Group",
-  description: "The future of agriculture is here with Adaptive Customer Service for Agriculture #1. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before.",
+  description: "The future of agriculture is here with Adaptive Customer Service for Agriculture #1. Powered by cutting-edge AI, this platform delivers compliance monitoring li",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-customer-service-for-agriculture-1-548c9ddb`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Increased revenue with optimized pricing strategies</li>
             <li>Enhanced decision making with data-driven insights</li>
             <li>Real-time insights and alerts for proactive management</li>
-            <li>Reduced customer acquisition costs with optimization</li>
           </ul>
         </div>
         

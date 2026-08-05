@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>A/B testing framework for continuous optimization</li>
             <li>Brand monitoring across social channels</li>
-            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better inventory management with demand forecasting</li>
             <li>ROI achieved in under 90 days with cost savings</li>
             <li>Better financial planning with predictive models</li>
-            <li>Reduced operational risks with predictive models</li>
           </ul>
         </div>
         

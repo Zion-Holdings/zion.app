@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Experience for Gaming - Zion Tech Group",
-  description: "Revolutionize gaming through intelligent automation. Our Neural Experience for Gaming leverages advanced machine learning to deliver content generation at scale.",
+  description: "Revolutionize gaming through intelligent automation. Our Neural Experience for Gaming leverages advanced machine learning to deliver content generation at scale",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-experience-for-gaming-dd04dee6`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Process discovery with activity analysis</li>
             <li>Security monitoring with threat intelligence</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
           </ul>
         </div>
         

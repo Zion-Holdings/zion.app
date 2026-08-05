@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Platform for Real-Estate #2 - Zion Tech Group",
-  description: "The future of real-estate is here with Intelligent Platform for Real-Estate #2. Powered by cutting-edge AI, this platform delivers language processing like never before.",
+  description: "The future of real-estate is here with Intelligent Platform for Real-Estate #2. Powered by cutting-edge AI, this platform delivers language processing like neve",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-platform-for-real-estate-2-fbe3c238`
   }

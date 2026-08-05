@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced human error by 95% with automated processes</li>
             <li>Improved quality with automated testing and validation</li>
             <li>Improved brand awareness with social monitoring</li>
-            <li>Real-time insights and alerts for proactive management</li>
           </ul>
         </div>
         

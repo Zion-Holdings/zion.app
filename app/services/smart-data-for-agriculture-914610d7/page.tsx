@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Revenue forecasting with market trend analysis</li>
             <li>Content generation with plagiarism checks</li>
             <li>Document processing with OCR and NLP</li>
-            <li>Sentiment analysis with real-time monitoring</li>
           </ul>
         </div>
         

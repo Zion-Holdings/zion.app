@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Serverless functions for cost-effective scaling</li>
             <li>Inventory prediction with demand forecasting</li>
-            <li>Process discovery with activity analysis</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Healthcare for Energy #1 - Zion Tech Group",
-  description: "Revolutionize energy through intelligent automation. Our Autonomous Healthcare for Energy #1 leverages advanced machine learning to deliver customer insights at scale.",
+  description: "Revolutionize energy through intelligent automation. Our Autonomous Healthcare for Energy #1 leverages advanced machine learning to deliver customer insights at",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-healthcare-for-energy-1-54689813`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sales process optimization with pipeline management</li>
             <li>Logistics route optimization with traffic prediction</li>
             <li>Multi-language support with localization</li>
-            <li>Revenue forecasting with market trend analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better market positioning with competitive analysis</li>
             <li>Better resource utilization with auto-scaling</li>
             <li>Reduced support tickets with self-service options</li>
-            <li>Enhanced security posture with continuous monitoring</li>
           </ul>
         </div>
         

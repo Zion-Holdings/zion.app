@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural System for Hospitality #1 - Zion Tech Group",
-  description: "Transform your hospitality operations with our Neural System for Hospitality #1. This AI-driven solution automates threat detection with unprecedented accuracy and efficiency.",
+  description: "Transform your hospitality operations with our Neural System for Hospitality #1. This AI-driven solution automates threat detection with unprecedented accuracy ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-system-for-hospitality-1-29fd06bb`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Network optimization with traffic analysis</li>
             <li>Sales process optimization with pipeline management</li>
             <li>GDPR compliance with data portability</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         

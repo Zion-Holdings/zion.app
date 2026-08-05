@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Finance for Media - Zion Tech Group",
-  description: "Transform your media operations with our Automated Finance for Media. This AI-driven solution automates sales forecasting with unprecedented accuracy and efficiency.",
+  description: "Transform your media operations with our Automated Finance for Media. This AI-driven solution automates sales forecasting with unprecedented accuracy and effici",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-finance-for-media-d2a1d4eb`
   }

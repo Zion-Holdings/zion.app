@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Quality for Finance - Zion Tech Group",
-  description: "Transform your finance operations with our Self-Optimizing Quality for Finance. This AI-driven solution automates network optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your finance operations with our Self-Optimizing Quality for Finance. This AI-driven solution automates network optimization with unprecedented accura",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-quality-for-finance-02dc8fc7`
   }

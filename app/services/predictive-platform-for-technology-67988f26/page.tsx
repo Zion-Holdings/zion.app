@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Platform for Technology - Zion Tech Group",
-  description: "Revolutionize technology through intelligent automation. Our Predictive Platform for Technology leverages advanced machine learning to deliver security monitoring at scale.",
+  description: "Revolutionize technology through intelligent automation. Our Predictive Platform for Technology leverages advanced machine learning to deliver security monitori",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-platform-for-technology-67988f26`
   }

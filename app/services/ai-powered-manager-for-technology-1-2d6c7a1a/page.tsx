@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Manager for Technology #1 - Zion Tech Group",
-  description: "Revolutionize technology through intelligent automation. Our AI-Powered Manager for Technology #1 leverages advanced machine learning to deliver document processing at scale.",
+  description: "Revolutionize technology through intelligent automation. Our AI-Powered Manager for Technology #1 leverages advanced machine learning to deliver document proces",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-manager-for-technology-1-2d6c7a1a`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved employee productivity with automation</li>
             <li>99.9% uptime guarantee with redundant architecture</li>
             <li>3x faster decision making with real-time insights</li>
-            <li>Better resource utilization with auto-scaling</li>
           </ul>
         </div>
         

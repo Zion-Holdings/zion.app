@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Manager for Agriculture - Zion Tech Group",
-  description: "Unlock unprecedented growth with Predictive Manager for Agriculture. This autonomous system provides sales process optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Predictive Manager for Agriculture. This autonomous system provides sales process optimization with zero manual intervention ne",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-manager-for-agriculture-928e3162`
   }

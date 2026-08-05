@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Support for Finance #1 - Zion Tech Group",
-  description: "Revolutionize finance through intelligent automation. Our Self-Optimizing Support for Finance #1 leverages advanced machine learning to deliver maintenance scheduling at scale.",
+  description: "Revolutionize finance through intelligent automation. Our Self-Optimizing Support for Finance #1 leverages advanced machine learning to deliver maintenance sche",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-support-for-finance-1-55b5a05b`
   }

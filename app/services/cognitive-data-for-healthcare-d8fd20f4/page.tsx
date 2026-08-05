@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Data for Healthcare - Zion Tech Group",
-  description: "Transform your healthcare operations with our Cognitive Data for Healthcare. This AI-driven solution automates security monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your healthcare operations with our Cognitive Data for Healthcare. This AI-driven solution automates security monitoring with unprecedented accuracy a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-data-for-healthcare-d8fd20f4`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sales process optimization with pipeline management</li>
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Code optimization with performance profiling</li>
-            <li>Brand monitoring across social channels</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Microservices deployment with container orchestration</li>
-            <li>Competitive intelligence with market share tracking</li>
           </ul>
         </div>
         

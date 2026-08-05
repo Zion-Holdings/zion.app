@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Risk for Agriculture #1 - Zion Tech Group",
-  description: "Revolutionize agriculture through intelligent automation. Our Intelligent Risk for Agriculture #1 leverages advanced machine learning to deliver network optimization at scale.",
+  description: "Revolutionize agriculture through intelligent automation. Our Intelligent Risk for Agriculture #1 leverages advanced machine learning to deliver network optimiz",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-risk-for-agriculture-1-d0f86cb6`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Better resource utilization with auto-scaling</li>
             <li>Reduced human error by 95% with automated processes</li>
-            <li>Better supply chain visibility with tracking</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Coordinator for Healthcare - Zion Tech Group",
-  description: "Revolutionize healthcare through intelligent automation. Our Automated Coordinator for Healthcare leverages advanced machine learning to deliver customer service automation at scale.",
+  description: "Revolutionize healthcare through intelligent automation. Our Automated Coordinator for Healthcare leverages advanced machine learning to deliver customer servic",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-coordinator-for-healthcare-639ddd8f`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Fraud detection with anomaly analysis</li>
             <li>Inventory prediction with demand forecasting</li>
             <li>Data quality with anomaly detection</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         

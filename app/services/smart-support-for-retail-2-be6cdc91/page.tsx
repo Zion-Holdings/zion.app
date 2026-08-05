@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Compliance monitoring with regulatory updates</li>
             <li>Image recognition with computer vision</li>
             <li>Sentiment analysis with real-time monitoring</li>
-            <li>Process discovery with activity analysis</li>
           </ul>
         </div>
         

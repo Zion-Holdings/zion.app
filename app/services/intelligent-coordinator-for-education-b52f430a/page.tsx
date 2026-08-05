@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Document processing with OCR and NLP</li>
             <li>Code optimization with performance profiling</li>
             <li>Role-based access control with SSO integration</li>
-            <li>A/B testing framework for continuous optimization</li>
           </ul>
         </div>
         

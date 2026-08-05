@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Monitoring for Healthcare #1 - Zion Tech Group",
-  description: "Revolutionize healthcare through intelligent automation. Our Neural Monitoring for Healthcare #1 leverages advanced machine learning to deliver fraud prevention at scale.",
+  description: "Revolutionize healthcare through intelligent automation. Our Neural Monitoring for Healthcare #1 leverages advanced machine learning to deliver fraud prevention",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-monitoring-for-healthcare-1-bede4cf1`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>HIPAA ready with healthcare data protection</li>
             <li>Microservices deployment with container orchestration</li>
             <li>Data governance with policy enforcement</li>
-            <li>Executive dashboards with drill-down capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Automated compliance reporting for regulatory requirements</li>
             <li>Faster content creation with AI assistance</li>
             <li>3x faster decision making with real-time insights</li>
-            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

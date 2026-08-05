@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Advisor for Education #1 - Zion Tech Group",
-  description: "The future of education is here with AI-Powered Advisor for Education #1. Powered by cutting-edge AI, this platform delivers security monitoring like never before.",
+  description: "The future of education is here with AI-Powered Advisor for Education #1. Powered by cutting-edge AI, this platform delivers security monitoring like never befo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-advisor-for-education-1-577ed378`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Microservices deployment with container orchestration</li>
             <li>Brand monitoring across social channels</li>
             <li>Revenue forecasting with market trend analysis</li>
-            <li>Market analysis with buyer behavior insights</li>
           </ul>
         </div>
         

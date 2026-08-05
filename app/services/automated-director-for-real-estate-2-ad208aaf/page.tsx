@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Director for Real-Estate #2 - Zion Tech Group",
-  description: "The future of real-estate is here with Automated Director for Real-Estate #2. Powered by cutting-edge AI, this platform delivers financial planning like never before.",
+  description: "The future of real-estate is here with Automated Director for Real-Estate #2. Powered by cutting-edge AI, this platform delivers financial planning like never b",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-director-for-real-estate-2-ad208aaf`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Image recognition with computer vision</li>
             <li>Language processing with sentiment analysis</li>
             <li>Multi-region deployment with automatic failover</li>
-            <li>Executive dashboards with drill-down capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Performance benchmarking against industry standards</li>
             <li>99.9% uptime guarantee with redundant architecture</li>
             <li>24/7 automated operations without human intervention</li>
-            <li>Reduced risk with early warning systems</li>
           </ul>
         </div>
         

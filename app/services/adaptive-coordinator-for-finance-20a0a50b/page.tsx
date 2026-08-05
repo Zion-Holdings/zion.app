@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Coordinator for Finance - Zion Tech Group",
-  description: "Transform your finance operations with our Adaptive Coordinator for Finance. This AI-driven solution automates code optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your finance operations with our Adaptive Coordinator for Finance. This AI-driven solution automates code optimization with unprecedented accuracy and",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-coordinator-for-finance-20a0a50b`
   }

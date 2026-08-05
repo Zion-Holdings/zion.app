@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Compliance monitoring with regulatory updates</li>
             <li>Network optimization with traffic analysis</li>
             <li>Logistics route optimization with traffic prediction</li>
-            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         

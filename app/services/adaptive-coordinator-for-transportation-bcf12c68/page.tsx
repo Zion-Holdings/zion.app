@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Coordinator for Transportation - Zion Tech Group",
-  description: "Unlock unprecedented growth with Adaptive Coordinator for Transportation. This autonomous system provides market intelligence with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Adaptive Coordinator for Transportation. This autonomous system provides market intelligence with zero manual intervention need",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-coordinator-for-transportation-bcf12c68`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Brand monitoring across social channels</li>
             <li>Inventory prediction with demand forecasting</li>
             <li>Predictive modeling with ensemble methods</li>
-            <li>Business intelligence with KPI dashboards</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Zero manual intervention required for routine tasks</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>Better supply chain visibility with tracking</li>
-            <li>Better inventory management with demand forecasting</li>
           </ul>
         </div>
         

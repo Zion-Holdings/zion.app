@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Revenue forecasting with market trend analysis</li>
             <li>Image recognition with computer vision</li>
             <li>Code optimization with performance profiling</li>
-            <li>Sales process optimization with pipeline management</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Cloud for Logistics #1 - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our AI-Powered Cloud for Logistics #1 leverages advanced machine learning to deliver network optimization at scale.",
+  description: "Revolutionize logistics through intelligent automation. Our AI-Powered Cloud for Logistics #1 leverages advanced machine learning to deliver network optimizatio",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-cloud-for-logistics-1-ce2d2fb9`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-region deployment with automatic failover</li>
             <li>Compliance monitoring with regulatory updates</li>
             <li>Edge computing support for low-latency operations</li>
-            <li>Automation opportunity identification</li>
           </ul>
         </div>
         

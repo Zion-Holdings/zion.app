@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Master data management with golden records</li>
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Code optimization with performance profiling</li>
-            <li>GDPR compliance with data portability</li>
           </ul>
         </div>
         

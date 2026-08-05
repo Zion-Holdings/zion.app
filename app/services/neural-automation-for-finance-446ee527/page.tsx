@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>24/7 automated operations without human intervention</li>
             <li>Real-time insights and alerts for proactive management</li>
             <li>Scalable to millions of transactions per second</li>
-            <li>Reduced customer acquisition costs with optimization</li>
           </ul>
         </div>
         

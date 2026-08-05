@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Finance for Healthcare - Zion Tech Group",
-  description: "Revolutionize healthcare through intelligent automation. Our Self-Optimizing Finance for Healthcare leverages advanced machine learning to deliver network optimization at scale.",
+  description: "Revolutionize healthcare through intelligent automation. Our Self-Optimizing Finance for Healthcare leverages advanced machine learning to deliver network optim",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-finance-for-healthcare-e2877c0f`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Healthcare data analytics with patient insights</li>
-            <li>Customer journey mapping with touchpoint analysis</li>
           </ul>
         </div>
         

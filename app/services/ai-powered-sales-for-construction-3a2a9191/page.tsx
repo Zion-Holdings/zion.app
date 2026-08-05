@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Sales for Construction - Zion Tech Group",
-  description: "The future of construction is here with AI-Powered Sales for Construction. Powered by cutting-edge AI, this platform delivers language processing like never before.",
+  description: "The future of construction is here with AI-Powered Sales for Construction. Powered by cutting-edge AI, this platform delivers language processing like never bef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-sales-for-construction-3a2a9191`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Role-based access control with SSO integration</li>
             <li>Machine learning integration with automatic model training</li>
             <li>User experience analytics with behavior tracking</li>
-            <li>Image recognition with computer vision</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Scalable to millions of transactions per second</li>
             <li>Enhanced security posture with continuous monitoring</li>
             <li>24/7 automated operations without human intervention</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

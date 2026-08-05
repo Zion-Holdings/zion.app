@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Sales for Retail - Zion Tech Group",
-  description: "Transform your retail operations with our Predictive Sales for Retail. This AI-driven solution automates supply chain with unprecedented accuracy and efficiency.",
+  description: "Transform your retail operations with our Predictive Sales for Retail. This AI-driven solution automates supply chain with unprecedented accuracy and efficiency",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-sales-for-retail-d22a3bde`
   }

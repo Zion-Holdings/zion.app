@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Image recognition with computer vision</li>
             <li>Fraud detection with anomaly analysis</li>
             <li>SOC 2 certified with security controls</li>
-            <li>Sentiment analysis with real-time monitoring</li>
           </ul>
         </div>
         

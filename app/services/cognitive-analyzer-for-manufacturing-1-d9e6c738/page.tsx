@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Analyzer for Manufacturing #1 - Zion Tech Group",
-  description: "Transform your manufacturing operations with our Cognitive Analyzer for Manufacturing #1. This AI-driven solution automates image recognition with unprecedented accuracy and efficiency.",
+  description: "Transform your manufacturing operations with our Cognitive Analyzer for Manufacturing #1. This AI-driven solution automates image recognition with unprecedented",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-analyzer-for-manufacturing-1-d9e6c738`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Financial risk management with scenario analysis</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Role-based access control with SSO integration</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         

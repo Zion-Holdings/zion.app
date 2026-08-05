@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Healthcare for Finance - Zion Tech Group",
-  description: "Revolutionize finance through intelligent automation. Our Neural Healthcare for Finance leverages advanced machine learning to deliver predictive analytics at scale.",
+  description: "Revolutionize finance through intelligent automation. Our Neural Healthcare for Finance leverages advanced machine learning to deliver predictive analytics at s",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-healthcare-for-finance-e26df94b`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Microservices deployment with container orchestration</li>
             <li>Content generation with plagiarism checks</li>
             <li>Customer service automation with chatbot integration</li>
-            <li>Custom integrations with webhook support</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Automated compliance reporting for regulatory requirements</li>
             <li>Better market positioning with competitive analysis</li>
             <li>Faster time-to-market with accelerated development</li>
-            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

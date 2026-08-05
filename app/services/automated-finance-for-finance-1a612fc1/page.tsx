@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Automation opportunity identification</li>
             <li>Content generation with plagiarism checks</li>
-            <li>Data governance with policy enforcement</li>
           </ul>
         </div>
         

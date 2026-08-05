@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Insights for Real-Estate - Zion Tech Group",
-  description: "The future of real-estate is here with Autonomous Insights for Real-Estate. Powered by cutting-edge AI, this platform delivers performance monitoring like never before.",
+  description: "The future of real-estate is here with Autonomous Insights for Real-Estate. Powered by cutting-edge AI, this platform delivers performance monitoring like never",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-insights-for-real-estate-813ee3a8`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Competitive intelligence with market share tracking</li>
             <li>Multi-language support with localization</li>
             <li>Customer service automation with chatbot integration</li>
-            <li>Maintenance scheduling with predictive analytics</li>
           </ul>
         </div>
         

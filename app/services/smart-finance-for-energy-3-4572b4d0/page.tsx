@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Real-time processing with streaming analytics</li>
             <li>Role-based access control with SSO integration</li>
             <li>Multi-region deployment with automatic failover</li>
-            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced development time with code generation</li>
             <li>Better financial planning with predictive models</li>
             <li>Improved quality with automated testing and validation</li>
-            <li>Better inventory management with demand forecasting</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Intelligence for Logistics #1 - Zion Tech Group",
-  description: "The future of logistics is here with Neural Intelligence for Logistics #1. Powered by cutting-edge AI, this platform delivers performance monitoring like never before.",
+  description: "The future of logistics is here with Neural Intelligence for Logistics #1. Powered by cutting-edge AI, this platform delivers performance monitoring like never ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-intelligence-for-logistics-1-6903ad8e`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Inventory prediction with demand forecasting</li>
             <li>Cost reduction with process mining</li>
             <li>Audit trails with compliance reporting</li>
-            <li>Version control with rollback capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced development time with code generation</li>
             <li>Scalable to millions of transactions per second</li>
             <li>Improved employee productivity with automation</li>
-            <li>Enhanced security posture with continuous monitoring</li>
           </ul>
         </div>
         

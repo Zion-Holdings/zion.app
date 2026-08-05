@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Monitoring for Transportation - Zion Tech Group",
-  description: "Transform your transportation operations with our Intelligent Monitoring for Transportation. This AI-driven solution automates language processing with unprecedented accuracy and efficiency.",
+  description: "Transform your transportation operations with our Intelligent Monitoring for Transportation. This AI-driven solution automates language processing with unpreced",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-monitoring-for-transportation-45bc61e0`
   }

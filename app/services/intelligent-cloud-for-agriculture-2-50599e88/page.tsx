@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Cloud for Agriculture #2 - Zion Tech Group",
-  description: "Transform your agriculture operations with our Intelligent Cloud for Agriculture #2. This AI-driven solution automates decision support with unprecedented accuracy and efficiency.",
+  description: "Transform your agriculture operations with our Intelligent Cloud for Agriculture #2. This AI-driven solution automates decision support with unprecedented accur",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-cloud-for-agriculture-2-50599e88`
   }

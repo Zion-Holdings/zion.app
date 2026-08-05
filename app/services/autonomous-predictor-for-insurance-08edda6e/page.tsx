@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>GDPR compliance with data portability</li>
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Language processing with sentiment analysis</li>
-            <li>Predictive modeling with ensemble methods</li>
           </ul>
         </div>
         

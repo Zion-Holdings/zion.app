@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Optimization for Hospitality #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Autonomous Optimization for Hospitality #1. This autonomous system provides network optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Autonomous Optimization for Hospitality #1. This autonomous system provides network optimization with zero manual intervention ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-optimization-for-hospitality-1-e960ee8a`
   }

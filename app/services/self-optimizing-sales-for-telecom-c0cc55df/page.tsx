@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Sales for Telecom - Zion Tech Group",
-  description: "Transform your telecom operations with our Self-Optimizing Sales for Telecom. This AI-driven solution automates content generation with unprecedented accuracy and efficiency.",
+  description: "Transform your telecom operations with our Self-Optimizing Sales for Telecom. This AI-driven solution automates content generation with unprecedented accuracy a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-sales-for-telecom-c0cc55df`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Brand monitoring across social channels</li>
             <li>A/B testing framework for continuous optimization</li>
             <li>Security monitoring with threat intelligence</li>
-            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security posture with continuous monitoring</li>
             <li>ROI achieved in under 90 days with cost savings</li>
             <li>Reduced churn with proactive customer retention</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
           </ul>
         </div>
         

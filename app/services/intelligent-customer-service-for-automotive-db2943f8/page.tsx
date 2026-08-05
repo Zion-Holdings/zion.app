@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>SOC 2 certified with security controls</li>
             <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Language processing with sentiment analysis</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Advisor for Healthcare - Zion Tech Group",
-  description: "Transform your healthcare operations with our Smart Advisor for Healthcare. This AI-driven solution automates document processing with unprecedented accuracy and efficiency.",
+  description: "Transform your healthcare operations with our Smart Advisor for Healthcare. This AI-driven solution automates document processing with unprecedented accuracy an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-advisor-for-healthcare-9a75492c`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better resource utilization with auto-scaling</li>
             <li>Reduced human error by 95% with automated processes</li>
             <li>Cost optimization recommendations with savings analysis</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

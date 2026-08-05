@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security with continuous threat monitoring</li>
             <li>50% reduction in operational costs through automation</li>
             <li>Better resource utilization with auto-scaling</li>
-            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

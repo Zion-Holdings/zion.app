@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Microservices deployment with container orchestration</li>
             <li>Custom integrations with webhook support</li>
-            <li>Business intelligence with KPI dashboards</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better market positioning with competitive analysis</li>
             <li>Improved employee productivity with automation</li>
             <li>Performance benchmarking against industry standards</li>
-            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

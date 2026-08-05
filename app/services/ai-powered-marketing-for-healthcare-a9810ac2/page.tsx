@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Data encryption at rest and in transit</li>
             <li>Sales process optimization with pipeline management</li>
-            <li>Budget optimization with cost allocation</li>
           </ul>
         </div>
         

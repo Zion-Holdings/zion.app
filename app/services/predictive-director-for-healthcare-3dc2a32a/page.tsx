@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Network optimization with traffic analysis</li>
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Market analysis with buyer behavior insights</li>
-            <li>Business intelligence with KPI dashboards</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Security monitoring with threat intelligence</li>
             <li>Market analysis with buyer behavior insights</li>
             <li>Sales process optimization with pipeline management</li>
-            <li>Predictive modeling with ensemble methods</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Predictive maintenance scheduling to prevent downtime</li>
             <li>Improved customer retention with proactive service</li>
             <li>Real-time insights and alerts for proactive management</li>
-            <li>Reduced risk with early warning systems</li>
           </ul>
         </div>
         

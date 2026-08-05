@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Inventory prediction with demand forecasting</li>
             <li>GDPR compliance with data portability</li>
             <li>Version control with rollback capabilities</li>
-            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         

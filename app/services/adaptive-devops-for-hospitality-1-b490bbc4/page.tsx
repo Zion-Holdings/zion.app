@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive DevOps for Hospitality #1 - Zion Tech Group",
-  description: "Revolutionize hospitality through intelligent automation. Our Adaptive DevOps for Hospitality #1 leverages advanced machine learning to deliver language processing at scale.",
+  description: "Revolutionize hospitality through intelligent automation. Our Adaptive DevOps for Hospitality #1 leverages advanced machine learning to deliver language process",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-devops-for-hospitality-1-b490bbc4`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Manufacturing quality control with defect detection</li>
             <li>Edge computing support for low-latency operations</li>
             <li>Multi-language support with localization</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         

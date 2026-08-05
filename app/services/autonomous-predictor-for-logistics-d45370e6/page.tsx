@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Predictor for Logistics - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Autonomous Predictor for Logistics leverages advanced machine learning to deliver security monitoring at scale.",
+  description: "Revolutionize logistics through intelligent automation. Our Autonomous Predictor for Logistics leverages advanced machine learning to deliver security monitorin",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-predictor-for-logistics-d45370e6`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Process discovery with activity analysis</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved conversion rates with personalization</li>
             <li>Reduced support tickets with self-service options</li>
             <li>Better market positioning with competitive analysis</li>
-            <li>Reduced development time with code generation</li>
           </ul>
         </div>
         

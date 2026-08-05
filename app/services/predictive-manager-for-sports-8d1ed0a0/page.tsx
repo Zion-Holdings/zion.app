@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Image recognition with computer vision</li>
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Process discovery with activity analysis</li>
-            <li>Document processing with OCR and NLP</li>
           </ul>
         </div>
         

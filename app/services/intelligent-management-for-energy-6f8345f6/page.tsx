@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Energy optimization with consumption tracking</li>
             <li>Master data management with golden records</li>
             <li>GDPR compliance with data portability</li>
-            <li>Brand monitoring across social channels</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced operational risks with predictive models</li>
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Faster content creation with AI assistance</li>
-            <li>Reduced risk with early warning systems</li>
           </ul>
         </div>
         

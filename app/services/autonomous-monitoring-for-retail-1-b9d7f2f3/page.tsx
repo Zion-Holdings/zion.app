@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Inventory prediction with demand forecasting</li>
             <li>SOC 2 certified with security controls</li>
             <li>Security monitoring with threat intelligence</li>
-            <li>Market analysis with buyer behavior insights</li>
           </ul>
         </div>
         

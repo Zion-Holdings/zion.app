@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Coordinator for Insurance - Zion Tech Group",
-  description: "The future of insurance is here with Autonomous Coordinator for Insurance. Powered by cutting-edge AI, this platform delivers customer insights like never before.",
+  description: "The future of insurance is here with Autonomous Coordinator for Insurance. Powered by cutting-edge AI, this platform delivers customer insights like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-coordinator-for-insurance-d57958ae`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better inventory management with demand forecasting</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Improved customer satisfaction with faster response times</li>
-            <li>Enhanced security posture with continuous monitoring</li>
           </ul>
         </div>
         

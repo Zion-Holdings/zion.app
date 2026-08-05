@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced shipping costs with route optimization</li>
             <li>3x faster decision making with real-time insights</li>
             <li>Dynamic resource allocation based on demand patterns</li>
-            <li>50% reduction in operational costs through automation</li>
           </ul>
         </div>
         

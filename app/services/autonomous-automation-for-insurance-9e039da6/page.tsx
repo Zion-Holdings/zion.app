@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Budget optimization with cost allocation</li>
             <li>Market analysis with buyer behavior insights</li>
             <li>Security monitoring with threat intelligence</li>
-            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better financial planning with predictive models</li>
             <li>Improved customer retention with proactive service</li>
             <li>Better market positioning with competitive analysis</li>
-            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

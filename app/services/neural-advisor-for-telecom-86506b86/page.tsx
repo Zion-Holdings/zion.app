@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-region deployment with automatic failover</li>
             <li>Content generation with plagiarism checks</li>
             <li>Machine learning integration with automatic model training</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced customer acquisition costs with optimization</li>
             <li>Performance benchmarking against industry standards</li>
             <li>Enhanced security posture with continuous monitoring</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
           </ul>
         </div>
         

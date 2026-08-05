@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Predictor for Transportation #2 - Zion Tech Group",
-  description: "Transform your transportation operations with our Neural Predictor for Transportation #2. This AI-driven solution automates performance monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your transportation operations with our Neural Predictor for Transportation #2. This AI-driven solution automates performance monitoring with unpreced",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-predictor-for-transportation-2-49921b7b`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-region deployment with automatic failover</li>
             <li>Competitive intelligence with market share tracking</li>
             <li>Executive dashboards with drill-down capabilities</li>
-            <li>HIPAA ready with healthcare data protection</li>
           </ul>
         </div>
         

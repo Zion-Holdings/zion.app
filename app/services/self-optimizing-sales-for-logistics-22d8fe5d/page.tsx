@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Sales for Logistics - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Self-Optimizing Sales for Logistics leverages advanced machine learning to deliver performance monitoring at scale.",
+  description: "Revolutionize logistics through intelligent automation. Our Self-Optimizing Sales for Logistics leverages advanced machine learning to deliver performance monit",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-sales-for-logistics-22d8fe5d`
   }

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Budget optimization with cost allocation</li>
             <li>HIPAA ready with healthcare data protection</li>
-            <li>Custom integrations with webhook support</li>
           </ul>
         </div>
         

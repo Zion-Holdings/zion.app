@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Advisor for Education #2 - Zion Tech Group",
-  description: "Transform your education operations with our AI-Powered Advisor for Education #2. This AI-driven solution automates customer insights with unprecedented accuracy and efficiency.",
+  description: "Transform your education operations with our AI-Powered Advisor for Education #2. This AI-driven solution automates customer insights with unprecedented accurac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-advisor-for-education-2-1f39f58a`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Compliance monitoring with regulatory updates</li>
             <li>Fraud detection with anomaly analysis</li>
             <li>Audit trails with compliance reporting</li>
-            <li>Cost reduction with process mining</li>
           </ul>
         </div>
         

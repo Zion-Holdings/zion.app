@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Performance for Finance - Zion Tech Group",
-  description: "Revolutionize finance through intelligent automation. Our Intelligent Performance for Finance leverages advanced machine learning to deliver process automation at scale.",
+  description: "Revolutionize finance through intelligent automation. Our Intelligent Performance for Finance leverages advanced machine learning to deliver process automation ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-performance-for-finance-8d6c40b3`
   }

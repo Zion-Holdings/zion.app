@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Security for Technology - Zion Tech Group",
-  description: "Transform your technology operations with our AI-Powered Security for Technology. This AI-driven solution automates content generation with unprecedented accuracy and efficiency.",
+  description: "Transform your technology operations with our AI-Powered Security for Technology. This AI-driven solution automates content generation with unprecedented accura",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-security-for-technology-74139f86`
   }

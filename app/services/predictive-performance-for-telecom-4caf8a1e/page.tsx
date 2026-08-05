@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Performance for Telecom - Zion Tech Group",
-  description: "Revolutionize telecom through intelligent automation. Our Predictive Performance for Telecom leverages advanced machine learning to deliver compliance monitoring at scale.",
+  description: "Revolutionize telecom through intelligent automation. Our Predictive Performance for Telecom leverages advanced machine learning to deliver compliance monitorin",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-performance-for-telecom-4caf8a1e`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Customer service automation with chatbot integration</li>
-            <li>Multi-region deployment with automatic failover</li>
           </ul>
         </div>
         

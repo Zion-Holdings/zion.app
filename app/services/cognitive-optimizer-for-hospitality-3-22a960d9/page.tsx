@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer service automation with chatbot integration</li>
             <li>Data quality with anomaly detection</li>
             <li>Audit trails with compliance reporting</li>
-            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         

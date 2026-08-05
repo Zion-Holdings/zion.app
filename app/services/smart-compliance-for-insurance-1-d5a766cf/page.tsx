@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Compliance for Insurance #1 - Zion Tech Group",
-  description: "Transform your insurance operations with our Smart Compliance for Insurance #1. This AI-driven solution automates market intelligence with unprecedented accuracy and efficiency.",
+  description: "Transform your insurance operations with our Smart Compliance for Insurance #1. This AI-driven solution automates market intelligence with unprecedented accurac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-compliance-for-insurance-1-d5a766cf`
   }

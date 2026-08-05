@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Fraud detection with anomaly analysis</li>
             <li>Custom integrations with webhook support</li>
             <li>Real-time processing with streaming analytics</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better resource utilization with auto-scaling</li>
             <li>Better compliance with automated audit trails</li>
             <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

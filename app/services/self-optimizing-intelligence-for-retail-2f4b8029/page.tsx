@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Intelligence for Retail - Zion Tech Group",
-  description: "The future of retail is here with Self-Optimizing Intelligence for Retail. Powered by cutting-edge AI, this platform delivers fraud prevention like never before.",
+  description: "The future of retail is here with Self-Optimizing Intelligence for Retail. Powered by cutting-edge AI, this platform delivers fraud prevention like never before",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-intelligence-for-retail-2f4b8029`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Energy optimization with consumption tracking</li>
             <li>Edge computing support for low-latency operations</li>
-            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         

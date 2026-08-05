@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Compliance for Construction - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Neural Compliance for Construction leverages advanced machine learning to deliver image recognition at scale.",
+  description: "Revolutionize construction through intelligent automation. Our Neural Compliance for Construction leverages advanced machine learning to deliver image recogniti",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-compliance-for-construction-f75bfa96`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Network optimization with traffic analysis</li>
             <li>GDPR compliance with data portability</li>
             <li>Automation opportunity identification</li>
-            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Suite for Healthcare #1 - Zion Tech Group",
-  description: "Revolutionize healthcare through intelligent automation. Our Automated Suite for Healthcare #1 leverages advanced machine learning to deliver resource optimization at scale.",
+  description: "Revolutionize healthcare through intelligent automation. Our Automated Suite for Healthcare #1 leverages advanced machine learning to deliver resource optimizat",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-suite-for-healthcare-1-315a4927`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-region deployment with automatic failover</li>
             <li>Predictive modeling with ensemble methods</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>Automation opportunity identification</li>
           </ul>
         </div>
         

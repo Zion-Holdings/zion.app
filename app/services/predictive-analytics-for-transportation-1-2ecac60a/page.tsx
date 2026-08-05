@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Custom integrations with webhook support</li>
             <li>HIPAA ready with healthcare data protection</li>
             <li>Content generation with plagiarism checks</li>
-            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         

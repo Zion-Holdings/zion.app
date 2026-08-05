@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Predictive maintenance scheduling to prevent downtime</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>Improved forecast accuracy with ML models</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Security monitoring with threat intelligence</li>
             <li>Image recognition with computer vision</li>
-            <li>Logistics route optimization with traffic prediction</li>
           </ul>
         </div>
         

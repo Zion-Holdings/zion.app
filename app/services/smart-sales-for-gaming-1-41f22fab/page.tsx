@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Sales for Gaming #1 - Zion Tech Group",
-  description: "Revolutionize gaming through intelligent automation. Our Smart Sales for Gaming #1 leverages advanced machine learning to deliver customer service automation at scale.",
+  description: "Revolutionize gaming through intelligent automation. Our Smart Sales for Gaming #1 leverages advanced machine learning to deliver customer service automation at",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-sales-for-gaming-1-41f22fab`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Content generation with plagiarism checks</li>
             <li>Role-based access control with SSO integration</li>
             <li>Business intelligence with KPI dashboards</li>
-            <li>Automation opportunity identification</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved customer satisfaction with faster response times</li>
             <li>Automated compliance reporting for regulatory requirements</li>
             <li>Better customer experience with personalization</li>
-            <li>Improved product quality with automated testing</li>
           </ul>
         </div>
         

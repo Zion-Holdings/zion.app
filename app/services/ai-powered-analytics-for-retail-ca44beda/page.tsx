@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Multi-language support with localization</li>
             <li>Multi-region deployment with automatic failover</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved quality with automated testing and validation</li>
             <li>Scalable to millions of transactions per second</li>
             <li>Enhanced security with continuous threat monitoring</li>
-            <li>Better compliance with automated audit trails</li>
           </ul>
         </div>
         

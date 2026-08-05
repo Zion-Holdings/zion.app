@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-region deployment with automatic failover</li>
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Network optimization with traffic analysis</li>
-            <li>Customer service automation with chatbot integration</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Automated compliance reporting for regulatory requirements</li>
             <li>Reduced shipping costs with route optimization</li>
             <li>3x faster decision making with real-time insights</li>
-            <li>Improved employee productivity with automation</li>
           </ul>
         </div>
         

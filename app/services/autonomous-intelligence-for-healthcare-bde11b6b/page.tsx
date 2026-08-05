@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Intelligence for Healthcare - Zion Tech Group",
-  description: "Revolutionize healthcare through intelligent automation. Our Autonomous Intelligence for Healthcare leverages advanced machine learning to deliver threat detection at scale.",
+  description: "Revolutionize healthcare through intelligent automation. Our Autonomous Intelligence for Healthcare leverages advanced machine learning to deliver threat detect",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-intelligence-for-healthcare-bde11b6b`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Budget optimization with cost allocation</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>Document processing with OCR and NLP</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security with continuous threat monitoring</li>
             <li>99.9% uptime guarantee with redundant architecture</li>
             <li>Performance benchmarking against industry standards</li>
-            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         

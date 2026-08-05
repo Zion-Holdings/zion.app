@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Manufacturing for Sports #1 - Zion Tech Group",
-  description: "Revolutionize sports through intelligent automation. Our Self-Optimizing Manufacturing for Sports #1 leverages advanced machine learning to deliver sales process optimization at scale.",
+  description: "Revolutionize sports through intelligent automation. Our Self-Optimizing Manufacturing for Sports #1 leverages advanced machine learning to deliver sales proces",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-manufacturing-for-sports-1-92932ecf`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cost reduction with process mining</li>
             <li>Security monitoring with threat intelligence</li>
             <li>Multi-region deployment with automatic failover</li>
-            <li>Logistics route optimization with traffic prediction</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved quality with automated testing and validation</li>
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Zero manual intervention required for routine tasks</li>
-            <li>Better compliance with automated audit trails</li>
           </ul>
         </div>
         

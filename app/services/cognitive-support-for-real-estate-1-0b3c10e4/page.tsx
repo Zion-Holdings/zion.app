@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Support for Real-Estate #1 - Zion Tech Group",
-  description: "The future of real-estate is here with Cognitive Support for Real-Estate #1. Powered by cutting-edge AI, this platform delivers inventory management like never before.",
+  description: "The future of real-estate is here with Cognitive Support for Real-Estate #1. Powered by cutting-edge AI, this platform delivers inventory management like never ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-support-for-real-estate-1-0b3c10e4`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced operational risks with predictive models</li>
             <li>Improved customer satisfaction with faster response times</li>
             <li>Better market positioning with competitive analysis</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
           </ul>
         </div>
         

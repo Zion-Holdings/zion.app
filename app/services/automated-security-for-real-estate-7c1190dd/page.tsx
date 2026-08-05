@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Security for Real-Estate - Zion Tech Group",
-  description: "Transform your real-estate operations with our Automated Security for Real-Estate. This AI-driven solution automates maintenance scheduling with unprecedented accuracy and efficiency.",
+  description: "Transform your real-estate operations with our Automated Security for Real-Estate. This AI-driven solution automates maintenance scheduling with unprecedented a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-security-for-real-estate-7c1190dd`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Revenue forecasting with market trend analysis</li>
             <li>Audit trails with compliance reporting</li>
             <li>Custom integrations with webhook support</li>
-            <li>Financial risk management with scenario analysis</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Cloud for Retail - Zion Tech Group",
-  description: "Transform your retail operations with our Automated Cloud for Retail. This AI-driven solution automates decision support with unprecedented accuracy and efficiency.",
+  description: "Transform your retail operations with our Automated Cloud for Retail. This AI-driven solution automates decision support with unprecedented accuracy and efficie",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-cloud-for-retail-f6209336`
   }

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Compliance monitoring with regulatory updates</li>
             <li>Customer service automation with chatbot integration</li>
             <li>Data governance with policy enforcement</li>
-            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         

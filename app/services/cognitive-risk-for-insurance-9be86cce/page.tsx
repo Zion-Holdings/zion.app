@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Risk for Insurance - Zion Tech Group",
-  description: "Transform your insurance operations with our Cognitive Risk for Insurance. This AI-driven solution automates security monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your insurance operations with our Cognitive Risk for Insurance. This AI-driven solution automates security monitoring with unprecedented accuracy and",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-risk-for-insurance-9be86cce`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Finance for Manufacturing - Zion Tech Group",
-  description: "Unlock unprecedented growth with Cognitive Finance for Manufacturing. This autonomous system provides sales process optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Cognitive Finance for Manufacturing. This autonomous system provides sales process optimization with zero manual intervention n",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-finance-for-manufacturing-e2ad73f8`
   }

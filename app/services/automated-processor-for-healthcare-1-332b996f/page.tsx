@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Network optimization with traffic analysis</li>
             <li>Process discovery with activity analysis</li>
             <li>Customer journey mapping with touchpoint analysis</li>
-            <li>Maintenance scheduling with predictive analytics</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved quality with automated testing and validation</li>
             <li>Reduced risk with early warning systems</li>
             <li>Improved conversion rates with personalization</li>
-            <li>Improved customer retention with proactive service</li>
           </ul>
         </div>
         

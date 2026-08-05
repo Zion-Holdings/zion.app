@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Manufacturing for Construction #1 - Zion Tech Group",
-  description: "Transform your construction operations with our Cognitive Manufacturing for Construction #1. This AI-driven solution automates user experience with unprecedented accuracy and efficiency.",
+  description: "Transform your construction operations with our Cognitive Manufacturing for Construction #1. This AI-driven solution automates user experience with unprecedente",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-manufacturing-for-construction-1-c6bbbbc8`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Inventory prediction with demand forecasting</li>
             <li>Predictive modeling with ensemble methods</li>
             <li>Role-based access control with SSO integration</li>
-            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Better financial planning with predictive models</li>
             <li>Better compliance with automated audit trails</li>
-            <li>Reduced risk with early warning systems</li>
           </ul>
         </div>
         

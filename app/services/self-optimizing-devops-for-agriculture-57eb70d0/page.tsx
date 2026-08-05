@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing DevOps for Agriculture - Zion Tech Group",
-  description: "The future of agriculture is here with Self-Optimizing DevOps for Agriculture. Powered by cutting-edge AI, this platform delivers predictive analytics like never before.",
+  description: "The future of agriculture is here with Self-Optimizing DevOps for Agriculture. Powered by cutting-edge AI, this platform delivers predictive analytics like neve",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-devops-for-agriculture-57eb70d0`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>SOC 2 certified with security controls</li>
             <li>Customer journey mapping with touchpoint analysis</li>
-            <li>Master data management with golden records</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Automated compliance reporting for regulatory requirements</li>
             <li>Improved customer satisfaction with faster response times</li>
             <li>Reduced churn with proactive customer retention</li>
-            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

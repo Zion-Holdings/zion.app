@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Alerting system with intelligent notifications</li>
             <li>Sales process optimization with pipeline management</li>
             <li>Language processing with sentiment analysis</li>
-            <li>Executive dashboards with drill-down capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Faster content creation with AI assistance</li>
             <li>50% reduction in operational costs through automation</li>
             <li>Better supply chain visibility with tracking</li>
-            <li>Better code quality with automated reviews</li>
           </ul>
         </div>
         

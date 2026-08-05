@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Language processing with sentiment analysis</li>
             <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         

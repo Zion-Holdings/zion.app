@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Quality for Automotive #1 - Zion Tech Group",
-  description: "The future of automotive is here with Adaptive Quality for Automotive #1. Powered by cutting-edge AI, this platform delivers financial planning like never before.",
+  description: "The future of automotive is here with Adaptive Quality for Automotive #1. Powered by cutting-edge AI, this platform delivers financial planning like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-quality-for-automotive-1-386d47a6`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Faster time-to-market with accelerated development</li>
             <li>ROI achieved in under 90 days with cost savings</li>
             <li>Enhanced decision making with data-driven insights</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Analyzer for Insurance - Zion Tech Group",
-  description: "Transform your insurance operations with our Neural Analyzer for Insurance. This AI-driven solution automates financial planning with unprecedented accuracy and efficiency.",
+  description: "Transform your insurance operations with our Neural Analyzer for Insurance. This AI-driven solution automates financial planning with unprecedented accuracy and",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-analyzer-for-insurance-0c137c79`
   }

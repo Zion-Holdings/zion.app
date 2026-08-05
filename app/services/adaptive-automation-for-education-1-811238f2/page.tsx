@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Automation for Education #1 - Zion Tech Group",
-  description: "Revolutionize education through intelligent automation. Our Adaptive Automation for Education #1 leverages advanced machine learning to deliver customer service automation at scale.",
+  description: "Revolutionize education through intelligent automation. Our Adaptive Automation for Education #1 leverages advanced machine learning to deliver customer service",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-automation-for-education-1-811238f2`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Fraud detection with anomaly analysis</li>
             <li>Business intelligence with KPI dashboards</li>
             <li>Energy optimization with consumption tracking</li>
-            <li>Role-based access control with SSO integration</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced support tickets with self-service options</li>
             <li>Faster time-to-market with accelerated development</li>
             <li>Improved employee productivity with automation</li>
-            <li>Improved quality with automated testing and validation</li>
           </ul>
         </div>
         

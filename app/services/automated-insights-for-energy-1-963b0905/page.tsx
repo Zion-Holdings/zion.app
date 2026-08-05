@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Insights for Energy #1 - Zion Tech Group",
-  description: "Revolutionize energy through intelligent automation. Our Automated Insights for Energy #1 leverages advanced machine learning to deliver customer insights at scale.",
+  description: "Revolutionize energy through intelligent automation. Our Automated Insights for Energy #1 leverages advanced machine learning to deliver customer insights at sc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-insights-for-energy-1-963b0905`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better financial planning with predictive models</li>
             <li>Improved quality with automated testing and validation</li>
             <li>Better inventory management with demand forecasting</li>
-            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Orchestrator for Logistics - Zion Tech Group",
-  description: "The future of logistics is here with AI-Powered Orchestrator for Logistics. Powered by cutting-edge AI, this platform delivers process automation like never before.",
+  description: "The future of logistics is here with AI-Powered Orchestrator for Logistics. Powered by cutting-edge AI, this platform delivers process automation like never bef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-orchestrator-for-logistics-1933d55f`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Serverless functions for cost-effective scaling</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Image recognition with computer vision</li>
-            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Coordinator for Logistics - Zion Tech Group",
-  description: "Transform your logistics operations with our Autonomous Coordinator for Logistics. This AI-driven solution automates energy management with unprecedented accuracy and efficiency.",
+  description: "Transform your logistics operations with our Autonomous Coordinator for Logistics. This AI-driven solution automates energy management with unprecedented accura",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-coordinator-for-logistics-9835681f`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Compliance for Hospitality #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Compliance for Hospitality #1. This autonomous system provides workflow management with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Intelligent Compliance for Hospitality #1. This autonomous system provides workflow management with zero manual intervention ne",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-compliance-for-hospitality-1-dd28b582`
   }

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Energy optimization with consumption tracking</li>
             <li>Cost reduction with process mining</li>
             <li>Data quality with anomaly detection</li>
-            <li>Multi-language support with localization</li>
           </ul>
         </div>
         

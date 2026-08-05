@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Inventory prediction with demand forecasting</li>
-            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         

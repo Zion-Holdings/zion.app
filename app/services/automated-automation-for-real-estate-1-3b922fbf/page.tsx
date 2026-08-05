@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Automation for Real-Estate #1 - Zion Tech Group",
-  description: "Transform your real-estate operations with our Automated Automation for Real-Estate #1. This AI-driven solution automates user experience with unprecedented accuracy and efficiency.",
+  description: "Transform your real-estate operations with our Automated Automation for Real-Estate #1. This AI-driven solution automates user experience with unprecedented acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-automation-for-real-estate-1-3b922fbf`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Real-time processing with streaming analytics</li>
             <li>Multi-region deployment with automatic failover</li>
-            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         

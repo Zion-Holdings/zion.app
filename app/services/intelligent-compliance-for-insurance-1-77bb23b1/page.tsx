@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Compliance for Insurance #1 - Zion Tech Group",
-  description: "Transform your insurance operations with our Intelligent Compliance for Insurance #1. This AI-driven solution automates financial planning with unprecedented accuracy and efficiency.",
+  description: "Transform your insurance operations with our Intelligent Compliance for Insurance #1. This AI-driven solution automates financial planning with unprecedented ac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-compliance-for-insurance-1-77bb23b1`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Predictive modeling with ensemble methods</li>
             <li>SOC 2 certified with security controls</li>
             <li>Energy optimization with consumption tracking</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         

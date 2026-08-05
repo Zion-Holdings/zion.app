@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automation opportunity identification</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>SOC 2 certified with security controls</li>
-            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Automation for Healthcare - Zion Tech Group",
-  description: "Revolutionize healthcare through intelligent automation. Our Neural Automation for Healthcare leverages advanced machine learning to deliver data processing at scale.",
+  description: "Revolutionize healthcare through intelligent automation. Our Neural Automation for Healthcare leverages advanced machine learning to deliver data processing at ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-automation-for-healthcare-d94c49e4`
   }

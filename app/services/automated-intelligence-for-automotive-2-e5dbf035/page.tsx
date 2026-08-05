@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Maintenance scheduling with predictive analytics</li>
             <li>Budget optimization with cost allocation</li>
             <li>Healthcare data analytics with patient insights</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved customer retention with proactive service</li>
             <li>Zero manual intervention required for routine tasks</li>
             <li>3x faster decision making with real-time insights</li>
-            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

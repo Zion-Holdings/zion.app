@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Cloud for Agriculture - Zion Tech Group",
-  description: "The future of agriculture is here with Autonomous Cloud for Agriculture. Powered by cutting-edge AI, this platform delivers market intelligence like never before.",
+  description: "The future of agriculture is here with Autonomous Cloud for Agriculture. Powered by cutting-edge AI, this platform delivers market intelligence like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-cloud-for-agriculture-654b06ae`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced human error by 95% with automated processes</li>
             <li>Reduced customer acquisition costs with optimization</li>
             <li>Better code quality with automated reviews</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
           </ul>
         </div>
         

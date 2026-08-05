@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Compliance for Gaming - Zion Tech Group",
-  description: "Unlock unprecedented growth with Self-Optimizing Compliance for Gaming. This autonomous system provides compliance monitoring with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Self-Optimizing Compliance for Gaming. This autonomous system provides compliance monitoring with zero manual intervention need",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-compliance-for-gaming-55072e2d`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-language support with localization</li>
             <li>SOC 2 certified with security controls</li>
             <li>Energy optimization with consumption tracking</li>
-            <li>Custom integrations with webhook support</li>
           </ul>
         </div>
         

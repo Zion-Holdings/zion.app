@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Optimization for Technology - Zion Tech Group",
-  description: "Transform your technology operations with our Cognitive Optimization for Technology. This AI-driven solution automates threat detection with unprecedented accuracy and efficiency.",
+  description: "Transform your technology operations with our Cognitive Optimization for Technology. This AI-driven solution automates threat detection with unprecedented accur",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-optimization-for-technology-73e3590b`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better customer experience with personalization</li>
             <li>Reduced risk with early warning systems</li>
             <li>Increased revenue with optimized pricing strategies</li>
-            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-language support with localization</li>
             <li>Compliance monitoring with regulatory updates</li>
             <li>Machine learning integration with automatic model training</li>
-            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         

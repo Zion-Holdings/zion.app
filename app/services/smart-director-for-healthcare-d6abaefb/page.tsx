@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Director for Healthcare - Zion Tech Group",
-  description: "Revolutionize healthcare through intelligent automation. Our Smart Director for Healthcare leverages advanced machine learning to deliver inventory management at scale.",
+  description: "Revolutionize healthcare through intelligent automation. Our Smart Director for Healthcare leverages advanced machine learning to deliver inventory management a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-director-for-healthcare-d6abaefb`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Healthcare data analytics with patient insights</li>
             <li>Financial risk management with scenario analysis</li>
             <li>Code optimization with performance profiling</li>
-            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         

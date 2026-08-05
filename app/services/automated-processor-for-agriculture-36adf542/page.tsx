@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Processor for Agriculture - Zion Tech Group",
-  description: "The future of agriculture is here with Automated Processor for Agriculture. Powered by cutting-edge AI, this platform delivers network optimization like never before.",
+  description: "The future of agriculture is here with Automated Processor for Agriculture. Powered by cutting-edge AI, this platform delivers network optimization like never b",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-processor-for-agriculture-36adf542`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>ROI achieved in under 90 days with cost savings</li>
             <li>Increased revenue with optimized pricing strategies</li>
-            <li>Improved sales performance with lead scoring</li>
           </ul>
         </div>
         

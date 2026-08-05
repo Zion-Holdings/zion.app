@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Supply for Logistics - Zion Tech Group",
-  description: "Transform your logistics operations with our Neural Supply for Logistics. This AI-driven solution automates language processing with unprecedented accuracy and efficiency.",
+  description: "Transform your logistics operations with our Neural Supply for Logistics. This AI-driven solution automates language processing with unprecedented accuracy and ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-supply-for-logistics-93db742d`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Business intelligence with KPI dashboards</li>
             <li>Microservices deployment with container orchestration</li>
             <li>Network optimization with traffic analysis</li>
-            <li>Customer service automation with chatbot integration</li>
           </ul>
         </div>
         

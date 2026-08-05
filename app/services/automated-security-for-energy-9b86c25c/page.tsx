@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Security for Energy - Zion Tech Group",
-  description: "Revolutionize energy through intelligent automation. Our Automated Security for Energy leverages advanced machine learning to deliver network optimization at scale.",
+  description: "Revolutionize energy through intelligent automation. Our Automated Security for Energy leverages advanced machine learning to deliver network optimization at sc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-security-for-energy-9b86c25c`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Improved sales performance with lead scoring</li>
             <li>Zero manual intervention required for routine tasks</li>
-            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

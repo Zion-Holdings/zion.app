@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Alerting system with intelligent notifications</li>
             <li>A/B testing framework for continuous optimization</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Predictive modeling with ensemble methods</li>
           </ul>
         </div>
         

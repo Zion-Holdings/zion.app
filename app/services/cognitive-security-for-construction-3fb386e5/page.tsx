@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Security for Construction - Zion Tech Group",
-  description: "The future of construction is here with Cognitive Security for Construction. Powered by cutting-edge AI, this platform delivers image recognition like never before.",
+  description: "The future of construction is here with Cognitive Security for Construction. Powered by cutting-edge AI, this platform delivers image recognition like never bef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-security-for-construction-3fb386e5`
   }

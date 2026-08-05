@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Healthcare data analytics with patient insights</li>
             <li>Budget optimization with cost allocation</li>
             <li>Document processing with OCR and NLP</li>
-            <li>Financial risk management with scenario analysis</li>
           </ul>
         </div>
         

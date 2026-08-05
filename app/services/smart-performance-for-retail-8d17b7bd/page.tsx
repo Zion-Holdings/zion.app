@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Budget optimization with cost allocation</li>
             <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Role-based access control with SSO integration</li>
           </ul>
         </div>
         

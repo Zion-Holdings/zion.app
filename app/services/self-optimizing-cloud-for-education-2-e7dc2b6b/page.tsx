@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automation opportunity identification</li>
             <li>Inventory prediction with demand forecasting</li>
             <li>Financial risk management with scenario analysis</li>
-            <li>Multi-region deployment with automatic failover</li>
           </ul>
         </div>
         

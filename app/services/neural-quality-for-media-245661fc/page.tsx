@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Master data management with golden records</li>
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Language processing with sentiment analysis</li>
-            <li>Edge computing support for low-latency operations</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data quality with anomaly detection</li>
             <li>User experience analytics with behavior tracking</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Version control with rollback capabilities</li>
           </ul>
         </div>
         

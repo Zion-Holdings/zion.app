@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>A/B testing framework for continuous optimization</li>
             <li>Market analysis with buyer behavior insights</li>
             <li>Master data management with golden records</li>
-            <li>Cost reduction with process mining</li>
           </ul>
         </div>
         

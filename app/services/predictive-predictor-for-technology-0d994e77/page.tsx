@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Predictor for Technology - Zion Tech Group",
-  description: "Revolutionize technology through intelligent automation. Our Predictive Predictor for Technology leverages advanced machine learning to deliver energy management at scale.",
+  description: "Revolutionize technology through intelligent automation. Our Predictive Predictor for Technology leverages advanced machine learning to deliver energy managemen",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-predictor-for-technology-0d994e77`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Content generation with plagiarism checks</li>
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Competitive intelligence with market share tracking</li>
-            <li>Process discovery with activity analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Scalable to millions of transactions per second</li>
             <li>Dynamic resource allocation based on demand patterns</li>
             <li>Improved sales performance with lead scoring</li>
-            <li>Improved conversion rates with personalization</li>
           </ul>
         </div>
         

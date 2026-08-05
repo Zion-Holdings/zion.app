@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sales process optimization with pipeline management</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Business intelligence with KPI dashboards</li>
-            <li>Executive dashboards with drill-down capabilities</li>
           </ul>
         </div>
         

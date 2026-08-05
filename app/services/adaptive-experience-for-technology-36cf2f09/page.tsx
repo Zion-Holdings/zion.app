@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Market analysis with buyer behavior insights</li>
             <li>A/B testing framework for continuous optimization</li>
             <li>Energy optimization with consumption tracking</li>
-            <li>Network optimization with traffic analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Real-time insights and alerts for proactive management</li>
             <li>Improved customer satisfaction with faster response times</li>
             <li>Improved conversion rates with personalization</li>
-            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         

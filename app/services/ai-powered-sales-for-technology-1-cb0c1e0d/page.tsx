@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sales process optimization with pipeline management</li>
             <li>HIPAA ready with healthcare data protection</li>
             <li>Revenue forecasting with market trend analysis</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced development time with code generation</li>
             <li>Reduced human error by 95% with automated processes</li>
             <li>3x faster decision making with real-time insights</li>
-            <li>Improved quality with automated testing and validation</li>
           </ul>
         </div>
         

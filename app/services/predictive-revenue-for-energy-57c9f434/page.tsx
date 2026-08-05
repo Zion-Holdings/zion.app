@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Revenue for Energy - Zion Tech Group",
-  description: "Transform your energy operations with our Predictive Revenue for Energy. This AI-driven solution automates maintenance scheduling with unprecedented accuracy and efficiency.",
+  description: "Transform your energy operations with our Predictive Revenue for Energy. This AI-driven solution automates maintenance scheduling with unprecedented accuracy an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-revenue-for-energy-57c9f434`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>Better code quality with automated reviews</li>
             <li>Faster time-to-market with accelerated development</li>
-            <li>50% reduction in operational costs through automation</li>
           </ul>
         </div>
         

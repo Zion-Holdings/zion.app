@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Alerting system with intelligent notifications</li>
             <li>Customer service automation with chatbot integration</li>
             <li>Content generation with plagiarism checks</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Better customer experience with personalization</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

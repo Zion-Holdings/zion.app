@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Manufacturing for Manufacturing - Zion Tech Group",
-  description: "The future of manufacturing is here with Self-Optimizing Manufacturing for Manufacturing. Powered by cutting-edge AI, this platform delivers process automation like never before.",
+  description: "The future of manufacturing is here with Self-Optimizing Manufacturing for Manufacturing. Powered by cutting-edge AI, this platform delivers process automation ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-manufacturing-for-manufacturing-27d1277a`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Edge computing support for low-latency operations</li>
             <li>Manufacturing quality control with defect detection</li>
             <li>Document processing with OCR and NLP</li>
-            <li>Sales process optimization with pipeline management</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced risk with early warning systems</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>Faster content creation with AI assistance</li>
-            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Intelligence for Manufacturing - Zion Tech Group",
-  description: "Transform your manufacturing operations with our Cognitive Intelligence for Manufacturing. This AI-driven solution automates quality control with unprecedented accuracy and efficiency.",
+  description: "Transform your manufacturing operations with our Cognitive Intelligence for Manufacturing. This AI-driven solution automates quality control with unprecedented ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-intelligence-for-manufacturing-800ab669`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better financial planning with predictive models</li>
             <li>Improved brand awareness with social monitoring</li>
             <li>Seamless integration with existing systems and workflows</li>
-            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

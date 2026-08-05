@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Automation for Real-Estate #2 - Zion Tech Group",
-  description: "The future of real-estate is here with Smart Automation for Real-Estate #2. Powered by cutting-edge AI, this platform delivers customer service automation like never before.",
+  description: "The future of real-estate is here with Smart Automation for Real-Estate #2. Powered by cutting-edge AI, this platform delivers customer service automation like ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-automation-for-real-estate-2-da806296`
   }

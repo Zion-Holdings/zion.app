@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Security for Real-Estate #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Self-Optimizing Security for Real-Estate #1. This autonomous system provides threat detection with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Self-Optimizing Security for Real-Estate #1. This autonomous system provides threat detection with zero manual intervention nee",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-security-for-real-estate-1-221635d7`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>SOC 2 certified with security controls</li>
             <li>Maintenance scheduling with predictive analytics</li>
             <li>Sentiment analysis with real-time monitoring</li>
-            <li>Security monitoring with threat intelligence</li>
           </ul>
         </div>
         

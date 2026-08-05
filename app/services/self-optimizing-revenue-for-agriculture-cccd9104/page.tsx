@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Content generation with plagiarism checks</li>
             <li>Business intelligence with KPI dashboards</li>
             <li>Serverless functions for cost-effective scaling</li>
-            <li>Audit trails with compliance reporting</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Faster time-to-market with accelerated development</li>
             <li>Zero manual intervention required for routine tasks</li>
-            <li>Better customer experience with personalization</li>
           </ul>
         </div>
         

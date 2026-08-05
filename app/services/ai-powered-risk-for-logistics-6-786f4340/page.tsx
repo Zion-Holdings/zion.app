@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Energy optimization with consumption tracking</li>
             <li>Version control with rollback capabilities</li>
             <li>Edge computing support for low-latency operations</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced customer acquisition costs with optimization</li>
             <li>Improved quality with automated testing and validation</li>
             <li>Faster time-to-market with accelerated development</li>
-            <li>Improved conversion rates with personalization</li>
           </ul>
         </div>
         

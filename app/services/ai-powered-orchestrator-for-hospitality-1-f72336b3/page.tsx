@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Orchestrator for Hospitality #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with AI-Powered Orchestrator for Hospitality #1. This autonomous system provides customer service automation with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with AI-Powered Orchestrator for Hospitality #1. This autonomous system provides customer service automation with zero manual interv",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-orchestrator-for-hospitality-1-f72336b3`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Role-based access control with SSO integration</li>
             <li>Serverless functions for cost-effective scaling</li>
             <li>Master data management with golden records</li>
-            <li>Image recognition with computer vision</li>
           </ul>
         </div>
         

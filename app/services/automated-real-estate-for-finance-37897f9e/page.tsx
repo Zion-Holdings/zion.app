@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Real Estate for Finance - Zion Tech Group",
-  description: "The future of finance is here with Automated Real Estate for Finance. Powered by cutting-edge AI, this platform delivers resource optimization like never before.",
+  description: "The future of finance is here with Automated Real Estate for Finance. Powered by cutting-edge AI, this platform delivers resource optimization like never before",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-real-estate-for-finance-37897f9e`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Machine learning integration with automatic model training</li>
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Microservices deployment with container orchestration</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         

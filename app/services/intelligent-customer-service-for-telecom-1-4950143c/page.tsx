@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Predictive modeling with ensemble methods</li>
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>SOC 2 certified with security controls</li>
-            <li>Sales process optimization with pipeline management</li>
           </ul>
         </div>
         

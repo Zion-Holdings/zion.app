@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Insights for Insurance - Zion Tech Group",
-  description: "Transform your insurance operations with our Automated Insights for Insurance. This AI-driven solution automates market intelligence with unprecedented accuracy and efficiency.",
+  description: "Transform your insurance operations with our Automated Insights for Insurance. This AI-driven solution automates market intelligence with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-insights-for-insurance-6a9ee40c`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Version control with rollback capabilities</li>
             <li>Content generation with plagiarism checks</li>
             <li>User experience analytics with behavior tracking</li>
-            <li>Executive dashboards with drill-down capabilities</li>
           </ul>
         </div>
         

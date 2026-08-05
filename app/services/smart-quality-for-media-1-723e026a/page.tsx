@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Quality for Media #1 - Zion Tech Group",
-  description: "Transform your media operations with our Smart Quality for Media #1. This AI-driven solution automates customer insights with unprecedented accuracy and efficiency.",
+  description: "Transform your media operations with our Smart Quality for Media #1. This AI-driven solution automates customer insights with unprecedented accuracy and efficie",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-quality-for-media-1-723e026a`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Logistics route optimization with traffic prediction</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>HIPAA ready with healthcare data protection</li>
-            <li>Financial risk management with scenario analysis</li>
           </ul>
         </div>
         

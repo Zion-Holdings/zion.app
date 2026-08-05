@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Revenue for Hospitality - Zion Tech Group",
-  description: "Transform your hospitality operations with our Autonomous Revenue for Hospitality. This AI-driven solution automates predictive analytics with unprecedented accuracy and efficiency.",
+  description: "Transform your hospitality operations with our Autonomous Revenue for Hospitality. This AI-driven solution automates predictive analytics with unprecedented acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-revenue-for-hospitality-9d6d5173`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Customer service automation with chatbot integration</li>
             <li>Healthcare data analytics with patient insights</li>
-            <li>Budget optimization with cost allocation</li>
           </ul>
         </div>
         

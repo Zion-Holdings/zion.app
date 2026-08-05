@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Role-based access control with SSO integration</li>
             <li>Compliance monitoring with regulatory updates</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Revenue forecasting with market trend analysis</li>
           </ul>
         </div>
         

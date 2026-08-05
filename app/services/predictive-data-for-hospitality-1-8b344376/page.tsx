@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Data for Hospitality #1 - Zion Tech Group",
-  description: "The future of hospitality is here with Predictive Data for Hospitality #1. Powered by cutting-edge AI, this platform delivers decision support like never before.",
+  description: "The future of hospitality is here with Predictive Data for Hospitality #1. Powered by cutting-edge AI, this platform delivers decision support like never before",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-data-for-hospitality-1-8b344376`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Image recognition with computer vision</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>Healthcare data analytics with patient insights</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved customer retention with proactive service</li>
             <li>Better market positioning with competitive analysis</li>
             <li>Reduced risk with early warning systems</li>
-            <li>Better resource utilization with auto-scaling</li>
           </ul>
         </div>
         

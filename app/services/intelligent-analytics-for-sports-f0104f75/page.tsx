@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Analytics for Sports - Zion Tech Group",
-  description: "Transform your sports operations with our Intelligent Analytics for Sports. This AI-driven solution automates predictive analytics with unprecedented accuracy and efficiency.",
+  description: "Transform your sports operations with our Intelligent Analytics for Sports. This AI-driven solution automates predictive analytics with unprecedented accuracy a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-analytics-for-sports-f0104f75`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Real-time processing with streaming analytics</li>
             <li>Fraud detection with anomaly analysis</li>
             <li>A/B testing framework for continuous optimization</li>
-            <li>Cost reduction with process mining</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Cost optimization recommendations with savings analysis</li>
             <li>Reduced customer acquisition costs with optimization</li>
             <li>Better supply chain visibility with tracking</li>
-            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

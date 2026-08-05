@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Optimizer for Technology - Zion Tech Group",
-  description: "Revolutionize technology through intelligent automation. Our Intelligent Optimizer for Technology leverages advanced machine learning to deliver sales process optimization at scale.",
+  description: "Revolutionize technology through intelligent automation. Our Intelligent Optimizer for Technology leverages advanced machine learning to deliver sales process o",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-optimizer-for-technology-a58ebe39`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>User experience analytics with behavior tracking</li>
             <li>GDPR compliance with data portability</li>
             <li>Data quality with anomaly detection</li>
-            <li>Real-time processing with streaming analytics</li>
           </ul>
         </div>
         

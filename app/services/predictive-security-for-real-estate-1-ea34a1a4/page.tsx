@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Security for Real-Estate #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Predictive Security for Real-Estate #1. This autonomous system provides network optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Predictive Security for Real-Estate #1. This autonomous system provides network optimization with zero manual intervention need",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-security-for-real-estate-1-ea34a1a4`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Budget optimization with cost allocation</li>
             <li>Maintenance scheduling with predictive analytics</li>
             <li>Healthcare data analytics with patient insights</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
           </ul>
         </div>
         

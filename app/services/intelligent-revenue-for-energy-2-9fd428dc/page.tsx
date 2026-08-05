@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Custom integrations with webhook support</li>
             <li>Data quality with anomaly detection</li>
             <li>Language processing with sentiment analysis</li>
-            <li>Market analysis with buyer behavior insights</li>
           </ul>
         </div>
         

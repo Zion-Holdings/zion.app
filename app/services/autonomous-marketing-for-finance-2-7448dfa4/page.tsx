@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Marketing for Finance #2 - Zion Tech Group",
-  description: "The future of finance is here with Autonomous Marketing for Finance #2. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.",
+  description: "The future of finance is here with Autonomous Marketing for Finance #2. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never bef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-marketing-for-finance-2-7448dfa4`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Image recognition with computer vision</li>
             <li>Market analysis with buyer behavior insights</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Customer service automation with chatbot integration</li>
           </ul>
         </div>
         

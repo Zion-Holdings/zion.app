@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Business intelligence with KPI dashboards</li>
             <li>Predictive modeling with ensemble methods</li>
             <li>HIPAA ready with healthcare data protection</li>
-            <li>Edge computing support for low-latency operations</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better financial planning with predictive models</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>Better code quality with automated reviews</li>
-            <li>Improved forecast accuracy with ML models</li>
           </ul>
         </div>
         

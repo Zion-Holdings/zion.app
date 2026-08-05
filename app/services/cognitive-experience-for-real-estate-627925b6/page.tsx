@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Experience for Real-Estate - Zion Tech Group",
-  description: "Transform your real-estate operations with our Cognitive Experience for Real-Estate. This AI-driven solution automates threat detection with unprecedented accuracy and efficiency.",
+  description: "Transform your real-estate operations with our Cognitive Experience for Real-Estate. This AI-driven solution automates threat detection with unprecedented accur",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-experience-for-real-estate-627925b6`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved forecast accuracy with ML models</li>
             <li>Zero manual intervention required for routine tasks</li>
             <li>Better financial planning with predictive models</li>
-            <li>Enhanced decision making with data-driven insights</li>
           </ul>
         </div>
         

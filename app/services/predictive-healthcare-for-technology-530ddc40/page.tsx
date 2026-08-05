@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved customer retention with proactive service</li>
             <li>Improved employee productivity with automation</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Improved conversion rates with personalization</li>
           </ul>
         </div>
         

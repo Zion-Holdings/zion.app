@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Orchestrator for Transportation - Zion Tech Group",
-  description: "Unlock unprecedented growth with Self-Optimizing Orchestrator for Transportation. This autonomous system provides user experience with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Self-Optimizing Orchestrator for Transportation. This autonomous system provides user experience with zero manual intervention ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-orchestrator-for-transportation-784d32c5`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Serverless functions for cost-effective scaling</li>
             <li>Revenue forecasting with market trend analysis</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Competitive intelligence with market share tracking</li>
           </ul>
         </div>
         

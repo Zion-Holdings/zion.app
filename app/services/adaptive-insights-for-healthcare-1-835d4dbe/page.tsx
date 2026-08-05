@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Insights for Healthcare #1 - Zion Tech Group",
-  description: "The future of healthcare is here with Adaptive Insights for Healthcare #1. Powered by cutting-edge AI, this platform delivers decision support like never before.",
+  description: "The future of healthcare is here with Adaptive Insights for Healthcare #1. Powered by cutting-edge AI, this platform delivers decision support like never before",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-insights-for-healthcare-1-835d4dbe`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Energy optimization with consumption tracking</li>
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Master data management with golden records</li>
-            <li>Network optimization with traffic analysis</li>
           </ul>
         </div>
         

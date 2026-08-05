@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Real Estate for Insurance #1 - Zion Tech Group",
-  description: "Transform your insurance operations with our Adaptive Real Estate for Insurance #1. This AI-driven solution automates inventory management with unprecedented accuracy and efficiency.",
+  description: "Transform your insurance operations with our Adaptive Real Estate for Insurance #1. This AI-driven solution automates inventory management with unprecedented ac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-real-estate-for-insurance-1-a09b74fe`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Machine learning integration with automatic model training</li>
             <li>Data quality with anomaly detection</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced churn with proactive customer retention</li>
             <li>Improved brand awareness with social monitoring</li>
             <li>Better compliance with automated audit trails</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         

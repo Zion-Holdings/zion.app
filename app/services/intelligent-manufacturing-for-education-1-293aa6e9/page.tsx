@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Manufacturing for Education #1 - Zion Tech Group",
-  description: "Revolutionize education through intelligent automation. Our Intelligent Manufacturing for Education #1 leverages advanced machine learning to deliver document processing at scale.",
+  description: "Revolutionize education through intelligent automation. Our Intelligent Manufacturing for Education #1 leverages advanced machine learning to deliver document p",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-manufacturing-for-education-1-293aa6e9`
   }

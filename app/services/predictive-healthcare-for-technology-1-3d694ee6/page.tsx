@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Healthcare for Technology #1 - Zion Tech Group",
-  description: "Revolutionize technology through intelligent automation. Our Predictive Healthcare for Technology #1 leverages advanced machine learning to deliver image recognition at scale.",
+  description: "Revolutionize technology through intelligent automation. Our Predictive Healthcare for Technology #1 leverages advanced machine learning to deliver image recogn",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-healthcare-for-technology-1-3d694ee6`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Role-based access control with SSO integration</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Edge computing support for low-latency operations</li>
-            <li>Machine learning integration with automatic model training</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced churn with proactive customer retention</li>
             <li>Improved customer retention with proactive service</li>
             <li>24/7 automated operations without human intervention</li>
-            <li>Improved brand awareness with social monitoring</li>
           </ul>
         </div>
         

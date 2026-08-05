@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Fraud detection with anomaly analysis</li>
             <li>Brand monitoring across social channels</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better market positioning with competitive analysis</li>
             <li>Real-time insights and alerts for proactive management</li>
             <li>3x faster decision making with real-time insights</li>
-            <li>Better supply chain visibility with tracking</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Compliance monitoring with regulatory updates</li>
             <li>Market analysis with buyer behavior insights</li>
             <li>Sales process optimization with pipeline management</li>
-            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         

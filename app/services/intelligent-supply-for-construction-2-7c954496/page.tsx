@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Supply for Construction #2 - Zion Tech Group",
-  description: "The future of construction is here with Intelligent Supply for Construction #2. Powered by cutting-edge AI, this platform delivers quality control like never before.",
+  description: "The future of construction is here with Intelligent Supply for Construction #2. Powered by cutting-edge AI, this platform delivers quality control like never be",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-supply-for-construction-2-7c954496`
   }

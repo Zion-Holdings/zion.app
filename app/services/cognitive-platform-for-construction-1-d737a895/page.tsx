@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Brand monitoring across social channels</li>
             <li>Inventory prediction with demand forecasting</li>
             <li>Role-based access control with SSO integration</li>
-            <li>HIPAA ready with healthcare data protection</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced shipping costs with route optimization</li>
             <li>Better resource utilization with auto-scaling</li>
             <li>Reduced marketing costs with targeted campaigns</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

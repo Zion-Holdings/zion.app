@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Analytics for Finance - Zion Tech Group",
-  description: "Revolutionize finance through intelligent automation. Our Automated Analytics for Finance leverages advanced machine learning to deliver risk assessment at scale.",
+  description: "Revolutionize finance through intelligent automation. Our Automated Analytics for Finance leverages advanced machine learning to deliver risk assessment at scal",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-analytics-for-finance-51ef14ee`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Real-time insights and alerts for proactive management</li>
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Improved product quality with automated testing</li>
-            <li>Reduced customer acquisition costs with optimization</li>
           </ul>
         </div>
         

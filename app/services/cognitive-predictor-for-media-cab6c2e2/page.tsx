@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Predictor for Media - Zion Tech Group",
-  description: "Transform your media operations with our Cognitive Predictor for Media. This AI-driven solution automates predictive analytics with unprecedented accuracy and efficiency.",
+  description: "Transform your media operations with our Cognitive Predictor for Media. This AI-driven solution automates predictive analytics with unprecedented accuracy and e",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-predictor-for-media-cab6c2e2`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Dynamic resource allocation based on demand patterns</li>
             <li>Better resource utilization with auto-scaling</li>
             <li>Better inventory management with demand forecasting</li>
-            <li>Enhanced security posture with continuous monitoring</li>
           </ul>
         </div>
         

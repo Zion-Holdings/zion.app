@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Performance for Education #1 - Zion Tech Group",
-  description: "The future of education is here with Autonomous Performance for Education #1. Powered by cutting-edge AI, this platform delivers financial planning like never before.",
+  description: "The future of education is here with Autonomous Performance for Education #1. Powered by cutting-edge AI, this platform delivers financial planning like never b",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-performance-for-education-1-71567e7a`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automation opportunity identification</li>
             <li>Multi-language support with localization</li>
             <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced decision making with data-driven insights</li>
             <li>Improved product quality with automated testing</li>
             <li>Reduced risk with early warning systems</li>
-            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Engine for Construction #1 - Zion Tech Group",
-  description: "The future of construction is here with Autonomous Engine for Construction #1. Powered by cutting-edge AI, this platform delivers decision support like never before.",
+  description: "The future of construction is here with Autonomous Engine for Construction #1. Powered by cutting-edge AI, this platform delivers decision support like never be",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-engine-for-construction-1-a6ea6e26`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Business intelligence with KPI dashboards</li>
             <li>Code optimization with performance profiling</li>
             <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Sentiment analysis with real-time monitoring</li>
           </ul>
         </div>
         

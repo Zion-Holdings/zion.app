@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Processor for Transportation - Zion Tech Group",
-  description: "Unlock unprecedented growth with AI-Powered Processor for Transportation. This autonomous system provides maintenance scheduling with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with AI-Powered Processor for Transportation. This autonomous system provides maintenance scheduling with zero manual intervention n",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-processor-for-transportation-9c14458f`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-language support with localization</li>
             <li>Process discovery with activity analysis</li>
             <li>Zero-downtime updates with blue-green deployment</li>
-            <li>GDPR compliance with data portability</li>
           </ul>
         </div>
         

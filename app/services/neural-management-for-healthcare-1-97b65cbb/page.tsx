@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Management for Healthcare #1 - Zion Tech Group",
-  description: "The future of healthcare is here with Neural Management for Healthcare #1. Powered by cutting-edge AI, this platform delivers security monitoring like never before.",
+  description: "The future of healthcare is here with Neural Management for Healthcare #1. Powered by cutting-edge AI, this platform delivers security monitoring like never bef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-management-for-healthcare-1-97b65cbb`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Market analysis with buyer behavior insights</li>
             <li>Compliance monitoring with regulatory updates</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
           </ul>
         </div>
         

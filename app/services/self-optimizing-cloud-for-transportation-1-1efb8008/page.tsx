@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Cloud for Transportation #1 - Zion Tech Group",
-  description: "Next-generation transportation solution: Self-Optimizing Cloud for Transportation #1. Combines workflow management with adaptive intelligence for optimal results.",
+  description: "Next-generation transportation solution: Self-Optimizing Cloud for Transportation #1. Combines workflow management with adaptive intelligence for optimal result",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-cloud-for-transportation-1-1efb8008`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Zero manual intervention required for routine tasks</li>
             <li>Dynamic resource allocation based on demand patterns</li>
             <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Increased revenue with optimized pricing strategies</li>
           </ul>
         </div>
         

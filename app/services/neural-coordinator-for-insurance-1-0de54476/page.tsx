@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Budget optimization with cost allocation</li>
             <li>Custom integrations with webhook support</li>
             <li>Machine learning integration with automatic model training</li>
-            <li>Maintenance scheduling with predictive analytics</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced customer acquisition costs with optimization</li>
             <li>Improved brand awareness with social monitoring</li>
             <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Improved sales performance with lead scoring</li>
           </ul>
         </div>
         

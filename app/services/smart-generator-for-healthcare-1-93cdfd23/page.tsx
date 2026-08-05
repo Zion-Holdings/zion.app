@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Generator for Healthcare #1 - Zion Tech Group",
-  description: "Transform your healthcare operations with our Smart Generator for Healthcare #1. This AI-driven solution automates sales process optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your healthcare operations with our Smart Generator for Healthcare #1. This AI-driven solution automates sales process optimization with unprecedented",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-generator-for-healthcare-1-93cdfd23`
   }

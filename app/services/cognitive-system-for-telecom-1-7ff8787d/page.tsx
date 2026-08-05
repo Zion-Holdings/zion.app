@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive System for Telecom #1 - Zion Tech Group",
-  description: "Transform your telecom operations with our Cognitive System for Telecom #1. This AI-driven solution automates resource optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your telecom operations with our Cognitive System for Telecom #1. This AI-driven solution automates resource optimization with unprecedented accuracy ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-system-for-telecom-1-7ff8787d`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Serverless functions for cost-effective scaling</li>
             <li>Security monitoring with threat intelligence</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Revenue forecasting with market trend analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better financial planning with predictive models</li>
             <li>Increased revenue with optimized pricing strategies</li>
             <li>Reduced marketing costs with targeted campaigns</li>
-            <li>Reduced development time with code generation</li>
           </ul>
         </div>
         

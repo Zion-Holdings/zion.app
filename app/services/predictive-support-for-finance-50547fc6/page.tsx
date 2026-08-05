@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Market analysis with buyer behavior insights</li>
             <li>GDPR compliance with data portability</li>
             <li>Compliance monitoring with regulatory updates</li>
-            <li>Edge computing support for low-latency operations</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>ROI achieved in under 90 days with cost savings</li>
             <li>Reduced development time with code generation</li>
             <li>Enhanced security posture with continuous monitoring</li>
-            <li>Improved product quality with automated testing</li>
           </ul>
         </div>
         

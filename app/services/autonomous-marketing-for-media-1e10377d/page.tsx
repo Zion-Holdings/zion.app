@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Marketing for Media - Zion Tech Group",
-  description: "Transform your media operations with our Autonomous Marketing for Media. This AI-driven solution automates energy management with unprecedented accuracy and efficiency.",
+  description: "Transform your media operations with our Autonomous Marketing for Media. This AI-driven solution automates energy management with unprecedented accuracy and eff",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-marketing-for-media-1e10377d`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Better customer experience with personalization</li>
             <li>Enhanced security with continuous threat monitoring</li>
-            <li>Improved conversion rates with personalization</li>
           </ul>
         </div>
         

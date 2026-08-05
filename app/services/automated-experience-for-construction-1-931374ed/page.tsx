@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Experience for Construction #1 - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Automated Experience for Construction #1 leverages advanced machine learning to deliver predictive analytics at scale.",
+  description: "Revolutionize construction through intelligent automation. Our Automated Experience for Construction #1 leverages advanced machine learning to deliver predictiv",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-experience-for-construction-1-931374ed`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Maintenance scheduling with predictive analytics</li>
             <li>Alerting system with intelligent notifications</li>
             <li>Financial risk management with scenario analysis</li>
-            <li>Multi-region deployment with automatic failover</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced churn with proactive customer retention</li>
             <li>Enhanced security with continuous threat monitoring</li>
             <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Better financial planning with predictive models</li>
           </ul>
         </div>
         

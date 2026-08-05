@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Engine for Insurance - Zion Tech Group",
-  description: "Transform your insurance operations with our Neural Engine for Insurance. This AI-driven solution automates network optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your insurance operations with our Neural Engine for Insurance. This AI-driven solution automates network optimization with unprecedented accuracy and",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-engine-for-insurance-038c654d`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cost reduction with process mining</li>
             <li>Real-time processing with streaming analytics</li>
             <li>Healthcare data analytics with patient insights</li>
-            <li>Image recognition with computer vision</li>
           </ul>
         </div>
         

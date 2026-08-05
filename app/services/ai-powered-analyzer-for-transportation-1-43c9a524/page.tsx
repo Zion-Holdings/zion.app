@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Analyzer for Transportation #1 - Zion Tech Group",
-  description: "Transform your transportation operations with our AI-Powered Analyzer for Transportation #1. This AI-driven solution automates market intelligence with unprecedented accuracy and efficiency.",
+  description: "Transform your transportation operations with our AI-Powered Analyzer for Transportation #1. This AI-driven solution automates market intelligence with unpreced",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-analyzer-for-transportation-1-43c9a524`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Competitive intelligence with market share tracking</li>
             <li>Security monitoring with threat intelligence</li>
             <li>A/B testing framework for continuous optimization</li>
-            <li>Business intelligence with KPI dashboards</li>
           </ul>
         </div>
         

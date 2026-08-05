@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Serverless functions for cost-effective scaling</li>
             <li>Edge computing support for low-latency operations</li>
             <li>Multi-language support with localization</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         

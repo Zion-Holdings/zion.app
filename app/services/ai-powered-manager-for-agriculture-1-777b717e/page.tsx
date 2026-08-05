@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Manager for Agriculture #1 - Zion Tech Group",
-  description: "Revolutionize agriculture through intelligent automation. Our AI-Powered Manager for Agriculture #1 leverages advanced machine learning to deliver supply chain at scale.",
+  description: "Revolutionize agriculture through intelligent automation. Our AI-Powered Manager for Agriculture #1 leverages advanced machine learning to deliver supply chain ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-manager-for-agriculture-1-777b717e`
   }

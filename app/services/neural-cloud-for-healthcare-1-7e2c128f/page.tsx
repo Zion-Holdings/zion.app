@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Cloud for Healthcare #1 - Zion Tech Group",
-  description: "Transform your healthcare operations with our Neural Cloud for Healthcare #1. This AI-driven solution automates energy management with unprecedented accuracy and efficiency.",
+  description: "Transform your healthcare operations with our Neural Cloud for Healthcare #1. This AI-driven solution automates energy management with unprecedented accuracy an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-cloud-for-healthcare-1-7e2c128f`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Edge computing support for low-latency operations</li>
             <li>Market analysis with buyer behavior insights</li>
             <li>GDPR compliance with data portability</li>
-            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         

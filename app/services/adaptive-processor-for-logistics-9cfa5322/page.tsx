@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Processor for Logistics - Zion Tech Group",
-  description: "Transform your logistics operations with our Adaptive Processor for Logistics. This AI-driven solution automates inventory management with unprecedented accuracy and efficiency.",
+  description: "Transform your logistics operations with our Adaptive Processor for Logistics. This AI-driven solution automates inventory management with unprecedented accurac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-processor-for-logistics-9cfa5322`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Manufacturing quality control with defect detection</li>
             <li>Serverless functions for cost-effective scaling</li>
             <li>User experience analytics with behavior tracking</li>
-            <li>HIPAA ready with healthcare data protection</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Code optimization with performance profiling</li>
             <li>Energy optimization with consumption tracking</li>
             <li>Predictive modeling with ensemble methods</li>
-            <li>HIPAA ready with healthcare data protection</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced development time with code generation</li>
             <li>ROI achieved in under 90 days with cost savings</li>
             <li>Enhanced security with continuous threat monitoring</li>
-            <li>Increased revenue with optimized pricing strategies</li>
           </ul>
         </div>
         

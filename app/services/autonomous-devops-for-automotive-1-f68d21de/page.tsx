@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous DevOps for Automotive #1 - Zion Tech Group",
-  description: "Revolutionize automotive through intelligent automation. Our Autonomous DevOps for Automotive #1 leverages advanced machine learning to deliver data processing at scale.",
+  description: "Revolutionize automotive through intelligent automation. Our Autonomous DevOps for Automotive #1 leverages advanced machine learning to deliver data processing ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-devops-for-automotive-1-f68d21de`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>A/B testing framework for continuous optimization</li>
             <li>Audit trails with compliance reporting</li>
-            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         

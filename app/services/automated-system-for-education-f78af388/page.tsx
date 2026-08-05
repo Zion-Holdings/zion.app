@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated System for Education - Zion Tech Group",
-  description: "Transform your education operations with our Automated System for Education. This AI-driven solution automates sales forecasting with unprecedented accuracy and efficiency.",
+  description: "Transform your education operations with our Automated System for Education. This AI-driven solution automates sales forecasting with unprecedented accuracy and",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-system-for-education-f78af388`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Machine learning integration with automatic model training</li>
             <li>Data governance with policy enforcement</li>
             <li>Inventory prediction with demand forecasting</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         

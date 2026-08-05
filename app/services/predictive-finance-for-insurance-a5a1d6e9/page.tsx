@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Finance for Insurance - Zion Tech Group",
-  description: "Transform your insurance operations with our Predictive Finance for Insurance. This AI-driven solution automates fraud prevention with unprecedented accuracy and efficiency.",
+  description: "Transform your insurance operations with our Predictive Finance for Insurance. This AI-driven solution automates fraud prevention with unprecedented accuracy an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-finance-for-insurance-a5a1d6e9`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>A/B testing framework for continuous optimization</li>
             <li>Sentiment analysis with real-time monitoring</li>
-            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better financial planning with predictive models</li>
             <li>Reduced shipping costs with route optimization</li>
             <li>Reduced development time with code generation</li>
-            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Monitoring for Hospitality #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Monitoring for Hospitality #1. This autonomous system provides decision support with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Intelligent Monitoring for Hospitality #1. This autonomous system provides decision support with zero manual intervention neede",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-monitoring-for-hospitality-1-5e48b8fb`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Compliance monitoring with regulatory updates</li>
             <li>Machine learning integration with automatic model training</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Real Estate for Technology - Zion Tech Group",
-  description: "Revolutionize technology through intelligent automation. Our Automated Real Estate for Technology leverages advanced machine learning to deliver image recognition at scale.",
+  description: "Revolutionize technology through intelligent automation. Our Automated Real Estate for Technology leverages advanced machine learning to deliver image recogniti",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-real-estate-for-technology-cb05729e`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Alerting system with intelligent notifications</li>
             <li>Manufacturing quality control with defect detection</li>
-            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Real Estate for Insurance #1 - Zion Tech Group",
-  description: "The future of insurance is here with Cognitive Real Estate for Insurance #1. Powered by cutting-edge AI, this platform delivers market intelligence like never before.",
+  description: "The future of insurance is here with Cognitive Real Estate for Insurance #1. Powered by cutting-edge AI, this platform delivers market intelligence like never b",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-real-estate-for-insurance-1-3bda249d`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Budget optimization with cost allocation</li>
             <li>Alerting system with intelligent notifications</li>
             <li>Document processing with OCR and NLP</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         

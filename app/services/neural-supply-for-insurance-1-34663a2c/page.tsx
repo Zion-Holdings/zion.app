@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Supply for Insurance #1 - Zion Tech Group",
-  description: "Transform your insurance operations with our Neural Supply for Insurance #1. This AI-driven solution automates language processing with unprecedented accuracy and efficiency.",
+  description: "Transform your insurance operations with our Neural Supply for Insurance #1. This AI-driven solution automates language processing with unprecedented accuracy a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-supply-for-insurance-1-34663a2c`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automation opportunity identification</li>
             <li>Predictive modeling with ensemble methods</li>
             <li>Open-source friendly with plugin architecture</li>
-            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         

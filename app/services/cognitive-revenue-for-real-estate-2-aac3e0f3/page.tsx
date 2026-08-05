@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Revenue for Real-Estate #2 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Cognitive Revenue for Real-Estate #2. This autonomous system provides compliance monitoring with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Cognitive Revenue for Real-Estate #2. This autonomous system provides compliance monitoring with zero manual intervention neede",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-revenue-for-real-estate-2-aac3e0f3`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Energy optimization with consumption tracking</li>
             <li>Master data management with golden records</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         

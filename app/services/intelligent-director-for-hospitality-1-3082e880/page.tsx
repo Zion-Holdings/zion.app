@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Director for Hospitality #1 - Zion Tech Group",
-  description: "The future of hospitality is here with Intelligent Director for Hospitality #1. Powered by cutting-edge AI, this platform delivers security monitoring like never before.",
+  description: "The future of hospitality is here with Intelligent Director for Hospitality #1. Powered by cutting-edge AI, this platform delivers security monitoring like neve",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-director-for-hospitality-1-3082e880`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Edge computing support for low-latency operations</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Budget optimization with cost allocation</li>
             <li>Master data management with golden records</li>
             <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Data governance with policy enforcement</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better customer experience with personalization</li>
             <li>Enhanced decision making with data-driven insights</li>
             <li>Performance benchmarking against industry standards</li>
-            <li>Better inventory management with demand forecasting</li>
           </ul>
         </div>
         

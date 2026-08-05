@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Predictive modeling with ensemble methods</li>
             <li>Open-source friendly with plugin architecture</li>
             <li>Master data management with golden records</li>
-            <li>Sales process optimization with pipeline management</li>
           </ul>
         </div>
         

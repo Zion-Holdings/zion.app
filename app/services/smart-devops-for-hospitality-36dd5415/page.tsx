@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cost reduction with process mining</li>
             <li>HIPAA ready with healthcare data protection</li>
             <li>Market analysis with buyer behavior insights</li>
-            <li>Brand monitoring across social channels</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better risk management with predictive analytics</li>
             <li>Real-time insights and alerts for proactive management</li>
             <li>Seamless integration with existing systems and workflows</li>
-            <li>Improved sales performance with lead scoring</li>
           </ul>
         </div>
         

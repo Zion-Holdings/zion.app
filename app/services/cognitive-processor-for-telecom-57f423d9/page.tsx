@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Processor for Telecom - Zion Tech Group",
-  description: "Revolutionize telecom through intelligent automation. Our Cognitive Processor for Telecom leverages advanced machine learning to deliver image recognition at scale.",
+  description: "Revolutionize telecom through intelligent automation. Our Cognitive Processor for Telecom leverages advanced machine learning to deliver image recognition at sc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-processor-for-telecom-57f423d9`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Edge computing support for low-latency operations</li>
             <li>Content generation with plagiarism checks</li>
-            <li>Version control with rollback capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Cost optimization recommendations with savings analysis</li>
             <li>Better inventory management with demand forecasting</li>
             <li>Improved brand awareness with social monitoring</li>
-            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

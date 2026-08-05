@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Open-source friendly with plugin architecture</li>
             <li>Content generation with plagiarism checks</li>
             <li>Budget optimization with cost allocation</li>
-            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         

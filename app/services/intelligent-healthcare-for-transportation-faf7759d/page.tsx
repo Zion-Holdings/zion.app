@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Healthcare data analytics with patient insights</li>
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Version control with rollback capabilities</li>
-            <li>Sentiment analysis with real-time monitoring</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Enhanced decision making with data-driven insights</li>
             <li>Reduced customer acquisition costs with optimization</li>
-            <li>Zero manual intervention required for routine tasks</li>
           </ul>
         </div>
         

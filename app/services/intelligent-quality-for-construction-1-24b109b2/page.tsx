@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Alerting system with intelligent notifications</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Data quality with anomaly detection</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Compliance for Manufacturing #2 - Zion Tech Group",
-  description: "Revolutionize manufacturing through intelligent automation. Our Neural Compliance for Manufacturing #2 leverages advanced machine learning to deliver document processing at scale.",
+  description: "Revolutionize manufacturing through intelligent automation. Our Neural Compliance for Manufacturing #2 leverages advanced machine learning to deliver document p",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-compliance-for-manufacturing-2-0e1f8963`
   }

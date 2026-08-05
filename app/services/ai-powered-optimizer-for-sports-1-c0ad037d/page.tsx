@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>HIPAA ready with healthcare data protection</li>
             <li>Master data management with golden records</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved product quality with automated testing</li>
             <li>Real-time insights and alerts for proactive management</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

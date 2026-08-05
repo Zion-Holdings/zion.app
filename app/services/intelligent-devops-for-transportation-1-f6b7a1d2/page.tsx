@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent DevOps for Transportation #1 - Zion Tech Group",
-  description: "Next-generation transportation solution: Intelligent DevOps for Transportation #1. Combines compliance monitoring with adaptive intelligence for optimal results.",
+  description: "Next-generation transportation solution: Intelligent DevOps for Transportation #1. Combines compliance monitoring with adaptive intelligence for optimal results",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-devops-for-transportation-1-f6b7a1d2`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Financial risk management with scenario analysis</li>
             <li>Master data management with golden records</li>
             <li>Energy optimization with consumption tracking</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         

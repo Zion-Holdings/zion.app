@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Optimizer for Transportation #2 - Zion Tech Group",
-  description: "Transform your transportation operations with our Adaptive Optimizer for Transportation #2. This AI-driven solution automates security monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your transportation operations with our Adaptive Optimizer for Transportation #2. This AI-driven solution automates security monitoring with unprecede",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-optimizer-for-transportation-2-32159c64`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Financial risk management with scenario analysis</li>
             <li>Audit trails with compliance reporting</li>
             <li>A/B testing framework for continuous optimization</li>
-            <li>Custom integrations with webhook support</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved brand awareness with social monitoring</li>
             <li>Automated compliance reporting for regulatory requirements</li>
             <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Reduced human error by 95% with automated processes</li>
           </ul>
         </div>
         

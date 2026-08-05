@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>SOC 2 certified with security controls</li>
             <li>Cost reduction with process mining</li>
             <li>Edge computing support for low-latency operations</li>
-            <li>Machine learning integration with automatic model training</li>
           </ul>
         </div>
         

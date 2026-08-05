@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent System for Automotive - Zion Tech Group",
-  description: "Transform your automotive operations with our Intelligent System for Automotive. This AI-driven solution automates resource optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your automotive operations with our Intelligent System for Automotive. This AI-driven solution automates resource optimization with unprecedented accu",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-system-for-automotive-ebf74c3d`
   }

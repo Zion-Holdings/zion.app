@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Real-time insights and alerts for proactive management</li>
             <li>Reduced operational risks with predictive models</li>
             <li>Better risk management with predictive analytics</li>
-            <li>Better financial planning with predictive models</li>
           </ul>
         </div>
         

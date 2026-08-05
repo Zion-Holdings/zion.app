@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Intelligence for Logistics #2 - Zion Tech Group",
-  description: "The future of logistics is here with AI-Powered Intelligence for Logistics #2. Powered by cutting-edge AI, this platform delivers quality control like never before.",
+  description: "The future of logistics is here with AI-Powered Intelligence for Logistics #2. Powered by cutting-edge AI, this platform delivers quality control like never bef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-intelligence-for-logistics-2-385c8456`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Analytics for Healthcare - Zion Tech Group",
-  description: "Revolutionize healthcare through intelligent automation. Our Smart Analytics for Healthcare leverages advanced machine learning to deliver customer insights at scale.",
+  description: "Revolutionize healthcare through intelligent automation. Our Smart Analytics for Healthcare leverages advanced machine learning to deliver customer insights at ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-analytics-for-healthcare-9b5a8394`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>SOC 2 certified with security controls</li>
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Fraud detection with anomaly analysis</li>
-            <li>Custom integrations with webhook support</li>
           </ul>
         </div>
         

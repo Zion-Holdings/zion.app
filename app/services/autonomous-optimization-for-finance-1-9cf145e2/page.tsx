@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>HIPAA ready with healthcare data protection</li>
             <li>Version control with rollback capabilities</li>
             <li>Document processing with OCR and NLP</li>
-            <li>Master data management with golden records</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Analyzer for Real-Estate #2 - Zion Tech Group",
-  description: "Transform your real-estate operations with our Predictive Analyzer for Real-Estate #2. This AI-driven solution automates decision support with unprecedented accuracy and efficiency.",
+  description: "Transform your real-estate operations with our Predictive Analyzer for Real-Estate #2. This AI-driven solution automates decision support with unprecedented acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-analyzer-for-real-estate-2-d641120b`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Business intelligence with KPI dashboards</li>
             <li>Manufacturing quality control with defect detection</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
           </ul>
         </div>
         

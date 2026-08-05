@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Faster time-to-market with accelerated development</li>
             <li>Improved customer satisfaction with faster response times</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Improved customer retention with proactive service</li>
           </ul>
         </div>
         

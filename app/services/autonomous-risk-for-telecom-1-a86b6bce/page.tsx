@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved brand awareness with social monitoring</li>
             <li>Better code quality with automated reviews</li>
             <li>Faster content creation with AI assistance</li>
-            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

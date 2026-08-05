@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Optimization for Real-Estate - Zion Tech Group",
-  description: "Transform your real-estate operations with our Adaptive Optimization for Real-Estate. This AI-driven solution automates maintenance scheduling with unprecedented accuracy and efficiency.",
+  description: "Transform your real-estate operations with our Adaptive Optimization for Real-Estate. This AI-driven solution automates maintenance scheduling with unprecedente",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-optimization-for-real-estate-efece9bd`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Scalable to millions of transactions per second</li>
             <li>Improved sales performance with lead scoring</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Reduced support tickets with self-service options</li>
           </ul>
         </div>
         

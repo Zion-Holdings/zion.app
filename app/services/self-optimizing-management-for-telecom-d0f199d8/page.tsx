@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Management for Telecom - Zion Tech Group",
-  description: "Transform your telecom operations with our Self-Optimizing Management for Telecom. This AI-driven solution automates sales process optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your telecom operations with our Self-Optimizing Management for Telecom. This AI-driven solution automates sales process optimization with unprecedent",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-management-for-telecom-d0f199d8`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Content generation with plagiarism checks</li>
             <li>Cost reduction with process mining</li>
             <li>Serverless functions for cost-effective scaling</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         

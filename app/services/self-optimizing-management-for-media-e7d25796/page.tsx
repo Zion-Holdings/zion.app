@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Management for Media - Zion Tech Group",
-  description: "Revolutionize media through intelligent automation. Our Self-Optimizing Management for Media leverages advanced machine learning to deliver process automation at scale.",
+  description: "Revolutionize media through intelligent automation. Our Self-Optimizing Management for Media leverages advanced machine learning to deliver process automation a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-management-for-media-e7d25796`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Healthcare data analytics with patient insights</li>
             <li>Financial risk management with scenario analysis</li>
             <li>Competitive intelligence with market share tracking</li>
-            <li>Sentiment analysis with real-time monitoring</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved brand awareness with social monitoring</li>
             <li>Improved customer retention with proactive service</li>
             <li>Better resource utilization with auto-scaling</li>
-            <li>Improved sales performance with lead scoring</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Manufacturing for Media #1 - Zion Tech Group",
-  description: "Revolutionize media through intelligent automation. Our Smart Manufacturing for Media #1 leverages advanced machine learning to deliver inventory management at scale.",
+  description: "Revolutionize media through intelligent automation. Our Smart Manufacturing for Media #1 leverages advanced machine learning to deliver inventory management at ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-manufacturing-for-media-1-9a09dfab`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer service automation with chatbot integration</li>
             <li>Multi-language support with localization</li>
             <li>Custom integrations with webhook support</li>
-            <li>Master data management with golden records</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Data for Healthcare - Zion Tech Group",
-  description: "Transform your healthcare operations with our Automated Data for Healthcare. This AI-driven solution automates customer service automation with unprecedented accuracy and efficiency.",
+  description: "Transform your healthcare operations with our Automated Data for Healthcare. This AI-driven solution automates customer service automation with unprecedented ac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-data-for-healthcare-2cfe70e7`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Edge computing support for low-latency operations</li>
             <li>Logistics route optimization with traffic prediction</li>
             <li>Audit trails with compliance reporting</li>
-            <li>GDPR compliance with data portability</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved quality with automated testing and validation</li>
             <li>Cost optimization recommendations with savings analysis</li>
             <li>Reduced customer acquisition costs with optimization</li>
-            <li>Reduced risk with early warning systems</li>
           </ul>
         </div>
         

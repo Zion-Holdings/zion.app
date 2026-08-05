@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Security for Healthcare - Zion Tech Group",
-  description: "Transform your healthcare operations with our Neural Security for Healthcare. This AI-driven solution automates sales forecasting with unprecedented accuracy and efficiency.",
+  description: "Transform your healthcare operations with our Neural Security for Healthcare. This AI-driven solution automates sales forecasting with unprecedented accuracy an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-security-for-healthcare-4a5fa2cb`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved quality with automated testing and validation</li>
             <li>99.9% uptime guarantee with redundant architecture</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Reduced operational risks with predictive models</li>
           </ul>
         </div>
         

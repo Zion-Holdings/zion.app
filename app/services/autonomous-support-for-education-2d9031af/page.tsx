@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better compliance with automated audit trails</li>
             <li>Better risk management with predictive analytics</li>
             <li>Real-time insights and alerts for proactive management</li>
-            <li>50% reduction in operational costs through automation</li>
           </ul>
         </div>
         

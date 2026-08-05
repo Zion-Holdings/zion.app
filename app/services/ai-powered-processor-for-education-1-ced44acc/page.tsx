@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Cost reduction with process mining</li>
             <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Multi-language support with localization</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better customer experience with personalization</li>
             <li>Reduced development time with code generation</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

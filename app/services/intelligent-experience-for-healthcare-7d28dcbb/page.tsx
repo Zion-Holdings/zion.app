@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Budget optimization with cost allocation</li>
             <li>Image recognition with computer vision</li>
             <li>SOC 2 certified with security controls</li>
-            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         

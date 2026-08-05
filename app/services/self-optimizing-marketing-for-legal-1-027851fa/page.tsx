@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Marketing for Legal #1 - Zion Tech Group",
-  description: "Revolutionize legal through intelligent automation. Our Self-Optimizing Marketing for Legal #1 leverages advanced machine learning to deliver threat detection at scale.",
+  description: "Revolutionize legal through intelligent automation. Our Self-Optimizing Marketing for Legal #1 leverages advanced machine learning to deliver threat detection a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-marketing-for-legal-1-027851fa`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Process discovery with activity analysis</li>
             <li>Inventory prediction with demand forecasting</li>
-            <li>Role-based access control with SSO integration</li>
           </ul>
         </div>
         

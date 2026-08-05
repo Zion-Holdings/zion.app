@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Role-based access control with SSO integration</li>
             <li>Automation opportunity identification</li>
             <li>Multi-region deployment with automatic failover</li>
-            <li>Competitive intelligence with market share tracking</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>24/7 automated operations without human intervention</li>
             <li>Enhanced security with continuous threat monitoring</li>
             <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Reduced human error by 95% with automated processes</li>
           </ul>
         </div>
         

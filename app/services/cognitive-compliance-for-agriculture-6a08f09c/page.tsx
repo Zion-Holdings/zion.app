@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Compliance for Agriculture - Zion Tech Group",
-  description: "The future of agriculture is here with Cognitive Compliance for Agriculture. Powered by cutting-edge AI, this platform delivers image recognition like never before.",
+  description: "The future of agriculture is here with Cognitive Compliance for Agriculture. Powered by cutting-edge AI, this platform delivers image recognition like never bef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-compliance-for-agriculture-6a08f09c`
   }

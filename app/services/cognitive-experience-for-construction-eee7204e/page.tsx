@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Experience for Construction - Zion Tech Group",
-  description: "Transform your construction operations with our Cognitive Experience for Construction. This AI-driven solution automates fraud prevention with unprecedented accuracy and efficiency.",
+  description: "Transform your construction operations with our Cognitive Experience for Construction. This AI-driven solution automates fraud prevention with unprecedented acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-experience-for-construction-eee7204e`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>GDPR compliance with data portability</li>
             <li>Serverless functions for cost-effective scaling</li>
             <li>Automation opportunity identification</li>
-            <li>Machine learning integration with automatic model training</li>
           </ul>
         </div>
         

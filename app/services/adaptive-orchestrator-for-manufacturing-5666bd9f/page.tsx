@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Orchestrator for Manufacturing - Zion Tech Group",
-  description: "Next-generation manufacturing solution: Adaptive Orchestrator for Manufacturing. Combines customer service automation with adaptive intelligence for optimal results.",
+  description: "Next-generation manufacturing solution: Adaptive Orchestrator for Manufacturing. Combines customer service automation with adaptive intelligence for optimal res",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-orchestrator-for-manufacturing-5666bd9f`
   }

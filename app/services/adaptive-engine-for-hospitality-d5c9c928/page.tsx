@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Engine for Hospitality - Zion Tech Group",
-  description: "The future of hospitality is here with Adaptive Engine for Hospitality. Powered by cutting-edge AI, this platform delivers sales process optimization like never before.",
+  description: "The future of hospitality is here with Adaptive Engine for Hospitality. Powered by cutting-edge AI, this platform delivers sales process optimization like never",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-engine-for-hospitality-d5c9c928`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Market analysis with buyer behavior insights</li>
             <li>Real-time processing with streaming analytics</li>
             <li>Version control with rollback capabilities</li>
-            <li>Revenue forecasting with market trend analysis</li>
           </ul>
         </div>
         

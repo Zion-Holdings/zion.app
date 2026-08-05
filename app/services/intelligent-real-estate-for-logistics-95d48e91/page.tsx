@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Content generation with plagiarism checks</li>
             <li>Brand monitoring across social channels</li>
             <li>Data governance with policy enforcement</li>
-            <li>Revenue forecasting with market trend analysis</li>
           </ul>
         </div>
         

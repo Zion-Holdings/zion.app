@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>HIPAA ready with healthcare data protection</li>
             <li>Competitive intelligence with market share tracking</li>
             <li>Financial risk management with scenario analysis</li>
-            <li>Multi-language support with localization</li>
           </ul>
         </div>
         

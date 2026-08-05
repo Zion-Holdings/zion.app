@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Optimization for Construction - Zion Tech Group",
-  description: "The future of construction is here with Predictive Optimization for Construction. Powered by cutting-edge AI, this platform delivers customer insights like never before.",
+  description: "The future of construction is here with Predictive Optimization for Construction. Powered by cutting-edge AI, this platform delivers customer insights like neve",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-optimization-for-construction-7f7f5b50`
   }

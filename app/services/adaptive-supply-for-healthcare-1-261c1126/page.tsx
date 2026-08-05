@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Supply for Healthcare #1 - Zion Tech Group",
-  description: "The future of healthcare is here with Adaptive Supply for Healthcare #1. Powered by cutting-edge AI, this platform delivers network optimization like never before.",
+  description: "The future of healthcare is here with Adaptive Supply for Healthcare #1. Powered by cutting-edge AI, this platform delivers network optimization like never befo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-supply-for-healthcare-1-261c1126`
   }

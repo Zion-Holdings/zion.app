@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data quality with anomaly detection</li>
             <li>Financial risk management with scenario analysis</li>
             <li>Custom integrations with webhook support</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         

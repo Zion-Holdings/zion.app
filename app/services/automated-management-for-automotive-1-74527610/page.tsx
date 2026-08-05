@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Management for Automotive #1 - Zion Tech Group",
-  description: "The future of automotive is here with Automated Management for Automotive #1. Powered by cutting-edge AI, this platform delivers image recognition like never before.",
+  description: "The future of automotive is here with Automated Management for Automotive #1. Powered by cutting-edge AI, this platform delivers image recognition like never be",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-management-for-automotive-1-74527610`
   }

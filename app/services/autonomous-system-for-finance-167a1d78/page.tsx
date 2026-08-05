@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous System for Finance - Zion Tech Group",
-  description: "The future of finance is here with Autonomous System for Finance. Powered by cutting-edge AI, this platform delivers sales process optimization like never before.",
+  description: "The future of finance is here with Autonomous System for Finance. Powered by cutting-edge AI, this platform delivers sales process optimization like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-system-for-finance-167a1d78`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved conversion rates with personalization</li>
             <li>Real-time insights and alerts for proactive management</li>
             <li>Performance benchmarking against industry standards</li>
-            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

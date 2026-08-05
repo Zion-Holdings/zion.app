@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Manufacturing quality control with defect detection</li>
             <li>Maintenance scheduling with predictive analytics</li>
             <li>Customer journey mapping with touchpoint analysis</li>
-            <li>Multi-language support with localization</li>
           </ul>
         </div>
         

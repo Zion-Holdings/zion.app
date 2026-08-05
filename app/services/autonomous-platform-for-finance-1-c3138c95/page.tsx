@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Predictive modeling with ensemble methods</li>
             <li>Content generation with plagiarism checks</li>
-            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better resource utilization with auto-scaling</li>
             <li>Increased revenue with optimized pricing strategies</li>
             <li>Seamless integration with existing systems and workflows</li>
-            <li>Better supply chain visibility with tracking</li>
           </ul>
         </div>
         

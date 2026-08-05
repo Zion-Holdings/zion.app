@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Supply for Telecom #1 - Zion Tech Group",
-  description: "The future of telecom is here with Neural Supply for Telecom #1. Powered by cutting-edge AI, this platform delivers customer service automation like never before.",
+  description: "The future of telecom is here with Neural Supply for Telecom #1. Powered by cutting-edge AI, this platform delivers customer service automation like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-supply-for-telecom-1-3fe11c41`
   }

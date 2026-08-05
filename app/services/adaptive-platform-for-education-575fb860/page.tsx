@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Platform for Education - Zion Tech Group",
-  description: "Transform your education operations with our Adaptive Platform for Education. This AI-driven solution automates energy management with unprecedented accuracy and efficiency.",
+  description: "Transform your education operations with our Adaptive Platform for Education. This AI-driven solution automates energy management with unprecedented accuracy an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-platform-for-education-575fb860`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Fraud detection with anomaly analysis</li>
             <li>Healthcare data analytics with patient insights</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>Custom integrations with webhook support</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better customer experience with personalization</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>Performance benchmarking against industry standards</li>
-            <li>Reduced operational risks with predictive models</li>
           </ul>
         </div>
         

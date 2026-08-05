@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved sales performance with lead scoring</li>
             <li>Better financial planning with predictive models</li>
             <li>Better code quality with automated reviews</li>
-            <li>Better supply chain visibility with tracking</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Process discovery with activity analysis</li>
             <li>Data quality with anomaly detection</li>
             <li>Sales process optimization with pipeline management</li>
-            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         

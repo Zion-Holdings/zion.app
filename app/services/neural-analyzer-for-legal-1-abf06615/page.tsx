@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Analyzer for Legal #1 - Zion Tech Group",
-  description: "Revolutionize legal through intelligent automation. Our Neural Analyzer for Legal #1 leverages advanced machine learning to deliver customer service automation at scale.",
+  description: "Revolutionize legal through intelligent automation. Our Neural Analyzer for Legal #1 leverages advanced machine learning to deliver customer service automation ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-analyzer-for-legal-1-abf06615`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Reduced shipping costs with route optimization</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
           </ul>
         </div>
         

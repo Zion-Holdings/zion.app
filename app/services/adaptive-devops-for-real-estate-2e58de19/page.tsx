@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive DevOps for Real-Estate - Zion Tech Group",
-  description: "Transform your real-estate operations with our Adaptive DevOps for Real-Estate. This AI-driven solution automates energy management with unprecedented accuracy and efficiency.",
+  description: "Transform your real-estate operations with our Adaptive DevOps for Real-Estate. This AI-driven solution automates energy management with unprecedented accuracy ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-devops-for-real-estate-2e58de19`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cost reduction with process mining</li>
             <li>GDPR compliance with data portability</li>
             <li>Fraud detection with anomaly analysis</li>
-            <li>Image recognition with computer vision</li>
           </ul>
         </div>
         

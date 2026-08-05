@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Suite for Energy - Zion Tech Group",
-  description: "Transform your energy operations with our Adaptive Suite for Energy. This AI-driven solution automates threat detection with unprecedented accuracy and efficiency.",
+  description: "Transform your energy operations with our Adaptive Suite for Energy. This AI-driven solution automates threat detection with unprecedented accuracy and efficien",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-suite-for-energy-2e5deb22`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Version control with rollback capabilities</li>
             <li>Alerting system with intelligent notifications</li>
             <li>Document processing with OCR and NLP</li>
-            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Analytics for Insurance - Zion Tech Group",
-  description: "Transform your insurance operations with our Cognitive Analytics for Insurance. This AI-driven solution automates content generation with unprecedented accuracy and efficiency.",
+  description: "Transform your insurance operations with our Cognitive Analytics for Insurance. This AI-driven solution automates content generation with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-analytics-for-insurance-f5dbd973`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Document processing with OCR and NLP</li>
             <li>Multi-region deployment with automatic failover</li>
             <li>Executive dashboards with drill-down capabilities</li>
-            <li>Automation opportunity identification</li>
           </ul>
         </div>
         

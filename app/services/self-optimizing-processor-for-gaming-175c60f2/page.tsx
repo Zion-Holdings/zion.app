@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Processor for Gaming - Zion Tech Group",
-  description: "Revolutionize gaming through intelligent automation. Our Self-Optimizing Processor for Gaming leverages advanced machine learning to deliver image recognition at scale.",
+  description: "Revolutionize gaming through intelligent automation. Our Self-Optimizing Processor for Gaming leverages advanced machine learning to deliver image recognition a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-processor-for-gaming-175c60f2`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Dynamic resource allocation based on demand patterns</li>
             <li>Better supply chain visibility with tracking</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

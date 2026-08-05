@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Predictive maintenance scheduling to prevent downtime</li>
             <li>Improved conversion rates with personalization</li>
             <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

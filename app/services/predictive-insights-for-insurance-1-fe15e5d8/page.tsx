@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Code optimization with performance profiling</li>
             <li>Maintenance scheduling with predictive analytics</li>
             <li>Role-based access control with SSO integration</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved brand awareness with social monitoring</li>
             <li>Better risk management with predictive analytics</li>
             <li>Better supply chain visibility with tracking</li>
-            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         

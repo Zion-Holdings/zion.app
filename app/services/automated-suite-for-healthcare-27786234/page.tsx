@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer service automation with chatbot integration</li>
             <li>Code optimization with performance profiling</li>
             <li>Machine learning integration with automatic model training</li>
-            <li>Security monitoring with threat intelligence</li>
           </ul>
         </div>
         

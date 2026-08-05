@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Serverless functions for cost-effective scaling</li>
             <li>Budget optimization with cost allocation</li>
             <li>Inventory prediction with demand forecasting</li>
-            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Manager for Automotive #1 - Zion Tech Group",
-  description: "The future of automotive is here with Autonomous Manager for Automotive #1. Powered by cutting-edge AI, this platform delivers process automation like never before.",
+  description: "The future of automotive is here with Autonomous Manager for Automotive #1. Powered by cutting-edge AI, this platform delivers process automation like never bef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-manager-for-automotive-1-beefd87b`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Process discovery with activity analysis</li>
             <li>User experience analytics with behavior tracking</li>
             <li>Machine learning integration with automatic model training</li>
-            <li>Network optimization with traffic analysis</li>
           </ul>
         </div>
         

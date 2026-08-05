@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Management for Hospitality - Zion Tech Group",
-  description: "The future of hospitality is here with Adaptive Management for Hospitality. Powered by cutting-edge AI, this platform delivers fraud prevention like never before.",
+  description: "The future of hospitality is here with Adaptive Management for Hospitality. Powered by cutting-edge AI, this platform delivers fraud prevention like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-management-for-hospitality-70b1ef02`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-language support with localization</li>
             <li>Revenue forecasting with market trend analysis</li>
             <li>Energy optimization with consumption tracking</li>
-            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better market positioning with competitive analysis</li>
             <li>Reduced human error by 95% with automated processes</li>
             <li>Reduced risk with early warning systems</li>
-            <li>Reduced support tickets with self-service options</li>
           </ul>
         </div>
         

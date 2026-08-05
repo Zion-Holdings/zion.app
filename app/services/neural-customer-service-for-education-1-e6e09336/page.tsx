@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Customer Service for Education #1 - Zion Tech Group",
-  description: "Transform your education operations with our Neural Customer Service for Education #1. This AI-driven solution automates performance monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your education operations with our Neural Customer Service for Education #1. This AI-driven solution automates performance monitoring with unprecedent",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-customer-service-for-education-1-e6e09336`
   }

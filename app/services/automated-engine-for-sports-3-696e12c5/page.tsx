@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Engine for Sports #3 - Zion Tech Group",
-  description: "Revolutionize sports through intelligent automation. Our Automated Engine for Sports #3 leverages advanced machine learning to deliver fraud prevention at scale.",
+  description: "Revolutionize sports through intelligent automation. Our Automated Engine for Sports #3 leverages advanced machine learning to deliver fraud prevention at scale",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-engine-for-sports-3-696e12c5`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Master data management with golden records</li>
             <li>Sales process optimization with pipeline management</li>
             <li>Market analysis with buyer behavior insights</li>
-            <li>Image recognition with computer vision</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better market positioning with competitive analysis</li>
             <li>Reduced risk with early warning systems</li>
             <li>Improved customer satisfaction with faster response times</li>
-            <li>Improved quality with automated testing and validation</li>
           </ul>
         </div>
         

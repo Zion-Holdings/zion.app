@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Predictor for Finance - Zion Tech Group",
-  description: "Transform your finance operations with our Autonomous Predictor for Finance. This AI-driven solution automates maintenance scheduling with unprecedented accuracy and efficiency.",
+  description: "Transform your finance operations with our Autonomous Predictor for Finance. This AI-driven solution automates maintenance scheduling with unprecedented accurac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-predictor-for-finance-f61b4a3b`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-region deployment with automatic failover</li>
             <li>Audit trails with compliance reporting</li>
             <li>Compliance monitoring with regulatory updates</li>
-            <li>Sentiment analysis with real-time monitoring</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced decision making with data-driven insights</li>
             <li>Improved brand awareness with social monitoring</li>
             <li>Improved conversion rates with personalization</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

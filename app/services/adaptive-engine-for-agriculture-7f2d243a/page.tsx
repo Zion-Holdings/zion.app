@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Financial risk management with scenario analysis</li>
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Serverless functions for cost-effective scaling</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
           </ul>
         </div>
         

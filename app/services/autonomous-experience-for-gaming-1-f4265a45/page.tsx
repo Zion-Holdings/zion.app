@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved forecast accuracy with ML models</li>
             <li>Reduced support tickets with self-service options</li>
             <li>Improved quality with automated testing and validation</li>
-            <li>Reduced shipping costs with route optimization</li>
           </ul>
         </div>
         

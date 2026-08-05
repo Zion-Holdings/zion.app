@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Security for Gaming - Zion Tech Group",
-  description: "Revolutionize gaming through intelligent automation. Our Smart Security for Gaming leverages advanced machine learning to deliver maintenance scheduling at scale.",
+  description: "Revolutionize gaming through intelligent automation. Our Smart Security for Gaming leverages advanced machine learning to deliver maintenance scheduling at scal",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-security-for-gaming-bfc07436`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced risk with early warning systems</li>
             <li>Reduced operational risks with predictive models</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Improved quality with automated testing and validation</li>
           </ul>
         </div>
         

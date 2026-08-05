@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Manufacturing for Sports - Zion Tech Group",
-  description: "Transform your sports operations with our Neural Manufacturing for Sports. This AI-driven solution automates maintenance scheduling with unprecedented accuracy and efficiency.",
+  description: "Transform your sports operations with our Neural Manufacturing for Sports. This AI-driven solution automates maintenance scheduling with unprecedented accuracy ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-manufacturing-for-sports-0c65b8e8`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Data encryption at rest and in transit</li>
             <li>Scenario planning with Monte Carlo simulations</li>
-            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved product quality with automated testing</li>
             <li>Zero manual intervention required for routine tasks</li>
             <li>Faster content creation with AI assistance</li>
-            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

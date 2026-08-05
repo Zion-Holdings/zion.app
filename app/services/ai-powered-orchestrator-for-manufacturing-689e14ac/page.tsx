@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Orchestrator for Manufacturing - Zion Tech Group",
-  description: "The future of manufacturing is here with AI-Powered Orchestrator for Manufacturing. Powered by cutting-edge AI, this platform delivers language processing like never before.",
+  description: "The future of manufacturing is here with AI-Powered Orchestrator for Manufacturing. Powered by cutting-edge AI, this platform delivers language processing like ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-orchestrator-for-manufacturing-689e14ac`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>GDPR compliance with data portability</li>
             <li>Process discovery with activity analysis</li>
             <li>Master data management with golden records</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         

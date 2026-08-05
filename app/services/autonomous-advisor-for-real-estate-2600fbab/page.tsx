@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>User experience analytics with behavior tracking</li>
             <li>Market analysis with buyer behavior insights</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
           </ul>
         </div>
         

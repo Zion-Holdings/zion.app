@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Director for Manufacturing #2 - Zion Tech Group",
-  description: "Transform your manufacturing operations with our Autonomous Director for Manufacturing #2. This AI-driven solution automates performance monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your manufacturing operations with our Autonomous Director for Manufacturing #2. This AI-driven solution automates performance monitoring with unprece",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-director-for-manufacturing-2-bb13c205`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Logistics route optimization with traffic prediction</li>
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Customer journey mapping with touchpoint analysis</li>
-            <li>A/B testing framework for continuous optimization</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Better resource utilization with auto-scaling</li>
             <li>Enhanced security with continuous threat monitoring</li>
-            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

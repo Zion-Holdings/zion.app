@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Security for Real-Estate #4 - Zion Tech Group",
-  description: "The future of real-estate is here with Adaptive Security for Real-Estate #4. Powered by cutting-edge AI, this platform delivers security monitoring like never before.",
+  description: "The future of real-estate is here with Adaptive Security for Real-Estate #4. Powered by cutting-edge AI, this platform delivers security monitoring like never b",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-security-for-real-estate-4-c4a6d86f`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Security monitoring with threat intelligence</li>
             <li>Budget optimization with cost allocation</li>
-            <li>Competitive intelligence with market share tracking</li>
           </ul>
         </div>
         

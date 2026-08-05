@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Security for Sports #1 - Zion Tech Group",
-  description: "Transform your sports operations with our Smart Security for Sports #1. This AI-driven solution automates supply chain with unprecedented accuracy and efficiency.",
+  description: "Transform your sports operations with our Smart Security for Sports #1. This AI-driven solution automates supply chain with unprecedented accuracy and efficienc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-security-for-sports-1-b3c7b0ed`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Performance for Agriculture - Zion Tech Group",
-  description: "The future of agriculture is here with Neural Performance for Agriculture. Powered by cutting-edge AI, this platform delivers financial planning like never before.",
+  description: "The future of agriculture is here with Neural Performance for Agriculture. Powered by cutting-edge AI, this platform delivers financial planning like never befo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-performance-for-agriculture-2ff971cb`
   }

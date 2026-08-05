@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Optimizer for Hospitality #1 - Zion Tech Group",
-  description: "Revolutionize hospitality through intelligent automation. Our Cognitive Optimizer for Hospitality #1 leverages advanced machine learning to deliver supply chain at scale.",
+  description: "Revolutionize hospitality through intelligent automation. Our Cognitive Optimizer for Hospitality #1 leverages advanced machine learning to deliver supply chain",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-optimizer-for-hospitality-1-5d4cee61`
   }

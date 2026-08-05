@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Sales for Automotive - Zion Tech Group",
-  description: "The future of automotive is here with Predictive Sales for Automotive. Powered by cutting-edge AI, this platform delivers customer service automation like never before.",
+  description: "The future of automotive is here with Predictive Sales for Automotive. Powered by cutting-edge AI, this platform delivers customer service automation like never",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-sales-for-automotive-e0662842`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sentiment analysis with real-time monitoring</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Image recognition with computer vision</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better supply chain visibility with tracking</li>
             <li>Better financial planning with predictive models</li>
             <li>Better inventory management with demand forecasting</li>
-            <li>Better market positioning with competitive analysis</li>
           </ul>
         </div>
         

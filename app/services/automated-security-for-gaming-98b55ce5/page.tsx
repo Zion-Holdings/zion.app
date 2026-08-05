@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Security for Gaming - Zion Tech Group",
-  description: "Transform your gaming operations with our Automated Security for Gaming. This AI-driven solution automates performance monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your gaming operations with our Automated Security for Gaming. This AI-driven solution automates performance monitoring with unprecedented accuracy an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-security-for-gaming-98b55ce5`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Seamless integration with existing systems and workflows</li>
             <li>Better resource utilization with auto-scaling</li>
             <li>Real-time insights and alerts for proactive management</li>
-            <li>Improved sales performance with lead scoring</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Support for Real-Estate #2 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Predictive Support for Real-Estate #2. This autonomous system provides market intelligence with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Predictive Support for Real-Estate #2. This autonomous system provides market intelligence with zero manual intervention needed",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-support-for-real-estate-2-2fb1ce58`
   }

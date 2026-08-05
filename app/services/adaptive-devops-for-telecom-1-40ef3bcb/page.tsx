@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Alerting system with intelligent notifications</li>
             <li>Open-source friendly with plugin architecture</li>
             <li>Serverless functions for cost-effective scaling</li>
-            <li>Role-based access control with SSO integration</li>
           </ul>
         </div>
         

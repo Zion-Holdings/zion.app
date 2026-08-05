@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-region deployment with automatic failover</li>
             <li>Brand monitoring across social channels</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Healthcare data analytics with patient insights</li>
           </ul>
         </div>
         

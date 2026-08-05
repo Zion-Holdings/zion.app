@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive System for Gaming #1 - Zion Tech Group",
-  description: "Revolutionize gaming through intelligent automation. Our Predictive System for Gaming #1 leverages advanced machine learning to deliver content generation at scale.",
+  description: "Revolutionize gaming through intelligent automation. Our Predictive System for Gaming #1 leverages advanced machine learning to deliver content generation at sc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-system-for-gaming-1-e6ba636d`
   }

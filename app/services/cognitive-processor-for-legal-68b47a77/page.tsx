@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Processor for Legal - Zion Tech Group",
-  description: "Transform your legal operations with our Cognitive Processor for Legal. This AI-driven solution automates quality control with unprecedented accuracy and efficiency.",
+  description: "Transform your legal operations with our Cognitive Processor for Legal. This AI-driven solution automates quality control with unprecedented accuracy and effici",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-processor-for-legal-68b47a77`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Role-based access control with SSO integration</li>
             <li>Healthcare data analytics with patient insights</li>
             <li>Revenue forecasting with market trend analysis</li>
-            <li>HIPAA ready with healthcare data protection</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Real Estate for Manufacturing - Zion Tech Group",
-  description: "Transform your manufacturing operations with our Cognitive Real Estate for Manufacturing. This AI-driven solution automates network optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your manufacturing operations with our Cognitive Real Estate for Manufacturing. This AI-driven solution automates network optimization with unpreceden",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-real-estate-for-manufacturing-d55fc085`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cost reduction with process mining</li>
             <li>Multi-language support with localization</li>
             <li>Customer journey mapping with touchpoint analysis</li>
-            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>99.9% uptime guarantee with redundant architecture</li>
             <li>Enhanced decision making with data-driven insights</li>
             <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
           </ul>
         </div>
         

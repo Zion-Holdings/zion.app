@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>HIPAA ready with healthcare data protection</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         

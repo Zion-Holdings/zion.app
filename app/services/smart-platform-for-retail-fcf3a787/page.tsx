@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data governance with policy enforcement</li>
             <li>Business intelligence with KPI dashboards</li>
             <li>Sales process optimization with pipeline management</li>
-            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced development time with code generation</li>
             <li>Reduced risk with early warning systems</li>
             <li>Improved sales performance with lead scoring</li>
-            <li>Better inventory management with demand forecasting</li>
           </ul>
         </div>
         

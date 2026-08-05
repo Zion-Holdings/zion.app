@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Analytics for Real-Estate - Zion Tech Group",
-  description: "Unlock unprecedented growth with Predictive Analytics for Real-Estate. This autonomous system provides inventory management with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Predictive Analytics for Real-Estate. This autonomous system provides inventory management with zero manual intervention needed",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-analytics-for-real-estate-39ac05ed`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Enterprise-grade security with end-to-end encryption</li>
             <li>3x faster decision making with real-time insights</li>
             <li>Improved employee productivity with automation</li>
-            <li>Better resource utilization with auto-scaling</li>
           </ul>
         </div>
         

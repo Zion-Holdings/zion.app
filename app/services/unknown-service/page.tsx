@@ -1,8 +1,8 @@
 import { } from 'next/navigation';
 
 export const metadata = {
-  title: "Edge Blockchain Verification Redis (Analytics) - Zion Tech Group",
-  description: "Edge Blockchain Verification Redis (Analytics) is an AI-powered analytics solution that transforms how businesses operate through intelligent automation and rea",
+  title: "Scalable Retail Personalization Serverless (Retail) - Zion Tech Group",
+  description: "Scalable Retail Personalization Serverless (Retail) is an AI-powered retail solution that transforms how businesses operate through intelligent automation and r",
   alternates: {
     canonical: `https://ziontechgroup.com/services/unknown-service`
   }
@@ -12,8 +12,8 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Edge Blockchain Verification Redis (Analytics)</h1>
-        <p className="text-lg text-gray-300 mb-8">Edge Blockchain Verification Redis (Analytics) is an AI-powered analytics solution that transforms how businesses operate through intelligent automation and real-time analytics.
+        <h1 className="text-4xl font-bold mb-6">Scalable Retail Personalization Serverless (Retail)</h1>
+        <p className="text-lg text-gray-300 mb-8">Scalable Retail Personalization Serverless (Retail) is an AI-powered retail solution that transforms how businesses operate through intelligent automation and real-time analytics.
 
 ## Key Features
 
@@ -28,11 +28,11 @@ export default function ServicePage() {
 
 ## Technical Stack
 
-Node.js, Rust, MongoDB, Edge Computing, Kafka, Computer Vision
+Azure, Spark, Blockchain, Fastify, DigitalOcean, AWS
 
 ## Use Cases
 
-- **Industry Applications**: Process Automation optimization
+- **Industry Applications**: Data Visualization optimization
 - **Business Impact**: 40-60% efficiency improvement
 - **ROI**: 12-31M annual savings potential
 - **Time-to-Value**: Reduced from months to weeks
@@ -60,10 +60,10 @@ Node.js, Rust, MongoDB, Edge Computing, Kafka, Computer Vision
 
 ## Related Services
 
-- Analytics Strategy Consulting
-- Analytics Implementation Services
-- Analytics Managed Services
-- Analytics Training &amp; Certification
+- Retail Strategy Consulting
+- Retail Implementation Services
+- Retail Managed Services
+- Retail Training &amp; Certification
 </p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">

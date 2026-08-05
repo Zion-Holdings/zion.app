@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Process discovery with activity analysis</li>
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Customer service automation with chatbot integration</li>
-            <li>Edge computing support for low-latency operations</li>
           </ul>
         </div>
         

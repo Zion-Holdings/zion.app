@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Revenue forecasting with market trend analysis</li>
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Executive dashboards with drill-down capabilities</li>
-            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Cost optimization recommendations with savings analysis</li>
             <li>24/7 automated operations without human intervention</li>
             <li>Enhanced security posture with continuous monitoring</li>
-            <li>Better code quality with automated reviews</li>
           </ul>
         </div>
         

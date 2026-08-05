@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Edge computing support for low-latency operations</li>
             <li>Business intelligence with KPI dashboards</li>
             <li>Customer journey mapping with touchpoint analysis</li>
-            <li>GDPR compliance with data portability</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better compliance with automated audit trails</li>
             <li>Performance benchmarking against industry standards</li>
             <li>Better financial planning with predictive models</li>
-            <li>Improved employee productivity with automation</li>
           </ul>
         </div>
         

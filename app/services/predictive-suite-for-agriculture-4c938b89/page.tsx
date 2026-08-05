@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Manufacturing quality control with defect detection</li>
             <li>SOC 2 certified with security controls</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Enhanced decision making with data-driven insights</li>
-            <li>Better compliance with automated audit trails</li>
           </ul>
         </div>
         

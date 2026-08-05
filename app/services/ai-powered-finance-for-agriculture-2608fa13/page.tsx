@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Predictive modeling with ensemble methods</li>
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Business intelligence with KPI dashboards</li>
           </ul>
         </div>
         

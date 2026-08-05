@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Faster time-to-market with accelerated development</li>
             <li>24/7 automated operations without human intervention</li>
             <li>Improved conversion rates with personalization</li>
-            <li>Improved brand awareness with social monitoring</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Compliance for Gaming #1 - Zion Tech Group",
-  description: "Revolutionize gaming through intelligent automation. Our Adaptive Compliance for Gaming #1 leverages advanced machine learning to deliver financial planning at scale.",
+  description: "Revolutionize gaming through intelligent automation. Our Adaptive Compliance for Gaming #1 leverages advanced machine learning to deliver financial planning at ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-compliance-for-gaming-1-94555455`
   }

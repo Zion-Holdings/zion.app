@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Experience for Manufacturing - Zion Tech Group",
-  description: "Unlock unprecedented growth with Automated Experience for Manufacturing. This autonomous system provides network optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Automated Experience for Manufacturing. This autonomous system provides network optimization with zero manual intervention need",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-experience-for-manufacturing-606eb77a`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved sales performance with lead scoring</li>
             <li>Real-time insights and alerts for proactive management</li>
             <li>Enhanced decision making with data-driven insights</li>
-            <li>Better customer experience with personalization</li>
           </ul>
         </div>
         

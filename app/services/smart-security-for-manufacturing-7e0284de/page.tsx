@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer service automation with chatbot integration</li>
             <li>Automation opportunity identification</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Automation for Transportation - Zion Tech Group",
-  description: "The future of transportation is here with Neural Automation for Transportation. Powered by cutting-edge AI, this platform delivers content generation like never before.",
+  description: "The future of transportation is here with Neural Automation for Transportation. Powered by cutting-edge AI, this platform delivers content generation like never",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-automation-for-transportation-58fcf88b`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Business intelligence with KPI dashboards</li>
             <li>Competitive intelligence with market share tracking</li>
             <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         

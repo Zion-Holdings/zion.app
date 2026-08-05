@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Network optimization with traffic analysis</li>
             <li>Competitive intelligence with market share tracking</li>
             <li>Automation opportunity identification</li>
-            <li>Security monitoring with threat intelligence</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved quality with automated testing and validation</li>
             <li>Better risk management with predictive analytics</li>
             <li>Improved brand awareness with social monitoring</li>
-            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

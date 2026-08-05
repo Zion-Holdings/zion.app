@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-language support with localization</li>
             <li>Data encryption at rest and in transit</li>
             <li>Machine learning integration with automatic model training</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         

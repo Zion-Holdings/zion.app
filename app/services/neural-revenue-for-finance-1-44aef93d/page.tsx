@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Real-time processing with streaming analytics</li>
             <li>Network optimization with traffic analysis</li>
-            <li>Security monitoring with threat intelligence</li>
           </ul>
         </div>
         

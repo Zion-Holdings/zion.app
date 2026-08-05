@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Platform for Construction - Zion Tech Group",
-  description: "Transform your construction operations with our Autonomous Platform for Construction. This AI-driven solution automates workflow management with unprecedented accuracy and efficiency.",
+  description: "Transform your construction operations with our Autonomous Platform for Construction. This AI-driven solution automates workflow management with unprecedented a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-platform-for-construction-f5267954`
   }

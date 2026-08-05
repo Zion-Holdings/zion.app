@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Experience for Logistics #1 - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Adaptive Experience for Logistics #1 leverages advanced machine learning to deliver sales forecasting at scale.",
+  description: "Revolutionize logistics through intelligent automation. Our Adaptive Experience for Logistics #1 leverages advanced machine learning to deliver sales forecastin",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-experience-for-logistics-1-cdb3f88f`
   }

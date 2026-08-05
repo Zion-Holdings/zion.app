@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automation opportunity identification</li>
             <li>SOC 2 certified with security controls</li>
             <li>Network optimization with traffic analysis</li>
-            <li>Version control with rollback capabilities</li>
           </ul>
         </div>
         

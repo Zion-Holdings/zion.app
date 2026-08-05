@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Healthcare for Transportation #1 - Zion Tech Group",
-  description: "Next-generation transportation solution: Automated Healthcare for Transportation #1. Combines predictive analytics with adaptive intelligence for optimal results.",
+  description: "Next-generation transportation solution: Automated Healthcare for Transportation #1. Combines predictive analytics with adaptive intelligence for optimal result",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-healthcare-for-transportation-1-16e5d82e`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Improved product quality with automated testing</li>
             <li>Scalable to millions of transactions per second</li>
-            <li>Improved sales performance with lead scoring</li>
           </ul>
         </div>
         

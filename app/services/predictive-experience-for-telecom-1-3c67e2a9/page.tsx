@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Experience for Telecom #1 - Zion Tech Group",
-  description: "The future of telecom is here with Predictive Experience for Telecom #1. Powered by cutting-edge AI, this platform delivers network optimization like never before.",
+  description: "The future of telecom is here with Predictive Experience for Telecom #1. Powered by cutting-edge AI, this platform delivers network optimization like never befo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-experience-for-telecom-1-3c67e2a9`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>A/B testing framework for continuous optimization</li>
             <li>Automation opportunity identification</li>
             <li>Inventory prediction with demand forecasting</li>
-            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better market positioning with competitive analysis</li>
             <li>Improved quality with automated testing and validation</li>
             <li>Seamless integration with existing systems and workflows</li>
-            <li>Better inventory management with demand forecasting</li>
           </ul>
         </div>
         

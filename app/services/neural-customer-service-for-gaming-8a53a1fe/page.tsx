@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Language processing with sentiment analysis</li>
-            <li>Security monitoring with threat intelligence</li>
           </ul>
         </div>
         

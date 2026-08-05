@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Marketing for Transportation - Zion Tech Group",
-  description: "The future of transportation is here with Predictive Marketing for Transportation. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.",
+  description: "The future of transportation is here with Predictive Marketing for Transportation. Powered by cutting-edge AI, this platform delivers sales forecasting like nev",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-marketing-for-transportation-1e97ddf2`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Microservices deployment with container orchestration</li>
             <li>Competitive intelligence with market share tracking</li>
             <li>Machine learning integration with automatic model training</li>
-            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         

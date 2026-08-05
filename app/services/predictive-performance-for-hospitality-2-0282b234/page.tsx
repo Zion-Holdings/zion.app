@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Performance for Hospitality #2 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Predictive Performance for Hospitality #2. This autonomous system provides workflow management with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Predictive Performance for Hospitality #2. This autonomous system provides workflow management with zero manual intervention ne",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-performance-for-hospitality-2-0282b234`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automation opportunity identification</li>
             <li>A/B testing framework for continuous optimization</li>
             <li>Healthcare data analytics with patient insights</li>
-            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         

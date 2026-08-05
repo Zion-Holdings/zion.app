@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Sales for Logistics #1 - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Predictive Sales for Logistics #1 leverages advanced machine learning to deliver compliance monitoring at scale.",
+  description: "Revolutionize logistics through intelligent automation. Our Predictive Sales for Logistics #1 leverages advanced machine learning to deliver compliance monitori",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-sales-for-logistics-1-715f1bb3`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Performance benchmarking against industry standards</li>
             <li>24/7 automated operations without human intervention</li>
             <li>Seamless integration with existing systems and workflows</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         

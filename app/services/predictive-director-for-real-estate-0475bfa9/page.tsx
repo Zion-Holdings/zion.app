@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Audit trails with compliance reporting</li>
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Microservices deployment with container orchestration</li>
-            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         

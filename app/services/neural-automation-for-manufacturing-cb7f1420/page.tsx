@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Automation for Manufacturing - Zion Tech Group",
-  description: "Transform your manufacturing operations with our Neural Automation for Manufacturing. This AI-driven solution automates threat detection with unprecedented accuracy and efficiency.",
+  description: "Transform your manufacturing operations with our Neural Automation for Manufacturing. This AI-driven solution automates threat detection with unprecedented accu",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-automation-for-manufacturing-cb7f1420`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Code optimization with performance profiling</li>
-            <li>Energy optimization with consumption tracking</li>
           </ul>
         </div>
         

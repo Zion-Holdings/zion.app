@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Compliance for Agriculture #1 - Zion Tech Group",
-  description: "The future of agriculture is here with Neural Compliance for Agriculture #1. Powered by cutting-edge AI, this platform delivers energy management like never before.",
+  description: "The future of agriculture is here with Neural Compliance for Agriculture #1. Powered by cutting-edge AI, this platform delivers energy management like never bef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-compliance-for-agriculture-1-7cbb3188`
   }

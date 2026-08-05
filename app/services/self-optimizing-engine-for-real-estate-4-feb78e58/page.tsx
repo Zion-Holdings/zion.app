@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Engine for Real-Estate #4 - Zion Tech Group",
-  description: "Revolutionize real-estate through intelligent automation. Our Self-Optimizing Engine for Real-Estate #4 leverages advanced machine learning to deliver data processing at scale.",
+  description: "Revolutionize real-estate through intelligent automation. Our Self-Optimizing Engine for Real-Estate #4 leverages advanced machine learning to deliver data proc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-engine-for-real-estate-4-feb78e58`
   }

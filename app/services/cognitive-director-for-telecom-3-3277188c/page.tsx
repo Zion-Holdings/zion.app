@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data quality with anomaly detection</li>
             <li>Data governance with policy enforcement</li>
             <li>GDPR compliance with data portability</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Supply for Automotive - Zion Tech Group",
-  description: "Transform your automotive operations with our Neural Supply for Automotive. This AI-driven solution automates performance monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your automotive operations with our Neural Supply for Automotive. This AI-driven solution automates performance monitoring with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-supply-for-automotive-d3fb4318`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>GDPR compliance with data portability</li>
             <li>SOC 2 certified with security controls</li>
             <li>Edge computing support for low-latency operations</li>
-            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         

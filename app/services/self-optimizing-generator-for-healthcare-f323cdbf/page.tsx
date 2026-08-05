@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Generator for Healthcare - Zion Tech Group",
-  description: "Unlock unprecedented growth with Self-Optimizing Generator for Healthcare. This autonomous system provides inventory management with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Self-Optimizing Generator for Healthcare. This autonomous system provides inventory management with zero manual intervention ne",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-generator-for-healthcare-f323cdbf`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Energy optimization with consumption tracking</li>
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Image recognition with computer vision</li>
-            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         

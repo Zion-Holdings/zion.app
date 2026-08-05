@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Performance for Sports - Zion Tech Group",
-  description: "Revolutionize sports through intelligent automation. Our AI-Powered Performance for Sports leverages advanced machine learning to deliver document processing at scale.",
+  description: "Revolutionize sports through intelligent automation. Our AI-Powered Performance for Sports leverages advanced machine learning to deliver document processing at",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-performance-for-sports-549d0702`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Audit trails with compliance reporting</li>
             <li>GDPR compliance with data portability</li>
             <li>Inventory prediction with demand forecasting</li>
-            <li>Master data management with golden records</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Performance for Manufacturing - Zion Tech Group",
-  description: "Transform your manufacturing operations with our Cognitive Performance for Manufacturing. This AI-driven solution automates sales process optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your manufacturing operations with our Cognitive Performance for Manufacturing. This AI-driven solution automates sales process optimization with unpr",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-performance-for-manufacturing-32982ee3`
   }

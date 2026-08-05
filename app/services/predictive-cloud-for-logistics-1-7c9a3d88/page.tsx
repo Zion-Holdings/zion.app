@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Cloud for Logistics #1 - Zion Tech Group",
-  description: "Transform your logistics operations with our Predictive Cloud for Logistics #1. This AI-driven solution automates resource optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your logistics operations with our Predictive Cloud for Logistics #1. This AI-driven solution automates resource optimization with unprecedented accur",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-cloud-for-logistics-1-7c9a3d88`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Document processing with OCR and NLP</li>
             <li>Code optimization with performance profiling</li>
             <li>Predictive modeling with ensemble methods</li>
-            <li>Sentiment analysis with real-time monitoring</li>
           </ul>
         </div>
         

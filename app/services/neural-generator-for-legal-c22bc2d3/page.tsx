@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Process discovery with activity analysis</li>
             <li>Manufacturing quality control with defect detection</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Zero manual intervention required for routine tasks</li>
             <li>24/7 automated operations without human intervention</li>
             <li>Improved quality with automated testing and validation</li>
-            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

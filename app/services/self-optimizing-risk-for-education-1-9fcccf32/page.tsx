@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Risk for Education #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Self-Optimizing Risk for Education #1. This autonomous system provides resource optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Self-Optimizing Risk for Education #1. This autonomous system provides resource optimization with zero manual intervention need",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-risk-for-education-1-9fcccf32`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Business intelligence with KPI dashboards</li>
             <li>Maintenance scheduling with predictive analytics</li>
             <li>Data governance with policy enforcement</li>
-            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         

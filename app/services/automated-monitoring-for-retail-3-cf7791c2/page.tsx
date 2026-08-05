@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Monitoring for Retail #3 - Zion Tech Group",
-  description: "Transform your retail operations with our Automated Monitoring for Retail #3. This AI-driven solution automates quality control with unprecedented accuracy and efficiency.",
+  description: "Transform your retail operations with our Automated Monitoring for Retail #3. This AI-driven solution automates quality control with unprecedented accuracy and ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-monitoring-for-retail-3-cf7791c2`
   }

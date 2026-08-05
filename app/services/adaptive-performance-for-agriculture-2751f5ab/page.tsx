@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Performance for Agriculture - Zion Tech Group",
-  description: "Transform your agriculture operations with our Adaptive Performance for Agriculture. This AI-driven solution automates predictive analytics with unprecedented accuracy and efficiency.",
+  description: "Transform your agriculture operations with our Adaptive Performance for Agriculture. This AI-driven solution automates predictive analytics with unprecedented a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-performance-for-agriculture-2751f5ab`
   }

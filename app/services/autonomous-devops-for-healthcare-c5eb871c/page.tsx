@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous DevOps for Healthcare - Zion Tech Group",
-  description: "Revolutionize healthcare through intelligent automation. Our Autonomous DevOps for Healthcare leverages advanced machine learning to deliver predictive analytics at scale.",
+  description: "Revolutionize healthcare through intelligent automation. Our Autonomous DevOps for Healthcare leverages advanced machine learning to deliver predictive analytic",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-devops-for-healthcare-c5eb871c`
   }

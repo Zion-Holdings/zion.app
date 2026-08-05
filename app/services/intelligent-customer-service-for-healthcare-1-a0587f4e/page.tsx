@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Customer Service for Healthcare #1 - Zion Tech Group",
-  description: "Revolutionize healthcare through intelligent automation. Our Intelligent Customer Service for Healthcare #1 leverages advanced machine learning to deliver sales process optimization at scale.",
+  description: "Revolutionize healthcare through intelligent automation. Our Intelligent Customer Service for Healthcare #1 leverages advanced machine learning to deliver sales",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-customer-service-for-healthcare-1-a0587f4e`
   }

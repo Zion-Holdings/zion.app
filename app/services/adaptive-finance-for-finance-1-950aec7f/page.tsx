@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Finance for Finance #1 - Zion Tech Group",
-  description: "Transform your finance operations with our Adaptive Finance for Finance #1. This AI-driven solution automates code optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your finance operations with our Adaptive Finance for Finance #1. This AI-driven solution automates code optimization with unprecedented accuracy and ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-finance-for-finance-1-950aec7f`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Open-source friendly with plugin architecture</li>
             <li>Custom integrations with webhook support</li>
             <li>Image recognition with computer vision</li>
-            <li>Financial risk management with scenario analysis</li>
           </ul>
         </div>
         

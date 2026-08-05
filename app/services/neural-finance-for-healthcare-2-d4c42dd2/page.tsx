@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cost reduction with process mining</li>
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Faster time-to-market with accelerated development</li>
             <li>99.9% uptime guarantee with redundant architecture</li>
             <li>Reduced marketing costs with targeted campaigns</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Revenue forecasting with market trend analysis</li>
             <li>Master data management with golden records</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         

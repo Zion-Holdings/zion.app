@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart DevOps for Manufacturing #1 - Zion Tech Group",
-  description: "Revolutionize manufacturing through intelligent automation. Our Smart DevOps for Manufacturing #1 leverages advanced machine learning to deliver resource optimization at scale.",
+  description: "Revolutionize manufacturing through intelligent automation. Our Smart DevOps for Manufacturing #1 leverages advanced machine learning to deliver resource optimi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-devops-for-manufacturing-1-0b10b7b5`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Language processing with sentiment analysis</li>
             <li>Financial risk management with scenario analysis</li>
             <li>Cost reduction with process mining</li>
-            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Security for Retail - Zion Tech Group",
-  description: "Revolutionize retail through intelligent automation. Our Autonomous Security for Retail leverages advanced machine learning to deliver document processing at scale.",
+  description: "Revolutionize retail through intelligent automation. Our Autonomous Security for Retail leverages advanced machine learning to deliver document processing at sc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-security-for-retail-a6599f02`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Fraud detection with anomaly analysis</li>
             <li>Custom integrations with webhook support</li>
             <li>Edge computing support for low-latency operations</li>
-            <li>Audit trails with compliance reporting</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data governance with policy enforcement</li>
             <li>Healthcare data analytics with patient insights</li>
             <li>Data quality with anomaly detection</li>
-            <li>Process discovery with activity analysis</li>
           </ul>
         </div>
         

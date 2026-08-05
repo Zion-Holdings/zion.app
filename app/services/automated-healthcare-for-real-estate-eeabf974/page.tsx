@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Healthcare for Real-Estate - Zion Tech Group",
-  description: "The future of real-estate is here with Automated Healthcare for Real-Estate. Powered by cutting-edge AI, this platform delivers risk assessment like never before.",
+  description: "The future of real-estate is here with Automated Healthcare for Real-Estate. Powered by cutting-edge AI, this platform delivers risk assessment like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-healthcare-for-real-estate-eeabf974`
   }

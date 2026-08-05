@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Supply for Telecom - Zion Tech Group",
-  description: "Transform your telecom operations with our Neural Supply for Telecom. This AI-driven solution automates compliance monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your telecom operations with our Neural Supply for Telecom. This AI-driven solution automates compliance monitoring with unprecedented accuracy and ef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-supply-for-telecom-a2102475`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Content generation with plagiarism checks</li>
             <li>Data governance with policy enforcement</li>
             <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Audit trails with compliance reporting</li>
           </ul>
         </div>
         

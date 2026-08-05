@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Manager for Technology #1 - Zion Tech Group",
-  description: "Transform your technology operations with our Intelligent Manager for Technology #1. This AI-driven solution automates customer insights with unprecedented accuracy and efficiency.",
+  description: "Transform your technology operations with our Intelligent Manager for Technology #1. This AI-driven solution automates customer insights with unprecedented accu",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-manager-for-technology-1-8a4fac49`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Edge computing support for low-latency operations</li>
             <li>Microservices deployment with container orchestration</li>
-            <li>Revenue forecasting with market trend analysis</li>
           </ul>
         </div>
         

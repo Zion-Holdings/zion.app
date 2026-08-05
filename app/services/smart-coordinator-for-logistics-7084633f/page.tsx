@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Microservices deployment with container orchestration</li>
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Real-time processing with streaming analytics</li>
-            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         

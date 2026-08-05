@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Data for Insurance #1 - Zion Tech Group",
-  description: "Revolutionize insurance through intelligent automation. Our Intelligent Data for Insurance #1 leverages advanced machine learning to deliver customer insights at scale.",
+  description: "Revolutionize insurance through intelligent automation. Our Intelligent Data for Insurance #1 leverages advanced machine learning to deliver customer insights a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-data-for-insurance-1-a207f390`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Alerting system with intelligent notifications</li>
             <li>Multi-language support with localization</li>
-            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         

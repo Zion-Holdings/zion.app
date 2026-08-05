@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Supply for Education #1 - Zion Tech Group",
-  description: "Transform your education operations with our Intelligent Supply for Education #1. This AI-driven solution automates threat detection with unprecedented accuracy and efficiency.",
+  description: "Transform your education operations with our Intelligent Supply for Education #1. This AI-driven solution automates threat detection with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-supply-for-education-1-4a5dffa3`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Logistics route optimization with traffic prediction</li>
             <li>Maintenance scheduling with predictive analytics</li>
             <li>Document processing with OCR and NLP</li>
-            <li>Real-time processing with streaming analytics</li>
           </ul>
         </div>
         

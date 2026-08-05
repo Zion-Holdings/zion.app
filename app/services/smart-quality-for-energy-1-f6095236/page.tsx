@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Quality for Energy #1 - Zion Tech Group",
-  description: "Transform your energy operations with our Smart Quality for Energy #1. This AI-driven solution automates customer service automation with unprecedented accuracy and efficiency.",
+  description: "Transform your energy operations with our Smart Quality for Energy #1. This AI-driven solution automates customer service automation with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-quality-for-energy-1-f6095236`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Scalable to millions of transactions per second</li>
             <li>3x faster decision making with real-time insights</li>
             <li>Better risk management with predictive analytics</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
           </ul>
         </div>
         

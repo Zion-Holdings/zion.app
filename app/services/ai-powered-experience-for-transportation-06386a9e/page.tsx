@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Experience for Transportation - Zion Tech Group",
-  description: "Transform your transportation operations with our AI-Powered Experience for Transportation. This AI-driven solution automates threat detection with unprecedented accuracy and efficiency.",
+  description: "Transform your transportation operations with our AI-Powered Experience for Transportation. This AI-driven solution automates threat detection with unprecedente",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-experience-for-transportation-06386a9e`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>User experience analytics with behavior tracking</li>
             <li>Fraud detection with anomaly analysis</li>
             <li>Real-time processing with streaming analytics</li>
-            <li>A/B testing framework for continuous optimization</li>
           </ul>
         </div>
         

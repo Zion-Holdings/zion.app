@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Process discovery with activity analysis</li>
             <li>Alerting system with intelligent notifications</li>
             <li>Network optimization with traffic analysis</li>
-            <li>GDPR compliance with data portability</li>
           </ul>
         </div>
         

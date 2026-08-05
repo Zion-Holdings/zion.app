@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer service automation with chatbot integration</li>
             <li>Competitive intelligence with market share tracking</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Zero manual intervention required for routine tasks</li>
-            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

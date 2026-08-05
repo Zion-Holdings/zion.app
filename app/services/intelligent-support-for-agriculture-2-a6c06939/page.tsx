@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Support for Agriculture #2 - Zion Tech Group",
-  description: "Revolutionize agriculture through intelligent automation. Our Intelligent Support for Agriculture #2 leverages advanced machine learning to deliver maintenance scheduling at scale.",
+  description: "Revolutionize agriculture through intelligent automation. Our Intelligent Support for Agriculture #2 leverages advanced machine learning to deliver maintenance ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-support-for-agriculture-2-a6c06939`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security posture with continuous monitoring</li>
             <li>Better supply chain visibility with tracking</li>
             <li>Reduced shipping costs with route optimization</li>
-            <li>Real-time insights and alerts for proactive management</li>
           </ul>
         </div>
         

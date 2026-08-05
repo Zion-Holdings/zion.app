@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Inventory prediction with demand forecasting</li>
             <li>Document processing with OCR and NLP</li>
             <li>Multi-language support with localization</li>
-            <li>Machine learning integration with automatic model training</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Performance benchmarking against industry standards</li>
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Better risk management with predictive analytics</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cost reduction with process mining</li>
             <li>Multi-region deployment with automatic failover</li>
             <li>Serverless functions for cost-effective scaling</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         

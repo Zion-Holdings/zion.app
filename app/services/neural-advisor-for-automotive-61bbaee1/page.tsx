@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automation opportunity identification</li>
             <li>User experience analytics with behavior tracking</li>
             <li>Predictive modeling with ensemble methods</li>
-            <li>Data governance with policy enforcement</li>
           </ul>
         </div>
         

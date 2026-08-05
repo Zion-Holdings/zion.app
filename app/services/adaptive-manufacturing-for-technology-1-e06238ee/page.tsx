@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-language support with localization</li>
             <li>Network optimization with traffic analysis</li>
             <li>Process discovery with activity analysis</li>
-            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Compliance for Insurance - Zion Tech Group",
-  description: "Revolutionize insurance through intelligent automation. Our Adaptive Compliance for Insurance leverages advanced machine learning to deliver decision support at scale.",
+  description: "Revolutionize insurance through intelligent automation. Our Adaptive Compliance for Insurance leverages advanced machine learning to deliver decision support at",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-compliance-for-insurance-90ae088e`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Fraud detection with anomaly analysis</li>
             <li>Language processing with sentiment analysis</li>
             <li>Multi-language support with localization</li>
-            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         

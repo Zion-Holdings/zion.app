@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Engine for Finance #1 - Zion Tech Group",
-  description: "Transform your finance operations with our Neural Engine for Finance #1. This AI-driven solution automates maintenance scheduling with unprecedented accuracy and efficiency.",
+  description: "Transform your finance operations with our Neural Engine for Finance #1. This AI-driven solution automates maintenance scheduling with unprecedented accuracy an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-engine-for-finance-1-bb849611`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Compliance monitoring with regulatory updates</li>
             <li>Multi-region deployment with automatic failover</li>
             <li>Logistics route optimization with traffic prediction</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         

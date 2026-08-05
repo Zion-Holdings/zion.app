@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Compliance for Agriculture #1 - Zion Tech Group",
-  description: "The future of agriculture is here with Cognitive Compliance for Agriculture #1. Powered by cutting-edge AI, this platform delivers language processing like never before.",
+  description: "The future of agriculture is here with Cognitive Compliance for Agriculture #1. Powered by cutting-edge AI, this platform delivers language processing like neve",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-compliance-for-agriculture-1-cfa65bc1`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Competitive intelligence with market share tracking</li>
             <li>Cost reduction with process mining</li>
             <li>Role-based access control with SSO integration</li>
-            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better risk management with predictive analytics</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Performance benchmarking against industry standards</li>
-            <li>Reduced support tickets with self-service options</li>
           </ul>
         </div>
         

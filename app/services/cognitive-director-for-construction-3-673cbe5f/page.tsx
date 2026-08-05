@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Seamless integration with existing systems and workflows</li>
             <li>Enhanced decision making with data-driven insights</li>
             <li>Better market positioning with competitive analysis</li>
-            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

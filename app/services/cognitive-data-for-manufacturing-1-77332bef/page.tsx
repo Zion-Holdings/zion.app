@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Role-based access control with SSO integration</li>
             <li>Budget optimization with cost allocation</li>
             <li>Market analysis with buyer behavior insights</li>
-            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         

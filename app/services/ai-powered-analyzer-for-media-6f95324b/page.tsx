@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Logistics route optimization with traffic prediction</li>
             <li>Real-time processing with streaming analytics</li>
             <li>Master data management with golden records</li>
-            <li>Multi-language support with localization</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Security for Finance #2 - Zion Tech Group",
-  description: "Revolutionize finance through intelligent automation. Our Intelligent Security for Finance #2 leverages advanced machine learning to deliver image recognition at scale.",
+  description: "Revolutionize finance through intelligent automation. Our Intelligent Security for Finance #2 leverages advanced machine learning to deliver image recognition a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-security-for-finance-2-615756b9`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Content generation with plagiarism checks</li>
             <li>Code optimization with performance profiling</li>
             <li>Customer service automation with chatbot integration</li>
-            <li>Predictive modeling with ensemble methods</li>
           </ul>
         </div>
         

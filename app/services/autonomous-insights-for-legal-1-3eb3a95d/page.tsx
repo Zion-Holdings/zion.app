@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Audit trails with compliance reporting</li>
             <li>Custom integrations with webhook support</li>
             <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
           </ul>
         </div>
         

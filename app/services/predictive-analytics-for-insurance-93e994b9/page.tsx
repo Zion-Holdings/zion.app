@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Analytics for Insurance - Zion Tech Group",
-  description: "Revolutionize insurance through intelligent automation. Our Predictive Analytics for Insurance leverages advanced machine learning to deliver user experience at scale.",
+  description: "Revolutionize insurance through intelligent automation. Our Predictive Analytics for Insurance leverages advanced machine learning to deliver user experience at",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-analytics-for-insurance-93e994b9`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Revenue forecasting with market trend analysis</li>
             <li>Edge computing support for low-latency operations</li>
-            <li>Role-based access control with SSO integration</li>
           </ul>
         </div>
         

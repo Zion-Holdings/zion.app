@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Risk for Insurance #1 - Zion Tech Group",
-  description: "Revolutionize insurance through intelligent automation. Our Adaptive Risk for Insurance #1 leverages advanced machine learning to deliver threat detection at scale.",
+  description: "Revolutionize insurance through intelligent automation. Our Adaptive Risk for Insurance #1 leverages advanced machine learning to deliver threat detection at sc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-risk-for-insurance-1-0af6c94e`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Microservices deployment with container orchestration</li>
             <li>Multi-language support with localization</li>
             <li>Automation opportunity identification</li>
-            <li>Document processing with OCR and NLP</li>
           </ul>
         </div>
         

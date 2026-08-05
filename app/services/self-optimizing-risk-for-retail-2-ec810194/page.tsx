@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cost reduction with process mining</li>
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Process discovery with activity analysis</li>
           </ul>
         </div>
         

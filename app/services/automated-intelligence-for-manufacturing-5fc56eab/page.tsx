@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Intelligence for Manufacturing - Zion Tech Group",
-  description: "Transform your manufacturing operations with our Automated Intelligence for Manufacturing. This AI-driven solution automates decision support with unprecedented accuracy and efficiency.",
+  description: "Transform your manufacturing operations with our Automated Intelligence for Manufacturing. This AI-driven solution automates decision support with unprecedented",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-intelligence-for-manufacturing-5fc56eab`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Financial risk management with scenario analysis</li>
             <li>Data encryption at rest and in transit</li>
             <li>Role-based access control with SSO integration</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         

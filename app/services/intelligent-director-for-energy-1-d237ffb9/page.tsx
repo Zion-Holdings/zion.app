@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automation opportunity identification</li>
             <li>Alerting system with intelligent notifications</li>
             <li>Data encryption at rest and in transit</li>
-            <li>Data quality with anomaly detection</li>
           </ul>
         </div>
         

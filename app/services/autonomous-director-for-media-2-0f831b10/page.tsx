@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Predictive modeling with ensemble methods</li>
             <li>Logistics route optimization with traffic prediction</li>
             <li>Role-based access control with SSO integration</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Scalable to millions of transactions per second</li>
             <li>24/7 automated operations without human intervention</li>
             <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Improved employee productivity with automation</li>
           </ul>
         </div>
         

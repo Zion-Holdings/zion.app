@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced shipping costs with route optimization</li>
             <li>Automated compliance reporting for regulatory requirements</li>
             <li>Better financial planning with predictive models</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

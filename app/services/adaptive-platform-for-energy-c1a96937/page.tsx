@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Platform for Energy - Zion Tech Group",
-  description: "Transform your energy operations with our Adaptive Platform for Energy. This AI-driven solution automates decision support with unprecedented accuracy and efficiency.",
+  description: "Transform your energy operations with our Adaptive Platform for Energy. This AI-driven solution automates decision support with unprecedented accuracy and effic",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-platform-for-energy-c1a96937`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Image recognition with computer vision</li>
             <li>Security monitoring with threat intelligence</li>
             <li>Data encryption at rest and in transit</li>
-            <li>Cost reduction with process mining</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Fraud detection with anomaly analysis</li>
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Language processing with sentiment analysis</li>
-            <li>Competitive intelligence with market share tracking</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Monitoring for Retail - Zion Tech Group",
-  description: "Transform your retail operations with our Adaptive Monitoring for Retail. This AI-driven solution automates inventory management with unprecedented accuracy and efficiency.",
+  description: "Transform your retail operations with our Adaptive Monitoring for Retail. This AI-driven solution automates inventory management with unprecedented accuracy and",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-monitoring-for-retail-cc12daa4`
   }

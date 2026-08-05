@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Intelligence for Energy #3 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Intelligence for Energy #3. This autonomous system provides network optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Intelligent Intelligence for Energy #3. This autonomous system provides network optimization with zero manual intervention need",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-intelligence-for-energy-3-9ffdab0a`
   }

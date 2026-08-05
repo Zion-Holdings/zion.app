@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Processor for Retail - Zion Tech Group",
-  description: "Revolutionize retail through intelligent automation. Our Autonomous Processor for Retail leverages advanced machine learning to deliver security monitoring at scale.",
+  description: "Revolutionize retail through intelligent automation. Our Autonomous Processor for Retail leverages advanced machine learning to deliver security monitoring at s",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-processor-for-retail-6a42c3a8`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved brand awareness with social monitoring</li>
             <li>Better supply chain visibility with tracking</li>
             <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Better code quality with automated reviews</li>
           </ul>
         </div>
         

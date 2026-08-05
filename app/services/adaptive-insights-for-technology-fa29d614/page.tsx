@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Insights for Technology - Zion Tech Group",
-  description: "The future of technology is here with Adaptive Insights for Technology. Powered by cutting-edge AI, this platform delivers performance monitoring like never before.",
+  description: "The future of technology is here with Adaptive Insights for Technology. Powered by cutting-edge AI, this platform delivers performance monitoring like never bef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-insights-for-technology-fa29d614`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved conversion rates with personalization</li>
             <li>50% reduction in operational costs through automation</li>
             <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Improved forecast accuracy with ML models</li>
           </ul>
         </div>
         

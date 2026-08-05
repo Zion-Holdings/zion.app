@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Market analysis with buyer behavior insights</li>
             <li>Master data management with golden records</li>
             <li>Serverless functions for cost-effective scaling</li>
-            <li>Business intelligence with KPI dashboards</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better financial planning with predictive models</li>
             <li>Better compliance with automated audit trails</li>
             <li>Improved quality with automated testing and validation</li>
-            <li>Improved customer satisfaction with faster response times</li>
           </ul>
         </div>
         

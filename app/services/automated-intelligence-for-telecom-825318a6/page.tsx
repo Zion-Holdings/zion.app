@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Intelligence for Telecom - Zion Tech Group",
-  description: "Revolutionize telecom through intelligent automation. Our Automated Intelligence for Telecom leverages advanced machine learning to deliver sales process optimization at scale.",
+  description: "Revolutionize telecom through intelligent automation. Our Automated Intelligence for Telecom leverages advanced machine learning to deliver sales process optimi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-intelligence-for-telecom-825318a6`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>24/7 automated operations without human intervention</li>
             <li>Improved sales performance with lead scoring</li>
             <li>Better resource utilization with auto-scaling</li>
-            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

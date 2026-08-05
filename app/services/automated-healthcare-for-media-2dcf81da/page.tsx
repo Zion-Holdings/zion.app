@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>50% reduction in operational costs through automation</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Seamless integration with existing systems and workflows</li>
-            <li>Better compliance with automated audit trails</li>
           </ul>
         </div>
         

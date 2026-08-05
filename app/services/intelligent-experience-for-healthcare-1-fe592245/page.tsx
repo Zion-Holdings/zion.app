@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data encryption at rest and in transit</li>
             <li>Document processing with OCR and NLP</li>
             <li>Financial risk management with scenario analysis</li>
-            <li>Customer journey mapping with touchpoint analysis</li>
           </ul>
         </div>
         

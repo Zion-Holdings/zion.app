@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Optimizer for Logistics #1 - Zion Tech Group",
-  description: "Transform your logistics operations with our Smart Optimizer for Logistics #1. This AI-driven solution automates image recognition with unprecedented accuracy and efficiency.",
+  description: "Transform your logistics operations with our Smart Optimizer for Logistics #1. This AI-driven solution automates image recognition with unprecedented accuracy a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-optimizer-for-logistics-1-df56e373`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better supply chain visibility with tracking</li>
             <li>50% reduction in operational costs through automation</li>
             <li>Reduced development time with code generation</li>
-            <li>Reduced customer acquisition costs with optimization</li>
           </ul>
         </div>
         

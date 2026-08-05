@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Real-time insights and alerts for proactive management</li>
             <li>24/7 automated operations without human intervention</li>
             <li>Cost optimization recommendations with savings analysis</li>
-            <li>Improved employee productivity with automation</li>
           </ul>
         </div>
         

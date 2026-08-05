@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cost reduction with process mining</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>HIPAA ready with healthcare data protection</li>
-            <li>Language processing with sentiment analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced customer acquisition costs with optimization</li>
             <li>Improved quality with automated testing and validation</li>
             <li>24/7 automated operations without human intervention</li>
-            <li>Reduced development time with code generation</li>
           </ul>
         </div>
         

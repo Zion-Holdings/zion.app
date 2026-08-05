@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Brand monitoring across social channels</li>
             <li>Healthcare data analytics with patient insights</li>
             <li>Security monitoring with threat intelligence</li>
-            <li>Language processing with sentiment analysis</li>
           </ul>
         </div>
         

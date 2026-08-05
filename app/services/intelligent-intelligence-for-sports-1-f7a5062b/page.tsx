@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Intelligence for Sports #1 - Zion Tech Group",
-  description: "Revolutionize sports through intelligent automation. Our Intelligent Intelligence for Sports #1 leverages advanced machine learning to deliver security monitoring at scale.",
+  description: "Revolutionize sports through intelligent automation. Our Intelligent Intelligence for Sports #1 leverages advanced machine learning to deliver security monitori",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-intelligence-for-sports-1-f7a5062b`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data encryption at rest and in transit</li>
             <li>Edge computing support for low-latency operations</li>
             <li>GDPR compliance with data portability</li>
-            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Processor for Insurance - Zion Tech Group",
-  description: "Revolutionize insurance through intelligent automation. Our Self-Optimizing Processor for Insurance leverages advanced machine learning to deliver fraud prevention at scale.",
+  description: "Revolutionize insurance through intelligent automation. Our Self-Optimizing Processor for Insurance leverages advanced machine learning to deliver fraud prevent",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-processor-for-insurance-4dbcbb73`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Scalable to millions of transactions per second</li>
             <li>Reduced human error by 95% with automated processes</li>
             <li>Improved quality with automated testing and validation</li>
-            <li>Better code quality with automated reviews</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Machine learning integration with automatic model training</li>
             <li>Energy optimization with consumption tracking</li>
-            <li>Healthcare data analytics with patient insights</li>
           </ul>
         </div>
         

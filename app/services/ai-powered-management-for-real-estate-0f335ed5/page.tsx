@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Market analysis with buyer behavior insights</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>Business intelligence with KPI dashboards</li>
           </ul>
         </div>
         

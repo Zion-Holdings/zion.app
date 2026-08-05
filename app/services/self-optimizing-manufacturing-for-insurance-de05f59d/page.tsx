@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Manufacturing for Insurance - Zion Tech Group",
-  description: "Unlock unprecedented growth with Self-Optimizing Manufacturing for Insurance. This autonomous system provides maintenance scheduling with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Self-Optimizing Manufacturing for Insurance. This autonomous system provides maintenance scheduling with zero manual interventi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-manufacturing-for-insurance-de05f59d`
   }

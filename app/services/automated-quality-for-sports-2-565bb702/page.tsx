@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Predictive modeling with ensemble methods</li>
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>GDPR compliance with data portability</li>
-            <li>Financial risk management with scenario analysis</li>
           </ul>
         </div>
         

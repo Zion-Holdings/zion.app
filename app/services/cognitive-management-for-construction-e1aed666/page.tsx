@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Management for Construction - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Cognitive Management for Construction leverages advanced machine learning to deliver risk assessment at scale.",
+  description: "Revolutionize construction through intelligent automation. Our Cognitive Management for Construction leverages advanced machine learning to deliver risk assessm",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-management-for-construction-e1aed666`
   }

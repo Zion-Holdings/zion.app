@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Role-based access control with SSO integration</li>
             <li>Serverless functions for cost-effective scaling</li>
             <li>Financial risk management with scenario analysis</li>
-            <li>Customer service automation with chatbot integration</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>ROI achieved in under 90 days with cost savings</li>
             <li>Better inventory management with demand forecasting</li>
             <li>3x faster decision making with real-time insights</li>
-            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

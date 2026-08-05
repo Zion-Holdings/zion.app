@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Predictive modeling with ensemble methods</li>
             <li>Network optimization with traffic analysis</li>
             <li>Process discovery with activity analysis</li>
-            <li>Machine learning integration with automatic model training</li>
           </ul>
         </div>
         

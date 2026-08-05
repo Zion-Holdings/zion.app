@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Optimizer for Construction #1 - Zion Tech Group",
-  description: "Transform your construction operations with our Self-Optimizing Optimizer for Construction #1. This AI-driven solution automates image recognition with unprecedented accuracy and efficiency.",
+  description: "Transform your construction operations with our Self-Optimizing Optimizer for Construction #1. This AI-driven solution automates image recognition with unpreced",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-optimizer-for-construction-1-4a72576b`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Alerting system with intelligent notifications</li>
             <li>Custom integrations with webhook support</li>
             <li>Sales process optimization with pipeline management</li>
-            <li>Multi-region deployment with automatic failover</li>
           </ul>
         </div>
         

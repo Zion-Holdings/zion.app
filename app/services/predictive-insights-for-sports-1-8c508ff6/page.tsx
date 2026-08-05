@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced support tickets with self-service options</li>
             <li>Seamless integration with existing systems and workflows</li>
             <li>24/7 automated operations without human intervention</li>
-            <li>Improved forecast accuracy with ML models</li>
           </ul>
         </div>
         

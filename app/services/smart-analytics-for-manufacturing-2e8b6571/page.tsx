@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Analytics for Manufacturing - Zion Tech Group",
-  description: "Revolutionize manufacturing through intelligent automation. Our Smart Analytics for Manufacturing leverages advanced machine learning to deliver resource optimization at scale.",
+  description: "Revolutionize manufacturing through intelligent automation. Our Smart Analytics for Manufacturing leverages advanced machine learning to deliver resource optimi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-analytics-for-manufacturing-2e8b6571`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Security monitoring with threat intelligence</li>
             <li>GDPR compliance with data portability</li>
             <li>Manufacturing quality control with defect detection</li>
-            <li>Business intelligence with KPI dashboards</li>
           </ul>
         </div>
         

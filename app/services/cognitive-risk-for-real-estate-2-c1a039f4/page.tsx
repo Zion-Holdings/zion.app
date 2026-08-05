@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data governance with policy enforcement</li>
             <li>Microservices deployment with container orchestration</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         

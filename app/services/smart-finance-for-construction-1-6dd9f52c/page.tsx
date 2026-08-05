@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Master data management with golden records</li>
             <li>Sales process optimization with pipeline management</li>
             <li>Manufacturing quality control with defect detection</li>
-            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         

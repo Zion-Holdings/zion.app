@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Optimization for Construction - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Adaptive Optimization for Construction leverages advanced machine learning to deliver sales process optimization at scale.",
+  description: "Revolutionize construction through intelligent automation. Our Adaptive Optimization for Construction leverages advanced machine learning to deliver sales proce",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-optimization-for-construction-29488880`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data quality with anomaly detection</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Data governance with policy enforcement</li>
-            <li>Image recognition with computer vision</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced human error by 95% with automated processes</li>
             <li>24/7 automated operations without human intervention</li>
             <li>Enhanced security with continuous threat monitoring</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

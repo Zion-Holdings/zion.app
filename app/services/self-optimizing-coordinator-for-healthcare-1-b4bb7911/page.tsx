@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Coordinator for Healthcare #1 - Zion Tech Group",
-  description: "Revolutionize healthcare through intelligent automation. Our Self-Optimizing Coordinator for Healthcare #1 leverages advanced machine learning to deliver customer service automation at scale.",
+  description: "Revolutionize healthcare through intelligent automation. Our Self-Optimizing Coordinator for Healthcare #1 leverages advanced machine learning to deliver custom",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-coordinator-for-healthcare-1-b4bb7911`
   }

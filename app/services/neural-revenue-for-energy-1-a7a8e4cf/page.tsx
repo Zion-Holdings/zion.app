@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Revenue for Energy #1 - Zion Tech Group",
-  description: "Transform your energy operations with our Neural Revenue for Energy #1. This AI-driven solution automates document processing with unprecedented accuracy and efficiency.",
+  description: "Transform your energy operations with our Neural Revenue for Energy #1. This AI-driven solution automates document processing with unprecedented accuracy and ef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-revenue-for-energy-1-a7a8e4cf`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>GDPR compliance with data portability</li>
             <li>Code optimization with performance profiling</li>
             <li>Version control with rollback capabilities</li>
-            <li>Document processing with OCR and NLP</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced operational risks with predictive models</li>
             <li>Reduced risk with early warning systems</li>
             <li>Reduced support tickets with self-service options</li>
-            <li>Faster content creation with AI assistance</li>
           </ul>
         </div>
         

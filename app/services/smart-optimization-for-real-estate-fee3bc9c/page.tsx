@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Scalable to millions of transactions per second</li>
             <li>50% reduction in operational costs through automation</li>
             <li>Improved conversion rates with personalization</li>
-            <li>Improved employee productivity with automation</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Real-time processing with streaming analytics</li>
             <li>Automation opportunity identification</li>
             <li>Business intelligence with KPI dashboards</li>
-            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         

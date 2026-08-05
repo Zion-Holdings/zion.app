@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Monitoring for Education #1 - Zion Tech Group",
-  description: "Transform your education operations with our Intelligent Monitoring for Education #1. This AI-driven solution automates decision support with unprecedented accuracy and efficiency.",
+  description: "Transform your education operations with our Intelligent Monitoring for Education #1. This AI-driven solution automates decision support with unprecedented accu",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-monitoring-for-education-1-1a2709da`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Maintenance scheduling with predictive analytics</li>
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Market analysis with buyer behavior insights</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Finance for Logistics - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Neural Finance for Logistics leverages advanced machine learning to deliver sales forecasting at scale.",
+  description: "Revolutionize logistics through intelligent automation. Our Neural Finance for Logistics leverages advanced machine learning to deliver sales forecasting at sca",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-finance-for-logistics-a8589a7f`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved sales performance with lead scoring</li>
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         

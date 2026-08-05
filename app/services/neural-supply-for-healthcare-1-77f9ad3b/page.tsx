@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Manufacturing quality control with defect detection</li>
             <li>Security monitoring with threat intelligence</li>
             <li>Fraud detection with anomaly analysis</li>
-            <li>Master data management with golden records</li>
           </ul>
         </div>
         

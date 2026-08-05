@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>24/7 automated operations without human intervention</li>
             <li>Real-time insights and alerts for proactive management</li>
             <li>Improved sales performance with lead scoring</li>
-            <li>Better supply chain visibility with tracking</li>
           </ul>
         </div>
         

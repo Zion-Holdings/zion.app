@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Sales for Gaming #1 - Zion Tech Group",
-  description: "Transform your gaming operations with our Neural Sales for Gaming #1. This AI-driven solution automates financial planning with unprecedented accuracy and efficiency.",
+  description: "Transform your gaming operations with our Neural Sales for Gaming #1. This AI-driven solution automates financial planning with unprecedented accuracy and effic",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-sales-for-gaming-1-37b3f4b7`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Quality for Real-Estate - Zion Tech Group",
-  description: "Revolutionize real-estate through intelligent automation. Our Predictive Quality for Real-Estate leverages advanced machine learning to deliver resource optimization at scale.",
+  description: "Revolutionize real-estate through intelligent automation. Our Predictive Quality for Real-Estate leverages advanced machine learning to deliver resource optimiz",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-quality-for-real-estate-da358709`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Edge computing support for low-latency operations</li>
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Multi-region deployment with automatic failover</li>
-            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         

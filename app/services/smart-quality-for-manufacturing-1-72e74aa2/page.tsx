@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Energy optimization with consumption tracking</li>
             <li>Customer service automation with chatbot integration</li>
             <li>User experience analytics with behavior tracking</li>
-            <li>Logistics route optimization with traffic prediction</li>
           </ul>
         </div>
         

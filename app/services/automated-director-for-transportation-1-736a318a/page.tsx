@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Director for Transportation #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Automated Director for Transportation #1. This autonomous system provides sales forecasting with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Automated Director for Transportation #1. This autonomous system provides sales forecasting with zero manual intervention neede",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-director-for-transportation-1-736a318a`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automation opportunity identification</li>
             <li>Security monitoring with threat intelligence</li>
             <li>Mobile-responsive interface with offline capabilities</li>
-            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Manufacturing for Retail #2 - Zion Tech Group",
-  description: "Transform your retail operations with our Automated Manufacturing for Retail #2. This AI-driven solution automates process automation with unprecedented accuracy and efficiency.",
+  description: "Transform your retail operations with our Automated Manufacturing for Retail #2. This AI-driven solution automates process automation with unprecedented accurac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-manufacturing-for-retail-2-66bed5c1`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Performance benchmarking against industry standards</li>
             <li>3x faster decision making with real-time insights</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Improved customer retention with proactive service</li>
           </ul>
         </div>
         

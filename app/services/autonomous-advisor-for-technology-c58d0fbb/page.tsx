@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security posture with continuous monitoring</li>
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Reduced shipping costs with route optimization</li>
-            <li>Reduced customer acquisition costs with optimization</li>
           </ul>
         </div>
         

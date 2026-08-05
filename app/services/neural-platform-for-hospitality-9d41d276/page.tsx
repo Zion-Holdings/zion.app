@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Multi-region deployment with automatic failover</li>
-            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Faster content creation with AI assistance</li>
             <li>3x faster decision making with real-time insights</li>
             <li>Reduced human error by 95% with automated processes</li>
-            <li>Better code quality with automated reviews</li>
           </ul>
         </div>
         

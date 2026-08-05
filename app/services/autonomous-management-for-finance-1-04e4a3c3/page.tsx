@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Custom integrations with webhook support</li>
             <li>Microservices deployment with container orchestration</li>
             <li>Sales process optimization with pipeline management</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         

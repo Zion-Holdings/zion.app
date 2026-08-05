@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Coordinator for Legal - Zion Tech Group",
-  description: "Transform your legal operations with our AI-Powered Coordinator for Legal. This AI-driven solution automates threat detection with unprecedented accuracy and efficiency.",
+  description: "Transform your legal operations with our AI-Powered Coordinator for Legal. This AI-driven solution automates threat detection with unprecedented accuracy and ef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-coordinator-for-legal-aa49d251`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Monitoring for Gaming - Zion Tech Group",
-  description: "Revolutionize gaming through intelligent automation. Our AI-Powered Monitoring for Gaming leverages advanced machine learning to deliver sales process optimization at scale.",
+  description: "Revolutionize gaming through intelligent automation. Our AI-Powered Monitoring for Gaming leverages advanced machine learning to deliver sales process optimizat",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-monitoring-for-gaming-a77f250d`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Machine learning integration with automatic model training</li>
             <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         

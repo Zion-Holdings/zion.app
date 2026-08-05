@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Logistics route optimization with traffic prediction</li>
             <li>Data quality with anomaly detection</li>
-            <li>Automation opportunity identification</li>
           </ul>
         </div>
         

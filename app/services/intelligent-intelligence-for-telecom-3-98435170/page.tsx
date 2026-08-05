@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Intelligence for Telecom #3 - Zion Tech Group",
-  description: "Transform your telecom operations with our Intelligent Intelligence for Telecom #3. This AI-driven solution automates process automation with unprecedented accuracy and efficiency.",
+  description: "Transform your telecom operations with our Intelligent Intelligence for Telecom #3. This AI-driven solution automates process automation with unprecedented accu",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-intelligence-for-telecom-3-98435170`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Open-source friendly with plugin architecture</li>
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Multi-region deployment with automatic failover</li>
           </ul>
         </div>
         

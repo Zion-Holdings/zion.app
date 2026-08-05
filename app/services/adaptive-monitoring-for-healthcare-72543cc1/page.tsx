@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Monitoring for Healthcare - Zion Tech Group",
-  description: "Revolutionize healthcare through intelligent automation. Our Adaptive Monitoring for Healthcare leverages advanced machine learning to deliver language processing at scale.",
+  description: "Revolutionize healthcare through intelligent automation. Our Adaptive Monitoring for Healthcare leverages advanced machine learning to deliver language processi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-monitoring-for-healthcare-72543cc1`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced customer acquisition costs with optimization</li>
             <li>Enhanced security posture with continuous monitoring</li>
             <li>Better customer experience with personalization</li>
-            <li>Improved forecast accuracy with ML models</li>
           </ul>
         </div>
         

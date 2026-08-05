@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Image recognition with computer vision</li>
             <li>Logistics route optimization with traffic prediction</li>
-            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         

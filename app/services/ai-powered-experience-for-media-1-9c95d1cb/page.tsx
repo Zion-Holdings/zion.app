@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Experience for Media #1 - Zion Tech Group",
-  description: "Transform your media operations with our AI-Powered Experience for Media #1. This AI-driven solution automates predictive analytics with unprecedented accuracy and efficiency.",
+  description: "Transform your media operations with our AI-Powered Experience for Media #1. This AI-driven solution automates predictive analytics with unprecedented accuracy ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-experience-for-media-1-9c95d1cb`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Customer service automation with chatbot integration</li>
             <li>Multi-region deployment with automatic failover</li>
-            <li>Logistics route optimization with traffic prediction</li>
           </ul>
         </div>
         

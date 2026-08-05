@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Manufacturing quality control with defect detection</li>
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         

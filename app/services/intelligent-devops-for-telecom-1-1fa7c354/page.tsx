@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-region deployment with automatic failover</li>
             <li>Real-time processing with streaming analytics</li>
             <li>Data encryption at rest and in transit</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Cost optimization recommendations with savings analysis</li>
             <li>Better inventory management with demand forecasting</li>
             <li>Reduced operational risks with predictive models</li>
-            <li>Enhanced decision making with data-driven insights</li>
           </ul>
         </div>
         

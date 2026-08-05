@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Open-source friendly with plugin architecture</li>
             <li>Market analysis with buyer behavior insights</li>
-            <li>Document processing with OCR and NLP</li>
           </ul>
         </div>
         

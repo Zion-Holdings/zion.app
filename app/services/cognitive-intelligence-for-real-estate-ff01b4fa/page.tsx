@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Intelligence for Real-Estate - Zion Tech Group",
-  description: "Revolutionize real-estate through intelligent automation. Our Cognitive Intelligence for Real-Estate leverages advanced machine learning to deliver resource optimization at scale.",
+  description: "Revolutionize real-estate through intelligent automation. Our Cognitive Intelligence for Real-Estate leverages advanced machine learning to deliver resource opt",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-intelligence-for-real-estate-ff01b4fa`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security with continuous threat monitoring</li>
             <li>Better risk management with predictive analytics</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
           </ul>
         </div>
         

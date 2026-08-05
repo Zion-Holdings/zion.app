@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Monitoring for Manufacturing #1 - Zion Tech Group",
-  description: "The future of manufacturing is here with Adaptive Monitoring for Manufacturing #1. Powered by cutting-edge AI, this platform delivers threat detection like never before.",
+  description: "The future of manufacturing is here with Adaptive Monitoring for Manufacturing #1. Powered by cutting-edge AI, this platform delivers threat detection like neve",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-monitoring-for-manufacturing-1-9eba6491`
   }

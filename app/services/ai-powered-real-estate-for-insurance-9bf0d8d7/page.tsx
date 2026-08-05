@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Real Estate for Insurance - Zion Tech Group",
-  description: "Transform your insurance operations with our AI-Powered Real Estate for Insurance. This AI-driven solution automates network optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your insurance operations with our AI-Powered Real Estate for Insurance. This AI-driven solution automates network optimization with unprecedented acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-real-estate-for-insurance-9bf0d8d7`
   }

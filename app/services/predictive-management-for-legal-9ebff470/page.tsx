@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Management for Legal - Zion Tech Group",
-  description: "Transform your legal operations with our Predictive Management for Legal. This AI-driven solution automates market intelligence with unprecedented accuracy and efficiency.",
+  description: "Transform your legal operations with our Predictive Management for Legal. This AI-driven solution automates market intelligence with unprecedented accuracy and ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-management-for-legal-9ebff470`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Inventory prediction with demand forecasting</li>
             <li>Code optimization with performance profiling</li>
             <li>Process discovery with activity analysis</li>
-            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         

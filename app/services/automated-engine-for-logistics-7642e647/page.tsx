@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>HIPAA ready with healthcare data protection</li>
             <li>Logistics route optimization with traffic prediction</li>
             <li>Language processing with sentiment analysis</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         

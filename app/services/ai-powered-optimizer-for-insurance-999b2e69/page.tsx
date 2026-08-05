@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Audit trails with compliance reporting</li>
             <li>Edge computing support for low-latency operations</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Logistics route optimization with traffic prediction</li>
           </ul>
         </div>
         

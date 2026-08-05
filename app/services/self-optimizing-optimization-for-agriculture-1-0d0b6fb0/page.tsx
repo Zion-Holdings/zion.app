@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Optimization for Agriculture #1 - Zion Tech Group",
-  description: "Revolutionize agriculture through intelligent automation. Our Self-Optimizing Optimization for Agriculture #1 leverages advanced machine learning to deliver quality control at scale.",
+  description: "Revolutionize agriculture through intelligent automation. Our Self-Optimizing Optimization for Agriculture #1 leverages advanced machine learning to deliver qua",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-optimization-for-agriculture-1-0d0b6fb0`
   }

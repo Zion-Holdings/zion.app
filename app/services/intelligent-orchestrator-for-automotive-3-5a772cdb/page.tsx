@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Orchestrator for Automotive #3 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Orchestrator for Automotive #3. This autonomous system provides sales process optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Intelligent Orchestrator for Automotive #3. This autonomous system provides sales process optimization with zero manual interve",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-orchestrator-for-automotive-3-5a772cdb`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Audit trails with compliance reporting</li>
             <li>Data governance with policy enforcement</li>
             <li>Serverless functions for cost-effective scaling</li>
-            <li>Language processing with sentiment analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved quality with automated testing and validation</li>
             <li>Improved sales performance with lead scoring</li>
             <li>Zero manual intervention required for routine tasks</li>
-            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

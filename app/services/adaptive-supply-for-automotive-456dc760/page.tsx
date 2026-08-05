@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Supply for Automotive - Zion Tech Group",
-  description: "Revolutionize automotive through intelligent automation. Our Adaptive Supply for Automotive leverages advanced machine learning to deliver risk assessment at scale.",
+  description: "Revolutionize automotive through intelligent automation. Our Adaptive Supply for Automotive leverages advanced machine learning to deliver risk assessment at sc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-supply-for-automotive-456dc760`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Logistics route optimization with traffic prediction</li>
             <li>Language processing with sentiment analysis</li>
             <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         

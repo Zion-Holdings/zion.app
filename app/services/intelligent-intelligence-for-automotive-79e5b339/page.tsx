@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Intelligence for Automotive - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Intelligence for Automotive. This autonomous system provides energy management with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Intelligent Intelligence for Automotive. This autonomous system provides energy management with zero manual intervention needed",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-intelligence-for-automotive-79e5b339`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced churn with proactive customer retention</li>
             <li>3x faster decision making with real-time insights</li>
             <li>Reduced development time with code generation</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
           </ul>
         </div>
         

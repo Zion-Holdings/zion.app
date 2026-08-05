@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Generator for Energy - Zion Tech Group",
-  description: "Revolutionize energy through intelligent automation. Our Self-Optimizing Generator for Energy leverages advanced machine learning to deliver compliance monitoring at scale.",
+  description: "Revolutionize energy through intelligent automation. Our Self-Optimizing Generator for Energy leverages advanced machine learning to deliver compliance monitori",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-generator-for-energy-aa2fc6a3`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Multi-language support with localization</li>
-            <li>Multi-region deployment with automatic failover</li>
           </ul>
         </div>
         

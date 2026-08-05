@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Optimizer for Construction #2 - Zion Tech Group",
-  description: "Transform your construction operations with our Intelligent Optimizer for Construction #2. This AI-driven solution automates document processing with unprecedented accuracy and efficiency.",
+  description: "Transform your construction operations with our Intelligent Optimizer for Construction #2. This AI-driven solution automates document processing with unpreceden",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-optimizer-for-construction-2-ea1d73e3`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>SOC 2 certified with security controls</li>
             <li>Role-based access control with SSO integration</li>
             <li>Master data management with golden records</li>
-            <li>HIPAA ready with healthcare data protection</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved customer retention with proactive service</li>
             <li>Performance benchmarking against industry standards</li>
             <li>Better inventory management with demand forecasting</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

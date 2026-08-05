@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Analytics for Technology #1 - Zion Tech Group",
-  description: "The future of technology is here with AI-Powered Analytics for Technology #1. Powered by cutting-edge AI, this platform delivers market intelligence like never before.",
+  description: "The future of technology is here with AI-Powered Analytics for Technology #1. Powered by cutting-edge AI, this platform delivers market intelligence like never ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-analytics-for-technology-1-a7aaf5eb`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Zero manual intervention required for routine tasks</li>
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Reduced development time with code generation</li>
-            <li>Better supply chain visibility with tracking</li>
           </ul>
         </div>
         

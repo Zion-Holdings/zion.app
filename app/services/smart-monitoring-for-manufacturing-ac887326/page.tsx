@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Monitoring for Manufacturing - Zion Tech Group",
-  description: "Transform your manufacturing operations with our Smart Monitoring for Manufacturing. This AI-driven solution automates maintenance scheduling with unprecedented accuracy and efficiency.",
+  description: "Transform your manufacturing operations with our Smart Monitoring for Manufacturing. This AI-driven solution automates maintenance scheduling with unprecedented",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-monitoring-for-manufacturing-ac887326`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Logistics route optimization with traffic prediction</li>
             <li>Microservices deployment with container orchestration</li>
             <li>Cost reduction with process mining</li>
-            <li>Multi-language support with localization</li>
           </ul>
         </div>
         

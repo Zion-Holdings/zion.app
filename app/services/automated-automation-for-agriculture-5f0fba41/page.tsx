@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Real-time processing with streaming analytics</li>
             <li>Version control with rollback capabilities</li>
-            <li>Sales process optimization with pipeline management</li>
           </ul>
         </div>
         

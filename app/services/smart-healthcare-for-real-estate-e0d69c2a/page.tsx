@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Healthcare for Real-Estate - Zion Tech Group",
-  description: "Transform your real-estate operations with our Smart Healthcare for Real-Estate. This AI-driven solution automates customer service automation with unprecedented accuracy and efficiency.",
+  description: "Transform your real-estate operations with our Smart Healthcare for Real-Estate. This AI-driven solution automates customer service automation with unprecedente",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-healthcare-for-real-estate-e0d69c2a`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Content generation with plagiarism checks</li>
             <li>Fraud detection with anomaly analysis</li>
             <li>Sentiment analysis with real-time monitoring</li>
-            <li>Competitive intelligence with market share tracking</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better code quality with automated reviews</li>
             <li>Better financial planning with predictive models</li>
             <li>Better customer experience with personalization</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
           </ul>
         </div>
         

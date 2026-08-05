@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Business intelligence with KPI dashboards</li>
             <li>Brand monitoring across social channels</li>
             <li>Image recognition with computer vision</li>
-            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         

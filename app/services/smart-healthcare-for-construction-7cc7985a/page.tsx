@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Healthcare for Construction - Zion Tech Group",
-  description: "Transform your construction operations with our Smart Healthcare for Construction. This AI-driven solution automates content generation with unprecedented accuracy and efficiency.",
+  description: "Transform your construction operations with our Smart Healthcare for Construction. This AI-driven solution automates content generation with unprecedented accur",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-healthcare-for-construction-7cc7985a`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer service automation with chatbot integration</li>
             <li>Logistics route optimization with traffic prediction</li>
             <li>Multi-language support with localization</li>
-            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved employee productivity with automation</li>
             <li>ROI achieved in under 90 days with cost savings</li>
             <li>Better resource utilization with auto-scaling</li>
-            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

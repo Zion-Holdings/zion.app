@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Process discovery with activity analysis</li>
             <li>Language processing with sentiment analysis</li>
-            <li>Cost reduction with process mining</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better supply chain visibility with tracking</li>
             <li>Scalable to millions of transactions per second</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Improved customer retention with proactive service</li>
           </ul>
         </div>
         

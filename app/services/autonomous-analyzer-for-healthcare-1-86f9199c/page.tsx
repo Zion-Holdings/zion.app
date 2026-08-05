@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Analyzer for Healthcare #1 - Zion Tech Group",
-  description: "Transform your healthcare operations with our Autonomous Analyzer for Healthcare #1. This AI-driven solution automates content generation with unprecedented accuracy and efficiency.",
+  description: "Transform your healthcare operations with our Autonomous Analyzer for Healthcare #1. This AI-driven solution automates content generation with unprecedented acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-analyzer-for-healthcare-1-86f9199c`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Role-based access control with SSO integration</li>
             <li>Brand monitoring across social channels</li>
             <li>Revenue forecasting with market trend analysis</li>
-            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         

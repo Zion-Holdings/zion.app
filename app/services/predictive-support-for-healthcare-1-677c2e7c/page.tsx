@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Version control with rollback capabilities</li>
             <li>Image recognition with computer vision</li>
             <li>Process discovery with activity analysis</li>
-            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         

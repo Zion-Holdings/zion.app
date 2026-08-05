@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Orchestrator for Manufacturing #2 - Zion Tech Group",
-  description: "Next-generation manufacturing solution: Cognitive Orchestrator for Manufacturing #2. Combines sales process optimization with adaptive intelligence for optimal results.",
+  description: "Next-generation manufacturing solution: Cognitive Orchestrator for Manufacturing #2. Combines sales process optimization with adaptive intelligence for optimal ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-orchestrator-for-manufacturing-2-a5994ce9`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>GDPR compliance with data portability</li>
             <li>Security monitoring with threat intelligence</li>
             <li>Cost reduction with process mining</li>
-            <li>A/B testing framework for continuous optimization</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced support tickets with self-service options</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>Better code quality with automated reviews</li>
-            <li>Reduced operational risks with predictive models</li>
           </ul>
         </div>
         

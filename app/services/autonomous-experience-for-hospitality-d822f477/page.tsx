@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Experience for Hospitality - Zion Tech Group",
-  description: "The future of hospitality is here with Autonomous Experience for Hospitality. Powered by cutting-edge AI, this platform delivers network optimization like never before.",
+  description: "The future of hospitality is here with Autonomous Experience for Hospitality. Powered by cutting-edge AI, this platform delivers network optimization like never",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-experience-for-hospitality-d822f477`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Security monitoring with threat intelligence</li>
             <li>Brand monitoring across social channels</li>
             <li>Open-source friendly with plugin architecture</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data quality with anomaly detection</li>
             <li>Data governance with policy enforcement</li>
             <li>SOC 2 certified with security controls</li>
-            <li>Cost reduction with process mining</li>
           </ul>
         </div>
         

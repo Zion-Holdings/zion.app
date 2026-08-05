@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Coordinator for Telecom - Zion Tech Group",
-  description: "Unlock unprecedented growth with Autonomous Coordinator for Telecom. This autonomous system provides customer service automation with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Autonomous Coordinator for Telecom. This autonomous system provides customer service automation with zero manual intervention n",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-coordinator-for-telecom-d9e8f9ac`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>SOC 2 certified with security controls</li>
             <li>Version control with rollback capabilities</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
           </ul>
         </div>
         

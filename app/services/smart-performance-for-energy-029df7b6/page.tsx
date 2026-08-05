@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Microservices deployment with container orchestration</li>
             <li>Healthcare data analytics with patient insights</li>
             <li>Real-time processing with streaming analytics</li>
-            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced risk with early warning systems</li>
             <li>Enhanced security with continuous threat monitoring</li>
             <li>24/7 automated operations without human intervention</li>
-            <li>Improved product quality with automated testing</li>
           </ul>
         </div>
         

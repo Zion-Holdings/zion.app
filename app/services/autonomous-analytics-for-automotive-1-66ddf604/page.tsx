@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Analytics for Automotive #1 - Zion Tech Group",
-  description: "The future of automotive is here with Autonomous Analytics for Automotive #1. Powered by cutting-edge AI, this platform delivers energy management like never before.",
+  description: "The future of automotive is here with Autonomous Analytics for Automotive #1. Powered by cutting-edge AI, this platform delivers energy management like never be",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-analytics-for-automotive-1-66ddf604`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Content generation with plagiarism checks</li>
             <li>Fraud detection with anomaly analysis</li>
             <li>Open-source friendly with plugin architecture</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Scalable to millions of transactions per second</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>Improved sales performance with lead scoring</li>
-            <li>Improved forecast accuracy with ML models</li>
           </ul>
         </div>
         

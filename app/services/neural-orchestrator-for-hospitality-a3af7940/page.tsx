@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Orchestrator for Hospitality - Zion Tech Group",
-  description: "Transform your hospitality operations with our Neural Orchestrator for Hospitality. This AI-driven solution automates network optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your hospitality operations with our Neural Orchestrator for Hospitality. This AI-driven solution automates network optimization with unprecedented ac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-orchestrator-for-hospitality-a3af7940`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Faster content creation with AI assistance</li>
             <li>Scalable to millions of transactions per second</li>
             <li>Reduced shipping costs with route optimization</li>
-            <li>Better supply chain visibility with tracking</li>
           </ul>
         </div>
         

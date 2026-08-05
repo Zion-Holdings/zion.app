@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Platform for Construction - Zion Tech Group",
-  description: "The future of construction is here with Cognitive Platform for Construction. Powered by cutting-edge AI, this platform delivers workflow management like never before.",
+  description: "The future of construction is here with Cognitive Platform for Construction. Powered by cutting-edge AI, this platform delivers workflow management like never b",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-platform-for-construction-f0f08083`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Microservices deployment with container orchestration</li>
             <li>Budget optimization with cost allocation</li>
             <li>Image recognition with computer vision</li>
-            <li>Executive dashboards with drill-down capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Increased revenue with optimized pricing strategies</li>
             <li>Dynamic resource allocation based on demand patterns</li>
             <li>Improved sales performance with lead scoring</li>
-            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

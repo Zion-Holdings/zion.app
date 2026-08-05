@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Director for Gaming - Zion Tech Group",
-  description: "Transform your gaming operations with our Cognitive Director for Gaming. This AI-driven solution automates threat detection with unprecedented accuracy and efficiency.",
+  description: "Transform your gaming operations with our Cognitive Director for Gaming. This AI-driven solution automates threat detection with unprecedented accuracy and effi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-director-for-gaming-5414a677`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Inventory prediction with demand forecasting</li>
             <li>Compliance monitoring with regulatory updates</li>
-            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better code quality with automated reviews</li>
             <li>Faster content creation with AI assistance</li>
             <li>Increased revenue with optimized pricing strategies</li>
-            <li>Better supply chain visibility with tracking</li>
           </ul>
         </div>
         

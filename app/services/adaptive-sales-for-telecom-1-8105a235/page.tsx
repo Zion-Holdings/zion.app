@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Sales for Telecom #1 - Zion Tech Group",
-  description: "Revolutionize telecom through intelligent automation. Our Adaptive Sales for Telecom #1 leverages advanced machine learning to deliver performance monitoring at scale.",
+  description: "Revolutionize telecom through intelligent automation. Our Adaptive Sales for Telecom #1 leverages advanced machine learning to deliver performance monitoring at",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-sales-for-telecom-1-8105a235`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-language support with localization</li>
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>Budget optimization with cost allocation</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better customer experience with personalization</li>
             <li>Cost optimization recommendations with savings analysis</li>
             <li>Enhanced security posture with continuous monitoring</li>
-            <li>Improved brand awareness with social monitoring</li>
           </ul>
         </div>
         

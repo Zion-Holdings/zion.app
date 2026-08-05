@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Insights for Media #1 - Zion Tech Group",
-  description: "Transform your media operations with our Autonomous Insights for Media #1. This AI-driven solution automates sales process optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your media operations with our Autonomous Insights for Media #1. This AI-driven solution automates sales process optimization with unprecedented accur",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-insights-for-media-1-f0a4b591`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better market positioning with competitive analysis</li>
             <li>Reduced development time with code generation</li>
             <li>Enhanced decision making with data-driven insights</li>
-            <li>Improved customer retention with proactive service</li>
           </ul>
         </div>
         

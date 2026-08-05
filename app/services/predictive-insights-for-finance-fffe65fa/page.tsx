@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Insights for Finance - Zion Tech Group",
-  description: "Revolutionize finance through intelligent automation. Our Predictive Insights for Finance leverages advanced machine learning to deliver quality control at scale.",
+  description: "Revolutionize finance through intelligent automation. Our Predictive Insights for Finance leverages advanced machine learning to deliver quality control at scal",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-insights-for-finance-fffe65fa`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Improved employee productivity with automation</li>
             <li>Improved forecast accuracy with ML models</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
           </ul>
         </div>
         

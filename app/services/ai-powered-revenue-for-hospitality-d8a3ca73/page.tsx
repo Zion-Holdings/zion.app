@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Revenue for Hospitality - Zion Tech Group",
-  description: "Transform your hospitality operations with our AI-Powered Revenue for Hospitality. This AI-driven solution automates sales forecasting with unprecedented accuracy and efficiency.",
+  description: "Transform your hospitality operations with our AI-Powered Revenue for Hospitality. This AI-driven solution automates sales forecasting with unprecedented accura",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-revenue-for-hospitality-d8a3ca73`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Edge computing support for low-latency operations</li>
             <li>Inventory prediction with demand forecasting</li>
             <li>Compliance monitoring with regulatory updates</li>
-            <li>Cost reduction with process mining</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Logistics route optimization with traffic prediction</li>
             <li>Competitive intelligence with market share tracking</li>
             <li>Cost reduction with process mining</li>
-            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         

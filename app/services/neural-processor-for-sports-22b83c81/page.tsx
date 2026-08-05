@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Document processing with OCR and NLP</li>
             <li>Master data management with golden records</li>
             <li>Customer journey mapping with touchpoint analysis</li>
-            <li>Audit trails with compliance reporting</li>
           </ul>
         </div>
         

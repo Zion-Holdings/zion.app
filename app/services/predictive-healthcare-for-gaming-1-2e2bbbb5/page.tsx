@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Healthcare for Gaming #1 - Zion Tech Group",
-  description: "Revolutionize gaming through intelligent automation. Our Predictive Healthcare for Gaming #1 leverages advanced machine learning to deliver compliance monitoring at scale.",
+  description: "Revolutionize gaming through intelligent automation. Our Predictive Healthcare for Gaming #1 leverages advanced machine learning to deliver compliance monitorin",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-healthcare-for-gaming-1-2e2bbbb5`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Performance benchmarking against industry standards</li>
             <li>Improved sales performance with lead scoring</li>
             <li>Reduced operational risks with predictive models</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
           </ul>
         </div>
         

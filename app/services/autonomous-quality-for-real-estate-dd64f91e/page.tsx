@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Quality for Real-Estate - Zion Tech Group",
-  description: "Revolutionize real-estate through intelligent automation. Our Autonomous Quality for Real-Estate leverages advanced machine learning to deliver compliance monitoring at scale.",
+  description: "Revolutionize real-estate through intelligent automation. Our Autonomous Quality for Real-Estate leverages advanced machine learning to deliver compliance monit",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-quality-for-real-estate-dd64f91e`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Code optimization with performance profiling</li>
             <li>Audit trails with compliance reporting</li>
             <li>Automation opportunity identification</li>
-            <li>Sales process optimization with pipeline management</li>
           </ul>
         </div>
         

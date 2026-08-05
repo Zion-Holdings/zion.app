@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>GDPR compliance with data portability</li>
             <li>User experience analytics with behavior tracking</li>
             <li>Open-source friendly with plugin architecture</li>
-            <li>Market analysis with buyer behavior insights</li>
           </ul>
         </div>
         

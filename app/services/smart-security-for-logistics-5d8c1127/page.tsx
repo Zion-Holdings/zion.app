@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Security for Logistics - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Smart Security for Logistics leverages advanced machine learning to deliver compliance monitoring at scale.",
+  description: "Revolutionize logistics through intelligent automation. Our Smart Security for Logistics leverages advanced machine learning to deliver compliance monitoring at",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-security-for-logistics-5d8c1127`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Microservices deployment with container orchestration</li>
             <li>Serverless functions for cost-effective scaling</li>
             <li>Security monitoring with threat intelligence</li>
-            <li>Image recognition with computer vision</li>
           </ul>
         </div>
         

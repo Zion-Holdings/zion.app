@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Process discovery with activity analysis</li>
             <li>Version control with rollback capabilities</li>
             <li>Open-source friendly with plugin architecture</li>
-            <li>Customer journey mapping with touchpoint analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security posture with continuous monitoring</li>
             <li>Reduced development time with code generation</li>
             <li>Reduced churn with proactive customer retention</li>
-            <li>Improved forecast accuracy with ML models</li>
           </ul>
         </div>
         

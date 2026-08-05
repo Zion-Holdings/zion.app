@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Analytics for Media - Zion Tech Group",
-  description: "Revolutionize media through intelligent automation. Our AI-Powered Analytics for Media leverages advanced machine learning to deliver resource optimization at scale.",
+  description: "Revolutionize media through intelligent automation. Our AI-Powered Analytics for Media leverages advanced machine learning to deliver resource optimization at s",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-analytics-for-media-4e9f61b7`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Brand monitoring across social channels</li>
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Automation opportunity identification</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
           </ul>
         </div>
         

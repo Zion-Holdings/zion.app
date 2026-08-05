@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Version control with rollback capabilities</li>
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Security monitoring with threat intelligence</li>
-            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced churn with proactive customer retention</li>
             <li>Better code quality with automated reviews</li>
             <li>Better market positioning with competitive analysis</li>
-            <li>Reduced support tickets with self-service options</li>
           </ul>
         </div>
         

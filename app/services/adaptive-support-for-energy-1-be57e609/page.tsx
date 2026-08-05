@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Support for Energy #1 - Zion Tech Group",
-  description: "Transform your energy operations with our Adaptive Support for Energy #1. This AI-driven solution automates predictive analytics with unprecedented accuracy and efficiency.",
+  description: "Transform your energy operations with our Adaptive Support for Energy #1. This AI-driven solution automates predictive analytics with unprecedented accuracy and",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-support-for-energy-1-be57e609`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Manufacturing quality control with defect detection</li>
             <li>Financial risk management with scenario analysis</li>
             <li>Data quality with anomaly detection</li>
-            <li>Language processing with sentiment analysis</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Analytics for Healthcare #2 - Zion Tech Group",
-  description: "The future of healthcare is here with Automated Analytics for Healthcare #2. Powered by cutting-edge AI, this platform delivers market intelligence like never before.",
+  description: "The future of healthcare is here with Automated Analytics for Healthcare #2. Powered by cutting-edge AI, this platform delivers market intelligence like never b",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-analytics-for-healthcare-2-fc77797e`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Business intelligence with KPI dashboards</li>
             <li>Healthcare data analytics with patient insights</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>Predictive modeling with ensemble methods</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Zero manual intervention required for routine tasks</li>
             <li>Improved conversion rates with personalization</li>
-            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

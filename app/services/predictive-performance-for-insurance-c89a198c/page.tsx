@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Performance for Insurance - Zion Tech Group",
-  description: "Revolutionize insurance through intelligent automation. Our Predictive Performance for Insurance leverages advanced machine learning to deliver performance monitoring at scale.",
+  description: "Revolutionize insurance through intelligent automation. Our Predictive Performance for Insurance leverages advanced machine learning to deliver performance moni",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-performance-for-insurance-c89a198c`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Content generation with plagiarism checks</li>
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Serverless functions for cost-effective scaling</li>
-            <li>Audit trails with compliance reporting</li>
           </ul>
         </div>
         

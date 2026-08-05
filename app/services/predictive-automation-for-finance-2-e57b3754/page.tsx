@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Automation for Finance #2 - Zion Tech Group",
-  description: "Revolutionize finance through intelligent automation. Our Predictive Automation for Finance #2 leverages advanced machine learning to deliver financial planning at scale.",
+  description: "Revolutionize finance through intelligent automation. Our Predictive Automation for Finance #2 leverages advanced machine learning to deliver financial planning",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-automation-for-finance-2-e57b3754`
   }

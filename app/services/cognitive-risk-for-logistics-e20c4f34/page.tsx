@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Risk for Logistics - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Cognitive Risk for Logistics leverages advanced machine learning to deliver image recognition at scale.",
+  description: "Revolutionize logistics through intelligent automation. Our Cognitive Risk for Logistics leverages advanced machine learning to deliver image recognition at sca",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-risk-for-logistics-e20c4f34`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Manufacturing quality control with defect detection</li>
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Security monitoring with threat intelligence</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better compliance with automated audit trails</li>
             <li>Reduced risk with early warning systems</li>
             <li>Improved quality with automated testing and validation</li>
-            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

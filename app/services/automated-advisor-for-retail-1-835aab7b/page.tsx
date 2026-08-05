@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Advisor for Retail #1 - Zion Tech Group",
-  description: "Revolutionize retail through intelligent automation. Our Automated Advisor for Retail #1 leverages advanced machine learning to deliver customer service automation at scale.",
+  description: "Revolutionize retail through intelligent automation. Our Automated Advisor for Retail #1 leverages advanced machine learning to deliver customer service automat",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-advisor-for-retail-1-835aab7b`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Healthcare data analytics with patient insights</li>
             <li>Manufacturing quality control with defect detection</li>
             <li>Logistics route optimization with traffic prediction</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sales process optimization with pipeline management</li>
             <li>Multi-region deployment with automatic failover</li>
             <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Language processing with sentiment analysis</li>
           </ul>
         </div>
         

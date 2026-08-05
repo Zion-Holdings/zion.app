@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Fraud detection with anomaly analysis</li>
             <li>User experience analytics with behavior tracking</li>
-            <li>Version control with rollback capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Dynamic resource allocation based on demand patterns</li>
             <li>Enhanced security with continuous threat monitoring</li>
             <li>Improved customer retention with proactive service</li>
-            <li>Better financial planning with predictive models</li>
           </ul>
         </div>
         

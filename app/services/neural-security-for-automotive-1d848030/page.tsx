@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Role-based access control with SSO integration</li>
             <li>Customer service automation with chatbot integration</li>
-            <li>Language processing with sentiment analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better customer experience with personalization</li>
             <li>ROI achieved in under 90 days with cost savings</li>
             <li>24/7 automated operations without human intervention</li>
-            <li>Improved conversion rates with personalization</li>
           </ul>
         </div>
         

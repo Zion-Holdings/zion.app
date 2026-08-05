@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Data for Transportation - Zion Tech Group",
-  description: "The future of transportation is here with Smart Data for Transportation. Powered by cutting-edge AI, this platform delivers workflow management like never before.",
+  description: "The future of transportation is here with Smart Data for Transportation. Powered by cutting-edge AI, this platform delivers workflow management like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-data-for-transportation-762c0111`
   }

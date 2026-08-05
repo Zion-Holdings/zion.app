@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Analytics for Insurance - Zion Tech Group",
-  description: "Revolutionize insurance through intelligent automation. Our Smart Analytics for Insurance leverages advanced machine learning to deliver network optimization at scale.",
+  description: "Revolutionize insurance through intelligent automation. Our Smart Analytics for Insurance leverages advanced machine learning to deliver network optimization at",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-analytics-for-insurance-da2b89d2`
   }

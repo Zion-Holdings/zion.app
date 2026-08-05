@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Quality for Construction #1 - Zion Tech Group",
-  description: "Transform your construction operations with our Automated Quality for Construction #1. This AI-driven solution automates decision support with unprecedented accuracy and efficiency.",
+  description: "Transform your construction operations with our Automated Quality for Construction #1. This AI-driven solution automates decision support with unprecedented acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-quality-for-construction-1-c3f6a3fd`
   }

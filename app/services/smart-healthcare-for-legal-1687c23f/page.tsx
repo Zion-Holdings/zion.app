@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>24/7 automated operations without human intervention</li>
             <li>Improved forecast accuracy with ML models</li>
             <li>Better inventory management with demand forecasting</li>
-            <li>Improved customer satisfaction with faster response times</li>
           </ul>
         </div>
         

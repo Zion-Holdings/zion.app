@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Manufacturing for Insurance #2 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Manufacturing for Insurance #2. This autonomous system provides network optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Intelligent Manufacturing for Insurance #2. This autonomous system provides network optimization with zero manual intervention ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-manufacturing-for-insurance-2-8e7cecc5`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Brand monitoring across social channels</li>
             <li>Code optimization with performance profiling</li>
             <li>Data governance with policy enforcement</li>
-            <li>Version control with rollback capabilities</li>
           </ul>
         </div>
         

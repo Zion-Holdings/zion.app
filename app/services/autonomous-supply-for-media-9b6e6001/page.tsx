@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Open-source friendly with plugin architecture</li>
             <li>Automation opportunity identification</li>
             <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Business intelligence with KPI dashboards</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Performance for Manufacturing #1 - Zion Tech Group",
-  description: "Revolutionize manufacturing through intelligent automation. Our Autonomous Performance for Manufacturing #1 leverages advanced machine learning to deliver quality control at scale.",
+  description: "Revolutionize manufacturing through intelligent automation. Our Autonomous Performance for Manufacturing #1 leverages advanced machine learning to deliver quali",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-performance-for-manufacturing-1-93206f64`
   }

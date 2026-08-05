@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Customer Service for Hospitality #1 - Zion Tech Group",
-  description: "Next-generation hospitality solution: Cognitive Customer Service for Hospitality #1. Combines inventory management with adaptive intelligence for optimal results.",
+  description: "Next-generation hospitality solution: Cognitive Customer Service for Hospitality #1. Combines inventory management with adaptive intelligence for optimal result",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-customer-service-for-hospitality-1-95c8c138`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Edge computing support for low-latency operations</li>
             <li>Code optimization with performance profiling</li>
             <li>Revenue forecasting with market trend analysis</li>
-            <li>Sales process optimization with pipeline management</li>
           </ul>
         </div>
         

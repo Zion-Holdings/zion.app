@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Support for Hospitality #1 - Zion Tech Group",
-  description: "Transform your hospitality operations with our Cognitive Support for Hospitality #1. This AI-driven solution automates supply chain with unprecedented accuracy and efficiency.",
+  description: "Transform your hospitality operations with our Cognitive Support for Hospitality #1. This AI-driven solution automates supply chain with unprecedented accuracy ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-support-for-hospitality-1-c8d4fcb9`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Manufacturing quality control with defect detection</li>
             <li>Multi-language support with localization</li>
             <li>Serverless functions for cost-effective scaling</li>
-            <li>Executive dashboards with drill-down capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced human error by 95% with automated processes</li>
             <li>Better customer experience with personalization</li>
             <li>Reduced risk with early warning systems</li>
-            <li>Better inventory management with demand forecasting</li>
           </ul>
         </div>
         

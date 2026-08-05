@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Compliance monitoring with regulatory updates</li>
             <li>Healthcare data analytics with patient insights</li>
             <li>Microservices deployment with container orchestration</li>
-            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         

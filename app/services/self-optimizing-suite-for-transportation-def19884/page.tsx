@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Suite for Transportation - Zion Tech Group",
-  description: "Transform your transportation operations with our Self-Optimizing Suite for Transportation. This AI-driven solution automates customer insights with unprecedented accuracy and efficiency.",
+  description: "Transform your transportation operations with our Self-Optimizing Suite for Transportation. This AI-driven solution automates customer insights with unprecedent",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-suite-for-transportation-def19884`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Increased revenue with optimized pricing strategies</li>
             <li>99.9% uptime guarantee with redundant architecture</li>
             <li>Reduced shipping costs with route optimization</li>
-            <li>Reduced operational risks with predictive models</li>
           </ul>
         </div>
         

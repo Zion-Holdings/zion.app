@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Network optimization with traffic analysis</li>
             <li>Customer service automation with chatbot integration</li>
             <li>Role-based access control with SSO integration</li>
-            <li>Brand monitoring across social channels</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced support tickets with self-service options</li>
             <li>Improved forecast accuracy with ML models</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

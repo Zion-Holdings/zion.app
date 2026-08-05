@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Analytics for Education #1 - Zion Tech Group",
-  description: "Transform your education operations with our Autonomous Analytics for Education #1. This AI-driven solution automates process automation with unprecedented accuracy and efficiency.",
+  description: "Transform your education operations with our Autonomous Analytics for Education #1. This AI-driven solution automates process automation with unprecedented accu",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-analytics-for-education-1-0590e87c`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Zero manual intervention required for routine tasks</li>
             <li>Reduced operational risks with predictive models</li>
             <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Faster content creation with AI assistance</li>
           </ul>
         </div>
         

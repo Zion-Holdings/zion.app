@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Monitoring for Real-Estate #1 - Zion Tech Group",
-  description: "Transform your real-estate operations with our Self-Optimizing Monitoring for Real-Estate #1. This AI-driven solution automates network optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your real-estate operations with our Self-Optimizing Monitoring for Real-Estate #1. This AI-driven solution automates network optimization with unprec",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-monitoring-for-real-estate-1-6c3dd600`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Custom integrations with webhook support</li>
             <li>Network optimization with traffic analysis</li>
             <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Revenue forecasting with market trend analysis</li>
           </ul>
         </div>
         

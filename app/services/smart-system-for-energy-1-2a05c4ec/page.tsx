@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Real-time processing with streaming analytics</li>
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Director for Logistics #1 - Zion Tech Group",
-  description: "The future of logistics is here with Intelligent Director for Logistics #1. Powered by cutting-edge AI, this platform delivers network optimization like never before.",
+  description: "The future of logistics is here with Intelligent Director for Logistics #1. Powered by cutting-edge AI, this platform delivers network optimization like never b",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-director-for-logistics-1-8a1b1ce9`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Energy optimization with consumption tracking</li>
             <li>Serverless functions for cost-effective scaling</li>
             <li>Cost reduction with process mining</li>
-            <li>Market analysis with buyer behavior insights</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved product quality with automated testing</li>
             <li>Reduced churn with proactive customer retention</li>
             <li>Improved forecast accuracy with ML models</li>
-            <li>Improved sales performance with lead scoring</li>
           </ul>
         </div>
         

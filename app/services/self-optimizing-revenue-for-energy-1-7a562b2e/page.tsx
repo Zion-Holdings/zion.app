@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Revenue for Energy #1 - Zion Tech Group",
-  description: "Transform your energy operations with our Self-Optimizing Revenue for Energy #1. This AI-driven solution automates performance monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your energy operations with our Self-Optimizing Revenue for Energy #1. This AI-driven solution automates performance monitoring with unprecedented acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-revenue-for-energy-1-7a562b2e`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Increased revenue with optimized pricing strategies</li>
             <li>Improved sales performance with lead scoring</li>
             <li>Reduced marketing costs with targeted campaigns</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
           </ul>
         </div>
         

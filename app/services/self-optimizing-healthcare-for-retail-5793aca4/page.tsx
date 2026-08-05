@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Financial risk management with scenario analysis</li>
             <li>A/B testing framework for continuous optimization</li>
             <li>Compliance monitoring with regulatory updates</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved employee productivity with automation</li>
             <li>Better supply chain visibility with tracking</li>
             <li>24/7 automated operations without human intervention</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

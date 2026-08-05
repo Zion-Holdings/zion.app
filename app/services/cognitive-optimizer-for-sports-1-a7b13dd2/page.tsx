@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Optimizer for Sports #1 - Zion Tech Group",
-  description: "Transform your sports operations with our Cognitive Optimizer for Sports #1. This AI-driven solution automates customer insights with unprecedented accuracy and efficiency.",
+  description: "Transform your sports operations with our Cognitive Optimizer for Sports #1. This AI-driven solution automates customer insights with unprecedented accuracy and",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-optimizer-for-sports-1-a7b13dd2`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Network optimization with traffic analysis</li>
             <li>SOC 2 certified with security controls</li>
             <li>Inventory prediction with demand forecasting</li>
-            <li>Budget optimization with cost allocation</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Faster content creation with AI assistance</li>
             <li>Reduced support tickets with self-service options</li>
             <li>Reduced human error by 95% with automated processes</li>
-            <li>Zero manual intervention required for routine tasks</li>
           </ul>
         </div>
         

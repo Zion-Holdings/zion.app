@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Revenue for Agriculture #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with AI-Powered Revenue for Agriculture #1. This autonomous system provides resource optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with AI-Powered Revenue for Agriculture #1. This autonomous system provides resource optimization with zero manual intervention need",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-revenue-for-agriculture-1-f4a47897`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Process discovery with activity analysis</li>
             <li>Revenue forecasting with market trend analysis</li>
             <li>SOC 2 certified with security controls</li>
-            <li>A/B testing framework for continuous optimization</li>
           </ul>
         </div>
         

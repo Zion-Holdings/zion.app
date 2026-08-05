@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Engine for Sports #1 - Zion Tech Group",
-  description: "The future of sports is here with Self-Optimizing Engine for Sports #1. Powered by cutting-edge AI, this platform delivers customer service automation like never before.",
+  description: "The future of sports is here with Self-Optimizing Engine for Sports #1. Powered by cutting-edge AI, this platform delivers customer service automation like neve",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-engine-for-sports-1-7e7bb513`
   }

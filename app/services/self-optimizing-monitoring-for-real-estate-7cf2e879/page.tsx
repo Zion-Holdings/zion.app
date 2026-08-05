@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Monitoring for Real-Estate - Zion Tech Group",
-  description: "The future of real-estate is here with Self-Optimizing Monitoring for Real-Estate. Powered by cutting-edge AI, this platform delivers predictive analytics like never before.",
+  description: "The future of real-estate is here with Self-Optimizing Monitoring for Real-Estate. Powered by cutting-edge AI, this platform delivers predictive analytics like ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-monitoring-for-real-estate-7cf2e879`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Real-time processing with streaming analytics</li>
             <li>Multi-region deployment with automatic failover</li>
             <li>HIPAA ready with healthcare data protection</li>
-            <li>Multi-language support with localization</li>
           </ul>
         </div>
         

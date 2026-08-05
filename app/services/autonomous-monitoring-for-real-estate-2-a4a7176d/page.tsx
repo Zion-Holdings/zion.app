@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Monitoring for Real-Estate #2 - Zion Tech Group",
-  description: "Transform your real-estate operations with our Autonomous Monitoring for Real-Estate #2. This AI-driven solution automates customer service automation with unprecedented accuracy and efficiency.",
+  description: "Transform your real-estate operations with our Autonomous Monitoring for Real-Estate #2. This AI-driven solution automates customer service automation with unpr",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-monitoring-for-real-estate-2-a4a7176d`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better risk management with predictive analytics</li>
             <li>24/7 automated operations without human intervention</li>
             <li>Better customer experience with personalization</li>
-            <li>Reduced human error by 95% with automated processes</li>
           </ul>
         </div>
         

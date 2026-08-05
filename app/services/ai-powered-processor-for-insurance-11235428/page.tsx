@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Revenue forecasting with market trend analysis</li>
             <li>Budget optimization with cost allocation</li>
             <li>Data quality with anomaly detection</li>
-            <li>Executive dashboards with drill-down capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better code quality with automated reviews</li>
             <li>Better supply chain visibility with tracking</li>
             <li>Zero manual intervention required for routine tasks</li>
-            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

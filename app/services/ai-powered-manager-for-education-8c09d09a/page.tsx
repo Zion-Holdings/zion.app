@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Healthcare data analytics with patient insights</li>
             <li>Serverless functions for cost-effective scaling</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>Real-time processing with streaming analytics</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Faster time-to-market with accelerated development</li>
             <li>Improved forecast accuracy with ML models</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Improved customer satisfaction with faster response times</li>
           </ul>
         </div>
         

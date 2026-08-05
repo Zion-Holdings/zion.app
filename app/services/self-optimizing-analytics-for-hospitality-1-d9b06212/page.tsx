@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Machine learning integration with automatic model training</li>
             <li>Microservices deployment with container orchestration</li>
             <li>Fraud detection with anomaly analysis</li>
-            <li>A/B testing framework for continuous optimization</li>
           </ul>
         </div>
         

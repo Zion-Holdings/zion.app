@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Orchestrator for Gaming #1 - Zion Tech Group",
-  description: "Revolutionize gaming through intelligent automation. Our Cognitive Orchestrator for Gaming #1 leverages advanced machine learning to deliver predictive analytics at scale.",
+  description: "Revolutionize gaming through intelligent automation. Our Cognitive Orchestrator for Gaming #1 leverages advanced machine learning to deliver predictive analytic",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-orchestrator-for-gaming-1-55af8e28`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Fraud detection with anomaly analysis</li>
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>HIPAA ready with healthcare data protection</li>
-            <li>Customer journey mapping with touchpoint analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced development time with code generation</li>
             <li>Better customer experience with personalization</li>
             <li>Reduced risk with early warning systems</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
           </ul>
         </div>
         

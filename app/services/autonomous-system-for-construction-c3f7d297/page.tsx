@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Market analysis with buyer behavior insights</li>
             <li>Multi-language support with localization</li>
             <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         

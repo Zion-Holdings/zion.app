@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Quality for Manufacturing #1 - Zion Tech Group",
-  description: "Revolutionize manufacturing through intelligent automation. Our Cognitive Quality for Manufacturing #1 leverages advanced machine learning to deliver language processing at scale.",
+  description: "Revolutionize manufacturing through intelligent automation. Our Cognitive Quality for Manufacturing #1 leverages advanced machine learning to deliver language p",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-quality-for-manufacturing-1-ac57d095`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Process discovery with activity analysis</li>
             <li>Inventory prediction with demand forecasting</li>
-            <li>Brand monitoring across social channels</li>
           </ul>
         </div>
         

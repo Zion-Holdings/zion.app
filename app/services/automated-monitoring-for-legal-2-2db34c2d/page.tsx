@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Revenue forecasting with market trend analysis</li>
             <li>Maintenance scheduling with predictive analytics</li>
             <li>GDPR compliance with data portability</li>
-            <li>Financial risk management with scenario analysis</li>
           </ul>
         </div>
         

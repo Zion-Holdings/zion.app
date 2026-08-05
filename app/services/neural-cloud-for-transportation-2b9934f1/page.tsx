@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Cloud for Transportation - Zion Tech Group",
-  description: "Revolutionize transportation through intelligent automation. Our Neural Cloud for Transportation leverages advanced machine learning to deliver risk assessment at scale.",
+  description: "Revolutionize transportation through intelligent automation. Our Neural Cloud for Transportation leverages advanced machine learning to deliver risk assessment ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-cloud-for-transportation-2b9934f1`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Network optimization with traffic analysis</li>
             <li>Financial risk management with scenario analysis</li>
-            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced operational risks with predictive models</li>
             <li>Better compliance with automated audit trails</li>
             <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Better resource utilization with auto-scaling</li>
           </ul>
         </div>
         

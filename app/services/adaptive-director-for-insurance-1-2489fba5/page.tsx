@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Director for Insurance #1 - Zion Tech Group",
-  description: "Transform your insurance operations with our Adaptive Director for Insurance #1. This AI-driven solution automates inventory management with unprecedented accuracy and efficiency.",
+  description: "Transform your insurance operations with our Adaptive Director for Insurance #1. This AI-driven solution automates inventory management with unprecedented accur",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-director-for-insurance-1-2489fba5`
   }

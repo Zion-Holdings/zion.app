@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Language processing with sentiment analysis</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>Machine learning integration with automatic model training</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Improved sales performance with lead scoring</li>
-            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         

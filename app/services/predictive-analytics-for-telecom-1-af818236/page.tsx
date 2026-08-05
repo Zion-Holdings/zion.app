@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Analytics for Telecom #1 - Zion Tech Group",
-  description: "Transform your telecom operations with our Predictive Analytics for Telecom #1. This AI-driven solution automates network optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your telecom operations with our Predictive Analytics for Telecom #1. This AI-driven solution automates network optimization with unprecedented accura",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-analytics-for-telecom-1-af818236`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Automated compliance reporting for regulatory requirements</li>
             <li>Enhanced security with continuous threat monitoring</li>
             <li>Better market positioning with competitive analysis</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
           </ul>
         </div>
         

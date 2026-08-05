@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Real Estate for Legal - Zion Tech Group",
-  description: "Transform your legal operations with our Intelligent Real Estate for Legal. This AI-driven solution automates process automation with unprecedented accuracy and efficiency.",
+  description: "Transform your legal operations with our Intelligent Real Estate for Legal. This AI-driven solution automates process automation with unprecedented accuracy and",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-real-estate-for-legal-c2568411`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Real-time processing with streaming analytics</li>
             <li>Multi-language support with localization</li>
             <li>Audit trails with compliance reporting</li>
-            <li>Process discovery with activity analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better inventory management with demand forecasting</li>
             <li>Better market positioning with competitive analysis</li>
             <li>24/7 automated operations without human intervention</li>
-            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

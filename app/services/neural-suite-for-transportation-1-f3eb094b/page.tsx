@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Suite for Transportation #1 - Zion Tech Group",
-  description: "Revolutionize transportation through intelligent automation. Our Neural Suite for Transportation #1 leverages advanced machine learning to deliver network optimization at scale.",
+  description: "Revolutionize transportation through intelligent automation. Our Neural Suite for Transportation #1 leverages advanced machine learning to deliver network optim",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-suite-for-transportation-1-f3eb094b`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Predictive modeling with ensemble methods</li>
             <li>Code optimization with performance profiling</li>
             <li>Version control with rollback capabilities</li>
-            <li>Data governance with policy enforcement</li>
           </ul>
         </div>
         

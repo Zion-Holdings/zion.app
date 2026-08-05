@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Manufacturing for Education #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Predictive Manufacturing for Education #1. This autonomous system provides sales process optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Predictive Manufacturing for Education #1. This autonomous system provides sales process optimization with zero manual interven",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-manufacturing-for-education-1-89c0000b`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Code optimization with performance profiling</li>
             <li>Customer service automation with chatbot integration</li>
             <li>Audit trails with compliance reporting</li>
-            <li>Role-based access control with SSO integration</li>
           </ul>
         </div>
         

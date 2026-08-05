@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Fraud detection with anomaly analysis</li>
             <li>Master data management with golden records</li>
-            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         

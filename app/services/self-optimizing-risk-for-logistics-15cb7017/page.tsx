@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Microservices deployment with container orchestration</li>
             <li>Market analysis with buyer behavior insights</li>
             <li>HIPAA ready with healthcare data protection</li>
-            <li>Master data management with golden records</li>
           </ul>
         </div>
         

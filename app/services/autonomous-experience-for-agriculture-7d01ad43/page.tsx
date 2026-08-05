@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Experience for Agriculture - Zion Tech Group",
-  description: "Unlock unprecedented growth with Autonomous Experience for Agriculture. This autonomous system provides workflow management with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Autonomous Experience for Agriculture. This autonomous system provides workflow management with zero manual intervention needed",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-experience-for-agriculture-7d01ad43`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Custom integrations with webhook support</li>
             <li>Maintenance scheduling with predictive analytics</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>Role-based access control with SSO integration</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Sales process optimization with pipeline management</li>
             <li>User experience analytics with behavior tracking</li>
-            <li>Role-based access control with SSO integration</li>
           </ul>
         </div>
         

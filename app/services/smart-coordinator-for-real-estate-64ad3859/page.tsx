@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Coordinator for Real-Estate - Zion Tech Group",
-  description: "Transform your real-estate operations with our Smart Coordinator for Real-Estate. This AI-driven solution automates financial planning with unprecedented accuracy and efficiency.",
+  description: "Transform your real-estate operations with our Smart Coordinator for Real-Estate. This AI-driven solution automates financial planning with unprecedented accura",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-coordinator-for-real-estate-64ad3859`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Content generation with plagiarism checks</li>
             <li>GDPR compliance with data portability</li>
             <li>Multi-region deployment with automatic failover</li>
-            <li>Budget optimization with cost allocation</li>
           </ul>
         </div>
         

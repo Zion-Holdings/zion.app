@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Dynamic resource allocation based on demand patterns</li>
             <li>Improved brand awareness with social monitoring</li>
             <li>Cost optimization recommendations with savings analysis</li>
-            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Insights for Construction #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with AI-Powered Insights for Construction #1. This autonomous system provides workflow management with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with AI-Powered Insights for Construction #1. This autonomous system provides workflow management with zero manual intervention need",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-insights-for-construction-1-830acb6b`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>99.9% uptime guarantee with redundant architecture</li>
             <li>Improved employee productivity with automation</li>
             <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Better code quality with automated reviews</li>
           </ul>
         </div>
         

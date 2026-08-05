@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Manufacturing quality control with defect detection</li>
             <li>Budget optimization with cost allocation</li>
-            <li>Multi-language support with localization</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better inventory management with demand forecasting</li>
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Enhanced security with continuous threat monitoring</li>
-            <li>Better resource utilization with auto-scaling</li>
           </ul>
         </div>
         

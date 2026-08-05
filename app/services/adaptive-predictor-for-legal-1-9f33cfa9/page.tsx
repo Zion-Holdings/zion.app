@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Predictor for Legal #1 - Zion Tech Group",
-  description: "Transform your legal operations with our Adaptive Predictor for Legal #1. This AI-driven solution automates quality control with unprecedented accuracy and efficiency.",
+  description: "Transform your legal operations with our Adaptive Predictor for Legal #1. This AI-driven solution automates quality control with unprecedented accuracy and effi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-predictor-for-legal-1-9f33cfa9`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Content generation with plagiarism checks</li>
             <li>Process discovery with activity analysis</li>
             <li>SOC 2 certified with security controls</li>
-            <li>Executive dashboards with drill-down capabilities</li>
           </ul>
         </div>
         

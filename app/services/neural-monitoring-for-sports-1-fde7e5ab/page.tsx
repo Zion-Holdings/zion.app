@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Monitoring for Sports #1 - Zion Tech Group",
-  description: "Revolutionize sports through intelligent automation. Our Neural Monitoring for Sports #1 leverages advanced machine learning to deliver financial planning at scale.",
+  description: "Revolutionize sports through intelligent automation. Our Neural Monitoring for Sports #1 leverages advanced machine learning to deliver financial planning at sc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-monitoring-for-sports-1-fde7e5ab`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Logistics route optimization with traffic prediction</li>
             <li>Multi-region deployment with automatic failover</li>
             <li>Sentiment analysis with real-time monitoring</li>
-            <li>Data governance with policy enforcement</li>
           </ul>
         </div>
         

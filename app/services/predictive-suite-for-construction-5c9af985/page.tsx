@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>HIPAA ready with healthcare data protection</li>
             <li>Version control with rollback capabilities</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security with continuous threat monitoring</li>
             <li>Reduced operational risks with predictive models</li>
             <li>Enhanced security posture with continuous monitoring</li>
-            <li>Improved product quality with automated testing</li>
           </ul>
         </div>
         

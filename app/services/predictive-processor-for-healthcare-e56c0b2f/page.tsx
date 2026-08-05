@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Energy optimization with consumption tracking</li>
             <li>Healthcare data analytics with patient insights</li>
             <li>Document processing with OCR and NLP</li>
-            <li>Financial risk management with scenario analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved customer retention with proactive service</li>
             <li>Faster content creation with AI assistance</li>
             <li>Cost optimization recommendations with savings analysis</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
           </ul>
         </div>
         

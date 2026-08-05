@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Security for Insurance - Zion Tech Group",
-  description: "The future of insurance is here with Predictive Security for Insurance. Powered by cutting-edge AI, this platform delivers market intelligence like never before.",
+  description: "The future of insurance is here with Predictive Security for Insurance. Powered by cutting-edge AI, this platform delivers market intelligence like never before",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-security-for-insurance-118e205d`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Financial risk management with scenario analysis</li>
             <li>Budget optimization with cost allocation</li>
             <li>Master data management with golden records</li>
-            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         

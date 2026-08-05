@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Experience for Technology - Zion Tech Group",
-  description: "The future of technology is here with Predictive Experience for Technology. Powered by cutting-edge AI, this platform delivers security monitoring like never before.",
+  description: "The future of technology is here with Predictive Experience for Technology. Powered by cutting-edge AI, this platform delivers security monitoring like never be",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-experience-for-technology-4eb6e402`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Audit trails with compliance reporting</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Security monitoring with threat intelligence</li>
-            <li>Automation opportunity identification</li>
           </ul>
         </div>
         

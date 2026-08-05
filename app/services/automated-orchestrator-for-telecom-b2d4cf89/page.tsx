@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sales process optimization with pipeline management</li>
             <li>Edge computing support for low-latency operations</li>
             <li>Machine learning integration with automatic model training</li>
-            <li>Real-time processing with streaming analytics</li>
           </ul>
         </div>
         

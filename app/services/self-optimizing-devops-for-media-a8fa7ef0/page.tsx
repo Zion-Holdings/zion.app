@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>A/B testing framework for continuous optimization</li>
             <li>Edge computing support for low-latency operations</li>
             <li>Revenue forecasting with market trend analysis</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Increased revenue with optimized pricing strategies</li>
             <li>Reduced customer acquisition costs with optimization</li>
             <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Better financial planning with predictive models</li>
           </ul>
         </div>
         

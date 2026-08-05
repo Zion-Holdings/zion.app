@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Cloud for Real-Estate #1 - Zion Tech Group",
-  description: "Revolutionize real-estate through intelligent automation. Our AI-Powered Cloud for Real-Estate #1 leverages advanced machine learning to deliver customer service automation at scale.",
+  description: "Revolutionize real-estate through intelligent automation. Our AI-Powered Cloud for Real-Estate #1 leverages advanced machine learning to deliver customer servic",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-cloud-for-real-estate-1-863acb4f`
   }

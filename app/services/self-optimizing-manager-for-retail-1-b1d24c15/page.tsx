@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Manager for Retail #1 - Zion Tech Group",
-  description: "Transform your retail operations with our Self-Optimizing Manager for Retail #1. This AI-driven solution automates energy management with unprecedented accuracy and efficiency.",
+  description: "Transform your retail operations with our Self-Optimizing Manager for Retail #1. This AI-driven solution automates energy management with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-manager-for-retail-1-b1d24c15`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-region deployment with automatic failover</li>
             <li>Brand monitoring across social channels</li>
             <li>Microservices deployment with container orchestration</li>
-            <li>Data quality with anomaly detection</li>
           </ul>
         </div>
         

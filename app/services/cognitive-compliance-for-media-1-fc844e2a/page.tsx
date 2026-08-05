@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>User experience analytics with behavior tracking</li>
             <li>Multi-region deployment with automatic failover</li>
             <li>A/B testing framework for continuous optimization</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>ROI achieved in under 90 days with cost savings</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Reduced support tickets with self-service options</li>
           </ul>
         </div>
         

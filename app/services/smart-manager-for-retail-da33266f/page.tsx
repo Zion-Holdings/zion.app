@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Manager for Retail - Zion Tech Group",
-  description: "Transform your retail operations with our Smart Manager for Retail. This AI-driven solution automates customer service automation with unprecedented accuracy and efficiency.",
+  description: "Transform your retail operations with our Smart Manager for Retail. This AI-driven solution automates customer service automation with unprecedented accuracy an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-manager-for-retail-da33266f`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Real-time insights and alerts for proactive management</li>
             <li>Reduced human error by 95% with automated processes</li>
             <li>Reduced support tickets with self-service options</li>
-            <li>Improved conversion rates with personalization</li>
           </ul>
         </div>
         

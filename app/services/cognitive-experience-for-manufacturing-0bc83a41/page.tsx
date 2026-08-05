@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Experience for Manufacturing - Zion Tech Group",
-  description: "Revolutionize manufacturing through intelligent automation. Our Cognitive Experience for Manufacturing leverages advanced machine learning to deliver security monitoring at scale.",
+  description: "Revolutionize manufacturing through intelligent automation. Our Cognitive Experience for Manufacturing leverages advanced machine learning to deliver security m",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-experience-for-manufacturing-0bc83a41`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data quality with anomaly detection</li>
             <li>Inventory prediction with demand forecasting</li>
             <li>Custom integrations with webhook support</li>
-            <li>Brand monitoring across social channels</li>
           </ul>
         </div>
         

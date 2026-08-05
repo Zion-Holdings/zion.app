@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Manufacturing quality control with defect detection</li>
             <li>Budget optimization with cost allocation</li>
-            <li>Executive dashboards with drill-down capabilities</li>
           </ul>
         </div>
         

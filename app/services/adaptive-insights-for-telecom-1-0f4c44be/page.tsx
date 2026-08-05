@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced development time with code generation</li>
             <li>Improved conversion rates with personalization</li>
             <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Enhanced decision making with data-driven insights</li>
           </ul>
         </div>
         

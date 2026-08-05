@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Faster content creation with AI assistance</li>
             <li>Zero manual intervention required for routine tasks</li>
             <li>Better risk management with predictive analytics</li>
-            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

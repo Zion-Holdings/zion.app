@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Data for Logistics #1 - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Automated Data for Logistics #1 leverages advanced machine learning to deliver security monitoring at scale.",
+  description: "Revolutionize logistics through intelligent automation. Our Automated Data for Logistics #1 leverages advanced machine learning to deliver security monitoring a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-data-for-logistics-1-b55cd426`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Logistics route optimization with traffic prediction</li>
             <li>User experience analytics with behavior tracking</li>
-            <li>Healthcare data analytics with patient insights</li>
           </ul>
         </div>
         

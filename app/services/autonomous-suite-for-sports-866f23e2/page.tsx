@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Process discovery with activity analysis</li>
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Sentiment analysis with real-time monitoring</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
           </ul>
         </div>
         

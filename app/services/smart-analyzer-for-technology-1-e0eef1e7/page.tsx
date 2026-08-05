@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Analyzer for Technology #1 - Zion Tech Group",
-  description: "Transform your technology operations with our Smart Analyzer for Technology #1. This AI-driven solution automates process automation with unprecedented accuracy and efficiency.",
+  description: "Transform your technology operations with our Smart Analyzer for Technology #1. This AI-driven solution automates process automation with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-analyzer-for-technology-1-e0eef1e7`
   }

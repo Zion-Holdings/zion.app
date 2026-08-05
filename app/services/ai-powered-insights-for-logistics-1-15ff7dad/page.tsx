@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Insights for Logistics #1 - Zion Tech Group",
-  description: "The future of logistics is here with AI-Powered Insights for Logistics #1. Powered by cutting-edge AI, this platform delivers financial planning like never before.",
+  description: "The future of logistics is here with AI-Powered Insights for Logistics #1. Powered by cutting-edge AI, this platform delivers financial planning like never befo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-insights-for-logistics-1-15ff7dad`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Open-source friendly with plugin architecture</li>
             <li>Market analysis with buyer behavior insights</li>
             <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Energy optimization with consumption tracking</li>
           </ul>
         </div>
         

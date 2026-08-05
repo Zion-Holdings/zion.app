@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Cloud for Manufacturing - Zion Tech Group",
-  description: "The future of manufacturing is here with Adaptive Cloud for Manufacturing. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.",
+  description: "The future of manufacturing is here with Adaptive Cloud for Manufacturing. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-cloud-for-manufacturing-f7b82caf`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Alerting system with intelligent notifications</li>
             <li>Image recognition with computer vision</li>
             <li>Cost reduction with process mining</li>
-            <li>Revenue forecasting with market trend analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better risk management with predictive analytics</li>
             <li>Better market positioning with competitive analysis</li>
             <li>Cost optimization recommendations with savings analysis</li>
-            <li>Reduced support tickets with self-service options</li>
           </ul>
         </div>
         

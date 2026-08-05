@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Insights for Hospitality - Zion Tech Group",
-  description: "Transform your hospitality operations with our Self-Optimizing Insights for Hospitality. This AI-driven solution automates risk assessment with unprecedented accuracy and efficiency.",
+  description: "Transform your hospitality operations with our Self-Optimizing Insights for Hospitality. This AI-driven solution automates risk assessment with unprecedented ac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-insights-for-hospitality-e01f9a23`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Custom integrations with webhook support</li>
             <li>Audit trails with compliance reporting</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Optimizer for Automotive - Zion Tech Group",
-  description: "The future of automotive is here with AI-Powered Optimizer for Automotive. Powered by cutting-edge AI, this platform delivers language processing like never before.",
+  description: "The future of automotive is here with AI-Powered Optimizer for Automotive. Powered by cutting-edge AI, this platform delivers language processing like never bef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-optimizer-for-automotive-a946f44e`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer service automation with chatbot integration</li>
             <li>Logistics route optimization with traffic prediction</li>
             <li>Serverless functions for cost-effective scaling</li>
-            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         

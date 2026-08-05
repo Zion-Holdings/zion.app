@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Machine learning integration with automatic model training</li>
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Logistics route optimization with traffic prediction</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>99.9% uptime guarantee with redundant architecture</li>
             <li>Better supply chain visibility with tracking</li>
             <li>Reduced human error by 95% with automated processes</li>
-            <li>Faster content creation with AI assistance</li>
           </ul>
         </div>
         

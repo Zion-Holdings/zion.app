@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Manufacturing for Gaming - Zion Tech Group",
-  description: "Unlock unprecedented growth with Automated Manufacturing for Gaming. This autonomous system provides sales process optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Automated Manufacturing for Gaming. This autonomous system provides sales process optimization with zero manual intervention ne",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-manufacturing-for-gaming-10d53a24`
   }

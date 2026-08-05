@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer service automation with chatbot integration</li>
             <li>Serverless functions for cost-effective scaling</li>
             <li>Microservices deployment with container orchestration</li>
-            <li>Master data management with golden records</li>
           </ul>
         </div>
         

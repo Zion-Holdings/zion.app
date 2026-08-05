@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Machine learning integration with automatic model training</li>
             <li>Compliance monitoring with regulatory updates</li>
             <li>Content generation with plagiarism checks</li>
-            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better customer experience with personalization</li>
             <li>Reduced risk with early warning systems</li>
             <li>Enhanced decision making with data-driven insights</li>
-            <li>Real-time insights and alerts for proactive management</li>
           </ul>
         </div>
         

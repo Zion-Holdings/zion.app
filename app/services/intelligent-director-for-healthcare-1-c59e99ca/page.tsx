@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Director for Healthcare #1 - Zion Tech Group",
-  description: "The future of healthcare is here with Intelligent Director for Healthcare #1. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.",
+  description: "The future of healthcare is here with Intelligent Director for Healthcare #1. Powered by cutting-edge AI, this platform delivers sales forecasting like never be",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-director-for-healthcare-1-c59e99ca`
   }

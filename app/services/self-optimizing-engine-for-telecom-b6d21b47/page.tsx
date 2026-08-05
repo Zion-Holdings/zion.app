@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Engine for Telecom - Zion Tech Group",
-  description: "Revolutionize telecom through intelligent automation. Our Self-Optimizing Engine for Telecom leverages advanced machine learning to deliver predictive analytics at scale.",
+  description: "Revolutionize telecom through intelligent automation. Our Self-Optimizing Engine for Telecom leverages advanced machine learning to deliver predictive analytics",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-engine-for-telecom-b6d21b47`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Document processing with OCR and NLP</li>
             <li>Revenue forecasting with market trend analysis</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Cost reduction with process mining</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security posture with continuous monitoring</li>
             <li>Reduced support tickets with self-service options</li>
             <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Faster content creation with AI assistance</li>
           </ul>
         </div>
         

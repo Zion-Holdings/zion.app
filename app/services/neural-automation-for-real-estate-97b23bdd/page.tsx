@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Automation for Real-Estate - Zion Tech Group",
-  description: "Transform your real-estate operations with our Neural Automation for Real-Estate. This AI-driven solution automates financial planning with unprecedented accuracy and efficiency.",
+  description: "Transform your real-estate operations with our Neural Automation for Real-Estate. This AI-driven solution automates financial planning with unprecedented accura",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-automation-for-real-estate-97b23bdd`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>User experience analytics with behavior tracking</li>
             <li>Market analysis with buyer behavior insights</li>
             <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
           </ul>
         </div>
         

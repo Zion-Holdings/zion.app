@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Data for Agriculture - Zion Tech Group",
-  description: "Revolutionize agriculture through intelligent automation. Our Cognitive Data for Agriculture leverages advanced machine learning to deliver language processing at scale.",
+  description: "Revolutionize agriculture through intelligent automation. Our Cognitive Data for Agriculture leverages advanced machine learning to deliver language processing ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-data-for-agriculture-64cc6bec`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Custom integrations with webhook support</li>
             <li>Compliance monitoring with regulatory updates</li>
             <li>Healthcare data analytics with patient insights</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
           </ul>
         </div>
         

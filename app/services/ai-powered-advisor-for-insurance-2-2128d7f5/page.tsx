@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Energy optimization with consumption tracking</li>
             <li>Edge computing support for low-latency operations</li>
             <li>User experience analytics with behavior tracking</li>
-            <li>Master data management with golden records</li>
           </ul>
         </div>
         

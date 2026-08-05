@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         

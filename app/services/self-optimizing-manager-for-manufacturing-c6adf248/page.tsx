@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Role-based access control with SSO integration</li>
             <li>Data quality with anomaly detection</li>
             <li>Version control with rollback capabilities</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         

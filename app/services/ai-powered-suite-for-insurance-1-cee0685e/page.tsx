@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Suite for Insurance #1 - Zion Tech Group",
-  description: "The future of insurance is here with AI-Powered Suite for Insurance #1. Powered by cutting-edge AI, this platform delivers resource optimization like never before.",
+  description: "The future of insurance is here with AI-Powered Suite for Insurance #1. Powered by cutting-edge AI, this platform delivers resource optimization like never befo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-suite-for-insurance-1-cee0685e`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Energy optimization with consumption tracking</li>
             <li>SOC 2 certified with security controls</li>
             <li>Master data management with golden records</li>
-            <li>Market analysis with buyer behavior insights</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced risk with early warning systems</li>
             <li>Seamless integration with existing systems and workflows</li>
             <li>Better risk management with predictive analytics</li>
-            <li>Better compliance with automated audit trails</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Experience for Technology - Zion Tech Group",
-  description: "Unlock unprecedented growth with Self-Optimizing Experience for Technology. This autonomous system provides network optimization with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Self-Optimizing Experience for Technology. This autonomous system provides network optimization with zero manual intervention n",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-experience-for-technology-2962dfc9`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>A/B testing framework for continuous optimization</li>
             <li>Security monitoring with threat intelligence</li>
             <li>Budget optimization with cost allocation</li>
-            <li>Multi-language support with localization</li>
           </ul>
         </div>
         

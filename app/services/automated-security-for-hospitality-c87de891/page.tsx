@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Security for Hospitality - Zion Tech Group",
-  description: "The future of hospitality is here with Automated Security for Hospitality. Powered by cutting-edge AI, this platform delivers performance monitoring like never before.",
+  description: "The future of hospitality is here with Automated Security for Hospitality. Powered by cutting-edge AI, this platform delivers performance monitoring like never ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-security-for-hospitality-c87de891`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Multi-region deployment with automatic failover</li>
             <li>Executive dashboards with drill-down capabilities</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Faster content creation with AI assistance</li>
             <li>99.9% uptime guarantee with redundant architecture</li>
             <li>Improved customer retention with proactive service</li>
-            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

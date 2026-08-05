@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Platform for Legal - Zion Tech Group",
-  description: "Transform your legal operations with our Intelligent Platform for Legal. This AI-driven solution automates risk assessment with unprecedented accuracy and efficiency.",
+  description: "Transform your legal operations with our Intelligent Platform for Legal. This AI-driven solution automates risk assessment with unprecedented accuracy and effic",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-platform-for-legal-6bb3c2aa`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Language processing with sentiment analysis</li>
             <li>Data quality with anomaly detection</li>
             <li>Multi-language support with localization</li>
-            <li>Network optimization with traffic analysis</li>
           </ul>
         </div>
         

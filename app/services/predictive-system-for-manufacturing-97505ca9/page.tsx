@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Audit trails with compliance reporting</li>
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Serverless functions for cost-effective scaling</li>
-            <li>Security monitoring with threat intelligence</li>
           </ul>
         </div>
         

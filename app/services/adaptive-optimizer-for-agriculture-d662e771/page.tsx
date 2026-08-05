@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Optimizer for Agriculture - Zion Tech Group",
-  description: "Transform your agriculture operations with our Adaptive Optimizer for Agriculture. This AI-driven solution automates compliance monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your agriculture operations with our Adaptive Optimizer for Agriculture. This AI-driven solution automates compliance monitoring with unprecedented ac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-optimizer-for-agriculture-d662e771`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Customer service automation with chatbot integration</li>
             <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Real-time insights and alerts for proactive management</li>
             <li>Improved conversion rates with personalization</li>
-            <li>Faster content creation with AI assistance</li>
           </ul>
         </div>
         

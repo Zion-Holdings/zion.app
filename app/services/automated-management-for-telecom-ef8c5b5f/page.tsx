@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Management for Telecom - Zion Tech Group",
-  description: "Revolutionize telecom through intelligent automation. Our Automated Management for Telecom leverages advanced machine learning to deliver code optimization at scale.",
+  description: "Revolutionize telecom through intelligent automation. Our Automated Management for Telecom leverages advanced machine learning to deliver code optimization at s",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-management-for-telecom-ef8c5b5f`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced support tickets with self-service options</li>
             <li>Seamless integration with existing systems and workflows</li>
             <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

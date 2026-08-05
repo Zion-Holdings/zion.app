@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Predictor for Manufacturing - Zion Tech Group",
-  description: "Revolutionize manufacturing through intelligent automation. Our Automated Predictor for Manufacturing leverages advanced machine learning to deliver document processing at scale.",
+  description: "Revolutionize manufacturing through intelligent automation. Our Automated Predictor for Manufacturing leverages advanced machine learning to deliver document pr",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-predictor-for-manufacturing-3f17a5d2`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Language processing with sentiment analysis</li>
             <li>Sales process optimization with pipeline management</li>
             <li>Logistics route optimization with traffic prediction</li>
-            <li>Cost reduction with process mining</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>50% reduction in operational costs through automation</li>
             <li>Improved quality with automated testing and validation</li>
             <li>Reduced operational risks with predictive models</li>
-            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

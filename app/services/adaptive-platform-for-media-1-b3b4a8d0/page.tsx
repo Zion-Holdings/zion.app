@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Compliance monitoring with regulatory updates</li>
             <li>Process discovery with activity analysis</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         

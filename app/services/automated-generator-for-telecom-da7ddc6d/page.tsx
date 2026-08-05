@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced operational risks with predictive models</li>
             <li>Enhanced decision making with data-driven insights</li>
             <li>Reduced shipping costs with route optimization</li>
-            <li>Improved brand awareness with social monitoring</li>
           </ul>
         </div>
         

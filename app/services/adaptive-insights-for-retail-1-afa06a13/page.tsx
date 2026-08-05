@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Network optimization with traffic analysis</li>
             <li>HIPAA ready with healthcare data protection</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>GDPR compliance with data portability</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced support tickets with self-service options</li>
             <li>Reduced shipping costs with route optimization</li>
             <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
           </ul>
         </div>
         

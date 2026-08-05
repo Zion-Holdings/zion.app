@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Manufacturing for Telecom - Zion Tech Group",
-  description: "Revolutionize telecom through intelligent automation. Our Smart Manufacturing for Telecom leverages advanced machine learning to deliver inventory management at scale.",
+  description: "Revolutionize telecom through intelligent automation. Our Smart Manufacturing for Telecom leverages advanced machine learning to deliver inventory management at",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-manufacturing-for-telecom-7f2ba2ac`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Platform for Technology #1 - Zion Tech Group",
-  description: "Revolutionize technology through intelligent automation. Our Predictive Platform for Technology #1 leverages advanced machine learning to deliver process automation at scale.",
+  description: "Revolutionize technology through intelligent automation. Our Predictive Platform for Technology #1 leverages advanced machine learning to deliver process automa",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-platform-for-technology-1-a4014246`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved sales performance with lead scoring</li>
             <li>Performance benchmarking against industry standards</li>
             <li>Scalable to millions of transactions per second</li>
-            <li>Better code quality with automated reviews</li>
           </ul>
         </div>
         

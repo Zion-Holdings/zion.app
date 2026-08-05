@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Automation for Automotive - Zion Tech Group",
-  description: "Unlock unprecedented growth with Self-Optimizing Automation for Automotive. This autonomous system provides energy management with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Self-Optimizing Automation for Automotive. This autonomous system provides energy management with zero manual intervention need",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-automation-for-automotive-646630bf`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>24/7 automated operations without human intervention</li>
             <li>Better inventory management with demand forecasting</li>
             <li>Better customer experience with personalization</li>
-            <li>Reduced human error by 95% with automated processes</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Predictive modeling with ensemble methods</li>
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Edge computing support for low-latency operations</li>
-            <li>Network optimization with traffic analysis</li>
           </ul>
         </div>
         

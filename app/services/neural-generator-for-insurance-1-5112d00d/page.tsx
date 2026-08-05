@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved brand awareness with social monitoring</li>
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Enhanced security posture with continuous monitoring</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Security for Automotive #1 - Zion Tech Group",
-  description: "Revolutionize automotive through intelligent automation. Our AI-Powered Security for Automotive #1 leverages advanced machine learning to deliver financial planning at scale.",
+  description: "Revolutionize automotive through intelligent automation. Our AI-Powered Security for Automotive #1 leverages advanced machine learning to deliver financial plan",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-security-for-automotive-1-59769ed8`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer service automation with chatbot integration</li>
             <li>Predictive modeling with ensemble methods</li>
             <li>HIPAA ready with healthcare data protection</li>
-            <li>Brand monitoring across social channels</li>
           </ul>
         </div>
         

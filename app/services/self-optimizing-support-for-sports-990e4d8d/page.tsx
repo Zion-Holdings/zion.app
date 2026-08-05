@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Support for Sports - Zion Tech Group",
-  description: "Revolutionize sports through intelligent automation. Our Self-Optimizing Support for Sports leverages advanced machine learning to deliver performance monitoring at scale.",
+  description: "Revolutionize sports through intelligent automation. Our Self-Optimizing Support for Sports leverages advanced machine learning to deliver performance monitorin",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-support-for-sports-990e4d8d`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>HIPAA ready with healthcare data protection</li>
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Competitive intelligence with market share tracking</li>
           </ul>
         </div>
         

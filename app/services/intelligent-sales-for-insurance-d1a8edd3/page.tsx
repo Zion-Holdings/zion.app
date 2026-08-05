@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Sales for Insurance - Zion Tech Group",
-  description: "Transform your insurance operations with our Intelligent Sales for Insurance. This AI-driven solution automates supply chain with unprecedented accuracy and efficiency.",
+  description: "Transform your insurance operations with our Intelligent Sales for Insurance. This AI-driven solution automates supply chain with unprecedented accuracy and eff",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-sales-for-insurance-d1a8edd3`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data governance with policy enforcement</li>
             <li>Customer service automation with chatbot integration</li>
             <li>Predictive modeling with ensemble methods</li>
-            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         

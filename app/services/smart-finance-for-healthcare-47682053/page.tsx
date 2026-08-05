@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Process discovery with activity analysis</li>
             <li>Manufacturing quality control with defect detection</li>
             <li>Version control with rollback capabilities</li>
-            <li>HIPAA ready with healthcare data protection</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Faster time-to-market with accelerated development</li>
             <li>Improved sales performance with lead scoring</li>
             <li>Improved brand awareness with social monitoring</li>
-            <li>Better inventory management with demand forecasting</li>
           </ul>
         </div>
         

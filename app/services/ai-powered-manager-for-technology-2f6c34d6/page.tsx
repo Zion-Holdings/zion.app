@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data quality with anomaly detection</li>
             <li>Language processing with sentiment analysis</li>
             <li>Customer journey mapping with touchpoint analysis</li>
-            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better supply chain visibility with tracking</li>
             <li>Scalable to millions of transactions per second</li>
             <li>Improved sales performance with lead scoring</li>
-            <li>Faster content creation with AI assistance</li>
           </ul>
         </div>
         

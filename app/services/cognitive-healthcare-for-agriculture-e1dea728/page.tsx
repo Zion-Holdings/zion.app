@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Healthcare for Agriculture - Zion Tech Group",
-  description: "Revolutionize agriculture through intelligent automation. Our Cognitive Healthcare for Agriculture leverages advanced machine learning to deliver quality control at scale.",
+  description: "Revolutionize agriculture through intelligent automation. Our Cognitive Healthcare for Agriculture leverages advanced machine learning to deliver quality contro",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-healthcare-for-agriculture-e1dea728`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sales process optimization with pipeline management</li>
             <li>Automation opportunity identification</li>
             <li>Process discovery with activity analysis</li>
-            <li>Sentiment analysis with real-time monitoring</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Network optimization with traffic analysis</li>
             <li>Multi-region deployment with automatic failover</li>
             <li>Audit trails with compliance reporting</li>
-            <li>Sentiment analysis with real-time monitoring</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Real-time insights and alerts for proactive management</li>
             <li>Better customer experience with personalization</li>
             <li>Performance benchmarking against industry standards</li>
-            <li>Improved forecast accuracy with ML models</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Security for Construction - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Self-Optimizing Security for Construction leverages advanced machine learning to deliver security monitoring at scale.",
+  description: "Revolutionize construction through intelligent automation. Our Self-Optimizing Security for Construction leverages advanced machine learning to deliver security",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-security-for-construction-0478b00b`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Logistics route optimization with traffic prediction</li>
             <li>Revenue forecasting with market trend analysis</li>
             <li>Fraud detection with anomaly analysis</li>
-            <li>Financial risk management with scenario analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security posture with continuous monitoring</li>
             <li>Reduced customer acquisition costs with optimization</li>
             <li>Reduced shipping costs with route optimization</li>
-            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

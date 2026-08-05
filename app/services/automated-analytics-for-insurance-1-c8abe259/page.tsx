@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better financial planning with predictive models</li>
             <li>Better risk management with predictive analytics</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Supply for Construction #1 - Zion Tech Group",
-  description: "The future of construction is here with Adaptive Supply for Construction #1. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before.",
+  description: "The future of construction is here with Adaptive Supply for Construction #1. Powered by cutting-edge AI, this platform delivers compliance monitoring like never",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-supply-for-construction-1-8378bcc2`
   }

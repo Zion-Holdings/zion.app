@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Predictor for Transportation #3 - Zion Tech Group",
-  description: "Transform your transportation operations with our Neural Predictor for Transportation #3. This AI-driven solution automates threat detection with unprecedented accuracy and efficiency.",
+  description: "Transform your transportation operations with our Neural Predictor for Transportation #3. This AI-driven solution automates threat detection with unprecedented ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-predictor-for-transportation-3-a3a219ce`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Insights for Agriculture #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Predictive Insights for Agriculture #1. This autonomous system provides maintenance scheduling with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Predictive Insights for Agriculture #1. This autonomous system provides maintenance scheduling with zero manual intervention ne",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-insights-for-agriculture-1-f2c2abb4`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Revenue forecasting with market trend analysis</li>
             <li>Inventory prediction with demand forecasting</li>
-            <li>Document processing with OCR and NLP</li>
           </ul>
         </div>
         

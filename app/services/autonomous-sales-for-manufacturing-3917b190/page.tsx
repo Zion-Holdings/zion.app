@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Sales for Manufacturing - Zion Tech Group",
-  description: "Unlock unprecedented growth with Autonomous Sales for Manufacturing. This autonomous system provides performance monitoring with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Autonomous Sales for Manufacturing. This autonomous system provides performance monitoring with zero manual intervention needed",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-sales-for-manufacturing-3917b190`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Budget optimization with cost allocation</li>
             <li>Content generation with plagiarism checks</li>
             <li>SOC 2 certified with security controls</li>
-            <li>Energy optimization with consumption tracking</li>
           </ul>
         </div>
         

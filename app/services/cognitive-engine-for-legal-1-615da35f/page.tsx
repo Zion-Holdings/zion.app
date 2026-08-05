@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Engine for Legal #1 - Zion Tech Group",
-  description: "Transform your legal operations with our Cognitive Engine for Legal #1. This AI-driven solution automates language processing with unprecedented accuracy and efficiency.",
+  description: "Transform your legal operations with our Cognitive Engine for Legal #1. This AI-driven solution automates language processing with unprecedented accuracy and ef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-engine-for-legal-1-615da35f`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>User experience analytics with behavior tracking</li>
             <li>Revenue forecasting with market trend analysis</li>
             <li>Audit trails with compliance reporting</li>
-            <li>Energy optimization with consumption tracking</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security posture with continuous monitoring</li>
             <li>Reduced human error by 95% with automated processes</li>
             <li>Better inventory management with demand forecasting</li>
-            <li>Faster content creation with AI assistance</li>
           </ul>
         </div>
         

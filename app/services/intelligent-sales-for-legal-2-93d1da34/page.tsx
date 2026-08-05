@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Sales for Legal #2 - Zion Tech Group",
-  description: "The future of legal is here with Intelligent Sales for Legal #2. Powered by cutting-edge AI, this platform delivers customer service automation like never before.",
+  description: "The future of legal is here with Intelligent Sales for Legal #2. Powered by cutting-edge AI, this platform delivers customer service automation like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-sales-for-legal-2-93d1da34`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Manufacturing quality control with defect detection</li>
             <li>Data governance with policy enforcement</li>
             <li>Document processing with OCR and NLP</li>
-            <li>Market analysis with buyer behavior insights</li>
           </ul>
         </div>
         

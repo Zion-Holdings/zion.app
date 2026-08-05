@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Process discovery with activity analysis</li>
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Inventory prediction with demand forecasting</li>
-            <li>Cost reduction with process mining</li>
           </ul>
         </div>
         

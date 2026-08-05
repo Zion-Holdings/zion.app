@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Faster time-to-market with accelerated development</li>
             <li>Reduced human error by 95% with automated processes</li>
             <li>Better financial planning with predictive models</li>
-            <li>Improved product quality with automated testing</li>
           </ul>
         </div>
         

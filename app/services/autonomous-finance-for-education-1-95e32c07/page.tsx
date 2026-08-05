@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Open-source friendly with plugin architecture</li>
             <li>Manufacturing quality control with defect detection</li>
             <li>Version control with rollback capabilities</li>
-            <li>Multi-language support with localization</li>
           </ul>
         </div>
         

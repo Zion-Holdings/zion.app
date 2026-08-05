@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Supply for Construction #1 - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Cognitive Supply for Construction #1 leverages advanced machine learning to deliver inventory management at scale.",
+  description: "Revolutionize construction through intelligent automation. Our Cognitive Supply for Construction #1 leverages advanced machine learning to deliver inventory man",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-supply-for-construction-1-f4af15b8`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Budget optimization with cost allocation</li>
             <li>Fraud detection with anomaly analysis</li>
             <li>Competitive intelligence with market share tracking</li>
-            <li>GDPR compliance with data portability</li>
           </ul>
         </div>
         

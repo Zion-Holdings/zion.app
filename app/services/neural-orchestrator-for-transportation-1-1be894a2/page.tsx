@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Orchestrator for Transportation #1 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Neural Orchestrator for Transportation #1. This autonomous system provides financial planning with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Neural Orchestrator for Transportation #1. This autonomous system provides financial planning with zero manual intervention nee",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-orchestrator-for-transportation-1-1be894a2`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer service automation with chatbot integration</li>
             <li>Microservices deployment with container orchestration</li>
             <li>Code optimization with performance profiling</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
           </ul>
         </div>
         

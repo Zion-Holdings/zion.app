@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Version control with rollback capabilities</li>
             <li>Role-based access control with SSO integration</li>
             <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Document processing with OCR and NLP</li>
           </ul>
         </div>
         

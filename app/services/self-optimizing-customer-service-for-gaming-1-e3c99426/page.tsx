@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Customer Service for Gaming #1 - Zion Tech Group",
-  description: "Revolutionize gaming through intelligent automation. Our Self-Optimizing Customer Service for Gaming #1 leverages advanced machine learning to deliver workflow management at scale.",
+  description: "Revolutionize gaming through intelligent automation. Our Self-Optimizing Customer Service for Gaming #1 leverages advanced machine learning to deliver workflow ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-customer-service-for-gaming-1-e3c99426`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Scalable to millions of transactions per second</li>
             <li>Cost optimization recommendations with savings analysis</li>
             <li>Seamless integration with existing systems and workflows</li>
-            <li>Improved customer retention with proactive service</li>
           </ul>
         </div>
         

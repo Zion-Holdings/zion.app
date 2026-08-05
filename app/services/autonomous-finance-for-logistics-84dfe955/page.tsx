@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Finance for Logistics - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Autonomous Finance for Logistics leverages advanced machine learning to deliver quality control at scale.",
+  description: "Revolutionize logistics through intelligent automation. Our Autonomous Finance for Logistics leverages advanced machine learning to deliver quality control at s",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-finance-for-logistics-84dfe955`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Business intelligence with KPI dashboards</li>
             <li>Inventory prediction with demand forecasting</li>
-            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         

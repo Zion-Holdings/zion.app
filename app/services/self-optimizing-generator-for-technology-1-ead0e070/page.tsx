@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Generator for Technology #1 - Zion Tech Group",
-  description: "The future of technology is here with Self-Optimizing Generator for Technology #1. Powered by cutting-edge AI, this platform delivers customer insights like never before.",
+  description: "The future of technology is here with Self-Optimizing Generator for Technology #1. Powered by cutting-edge AI, this platform delivers customer insights like nev",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-generator-for-technology-1-ead0e070`
   }

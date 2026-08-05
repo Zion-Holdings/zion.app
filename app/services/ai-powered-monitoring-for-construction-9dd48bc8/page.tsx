@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Monitoring for Construction - Zion Tech Group",
-  description: "Transform your construction operations with our AI-Powered Monitoring for Construction. This AI-driven solution automates content generation with unprecedented accuracy and efficiency.",
+  description: "Transform your construction operations with our AI-Powered Monitoring for Construction. This AI-driven solution automates content generation with unprecedented ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-monitoring-for-construction-9dd48bc8`
   }

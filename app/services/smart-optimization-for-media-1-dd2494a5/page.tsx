@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>Financial risk management with scenario analysis</li>
-            <li>HIPAA ready with healthcare data protection</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced risk with early warning systems</li>
             <li>Seamless integration with existing systems and workflows</li>
             <li>Cost optimization recommendations with savings analysis</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
           </ul>
         </div>
         

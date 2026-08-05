@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-language support with localization</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Business intelligence with KPI dashboards</li>
-            <li>Revenue forecasting with market trend analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved customer satisfaction with faster response times</li>
             <li>Enhanced decision making with data-driven insights</li>
             <li>Reduced churn with proactive customer retention</li>
-            <li>Better resource utilization with auto-scaling</li>
           </ul>
         </div>
         

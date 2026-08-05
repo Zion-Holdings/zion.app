@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Document processing with OCR and NLP</li>
             <li>Serverless functions for cost-effective scaling</li>
             <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Multi-language support with localization</li>
           </ul>
         </div>
         

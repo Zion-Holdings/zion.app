@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Processor for Construction - Zion Tech Group",
-  description: "The future of construction is here with Cognitive Processor for Construction. Powered by cutting-edge AI, this platform delivers market intelligence like never before.",
+  description: "The future of construction is here with Cognitive Processor for Construction. Powered by cutting-edge AI, this platform delivers market intelligence like never ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-processor-for-construction-d9cdc414`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Predictive maintenance scheduling to prevent downtime</li>
             <li>Better supply chain visibility with tracking</li>
             <li>Improved conversion rates with personalization</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

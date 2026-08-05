@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better compliance with automated audit trails</li>
             <li>Improved product quality with automated testing</li>
             <li>Improved customer satisfaction with faster response times</li>
-            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

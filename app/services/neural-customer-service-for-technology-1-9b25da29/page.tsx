@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Role-based access control with SSO integration</li>
             <li>Network optimization with traffic analysis</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better risk management with predictive analytics</li>
             <li>Improved brand awareness with social monitoring</li>
             <li>Faster time-to-market with accelerated development</li>
-            <li>Improved customer satisfaction with faster response times</li>
           </ul>
         </div>
         

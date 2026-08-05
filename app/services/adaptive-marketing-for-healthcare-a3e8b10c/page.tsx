@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Marketing for Healthcare - Zion Tech Group",
-  description: "The future of healthcare is here with Adaptive Marketing for Healthcare. Powered by cutting-edge AI, this platform delivers document processing like never before.",
+  description: "The future of healthcare is here with Adaptive Marketing for Healthcare. Powered by cutting-edge AI, this platform delivers document processing like never befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-marketing-for-healthcare-a3e8b10c`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>SOC 2 certified with security controls</li>
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Fraud detection with anomaly analysis</li>
-            <li>Data quality with anomaly detection</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Automated compliance reporting for regulatory requirements</li>
             <li>ROI achieved in under 90 days with cost savings</li>
             <li>Improved product quality with automated testing</li>
-            <li>Improved brand awareness with social monitoring</li>
           </ul>
         </div>
         

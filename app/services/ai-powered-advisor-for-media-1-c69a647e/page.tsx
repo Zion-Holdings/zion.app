@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Advisor for Media #1 - Zion Tech Group",
-  description: "Revolutionize media through intelligent automation. Our AI-Powered Advisor for Media #1 leverages advanced machine learning to deliver fraud prevention at scale.",
+  description: "Revolutionize media through intelligent automation. Our AI-Powered Advisor for Media #1 leverages advanced machine learning to deliver fraud prevention at scale",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-advisor-for-media-1-c69a647e`
   }

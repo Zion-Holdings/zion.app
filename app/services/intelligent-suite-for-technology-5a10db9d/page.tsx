@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Healthcare data analytics with patient insights</li>
             <li>Version control with rollback capabilities</li>
             <li>Master data management with golden records</li>
-            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         

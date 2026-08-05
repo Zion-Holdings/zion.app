@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Predictive modeling with ensemble methods</li>
             <li>HIPAA ready with healthcare data protection</li>
             <li>Compliance monitoring with regulatory updates</li>
-            <li>Network optimization with traffic analysis</li>
           </ul>
         </div>
         

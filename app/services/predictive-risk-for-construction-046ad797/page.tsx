@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Risk for Construction - Zion Tech Group",
-  description: "Transform your construction operations with our Predictive Risk for Construction. This AI-driven solution automates energy management with unprecedented accuracy and efficiency.",
+  description: "Transform your construction operations with our Predictive Risk for Construction. This AI-driven solution automates energy management with unprecedented accurac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-risk-for-construction-046ad797`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Brand monitoring across social channels</li>
             <li>Version control with rollback capabilities</li>
             <li>Financial risk management with scenario analysis</li>
-            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         

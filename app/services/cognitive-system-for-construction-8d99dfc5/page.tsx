@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Inventory prediction with demand forecasting</li>
             <li>Code optimization with performance profiling</li>
             <li>Compliance monitoring with regulatory updates</li>
-            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         

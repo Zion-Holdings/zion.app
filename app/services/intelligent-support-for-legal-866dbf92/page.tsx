@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Support for Legal - Zion Tech Group",
-  description: "Revolutionize legal through intelligent automation. Our Intelligent Support for Legal leverages advanced machine learning to deliver financial planning at scale.",
+  description: "Revolutionize legal through intelligent automation. Our Intelligent Support for Legal leverages advanced machine learning to deliver financial planning at scale",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-support-for-legal-866dbf92`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Logistics route optimization with traffic prediction</li>
             <li>GDPR compliance with data portability</li>
             <li>Serverless functions for cost-effective scaling</li>
-            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         

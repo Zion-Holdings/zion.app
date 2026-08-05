@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Orchestrator for Gaming - Zion Tech Group",
-  description: "Revolutionize gaming through intelligent automation. Our Adaptive Orchestrator for Gaming leverages advanced machine learning to deliver threat detection at scale.",
+  description: "Revolutionize gaming through intelligent automation. Our Adaptive Orchestrator for Gaming leverages advanced machine learning to deliver threat detection at sca",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-orchestrator-for-gaming-f5480dc7`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>HIPAA ready with healthcare data protection</li>
             <li>Edge computing support for low-latency operations</li>
             <li>Sentiment analysis with real-time monitoring</li>
-            <li>Multi-region deployment with automatic failover</li>
           </ul>
         </div>
         

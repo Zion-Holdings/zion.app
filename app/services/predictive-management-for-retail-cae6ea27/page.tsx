@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Inventory prediction with demand forecasting</li>
             <li>Manufacturing quality control with defect detection</li>
             <li>Business intelligence with KPI dashboards</li>
-            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         

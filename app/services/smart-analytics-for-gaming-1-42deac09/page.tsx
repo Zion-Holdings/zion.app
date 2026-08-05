@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Microservices deployment with container orchestration</li>
             <li>Market analysis with buyer behavior insights</li>
-            <li>Data quality with anomaly detection</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced risk with early warning systems</li>
             <li>Better resource utilization with auto-scaling</li>
             <li>Improved conversion rates with personalization</li>
-            <li>Reduced human error by 95% with automated processes</li>
           </ul>
         </div>
         

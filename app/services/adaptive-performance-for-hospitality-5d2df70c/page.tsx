@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Performance for Hospitality - Zion Tech Group",
-  description: "Transform your hospitality operations with our Adaptive Performance for Hospitality. This AI-driven solution automates risk assessment with unprecedented accuracy and efficiency.",
+  description: "Transform your hospitality operations with our Adaptive Performance for Hospitality. This AI-driven solution automates risk assessment with unprecedented accura",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-performance-for-hospitality-5d2df70c`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Microservices deployment with container orchestration</li>
             <li>Compliance monitoring with regulatory updates</li>
             <li>Version control with rollback capabilities</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
           </ul>
         </div>
         

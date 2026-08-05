@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Analyzer for Logistics #1 - Zion Tech Group",
-  description: "The future of logistics is here with Neural Analyzer for Logistics #1. Powered by cutting-edge AI, this platform delivers inventory management like never before.",
+  description: "The future of logistics is here with Neural Analyzer for Logistics #1. Powered by cutting-edge AI, this platform delivers inventory management like never before",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-analyzer-for-logistics-1-bc2d2c78`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Image recognition with computer vision</li>
             <li>A/B testing framework for continuous optimization</li>
             <li>Cost reduction with process mining</li>
-            <li>Document processing with OCR and NLP</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced customer acquisition costs with optimization</li>
             <li>Automated compliance reporting for regulatory requirements</li>
             <li>Better risk management with predictive analytics</li>
-            <li>Faster content creation with AI assistance</li>
           </ul>
         </div>
         

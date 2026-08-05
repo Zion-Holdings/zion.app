@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Supply for Transportation - Zion Tech Group",
-  description: "Transform your transportation operations with our Predictive Supply for Transportation. This AI-driven solution automates image recognition with unprecedented accuracy and efficiency.",
+  description: "Transform your transportation operations with our Predictive Supply for Transportation. This AI-driven solution automates image recognition with unprecedented a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-supply-for-transportation-fb66989d`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Real-time processing with streaming analytics</li>
             <li>Multi-region deployment with automatic failover</li>
             <li>Predictive modeling with ensemble methods</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         

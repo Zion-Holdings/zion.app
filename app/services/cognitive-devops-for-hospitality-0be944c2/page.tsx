@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive DevOps for Hospitality - Zion Tech Group",
-  description: "Transform your hospitality operations with our Cognitive DevOps for Hospitality. This AI-driven solution automates image recognition with unprecedented accuracy and efficiency.",
+  description: "Transform your hospitality operations with our Cognitive DevOps for Hospitality. This AI-driven solution automates image recognition with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-devops-for-hospitality-0be944c2`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Edge computing support for low-latency operations</li>
             <li>Brand monitoring across social channels</li>
             <li>Customer service automation with chatbot integration</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved forecast accuracy with ML models</li>
             <li>Zero manual intervention required for routine tasks</li>
             <li>Seamless integration with existing systems and workflows</li>
-            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

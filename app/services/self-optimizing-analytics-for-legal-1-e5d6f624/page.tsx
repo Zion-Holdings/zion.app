@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Competitive intelligence with market share tracking</li>
             <li>Serverless functions for cost-effective scaling</li>
             <li>Multi-language support with localization</li>
-            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         

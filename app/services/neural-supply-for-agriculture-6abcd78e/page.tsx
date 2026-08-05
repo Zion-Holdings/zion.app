@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Supply for Agriculture - Zion Tech Group",
-  description: "Transform your agriculture operations with our Neural Supply for Agriculture. This AI-driven solution automates financial planning with unprecedented accuracy and efficiency.",
+  description: "Transform your agriculture operations with our Neural Supply for Agriculture. This AI-driven solution automates financial planning with unprecedented accuracy a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-supply-for-agriculture-6abcd78e`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Security monitoring with threat intelligence</li>
             <li>Content generation with plagiarism checks</li>
             <li>Multi-language support with localization</li>
-            <li>Audit trails with compliance reporting</li>
           </ul>
         </div>
         

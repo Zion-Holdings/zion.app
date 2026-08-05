@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive DevOps for Automotive - Zion Tech Group",
-  description: "Unlock unprecedented growth with Predictive DevOps for Automotive. This autonomous system provides customer service automation with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Predictive DevOps for Automotive. This autonomous system provides customer service automation with zero manual intervention nee",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-devops-for-automotive-fe7ab52b`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Custom integrations with webhook support</li>
             <li>Data governance with policy enforcement</li>
             <li>Edge computing support for low-latency operations</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved customer satisfaction with faster response times</li>
             <li>Reduced churn with proactive customer retention</li>
             <li>Faster content creation with AI assistance</li>
-            <li>Improved sales performance with lead scoring</li>
           </ul>
         </div>
         

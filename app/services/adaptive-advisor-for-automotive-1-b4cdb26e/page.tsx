@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Advisor for Automotive #1 - Zion Tech Group",
-  description: "The future of automotive is here with Adaptive Advisor for Automotive #1. Powered by cutting-edge AI, this platform delivers document processing like never before.",
+  description: "The future of automotive is here with Adaptive Advisor for Automotive #1. Powered by cutting-edge AI, this platform delivers document processing like never befo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-advisor-for-automotive-1-b4cdb26e`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Market analysis with buyer behavior insights</li>
             <li>User experience analytics with behavior tracking</li>
             <li>Custom integrations with webhook support</li>
-            <li>Energy optimization with consumption tracking</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Support for Energy - Zion Tech Group",
-  description: "Transform your energy operations with our AI-Powered Support for Energy. This AI-driven solution automates financial planning with unprecedented accuracy and efficiency.",
+  description: "Transform your energy operations with our AI-Powered Support for Energy. This AI-driven solution automates financial planning with unprecedented accuracy and ef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-support-for-energy-95600d7a`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Alerting system with intelligent notifications</li>
             <li>Multi-language support with localization</li>
             <li>Data quality with anomaly detection</li>
-            <li>Energy optimization with consumption tracking</li>
           </ul>
         </div>
         

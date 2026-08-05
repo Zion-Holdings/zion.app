@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Better customer experience with personalization</li>
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Faster time-to-market with accelerated development</li>
-            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

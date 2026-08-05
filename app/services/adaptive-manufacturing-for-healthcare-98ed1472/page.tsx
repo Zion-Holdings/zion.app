@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Manufacturing for Healthcare - Zion Tech Group",
-  description: "Transform your healthcare operations with our Adaptive Manufacturing for Healthcare. This AI-driven solution automates code optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your healthcare operations with our Adaptive Manufacturing for Healthcare. This AI-driven solution automates code optimization with unprecedented accu",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-manufacturing-for-healthcare-98ed1472`
   }

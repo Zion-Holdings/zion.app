@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Insights for Telecom - Zion Tech Group",
-  description: "Revolutionize telecom through intelligent automation. Our Neural Insights for Telecom leverages advanced machine learning to deliver workflow management at scale.",
+  description: "Revolutionize telecom through intelligent automation. Our Neural Insights for Telecom leverages advanced machine learning to deliver workflow management at scal",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-insights-for-telecom-0176c9b8`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Edge computing support for low-latency operations</li>
             <li>Automation opportunity identification</li>
             <li>Compliance monitoring with regulatory updates</li>
-            <li>A/B testing framework for continuous optimization</li>
           </ul>
         </div>
         

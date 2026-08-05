@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Customer Service for Technology #1 - Zion Tech Group",
-  description: "Revolutionize technology through intelligent automation. Our Smart Customer Service for Technology #1 leverages advanced machine learning to deliver inventory management at scale.",
+  description: "Revolutionize technology through intelligent automation. Our Smart Customer Service for Technology #1 leverages advanced machine learning to deliver inventory m",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-customer-service-for-technology-1-0c44fb36`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Brand monitoring across social channels</li>
             <li>Network optimization with traffic analysis</li>
-            <li>HIPAA ready with healthcare data protection</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved sales performance with lead scoring</li>
             <li>Better resource utilization with auto-scaling</li>
             <li>Zero manual intervention required for routine tasks</li>
-            <li>Better compliance with automated audit trails</li>
           </ul>
         </div>
         

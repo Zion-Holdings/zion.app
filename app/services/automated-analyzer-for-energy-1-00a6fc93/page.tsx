@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Analyzer for Energy #1 - Zion Tech Group",
-  description: "Revolutionize energy through intelligent automation. Our Automated Analyzer for Energy #1 leverages advanced machine learning to deliver quality control at scale.",
+  description: "Revolutionize energy through intelligent automation. Our Automated Analyzer for Energy #1 leverages advanced machine learning to deliver quality control at scal",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-analyzer-for-energy-1-00a6fc93`
   }

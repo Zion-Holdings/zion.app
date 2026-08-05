@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Supply for Construction - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Smart Supply for Construction leverages advanced machine learning to deliver sales process optimization at scale.",
+  description: "Revolutionize construction through intelligent automation. Our Smart Supply for Construction leverages advanced machine learning to deliver sales process optimi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-supply-for-construction-7acc8dcd`
   }

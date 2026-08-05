@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Document processing with OCR and NLP</li>
             <li>Master data management with golden records</li>
             <li>Security monitoring with threat intelligence</li>
-            <li>Maintenance scheduling with predictive analytics</li>
           </ul>
         </div>
         

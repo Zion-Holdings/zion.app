@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data encryption at rest and in transit</li>
             <li>Healthcare data analytics with patient insights</li>
             <li>Network optimization with traffic analysis</li>
-            <li>Customer service automation with chatbot integration</li>
           </ul>
         </div>
         

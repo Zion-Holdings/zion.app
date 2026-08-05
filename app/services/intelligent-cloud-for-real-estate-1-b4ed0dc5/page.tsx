@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Cloud for Real-Estate #1 - Zion Tech Group",
-  description: "Revolutionize real-estate through intelligent automation. Our Intelligent Cloud for Real-Estate #1 leverages advanced machine learning to deliver sales process optimization at scale.",
+  description: "Revolutionize real-estate through intelligent automation. Our Intelligent Cloud for Real-Estate #1 leverages advanced machine learning to deliver sales process ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-cloud-for-real-estate-1-b4ed0dc5`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Alerting system with intelligent notifications</li>
             <li>Document processing with OCR and NLP</li>
             <li>Data governance with policy enforcement</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Scalable to millions of transactions per second</li>
             <li>Better risk management with predictive analytics</li>
             <li>Real-time insights and alerts for proactive management</li>
-            <li>Improved sales performance with lead scoring</li>
           </ul>
         </div>
         

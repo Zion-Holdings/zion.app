@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Process discovery with activity analysis</li>
             <li>Language processing with sentiment analysis</li>
             <li>SOC 2 certified with security controls</li>
-            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Better customer experience with personalization</li>
             <li>Improved employee productivity with automation</li>
-            <li>Improved conversion rates with personalization</li>
           </ul>
         </div>
         

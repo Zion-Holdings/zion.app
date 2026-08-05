@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>SOC 2 certified with security controls</li>
             <li>Cloud-native architecture with multi-region deployment</li>
             <li>Process discovery with activity analysis</li>
-            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Increased revenue with optimized pricing strategies</li>
             <li>Reduced human error by 95% with automated processes</li>
             <li>Better risk management with predictive analytics</li>
-            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

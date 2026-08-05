@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Monitoring for Manufacturing #1 - Zion Tech Group",
-  description: "The future of manufacturing is here with Autonomous Monitoring for Manufacturing #1. Powered by cutting-edge AI, this platform delivers content generation like never before.",
+  description: "The future of manufacturing is here with Autonomous Monitoring for Manufacturing #1. Powered by cutting-edge AI, this platform delivers content generation like ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-monitoring-for-manufacturing-1-832588bd`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Faster time-to-market with accelerated development</li>
             <li>Improved brand awareness with social monitoring</li>
             <li>Reduced risk with early warning systems</li>
-            <li>Improved product quality with automated testing</li>
           </ul>
         </div>
         

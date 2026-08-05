@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Platform for Automotive #1 - Zion Tech Group",
-  description: "Transform your automotive operations with our Automated Platform for Automotive #1. This AI-driven solution automates financial planning with unprecedented accuracy and efficiency.",
+  description: "Transform your automotive operations with our Automated Platform for Automotive #1. This AI-driven solution automates financial planning with unprecedented accu",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-platform-for-automotive-1-c832715e`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced decision making with data-driven insights</li>
             <li>Performance benchmarking against industry standards</li>
             <li>Reduced development time with code generation</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
           </ul>
         </div>
         

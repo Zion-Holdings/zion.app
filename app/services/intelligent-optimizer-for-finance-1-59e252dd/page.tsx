@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Optimizer for Finance #1 - Zion Tech Group",
-  description: "Transform your finance operations with our Intelligent Optimizer for Finance #1. This AI-driven solution automates customer insights with unprecedented accuracy and efficiency.",
+  description: "Transform your finance operations with our Intelligent Optimizer for Finance #1. This AI-driven solution automates customer insights with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-optimizer-for-finance-1-59e252dd`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced churn with proactive customer retention</li>
             <li>Reduced human error by 95% with automated processes</li>
             <li>Real-time insights and alerts for proactive management</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

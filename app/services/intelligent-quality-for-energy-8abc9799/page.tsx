@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Microservices deployment with container orchestration</li>
             <li>Alerting system with intelligent notifications</li>
             <li>Code optimization with performance profiling</li>
-            <li>Role-based access control with SSO integration</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Reduced risk with early warning systems</li>
             <li>Better resource utilization with auto-scaling</li>
-            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

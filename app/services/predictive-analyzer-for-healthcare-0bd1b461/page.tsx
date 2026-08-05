@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Analyzer for Healthcare - Zion Tech Group",
-  description: "Transform your healthcare operations with our Predictive Analyzer for Healthcare. This AI-driven solution automates workflow management with unprecedented accuracy and efficiency.",
+  description: "Transform your healthcare operations with our Predictive Analyzer for Healthcare. This AI-driven solution automates workflow management with unprecedented accur",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-analyzer-for-healthcare-0bd1b461`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Process discovery with activity analysis</li>
             <li>Version control with rollback capabilities</li>
             <li>Logistics route optimization with traffic prediction</li>
-            <li>Custom integrations with webhook support</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced customer acquisition costs with optimization</li>
             <li>Reduced churn with proactive customer retention</li>
             <li>Reduced operational risks with predictive models</li>
-            <li>Reduced risk with early warning systems</li>
           </ul>
         </div>
         

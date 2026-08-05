@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Predictive modeling with ensemble methods</li>
             <li>User experience analytics with behavior tracking</li>
             <li>Budget optimization with cost allocation</li>
-            <li>Custom integrations with webhook support</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>Better code quality with automated reviews</li>
             <li>Better financial planning with predictive models</li>
-            <li>Improved customer retention with proactive service</li>
           </ul>
         </div>
         

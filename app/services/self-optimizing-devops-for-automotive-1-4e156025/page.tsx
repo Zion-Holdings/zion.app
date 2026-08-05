@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing DevOps for Automotive #1 - Zion Tech Group",
-  description: "Transform your automotive operations with our Self-Optimizing DevOps for Automotive #1. This AI-driven solution automates customer service automation with unprecedented accuracy and efficiency.",
+  description: "Transform your automotive operations with our Self-Optimizing DevOps for Automotive #1. This AI-driven solution automates customer service automation with unpre",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-devops-for-automotive-1-4e156025`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Mobile-responsive interface with offline capabilities</li>
             <li>Sales process optimization with pipeline management</li>
             <li>Open-source friendly with plugin architecture</li>
-            <li>Automation opportunity identification</li>
           </ul>
         </div>
         

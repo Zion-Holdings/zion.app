@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data governance with policy enforcement</li>
             <li>Customer service automation with chatbot integration</li>
             <li>Microservices deployment with container orchestration</li>
-            <li>Budget optimization with cost allocation</li>
           </ul>
         </div>
         

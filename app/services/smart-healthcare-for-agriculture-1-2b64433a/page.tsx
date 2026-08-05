@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Healthcare for Agriculture #1 - Zion Tech Group",
-  description: "The future of agriculture is here with Smart Healthcare for Agriculture #1. Powered by cutting-edge AI, this platform delivers inventory management like never before.",
+  description: "The future of agriculture is here with Smart Healthcare for Agriculture #1. Powered by cutting-edge AI, this platform delivers inventory management like never b",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-healthcare-for-agriculture-1-2b64433a`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>Logistics route optimization with traffic prediction</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better inventory management with demand forecasting</li>
             <li>Zero manual intervention required for routine tasks</li>
             <li>Increased revenue with optimized pricing strategies</li>
-            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

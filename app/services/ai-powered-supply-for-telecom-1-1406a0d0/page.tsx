@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Supply for Telecom #1 - Zion Tech Group",
-  description: "Transform your telecom operations with our AI-Powered Supply for Telecom #1. This AI-driven solution automates image recognition with unprecedented accuracy and efficiency.",
+  description: "Transform your telecom operations with our AI-Powered Supply for Telecom #1. This AI-driven solution automates image recognition with unprecedented accuracy and",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-supply-for-telecom-1-1406a0d0`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Manufacturing quality control with defect detection</li>
             <li>Multi-region deployment with automatic failover</li>
             <li>Energy optimization with consumption tracking</li>
-            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Compliance for Logistics - Zion Tech Group",
-  description: "Transform your logistics operations with our Automated Compliance for Logistics. This AI-driven solution automates compliance monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your logistics operations with our Automated Compliance for Logistics. This AI-driven solution automates compliance monitoring with unprecedented accu",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-compliance-for-logistics-b61e82af`
   }

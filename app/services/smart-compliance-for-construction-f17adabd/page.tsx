@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Compliance for Construction - Zion Tech Group",
-  description: "Transform your construction operations with our Smart Compliance for Construction. This AI-driven solution automates process automation with unprecedented accuracy and efficiency.",
+  description: "Transform your construction operations with our Smart Compliance for Construction. This AI-driven solution automates process automation with unprecedented accur",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-compliance-for-construction-f17adabd`
   }

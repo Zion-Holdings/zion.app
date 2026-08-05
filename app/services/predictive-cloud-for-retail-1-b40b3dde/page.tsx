@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Cloud for Retail #1 - Zion Tech Group",
-  description: "Revolutionize retail through intelligent automation. Our Predictive Cloud for Retail #1 leverages advanced machine learning to deliver performance monitoring at scale.",
+  description: "Revolutionize retail through intelligent automation. Our Predictive Cloud for Retail #1 leverages advanced machine learning to deliver performance monitoring at",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-cloud-for-retail-1-b40b3dde`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Fraud detection with anomaly analysis</li>
             <li>Customer journey mapping with touchpoint analysis</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Data quality with anomaly detection</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved product quality with automated testing</li>
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Improved sales performance with lead scoring</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
           </ul>
         </div>
         

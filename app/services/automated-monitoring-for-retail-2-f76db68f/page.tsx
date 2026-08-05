@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Monitoring for Retail #2 - Zion Tech Group",
-  description: "Revolutionize retail through intelligent automation. Our Automated Monitoring for Retail #2 leverages advanced machine learning to deliver performance monitoring at scale.",
+  description: "Revolutionize retail through intelligent automation. Our Automated Monitoring for Retail #2 leverages advanced machine learning to deliver performance monitorin",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-monitoring-for-retail-2-f76db68f`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Manufacturing quality control with defect detection</li>
             <li>Role-based access control with SSO integration</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
           </ul>
         </div>
         

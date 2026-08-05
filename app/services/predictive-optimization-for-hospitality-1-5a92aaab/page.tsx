@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Optimization for Hospitality #1 - Zion Tech Group",
-  description: "Transform your hospitality operations with our Predictive Optimization for Hospitality #1. This AI-driven solution automates code optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your hospitality operations with our Predictive Optimization for Hospitality #1. This AI-driven solution automates code optimization with unprecedente",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-optimization-for-hospitality-1-5a92aaab`
   }

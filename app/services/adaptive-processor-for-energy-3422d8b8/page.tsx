@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Processor for Energy - Zion Tech Group",
-  description: "Transform your energy operations with our Adaptive Processor for Energy. This AI-driven solution automates threat detection with unprecedented accuracy and efficiency.",
+  description: "Transform your energy operations with our Adaptive Processor for Energy. This AI-driven solution automates threat detection with unprecedented accuracy and effi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-processor-for-energy-3422d8b8`
   }

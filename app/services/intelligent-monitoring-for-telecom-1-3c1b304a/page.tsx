@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Monitoring for Telecom #1 - Zion Tech Group",
-  description: "The future of telecom is here with Intelligent Monitoring for Telecom #1. Powered by cutting-edge AI, this platform delivers customer insights like never before.",
+  description: "The future of telecom is here with Intelligent Monitoring for Telecom #1. Powered by cutting-edge AI, this platform delivers customer insights like never before",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-monitoring-for-telecom-1-3c1b304a`
   }

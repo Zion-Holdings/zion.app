@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-region deployment with automatic failover</li>
             <li>Customer service automation with chatbot integration</li>
             <li>Role-based access control with SSO integration</li>
-            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         

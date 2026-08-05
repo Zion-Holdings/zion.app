@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Cloud for Transportation - Zion Tech Group",
-  description: "The future of transportation is here with Smart Cloud for Transportation. Powered by cutting-edge AI, this platform delivers market intelligence like never before.",
+  description: "The future of transportation is here with Smart Cloud for Transportation. Powered by cutting-edge AI, this platform delivers market intelligence like never befo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-cloud-for-transportation-c6b5586b`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>User experience analytics with behavior tracking</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Budget optimization with cost allocation</li>
           </ul>
         </div>
         

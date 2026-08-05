@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Optimizer for Legal - Zion Tech Group",
-  description: "Transform your legal operations with our Self-Optimizing Optimizer for Legal. This AI-driven solution automates user experience with unprecedented accuracy and efficiency.",
+  description: "Transform your legal operations with our Self-Optimizing Optimizer for Legal. This AI-driven solution automates user experience with unprecedented accuracy and ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-optimizer-for-legal-b4b1c912`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cost reduction with process mining</li>
             <li>Version control with rollback capabilities</li>
             <li>Language processing with sentiment analysis</li>
-            <li>Business intelligence with KPI dashboards</li>
           </ul>
         </div>
         

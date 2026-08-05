@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Insights for Real-Estate #2 - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Insights for Real-Estate #2. This autonomous system provides compliance monitoring with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Intelligent Insights for Real-Estate #2. This autonomous system provides compliance monitoring with zero manual intervention ne",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-insights-for-real-estate-2-8569b4f4`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Energy optimization with consumption tracking</li>
-            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Orchestrator for Insurance #1 - Zion Tech Group",
-  description: "Transform your insurance operations with our Automated Orchestrator for Insurance #1. This AI-driven solution automates sales process optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your insurance operations with our Automated Orchestrator for Insurance #1. This AI-driven solution automates sales process optimization with unpreced",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-orchestrator-for-insurance-1-f7b1adf5`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Sentiment analysis with real-time monitoring</li>
             <li>Audit trails with compliance reporting</li>
             <li>Multi-region deployment with automatic failover</li>
-            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better financial planning with predictive models</li>
             <li>Better code quality with automated reviews</li>
             <li>Reduced operational risks with predictive models</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         

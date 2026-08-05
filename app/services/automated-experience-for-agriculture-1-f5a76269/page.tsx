@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Experience for Agriculture #1 - Zion Tech Group",
-  description: "The future of agriculture is here with Automated Experience for Agriculture #1. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.",
+  description: "The future of agriculture is here with Automated Experience for Agriculture #1. Powered by cutting-edge AI, this platform delivers sales forecasting like never ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-experience-for-agriculture-1-f5a76269`
   }

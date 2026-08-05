@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Alerting system with intelligent notifications</li>
             <li>HIPAA ready with healthcare data protection</li>
-            <li>Security monitoring with threat intelligence</li>
           </ul>
         </div>
         

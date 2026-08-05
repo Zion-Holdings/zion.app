@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Brand monitoring across social channels</li>
             <li>Data quality with anomaly detection</li>
-            <li>Document processing with OCR and NLP</li>
           </ul>
         </div>
         
