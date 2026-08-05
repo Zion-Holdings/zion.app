@@ -38,22 +38,29 @@ def get_file_sha(path):
     result = gh_api(path + '?ref=' + BRANCH)
     return result.get('sha') if 'sha' in result else None
 
-def create_or_update_file(path, content, message):
-    sha = get_file_sha(path)
-    payload = {
-        'message': message,
-        'content': base64.b64encode(content.encode()).decode(),
-        'branch': BRANCH
-    }
-    if sha:
-        payload['sha'] = sha
-    result = gh_api(path, data=payload, method='PUT')
-    if 'content' in result:
-        print(f'  OK {path} -> {result["content"]["sha"][:8]}')
-        return True
-    else:
-        print(f'  FAIL {path}: {result.get("error")} {result.get("body","")[:120]}')
-        return False
+def create_or_update_file(path, content, message, retries=3):
+    for attempt in range(retries):
+        sha = get_file_sha(path)
+        payload = {
+            'message': message,
+            'content': base64.b64encode(content.encode()).decode(),
+            'branch': BRANCH
+        }
+        if sha:
+            payload['sha'] = sha
+        result = gh_api(path, data=payload, method='PUT')
+        if 'content' in result:
+            print(f'  OK {path} -> {result["content"]["sha"][:8]}')
+            return True
+        else:
+            err = result.get('error')
+            if err == 409 and attempt < retries - 1:
+                time.sleep(1)
+                continue
+            print(f'  FAIL {path}: {result.get("error")} {result.get("body","")[:120]}')
+            return False
+    print(f'  FAIL {path}: max retries exceeded')
+    return False
 
 def load_topics():
     try:
