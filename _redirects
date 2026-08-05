@@ -47,3 +47,10 @@
 /services/ai-chatbot-builder/ /services/ 301
 /services/managed-observability-247/ /services/ 301
 /services/sec-soc-as-a-service/ /services/ 301
+/tools/ssl-checker/ /tools/ 301
+/free-ai-readiness-audit/ /ai-services/ 301
+/roi-calculator/ /ai-services/ 301
+/tools/service-comparison/ /services/ 301
+/ai/ai-readiness-assessment/ /ai-services/ 301
+/services/ai-observability-aiops/ /services/ 301
+/status-page/ /contact/ 301
