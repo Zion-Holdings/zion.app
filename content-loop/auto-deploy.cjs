@@ -21,6 +21,27 @@ function run(cmd, opts = {}) {
   }
 }
 
+async function waitForRun(createdAt) {
+  const token = fs.readFileSync(TOKEN_PATH, 'utf8').trim();
+  const repo = 'Zion-support/zion-support.github.io';
+  const auth = `Authorization: token ${token}`;
+  const started = Date.now();
+  const timeoutMs = 20 * 60 * 1000;
+  while (Date.now() - started < timeoutMs) {
+    const list = JSON.parse(run(`curl -s -H "${auth}" -H "Accept: application/vnd.github+json" https://api.github.com/repos/${repo}/actions/workflows/gh-pages.yml/runs?per_page=5`, { allowFail: true }) || '{"workflow_runs":[]}');
+    const run = (list.workflow_runs || []).find(r => r.head_sha && r.created_at && r.created_at >= createdAt);
+    if (!run) {
+      await new Promise(r => setTimeout(r, 5000));
+      continue;
+    }
+    if (run.status === 'completed') {
+      return run.conclusion === 'success';
+    }
+    await new Promise(r => setTimeout(r, 5000));
+  }
+  return false;
+}
+
 async function main() {
   // 1) ensure clean state
   run('git add -A');
@@ -33,7 +54,7 @@ async function main() {
   // 2) commit
   run("git commit -m 'chore: autonomous content loop batch'");
 
-  // 3) push master
+  // 3) push master/main
   run('git push origin master --force');
   run('git push origin master:main --force');
 
@@ -45,9 +66,16 @@ async function main() {
     return;
   }
   const payload = JSON.stringify({ ref: 'main' });
-  const curl = `curl -s -X POST -H "Authorization: token ***" -H "Accept: application/vnd.github+json" -H "Content-Type: application/json" https://api.github.com/repos/Zion-support/zion-support.github.io/actions/workflows/gh-pages.yml/dispatches -d '${payload}'`;
-  run(curl, { allowFail: true });
-  console.log('Deploy complete.');
+  const createdAt = new Date().toISOString();
+  const curl = `curl -s -o /dev/null -w '%{http_code}' -X POST -H "Authorization: token ${token}" -H "Accept: application/vnd.github+json" -H "Content-Type: application/json" https://api.github.com/repos/Zion-support/zion-support.github.io/actions/workflows/gh-pages.yml/dispatches -d '${payload}'`;
+  const code = run(curl, { allowFail: true });
+  if ((code || '').includes('204')) {
+    console.log('Dispatched Pages workflow. Waiting for completion...');
+    const ok = await waitForRun(createdAt);
+    console.log(ok ? 'Deploy complete.' : 'Deploy did not complete successfully.');
+  } else {
+    console.log('Workflow dispatch failed:', code);
+  }
 }
 
 main().catch((e) => { console.error(e.message); process.exit(1); });
