@@ -1,0 +1,32 @@
+{
+  "crawl_date": "2026-08-05",
+  "live_site": "https://ziontechgroup.com",
+  "pages_source": {
+    "branch": "gh-pages",
+    "path": "/",
+    "verified": true
+  },
+  "key_paths": [
+    {"path": "/", "status": 200, "title": "Zion Tech Group — AI & IT Services"},
+    {"path": "/services/", "status": 200, "title": "Services | Zion Tech Group"},
+    {"path": "/tools/", "status": 200, "title": "Free Tools & Calculators | Zion Tech Group"},
+    {"path": "/contact/", "status": 200, "title": null},
+    {"path": "/pricing/", "status": 200, "title": "Pricing | Zion Tech Group"},
+    {"path": "/solutions/", "status": 200, "title": null},
+    {"path": "/blog/", "status": 200, "title": null},
+    {"path": "/about/", "status": 200, "title": null}
+  ],
+  "homepage_ctas": [
+    "Start a project (/contact/)",
+    "Explore services (/services/)"
+  ],
+  "homepage_service_blocks": [
+    "AI Implementation",
+    "Managed IT & Support",
+    "Cybersecurity & SOC",
+    "Cloud Cost Optimization"
+  ],
+  "broken_links_found": false,
+  "fixes_applied": [],
+  "notes": "All 8 requested key paths returned HTTP 200. Homepage has clear conversion CTAs and service blocks. No redirects or patches required."
+}
