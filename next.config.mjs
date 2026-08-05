@@ -11,23 +11,6 @@ const nextConfig = {
   },
   async redirects() {
     return [
-<<<<<<< HEAD
-      {
-        source: '/consultation',
-        destination: '/contact',
-        permanent: true,
-      },
-      {
-        source: '/managed-it',
-        destination: '/services/it-managed-it-ops',
-        permanent: true,
-      },
-      {
-        source: '/services/managed-it',
-        destination: '/services/it-managed-it-ops',
-        permanent: true,
-      },
-=======
       { source: '/agents/monitoring', destination: '/agents-monitoring', permanent: true },
       { source: '/agents/monitoring/:splat*', destination: '/agents-monitoring/:splat*', permanent: true },
       { source: '/services/ai-services', destination: '/services/?category=ai', permanent: true },
@@ -80,7 +63,12 @@ const nextConfig = {
       { source: '/services/lead-generation-outreach-automation/', destination: '/services/', permanent: true },
       { source: '/free-tools', destination: '/tools/', permanent: true },
       { source: '/free-tools/', destination: '/tools/', permanent: true },
->>>>>>> 8e08d34fa02 (fix: add /free-tools → /tools redirect in next.config and docs fallbacks)
+      { source: '/ai-services-index', destination: '/services/?category=ai', permanent: true },
+      { source: '/ai-services-index/', destination: '/services/?category=ai', permanent: true },
+      { source: '/free-ai-it-tools', destination: '/tools/', permanent: true },
+      { source: '/free-ai-it-tools/', destination: '/tools/', permanent: true },
+      { source: '/new-ai-services', destination: '/services/', permanent: true },
+      { source: '/new-ai-services/', destination: '/services/', permanent: true },
     ];
   },
 };
