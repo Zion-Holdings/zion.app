@@ -12,6 +12,11 @@ from pathlib import Path
 
 WORKSPACE = Path('/root/.openclaw/workspace')
 TOKENS_FILE = WORKSPACE / 'gog_tokens.json'
+if not TOKENS_FILE.exists():
+    _win_tokens = Path.home() / '.openclaw' / 'workspace' / 'gog_tokens.json'
+    if _win_tokens.exists():
+        TOKENS_FILE = _win_tokens
+        WORKSPACE = TOKENS_FILE.parent
 
 def load_gog_tokens():
     with open(TOKENS_FILE) as f:
