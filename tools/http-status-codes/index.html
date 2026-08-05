@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTTP Status Code Reference | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Reference guide for HTTP status codes. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/http-status-codes/" />
+</head>
+<body>
+  <main>
+    <h1>HTTP Status Code Reference</h1>
+    <input type="number" id="code" min="100" max="599" placeholder="Enter status code (e.g., 200)" />
+    <button onclick="lookup()">Lookup</button>
+    <p id="result"></p>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      const codes = {
+        100: 'Continue',
+        101: 'Switching Protocols',
+        102: 'Processing',
+        200: 'OK',
+        201: 'Created',
+        202: 'Accepted',
+        204: 'No Content',
+        301: 'Moved Permanently',
+        302: 'Found',
+        303: 'See Other',
+        304: 'Not Modified',
+        307: 'Temporary Redirect',
+        400: 'Bad Request',
+        401: 'Unauthorized',
+        403: 'Forbidden',
+        404: 'Not Found',
+        405: 'Method Not Allowed',
+        408: 'Request Timeout',
+        429: 'Too Many Requests',
+        500: 'Internal Server Error',
+        502: 'Bad Gateway',
+        503: 'Service Unavailable',
+        504: 'Gateway Timeout'
+      };
+      function lookup(){
+        const code = parseInt(document.getElementById('code').value);
+        const res = document.getElementById('result');
+        if (code && codes[code]) res.textContent = code + ' - ' + codes[code];
+        else res.textContent = 'Status code not found';
+      }
+    </script>
+  </main>
+</body>
+</html>
