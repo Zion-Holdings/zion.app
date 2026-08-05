@@ -69,6 +69,10 @@ const nextConfig = {
       { source: '/free-ai-it-tools/', destination: '/tools/', permanent: true },
       { source: '/new-ai-services', destination: '/services/', permanent: true },
       { source: '/new-ai-services/', destination: '/services/', permanent: true },
+      { source: '/dashboard', destination: '/contact/', permanent: true },
+      { source: '/dashboard/', destination: '/contact/', permanent: true },
+      { source: '/academy', destination: '/services/', permanent: true },
+      { source: '/academy/', destination: '/services/', permanent: true },
     ];
   },
 };
