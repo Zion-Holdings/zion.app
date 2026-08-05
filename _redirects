@@ -1,15 +1,6 @@
-# Core routes
-/ /index.html 200
-/services/ /services/index.html 200
-/blog/ /blog/index.html 200
-/contact /docs/contact/index.html 200
-/contact/ /docs/contact/index.html 200
-/search /docs/search/index.html 200
-/search/ /docs/search/index.html 200
 /pricing /solutions/index.html 301
-/pricing/ /solutions/index.html 301
-/free-tools /free-tools/index.html 301
-/free-tools/ /free-tools/index.html 301
+/free-tools /free-tools-hub/ 301
+/free-tools/ /free-tools-hub/ 301
 /ai-services /ai-services/index.html 301
 /ai-services/ /ai-services/index.html 301
 /help /faq/index.html 301
@@ -30,4 +21,7 @@
 /industry-solutions/ /industries/index.html 301
 /academy /faq/index.html 301
 /academy/ /faq/index.html 301
-# rebuild trigger
+/case-studies /case-studies/index.html 200
+/free-tools /free-tools/index.html 301
+/site-map /site-map/index.html 301
+/success-stories /success-stories/index.html 301
