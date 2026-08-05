@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-03T04:15:00.000Z",
+  "generated": "2026-08-05T00:40:06.655Z",
   "count": 1638,
   "categories": {
     "it": 262,
@@ -98,7 +98,7 @@
     {
       "id": "ai-3d-asset-generator",
       "title": "Ai 3D Asset Generator",
-      "description": "AI 3D Asset Generator \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI 3D Asset Generator — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-3d-asset-generator",
       "category": "ai",
       "industry": "Finance",
@@ -143,7 +143,7 @@
     {
       "id": "ai-ad-copy-generator",
       "title": "Ai Ad Copy Generator",
-      "description": "AI Ad Copy Generator \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Ad Copy Generator — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-ad-copy-generator",
       "category": "ai",
       "industry": "Marketing",
@@ -170,7 +170,7 @@
     {
       "id": "ai-agent-safety-evaluation",
       "title": "Ai Agent Safety Evaluation",
-      "description": "Ai Agent Safety Evaluation \u2014 comprehensive managed service with expert support and proven delivery methodology.",
+      "description": "Ai Agent Safety Evaluation — comprehensive managed service with expert support and proven delivery methodology.",
       "href": "/services/ai-agent-safety-evaluation",
       "category": "ai",
       "industry": "General",
@@ -188,7 +188,7 @@
     {
       "id": "ai-agentic-workflows",
       "title": "AI Agentic Workflow Automation",
-      "description": "Autonomous AI agents that plan, execute, and monitor multi-step business workflows \u2014 from data gathering to decision execution with human-in-the-loop oversight.",
+      "description": "Autonomous AI agents that plan, execute, and monitor multi-step business workflows — from data gathering to decision execution with human-in-the-loop oversight.",
       "href": "/services/ai-agentic-workflows",
       "category": "ai",
       "industry": "General",
@@ -242,7 +242,7 @@
     {
       "id": "ai-api-orchestration-layer",
       "title": "Ai Api Orchestration Layer",
-      "description": "AI Api Orchestration Layer \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Api Orchestration Layer — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-api-orchestration-layer",
       "category": "ai",
       "industry": "General",
@@ -368,7 +368,7 @@
     {
       "id": "ai-bug-to-issue-router",
       "title": "Ai Bug To Issue Router",
-      "description": "AI Bug To Issue Router \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Bug To Issue Router — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-bug-to-issue-router",
       "category": "ai",
       "industry": "General",
@@ -530,7 +530,7 @@
     {
       "id": "ai-cloud-cost-optimizer",
       "title": "AI Cloud Cost Optimizer",
-      "description": "ML-powered cloud cost optimizer: continuously rightsizes VMs, containers, serverless across AWS/GCP/Azure \u2014 reducing cloud spend 30-50% with zero manual intervention via smart scaling policies.",
+      "description": "ML-powered cloud cost optimizer: continuously rightsizes VMs, containers, serverless across AWS/GCP/Azure — reducing cloud spend 30-50% with zero manual intervention via smart scaling policies.",
       "href": "/services/ai-cloud-cost-optimizer",
       "category": "ai",
       "industry": "General",
@@ -593,7 +593,7 @@
     {
       "id": "ai-code-migration-assistant",
       "title": "AI Code Migration Assistant",
-      "description": "Automated major-version migration: React 18\u219219, Python 3.9\u21923.12, Rails 6\u21927, with AST-wrapped diff PR and regression test suit.",
+      "description": "Automated major-version migration: React 18→19, Python 3.9→3.12, Rails 6→7, with AST-wrapped diff PR and regression test suit.",
       "href": "/services/ai-code-migration-assistant",
       "category": "ai",
       "industry": "General",
@@ -602,7 +602,7 @@
     {
       "id": "ai-code-migration-modernization",
       "title": "AI Code Migration & Modernization",
-      "description": "Automatically migrate legacy codebases to modern frameworks (COBOL \u2192 Java, jQuery \u2192 React, Python 2 \u2192 Python 3) with AI-assisted refactoring.",
+      "description": "Automatically migrate legacy codebases to modern frameworks (COBOL → Java, jQuery → React, Python 2 → Python 3) with AI-assisted refactoring.",
       "href": "/services/ai-code-migration-modernization",
       "category": "ai",
       "industry": "General",
@@ -629,7 +629,7 @@
     {
       "id": "ai-code-reviewer",
       "title": "Ai Code Reviewer",
-      "description": "AI Code Reviewer \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Code Reviewer — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-code-reviewer",
       "category": "ai",
       "industry": "General",
@@ -692,7 +692,7 @@
     {
       "id": "ai-competitive-price-tracker",
       "title": "Ai Competitive Price Tracker",
-      "description": "AI Competitive Price Tracker \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Competitive Price Tracker — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-competitive-price-tracker",
       "category": "ai",
       "industry": "General",
@@ -800,7 +800,7 @@
     {
       "id": "ai-content-moderation",
       "title": "AI Content Moderation Platform",
-      "description": "Automated content review for user-generated platforms \u2014 detect spam, harassment, and policy violations across text, image, and video.",
+      "description": "Automated content review for user-generated platforms — detect spam, harassment, and policy violations across text, image, and video.",
       "href": "/services/ai-content-moderation",
       "category": "ai",
       "industry": "General",
@@ -827,7 +827,7 @@
     {
       "id": "ai-context-engineering-enterprise",
       "title": "Ai Context Engineering Enterprise",
-      "description": "Ai Context Engineering Enterprise \u2014 comprehensive managed service with expert support and proven delivery methodology.",
+      "description": "Ai Context Engineering Enterprise — comprehensive managed service with expert support and proven delivery methodology.",
       "href": "/services/ai-context-engineering-enterprise",
       "category": "ai",
       "industry": "Finance",
@@ -944,7 +944,7 @@
     {
       "id": "ai-conversational-hr-onboarding",
       "title": "AI Conversational HR & Employee Onboarding",
-      "description": "HR chatbot that handles new-employee paperwork, benefits enrollment, IT provisioning, I-9 verification, PTO requests, and policy questions \u2014 reducing HR admin workload by 90% and improving new-hire experience.",
+      "description": "HR chatbot that handles new-employee paperwork, benefits enrollment, IT provisioning, I-9 verification, PTO requests, and policy questions — reducing HR admin workload by 90% and improving new-hire experience.",
       "href": "/services/ai-conversational-hr-onboarding",
       "category": "ai",
       "industry": "General",
@@ -971,7 +971,7 @@
     {
       "id": "ai-credit-underwriting",
       "title": "Ai Credit Underwriting",
-      "description": "AI Credit Underwriting \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Credit Underwriting — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-credit-underwriting",
       "category": "ai",
       "industry": "General",
@@ -989,7 +989,7 @@
     {
       "id": "ai-cro-optimizer",
       "title": "Ai Cro Optimizer",
-      "description": "AI Cro Optimizer \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Cro Optimizer — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-cro-optimizer",
       "category": "ai",
       "industry": "General",
@@ -1223,7 +1223,7 @@
     {
       "id": "ai-dashboard-designer",
       "title": "Ai Dashboard Designer",
-      "description": "AI Dashboard Designer \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Dashboard Designer — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-dashboard-designer",
       "category": "ai",
       "industry": "General",
@@ -1250,7 +1250,7 @@
     {
       "id": "ai-data-quality-fabric",
       "title": "Ai Data Quality Fabric",
-      "description": "AI Data Quality Fabric \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Data Quality Fabric — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-data-quality-fabric",
       "category": "ai",
       "industry": "General",
@@ -1259,7 +1259,7 @@
     {
       "id": "ai-data-quality-guardian",
       "title": "Ai Data Quality Guardian",
-      "description": "AI Data Quality Guardian \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Data Quality Guardian — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-data-quality-guardian",
       "category": "ai",
       "industry": "General",
@@ -1268,7 +1268,7 @@
     {
       "id": "ai-ddos-protection-platform",
       "title": "AI DDoS Protection & Mitigation Platform",
-      "description": "Edge-based DDoS mitigation tuned by ML: absorbs multi-Tbps volumetric attacks, distinguishes legitimate traffic spikes from attacks, and auto-scales scrubbing capacity \u2014 all with sub-millisecond routing overhead.",
+      "description": "Edge-based DDoS mitigation tuned by ML: absorbs multi-Tbps volumetric attacks, distinguishes legitimate traffic spikes from attacks, and auto-scales scrubbing capacity — all with sub-millisecond routing overhead.",
       "href": "/services/ai-ddos-protection-platform",
       "category": "security",
       "industry": "General",
@@ -1277,7 +1277,7 @@
     {
       "id": "ai-deepfake-detection",
       "title": "Ai Deepfake Detection",
-      "description": "AI Deepfake Detection \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Deepfake Detection — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-deepfake-detection",
       "category": "ai",
       "industry": "General",
@@ -1358,7 +1358,7 @@
     {
       "id": "ai-digital-twin-platform",
       "title": "Ai Digital Twin Platform",
-      "description": "AI Digital Twin Platform \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Digital Twin Platform — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-digital-twin-platform",
       "category": "ai",
       "industry": "General",
@@ -1448,7 +1448,7 @@
     {
       "id": "ai-document-understanding",
       "title": "AI Document Understanding & Data Extraction",
-      "description": "AI that reads and understands any document \u2014 invoices, contracts, forms, handwritten notes. Extract structured data with 99% accuracy and learn from corrections.",
+      "description": "AI that reads and understands any document — invoices, contracts, forms, handwritten notes. Extract structured data with 99% accuracy and learn from corrections.",
       "href": "/services/ai-document-understanding",
       "category": "ai",
       "industry": "technology",
@@ -1502,7 +1502,7 @@
     {
       "id": "ai-drug-discovery-platform",
       "title": "Ai Drug Discovery Platform",
-      "description": "AI Drug Discovery Platform \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Drug Discovery Platform — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-drug-discovery-platform",
       "category": "ai",
       "industry": "Healthcare",
@@ -1520,7 +1520,7 @@
     {
       "id": "ai-dyslexia-assist",
       "title": "Ai Dyslexia Assist",
-      "description": "AI Dyslexia Assist \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Dyslexia Assist — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-dyslexia-assist",
       "category": "ai",
       "industry": "General",
@@ -1529,7 +1529,7 @@
     {
       "id": "ai-ecommerce-smart-search",
       "title": "Ai Ecommerce Smart Search",
-      "description": "AI Ecommerce Smart Search \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Ecommerce Smart Search — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-ecommerce-smart-search",
       "category": "ai",
       "industry": "E-Commerce",
@@ -1555,7 +1555,7 @@
     },
     {
       "id": "ai-education-tutor",
-      "title": "AI 1:1 Tutor for K\u201312 & Higher Ed",
+      "title": "AI 1:1 Tutor for K–12 & Higher Ed",
       "description": "Personalized learning companion that adapts to student\\",
       "href": "/services/ai-education-tutor",
       "category": "ai",
@@ -1664,7 +1664,7 @@
     {
       "id": "ai-energy-optimization",
       "title": "AI Energy Optimization & Sustainability",
-      "description": "AI-driven energy consumption optimization for buildings, data centers, and manufacturing \u2014 reduce costs, meet ESG targets, and automate sustainability reporting.",
+      "description": "AI-driven energy consumption optimization for buildings, data centers, and manufacturing — reduce costs, meet ESG targets, and automate sustainability reporting.",
       "href": "/services/ai-energy-optimization",
       "category": "ai",
       "industry": "Manufacturing",
@@ -1736,7 +1736,7 @@
     {
       "id": "ai-etl-pipeline-builder",
       "title": "AI ETL Pipeline Builder",
-      "description": "Natural language ETL builder: describe source, target, transformation \u2014 AI generates production-ready dbt/Glue/Dataflow pipeline. Auto-tests, docs, type-map.",
+      "description": "Natural language ETL builder: describe source, target, transformation — AI generates production-ready dbt/Glue/Dataflow pipeline. Auto-tests, docs, type-map.",
       "href": "/services/ai-etl-pipeline-builder",
       "category": "data",
       "industry": "Manufacturing",
@@ -1745,7 +1745,7 @@
     {
       "id": "ai-exam-proctoring",
       "title": "Ai Exam Proctoring",
-      "description": "AI Exam Proctoring \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Exam Proctoring — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-exam-proctoring",
       "category": "ai",
       "industry": "General",
@@ -1781,7 +1781,7 @@
     {
       "id": "ai-feature-store",
       "title": "Ai Feature Store",
-      "description": "AI Feature Store \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Feature Store — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-feature-store",
       "category": "ai",
       "industry": "General",
@@ -1790,7 +1790,7 @@
     {
       "id": "ai-federated-learning",
       "title": "Ai Federated Learning",
-      "description": "AI Federated Learning \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Federated Learning — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-federated-learning",
       "category": "ai",
       "industry": "General",
@@ -1808,7 +1808,7 @@
     {
       "id": "ai-feedback-analyzer",
       "title": "AI-Powered Customer Feedback Analyzer",
-      "description": "Transform customer feedback into actionable business intelligence with our AI-powered feedback analyzer. Process reviews, surveys, social media comments, and support tickets to uncover trends, sentiment patterns, and improvement opportunities\u2014all automatically and in real-time.",
+      "description": "Transform customer feedback into actionable business intelligence with our AI-powered feedback analyzer. Process reviews, surveys, social media comments, and support tickets to uncover trends, sentiment patterns, and improvement opportunities—all automatically and in real-time.",
       "href": "/services/ai-feedback-analyzer",
       "category": "ai",
       "industry": "General",
@@ -1862,7 +1862,7 @@
     {
       "id": "ai-finetuning-alignment-pipelines",
       "title": "Ai Finetuning Alignment Pipelines",
-      "description": "Ai Finetuning Alignment Pipelines \u2014 comprehensive managed service with expert support and proven delivery methodology.",
+      "description": "Ai Finetuning Alignment Pipelines — comprehensive managed service with expert support and proven delivery methodology.",
       "href": "/services/ai-finetuning-alignment-pipelines",
       "category": "ai",
       "industry": "General",
@@ -1907,7 +1907,7 @@
     {
       "id": "ai-form-filler-intelligence",
       "title": "Ai Form Filler Intelligence",
-      "description": "AI Form Filler Intelligence \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Form Filler Intelligence — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-form-filler-intelligence",
       "category": "ai",
       "industry": "General",
@@ -1979,7 +1979,7 @@
     {
       "id": "ai-fraud-pattern-analyzer",
       "title": "AI Fraud Pattern Analyzer",
-      "description": "Deep behavioral profiling: baseline per user then alerts on anomalous patterns \u2014 login geography, transaction velocity, amount/type deviation, withdrawn account signals. Links across accounts to detect ring fraud.",
+      "description": "Deep behavioral profiling: baseline per user then alerts on anomalous patterns — login geography, transaction velocity, amount/type deviation, withdrawn account signals. Links across accounts to detect ring fraud.",
       "href": "/services/ai-fraud-pattern-analyzer",
       "category": "ai",
       "industry": "General",
@@ -2006,7 +2006,7 @@
     {
       "id": "ai-gen-app-dev-1",
       "title": "AI-Powered Application Development",
-      "description": "End-to-end development service for building production-ready AI applications \u2014 from LLM-powered chatbots and RAG systems to multi-agent workflows and AI-native products.",
+      "description": "End-to-end development service for building production-ready AI applications — from LLM-powered chatbots and RAG systems to multi-agent workflows and AI-native products.",
       "href": "/services/ai-gen-app-dev-1",
       "category": "ai",
       "industry": "Manufacturing",
@@ -2033,7 +2033,7 @@
     {
       "id": "ai-genomic-analysis",
       "title": "Ai Genomic Analysis",
-      "description": "AI Genomic Analysis \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Genomic Analysis — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-genomic-analysis",
       "category": "ai",
       "industry": "General",
@@ -2069,7 +2069,7 @@
     {
       "id": "ai-glassdoor-review-analyzer",
       "title": "Ai Glassdoor Review Analyzer",
-      "description": "AI Glassdoor Review Analyzer \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Glassdoor Review Analyzer — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-glassdoor-review-analyzer",
       "category": "ai",
       "industry": "General",
@@ -2078,7 +2078,7 @@
     {
       "id": "ai-governance-compliance",
       "title": "Ai Governance Compliance",
-      "description": "AI Governance Compliance \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Governance Compliance — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-governance-compliance",
       "category": "ai",
       "industry": "General",
@@ -2123,7 +2123,7 @@
     {
       "id": "ai-hiring-pipeline-optimizer",
       "title": "Ai Hiring Pipeline Optimizer",
-      "description": "AI Hiring Pipeline Optimizer \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Hiring Pipeline Optimizer — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-hiring-pipeline-optimizer",
       "category": "ai",
       "industry": "General",
@@ -2186,7 +2186,7 @@
     {
       "id": "ai-infra-provisioner",
       "title": "Ai Infra Provisioner",
-      "description": "AI Infra Provisioner \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Infra Provisioner — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-infra-provisioner",
       "category": "ai",
       "industry": "General",
@@ -2195,7 +2195,7 @@
     {
       "id": "ai-insurance-claims",
       "title": "Ai Insurance Claims",
-      "description": "AI Insurance Claims \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Insurance Claims — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-insurance-claims",
       "category": "ai",
       "industry": "Finance",
@@ -2249,7 +2249,7 @@
     {
       "id": "ai-intelligent-routing",
       "title": "AI Intelligent Document Processing & Routing",
-      "description": "Automated document intake with AI extraction, classification, and intelligent routing to the right team or workflow \u2014 invoices, claims, applications, and contracts.",
+      "description": "Automated document intake with AI extraction, classification, and intelligent routing to the right team or workflow — invoices, claims, applications, and contracts.",
       "href": "/services/ai-intelligent-routing",
       "category": "ai",
       "industry": "Finance",
@@ -2258,7 +2258,7 @@
     {
       "id": "ai-interview-conduct-bot",
       "title": "Ai Interview Conduct Bot",
-      "description": "AI Interview Conduct Bot \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Interview Conduct Bot — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-interview-conduct-bot",
       "category": "ai",
       "industry": "General",
@@ -2357,7 +2357,7 @@
     {
       "id": "ai-knowledge-base-rag",
       "title": "Ai Knowledge Base Rag",
-      "description": "AI Knowledge Base Rag \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Knowledge Base Rag — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-knowledge-base-rag",
       "category": "ai",
       "industry": "General",
@@ -2366,7 +2366,7 @@
     {
       "id": "ai-knowledge-base-rag-platform",
       "title": "AI Knowledge Base & RAG Platform",
-      "description": "AI Knowledge Base Rag \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Knowledge Base Rag — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-knowledge-base-rag-platform",
       "category": "ai",
       "industry": "General",
@@ -2375,7 +2375,7 @@
     {
       "id": "ai-knowledge-graph",
       "title": "AI Knowledge Graph Builder",
-      "description": "Ingest internal docs, wikis, tickets, and code \u2014 extract entity relations, build searchable knowledge graph. Surfaces hidden connections: which team owns what, what service is blocked by which team.",
+      "description": "Ingest internal docs, wikis, tickets, and code — extract entity relations, build searchable knowledge graph. Surfaces hidden connections: which team owns what, what service is blocked by which team.",
       "href": "/services/ai-knowledge-graph",
       "category": "ai",
       "industry": "General",
@@ -2447,7 +2447,7 @@
     {
       "id": "ai-kubernetes-optimizer",
       "title": "Ai Kubernetes Optimizer",
-      "description": "AI Kubernetes Optimizer \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Kubernetes Optimizer — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-kubernetes-optimizer",
       "category": "ai",
       "industry": "General",
@@ -2456,7 +2456,7 @@
     {
       "id": "ai-kyc-aml-compliance",
       "title": "Ai Kyc Aml Compliance",
-      "description": "AI Kyc Aml Compliance \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Kyc Aml Compliance — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-kyc-aml-compliance",
       "category": "ai",
       "industry": "Finance",
@@ -2618,7 +2618,7 @@
     {
       "id": "ai-llm-router-pro",
       "title": "Ai Llm Router Pro",
-      "description": "AI Llm Router Pro \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Llm Router Pro — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-llm-router-pro",
       "category": "ai",
       "industry": "General",
@@ -2627,7 +2627,7 @@
     {
       "id": "ai-load-testing",
       "title": "Ai Load Testing",
-      "description": "AI Load Testing \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Load Testing — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-load-testing",
       "category": "ai",
       "industry": "General",
@@ -2645,7 +2645,7 @@
     {
       "id": "ai-localization-engine",
       "title": "AI Content Localization Engine",
-      "description": "Go beyond translation \u2014 adapt content for local markets with AI. Cultural nuance detection, imagery adaptation, and brand voice consistency across 50+ languages.",
+      "description": "Go beyond translation — adapt content for local markets with AI. Cultural nuance detection, imagery adaptation, and brand voice consistency across 50+ languages.",
       "href": "/services/ai-localization-engine",
       "category": "ai",
       "industry": "Technology",
@@ -2654,7 +2654,7 @@
     {
       "id": "ai-log-analysis",
       "title": "Ai Log Analysis",
-      "description": "AI Log Analysis \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Log Analysis — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-log-analysis",
       "category": "ai",
       "industry": "General",
@@ -2663,7 +2663,7 @@
     {
       "id": "ai-low-code-integration",
       "title": "Ai Low Code Integration",
-      "description": "AI Low Code Integration \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Low Code Integration — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-low-code-integration",
       "category": "ai",
       "industry": "General",
@@ -2690,7 +2690,7 @@
     {
       "id": "ai-marketing-copy-generator",
       "title": "AI Marketing Copy Generator",
-      "description": "Multi-format copy engine: SEO blog, ad headline, landing page, LinkedIn post, email sequence \u2014 brand-voice tuned per company.",
+      "description": "Multi-format copy engine: SEO blog, ad headline, landing page, LinkedIn post, email sequence — brand-voice tuned per company.",
       "href": "/services/ai-marketing-copy-generator",
       "category": "ai",
       "industry": "E-Commerce",
@@ -2717,7 +2717,7 @@
     {
       "id": "ai-medical-image-diagnosis",
       "title": "Ai Medical Image Diagnosis",
-      "description": "AI Medical Image Diagnosis \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Medical Image Diagnosis — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-medical-image-diagnosis",
       "category": "ai",
       "industry": "Healthcare",
@@ -2726,7 +2726,7 @@
     {
       "id": "ai-medical-imaging",
       "title": "AI Medical Imaging & Diagnostics",
-      "description": "FDA-ready AI diagnostic support for radiology, pathology, and dermatology \u2014 detect anomalies, prioritize cases, and assist radiologists with second-opinion AI.",
+      "description": "FDA-ready AI diagnostic support for radiology, pathology, and dermatology — detect anomalies, prioritize cases, and assist radiologists with second-opinion AI.",
       "href": "/services/ai-medical-imaging",
       "category": "ai",
       "industry": "Healthcare",
@@ -2807,7 +2807,7 @@
     {
       "id": "ai-memory-agents-long-horizon",
       "title": "Ai Memory Agents Long Horizon",
-      "description": "Ai Memory Agents Long Horizon \u2014 comprehensive managed service with expert support and proven delivery methodology.",
+      "description": "Ai Memory Agents Long Horizon — comprehensive managed service with expert support and proven delivery methodology.",
       "href": "/services/ai-memory-agents-long-horizon",
       "category": "ai",
       "industry": "General",
@@ -2852,7 +2852,7 @@
     {
       "id": "ai-metadata-management",
       "title": "Ai Metadata Management",
-      "description": "AI Metadata Management \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Metadata Management — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-metadata-management",
       "category": "ai",
       "industry": "General",
@@ -2996,7 +2996,7 @@
     {
       "id": "ai-nutrition-meal-planner",
       "title": "Ai Nutrition Meal Planner",
-      "description": "AI Nutrition Meal Planner \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Nutrition Meal Planner — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-nutrition-meal-planner",
       "category": "ai",
       "industry": "General",
@@ -3014,7 +3014,7 @@
     {
       "id": "ai-observability-turbo",
       "title": "Ai Observability Turbo",
-      "description": "AI Observability Turbo \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Observability Turbo — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-observability-turbo",
       "category": "ai",
       "industry": "General",
@@ -3041,7 +3041,7 @@
     {
       "id": "ai-office-automation",
       "title": "AI-Powered Office Automation",
-      "description": "AI copilot for office workflows: document classification, contract parsing, email triage, invoice data extraction, and workflow routing \u2014 all with no-code builder.",
+      "description": "AI copilot for office workflows: document classification, contract parsing, email triage, invoice data extraction, and workflow routing — all with no-code builder.",
       "href": "/services/ai-office-automation",
       "category": "automation",
       "industry": "Finance",
@@ -3095,7 +3095,7 @@
     {
       "id": "ai-personal-finance-coach",
       "title": "Ai Personal Finance Coach",
-      "description": "AI Personal Finance Coach \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Personal Finance Coach — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-personal-finance-coach",
       "category": "ai",
       "industry": "Finance",
@@ -3104,7 +3104,7 @@
     {
       "id": "ai-personal-finance-coach",
       "title": "AI Personal Financial Coach",
-      "description": "AI Personal Financial Coach \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Personal Financial Coach — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-personal-finance-coach",
       "category": "ai",
       "industry": "Finance",
@@ -3122,7 +3122,7 @@
     {
       "id": "ai-personalization-engine",
       "title": "AI Personalization & Recommendation Engine",
-      "description": "Real-time personalization for websites, apps, and e-commerce \u2014 dynamic content, product recommendations, pricing, and messaging tailored to each visitor.",
+      "description": "Real-time personalization for websites, apps, and e-commerce — dynamic content, product recommendations, pricing, and messaging tailored to each visitor.",
       "href": "/services/ai-personalization-engine",
       "category": "ai",
       "industry": "Finance",
@@ -3194,7 +3194,7 @@
     {
       "id": "ai-post-purchase-care",
       "title": "AI Post-Purchase Customer Care Agent",
-      "description": "Proactive post-purchase support agent that monitors order status, delivery delays, and product issues \u2014 resolving 80% of cases before human escalation.",
+      "description": "Proactive post-purchase support agent that monitors order status, delivery delays, and product issues — resolving 80% of cases before human escalation.",
       "href": "/services/ai-post-purchase-care",
       "category": "ai",
       "industry": "E-Commerce",
@@ -3311,7 +3311,7 @@
     {
       "id": "ai-predictive-analytics",
       "title": "AI Predictive Analytics & Decision Intelligence",
-      "description": "Enterprise predictive analytics with automated model selection, explainable AI, and real-time forecasting. No ML expertise required \u2014 connect data and get predictions.",
+      "description": "Enterprise predictive analytics with automated model selection, explainable AI, and real-time forecasting. No ML expertise required — connect data and get predictions.",
       "href": "/services/ai-predictive-analytics",
       "category": "ai",
       "industry": "technology",
@@ -3329,7 +3329,7 @@
     {
       "id": "ai-predictive-analytics-suite",
       "title": "AI Predictive Analytics & Forecasting Suite",
-      "description": "Enterprise-grade predictive analytics with automated model selection, explainable AI, and real-time forecasting. No ML expertise required \u2014 just connect your data and get predictions.",
+      "description": "Enterprise-grade predictive analytics with automated model selection, explainable AI, and real-time forecasting. No ML expertise required — just connect your data and get predictions.",
       "href": "/services/ai-predictive-analytics-suite",
       "category": "ai",
       "industry": "Enterprise",
@@ -3401,7 +3401,7 @@
     {
       "id": "ai-predictive-maintenance-advisor",
       "title": "Predictive Maintenance Advisor",
-      "description": "Asset remaining useful life prediction via multimodal sensor fusion \u2014 vibration, thermal, acoustic, and electrical. Plain-English root-cause narration, part recommendation, and HSE safety-risk layer for maintenance managers.",
+      "description": "Asset remaining useful life prediction via multimodal sensor fusion — vibration, thermal, acoustic, and electrical. Plain-English root-cause narration, part recommendation, and HSE safety-risk layer for maintenance managers.",
       "href": "/services/ai-predictive-maintenance-advisor",
       "category": "ai",
       "industry": "Finance",
@@ -3419,7 +3419,7 @@
     {
       "id": "ai-predictive-maintenance-factory",
       "title": "Predictive Maintenance for Manufacturing",
-      "description": "IoT sensor fusion + ML to predict equipment failures 7\u201330 days in advance. Reduces downtime by 50%, extends asset life.",
+      "description": "IoT sensor fusion + ML to predict equipment failures 7–30 days in advance. Reduces downtime by 50%, extends asset life.",
       "href": "/services/ai-predictive-maintenance-factory",
       "category": "ai",
       "industry": "Finance",
@@ -3436,7 +3436,7 @@
     },
     {
       "id": "ai-predictive-maintenance-industrial",
-      "title": "AI Predictive Maintenance \u2014 Industrial IoT",
+      "title": "AI Predictive Maintenance — Industrial IoT",
       "description": "Industrial IoT predictive maintenance: sensor fusion (vibration, temperature, current, ultrasound), ML failure prediction, remaining useful life (RUL) estimation, and automated work-order creation in your CMMS.",
       "href": "/services/ai-predictive-maintenance-industrial",
       "category": "ai",
@@ -3518,7 +3518,7 @@
     {
       "id": "ai-privilege-access-manager",
       "title": "Ai Privilege Access Manager",
-      "description": "AI Privilege Access Manager \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Privilege Access Manager — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-privilege-access-manager",
       "category": "ai",
       "industry": "General",
@@ -3590,7 +3590,7 @@
     {
       "id": "ai-product-photo-enhancer",
       "title": "Ai Product Photo Enhancer",
-      "description": "AI Product Photo Enhancer \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Product Photo Enhancer — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-product-photo-enhancer",
       "category": "ai",
       "industry": "General",
@@ -3599,7 +3599,7 @@
     {
       "id": "ai-profitability-dashboard",
       "title": "Ai Profitability Dashboard",
-      "description": "AI Profitability Dashboard \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Profitability Dashboard — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-profitability-dashboard",
       "category": "ai",
       "industry": "Finance",
@@ -3608,7 +3608,7 @@
     {
       "id": "ai-project-planning",
       "title": "AI Project Planning & Scheduling",
-      "description": "PM-grade AI: scope\u2192WBS\u2192resource allocation\u2192critical path\u2192risk register\u2192milestone tracking. Syncs to Jira Asana Monday auto-updates when scope changes.",
+      "description": "PM-grade AI: scope→WBS→resource allocation→critical path→risk register→milestone tracking. Syncs to Jira Asana Monday auto-updates when scope changes.",
       "href": "/services/ai-project-planning",
       "category": "ai",
       "industry": "Sustainability",
@@ -3635,7 +3635,7 @@
     {
       "id": "ai-quality-inspection",
       "title": "Ai Quality Inspection",
-      "description": "AI Quality Inspection \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Quality Inspection — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-quality-inspection",
       "category": "ai",
       "industry": "General",
@@ -3662,7 +3662,7 @@
     {
       "id": "ai-quantum-optimizer",
       "title": "Ai Quantum Optimizer",
-      "description": "AI Quantum Optimizer \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Quantum Optimizer — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-quantum-optimizer",
       "category": "ai",
       "industry": "General",
@@ -3761,7 +3761,7 @@
     {
       "id": "ai-regulated-industries",
       "title": "AI for Regulated Industries",
-      "description": "AI solutions built for healthcare, finance, legal, and government. HIPAA, SOC 2, GDPR, and EU AI Act\u2013ready with audit trails and human oversight.",
+      "description": "AI solutions built for healthcare, finance, legal, and government. HIPAA, SOC 2, GDPR, and EU AI Act–ready with audit trails and human oversight.",
       "href": "/services/ai-regulated-industries",
       "category": "ai",
       "industry": "Finance",
@@ -3788,7 +3788,7 @@
     {
       "id": "ai-reinforcement-learning-ops",
       "title": "Ai Reinforcement Learning Ops",
-      "description": "AI Reinforcement Learning Ops \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Reinforcement Learning Ops — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-reinforcement-learning-ops",
       "category": "ai",
       "industry": "General",
@@ -3833,7 +3833,7 @@
     {
       "id": "ai-retail-recommendation-engine",
       "title": "AI Retail Recommendation Engine",
-      "description": "Product recommendation engine for e-commerce that increases AOV by 15\u201325% using collaborative filtering, basket analysis, and real-time behavior.",
+      "description": "Product recommendation engine for e-commerce that increases AOV by 15–25% using collaborative filtering, basket analysis, and real-time behavior.",
       "href": "/services/ai-retail-recommendation-engine",
       "category": "ai",
       "industry": "General",
@@ -3860,7 +3860,7 @@
     {
       "id": "ai-revenue-optimization",
       "title": "AI Revenue Optimization & Pricing Intelligence",
-      "description": "Dynamic pricing engine powered by machine learning \u2014 analyze competitor pricing, demand elasticity, customer segments, and market conditions to maximize revenue in real time.",
+      "description": "Dynamic pricing engine powered by machine learning — analyze competitor pricing, demand elasticity, customer segments, and market conditions to maximize revenue in real time.",
       "href": "/services/ai-revenue-optimization",
       "category": "ai",
       "industry": "Finance",
@@ -3896,7 +3896,7 @@
     {
       "id": "ai-robotics-integration",
       "title": "AI Robotics Integration & Autonomous Systems",
-      "description": "AI integration for industrial and commercial robotics \u2014 computer vision navigation, autonomous task planning, human-robot collaboration, and fleet management.",
+      "description": "AI integration for industrial and commercial robotics — computer vision navigation, autonomous task planning, human-robot collaboration, and fleet management.",
       "href": "/services/ai-robotics-integration",
       "category": "ai",
       "industry": "Manufacturing",
@@ -3923,7 +3923,7 @@
     {
       "id": "ai-rpa-platform",
       "title": "Ai Rpa Platform",
-      "description": "AI Rpa Platform \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Rpa Platform — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-rpa-platform",
       "category": "ai",
       "industry": "General",
@@ -3959,7 +3959,7 @@
     {
       "id": "ai-secrets-management",
       "title": "Ai Secrets Management",
-      "description": "AI Secrets Management \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Secrets Management — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-secrets-management",
       "category": "ai",
       "industry": "General",
@@ -3977,7 +3977,7 @@
     {
       "id": "ai-self-healing-infra",
       "title": "AI Self-Healing Infrastructure",
-      "description": "Autonomous infrastructure remediation engine that detects anomalies, diagnoses root cause, and applies fixes \u2014 rollback guaranteed \u2014 without human intervention.",
+      "description": "Autonomous infrastructure remediation engine that detects anomalies, diagnoses root cause, and applies fixes — rollback guaranteed — without human intervention.",
       "href": "/services/ai-self-healing-infra",
       "category": "automation",
       "industry": "General",
@@ -4022,7 +4022,7 @@
     {
       "id": "ai-seo-content-optimizer",
       "title": "Ai Seo Content Optimizer",
-      "description": "AI Seo Content Optimizer \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Seo Content Optimizer — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-seo-content-optimizer",
       "category": "ai",
       "industry": "Marketing",
@@ -4040,7 +4040,7 @@
     {
       "id": "ai-serverless-platform",
       "title": "Ai Serverless Platform",
-      "description": "AI Serverless Platform \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Serverless Platform — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-serverless-platform",
       "category": "ai",
       "industry": "General",
@@ -4057,7 +4057,7 @@
     },
     {
       "id": "ai-services-rag-as-a-service",
-      "title": "RAG as a Service \u2014 Knowledge Retrieval API",
+      "title": "RAG as a Service — Knowledge Retrieval API",
       "description": "Plug-and-play Retrieval Augmented Generation. Upload documents, get a chatbot API. No ML team required.",
       "href": "/services/ai-services-rag-as-a-service",
       "category": "ai-services",
@@ -4112,7 +4112,7 @@
     {
       "id": "ai-smart-document-redactor",
       "title": "Ai Smart Document Redactor",
-      "description": "AI Smart Document Redactor \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Smart Document Redactor — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-smart-document-redactor",
       "category": "ai",
       "industry": "General",
@@ -4166,7 +4166,7 @@
     {
       "id": "ai-spatial-computing",
       "title": "AI Spatial Computing & AR/VR Analytics",
-      "description": "AI-powered spatial computing platform for augmented and virtual reality experiences \u2014 3D scene understanding, gesture recognition, and immersive analytics.",
+      "description": "AI-powered spatial computing platform for augmented and virtual reality experiences — 3D scene understanding, gesture recognition, and immersive analytics.",
       "href": "/services/ai-spatial-computing",
       "category": "ai",
       "industry": "General",
@@ -4319,7 +4319,7 @@
     {
       "id": "ai-supply-chain-predictor",
       "title": "AI Supply Chain Predictor",
-      "description": "Predicts supply chain disruptions 14\u201330 days in advance using multi-source data: weather, geopolitical events, shipping delays, and supplier health scores.",
+      "description": "Predicts supply chain disruptions 14–30 days in advance using multi-source data: weather, geopolitical events, shipping delays, and supplier health scores.",
       "href": "/services/ai-supply-chain-predictor",
       "category": "ai",
       "industry": "Healthcare",
@@ -4454,7 +4454,7 @@
     {
       "id": "ai-talent-acquisition",
       "title": "AI Talent Acquisition & Hiring Intelligence",
-      "description": "End-to-end AI recruiting platform \u2014 candidate sourcing, resume screening, bias-free scoring, interview scheduling, and predictive hiring success modeling.",
+      "description": "End-to-end AI recruiting platform — candidate sourcing, resume screening, bias-free scoring, interview scheduling, and predictive hiring success modeling.",
       "href": "/services/ai-talent-acquisition",
       "category": "ai",
       "industry": "General",
@@ -4481,7 +4481,7 @@
     {
       "id": "ai-tax-compliance-calculator",
       "title": "Ai Tax Compliance Calculator",
-      "description": "AI Tax Compliance Calculator \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Tax Compliance Calculator — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-tax-compliance-calculator",
       "category": "ai",
       "industry": "Finance",
@@ -4517,7 +4517,7 @@
     {
       "id": "ai-test-automation-framework",
       "title": "Ai Test Automation Framework",
-      "description": "AI Test Automation Framework \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Test Automation Framework — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-test-automation-framework",
       "category": "ai",
       "industry": "General",
@@ -4553,7 +4553,7 @@
     {
       "id": "ai-threat-intelligence",
       "title": "Ai Threat Intelligence",
-      "description": "AI Threat Intelligence \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Threat Intelligence — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-threat-intelligence",
       "category": "ai",
       "industry": "General",
@@ -4571,7 +4571,7 @@
     {
       "id": "ai-trading-signal-engine",
       "title": "Ai Trading Signal Engine",
-      "description": "AI Trading Signal Engine \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Trading Signal Engine — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-trading-signal-engine",
       "category": "ai",
       "industry": "Finance",
@@ -4625,7 +4625,7 @@
     {
       "id": "ai-tutoring-platform",
       "title": "Ai Tutoring Platform",
-      "description": "AI Tutoring Platform \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Tutoring Platform — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-tutoring-platform",
       "category": "ai",
       "industry": "Education",
@@ -4679,7 +4679,7 @@
     {
       "id": "ai-video-generation",
       "title": "AI Video Generation & Editing",
-      "description": "Create professional videos from text prompts with voiceover, B-roll, transitions, and brand styling \u2014 produce enterprise-grade content in minutes.",
+      "description": "Create professional videos from text prompts with voiceover, B-roll, transitions, and brand styling — produce enterprise-grade content in minutes.",
       "href": "/services/ai-video-generation",
       "category": "ai",
       "industry": "Finance",
@@ -4751,7 +4751,7 @@
     {
       "id": "ai-voice-agent-builder",
       "title": "Ai Voice Agent Builder",
-      "description": "AI Voice Agent Builder \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Voice Agent Builder — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-voice-agent-builder",
       "category": "ai",
       "industry": "General",
@@ -4805,7 +4805,7 @@
     {
       "id": "ai-voice-brand-consistency",
       "title": "Ai Voice Brand Consistency",
-      "description": "AI Voice Brand Consistency \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Voice Brand Consistency — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-voice-brand-consistency",
       "category": "ai",
       "industry": "Marketing",
@@ -4850,7 +4850,7 @@
     {
       "id": "ai-voice-cloning-studio",
       "title": "Ai Voice Cloning Studio",
-      "description": "AI Voice Cloning Studio \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Voice Cloning Studio — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-voice-cloning-studio",
       "category": "ai",
       "industry": "General",
@@ -4868,7 +4868,7 @@
     {
       "id": "ai-voice-to-action-platform",
       "title": "Voice-to-Action Platform",
-      "description": "ASR (speech-to-text) + LLM intent extraction + action execution: schedule meetings, create tickets, run queries \u2014 all via natural voice.",
+      "description": "ASR (speech-to-text) + LLM intent extraction + action execution: schedule meetings, create tickets, run queries — all via natural voice.",
       "href": "/services/ai-voice-to-action-platform",
       "category": "ai",
       "industry": "General",
@@ -4877,7 +4877,7 @@
     {
       "id": "ai-vpc-zero-trust",
       "title": "Ai Vpc Zero Trust",
-      "description": "AI Vpc Zero Trust \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "AI Vpc Zero Trust — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/ai-vpc-zero-trust",
       "category": "ai",
       "industry": "General",
@@ -4948,7 +4948,7 @@
     },
     {
       "id": "ai-workflow-automation-builder",
-      "title": "AI Workflow Automation Builder \u2014 Starter",
+      "title": "AI Workflow Automation Builder — Starter",
       "description": "Entry-level AI workflow builder: natural language workflow design, 100+ connectors, AI decision nodes, scheduled triggers, and human-in-the-loop approval steps for small teams.",
       "href": "/services/ai-workflow-automation-builder",
       "category": "ai",
@@ -4957,7 +4957,7 @@
     },
     {
       "id": "ai-workflow-automation-enterprise",
-      "title": "AI Workflow Automation \u2014 Enterprise Scale",
+      "title": "AI Workflow Automation — Enterprise Scale",
       "description": "Enterprise-grade workflow orchestration: unlimited workflows, role-based access, SSO, custom AI model integration, multi-region deployment, and 24/7 dedicated support.",
       "href": "/services/ai-workflow-automation-enterprise",
       "category": "ai",
@@ -4985,7 +4985,7 @@
     {
       "id": "ai-zero-trust-network-access",
       "title": "AI Zero Trust Network Access (ZTNA)",
-      "description": "AI-powered ZTNA platform: continuous identity verification, adaptive access policies, micro-segmentation, device posture scoring, and real-time threat-based access revocation \u2014 all enforced at the edge.",
+      "description": "AI-powered ZTNA platform: continuous identity verification, adaptive access policies, micro-segmentation, device posture scoring, and real-time threat-based access revocation — all enforced at the edge.",
       "href": "/services/ai-zero-trust-network-access",
       "category": "ai",
       "industry": "E-Commerce",
@@ -5021,7 +5021,7 @@
     {
       "id": "api-integration",
       "title": "API Development & Integration",
-      "description": "Custom API design, development, and integration \u2014 REST, GraphQL, Webhooks, and third-party service connectors.",
+      "description": "Custom API design, development, and integration — REST, GraphQL, Webhooks, and third-party service connectors.",
       "href": "/services/api-integration",
       "category": "it",
       "industry": "General",
@@ -5372,7 +5372,7 @@
     {
       "id": "aws-serverless-migration",
       "title": "AWS Serverless Migration",
-      "description": "Migrate EC2/S3 apps to serverless: Lambda + API Gateway + DynamoDB event-driven. Schema migration dual-write zero-downtime cutover \u2014 saves compute costs 60-80%.",
+      "description": "Migrate EC2/S3 apps to serverless: Lambda + API Gateway + DynamoDB event-driven. Schema migration dual-write zero-downtime cutover — saves compute costs 60-80%.",
       "href": "/services/aws-serverless-migration",
       "category": "cloud",
       "industry": "General",
@@ -5480,7 +5480,7 @@
     {
       "id": "cloud-blob-intelligent-tiering",
       "title": "Intelligent Blob Storage Tiering",
-      "description": "Auto lifecycle tiering hot\u2192cool\u2192archive; S3-compatible API; point-in-time restore; cross-region replication; cost dashboard.",
+      "description": "Auto lifecycle tiering hot→cool→archive; S3-compatible API; point-in-time restore; cross-region replication; cost dashboard.",
       "href": "/services/cloud-blob-intelligent-tiering",
       "category": "cloud",
       "industry": "General",
@@ -5525,7 +5525,7 @@
     {
       "id": "cloud-container-registry-trivy-scan",
       "title": "Container Registry + Trivy Scan",
-      "description": "Private container registry with built-in Trivy CVE scanning, SBOM generation, image signing, and promotion pipeline (dev\u2192staging\u2192prod).",
+      "description": "Private container registry with built-in Trivy CVE scanning, SBOM generation, image signing, and promotion pipeline (dev→staging→prod).",
       "href": "/services/cloud-container-registry-trivy-scan",
       "category": "cloud",
       "industry": "General",
@@ -5560,7 +5560,7 @@
     },
     {
       "id": "cloud-cost-anomaly-detector-ml",
-      "title": "Cloud Cost Anomaly Detector \u2014 ML-Powered",
+      "title": "Cloud Cost Anomaly Detector — ML-Powered",
       "description": "ML-powered cloud cost monitoring: automatically detect anomalous spend spikes, forecast monthly costs with confidence intervals, receive root-cause attribution (service + region + tag), and set auto-throttling alerts.",
       "href": "/services/cloud-cost-anomaly-detector-ml",
       "category": "cloud",
@@ -6425,7 +6425,7 @@
     {
       "id": "data-lakehouse",
       "title": "Data Lakehouse Platform",
-      "description": "Unified platform combining data lake flexibility with data warehouse performance \u2014 ACID transactions, time travel, and open-table format support.",
+      "description": "Unified platform combining data lake flexibility with data warehouse performance — ACID transactions, time travel, and open-table format support.",
       "href": "/services/data-lakehouse",
       "category": "data",
       "industry": "Manufacturing",
@@ -6542,7 +6542,7 @@
     {
       "id": "data-real-time-operational-analytics",
       "title": "Real-Time Operational Analytics",
-      "description": "Sub-second analytics on operational DB change streams: CDC Kafka Flink aggregations \u2192 Superset/Metabase dashboards.",
+      "description": "Sub-second analytics on operational DB change streams: CDC Kafka Flink aggregations → Superset/Metabase dashboards.",
       "href": "/services/data-real-time-operational-analytics",
       "category": "data",
       "industry": "General",
@@ -6677,7 +6677,7 @@
     {
       "id": "db-migration-service",
       "title": "Database Migration Service",
-      "description": "Homogeneous and heterogeneous database migrations \u2014 on-prem to cloud, between engines (Oracle\u2192Postgres, MySQL\u2192CockroachDB) with zero-downtime cutovers.",
+      "description": "Homogeneous and heterogeneous database migrations — on-prem to cloud, between engines (Oracle→Postgres, MySQL→CockroachDB) with zero-downtime cutovers.",
       "href": "/services/db-migration-service",
       "category": "it",
       "industry": "Finance",
@@ -7109,7 +7109,7 @@
     {
       "id": "generative-ai-legal-review",
       "title": "Generative AI Legal Document Review",
-      "description": "AI contract review that highlights risks, suggests clauses, compares against playbooks, and redlines in your firms style \u2014 cutting document review time 80%.",
+      "description": "AI contract review that highlights risks, suggests clauses, compares against playbooks, and redlines in your firms style — cutting document review time 80%.",
       "href": "/services/generative-ai-legal-review",
       "category": "ai",
       "industry": "General",
@@ -7172,7 +7172,7 @@
     {
       "id": "graph-database-analytics",
       "title": "Graph Database & Analytics",
-      "description": "Graph database: fraud rings, social networks, knowledge graphs, recommendation engine. Neo4j + GDS \u2014 community detection, centrality, shortest-path, link prediction, visual dashboard.",
+      "description": "Graph database: fraud rings, social networks, knowledge graphs, recommendation engine. Neo4j + GDS — community detection, centrality, shortest-path, link prediction, visual dashboard.",
       "href": "/services/graph-database-analytics",
       "category": "data",
       "industry": "General",
@@ -7307,7 +7307,7 @@
     {
       "id": "insurance-ai-claims-processor",
       "title": "Insurance AI Claims Processor",
-      "description": "End-to-end claims processing with AI \u2014 intake, fraud detection, damage assessment, adjudication, and payment. Reduces processing time from weeks to minutes.",
+      "description": "End-to-end claims processing with AI — intake, fraud detection, damage assessment, adjudication, and payment. Reduces processing time from weeks to minutes.",
       "href": "/services/insurance-ai-claims-processor",
       "category": "ai",
       "industry": "Insurance",
@@ -7352,7 +7352,7 @@
     {
       "id": "it-api-gateway-ai",
       "title": "It Api Gateway Ai",
-      "description": "IT Api Gateway Ai \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "IT Api Gateway Ai — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/it-api-gateway-ai",
       "category": "it",
       "industry": "General",
@@ -7397,7 +7397,7 @@
     {
       "id": "it-api-management-platform",
       "title": "API Management & Gateway",
-      "description": "Full API lifecycle management \u2014 design, publish, secure, monitor, and monetize APIs. Developer portal, rate limiting, analytics, and versioning.",
+      "description": "Full API lifecycle management — design, publish, secure, monitor, and monetize APIs. Developer portal, rate limiting, analytics, and versioning.",
       "href": "/services/it-api-management-platform",
       "category": "it",
       "industry": "Technology",
@@ -7406,7 +7406,7 @@
     {
       "id": "it-api-performance-testing",
       "title": "It Api Performance Testing",
-      "description": "IT Api Performance Testing \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "IT Api Performance Testing — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/it-api-performance-testing",
       "category": "it",
       "industry": "General",
@@ -7541,7 +7541,7 @@
     {
       "id": "it-blockchain-development",
       "title": "Blockchain Development & Smart Contract Auditing",
-      "description": "End-to-end blockchain solution development \u2014 smart contract creation, security auditing, tokenomics design, and Web3 integration for enterprises.",
+      "description": "End-to-end blockchain solution development — smart contract creation, security auditing, tokenomics design, and Web3 integration for enterprises.",
       "href": "/services/it-blockchain-development",
       "category": "it",
       "industry": "Finance",
@@ -7622,7 +7622,7 @@
     {
       "id": "it-cloud-cost-governance",
       "title": "It Cloud Cost Governance",
-      "description": "IT Cloud Cost Governance \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "IT Cloud Cost Governance — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/it-cloud-cost-governance",
       "category": "it",
       "industry": "General",
@@ -7721,7 +7721,7 @@
     {
       "id": "it-consulting",
       "title": "IT Strategy & Digital Transformation Consulting",
-      "description": "Strategic technology consulting \u2014 digital transformation roadmaps, tech stack evaluation, and CTO-as-a-service.",
+      "description": "Strategic technology consulting — digital transformation roadmaps, tech stack evaluation, and CTO-as-a-service.",
       "href": "/services/it-consulting",
       "category": "it",
       "industry": "General",
@@ -7739,7 +7739,7 @@
     {
       "id": "it-crm-implementation",
       "title": "IT CRM Implementation & Customer Data Platform",
-      "description": "CRM implementation and customer data platform setup. Salesforce, HubSpot, or Microsoft Dynamics \u2014 with custom workflows, integrations, and analytics.",
+      "description": "CRM implementation and customer data platform setup. Salesforce, HubSpot, or Microsoft Dynamics — with custom workflows, integrations, and analytics.",
       "href": "/services/it-crm-implementation",
       "category": "it",
       "industry": "technology",
@@ -7847,7 +7847,7 @@
     {
       "id": "it-data-migration",
       "title": "IT Data Migration & Database Consolidation",
-      "description": "End-to-end data migration services \u2014 from legacy databases to modern platforms. Zero-downtime migration with automated validation and rollback.",
+      "description": "End-to-end data migration services — from legacy databases to modern platforms. Zero-downtime migration with automated validation and rollback.",
       "href": "/services/it-data-migration",
       "category": "it",
       "industry": "technology",
@@ -7901,7 +7901,7 @@
     {
       "id": "it-database-as-a-service",
       "title": "Managed Database Service",
-      "description": "Fully managed databases \u2014 PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch. Automated backups, scaling, patching, monitoring, and query optimization.",
+      "description": "Fully managed databases — PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch. Automated backups, scaling, patching, monitoring, and query optimization.",
       "href": "/services/it-database-as-a-service",
       "category": "it",
       "industry": "Data",
@@ -7973,7 +7973,7 @@
     {
       "id": "it-devsecops-1",
       "title": "DevSecOps & Security Automation",
-      "description": "Embed security into CI/CD pipelines with automated SAST, DAST, SCA, container scanning, and infrastructure-as-code security checks \u2014 shifting security left without slowing delivery.",
+      "description": "Embed security into CI/CD pipelines with automated SAST, DAST, SCA, container scanning, and infrastructure-as-code security checks — shifting security left without slowing delivery.",
       "href": "/services/it-devsecops-1",
       "category": "it",
       "industry": "General",
@@ -8000,7 +8000,7 @@
     {
       "id": "it-digital-twin-platform",
       "title": "Digital Twin & IoT Platform Development",
-      "description": "Build real-time digital replicas of physical systems \u2014 factory floors, supply chains, and smart cities with predictive simulation and optimization capabilities.",
+      "description": "Build real-time digital replicas of physical systems — factory floors, supply chains, and smart cities with predictive simulation and optimization capabilities.",
       "href": "/services/it-digital-twin-platform",
       "category": "automation",
       "industry": "Manufacturing",
@@ -8126,7 +8126,7 @@
     {
       "id": "it-edge-computing-solutions",
       "title": "Edge Computing & IoT Infrastructure",
-      "description": "Deploy compute closer to your data sources with edge computing architecture \u2014 low-latency processing, distributed AI inference, and resilient IoT device management.",
+      "description": "Deploy compute closer to your data sources with edge computing architecture — low-latency processing, distributed AI inference, and resilient IoT device management.",
       "href": "/services/it-edge-computing-solutions",
       "category": "cloud",
       "industry": "Manufacturing",
@@ -8207,7 +8207,7 @@
     {
       "id": "it-erp-implementation",
       "title": "IT ERP Implementation & Business Process Automation",
-      "description": "End-to-end ERP implementation and business process automation. SAP, Oracle, NetSuite, or Microsoft Dynamics \u2014 from selection to go-live and optimization.",
+      "description": "End-to-end ERP implementation and business process automation. SAP, Oracle, NetSuite, or Microsoft Dynamics — from selection to go-live and optimization.",
       "href": "/services/it-erp-implementation",
       "category": "it",
       "industry": "technology",
@@ -8288,7 +8288,7 @@
     {
       "id": "it-identity-access-management",
       "title": "Identity & Access Management (IAM) Platform",
-      "description": "Enterprise IAM with SSO, MFA, PAM, and automated access provisioning across cloud and on-premise systems \u2014 Zero Trust-ready identity governance.",
+      "description": "Enterprise IAM with SSO, MFA, PAM, and automated access provisioning across cloud and on-premise systems — Zero Trust-ready identity governance.",
       "href": "/services/it-identity-access-management",
       "category": "security",
       "industry": "Finance",
@@ -8351,7 +8351,7 @@
     {
       "id": "it-incident-response-simulator",
       "title": "It Incident Response Simulator",
-      "description": "IT Incident Response Simulator \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "IT Incident Response Simulator — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/it-incident-response-simulator",
       "category": "it",
       "industry": "General",
@@ -8432,7 +8432,7 @@
     {
       "id": "it-kubernetes-management",
       "title": "Container Orchestration & Kubernetes Management",
-      "description": "Enterprise Kubernetes deployment, management, and optimization \u2014 multi-cluster orchestration, GitOps workflows, and service mesh implementation.",
+      "description": "Enterprise Kubernetes deployment, management, and optimization — multi-cluster orchestration, GitOps workflows, and service mesh implementation.",
       "href": "/services/it-kubernetes-management",
       "category": "cloud",
       "industry": "Finance",
@@ -8702,7 +8702,7 @@
     {
       "id": "it-observability-logging",
       "title": "It Observability Logging",
-      "description": "IT Observability Logging \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "IT Observability Logging — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/it-observability-logging",
       "category": "it",
       "industry": "General",
@@ -8747,7 +8747,7 @@
     {
       "id": "it-penetration-testing",
       "title": "Penetration Testing & Vulnerability Assessment",
-      "description": "Comprehensive security testing \u2014 network, web application, API, and social engineering assessments with detailed remediation reports and retesting.",
+      "description": "Comprehensive security testing — network, web application, API, and social engineering assessments with detailed remediation reports and retesting.",
       "href": "/services/it-penetration-testing",
       "category": "security",
       "industry": "General",
@@ -8774,7 +8774,7 @@
     {
       "id": "it-platform-engineering-1",
       "title": "Internal Developer Platform (IDP) Engineering",
-      "description": "Design and build an Internal Developer Platform (IDP) that provides self-service capabilities for developers \u2014 spinning up environments, deploying applications, and managing infrastructure through golden paths.",
+      "description": "Design and build an Internal Developer Platform (IDP) that provides self-service capabilities for developers — spinning up environments, deploying applications, and managing infrastructure through golden paths.",
       "href": "/services/it-platform-engineering-1",
       "category": "it",
       "industry": "SaaS",
@@ -9035,7 +9035,7 @@
     {
       "id": "it-synthetic-monitoring",
       "title": "It Synthetic Monitoring",
-      "description": "IT Synthetic Monitoring \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "IT Synthetic Monitoring — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/it-synthetic-monitoring",
       "category": "it",
       "industry": "General",
@@ -9143,7 +9143,7 @@
     {
       "id": "it-zero-trust-1",
       "title": "Zero Trust Security Implementation",
-      "description": "Complete Zero Trust architecture implementation \u2014 from identity and access management to network microsegmentation, device trust, and continuous verification across your entire infrastructure.",
+      "description": "Complete Zero Trust architecture implementation — from identity and access management to network microsegmentation, device trust, and continuous verification across your entire infrastructure.",
       "href": "/services/it-zero-trust-1",
       "category": "it",
       "industry": "General",
@@ -9152,7 +9152,7 @@
     {
       "id": "it-zero-trust-architecture",
       "title": "Zero Trust Security Architecture",
-      "description": "Implement Zero Trust principles across your enterprise \u2014 identity verification, micro-segmentation, least-privilege access, and continuous authentication for every request.",
+      "description": "Implement Zero Trust principles across your enterprise — identity verification, micro-segmentation, least-privilege access, and continuous authentication for every request.",
       "href": "/services/it-zero-trust-architecture",
       "category": "security",
       "industry": "Finance",
@@ -9188,7 +9188,7 @@
     {
       "id": "k8s-gitops-enterprise",
       "title": "Kubernetes GitOps Enterprise Platform",
-      "description": "Enterprise Kubernetes with GitOps: ArgoCD or Flux continuous delivery, OPA or Gatekeeper policy enforcement, cluster fleet management, cost allocation, namespace quotas, and image scanning \u2014 all via Git commits.",
+      "description": "Enterprise Kubernetes with GitOps: ArgoCD or Flux continuous delivery, OPA or Gatekeeper policy enforcement, cluster fleet management, cost allocation, namespace quotas, and image scanning — all via Git commits.",
       "href": "/services/k8s-gitops-enterprise",
       "category": "it",
       "industry": "Finance",
@@ -9215,7 +9215,7 @@
     {
       "id": "kubernetes-operator-database",
       "title": "Kubernetes Operator for Database Automation",
-      "description": "Fully-managed PostgreSQL/MySQL/MongoDB on Kubernetes: automated backups, point-in-time recovery, connection pooling, replica failover, storage auto-scaling, and version upgrades \u2014 all via declarative Custom Resources.",
+      "description": "Fully-managed PostgreSQL/MySQL/MongoDB on Kubernetes: automated backups, point-in-time recovery, connection pooling, replica failover, storage auto-scaling, and version upgrades — all via declarative Custom Resources.",
       "href": "/services/kubernetes-operator-database",
       "category": "it",
       "industry": "E-Commerce",
@@ -9457,7 +9457,7 @@
     },
     {
       "id": "micro-saas-affiliate-manager",
-      "title": "AffiliateHub \u2014 Affiliate Management Micro-SaaS",
+      "title": "AffiliateHub — Affiliate Management Micro-SaaS",
       "description": "Affiliate program management for SaaS and e-commerce. Track referrals, manage commissions, and provide affiliates with marketing materials and dashboards.",
       "href": "/services/micro-saas-affiliate-manager",
       "category": "micro-saas",
@@ -9719,7 +9719,7 @@
     {
       "id": "micro-saas-ai-hiring-pipeline",
       "title": "Micro-SaaS AI Hiring Pipeline & ATS",
-      "description": "Lightweight AI-powered applicant tracking system for SMBs. Smart resume parsing, candidate scoring, interview scheduling, and offer management \u2014 all in one affordable platform.",
+      "description": "Lightweight AI-powered applicant tracking system for SMBs. Smart resume parsing, candidate scoring, interview scheduling, and offer management — all in one affordable platform.",
       "href": "/services/micro-saas-ai-hiring-pipeline",
       "category": "micro-saas",
       "industry": "hr-tech",
@@ -9809,7 +9809,7 @@
     {
       "id": "micro-saas-ai-legal-assistant",
       "title": "Micro-SaaS AI Legal Assistant for SMBs",
-      "description": "AI legal assistant that drafts contracts, reviews NDAs, generates privacy policies, and answers legal questions. Not a replacement for lawyers \u2014 a force multiplier for small businesses.",
+      "description": "AI legal assistant that drafts contracts, reviews NDAs, generates privacy policies, and answers legal questions. Not a replacement for lawyers — a force multiplier for small businesses.",
       "href": "/services/micro-saas-ai-legal-assistant",
       "category": "micro-saas",
       "industry": "legal-tech",
@@ -10168,7 +10168,7 @@
     },
     {
       "id": "micro-saas-api-monetization",
-      "title": "APIMonetize \u2014 API Monetization Platform",
+      "title": "APIMonetize — API Monetization Platform",
       "description": "Turn APIs into revenue streams. Usage-based billing, developer portals, rate limiting, and analytics for API-first businesses.",
       "href": "/services/micro-saas-api-monetization",
       "category": "micro-saas",
@@ -10186,7 +10186,7 @@
     },
     {
       "id": "micro-saas-churn-analytics",
-      "title": "Churnlytics \u2014 Churn Analytics Micro-SaaS",
+      "title": "Churnlytics — Churn Analytics Micro-SaaS",
       "description": "Predict and prevent SaaS churn with AI. Connect Stripe/Braintree, get churn risk scores, automated retention campaigns, and revenue impact forecasting.",
       "href": "/services/micro-saas-churn-analytics",
       "category": "micro-saas",
@@ -10195,7 +10195,7 @@
     },
     {
       "id": "micro-saas-churn-prediction",
-      "title": "ChurnGuard \u2014 Churn Prediction & Prevention",
+      "title": "ChurnGuard — Churn Prediction & Prevention",
       "description": "AI-powered churn prediction for SaaS. Identify at-risk accounts, automate retention playbooks, and track health scores in real-time.",
       "href": "/services/micro-saas-churn-prediction",
       "category": "micro-saas",
@@ -10204,7 +10204,7 @@
     },
     {
       "id": "micro-saas-churn-prediction-saas",
-      "title": "ChurnShield \u2014 Churn Prediction Micro-SaaS",
+      "title": "ChurnShield — Churn Prediction Micro-SaaS",
       "description": "Plug-and-play churn prediction for SaaS businesses. Connect your Stripe/Braintree account, and get AI-powered churn risk scores for every customer. Automated retention campaigns and win-back workflows.",
       "href": "/services/micro-saas-churn-prediction-saas",
       "category": "micro-saas",
@@ -10222,7 +10222,7 @@
     },
     {
       "id": "micro-saas-contract-management",
-      "title": "ContractForge \u2014 Contract Management Micro-SaaS",
+      "title": "ContractForge — Contract Management Micro-SaaS",
       "description": "Contract lifecycle management for small and medium businesses. Template library, e-signatures, renewal tracking, and AI-powered clause analysis. Integrates with CRM and accounting software.",
       "href": "/services/micro-saas-contract-management",
       "category": "micro-saas",
@@ -10232,7 +10232,7 @@
     {
       "id": "micro-saas-customer-data-platform",
       "title": "Customer Data Platform (CDP)",
-      "description": "Unify customer data from all touchpoints into a single profile. Identity resolution, segmentation, activation, and privacy compliance \u2014 all in one platform.",
+      "description": "Unify customer data from all touchpoints into a single profile. Identity resolution, segmentation, activation, and privacy compliance — all in one platform.",
       "href": "/services/micro-saas-customer-data-platform",
       "category": "micro-saas",
       "industry": "Marketing",
@@ -10249,7 +10249,7 @@
     },
     {
       "id": "micro-saas-customer-onboarding",
-      "title": "Onboardly \u2014 Customer Onboarding Micro-SaaS",
+      "title": "Onboardly — Customer Onboarding Micro-SaaS",
       "description": "Interactive customer onboarding platform with guided tours, checklists, and progress tracking. Reduce time-to-value and improve activation rates with automated onboarding flows.",
       "href": "/services/micro-saas-customer-onboarding",
       "category": "micro-saas",
@@ -10258,7 +10258,7 @@
     },
     {
       "id": "micro-saas-customer-portal",
-      "title": "PortalPro \u2014 Customer Portal Micro-SaaS",
+      "title": "PortalPro — Customer Portal Micro-SaaS",
       "description": "Branded customer portal for SaaS companies. Ticket management, knowledge base, billing, and account settings in one customizable portal.",
       "href": "/services/micro-saas-customer-portal",
       "category": "micro-saas",
@@ -10312,7 +10312,7 @@
     },
     {
       "id": "micro-saas-feature-request-tracker",
-      "title": "FeatureVault \u2014 Feature Request Tracker",
+      "title": "FeatureVault — Feature Request Tracker",
       "description": "Customer feedback and feature request management platform. Public roadmap, voting boards, and automatic categorization of feedback using AI. Integrates with Intercom, Zendesk, and Slack.",
       "href": "/services/micro-saas-feature-request-tracker",
       "category": "micro-saas",
@@ -10321,7 +10321,7 @@
     },
     {
       "id": "micro-saas-feature-request-voting",
-      "title": "FeatureVote \u2014 Feature Request Voting Board",
+      "title": "FeatureVote — Feature Request Voting Board",
       "description": "Public feature request board with voting, status tracking, and roadmap publishing. Help product teams prioritize based on real customer demand.",
       "href": "/services/micro-saas-feature-request-voting",
       "category": "micro-saas",
@@ -10330,7 +10330,7 @@
     },
     {
       "id": "micro-saas-feedback-analytics",
-      "title": "FeedbackIQ \u2014 Customer Feedback Analytics",
+      "title": "FeedbackIQ — Customer Feedback Analytics",
       "description": "Aggregate and analyze customer feedback from all channels. AI-powered sentiment analysis, trend detection, and automated action items.",
       "href": "/services/micro-saas-feedback-analytics",
       "category": "micro-saas",
@@ -10348,7 +10348,7 @@
     },
     {
       "id": "micro-saas-form-builder",
-      "title": "FormCraft \u2014 Form Builder Micro-SaaS",
+      "title": "FormCraft — Form Builder Micro-SaaS",
       "description": "Drag-and-drop form builder with 100+ templates, conditional logic, payment collection, and analytics. Create surveys, registrations, orders, and lead capture forms without code.",
       "href": "/services/micro-saas-form-builder",
       "category": "micro-saas",
@@ -10357,7 +10357,7 @@
     },
     {
       "id": "micro-saas-internal-wiki",
-      "title": "WikiBase \u2014 Internal Knowledge Wiki",
+      "title": "WikiBase — Internal Knowledge Wiki",
       "description": "Modern internal wiki with AI-powered search, auto-documentation, and team collaboration. Replace Confluence with a faster, smarter knowledge base.",
       "href": "/services/micro-saas-internal-wiki",
       "category": "micro-saas",
@@ -10366,7 +10366,7 @@
     },
     {
       "id": "micro-saas-invoice-generator",
-      "title": "InvoiceFlow \u2014 Invoice Generator Micro-SaaS",
+      "title": "InvoiceFlow — Invoice Generator Micro-SaaS",
       "description": "Professional invoice and payment collection for freelancers and small businesses. Custom templates, recurring invoices, payment tracking, and automatic late payment reminders. Multi-currency and tax support.",
       "href": "/services/micro-saas-invoice-generator",
       "category": "micro-saas",
@@ -10375,7 +10375,7 @@
     },
     {
       "id": "micro-saas-knowledge-base",
-      "title": "KnowledgeBase Pro \u2014 Knowledge Base Micro-SaaS",
+      "title": "KnowledgeBase Pro — Knowledge Base Micro-SaaS",
       "description": "Self-service knowledge base for SaaS companies. AI-powered search, article suggestions, and analytics. Reduce support tickets by 40%.",
       "href": "/services/micro-saas-knowledge-base",
       "category": "micro-saas",
@@ -10393,7 +10393,7 @@
     },
     {
       "id": "micro-saas-lead-scoring-engine",
-      "title": "LeadForge \u2014 Lead Scoring Micro-SaaS",
+      "title": "LeadForge — Lead Scoring Micro-SaaS",
       "description": "AI-powered lead scoring for sales teams. Analyze website activity, email engagement, firmographics, and social signals to rank leads by conversion probability. Integrates with HubSpot, Salesforce, and Pipedrive.",
       "href": "/services/micro-saas-lead-scoring-engine",
       "category": "micro-saas",
@@ -10402,7 +10402,7 @@
     },
     {
       "id": "micro-saas-meeting-notes-ai",
-      "title": "MeetingMind \u2014 AI Meeting Notes Micro-SaaS",
+      "title": "MeetingMind — AI Meeting Notes Micro-SaaS",
       "description": "AI-powered meeting notes and action item extraction. Integrates with Zoom, Google Meet, and Teams to automatically transcribe, summarize, and extract action items from meetings. Share notes with one click.",
       "href": "/services/micro-saas-meeting-notes-ai",
       "category": "micro-saas",
@@ -10420,7 +10420,7 @@
     },
     {
       "id": "micro-saas-nps-platform",
-      "title": "NPS Pro \u2014 Net Promoter Score Micro-SaaS",
+      "title": "NPS Pro — Net Promoter Score Micro-SaaS",
       "description": "NPS survey and feedback management for customer success teams. Automated surveys, trend analysis, and closed-loop follow-up workflows.",
       "href": "/services/micro-saas-nps-platform",
       "category": "micro-saas",
@@ -10429,7 +10429,7 @@
     },
     {
       "id": "micro-saas-onboarding-checklist",
-      "title": "OnboardFlow \u2014 Onboarding Checklist Micro-SaaS",
+      "title": "OnboardFlow — Onboarding Checklist Micro-SaaS",
       "description": "Interactive onboarding checklists for SaaS products. Drag-and-drop builder, progress tracking, and integration with Intercom, Pendo, and Segment.",
       "href": "/services/micro-saas-onboarding-checklist",
       "category": "micro-saas",
@@ -10447,7 +10447,7 @@
     },
     {
       "id": "micro-saas-referral-program",
-      "title": "ReferralHub \u2014 Referral Program Platform",
+      "title": "ReferralHub — Referral Program Platform",
       "description": "Launch and manage referral programs for SaaS. Track referrals, automate rewards, and measure ROI with built-in analytics.",
       "href": "/services/micro-saas-referral-program",
       "category": "micro-saas",
@@ -10501,7 +10501,7 @@
     },
     {
       "id": "micro-saas-social-media-scheduler",
-      "title": "PostPilot \u2014 Social Media Scheduler Micro-SaaS",
+      "title": "PostPilot — Social Media Scheduler Micro-SaaS",
       "description": "Multi-platform social media scheduling with AI content suggestions, optimal posting times, and analytics. Supports Instagram, Twitter/X, LinkedIn, Facebook, and TikTok.",
       "href": "/services/micro-saas-social-media-scheduler",
       "category": "micro-saas",
@@ -10510,7 +10510,7 @@
     },
     {
       "id": "micro-saas-status-page",
-      "title": "StatusPulse \u2014 Status Page Micro-SaaS",
+      "title": "StatusPulse — Status Page Micro-SaaS",
       "description": "Beautiful status pages for SaaS companies. Real-time incident communication, subscriber notifications, and uptime tracking. Custom domain and branding.",
       "href": "/services/micro-saas-status-page",
       "category": "micro-saas",
@@ -10519,7 +10519,7 @@
     },
     {
       "id": "micro-saas-subscription-analytics",
-      "title": "SubMetrics \u2014 Subscription Analytics Micro-SaaS",
+      "title": "SubMetrics — Subscription Analytics Micro-SaaS",
       "description": "Real-time subscription analytics and financial metrics for SaaS businesses. MRR/ARR tracking, cohort analysis, revenue forecasting, and investor-ready reports. Connects to Stripe, Chargebee, and Recurly.",
       "href": "/services/micro-saas-subscription-analytics",
       "category": "micro-saas",
@@ -10537,7 +10537,7 @@
     },
     {
       "id": "micro-saas-survey-platform",
-      "title": "SurveyPro \u2014 Survey Platform Micro-SaaS",
+      "title": "SurveyPro — Survey Platform Micro-SaaS",
       "description": "Advanced survey platform with AI-powered insights, sentiment analysis, and executive dashboards. For market research, customer feedback, and employee engagement.",
       "href": "/services/micro-saas-survey-platform",
       "category": "micro-saas",
@@ -10546,7 +10546,7 @@
     },
     {
       "id": "micro-saas-url-shortener-analytics",
-      "title": "LinkForge \u2014 URL Shortener & Analytics Micro-SaaS",
+      "title": "LinkForge — URL Shortener & Analytics Micro-SaaS",
       "description": "Branded URL shortener with advanced analytics. Link tracking, QR codes, retargeting pixels, and team collaboration for marketing teams.",
       "href": "/services/micro-saas-url-shortener-analytics",
       "category": "micro-saas",
@@ -10555,7 +10555,7 @@
     },
     {
       "id": "micro-saas-usage-based-cost-calculator",
-      "title": "CostLens \u2014 Usage-Based Cost Calculator",
+      "title": "CostLens — Usage-Based Cost Calculator",
       "description": "Interactive pricing calculator widget for usage-based SaaS. Real-time cost estimation, scenario comparison, and embed in any site with one script tag.",
       "href": "/services/micro-saas-usage-based-cost-calculator",
       "category": "micro-saas",
@@ -10564,7 +10564,7 @@
     },
     {
       "id": "micro-saas-waitlist-manager",
-      "title": "LaunchList \u2014 Waitlist Management Micro-SaaS",
+      "title": "LaunchList — Waitlist Management Micro-SaaS",
       "description": "Beautiful waitlist pages with referral tracking, position management, and email campaigns. Perfect for product launches, beta access, and exclusive memberships.",
       "href": "/services/micro-saas-waitlist-manager",
       "category": "micro-saas",
@@ -10591,7 +10591,7 @@
     },
     {
       "id": "micro-saas-white-label-helpdesk",
-      "title": "DeskForge \u2014 White-Label Helpdesk",
+      "title": "DeskForge — White-Label Helpdesk",
       "description": "Fully white-label helpdesk solution for agencies and SaaS companies. Multi-brand support, AI-powered ticket routing, canned responses, and SLA management. Custom domain and branding included.",
       "href": "/services/micro-saas-white-label-helpdesk",
       "category": "micro-saas",
@@ -10961,7 +10961,7 @@
     {
       "id": "real-estate-ai-valuation",
       "title": "Real Estate AI Valuation Platform",
-      "description": "Automated property valuations using AI \u2014 market analysis, comparable sales, rental yield prediction, and investment scoring for residential and commercial real estate.",
+      "description": "Automated property valuations using AI — market analysis, comparable sales, rental yield prediction, and investment scoring for residential and commercial real estate.",
       "href": "/services/real-estate-ai-valuation",
       "category": "ai",
       "industry": "Real Estate",
@@ -11051,7 +11051,7 @@
     {
       "id": "rpa-intelligent-automation",
       "title": "RPA + Intelligent Document Processing",
-      "description": "RPA robots augmented with AI document understanding: extract structured data from PDFs, invoices, and emails; fill ERP/CRM forms; reconcile payments; and escalate exceptions \u2014 end-to-end touchless processing.",
+      "description": "RPA robots augmented with AI document understanding: extract structured data from PDFs, invoices, and emails; fill ERP/CRM forms; reconcile payments; and escalate exceptions — end-to-end touchless processing.",
       "href": "/services/rpa-intelligent-automation",
       "category": "automation",
       "industry": "Finance",
@@ -11069,7 +11069,7 @@
     {
       "id": "saas-development",
       "title": "SaaS Product Development",
-      "description": "Full-stack SaaS development from concept to launch \u2014 MVP, scaling, and product-market fit optimization.",
+      "description": "Full-stack SaaS development from concept to launch — MVP, scaling, and product-market fit optimization.",
       "href": "/services/saas-development",
       "category": "it",
       "industry": "SaaS",
@@ -11078,7 +11078,7 @@
     {
       "id": "secure-file-transfer",
       "title": "Secure File Transfer",
-      "description": "Secure File Transfer \u2014 enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
+      "description": "Secure File Transfer — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integration. Built for scale with security-first architecture.",
       "href": "/services/secure-file-transfer",
       "category": "ai",
       "industry": "General",
@@ -11438,7 +11438,7 @@
     {
       "id": "security-supply-chain-sbom",
       "title": "Supply Chain SBOM & Vulnerability Intelligence",
-      "description": "Automated SBOM generation, dependency attestation, real-time CVE/SSVC scoring, exploitability prediction, automated PR patch suggestions, and SLSA provenance verification \u2014 closing the software supply-chain attack window at build time.",
+      "description": "Automated SBOM generation, dependency attestation, real-time CVE/SSVC scoring, exploitability prediction, automated PR patch suggestions, and SLSA provenance verification — closing the software supply-chain attack window at build time.",
       "href": "/services/security-supply-chain-sbom",
       "category": "security",
       "industry": "Manufacturing",
@@ -11546,7 +11546,7 @@
     {
       "id": "soc-as-a-service",
       "title": "Security Operations Center as a Service (SOCaaS)",
-      "description": "24/7 managed security monitoring, threat hunting, incident response, and compliance reporting \u2014 no need to build your own SOC.",
+      "description": "24/7 managed security monitoring, threat hunting, incident response, and compliance reporting — no need to build your own SOC.",
       "href": "/services/soc-as-a-service",
       "category": "it",
       "industry": "General",
@@ -11573,7 +11573,7 @@
     {
       "id": "streaming-realtime-analytics",
       "title": "Real-Time Streaming Analytics",
-      "description": "Sub-second analytics on event streams: Kafka/Redpanda/PubSub to Flink/Spark \u2014 sessionization, windowed aggregates, anomaly detection. Sub-second refresh dashboard.",
+      "description": "Sub-second analytics on event streams: Kafka/Redpanda/PubSub to Flink/Spark — sessionization, windowed aggregates, anomaly detection. Sub-second refresh dashboard.",
       "href": "/services/streaming-realtime-analytics",
       "category": "data",
       "industry": "General",
@@ -12048,17 +12048,8 @@
       "popular": true
     },
     {
-      "id": "w174-DevOps-accelerator",
-      "title": "DevOps Accelerator & Platform Engineering",
-      "description": "Internal developer platform: golden paths, service catalog, environment management, and self-service infrastructure. Developer self-service reduces ticket volume 80%.",
-      "href": "/services/w174-DevOps-accelerator",
-      "category": "automation",
-      "industry": "DevOps",
-      "popular": false
-    },
-    {
       "id": "w174-affiliatrack",
-      "title": "Affiliatrack \u2014 Affiliate & Referral Platform",
+      "title": "Affiliatrack — Affiliate & Referral Platform",
       "description": "Affiliate and referral program management: tracking, commission calculation, payouts, and fraud detection. Grow revenue with partner programs.",
       "href": "/services/w174-affiliatrack",
       "category": "micro-saas",
@@ -12184,7 +12175,7 @@
     },
     {
       "id": "w174-aisearch",
-      "title": "AISearch \u2014 Site Search Intelligence",
+      "title": "AISearch — Site Search Intelligence",
       "description": "AI-powered site search with natural language understanding, typo tolerance, faceted filters, and merchandising rules. Replaces Algolia/Elastic with smarter search.",
       "href": "/services/w174-aisearch",
       "category": "micro-saas",
@@ -12193,7 +12184,7 @@
     },
     {
       "id": "w174-apidocs",
-      "title": "APIDocs \u2014 Interactive API Documentation",
+      "title": "APIDocs — Interactive API Documentation",
       "description": "Beautiful, interactive API documentation with try-it-out consoles, code samples in 10+ languages, and auto-generated from OpenAPI/GraphQL schemas.",
       "href": "/services/w174-apidocs",
       "category": "micro-saas",
@@ -12211,7 +12202,7 @@
     },
     {
       "id": "w174-changelogify",
-      "title": "Changelogify \u2014 Auto Changelog",
+      "title": "Changelogify — Auto Changelog",
       "description": "Auto-generate beautiful changelogs from git commits, PRs, and Jira tickets. Semantic versioning, release notes, and public changelog pages with RSS.",
       "href": "/services/w174-changelogify",
       "category": "micro-saas",
@@ -12265,7 +12256,7 @@
     },
     {
       "id": "w174-credrisk",
-      "title": "CredRisk \u2014 Credit Decisioning Engine",
+      "title": "CredRisk — Credit Decisioning Engine",
       "description": "AI-powered credit scoring and loan decisioning for fintech and lenders. Alternative data scoring, real-time decisions, and fair lending compliance.",
       "href": "/services/w174-credrisk",
       "category": "micro-saas",
@@ -12318,6 +12309,15 @@
       "popular": false
     },
     {
+      "id": "w174-DevOps-accelerator",
+      "title": "DevOps Accelerator & Platform Engineering",
+      "description": "Internal developer platform: golden paths, service catalog, environment management, and self-service infrastructure. Developer self-service reduces ticket volume 80%.",
+      "href": "/services/w174-DevOps-accelerator",
+      "category": "automation",
+      "industry": "DevOps",
+      "popular": false
+    },
+    {
       "id": "w174-dlp-platform",
       "title": "Data Loss Prevention (DLP) Platform",
       "description": "Enterprise DLP for endpoints, network, cloud, and email. Detect and prevent PII, IP, and sensitive data exfiltration with policy-based controls and OCR content inspection.",
@@ -12346,7 +12346,7 @@
     },
     {
       "id": "w174-envault",
-      "title": "EnVault \u2014 Environment Config Manager",
+      "title": "EnVault — Environment Config Manager",
       "description": "Manage application configuration and environment variables across dev/staging/prod. Encrypted at rest, audit trails, and instant rollback. Like Doppler/Envkey for teams.",
       "href": "/services/w174-envault",
       "category": "micro-saas",
@@ -12364,7 +12364,7 @@
     },
     {
       "id": "w174-fileforge",
-      "title": "FileForge \u2014 File Conversion & Processing",
+      "title": "FileForge — File Conversion & Processing",
       "description": "Universal file conversion API: PDF, Office, images, CAD, video, audio. Batch processing, OCR, compression, and watermarking. 200+ format pairs.",
       "href": "/services/w174-fileforge",
       "category": "micro-saas",
@@ -12571,7 +12571,7 @@
     },
     {
       "id": "w174-schedflow",
-      "title": "SchedFlow \u2014 Appointment & Queue Mgmt",
+      "title": "SchedFlow — Appointment & Queue Mgmt",
       "description": "Appointment scheduling and virtual queue management for healthcare, salons, government offices. Online booking, SMS reminders, walk-in queuing, and no-show reduction.",
       "href": "/services/w174-schedflow",
       "category": "micro-saas",
@@ -12616,7 +12616,7 @@
     },
     {
       "id": "w174-taxflow",
-      "title": "TaxFlow \u2014 Tax Compliance Automation",
+      "title": "TaxFlow — Tax Compliance Automation",
       "description": "Automated sales tax calculation, filing, and remittance for e-commerce and SaaS. Real-time rates, nexus tracking, and multi-state/county compliance.",
       "href": "/services/w174-taxflow",
       "category": "micro-saas",
@@ -12625,7 +12625,7 @@
     },
     {
       "id": "w174-teampulse",
-      "title": "TeamPulse \u2014 Employee Engagement",
+      "title": "TeamPulse — Employee Engagement",
       "description": "Continuous employee engagement: pulse surveys, 1-on-1 templates, OKR tracking, and burnout detection. Actionable insights, not vanity metrics.",
       "href": "/services/w174-teampulse",
       "category": "micro-saas",
@@ -12643,7 +12643,7 @@
     },
     {
       "id": "w174-translatix",
-      "title": "Translatix \u2014 i18n Localization Platform",
+      "title": "Translatix — i18n Localization Platform",
       "description": "Developer-friendly app localization: string extraction, translation management, in-context editing, and automated deployment. 80+ languages with MT + human review.",
       "href": "/services/w174-translatix",
       "category": "micro-saas",
@@ -12652,7 +12652,7 @@
     },
     {
       "id": "w174-uptimecanary",
-      "title": "UptimeCanary \u2014 Monitoring & Alerts",
+      "title": "UptimeCanary — Monitoring & Alerts",
       "description": "Simple uptime monitoring with HTTP checks, SSL monitoring, domain expiry alerts, and status pages. 1-minute intervals, 12 global regions, PagerDuty/Slack alerts.",
       "href": "/services/w174-uptimecanary",
       "category": "micro-saas",
@@ -12752,7 +12752,7 @@
     {
       "id": "w175-ai-personalization-engine",
       "title": "AI Personalization Engine",
-      "description": "ML-powered real-time personalization for web, mobile, and email. Product recommendations, content targeting, dynamic pricing \u2014 all without manual rules.",
+      "description": "ML-powered real-time personalization for web, mobile, and email. Product recommendations, content targeting, dynamic pricing — all without manual rules.",
       "href": "/services/w175-ai-personalization-engine",
       "category": "ai",
       "industry": "E-Commerce",
@@ -12787,7 +12787,7 @@
     },
     {
       "id": "w175-auditrail",
-      "title": "AuditTrail \u2014 Compliance Audit Log",
+      "title": "AuditTrail — Compliance Audit Log",
       "description": "Immutable audit logging for compliance: every action tracked, tamper-proof, searchable, and exportable. SOC 2, HIPAA, and PCI ready out of the box.",
       "href": "/services/w175-auditrail",
       "category": "micro-saas",
@@ -12814,7 +12814,7 @@
     },
     {
       "id": "w175-campaigndash",
-      "title": "CampaignDash \u2014 Ad Campaign Analytics",
+      "title": "CampaignDash — Ad Campaign Analytics",
       "description": "Unified ad campaign analytics across Google, Meta, LinkedIn, TikTok, and X. Cross-channel ROI, attribution, and optimization recommendations.",
       "href": "/services/w175-campaigndash",
       "category": "micro-saas",
@@ -12913,7 +12913,7 @@
     },
     {
       "id": "w175-crm-sync",
-      "title": "CRMSync \u2014 Data Sync for Sales",
+      "title": "CRMSync — Data Sync for Sales",
       "description": "Keep CRM data clean and synced: deduplicate, enrich from Clearbit/ZoomInfo, sync between CRMs, and validate email/phone. 99.5% data accuracy.",
       "href": "/services/w175-crm-sync",
       "category": "micro-saas",
@@ -12985,7 +12985,7 @@
     },
     {
       "id": "w175-errortrack",
-      "title": "ErrorTrack \u2014 Smart Error Tracking",
+      "title": "ErrorTrack — Smart Error Tracking",
       "description": "Intelligent error tracking with AI grouping, root cause hints, and affected user detection. Smarter than Sentry/Bugsnag with AI-powered triage.",
       "href": "/services/w175-errortrack",
       "category": "micro-saas",
@@ -12994,7 +12994,7 @@
     },
     {
       "id": "w175-expensify-lite",
-      "title": "ExpenseLite \u2014 Expense Management",
+      "title": "ExpenseLite — Expense Management",
       "description": "Simple expense management: receipt scanning, auto-categorization, approval flows, and reimbursement. Built for small and mid-size teams.",
       "href": "/services/w175-expensify-lite",
       "category": "micro-saas",
@@ -13093,7 +13093,7 @@
     },
     {
       "id": "w175-legalbot",
-      "title": "LegalBot \u2014 AI Legal Q&A Assistant",
+      "title": "LegalBot — AI Legal Q&A Assistant",
       "description": "AI legal assistant for common legal questions: employment law, IP basics, contract review, and regulatory queries. Not legal advice, but legal information at scale.",
       "href": "/services/w175-legalbot",
       "category": "micro-saas",
@@ -13156,7 +13156,7 @@
     },
     {
       "id": "w175-quizforge",
-      "title": "QuizForge \u2014 Assessment & Quiz Builder",
+      "title": "QuizForge — Assessment & Quiz Builder",
       "description": "AI-powered quiz and assessment builder for education and training. Auto-generate from content, adaptive difficulty, and detailed analytics.",
       "href": "/services/w175-quizforge",
       "category": "micro-saas",
@@ -13165,7 +13165,7 @@
     },
     {
       "id": "w175-relnoter",
-      "title": "RelNoter \u2014 Release Notes Generator",
+      "title": "RelNoter — Release Notes Generator",
       "description": "Auto-generate release notes from git commits, PRs, and tickets. Beautiful formatting, categorization, and publishing to Slack, email, and changelog pages.",
       "href": "/services/w175-relnoter",
       "category": "micro-saas",
@@ -13174,7 +13174,7 @@
     },
     {
       "id": "w175-remoteboard",
-      "title": "RemoteBoard \u2014 Async Standup Tool",
+      "title": "RemoteBoard — Async Standup Tool",
       "description": "Async daily standups and team updates for remote teams. Text, video, or voice check-ins with AI summaries, blockers tracking, and Slack/Teams integration.",
       "href": "/services/w175-remoteboard",
       "category": "micro-saas",
@@ -13192,7 +13192,7 @@
     },
     {
       "id": "w175-reviewpulse",
-      "title": "ReviewPulse \u2014 Review Management",
+      "title": "ReviewPulse — Review Management",
       "description": "Monitor, respond to, and analyze reviews across Google, Yelp, Trustpilot, G2, and App Stores. AI-generated responses and sentiment trend tracking.",
       "href": "/services/w175-reviewpulse",
       "category": "micro-saas",
@@ -13201,7 +13201,7 @@
     },
     {
       "id": "w175-screendoor",
-      "title": "ScreenDoor \u2014 Feature Flag Platform",
+      "title": "ScreenDoor — Feature Flag Platform",
       "description": "Feature flags and progressive rollouts: toggle features, A/B test, canary releases, and kill switches. Target by segment, gradual rollout, and instant rollback.",
       "href": "/services/w175-screendoor",
       "category": "micro-saas",
@@ -13300,8 +13300,8 @@
     },
     {
       "id": "w175-writely",
-      "title": "Writely \u2014 AI Writing Assistant",
-      "description": "AI writing assistant for business: emails, reports, proposals, and documentation. Style matching, tone adjustment, and grammar correction. Not generic \u2014 learns your brand voice.",
+      "title": "Writely — AI Writing Assistant",
+      "description": "AI writing assistant for business: emails, reports, proposals, and documentation. Style matching, tone adjustment, and grammar correction. Not generic — learns your brand voice.",
       "href": "/services/w175-writely",
       "category": "micro-saas",
       "industry": "Productivity",
@@ -13336,7 +13336,7 @@
     },
     {
       "id": "w176-ai-chatbot-builder",
-      "title": "Chatbot Studio \u2014 No-Code Chatbots",
+      "title": "Chatbot Studio — No-Code Chatbots",
       "description": "Build chatbots visually: drag-drop flows, AI training, multi-channel deployment, and analytics. No engineering required.",
       "href": "/services/w176-ai-chatbot-builder",
       "category": "micro-saas",
@@ -13471,7 +13471,7 @@
     },
     {
       "id": "w176-asset-tracker",
-      "title": "AssetTracker \u2014 Physical Asset Tracking",
+      "title": "AssetTracker — Physical Asset Tracking",
       "description": "Track physical assets with QR codes, barcodes, or RFID: check-in/out, maintenance scheduling, depreciation, and audit reporting.",
       "href": "/services/w176-asset-tracker",
       "category": "micro-saas",
@@ -13561,7 +13561,7 @@
     },
     {
       "id": "w176-cronjob-manager",
-      "title": "CronJob Manager \u2014 Scheduled Tasks",
+      "title": "CronJob Manager — Scheduled Tasks",
       "description": "Managed cron job execution: create, monitor, and debug scheduled tasks. Retry on failure, timeout alerts, and execution history. No more lost crons.",
       "href": "/services/w176-cronjob-manager",
       "category": "micro-saas",
@@ -13633,7 +13633,7 @@
     },
     {
       "id": "w176-dataimport-wizard",
-      "title": "DataImport Wizard \u2014 CSV/Excel Tool",
+      "title": "DataImport Wizard — CSV/Excel Tool",
       "description": "Smart data import tool: auto-detect formats, validate, transform, map columns, and import to any database or API. Handle messy data gracefully.",
       "href": "/services/w176-dataimport-wizard",
       "category": "micro-saas",
@@ -13687,7 +13687,7 @@
     },
     {
       "id": "w176-email-warmup",
-      "title": "EmailWarmup \u2014 Deliverability Engine",
+      "title": "EmailWarmup — Deliverability Engine",
       "description": "Email warmup and deliverability management: automated warmup sequences, domain health monitoring, blacklists checking, and DMARC optimization.",
       "href": "/services/w176-email-warmup",
       "category": "micro-saas",
@@ -13714,7 +13714,7 @@
     },
     {
       "id": "w176-feedbackloop",
-      "title": "FeedbackLoop \u2014 Product Feedback",
+      "title": "FeedbackLoop — Product Feedback",
       "description": "Collect, prioritize, and act on product feedback: feature request voting, roadmap communication, and changelog integration. Close the loop with users.",
       "href": "/services/w176-feedbackloop",
       "category": "micro-saas",
@@ -13723,7 +13723,7 @@
     },
     {
       "id": "w176-geoanalytics",
-      "title": "GeoAnalytics \u2014 Location Intelligence",
+      "title": "GeoAnalytics — Location Intelligence",
       "description": "Location analytics: geocoding, heatmaps, trade area analysis, drive-time rings, and demographic enrichment. Turn addresses into insights.",
       "href": "/services/w176-geoanalytics",
       "category": "micro-saas",
@@ -13741,7 +13741,7 @@
     },
     {
       "id": "w176-incident-comms",
-      "title": "IncidentComms \u2014 Status & Comms",
+      "title": "IncidentComms — Status & Comms",
       "description": "Professional incident communication: status page, stakeholder updates, templates, and timeline. Keep customers and leadership informed during outages.",
       "href": "/services/w176-incident-comms",
       "category": "micro-saas",
@@ -13768,7 +13768,7 @@
     },
     {
       "id": "w176-kanbanpro",
-      "title": "KanbanPro \u2014 Project Boards",
+      "title": "KanbanPro — Project Boards",
       "description": "Visual project management with Kanban boards, Gantt charts, time tracking, and automation rules. For teams that want simplicity, not complexity.",
       "href": "/services/w176-kanbanpro",
       "category": "micro-saas",
@@ -13894,7 +13894,7 @@
     },
     {
       "id": "w176-slackbot-builder",
-      "title": "SlackBot Builder \u2014 No-Code Slack Apps",
+      "title": "SlackBot Builder — No-Code Slack Apps",
       "description": "Build custom Slack bots and workflows without code: slash commands, interactive messages, workflow steps, and AI-powered responses.",
       "href": "/services/w176-slackbot-builder",
       "category": "micro-saas",
@@ -13912,7 +13912,7 @@
     },
     {
       "id": "w176-stockpulse",
-      "title": "StockPulse \u2014 Market Intelligence",
+      "title": "StockPulse — Market Intelligence",
       "description": "Real-time market intelligence for investors and analysts: price alerts, pattern detection, earnings analysis, and portfolio tracking with AI insights.",
       "href": "/services/w176-stockpulse",
       "category": "micro-saas",
@@ -13930,7 +13930,7 @@
     },
     {
       "id": "w176-timezone",
-      "title": "TimeZone \u2014 Global Scheduling",
+      "title": "TimeZone — Global Scheduling",
       "description": "Schedule across time zones without the math. Smart availability, conflict detection, round-robin booking, and calendar sync for distributed teams.",
       "href": "/services/w176-timezone",
       "category": "micro-saas",
@@ -14056,7 +14056,7 @@
     },
     {
       "id": "w177-cert-mgmt",
-      "title": "CertManager \u2014 SSL/TLS Certificate Mgmt",
+      "title": "CertManager — SSL/TLS Certificate Mgmt",
       "description": "Automated SSL/TLS certificate lifecycle: issuance, renewal, revocation, monitoring. Never let a cert expire.",
       "href": "/services/w177-cert-mgmt",
       "category": "micro-saas",
@@ -14254,7 +14254,7 @@
     },
     {
       "id": "w177-dealroom",
-      "title": "DealRoom \u2014 Virtual Data Room",
+      "title": "DealRoom — Virtual Data Room",
       "description": "Secure virtual data rooms for M&A: document access control, watermarking, activity tracking.",
       "href": "/services/w177-dealroom",
       "category": "micro-saas",
@@ -14263,7 +14263,7 @@
     },
     {
       "id": "w177-digestion",
-      "title": "DigestIt \u2014 Internal Newsletter",
+      "title": "DigestIt — Internal Newsletter",
       "description": "Create and distribute internal newsletters: curated content, employee submissions, analytics, Slack/email distribution.",
       "href": "/services/w177-digestion",
       "category": "micro-saas",
@@ -14335,7 +14335,7 @@
     },
     {
       "id": "w177-helpdesk-lite",
-      "title": "HelpDesk Lite \u2014 Simple Ticketing",
+      "title": "HelpDesk Lite — Simple Ticketing",
       "description": "Lightweight help desk: ticket management, knowledge base, SLA tracking, canned responses. No bloat.",
       "href": "/services/w177-helpdesk-lite",
       "category": "micro-saas",
@@ -14362,7 +14362,7 @@
     },
     {
       "id": "w177-inventorysync",
-      "title": "InventorySync \u2014 Multi-Channel Inventory",
+      "title": "InventorySync — Multi-Channel Inventory",
       "description": "Sync inventory across Amazon, Shopify, eBay, Walmart, POS: real-time stock levels, oversell prevention.",
       "href": "/services/w177-inventorysync",
       "category": "micro-saas",
@@ -14389,7 +14389,7 @@
     },
     {
       "id": "w177-leadscoring",
-      "title": "LeadScore \u2014 Predictive Lead Scoring",
+      "title": "LeadScore — Predictive Lead Scoring",
       "description": "AI lead scoring: behavioral and firmographic data, predict conversion likelihood, prioritize sales effort.",
       "href": "/services/w177-leadscoring",
       "category": "micro-saas",
@@ -14443,7 +14443,7 @@
     },
     {
       "id": "w177-progress",
-      "title": "ProgressBoard \u2014 OKR Tracking",
+      "title": "ProgressBoard — OKR Tracking",
       "description": "OKR tracking: cascading goals, progress visibility, retrospective insights. Keep teams aligned.",
       "href": "/services/w177-progress",
       "category": "micro-saas",
@@ -14461,7 +14461,7 @@
     },
     {
       "id": "w177-quotegen",
-      "title": "QuoteGen \u2014 Quote Builder",
+      "title": "QuoteGen — Quote Builder",
       "description": "Create quotes and proposals: templates, e-signature, approval workflows, CRM sync. Close deals 3x faster.",
       "href": "/services/w177-quotegen",
       "category": "micro-saas",
@@ -14506,7 +14506,7 @@
     },
     {
       "id": "w177-systemstatus",
-      "title": "SystemStatus \u2014 Infra Monitor",
+      "title": "SystemStatus — Infra Monitor",
       "description": "Infrastructure monitoring: servers, containers, APIs, databases. Alerting, runbook automation, incident management.",
       "href": "/services/w177-systemstatus",
       "category": "micro-saas",
@@ -14515,7 +14515,7 @@
     },
     {
       "id": "w177-textexport",
-      "title": "TextExport \u2014 SMS Marketing",
+      "title": "TextExport — SMS Marketing",
       "description": "SMS and MMS marketing: campaigns, automations, opt-in management. TCPA compliant.",
       "href": "/services/w177-textexport",
       "category": "micro-saas",
@@ -14524,7 +14524,7 @@
     },
     {
       "id": "w177-travel-expense",
-      "title": "TravelExpense \u2014 T and E Management",
+      "title": "TravelExpense — T and E Management",
       "description": "Travel and expense management: booking, receipt capture, per diem calculation, policy enforcement.",
       "href": "/services/w177-travel-expense",
       "category": "micro-saas",
@@ -14561,7 +14561,7 @@
     {
       "id": "wave126-ai-code-review",
       "title": "AI-Powered Code Review Platform",
-      "description": "Automated pull request reviews powered by deep code understanding. Scans for security vulnerabilities, enforces style guides, detects anti-patterns, and provides actionable suggestions \u2014 reducing review time by 80% and catching issues before they reach production.",
+      "description": "Automated pull request reviews powered by deep code understanding. Scans for security vulnerabilities, enforces style guides, detects anti-patterns, and provides actionable suggestions — reducing review time by 80% and catching issues before they reach production.",
       "href": "/services/wave126-ai-code-review",
       "category": "micro-saas",
       "industry": "Software Development",
@@ -14570,7 +14570,7 @@
     {
       "id": "wave126-ai-meeting-minutes",
       "title": "AI Meeting Minutes Generator",
-      "description": "Transform every meeting into structured, actionable records in real time. AI transcribes conversations, identifies decisions and action items, assigns owners, and distributes summaries \u2014 ensuring nothing falls through the cracks.",
+      "description": "Transform every meeting into structured, actionable records in real time. AI transcribes conversations, identifies decisions and action items, assigns owners, and distributes summaries — ensuring nothing falls through the cracks.",
       "href": "/services/wave126-ai-meeting-minutes",
       "category": "micro-saas",
       "industry": "General",
@@ -14579,7 +14579,7 @@
     {
       "id": "wave126-automated-compliance-reporting",
       "title": "Automated Compliance Reporting",
-      "description": "Continuous compliance automation for SOC 2, HIPAA, GDPR, PCI-DSS, and ISO 27001. Auto-collects evidence, maps controls, generates audit-ready reports, and tracks remediation \u2014 compressing audit prep from months to days.",
+      "description": "Continuous compliance automation for SOC 2, HIPAA, GDPR, PCI-DSS, and ISO 27001. Auto-collects evidence, maps controls, generates audit-ready reports, and tracks remediation — compressing audit prep from months to days.",
       "href": "/services/wave126-automated-compliance-reporting",
       "category": "micro-saas",
       "industry": "Compliance",
@@ -14588,7 +14588,7 @@
     {
       "id": "wave126-cloud-cost-optimization",
       "title": "Cloud Cost Optimization Consulting",
-      "description": "FinOps-led cloud spend management that delivers guaranteed savings. Right-sizes workloads, optimizes reserved instance and savings plan coverage, eliminates waste, and implements governance \u2014 typically reducing cloud spend by 25-40%.",
+      "description": "FinOps-led cloud spend management that delivers guaranteed savings. Right-sizes workloads, optimizes reserved instance and savings plan coverage, eliminates waste, and implements governance — typically reducing cloud spend by 25-40%.",
       "href": "/services/wave126-cloud-cost-optimization",
       "category": "cloud",
       "industry": "Cloud Infrastructure",
@@ -14597,7 +14597,7 @@
     {
       "id": "wave126-customer-feedback-analyzer",
       "title": "Customer Feedback Analyzer",
-      "description": "Unified NLP-powered analysis across reviews, surveys, support tickets, and social mentions. Surfaces sentiment trends, emerging issues, and feature requests \u2014 turning unstructured feedback into strategic product intelligence.",
+      "description": "Unified NLP-powered analysis across reviews, surveys, support tickets, and social mentions. Surfaces sentiment trends, emerging issues, and feature requests — turning unstructured feedback into strategic product intelligence.",
       "href": "/services/wave126-customer-feedback-analyzer",
       "category": "micro-saas",
       "industry": "Customer Experience",
@@ -14606,7 +14606,7 @@
     {
       "id": "wave126-data-loss-prevention",
       "title": "Data Loss Prevention (DLP)",
-      "description": "Comprehensive data protection across endpoints, cloud applications, and email. AI-powered classification, policy enforcement, and insider threat detection \u2014 ensuring sensitive data never leaves your organization undetected.",
+      "description": "Comprehensive data protection across endpoints, cloud applications, and email. AI-powered classification, policy enforcement, and insider threat detection — ensuring sensitive data never leaves your organization undetected.",
       "href": "/services/wave126-data-loss-prevention",
       "category": "security",
       "industry": "Data Security",
@@ -14615,7 +14615,7 @@
     {
       "id": "wave126-it-asset-discovery-management",
       "title": "IT Asset Discovery & Management",
-      "description": "Agentless auto-discovery of every asset in your environment \u2014 hardware, software, cloud, and shadow IT. Full lifecycle tracking, CMDB integration, license optimization, and vulnerability correlation for complete IT visibility.",
+      "description": "Agentless auto-discovery of every asset in your environment — hardware, software, cloud, and shadow IT. Full lifecycle tracking, CMDB integration, license optimization, and vulnerability correlation for complete IT visibility.",
       "href": "/services/wave126-it-asset-discovery-management",
       "category": "it",
       "industry": "IT Operations",
@@ -14624,7 +14624,7 @@
     {
       "id": "wave126-managed-detection-response",
       "title": "Managed Detection & Response (MDR)",
-      "description": "Enterprise-grade 24/7 security operations delivered as a service. AI-augmented threat detection across endpoints, network, and cloud \u2014 with human-led incident investigation, containment, and response in under 15 minutes.",
+      "description": "Enterprise-grade 24/7 security operations delivered as a service. AI-augmented threat detection across endpoints, network, and cloud — with human-led incident investigation, containment, and response in under 15 minutes.",
       "href": "/services/wave126-managed-detection-response",
       "category": "security",
       "industry": "Cybersecurity",
@@ -14633,7 +14633,7 @@
     {
       "id": "wave126-smart-invoice-reconciliation",
       "title": "Smart Invoice Reconciliation",
-      "description": "Automatically match invoices to purchase orders and payments using AI-powered pattern recognition. Flags discrepancies, detects duplicate payments, and reconciles accounts in real time \u2014 cutting month-end close time by 60%.",
+      "description": "Automatically match invoices to purchase orders and payments using AI-powered pattern recognition. Flags discrepancies, detects duplicate payments, and reconciles accounts in real time — cutting month-end close time by 60%.",
       "href": "/services/wave126-smart-invoice-reconciliation",
       "category": "micro-saas",
       "industry": "Finance",
@@ -14642,7 +14642,7 @@
     {
       "id": "wave126-zero-trust-architecture",
       "title": "Zero Trust Network Architecture",
-      "description": "Design and implement a zero trust security model tailored to your infrastructure. Identity-based access controls, microsegmentation, continuous verification, and encrypted service meshes \u2014 eliminating implicit trust and reducing blast radius by 95%.",
+      "description": "Design and implement a zero trust security model tailored to your infrastructure. Identity-based access controls, microsegmentation, continuous verification, and encrypted service meshes — eliminating implicit trust and reducing blast radius by 95%.",
       "href": "/services/wave126-zero-trust-architecture",
       "category": "it",
       "industry": "Cybersecurity",
@@ -14651,7 +14651,7 @@
     {
       "id": "wave127-ai-agent-orchestrator",
       "title": "AI Agent Orchestrator",
-      "description": "Production-grade platform for managing, monitoring, and scaling fleets of autonomous AI agents. Define workflows, enforce guardrails, track performance, and coordinate multi-agent systems \u2014 turning experimental agents into reliable business automation.",
+      "description": "Production-grade platform for managing, monitoring, and scaling fleets of autonomous AI agents. Define workflows, enforce guardrails, track performance, and coordinate multi-agent systems — turning experimental agents into reliable business automation.",
       "href": "/services/wave127-ai-agent-orchestrator",
       "category": "ai",
       "industry": "AI Automation",
@@ -14660,7 +14660,7 @@
     {
       "id": "wave127-ai-legal-document-analyzer",
       "title": "AI-Powered Legal Document Analyzer",
-      "description": "Intelligent contract review at scale \u2014 extracts clauses, evaluates risk, compares against gold-standard templates, and generates redline suggestions. Handles 50+ document types from NDAs to M&A agreements, cutting legal review costs by 70%.",
+      "description": "Intelligent contract review at scale — extracts clauses, evaluates risk, compares against gold-standard templates, and generates redline suggestions. Handles 50+ document types from NDAs to M&A agreements, cutting legal review costs by 70%.",
       "href": "/services/wave127-ai-legal-document-analyzer",
       "category": "ai",
       "industry": "Legal",
@@ -14669,7 +14669,7 @@
     {
       "id": "wave127-ai-synthetic-data-generator",
       "title": "AI Synthetic Data Generator",
-      "description": "Generate privacy-safe, statistically faithful synthetic datasets for ML model training and testing. Preserves multivariate distributions and relational integrity \u2014 fully GDPR- and HIPAA-compliant so you can innovate without exposing real PII.",
+      "description": "Generate privacy-safe, statistically faithful synthetic datasets for ML model training and testing. Preserves multivariate distributions and relational integrity — fully GDPR- and HIPAA-compliant so you can innovate without exposing real PII.",
       "href": "/services/wave127-ai-synthetic-data-generator",
       "category": "ai",
       "industry": "Data Science",
@@ -14678,7 +14678,7 @@
     {
       "id": "wave127-edtech-adaptive-learning",
       "title": "EdTech Adaptive Learning Engine",
-      "description": "AI-driven personalized learning that adapts curricula, pacing, and assessment difficulty in real time. Knowledge graph models each learner's mastery, while spaced repetition and retrieval practice lock in retention \u2014 improving outcomes by 25-40%.",
+      "description": "AI-driven personalized learning that adapts curricula, pacing, and assessment difficulty in real time. Knowledge graph models each learner's mastery, while spaced repetition and retrieval practice lock in retention — improving outcomes by 25-40%.",
       "href": "/services/wave127-edtech-adaptive-learning",
       "category": "ai",
       "industry": "EdTech",
@@ -14696,7 +14696,7 @@
     {
       "id": "wave127-healthcare-ai-diagnostics",
       "title": "Healthcare AI Diagnostics Assistant",
-      "description": "FDA-aligned AI assistant for clinical decision support. Analyzes medical imaging (X-ray, CT, MRI), correlates patient history, and surfaces differential diagnoses with evidence citations \u2014 augmenting clinician judgment, not replacing it.",
+      "description": "FDA-aligned AI assistant for clinical decision support. Analyzes medical imaging (X-ray, CT, MRI), correlates patient history, and surfaces differential diagnoses with evidence citations — augmenting clinician judgment, not replacing it.",
       "href": "/services/wave127-healthcare-ai-diagnostics",
       "category": "ai",
       "industry": "Healthcare IT",
@@ -14705,7 +14705,7 @@
     {
       "id": "wave127-manufacturing-digital-twin",
       "title": "Manufacturing Digital Twin Platform",
-      "description": "High-fidelity digital replicas of production lines, facilities, and supply chains. Run what-if scenarios, optimize throughput, simulate disruptions, and validate changes before touching the physical plant \u2014 compressing commissioning time by 60%.",
+      "description": "High-fidelity digital replicas of production lines, facilities, and supply chains. Run what-if scenarios, optimize throughput, simulate disruptions, and validate changes before touching the physical plant — compressing commissioning time by 60%.",
       "href": "/services/wave127-manufacturing-digital-twin",
       "category": "ai",
       "industry": "Manufacturing Tech",
@@ -14741,7 +14741,7 @@
     {
       "id": "workflow-automation",
       "title": "Workflow Automation & Integration Platform",
-      "description": "Low-code workflow builder: connect 500+ apps Zaps custom logic conditional branching retry error handling webhook triggers scheduling and approvals \u2014 replaces manual copy-paste.",
+      "description": "Low-code workflow builder: connect 500+ apps Zaps custom logic conditional branching retry error handling webhook triggers scheduling and approvals — replaces manual copy-paste.",
       "href": "/services/workflow-automation",
       "category": "automation",
       "industry": "General",
@@ -14750,7 +14750,7 @@
     {
       "id": "zero-trust-access",
       "title": "Zero Trust Access Gateway",
-      "description": "Replace traditional VPN with continuous identity-verified access \u2014 least-privilege, device-aware, audit-logged connections to every app for hybrid and remote-first enterprises.",
+      "description": "Replace traditional VPN with continuous identity-verified access — least-privilege, device-aware, audit-logged connections to every app for hybrid and remote-first enterprises.",
       "href": "/services/zero-trust-access",
       "category": "security",
       "industry": "Finance",
