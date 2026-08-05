@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IP Address Validator | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Validate IPv4 and IPv6 addresses. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/ip-address-validator/" />
+</head>
+<body>
+  <main>
+    <h1>IP Address Validator</h1>
+    <input id="ip" type="text" placeholder="Enter IP address" style="width: 100%;" />
+    <button onclick="validate()">Validate</button>
+    <p id="result"></p>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function validate(){
+        const ip = document.getElementById('ip').value;
+        const res = document.getElementById('result');
+        const ipv4 = /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+        const ipv6 = /^([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$/;
+        if (ipv4.test(ip)) {
+          res.innerHTML = '<span style="color: green;">✓ Valid IPv4: ' + ip + '</span>';
+        } else if (ipv6.test(ip)) {
+          res.innerHTML = '<span style="color: green;">✓ Valid IPv6: ' + ip + '</span>';
+        } else {
+          res.innerHTML = '<span style="color: red;">✗ Invalid IP address</span>';
+        }
+      }
+    </script>
+  </main>
+</body>
+</html>

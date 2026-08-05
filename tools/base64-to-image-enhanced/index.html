@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Base64 to Image | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Convert Base64 strings back to images. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/base64-to-image/" />
+</head>
+<body>
+  <main>
+    <h1>Base64 to Image Converter</h1>
+    <textarea id="base64" rows="3" placeholder="Enter Base64 string"></textarea>
+    <button onclick="convert()">Convert</button>
+    <div id="result" style="margin-top: 10px;"></div>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function convert(){
+        const base64 = document.getElementById('base64').value;
+        document.getElementById('result').innerHTML = '<img src="' + base64 + '" style="max-width: 100%; max-height: 300px;" />';
+      }
+    </script>
+  </main>
+</body>
+</html>
