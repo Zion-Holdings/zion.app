@@ -93,36 +93,36 @@ jobs:
           ARTIFACT_DIR="${GITHUB_WORKSPACE:-.}/artifacts/pages"
           mkdir -p "$ARTIFACT_DIR"
           mkdir -p "$ARTIFACT_DIR/docs"
-          
+
           # Base: docs/ from main branch.
           if [ -d docs ]; then
             cp -a docs/. "$ARTIFACT_DIR"/
           fi
-          
+
           docs_index=.github/docs_index.html
           if [ ! -f "$ARTIFACT_DIR/index.html" ] && [ -f "$docs_index" ]; then
             cp -a "$docs_index" "$ARTIFACT_DIR/index.html"
           fi
-          
+
           # If Next export succeeded, overlay generated files.
           if [ -d out ]; then
             cp -a out/. "$ARTIFACT_DIR"/ || true
           fi
-          
+
           if [ -d public ]; then
             cp -a public/. "$ARTIFACT_DIR"/
           fi
-          
+
           # Include root redirects and SEO files.
           if [ -f _redirects ] && [ ! -f "$ARTIFACT_DIR/_redirects" ]; then cp -f _redirects "$ARTIFACT_DIR/_redirects"; fi
           if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f docs/robots.txt ]; then cp -f docs/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
           if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f public/robots.txt ]; then cp -f public/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
           if [ ! -f "$ARTIFACT_DIR/sitemap.xml" ] && [ -f docs/sitemap.xml ]; then cp -f docs/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
-          
+
           PAGES=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)
           echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
-          echo 'manifest:'
-          find "$ARTIFACT_DIR" -maxdepth 3 -type f | head -n 120p
+          echo "manifest=$(find "$ARTIFACT_DIR" -maxdepth 3 -type f | head -n 200)"
+          echo "artifacts_uploaded=1" >> "$GITHUB_OUTPUT"
 
       - name: Pages artifact
         uses: actions/upload-pages-artifact@v4
