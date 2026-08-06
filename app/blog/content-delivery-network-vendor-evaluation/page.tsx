@@ -57,10 +57,10 @@ Leading indicators for content delivery network: vendor evaluation: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-performance-testing-2026-7243">Api Performance Testing 2026 7243</Link></li>
-<li><Link href="/blog/cicd-best-practices-vendor-evaluation">Cicd Best Practices Vendor Evaluation</Link></li>
-<li><Link href="/blog/digital-twin-policy-and-compliance">Digital Twin Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026-6931">Ai Agentic Workflows 2026 6931</Link></li>
+              <li><Link /blog/api-performance-testing-2026-7243/>Api Performance Testing 2026 7243</Link></li>
+<li><Link /blog/cicd-best-practices-vendor-evaluation/>Cicd Best Practices Vendor Evaluation</Link></li>
+<li><Link /blog/digital-twin-policy-and-compliance/>Digital Twin Policy And Compliance</Link></li>
+<li><Link /blog/ai-agentic-workflows-2026-6931/>Ai Agentic Workflows 2026 6931</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

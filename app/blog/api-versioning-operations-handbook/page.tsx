@@ -57,10 +57,10 @@ Leading indicators for api versioning: operations handbook: workflow completion 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-2026-6742">Cloud Finops 2026 6742</Link></li>
-<li><Link href="/blog/it-asset-management-operations-handbook">It Asset Management Operations Handbook</Link></li>
-<li><Link href="/blog/devsecops-pipeline-vendor-evaluation">Devsecops Pipeline Vendor Evaluation</Link></li>
-<li><Link href="/blog/data-pipeline-orchestration-checklist-for-it-leaders">Data Pipeline Orchestration Checklist For It Leaders</Link></li>
+              <li><Link /blog/cloud-finops-2026-6742/>Cloud Finops 2026 6742</Link></li>
+<li><Link /blog/it-asset-management-operations-handbook/>It Asset Management Operations Handbook</Link></li>
+<li><Link /blog/devsecops-pipeline-vendor-evaluation/>Devsecops Pipeline Vendor Evaluation</Link></li>
+<li><Link /blog/data-pipeline-orchestration-checklist-for-it-leaders/>Data Pipeline Orchestration Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

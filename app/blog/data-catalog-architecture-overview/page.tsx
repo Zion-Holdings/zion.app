@@ -57,10 +57,10 @@ Leading indicators for data catalog: architecture overview: workflow completion 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-compliance-and-regulatory-reporting">Ai For Compliance And Regulatory Reporting</Link></li>
-<li><Link href="/blog/it-consulting-policy-and-compliance">It Consulting Policy And Compliance</Link></li>
-<li><Link href="/blog/oncall-best-practices-vendor-evaluation">Oncall Best Practices Vendor Evaluation</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-2026-6660">Autonomous Code Deployment 2026 6660</Link></li>
+              <li><Link /blog/ai-for-compliance-and-regulatory-reporting/>Ai For Compliance And Regulatory Reporting</Link></li>
+<li><Link /blog/it-consulting-policy-and-compliance/>It Consulting Policy And Compliance</Link></li>
+<li><Link /blog/oncall-best-practices-vendor-evaluation/>Oncall Best Practices Vendor Evaluation</Link></li>
+<li><Link /blog/autonomous-code-deployment-2026-6660/>Autonomous Code Deployment 2026 6660</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

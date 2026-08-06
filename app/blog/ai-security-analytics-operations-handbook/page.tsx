@@ -54,10 +54,10 @@ If this guide matches your ai security analytics: operations handbook initiative
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/golang-microservices-executive-guide">Golang Microservices Executive Guide</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-6786">Enterprise Ai Intelligence Hub 2026 6786</Link></li>
-<li><Link href="/blog/technical-due-diligence-common-mistakes">Technical Due Diligence Common Mistakes</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-starter-template">Ai Agent Safety Evaluation Starter Template</Link></li>
+              <li><Link /blog/golang-microservices-executive-guide/>Golang Microservices Executive Guide</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-2026-6786/>Enterprise Ai Intelligence Hub 2026 6786</Link></li>
+<li><Link /blog/technical-due-diligence-common-mistakes/>Technical Due Diligence Common Mistakes</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-starter-template/>Ai Agent Safety Evaluation Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

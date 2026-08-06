@@ -57,10 +57,10 @@ For retrieval augmented generation: implementation playbook: pick one workflow, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/saas-security-executive-guide">Saas Security Executive Guide</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-roi-and-cost-model">Cyber Threat Intelligence Roi And Cost Model</Link></li>
-<li><Link href="/blog/hybrid-cloud-2026">Hybrid Cloud 2026</Link></li>
-<li><Link href="/blog/database-performance-policy-and-compliance">Database Performance Policy And Compliance</Link></li>
+              <li><Link /blog/saas-security-executive-guide/>Saas Security Executive Guide</Link></li>
+<li><Link /blog/cyber-threat-intelligence-roi-and-cost-model/>Cyber Threat Intelligence Roi And Cost Model</Link></li>
+<li><Link /blog/hybrid-cloud-2026/>Hybrid Cloud 2026</Link></li>
+<li><Link /blog/database-performance-policy-and-compliance/>Database Performance Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

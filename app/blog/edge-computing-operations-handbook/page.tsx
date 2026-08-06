@@ -57,10 +57,10 @@ Leading indicators for edge computing: operations handbook: workflow completion 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-2026-7191">It Consulting 2026 7191</Link></li>
-<li><Link href="/blog/ai-observability-2026-6772">Ai Observability 2026 6772</Link></li>
-<li><Link href="/blog/api-lifecycle-management-starter-template">Api Lifecycle Management Starter Template</Link></li>
-<li><Link href="/blog/api-governance-security-and-governance">Api Governance Security And Governance</Link></li>
+              <li><Link /blog/it-consulting-2026-7191/>It Consulting 2026 7191</Link></li>
+<li><Link /blog/ai-observability-2026-6772/>Ai Observability 2026 6772</Link></li>
+<li><Link /blog/api-lifecycle-management-starter-template/>Api Lifecycle Management Starter Template</Link></li>
+<li><Link /blog/api-governance-security-and-governance/>Api Governance Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

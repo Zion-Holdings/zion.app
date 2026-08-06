@@ -57,10 +57,10 @@ For enterprise data warehouse: common mistakes: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-sales-forecasting-starter-template">Ai Sales Forecasting Starter Template</Link></li>
-<li><Link href="/blog/prompt-engineering-architecture-overview">Prompt Engineering Architecture Overview</Link></li>
-<li><Link href="/blog/ai-bom-procurement-2026-7284">Ai Bom Procurement 2026 7284</Link></li>
-<li><Link href="/blog/cost-optimization-operations-handbook">Cost Optimization Operations Handbook</Link></li>
+              <li><Link /blog/ai-sales-forecasting-starter-template/>Ai Sales Forecasting Starter Template</Link></li>
+<li><Link /blog/prompt-engineering-architecture-overview/>Prompt Engineering Architecture Overview</Link></li>
+<li><Link /blog/ai-bom-procurement-2026-7284/>Ai Bom Procurement 2026 7284</Link></li>
+<li><Link /blog/cost-optimization-operations-handbook/>Cost Optimization Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

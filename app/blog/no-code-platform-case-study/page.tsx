@@ -57,10 +57,10 @@ Leading indicators for no code platform: case study: workflow completion rate, e
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/process-automation-automation-roadmap">Process Automation Automation Roadmap</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-6617">Smart Contract Audit 2026 6617</Link></li>
-<li><Link href="/blog/identity-access-management-2026">Identity Access Management 2026</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-2026-7160">Data Warehouse Modernization 2026 7160</Link></li>
+              <li><Link /blog/process-automation-automation-roadmap/>Process Automation Automation Roadmap</Link></li>
+<li><Link /blog/smart-contract-audit-2026-6617/>Smart Contract Audit 2026 6617</Link></li>
+<li><Link /blog/identity-access-management-2026/>Identity Access Management 2026</Link></li>
+<li><Link /blog/data-warehouse-modernization-2026-7160/>Data Warehouse Modernization 2026 7160</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

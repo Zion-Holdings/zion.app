@@ -57,10 +57,10 @@ For technology roadmap: vendor evaluation: pick one workflow, assign ownership, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-agriculture-and-agritech">Ai For Agriculture And Agritech</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-2026-7208">Ai Autonomous Agents 2026 7208</Link></li>
-<li><Link href="/blog/continuous-delivery-common-mistakes">Continuous Delivery Common Mistakes</Link></li>
-<li><Link href="/blog/aws-cost-optimization-automation-roadmap">Aws Cost Optimization Automation Roadmap</Link></li>
+              <li><Link /blog/ai-for-agriculture-and-agritech/>Ai For Agriculture And Agritech</Link></li>
+<li><Link /blog/ai-autonomous-agents-2026-7208/>Ai Autonomous Agents 2026 7208</Link></li>
+<li><Link /blog/continuous-delivery-common-mistakes/>Continuous Delivery Common Mistakes</Link></li>
+<li><Link /blog/aws-cost-optimization-automation-roadmap/>Aws Cost Optimization Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

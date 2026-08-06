@@ -54,10 +54,10 @@ If this guide matches your identity access management: automation roadmap initia
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-common-mistakes">Graphql Federation Platform Common Mistakes</Link></li>
-<li><Link href="/blog/smart-contract-audit-executive-guide">Smart Contract Audit Executive Guide</Link></li>
-<li><Link href="/blog/process-automation-checklist-for-it-leaders">Process Automation Checklist For It Leaders</Link></li>
-<li><Link href="/blog/site-reliability-engineering-roi-and-cost-model">Site Reliability Engineering Roi And Cost Model</Link></li>
+              <li><Link /blog/graphql-federation-platform-common-mistakes/>Graphql Federation Platform Common Mistakes</Link></li>
+<li><Link /blog/smart-contract-audit-executive-guide/>Smart Contract Audit Executive Guide</Link></li>
+<li><Link /blog/process-automation-checklist-for-it-leaders/>Process Automation Checklist For It Leaders</Link></li>
+<li><Link /blog/site-reliability-engineering-roi-and-cost-model/>Site Reliability Engineering Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

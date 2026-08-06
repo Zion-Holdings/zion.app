@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automated-ai-reporting-2026-6521">Automated Ai Reporting 2026 6521</Link></li>
-<li><Link href="/blog/ai-email-intelligence-2026-7114">Ai Email Intelligence 2026 7114</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-vendor-evaluation">Ai 3D Asset Generator Vendor Evaluation</Link></li>
-<li><Link href="/blog/network-automation-2026">Network Automation 2026</Link></li>
+              <li><Link /blog/automated-ai-reporting-2026-6521/>Automated Ai Reporting 2026 6521</Link></li>
+<li><Link /blog/ai-email-intelligence-2026-7114/>Ai Email Intelligence 2026 7114</Link></li>
+<li><Link /blog/ai-3d-asset-generator-vendor-evaluation/>Ai 3D Asset Generator Vendor Evaluation</Link></li>
+<li><Link /blog/network-automation-2026/>Network Automation 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

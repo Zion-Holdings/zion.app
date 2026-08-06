@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/aiops-automation-roadmap">Aiops Automation Roadmap</Link></li>
-<li><Link href="/blog/generative-ai-security-security-and-governance">Generative Ai Security Security And Governance</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-starter-template">Autonomous Qa Engineering Starter Template</Link></li>
-<li><Link href="/blog/zero-trust-architecture-vendor-evaluation">Zero Trust Architecture Vendor Evaluation</Link></li>
+              <li><Link /blog/aiops-automation-roadmap/>Aiops Automation Roadmap</Link></li>
+<li><Link /blog/generative-ai-security-security-and-governance/>Generative Ai Security Security And Governance</Link></li>
+<li><Link /blog/autonomous-qa-engineering-starter-template/>Autonomous Qa Engineering Starter Template</Link></li>
+<li><Link /blog/zero-trust-architecture-vendor-evaluation/>Zero Trust Architecture Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

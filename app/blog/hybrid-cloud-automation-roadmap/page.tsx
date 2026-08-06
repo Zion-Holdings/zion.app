@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-architecture-security-and-governance">Data Architecture Security And Governance</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-2026-7340">Ai Accessibility Auditor 2026 7340</Link></li>
-<li><Link href="/blog/deep-learning-starter-template">Deep Learning Starter Template</Link></li>
-<li><Link href="/blog/api-management-gateway-2026-6876">Api Management Gateway 2026 6876</Link></li>
+              <li><Link /blog/data-architecture-security-and-governance/>Data Architecture Security And Governance</Link></li>
+<li><Link /blog/ai-accessibility-auditor-2026-7340/>Ai Accessibility Auditor 2026 7340</Link></li>
+<li><Link /blog/deep-learning-starter-template/>Deep Learning Starter Template</Link></li>
+<li><Link /blog/api-management-gateway-2026-6876/>Api Management Gateway 2026 6876</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

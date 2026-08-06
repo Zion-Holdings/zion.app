@@ -57,10 +57,10 @@ Leading indicators for cloud cost management: case study: workflow completion ra
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-security-testing-2026-6554">Api Security Testing 2026 6554</Link></li>
-<li><Link href="/blog/machine-learning-deployment-patterns">Machine Learning Deployment Patterns</Link></li>
-<li><Link href="/blog/terraform-executive-guide">Terraform Executive Guide</Link></li>
-<li><Link href="/blog/ai-video-analytics-common-mistakes">Ai Video Analytics Common Mistakes</Link></li>
+              <li><Link /blog/api-security-testing-2026-6554/>Api Security Testing 2026 6554</Link></li>
+<li><Link /blog/machine-learning-deployment-patterns/>Machine Learning Deployment Patterns</Link></li>
+<li><Link /blog/terraform-executive-guide/>Terraform Executive Guide</Link></li>
+<li><Link /blog/ai-video-analytics-common-mistakes/>Ai Video Analytics Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for smart contract audit: operations handbook: workflow compl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-architecture-2026">Data Architecture 2026</Link></li>
-<li><Link href="/blog/natural-language-processing-automation-roadmap">Natural Language Processing Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-2026-6725">Ai Autonomous Agents 2026 6725</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026-7179">Cybersecurity Platform Msp 2026 7179</Link></li>
+              <li><Link /blog/data-architecture-2026/>Data Architecture 2026</Link></li>
+<li><Link /blog/natural-language-processing-automation-roadmap/>Natural Language Processing Automation Roadmap</Link></li>
+<li><Link /blog/ai-autonomous-agents-2026-6725/>Ai Autonomous Agents 2026 6725</Link></li>
+<li><Link /blog/cybersecurity-platform-msp-2026-7179/>Cybersecurity Platform Msp 2026 7179</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
