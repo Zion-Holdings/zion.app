@@ -66,7 +66,7 @@
     "deploy:status:generate": "node scripts/deploy-status-generate.cjs",
     "automation:preflight": "node scripts/automation-preflight.cjs",
     "autonomy:growth-signal": "node automation/autonomous-growth-signal.cjs",
-    "autonomy:queue-guard": "node automation/autonomous-writer-queue-guard.cjs",
+    "autonomy:queue-guard": "node scripts/automation/autonomous-writer-queue-guard.cjs",
     "smoke:routes:check": "node scripts/smoke-routes-check.cjs",
     "homepage:ai-sync:check": "node scripts/homepage-ai-sync-check.cjs",
     "generate:service-index": "node scripts/generate_service_index.cjs",

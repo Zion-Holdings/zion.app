@@ -37,4 +37,4 @@ jobs:
 
       - name: Workflow contracts (dedupe, integrity, pin)
         if: ${{ inputs.run_contracts }}
-        run: npm run automation:preflight
+        run: npm run workflows:contracts:node
