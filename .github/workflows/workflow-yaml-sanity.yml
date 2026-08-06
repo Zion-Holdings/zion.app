@@ -40,4 +40,5 @@ concurrency:
 jobs:
   validate:
     uses: ./.github/workflows/reusable-workflow-ci.yml
-    timeout-minutes: 14
+
+
