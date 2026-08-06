@@ -63,3 +63,9 @@
 /about/ /about/index.html 200
 /faq/ /faq/index.html 200
 /agents/ /agents/index.html 200
+
+# Normalized fallbacks
+/free-tools /free-tools/index.html 200
+/free-tools/ /free-tools/index.html 200
+/tools/service-comparison /tools/service-comparison/index.html 200
+/tools/service-comparison/ /tools/service-comparison/index.html 200
