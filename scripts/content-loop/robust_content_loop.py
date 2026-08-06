@@ -33,20 +33,7 @@ def slugify(text):
     text=re.sub(r'\s+','-',text.strip())
     return text[:80] or 'service'
 
-def ensure_path(path):
-    parts=path.split('/')
-    cur=''
-    for p in parts[:-1]:
-        cur=(cur+'/'+p).lstrip('/')
-        url=f'{BASE}/contents/{cur}?ref={BRANCH}'
-        payload={'message':f'chore: ensure dir {cur}','content':__import__('base64').b64encode(b'').decode(),'branch':BRANCH}
-        try:
-            gh('PUT',url,payload)
-        except Exception:
-            pass
-
 def put_file(path,content_bytes,message):
-    ensure_path(path)
     url=f'{BASE}/contents/{path}?ref={BRANCH}'
     payload={'message':message,'content':__import__('base64').b64encode(content_bytes).decode(),'branch':BRANCH}
     try:
@@ -105,29 +92,34 @@ def build_blog_post(i,keyword):
 </main>
 </body>
 </html>'''
-    return f'app/blog/{slug}/page.tsx', body.encode()
+    return f'app/blog/{slug}-playbook-{i}/page.tsx', body.encode()
 
 def run():
     print('SEO content loop start')
     existing=existing_paths()
     created=[]
+    skipped=[]
     failures=[]
     for i in range(1,51):
         keyword=KEYWORDS[(i-1)%len(KEYWORDS)]
         try:
             spath,scontent=build_service_page(i,keyword)
-            if spath not in existing:
+            if spath in existing:
+                skipped.append(spath)
+            else:
                 put_file(spath,scontent,f'feat: add {keyword} service page {i}')
                 created.append(spath)
             bpath,bcontent=build_blog_post(i,keyword)
-            if bpath not in existing:
+            if bpath in existing:
+                skipped.append(bpath)
+            else:
                 put_file(bpath,bcontent,f'feat: add {keyword} blog post {i}')
                 created.append(bpath)
         except Exception as e:
             failures.append(str(e))
             time.sleep(1)
-    print(f'created={len(created)} failures={len(failures)}')
-    return {'created':len(created),'failures':failures}
+    print(f'created={len(created)} skipped={len(skipped)} failures={len(failures)}')
+    return {'created':len(created),'skipped':len(skipped),'failures':failures}
 
 if __name__=='__main__':
     run()
