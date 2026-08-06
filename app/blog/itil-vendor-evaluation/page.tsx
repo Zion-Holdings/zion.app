@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-data-warehouse-checklist-for-it-leaders">Enterprise Data Warehouse Checklist For It Leaders</Link></li>
-<li><Link href="/blog/blockchain-enterprise-deployment-patterns">Blockchain Enterprise Deployment Patterns</Link></li>
-<li><Link href="/blog/cloud-native-app-development-2026-6881">Cloud Native App Development 2026 6881</Link></li>
-<li><Link href="/blog/cloud-migration-services-checklist-for-it-leaders">Cloud Migration Services Checklist For It Leaders</Link></li>
+              <li><Link /blog/enterprise-data-warehouse-checklist-for-it-leaders/>Enterprise Data Warehouse Checklist For It Leaders</Link></li>
+<li><Link /blog/blockchain-enterprise-deployment-patterns/>Blockchain Enterprise Deployment Patterns</Link></li>
+<li><Link /blog/cloud-native-app-development-2026-6881/>Cloud Native App Development 2026 6881</Link></li>
+<li><Link /blog/cloud-migration-services-checklist-for-it-leaders/>Cloud Migration Services Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for ai process mining: operations handbook: workflow completi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ubiquitous-connectivity-executive-guide">Ubiquitous Connectivity Executive Guide</Link></li>
-<li><Link href="/blog/content-delivery-network-policy-and-compliance">Content Delivery Network Policy And Compliance</Link></li>
-<li><Link href="/blog/technical-due-diligence-automation-roadmap">Technical Due Diligence Automation Roadmap</Link></li>
-<li><Link href="/blog/vulnerability-assessment-executive-guide">Vulnerability Assessment Executive Guide</Link></li>
+              <li><Link /blog/ubiquitous-connectivity-executive-guide/>Ubiquitous Connectivity Executive Guide</Link></li>
+<li><Link /blog/content-delivery-network-policy-and-compliance/>Content Delivery Network Policy And Compliance</Link></li>
+<li><Link /blog/technical-due-diligence-automation-roadmap/>Technical Due Diligence Automation Roadmap</Link></li>
+<li><Link /blog/vulnerability-assessment-executive-guide/>Vulnerability Assessment Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

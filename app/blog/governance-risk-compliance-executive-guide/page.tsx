@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-governance-common-mistakes">Data Governance Common Mistakes</Link></li>
-<li><Link href="/blog/vendor-management-checklist-for-it-leaders">Vendor Management Checklist For It Leaders</Link></li>
-<li><Link href="/blog/data-observability-common-mistakes">Data Observability Common Mistakes</Link></li>
-<li><Link href="/blog/policy-as-code-automation-roadmap">Policy As Code Automation Roadmap</Link></li>
+              <li><Link /blog/data-governance-common-mistakes/>Data Governance Common Mistakes</Link></li>
+<li><Link /blog/vendor-management-checklist-for-it-leaders/>Vendor Management Checklist For It Leaders</Link></li>
+<li><Link /blog/data-observability-common-mistakes/>Data Observability Common Mistakes</Link></li>
+<li><Link /blog/policy-as-code-automation-roadmap/>Policy As Code Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

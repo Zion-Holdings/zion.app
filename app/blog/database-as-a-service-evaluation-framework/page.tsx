@@ -57,10 +57,10 @@ Leading indicators for database as a service: evaluation framework: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-automation-starter-template">It Automation Starter Template</Link></li>
-<li><Link href="/blog/devops-cicd-case-study">Devops Cicd Case Study</Link></li>
-<li><Link href="/blog/quality-assurance-roi-and-cost-model">Quality Assurance Roi And Cost Model</Link></li>
-<li><Link href="/blog/it-automation-checklist-for-it-leaders">It Automation Checklist For It Leaders</Link></li>
+              <li><Link /blog/it-automation-starter-template/>It Automation Starter Template</Link></li>
+<li><Link /blog/devops-cicd-case-study/>Devops Cicd Case Study</Link></li>
+<li><Link /blog/quality-assurance-roi-and-cost-model/>Quality Assurance Roi And Cost Model</Link></li>
+<li><Link /blog/it-automation-checklist-for-it-leaders/>It Automation Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

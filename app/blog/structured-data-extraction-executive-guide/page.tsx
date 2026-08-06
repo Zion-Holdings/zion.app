@@ -57,10 +57,10 @@ For structured data extraction: executive guide: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-api-gateway-2026-7034">Ai Api Gateway 2026 7034</Link></li>
-<li><Link href="/blog/api-management-gateway-2026">Api Management Gateway 2026</Link></li>
-<li><Link href="/blog/privacy-engineering-security-and-governance">Privacy Engineering Security And Governance</Link></li>
-<li><Link href="/blog/finops-2026">Finops 2026</Link></li>
+              <li><Link /blog/ai-api-gateway-2026-7034/>Ai Api Gateway 2026 7034</Link></li>
+<li><Link /blog/api-management-gateway-2026/>Api Management Gateway 2026</Link></li>
+<li><Link /blog/privacy-engineering-security-and-governance/>Privacy Engineering Security And Governance</Link></li>
+<li><Link /blog/finops-2026/>Finops 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

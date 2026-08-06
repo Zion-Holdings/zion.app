@@ -54,10 +54,10 @@ If this guide matches your identity access management: starter template initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-observability-executive-guide">Data Observability Executive Guide</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026-6861">Ai Agent Tool Builder 2026 6861</Link></li>
-<li><Link href="/blog/quality-assurance-policy-and-compliance">Quality Assurance Policy And Compliance</Link></li>
-<li><Link href="/blog/data-catalog-security-and-governance">Data Catalog Security And Governance</Link></li>
+              <li><Link /blog/data-observability-executive-guide/>Data Observability Executive Guide</Link></li>
+<li><Link /blog/ai-agent-tool-builder-2026-6861/>Ai Agent Tool Builder 2026 6861</Link></li>
+<li><Link /blog/quality-assurance-policy-and-compliance/>Quality Assurance Policy And Compliance</Link></li>
+<li><Link /blog/data-catalog-security-and-governance/>Data Catalog Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

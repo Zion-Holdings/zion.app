@@ -57,10 +57,10 @@ Leading indicators for virtual cto: checklist for it leaders: workflow completio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/azure-migration-executive-guide">Azure Migration Executive Guide</Link></li>
-<li><Link href="/blog/cloud-optimization-starter-template">Cloud Optimization Starter Template</Link></li>
-<li><Link href="/blog/cicd-best-practices-vendor-evaluation">Cicd Best Practices Vendor Evaluation</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-6971">Cloud Cost Optimization Checklist 2026 6971</Link></li>
+              <li><Link /blog/azure-migration-executive-guide/>Azure Migration Executive Guide</Link></li>
+<li><Link /blog/cloud-optimization-starter-template/>Cloud Optimization Starter Template</Link></li>
+<li><Link /blog/cicd-best-practices-vendor-evaluation/>Cicd Best Practices Vendor Evaluation</Link></li>
+<li><Link /blog/cloud-cost-optimization-checklist-2026-6971/>Cloud Cost Optimization Checklist 2026 6971</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

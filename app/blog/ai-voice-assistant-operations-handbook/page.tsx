@@ -54,10 +54,10 @@ If this guide matches your ai voice assistant: operations handbook initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cybersecurity-platform-msp-2026-6765">Cybersecurity Platform Msp 2026 6765</Link></li>
-<li><Link href="/blog/disaster-recovery-operations-handbook">Disaster Recovery Operations Handbook</Link></li>
-<li><Link href="/blog/network-security-policy-and-compliance">Network Security Policy And Compliance</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-6971">Cloud Cost Optimization Checklist 2026 6971</Link></li>
+              <li><Link /blog/cybersecurity-platform-msp-2026-6765/>Cybersecurity Platform Msp 2026 6765</Link></li>
+<li><Link /blog/disaster-recovery-operations-handbook/>Disaster Recovery Operations Handbook</Link></li>
+<li><Link /blog/network-security-policy-and-compliance/>Network Security Policy And Compliance</Link></li>
+<li><Link /blog/cloud-cost-optimization-checklist-2026-6971/>Cloud Cost Optimization Checklist 2026 6971</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

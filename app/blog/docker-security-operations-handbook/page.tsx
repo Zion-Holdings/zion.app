@@ -54,10 +54,10 @@ If this guide matches your docker security: operations handbook initiative, the 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/oncall-best-practices-starter-template">Oncall Best Practices Starter Template</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026-6859">Ai Ad Copy Generator 2026 6859</Link></li>
-<li><Link href="/blog/ai-service-desk-architecture-overview">Ai Service Desk Architecture Overview</Link></li>
-<li><Link href="/blog/continuous-integration-policy-and-compliance">Continuous Integration Policy And Compliance</Link></li>
+              <li><Link /blog/oncall-best-practices-starter-template/>Oncall Best Practices Starter Template</Link></li>
+<li><Link /blog/ai-ad-copy-generator-2026-6859/>Ai Ad Copy Generator 2026 6859</Link></li>
+<li><Link /blog/ai-service-desk-architecture-overview/>Ai Service Desk Architecture Overview</Link></li>
+<li><Link /blog/continuous-integration-policy-and-compliance/>Continuous Integration Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your cloud cost management: operations handbook initiative
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-2026-7165">Endpoint Management 2026 7165</Link></li>
-<li><Link href="/blog/deep-learning-architecture-overview">Deep Learning Architecture Overview</Link></li>
-<li><Link href="/blog/apm-application-performance-implementation-playbook">Apm Application Performance Implementation Playbook</Link></li>
-<li><Link href="/blog/api-versioning-vendor-evaluation">Api Versioning Vendor Evaluation</Link></li>
+              <li><Link /blog/endpoint-management-2026-7165/>Endpoint Management 2026 7165</Link></li>
+<li><Link /blog/deep-learning-architecture-overview/>Deep Learning Architecture Overview</Link></li>
+<li><Link /blog/apm-application-performance-implementation-playbook/>Apm Application Performance Implementation Playbook</Link></li>
+<li><Link /blog/api-versioning-vendor-evaluation/>Api Versioning Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

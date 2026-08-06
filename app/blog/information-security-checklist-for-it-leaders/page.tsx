@@ -57,10 +57,10 @@ Leading indicators for information security: checklist for it leaders: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/penetration-testing-automation-roadmap">Penetration Testing Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-service-desk-2026">Ai Service Desk 2026</Link></li>
-<li><Link href="/blog/data-integration-security-and-governance">Data Integration Security And Governance</Link></li>
-<li><Link href="/blog/zero-trust-architecture-executive-guide">Zero Trust Architecture Executive Guide</Link></li>
+              <li><Link /blog/penetration-testing-automation-roadmap/>Penetration Testing Automation Roadmap</Link></li>
+<li><Link /blog/ai-service-desk-2026/>Ai Service Desk 2026</Link></li>
+<li><Link /blog/data-integration-security-and-governance/>Data Integration Security And Governance</Link></li>
+<li><Link /blog/zero-trust-architecture-executive-guide/>Zero Trust Architecture Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

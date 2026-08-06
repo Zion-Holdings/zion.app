@@ -54,10 +54,10 @@ If this guide matches your digital twin: case study initiative, the next step is
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-onboarding-implementation-playbook">Ai Customer Onboarding Implementation Playbook</Link></li>
-<li><Link href="/blog/api-design-vendor-evaluation">Api Design Vendor Evaluation</Link></li>
-<li><Link href="/blog/structured-data-extraction-policy-and-compliance">Structured Data Extraction Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-bom-procurement-2026-6663">Ai Bom Procurement 2026 6663</Link></li>
+              <li><Link /blog/ai-customer-onboarding-implementation-playbook/>Ai Customer Onboarding Implementation Playbook</Link></li>
+<li><Link /blog/api-design-vendor-evaluation/>Api Design Vendor Evaluation</Link></li>
+<li><Link /blog/structured-data-extraction-policy-and-compliance/>Structured Data Extraction Policy And Compliance</Link></li>
+<li><Link /blog/ai-bom-procurement-2026-6663/>Ai Bom Procurement 2026 6663</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

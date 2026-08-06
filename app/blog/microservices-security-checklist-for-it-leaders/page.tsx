@@ -54,10 +54,10 @@ If this guide matches your microservices security: checklist for it leaders init
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-modeling-executive-guide">Data Modeling Executive Guide</Link></li>
-<li><Link href="/blog/ai-for-digital-transformation-and-change-management">Ai For Digital Transformation And Change Management</Link></li>
-<li><Link href="/blog/ai-for-conversation-and-customer-analytics">Ai For Conversation And Customer Analytics</Link></li>
-<li><Link href="/blog/ai-for-insurance-underwriting-and-claims-automation">Ai For Insurance Underwriting And Claims Automation</Link></li>
+              <li><Link /blog/data-modeling-executive-guide/>Data Modeling Executive Guide</Link></li>
+<li><Link /blog/ai-for-digital-transformation-and-change-management/>Ai For Digital Transformation And Change Management</Link></li>
+<li><Link /blog/ai-for-conversation-and-customer-analytics/>Ai For Conversation And Customer Analytics</Link></li>
+<li><Link /blog/ai-for-insurance-underwriting-and-claims-automation/>Ai For Insurance Underwriting And Claims Automation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your static application security testing: security and gov
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-security-testing-automation-roadmap">Api Security Testing Automation Roadmap</Link></li>
-<li><Link href="/blog/5g-solutions-2026-6776">5G Solutions 2026 6776</Link></li>
-<li><Link href="/blog/machine-learning-evaluation-framework">Machine Learning Evaluation Framework</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-2026-7022">Data Warehouse Modernization 2026 7022</Link></li>
+              <li><Link /blog/api-security-testing-automation-roadmap/>Api Security Testing Automation Roadmap</Link></li>
+<li><Link /blog/5g-solutions-2026-6776/>5G Solutions 2026 6776</Link></li>
+<li><Link /blog/machine-learning-evaluation-framework/>Machine Learning Evaluation Framework</Link></li>
+<li><Link /blog/data-warehouse-modernization-2026-7022/>Data Warehouse Modernization 2026 7022</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

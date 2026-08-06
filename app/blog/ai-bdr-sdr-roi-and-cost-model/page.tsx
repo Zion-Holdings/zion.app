@@ -57,10 +57,10 @@ For ai bdr sdr: roi and cost model: pick one workflow, assign ownership, define 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-virtualization-evaluation-framework">Data Virtualization Evaluation Framework</Link></li>
-<li><Link href="/blog/cloud-cost-management-policy-and-compliance">Cloud Cost Management Policy And Compliance</Link></li>
-<li><Link href="/blog/infrastructure-as-code-checklist-for-it-leaders">Infrastructure As Code Checklist For It Leaders</Link></li>
-<li><Link href="/blog/database-performance-common-mistakes">Database Performance Common Mistakes</Link></li>
+              <li><Link /blog/data-virtualization-evaluation-framework/>Data Virtualization Evaluation Framework</Link></li>
+<li><Link /blog/cloud-cost-management-policy-and-compliance/>Cloud Cost Management Policy And Compliance</Link></li>
+<li><Link /blog/infrastructure-as-code-checklist-for-it-leaders/>Infrastructure As Code Checklist For It Leaders</Link></li>
+<li><Link /blog/database-performance-common-mistakes/>Database Performance Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

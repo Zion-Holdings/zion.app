@@ -57,10 +57,10 @@ Leading indicators for ubiquitous connectivity: security and governance: workflo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/splunk-migration-deployment-patterns">Splunk Migration Deployment Patterns</Link></li>
-<li><Link href="/blog/multi-cloud-strategy-evaluation-framework">Multi Cloud Strategy Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-api-gateway-vendor-evaluation">Ai Api Gateway Vendor Evaluation</Link></li>
-<li><Link href="/blog/customer-data-platform-evaluation-framework">Customer Data Platform Evaluation Framework</Link></li>
+              <li><Link /blog/splunk-migration-deployment-patterns/>Splunk Migration Deployment Patterns</Link></li>
+<li><Link /blog/multi-cloud-strategy-evaluation-framework/>Multi Cloud Strategy Evaluation Framework</Link></li>
+<li><Link /blog/ai-api-gateway-vendor-evaluation/>Ai Api Gateway Vendor Evaluation</Link></li>
+<li><Link /blog/customer-data-platform-evaluation-framework/>Customer Data Platform Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
