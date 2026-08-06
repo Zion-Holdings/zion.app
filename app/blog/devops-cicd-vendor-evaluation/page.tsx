@@ -57,10 +57,10 @@ For devops ci/cd: vendor evaluation: pick one workflow, assign ownership, define
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automated-ai-reporting-executive-guide">Automated Ai Reporting Executive Guide</Link></li>
-<li><Link href="/blog/api-gateway-management-automation-roadmap">Api Gateway Management Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-customer-support-policy-and-compliance">Ai Customer Support Policy And Compliance</Link></li>
-<li><Link href="/blog/it-consulting-2026">It Consulting 2026</Link></li>
+              <li><Link /blog/automated-ai-reporting-executive-guide/>Automated Ai Reporting Executive Guide</Link></li>
+<li><Link /blog/api-gateway-management-automation-roadmap/>Api Gateway Management Automation Roadmap</Link></li>
+<li><Link /blog/ai-customer-support-policy-and-compliance/>Ai Customer Support Policy And Compliance</Link></li>
+<li><Link /blog/it-consulting-2026/>It Consulting 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

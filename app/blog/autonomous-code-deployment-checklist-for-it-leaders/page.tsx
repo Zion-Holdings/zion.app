@@ -57,10 +57,10 @@ Leading indicators for autonomous code deployment: checklist for it leaders: wor
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-checklist-for-it-leaders">Ai Observability Checklist For It Leaders</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-case-study">Autonomous Code Deployment Case Study</Link></li>
-<li><Link href="/blog/micro-saas-ai-social-media-manager-2026-6647">Micro Saas Ai Social Media Manager 2026 6647</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-implementation-playbook">Cloud Cost Ai Optimizer Implementation Playbook</Link></li>
+              <li><Link /blog/ai-observability-checklist-for-it-leaders/>Ai Observability Checklist For It Leaders</Link></li>
+<li><Link /blog/autonomous-code-deployment-case-study/>Autonomous Code Deployment Case Study</Link></li>
+<li><Link /blog/micro-saas-ai-social-media-manager-2026-6647/>Micro Saas Ai Social Media Manager 2026 6647</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-implementation-playbook/>Cloud Cost Ai Optimizer Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your ai 3d asset generator: architecture overview initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-performance-monitoring-architecture-overview">Ai Performance Monitoring Architecture Overview</Link></li>
-<li><Link href="/blog/ai-observability-vendor-evaluation">Ai Observability Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-architecture-overview">Ai Msp Security Compliance Architecture Overview</Link></li>
-<li><Link href="/blog/ai-api-gateway-executive-guide">Ai Api Gateway Executive Guide</Link></li>
+              <li><Link /blog/ai-performance-monitoring-architecture-overview/>Ai Performance Monitoring Architecture Overview</Link></li>
+<li><Link /blog/ai-observability-vendor-evaluation/>Ai Observability Vendor Evaluation</Link></li>
+<li><Link /blog/ai-msp-security-compliance-architecture-overview/>Ai Msp Security Compliance Architecture Overview</Link></li>
+<li><Link /blog/ai-api-gateway-executive-guide/>Ai Api Gateway Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

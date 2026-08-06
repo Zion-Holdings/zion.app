@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/smart-contract-audit-case-study">Smart Contract Audit Case Study</Link></li>
-<li><Link href="/blog/ai-bom-procurement-executive-guide">Ai Bom Procurement Executive Guide</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-common-mistakes">Autonomous Code Deployment Common Mistakes</Link></li>
-<li><Link href="/blog/chaos-engineering-automation-roadmap">Chaos Engineering Automation Roadmap</Link></li>
+              <li><Link /blog/smart-contract-audit-case-study/>Smart Contract Audit Case Study</Link></li>
+<li><Link /blog/ai-bom-procurement-executive-guide/>Ai Bom Procurement Executive Guide</Link></li>
+<li><Link /blog/autonomous-code-deployment-common-mistakes/>Autonomous Code Deployment Common Mistakes</Link></li>
+<li><Link /blog/chaos-engineering-automation-roadmap/>Chaos Engineering Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for devops ci/cd: deployment patterns: workflow completion ra
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-api-gateway-operations-handbook">Ai Api Gateway Operations Handbook</Link></li>
-<li><Link href="/blog/network-infrastructure-2026">Network Infrastructure 2026</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-evaluation-framework">Microsaas Hr Recruitment Evaluation Framework</Link></li>
-<li><Link href="/blog/smart-contract-audit-executive-guide">Smart Contract Audit Executive Guide</Link></li>
+              <li><Link /blog/ai-api-gateway-operations-handbook/>Ai Api Gateway Operations Handbook</Link></li>
+<li><Link /blog/network-infrastructure-2026/>Network Infrastructure 2026</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-evaluation-framework/>Microsaas Hr Recruitment Evaluation Framework</Link></li>
+<li><Link /blog/smart-contract-audit-executive-guide/>Smart Contract Audit Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

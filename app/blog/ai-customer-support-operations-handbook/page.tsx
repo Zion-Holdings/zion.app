@@ -57,10 +57,10 @@ Leading indicators for ai customer support: operations handbook: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-lakehouse-pipelines-case-study">Ai Data Lakehouse Pipelines Case Study</Link></li>
-<li><Link href="/blog/ai-it-operations-case-study">Ai It Operations Case Study</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026">Smart Contract Audit 2026</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-architecture-overview">Ai Performance Monitoring Architecture Overview</Link></li>
+              <li><Link /blog/ai-data-lakehouse-pipelines-case-study/>Ai Data Lakehouse Pipelines Case Study</Link></li>
+<li><Link /blog/ai-it-operations-case-study/>Ai It Operations Case Study</Link></li>
+<li><Link /blog/smart-contract-audit-2026/>Smart Contract Audit 2026</Link></li>
+<li><Link /blog/ai-performance-monitoring-architecture-overview/>Ai Performance Monitoring Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

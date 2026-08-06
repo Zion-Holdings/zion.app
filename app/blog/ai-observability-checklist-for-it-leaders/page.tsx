@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/genai-devops-cicd-evaluation-framework">Genai Devops Cicd Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-security-and-governance">Ai Ad Copy Generator Security And Governance</Link></li>
-<li><Link href="/blog/database-migration-service-2026-6540">Database Migration Service 2026 6540</Link></li>
-<li><Link href="/blog/ai-customer-support-pro-2026-6633">Ai Customer Support Pro 2026 6633</Link></li>
+              <li><Link /blog/genai-devops-cicd-evaluation-framework/>Genai Devops Cicd Evaluation Framework</Link></li>
+<li><Link /blog/ai-ad-copy-generator-security-and-governance/>Ai Ad Copy Generator Security And Governance</Link></li>
+<li><Link /blog/database-migration-service-2026-6540/>Database Migration Service 2026 6540</Link></li>
+<li><Link /blog/ai-customer-support-pro-2026-6633/>Ai Customer Support Pro 2026 6633</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

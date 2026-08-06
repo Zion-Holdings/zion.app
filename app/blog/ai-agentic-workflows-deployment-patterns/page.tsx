@@ -57,10 +57,10 @@ For ai agentic workflows: deployment patterns: pick one workflow, assign ownersh
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/genai-devops-cicd-case-study">Genai Devops Cicd Case Study</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-case-study">Ai Data Lakehouse Pipelines Case Study</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-evaluation-framework">Microsaas Social Media Manager Evaluation Framework</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-policy-and-compliance">Cybersecurity For Msps Policy And Compliance</Link></li>
+              <li><Link /blog/genai-devops-cicd-case-study/>Genai Devops Cicd Case Study</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-case-study/>Ai Data Lakehouse Pipelines Case Study</Link></li>
+<li><Link /blog/microsaas-social-media-manager-evaluation-framework/>Microsaas Social Media Manager Evaluation Framework</Link></li>
+<li><Link /blog/cybersecurity-for-msps-policy-and-compliance/>Cybersecurity For Msps Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

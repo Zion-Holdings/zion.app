@@ -54,10 +54,10 @@ If this guide matches your automation orchestration: vendor evaluation initiativ
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-performance-monitoring-checklist-for-it-leaders">Ai Performance Monitoring Checklist For It Leaders</Link></li>
-<li><Link href="/blog/accessibility-compliance-policy-and-compliance">Accessibility Compliance Policy And Compliance</Link></li>
-<li><Link href="/blog/devsecops-pipeline-2026-6887">Devsecops Pipeline 2026 6887</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders">Cloud Cost Ai Optimizer Checklist For It Leaders</Link></li>
+              <li><Link /blog/ai-performance-monitoring-checklist-for-it-leaders/>Ai Performance Monitoring Checklist For It Leaders</Link></li>
+<li><Link /blog/accessibility-compliance-policy-and-compliance/>Accessibility Compliance Policy And Compliance</Link></li>
+<li><Link /blog/devsecops-pipeline-2026-6887/>Devsecops Pipeline 2026 6887</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/>Cloud Cost Ai Optimizer Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

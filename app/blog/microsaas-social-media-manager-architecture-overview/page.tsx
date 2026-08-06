@@ -57,10 +57,10 @@ Leading indicators for microsaas social media manager: architecture overview: wo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-executive-guide">Event Driven Architecture Executive Guide</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-checklist-for-it-leaders">Autonomous Qa Engineering Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-automation-roadmap">Ai Ad Copy Generator Automation Roadmap</Link></li>
-<li><Link href="/blog/accessibility-compliance-2026">Accessibility Compliance 2026</Link></li>
+              <li><Link /blog/event-driven-architecture-executive-guide/>Event Driven Architecture Executive Guide</Link></li>
+<li><Link /blog/autonomous-qa-engineering-checklist-for-it-leaders/>Autonomous Qa Engineering Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-ad-copy-generator-automation-roadmap/>Ai Ad Copy Generator Automation Roadmap</Link></li>
+<li><Link /blog/accessibility-compliance-2026/>Accessibility Compliance 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

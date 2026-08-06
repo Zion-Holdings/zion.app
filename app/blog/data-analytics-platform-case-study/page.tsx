@@ -54,10 +54,10 @@ If this guide matches your data analytics platform: case study initiative, the n
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-evaluation-framework">Devsecops Pipeline Evaluation Framework</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-checklist-for-it-leaders">Microsaas Social Media Manager Checklist For It Leaders</Link></li>
-<li><Link href="/blog/api-security-testing-deployment-patterns">Api Security Testing Deployment Patterns</Link></li>
-<li><Link href="/blog/network-infrastructure-vendor-evaluation">Network Infrastructure Vendor Evaluation</Link></li>
+              <li><Link /blog/devsecops-pipeline-evaluation-framework/>Devsecops Pipeline Evaluation Framework</Link></li>
+<li><Link /blog/microsaas-social-media-manager-checklist-for-it-leaders/>Microsaas Social Media Manager Checklist For It Leaders</Link></li>
+<li><Link /blog/api-security-testing-deployment-patterns/>Api Security Testing Deployment Patterns</Link></li>
+<li><Link /blog/network-infrastructure-vendor-evaluation/>Network Infrastructure Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

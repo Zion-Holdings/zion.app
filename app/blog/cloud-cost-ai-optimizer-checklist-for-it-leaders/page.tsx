@@ -54,10 +54,10 @@ If this guide matches your cloud cost ai optimizer: checklist for it leaders ini
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-success-churn-2026">Ai Customer Success Churn 2026</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-roi-and-cost-model">Autonomous Qa Engineering Roi And Cost Model</Link></li>
-<li><Link href="/blog/managed-it-services-architecture-overview">Managed It Services Architecture Overview</Link></li>
-<li><Link href="/blog/network-infrastructure-checklist-for-it-leaders">Network Infrastructure Checklist For It Leaders</Link></li>
+              <li><Link /blog/ai-customer-success-churn-2026/>Ai Customer Success Churn 2026</Link></li>
+<li><Link /blog/autonomous-qa-engineering-roi-and-cost-model/>Autonomous Qa Engineering Roi And Cost Model</Link></li>
+<li><Link /blog/managed-it-services-architecture-overview/>Managed It Services Architecture Overview</Link></li>
+<li><Link /blog/network-infrastructure-checklist-for-it-leaders/>Network Infrastructure Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

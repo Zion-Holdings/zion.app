@@ -54,10 +54,10 @@ If this guide matches your autonomous code deployment: starter template initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-2026">Api Management Gateway 2026</Link></li>
-<li><Link href="/blog/container-security-lifecycle-operations-handbook">Container Security Lifecycle Operations Handbook</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-evaluation-framework">Data Warehouse Modernization Evaluation Framework</Link></li>
-<li><Link href="/blog/devops-cicd-architecture-overview">Devops Cicd Architecture Overview</Link></li>
+              <li><Link /blog/api-management-gateway-2026/>Api Management Gateway 2026</Link></li>
+<li><Link /blog/container-security-lifecycle-operations-handbook/>Container Security Lifecycle Operations Handbook</Link></li>
+<li><Link /blog/data-warehouse-modernization-evaluation-framework/>Data Warehouse Modernization Evaluation Framework</Link></li>
+<li><Link /blog/devops-cicd-architecture-overview/>Devops Cicd Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

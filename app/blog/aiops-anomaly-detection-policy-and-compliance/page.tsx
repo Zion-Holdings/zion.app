@@ -54,10 +54,10 @@ If this guide matches your aiops anomaly detection: policy and compliance initia
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-api-gateway-executive-guide">Ai Api Gateway Executive Guide</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-architecture-overview">Ai Agentic Workflows Architecture Overview</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-executive-guide">Cloud Cost Ai Optimizer Executive Guide</Link></li>
-<li><Link href="/blog/it-consulting-checklist-for-it-leaders">It Consulting Checklist For It Leaders</Link></li>
+              <li><Link /blog/ai-api-gateway-executive-guide/>Ai Api Gateway Executive Guide</Link></li>
+<li><Link /blog/ai-agentic-workflows-architecture-overview/>Ai Agentic Workflows Architecture Overview</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-executive-guide/>Cloud Cost Ai Optimizer Executive Guide</Link></li>
+<li><Link /blog/it-consulting-checklist-for-it-leaders/>It Consulting Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

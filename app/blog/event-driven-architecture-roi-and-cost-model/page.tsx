@@ -57,10 +57,10 @@ For event driven architecture: roi and cost model: pick one workflow, assign own
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/network-infrastructure-checklist-for-it-leaders">Network Infrastructure Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-data-backup-architecture-overview">Ai Data Backup Architecture Overview</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-evaluation-framework">Microsaas Hr Recruitment Evaluation Framework</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-roi-and-cost-model">Microsaas Expense Tracker Roi And Cost Model</Link></li>
+              <li><Link /blog/network-infrastructure-checklist-for-it-leaders/>Network Infrastructure Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-data-backup-architecture-overview/>Ai Data Backup Architecture Overview</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-evaluation-framework/>Microsaas Hr Recruitment Evaluation Framework</Link></li>
+<li><Link /blog/microsaas-expense-tracker-roi-and-cost-model/>Microsaas Expense Tracker Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

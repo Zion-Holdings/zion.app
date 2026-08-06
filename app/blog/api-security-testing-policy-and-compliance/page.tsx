@@ -57,10 +57,10 @@ For api security testing: policy and compliance: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-evaluation-framework">Graphql Federation Platform Evaluation Framework</Link></li>
-<li><Link href="/blog/api-security-testing-vendor-evaluation">Api Security Testing Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-architecture-overview">Ai Agentic Workflows Architecture Overview</Link></li>
-<li><Link href="/blog/smart-contract-audit-vendor-evaluation">Smart Contract Audit Vendor Evaluation</Link></li>
+              <li><Link /blog/graphql-federation-platform-evaluation-framework/>Graphql Federation Platform Evaluation Framework</Link></li>
+<li><Link /blog/api-security-testing-vendor-evaluation/>Api Security Testing Vendor Evaluation</Link></li>
+<li><Link /blog/ai-agentic-workflows-architecture-overview/>Ai Agentic Workflows Architecture Overview</Link></li>
+<li><Link /blog/smart-contract-audit-vendor-evaluation/>Smart Contract Audit Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

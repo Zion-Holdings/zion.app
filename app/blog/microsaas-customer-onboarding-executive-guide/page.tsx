@@ -54,10 +54,10 @@ If this guide matches your microsaas customer onboarding: executive guide initia
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-it-operations-automation-2026">Ai It Operations Automation 2026</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-2026">Ai 3D Asset Generator 2026</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-operations-handbook">Ai Autonomous Agents Operations Handbook</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026">Cloud Cost Optimization Checklist 2026</Link></li>
+              <li><Link /blog/ai-it-operations-automation-2026/>Ai It Operations Automation 2026</Link></li>
+<li><Link /blog/ai-3d-asset-generator-2026/>Ai 3D Asset Generator 2026</Link></li>
+<li><Link /blog/ai-autonomous-agents-operations-handbook/>Ai Autonomous Agents Operations Handbook</Link></li>
+<li><Link /blog/cloud-cost-optimization-checklist-2026/>Cloud Cost Optimization Checklist 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

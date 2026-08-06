@@ -57,10 +57,10 @@ For autonomous qa engineering: evaluation framework: pick one workflow, assign o
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-legal-tech-and-contract-intelligence">Ai For Legal Tech And Contract Intelligence</Link></li>
-<li><Link href="/blog/ai-api-gateway-2026-6758">Ai Api Gateway 2026 6758</Link></li>
-<li><Link href="/blog/ai-for-healthcare-analytics-and-clinical-decision-support">Ai For Healthcare Analytics And Clinical Decision Support</Link></li>
-<li><Link href="/blog/ai-bom-procurement-2026-6801">Ai Bom Procurement 2026 6801</Link></li>
+              <li><Link /blog/ai-for-legal-tech-and-contract-intelligence/>Ai For Legal Tech And Contract Intelligence</Link></li>
+<li><Link /blog/ai-api-gateway-2026-6758/>Ai Api Gateway 2026 6758</Link></li>
+<li><Link /blog/ai-for-healthcare-analytics-and-clinical-decision-support/>Ai For Healthcare Analytics And Clinical Decision Support</Link></li>
+<li><Link /blog/ai-bom-procurement-2026-6801/>Ai Bom Procurement 2026 6801</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

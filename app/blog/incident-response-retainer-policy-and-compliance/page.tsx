@@ -57,10 +57,10 @@ For incident response retainer: policy and compliance: pick one workflow, assign
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-tool-builder-starter-template">Ai Agent Tool Builder Starter Template</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-2026">Cyber Threat Intelligence 2026</Link></li>
-<li><Link href="/blog/chaos-engineering-architecture-overview">Chaos Engineering Architecture Overview</Link></li>
-<li><Link href="/blog/api-orchestration-layer-roi-and-cost-model">Api Orchestration Layer Roi And Cost Model</Link></li>
+              <li><Link /blog/ai-agent-tool-builder-starter-template/>Ai Agent Tool Builder Starter Template</Link></li>
+<li><Link /blog/cyber-threat-intelligence-2026/>Cyber Threat Intelligence 2026</Link></li>
+<li><Link /blog/chaos-engineering-architecture-overview/>Chaos Engineering Architecture Overview</Link></li>
+<li><Link /blog/api-orchestration-layer-roi-and-cost-model/>Api Orchestration Layer Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

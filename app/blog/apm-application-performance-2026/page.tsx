@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-expense-tracker-security-and-governance">Microsaas Expense Tracker Security And Governance</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-implementation-playbook">Enterprise Backup Dr Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026">Ai Ad Copy Generator 2026</Link></li>
-<li><Link href="/blog/devsecops-pipeline-vendor-evaluation">Devsecops Pipeline Vendor Evaluation</Link></li>
+              <li><Link /blog/microsaas-expense-tracker-security-and-governance/>Microsaas Expense Tracker Security And Governance</Link></li>
+<li><Link /blog/enterprise-backup-dr-implementation-playbook/>Enterprise Backup Dr Implementation Playbook</Link></li>
+<li><Link /blog/ai-ad-copy-generator-2026/>Ai Ad Copy Generator 2026</Link></li>
+<li><Link /blog/devsecops-pipeline-vendor-evaluation/>Devsecops Pipeline Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

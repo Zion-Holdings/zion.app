@@ -57,10 +57,10 @@ Leading indicators for managed it services: checklist for it leaders: workflow c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-architecture-overview">Cloud Cost Ai Optimizer Architecture Overview</Link></li>
-<li><Link href="/blog/endpoint-management-roi-and-cost-model">Endpoint Management Roi And Cost Model</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-implementation-playbook">Cybersecurity For Msps Implementation Playbook</Link></li>
-<li><Link href="/blog/devsecops-pipeline-vendor-evaluation">Devsecops Pipeline Vendor Evaluation</Link></li>
+              <li><Link /blog/cloud-cost-ai-optimizer-architecture-overview/>Cloud Cost Ai Optimizer Architecture Overview</Link></li>
+<li><Link /blog/endpoint-management-roi-and-cost-model/>Endpoint Management Roi And Cost Model</Link></li>
+<li><Link /blog/cybersecurity-for-msps-implementation-playbook/>Cybersecurity For Msps Implementation Playbook</Link></li>
+<li><Link /blog/devsecops-pipeline-vendor-evaluation/>Devsecops Pipeline Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

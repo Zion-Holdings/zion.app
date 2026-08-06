@@ -57,10 +57,10 @@ Leading indicators for microsaas expense tracker: vendor evaluation: workflow co
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/container-security-lifecycle-operations-handbook">Container Security Lifecycle Operations Handbook</Link></li>
-<li><Link href="/blog/genai-devops-cicd-executive-guide">Genai Devops Cicd Executive Guide</Link></li>
-<li><Link href="/blog/smart-contract-audit-case-study">Smart Contract Audit Case Study</Link></li>
-<li><Link href="/blog/edge-computing-deployment-checklist-for-it-leaders">Edge Computing Deployment Checklist For It Leaders</Link></li>
+              <li><Link /blog/container-security-lifecycle-operations-handbook/>Container Security Lifecycle Operations Handbook</Link></li>
+<li><Link /blog/genai-devops-cicd-executive-guide/>Genai Devops Cicd Executive Guide</Link></li>
+<li><Link /blog/smart-contract-audit-case-study/>Smart Contract Audit Case Study</Link></li>
+<li><Link /blog/edge-computing-deployment-checklist-for-it-leaders/>Edge Computing Deployment Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For cloud cost ai optimizer: case study: pick one workflow, assign ownership, de
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-it-operations-operations-handbook">Ai It Operations Operations Handbook</Link></li>
-<li><Link href="/blog/ai-observability-evaluation-framework">Ai Observability Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-operations-handbook">Ai Data Lakehouse Pipelines Operations Handbook</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-security-and-governance">Ai Agent Tool Builder Security And Governance</Link></li>
+              <li><Link /blog/ai-it-operations-operations-handbook/>Ai It Operations Operations Handbook</Link></li>
+<li><Link /blog/ai-observability-evaluation-framework/>Ai Observability Evaluation Framework</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-operations-handbook/>Ai Data Lakehouse Pipelines Operations Handbook</Link></li>
+<li><Link /blog/ai-agent-tool-builder-security-and-governance/>Ai Agent Tool Builder Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

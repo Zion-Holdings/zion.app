@@ -57,10 +57,10 @@ For data warehouse modernization: policy and compliance: pick one workflow, assi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bdr-sdr-checklist-for-it-leaders">Ai Bdr Sdr Checklist For It Leaders</Link></li>
-<li><Link href="/blog/edge-computing-deployment-security-and-governance">Edge Computing Deployment Security And Governance</Link></li>
-<li><Link href="/blog/chaos-engineering-roi-and-cost-model">Chaos Engineering Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-api-gateway-case-study">Ai Api Gateway Case Study</Link></li>
+              <li><Link /blog/ai-bdr-sdr-checklist-for-it-leaders/>Ai Bdr Sdr Checklist For It Leaders</Link></li>
+<li><Link /blog/edge-computing-deployment-security-and-governance/>Edge Computing Deployment Security And Governance</Link></li>
+<li><Link /blog/chaos-engineering-roi-and-cost-model/>Chaos Engineering Roi And Cost Model</Link></li>
+<li><Link /blog/ai-api-gateway-case-study/>Ai Api Gateway Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

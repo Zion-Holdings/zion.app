@@ -54,10 +54,10 @@ If this guide matches your cyber threat intelligence: automation roadmap initiat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-orchestration-layer-2026">Api Orchestration Layer 2026</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026">Ai Ad Copy Generator 2026</Link></li>
-<li><Link href="/blog/automation-orchestration-operations-handbook">Automation Orchestration Operations Handbook</Link></li>
-<li><Link href="/blog/automation-orchestration-policy-and-compliance">Automation Orchestration Policy And Compliance</Link></li>
+              <li><Link /blog/api-orchestration-layer-2026/>Api Orchestration Layer 2026</Link></li>
+<li><Link /blog/ai-ad-copy-generator-2026/>Ai Ad Copy Generator 2026</Link></li>
+<li><Link /blog/automation-orchestration-operations-handbook/>Automation Orchestration Operations Handbook</Link></li>
+<li><Link /blog/automation-orchestration-policy-and-compliance/>Automation Orchestration Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your devsecops pipeline: checklist for it leaders initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-deployment-patterns">Api Management Gateway Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-api-gateway-case-study">Ai Api Gateway Case Study</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-2026">Etl Pipeline Optimization 2026</Link></li>
-<li><Link href="/blog/brand-voice-guardian-starter-template">Brand Voice Guardian Starter Template</Link></li>
+              <li><Link /blog/api-management-gateway-deployment-patterns/>Api Management Gateway Deployment Patterns</Link></li>
+<li><Link /blog/ai-api-gateway-case-study/>Ai Api Gateway Case Study</Link></li>
+<li><Link /blog/etl-pipeline-optimization-2026/>Etl Pipeline Optimization 2026</Link></li>
+<li><Link /blog/brand-voice-guardian-starter-template/>Brand Voice Guardian Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

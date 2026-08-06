@@ -54,10 +54,10 @@ If this guide matches your ai agent safety evaluation: starter template initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-code-deployment-automation-roadmap">Autonomous Code Deployment Automation Roadmap</Link></li>
-<li><Link href="/blog/apm-application-performance-starter-template">Apm Application Performance Starter Template</Link></li>
-<li><Link href="/blog/managed-it-services-implementation-playbook">Managed It Services Implementation Playbook</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-6784">Micro Saas Ai Customer Onboarding 2026 6784</Link></li>
+              <li><Link /blog/autonomous-code-deployment-automation-roadmap/>Autonomous Code Deployment Automation Roadmap</Link></li>
+<li><Link /blog/apm-application-performance-starter-template/>Apm Application Performance Starter Template</Link></li>
+<li><Link /blog/managed-it-services-implementation-playbook/>Managed It Services Implementation Playbook</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026-6784/>Micro Saas Ai Customer Onboarding 2026 6784</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-hr-recruitment-executive-guide">Microsaas Hr Recruitment Executive Guide</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-roi-and-cost-model">Cloud Cost Optimization Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-operations-handbook">Ai Performance Monitoring Operations Handbook</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026">Ai Agent Tool Builder 2026</Link></li>
+              <li><Link /blog/microsaas-hr-recruitment-executive-guide/>Microsaas Hr Recruitment Executive Guide</Link></li>
+<li><Link /blog/cloud-cost-optimization-roi-and-cost-model/>Cloud Cost Optimization Roi And Cost Model</Link></li>
+<li><Link /blog/ai-performance-monitoring-operations-handbook/>Ai Performance Monitoring Operations Handbook</Link></li>
+<li><Link /blog/ai-agent-tool-builder-2026/>Ai Agent Tool Builder 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

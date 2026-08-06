@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/chaos-engineering-operations-handbook">Chaos Engineering Operations Handbook</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-2026">Autonomous Code Deployment 2026</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-case-study">Ai Performance Monitoring Case Study</Link></li>
-<li><Link href="/blog/accessibility-compliance-security-and-governance">Accessibility Compliance Security And Governance</Link></li>
+              <li><Link /blog/chaos-engineering-operations-handbook/>Chaos Engineering Operations Handbook</Link></li>
+<li><Link /blog/autonomous-code-deployment-2026/>Autonomous Code Deployment 2026</Link></li>
+<li><Link /blog/ai-performance-monitoring-case-study/>Ai Performance Monitoring Case Study</Link></li>
+<li><Link /blog/accessibility-compliance-security-and-governance/>Accessibility Compliance Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-msp-security-compliance-2026-6704">Ai Msp Security Compliance 2026 6704</Link></li>
-<li><Link href="/blog/api-orchestration-layer-checklist-for-it-leaders">Api Orchestration Layer Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cloud-native-app-development-executive-guide">Cloud Native App Development Executive Guide</Link></li>
-<li><Link href="/blog/event-driven-architecture-case-study">Event Driven Architecture Case Study</Link></li>
+              <li><Link /blog/ai-msp-security-compliance-2026-6704/>Ai Msp Security Compliance 2026 6704</Link></li>
+<li><Link /blog/api-orchestration-layer-checklist-for-it-leaders/>Api Orchestration Layer Checklist For It Leaders</Link></li>
+<li><Link /blog/cloud-native-app-development-executive-guide/>Cloud Native App Development Executive Guide</Link></li>
+<li><Link /blog/event-driven-architecture-case-study/>Event Driven Architecture Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

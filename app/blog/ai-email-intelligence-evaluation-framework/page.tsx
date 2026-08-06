@@ -57,10 +57,10 @@ Leading indicators for ai email intelligence: evaluation framework: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-qa-engineering-2026-7006">Autonomous Qa Engineering 2026 7006</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-implementation-playbook">Ai Agent Tool Builder Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-2026-6980">Ai Msp Security Compliance 2026 6980</Link></li>
-<li><Link href="/blog/5g-solutions-2026-6776">5G Solutions 2026 6776</Link></li>
+              <li><Link /blog/autonomous-qa-engineering-2026-7006/>Autonomous Qa Engineering 2026 7006</Link></li>
+<li><Link /blog/ai-agent-tool-builder-implementation-playbook/>Ai Agent Tool Builder Implementation Playbook</Link></li>
+<li><Link /blog/ai-msp-security-compliance-2026-6980/>Ai Msp Security Compliance 2026 6980</Link></li>
+<li><Link /blog/5g-solutions-2026-6776/>5G Solutions 2026 6776</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your chaos engineering: roi and cost model initiative, the
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-optimizer-implementation-playbook">Ai Accessibility Optimizer Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026">Ai Ad Copy Generator 2026</Link></li>
-<li><Link href="/blog/incident-response-retainer-vendor-evaluation">Incident Response Retainer Vendor Evaluation</Link></li>
-<li><Link href="/blog/api-management-gateway-operations-handbook">Api Management Gateway Operations Handbook</Link></li>
+              <li><Link /blog/ai-accessibility-optimizer-implementation-playbook/>Ai Accessibility Optimizer Implementation Playbook</Link></li>
+<li><Link /blog/ai-ad-copy-generator-2026/>Ai Ad Copy Generator 2026</Link></li>
+<li><Link /blog/incident-response-retainer-vendor-evaluation/>Incident Response Retainer Vendor Evaluation</Link></li>
+<li><Link /blog/api-management-gateway-operations-handbook/>Api Management Gateway Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

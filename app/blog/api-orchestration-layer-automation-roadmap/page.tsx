@@ -57,10 +57,10 @@ Leading indicators for api orchestration layer: automation roadmap: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-starter-template">Event Driven Architecture Starter Template</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-2026-6960">Etl Pipeline Optimization 2026 6960</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-evaluation-framework">Ai Agent Safety Evaluation Evaluation Framework</Link></li>
-<li><Link href="/blog/automation-orchestration-enterprise-2026-6">Automation Orchestration Enterprise 2026 6</Link></li>
+              <li><Link /blog/event-driven-architecture-starter-template/>Event Driven Architecture Starter Template</Link></li>
+<li><Link /blog/etl-pipeline-optimization-2026-6960/>Etl Pipeline Optimization 2026 6960</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-evaluation-framework/>Ai Agent Safety Evaluation Evaluation Framework</Link></li>
+<li><Link /blog/automation-orchestration-enterprise-2026-6/>Automation Orchestration Enterprise 2026 6</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

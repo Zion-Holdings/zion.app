@@ -57,10 +57,10 @@ For 5g solutions: executive guide: pick one workflow, assign ownership, define s
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cyber-threat-intelligence-operations-handbook">Cyber Threat Intelligence Operations Handbook</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-implementation-playbook">Cyber Threat Intelligence Implementation Playbook</Link></li>
-<li><Link href="/blog/api-orchestration-layer-starter-template">Api Orchestration Layer Starter Template</Link></li>
-<li><Link href="/blog/ai-data-backup-2026-7038">Ai Data Backup 2026 7038</Link></li>
+              <li><Link /blog/cyber-threat-intelligence-operations-handbook/>Cyber Threat Intelligence Operations Handbook</Link></li>
+<li><Link /blog/cyber-threat-intelligence-implementation-playbook/>Cyber Threat Intelligence Implementation Playbook</Link></li>
+<li><Link /blog/api-orchestration-layer-starter-template/>Api Orchestration Layer Starter Template</Link></li>
+<li><Link /blog/ai-data-backup-2026-7038/>Ai Data Backup 2026 7038</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

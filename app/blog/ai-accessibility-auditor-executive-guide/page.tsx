@@ -57,10 +57,10 @@ For ai accessibility auditor: executive guide: pick one workflow, assign ownersh
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bdr-sdr-starter-template">Ai Bdr Sdr Starter Template</Link></li>
-<li><Link href="/blog/api-management-gateway-deployment-patterns">Api Management Gateway Deployment Patterns</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-common-mistakes">Cyber Threat Intelligence Common Mistakes</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-evaluation-framework">Microsaas Customer Onboarding Evaluation Framework</Link></li>
+              <li><Link /blog/ai-bdr-sdr-starter-template/>Ai Bdr Sdr Starter Template</Link></li>
+<li><Link /blog/api-management-gateway-deployment-patterns/>Api Management Gateway Deployment Patterns</Link></li>
+<li><Link /blog/cyber-threat-intelligence-common-mistakes/>Cyber Threat Intelligence Common Mistakes</Link></li>
+<li><Link /blog/microsaas-customer-onboarding-evaluation-framework/>Microsaas Customer Onboarding Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

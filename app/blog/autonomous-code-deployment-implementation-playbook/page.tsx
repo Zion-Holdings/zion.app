@@ -54,10 +54,10 @@ If this guide matches your autonomous code deployment: implementation playbook i
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-2026">Devsecops Pipeline 2026</Link></li>
-<li><Link href="/blog/ai-email-intelligence-2026-6838">Ai Email Intelligence 2026 6838</Link></li>
-<li><Link href="/blog/api-orchestration-layer-operations-handbook">Api Orchestration Layer Operations Handbook</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-vendor-evaluation">Cyber Threat Intelligence Vendor Evaluation</Link></li>
+              <li><Link /blog/devsecops-pipeline-2026/>Devsecops Pipeline 2026</Link></li>
+<li><Link /blog/ai-email-intelligence-2026-6838/>Ai Email Intelligence 2026 6838</Link></li>
+<li><Link /blog/api-orchestration-layer-operations-handbook/>Api Orchestration Layer Operations Handbook</Link></li>
+<li><Link /blog/cyber-threat-intelligence-vendor-evaluation/>Cyber Threat Intelligence Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your ai data backup: policy and compliance initiative, the
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devops-gen-ai-cicd-2026-6679">Devops Gen Ai Cicd 2026 6679</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-7026">Edge Computing Deployment 2026 7026</Link></li>
-<li><Link href="/blog/5g-solutions-policy-and-compliance">5G Solutions Policy And Compliance</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-7006">Autonomous Qa Engineering 2026 7006</Link></li>
+              <li><Link /blog/devops-gen-ai-cicd-2026-6679/>Devops Gen Ai Cicd 2026 6679</Link></li>
+<li><Link /blog/edge-computing-deployment-2026-7026/>Edge Computing Deployment 2026 7026</Link></li>
+<li><Link /blog/5g-solutions-policy-and-compliance/>5G Solutions Policy And Compliance</Link></li>
+<li><Link /blog/autonomous-qa-engineering-2026-7006/>Autonomous Qa Engineering 2026 7006</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

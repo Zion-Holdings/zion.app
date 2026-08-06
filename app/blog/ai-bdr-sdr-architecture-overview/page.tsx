@@ -57,10 +57,10 @@ For ai bdr sdr: architecture overview: pick one workflow, assign ownership, defi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-optimizer-2026">Ai Accessibility Optimizer 2026</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-implementation-playbook">Enterprise Backup Dr Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-case-study">Ai Performance Monitoring Case Study</Link></li>
-<li><Link href="/blog/cloud-finops-starter-template">Cloud Finops Starter Template</Link></li>
+              <li><Link /blog/ai-accessibility-optimizer-2026/>Ai Accessibility Optimizer 2026</Link></li>
+<li><Link /blog/enterprise-backup-dr-implementation-playbook/>Enterprise Backup Dr Implementation Playbook</Link></li>
+<li><Link /blog/ai-performance-monitoring-case-study/>Ai Performance Monitoring Case Study</Link></li>
+<li><Link /blog/cloud-finops-starter-template/>Cloud Finops Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

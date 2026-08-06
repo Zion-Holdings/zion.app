@@ -57,10 +57,10 @@ For api security testing: security and governance: pick one workflow, assign own
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cyber-threat-intelligence-roi-and-cost-model">Cyber Threat Intelligence Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-operations-handbook">Ai Accessibility Optimizer Operations Handbook</Link></li>
-<li><Link href="/blog/ai-customer-support-policy-and-compliance">Ai Customer Support Policy And Compliance</Link></li>
-<li><Link href="/blog/graphql-federation-platform-case-study">Graphql Federation Platform Case Study</Link></li>
+              <li><Link /blog/cyber-threat-intelligence-roi-and-cost-model/>Cyber Threat Intelligence Roi And Cost Model</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-operations-handbook/>Ai Accessibility Optimizer Operations Handbook</Link></li>
+<li><Link /blog/ai-customer-support-policy-and-compliance/>Ai Customer Support Policy And Compliance</Link></li>
+<li><Link /blog/graphql-federation-platform-case-study/>Graphql Federation Platform Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

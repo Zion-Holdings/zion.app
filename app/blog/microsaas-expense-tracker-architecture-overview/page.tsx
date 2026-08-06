@@ -54,10 +54,10 @@ If this guide matches your microsaas expense tracker: architecture overview init
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-starter-template">Event Driven Architecture Starter Template</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-2026">Ai Msp Security Compliance 2026</Link></li>
-<li><Link href="/blog/ai-customer-support-operations-handbook">Ai Customer Support Operations Handbook</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026">Smart Contract Audit 2026</Link></li>
+              <li><Link /blog/event-driven-architecture-starter-template/>Event Driven Architecture Starter Template</Link></li>
+<li><Link /blog/ai-msp-security-compliance-2026/>Ai Msp Security Compliance 2026</Link></li>
+<li><Link /blog/ai-customer-support-operations-handbook/>Ai Customer Support Operations Handbook</Link></li>
+<li><Link /blog/smart-contract-audit-2026/>Smart Contract Audit 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

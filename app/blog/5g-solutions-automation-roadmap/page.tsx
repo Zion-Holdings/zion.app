@@ -57,10 +57,10 @@ Leading indicators for 5g solutions: automation roadmap: workflow completion rat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-social-media-manager-vendor-evaluation">Microsaas Social Media Manager Vendor Evaluation</Link></li>
-<li><Link href="/blog/container-security-lifecycle-operations-handbook">Container Security Lifecycle Operations Handbook</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders">Cloud Cost Ai Optimizer Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cloud-finops-policy-and-compliance">Cloud Finops Policy And Compliance</Link></li>
+              <li><Link /blog/microsaas-social-media-manager-vendor-evaluation/>Microsaas Social Media Manager Vendor Evaluation</Link></li>
+<li><Link /blog/container-security-lifecycle-operations-handbook/>Container Security Lifecycle Operations Handbook</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/>Cloud Cost Ai Optimizer Checklist For It Leaders</Link></li>
+<li><Link /blog/cloud-finops-policy-and-compliance/>Cloud Finops Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

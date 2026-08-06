@@ -54,10 +54,10 @@ If this guide matches your cyber threat intelligence: executive guide initiative
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-policy-and-compliance">Endpoint Management Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-api-gateway-architecture-overview">Ai Api Gateway Architecture Overview</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-implementation-playbook">Enterprise Backup Dr Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-checklist-for-it-leaders">Ai Bdr Sdr Checklist For It Leaders</Link></li>
+              <li><Link /blog/endpoint-management-policy-and-compliance/>Endpoint Management Policy And Compliance</Link></li>
+<li><Link /blog/ai-api-gateway-architecture-overview/>Ai Api Gateway Architecture Overview</Link></li>
+<li><Link /blog/enterprise-backup-dr-implementation-playbook/>Enterprise Backup Dr Implementation Playbook</Link></li>
+<li><Link /blog/ai-bdr-sdr-checklist-for-it-leaders/>Ai Bdr Sdr Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

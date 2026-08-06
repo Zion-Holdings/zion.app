@@ -57,10 +57,10 @@ Leading indicators for data warehouse modernization: evaluation framework: workf
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automated-ai-reporting-policy-and-compliance">Automated Ai Reporting Policy And Compliance</Link></li>
-<li><Link href="/blog/cloud-finops-implementation-playbook">Cloud Finops Implementation Playbook</Link></li>
-<li><Link href="/blog/api-gateway-management-automation-roadmap">Api Gateway Management Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-implementation-playbook">Ai Performance Monitoring Implementation Playbook</Link></li>
+              <li><Link /blog/automated-ai-reporting-policy-and-compliance/>Automated Ai Reporting Policy And Compliance</Link></li>
+<li><Link /blog/cloud-finops-implementation-playbook/>Cloud Finops Implementation Playbook</Link></li>
+<li><Link /blog/api-gateway-management-automation-roadmap/>Api Gateway Management Automation Roadmap</Link></li>
+<li><Link /blog/ai-performance-monitoring-implementation-playbook/>Ai Performance Monitoring Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

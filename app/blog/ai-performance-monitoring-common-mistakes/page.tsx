@@ -57,10 +57,10 @@ For ai performance monitoring: common mistakes: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-6905">Data Analytics Platform Modern Enterprise 2026 6905</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-6715">Micro Saas Ai Customer Onboarding 2026 6715</Link></li>
-<li><Link href="/blog/cloud-native-app-development-2026-6950">Cloud Native App Development 2026 6950</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-operations-handbook">Ai Performance Monitoring Operations Handbook</Link></li>
+              <li><Link /blog/data-analytics-platform-modern-enterprise-2026-6905/>Data Analytics Platform Modern Enterprise 2026 6905</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026-6715/>Micro Saas Ai Customer Onboarding 2026 6715</Link></li>
+<li><Link /blog/cloud-native-app-development-2026-6950/>Cloud Native App Development 2026 6950</Link></li>
+<li><Link /blog/ai-performance-monitoring-operations-handbook/>Ai Performance Monitoring Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for ai agentic workflows: security and governance: workflow c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/multimodal-ai-vision-and-language-models-in-enterprise">Multimodal Ai Vision And Language Models In Enterprise</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-starter-template">Microsaas Expense Tracker Starter Template</Link></li>
-<li><Link href="/blog/endpoint-management-2026-6889">Endpoint Management 2026 6889</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-implementation-playbook">Microsaas Social Media Manager Implementation Playbook</Link></li>
+              <li><Link /blog/multimodal-ai-vision-and-language-models-in-enterprise/>Multimodal Ai Vision And Language Models In Enterprise</Link></li>
+<li><Link /blog/microsaas-expense-tracker-starter-template/>Microsaas Expense Tracker Starter Template</Link></li>
+<li><Link /blog/endpoint-management-2026-6889/>Endpoint Management 2026 6889</Link></li>
+<li><Link /blog/microsaas-social-media-manager-implementation-playbook/>Microsaas Social Media Manager Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

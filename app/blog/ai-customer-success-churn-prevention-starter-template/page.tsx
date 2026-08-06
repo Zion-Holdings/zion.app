@@ -57,10 +57,10 @@ Leading indicators for ai customer success churn prevention: starter template: w
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-orchestration-layer-starter-template">Api Orchestration Layer Starter Template</Link></li>
-<li><Link href="/blog/genai-devops-cicd-automation-roadmap">Genai Devops Cicd Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-2026">Ai Bdr Sdr 2026</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-case-study">Microsaas Expense Tracker Case Study</Link></li>
+              <li><Link /blog/api-orchestration-layer-starter-template/>Api Orchestration Layer Starter Template</Link></li>
+<li><Link /blog/genai-devops-cicd-automation-roadmap/>Genai Devops Cicd Automation Roadmap</Link></li>
+<li><Link /blog/ai-bdr-sdr-2026/>Ai Bdr Sdr 2026</Link></li>
+<li><Link /blog/microsaas-expense-tracker-case-study/>Microsaas Expense Tracker Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For database migration service: checklist for it leaders: pick one workflow, ass
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/edge-computing-deployment-2026">Edge Computing Deployment 2026</Link></li>
-<li><Link href="/blog/api-security-testing-2026">Api Security Testing 2026</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-automation-roadmap">Microsaas Expense Tracker Automation Roadmap</Link></li>
-<li><Link href="/blog/smart-contract-audit-checklist-for-it-leaders">Smart Contract Audit Checklist For It Leaders</Link></li>
+              <li><Link /blog/edge-computing-deployment-2026/>Edge Computing Deployment 2026</Link></li>
+<li><Link /blog/api-security-testing-2026/>Api Security Testing 2026</Link></li>
+<li><Link /blog/microsaas-expense-tracker-automation-roadmap/>Microsaas Expense Tracker Automation Roadmap</Link></li>
+<li><Link /blog/smart-contract-audit-checklist-for-it-leaders/>Smart Contract Audit Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/edge-computing-deployment-automation-roadmap">Edge Computing Deployment Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-api-gateway-checklist-for-it-leaders">Ai Api Gateway Checklist For It Leaders</Link></li>
-<li><Link href="/blog/it-consulting-implementation-playbook">It Consulting Implementation Playbook</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-6686">Smart Contract Audit 2026 6686</Link></li>
+              <li><Link /blog/edge-computing-deployment-automation-roadmap/>Edge Computing Deployment Automation Roadmap</Link></li>
+<li><Link /blog/ai-api-gateway-checklist-for-it-leaders/>Ai Api Gateway Checklist For It Leaders</Link></li>
+<li><Link /blog/it-consulting-implementation-playbook/>It Consulting Implementation Playbook</Link></li>
+<li><Link /blog/smart-contract-audit-2026-6686/>Smart Contract Audit 2026 6686</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

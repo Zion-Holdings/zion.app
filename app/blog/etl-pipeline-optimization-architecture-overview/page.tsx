@@ -54,10 +54,10 @@ If this guide matches your etl pipeline optimization: architecture overview init
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-social-media-manager-2026-6578">Micro Saas Ai Social Media Manager 2026 6578</Link></li>
-<li><Link href="/blog/accessibility-compliance-2026-6872">Accessibility Compliance 2026 6872</Link></li>
-<li><Link href="/blog/api-security-testing-2026-6968">Api Security Testing 2026 6968</Link></li>
-<li><Link href="/blog/cloud-finops-2026-6880">Cloud Finops 2026 6880</Link></li>
+              <li><Link /blog/micro-saas-ai-social-media-manager-2026-6578/>Micro Saas Ai Social Media Manager 2026 6578</Link></li>
+<li><Link /blog/accessibility-compliance-2026-6872/>Accessibility Compliance 2026 6872</Link></li>
+<li><Link /blog/api-security-testing-2026-6968/>Api Security Testing 2026 6968</Link></li>
+<li><Link /blog/cloud-finops-2026-6880/>Cloud Finops 2026 6880</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

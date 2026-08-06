@@ -57,10 +57,10 @@ Leading indicators for microsaas expense tracker: operations handbook: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-product-development-and-innovation">Ai For Product Development And Innovation</Link></li>
-<li><Link href="/blog/ai-customer-support-pro-2026-6702">Ai Customer Support Pro 2026 6702</Link></li>
-<li><Link href="/blog/api-integration-evaluation-framework">Api Integration Evaluation Framework</Link></li>
-<li><Link href="/blog/micro-saas-ai-translation-engine-2026-6781">Micro Saas Ai Translation Engine 2026 6781</Link></li>
+              <li><Link /blog/ai-for-product-development-and-innovation/>Ai For Product Development And Innovation</Link></li>
+<li><Link /blog/ai-customer-support-pro-2026-6702/>Ai Customer Support Pro 2026 6702</Link></li>
+<li><Link /blog/api-integration-evaluation-framework/>Api Integration Evaluation Framework</Link></li>
+<li><Link /blog/micro-saas-ai-translation-engine-2026-6781/>Micro Saas Ai Translation Engine 2026 6781</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

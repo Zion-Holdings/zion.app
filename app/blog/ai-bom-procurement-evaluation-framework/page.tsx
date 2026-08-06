@@ -54,10 +54,10 @@ If this guide matches your ai bom procurement: evaluation framework initiative, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-msp-security-compliance-deployment-patterns">Ai Msp Security Compliance Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-email-intelligence-2026-6769">Ai Email Intelligence 2026 6769</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-2026-6591">Autonomous Code Deployment 2026 6591</Link></li>
-<li><Link href="/blog/incident-response-retainer-2026-7033">Incident Response Retainer 2026 7033</Link></li>
+              <li><Link /blog/ai-msp-security-compliance-deployment-patterns/>Ai Msp Security Compliance Deployment Patterns</Link></li>
+<li><Link /blog/ai-email-intelligence-2026-6769/>Ai Email Intelligence 2026 6769</Link></li>
+<li><Link /blog/autonomous-code-deployment-2026-6591/>Autonomous Code Deployment 2026 6591</Link></li>
+<li><Link /blog/incident-response-retainer-2026-7033/>Incident Response Retainer 2026 7033</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

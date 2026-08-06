@@ -54,10 +54,10 @@ If this guide matches your devops ci/cd: evaluation framework initiative, the ne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-starter-template">Event Driven Architecture Starter Template</Link></li>
-<li><Link href="/blog/brand-voice-guardian-architecture-overview">Brand Voice Guardian Architecture Overview</Link></li>
-<li><Link href="/blog/container-security-lifecycle-automation-roadmap">Container Security Lifecycle Automation Roadmap</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-roi-and-cost-model">Autonomous Qa Engineering Roi And Cost Model</Link></li>
+              <li><Link /blog/event-driven-architecture-starter-template/>Event Driven Architecture Starter Template</Link></li>
+<li><Link /blog/brand-voice-guardian-architecture-overview/>Brand Voice Guardian Architecture Overview</Link></li>
+<li><Link /blog/container-security-lifecycle-automation-roadmap/>Container Security Lifecycle Automation Roadmap</Link></li>
+<li><Link /blog/autonomous-qa-engineering-roi-and-cost-model/>Autonomous Qa Engineering Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

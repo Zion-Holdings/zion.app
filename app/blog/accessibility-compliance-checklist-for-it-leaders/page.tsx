@@ -54,10 +54,10 @@ If this guide matches your accessibility compliance: checklist for it leaders in
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-autonomous-agents-architecture-overview">Ai Autonomous Agents Architecture Overview</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026">Ai Customer Success Churn 2026</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-common-mistakes">Data Warehouse Modernization Common Mistakes</Link></li>
-<li><Link href="/blog/graphql-federation-platform-roi-and-cost-model">Graphql Federation Platform Roi And Cost Model</Link></li>
+              <li><Link /blog/ai-autonomous-agents-architecture-overview/>Ai Autonomous Agents Architecture Overview</Link></li>
+<li><Link /blog/ai-customer-success-churn-2026/>Ai Customer Success Churn 2026</Link></li>
+<li><Link /blog/data-warehouse-modernization-common-mistakes/>Data Warehouse Modernization Common Mistakes</Link></li>
+<li><Link /blog/graphql-federation-platform-roi-and-cost-model/>Graphql Federation Platform Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

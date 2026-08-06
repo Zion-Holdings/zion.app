@@ -57,10 +57,10 @@ For cloud native app development: implementation playbook: pick one workflow, as
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-security-and-governance">Cloud Cost Ai Optimizer Security And Governance</Link></li>
-<li><Link href="/blog/automated-ai-reporting-2026-6935">Automated Ai Reporting 2026 6935</Link></li>
-<li><Link href="/blog/accessibility-compliance-case-study">Accessibility Compliance Case Study</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-6520">Api Orchestration Layer 2026 6520</Link></li>
+              <li><Link /blog/cloud-cost-ai-optimizer-security-and-governance/>Cloud Cost Ai Optimizer Security And Governance</Link></li>
+<li><Link /blog/automated-ai-reporting-2026-6935/>Automated Ai Reporting 2026 6935</Link></li>
+<li><Link /blog/accessibility-compliance-case-study/>Accessibility Compliance Case Study</Link></li>
+<li><Link /blog/api-orchestration-layer-2026-6520/>Api Orchestration Layer 2026 6520</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

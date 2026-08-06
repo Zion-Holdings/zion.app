@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/edge-computing-deployment-2026-7026">Edge Computing Deployment 2026 7026</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026-6917">Cloud Migration Services 2026 6917</Link></li>
-<li><Link href="/blog/genai-devops-cicd-checklist-for-it-leaders">Genai Devops Cicd Checklist For It Leaders</Link></li>
-<li><Link href="/blog/rag-for-enterprise-knowledge-bases">Rag For Enterprise Knowledge Bases</Link></li>
+              <li><Link /blog/edge-computing-deployment-2026-7026/>Edge Computing Deployment 2026 7026</Link></li>
+<li><Link /blog/cloud-migration-services-2026-6917/>Cloud Migration Services 2026 6917</Link></li>
+<li><Link /blog/genai-devops-cicd-checklist-for-it-leaders/>Genai Devops Cicd Checklist For It Leaders</Link></li>
+<li><Link /blog/rag-for-enterprise-knowledge-bases/>Rag For Enterprise Knowledge Bases</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

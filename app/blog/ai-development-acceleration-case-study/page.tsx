@@ -54,10 +54,10 @@ If this guide matches your ai development acceleration: case study initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-support-pro-2026-7047">Ai Customer Support Pro 2026 7047</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-2026-6519">Aiops Anomaly Detection 2026 6519</Link></li>
-<li><Link href="/blog/database-migration-service-2026-6540">Database Migration Service 2026 6540</Link></li>
-<li><Link href="/blog/api-security-testing-implementation-playbook">Api Security Testing Implementation Playbook</Link></li>
+              <li><Link /blog/ai-customer-support-pro-2026-7047/>Ai Customer Support Pro 2026 7047</Link></li>
+<li><Link /blog/aiops-anomaly-detection-2026-6519/>Aiops Anomaly Detection 2026 6519</Link></li>
+<li><Link /blog/database-migration-service-2026-6540/>Database Migration Service 2026 6540</Link></li>
+<li><Link /blog/api-security-testing-implementation-playbook/>Api Security Testing Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

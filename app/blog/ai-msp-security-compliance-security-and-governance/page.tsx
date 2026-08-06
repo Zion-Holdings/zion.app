@@ -54,10 +54,10 @@ If this guide matches your ai msp security compliance: security and governance i
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automation-orchestration-checklist-for-it-leaders">Automation Orchestration Checklist For It Leaders</Link></li>
-<li><Link href="/blog/incident-response-retainer-case-study">Incident Response Retainer Case Study</Link></li>
-<li><Link href="/blog/cloud-native-app-development-implementation-playbook">Cloud Native App Development Implementation Playbook</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-6592">Autonomous Qa Engineering 2026 6592</Link></li>
+              <li><Link /blog/automation-orchestration-checklist-for-it-leaders/>Automation Orchestration Checklist For It Leaders</Link></li>
+<li><Link /blog/incident-response-retainer-case-study/>Incident Response Retainer Case Study</Link></li>
+<li><Link /blog/cloud-native-app-development-implementation-playbook/>Cloud Native App Development Implementation Playbook</Link></li>
+<li><Link /blog/autonomous-qa-engineering-2026-6592/>Autonomous Qa Engineering 2026 6592</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

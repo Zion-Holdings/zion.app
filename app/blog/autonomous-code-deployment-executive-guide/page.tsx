@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-development-acceleration-2026">Ai Development Acceleration 2026</Link></li>
-<li><Link href="/blog/genai-devops-cicd-deployment-patterns">Genai Devops Cicd Deployment Patterns</Link></li>
-<li><Link href="/blog/api-orchestration-layer-policy-and-compliance">Api Orchestration Layer Policy And Compliance</Link></li>
-<li><Link href="/blog/api-security-testing-2026">Api Security Testing 2026</Link></li>
+              <li><Link /blog/ai-development-acceleration-2026/>Ai Development Acceleration 2026</Link></li>
+<li><Link /blog/genai-devops-cicd-deployment-patterns/>Genai Devops Cicd Deployment Patterns</Link></li>
+<li><Link /blog/api-orchestration-layer-policy-and-compliance/>Api Orchestration Layer Policy And Compliance</Link></li>
+<li><Link /blog/api-security-testing-2026/>Api Security Testing 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

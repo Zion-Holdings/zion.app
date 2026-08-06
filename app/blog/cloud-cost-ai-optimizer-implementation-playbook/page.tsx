@@ -57,10 +57,10 @@ For cloud cost ai optimizer: implementation playbook: pick one workflow, assign 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cybersecurity-for-msps-implementation-playbook">Cybersecurity For Msps Implementation Playbook</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-architecture-overview">Autonomous Qa Engineering Architecture Overview</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-policy-and-compliance">Microsaas Expense Tracker Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-common-mistakes">Ai Msp Security Compliance Common Mistakes</Link></li>
+              <li><Link /blog/cybersecurity-for-msps-implementation-playbook/>Cybersecurity For Msps Implementation Playbook</Link></li>
+<li><Link /blog/autonomous-qa-engineering-architecture-overview/>Autonomous Qa Engineering Architecture Overview</Link></li>
+<li><Link /blog/microsaas-expense-tracker-policy-and-compliance/>Microsaas Expense Tracker Policy And Compliance</Link></li>
+<li><Link /blog/ai-msp-security-compliance-common-mistakes/>Ai Msp Security Compliance Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

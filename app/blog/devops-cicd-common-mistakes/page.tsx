@@ -57,10 +57,10 @@ Leading indicators for devops ci/cd: common mistakes: workflow completion rate, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/accessibility-compliance-security-and-governance">Accessibility Compliance Security And Governance</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-implementation-playbook">Data Warehouse Modernization Implementation Playbook</Link></li>
-<li><Link href="/blog/network-infrastructure-vendor-evaluation">Network Infrastructure Vendor Evaluation</Link></li>
-<li><Link href="/blog/micro-saas-ai-translation-engine-2026">Micro Saas Ai Translation Engine 2026</Link></li>
+              <li><Link /blog/accessibility-compliance-security-and-governance/>Accessibility Compliance Security And Governance</Link></li>
+<li><Link /blog/data-warehouse-modernization-implementation-playbook/>Data Warehouse Modernization Implementation Playbook</Link></li>
+<li><Link /blog/network-infrastructure-vendor-evaluation/>Network Infrastructure Vendor Evaluation</Link></li>
+<li><Link /blog/micro-saas-ai-translation-engine-2026/>Micro Saas Ai Translation Engine 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

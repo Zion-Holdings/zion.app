@@ -57,10 +57,10 @@ Leading indicators for etl pipeline optimization: policy and compliance: workflo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-social-media-manager-architecture-overview">Microsaas Social Media Manager Architecture Overview</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-common-mistakes">Ai 3D Asset Generator Common Mistakes</Link></li>
-<li><Link href="/blog/cloud-finops-2026">Cloud Finops 2026</Link></li>
-<li><Link href="/blog/incident-response-retainer-policy-and-compliance">Incident Response Retainer Policy And Compliance</Link></li>
+              <li><Link /blog/microsaas-social-media-manager-architecture-overview/>Microsaas Social Media Manager Architecture Overview</Link></li>
+<li><Link /blog/ai-3d-asset-generator-common-mistakes/>Ai 3D Asset Generator Common Mistakes</Link></li>
+<li><Link /blog/cloud-finops-2026/>Cloud Finops 2026</Link></li>
+<li><Link /blog/incident-response-retainer-policy-and-compliance/>Incident Response Retainer Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

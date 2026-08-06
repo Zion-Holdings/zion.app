@@ -57,10 +57,10 @@ For cybersecurity for msps: architecture overview: pick one workflow, assign own
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-architecture-overview">Data Analytics Platform Architecture Overview</Link></li>
-<li><Link href="/blog/ai-agent-frameworks-for-business-automation">Ai Agent Frameworks For Business Automation</Link></li>
-<li><Link href="/blog/api-gateway-management-policy-and-compliance">Api Gateway Management Policy And Compliance</Link></li>
-<li><Link href="/blog/automated-ai-reporting-deployment-patterns">Automated Ai Reporting Deployment Patterns</Link></li>
+              <li><Link /blog/data-analytics-platform-architecture-overview/>Data Analytics Platform Architecture Overview</Link></li>
+<li><Link /blog/ai-agent-frameworks-for-business-automation/>Ai Agent Frameworks For Business Automation</Link></li>
+<li><Link /blog/api-gateway-management-policy-and-compliance/>Api Gateway Management Policy And Compliance</Link></li>
+<li><Link /blog/automated-ai-reporting-deployment-patterns/>Automated Ai Reporting Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

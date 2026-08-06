@@ -57,10 +57,10 @@ Leading indicators for endpoint management: operations handbook: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-support-vendor-evaluation">Ai Customer Support Vendor Evaluation</Link></li>
-<li><Link href="/blog/microsaas-translation-engine-checklist-for-it-leaders">Microsaas Translation Engine Checklist For It Leaders</Link></li>
-<li><Link href="/blog/edge-computing-deployment-vendor-evaluation">Edge Computing Deployment Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-2026">Ai Accessibility Auditor 2026</Link></li>
+              <li><Link /blog/ai-customer-support-vendor-evaluation/>Ai Customer Support Vendor Evaluation</Link></li>
+<li><Link /blog/microsaas-translation-engine-checklist-for-it-leaders/>Microsaas Translation Engine Checklist For It Leaders</Link></li>
+<li><Link /blog/edge-computing-deployment-vendor-evaluation/>Edge Computing Deployment Vendor Evaluation</Link></li>
+<li><Link /blog/ai-accessibility-auditor-2026/>Ai Accessibility Auditor 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

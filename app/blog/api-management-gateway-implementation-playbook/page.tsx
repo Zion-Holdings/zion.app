@@ -54,10 +54,10 @@ If this guide matches your api management gateway: implementation playbook initi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/5g-solutions-checklist-for-it-leaders">5G Solutions Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-development-acceleration-checklist-for-it-leaders">Ai Development Acceleration Checklist For It Leaders</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-automation-roadmap">Data Warehouse Modernization Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-operations-handbook">Ai Agent Tool Builder Operations Handbook</Link></li>
+              <li><Link /blog/5g-solutions-checklist-for-it-leaders/>5G Solutions Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-development-acceleration-checklist-for-it-leaders/>Ai Development Acceleration Checklist For It Leaders</Link></li>
+<li><Link /blog/data-warehouse-modernization-automation-roadmap/>Data Warehouse Modernization Automation Roadmap</Link></li>
+<li><Link /blog/ai-agent-tool-builder-operations-handbook/>Ai Agent Tool Builder Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for chaos engineering: executive guide: workflow completion r
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-translation-engine-common-mistakes">Microsaas Translation Engine Common Mistakes</Link></li>
-<li><Link href="/blog/ai-development-acceleration-architecture-overview">Ai Development Acceleration Architecture Overview</Link></li>
-<li><Link href="/blog/ai-api-gateway-checklist-for-it-leaders">Ai Api Gateway Checklist For It Leaders</Link></li>
-<li><Link href="/blog/database-migration-service-2026">Database Migration Service 2026</Link></li>
+              <li><Link /blog/microsaas-translation-engine-common-mistakes/>Microsaas Translation Engine Common Mistakes</Link></li>
+<li><Link /blog/ai-development-acceleration-architecture-overview/>Ai Development Acceleration Architecture Overview</Link></li>
+<li><Link /blog/ai-api-gateway-checklist-for-it-leaders/>Ai Api Gateway Checklist For It Leaders</Link></li>
+<li><Link /blog/database-migration-service-2026/>Database Migration Service 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

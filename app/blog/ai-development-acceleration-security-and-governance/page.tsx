@@ -54,10 +54,10 @@ If this guide matches your ai development acceleration: security and governance 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/accessibility-compliance-2026">Accessibility Compliance 2026</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-case-study">Ai Accessibility Auditor Case Study</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-executive-guide">Cyber Threat Intelligence Executive Guide</Link></li>
-<li><Link href="/blog/brand-voice-guardian-starter-template">Brand Voice Guardian Starter Template</Link></li>
+              <li><Link /blog/accessibility-compliance-2026/>Accessibility Compliance 2026</Link></li>
+<li><Link /blog/ai-accessibility-auditor-case-study/>Ai Accessibility Auditor Case Study</Link></li>
+<li><Link /blog/cyber-threat-intelligence-executive-guide/>Cyber Threat Intelligence Executive Guide</Link></li>
+<li><Link /blog/brand-voice-guardian-starter-template/>Brand Voice Guardian Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

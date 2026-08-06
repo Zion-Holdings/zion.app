@@ -57,10 +57,10 @@ For enterprise ai intelligence hub: vendor evaluation: pick one workflow, assign
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devops-cicd-case-study">Devops Cicd Case Study</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-roi-and-cost-model">Data Warehouse Modernization Roi And Cost Model</Link></li>
-<li><Link href="/blog/cloud-migration-services-operations-handbook">Cloud Migration Services Operations Handbook</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-policy-and-compliance">Autonomous Code Deployment Policy And Compliance</Link></li>
+              <li><Link /blog/devops-cicd-case-study/>Devops Cicd Case Study</Link></li>
+<li><Link /blog/data-warehouse-modernization-roi-and-cost-model/>Data Warehouse Modernization Roi And Cost Model</Link></li>
+<li><Link /blog/cloud-migration-services-operations-handbook/>Cloud Migration Services Operations Handbook</Link></li>
+<li><Link /blog/autonomous-code-deployment-policy-and-compliance/>Autonomous Code Deployment Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

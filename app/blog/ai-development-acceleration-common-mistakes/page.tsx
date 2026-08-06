@@ -57,10 +57,10 @@ For ai development acceleration: common mistakes: pick one workflow, assign owne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-performance-monitoring-deployment-patterns">Ai Performance Monitoring Deployment Patterns</Link></li>
-<li><Link href="/blog/network-infrastructure-2026">Network Infrastructure 2026</Link></li>
-<li><Link href="/blog/ai-it-operations-automation-2026-1">Ai It Operations Automation 2026 1</Link></li>
-<li><Link href="/blog/api-security-testing-2026-6968">Api Security Testing 2026 6968</Link></li>
+              <li><Link /blog/ai-performance-monitoring-deployment-patterns/>Ai Performance Monitoring Deployment Patterns</Link></li>
+<li><Link /blog/network-infrastructure-2026/>Network Infrastructure 2026</Link></li>
+<li><Link /blog/ai-it-operations-automation-2026-1/>Ai It Operations Automation 2026 1</Link></li>
+<li><Link /blog/api-security-testing-2026-6968/>Api Security Testing 2026 6968</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

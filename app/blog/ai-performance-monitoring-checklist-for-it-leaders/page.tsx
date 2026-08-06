@@ -57,10 +57,10 @@ Leading indicators for ai performance monitoring: checklist for it leaders: work
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-qa-engineering-deployment-patterns">Autonomous Qa Engineering Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-api-gateway-2026-6827">Ai Api Gateway 2026 6827</Link></li>
-<li><Link href="/blog/edge-computing-deployment-evaluation-framework">Edge Computing Deployment Evaluation Framework</Link></li>
-<li><Link href="/blog/it-consulting-automation-roadmap">It Consulting Automation Roadmap</Link></li>
+              <li><Link /blog/autonomous-qa-engineering-deployment-patterns/>Autonomous Qa Engineering Deployment Patterns</Link></li>
+<li><Link /blog/ai-api-gateway-2026-6827/>Ai Api Gateway 2026 6827</Link></li>
+<li><Link /blog/edge-computing-deployment-evaluation-framework/>Edge Computing Deployment Evaluation Framework</Link></li>
+<li><Link /blog/it-consulting-automation-roadmap/>It Consulting Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

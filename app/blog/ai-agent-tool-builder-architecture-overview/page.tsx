@@ -54,10 +54,10 @@ If this guide matches your ai agent tool builder: architecture overview initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-optimization-starter-template">Cloud Cost Optimization Starter Template</Link></li>
-<li><Link href="/blog/cloud-finops-starter-template">Cloud Finops Starter Template</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-operations-handbook">Enterprise Ai Intelligence Hub Operations Handbook</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026-6765">Cybersecurity Platform Msp 2026 6765</Link></li>
+              <li><Link /blog/cloud-cost-optimization-starter-template/>Cloud Cost Optimization Starter Template</Link></li>
+<li><Link /blog/cloud-finops-starter-template/>Cloud Finops Starter Template</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-operations-handbook/>Enterprise Ai Intelligence Hub Operations Handbook</Link></li>
+<li><Link /blog/cybersecurity-platform-msp-2026-6765/>Cybersecurity Platform Msp 2026 6765</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

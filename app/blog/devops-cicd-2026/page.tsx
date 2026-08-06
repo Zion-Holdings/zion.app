@@ -54,10 +54,10 @@ If this guide matches your devops ci/cd initiative, the next step is a scoping c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bdr-sdr-architecture-overview">Ai Bdr Sdr Architecture Overview</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-case-study">Ai Agentic Workflows Case Study</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-architecture-overview">Ai Autonomous Agents Architecture Overview</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-implementation-playbook">Microsaas Social Media Manager Implementation Playbook</Link></li>
+              <li><Link /blog/ai-bdr-sdr-architecture-overview/>Ai Bdr Sdr Architecture Overview</Link></li>
+<li><Link /blog/ai-agentic-workflows-case-study/>Ai Agentic Workflows Case Study</Link></li>
+<li><Link /blog/ai-autonomous-agents-architecture-overview/>Ai Autonomous Agents Architecture Overview</Link></li>
+<li><Link /blog/microsaas-social-media-manager-implementation-playbook/>Microsaas Social Media Manager Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

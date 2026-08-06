@@ -54,10 +54,10 @@ If this guide matches your devsecops pipeline: deployment patterns initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/brand-voice-guardian-security-and-governance">Brand Voice Guardian Security And Governance</Link></li>
-<li><Link href="/blog/chaos-engineering-automation-roadmap">Chaos Engineering Automation Roadmap</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-case-study">Autonomous Code Deployment Case Study</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026-6765">Cybersecurity Platform Msp 2026 6765</Link></li>
+              <li><Link /blog/brand-voice-guardian-security-and-governance/>Brand Voice Guardian Security And Governance</Link></li>
+<li><Link /blog/chaos-engineering-automation-roadmap/>Chaos Engineering Automation Roadmap</Link></li>
+<li><Link /blog/autonomous-code-deployment-case-study/>Autonomous Code Deployment Case Study</Link></li>
+<li><Link /blog/cybersecurity-platform-msp-2026-6765/>Cybersecurity Platform Msp 2026 6765</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

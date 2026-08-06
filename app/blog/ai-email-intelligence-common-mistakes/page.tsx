@@ -54,10 +54,10 @@ If this guide matches your ai email intelligence: common mistakes initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cyber-threat-intelligence-automation-roadmap">Cyber Threat Intelligence Automation Roadmap</Link></li>
-<li><Link href="/blog/genai-devops-cicd-roi-and-cost-model">Genai Devops Cicd Roi And Cost Model</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026-6559">Managed It Services Small Business 2026 6559</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-2026-6662">Ai Bdr Sdr 2026 6662</Link></li>
+              <li><Link /blog/cyber-threat-intelligence-automation-roadmap/>Cyber Threat Intelligence Automation Roadmap</Link></li>
+<li><Link /blog/genai-devops-cicd-roi-and-cost-model/>Genai Devops Cicd Roi And Cost Model</Link></li>
+<li><Link /blog/managed-it-services-small-business-2026-6559/>Managed It Services Small Business 2026 6559</Link></li>
+<li><Link /blog/ai-bdr-sdr-2026-6662/>Ai Bdr Sdr 2026 6662</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

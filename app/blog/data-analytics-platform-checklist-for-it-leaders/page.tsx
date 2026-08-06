@@ -57,10 +57,10 @@ For data analytics platform: checklist for it leaders: pick one workflow, assign
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-evaluation-framework">Ai Observability Evaluation Framework</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-6922">Micro Saas Ai Customer Onboarding 2026 6922</Link></li>
-<li><Link href="/blog/ai-data-backup-roi-and-cost-model">Ai Data Backup Roi And Cost Model</Link></li>
-<li><Link href="/blog/cloud-migration-services-architecture-overview">Cloud Migration Services Architecture Overview</Link></li>
+              <li><Link /blog/ai-observability-evaluation-framework/>Ai Observability Evaluation Framework</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026-6922/>Micro Saas Ai Customer Onboarding 2026 6922</Link></li>
+<li><Link /blog/ai-data-backup-roi-and-cost-model/>Ai Data Backup Roi And Cost Model</Link></li>
+<li><Link /blog/cloud-migration-services-architecture-overview/>Cloud Migration Services Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

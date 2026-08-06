@@ -57,10 +57,10 @@ Leading indicators for aiops anomaly detection: common mistakes: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-auditor-policy-and-compliance">Ai Accessibility Auditor Policy And Compliance</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-policy-and-compliance">Microsaas Expense Tracker Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-starter-template">Ai Ad Copy Generator Starter Template</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026">Ai Customer Success Churn 2026</Link></li>
+              <li><Link /blog/ai-accessibility-auditor-policy-and-compliance/>Ai Accessibility Auditor Policy And Compliance</Link></li>
+<li><Link /blog/microsaas-expense-tracker-policy-and-compliance/>Microsaas Expense Tracker Policy And Compliance</Link></li>
+<li><Link /blog/ai-ad-copy-generator-starter-template/>Ai Ad Copy Generator Starter Template</Link></li>
+<li><Link /blog/ai-customer-success-churn-2026/>Ai Customer Success Churn 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

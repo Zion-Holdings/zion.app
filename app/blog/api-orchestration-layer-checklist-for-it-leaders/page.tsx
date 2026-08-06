@@ -57,10 +57,10 @@ Leading indicators for api orchestration layer: checklist for it leaders: workfl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agentic-workflows-automation-roadmap">Ai Agentic Workflows Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-evaluation-framework">Ai Agent Safety Evaluation Evaluation Framework</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026">Cloud Cost Ai Optimizer 2026</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-automation-roadmap">Microsaas Expense Tracker Automation Roadmap</Link></li>
+              <li><Link /blog/ai-agentic-workflows-automation-roadmap/>Ai Agentic Workflows Automation Roadmap</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-evaluation-framework/>Ai Agent Safety Evaluation Evaluation Framework</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-2026/>Cloud Cost Ai Optimizer 2026</Link></li>
+<li><Link /blog/microsaas-expense-tracker-automation-roadmap/>Microsaas Expense Tracker Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

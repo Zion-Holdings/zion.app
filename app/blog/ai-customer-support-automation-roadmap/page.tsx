@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-social-media-manager-implementation-playbook">Microsaas Social Media Manager Implementation Playbook</Link></li>
-<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7043">Data Analytics Platform Modern Enterprise 2026 7043</Link></li>
-<li><Link href="/blog/api-management-gateway-security-and-governance">Api Management Gateway Security And Governance</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026-6862">Ai Agentic Workflows 2026 6862</Link></li>
+              <li><Link /blog/microsaas-social-media-manager-implementation-playbook/>Microsaas Social Media Manager Implementation Playbook</Link></li>
+<li><Link /blog/data-analytics-platform-modern-enterprise-2026-7043/>Data Analytics Platform Modern Enterprise 2026 7043</Link></li>
+<li><Link /blog/api-management-gateway-security-and-governance/>Api Management Gateway Security And Governance</Link></li>
+<li><Link /blog/ai-agentic-workflows-2026-6862/>Ai Agentic Workflows 2026 6862</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

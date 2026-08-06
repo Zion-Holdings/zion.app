@@ -57,10 +57,10 @@ Leading indicators for brand voice guardian: automation roadmap: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-autonomous-agents-operations-handbook">Ai Autonomous Agents Operations Handbook</Link></li>
-<li><Link href="/blog/automated-ai-reporting-checklist-for-it-leaders">Automated Ai Reporting Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cloud-migration-services-policy-and-compliance">Cloud Migration Services Policy And Compliance</Link></li>
-<li><Link href="/blog/container-security-lifecycle-checklist-for-it-leaders">Container Security Lifecycle Checklist For It Leaders</Link></li>
+              <li><Link /blog/ai-autonomous-agents-operations-handbook/>Ai Autonomous Agents Operations Handbook</Link></li>
+<li><Link /blog/automated-ai-reporting-checklist-for-it-leaders/>Automated Ai Reporting Checklist For It Leaders</Link></li>
+<li><Link /blog/cloud-migration-services-policy-and-compliance/>Cloud Migration Services Policy And Compliance</Link></li>
+<li><Link /blog/container-security-lifecycle-checklist-for-it-leaders/>Container Security Lifecycle Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

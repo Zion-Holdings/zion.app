@@ -57,10 +57,10 @@ Leading indicators for api integration: workflow completion rate, escalation rat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/etl-pipeline-optimization-implementation-playbook">Etl Pipeline Optimization Implementation Playbook</Link></li>
-<li><Link href="/blog/genai-devops-cicd-executive-guide">Genai Devops Cicd Executive Guide</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-common-mistakes">Ai Bdr Sdr Common Mistakes</Link></li>
-<li><Link href="/blog/automated-ai-reporting-2026">Automated Ai Reporting 2026</Link></li>
+              <li><Link /blog/etl-pipeline-optimization-implementation-playbook/>Etl Pipeline Optimization Implementation Playbook</Link></li>
+<li><Link /blog/genai-devops-cicd-executive-guide/>Genai Devops Cicd Executive Guide</Link></li>
+<li><Link /blog/ai-bdr-sdr-common-mistakes/>Ai Bdr Sdr Common Mistakes</Link></li>
+<li><Link /blog/automated-ai-reporting-2026/>Automated Ai Reporting 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

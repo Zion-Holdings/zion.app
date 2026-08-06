@@ -57,10 +57,10 @@ Leading indicators for aiops anomaly detection: vendor evaluation: workflow comp
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-policy-and-compliance">Devsecops Pipeline Policy And Compliance</Link></li>
-<li><Link href="/blog/brand-voice-guardian-policy-and-compliance">Brand Voice Guardian Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-evaluation-framework">Ai Bdr Sdr Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-deployment-patterns">Ai Msp Security Compliance Deployment Patterns</Link></li>
+              <li><Link /blog/devsecops-pipeline-policy-and-compliance/>Devsecops Pipeline Policy And Compliance</Link></li>
+<li><Link /blog/brand-voice-guardian-policy-and-compliance/>Brand Voice Guardian Policy And Compliance</Link></li>
+<li><Link /blog/ai-bdr-sdr-evaluation-framework/>Ai Bdr Sdr Evaluation Framework</Link></li>
+<li><Link /blog/ai-msp-security-compliance-deployment-patterns/>Ai Msp Security Compliance Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

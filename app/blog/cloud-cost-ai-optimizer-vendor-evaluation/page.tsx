@@ -57,10 +57,10 @@ For cloud cost ai optimizer: vendor evaluation: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-performance-testing-2026-6622">Api Performance Testing 2026 6622</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-2026-6662">Ai Bdr Sdr 2026 6662</Link></li>
-<li><Link href="/blog/ai-for-blockchain-and-web3-operations">Ai For Blockchain And Web3 Operations</Link></li>
-<li><Link href="/blog/ai-bom-procurement-2026-6939">Ai Bom Procurement 2026 6939</Link></li>
+              <li><Link /blog/api-performance-testing-2026-6622/>Api Performance Testing 2026 6622</Link></li>
+<li><Link /blog/ai-bdr-sdr-2026-6662/>Ai Bdr Sdr 2026 6662</Link></li>
+<li><Link /blog/ai-for-blockchain-and-web3-operations/>Ai For Blockchain And Web3 Operations</Link></li>
+<li><Link /blog/ai-bom-procurement-2026-6939/>Ai Bom Procurement 2026 6939</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

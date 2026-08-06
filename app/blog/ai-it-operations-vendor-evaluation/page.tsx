@@ -57,10 +57,10 @@ For ai it operations: vendor evaluation: pick one workflow, assign ownership, de
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-hr-recruitment-deployment-patterns">Microsaas Hr Recruitment Deployment Patterns</Link></li>
-<li><Link href="/blog/api-performance-testing-2026-6829">Api Performance Testing 2026 6829</Link></li>
-<li><Link href="/blog/devops-cicd-2026-6711">Devops Cicd 2026 6711</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-2026-6519">Aiops Anomaly Detection 2026 6519</Link></li>
+              <li><Link /blog/microsaas-hr-recruitment-deployment-patterns/>Microsaas Hr Recruitment Deployment Patterns</Link></li>
+<li><Link /blog/api-performance-testing-2026-6829/>Api Performance Testing 2026 6829</Link></li>
+<li><Link /blog/devops-cicd-2026-6711/>Devops Cicd 2026 6711</Link></li>
+<li><Link /blog/aiops-anomaly-detection-2026-6519/>Aiops Anomaly Detection 2026 6519</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

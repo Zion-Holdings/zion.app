@@ -57,10 +57,10 @@ Leading indicators for ai bdr sdr: common mistakes: workflow completion rate, es
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automated-ai-reporting-architecture-overview">Automated Ai Reporting Architecture Overview</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-security-and-governance">Ai Agent Safety Evaluation Security And Governance</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-roi-and-cost-model">Data Warehouse Modernization Roi And Cost Model</Link></li>
-<li><Link href="/blog/cloud-finops-implementation-playbook">Cloud Finops Implementation Playbook</Link></li>
+              <li><Link /blog/automated-ai-reporting-architecture-overview/>Automated Ai Reporting Architecture Overview</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-security-and-governance/>Ai Agent Safety Evaluation Security And Governance</Link></li>
+<li><Link /blog/data-warehouse-modernization-roi-and-cost-model/>Data Warehouse Modernization Roi And Cost Model</Link></li>
+<li><Link /blog/cloud-finops-implementation-playbook/>Cloud Finops Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

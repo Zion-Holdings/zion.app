@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-operations-handbook">It Consulting Operations Handbook</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-case-study">Ai Msp Security Compliance Case Study</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-policy-and-compliance">Microsaas Hr Recruitment Policy And Compliance</Link></li>
-<li><Link href="/blog/apm-application-performance-operations-handbook">Apm Application Performance Operations Handbook</Link></li>
+              <li><Link /blog/it-consulting-operations-handbook/>It Consulting Operations Handbook</Link></li>
+<li><Link /blog/ai-msp-security-compliance-case-study/>Ai Msp Security Compliance Case Study</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-policy-and-compliance/>Microsaas Hr Recruitment Policy And Compliance</Link></li>
+<li><Link /blog/apm-application-performance-operations-handbook/>Apm Application Performance Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

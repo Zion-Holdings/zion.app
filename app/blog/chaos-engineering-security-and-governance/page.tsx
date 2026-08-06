@@ -54,10 +54,10 @@ If this guide matches your chaos engineering: security and governance initiative
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/edge-computing-deployment-case-study">Edge Computing Deployment Case Study</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-case-study">Etl Pipeline Optimization Case Study</Link></li>
-<li><Link href="/blog/ai-it-operations-executive-guide">Ai It Operations Executive Guide</Link></li>
-<li><Link href="/blog/automated-ai-reporting-executive-guide">Automated Ai Reporting Executive Guide</Link></li>
+              <li><Link /blog/edge-computing-deployment-case-study/>Edge Computing Deployment Case Study</Link></li>
+<li><Link /blog/etl-pipeline-optimization-case-study/>Etl Pipeline Optimization Case Study</Link></li>
+<li><Link /blog/ai-it-operations-executive-guide/>Ai It Operations Executive Guide</Link></li>
+<li><Link /blog/automated-ai-reporting-executive-guide/>Automated Ai Reporting Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

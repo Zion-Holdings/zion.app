@@ -54,10 +54,10 @@ If this guide matches your ai performance monitoring: security and governance in
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-optimization-vendor-evaluation">Cloud Cost Optimization Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-case-study">Ai Msp Security Compliance Case Study</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-checklist-for-it-leaders">Ai Agent Tool Builder Checklist For It Leaders</Link></li>
-<li><Link href="/blog/chaos-engineering-starter-template">Chaos Engineering Starter Template</Link></li>
+              <li><Link /blog/cloud-cost-optimization-vendor-evaluation/>Cloud Cost Optimization Vendor Evaluation</Link></li>
+<li><Link /blog/ai-msp-security-compliance-case-study/>Ai Msp Security Compliance Case Study</Link></li>
+<li><Link /blog/ai-agent-tool-builder-checklist-for-it-leaders/>Ai Agent Tool Builder Checklist For It Leaders</Link></li>
+<li><Link /blog/chaos-engineering-starter-template/>Chaos Engineering Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

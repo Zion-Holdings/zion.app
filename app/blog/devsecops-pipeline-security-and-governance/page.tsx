@@ -57,10 +57,10 @@ For devsecops pipeline: security and governance: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-performance-testing-executive-guide">Api Performance Testing Executive Guide</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-vendor-evaluation">Enterprise Ai Intelligence Hub Vendor Evaluation</Link></li>
-<li><Link href="/blog/micro-saas-ai-social-media-manager-2026">Micro Saas Ai Social Media Manager 2026</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-security-and-governance">Autonomous Code Deployment Security And Governance</Link></li>
+              <li><Link /blog/api-performance-testing-executive-guide/>Api Performance Testing Executive Guide</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-vendor-evaluation/>Enterprise Ai Intelligence Hub Vendor Evaluation</Link></li>
+<li><Link /blog/micro-saas-ai-social-media-manager-2026/>Micro Saas Ai Social Media Manager 2026</Link></li>
+<li><Link /blog/autonomous-code-deployment-security-and-governance/>Autonomous Code Deployment Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

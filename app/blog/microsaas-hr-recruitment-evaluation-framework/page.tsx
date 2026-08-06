@@ -57,10 +57,10 @@ For microsaas hr recruitment: evaluation framework: pick one workflow, assign ow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automated-ai-reporting-policy-and-compliance">Automated Ai Reporting Policy And Compliance</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-automation-roadmap">Data Warehouse Modernization Automation Roadmap</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-security-and-governance">Cybersecurity For Msps Security And Governance</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026">Micro Saas Ai Expense Tracker 2026</Link></li>
+              <li><Link /blog/automated-ai-reporting-policy-and-compliance/>Automated Ai Reporting Policy And Compliance</Link></li>
+<li><Link /blog/data-warehouse-modernization-automation-roadmap/>Data Warehouse Modernization Automation Roadmap</Link></li>
+<li><Link /blog/cybersecurity-for-msps-security-and-governance/>Cybersecurity For Msps Security And Governance</Link></li>
+<li><Link /blog/micro-saas-ai-expense-tracker-2026/>Micro Saas Ai Expense Tracker 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

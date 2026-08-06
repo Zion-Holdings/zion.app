@@ -57,10 +57,10 @@ For graphql federation platform: executive guide: pick one workflow, assign owne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-auditor-common-mistakes">Ai Accessibility Auditor Common Mistakes</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-checklist-for-it-leaders">Cybersecurity For Msps Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-implementation-playbook">Ai Performance Monitoring Implementation Playbook</Link></li>
-<li><Link href="/blog/5g-solutions-security-and-governance">5G Solutions Security And Governance</Link></li>
+              <li><Link /blog/ai-accessibility-auditor-common-mistakes/>Ai Accessibility Auditor Common Mistakes</Link></li>
+<li><Link /blog/cybersecurity-for-msps-checklist-for-it-leaders/>Cybersecurity For Msps Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-performance-monitoring-implementation-playbook/>Ai Performance Monitoring Implementation Playbook</Link></li>
+<li><Link /blog/5g-solutions-security-and-governance/>5G Solutions Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

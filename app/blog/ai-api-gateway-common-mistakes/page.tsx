@@ -57,10 +57,10 @@ For ai api gateway: common mistakes: pick one workflow, assign ownership, define
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-success-churn-prevention-policy-and-compliance">Ai Customer Success Churn Prevention Policy And Compliance</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-implementation-playbook">Etl Pipeline Optimization Implementation Playbook</Link></li>
-<li><Link href="/blog/api-integration-operations-handbook">Api Integration Operations Handbook</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-deployment-patterns">Cloud Cost Ai Optimizer Deployment Patterns</Link></li>
+              <li><Link /blog/ai-customer-success-churn-prevention-policy-and-compliance/>Ai Customer Success Churn Prevention Policy And Compliance</Link></li>
+<li><Link /blog/etl-pipeline-optimization-implementation-playbook/>Etl Pipeline Optimization Implementation Playbook</Link></li>
+<li><Link /blog/api-integration-operations-handbook/>Api Integration Operations Handbook</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-deployment-patterns/>Cloud Cost Ai Optimizer Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

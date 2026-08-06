@@ -57,10 +57,10 @@ Leading indicators for ai bdr sdr: starter template: workflow completion rate, e
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-3d-asset-generator-2026">Ai 3D Asset Generator 2026</Link></li>
-<li><Link href="/blog/api-management-gateway-deployment-patterns">Api Management Gateway Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026">Ai Ad Copy Generator 2026</Link></li>
-<li><Link href="/blog/genai-devops-cicd-evaluation-framework">Genai Devops Cicd Evaluation Framework</Link></li>
+              <li><Link /blog/ai-3d-asset-generator-2026/>Ai 3D Asset Generator 2026</Link></li>
+<li><Link /blog/api-management-gateway-deployment-patterns/>Api Management Gateway Deployment Patterns</Link></li>
+<li><Link /blog/ai-ad-copy-generator-2026/>Ai Ad Copy Generator 2026</Link></li>
+<li><Link /blog/genai-devops-cicd-evaluation-framework/>Genai Devops Cicd Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

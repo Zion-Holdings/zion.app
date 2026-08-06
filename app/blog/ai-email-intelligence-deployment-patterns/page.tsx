@@ -57,10 +57,10 @@ For ai email intelligence: deployment patterns: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bdr-sdr-checklist-for-it-leaders">Ai Bdr Sdr Checklist For It Leaders</Link></li>
-<li><Link href="/blog/data-analytics-platform-security-and-governance">Data Analytics Platform Security And Governance</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026">Cloud Cost Optimization Checklist 2026</Link></li>
-<li><Link href="/blog/devsecops-pipeline-vendor-evaluation">Devsecops Pipeline Vendor Evaluation</Link></li>
+              <li><Link /blog/ai-bdr-sdr-checklist-for-it-leaders/>Ai Bdr Sdr Checklist For It Leaders</Link></li>
+<li><Link /blog/data-analytics-platform-security-and-governance/>Data Analytics Platform Security And Governance</Link></li>
+<li><Link /blog/cloud-cost-optimization-checklist-2026/>Cloud Cost Optimization Checklist 2026</Link></li>
+<li><Link /blog/devsecops-pipeline-vendor-evaluation/>Devsecops Pipeline Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

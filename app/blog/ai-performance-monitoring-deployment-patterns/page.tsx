@@ -57,10 +57,10 @@ Leading indicators for ai performance monitoring: deployment patterns: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/container-security-lifecycle-implementation-playbook">Container Security Lifecycle Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-case-study">Ai Msp Security Compliance Case Study</Link></li>
-<li><Link href="/blog/apm-application-performance-policy-and-compliance">Apm Application Performance Policy And Compliance</Link></li>
-<li><Link href="/blog/automated-ai-reporting-policy-and-compliance">Automated Ai Reporting Policy And Compliance</Link></li>
+              <li><Link /blog/container-security-lifecycle-implementation-playbook/>Container Security Lifecycle Implementation Playbook</Link></li>
+<li><Link /blog/ai-msp-security-compliance-case-study/>Ai Msp Security Compliance Case Study</Link></li>
+<li><Link /blog/apm-application-performance-policy-and-compliance/>Apm Application Performance Policy And Compliance</Link></li>
+<li><Link /blog/automated-ai-reporting-policy-and-compliance/>Automated Ai Reporting Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

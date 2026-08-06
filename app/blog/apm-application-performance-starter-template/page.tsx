@@ -57,10 +57,10 @@ Leading indicators for apm application performance: starter template: workflow c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-migration-service-executive-guide">Database Migration Service Executive Guide</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026">Ai Accessibility Optimizer 2026</Link></li>
-<li><Link href="/blog/container-security-lifecycle-checklist-for-it-leaders">Container Security Lifecycle Checklist For It Leaders</Link></li>
-<li><Link href="/blog/container-security-lifecycle-policy-and-compliance">Container Security Lifecycle Policy And Compliance</Link></li>
+              <li><Link /blog/database-migration-service-executive-guide/>Database Migration Service Executive Guide</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-2026/>Ai Accessibility Optimizer 2026</Link></li>
+<li><Link /blog/container-security-lifecycle-checklist-for-it-leaders/>Container Security Lifecycle Checklist For It Leaders</Link></li>
+<li><Link /blog/container-security-lifecycle-policy-and-compliance/>Container Security Lifecycle Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

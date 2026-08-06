@@ -54,10 +54,10 @@ If this guide matches your autonomous qa engineering: security and governance in
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-architecture-overview">Api Management Gateway Architecture Overview</Link></li>
-<li><Link href="/blog/network-infrastructure-case-study">Network Infrastructure Case Study</Link></li>
-<li><Link href="/blog/devops-cicd-case-study">Devops Cicd Case Study</Link></li>
-<li><Link href="/blog/automation-orchestration-enterprise-2026">Automation Orchestration Enterprise 2026</Link></li>
+              <li><Link /blog/api-management-gateway-architecture-overview/>Api Management Gateway Architecture Overview</Link></li>
+<li><Link /blog/network-infrastructure-case-study/>Network Infrastructure Case Study</Link></li>
+<li><Link /blog/devops-cicd-case-study/>Devops Cicd Case Study</Link></li>
+<li><Link /blog/automation-orchestration-enterprise-2026/>Automation Orchestration Enterprise 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

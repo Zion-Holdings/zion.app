@@ -57,10 +57,10 @@ Leading indicators for cloud finops: case study: workflow completion rate, escal
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-deployment-patterns">Cloud Cost Ai Optimizer Deployment Patterns</Link></li>
-<li><Link href="/blog/smart-contract-audit-checklist-for-it-leaders">Smart Contract Audit Checklist For It Leaders</Link></li>
-<li><Link href="/blog/endpoint-management-executive-guide">Endpoint Management Executive Guide</Link></li>
-<li><Link href="/blog/api-performance-testing-checklist-for-it-leaders">Api Performance Testing Checklist For It Leaders</Link></li>
+              <li><Link /blog/cloud-cost-ai-optimizer-deployment-patterns/>Cloud Cost Ai Optimizer Deployment Patterns</Link></li>
+<li><Link /blog/smart-contract-audit-checklist-for-it-leaders/>Smart Contract Audit Checklist For It Leaders</Link></li>
+<li><Link /blog/endpoint-management-executive-guide/>Endpoint Management Executive Guide</Link></li>
+<li><Link /blog/api-performance-testing-checklist-for-it-leaders/>Api Performance Testing Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

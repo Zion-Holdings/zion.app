@@ -54,10 +54,10 @@ If this guide matches your api orchestration layer: security and governance init
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-checklist-for-it-leaders">Cloud Finops Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-automation-roadmap">Ai Agent Tool Builder Automation Roadmap</Link></li>
-<li><Link href="/blog/database-migration-service-security-and-governance">Database Migration Service Security And Governance</Link></li>
-<li><Link href="/blog/api-integration-implementation-playbook">Api Integration Implementation Playbook</Link></li>
+              <li><Link /blog/cloud-finops-checklist-for-it-leaders/>Cloud Finops Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-agent-tool-builder-automation-roadmap/>Ai Agent Tool Builder Automation Roadmap</Link></li>
+<li><Link /blog/database-migration-service-security-and-governance/>Database Migration Service Security And Governance</Link></li>
+<li><Link /blog/api-integration-implementation-playbook/>Api Integration Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

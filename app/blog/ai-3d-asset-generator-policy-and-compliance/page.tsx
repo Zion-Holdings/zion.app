@@ -57,10 +57,10 @@ For ai 3d asset generator: policy and compliance: pick one workflow, assign owne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-3d-asset-generator-case-study">Ai 3D Asset Generator Case Study</Link></li>
-<li><Link href="/blog/chaos-engineering-2026-6671">Chaos Engineering 2026 6671</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-6557">Cloud Cost Optimization Checklist 2026 6557</Link></li>
-<li><Link href="/blog/rag-for-enterprise-knowledge-bases">Rag For Enterprise Knowledge Bases</Link></li>
+              <li><Link /blog/ai-3d-asset-generator-case-study/>Ai 3D Asset Generator Case Study</Link></li>
+<li><Link /blog/chaos-engineering-2026-6671/>Chaos Engineering 2026 6671</Link></li>
+<li><Link /blog/cloud-cost-optimization-checklist-2026-6557/>Cloud Cost Optimization Checklist 2026 6557</Link></li>
+<li><Link /blog/rag-for-enterprise-knowledge-bases/>Rag For Enterprise Knowledge Bases</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

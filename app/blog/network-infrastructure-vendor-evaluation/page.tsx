@@ -57,10 +57,10 @@ Leading indicators for network infrastructure: vendor evaluation: workflow compl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/5g-solutions-starter-template">5G Solutions Starter Template</Link></li>
-<li><Link href="/blog/network-infrastructure-automation-roadmap">Network Infrastructure Automation Roadmap</Link></li>
-<li><Link href="/blog/api-integration-implementation-playbook">Api Integration Implementation Playbook</Link></li>
-<li><Link href="/blog/graphql-federation-platform-checklist-for-it-leaders">Graphql Federation Platform Checklist For It Leaders</Link></li>
+              <li><Link /blog/5g-solutions-starter-template/>5G Solutions Starter Template</Link></li>
+<li><Link /blog/network-infrastructure-automation-roadmap/>Network Infrastructure Automation Roadmap</Link></li>
+<li><Link /blog/api-integration-implementation-playbook/>Api Integration Implementation Playbook</Link></li>
+<li><Link /blog/graphql-federation-platform-checklist-for-it-leaders/>Graphql Federation Platform Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

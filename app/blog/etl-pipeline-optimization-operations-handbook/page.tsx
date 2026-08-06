@@ -57,10 +57,10 @@ For etl pipeline optimization: operations handbook: pick one workflow, assign ow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-msp-security-compliance-2026">Ai Msp Security Compliance 2026</Link></li>
-<li><Link href="/blog/apm-application-performance-policy-and-compliance">Apm Application Performance Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-operations-handbook">Ai Accessibility Optimizer Operations Handbook</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026">Micro Saas Ai Customer Onboarding 2026</Link></li>
+              <li><Link /blog/ai-msp-security-compliance-2026/>Ai Msp Security Compliance 2026</Link></li>
+<li><Link /blog/apm-application-performance-policy-and-compliance/>Apm Application Performance Policy And Compliance</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-operations-handbook/>Ai Accessibility Optimizer Operations Handbook</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026/>Micro Saas Ai Customer Onboarding 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For autonomous code deployment: common mistakes: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/incident-response-retainer-policy-and-compliance">Incident Response Retainer Policy And Compliance</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-evaluation-framework">Microsaas Social Media Manager Evaluation Framework</Link></li>
-<li><Link href="/blog/graphql-federation-platform-case-study">Graphql Federation Platform Case Study</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-roi-and-cost-model">Cloud Cost Optimization Roi And Cost Model</Link></li>
+              <li><Link /blog/incident-response-retainer-policy-and-compliance/>Incident Response Retainer Policy And Compliance</Link></li>
+<li><Link /blog/microsaas-social-media-manager-evaluation-framework/>Microsaas Social Media Manager Evaluation Framework</Link></li>
+<li><Link /blog/graphql-federation-platform-case-study/>Graphql Federation Platform Case Study</Link></li>
+<li><Link /blog/cloud-cost-optimization-roi-and-cost-model/>Cloud Cost Optimization Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

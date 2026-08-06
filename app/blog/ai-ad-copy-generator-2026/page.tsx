@@ -57,10 +57,10 @@ For ai ad copy generator: pick one workflow, assign ownership, define success me
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automated-ai-reporting-evaluation-framework">Automated Ai Reporting Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-2026">Ai 3D Asset Generator 2026</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-common-mistakes">Ai Ad Copy Generator Common Mistakes</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-operations-handbook">Ai Data Lakehouse Pipelines Operations Handbook</Link></li>
+              <li><Link /blog/automated-ai-reporting-evaluation-framework/>Automated Ai Reporting Evaluation Framework</Link></li>
+<li><Link /blog/ai-3d-asset-generator-2026/>Ai 3D Asset Generator 2026</Link></li>
+<li><Link /blog/ai-ad-copy-generator-common-mistakes/>Ai Ad Copy Generator Common Mistakes</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-operations-handbook/>Ai Data Lakehouse Pipelines Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

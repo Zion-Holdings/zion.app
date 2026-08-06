@@ -57,10 +57,10 @@ For ai agentic workflows: operations handbook: pick one workflow, assign ownersh
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/accessibility-compliance-checklist-for-it-leaders">Accessibility Compliance Checklist For It Leaders</Link></li>
-<li><Link href="/blog/accessibility-compliance-implementation-playbook">Accessibility Compliance Implementation Playbook</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-deployment-patterns">Cyber Threat Intelligence Deployment Patterns</Link></li>
-<li><Link href="/blog/devsecops-pipeline-executive-guide">Devsecops Pipeline Executive Guide</Link></li>
+              <li><Link /blog/accessibility-compliance-checklist-for-it-leaders/>Accessibility Compliance Checklist For It Leaders</Link></li>
+<li><Link /blog/accessibility-compliance-implementation-playbook/>Accessibility Compliance Implementation Playbook</Link></li>
+<li><Link /blog/cyber-threat-intelligence-deployment-patterns/>Cyber Threat Intelligence Deployment Patterns</Link></li>
+<li><Link /blog/devsecops-pipeline-executive-guide/>Devsecops Pipeline Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For autonomous qa engineering: roi and cost model: pick one workflow, assign own
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-development-acceleration-policy-and-compliance">Ai Development Acceleration Policy And Compliance</Link></li>
-<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026">Micro Saas Ai Hr Recruitment 2026</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-starter-template">Cloud Cost Ai Optimizer Starter Template</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026">Cybersecurity Platform Msp 2026</Link></li>
+              <li><Link /blog/ai-development-acceleration-policy-and-compliance/>Ai Development Acceleration Policy And Compliance</Link></li>
+<li><Link /blog/micro-saas-ai-hr-recruitment-2026/>Micro Saas Ai Hr Recruitment 2026</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-starter-template/>Cloud Cost Ai Optimizer Starter Template</Link></li>
+<li><Link /blog/cybersecurity-platform-msp-2026/>Cybersecurity Platform Msp 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

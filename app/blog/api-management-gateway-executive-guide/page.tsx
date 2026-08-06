@@ -57,10 +57,10 @@ Leading indicators for api management gateway: executive guide: workflow complet
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-translation-engine-case-study">Microsaas Translation Engine Case Study</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-evaluation-framework">Cyber Threat Intelligence Evaluation Framework</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-vendor-evaluation">Microsaas Social Media Manager Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026">Ai Accessibility Optimizer 2026</Link></li>
+              <li><Link /blog/microsaas-translation-engine-case-study/>Microsaas Translation Engine Case Study</Link></li>
+<li><Link /blog/cyber-threat-intelligence-evaluation-framework/>Cyber Threat Intelligence Evaluation Framework</Link></li>
+<li><Link /blog/microsaas-social-media-manager-vendor-evaluation/>Microsaas Social Media Manager Vendor Evaluation</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-2026/>Ai Accessibility Optimizer 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

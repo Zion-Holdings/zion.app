@@ -57,10 +57,10 @@ Leading indicators for devops ci/cd: roi and cost model: workflow completion rat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-orchestration-layer-checklist-for-it-leaders">Api Orchestration Layer Checklist For It Leaders</Link></li>
-<li><Link href="/blog/brand-voice-guardian-starter-template">Brand Voice Guardian Starter Template</Link></li>
-<li><Link href="/blog/network-infrastructure-automation-roadmap">Network Infrastructure Automation Roadmap</Link></li>
-<li><Link href="/blog/genai-devops-cicd-common-mistakes">Genai Devops Cicd Common Mistakes</Link></li>
+              <li><Link /blog/api-orchestration-layer-checklist-for-it-leaders/>Api Orchestration Layer Checklist For It Leaders</Link></li>
+<li><Link /blog/brand-voice-guardian-starter-template/>Brand Voice Guardian Starter Template</Link></li>
+<li><Link /blog/network-infrastructure-automation-roadmap/>Network Infrastructure Automation Roadmap</Link></li>
+<li><Link /blog/genai-devops-cicd-common-mistakes/>Genai Devops Cicd Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

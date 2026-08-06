@@ -57,10 +57,10 @@ For ai customer success churn prevention: case study: pick one workflow, assign 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-success-churn-prevention-policy-and-compliance">Ai Customer Success Churn Prevention Policy And Compliance</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-6520">Api Orchestration Layer 2026 6520</Link></li>
-<li><Link href="/blog/incident-response-retainer-2026-6895">Incident Response Retainer 2026 6895</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-6824">Smart Contract Audit 2026 6824</Link></li>
+              <li><Link /blog/ai-customer-success-churn-prevention-policy-and-compliance/>Ai Customer Success Churn Prevention Policy And Compliance</Link></li>
+<li><Link /blog/api-orchestration-layer-2026-6520/>Api Orchestration Layer 2026 6520</Link></li>
+<li><Link /blog/incident-response-retainer-2026-6895/>Incident Response Retainer 2026 6895</Link></li>
+<li><Link /blog/smart-contract-audit-2026-6824/>Smart Contract Audit 2026 6824</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

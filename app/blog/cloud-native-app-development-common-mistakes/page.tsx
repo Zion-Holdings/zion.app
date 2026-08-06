@@ -57,10 +57,10 @@ For cloud native app development: common mistakes: pick one workflow, assign own
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-ad-copy-generator-automation-roadmap">Ai Ad Copy Generator Automation Roadmap</Link></li>
-<li><Link href="/blog/api-management-gateway-implementation-playbook">Api Management Gateway Implementation Playbook</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-security-and-governance">Microsaas Expense Tracker Security And Governance</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026">Api Orchestration Layer 2026</Link></li>
+              <li><Link /blog/ai-ad-copy-generator-automation-roadmap/>Ai Ad Copy Generator Automation Roadmap</Link></li>
+<li><Link /blog/api-management-gateway-implementation-playbook/>Api Management Gateway Implementation Playbook</Link></li>
+<li><Link /blog/microsaas-expense-tracker-security-and-governance/>Microsaas Expense Tracker Security And Governance</Link></li>
+<li><Link /blog/api-orchestration-layer-2026/>Api Orchestration Layer 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

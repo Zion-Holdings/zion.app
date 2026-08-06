@@ -57,10 +57,10 @@ For container security lifecycle: common mistakes: pick one workflow, assign own
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-support-pro-2026">Ai Customer Support Pro 2026</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-architecture-overview">Microsaas Hr Recruitment Architecture Overview</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-evaluation-framework">Data Warehouse Modernization Evaluation Framework</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-policy-and-compliance">Enterprise Ai Intelligence Hub Policy And Compliance</Link></li>
+              <li><Link /blog/ai-customer-support-pro-2026/>Ai Customer Support Pro 2026</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-architecture-overview/>Microsaas Hr Recruitment Architecture Overview</Link></li>
+<li><Link /blog/data-warehouse-modernization-evaluation-framework/>Data Warehouse Modernization Evaluation Framework</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-policy-and-compliance/>Enterprise Ai Intelligence Hub Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

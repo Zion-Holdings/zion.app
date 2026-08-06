@@ -57,10 +57,10 @@ For cloud cost optimization: policy and compliance: pick one workflow, assign ow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automated-ai-reporting-roi-and-cost-model">Automated Ai Reporting Roi And Cost Model</Link></li>
-<li><Link href="/blog/devops-cicd-starter-template">Devops Cicd Starter Template</Link></li>
-<li><Link href="/blog/api-management-gateway-2026-6531">Api Management Gateway 2026 6531</Link></li>
-<li><Link href="/blog/event-driven-architecture-2026-6685">Event Driven Architecture 2026 6685</Link></li>
+              <li><Link /blog/automated-ai-reporting-roi-and-cost-model/>Automated Ai Reporting Roi And Cost Model</Link></li>
+<li><Link /blog/devops-cicd-starter-template/>Devops Cicd Starter Template</Link></li>
+<li><Link /blog/api-management-gateway-2026-6531/>Api Management Gateway 2026 6531</Link></li>
+<li><Link /blog/event-driven-architecture-2026-6685/>Event Driven Architecture 2026 6685</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

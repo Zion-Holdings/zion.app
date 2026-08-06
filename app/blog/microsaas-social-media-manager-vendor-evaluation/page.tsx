@@ -54,10 +54,10 @@ If this guide matches your microsaas social media manager: vendor evaluation ini
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-roi-and-cost-model">Graphql Federation Platform Roi And Cost Model</Link></li>
-<li><Link href="/blog/edge-computing-deployment-executive-guide">Edge Computing Deployment Executive Guide</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-executive-guide">Microsaas Hr Recruitment Executive Guide</Link></li>
-<li><Link href="/blog/api-security-testing-vendor-evaluation">Api Security Testing Vendor Evaluation</Link></li>
+              <li><Link /blog/graphql-federation-platform-roi-and-cost-model/>Graphql Federation Platform Roi And Cost Model</Link></li>
+<li><Link /blog/edge-computing-deployment-executive-guide/>Edge Computing Deployment Executive Guide</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-executive-guide/>Microsaas Hr Recruitment Executive Guide</Link></li>
+<li><Link /blog/api-security-testing-vendor-evaluation/>Api Security Testing Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

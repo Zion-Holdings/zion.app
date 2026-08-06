@@ -57,10 +57,10 @@ Leading indicators for api security testing: architecture overview: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-code-deployment-2026">Autonomous Code Deployment 2026</Link></li>
-<li><Link href="/blog/ai-api-gateway-case-study">Ai Api Gateway Case Study</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-case-study">Microsaas Social Media Manager Case Study</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-operations-handbook">Ai Msp Security Compliance Operations Handbook</Link></li>
+              <li><Link /blog/autonomous-code-deployment-2026/>Autonomous Code Deployment 2026</Link></li>
+<li><Link /blog/ai-api-gateway-case-study/>Ai Api Gateway Case Study</Link></li>
+<li><Link /blog/microsaas-social-media-manager-case-study/>Microsaas Social Media Manager Case Study</Link></li>
+<li><Link /blog/ai-msp-security-compliance-operations-handbook/>Ai Msp Security Compliance Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

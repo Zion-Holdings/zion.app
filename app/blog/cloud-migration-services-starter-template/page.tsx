@@ -57,10 +57,10 @@ Leading indicators for cloud migration services: starter template: workflow comp
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/container-security-lifecycle-common-mistakes">Container Security Lifecycle Common Mistakes</Link></li>
-<li><Link href="/blog/managed-it-services-roi-and-cost-model">Managed It Services Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-checklist-for-it-leaders">Ai Ad Copy Generator Checklist For It Leaders</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-vendor-evaluation">Etl Pipeline Optimization Vendor Evaluation</Link></li>
+              <li><Link /blog/container-security-lifecycle-common-mistakes/>Container Security Lifecycle Common Mistakes</Link></li>
+<li><Link /blog/managed-it-services-roi-and-cost-model/>Managed It Services Roi And Cost Model</Link></li>
+<li><Link /blog/ai-ad-copy-generator-checklist-for-it-leaders/>Ai Ad Copy Generator Checklist For It Leaders</Link></li>
+<li><Link /blog/etl-pipeline-optimization-vendor-evaluation/>Etl Pipeline Optimization Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for graphql federation platform: architecture overview: workf
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-auditor-policy-and-compliance">Ai Accessibility Auditor Policy And Compliance</Link></li>
-<li><Link href="/blog/endpoint-management-vendor-evaluation">Endpoint Management Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-observability-implementation-playbook">Ai Observability Implementation Playbook</Link></li>
-<li><Link href="/blog/api-security-testing-policy-and-compliance">Api Security Testing Policy And Compliance</Link></li>
+              <li><Link /blog/ai-accessibility-auditor-policy-and-compliance/>Ai Accessibility Auditor Policy And Compliance</Link></li>
+<li><Link /blog/endpoint-management-vendor-evaluation/>Endpoint Management Vendor Evaluation</Link></li>
+<li><Link /blog/ai-observability-implementation-playbook/>Ai Observability Implementation Playbook</Link></li>
+<li><Link /blog/api-security-testing-policy-and-compliance/>Api Security Testing Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

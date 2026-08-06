@@ -57,10 +57,10 @@ For ai agent tool builder: automation roadmap: pick one workflow, assign ownersh
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-policy-and-compliance">Devsecops Pipeline Policy And Compliance</Link></li>
-<li><Link href="/blog/devops-cicd-implementation-playbook">Devops Cicd Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-security-and-governance">Ai Agent Tool Builder Security And Governance</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-implementation-playbook">Ai Accessibility Optimizer Implementation Playbook</Link></li>
+              <li><Link /blog/devsecops-pipeline-policy-and-compliance/>Devsecops Pipeline Policy And Compliance</Link></li>
+<li><Link /blog/devops-cicd-implementation-playbook/>Devops Cicd Implementation Playbook</Link></li>
+<li><Link /blog/ai-agent-tool-builder-security-and-governance/>Ai Agent Tool Builder Security And Governance</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-implementation-playbook/>Ai Accessibility Optimizer Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

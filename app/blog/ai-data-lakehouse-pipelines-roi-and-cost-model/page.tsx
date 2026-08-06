@@ -54,10 +54,10 @@ If this guide matches your ai data lakehouse pipelines: roi and cost model initi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-expense-tracker-executive-guide">Microsaas Expense Tracker Executive Guide</Link></li>
-<li><Link href="/blog/cloud-native-app-development-operations-handbook">Cloud Native App Development Operations Handbook</Link></li>
-<li><Link href="/blog/ai-bom-procurement-2026-6939">Ai Bom Procurement 2026 6939</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-executive-guide">Data Warehouse Modernization Executive Guide</Link></li>
+              <li><Link /blog/microsaas-expense-tracker-executive-guide/>Microsaas Expense Tracker Executive Guide</Link></li>
+<li><Link /blog/cloud-native-app-development-operations-handbook/>Cloud Native App Development Operations Handbook</Link></li>
+<li><Link /blog/ai-bom-procurement-2026-6939/>Ai Bom Procurement 2026 6939</Link></li>
+<li><Link /blog/data-warehouse-modernization-executive-guide/>Data Warehouse Modernization Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

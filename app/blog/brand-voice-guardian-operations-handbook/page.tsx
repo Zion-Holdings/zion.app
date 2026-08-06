@@ -57,10 +57,10 @@ For brand voice guardian: operations handbook: pick one workflow, assign ownersh
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automated-ai-reporting-checklist-for-it-leaders">Automated Ai Reporting Checklist For It Leaders</Link></li>
-<li><Link href="/blog/managed-it-services-case-study">Managed It Services Case Study</Link></li>
-<li><Link href="/blog/micro-saas-ai-social-media-manager-2026">Micro Saas Ai Social Media Manager 2026</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-executive-guide">Microsaas Hr Recruitment Executive Guide</Link></li>
+              <li><Link /blog/automated-ai-reporting-checklist-for-it-leaders/>Automated Ai Reporting Checklist For It Leaders</Link></li>
+<li><Link /blog/managed-it-services-case-study/>Managed It Services Case Study</Link></li>
+<li><Link /blog/micro-saas-ai-social-media-manager-2026/>Micro Saas Ai Social Media Manager 2026</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-executive-guide/>Microsaas Hr Recruitment Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

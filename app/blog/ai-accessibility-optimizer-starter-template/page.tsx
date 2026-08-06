@@ -57,10 +57,10 @@ For ai accessibility optimizer: starter template: pick one workflow, assign owne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bom-procurement-deployment-patterns">Ai Bom Procurement Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-architecture-overview">Ai Ad Copy Generator Architecture Overview</Link></li>
-<li><Link href="/blog/chaos-engineering-automation-roadmap">Chaos Engineering Automation Roadmap</Link></li>
-<li><Link href="/blog/endpoint-management-evaluation-framework">Endpoint Management Evaluation Framework</Link></li>
+              <li><Link /blog/ai-bom-procurement-deployment-patterns/>Ai Bom Procurement Deployment Patterns</Link></li>
+<li><Link /blog/ai-ad-copy-generator-architecture-overview/>Ai Ad Copy Generator Architecture Overview</Link></li>
+<li><Link /blog/chaos-engineering-automation-roadmap/>Chaos Engineering Automation Roadmap</Link></li>
+<li><Link /blog/endpoint-management-evaluation-framework/>Endpoint Management Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

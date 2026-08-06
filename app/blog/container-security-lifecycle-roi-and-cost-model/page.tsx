@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-management-automation-roadmap">Api Gateway Management Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-architecture-overview">Ai 3D Asset Generator Architecture Overview</Link></li>
-<li><Link href="/blog/api-security-testing-operations-handbook">Api Security Testing Operations Handbook</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-implementation-playbook">Data Warehouse Modernization Implementation Playbook</Link></li>
+              <li><Link /blog/api-gateway-management-automation-roadmap/>Api Gateway Management Automation Roadmap</Link></li>
+<li><Link /blog/ai-3d-asset-generator-architecture-overview/>Ai 3D Asset Generator Architecture Overview</Link></li>
+<li><Link /blog/api-security-testing-operations-handbook/>Api Security Testing Operations Handbook</Link></li>
+<li><Link /blog/data-warehouse-modernization-implementation-playbook/>Data Warehouse Modernization Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

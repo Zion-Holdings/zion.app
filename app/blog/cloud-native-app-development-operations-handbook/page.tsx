@@ -54,10 +54,10 @@ If this guide matches your cloud native app development: operations handbook ini
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-case-study">Devsecops Pipeline Case Study</Link></li>
-<li><Link href="/blog/cloud-finops-checklist-for-it-leaders">Cloud Finops Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-starter-template">Ai Accessibility Auditor Starter Template</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-security-and-governance">Ai Agent Safety Evaluation Security And Governance</Link></li>
+              <li><Link /blog/devsecops-pipeline-case-study/>Devsecops Pipeline Case Study</Link></li>
+<li><Link /blog/cloud-finops-checklist-for-it-leaders/>Cloud Finops Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-accessibility-auditor-starter-template/>Ai Accessibility Auditor Starter Template</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-security-and-governance/>Ai Agent Safety Evaluation Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

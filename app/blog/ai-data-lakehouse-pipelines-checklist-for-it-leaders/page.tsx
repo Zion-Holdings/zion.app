@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-2026-6685">Event Driven Architecture 2026 6685</Link></li>
-<li><Link href="/blog/cloud-native-app-development-deployment-patterns">Cloud Native App Development Deployment Patterns</Link></li>
-<li><Link href="/blog/api-gateway-management-case-study">Api Gateway Management Case Study</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-7032">Graphql Federation Platform 2026 7032</Link></li>
+              <li><Link /blog/event-driven-architecture-2026-6685/>Event Driven Architecture 2026 6685</Link></li>
+<li><Link /blog/cloud-native-app-development-deployment-patterns/>Cloud Native App Development Deployment Patterns</Link></li>
+<li><Link /blog/api-gateway-management-case-study/>Api Gateway Management Case Study</Link></li>
+<li><Link /blog/graphql-federation-platform-2026-7032/>Graphql Federation Platform 2026 7032</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

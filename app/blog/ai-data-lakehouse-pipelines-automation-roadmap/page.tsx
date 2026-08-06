@@ -57,10 +57,10 @@ For ai data lakehouse pipelines: automation roadmap: pick one workflow, assign o
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automated-ai-reporting-2026">Automated Ai Reporting 2026</Link></li>
-<li><Link href="/blog/api-management-gateway-operations-handbook">Api Management Gateway Operations Handbook</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-deployment-patterns">Autonomous Qa Engineering Deployment Patterns</Link></li>
-<li><Link href="/blog/genai-devops-cicd-common-mistakes">Genai Devops Cicd Common Mistakes</Link></li>
+              <li><Link /blog/automated-ai-reporting-2026/>Automated Ai Reporting 2026</Link></li>
+<li><Link /blog/api-management-gateway-operations-handbook/>Api Management Gateway Operations Handbook</Link></li>
+<li><Link /blog/autonomous-qa-engineering-deployment-patterns/>Autonomous Qa Engineering Deployment Patterns</Link></li>
+<li><Link /blog/genai-devops-cicd-common-mistakes/>Genai Devops Cicd Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For ai data backup: case study: pick one workflow, assign ownership, define succ
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-native-app-development-2026">Cloud Native App Development 2026</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-evaluation-framework">Data Warehouse Modernization Evaluation Framework</Link></li>
-<li><Link href="/blog/apm-application-performance-architecture-overview">Apm Application Performance Architecture Overview</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-architecture-overview">Autonomous Qa Engineering Architecture Overview</Link></li>
+              <li><Link /blog/cloud-native-app-development-2026/>Cloud Native App Development 2026</Link></li>
+<li><Link /blog/data-warehouse-modernization-evaluation-framework/>Data Warehouse Modernization Evaluation Framework</Link></li>
+<li><Link /blog/apm-application-performance-architecture-overview/>Apm Application Performance Architecture Overview</Link></li>
+<li><Link /blog/autonomous-qa-engineering-architecture-overview/>Autonomous Qa Engineering Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

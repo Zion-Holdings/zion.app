@@ -54,10 +54,10 @@ If this guide matches your microsaas social media manager: deployment patterns i
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-translation-engine-roi-and-cost-model">Microsaas Translation Engine Roi And Cost Model</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-implementation-playbook">Etl Pipeline Optimization Implementation Playbook</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-case-study">Etl Pipeline Optimization Case Study</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-2026-6867">Autonomous Code Deployment 2026 6867</Link></li>
+              <li><Link /blog/microsaas-translation-engine-roi-and-cost-model/>Microsaas Translation Engine Roi And Cost Model</Link></li>
+<li><Link /blog/etl-pipeline-optimization-implementation-playbook/>Etl Pipeline Optimization Implementation Playbook</Link></li>
+<li><Link /blog/etl-pipeline-optimization-case-study/>Etl Pipeline Optimization Case Study</Link></li>
+<li><Link /blog/autonomous-code-deployment-2026-6867/>Autonomous Code Deployment 2026 6867</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-in-construction-and-project-management">Ai In Construction And Project Management</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-6991">Micro Saas Ai Customer Onboarding 2026 6991</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-6817">Devops Gen Ai Cicd 2026 6817</Link></li>
-<li><Link href="/blog/ai-api-gateway-2026">Ai Api Gateway 2026</Link></li>
+              <li><Link /blog/ai-in-construction-and-project-management/>Ai In Construction And Project Management</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026-6991/>Micro Saas Ai Customer Onboarding 2026 6991</Link></li>
+<li><Link /blog/devops-gen-ai-cicd-2026-6817/>Devops Gen Ai Cicd 2026 6817</Link></li>
+<li><Link /blog/ai-api-gateway-2026/>Ai Api Gateway 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

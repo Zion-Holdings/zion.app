@@ -54,10 +54,10 @@ If this guide matches your etl pipeline optimization: checklist for it leaders i
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/network-infrastructure-automation-roadmap">Network Infrastructure Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026">Ai Accessibility Optimizer 2026</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-architecture-overview">Ai Agentic Workflows Architecture Overview</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-vendor-evaluation">Microsaas Social Media Manager Vendor Evaluation</Link></li>
+              <li><Link /blog/network-infrastructure-automation-roadmap/>Network Infrastructure Automation Roadmap</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-2026/>Ai Accessibility Optimizer 2026</Link></li>
+<li><Link /blog/ai-agentic-workflows-architecture-overview/>Ai Agentic Workflows Architecture Overview</Link></li>
+<li><Link /blog/microsaas-social-media-manager-vendor-evaluation/>Microsaas Social Media Manager Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

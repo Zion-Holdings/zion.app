@@ -57,10 +57,10 @@ Leading indicators for ai performance monitoring: starter template: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-policy-and-compliance">Data Analytics Platform Policy And Compliance</Link></li>
-<li><Link href="/blog/database-migration-service-policy-and-compliance">Database Migration Service Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026-6585">Ai Agent Tool Builder 2026 6585</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-7031">Smart Contract Audit 2026 7031</Link></li>
+              <li><Link /blog/data-analytics-platform-policy-and-compliance/>Data Analytics Platform Policy And Compliance</Link></li>
+<li><Link /blog/database-migration-service-policy-and-compliance/>Database Migration Service Policy And Compliance</Link></li>
+<li><Link /blog/ai-agent-tool-builder-2026-6585/>Ai Agent Tool Builder 2026 6585</Link></li>
+<li><Link /blog/smart-contract-audit-2026-7031/>Smart Contract Audit 2026 7031</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

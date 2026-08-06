@@ -54,10 +54,10 @@ If this guide matches your api security testing: checklist for it leaders initia
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/smart-contract-audit-executive-guide">Smart Contract Audit Executive Guide</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-common-mistakes">Autonomous Code Deployment Common Mistakes</Link></li>
-<li><Link href="/blog/endpoint-management-policy-and-compliance">Endpoint Management Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-observability-2026">Ai Observability 2026</Link></li>
+              <li><Link /blog/smart-contract-audit-executive-guide/>Smart Contract Audit Executive Guide</Link></li>
+<li><Link /blog/autonomous-code-deployment-common-mistakes/>Autonomous Code Deployment Common Mistakes</Link></li>
+<li><Link /blog/endpoint-management-policy-and-compliance/>Endpoint Management Policy And Compliance</Link></li>
+<li><Link /blog/ai-observability-2026/>Ai Observability 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

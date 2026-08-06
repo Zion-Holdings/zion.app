@@ -54,10 +54,10 @@ If this guide matches your ai agentic workflows: starter template initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-orchestration-layer-starter-template">Api Orchestration Layer Starter Template</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-6549">Graphql Federation Platform 2026 6549</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-policy-and-compliance">Ai Bdr Sdr Policy And Compliance</Link></li>
-<li><Link href="/blog/chaos-engineering-roi-and-cost-model">Chaos Engineering Roi And Cost Model</Link></li>
+              <li><Link /blog/api-orchestration-layer-starter-template/>Api Orchestration Layer Starter Template</Link></li>
+<li><Link /blog/graphql-federation-platform-2026-6549/>Graphql Federation Platform 2026 6549</Link></li>
+<li><Link /blog/ai-bdr-sdr-policy-and-compliance/>Ai Bdr Sdr Policy And Compliance</Link></li>
+<li><Link /blog/chaos-engineering-roi-and-cost-model/>Chaos Engineering Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your api integration: vendor evaluation initiative, the ne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-warehouse-modernization-case-study">Data Warehouse Modernization Case Study</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-checklist-for-it-leaders">Ai Ad Copy Generator Checklist For It Leaders</Link></li>
-<li><Link href="/blog/microsaas-translation-engine-checklist-for-it-leaders">Microsaas Translation Engine Checklist For It Leaders</Link></li>
-<li><Link href="/blog/devops-cicd-architecture-overview">Devops Cicd Architecture Overview</Link></li>
+              <li><Link /blog/data-warehouse-modernization-case-study/>Data Warehouse Modernization Case Study</Link></li>
+<li><Link /blog/ai-ad-copy-generator-checklist-for-it-leaders/>Ai Ad Copy Generator Checklist For It Leaders</Link></li>
+<li><Link /blog/microsaas-translation-engine-checklist-for-it-leaders/>Microsaas Translation Engine Checklist For It Leaders</Link></li>
+<li><Link /blog/devops-cicd-architecture-overview/>Devops Cicd Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

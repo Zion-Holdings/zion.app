@@ -57,10 +57,10 @@ Leading indicators for ai autonomous agents: roi and cost model: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-checklist-for-it-leaders">Endpoint Management Checklist For It Leaders</Link></li>
-<li><Link href="/blog/devops-cicd-2026-6780">Devops Cicd 2026 6780</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026-6603">Cloud Cost Ai Optimizer 2026 6603</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-7003">Api Orchestration Layer 2026 7003</Link></li>
+              <li><Link /blog/endpoint-management-checklist-for-it-leaders/>Endpoint Management Checklist For It Leaders</Link></li>
+<li><Link /blog/devops-cicd-2026-6780/>Devops Cicd 2026 6780</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-2026-6603/>Cloud Cost Ai Optimizer 2026 6603</Link></li>
+<li><Link /blog/api-orchestration-layer-2026-7003/>Api Orchestration Layer 2026 7003</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

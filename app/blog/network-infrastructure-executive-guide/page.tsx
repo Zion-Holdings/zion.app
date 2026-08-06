@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/apm-application-performance-implementation-playbook">Apm Application Performance Implementation Playbook</Link></li>
-<li><Link href="/blog/managed-it-services-automation-roadmap">Managed It Services Automation Roadmap</Link></li>
-<li><Link href="/blog/microsaas-translation-engine-checklist-for-it-leaders">Microsaas Translation Engine Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cloud-native-app-development-2026">Cloud Native App Development 2026</Link></li>
+              <li><Link /blog/apm-application-performance-implementation-playbook/>Apm Application Performance Implementation Playbook</Link></li>
+<li><Link /blog/managed-it-services-automation-roadmap/>Managed It Services Automation Roadmap</Link></li>
+<li><Link /blog/microsaas-translation-engine-checklist-for-it-leaders/>Microsaas Translation Engine Checklist For It Leaders</Link></li>
+<li><Link /blog/cloud-native-app-development-2026/>Cloud Native App Development 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

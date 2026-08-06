@@ -57,10 +57,10 @@ For enterprise ai intelligence hub: evaluation framework: pick one workflow, ass
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-development-acceleration-2026-6632">Ai Development Acceleration 2026 6632</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6897">Api Gateway Management 2026 6897</Link></li>
-<li><Link href="/blog/api-integration-2026-6875">Api Integration 2026 6875</Link></li>
-<li><Link href="/blog/ai-api-gateway-2026-6689">Ai Api Gateway 2026 6689</Link></li>
+              <li><Link /blog/ai-development-acceleration-2026-6632/>Ai Development Acceleration 2026 6632</Link></li>
+<li><Link /blog/api-gateway-management-2026-6897/>Api Gateway Management 2026 6897</Link></li>
+<li><Link /blog/api-integration-2026-6875/>Api Integration 2026 6875</Link></li>
+<li><Link /blog/ai-api-gateway-2026-6689/>Ai Api Gateway 2026 6689</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

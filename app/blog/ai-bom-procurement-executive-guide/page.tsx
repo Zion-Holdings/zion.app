@@ -54,10 +54,10 @@ If this guide matches your ai bom procurement: executive guide initiative, the n
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-backup-2026">Ai Data Backup 2026</Link></li>
-<li><Link href="/blog/genai-devops-cicd-deployment-patterns">Genai Devops Cicd Deployment Patterns</Link></li>
-<li><Link href="/blog/api-management-gateway-2026">Api Management Gateway 2026</Link></li>
-<li><Link href="/blog/automated-ai-reporting-executive-guide">Automated Ai Reporting Executive Guide</Link></li>
+              <li><Link /blog/ai-data-backup-2026/>Ai Data Backup 2026</Link></li>
+<li><Link /blog/genai-devops-cicd-deployment-patterns/>Genai Devops Cicd Deployment Patterns</Link></li>
+<li><Link /blog/api-management-gateway-2026/>Api Management Gateway 2026</Link></li>
+<li><Link /blog/automated-ai-reporting-executive-guide/>Automated Ai Reporting Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

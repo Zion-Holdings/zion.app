@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-translation-engine-checklist-for-it-leaders">Microsaas Translation Engine Checklist For It Leaders</Link></li>
-<li><Link href="/blog/accessibility-compliance-architecture-overview">Accessibility Compliance Architecture Overview</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-2026">Enterprise Backup Dr 2026</Link></li>
-<li><Link href="/blog/graphql-federation-platform-policy-and-compliance">Graphql Federation Platform Policy And Compliance</Link></li>
+              <li><Link /blog/microsaas-translation-engine-checklist-for-it-leaders/>Microsaas Translation Engine Checklist For It Leaders</Link></li>
+<li><Link /blog/accessibility-compliance-architecture-overview/>Accessibility Compliance Architecture Overview</Link></li>
+<li><Link /blog/enterprise-backup-dr-2026/>Enterprise Backup Dr 2026</Link></li>
+<li><Link /blog/graphql-federation-platform-policy-and-compliance/>Graphql Federation Platform Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

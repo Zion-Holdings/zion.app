@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-2026-7083">Api Management Gateway 2026 7083</Link></li>
-<li><Link href="/blog/accessibility-compliance-deployment-patterns">Accessibility Compliance Deployment Patterns</Link></li>
-<li><Link href="/blog/incident-response-retainer-case-study">Incident Response Retainer Case Study</Link></li>
-<li><Link href="/blog/it-consulting-implementation-playbook">It Consulting Implementation Playbook</Link></li>
+              <li><Link /blog/api-management-gateway-2026-7083/>Api Management Gateway 2026 7083</Link></li>
+<li><Link /blog/accessibility-compliance-deployment-patterns/>Accessibility Compliance Deployment Patterns</Link></li>
+<li><Link /blog/incident-response-retainer-case-study/>Incident Response Retainer Case Study</Link></li>
+<li><Link /blog/it-consulting-implementation-playbook/>It Consulting Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

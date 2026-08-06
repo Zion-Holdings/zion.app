@@ -57,10 +57,10 @@ For api management gateway: deployment patterns: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-integration-evaluation-framework">Api Integration Evaluation Framework</Link></li>
-<li><Link href="/blog/cloud-native-app-development-architecture-overview">Cloud Native App Development Architecture Overview</Link></li>
-<li><Link href="/blog/database-migration-service-common-mistakes">Database Migration Service Common Mistakes</Link></li>
-<li><Link href="/blog/ai-bom-procurement-deployment-patterns">Ai Bom Procurement Deployment Patterns</Link></li>
+              <li><Link /blog/api-integration-evaluation-framework/>Api Integration Evaluation Framework</Link></li>
+<li><Link /blog/cloud-native-app-development-architecture-overview/>Cloud Native App Development Architecture Overview</Link></li>
+<li><Link /blog/database-migration-service-common-mistakes/>Database Migration Service Common Mistakes</Link></li>
+<li><Link /blog/ai-bom-procurement-deployment-patterns/>Ai Bom Procurement Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

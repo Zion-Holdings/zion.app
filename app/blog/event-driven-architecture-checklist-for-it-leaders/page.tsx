@@ -54,10 +54,10 @@ If this guide matches your event driven architecture: checklist for it leaders i
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/genai-devops-cicd-implementation-playbook">Genai Devops Cicd Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-for-climate-tech-and-sustainability-operations">Ai For Climate Tech And Sustainability Operations</Link></li>
-<li><Link href="/blog/devops-automation-with-ai-reducing-deployment-failures-by-60">Devops Automation With Ai Reducing Deployment Failures By 60</Link></li>
-<li><Link href="/blog/api-orchestration-layer-security-and-governance">Api Orchestration Layer Security And Governance</Link></li>
+              <li><Link /blog/genai-devops-cicd-implementation-playbook/>Genai Devops Cicd Implementation Playbook</Link></li>
+<li><Link /blog/ai-for-climate-tech-and-sustainability-operations/>Ai For Climate Tech And Sustainability Operations</Link></li>
+<li><Link /blog/devops-automation-with-ai-reducing-deployment-failures-by-60/>Devops Automation With Ai Reducing Deployment Failures By 60</Link></li>
+<li><Link /blog/api-orchestration-layer-security-and-governance/>Api Orchestration Layer Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

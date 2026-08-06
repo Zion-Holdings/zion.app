@@ -54,10 +54,10 @@ If this guide matches your ai observability: automation roadmap initiative, the 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/aiops-anomaly-detection-2026-6657">Aiops Anomaly Detection 2026 6657</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-7035">Api Gateway Management 2026 7035</Link></li>
-<li><Link href="/blog/smart-contract-audit-roi-and-cost-model">Smart Contract Audit Roi And Cost Model</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-operations-handbook">Microsaas Customer Onboarding Operations Handbook</Link></li>
+              <li><Link /blog/aiops-anomaly-detection-2026-6657/>Aiops Anomaly Detection 2026 6657</Link></li>
+<li><Link /blog/api-gateway-management-2026-7035/>Api Gateway Management 2026 7035</Link></li>
+<li><Link /blog/smart-contract-audit-roi-and-cost-model/>Smart Contract Audit Roi And Cost Model</Link></li>
+<li><Link /blog/microsaas-customer-onboarding-operations-handbook/>Microsaas Customer Onboarding Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

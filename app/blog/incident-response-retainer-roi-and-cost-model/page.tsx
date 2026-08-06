@@ -57,10 +57,10 @@ Leading indicators for incident response retainer: roi and cost model: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-backup-case-study">Ai Data Backup Case Study</Link></li>
-<li><Link href="/blog/container-security-lifecycle-operations-handbook">Container Security Lifecycle Operations Handbook</Link></li>
-<li><Link href="/blog/api-integration-implementation-playbook">Api Integration Implementation Playbook</Link></li>
-<li><Link href="/blog/endpoint-management-case-study">Endpoint Management Case Study</Link></li>
+              <li><Link /blog/ai-data-backup-case-study/>Ai Data Backup Case Study</Link></li>
+<li><Link /blog/container-security-lifecycle-operations-handbook/>Container Security Lifecycle Operations Handbook</Link></li>
+<li><Link /blog/api-integration-implementation-playbook/>Api Integration Implementation Playbook</Link></li>
+<li><Link /blog/endpoint-management-case-study/>Endpoint Management Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

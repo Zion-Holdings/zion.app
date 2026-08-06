@@ -57,10 +57,10 @@ Leading indicators for enterprise backup dr: deployment patterns: workflow compl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/apm-application-performance-implementation-playbook">Apm Application Performance Implementation Playbook</Link></li>
-<li><Link href="/blog/graphql-federation-platform-roi-and-cost-model">Graphql Federation Platform Roi And Cost Model</Link></li>
-<li><Link href="/blog/5g-solutions-2026">5G Solutions 2026</Link></li>
-<li><Link href="/blog/network-infrastructure-checklist-for-it-leaders">Network Infrastructure Checklist For It Leaders</Link></li>
+              <li><Link /blog/apm-application-performance-implementation-playbook/>Apm Application Performance Implementation Playbook</Link></li>
+<li><Link /blog/graphql-federation-platform-roi-and-cost-model/>Graphql Federation Platform Roi And Cost Model</Link></li>
+<li><Link /blog/5g-solutions-2026/>5G Solutions 2026</Link></li>
+<li><Link /blog/network-infrastructure-checklist-for-it-leaders/>Network Infrastructure Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

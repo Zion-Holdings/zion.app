@@ -57,10 +57,10 @@ For genai devops ci/cd: checklist for it leaders: pick one workflow, assign owne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/container-security-lifecycle-operations-handbook">Container Security Lifecycle Operations Handbook</Link></li>
-<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026">Data Analytics Platform Modern Enterprise 2026</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-implementation-playbook">Microsaas Social Media Manager Implementation Playbook</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-vendor-evaluation">Microsaas Social Media Manager Vendor Evaluation</Link></li>
+              <li><Link /blog/container-security-lifecycle-operations-handbook/>Container Security Lifecycle Operations Handbook</Link></li>
+<li><Link /blog/data-analytics-platform-modern-enterprise-2026/>Data Analytics Platform Modern Enterprise 2026</Link></li>
+<li><Link /blog/microsaas-social-media-manager-implementation-playbook/>Microsaas Social Media Manager Implementation Playbook</Link></li>
+<li><Link /blog/microsaas-social-media-manager-vendor-evaluation/>Microsaas Social Media Manager Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

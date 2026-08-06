@@ -57,10 +57,10 @@ For autonomous qa engineering: common mistakes: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/chaos-engineering-2026">Chaos Engineering 2026</Link></li>
-<li><Link href="/blog/devsecops-pipeline-deployment-patterns">Devsecops Pipeline Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-2026-6584">Ai Agent Safety Evaluation 2026 6584</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-starter-template">Etl Pipeline Optimization Starter Template</Link></li>
+              <li><Link /blog/chaos-engineering-2026/>Chaos Engineering 2026</Link></li>
+<li><Link /blog/devsecops-pipeline-deployment-patterns/>Devsecops Pipeline Deployment Patterns</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-2026-6584/>Ai Agent Safety Evaluation 2026 6584</Link></li>
+<li><Link /blog/etl-pipeline-optimization-starter-template/>Etl Pipeline Optimization Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

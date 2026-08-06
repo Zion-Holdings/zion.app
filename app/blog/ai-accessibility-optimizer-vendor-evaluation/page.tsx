@@ -57,10 +57,10 @@ Leading indicators for ai accessibility optimizer: vendor evaluation: workflow c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/5g-solutions-policy-and-compliance">5G Solutions Policy And Compliance</Link></li>
-<li><Link href="/blog/genai-devops-cicd-evaluation-framework">Genai Devops Cicd Evaluation Framework</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-starter-template">Cloud Cost Ai Optimizer Starter Template</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-implementation-playbook">Ai Accessibility Optimizer Implementation Playbook</Link></li>
+              <li><Link /blog/5g-solutions-policy-and-compliance/>5G Solutions Policy And Compliance</Link></li>
+<li><Link /blog/genai-devops-cicd-evaluation-framework/>Genai Devops Cicd Evaluation Framework</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-starter-template/>Cloud Cost Ai Optimizer Starter Template</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-implementation-playbook/>Ai Accessibility Optimizer Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

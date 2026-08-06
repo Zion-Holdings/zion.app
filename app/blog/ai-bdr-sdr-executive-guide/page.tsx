@@ -54,10 +54,10 @@ If this guide matches your ai bdr sdr: executive guide initiative, the next step
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-2026-7053">It Consulting 2026 7053</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-deployment-patterns">Ai Accessibility Auditor Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-case-study">Ai 3D Asset Generator Case Study</Link></li>
-<li><Link href="/blog/chaos-engineering-2026">Chaos Engineering 2026</Link></li>
+              <li><Link /blog/it-consulting-2026-7053/>It Consulting 2026 7053</Link></li>
+<li><Link /blog/ai-accessibility-auditor-deployment-patterns/>Ai Accessibility Auditor Deployment Patterns</Link></li>
+<li><Link /blog/ai-3d-asset-generator-case-study/>Ai 3D Asset Generator Case Study</Link></li>
+<li><Link /blog/chaos-engineering-2026/>Chaos Engineering 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

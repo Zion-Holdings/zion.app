@@ -57,10 +57,10 @@ For brand voice guardian: roi and cost model: pick one workflow, assign ownershi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/chaos-engineering-automation-roadmap">Chaos Engineering Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-data-backup-executive-guide">Ai Data Backup Executive Guide</Link></li>
-<li><Link href="/blog/genai-devops-cicd-implementation-playbook">Genai Devops Cicd Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-development-acceleration-policy-and-compliance">Ai Development Acceleration Policy And Compliance</Link></li>
+              <li><Link /blog/chaos-engineering-automation-roadmap/>Chaos Engineering Automation Roadmap</Link></li>
+<li><Link /blog/ai-data-backup-executive-guide/>Ai Data Backup Executive Guide</Link></li>
+<li><Link /blog/genai-devops-cicd-implementation-playbook/>Genai Devops Cicd Implementation Playbook</Link></li>
+<li><Link /blog/ai-development-acceleration-policy-and-compliance/>Ai Development Acceleration Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

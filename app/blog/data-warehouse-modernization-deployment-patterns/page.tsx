@@ -54,10 +54,10 @@ If this guide matches your data warehouse modernization: deployment patterns ini
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bdr-sdr-2026">Ai Bdr Sdr 2026</Link></li>
-<li><Link href="/blog/event-driven-architecture-roi-and-cost-model">Event Driven Architecture Roi And Cost Model</Link></li>
-<li><Link href="/blog/api-orchestration-layer-policy-and-compliance">Api Orchestration Layer Policy And Compliance</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026">Api Orchestration Layer 2026</Link></li>
+              <li><Link /blog/ai-bdr-sdr-2026/>Ai Bdr Sdr 2026</Link></li>
+<li><Link /blog/event-driven-architecture-roi-and-cost-model/>Event Driven Architecture Roi And Cost Model</Link></li>
+<li><Link /blog/api-orchestration-layer-policy-and-compliance/>Api Orchestration Layer Policy And Compliance</Link></li>
+<li><Link /blog/api-orchestration-layer-2026/>Api Orchestration Layer 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

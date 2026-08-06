@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-safety-evaluation-vendor-evaluation">Ai Agent Safety Evaluation Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-2026-6650">Ai Accessibility Auditor 2026 6650</Link></li>
-<li><Link href="/blog/ai-for-insurance-underwriting-and-claims-automation">Ai For Insurance Underwriting And Claims Automation</Link></li>
-<li><Link href="/blog/database-migration-service-2026-6885">Database Migration Service 2026 6885</Link></li>
+              <li><Link /blog/ai-agent-safety-evaluation-vendor-evaluation/>Ai Agent Safety Evaluation Vendor Evaluation</Link></li>
+<li><Link /blog/ai-accessibility-auditor-2026-6650/>Ai Accessibility Auditor 2026 6650</Link></li>
+<li><Link /blog/ai-for-insurance-underwriting-and-claims-automation/>Ai For Insurance Underwriting And Claims Automation</Link></li>
+<li><Link /blog/database-migration-service-2026-6885/>Database Migration Service 2026 6885</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

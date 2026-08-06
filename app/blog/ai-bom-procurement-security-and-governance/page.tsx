@@ -57,10 +57,10 @@ Leading indicators for ai bom procurement: security and governance: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/chaos-engineering-deployment-patterns">Chaos Engineering Deployment Patterns</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-executive-guide">Autonomous Code Deployment Executive Guide</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-security-and-governance">Cloud Cost Optimization Security And Governance</Link></li>
-<li><Link href="/blog/smart-contract-audit-vendor-evaluation">Smart Contract Audit Vendor Evaluation</Link></li>
+              <li><Link /blog/chaos-engineering-deployment-patterns/>Chaos Engineering Deployment Patterns</Link></li>
+<li><Link /blog/autonomous-code-deployment-executive-guide/>Autonomous Code Deployment Executive Guide</Link></li>
+<li><Link /blog/cloud-cost-optimization-security-and-governance/>Cloud Cost Optimization Security And Governance</Link></li>
+<li><Link /blog/smart-contract-audit-vendor-evaluation/>Smart Contract Audit Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

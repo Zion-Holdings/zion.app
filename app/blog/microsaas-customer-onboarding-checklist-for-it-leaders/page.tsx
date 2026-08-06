@@ -57,10 +57,10 @@ Leading indicators for microsaas customer onboarding: checklist for it leaders: 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-architecture-overview">Api Management Gateway Architecture Overview</Link></li>
-<li><Link href="/blog/api-integration-operations-handbook">Api Integration Operations Handbook</Link></li>
-<li><Link href="/blog/graphql-federation-platform-roi-and-cost-model">Graphql Federation Platform Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-checklist-for-it-leaders">Ai Bdr Sdr Checklist For It Leaders</Link></li>
+              <li><Link /blog/api-management-gateway-architecture-overview/>Api Management Gateway Architecture Overview</Link></li>
+<li><Link /blog/api-integration-operations-handbook/>Api Integration Operations Handbook</Link></li>
+<li><Link /blog/graphql-federation-platform-roi-and-cost-model/>Graphql Federation Platform Roi And Cost Model</Link></li>
+<li><Link /blog/ai-bdr-sdr-checklist-for-it-leaders/>Ai Bdr Sdr Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

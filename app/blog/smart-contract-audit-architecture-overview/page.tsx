@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-code-deployment-executive-guide">Autonomous Code Deployment Executive Guide</Link></li>
-<li><Link href="/blog/brand-voice-guardian-case-study">Brand Voice Guardian Case Study</Link></li>
-<li><Link href="/blog/api-orchestration-layer-checklist-for-it-leaders">Api Orchestration Layer Checklist For It Leaders</Link></li>
-<li><Link href="/blog/container-security-lifecycle-roi-and-cost-model">Container Security Lifecycle Roi And Cost Model</Link></li>
+              <li><Link /blog/autonomous-code-deployment-executive-guide/>Autonomous Code Deployment Executive Guide</Link></li>
+<li><Link /blog/brand-voice-guardian-case-study/>Brand Voice Guardian Case Study</Link></li>
+<li><Link /blog/api-orchestration-layer-checklist-for-it-leaders/>Api Orchestration Layer Checklist For It Leaders</Link></li>
+<li><Link /blog/container-security-lifecycle-roi-and-cost-model/>Container Security Lifecycle Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for cloud migration services: architecture overview: workflow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-it-operations-implementation-playbook">Ai It Operations Implementation Playbook</Link></li>
-<li><Link href="/blog/graphql-federation-platform-roi-and-cost-model">Graphql Federation Platform Roi And Cost Model</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026">Micro Saas Ai Expense Tracker 2026</Link></li>
-<li><Link href="/blog/api-performance-testing-2026">Api Performance Testing 2026</Link></li>
+              <li><Link /blog/ai-it-operations-implementation-playbook/>Ai It Operations Implementation Playbook</Link></li>
+<li><Link /blog/graphql-federation-platform-roi-and-cost-model/>Graphql Federation Platform Roi And Cost Model</Link></li>
+<li><Link /blog/micro-saas-ai-expense-tracker-2026/>Micro Saas Ai Expense Tracker 2026</Link></li>
+<li><Link /blog/api-performance-testing-2026/>Api Performance Testing 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for ai customer success churn prevention: architecture overvi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/smart-contract-audit-2026-6755">Smart Contract Audit 2026 6755</Link></li>
-<li><Link href="/blog/devops-cicd-2026-6918">Devops Cicd 2026 6918</Link></li>
-<li><Link href="/blog/ai-for-blockchain-and-web3-operations">Ai For Blockchain And Web3 Operations</Link></li>
-<li><Link href="/blog/devsecops-pipeline-vendor-evaluation">Devsecops Pipeline Vendor Evaluation</Link></li>
+              <li><Link /blog/smart-contract-audit-2026-6755/>Smart Contract Audit 2026 6755</Link></li>
+<li><Link /blog/devops-cicd-2026-6918/>Devops Cicd 2026 6918</Link></li>
+<li><Link /blog/ai-for-blockchain-and-web3-operations/>Ai For Blockchain And Web3 Operations</Link></li>
+<li><Link /blog/devsecops-pipeline-vendor-evaluation/>Devsecops Pipeline Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

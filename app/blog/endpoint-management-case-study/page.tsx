@@ -54,10 +54,10 @@ If this guide matches your endpoint management: case study initiative, the next 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-vendor-evaluation">Devsecops Pipeline Vendor Evaluation</Link></li>
-<li><Link href="/blog/api-integration-automation-roadmap">Api Integration Automation Roadmap</Link></li>
-<li><Link href="/blog/database-migration-service-roi-and-cost-model">Database Migration Service Roi And Cost Model</Link></li>
-<li><Link href="/blog/microsaas-translation-engine-checklist-for-it-leaders">Microsaas Translation Engine Checklist For It Leaders</Link></li>
+              <li><Link /blog/devsecops-pipeline-vendor-evaluation/>Devsecops Pipeline Vendor Evaluation</Link></li>
+<li><Link /blog/api-integration-automation-roadmap/>Api Integration Automation Roadmap</Link></li>
+<li><Link /blog/database-migration-service-roi-and-cost-model/>Database Migration Service Roi And Cost Model</Link></li>
+<li><Link /blog/microsaas-translation-engine-checklist-for-it-leaders/>Microsaas Translation Engine Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

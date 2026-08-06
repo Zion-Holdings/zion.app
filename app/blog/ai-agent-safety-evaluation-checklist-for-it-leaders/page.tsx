@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/5g-solutions-policy-and-compliance">5G Solutions Policy And Compliance</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-checklist-for-it-leaders">Microsaas Social Media Manager Checklist For It Leaders</Link></li>
-<li><Link href="/blog/endpoint-management-case-study">Endpoint Management Case Study</Link></li>
-<li><Link href="/blog/api-management-gateway-starter-template">Api Management Gateway Starter Template</Link></li>
+              <li><Link /blog/5g-solutions-policy-and-compliance/>5G Solutions Policy And Compliance</Link></li>
+<li><Link /blog/microsaas-social-media-manager-checklist-for-it-leaders/>Microsaas Social Media Manager Checklist For It Leaders</Link></li>
+<li><Link /blog/endpoint-management-case-study/>Endpoint Management Case Study</Link></li>
+<li><Link /blog/api-management-gateway-starter-template/>Api Management Gateway Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

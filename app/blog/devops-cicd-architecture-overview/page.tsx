@@ -57,10 +57,10 @@ For devops ci/cd: architecture overview: pick one workflow, assign ownership, de
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-implementation-playbook">Graphql Federation Platform Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-policy-and-compliance">Ai Accessibility Auditor Policy And Compliance</Link></li>
-<li><Link href="/blog/devsecops-pipeline-policy-and-compliance">Devsecops Pipeline Policy And Compliance</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-executive-guide">Microsaas Hr Recruitment Executive Guide</Link></li>
+              <li><Link /blog/graphql-federation-platform-implementation-playbook/>Graphql Federation Platform Implementation Playbook</Link></li>
+<li><Link /blog/ai-accessibility-auditor-policy-and-compliance/>Ai Accessibility Auditor Policy And Compliance</Link></li>
+<li><Link /blog/devsecops-pipeline-policy-and-compliance/>Devsecops Pipeline Policy And Compliance</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-executive-guide/>Microsaas Hr Recruitment Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-hr-recruitment-architecture-overview">Microsaas Hr Recruitment Architecture Overview</Link></li>
-<li><Link href="/blog/api-gateway-management-deployment-patterns">Api Gateway Management Deployment Patterns</Link></li>
-<li><Link href="/blog/genai-devops-cicd-starter-template">Genai Devops Cicd Starter Template</Link></li>
-<li><Link href="/blog/devops-cicd-vendor-evaluation">Devops Cicd Vendor Evaluation</Link></li>
+              <li><Link /blog/microsaas-hr-recruitment-architecture-overview/>Microsaas Hr Recruitment Architecture Overview</Link></li>
+<li><Link /blog/api-gateway-management-deployment-patterns/>Api Gateway Management Deployment Patterns</Link></li>
+<li><Link /blog/genai-devops-cicd-starter-template/>Genai Devops Cicd Starter Template</Link></li>
+<li><Link /blog/devops-cicd-vendor-evaluation/>Devops Cicd Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

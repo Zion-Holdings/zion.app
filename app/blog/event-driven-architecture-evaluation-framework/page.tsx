@@ -57,10 +57,10 @@ For event driven architecture: evaluation framework: pick one workflow, assign o
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-ad-copy-generator-2026-6583">Ai Ad Copy Generator 2026 6583</Link></li>
-<li><Link href="/blog/chaos-engineering-2026-6809">Chaos Engineering 2026 6809</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-executive-guide">Autonomous Code Deployment Executive Guide</Link></li>
-<li><Link href="/blog/ai-for-blockchain-and-web3-operations">Ai For Blockchain And Web3 Operations</Link></li>
+              <li><Link /blog/ai-ad-copy-generator-2026-6583/>Ai Ad Copy Generator 2026 6583</Link></li>
+<li><Link /blog/chaos-engineering-2026-6809/>Chaos Engineering 2026 6809</Link></li>
+<li><Link /blog/autonomous-code-deployment-executive-guide/>Autonomous Code Deployment Executive Guide</Link></li>
+<li><Link /blog/ai-for-blockchain-and-web3-operations/>Ai For Blockchain And Web3 Operations</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

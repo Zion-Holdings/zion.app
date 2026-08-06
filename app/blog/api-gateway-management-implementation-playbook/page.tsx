@@ -57,10 +57,10 @@ Leading indicators for api gateway management: implementation playbook: workflow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-autonomous-agents-policy-and-compliance">Ai Autonomous Agents Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-architecture-overview">Ai 3D Asset Generator Architecture Overview</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026">Ai Ad Copy Generator 2026</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-policy-and-compliance">Ai Accessibility Auditor Policy And Compliance</Link></li>
+              <li><Link /blog/ai-autonomous-agents-policy-and-compliance/>Ai Autonomous Agents Policy And Compliance</Link></li>
+<li><Link /blog/ai-3d-asset-generator-architecture-overview/>Ai 3D Asset Generator Architecture Overview</Link></li>
+<li><Link /blog/ai-ad-copy-generator-2026/>Ai Ad Copy Generator 2026</Link></li>
+<li><Link /blog/ai-accessibility-auditor-policy-and-compliance/>Ai Accessibility Auditor Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

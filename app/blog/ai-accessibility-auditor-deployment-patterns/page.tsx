@@ -57,10 +57,10 @@ Leading indicators for ai accessibility auditor: deployment patterns: workflow c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-api-gateway-implementation-playbook">Ai Api Gateway Implementation Playbook</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-operations-handbook">Microsaas Customer Onboarding Operations Handbook</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026-6706">Ai Customer Success Churn 2026 6706</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-security-and-governance">Autonomous Code Deployment Security And Governance</Link></li>
+              <li><Link /blog/ai-api-gateway-implementation-playbook/>Ai Api Gateway Implementation Playbook</Link></li>
+<li><Link /blog/microsaas-customer-onboarding-operations-handbook/>Microsaas Customer Onboarding Operations Handbook</Link></li>
+<li><Link /blog/ai-customer-success-churn-2026-6706/>Ai Customer Success Churn 2026 6706</Link></li>
+<li><Link /blog/autonomous-code-deployment-security-and-governance/>Autonomous Code Deployment Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your ai data backup: starter template initiative, the next
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-security-testing-policy-and-compliance">Api Security Testing Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-vendor-evaluation">Ai Agentic Workflows Vendor Evaluation</Link></li>
-<li><Link href="/blog/graphql-federation-platform-roi-and-cost-model">Graphql Federation Platform Roi And Cost Model</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-operations-handbook">Microsaas Hr Recruitment Operations Handbook</Link></li>
+              <li><Link /blog/api-security-testing-policy-and-compliance/>Api Security Testing Policy And Compliance</Link></li>
+<li><Link /blog/ai-agentic-workflows-vendor-evaluation/>Ai Agentic Workflows Vendor Evaluation</Link></li>
+<li><Link /blog/graphql-federation-platform-roi-and-cost-model/>Graphql Federation Platform Roi And Cost Model</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-operations-handbook/>Microsaas Hr Recruitment Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

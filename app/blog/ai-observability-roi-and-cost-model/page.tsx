@@ -54,10 +54,10 @@ If this guide matches your ai observability: roi and cost model initiative, the 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-orchestration-layer-operations-handbook">Api Orchestration Layer Operations Handbook</Link></li>
-<li><Link href="/blog/api-security-testing-2026-6968">Api Security Testing 2026 6968</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6843">Ai Data Lakehouse Pipelines 2026 6843</Link></li>
-<li><Link href="/blog/apm-application-performance-checklist-for-it-leaders">Apm Application Performance Checklist For It Leaders</Link></li>
+              <li><Link /blog/api-orchestration-layer-operations-handbook/>Api Orchestration Layer Operations Handbook</Link></li>
+<li><Link /blog/api-security-testing-2026-6968/>Api Security Testing 2026 6968</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-2026-6843/>Ai Data Lakehouse Pipelines 2026 6843</Link></li>
+<li><Link /blog/apm-application-performance-checklist-for-it-leaders/>Apm Application Performance Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

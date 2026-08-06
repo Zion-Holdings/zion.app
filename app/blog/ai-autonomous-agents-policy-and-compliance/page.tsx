@@ -57,10 +57,10 @@ Leading indicators for ai autonomous agents: policy and compliance: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-2026">Graphql Federation Platform 2026</Link></li>
-<li><Link href="/blog/event-driven-architecture-starter-template">Event Driven Architecture Starter Template</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-vendor-evaluation">Microsaas Social Media Manager Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-operations-handbook">Ai Data Lakehouse Pipelines Operations Handbook</Link></li>
+              <li><Link /blog/graphql-federation-platform-2026/>Graphql Federation Platform 2026</Link></li>
+<li><Link /blog/event-driven-architecture-starter-template/>Event Driven Architecture Starter Template</Link></li>
+<li><Link /blog/microsaas-social-media-manager-vendor-evaluation/>Microsaas Social Media Manager Vendor Evaluation</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-operations-handbook/>Ai Data Lakehouse Pipelines Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

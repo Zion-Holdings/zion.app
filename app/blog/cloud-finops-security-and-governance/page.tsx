@@ -57,10 +57,10 @@ For cloud finops: security and governance: pick one workflow, assign ownership, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/5g-solutions-security-and-governance">5G Solutions Security And Governance</Link></li>
-<li><Link href="/blog/genai-devops-cicd-deployment-patterns">Genai Devops Cicd Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-bom-procurement-case-study">Ai Bom Procurement Case Study</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-security-and-governance">Ai Accessibility Auditor Security And Governance</Link></li>
+              <li><Link /blog/5g-solutions-security-and-governance/>5G Solutions Security And Governance</Link></li>
+<li><Link /blog/genai-devops-cicd-deployment-patterns/>Genai Devops Cicd Deployment Patterns</Link></li>
+<li><Link /blog/ai-bom-procurement-case-study/>Ai Bom Procurement Case Study</Link></li>
+<li><Link /blog/ai-accessibility-auditor-security-and-governance/>Ai Accessibility Auditor Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

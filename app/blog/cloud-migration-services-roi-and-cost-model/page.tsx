@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/brand-voice-guardian-2026-6802">Brand Voice Guardian 2026 6802</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-starter-template">Ai Agent Tool Builder Starter Template</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026-6859">Ai Ad Copy Generator 2026 6859</Link></li>
-<li><Link href="/blog/database-migration-service-common-mistakes">Database Migration Service Common Mistakes</Link></li>
+              <li><Link /blog/brand-voice-guardian-2026-6802/>Brand Voice Guardian 2026 6802</Link></li>
+<li><Link /blog/ai-agent-tool-builder-starter-template/>Ai Agent Tool Builder Starter Template</Link></li>
+<li><Link /blog/ai-ad-copy-generator-2026-6859/>Ai Ad Copy Generator 2026 6859</Link></li>
+<li><Link /blog/database-migration-service-common-mistakes/>Database Migration Service Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

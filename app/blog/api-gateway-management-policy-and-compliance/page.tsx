@@ -57,10 +57,10 @@ Leading indicators for api gateway management: policy and compliance: workflow c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders">Cloud Cost Ai Optimizer Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cloud-migration-services-checklist-for-it-leaders">Cloud Migration Services Checklist For It Leaders</Link></li>
-<li><Link href="/blog/automation-orchestration-case-study">Automation Orchestration Case Study</Link></li>
-<li><Link href="/blog/cloud-native-app-development-automation-roadmap">Cloud Native App Development Automation Roadmap</Link></li>
+              <li><Link /blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/>Cloud Cost Ai Optimizer Checklist For It Leaders</Link></li>
+<li><Link /blog/cloud-migration-services-checklist-for-it-leaders/>Cloud Migration Services Checklist For It Leaders</Link></li>
+<li><Link /blog/automation-orchestration-case-study/>Automation Orchestration Case Study</Link></li>
+<li><Link /blog/cloud-native-app-development-automation-roadmap/>Cloud Native App Development Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your incident response retainer initiative, the next step 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/chaos-engineering-operations-handbook">Chaos Engineering Operations Handbook</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026">Micro Saas Ai Customer Onboarding 2026</Link></li>
-<li><Link href="/blog/incident-response-retainer-executive-guide">Incident Response Retainer Executive Guide</Link></li>
-<li><Link href="/blog/api-integration-common-mistakes">Api Integration Common Mistakes</Link></li>
+              <li><Link /blog/chaos-engineering-operations-handbook/>Chaos Engineering Operations Handbook</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026/>Micro Saas Ai Customer Onboarding 2026</Link></li>
+<li><Link /blog/incident-response-retainer-executive-guide/>Incident Response Retainer Executive Guide</Link></li>
+<li><Link /blog/api-integration-common-mistakes/>Api Integration Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

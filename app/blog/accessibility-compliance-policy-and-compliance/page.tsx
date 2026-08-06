@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-management-2026-7081">Api Gateway Management 2026 7081</Link></li>
-<li><Link href="/blog/ai-for-real-estate-and-property-management">Ai For Real Estate And Property Management</Link></li>
-<li><Link href="/blog/event-driven-architecture-implementation-playbook">Event Driven Architecture Implementation Playbook</Link></li>
-<li><Link href="/blog/genai-devops-cicd-automation-roadmap">Genai Devops Cicd Automation Roadmap</Link></li>
+              <li><Link /blog/api-gateway-management-2026-7081/>Api Gateway Management 2026 7081</Link></li>
+<li><Link /blog/ai-for-real-estate-and-property-management/>Ai For Real Estate And Property Management</Link></li>
+<li><Link /blog/event-driven-architecture-implementation-playbook/>Event Driven Architecture Implementation Playbook</Link></li>
+<li><Link /blog/genai-devops-cicd-automation-roadmap/>Genai Devops Cicd Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your ai ad copy generator: checklist for it leaders initia
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-ad-copy-generator-common-mistakes">Ai Ad Copy Generator Common Mistakes</Link></li>
-<li><Link href="/blog/api-security-testing-2026">Api Security Testing 2026</Link></li>
-<li><Link href="/blog/automated-ai-reporting-evaluation-framework">Automated Ai Reporting Evaluation Framework</Link></li>
-<li><Link href="/blog/genai-devops-cicd-deployment-patterns">Genai Devops Cicd Deployment Patterns</Link></li>
+              <li><Link /blog/ai-ad-copy-generator-common-mistakes/>Ai Ad Copy Generator Common Mistakes</Link></li>
+<li><Link /blog/api-security-testing-2026/>Api Security Testing 2026</Link></li>
+<li><Link /blog/automated-ai-reporting-evaluation-framework/>Automated Ai Reporting Evaluation Framework</Link></li>
+<li><Link /blog/genai-devops-cicd-deployment-patterns/>Genai Devops Cicd Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

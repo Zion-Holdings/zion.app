@@ -57,10 +57,10 @@ Leading indicators for accessibility compliance: security and governance: workfl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automation-orchestration-policy-and-compliance">Automation Orchestration Policy And Compliance</Link></li>
-<li><Link href="/blog/database-migration-service-common-mistakes">Database Migration Service Common Mistakes</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-operations-handbook">Ai Data Lakehouse Pipelines Operations Handbook</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-2026">Enterprise Backup Dr 2026</Link></li>
+              <li><Link /blog/automation-orchestration-policy-and-compliance/>Automation Orchestration Policy And Compliance</Link></li>
+<li><Link /blog/database-migration-service-common-mistakes/>Database Migration Service Common Mistakes</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-operations-handbook/>Ai Data Lakehouse Pipelines Operations Handbook</Link></li>
+<li><Link /blog/enterprise-backup-dr-2026/>Enterprise Backup Dr 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

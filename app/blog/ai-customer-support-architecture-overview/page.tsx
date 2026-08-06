@@ -57,10 +57,10 @@ For ai customer support: architecture overview: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-tool-builder-2026">Ai Agent Tool Builder 2026</Link></li>
-<li><Link href="/blog/ai-for-audit-and-compliance-automation">Ai For Audit And Compliance Automation</Link></li>
-<li><Link href="/blog/event-driven-architecture-vendor-evaluation">Event Driven Architecture Vendor Evaluation</Link></li>
-<li><Link href="/blog/cloud-finops-checklist-for-it-leaders">Cloud Finops Checklist For It Leaders</Link></li>
+              <li><Link /blog/ai-agent-tool-builder-2026/>Ai Agent Tool Builder 2026</Link></li>
+<li><Link /blog/ai-for-audit-and-compliance-automation/>Ai For Audit And Compliance Automation</Link></li>
+<li><Link /blog/event-driven-architecture-vendor-evaluation/>Event Driven Architecture Vendor Evaluation</Link></li>
+<li><Link /blog/cloud-finops-checklist-for-it-leaders/>Cloud Finops Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

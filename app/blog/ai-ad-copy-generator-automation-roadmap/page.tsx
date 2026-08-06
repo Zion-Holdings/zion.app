@@ -57,10 +57,10 @@ For ai ad copy generator: automation roadmap: pick one workflow, assign ownershi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-optimizer-implementation-playbook">Ai Accessibility Optimizer Implementation Playbook</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-automation-roadmap">Microsaas Expense Tracker Automation Roadmap</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026">Autonomous Qa Engineering 2026</Link></li>
-<li><Link href="/blog/devops-cicd-case-study">Devops Cicd Case Study</Link></li>
+              <li><Link /blog/ai-accessibility-optimizer-implementation-playbook/>Ai Accessibility Optimizer Implementation Playbook</Link></li>
+<li><Link /blog/microsaas-expense-tracker-automation-roadmap/>Microsaas Expense Tracker Automation Roadmap</Link></li>
+<li><Link /blog/autonomous-qa-engineering-2026/>Autonomous Qa Engineering 2026</Link></li>
+<li><Link /blog/devops-cicd-case-study/>Devops Cicd Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

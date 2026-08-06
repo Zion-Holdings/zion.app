@@ -57,10 +57,10 @@ Leading indicators for ai ad copy generator: vendor evaluation: workflow complet
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-migration-services-policy-and-compliance">Cloud Migration Services Policy And Compliance</Link></li>
-<li><Link href="/blog/managed-it-services-policy-and-compliance">Managed It Services Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-deployment-patterns">Ai Agentic Workflows Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-2026-6787">Ai 3D Asset Generator 2026 6787</Link></li>
+              <li><Link /blog/cloud-migration-services-policy-and-compliance/>Cloud Migration Services Policy And Compliance</Link></li>
+<li><Link /blog/managed-it-services-policy-and-compliance/>Managed It Services Policy And Compliance</Link></li>
+<li><Link /blog/ai-agentic-workflows-deployment-patterns/>Ai Agentic Workflows Deployment Patterns</Link></li>
+<li><Link /blog/ai-3d-asset-generator-2026-6787/>Ai 3D Asset Generator 2026 6787</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

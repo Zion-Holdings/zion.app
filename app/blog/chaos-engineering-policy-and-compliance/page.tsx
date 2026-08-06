@@ -54,10 +54,10 @@ If this guide matches your chaos engineering: policy and compliance initiative, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/accessibility-compliance-case-study">Accessibility Compliance Case Study</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-7026">Edge Computing Deployment 2026 7026</Link></li>
-<li><Link href="/blog/incident-response-retainer-2026-6619">Incident Response Retainer 2026 6619</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-policy-and-compliance">Enterprise Ai Intelligence Hub Policy And Compliance</Link></li>
+              <li><Link /blog/accessibility-compliance-case-study/>Accessibility Compliance Case Study</Link></li>
+<li><Link /blog/edge-computing-deployment-2026-7026/>Edge Computing Deployment 2026 7026</Link></li>
+<li><Link /blog/incident-response-retainer-2026-6619/>Incident Response Retainer 2026 6619</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-policy-and-compliance/>Enterprise Ai Intelligence Hub Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

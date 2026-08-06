@@ -57,10 +57,10 @@ Leading indicators for etl pipeline optimization: workflow completion rate, esca
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-translation-engine-common-mistakes">Microsaas Translation Engine Common Mistakes</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-2026">Cyber Threat Intelligence 2026</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-deployment-patterns">Ai 3D Asset Generator Deployment Patterns</Link></li>
-<li><Link href="/blog/chaos-engineering-2026">Chaos Engineering 2026</Link></li>
+              <li><Link /blog/microsaas-translation-engine-common-mistakes/>Microsaas Translation Engine Common Mistakes</Link></li>
+<li><Link /blog/cyber-threat-intelligence-2026/>Cyber Threat Intelligence 2026</Link></li>
+<li><Link /blog/ai-3d-asset-generator-deployment-patterns/>Ai 3D Asset Generator Deployment Patterns</Link></li>
+<li><Link /blog/chaos-engineering-2026/>Chaos Engineering 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

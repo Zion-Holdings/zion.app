@@ -54,10 +54,10 @@ If this guide matches your cloud native app development: deployment patterns ini
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/brand-voice-guardian-evaluation-framework">Brand Voice Guardian Evaluation Framework</Link></li>
-<li><Link href="/blog/incident-response-retainer-vendor-evaluation">Incident Response Retainer Vendor Evaluation</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-vendor-evaluation">Enterprise Ai Intelligence Hub Vendor Evaluation</Link></li>
-<li><Link href="/blog/data-analytics-platform-automation-roadmap">Data Analytics Platform Automation Roadmap</Link></li>
+              <li><Link /blog/brand-voice-guardian-evaluation-framework/>Brand Voice Guardian Evaluation Framework</Link></li>
+<li><Link /blog/incident-response-retainer-vendor-evaluation/>Incident Response Retainer Vendor Evaluation</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-vendor-evaluation/>Enterprise Ai Intelligence Hub Vendor Evaluation</Link></li>
+<li><Link /blog/data-analytics-platform-automation-roadmap/>Data Analytics Platform Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

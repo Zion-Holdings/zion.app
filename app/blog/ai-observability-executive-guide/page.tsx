@@ -57,10 +57,10 @@ For ai observability: executive guide: pick one workflow, assign ownership, defi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-management-common-mistakes">Api Gateway Management Common Mistakes</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-vendor-evaluation">Ai Accessibility Optimizer Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-deployment-patterns">Ai Data Lakehouse Pipelines Deployment Patterns</Link></li>
-<li><Link href="/blog/graphql-federation-platform-policy-and-compliance">Graphql Federation Platform Policy And Compliance</Link></li>
+              <li><Link /blog/api-gateway-management-common-mistakes/>Api Gateway Management Common Mistakes</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-vendor-evaluation/>Ai Accessibility Optimizer Vendor Evaluation</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-deployment-patterns/>Ai Data Lakehouse Pipelines Deployment Patterns</Link></li>
+<li><Link /blog/graphql-federation-platform-policy-and-compliance/>Graphql Federation Platform Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

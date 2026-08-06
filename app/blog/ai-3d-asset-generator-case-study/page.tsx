@@ -57,10 +57,10 @@ Leading indicators for ai 3d asset generator: case study: workflow completion ra
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/brand-voice-guardian-security-and-governance">Brand Voice Guardian Security And Governance</Link></li>
-<li><Link href="/blog/ai-observability-deployment-patterns">Ai Observability Deployment Patterns</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-2026-6676">Cyber Threat Intelligence 2026 6676</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6774">Ai Data Lakehouse Pipelines 2026 6774</Link></li>
+              <li><Link /blog/brand-voice-guardian-security-and-governance/>Brand Voice Guardian Security And Governance</Link></li>
+<li><Link /blog/ai-observability-deployment-patterns/>Ai Observability Deployment Patterns</Link></li>
+<li><Link /blog/cyber-threat-intelligence-2026-6676/>Cyber Threat Intelligence 2026 6676</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-2026-6774/>Ai Data Lakehouse Pipelines 2026 6774</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

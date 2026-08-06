@@ -54,10 +54,10 @@ If this guide matches your ai bom procurement: case study initiative, the next s
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-in-pharmaceuticals-and-life-sciences">Ai In Pharmaceuticals And Life Sciences</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-implementation-playbook">Cyber Threat Intelligence Implementation Playbook</Link></li>
-<li><Link href="/blog/accessibility-compliance-case-study">Accessibility Compliance Case Study</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026-6861">Ai Agent Tool Builder 2026 6861</Link></li>
+              <li><Link /blog/ai-in-pharmaceuticals-and-life-sciences/>Ai In Pharmaceuticals And Life Sciences</Link></li>
+<li><Link /blog/cyber-threat-intelligence-implementation-playbook/>Cyber Threat Intelligence Implementation Playbook</Link></li>
+<li><Link /blog/accessibility-compliance-case-study/>Accessibility Compliance Case Study</Link></li>
+<li><Link /blog/ai-agent-tool-builder-2026-6861/>Ai Agent Tool Builder 2026 6861</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for etl pipeline optimization: case study: workflow completio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bdr-sdr-checklist-for-it-leaders">Ai Bdr Sdr Checklist For It Leaders</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026">Devops Gen Ai Cicd 2026</Link></li>
-<li><Link href="/blog/automated-ai-reporting-policy-and-compliance">Automated Ai Reporting Policy And Compliance</Link></li>
-<li><Link href="/blog/devsecops-pipeline-executive-guide">Devsecops Pipeline Executive Guide</Link></li>
+              <li><Link /blog/ai-bdr-sdr-checklist-for-it-leaders/>Ai Bdr Sdr Checklist For It Leaders</Link></li>
+<li><Link /blog/devops-gen-ai-cicd-2026/>Devops Gen Ai Cicd 2026</Link></li>
+<li><Link /blog/automated-ai-reporting-policy-and-compliance/>Automated Ai Reporting Policy And Compliance</Link></li>
+<li><Link /blog/devsecops-pipeline-executive-guide/>Devsecops Pipeline Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

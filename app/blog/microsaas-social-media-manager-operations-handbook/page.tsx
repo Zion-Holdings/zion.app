@@ -57,10 +57,10 @@ For microsaas social media manager: operations handbook: pick one workflow, assi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-optimizer-implementation-playbook">Ai Accessibility Optimizer Implementation Playbook</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-6955">Devops Gen Ai Cicd 2026 6955</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-2026-6936">Autonomous Code Deployment 2026 6936</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-case-study">Ai Agent Tool Builder Case Study</Link></li>
+              <li><Link /blog/ai-accessibility-optimizer-implementation-playbook/>Ai Accessibility Optimizer Implementation Playbook</Link></li>
+<li><Link /blog/devops-gen-ai-cicd-2026-6955/>Devops Gen Ai Cicd 2026 6955</Link></li>
+<li><Link /blog/autonomous-code-deployment-2026-6936/>Autonomous Code Deployment 2026 6936</Link></li>
+<li><Link /blog/ai-agent-tool-builder-case-study/>Ai Agent Tool Builder Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

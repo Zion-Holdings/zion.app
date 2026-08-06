@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/apm-application-performance-policy-and-compliance">Apm Application Performance Policy And Compliance</Link></li>
-<li><Link href="/blog/api-orchestration-layer-policy-and-compliance">Api Orchestration Layer Policy And Compliance</Link></li>
-<li><Link href="/blog/container-security-lifecycle-2026">Container Security Lifecycle 2026</Link></li>
-<li><Link href="/blog/incident-response-retainer-executive-guide">Incident Response Retainer Executive Guide</Link></li>
+              <li><Link /blog/apm-application-performance-policy-and-compliance/>Apm Application Performance Policy And Compliance</Link></li>
+<li><Link /blog/api-orchestration-layer-policy-and-compliance/>Api Orchestration Layer Policy And Compliance</Link></li>
+<li><Link /blog/container-security-lifecycle-2026/>Container Security Lifecycle 2026</Link></li>
+<li><Link /blog/incident-response-retainer-executive-guide/>Incident Response Retainer Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

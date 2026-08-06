@@ -57,10 +57,10 @@ Leading indicators for ai customer success churn prevention: automation roadmap:
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-performance-testing-executive-guide">Api Performance Testing Executive Guide</Link></li>
-<li><Link href="/blog/5g-solutions-starter-template">5G Solutions Starter Template</Link></li>
-<li><Link href="/blog/api-security-testing-vendor-evaluation">Api Security Testing Vendor Evaluation</Link></li>
-<li><Link href="/blog/cloud-native-app-development-architecture-overview">Cloud Native App Development Architecture Overview</Link></li>
+              <li><Link /blog/api-performance-testing-executive-guide/>Api Performance Testing Executive Guide</Link></li>
+<li><Link /blog/5g-solutions-starter-template/>5G Solutions Starter Template</Link></li>
+<li><Link /blog/api-security-testing-vendor-evaluation/>Api Security Testing Vendor Evaluation</Link></li>
+<li><Link /blog/cloud-native-app-development-architecture-overview/>Cloud Native App Development Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

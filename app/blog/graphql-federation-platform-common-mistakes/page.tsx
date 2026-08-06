@@ -54,10 +54,10 @@ If this guide matches your graphql federation platform: common mistakes initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-translation-engine-executive-guide">Microsaas Translation Engine Executive Guide</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026-3">Cybersecurity Platform Msp 2026 3</Link></li>
-<li><Link href="/blog/automated-ai-reporting-2026-6866">Automated Ai Reporting 2026 6866</Link></li>
-<li><Link href="/blog/api-orchestration-layer-policy-and-compliance">Api Orchestration Layer Policy And Compliance</Link></li>
+              <li><Link /blog/microsaas-translation-engine-executive-guide/>Microsaas Translation Engine Executive Guide</Link></li>
+<li><Link /blog/cybersecurity-platform-msp-2026-3/>Cybersecurity Platform Msp 2026 3</Link></li>
+<li><Link /blog/automated-ai-reporting-2026-6866/>Automated Ai Reporting 2026 6866</Link></li>
+<li><Link /blog/api-orchestration-layer-policy-and-compliance/>Api Orchestration Layer Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

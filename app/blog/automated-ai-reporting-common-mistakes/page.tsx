@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-common-mistakes">Cloud Finops Common Mistakes</Link></li>
-<li><Link href="/blog/api-integration-2026-6944">Api Integration 2026 6944</Link></li>
-<li><Link href="/blog/network-infrastructure-2026-6778">Network Infrastructure 2026 6778</Link></li>
-<li><Link href="/blog/it-consulting-2026-6708">It Consulting 2026 6708</Link></li>
+              <li><Link /blog/cloud-finops-common-mistakes/>Cloud Finops Common Mistakes</Link></li>
+<li><Link /blog/api-integration-2026-6944/>Api Integration 2026 6944</Link></li>
+<li><Link /blog/network-infrastructure-2026-6778/>Network Infrastructure 2026 6778</Link></li>
+<li><Link /blog/it-consulting-2026-6708/>It Consulting 2026 6708</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

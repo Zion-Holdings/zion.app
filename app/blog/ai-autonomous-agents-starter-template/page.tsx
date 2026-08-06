@@ -54,10 +54,10 @@ If this guide matches your ai autonomous agents: starter template initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bdr-sdr-executive-guide">Ai Bdr Sdr Executive Guide</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-2026-6815">Data Warehouse Modernization 2026 6815</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-case-study">Enterprise Backup Dr Case Study</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-2026">Autonomous Code Deployment 2026</Link></li>
+              <li><Link /blog/ai-bdr-sdr-executive-guide/>Ai Bdr Sdr Executive Guide</Link></li>
+<li><Link /blog/data-warehouse-modernization-2026-6815/>Data Warehouse Modernization 2026 6815</Link></li>
+<li><Link /blog/enterprise-backup-dr-case-study/>Enterprise Backup Dr Case Study</Link></li>
+<li><Link /blog/autonomous-code-deployment-2026/>Autonomous Code Deployment 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

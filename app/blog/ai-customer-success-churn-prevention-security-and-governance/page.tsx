@@ -54,10 +54,10 @@ If this guide matches your ai customer success churn prevention: security and go
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devops-cicd-vendor-evaluation">Devops Cicd Vendor Evaluation</Link></li>
-<li><Link href="/blog/devsecops-pipeline-security-and-governance">Devsecops Pipeline Security And Governance</Link></li>
-<li><Link href="/blog/managed-it-services-checklist-for-it-leaders">Managed It Services Checklist For It Leaders</Link></li>
-<li><Link href="/blog/graphql-federation-platform-evaluation-framework">Graphql Federation Platform Evaluation Framework</Link></li>
+              <li><Link /blog/devops-cicd-vendor-evaluation/>Devops Cicd Vendor Evaluation</Link></li>
+<li><Link /blog/devsecops-pipeline-security-and-governance/>Devsecops Pipeline Security And Governance</Link></li>
+<li><Link /blog/managed-it-services-checklist-for-it-leaders/>Managed It Services Checklist For It Leaders</Link></li>
+<li><Link /blog/graphql-federation-platform-evaluation-framework/>Graphql Federation Platform Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your edge computing deployment: starter template initiativ
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-expense-tracker-evaluation-framework">Microsaas Expense Tracker Evaluation Framework</Link></li>
-<li><Link href="/blog/incident-response-retainer-2026-6757">Incident Response Retainer 2026 6757</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-6825">Graphql Federation Platform 2026 6825</Link></li>
-<li><Link href="/blog/automation-orchestration-enterprise-2026">Automation Orchestration Enterprise 2026</Link></li>
+              <li><Link /blog/microsaas-expense-tracker-evaluation-framework/>Microsaas Expense Tracker Evaluation Framework</Link></li>
+<li><Link /blog/incident-response-retainer-2026-6757/>Incident Response Retainer 2026 6757</Link></li>
+<li><Link /blog/graphql-federation-platform-2026-6825/>Graphql Federation Platform 2026 6825</Link></li>
+<li><Link /blog/automation-orchestration-enterprise-2026/>Automation Orchestration Enterprise 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

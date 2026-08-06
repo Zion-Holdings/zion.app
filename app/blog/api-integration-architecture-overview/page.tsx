@@ -57,10 +57,10 @@ For api integration: architecture overview: pick one workflow, assign ownership,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-case-study">Graphql Federation Platform Case Study</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-evaluation-framework">Microsaas Expense Tracker Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-starter-template">Ai Customer Success Churn Prevention Starter Template</Link></li>
-<li><Link href="/blog/api-management-gateway-deployment-patterns">Api Management Gateway Deployment Patterns</Link></li>
+              <li><Link /blog/graphql-federation-platform-case-study/>Graphql Federation Platform Case Study</Link></li>
+<li><Link /blog/microsaas-expense-tracker-evaluation-framework/>Microsaas Expense Tracker Evaluation Framework</Link></li>
+<li><Link /blog/ai-customer-success-churn-prevention-starter-template/>Ai Customer Success Churn Prevention Starter Template</Link></li>
+<li><Link /blog/api-management-gateway-deployment-patterns/>Api Management Gateway Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

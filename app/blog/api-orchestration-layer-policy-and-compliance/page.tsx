@@ -57,10 +57,10 @@ Leading indicators for api orchestration layer: policy and compliance: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devops-gen-ai-cicd-2026">Devops Gen Ai Cicd 2026</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-roi-and-cost-model">Enterprise Backup Dr Roi And Cost Model</Link></li>
-<li><Link href="/blog/event-driven-architecture-implementation-playbook">Event Driven Architecture Implementation Playbook</Link></li>
-<li><Link href="/blog/graphql-federation-platform-roi-and-cost-model">Graphql Federation Platform Roi And Cost Model</Link></li>
+              <li><Link /blog/devops-gen-ai-cicd-2026/>Devops Gen Ai Cicd 2026</Link></li>
+<li><Link /blog/enterprise-backup-dr-roi-and-cost-model/>Enterprise Backup Dr Roi And Cost Model</Link></li>
+<li><Link /blog/event-driven-architecture-implementation-playbook/>Event Driven Architecture Implementation Playbook</Link></li>
+<li><Link /blog/graphql-federation-platform-roi-and-cost-model/>Graphql Federation Platform Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

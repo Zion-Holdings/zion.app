@@ -57,10 +57,10 @@ Leading indicators for ai bdr sdr: implementation playbook: workflow completion 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-starter-template">Endpoint Management Starter Template</Link></li>
-<li><Link href="/blog/graphql-federation-platform-roi-and-cost-model">Graphql Federation Platform Roi And Cost Model</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-policy-and-compliance">Aiops Anomaly Detection Policy And Compliance</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026">Managed It Services Small Business 2026</Link></li>
+              <li><Link /blog/endpoint-management-starter-template/>Endpoint Management Starter Template</Link></li>
+<li><Link /blog/graphql-federation-platform-roi-and-cost-model/>Graphql Federation Platform Roi And Cost Model</Link></li>
+<li><Link /blog/aiops-anomaly-detection-policy-and-compliance/>Aiops Anomaly Detection Policy And Compliance</Link></li>
+<li><Link /blog/managed-it-services-small-business-2026/>Managed It Services Small Business 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

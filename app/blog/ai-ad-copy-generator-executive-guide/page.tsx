@@ -54,10 +54,10 @@ If this guide matches your ai ad copy generator: executive guide initiative, the
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-6698">Data Analytics Platform Modern Enterprise 2026 6698</Link></li>
-<li><Link href="/blog/managed-it-services-roi-and-cost-model">Managed It Services Roi And Cost Model</Link></li>
-<li><Link href="/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization">5 Proven Ai Automation Strategies For Enterprise Workflow Optimization</Link></li>
-<li><Link href="/blog/apm-application-performance-2026">Apm Application Performance 2026</Link></li>
+              <li><Link /blog/data-analytics-platform-modern-enterprise-2026-6698/>Data Analytics Platform Modern Enterprise 2026 6698</Link></li>
+<li><Link /blog/managed-it-services-roi-and-cost-model/>Managed It Services Roi And Cost Model</Link></li>
+<li><Link /blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/>5 Proven Ai Automation Strategies For Enterprise Workflow Optimization</Link></li>
+<li><Link /blog/apm-application-performance-2026/>Apm Application Performance 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

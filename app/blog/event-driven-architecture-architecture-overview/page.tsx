@@ -57,10 +57,10 @@ For event driven architecture: architecture overview: pick one workflow, assign 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-roi-and-cost-model">Graphql Federation Platform Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-api-gateway-checklist-for-it-leaders">Ai Api Gateway Checklist For It Leaders</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026-6559">Managed It Services Small Business 2026 6559</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-6715">Micro Saas Ai Customer Onboarding 2026 6715</Link></li>
+              <li><Link /blog/graphql-federation-platform-roi-and-cost-model/>Graphql Federation Platform Roi And Cost Model</Link></li>
+<li><Link /blog/ai-api-gateway-checklist-for-it-leaders/>Ai Api Gateway Checklist For It Leaders</Link></li>
+<li><Link /blog/managed-it-services-small-business-2026-6559/>Managed It Services Small Business 2026 6559</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026-6715/>Micro Saas Ai Customer Onboarding 2026 6715</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

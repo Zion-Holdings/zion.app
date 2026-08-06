@@ -57,10 +57,10 @@ Leading indicators for accessibility compliance: implementation playbook: workfl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-success-churn-2026">Ai Customer Success Churn 2026</Link></li>
-<li><Link href="/blog/api-management-gateway-deployment-patterns">Api Management Gateway Deployment Patterns</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-executive-guide">Microsaas Hr Recruitment Executive Guide</Link></li>
-<li><Link href="/blog/event-driven-architecture-vendor-evaluation">Event Driven Architecture Vendor Evaluation</Link></li>
+              <li><Link /blog/ai-customer-success-churn-2026/>Ai Customer Success Churn 2026</Link></li>
+<li><Link /blog/api-management-gateway-deployment-patterns/>Api Management Gateway Deployment Patterns</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-executive-guide/>Microsaas Hr Recruitment Executive Guide</Link></li>
+<li><Link /blog/event-driven-architecture-vendor-evaluation/>Event Driven Architecture Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

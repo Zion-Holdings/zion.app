@@ -57,10 +57,10 @@ Leading indicators for ai accessibility optimizer: automation roadmap: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/smart-contract-audit-case-study">Smart Contract Audit Case Study</Link></li>
-<li><Link href="/blog/devsecops-pipeline-executive-guide">Devsecops Pipeline Executive Guide</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-operations-handbook">Cyber Threat Intelligence Operations Handbook</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-automation-roadmap">Ai Customer Success Churn Prevention Automation Roadmap</Link></li>
+              <li><Link /blog/smart-contract-audit-case-study/>Smart Contract Audit Case Study</Link></li>
+<li><Link /blog/devsecops-pipeline-executive-guide/>Devsecops Pipeline Executive Guide</Link></li>
+<li><Link /blog/cyber-threat-intelligence-operations-handbook/>Cyber Threat Intelligence Operations Handbook</Link></li>
+<li><Link /blog/ai-customer-success-churn-prevention-automation-roadmap/>Ai Customer Success Churn Prevention Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

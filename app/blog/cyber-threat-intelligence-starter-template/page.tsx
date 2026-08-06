@@ -57,10 +57,10 @@ Leading indicators for cyber threat intelligence: starter template: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bdr-sdr-2026">Ai Bdr Sdr 2026</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-6853">Micro Saas Ai Customer Onboarding 2026 6853</Link></li>
-<li><Link href="/blog/edge-computing-deployment-security-and-governance">Edge Computing Deployment Security And Governance</Link></li>
-<li><Link href="/blog/genai-devops-cicd-security-and-governance">Genai Devops Cicd Security And Governance</Link></li>
+              <li><Link /blog/ai-bdr-sdr-2026/>Ai Bdr Sdr 2026</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026-6853/>Micro Saas Ai Customer Onboarding 2026 6853</Link></li>
+<li><Link /blog/edge-computing-deployment-security-and-governance/>Edge Computing Deployment Security And Governance</Link></li>
+<li><Link /blog/genai-devops-cicd-security-and-governance/>Genai Devops Cicd Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

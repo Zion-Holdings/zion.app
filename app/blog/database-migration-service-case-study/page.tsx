@@ -54,10 +54,10 @@ If this guide matches your database migration service: case study initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-backup-starter-template">Ai Data Backup Starter Template</Link></li>
-<li><Link href="/blog/accessibility-compliance-evaluation-framework">Accessibility Compliance Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-data-backup-2026-6693">Ai Data Backup 2026 6693</Link></li>
-<li><Link href="/blog/ai-api-gateway-2026">Ai Api Gateway 2026</Link></li>
+              <li><Link /blog/ai-data-backup-starter-template/>Ai Data Backup Starter Template</Link></li>
+<li><Link /blog/accessibility-compliance-evaluation-framework/>Accessibility Compliance Evaluation Framework</Link></li>
+<li><Link /blog/ai-data-backup-2026-6693/>Ai Data Backup 2026 6693</Link></li>
+<li><Link /blog/ai-api-gateway-2026/>Ai Api Gateway 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

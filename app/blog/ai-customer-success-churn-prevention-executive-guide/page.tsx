@@ -57,10 +57,10 @@ Leading indicators for ai customer success churn prevention: executive guide: wo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automation-orchestration-enterprise-2026">Automation Orchestration Enterprise 2026</Link></li>
-<li><Link href="/blog/devsecops-pipeline-policy-and-compliance">Devsecops Pipeline Policy And Compliance</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-deployment-patterns">Autonomous Qa Engineering Deployment Patterns</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-checklist-for-it-leaders">Cybersecurity For Msps Checklist For It Leaders</Link></li>
+              <li><Link /blog/automation-orchestration-enterprise-2026/>Automation Orchestration Enterprise 2026</Link></li>
+<li><Link /blog/devsecops-pipeline-policy-and-compliance/>Devsecops Pipeline Policy And Compliance</Link></li>
+<li><Link /blog/autonomous-qa-engineering-deployment-patterns/>Autonomous Qa Engineering Deployment Patterns</Link></li>
+<li><Link /blog/cybersecurity-for-msps-checklist-for-it-leaders/>Cybersecurity For Msps Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

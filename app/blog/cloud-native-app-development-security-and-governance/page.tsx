@@ -54,10 +54,10 @@ If this guide matches your cloud native app development: security and governance
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-orchestration-layer-roi-and-cost-model">Api Orchestration Layer Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-evaluation-framework">Ai Bdr Sdr Evaluation Framework</Link></li>
-<li><Link href="/blog/automated-ai-reporting-architecture-overview">Automated Ai Reporting Architecture Overview</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026">Ai Agent Tool Builder 2026</Link></li>
+              <li><Link /blog/api-orchestration-layer-roi-and-cost-model/>Api Orchestration Layer Roi And Cost Model</Link></li>
+<li><Link /blog/ai-bdr-sdr-evaluation-framework/>Ai Bdr Sdr Evaluation Framework</Link></li>
+<li><Link /blog/automated-ai-reporting-architecture-overview/>Automated Ai Reporting Architecture Overview</Link></li>
+<li><Link /blog/ai-agent-tool-builder-2026/>Ai Agent Tool Builder 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

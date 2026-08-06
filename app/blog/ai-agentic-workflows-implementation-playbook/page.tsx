@@ -57,10 +57,10 @@ Leading indicators for ai agentic workflows: implementation playbook: workflow c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-hr-recruitment-2026">Micro Saas Ai Hr Recruitment 2026</Link></li>
-<li><Link href="/blog/cloud-finops-starter-template">Cloud Finops Starter Template</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026">Ai Ad Copy Generator 2026</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-architecture-overview">Ai Bdr Sdr Architecture Overview</Link></li>
+              <li><Link /blog/micro-saas-ai-hr-recruitment-2026/>Micro Saas Ai Hr Recruitment 2026</Link></li>
+<li><Link /blog/cloud-finops-starter-template/>Cloud Finops Starter Template</Link></li>
+<li><Link /blog/ai-ad-copy-generator-2026/>Ai Ad Copy Generator 2026</Link></li>
+<li><Link /blog/ai-bdr-sdr-architecture-overview/>Ai Bdr Sdr Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

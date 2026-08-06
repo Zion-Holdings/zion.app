@@ -54,10 +54,10 @@ If this guide matches your event driven architecture: executive guide initiative
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-2026">Devsecops Pipeline 2026</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-case-study">Enterprise Ai Intelligence Hub Case Study</Link></li>
-<li><Link href="/blog/graphql-federation-platform-policy-and-compliance">Graphql Federation Platform Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-data-backup-roi-and-cost-model">Ai Data Backup Roi And Cost Model</Link></li>
+              <li><Link /blog/devsecops-pipeline-2026/>Devsecops Pipeline 2026</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-case-study/>Enterprise Ai Intelligence Hub Case Study</Link></li>
+<li><Link /blog/graphql-federation-platform-policy-and-compliance/>Graphql Federation Platform Policy And Compliance</Link></li>
+<li><Link /blog/ai-data-backup-roi-and-cost-model/>Ai Data Backup Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

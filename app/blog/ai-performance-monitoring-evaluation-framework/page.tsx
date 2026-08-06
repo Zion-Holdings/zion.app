@@ -57,10 +57,10 @@ For ai performance monitoring: evaluation framework: pick one workflow, assign o
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-management-2026-6529">Api Gateway Management 2026 6529</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026">Smart Contract Audit 2026</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-2026-6795">Aiops Anomaly Detection 2026 6795</Link></li>
-<li><Link href="/blog/container-security-lifecycle-2026-6951">Container Security Lifecycle 2026 6951</Link></li>
+              <li><Link /blog/api-gateway-management-2026-6529/>Api Gateway Management 2026 6529</Link></li>
+<li><Link /blog/smart-contract-audit-2026/>Smart Contract Audit 2026</Link></li>
+<li><Link /blog/aiops-anomaly-detection-2026-6795/>Aiops Anomaly Detection 2026 6795</Link></li>
+<li><Link /blog/container-security-lifecycle-2026-6951/>Container Security Lifecycle 2026 6951</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

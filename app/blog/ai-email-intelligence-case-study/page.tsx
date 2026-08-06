@@ -57,10 +57,10 @@ For ai email intelligence: case study: pick one workflow, assign ownership, defi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-it-operations-roi-and-cost-model">Ai It Operations Roi And Cost Model</Link></li>
-<li><Link href="/blog/genai-devops-cicd-executive-guide">Genai Devops Cicd Executive Guide</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-executive-guide">Ai Msp Security Compliance Executive Guide</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-common-mistakes">Ai Ad Copy Generator Common Mistakes</Link></li>
+              <li><Link /blog/ai-it-operations-roi-and-cost-model/>Ai It Operations Roi And Cost Model</Link></li>
+<li><Link /blog/genai-devops-cicd-executive-guide/>Genai Devops Cicd Executive Guide</Link></li>
+<li><Link /blog/ai-msp-security-compliance-executive-guide/>Ai Msp Security Compliance Executive Guide</Link></li>
+<li><Link /blog/ai-ad-copy-generator-common-mistakes/>Ai Ad Copy Generator Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

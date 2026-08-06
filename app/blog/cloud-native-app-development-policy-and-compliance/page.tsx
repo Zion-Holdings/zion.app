@@ -57,10 +57,10 @@ Leading indicators for cloud native app development: policy and compliance: work
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-ad-copy-generator-checklist-for-it-leaders">Ai Ad Copy Generator Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-bom-procurement-architecture-overview">Ai Bom Procurement Architecture Overview</Link></li>
-<li><Link href="/blog/database-migration-service-policy-and-compliance">Database Migration Service Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-checklist-for-it-leaders">Ai Customer Success Churn Prevention Checklist For It Leaders</Link></li>
+              <li><Link /blog/ai-ad-copy-generator-checklist-for-it-leaders/>Ai Ad Copy Generator Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-bom-procurement-architecture-overview/>Ai Bom Procurement Architecture Overview</Link></li>
+<li><Link /blog/database-migration-service-policy-and-compliance/>Database Migration Service Policy And Compliance</Link></li>
+<li><Link /blog/ai-customer-success-churn-prevention-checklist-for-it-leaders/>Ai Customer Success Churn Prevention Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

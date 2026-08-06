@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-fleet-and-logistics-operations">Ai For Fleet And Logistics Operations</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-evaluation-framework">Aiops Anomaly Detection Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-operations-handbook">Ai Msp Security Compliance Operations Handbook</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-automation-roadmap">Data Warehouse Modernization Automation Roadmap</Link></li>
+              <li><Link /blog/ai-for-fleet-and-logistics-operations/>Ai For Fleet And Logistics Operations</Link></li>
+<li><Link /blog/aiops-anomaly-detection-evaluation-framework/>Aiops Anomaly Detection Evaluation Framework</Link></li>
+<li><Link /blog/ai-msp-security-compliance-operations-handbook/>Ai Msp Security Compliance Operations Handbook</Link></li>
+<li><Link /blog/data-warehouse-modernization-automation-roadmap/>Data Warehouse Modernization Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

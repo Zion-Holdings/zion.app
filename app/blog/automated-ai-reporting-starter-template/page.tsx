@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-warehouse-modernization-implementation-playbook">Data Warehouse Modernization Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-starter-template">Ai Agent Tool Builder Starter Template</Link></li>
-<li><Link href="/blog/ai-email-intelligence-operations-handbook">Ai Email Intelligence Operations Handbook</Link></li>
-<li><Link href="/blog/cloud-finops-2026">Cloud Finops 2026</Link></li>
+              <li><Link /blog/data-warehouse-modernization-implementation-playbook/>Data Warehouse Modernization Implementation Playbook</Link></li>
+<li><Link /blog/ai-agent-tool-builder-starter-template/>Ai Agent Tool Builder Starter Template</Link></li>
+<li><Link /blog/ai-email-intelligence-operations-handbook/>Ai Email Intelligence Operations Handbook</Link></li>
+<li><Link /blog/cloud-finops-2026/>Cloud Finops 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

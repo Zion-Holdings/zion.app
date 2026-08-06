@@ -54,10 +54,10 @@ If this guide matches your ai bom procurement: implementation playbook initiativ
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-it-operations-automation-2026">Ai It Operations Automation 2026</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-checklist-for-it-leaders">Cybersecurity For Msps Checklist For It Leaders</Link></li>
-<li><Link href="/blog/api-integration-automation-roadmap">Api Integration Automation Roadmap</Link></li>
-<li><Link href="/blog/cloud-native-app-development-security-and-governance">Cloud Native App Development Security And Governance</Link></li>
+              <li><Link /blog/ai-it-operations-automation-2026/>Ai It Operations Automation 2026</Link></li>
+<li><Link /blog/cybersecurity-for-msps-checklist-for-it-leaders/>Cybersecurity For Msps Checklist For It Leaders</Link></li>
+<li><Link /blog/api-integration-automation-roadmap/>Api Integration Automation Roadmap</Link></li>
+<li><Link /blog/cloud-native-app-development-security-and-governance/>Cloud Native App Development Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

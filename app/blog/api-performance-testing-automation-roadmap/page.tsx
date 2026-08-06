@@ -54,10 +54,10 @@ If this guide matches your api performance testing: automation roadmap initiativ
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-evaluation-framework">Data Analytics Platform Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026-6721">Ai Ad Copy Generator 2026 6721</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-checklist-for-it-leaders">Aiops Anomaly Detection Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-architecture-overview">Cloud Cost Ai Optimizer Architecture Overview</Link></li>
+              <li><Link /blog/data-analytics-platform-evaluation-framework/>Data Analytics Platform Evaluation Framework</Link></li>
+<li><Link /blog/ai-ad-copy-generator-2026-6721/>Ai Ad Copy Generator 2026 6721</Link></li>
+<li><Link /blog/aiops-anomaly-detection-checklist-for-it-leaders/>Aiops Anomaly Detection Checklist For It Leaders</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-architecture-overview/>Cloud Cost Ai Optimizer Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

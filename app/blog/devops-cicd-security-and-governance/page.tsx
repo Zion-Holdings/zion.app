@@ -54,10 +54,10 @@ If this guide matches your devops ci/cd: security and governance initiative, the
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-auditor-2026">Ai Accessibility Auditor 2026</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-implementation-playbook">Ai Performance Monitoring Implementation Playbook</Link></li>
-<li><Link href="/blog/smart-contract-audit-case-study">Smart Contract Audit Case Study</Link></li>
-<li><Link href="/blog/ai-bom-procurement-vendor-evaluation">Ai Bom Procurement Vendor Evaluation</Link></li>
+              <li><Link /blog/ai-accessibility-auditor-2026/>Ai Accessibility Auditor 2026</Link></li>
+<li><Link /blog/ai-performance-monitoring-implementation-playbook/>Ai Performance Monitoring Implementation Playbook</Link></li>
+<li><Link /blog/smart-contract-audit-case-study/>Smart Contract Audit Case Study</Link></li>
+<li><Link /blog/ai-bom-procurement-vendor-evaluation/>Ai Bom Procurement Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

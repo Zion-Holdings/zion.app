@@ -54,10 +54,10 @@ If this guide matches your it consulting: automation roadmap initiative, the nex
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-it-operations-operations-handbook">Ai It Operations Operations Handbook</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-security-and-governance">Ai Agent Tool Builder Security And Governance</Link></li>
-<li><Link href="/blog/managed-it-services-case-study">Managed It Services Case Study</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026">Autonomous Qa Engineering 2026</Link></li>
+              <li><Link /blog/ai-it-operations-operations-handbook/>Ai It Operations Operations Handbook</Link></li>
+<li><Link /blog/ai-agent-tool-builder-security-and-governance/>Ai Agent Tool Builder Security And Governance</Link></li>
+<li><Link /blog/managed-it-services-case-study/>Managed It Services Case Study</Link></li>
+<li><Link /blog/autonomous-qa-engineering-2026/>Autonomous Qa Engineering 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For ai agentic workflows: roi and cost model: pick one workflow, assign ownershi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-management-implementation-playbook">Api Gateway Management Implementation Playbook</Link></li>
-<li><Link href="/blog/automated-ai-reporting-case-study">Automated Ai Reporting Case Study</Link></li>
-<li><Link href="/blog/endpoint-management-roi-and-cost-model">Endpoint Management Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-2026">Ai Agent Safety Evaluation 2026</Link></li>
+              <li><Link /blog/api-gateway-management-implementation-playbook/>Api Gateway Management Implementation Playbook</Link></li>
+<li><Link /blog/automated-ai-reporting-case-study/>Automated Ai Reporting Case Study</Link></li>
+<li><Link /blog/endpoint-management-roi-and-cost-model/>Endpoint Management Roi And Cost Model</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-2026/>Ai Agent Safety Evaluation 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

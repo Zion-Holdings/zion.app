@@ -54,10 +54,10 @@ If this guide matches your container security lifecycle: operations handbook ini
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-tool-builder-implementation-playbook">Ai Agent Tool Builder Implementation Playbook</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-evaluation-framework">Cyber Threat Intelligence Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-architecture-overview">Ai Msp Security Compliance Architecture Overview</Link></li>
-<li><Link href="/blog/api-performance-testing-vendor-evaluation">Api Performance Testing Vendor Evaluation</Link></li>
+              <li><Link /blog/ai-agent-tool-builder-implementation-playbook/>Ai Agent Tool Builder Implementation Playbook</Link></li>
+<li><Link /blog/cyber-threat-intelligence-evaluation-framework/>Cyber Threat Intelligence Evaluation Framework</Link></li>
+<li><Link /blog/ai-msp-security-compliance-architecture-overview/>Ai Msp Security Compliance Architecture Overview</Link></li>
+<li><Link /blog/api-performance-testing-vendor-evaluation/>Api Performance Testing Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

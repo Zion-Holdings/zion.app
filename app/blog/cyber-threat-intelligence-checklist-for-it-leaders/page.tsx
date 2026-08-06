@@ -54,10 +54,10 @@ If this guide matches your cyber threat intelligence: checklist for it leaders i
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bdr-sdr-evaluation-framework">Ai Bdr Sdr Evaluation Framework</Link></li>
-<li><Link href="/blog/endpoint-management-evaluation-framework">Endpoint Management Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6705">Ai Data Lakehouse Pipelines 2026 6705</Link></li>
-<li><Link href="/blog/devops-cicd-security-and-governance">Devops Cicd Security And Governance</Link></li>
+              <li><Link /blog/ai-bdr-sdr-evaluation-framework/>Ai Bdr Sdr Evaluation Framework</Link></li>
+<li><Link /blog/endpoint-management-evaluation-framework/>Endpoint Management Evaluation Framework</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-2026-6705/>Ai Data Lakehouse Pipelines 2026 6705</Link></li>
+<li><Link /blog/devops-cicd-security-and-governance/>Devops Cicd Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

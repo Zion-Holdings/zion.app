@@ -57,10 +57,10 @@ Leading indicators for microsaas hr recruitment: implementation playbook: workfl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-backup-dr-security-and-governance">Enterprise Backup Dr Security And Governance</Link></li>
-<li><Link href="/blog/api-performance-testing-evaluation-framework">Api Performance Testing Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-starter-template">Ai 3D Asset Generator Starter Template</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-policy-and-compliance">Microsaas Social Media Manager Policy And Compliance</Link></li>
+              <li><Link /blog/enterprise-backup-dr-security-and-governance/>Enterprise Backup Dr Security And Governance</Link></li>
+<li><Link /blog/api-performance-testing-evaluation-framework/>Api Performance Testing Evaluation Framework</Link></li>
+<li><Link /blog/ai-3d-asset-generator-starter-template/>Ai 3D Asset Generator Starter Template</Link></li>
+<li><Link /blog/microsaas-social-media-manager-policy-and-compliance/>Microsaas Social Media Manager Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

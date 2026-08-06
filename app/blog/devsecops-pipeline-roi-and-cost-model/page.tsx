@@ -57,10 +57,10 @@ Leading indicators for devsecops pipeline: roi and cost model: workflow completi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-optimization-checklist-2026">Cloud Cost Optimization Checklist 2026</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-security-and-governance">Autonomous Qa Engineering Security And Governance</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-vendor-evaluation">Microsaas Social Media Manager Vendor Evaluation</Link></li>
-<li><Link href="/blog/chaos-engineering-case-study">Chaos Engineering Case Study</Link></li>
+              <li><Link /blog/cloud-cost-optimization-checklist-2026/>Cloud Cost Optimization Checklist 2026</Link></li>
+<li><Link /blog/autonomous-qa-engineering-security-and-governance/>Autonomous Qa Engineering Security And Governance</Link></li>
+<li><Link /blog/microsaas-social-media-manager-vendor-evaluation/>Microsaas Social Media Manager Vendor Evaluation</Link></li>
+<li><Link /blog/chaos-engineering-case-study/>Chaos Engineering Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

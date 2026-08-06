@@ -57,10 +57,10 @@ For devsecops pipeline: implementation playbook: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-automation-roadmap">Devsecops Pipeline Automation Roadmap</Link></li>
-<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026">Micro Saas Ai Hr Recruitment 2026</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-case-study">Ai Performance Monitoring Case Study</Link></li>
-<li><Link href="/blog/api-security-testing-2026">Api Security Testing 2026</Link></li>
+              <li><Link /blog/devsecops-pipeline-automation-roadmap/>Devsecops Pipeline Automation Roadmap</Link></li>
+<li><Link /blog/micro-saas-ai-hr-recruitment-2026/>Micro Saas Ai Hr Recruitment 2026</Link></li>
+<li><Link /blog/ai-performance-monitoring-case-study/>Ai Performance Monitoring Case Study</Link></li>
+<li><Link /blog/api-security-testing-2026/>Api Security Testing 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

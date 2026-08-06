@@ -57,10 +57,10 @@ Leading indicators for smart contract audit: common mistakes: workflow completio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-msp-security-compliance-security-and-governance">Ai Msp Security Compliance Security And Governance</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-2026-6745">Cyber Threat Intelligence 2026 6745</Link></li>
-<li><Link href="/blog/api-integration-deployment-patterns">Api Integration Deployment Patterns</Link></li>
-<li><Link href="/blog/apm-application-performance-2026-6670">Apm Application Performance 2026 6670</Link></li>
+              <li><Link /blog/ai-msp-security-compliance-security-and-governance/>Ai Msp Security Compliance Security And Governance</Link></li>
+<li><Link /blog/cyber-threat-intelligence-2026-6745/>Cyber Threat Intelligence 2026 6745</Link></li>
+<li><Link /blog/api-integration-deployment-patterns/>Api Integration Deployment Patterns</Link></li>
+<li><Link /blog/apm-application-performance-2026-6670/>Apm Application Performance 2026 6670</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

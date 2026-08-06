@@ -54,10 +54,10 @@ If this guide matches your data warehouse modernization: checklist for it leader
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-native-app-development-checklist-for-it-leaders">Cloud Native App Development Checklist For It Leaders</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-6717">Enterprise Ai Intelligence Hub 2026 6717</Link></li>
-<li><Link href="/blog/brand-voice-guardian-2026-6526">Brand Voice Guardian 2026 6526</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-evaluation-framework">Microsaas Customer Onboarding Evaluation Framework</Link></li>
+              <li><Link /blog/cloud-native-app-development-checklist-for-it-leaders/>Cloud Native App Development Checklist For It Leaders</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-2026-6717/>Enterprise Ai Intelligence Hub 2026 6717</Link></li>
+<li><Link /blog/brand-voice-guardian-2026-6526/>Brand Voice Guardian 2026 6526</Link></li>
+<li><Link /blog/microsaas-customer-onboarding-evaluation-framework/>Microsaas Customer Onboarding Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

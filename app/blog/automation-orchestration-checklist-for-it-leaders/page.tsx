@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/chaos-engineering-starter-template">Chaos Engineering Starter Template</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-roi-and-cost-model">Cyber Threat Intelligence Roi And Cost Model</Link></li>
-<li><Link href="/blog/brand-voice-guardian-starter-template">Brand Voice Guardian Starter Template</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-vendor-evaluation">Cloud Cost Optimization Vendor Evaluation</Link></li>
+              <li><Link /blog/chaos-engineering-starter-template/>Chaos Engineering Starter Template</Link></li>
+<li><Link /blog/cyber-threat-intelligence-roi-and-cost-model/>Cyber Threat Intelligence Roi And Cost Model</Link></li>
+<li><Link /blog/brand-voice-guardian-starter-template/>Brand Voice Guardian Starter Template</Link></li>
+<li><Link /blog/cloud-cost-optimization-vendor-evaluation/>Cloud Cost Optimization Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your database migration service: operations handbook initi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-executive-guide">Devsecops Pipeline Executive Guide</Link></li>
-<li><Link href="/blog/edge-computing-deployment-vendor-evaluation">Edge Computing Deployment Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-development-acceleration-architecture-overview">Ai Development Acceleration Architecture Overview</Link></li>
-<li><Link href="/blog/network-infrastructure-case-study">Network Infrastructure Case Study</Link></li>
+              <li><Link /blog/devsecops-pipeline-executive-guide/>Devsecops Pipeline Executive Guide</Link></li>
+<li><Link /blog/edge-computing-deployment-vendor-evaluation/>Edge Computing Deployment Vendor Evaluation</Link></li>
+<li><Link /blog/ai-development-acceleration-architecture-overview/>Ai Development Acceleration Architecture Overview</Link></li>
+<li><Link /blog/network-infrastructure-case-study/>Network Infrastructure Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

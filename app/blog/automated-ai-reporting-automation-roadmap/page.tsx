@@ -54,10 +54,10 @@ If this guide matches your automated ai reporting: automation roadmap initiative
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-auditor-2026-6857">Ai Accessibility Auditor 2026 6857</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026-6775">Ai Customer Success Churn 2026 6775</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-2026-6718">Ai 3D Asset Generator 2026 6718</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-2026-6787">Ai 3D Asset Generator 2026 6787</Link></li>
+              <li><Link /blog/ai-accessibility-auditor-2026-6857/>Ai Accessibility Auditor 2026 6857</Link></li>
+<li><Link /blog/ai-customer-success-churn-2026-6775/>Ai Customer Success Churn 2026 6775</Link></li>
+<li><Link /blog/ai-3d-asset-generator-2026-6718/>Ai 3D Asset Generator 2026 6718</Link></li>
+<li><Link /blog/ai-3d-asset-generator-2026-6787/>Ai 3D Asset Generator 2026 6787</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

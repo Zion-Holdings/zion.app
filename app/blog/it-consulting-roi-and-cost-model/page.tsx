@@ -54,10 +54,10 @@ If this guide matches your it consulting: roi and cost model initiative, the nex
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-automation-roadmap">It Consulting Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-evaluation-framework">Ai Bdr Sdr Evaluation Framework</Link></li>
-<li><Link href="/blog/incident-response-retainer-executive-guide">Incident Response Retainer Executive Guide</Link></li>
-<li><Link href="/blog/container-security-lifecycle-2026">Container Security Lifecycle 2026</Link></li>
+              <li><Link /blog/it-consulting-automation-roadmap/>It Consulting Automation Roadmap</Link></li>
+<li><Link /blog/ai-bdr-sdr-evaluation-framework/>Ai Bdr Sdr Evaluation Framework</Link></li>
+<li><Link /blog/incident-response-retainer-executive-guide/>Incident Response Retainer Executive Guide</Link></li>
+<li><Link /blog/container-security-lifecycle-2026/>Container Security Lifecycle 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

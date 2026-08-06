@@ -57,10 +57,10 @@ Leading indicators for ai msp security compliance: architecture overview: workfl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-hr-recruitment-architecture-overview">Microsaas Hr Recruitment Architecture Overview</Link></li>
-<li><Link href="/blog/managed-it-services-case-study">Managed It Services Case Study</Link></li>
-<li><Link href="/blog/brand-voice-guardian-starter-template">Brand Voice Guardian Starter Template</Link></li>
-<li><Link href="/blog/devsecops-pipeline-policy-and-compliance">Devsecops Pipeline Policy And Compliance</Link></li>
+              <li><Link /blog/microsaas-hr-recruitment-architecture-overview/>Microsaas Hr Recruitment Architecture Overview</Link></li>
+<li><Link /blog/managed-it-services-case-study/>Managed It Services Case Study</Link></li>
+<li><Link /blog/brand-voice-guardian-starter-template/>Brand Voice Guardian Starter Template</Link></li>
+<li><Link /blog/devsecops-pipeline-policy-and-compliance/>Devsecops Pipeline Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

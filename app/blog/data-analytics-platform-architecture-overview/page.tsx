@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-social-media-manager-evaluation-framework">Microsaas Social Media Manager Evaluation Framework</Link></li>
-<li><Link href="/blog/database-migration-service-common-mistakes">Database Migration Service Common Mistakes</Link></li>
-<li><Link href="/blog/brand-voice-guardian-deployment-patterns">Brand Voice Guardian Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026">Ai Accessibility Optimizer 2026</Link></li>
+              <li><Link /blog/microsaas-social-media-manager-evaluation-framework/>Microsaas Social Media Manager Evaluation Framework</Link></li>
+<li><Link /blog/database-migration-service-common-mistakes/>Database Migration Service Common Mistakes</Link></li>
+<li><Link /blog/brand-voice-guardian-deployment-patterns/>Brand Voice Guardian Deployment Patterns</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-2026/>Ai Accessibility Optimizer 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
