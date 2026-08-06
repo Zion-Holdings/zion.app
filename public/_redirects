@@ -30,6 +30,10 @@
 /ai-services-index    /ai-services/    301
 /ai-services-index/    /ai-services/    301
 
+# Free AI IT Tools redirect
+/free-ai-it-tools    /tools/    301
+/free-ai-it-tools/    /tools/    301
+
 # New AI Services redirect
 /new-ai-services    /services/    301
 /new-ai-services/    /services/    301
