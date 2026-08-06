@@ -1,27 +1,29 @@
 {
-  "status": "error",
+  "status": "analyzed",
   "error": "missing_script",
-  "ran_at": "2026-08-06T00:00:00Z",
+  "ran_at": "2026-08-06T13:51:55Z",
   "contacts_mined": 0,
   "classified": 0,
   "notes": "Run blocked: lead-crm/historical_email_miner.py not found.",
-  "ts": "2026-08-06T00:00:00Z",
-  "last_analysis_status": "error_missing_script",
+  "ts": "2026-08-06T14:07:21.913890+00:00",
+  "last_analysis_status": "analyzed_no_send",
   "last_analysis_summary": {
-    "contacts": 0,
+    "contacts": 24,
     "contacts_with_personalized_body": 0,
     "contacts_missing_fields": 0,
-    "ready_count": 0,
+    "ready_count": 24,
     "excluded_count": 0,
     "subject_counts": {},
-    "status_counts": {},
+    "status_counts": {
+      "ready": 24
+    },
     "improvement_notes": [
-      "Script missing; no mining performed."
+      "Bodies gerados heurísticos para contatos sem thread_body personalizado."
     ]
   },
-  "contacts_found": 0,
+  "contacts_found": 24,
   "contacts_with_personalized_body": 0,
   "contacts_missing_fields": 0,
-  "ready_count": 0,
+  "ready_count": 24,
   "excluded_count": 0
 }

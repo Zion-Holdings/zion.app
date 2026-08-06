@@ -12,13 +12,18 @@ mkdir -p "$REPORT_DIR"
 REPORT="$REPORT_DIR/broken-links-report.json"
 TIMESTAMP=$(date -Iseconds)
 
-echo "{\"timestamp\":\"$TIMESTAMP\",\"broken_links\":[]," > "$REPORT
+echo "{\"timestamp\":\"$TIMESTAMP\",\"broken_links\":[]," > "$REPORT"
 
 BROKEN=0
 TOTAL=0
 
 # Check links from sitemap.xml
-if [ -f "public/sitemap.xml" ]; then
+SITEMAP="public/sitemap.xml"
+if ! grep -q '<loc>' "$SITEMAP" 2>/dev/null && [ -f "./sitemap.xml" ]; then
+  SITEMAP="./sitemap.xml"
+fi
+
+if [ -f "$SITEMAP" ]; then
   echo "  Checking sitemap URLs..."
   while IFS= read -r url; do
     HTTP_CODE=$(curl -sL -o /dev/null -w "%{http_code}" --max-time 10 "$url" 2>/dev/null || echo "000")
@@ -26,7 +31,7 @@ if [ -f "public/sitemap.xml" ]; then
     if [ "$HTTP_CODE" != "200" ] && [ "$HTTP_CODE" != "301" ] && [ "$HTTP_CODE" != "302" ]; then
       BROKEN=$((BROKEN + 1))
     fi
-  done < <(grep -oP '(?<=<loc>)[^<]+' public/sitemap.xml 2>/dev/null || true)
+  done < <(grep -oP '(?<=<loc>)[^<]+' "$SITEMAP" 2>/dev/null || true)
 fi
 
 # Check external links if --external flag
