@@ -80,7 +80,7 @@ def build_service_page(i,keyword):
 </main>
 </body>
 </html>'''
-    return f'pages/services/{slug}/index.html', body.encode()
+    return f'app/blog/{slug}/page.tsx', body.encode()
 
 def build_blog_post(i,keyword):
     title=f'{keyword.title()} Playbook for 2026'
@@ -105,7 +105,7 @@ def build_blog_post(i,keyword):
 </main>
 </body>
 </html>'''
-    return f'pages/blog/{slug}/index.html', body.encode()
+    return f'app/blog/{slug}/page.tsx', body.encode()
 
 def run():
     print('SEO content loop start')
