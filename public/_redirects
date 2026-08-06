@@ -9,4 +9,12 @@
 # Search
 /search /docs/search/index.html 200
 /search/ /docs/search/index.html 200
+
+# Free tools fallbacks
+/free-tools /free-tools.html 200
+/free-tools/ /free-tools.html 200
+
+# AI resources fallback
+/ai-resources /docs/ai-resources/index.html 200
+/ai-resources/ /docs/ai-resources/index.html 200
 2026-08-04T16:45:49Z
