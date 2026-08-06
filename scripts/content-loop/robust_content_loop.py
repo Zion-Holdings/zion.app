@@ -23,9 +23,23 @@ def gh(method,url,data=None):
         raise
 
 def existing_paths():
+    """Get all blob paths from repo tree with pagination."""
+    paths=set()
     url=f'{BASE}/git/trees/{BRANCH}?recursive=1'
-    tree=gh('GET',url).get('tree',[])
-    return {t['path'] for t in tree if t['type']=='blob'}
+    while url:
+        req=urllib.request.Request(url,headers=HEADERS)
+        with urllib.request.urlopen(req,timeout=30) as r:
+            data=json.loads(r.read().decode())
+        tree=data.get('tree',[])
+        for item in tree:
+            if item['type']=='blob':
+                paths.add(item['path'])
+        # Check for pagination
+        link=data.get('chain',{}).get('next')
+        if not link:
+            break
+        url=link
+    return paths
 
 def slugify(text):
     text=text.lower()
@@ -92,7 +106,7 @@ def build_blog_post(i,keyword):
 </main>
 </body>
 </html>'''
-    return f'app/blog/{slug}-playbook-{i}/page.tsx', body.encode()
+    return f'app/blog/{slug}/page.tsx', body.encode()
 
 def run():
     print('SEO content loop start')
