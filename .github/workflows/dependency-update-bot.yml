@@ -41,4 +41,5 @@ jobs:
       if: failure()
       run: |
         node automation/notify-telegram.js "⚠️ Dependency Update Bot failed on ${{ github.repository }}. Check workflow run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-    timeout-minutes: 10
+      continue-on-error: true
+    timeout-minutes: 20

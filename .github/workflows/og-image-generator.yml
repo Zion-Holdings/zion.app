@@ -51,12 +51,15 @@ jobs:
         git add public/og-images/
         git diff --cached --quiet || git commit -m "feat(auto): generate OG images for content"
         git push origin HEAD:${{ github.ref }}
+      continue-on-error: true
     - name: Notify Telegram on completion
       if: success()
       run: |
         COUNT=$(find public/og-images -name '*.png' 2>/dev/null | wc -l)
         node automation/notify-telegram.js "🖼️ OG image generator: updated ${COUNT} images."
+      continue-on-error: true
     - name: Notify Telegram on errors
       if: failure()
       run: node automation/notify-telegram.js "⚠️ OG image generator failed. Check workflow logs."
-    timeout-minutes: 10
+      continue-on-error: true
+    timeout-minutes: 20

@@ -53,7 +53,9 @@ jobs:
     - name: Notify Telegram on completion
       if: success()
       run: node automation/notify-telegram.js "🔏 Meta tags scan complete. Check artifacts for quality report."
+      continue-on-error: true
     - name: Notify Telegram on errors
       if: failure()
       run: node automation/notify-telegram.js "⚠️ Meta tags scan failed. Check workflow logs."
-    timeout-minutes: 10
+      continue-on-error: true
+    timeout-minutes: 20

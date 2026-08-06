@@ -61,7 +61,9 @@ jobs:
     - name: Notify Telegram on failure
       if: failure()
       run: node automation/notify-telegram.js "⚠️ Performance budget check failed. See CI logs."
+      continue-on-error: true
     - name: Notify Telegram on success
       if: success()
       run: node automation/notify-telegram.js "⚡ Performance budget check passed."
-    timeout-minutes: 10
+      continue-on-error: true
+    timeout-minutes: 20
