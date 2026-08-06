@@ -23,9 +23,9 @@ jobs:
   strict-pin-audit:
     if: github.event_name == 'workflow_dispatch' || (vars.ACTIONS_PIN_STRICT == 'true' && (github.event_name == 'pull_request' || (github.event_name == 'push' && vars.ACTIONS_PIN_STRICT_MAIN_PUSH == 'true')))
     uses: ./.github/workflows/reusable-workflow-ci.yml
+    timeout-minutes: 15
     with:
       run_contracts: true
-    timeout-minutes: 15
 
   strict-pin-hint:
     if: ${{ always() && needs.strict-pin-audit.result == 'failure' }}

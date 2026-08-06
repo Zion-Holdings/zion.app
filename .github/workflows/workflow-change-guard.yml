@@ -32,9 +32,9 @@ concurrency:
 jobs:
   validate-contracts:
     uses: ./.github/workflows/reusable-workflow-ci.yml
+    timeout-minutes: 14
     with:
       run_contracts: true
-    timeout-minutes: 14
 
   automation-guard:
     needs: validate-contracts
