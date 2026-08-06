@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>URL Shortener | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Shorten URLs. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/url-shortener/" />
+</head>
+<body>
+  <main>
+    <h1>URL Shortener</h1>
+    <input id="url" type="text" placeholder="Enter URL to shorten" style="width: 100%;" />
+    <button onclick="shorten()">Shorten</button>
+    <p id="result"></p>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function shorten(){
+        const url = document.getElementById('url').value;
+        const res = document.getElementById('result');
+        if (!url) return res.textContent = 'Please enter a URL';
+        res.innerHTML = '<p>Short URL: <a href="https://ziontechgroup.com/tools/redirect/' + btoa(url).substring(0,8) + '">https://ziontechgroup.com/tools/redirect/' + btoa(url).substring(0,8) + '</a></p>';
+      }
+    </script>
+  </main>
+</body>
+</html>
