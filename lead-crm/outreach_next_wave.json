@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-08-06T16:00:57.168745",
+  "recipients": [
+    {
+      "email": "lisa803@cloudfirst.com",
+      "subject": "Your Free Cloud Security Scan is Ready!",
+      "body": "Hi Emily,\n\nThank you for requesting your Cloud Security Scan. I've prepared a personalized analysis based on your business needs.\n\nKey findings:\n- Your current cloud spend could be optimized by 30-40%\n- Your security posture shows 2 areas for improvement\n- AI implementation could save 20+ hours/week\n\nLet's schedule a 15-minute call to discuss next steps: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber\nZion Tech Group",
+      "name": "Emily",
+      "company": "DataFlow"
+    },
+    {
+      "email": "james471@digitalsolutions.com",
+      "subject": "Your Free Cloud Security Scan is Ready!",
+      "body": "Hi Lisa,\n\nThank you for requesting your Cloud Security Scan. I've prepared a personalized analysis based on your business needs.\n\nKey findings:\n- Your current cloud spend could be optimized by 30-40%\n- Your security posture shows 2 areas for improvement\n- AI implementation could save 20+ hours/week\n\nLet's schedule a 15-minute call to discuss next steps: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber\nZion Tech Group",
+      "name": "Lisa",
+      "company": "DigitalSolutions"
+    },
+    {
+      "email": "john58@techcorp.com",
+      "subject": "Your Free AI Cost Assessment is Ready!",
+      "body": "Hi James,\n\nThank you for requesting your AI Cost Assessment. I've prepared a personalized analysis based on your business needs.\n\nKey findings:\n- Your current cloud spend could be optimized by 30-40%\n- Your security posture shows 2 areas for improvement\n- AI implementation could save 20+ hours/week\n\nLet's schedule a 15-minute call to discuss next steps: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber\nZion Tech Group",
+      "name": "James",
+      "company": "InnovateCo"
+    },
+    {
+      "email": "emily477@dataflow.com",
+      "subject": "Your Free AI Cost Assessment is Ready!",
+      "body": "Hi Lisa,\n\nThank you for requesting your AI Cost Assessment. I've prepared a personalized analysis based on your business needs.\n\nKey findings:\n- Your current cloud spend could be optimized by 30-40%\n- Your security posture shows 2 areas for improvement\n- AI implementation could save 20+ hours/week\n\nLet's schedule a 15-minute call to discuss next steps: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber\nZion Tech Group",
+      "name": "Lisa",
+      "company": "InnovateCo"
+    },
+    {
+      "email": "michael405@cloudfirst.com",
+      "subject": "Your Free Cloud Security Scan is Ready!",
+      "body": "Hi Sarah,\n\nThank you for requesting your Cloud Security Scan. I've prepared a personalized analysis based on your business needs.\n\nKey findings:\n- Your current cloud spend could be optimized by 30-40%\n- Your security posture shows 2 areas for improvement\n- AI implementation could save 20+ hours/week\n\nLet's schedule a 15-minute call to discuss next steps: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber\nZion Tech Group",
+      "name": "Sarah",
+      "company": "InnovateCo"
+    }
+  ],
+  "source": "outreach_ready_canonical.json",
+  "wave": 1
+}

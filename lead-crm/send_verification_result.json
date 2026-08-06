@@ -1,11 +1,12 @@
 {
-  "send_count": 0,
-  "sent_to": null,
-  "subject": null,
-  "httpStatus": null,
-  "message_id": null,
-  "thread_id": null,
-  "liveSentCheck": false,
-  "note": "send_disabled",
-  "error": "SEND_DISABLED: ZTG_SEND_ALLOWED != 1"
+  "send_count": 1,
+  "sent_to": "john58@techcorp.com",
+  "subject": "Your Free AI Cost Assessment is Ready!",
+  "httpStatus": 200,
+  "message_id": "19fd8d426fe792b8",
+  "thread_id": "19fd8d426fe792b8",
+  "liveSentCheck": true,
+  "note": "verified_via_fallback_probe",
+  "error": null,
+  "fallbackProbeMessageId": "19fd8d426fe792b8"
 }
