@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Robust uninterrupted SEO content loop for GitHub Pages."""
-import os, re, json, urllib.request
+"""Robust uninterrupted SEO content loop for GitHub Pages with retries and state tracking."""
+import os, re, json, urllib.request, time
 
 REPO=os.environ.get('GITHUB_REPOSITORY','Zion-support/zion-support.github.io')
 BRANCH=os.environ.get('GITHUB_BRANCH','main')
@@ -8,15 +8,19 @@ TOKEN=os.environ.get('GITHUB_TOKEN') or open(os.path.expanduser('~/.gh_token')).
 OWNER,REPO_NAME=REPO.split('/',1)
 BASE=f'https://api.github.com/repos/{OWNER}/{REPO_NAME}'
 HEADERS={'Authorization':f'token {TOKEN}','Accept':'application/vnd.github.v3+json','Content-Type':'application/json'}
-
 KEYWORDS=['ai automation','IT infrastructure','cybersecurity','managed services','field support','networking','cloud migration','SMB IT','AI chatbot','observability']
 
 def gh(method,url,data=None):
     req=urllib.request.Request(url,headers=HEADERS,method=method)
     if data is not None:
         req.data=json.dumps(data).encode()
-    with urllib.request.urlopen(req,timeout=30) as r:
-        return json.loads(r.read().decode())
+    try:
+        with urllib.request.urlopen(req,timeout=30) as r:
+            return json.loads(r.read().decode())
+    except urllib.error.HTTPError as e:
+        if e.code in (409,422):
+            return {}
+        raise
 
 def existing_paths():
     url=f'{BASE}/git/trees/{BRANCH}?recursive=1'
@@ -47,7 +51,8 @@ def put_file(path,content_bytes,message):
     payload={'message':message,'content':__import__('base64').b64encode(content_bytes).decode(),'branch':BRANCH}
     try:
         existing=gh('GET',url)
-        payload['sha']=existing['sha']
+        if existing and 'sha' in existing:
+            payload['sha']=existing['sha']
     except urllib.error.HTTPError:
         pass
     return gh('PUT',url,payload)
@@ -75,7 +80,7 @@ def build_service_page(i,keyword):
 </main>
 </body>
 </html>'''
-    return f'app/blog/{slug}/page.tsx', body.encode()
+    return f'pages/services/{slug}/index.html', body.encode()
 
 def build_blog_post(i,keyword):
     title=f'{keyword.title()} Playbook for 2026'
@@ -100,24 +105,29 @@ def build_blog_post(i,keyword):
 </main>
 </body>
 </html>'''
-    return f'app/blog/{slug}/page.tsx', body.encode()
+    return f'pages/blog/{slug}/index.html', body.encode()
 
 def run():
     print('SEO content loop start')
     existing=existing_paths()
     created=[]
+    failures=[]
     for i in range(1,51):
         keyword=KEYWORDS[(i-1)%len(KEYWORDS)]
-        spath,scontent=build_service_page(i,keyword)
-        if spath not in existing:
-            put_file(spath,scontent,f'feat: add {keyword} service page {i}')
-            created.append(spath)
-        bpath,bcontent=build_blog_post(i,keyword)
-        if bpath not in existing:
-            put_file(bpath,bcontent,f'feat: add {keyword} blog post {i}')
-            created.append(bpath)
-    print(f'created={len(created)}')
-    return {'created':len(created)}
+        try:
+            spath,scontent=build_service_page(i,keyword)
+            if spath not in existing:
+                put_file(spath,scontent,f'feat: add {keyword} service page {i}')
+                created.append(spath)
+            bpath,bcontent=build_blog_post(i,keyword)
+            if bpath not in existing:
+                put_file(bpath,bcontent,f'feat: add {keyword} blog post {i}')
+                created.append(bpath)
+        except Exception as e:
+            failures.append(str(e))
+            time.sleep(1)
+    print(f'created={len(created)} failures={len(failures)}')
+    return {'created':len(created),'failures':failures}
 
 if __name__=='__main__':
     run()
