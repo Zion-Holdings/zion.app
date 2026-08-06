@@ -1,0 +1,14 @@
+{
+  "score": 100,
+  "totalWorkflows": 394,
+  "totalScore": 39395,
+  "issues": [
+    {
+      "file": "stale.yml",
+      "score": 95,
+      "issues": [
+        "Missing contents: permission scope"
+      ]
+    }
+  ]
+}

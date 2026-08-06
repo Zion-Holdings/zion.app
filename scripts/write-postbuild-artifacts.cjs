@@ -1,23 +1,22 @@
 #!/usr/bin/env node
-/* write-postbuild-artifacts.cjs — writes .nojekyll, sitemap.xml, robots.txt */
+/**
+ * write-postbuild-artifacts.cjs
+ * Writes post-build artifacts for the static export.
+ */
 const fs = require('fs');
 const path = require('path');
 
-const outDir = path.join(process.cwd(), 'out');
+function write() {
+  const outDir = path.join(process.cwd(), 'out');
+  const artifacts = {
+    buildTimestamp: new Date().toISOString(),
+    buildCompleted: true
+  };
 
-// Ensure out/ directory exists
-if (!fs.existsSync(outDir)) {
-  fs.mkdirSync(outDir, { recursive: true });
+  if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+  fs.writeFileSync(path.join(outDir, '_build-info.json'), JSON.stringify(artifacts, null, 2));
+
+  console.log('Post-build artifacts written.');
 }
 
-// .nojekyll
-fs.writeFileSync(path.join(outDir, '.nojekyll'), '');
-
-// robots.txt
-fs.writeFileSync(path.join(outDir, 'robots.txt'), 
-  'User-agent: *\nAllow: /\nSitemap: https://ziontechgroup.com/sitemap.xml\n');
-
-// sitemap.xml + feed.xml — generated dynamically from build artifacts
-try { require('./generate-sitemap-feed.cjs'); }
-catch (e) { console.error('dynamic sitemap/feed failed:', e.message); }
-console.log('postbuild: .nojekyll, sitemap.xml, robots.txt written to out/');
+write();

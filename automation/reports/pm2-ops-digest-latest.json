@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-08-06T10:19:38.046Z",
+  "ci_mode": true,
+  "github_run_id": "test",
+  "github_repository": "test/test",
+  "processes": [],
+  "budget": {
+    "process_count": 0,
+    "running_count": 0,
+    "stopped_count": 0,
+    "high_restart_count": 0,
+    "high_memory_count": 0,
+    "total_memory_mb": 0,
+    "budget_exceeded": false,
+    "violations": []
+  },
+  "summary": {
+    "total_processes": 0,
+    "online": 0,
+    "stopped": 0,
+    "anomalies": 0,
+    "budget_exceeded": false
+  }
+}

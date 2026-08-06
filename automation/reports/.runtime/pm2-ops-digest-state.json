@@ -1,0 +1,12 @@
+{
+  "last_run": "2026-08-06T10:19:38.050Z",
+  "run_id": "test",
+  "repo": "test/test",
+  "summary": {
+    "total_processes": 0,
+    "online": 0,
+    "stopped": 0,
+    "anomalies": 0,
+    "budget_exceeded": false
+  }
+}

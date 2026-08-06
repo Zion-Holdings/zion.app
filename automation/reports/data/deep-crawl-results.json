@@ -1,0 +1,117 @@
+{
+  "timestamp": "2026-08-06T10:46:07.631Z",
+  "base_url": "https://ziontechgroup.com",
+  "total_html_files": 749,
+  "total_urls_discovered": 773,
+  "total_urls_checked": 773,
+  "full_crawl": true,
+  "status_codes": {
+    "ok_200": 772,
+    "redirects": 0,
+    "broken_404": 0,
+    "server_errors": 1,
+    "timeout": 0,
+    "other": 0
+  },
+  "broken_links": [],
+  "redirects": [],
+  "server_errors": [
+    {
+      "url": "https://ziontechgroup.com/services/it-help-desk-glucidex",
+      "status": "503"
+    }
+  ],
+  "timeouts": [],
+  "seo_issues": {
+    "missing_title": [],
+    "missing_description": [
+      "https://ziontechgroup.com/blog",
+      "https://ziontechgroup.com/contact"
+    ],
+    "missing_h1": [],
+    "missing_canonical": [
+      "https://ziontechgroup.com/blog",
+      "https://ziontechgroup.com/contact",
+      "https://ziontechgroup.com/free-tools.html",
+      "https://ziontechgroup.com/services/accessibility-compliance",
+      "https://ziontechgroup.com/services/advanced-ai-enterprise-intelligence-hub",
+      "https://ziontechgroup.com/services/agentic-workflow-orchestrator",
+      "https://ziontechgroup.com/services/ai-3d-asset-generator",
+      "https://ziontechgroup.com/services/ai-accessibility-auditor",
+      "https://ziontechgroup.com/services/ai-accessibility-optimizer",
+      "https://ziontechgroup.com/services/ai-ad-copy-generator",
+      "https://ziontechgroup.com/services/ai-agent-safety-evaluation",
+      "https://ziontechgroup.com/services/ai-agentic-workflows",
+      "https://ziontechgroup.com/services/ai-agents-autonomous",
+      "https://ziontechgroup.com/services/ai-ai-chatbot-builder",
+      "https://ziontechgroup.com/services/ai-ai-data-labeling",
+      "https://ziontechgroup.com/services/ai-ai-search-platform",
+      "https://ziontechgroup.com/services/ai-aiops-anomaly-detection",
+      "https://ziontechgroup.com/services/ai-analytics",
+      "https://ziontechgroup.com/services/ai-api-orchestration-layer",
+      "https://ziontechgroup.com/services/ai-automated-reporting",
+      "https://ziontechgroup.com/services/ai-automation",
+      "https://ziontechgroup.com/services/ai-autonomous-code-deployment",
+      "https://ziontechgroup.com/services/ai-autonomous-qa-engineering",
+      "https://ziontechgroup.com/services/ai-bdr-sdr",
+      "https://ziontechgroup.com/services/ai-bom-procurement",
+      "https://ziontechgroup.com/services/ai-brand-voice-guardian",
+      "https://ziontechgroup.com/services/ai-bug-to-issue-router",
+      "https://ziontechgroup.com/services/ai-call-center-voice-analytics",
+      "https://ziontechgroup.com/services/ai-campaign-predictor",
+      "https://ziontechgroup.com/services/ai-caption-subtitle-generator",
+      "https://ziontechgroup.com/services/ai-carbon-optimizer",
+      "https://ziontechgroup.com/services/ai-chatbot-builder-pro",
+      "https://ziontechgroup.com/services/ai-chatbot-omnichannel",
+      "https://ziontechgroup.com/services/ai-cloud-cost-optimizer",
+      "https://ziontechgroup.com/services/ai-code-assistant-enterprise",
+      "https://ziontechgroup.com/services/ai-code-audit-security",
+      "https://ziontechgroup.com/services/ai-code-migration",
+      "https://ziontechgroup.com/services/ai-code-migration-assistant",
+      "https://ziontechgroup.com/services/ai-code-migration-modernization",
+      "https://ziontechgroup.com/services/ai-code-review-assistant",
+      "https://ziontechgroup.com/services/ai-code-reviewer",
+      "https://ziontechgroup.com/services/ai-code-reviewer-pro",
+      "https://ziontechgroup.com/services/ai-codebase-doc-generator",
+      "https://ziontechgroup.com/services/ai-competitive-intel-engine"
+    ],
+    "short_title": [
+      "https://ziontechgroup.com/about",
+      "https://ziontechgroup.com/blog",
+      "https://ziontechgroup.com/careers",
+      "https://ziontechgroup.com/contact",
+      "https://ziontechgroup.com/free-tools.html",
+      "https://ziontechgroup.com/help",
+      "https://ziontechgroup.com/pricing",
+      "https://ziontechgroup.com/search"
+    ],
+    "short_description": [
+      "https://ziontechgroup.com/about",
+      "https://ziontechgroup.com/careers",
+      "https://ziontechgroup.com/free-tools.html",
+      "https://ziontechgroup.com/help",
+      "https://ziontechgroup.com/pricing",
+      "https://ziontechgroup.com/search",
+      "https://ziontechgroup.com/services/ai-analytics",
+      "https://ziontechgroup.com/services/ai-automated-reporting",
+      "https://ziontechgroup.com/services/ai-automation",
+      "https://ziontechgroup.com/services/ai-caption-subtitle-generator",
+      "https://ziontechgroup.com/services/ai-code-reviewer-pro",
+      "https://ziontechgroup.com/services/ai-competitive-intel-engine"
+    ]
+  },
+  "improvement_ideas": [
+    {
+      "priority": "medium",
+      "issue": "Missing meta descriptions",
+      "fix": "Add meta description tags to pages for better SEO click-through rates.",
+      "count": 2
+    },
+    {
+      "priority": "medium",
+      "issue": "Missing canonical tags",
+      "fix": "Add rel=canonical tags to prevent duplicate content issues.",
+      "count": 44
+    }
+  ]
+}
