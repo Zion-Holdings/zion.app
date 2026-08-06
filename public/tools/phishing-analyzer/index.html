@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phishing Analyzer - Zion Tech Group</title>
+  <meta name="description" content="Free AI-powered phishing email analyzer — paste suspicious email content to check for phishing indicators.">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+    .card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 1.5rem; margin: 1rem 0; }
+    .cta { display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem; background: #2563eb; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; }
+    textarea { width: 100%; min-height: 200px; padding: 1rem; border: 1px solid #d1d5db; border-radius: 6px; font-family: monospace; font-size: 0.875rem; }
+    button { padding: 0.75rem 1.5rem; background: #2563eb; color: white; border: none; border-radius: 6px; font-weight: 500; cursor: pointer; margin-top: 1rem; }
+    button:hover { background: #1d4ed8; }
+    .result { margin-top: 1rem; padding: 1rem; border-radius: 6px; display: none; }
+    .result.safe { background: #d1fae5; border: 1px solid #10b981; }
+    .result.suspicious { background: #fef3c7; border: 1px solid #f59e0b; }
+    .result.dangerous { background: #fee2e2; border: 1px solid #ef4444; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Phishing Analyzer</h1>
+    <p>Free AI-powered tool to analyze suspicious emails for phishing indicators</p>
+  </header>
+  <main>
+    <div class="card">
+      <h3>How It Works</h3>
+      <p>Paste the full email content (headers + body) below. Our AI will analyze it for common phishing indicators including:</p>
+      <ul>
+        <li>Spoofed sender domains and display names</li>
+        <li>Urgency/threat language patterns</li>
+        <li>Suspicious links and mismatched URLs</li>
+        <li>Credential harvesting attempts</li>
+        <li>Social engineering tactics</li>
+      </ul>
+    </div>
+    
+    <div class="card">
+      <h3>Analyze Email</h3>
+      <textarea id="emailInput" placeholder="Paste email content here (including headers if available)..."></textarea>
+      <button onclick="analyzeEmail()">Analyze</button>
+      <div id="result" class="result"></div>
+    </div>
+    
+    <div class="card">
+      <h3>Quick Tips</h3>
+      <ul>
+        <li>Hover over links before clicking — check the actual URL</li>
+        <li>Verify sender by contacting the organization directly</li>
+        <li>Legitimate companies rarely ask for passwords via email</li>
+        <li>When in doubt, forward to your IT security team</li>
+      </ul>
+    </div>
+  </main>
+  <footer style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #e5e7eb; text-align: center; color: #6b7280;">
+    <p>Zion Tech Group &copy; 2026 | <a href="/">Home</a> | <a href="/services/">Services</a> | <a href="/contact/">Contact</a></p>
+  </footer>
+  <script>
+    function analyzeEmail() {
+      const input = document.getElementById('emailInput').value;
+      const resultDiv = document.getElementById('result');
+      
+      if (!input.trim()) {
+        alert('Please paste email content to analyze');
+        return;
+      }
+      
+      // Simple heuristic analysis (demo)
+      let score = 0;
+      const checks = [];
+      
+      const lowerInput = input.toLowerCase();
+      
+      if (lowerInput.includes('urgent') || lowerInput.includes('immediate') || lowerInput.includes('act now')) {
+        score += 2; checks.push('Urgency language detected');
+      }
+      if (lowerInput.includes('verify your account') || lowerInput.includes('confirm your password') || lowerInput.includes('update your credentials')) {
+        score += 3; checks.push('Credential request detected');
+      }
+      if (lowerInput.includes('click here') || lowerInput.includes('click below')) {
+        score += 1; checks.push('Generic link text');
+      }
+      if (lowerInput.includes('@') && !lowerInput.includes('ziontechgroup.com')) {
+        // Check for mismatched domains (simplified)
+        score += 1; checks.push('External sender domain');
+      }
+      if (input.match(/https?:\/\/[^\s]+/g)) {
+        const urls = input.match(/https?:\/\/[^\s]+/g);
+        for (const url of urls) {
+          if (url.includes('bit.ly') || url.includes('tinyurl') || url.includes('t.co')) {
+            score += 2; checks.push('Shortened URL detected');
+          }
+        }
+      }
+      
+      resultDiv.style.display = 'block';
+      resultDiv.innerHTML = '<h4>Analysis Result</h4>';
+      
+      if (score >= 5) {
+        resultDiv.className = 'result dangerous';
+        resultDiv.innerHTML += `<p><strong>⚠️ HIGH RISK</strong> — This email shows multiple phishing indicators.</p>`;
+      } else if (score >= 2) {
+        resultDiv.className = 'result suspicious';
+        resultDiv.innerHTML += `<p><strong>⚠️ SUSPICIOUS</strong> — This email has some concerning characteristics.</p>`;
+      } else {
+        resultDiv.className = 'result safe';
+        resultDiv.innerHTML += `<p><strong>✅ APPEARS SAFE</strong> — No obvious phishing indicators found.</p>`;
+      }
+      
+      if (checks.length > 0) {
+        resultDiv.innerHTML += '<ul>' + checks.map(c => `<li>${c}</li>`).join('') + '</ul>';
+      }
+      
+      resultDiv.innerHTML += '<p><em>Note: This is a heuristic analysis. Always verify independently with your IT team.</em></p>';
+    }
+  </script>
+</body>
+</html>

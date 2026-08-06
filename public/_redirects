@@ -17,4 +17,12 @@
 # AI resources fallback
 /ai-resources /docs/ai-resources/index.html 200
 /ai-resources/ /docs/ai-resources/index.html 200
+
+# New routes - serve from public
+/status-page/    /status-page/index.html    200
+/public-roadmap/    /public-roadmap/index.html    200
+/solutions/healthcare/    /solutions/healthcare/index.html    200
+/industries/financial-services/    /industries/financial-services/index.html    200
+/tools/phishing-analyzer/    /tools/phishing-analyzer/index.html    200
+/free-consultation/    /free-consultation/index.html    200
 2026-08-04T16:45:49Z

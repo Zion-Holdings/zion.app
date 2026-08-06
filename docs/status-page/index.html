@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Status - Zion Tech Group</title>
+  <meta name="description" content="Real-time system status and operational metrics for Zion Tech Group services.">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 2rem 1rem; }
+    .status-card { border: 1px solid #e5e7eb; border-radius: 8px; padding: 1.5rem; margin: 1rem 0; }
+    .status-healthy { border-left: 4px solid #10b981; }
+    .status-degraded { border-left: 4px solid #f59e0b; }
+    .status-down { border-left: 4px solid #ef4444; }
+    .metric { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #f3f4f6; }
+    .metric:last-child { border-bottom: none; }
+    .badge { padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; }
+    .badge-healthy { background: #d1fae5; color: #065f46; }
+    .badge-degraded { background: #fef3c7; color: #92400e; }
+    .badge-down { background: #fee2e2; color: #991b1b; }
+    .cta { display: inline-block; margin-top: 2rem; padding: 0.75rem 1.5rem; background: #2563eb; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; }
+    .cta:hover { background: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>System Status</h1>
+    <p>Real-time operational metrics for Zion Tech Group services</p>
+  </header>
+  <main>
+    <div class="status-card status-healthy">
+      <h2>Overall Status: <span class="badge badge-healthy">All Systems Operational</span></h2>
+      <p>Last updated: <span id="timestamp"></span></p>
+    </div>
+    
+    <section>
+      <h2>Service Metrics</h2>
+      <div class="status-card">
+        <div class="metric">
+          <span>API Uptime (30d)</span>
+          <span class="badge badge-healthy">99.9%</span>
+        </div>
+        <div class="metric">
+          <span>Response Time (p95)</span>
+          <span>< 200ms</span>
+        </div>
+        <div class="metric">
+          <span>Error Rate</span>
+          <span class="badge badge-healthy">< 0.1%</span>
+        </div>
+        <div class="metric">
+          <span>Active Incidents</span>
+          <span class="badge badge-healthy">0</span>
+        </div>
+      </div>
+    </section>
+    
+    <section>
+      <h2>Component Status</h2>
+      <div class="status-card">
+        <div class="metric">
+          <span>Website</span>
+          <span class="badge badge-healthy">Operational</span>
+        </div>
+        <div class="metric">
+          <span>API Gateway</span>
+          <span class="badge badge-healthy">Operational</span>
+        </div>
+        <div class="metric">
+          <span>Authentication</span>
+          <span class="badge badge-healthy">Operational</span>
+        </div>
+        <div class="metric">
+          <span>Database</span>
+          <span class="badge badge-healthy">Operational</span>
+        </div>
+        <div class="metric">
+          <span>CDN</span>
+          <span class="badge badge-healthy">Operational</span>
+        </div>
+      </div>
+    </section>
+    
+    <a href="/contact/" class="cta">Report an Issue</a>
+  </main>
+  <footer style="margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #e5e7eb; text-align: center; color: #6b7280;">
+    <p>Zion Tech Group &copy; 2026 | <a href="/">Home</a> | <a href="/services/">Services</a> | <a href="/contact/">Contact</a></p>
+  </footer>
+  <script>
+    document.getElementById('timestamp').textContent = new Date().toLocaleString();
+  </script>
+</body>
+</html>

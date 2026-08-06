@@ -1,0 +1,27 @@
+/free-tools-hub/    /tools/    301
+/free-tools/    /tools/    301
+/free-tools    /tools/    301
+/products/    /services/    301
+/consultation/    /contact/    301
+/site-map/    /    301
+/faq/    /about/    301
+/status/    /    301
+/configurator/    /contact/    301
+/dashboard/    /contact/    301
+/docs/    /    301
+/ai-services-index    /services/?category=ai    301
+/free-ai-it-tools    /tools/    301
+/new-ai-services/    /services/    301
+/academy/    /services/    301
+
+# Search
+/search /docs/search/index.html 200
+/search/ /docs/search/index.html 200
+
+# New routes - serve from docs
+/status-page/    /status-page/index.html    200
+/public-roadmap/    /public-roadmap/index.html    200
+/solutions/healthcare/    /solutions/healthcare/index.html    200
+/industries/financial-services/    /industries/financial-services/index.html    200
+/tools/phishing-analyzer/    /tools/phishing-analyzer/index.html    200
+/free-consultation/    /free-consultation/index.html    200
