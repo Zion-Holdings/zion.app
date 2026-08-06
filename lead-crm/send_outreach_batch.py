@@ -427,6 +427,29 @@ def main():
 
     obj = json.loads(Path(batch_path).read_text())
     rows = obj.get('recipients') or obj.get('ready') or obj.get('batch') or []
+    if not rows:
+        leads = obj.get('leads')
+        if isinstance(leads, list):
+            rows = []
+            for lead in leads:
+                to = (lead.get('email') or '').strip().lower()
+                if not to:
+                    continue
+                base = dict(lead)
+                base['to'] = to
+                seq = lead.get('follow_up_sequence') or []
+                if isinstance(seq, list) and seq:
+                    for item in seq:
+                        if isinstance(item, dict):
+                            row = dict(base)
+                            row.setdefault('subject', item.get('subject', ''))
+                            row.setdefault('body', item.get('body', ''))
+                            row.setdefault('status', item.get('status', 'pending'))
+                            rows.append(row)
+                else:
+                    base.setdefault('subject', base.get('subject', ''))
+                    base.setdefault('body', base.get('body', ''))
+                    rows.append(base)
     chat_fn = _llm_chat
     outputs = []
     skipped_templates = 0

@@ -170,5 +170,19 @@
         }
       ]
     }
-  ]
+  ],
+  "ready": [],
+  "improvedAt": "2026-08-06T19:57:04.912868+00:00",
+  "analysisSummary": {
+    "contacts": 0,
+    "contacts_with_personalized_body": 0,
+    "contacts_missing_fields": 0,
+    "ready_count": 0,
+    "excluded_count": 0,
+    "subject_counts": {},
+    "status_counts": {},
+    "improvement_notes": [
+      "Bodies gerados heurísticos para contatos sem thread_body personalizado."
+    ]
+  }
 }
