@@ -54,10 +54,10 @@ If this guide matches your generative ai: common mistakes initiative, the next s
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-migration-service-executive-guide">Database Migration Service Executive Guide</Link></li>
-<li><Link href="/blog/ai-email-intelligence-evaluation-framework">Ai Email Intelligence Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-marketing-personalization-policy-and-compliance">Ai Marketing Personalization Policy And Compliance</Link></li>
-<li><Link href="/blog/incident-management-roi-and-cost-model">Incident Management Roi And Cost Model</Link></li>
+              <li><Link /blog/database-migration-service-executive-guide/>Database Migration Service Executive Guide</Link></li>
+<li><Link /blog/ai-email-intelligence-evaluation-framework/>Ai Email Intelligence Evaluation Framework</Link></li>
+<li><Link /blog/ai-marketing-personalization-policy-and-compliance/>Ai Marketing Personalization Policy And Compliance</Link></li>
+<li><Link /blog/incident-management-roi-and-cost-model/>Incident Management Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

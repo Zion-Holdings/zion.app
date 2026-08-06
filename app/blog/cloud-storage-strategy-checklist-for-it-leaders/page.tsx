@@ -54,10 +54,10 @@ If this guide matches your cloud storage strategy: checklist for it leaders init
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-social-media-manager-case-study">Microsaas Social Media Manager Case Study</Link></li>
-<li><Link href="/blog/aws-cost-optimization-2026">Aws Cost Optimization 2026</Link></li>
-<li><Link href="/blog/apm-application-performance-vendor-evaluation">Apm Application Performance Vendor Evaluation</Link></li>
-<li><Link href="/blog/5g-solutions-2026">5G Solutions 2026</Link></li>
+              <li><Link /blog/microsaas-social-media-manager-case-study/>Microsaas Social Media Manager Case Study</Link></li>
+<li><Link /blog/aws-cost-optimization-2026/>Aws Cost Optimization 2026</Link></li>
+<li><Link /blog/apm-application-performance-vendor-evaluation/>Apm Application Performance Vendor Evaluation</Link></li>
+<li><Link /blog/5g-solutions-2026/>5G Solutions 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-optimization-common-mistakes">Cloud Optimization Common Mistakes</Link></li>
-<li><Link href="/blog/container-security-lifecycle-case-study">Container Security Lifecycle Case Study</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-roi-and-cost-model">Cybersecurity For Msps Roi And Cost Model</Link></li>
-<li><Link href="/blog/api-design-architecture-overview">Api Design Architecture Overview</Link></li>
+              <li><Link /blog/cloud-optimization-common-mistakes/>Cloud Optimization Common Mistakes</Link></li>
+<li><Link /blog/container-security-lifecycle-case-study/>Container Security Lifecycle Case Study</Link></li>
+<li><Link /blog/cybersecurity-for-msps-roi-and-cost-model/>Cybersecurity For Msps Roi And Cost Model</Link></li>
+<li><Link /blog/api-design-architecture-overview/>Api Design Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

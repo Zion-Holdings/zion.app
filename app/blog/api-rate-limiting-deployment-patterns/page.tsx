@@ -57,10 +57,10 @@ Leading indicators for api rate limiting: deployment patterns: workflow completi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-predictive-maintenance-policy-and-compliance">Ai Predictive Maintenance Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-supply-chain-roi-and-cost-model">Ai Supply Chain Roi And Cost Model</Link></li>
-<li><Link href="/blog/database-security-policy-and-compliance">Database Security Policy And Compliance</Link></li>
-<li><Link href="/blog/micro-saas-ai-social-media-manager-2026-6647">Micro Saas Ai Social Media Manager 2026 6647</Link></li>
+              <li><Link /blog/ai-predictive-maintenance-policy-and-compliance/>Ai Predictive Maintenance Policy And Compliance</Link></li>
+<li><Link /blog/ai-supply-chain-roi-and-cost-model/>Ai Supply Chain Roi And Cost Model</Link></li>
+<li><Link /blog/database-security-policy-and-compliance/>Database Security Policy And Compliance</Link></li>
+<li><Link /blog/micro-saas-ai-social-media-manager-2026-6647/>Micro Saas Ai Social Media Manager 2026 6647</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your blockchain enterprise: operations handbook initiative
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-networking-implementation-playbook">Cloud Networking Implementation Playbook</Link></li>
-<li><Link href="/blog/api-management-gateway-security-and-governance">Api Management Gateway Security And Governance</Link></li>
-<li><Link href="/blog/email-security-architecture-overview">Email Security Architecture Overview</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-common-mistakes">Autonomous Code Deployment Common Mistakes</Link></li>
+              <li><Link /blog/cloud-networking-implementation-playbook/>Cloud Networking Implementation Playbook</Link></li>
+<li><Link /blog/api-management-gateway-security-and-governance/>Api Management Gateway Security And Governance</Link></li>
+<li><Link /blog/email-security-architecture-overview/>Email Security Architecture Overview</Link></li>
+<li><Link /blog/autonomous-code-deployment-common-mistakes/>Autonomous Code Deployment Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

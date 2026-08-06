@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/5g-solutions-2026-6776">5G Solutions 2026 6776</Link></li>
-<li><Link href="/blog/ai-expense-tracker-automation-roadmap">Ai Expense Tracker Automation Roadmap</Link></li>
-<li><Link href="/blog/enterprise-data-warehouse-vendor-evaluation">Enterprise Data Warehouse Vendor Evaluation</Link></li>
-<li><Link href="/blog/siem-policy-and-compliance">Siem Policy And Compliance</Link></li>
+              <li><Link /blog/5g-solutions-2026-6776/>5G Solutions 2026 6776</Link></li>
+<li><Link /blog/ai-expense-tracker-automation-roadmap/>Ai Expense Tracker Automation Roadmap</Link></li>
+<li><Link /blog/enterprise-data-warehouse-vendor-evaluation/>Enterprise Data Warehouse Vendor Evaluation</Link></li>
+<li><Link /blog/siem-policy-and-compliance/>Siem Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

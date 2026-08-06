@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-migration-services-2026-6572">Cloud Migration Services 2026 6572</Link></li>
-<li><Link href="/blog/google-cloud-migration-roi-and-cost-model">Google Cloud Migration Roi And Cost Model</Link></li>
-<li><Link href="/blog/network-security-roi-and-cost-model">Network Security Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-2026-7063">Ai 3D Asset Generator 2026 7063</Link></li>
+              <li><Link /blog/cloud-migration-services-2026-6572/>Cloud Migration Services 2026 6572</Link></li>
+<li><Link /blog/google-cloud-migration-roi-and-cost-model/>Google Cloud Migration Roi And Cost Model</Link></li>
+<li><Link /blog/network-security-roi-and-cost-model/>Network Security Roi And Cost Model</Link></li>
+<li><Link /blog/ai-3d-asset-generator-2026-7063/>Ai 3D Asset Generator 2026 7063</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

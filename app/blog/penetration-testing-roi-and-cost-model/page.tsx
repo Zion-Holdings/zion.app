@@ -54,10 +54,10 @@ If this guide matches your penetration testing: roi and cost model initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/low-code-platform-checklist-for-it-leaders">Low Code Platform Checklist For It Leaders</Link></li>
-<li><Link href="/blog/infrastructure-monitoring-operations-handbook">Infrastructure Monitoring Operations Handbook</Link></li>
-<li><Link href="/blog/remote-work-security-evaluation-framework">Remote Work Security Evaluation Framework</Link></li>
-<li><Link href="/blog/data-observability-deployment-patterns">Data Observability Deployment Patterns</Link></li>
+              <li><Link /blog/low-code-platform-checklist-for-it-leaders/>Low Code Platform Checklist For It Leaders</Link></li>
+<li><Link /blog/infrastructure-monitoring-operations-handbook/>Infrastructure Monitoring Operations Handbook</Link></li>
+<li><Link /blog/remote-work-security-evaluation-framework/>Remote Work Security Evaluation Framework</Link></li>
+<li><Link /blog/data-observability-deployment-patterns/>Data Observability Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For governance risk compliance: roi and cost model: pick one workflow, assign ow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-tool-builder-2026-6585">Ai Agent Tool Builder 2026 6585</Link></li>
-<li><Link href="/blog/ai-service-desk-starter-template">Ai Service Desk Starter Template</Link></li>
-<li><Link href="/blog/cloud-native-security-starter-template">Cloud Native Security Starter Template</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-2026-7071">Aiops Anomaly Detection 2026 7071</Link></li>
+              <li><Link /blog/ai-agent-tool-builder-2026-6585/>Ai Agent Tool Builder 2026 6585</Link></li>
+<li><Link /blog/ai-service-desk-starter-template/>Ai Service Desk Starter Template</Link></li>
+<li><Link /blog/cloud-native-security-starter-template/>Cloud Native Security Starter Template</Link></li>
+<li><Link /blog/aiops-anomaly-detection-2026-7071/>Aiops Anomaly Detection 2026 7071</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

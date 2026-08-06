@@ -54,10 +54,10 @@ If this guide matches your data quality: case study initiative, the next step is
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cicd-pipeline-security-automation-roadmap">Cicd Pipeline Security Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-meeting-assistant-case-study">Ai Meeting Assistant Case Study</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-evaluation-framework">Enterprise Backup Dr Evaluation Framework</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-automation-roadmap">Microsaas Expense Tracker Automation Roadmap</Link></li>
+              <li><Link /blog/cicd-pipeline-security-automation-roadmap/>Cicd Pipeline Security Automation Roadmap</Link></li>
+<li><Link /blog/ai-meeting-assistant-case-study/>Ai Meeting Assistant Case Study</Link></li>
+<li><Link /blog/enterprise-backup-dr-evaluation-framework/>Enterprise Backup Dr Evaluation Framework</Link></li>
+<li><Link /blog/microsaas-expense-tracker-automation-roadmap/>Microsaas Expense Tracker Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

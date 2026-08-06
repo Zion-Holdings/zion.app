@@ -54,10 +54,10 @@ If this guide matches your blockchain enterprise: executive guide initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-integration-2026">Enterprise Integration 2026</Link></li>
-<li><Link href="/blog/ai-observability-automation-roadmap">Ai Observability Automation Roadmap</Link></li>
-<li><Link href="/blog/event-driven-architecture-2026-6547">Event Driven Architecture 2026 6547</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-policy-and-compliance">Ai 3D Asset Generator Policy And Compliance</Link></li>
+              <li><Link /blog/enterprise-integration-2026/>Enterprise Integration 2026</Link></li>
+<li><Link /blog/ai-observability-automation-roadmap/>Ai Observability Automation Roadmap</Link></li>
+<li><Link /blog/event-driven-architecture-2026-6547/>Event Driven Architecture 2026 6547</Link></li>
+<li><Link /blog/ai-3d-asset-generator-policy-and-compliance/>Ai 3D Asset Generator Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

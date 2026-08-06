@@ -57,10 +57,10 @@ Leading indicators for ai meeting assistant: common mistakes: workflow completio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/static-application-security-testing-checklist-for-it-leaders">Static Application Security Testing Checklist For It Leaders</Link></li>
-<li><Link href="/blog/test-automation-implementation-playbook">Test Automation Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-architecture-overview">Ai Ad Copy Generator Architecture Overview</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-7072">Api Orchestration Layer 2026 7072</Link></li>
+              <li><Link /blog/static-application-security-testing-checklist-for-it-leaders/>Static Application Security Testing Checklist For It Leaders</Link></li>
+<li><Link /blog/test-automation-implementation-playbook/>Test Automation Implementation Playbook</Link></li>
+<li><Link /blog/ai-ad-copy-generator-architecture-overview/>Ai Ad Copy Generator Architecture Overview</Link></li>
+<li><Link /blog/api-orchestration-layer-2026-7072/>Api Orchestration Layer 2026 7072</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

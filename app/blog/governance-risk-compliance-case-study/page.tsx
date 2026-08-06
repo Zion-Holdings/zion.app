@@ -57,10 +57,10 @@ For governance risk compliance: case study: pick one workflow, assign ownership,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/reinforcement-learning-evaluation-framework">Reinforcement Learning Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-marketing-personalization-policy-and-compliance">Ai Marketing Personalization Policy And Compliance</Link></li>
-<li><Link href="/blog/endpoint-management-2026-6958">Endpoint Management 2026 6958</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6805">Api Gateway Management 2026 6805</Link></li>
+              <li><Link /blog/reinforcement-learning-evaluation-framework/>Reinforcement Learning Evaluation Framework</Link></li>
+<li><Link /blog/ai-marketing-personalization-policy-and-compliance/>Ai Marketing Personalization Policy And Compliance</Link></li>
+<li><Link /blog/endpoint-management-2026-6958/>Endpoint Management 2026 6958</Link></li>
+<li><Link /blog/api-gateway-management-2026-6805/>Api Gateway Management 2026 6805</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

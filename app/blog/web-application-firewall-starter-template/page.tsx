@@ -57,10 +57,10 @@ Leading indicators for web application firewall: starter template: workflow comp
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/machine-learning-2026">Machine Learning 2026</Link></li>
-<li><Link href="/blog/data-analytics-platform-evaluation-framework">Data Analytics Platform Evaluation Framework</Link></li>
-<li><Link href="/blog/ubiquitous-connectivity-architecture-overview">Ubiquitous Connectivity Architecture Overview</Link></li>
-<li><Link href="/blog/web-application-firewall-executive-guide">Web Application Firewall Executive Guide</Link></li>
+              <li><Link /blog/machine-learning-2026/>Machine Learning 2026</Link></li>
+<li><Link /blog/data-analytics-platform-evaluation-framework/>Data Analytics Platform Evaluation Framework</Link></li>
+<li><Link /blog/ubiquitous-connectivity-architecture-overview/>Ubiquitous Connectivity Architecture Overview</Link></li>
+<li><Link /blog/web-application-firewall-executive-guide/>Web Application Firewall Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

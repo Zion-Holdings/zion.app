@@ -57,10 +57,10 @@ For retrieval augmented generation: vendor evaluation: pick one workflow, assign
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-catalog-automation-roadmap">Data Catalog Automation Roadmap</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-operations-handbook">Cloud Cost Ai Optimizer Operations Handbook</Link></li>
-<li><Link href="/blog/accessibility-compliance-starter-template">Accessibility Compliance Starter Template</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6705">Ai Data Lakehouse Pipelines 2026 6705</Link></li>
+              <li><Link /blog/data-catalog-automation-roadmap/>Data Catalog Automation Roadmap</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-operations-handbook/>Cloud Cost Ai Optimizer Operations Handbook</Link></li>
+<li><Link /blog/accessibility-compliance-starter-template/>Accessibility Compliance Starter Template</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-2026-6705/>Ai Data Lakehouse Pipelines 2026 6705</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

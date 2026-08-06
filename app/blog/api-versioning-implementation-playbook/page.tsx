@@ -54,10 +54,10 @@ If this guide matches your api versioning: implementation playbook initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-customer-onboarding-architecture-overview">Microsaas Customer Onboarding Architecture Overview</Link></li>
-<li><Link href="/blog/database-migration-service-operations-handbook">Database Migration Service Operations Handbook</Link></li>
-<li><Link href="/blog/continuous-delivery-2026">Continuous Delivery 2026</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026-3">Cybersecurity Platform Msp 2026 3</Link></li>
+              <li><Link /blog/microsaas-customer-onboarding-architecture-overview/>Microsaas Customer Onboarding Architecture Overview</Link></li>
+<li><Link /blog/database-migration-service-operations-handbook/>Database Migration Service Operations Handbook</Link></li>
+<li><Link /blog/continuous-delivery-2026/>Continuous Delivery 2026</Link></li>
+<li><Link /blog/cybersecurity-platform-msp-2026-3/>Cybersecurity Platform Msp 2026 3</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

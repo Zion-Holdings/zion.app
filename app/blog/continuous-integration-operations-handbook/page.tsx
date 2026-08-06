@@ -57,10 +57,10 @@ Leading indicators for continuous integration: operations handbook: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/artificial-intelligence-ethics-vendor-evaluation">Artificial Intelligence Ethics Vendor Evaluation</Link></li>
-<li><Link href="/blog/automated-ai-reporting-2026-6866">Automated Ai Reporting 2026 6866</Link></li>
-<li><Link href="/blog/machine-learning-engineering-executive-guide">Machine Learning Engineering Executive Guide</Link></li>
-<li><Link href="/blog/database-migration-service-vendor-evaluation">Database Migration Service Vendor Evaluation</Link></li>
+              <li><Link /blog/artificial-intelligence-ethics-vendor-evaluation/>Artificial Intelligence Ethics Vendor Evaluation</Link></li>
+<li><Link /blog/automated-ai-reporting-2026-6866/>Automated Ai Reporting 2026 6866</Link></li>
+<li><Link /blog/machine-learning-engineering-executive-guide/>Machine Learning Engineering Executive Guide</Link></li>
+<li><Link /blog/database-migration-service-vendor-evaluation/>Database Migration Service Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

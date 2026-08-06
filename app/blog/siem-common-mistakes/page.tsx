@@ -54,10 +54,10 @@ If this guide matches your siem: common mistakes initiative, the next step is a 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-backup-starter-template">Ai Data Backup Starter Template</Link></li>
-<li><Link href="/blog/artificial-intelligence-ethics-evaluation-framework">Artificial Intelligence Ethics Evaluation Framework</Link></li>
-<li><Link href="/blog/it-consulting-2026-6984">It Consulting 2026 6984</Link></li>
-<li><Link href="/blog/continuous-deployment-deployment-patterns">Continuous Deployment Deployment Patterns</Link></li>
+              <li><Link /blog/ai-data-backup-starter-template/>Ai Data Backup Starter Template</Link></li>
+<li><Link /blog/artificial-intelligence-ethics-evaluation-framework/>Artificial Intelligence Ethics Evaluation Framework</Link></li>
+<li><Link /blog/it-consulting-2026-6984/>It Consulting 2026 6984</Link></li>
+<li><Link /blog/continuous-deployment-deployment-patterns/>Continuous Deployment Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your vendor management: checklist for it leaders initiativ
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-customer-onboarding-implementation-playbook">Microsaas Customer Onboarding Implementation Playbook</Link></li>
-<li><Link href="/blog/business-intelligence-2026">Business Intelligence 2026</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026-6710">Cloud Migration Services 2026 6710</Link></li>
-<li><Link href="/blog/no-code-platform-automation-roadmap">No Code Platform Automation Roadmap</Link></li>
+              <li><Link /blog/microsaas-customer-onboarding-implementation-playbook/>Microsaas Customer Onboarding Implementation Playbook</Link></li>
+<li><Link /blog/business-intelligence-2026/>Business Intelligence 2026</Link></li>
+<li><Link /blog/cloud-migration-services-2026-6710/>Cloud Migration Services 2026 6710</Link></li>
+<li><Link /blog/no-code-platform-automation-roadmap/>No Code Platform Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

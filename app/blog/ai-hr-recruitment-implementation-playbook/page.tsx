@@ -57,10 +57,10 @@ Leading indicators for ai hr recruitment: implementation playbook: workflow comp
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/information-security-policy-and-compliance">Information Security Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-for-audit-and-compliance-automation">Ai For Audit And Compliance Automation</Link></li>
-<li><Link href="/blog/ai-observability-deployment-patterns">Ai Observability Deployment Patterns</Link></li>
-<li><Link href="/blog/splunk-migration-architecture-overview">Splunk Migration Architecture Overview</Link></li>
+              <li><Link /blog/information-security-policy-and-compliance/>Information Security Policy And Compliance</Link></li>
+<li><Link /blog/ai-for-audit-and-compliance-automation/>Ai For Audit And Compliance Automation</Link></li>
+<li><Link /blog/ai-observability-deployment-patterns/>Ai Observability Deployment Patterns</Link></li>
+<li><Link /blog/splunk-migration-architecture-overview/>Splunk Migration Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

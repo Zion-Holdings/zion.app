@@ -54,10 +54,10 @@ If this guide matches your ai predictive maintenance: roi and cost model initiat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/5g-solutions-automation-roadmap">5G Solutions Automation Roadmap</Link></li>
-<li><Link href="/blog/api-governance-implementation-playbook">Api Governance Implementation Playbook</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-checklist-for-it-leaders">Autonomous Qa Engineering Checklist For It Leaders</Link></li>
-<li><Link href="/blog/policy-as-code-deployment-patterns">Policy As Code Deployment Patterns</Link></li>
+              <li><Link /blog/5g-solutions-automation-roadmap/>5G Solutions Automation Roadmap</Link></li>
+<li><Link /blog/api-governance-implementation-playbook/>Api Governance Implementation Playbook</Link></li>
+<li><Link /blog/autonomous-qa-engineering-checklist-for-it-leaders/>Autonomous Qa Engineering Checklist For It Leaders</Link></li>
+<li><Link /blog/policy-as-code-deployment-patterns/>Policy As Code Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

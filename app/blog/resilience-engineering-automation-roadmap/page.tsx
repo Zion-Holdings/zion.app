@@ -54,10 +54,10 @@ If this guide matches your resilience engineering: automation roadmap initiative
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/software-supply-chain-security-implementation-playbook">Software Supply Chain Security Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-observability-automation-roadmap">Ai Observability Automation Roadmap</Link></li>
-<li><Link href="/blog/enterprise-data-warehouse-case-study">Enterprise Data Warehouse Case Study</Link></li>
-<li><Link href="/blog/vulnerability-assessment-starter-template">Vulnerability Assessment Starter Template</Link></li>
+              <li><Link /blog/software-supply-chain-security-implementation-playbook/>Software Supply Chain Security Implementation Playbook</Link></li>
+<li><Link /blog/ai-observability-automation-roadmap/>Ai Observability Automation Roadmap</Link></li>
+<li><Link /blog/enterprise-data-warehouse-case-study/>Enterprise Data Warehouse Case Study</Link></li>
+<li><Link /blog/vulnerability-assessment-starter-template/>Vulnerability Assessment Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

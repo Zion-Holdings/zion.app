@@ -57,10 +57,10 @@ Leading indicators for ar vr enterprise: roi and cost model: workflow completion
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/azure-migration-roi-and-cost-model">Azure Migration Roi And Cost Model</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-6786">Enterprise Ai Intelligence Hub 2026 6786</Link></li>
-<li><Link href="/blog/network-security-vendor-evaluation">Network Security Vendor Evaluation</Link></li>
-<li><Link href="/blog/generative-ai-security-evaluation-framework">Generative Ai Security Evaluation Framework</Link></li>
+              <li><Link /blog/azure-migration-roi-and-cost-model/>Azure Migration Roi And Cost Model</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-2026-6786/>Enterprise Ai Intelligence Hub 2026 6786</Link></li>
+<li><Link /blog/network-security-vendor-evaluation/>Network Security Vendor Evaluation</Link></li>
+<li><Link /blog/generative-ai-security-evaluation-framework/>Generative Ai Security Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

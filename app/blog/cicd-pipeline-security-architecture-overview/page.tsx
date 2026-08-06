@@ -57,10 +57,10 @@ Leading indicators for ci/cd pipeline security: architecture overview: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-backup-automation-roadmap">Ai Data Backup Automation Roadmap</Link></li>
-<li><Link href="/blog/digital-twin-deployment-patterns">Digital Twin Deployment Patterns</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-roi-and-cost-model">Aiops Anomaly Detection Roi And Cost Model</Link></li>
-<li><Link href="/blog/azure-migration-evaluation-framework">Azure Migration Evaluation Framework</Link></li>
+              <li><Link /blog/ai-data-backup-automation-roadmap/>Ai Data Backup Automation Roadmap</Link></li>
+<li><Link /blog/digital-twin-deployment-patterns/>Digital Twin Deployment Patterns</Link></li>
+<li><Link /blog/aiops-anomaly-detection-roi-and-cost-model/>Aiops Anomaly Detection Roi And Cost Model</Link></li>
+<li><Link /blog/azure-migration-evaluation-framework/>Azure Migration Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

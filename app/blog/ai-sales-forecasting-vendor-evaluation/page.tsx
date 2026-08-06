@@ -57,10 +57,10 @@ For ai sales forecasting: vendor evaluation: pick one workflow, assign ownership
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/business-intelligence-deployment-patterns">Business Intelligence Deployment Patterns</Link></li>
-<li><Link href="/blog/cicd-pipeline-security-automation-roadmap">Cicd Pipeline Security Automation Roadmap</Link></li>
-<li><Link href="/blog/integration-testing-2026">Integration Testing 2026</Link></li>
-<li><Link href="/blog/devops-cicd-2026-7056">Devops Cicd 2026 7056</Link></li>
+              <li><Link /blog/business-intelligence-deployment-patterns/>Business Intelligence Deployment Patterns</Link></li>
+<li><Link /blog/cicd-pipeline-security-automation-roadmap/>Cicd Pipeline Security Automation Roadmap</Link></li>
+<li><Link /blog/integration-testing-2026/>Integration Testing 2026</Link></li>
+<li><Link /blog/devops-cicd-2026-7056/>Devops Cicd 2026 7056</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your business intelligence: checklist for it leaders initi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/accessibility-compliance-architecture-overview">Accessibility Compliance Architecture Overview</Link></li>
-<li><Link href="/blog/edge-computing-2026">Edge Computing 2026</Link></li>
-<li><Link href="/blog/vector-database-common-mistakes">Vector Database Common Mistakes</Link></li>
-<li><Link href="/blog/data-pipeline-orchestration-case-study">Data Pipeline Orchestration Case Study</Link></li>
+              <li><Link /blog/accessibility-compliance-architecture-overview/>Accessibility Compliance Architecture Overview</Link></li>
+<li><Link /blog/edge-computing-2026/>Edge Computing 2026</Link></li>
+<li><Link /blog/vector-database-common-mistakes/>Vector Database Common Mistakes</Link></li>
+<li><Link /blog/data-pipeline-orchestration-case-study/>Data Pipeline Orchestration Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

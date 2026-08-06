@@ -57,10 +57,10 @@ For blue green deployment: evaluation framework: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-observability-operations-handbook">Data Observability Operations Handbook</Link></li>
-<li><Link href="/blog/database-performance-executive-guide">Database Performance Executive Guide</Link></li>
-<li><Link href="/blog/ai-supply-chain-2026">Ai Supply Chain 2026</Link></li>
-<li><Link href="/blog/ai-meeting-assistant-case-study">Ai Meeting Assistant Case Study</Link></li>
+              <li><Link /blog/data-observability-operations-handbook/>Data Observability Operations Handbook</Link></li>
+<li><Link /blog/database-performance-executive-guide/>Database Performance Executive Guide</Link></li>
+<li><Link /blog/ai-supply-chain-2026/>Ai Supply Chain 2026</Link></li>
+<li><Link /blog/ai-meeting-assistant-case-study/>Ai Meeting Assistant Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

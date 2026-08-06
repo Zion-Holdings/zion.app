@@ -57,10 +57,10 @@ For distributed tracing: policy and compliance: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/threat-intelligence-platform-checklist-for-it-leaders">Threat Intelligence Platform Checklist For It Leaders</Link></li>
-<li><Link href="/blog/docker-security-automation-roadmap">Docker Security Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-for-fleet-and-logistics-operations">Ai For Fleet And Logistics Operations</Link></li>
-<li><Link href="/blog/zero-trust-architecture-2026">Zero Trust Architecture 2026</Link></li>
+              <li><Link /blog/threat-intelligence-platform-checklist-for-it-leaders/>Threat Intelligence Platform Checklist For It Leaders</Link></li>
+<li><Link /blog/docker-security-automation-roadmap/>Docker Security Automation Roadmap</Link></li>
+<li><Link /blog/ai-for-fleet-and-logistics-operations/>Ai For Fleet And Logistics Operations</Link></li>
+<li><Link /blog/zero-trust-architecture-2026/>Zero Trust Architecture 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

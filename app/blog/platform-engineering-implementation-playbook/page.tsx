@@ -54,10 +54,10 @@ If this guide matches your platform engineering: implementation playbook initiat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cost-optimization-checklist-for-it-leaders">Cost Optimization Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-vendor-evaluation">Cloud Cost Optimization Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-vendor-evaluation">Ai Customer Success Churn Prevention Vendor Evaluation</Link></li>
-<li><Link href="/blog/vendor-management-roi-and-cost-model">Vendor Management Roi And Cost Model</Link></li>
+              <li><Link /blog/cost-optimization-checklist-for-it-leaders/>Cost Optimization Checklist For It Leaders</Link></li>
+<li><Link /blog/cloud-cost-optimization-vendor-evaluation/>Cloud Cost Optimization Vendor Evaluation</Link></li>
+<li><Link /blog/ai-customer-success-churn-prevention-vendor-evaluation/>Ai Customer Success Churn Prevention Vendor Evaluation</Link></li>
+<li><Link /blog/vendor-management-roi-and-cost-model/>Vendor Management Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

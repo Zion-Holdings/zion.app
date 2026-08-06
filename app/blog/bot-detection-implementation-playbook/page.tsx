@@ -57,10 +57,10 @@ Leading indicators for bot detection: implementation playbook: workflow completi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/edge-computing-deployment-automation-roadmap">Edge Computing Deployment Automation Roadmap</Link></li>
-<li><Link href="/blog/incident-management-common-mistakes">Incident Management Common Mistakes</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-policy-and-compliance">Ai Customer Success Churn Prevention Policy And Compliance</Link></li>
-<li><Link href="/blog/cloud-security-posture-operations-handbook">Cloud Security Posture Operations Handbook</Link></li>
+              <li><Link /blog/edge-computing-deployment-automation-roadmap/>Edge Computing Deployment Automation Roadmap</Link></li>
+<li><Link /blog/incident-management-common-mistakes/>Incident Management Common Mistakes</Link></li>
+<li><Link /blog/ai-customer-success-churn-prevention-policy-and-compliance/>Ai Customer Success Churn Prevention Policy And Compliance</Link></li>
+<li><Link /blog/cloud-security-posture-operations-handbook/>Cloud Security Posture Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

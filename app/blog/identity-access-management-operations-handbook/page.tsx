@@ -57,10 +57,10 @@ Leading indicators for identity access management: operations handbook: workflow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-deployment-patterns">Graphql Federation Platform Deployment Patterns</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-executive-guide">Microsaas Hr Recruitment Executive Guide</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-checklist-for-it-leaders">Ai Agent Tool Builder Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-for-customer-service-and-support-automation">Ai For Customer Service And Support Automation</Link></li>
+              <li><Link /blog/graphql-federation-platform-deployment-patterns/>Graphql Federation Platform Deployment Patterns</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-executive-guide/>Microsaas Hr Recruitment Executive Guide</Link></li>
+<li><Link /blog/ai-agent-tool-builder-checklist-for-it-leaders/>Ai Agent Tool Builder Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-for-customer-service-and-support-automation/>Ai For Customer Service And Support Automation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

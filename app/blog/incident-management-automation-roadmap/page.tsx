@@ -54,10 +54,10 @@ If this guide matches your incident management: automation roadmap initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/no-code-platform-architecture-overview">No Code Platform Architecture Overview</Link></li>
-<li><Link href="/blog/api-gateway-security-roi-and-cost-model">Api Gateway Security Roi And Cost Model</Link></li>
-<li><Link href="/blog/vector-database-architecture-overview">Vector Database Architecture Overview</Link></li>
-<li><Link href="/blog/edge-ai-and-iot-deploying-models-at-the-edge">Edge Ai And Iot Deploying Models At The Edge</Link></li>
+              <li><Link /blog/no-code-platform-architecture-overview/>No Code Platform Architecture Overview</Link></li>
+<li><Link /blog/api-gateway-security-roi-and-cost-model/>Api Gateway Security Roi And Cost Model</Link></li>
+<li><Link /blog/vector-database-architecture-overview/>Vector Database Architecture Overview</Link></li>
+<li><Link /blog/edge-ai-and-iot-deploying-models-at-the-edge/>Edge Ai And Iot Deploying Models At The Edge</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your observability platform: roi and cost model initiative
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/service-mesh-deployment-patterns">Service Mesh Deployment Patterns</Link></li>
-<li><Link href="/blog/remote-work-security-case-study">Remote Work Security Case Study</Link></li>
-<li><Link href="/blog/cost-optimization-roi-and-cost-model">Cost Optimization Roi And Cost Model</Link></li>
-<li><Link href="/blog/identity-access-management-2026">Identity Access Management 2026</Link></li>
+              <li><Link /blog/service-mesh-deployment-patterns/>Service Mesh Deployment Patterns</Link></li>
+<li><Link /blog/remote-work-security-case-study/>Remote Work Security Case Study</Link></li>
+<li><Link /blog/cost-optimization-roi-and-cost-model/>Cost Optimization Roi And Cost Model</Link></li>
+<li><Link /blog/identity-access-management-2026/>Identity Access Management 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

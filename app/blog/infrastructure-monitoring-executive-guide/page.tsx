@@ -54,10 +54,10 @@ If this guide matches your infrastructure monitoring: executive guide initiative
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/container-security-lifecycle-2026-6537">Container Security Lifecycle 2026 6537</Link></li>
-<li><Link href="/blog/privacy-engineering-executive-guide">Privacy Engineering Executive Guide</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-roi-and-cost-model">Ai Agent Safety Evaluation Roi And Cost Model</Link></li>
-<li><Link href="/blog/cicd-best-practices-checklist-for-it-leaders">Cicd Best Practices Checklist For It Leaders</Link></li>
+              <li><Link /blog/container-security-lifecycle-2026-6537/>Container Security Lifecycle 2026 6537</Link></li>
+<li><Link /blog/privacy-engineering-executive-guide/>Privacy Engineering Executive Guide</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-roi-and-cost-model/>Ai Agent Safety Evaluation Roi And Cost Model</Link></li>
+<li><Link /blog/cicd-best-practices-checklist-for-it-leaders/>Cicd Best Practices Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

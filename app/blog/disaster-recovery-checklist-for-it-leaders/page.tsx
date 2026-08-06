@@ -57,10 +57,10 @@ Leading indicators for disaster recovery: checklist for it leaders: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/etl-pipeline-optimization-executive-guide">Etl Pipeline Optimization Executive Guide</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-architecture-overview">Ai Accessibility Optimizer Architecture Overview</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-6971">Cloud Cost Optimization Checklist 2026 6971</Link></li>
-<li><Link href="/blog/data-mesh-deployment-patterns">Data Mesh Deployment Patterns</Link></li>
+              <li><Link /blog/etl-pipeline-optimization-executive-guide/>Etl Pipeline Optimization Executive Guide</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-architecture-overview/>Ai Accessibility Optimizer Architecture Overview</Link></li>
+<li><Link /blog/cloud-cost-optimization-checklist-2026-6971/>Cloud Cost Optimization Checklist 2026 6971</Link></li>
+<li><Link /blog/data-mesh-deployment-patterns/>Data Mesh Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

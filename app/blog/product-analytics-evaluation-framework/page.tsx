@@ -57,10 +57,10 @@ Leading indicators for product analytics: evaluation framework: workflow complet
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/mobile-device-management-checklist-for-it-leaders">Mobile Device Management Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026-6654">Ai Agent Tool Builder 2026 6654</Link></li>
-<li><Link href="/blog/ai-marketing-personalization-architecture-overview">Ai Marketing Personalization Architecture Overview</Link></li>
-<li><Link href="/blog/genai-devops-cicd-automation-roadmap">Genai Devops Cicd Automation Roadmap</Link></li>
+              <li><Link /blog/mobile-device-management-checklist-for-it-leaders/>Mobile Device Management Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-agent-tool-builder-2026-6654/>Ai Agent Tool Builder 2026 6654</Link></li>
+<li><Link /blog/ai-marketing-personalization-architecture-overview/>Ai Marketing Personalization Architecture Overview</Link></li>
+<li><Link /blog/genai-devops-cicd-automation-roadmap/>Genai Devops Cicd Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

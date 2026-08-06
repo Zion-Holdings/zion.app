@@ -57,10 +57,10 @@ Leading indicators for deep learning: policy and compliance: workflow completion
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-social-media-manager-architecture-overview">Microsaas Social Media Manager Architecture Overview</Link></li>
-<li><Link href="/blog/ai-it-operations-case-study">Ai It Operations Case Study</Link></li>
-<li><Link href="/blog/edge-computing-policy-and-compliance">Edge Computing Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-security-and-governance">Ai Ad Copy Generator Security And Governance</Link></li>
+              <li><Link /blog/microsaas-social-media-manager-architecture-overview/>Microsaas Social Media Manager Architecture Overview</Link></li>
+<li><Link /blog/ai-it-operations-case-study/>Ai It Operations Case Study</Link></li>
+<li><Link /blog/edge-computing-policy-and-compliance/>Edge Computing Policy And Compliance</Link></li>
+<li><Link /blog/ai-ad-copy-generator-security-and-governance/>Ai Ad Copy Generator Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

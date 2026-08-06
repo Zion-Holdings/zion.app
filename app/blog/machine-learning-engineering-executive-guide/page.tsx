@@ -54,10 +54,10 @@ If this guide matches your machine learning engineering: executive guide initiat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-performance-monitoring-executive-guide">Ai Performance Monitoring Executive Guide</Link></li>
-<li><Link href="/blog/ai-process-mining-checklist-for-it-leaders">Ai Process Mining Checklist For It Leaders</Link></li>
-<li><Link href="/blog/reinforcement-learning-operations-handbook">Reinforcement Learning Operations Handbook</Link></li>
-<li><Link href="/blog/incident-management-roi-and-cost-model">Incident Management Roi And Cost Model</Link></li>
+              <li><Link /blog/ai-performance-monitoring-executive-guide/>Ai Performance Monitoring Executive Guide</Link></li>
+<li><Link /blog/ai-process-mining-checklist-for-it-leaders/>Ai Process Mining Checklist For It Leaders</Link></li>
+<li><Link /blog/reinforcement-learning-operations-handbook/>Reinforcement Learning Operations Handbook</Link></li>
+<li><Link /blog/incident-management-roi-and-cost-model/>Incident Management Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

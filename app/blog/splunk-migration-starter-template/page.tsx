@@ -57,10 +57,10 @@ For splunk migration: starter template: pick one workflow, assign ownership, def
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/token-optimization-policy-and-compliance">Token Optimization Policy And Compliance</Link></li>
-<li><Link href="/blog/hybrid-cloud-implementation-playbook">Hybrid Cloud Implementation Playbook</Link></li>
-<li><Link href="/blog/unified-endpoint-management-implementation-playbook">Unified Endpoint Management Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-video-analytics-operations-handbook">Ai Video Analytics Operations Handbook</Link></li>
+              <li><Link /blog/token-optimization-policy-and-compliance/>Token Optimization Policy And Compliance</Link></li>
+<li><Link /blog/hybrid-cloud-implementation-playbook/>Hybrid Cloud Implementation Playbook</Link></li>
+<li><Link /blog/unified-endpoint-management-implementation-playbook/>Unified Endpoint Management Implementation Playbook</Link></li>
+<li><Link /blog/ai-video-analytics-operations-handbook/>Ai Video Analytics Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

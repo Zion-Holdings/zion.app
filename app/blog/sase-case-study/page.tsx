@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/web-application-firewall-architecture-overview">Web Application Firewall Architecture Overview</Link></li>
-<li><Link href="/blog/continuous-deployment-deployment-patterns">Continuous Deployment Deployment Patterns</Link></li>
-<li><Link href="/blog/application-modernization-evaluation-framework">Application Modernization Evaluation Framework</Link></li>
-<li><Link href="/blog/continuous-delivery-automation-roadmap">Continuous Delivery Automation Roadmap</Link></li>
+              <li><Link /blog/web-application-firewall-architecture-overview/>Web Application Firewall Architecture Overview</Link></li>
+<li><Link /blog/continuous-deployment-deployment-patterns/>Continuous Deployment Deployment Patterns</Link></li>
+<li><Link /blog/application-modernization-evaluation-framework/>Application Modernization Evaluation Framework</Link></li>
+<li><Link /blog/continuous-delivery-automation-roadmap/>Continuous Delivery Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

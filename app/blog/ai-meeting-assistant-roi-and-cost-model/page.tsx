@@ -57,10 +57,10 @@ Leading indicators for ai meeting assistant: roi and cost model: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/deep-learning-case-study">Deep Learning Case Study</Link></li>
-<li><Link href="/blog/multi-cloud-strategy-roi-and-cost-model">Multi Cloud Strategy Roi And Cost Model</Link></li>
-<li><Link href="/blog/automation-orchestration-architecture-overview">Automation Orchestration Architecture Overview</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-2026-6649">Ai 3D Asset Generator 2026 6649</Link></li>
+              <li><Link /blog/deep-learning-case-study/>Deep Learning Case Study</Link></li>
+<li><Link /blog/multi-cloud-strategy-roi-and-cost-model/>Multi Cloud Strategy Roi And Cost Model</Link></li>
+<li><Link /blog/automation-orchestration-architecture-overview/>Automation Orchestration Architecture Overview</Link></li>
+<li><Link /blog/ai-3d-asset-generator-2026-6649/>Ai 3D Asset Generator 2026 6649</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

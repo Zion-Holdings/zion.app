@@ -57,10 +57,10 @@ Leading indicators for data modeling: deployment patterns: workflow completion r
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-msp-security-compliance-2026-7049">Ai Msp Security Compliance 2026 7049</Link></li>
-<li><Link href="/blog/finops-security-and-governance">Finops Security And Governance</Link></li>
-<li><Link href="/blog/information-security-policy-and-compliance">Information Security Policy And Compliance</Link></li>
-<li><Link href="/blog/zero-trust-architecture-operations-handbook">Zero Trust Architecture Operations Handbook</Link></li>
+              <li><Link /blog/ai-msp-security-compliance-2026-7049/>Ai Msp Security Compliance 2026 7049</Link></li>
+<li><Link /blog/finops-security-and-governance/>Finops Security And Governance</Link></li>
+<li><Link /blog/information-security-policy-and-compliance/>Information Security Policy And Compliance</Link></li>
+<li><Link /blog/zero-trust-architecture-operations-handbook/>Zero Trust Architecture Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

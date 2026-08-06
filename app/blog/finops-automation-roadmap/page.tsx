@@ -54,10 +54,10 @@ If this guide matches your finops: automation roadmap initiative, the next step 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-3d-asset-generator-2026-6511">Ai 3D Asset Generator 2026 6511</Link></li>
-<li><Link href="/blog/hybrid-cloud-vendor-evaluation">Hybrid Cloud Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-supply-chain-architecture-overview">Ai Supply Chain Architecture Overview</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-automation-roadmap">Ai Customer Success Churn Prevention Automation Roadmap</Link></li>
+              <li><Link /blog/ai-3d-asset-generator-2026-6511/>Ai 3D Asset Generator 2026 6511</Link></li>
+<li><Link /blog/hybrid-cloud-vendor-evaluation/>Hybrid Cloud Vendor Evaluation</Link></li>
+<li><Link /blog/ai-supply-chain-architecture-overview/>Ai Supply Chain Architecture Overview</Link></li>
+<li><Link /blog/ai-customer-success-churn-prevention-automation-roadmap/>Ai Customer Success Churn Prevention Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

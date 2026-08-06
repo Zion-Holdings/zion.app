@@ -57,10 +57,10 @@ Leading indicators for continuous deployment: executive guide: workflow completi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/threat-intelligence-platform-2026">Threat Intelligence Platform 2026</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-automation-roadmap">Ai Msp Security Compliance Automation Roadmap</Link></li>
-<li><Link href="/blog/terraform-2026">Terraform 2026</Link></li>
-<li><Link href="/blog/accessibility-compliance-roi-and-cost-model">Accessibility Compliance Roi And Cost Model</Link></li>
+              <li><Link /blog/threat-intelligence-platform-2026/>Threat Intelligence Platform 2026</Link></li>
+<li><Link /blog/ai-msp-security-compliance-automation-roadmap/>Ai Msp Security Compliance Automation Roadmap</Link></li>
+<li><Link /blog/terraform-2026/>Terraform 2026</Link></li>
+<li><Link /blog/accessibility-compliance-roi-and-cost-model/>Accessibility Compliance Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

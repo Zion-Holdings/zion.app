@@ -57,10 +57,10 @@ For ubiquitous connectivity: starter template: pick one workflow, assign ownersh
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-monetization-deployment-patterns">Api Monetization Deployment Patterns</Link></li>
-<li><Link href="/blog/site-reliability-engineering-checklist-for-it-leaders">Site Reliability Engineering Checklist For It Leaders</Link></li>
-<li><Link href="/blog/container-security-lifecycle-2026-6537">Container Security Lifecycle 2026 6537</Link></li>
-<li><Link href="/blog/siem-automation-roadmap">Siem Automation Roadmap</Link></li>
+              <li><Link /blog/api-monetization-deployment-patterns/>Api Monetization Deployment Patterns</Link></li>
+<li><Link /blog/site-reliability-engineering-checklist-for-it-leaders/>Site Reliability Engineering Checklist For It Leaders</Link></li>
+<li><Link /blog/container-security-lifecycle-2026-6537/>Container Security Lifecycle 2026 6537</Link></li>
+<li><Link /blog/siem-automation-roadmap/>Siem Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

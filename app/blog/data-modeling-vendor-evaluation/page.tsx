@@ -57,10 +57,10 @@ For data modeling: vendor evaluation: pick one workflow, assign ownership, defin
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/blue-green-deployment-operations-handbook">Blue Green Deployment Operations Handbook</Link></li>
-<li><Link href="/blog/email-security-2026">Email Security 2026</Link></li>
-<li><Link href="/blog/no-code-platform-architecture-overview">No Code Platform Architecture Overview</Link></li>
-<li><Link href="/blog/distributed-tracing-evaluation-framework">Distributed Tracing Evaluation Framework</Link></li>
+              <li><Link /blog/blue-green-deployment-operations-handbook/>Blue Green Deployment Operations Handbook</Link></li>
+<li><Link /blog/email-security-2026/>Email Security 2026</Link></li>
+<li><Link /blog/no-code-platform-architecture-overview/>No Code Platform Architecture Overview</Link></li>
+<li><Link /blog/distributed-tracing-evaluation-framework/>Distributed Tracing Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

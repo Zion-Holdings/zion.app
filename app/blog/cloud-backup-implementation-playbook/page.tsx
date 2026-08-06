@@ -54,10 +54,10 @@ If this guide matches your cloud backup: implementation playbook initiative, the
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-customer-onboarding-vendor-evaluation">Microsaas Customer Onboarding Vendor Evaluation</Link></li>
-<li><Link href="/blog/it-automation-checklist-for-it-leaders">It Automation Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026-6972">Cybersecurity Platform Msp 2026 6972</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-implementation-playbook">Cybersecurity For Msps Implementation Playbook</Link></li>
+              <li><Link /blog/microsaas-customer-onboarding-vendor-evaluation/>Microsaas Customer Onboarding Vendor Evaluation</Link></li>
+<li><Link /blog/it-automation-checklist-for-it-leaders/>It Automation Checklist For It Leaders</Link></li>
+<li><Link /blog/cybersecurity-platform-msp-2026-6972/>Cybersecurity Platform Msp 2026 6972</Link></li>
+<li><Link /blog/cybersecurity-for-msps-implementation-playbook/>Cybersecurity For Msps Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

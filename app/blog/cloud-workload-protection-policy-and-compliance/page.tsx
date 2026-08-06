@@ -54,10 +54,10 @@ If this guide matches your cloud workload protection: policy and compliance init
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/container-security-lifecycle-2026-6813">Container Security Lifecycle 2026 6813</Link></li>
-<li><Link href="/blog/enterprise-integration-vendor-evaluation">Enterprise Integration Vendor Evaluation</Link></li>
-<li><Link href="/blog/endpoint-management-architecture-overview">Endpoint Management Architecture Overview</Link></li>
-<li><Link href="/blog/ransomware-recovery-starter-template">Ransomware Recovery Starter Template</Link></li>
+              <li><Link /blog/container-security-lifecycle-2026-6813/>Container Security Lifecycle 2026 6813</Link></li>
+<li><Link /blog/enterprise-integration-vendor-evaluation/>Enterprise Integration Vendor Evaluation</Link></li>
+<li><Link /blog/endpoint-management-architecture-overview/>Endpoint Management Architecture Overview</Link></li>
+<li><Link /blog/ransomware-recovery-starter-template/>Ransomware Recovery Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

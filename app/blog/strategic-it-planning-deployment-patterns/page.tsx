@@ -57,10 +57,10 @@ Leading indicators for strategic it planning: deployment patterns: workflow comp
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-onboarding-operations-handbook">Ai Customer Onboarding Operations Handbook</Link></li>
-<li><Link href="/blog/natural-language-processing-architecture-overview">Natural Language Processing Architecture Overview</Link></li>
-<li><Link href="/blog/integration-testing-roi-and-cost-model">Integration Testing Roi And Cost Model</Link></li>
-<li><Link href="/blog/api-integration-evaluation-framework">Api Integration Evaluation Framework</Link></li>
+              <li><Link /blog/ai-customer-onboarding-operations-handbook/>Ai Customer Onboarding Operations Handbook</Link></li>
+<li><Link /blog/natural-language-processing-architecture-overview/>Natural Language Processing Architecture Overview</Link></li>
+<li><Link /blog/integration-testing-roi-and-cost-model/>Integration Testing Roi And Cost Model</Link></li>
+<li><Link /blog/api-integration-evaluation-framework/>Api Integration Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

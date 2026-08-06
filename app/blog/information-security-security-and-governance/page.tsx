@@ -57,10 +57,10 @@ Leading indicators for information security: security and governance: workflow c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/splunk-migration-roi-and-cost-model">Splunk Migration Roi And Cost Model</Link></li>
-<li><Link href="/blog/network-automation-deployment-patterns">Network Automation Deployment Patterns</Link></li>
-<li><Link href="/blog/database-performance-security-and-governance">Database Performance Security And Governance</Link></li>
-<li><Link href="/blog/api-management-gateway-case-study">Api Management Gateway Case Study</Link></li>
+              <li><Link /blog/splunk-migration-roi-and-cost-model/>Splunk Migration Roi And Cost Model</Link></li>
+<li><Link /blog/network-automation-deployment-patterns/>Network Automation Deployment Patterns</Link></li>
+<li><Link /blog/database-performance-security-and-governance/>Database Performance Security And Governance</Link></li>
+<li><Link /blog/api-management-gateway-case-study/>Api Management Gateway Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

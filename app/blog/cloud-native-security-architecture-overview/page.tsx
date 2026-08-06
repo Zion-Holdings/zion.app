@@ -57,10 +57,10 @@ Leading indicators for cloud native security: architecture overview: workflow co
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/aiops-anomaly-detection-vendor-evaluation">Aiops Anomaly Detection Vendor Evaluation</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-6715">Micro Saas Ai Customer Onboarding 2026 6715</Link></li>
-<li><Link href="/blog/ai-observability-architecture-overview">Ai Observability Architecture Overview</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-6557">Cloud Cost Optimization Checklist 2026 6557</Link></li>
+              <li><Link /blog/aiops-anomaly-detection-vendor-evaluation/>Aiops Anomaly Detection Vendor Evaluation</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026-6715/>Micro Saas Ai Customer Onboarding 2026 6715</Link></li>
+<li><Link /blog/ai-observability-architecture-overview/>Ai Observability Architecture Overview</Link></li>
+<li><Link /blog/cloud-cost-optimization-checklist-2026-6557/>Cloud Cost Optimization Checklist 2026 6557</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

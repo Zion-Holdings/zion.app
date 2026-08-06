@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders">Cloud Cost Ai Optimizer Checklist For It Leaders</Link></li>
-<li><Link href="/blog/saas-security-security-and-governance">Saas Security Security And Governance</Link></li>
-<li><Link href="/blog/token-optimization-policy-and-compliance">Token Optimization Policy And Compliance</Link></li>
-<li><Link href="/blog/brand-voice-guardian-2026">Brand Voice Guardian 2026</Link></li>
+              <li><Link /blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/>Cloud Cost Ai Optimizer Checklist For It Leaders</Link></li>
+<li><Link /blog/saas-security-security-and-governance/>Saas Security Security And Governance</Link></li>
+<li><Link /blog/token-optimization-policy-and-compliance/>Token Optimization Policy And Compliance</Link></li>
+<li><Link /blog/brand-voice-guardian-2026/>Brand Voice Guardian 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

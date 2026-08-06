@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/user-behavior-analytics-architecture-overview">User Behavior Analytics Architecture Overview</Link></li>
-<li><Link href="/blog/zero-trust-architecture-automation-roadmap">Zero Trust Architecture Automation Roadmap</Link></li>
-<li><Link href="/blog/api-integration-case-study">Api Integration Case Study</Link></li>
-<li><Link href="/blog/api-versioning-2026">Api Versioning 2026</Link></li>
+              <li><Link /blog/user-behavior-analytics-architecture-overview/>User Behavior Analytics Architecture Overview</Link></li>
+<li><Link /blog/zero-trust-architecture-automation-roadmap/>Zero Trust Architecture Automation Roadmap</Link></li>
+<li><Link /blog/api-integration-case-study/>Api Integration Case Study</Link></li>
+<li><Link /blog/api-versioning-2026/>Api Versioning 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

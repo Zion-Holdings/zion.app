@@ -54,10 +54,10 @@ If this guide matches your ai network optimization: starter template initiative,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/brand-voice-guardian-starter-template">Brand Voice Guardian Starter Template</Link></li>
-<li><Link href="/blog/oncall-best-practices-executive-guide">Oncall Best Practices Executive Guide</Link></li>
-<li><Link href="/blog/data-architecture-implementation-playbook">Data Architecture Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-security-analytics-roi-and-cost-model">Ai Security Analytics Roi And Cost Model</Link></li>
+              <li><Link /blog/brand-voice-guardian-starter-template/>Brand Voice Guardian Starter Template</Link></li>
+<li><Link /blog/oncall-best-practices-executive-guide/>Oncall Best Practices Executive Guide</Link></li>
+<li><Link /blog/data-architecture-implementation-playbook/>Data Architecture Implementation Playbook</Link></li>
+<li><Link /blog/ai-security-analytics-roi-and-cost-model/>Ai Security Analytics Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

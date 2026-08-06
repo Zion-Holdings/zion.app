@@ -57,10 +57,10 @@ For terraform: automation roadmap: pick one workflow, assign ownership, define s
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/process-automation-implementation-playbook">Process Automation Implementation Playbook</Link></li>
-<li><Link href="/blog/database-security-checklist-for-it-leaders">Database Security Checklist For It Leaders</Link></li>
-<li><Link href="/blog/brand-voice-guardian-checklist-for-it-leaders">Brand Voice Guardian Checklist For It Leaders</Link></li>
-<li><Link href="/blog/chaos-engineering-implementation-playbook">Chaos Engineering Implementation Playbook</Link></li>
+              <li><Link /blog/process-automation-implementation-playbook/>Process Automation Implementation Playbook</Link></li>
+<li><Link /blog/database-security-checklist-for-it-leaders/>Database Security Checklist For It Leaders</Link></li>
+<li><Link /blog/brand-voice-guardian-checklist-for-it-leaders/>Brand Voice Guardian Checklist For It Leaders</Link></li>
+<li><Link /blog/chaos-engineering-implementation-playbook/>Chaos Engineering Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

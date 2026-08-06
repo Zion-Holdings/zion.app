@@ -57,10 +57,10 @@ For ai marketing personalization: evaluation framework: pick one workflow, assig
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-security-and-governance">Data Analytics Platform Security And Governance</Link></li>
-<li><Link href="/blog/aiops-evaluation-framework">Aiops Evaluation Framework</Link></li>
-<li><Link href="/blog/edge-computing-deployment-patterns">Edge Computing Deployment Patterns</Link></li>
-<li><Link href="/blog/email-security-common-mistakes">Email Security Common Mistakes</Link></li>
+              <li><Link /blog/data-analytics-platform-security-and-governance/>Data Analytics Platform Security And Governance</Link></li>
+<li><Link /blog/aiops-evaluation-framework/>Aiops Evaluation Framework</Link></li>
+<li><Link /blog/edge-computing-deployment-patterns/>Edge Computing Deployment Patterns</Link></li>
+<li><Link /blog/email-security-common-mistakes/>Email Security Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

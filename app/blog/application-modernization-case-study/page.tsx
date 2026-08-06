@@ -54,10 +54,10 @@ If this guide matches your application modernization: case study initiative, the
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-asset-management-roi-and-cost-model">It Asset Management Roi And Cost Model</Link></li>
-<li><Link href="/blog/hybrid-cloud-implementation-playbook">Hybrid Cloud Implementation Playbook</Link></li>
-<li><Link href="/blog/no-code-platform-roi-and-cost-model">No Code Platform Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-bom-procurement-2026-7077">Ai Bom Procurement 2026 7077</Link></li>
+              <li><Link /blog/it-asset-management-roi-and-cost-model/>It Asset Management Roi And Cost Model</Link></li>
+<li><Link /blog/hybrid-cloud-implementation-playbook/>Hybrid Cloud Implementation Playbook</Link></li>
+<li><Link /blog/no-code-platform-roi-and-cost-model/>No Code Platform Roi And Cost Model</Link></li>
+<li><Link /blog/ai-bom-procurement-2026-7077/>Ai Bom Procurement 2026 7077</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

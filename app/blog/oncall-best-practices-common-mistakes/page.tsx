@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-backup-dr-executive-guide">Enterprise Backup Dr Executive Guide</Link></li>
-<li><Link href="/blog/sase-executive-guide">Sase Executive Guide</Link></li>
-<li><Link href="/blog/azure-migration-vendor-evaluation">Azure Migration Vendor Evaluation</Link></li>
-<li><Link href="/blog/disaster-recovery-roi-and-cost-model">Disaster Recovery Roi And Cost Model</Link></li>
+              <li><Link /blog/enterprise-backup-dr-executive-guide/>Enterprise Backup Dr Executive Guide</Link></li>
+<li><Link /blog/sase-executive-guide/>Sase Executive Guide</Link></li>
+<li><Link /blog/azure-migration-vendor-evaluation/>Azure Migration Vendor Evaluation</Link></li>
+<li><Link /blog/disaster-recovery-roi-and-cost-model/>Disaster Recovery Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

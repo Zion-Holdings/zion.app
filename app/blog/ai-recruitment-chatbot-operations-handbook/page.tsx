@@ -57,10 +57,10 @@ Leading indicators for ai recruitment chatbot: operations handbook: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-ad-copy-generator-2026">Ai Ad Copy Generator 2026</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders">Cloud Cost Ai Optimizer Checklist For It Leaders</Link></li>
-<li><Link href="/blog/edge-computing-2026">Edge Computing 2026</Link></li>
-<li><Link href="/blog/container-security-lifecycle-checklist-for-it-leaders">Container Security Lifecycle Checklist For It Leaders</Link></li>
+              <li><Link /blog/ai-ad-copy-generator-2026/>Ai Ad Copy Generator 2026</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/>Cloud Cost Ai Optimizer Checklist For It Leaders</Link></li>
+<li><Link /blog/edge-computing-2026/>Edge Computing 2026</Link></li>
+<li><Link /blog/container-security-lifecycle-checklist-for-it-leaders/>Container Security Lifecycle Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

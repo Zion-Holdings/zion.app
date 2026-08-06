@@ -57,10 +57,10 @@ For infrastructure monitoring: roi and cost model: pick one workflow, assign own
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/reinforcement-learning-case-study">Reinforcement Learning Case Study</Link></li>
-<li><Link href="/blog/ai-bom-procurement-evaluation-framework">Ai Bom Procurement Evaluation Framework</Link></li>
-<li><Link href="/blog/machine-learning-automation-roadmap">Machine Learning Automation Roadmap</Link></li>
-<li><Link href="/blog/no-code-platform-implementation-playbook">No Code Platform Implementation Playbook</Link></li>
+              <li><Link /blog/reinforcement-learning-case-study/>Reinforcement Learning Case Study</Link></li>
+<li><Link /blog/ai-bom-procurement-evaluation-framework/>Ai Bom Procurement Evaluation Framework</Link></li>
+<li><Link /blog/machine-learning-automation-roadmap/>Machine Learning Automation Roadmap</Link></li>
+<li><Link /blog/no-code-platform-implementation-playbook/>No Code Platform Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

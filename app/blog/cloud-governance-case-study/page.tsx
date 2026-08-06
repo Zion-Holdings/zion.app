@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/structured-data-extraction-policy-and-compliance">Structured Data Extraction Policy And Compliance</Link></li>
-<li><Link href="/blog/edge-computing-deployment-vendor-evaluation">Edge Computing Deployment Vendor Evaluation</Link></li>
-<li><Link href="/blog/network-automation-deployment-patterns">Network Automation Deployment Patterns</Link></li>
-<li><Link href="/blog/prompt-engineering-automation-roadmap">Prompt Engineering Automation Roadmap</Link></li>
+              <li><Link /blog/structured-data-extraction-policy-and-compliance/>Structured Data Extraction Policy And Compliance</Link></li>
+<li><Link /blog/edge-computing-deployment-vendor-evaluation/>Edge Computing Deployment Vendor Evaluation</Link></li>
+<li><Link /blog/network-automation-deployment-patterns/>Network Automation Deployment Patterns</Link></li>
+<li><Link /blog/prompt-engineering-automation-roadmap/>Prompt Engineering Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

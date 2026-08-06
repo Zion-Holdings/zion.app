@@ -54,10 +54,10 @@ If this guide matches your incident management: checklist for it leaders initiat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automation-orchestration-starter-template">Automation Orchestration Starter Template</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-automation-roadmap">Ai Ad Copy Generator Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-development-acceleration-automation-roadmap">Ai Development Acceleration Automation Roadmap</Link></li>
-<li><Link href="/blog/siem-checklist-for-it-leaders">Siem Checklist For It Leaders</Link></li>
+              <li><Link /blog/automation-orchestration-starter-template/>Automation Orchestration Starter Template</Link></li>
+<li><Link /blog/ai-ad-copy-generator-automation-roadmap/>Ai Ad Copy Generator Automation Roadmap</Link></li>
+<li><Link /blog/ai-development-acceleration-automation-roadmap/>Ai Development Acceleration Automation Roadmap</Link></li>
+<li><Link /blog/siem-checklist-for-it-leaders/>Siem Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

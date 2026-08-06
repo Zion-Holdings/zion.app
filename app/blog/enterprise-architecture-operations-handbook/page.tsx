@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-performance-monitoring-2026-6735">Ai Performance Monitoring 2026 6735</Link></li>
-<li><Link href="/blog/log-management-roi-and-cost-model">Log Management Roi And Cost Model</Link></li>
-<li><Link href="/blog/email-security-starter-template">Email Security Starter Template</Link></li>
-<li><Link href="/blog/aws-cost-optimization-automation-roadmap">Aws Cost Optimization Automation Roadmap</Link></li>
+              <li><Link /blog/ai-performance-monitoring-2026-6735/>Ai Performance Monitoring 2026 6735</Link></li>
+<li><Link /blog/log-management-roi-and-cost-model/>Log Management Roi And Cost Model</Link></li>
+<li><Link /blog/email-security-starter-template/>Email Security Starter Template</Link></li>
+<li><Link /blog/aws-cost-optimization-automation-roadmap/>Aws Cost Optimization Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

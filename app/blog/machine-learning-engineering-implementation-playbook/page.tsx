@@ -57,10 +57,10 @@ Leading indicators for machine learning engineering: implementation playbook: wo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/google-cloud-migration-case-study">Google Cloud Migration Case Study</Link></li>
-<li><Link href="/blog/cloud-native-security-automation-roadmap">Cloud Native Security Automation Roadmap</Link></li>
-<li><Link href="/blog/enterprise-service-bus-executive-guide">Enterprise Service Bus Executive Guide</Link></li>
-<li><Link href="/blog/data-virtualization-checklist-for-it-leaders">Data Virtualization Checklist For It Leaders</Link></li>
+              <li><Link /blog/google-cloud-migration-case-study/>Google Cloud Migration Case Study</Link></li>
+<li><Link /blog/cloud-native-security-automation-roadmap/>Cloud Native Security Automation Roadmap</Link></li>
+<li><Link /blog/enterprise-service-bus-executive-guide/>Enterprise Service Bus Executive Guide</Link></li>
+<li><Link /blog/data-virtualization-checklist-for-it-leaders/>Data Virtualization Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

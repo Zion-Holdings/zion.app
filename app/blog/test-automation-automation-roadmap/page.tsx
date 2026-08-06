@@ -57,10 +57,10 @@ For test automation: automation roadmap: pick one workflow, assign ownership, de
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-predictive-maintenance-evaluation-framework">Ai Predictive Maintenance Evaluation Framework</Link></li>
-<li><Link href="/blog/machine-learning-engineering-evaluation-framework">Machine Learning Engineering Evaluation Framework</Link></li>
-<li><Link href="/blog/infrastructure-as-code-executive-guide">Infrastructure As Code Executive Guide</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026-7068">Ai Agent Tool Builder 2026 7068</Link></li>
+              <li><Link /blog/ai-predictive-maintenance-evaluation-framework/>Ai Predictive Maintenance Evaluation Framework</Link></li>
+<li><Link /blog/machine-learning-engineering-evaluation-framework/>Machine Learning Engineering Evaluation Framework</Link></li>
+<li><Link /blog/infrastructure-as-code-executive-guide/>Infrastructure As Code Executive Guide</Link></li>
+<li><Link /blog/ai-agent-tool-builder-2026-7068/>Ai Agent Tool Builder 2026 7068</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

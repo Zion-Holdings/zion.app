@@ -57,10 +57,10 @@ Leading indicators for api design: checklist for it leaders: workflow completion
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cost-optimization-evaluation-framework">Cost Optimization Evaluation Framework</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-executive-guide">Microsaas Customer Onboarding Executive Guide</Link></li>
-<li><Link href="/blog/ai-network-optimization-architecture-overview">Ai Network Optimization Architecture Overview</Link></li>
-<li><Link href="/blog/infrastructure-monitoring-executive-guide">Infrastructure Monitoring Executive Guide</Link></li>
+              <li><Link /blog/cost-optimization-evaluation-framework/>Cost Optimization Evaluation Framework</Link></li>
+<li><Link /blog/microsaas-customer-onboarding-executive-guide/>Microsaas Customer Onboarding Executive Guide</Link></li>
+<li><Link /blog/ai-network-optimization-architecture-overview/>Ai Network Optimization Architecture Overview</Link></li>
+<li><Link /blog/infrastructure-monitoring-executive-guide/>Infrastructure Monitoring Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

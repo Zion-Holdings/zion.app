@@ -57,10 +57,10 @@ Leading indicators for infrastructure as code: case study: workflow completion r
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cybersecurity-for-msps-architecture-overview">Cybersecurity For Msps Architecture Overview</Link></li>
-<li><Link href="/blog/ai-customer-onboarding-executive-guide">Ai Customer Onboarding Executive Guide</Link></li>
-<li><Link href="/blog/enterprise-service-bus-automation-roadmap">Enterprise Service Bus Automation Roadmap</Link></li>
-<li><Link href="/blog/content-delivery-network-roi-and-cost-model">Content Delivery Network Roi And Cost Model</Link></li>
+              <li><Link /blog/cybersecurity-for-msps-architecture-overview/>Cybersecurity For Msps Architecture Overview</Link></li>
+<li><Link /blog/ai-customer-onboarding-executive-guide/>Ai Customer Onboarding Executive Guide</Link></li>
+<li><Link /blog/enterprise-service-bus-automation-roadmap/>Enterprise Service Bus Automation Roadmap</Link></li>
+<li><Link /blog/content-delivery-network-roi-and-cost-model/>Content Delivery Network Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

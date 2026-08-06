@@ -57,10 +57,10 @@ For data architecture: automation roadmap: pick one workflow, assign ownership, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-marketing-personalization-executive-guide">Ai Marketing Personalization Executive Guide</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-6784">Micro Saas Ai Customer Onboarding 2026 6784</Link></li>
-<li><Link href="/blog/ai-development-acceleration-2026-6839">Ai Development Acceleration 2026 6839</Link></li>
-<li><Link href="/blog/database-as-a-service-operations-handbook">Database As A Service Operations Handbook</Link></li>
+              <li><Link /blog/ai-marketing-personalization-executive-guide/>Ai Marketing Personalization Executive Guide</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026-6784/>Micro Saas Ai Customer Onboarding 2026 6784</Link></li>
+<li><Link /blog/ai-development-acceleration-2026-6839/>Ai Development Acceleration 2026 6839</Link></li>
+<li><Link /blog/database-as-a-service-operations-handbook/>Database As A Service Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

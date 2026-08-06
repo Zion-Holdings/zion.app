@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-vendor-evaluation">Cloud Cost Ai Optimizer Vendor Evaluation</Link></li>
-<li><Link href="/blog/data-security-checklist-for-it-leaders">Data Security Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-policy-and-compliance">Cloud Cost Ai Optimizer Policy And Compliance</Link></li>
-<li><Link href="/blog/vector-database-vendor-evaluation">Vector Database Vendor Evaluation</Link></li>
+              <li><Link /blog/cloud-cost-ai-optimizer-vendor-evaluation/>Cloud Cost Ai Optimizer Vendor Evaluation</Link></li>
+<li><Link /blog/data-security-checklist-for-it-leaders/>Data Security Checklist For It Leaders</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-policy-and-compliance/>Cloud Cost Ai Optimizer Policy And Compliance</Link></li>
+<li><Link /blog/vector-database-vendor-evaluation/>Vector Database Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

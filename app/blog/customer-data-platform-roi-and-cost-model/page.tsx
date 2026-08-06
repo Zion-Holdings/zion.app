@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-2026-6549">Graphql Federation Platform 2026 6549</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-6819">Edge Computing Deployment 2026 6819</Link></li>
-<li><Link href="/blog/ai-development-acceleration-2026-6632">Ai Development Acceleration 2026 6632</Link></li>
-<li><Link href="/blog/retrieval-augmented-generation-2026">Retrieval Augmented Generation 2026</Link></li>
+              <li><Link /blog/graphql-federation-platform-2026-6549/>Graphql Federation Platform 2026 6549</Link></li>
+<li><Link /blog/edge-computing-deployment-2026-6819/>Edge Computing Deployment 2026 6819</Link></li>
+<li><Link /blog/ai-development-acceleration-2026-6632/>Ai Development Acceleration 2026 6632</Link></li>
+<li><Link /blog/retrieval-augmented-generation-2026/>Retrieval Augmented Generation 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

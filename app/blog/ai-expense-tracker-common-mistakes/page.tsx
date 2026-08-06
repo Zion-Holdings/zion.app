@@ -57,10 +57,10 @@ Leading indicators for ai expense tracker: common mistakes: workflow completion 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-modeling-case-study">Data Modeling Case Study</Link></li>
-<li><Link href="/blog/distributed-tracing-2026">Distributed Tracing 2026</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-2026-6960">Etl Pipeline Optimization 2026 6960</Link></li>
-<li><Link href="/blog/api-performance-testing-2026-6829">Api Performance Testing 2026 6829</Link></li>
+              <li><Link /blog/data-modeling-case-study/>Data Modeling Case Study</Link></li>
+<li><Link /blog/distributed-tracing-2026/>Distributed Tracing 2026</Link></li>
+<li><Link /blog/etl-pipeline-optimization-2026-6960/>Etl Pipeline Optimization 2026 6960</Link></li>
+<li><Link /blog/api-performance-testing-2026-6829/>Api Performance Testing 2026 6829</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for artificial intelligence ethics: policy and compliance: wo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/monitoring-observability-checklist-for-it-leaders">Monitoring Observability Checklist For It Leaders</Link></li>
-<li><Link href="/blog/mobile-device-management-security-and-governance">Mobile Device Management Security And Governance</Link></li>
-<li><Link href="/blog/cloud-security-posture-evaluation-framework">Cloud Security Posture Evaluation Framework</Link></li>
-<li><Link href="/blog/data-observability-architecture-overview">Data Observability Architecture Overview</Link></li>
+              <li><Link /blog/monitoring-observability-checklist-for-it-leaders/>Monitoring Observability Checklist For It Leaders</Link></li>
+<li><Link /blog/mobile-device-management-security-and-governance/>Mobile Device Management Security And Governance</Link></li>
+<li><Link /blog/cloud-security-posture-evaluation-framework/>Cloud Security Posture Evaluation Framework</Link></li>
+<li><Link /blog/data-observability-architecture-overview/>Data Observability Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-6990">Micro Saas Ai Hr Recruitment 2026 6990</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-checklist-for-it-leaders">Microsaas Expense Tracker Checklist For It Leaders</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-operations-handbook">Autonomous Code Deployment Operations Handbook</Link></li>
-<li><Link href="/blog/process-automation-deployment-patterns">Process Automation Deployment Patterns</Link></li>
+              <li><Link /blog/micro-saas-ai-hr-recruitment-2026-6990/>Micro Saas Ai Hr Recruitment 2026 6990</Link></li>
+<li><Link /blog/microsaas-expense-tracker-checklist-for-it-leaders/>Microsaas Expense Tracker Checklist For It Leaders</Link></li>
+<li><Link /blog/autonomous-code-deployment-operations-handbook/>Autonomous Code Deployment Operations Handbook</Link></li>
+<li><Link /blog/process-automation-deployment-patterns/>Process Automation Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

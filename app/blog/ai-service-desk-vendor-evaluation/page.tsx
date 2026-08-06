@@ -54,10 +54,10 @@ If this guide matches your ai service desk: vendor evaluation initiative, the ne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/identity-access-management-case-study">Identity Access Management Case Study</Link></li>
-<li><Link href="/blog/cloud-governance-security-and-governance">Cloud Governance Security And Governance</Link></li>
-<li><Link href="/blog/api-governance-starter-template">Api Governance Starter Template</Link></li>
-<li><Link href="/blog/api-economy-executive-guide">Api Economy Executive Guide</Link></li>
+              <li><Link /blog/identity-access-management-case-study/>Identity Access Management Case Study</Link></li>
+<li><Link /blog/cloud-governance-security-and-governance/>Cloud Governance Security And Governance</Link></li>
+<li><Link /blog/api-governance-starter-template/>Api Governance Starter Template</Link></li>
+<li><Link /blog/api-economy-executive-guide/>Api Economy Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For platform engineering: security and governance: pick one workflow, assign own
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-security-and-governance">Endpoint Management Security And Governance</Link></li>
-<li><Link href="/blog/privacy-engineering-2026">Privacy Engineering 2026</Link></li>
-<li><Link href="/blog/incident-management-policy-and-compliance">Incident Management Policy And Compliance</Link></li>
-<li><Link href="/blog/unified-endpoint-management-2026">Unified Endpoint Management 2026</Link></li>
+              <li><Link /blog/endpoint-management-security-and-governance/>Endpoint Management Security And Governance</Link></li>
+<li><Link /blog/privacy-engineering-2026/>Privacy Engineering 2026</Link></li>
+<li><Link /blog/incident-management-policy-and-compliance/>Incident Management Policy And Compliance</Link></li>
+<li><Link /blog/unified-endpoint-management-2026/>Unified Endpoint Management 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

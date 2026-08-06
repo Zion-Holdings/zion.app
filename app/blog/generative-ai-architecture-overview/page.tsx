@@ -57,10 +57,10 @@ For generative ai: architecture overview: pick one workflow, assign ownership, d
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/information-security-evaluation-framework">Information Security Evaluation Framework</Link></li>
-<li><Link href="/blog/cloud-native-app-development-evaluation-framework">Cloud Native App Development Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-expense-tracker-security-and-governance">Ai Expense Tracker Security And Governance</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-2026-6677">Data Warehouse Modernization 2026 6677</Link></li>
+              <li><Link /blog/information-security-evaluation-framework/>Information Security Evaluation Framework</Link></li>
+<li><Link /blog/cloud-native-app-development-evaluation-framework/>Cloud Native App Development Evaluation Framework</Link></li>
+<li><Link /blog/ai-expense-tracker-security-and-governance/>Ai Expense Tracker Security And Governance</Link></li>
+<li><Link /blog/data-warehouse-modernization-2026-6677/>Data Warehouse Modernization 2026 6677</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

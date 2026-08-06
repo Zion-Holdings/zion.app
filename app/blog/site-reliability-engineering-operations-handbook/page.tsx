@@ -54,10 +54,10 @@ If this guide matches your site reliability engineering: operations handbook ini
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/etl-pipeline-optimization-2026-7029">Etl Pipeline Optimization 2026 7029</Link></li>
-<li><Link href="/blog/api-security-testing-roi-and-cost-model">Api Security Testing Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-policy-and-compliance">Ai Ad Copy Generator Policy And Compliance</Link></li>
-<li><Link href="/blog/penetration-testing-starter-template">Penetration Testing Starter Template</Link></li>
+              <li><Link /blog/etl-pipeline-optimization-2026-7029/>Etl Pipeline Optimization 2026 7029</Link></li>
+<li><Link /blog/api-security-testing-roi-and-cost-model/>Api Security Testing Roi And Cost Model</Link></li>
+<li><Link /blog/ai-ad-copy-generator-policy-and-compliance/>Ai Ad Copy Generator Policy And Compliance</Link></li>
+<li><Link /blog/penetration-testing-starter-template/>Penetration Testing Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

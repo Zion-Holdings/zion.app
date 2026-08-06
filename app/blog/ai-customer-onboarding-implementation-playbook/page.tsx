@@ -57,10 +57,10 @@ For ai customer onboarding: implementation playbook: pick one workflow, assign o
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/threat-intelligence-platform-evaluation-framework">Threat Intelligence Platform Evaluation Framework</Link></li>
-<li><Link href="/blog/azure-migration-checklist-for-it-leaders">Azure Migration Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-observability-2026-6565">Ai Observability 2026 6565</Link></li>
-<li><Link href="/blog/technology-roadmap-security-and-governance">Technology Roadmap Security And Governance</Link></li>
+              <li><Link /blog/threat-intelligence-platform-evaluation-framework/>Threat Intelligence Platform Evaluation Framework</Link></li>
+<li><Link /blog/azure-migration-checklist-for-it-leaders/>Azure Migration Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-observability-2026-6565/>Ai Observability 2026 6565</Link></li>
+<li><Link /blog/technology-roadmap-security-and-governance/>Technology Roadmap Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

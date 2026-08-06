@@ -57,10 +57,10 @@ Leading indicators for kubernetes: executive guide: workflow completion rate, es
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cost-optimization-common-mistakes">Cost Optimization Common Mistakes</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-2026-6538">Cyber Threat Intelligence 2026 6538</Link></li>
-<li><Link href="/blog/product-led-growth-vendor-evaluation">Product Led Growth Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-roi-and-cost-model">Ai Ad Copy Generator Roi And Cost Model</Link></li>
+              <li><Link /blog/cost-optimization-common-mistakes/>Cost Optimization Common Mistakes</Link></li>
+<li><Link /blog/cyber-threat-intelligence-2026-6538/>Cyber Threat Intelligence 2026 6538</Link></li>
+<li><Link /blog/product-led-growth-vendor-evaluation/>Product Led Growth Vendor Evaluation</Link></li>
+<li><Link /blog/ai-ad-copy-generator-roi-and-cost-model/>Ai Ad Copy Generator Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

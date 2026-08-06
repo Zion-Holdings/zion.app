@@ -57,10 +57,10 @@ Leading indicators for data security: deployment patterns: workflow completion r
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/product-led-growth-checklist-for-it-leaders">Product Led Growth Checklist For It Leaders</Link></li>
-<li><Link href="/blog/data-security-evaluation-framework">Data Security Evaluation Framework</Link></li>
-<li><Link href="/blog/devops-cicd-2026-6573">Devops Cicd 2026 6573</Link></li>
-<li><Link href="/blog/ransomware-recovery-evaluation-framework">Ransomware Recovery Evaluation Framework</Link></li>
+              <li><Link /blog/product-led-growth-checklist-for-it-leaders/>Product Led Growth Checklist For It Leaders</Link></li>
+<li><Link /blog/data-security-evaluation-framework/>Data Security Evaluation Framework</Link></li>
+<li><Link /blog/devops-cicd-2026-6573/>Devops Cicd 2026 6573</Link></li>
+<li><Link /blog/ransomware-recovery-evaluation-framework/>Ransomware Recovery Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

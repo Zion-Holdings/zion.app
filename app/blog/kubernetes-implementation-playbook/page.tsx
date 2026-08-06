@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/vendor-management-evaluation-framework">Vendor Management Evaluation Framework</Link></li>
-<li><Link href="/blog/edge-computing-deployment-checklist-for-it-leaders">Edge Computing Deployment Checklist For It Leaders</Link></li>
-<li><Link href="/blog/bot-detection-case-study">Bot Detection Case Study</Link></li>
-<li><Link href="/blog/ai-customer-support-architecture-overview">Ai Customer Support Architecture Overview</Link></li>
+              <li><Link /blog/vendor-management-evaluation-framework/>Vendor Management Evaluation Framework</Link></li>
+<li><Link /blog/edge-computing-deployment-checklist-for-it-leaders/>Edge Computing Deployment Checklist For It Leaders</Link></li>
+<li><Link /blog/bot-detection-case-study/>Bot Detection Case Study</Link></li>
+<li><Link /blog/ai-customer-support-architecture-overview/>Ai Customer Support Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

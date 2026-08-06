@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/deep-learning-implementation-playbook">Deep Learning Implementation Playbook</Link></li>
-<li><Link href="/blog/automation-orchestration-enterprise-2026-6">Automation Orchestration Enterprise 2026 6</Link></li>
-<li><Link href="/blog/managed-detection-response-implementation-playbook">Managed Detection Response Implementation Playbook</Link></li>
-<li><Link href="/blog/privacy-engineering-2026">Privacy Engineering 2026</Link></li>
+              <li><Link /blog/deep-learning-implementation-playbook/>Deep Learning Implementation Playbook</Link></li>
+<li><Link /blog/automation-orchestration-enterprise-2026-6/>Automation Orchestration Enterprise 2026 6</Link></li>
+<li><Link /blog/managed-detection-response-implementation-playbook/>Managed Detection Response Implementation Playbook</Link></li>
+<li><Link /blog/privacy-engineering-2026/>Privacy Engineering 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

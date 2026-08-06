@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-hr-recruitment-policy-and-compliance">Microsaas Hr Recruitment Policy And Compliance</Link></li>
-<li><Link href="/blog/golang-microservices-case-study">Golang Microservices Case Study</Link></li>
-<li><Link href="/blog/ai-voice-assistant-deployment-patterns">Ai Voice Assistant Deployment Patterns</Link></li>
-<li><Link href="/blog/data-catalog-executive-guide">Data Catalog Executive Guide</Link></li>
+              <li><Link /blog/microsaas-hr-recruitment-policy-and-compliance/>Microsaas Hr Recruitment Policy And Compliance</Link></li>
+<li><Link /blog/golang-microservices-case-study/>Golang Microservices Case Study</Link></li>
+<li><Link /blog/ai-voice-assistant-deployment-patterns/>Ai Voice Assistant Deployment Patterns</Link></li>
+<li><Link /blog/data-catalog-executive-guide/>Data Catalog Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

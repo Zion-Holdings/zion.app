@@ -57,10 +57,10 @@ Leading indicators for ai voice assistant: automation roadmap: workflow completi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-policy-and-compliance">Event Driven Architecture Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-2026-6662">Ai Bdr Sdr 2026 6662</Link></li>
-<li><Link href="/blog/penetration-testing-case-study">Penetration Testing Case Study</Link></li>
-<li><Link href="/blog/endpoint-management-architecture-overview">Endpoint Management Architecture Overview</Link></li>
+              <li><Link /blog/event-driven-architecture-policy-and-compliance/>Event Driven Architecture Policy And Compliance</Link></li>
+<li><Link /blog/ai-bdr-sdr-2026-6662/>Ai Bdr Sdr 2026 6662</Link></li>
+<li><Link /blog/penetration-testing-case-study/>Penetration Testing Case Study</Link></li>
+<li><Link /blog/endpoint-management-architecture-overview/>Endpoint Management Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

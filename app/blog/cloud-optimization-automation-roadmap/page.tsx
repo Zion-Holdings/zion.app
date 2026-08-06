@@ -54,10 +54,10 @@ If this guide matches your cloud optimization: automation roadmap initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-design-case-study">Api Design Case Study</Link></li>
-<li><Link href="/blog/managed-it-services-case-study">Managed It Services Case Study</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-7072">Api Orchestration Layer 2026 7072</Link></li>
-<li><Link href="/blog/ai-api-gateway-2026-6758">Ai Api Gateway 2026 6758</Link></li>
+              <li><Link /blog/api-design-case-study/>Api Design Case Study</Link></li>
+<li><Link /blog/managed-it-services-case-study/>Managed It Services Case Study</Link></li>
+<li><Link /blog/api-orchestration-layer-2026-7072/>Api Orchestration Layer 2026 7072</Link></li>
+<li><Link /blog/ai-api-gateway-2026-6758/>Ai Api Gateway 2026 6758</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

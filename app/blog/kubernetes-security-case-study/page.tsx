@@ -57,10 +57,10 @@ Leading indicators for kubernetes security: case study: workflow completion rate
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-2026-6534">Cloud Cost Ai Optimizer 2026 6534</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026-6558">Cybersecurity Platform Msp 2026 6558</Link></li>
-<li><Link href="/blog/application-modernization-automation-roadmap">Application Modernization Automation Roadmap</Link></li>
-<li><Link href="/blog/container-security-lifecycle-2026-6537">Container Security Lifecycle 2026 6537</Link></li>
+              <li><Link /blog/cloud-cost-ai-optimizer-2026-6534/>Cloud Cost Ai Optimizer 2026 6534</Link></li>
+<li><Link /blog/cybersecurity-platform-msp-2026-6558/>Cybersecurity Platform Msp 2026 6558</Link></li>
+<li><Link /blog/application-modernization-automation-roadmap/>Application Modernization Automation Roadmap</Link></li>
+<li><Link /blog/container-security-lifecycle-2026-6537/>Container Security Lifecycle 2026 6537</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

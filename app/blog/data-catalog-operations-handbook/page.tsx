@@ -54,10 +54,10 @@ If this guide matches your data catalog: operations handbook initiative, the nex
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/brand-voice-guardian-security-and-governance">Brand Voice Guardian Security And Governance</Link></li>
-<li><Link href="/blog/data-catalog-executive-guide">Data Catalog Executive Guide</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-6784">Micro Saas Ai Customer Onboarding 2026 6784</Link></li>
-<li><Link href="/blog/ai-predictive-maintenance-executive-guide">Ai Predictive Maintenance Executive Guide</Link></li>
+              <li><Link /blog/brand-voice-guardian-security-and-governance/>Brand Voice Guardian Security And Governance</Link></li>
+<li><Link /blog/data-catalog-executive-guide/>Data Catalog Executive Guide</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026-6784/>Micro Saas Ai Customer Onboarding 2026 6784</Link></li>
+<li><Link /blog/ai-predictive-maintenance-executive-guide/>Ai Predictive Maintenance Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

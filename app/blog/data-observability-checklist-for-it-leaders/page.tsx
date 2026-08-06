@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-architecture-overview">Graphql Federation Platform Architecture Overview</Link></li>
-<li><Link href="/blog/api-orchestration-layer-checklist-for-it-leaders">Api Orchestration Layer Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-code-review-automation-policy-and-compliance">Ai Code Review Automation Policy And Compliance</Link></li>
-<li><Link href="/blog/low-code-platform-case-study">Low Code Platform Case Study</Link></li>
+              <li><Link /blog/graphql-federation-platform-architecture-overview/>Graphql Federation Platform Architecture Overview</Link></li>
+<li><Link /blog/api-orchestration-layer-checklist-for-it-leaders/>Api Orchestration Layer Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-code-review-automation-policy-and-compliance/>Ai Code Review Automation Policy And Compliance</Link></li>
+<li><Link /blog/low-code-platform-case-study/>Low Code Platform Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For google cloud migration: roi and cost model: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/generative-ai-operations-handbook">Generative Ai Operations Handbook</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-starter-template">Data Warehouse Modernization Starter Template</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-architecture-overview">Ai Accessibility Auditor Architecture Overview</Link></li>
-<li><Link href="/blog/azure-migration-starter-template">Azure Migration Starter Template</Link></li>
+              <li><Link /blog/generative-ai-operations-handbook/>Generative Ai Operations Handbook</Link></li>
+<li><Link /blog/data-warehouse-modernization-starter-template/>Data Warehouse Modernization Starter Template</Link></li>
+<li><Link /blog/ai-accessibility-auditor-architecture-overview/>Ai Accessibility Auditor Architecture Overview</Link></li>
+<li><Link /blog/azure-migration-starter-template/>Azure Migration Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

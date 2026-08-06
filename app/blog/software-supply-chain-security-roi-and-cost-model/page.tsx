@@ -54,10 +54,10 @@ If this guide matches your software supply chain security: roi and cost model in
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-automation-roadmap">It Consulting Automation Roadmap</Link></li>
-<li><Link href="/blog/continuous-deployment-roi-and-cost-model">Continuous Deployment Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-workflow-automation-common-mistakes">Ai Workflow Automation Common Mistakes</Link></li>
-<li><Link href="/blog/ai-data-backup-case-study">Ai Data Backup Case Study</Link></li>
+              <li><Link /blog/it-consulting-automation-roadmap/>It Consulting Automation Roadmap</Link></li>
+<li><Link /blog/continuous-deployment-roi-and-cost-model/>Continuous Deployment Roi And Cost Model</Link></li>
+<li><Link /blog/ai-workflow-automation-common-mistakes/>Ai Workflow Automation Common Mistakes</Link></li>
+<li><Link /blog/ai-data-backup-case-study/>Ai Data Backup Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

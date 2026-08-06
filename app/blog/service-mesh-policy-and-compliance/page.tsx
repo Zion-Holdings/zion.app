@@ -57,10 +57,10 @@ For service mesh: policy and compliance: pick one workflow, assign ownership, de
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/observability-platform-automation-roadmap">Observability Platform Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-development-acceleration-2026-6839">Ai Development Acceleration 2026 6839</Link></li>
-<li><Link href="/blog/api-gateway-security-vendor-evaluation">Api Gateway Security Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-recruitment-chatbot-executive-guide">Ai Recruitment Chatbot Executive Guide</Link></li>
+              <li><Link /blog/observability-platform-automation-roadmap/>Observability Platform Automation Roadmap</Link></li>
+<li><Link /blog/ai-development-acceleration-2026-6839/>Ai Development Acceleration 2026 6839</Link></li>
+<li><Link /blog/api-gateway-security-vendor-evaluation/>Api Gateway Security Vendor Evaluation</Link></li>
+<li><Link /blog/ai-recruitment-chatbot-executive-guide/>Ai Recruitment Chatbot Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

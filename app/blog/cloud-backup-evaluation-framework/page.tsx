@@ -54,10 +54,10 @@ If this guide matches your cloud backup: evaluation framework initiative, the ne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-backup-dr-2026-6821">Enterprise Backup Dr 2026 6821</Link></li>
-<li><Link href="/blog/policy-as-code-architecture-overview">Policy As Code Architecture Overview</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-checklist-for-it-leaders">Ai 3D Asset Generator Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-voice-assistant-security-and-governance">Ai Voice Assistant Security And Governance</Link></li>
+              <li><Link /blog/enterprise-backup-dr-2026-6821/>Enterprise Backup Dr 2026 6821</Link></li>
+<li><Link /blog/policy-as-code-architecture-overview/>Policy As Code Architecture Overview</Link></li>
+<li><Link /blog/ai-3d-asset-generator-checklist-for-it-leaders/>Ai 3D Asset Generator Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-voice-assistant-security-and-governance/>Ai Voice Assistant Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

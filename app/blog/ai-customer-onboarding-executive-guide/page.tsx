@@ -57,10 +57,10 @@ Leading indicators for ai customer onboarding: executive guide: workflow complet
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automated-ai-reporting-vendor-evaluation">Automated Ai Reporting Vendor Evaluation</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-6523">Autonomous Qa Engineering 2026 6523</Link></li>
-<li><Link href="/blog/database-as-a-service-common-mistakes">Database As A Service Common Mistakes</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-operations-handbook">Ai Autonomous Agents Operations Handbook</Link></li>
+              <li><Link /blog/automated-ai-reporting-vendor-evaluation/>Automated Ai Reporting Vendor Evaluation</Link></li>
+<li><Link /blog/autonomous-qa-engineering-2026-6523/>Autonomous Qa Engineering 2026 6523</Link></li>
+<li><Link /blog/database-as-a-service-common-mistakes/>Database As A Service Common Mistakes</Link></li>
+<li><Link /blog/ai-autonomous-agents-operations-handbook/>Ai Autonomous Agents Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

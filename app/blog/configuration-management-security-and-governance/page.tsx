@@ -57,10 +57,10 @@ Leading indicators for configuration management: security and governance: workfl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-executive-guide">Api Management Gateway Executive Guide</Link></li>
-<li><Link href="/blog/ai-expense-tracker-deployment-patterns">Ai Expense Tracker Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-workflow-automation-vendor-evaluation">Ai Workflow Automation Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-policy-and-compliance">Ai Customer Success Churn Prevention Policy And Compliance</Link></li>
+              <li><Link /blog/api-management-gateway-executive-guide/>Api Management Gateway Executive Guide</Link></li>
+<li><Link /blog/ai-expense-tracker-deployment-patterns/>Ai Expense Tracker Deployment Patterns</Link></li>
+<li><Link /blog/ai-workflow-automation-vendor-evaluation/>Ai Workflow Automation Vendor Evaluation</Link></li>
+<li><Link /blog/ai-customer-success-churn-prevention-policy-and-compliance/>Ai Customer Success Churn Prevention Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

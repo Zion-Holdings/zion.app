@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-code-deployment-security-and-governance">Autonomous Code Deployment Security And Governance</Link></li>
-<li><Link href="/blog/database-as-a-service-implementation-playbook">Database As A Service Implementation Playbook</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-2026-6608">Data Warehouse Modernization 2026 6608</Link></li>
-<li><Link href="/blog/voice-biometrics-operations-handbook">Voice Biometrics Operations Handbook</Link></li>
+              <li><Link /blog/autonomous-code-deployment-security-and-governance/>Autonomous Code Deployment Security And Governance</Link></li>
+<li><Link /blog/database-as-a-service-implementation-playbook/>Database As A Service Implementation Playbook</Link></li>
+<li><Link /blog/data-warehouse-modernization-2026-6608/>Data Warehouse Modernization 2026 6608</Link></li>
+<li><Link /blog/voice-biometrics-operations-handbook/>Voice Biometrics Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

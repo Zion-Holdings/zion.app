@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-it-operations-automation-2026-6901">Ai It Operations Automation 2026 6901</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-2026-6607">Cyber Threat Intelligence 2026 6607</Link></li>
-<li><Link href="/blog/ai-risk-assessment-security-and-governance">Ai Risk Assessment Security And Governance</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-automation-roadmap">Ai Accessibility Auditor Automation Roadmap</Link></li>
+              <li><Link /blog/ai-it-operations-automation-2026-6901/>Ai It Operations Automation 2026 6901</Link></li>
+<li><Link /blog/cyber-threat-intelligence-2026-6607/>Cyber Threat Intelligence 2026 6607</Link></li>
+<li><Link /blog/ai-risk-assessment-security-and-governance/>Ai Risk Assessment Security And Governance</Link></li>
+<li><Link /blog/ai-accessibility-auditor-automation-roadmap/>Ai Accessibility Auditor Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for machine learning: roi and cost model: workflow completion
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-warehouse-modernization-2026-6608">Data Warehouse Modernization 2026 6608</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-6658">Api Orchestration Layer 2026 6658</Link></li>
-<li><Link href="/blog/digital-twin-policy-and-compliance">Digital Twin Policy And Compliance</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-6695">Cloud Cost Optimization Checklist 2026 6695</Link></li>
+              <li><Link /blog/data-warehouse-modernization-2026-6608/>Data Warehouse Modernization 2026 6608</Link></li>
+<li><Link /blog/api-orchestration-layer-2026-6658/>Api Orchestration Layer 2026 6658</Link></li>
+<li><Link /blog/digital-twin-policy-and-compliance/>Digital Twin Policy And Compliance</Link></li>
+<li><Link /blog/cloud-cost-optimization-checklist-2026-6695/>Cloud Cost Optimization Checklist 2026 6695</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For web application firewall: case study: pick one workflow, assign ownership, d
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/no-code-platform-evaluation-framework">No Code Platform Evaluation Framework</Link></li>
-<li><Link href="/blog/5g-solutions-vendor-evaluation">5G Solutions Vendor Evaluation</Link></li>
-<li><Link href="/blog/splunk-migration-operations-handbook">Splunk Migration Operations Handbook</Link></li>
-<li><Link href="/blog/cloud-networking-evaluation-framework">Cloud Networking Evaluation Framework</Link></li>
+              <li><Link /blog/no-code-platform-evaluation-framework/>No Code Platform Evaluation Framework</Link></li>
+<li><Link /blog/5g-solutions-vendor-evaluation/>5G Solutions Vendor Evaluation</Link></li>
+<li><Link /blog/splunk-migration-operations-handbook/>Splunk Migration Operations Handbook</Link></li>
+<li><Link /blog/cloud-networking-evaluation-framework/>Cloud Networking Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

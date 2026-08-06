@@ -54,10 +54,10 @@ If this guide matches your database as a service: architecture overview initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-service-desk-vendor-evaluation">Ai Service Desk Vendor Evaluation</Link></li>
-<li><Link href="/blog/information-security-operations-handbook">Information Security Operations Handbook</Link></li>
-<li><Link href="/blog/cloud-backup-policy-and-compliance">Cloud Backup Policy And Compliance</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6575">Micro Saas Ai Expense Tracker 2026 6575</Link></li>
+              <li><Link /blog/ai-service-desk-vendor-evaluation/>Ai Service Desk Vendor Evaluation</Link></li>
+<li><Link /blog/information-security-operations-handbook/>Information Security Operations Handbook</Link></li>
+<li><Link /blog/cloud-backup-policy-and-compliance/>Cloud Backup Policy And Compliance</Link></li>
+<li><Link /blog/micro-saas-ai-expense-tracker-2026-6575/>Micro Saas Ai Expense Tracker 2026 6575</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

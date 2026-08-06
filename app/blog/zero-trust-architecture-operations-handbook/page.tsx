@@ -57,10 +57,10 @@ For zero trust architecture: operations handbook: pick one workflow, assign owne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/continuous-deployment-case-study">Continuous Deployment Case Study</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-vendor-evaluation">Ai Ad Copy Generator Vendor Evaluation</Link></li>
-<li><Link href="/blog/cloud-native-security-policy-and-compliance">Cloud Native Security Policy And Compliance</Link></li>
-<li><Link href="/blog/sase-implementation-playbook">Sase Implementation Playbook</Link></li>
+              <li><Link /blog/continuous-deployment-case-study/>Continuous Deployment Case Study</Link></li>
+<li><Link /blog/ai-ad-copy-generator-vendor-evaluation/>Ai Ad Copy Generator Vendor Evaluation</Link></li>
+<li><Link /blog/cloud-native-security-policy-and-compliance/>Cloud Native Security Policy And Compliance</Link></li>
+<li><Link /blog/sase-implementation-playbook/>Sase Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For aws cost optimization: common mistakes: pick one workflow, assign ownership,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-6645">Micro Saas Ai Hr Recruitment 2026 6645</Link></li>
-<li><Link href="/blog/api-monetization-starter-template">Api Monetization Starter Template</Link></li>
-<li><Link href="/blog/cloud-cost-management-architecture-overview">Cloud Cost Management Architecture Overview</Link></li>
-<li><Link href="/blog/chaos-engineering-common-mistakes">Chaos Engineering Common Mistakes</Link></li>
+              <li><Link /blog/micro-saas-ai-hr-recruitment-2026-6645/>Micro Saas Ai Hr Recruitment 2026 6645</Link></li>
+<li><Link /blog/api-monetization-starter-template/>Api Monetization Starter Template</Link></li>
+<li><Link /blog/cloud-cost-management-architecture-overview/>Cloud Cost Management Architecture Overview</Link></li>
+<li><Link /blog/chaos-engineering-common-mistakes/>Chaos Engineering Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

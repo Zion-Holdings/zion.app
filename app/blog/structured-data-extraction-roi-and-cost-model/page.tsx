@@ -57,10 +57,10 @@ Leading indicators for structured data extraction: roi and cost model: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-autonomous-agents-2026-6863">Ai Autonomous Agents 2026 6863</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026-6582">Ai Accessibility Optimizer 2026 6582</Link></li>
-<li><Link href="/blog/reinforcement-learning-2026">Reinforcement Learning 2026</Link></li>
-<li><Link href="/blog/api-rate-limiting-operations-handbook">Api Rate Limiting Operations Handbook</Link></li>
+              <li><Link /blog/ai-autonomous-agents-2026-6863/>Ai Autonomous Agents 2026 6863</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-2026-6582/>Ai Accessibility Optimizer 2026 6582</Link></li>
+<li><Link /blog/reinforcement-learning-2026/>Reinforcement Learning 2026</Link></li>
+<li><Link /blog/api-rate-limiting-operations-handbook/>Api Rate Limiting Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

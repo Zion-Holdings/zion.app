@@ -54,10 +54,10 @@ If this guide matches your enterprise backup dr: architecture overview initiativ
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/docker-security-executive-guide">Docker Security Executive Guide</Link></li>
-<li><Link href="/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization">5 Proven Ai Automation Strategies For Enterprise Workflow Optimization</Link></li>
-<li><Link href="/blog/aws-cost-optimization-automation-roadmap">Aws Cost Optimization Automation Roadmap</Link></li>
-<li><Link href="/blog/data-analytics-platform-policy-and-compliance">Data Analytics Platform Policy And Compliance</Link></li>
+              <li><Link /blog/docker-security-executive-guide/>Docker Security Executive Guide</Link></li>
+<li><Link /blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/>5 Proven Ai Automation Strategies For Enterprise Workflow Optimization</Link></li>
+<li><Link /blog/aws-cost-optimization-automation-roadmap/>Aws Cost Optimization Automation Roadmap</Link></li>
+<li><Link /blog/data-analytics-platform-policy-and-compliance/>Data Analytics Platform Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

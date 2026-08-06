@@ -57,10 +57,10 @@ For managed detection response: starter template: pick one workflow, assign owne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-voice-assistant-case-study">Ai Voice Assistant Case Study</Link></li>
-<li><Link href="/blog/resilience-engineering-policy-and-compliance">Resilience Engineering Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-video-analytics-deployment-patterns">Ai Video Analytics Deployment Patterns</Link></li>
-<li><Link href="/blog/cicd-best-practices-roi-and-cost-model">Cicd Best Practices Roi And Cost Model</Link></li>
+              <li><Link /blog/ai-voice-assistant-case-study/>Ai Voice Assistant Case Study</Link></li>
+<li><Link /blog/resilience-engineering-policy-and-compliance/>Resilience Engineering Policy And Compliance</Link></li>
+<li><Link /blog/ai-video-analytics-deployment-patterns/>Ai Video Analytics Deployment Patterns</Link></li>
+<li><Link /blog/cicd-best-practices-roi-and-cost-model/>Cicd Best Practices Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

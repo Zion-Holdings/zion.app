@@ -57,10 +57,10 @@ For ai predictive maintenance: automation roadmap: pick one workflow, assign own
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-security-checklist-for-it-leaders">Database Security Checklist For It Leaders</Link></li>
-<li><Link href="/blog/retrieval-augmented-generation-deployment-patterns">Retrieval Augmented Generation Deployment Patterns</Link></li>
-<li><Link href="/blog/database-migration-service-vendor-evaluation">Database Migration Service Vendor Evaluation</Link></li>
-<li><Link href="/blog/microservices-architecture-automation-roadmap">Microservices Architecture Automation Roadmap</Link></li>
+              <li><Link /blog/database-security-checklist-for-it-leaders/>Database Security Checklist For It Leaders</Link></li>
+<li><Link /blog/retrieval-augmented-generation-deployment-patterns/>Retrieval Augmented Generation Deployment Patterns</Link></li>
+<li><Link /blog/database-migration-service-vendor-evaluation/>Database Migration Service Vendor Evaluation</Link></li>
+<li><Link /blog/microservices-architecture-automation-roadmap/>Microservices Architecture Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

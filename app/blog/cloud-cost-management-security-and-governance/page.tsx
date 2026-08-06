@@ -57,10 +57,10 @@ Leading indicators for cloud cost management: security and governance: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/llm-operations-automation-roadmap">Llm Operations Automation Roadmap</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6966">Api Gateway Management 2026 6966</Link></li>
-<li><Link href="/blog/ai-for-digital-transformation-and-change-management">Ai For Digital Transformation And Change Management</Link></li>
-<li><Link href="/blog/data-security-vendor-evaluation">Data Security Vendor Evaluation</Link></li>
+              <li><Link /blog/llm-operations-automation-roadmap/>Llm Operations Automation Roadmap</Link></li>
+<li><Link /blog/api-gateway-management-2026-6966/>Api Gateway Management 2026 6966</Link></li>
+<li><Link /blog/ai-for-digital-transformation-and-change-management/>Ai For Digital Transformation And Change Management</Link></li>
+<li><Link /blog/data-security-vendor-evaluation/>Data Security Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

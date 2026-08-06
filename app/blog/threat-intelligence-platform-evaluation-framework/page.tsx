@@ -54,10 +54,10 @@ If this guide matches your threat intelligence platform: evaluation framework in
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/splunk-migration-operations-handbook">Splunk Migration Operations Handbook</Link></li>
-<li><Link href="/blog/ai-hr-recruitment-architecture-overview">Ai Hr Recruitment Architecture Overview</Link></li>
-<li><Link href="/blog/api-lifecycle-management-implementation-playbook">Api Lifecycle Management Implementation Playbook</Link></li>
-<li><Link href="/blog/vendor-management-case-study">Vendor Management Case Study</Link></li>
+              <li><Link /blog/splunk-migration-operations-handbook/>Splunk Migration Operations Handbook</Link></li>
+<li><Link /blog/ai-hr-recruitment-architecture-overview/>Ai Hr Recruitment Architecture Overview</Link></li>
+<li><Link /blog/api-lifecycle-management-implementation-playbook/>Api Lifecycle Management Implementation Playbook</Link></li>
+<li><Link /blog/vendor-management-case-study/>Vendor Management Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

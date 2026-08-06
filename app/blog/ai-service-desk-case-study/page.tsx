@@ -54,10 +54,10 @@ If this guide matches your ai service desk: case study initiative, the next step
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-backup-dr-2026-6890">Enterprise Backup Dr 2026 6890</Link></li>
-<li><Link href="/blog/ai-marketing-personalization-case-study">Ai Marketing Personalization Case Study</Link></li>
-<li><Link href="/blog/cicd-best-practices-implementation-playbook">Cicd Best Practices Implementation Playbook</Link></li>
-<li><Link href="/blog/chaos-engineering-deployment-patterns">Chaos Engineering Deployment Patterns</Link></li>
+              <li><Link /blog/enterprise-backup-dr-2026-6890/>Enterprise Backup Dr 2026 6890</Link></li>
+<li><Link /blog/ai-marketing-personalization-case-study/>Ai Marketing Personalization Case Study</Link></li>
+<li><Link /blog/cicd-best-practices-implementation-playbook/>Cicd Best Practices Implementation Playbook</Link></li>
+<li><Link /blog/chaos-engineering-deployment-patterns/>Chaos Engineering Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

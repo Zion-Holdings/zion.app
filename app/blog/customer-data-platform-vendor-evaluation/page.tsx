@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/genai-devops-cicd-deployment-patterns">Genai Devops Cicd Deployment Patterns</Link></li>
-<li><Link href="/blog/cloud-finops-policy-and-compliance">Cloud Finops Policy And Compliance</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-automation-roadmap">Cyber Threat Intelligence Automation Roadmap</Link></li>
-<li><Link href="/blog/container-security-lifecycle-roi-and-cost-model">Container Security Lifecycle Roi And Cost Model</Link></li>
+              <li><Link /blog/genai-devops-cicd-deployment-patterns/>Genai Devops Cicd Deployment Patterns</Link></li>
+<li><Link /blog/cloud-finops-policy-and-compliance/>Cloud Finops Policy And Compliance</Link></li>
+<li><Link /blog/cyber-threat-intelligence-automation-roadmap/>Cyber Threat Intelligence Automation Roadmap</Link></li>
+<li><Link /blog/container-security-lifecycle-roi-and-cost-model/>Container Security Lifecycle Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

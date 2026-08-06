@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/process-automation-automation-roadmap">Process Automation Automation Roadmap</Link></li>
-<li><Link href="/blog/genai-devops-cicd-common-mistakes">Genai Devops Cicd Common Mistakes</Link></li>
-<li><Link href="/blog/api-performance-testing-operations-handbook">Api Performance Testing Operations Handbook</Link></li>
-<li><Link href="/blog/incident-management-executive-guide">Incident Management Executive Guide</Link></li>
+              <li><Link /blog/process-automation-automation-roadmap/>Process Automation Automation Roadmap</Link></li>
+<li><Link /blog/genai-devops-cicd-common-mistakes/>Genai Devops Cicd Common Mistakes</Link></li>
+<li><Link /blog/api-performance-testing-operations-handbook/>Api Performance Testing Operations Handbook</Link></li>
+<li><Link /blog/incident-management-executive-guide/>Incident Management Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your ai expense tracker: case study initiative, the next s
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/apm-application-performance-policy-and-compliance">Apm Application Performance Policy And Compliance</Link></li>
-<li><Link href="/blog/ubiquitous-connectivity-2026">Ubiquitous Connectivity 2026</Link></li>
-<li><Link href="/blog/natural-language-processing-operations-handbook">Natural Language Processing Operations Handbook</Link></li>
-<li><Link href="/blog/machine-learning-operations-checklist-for-it-leaders">Machine Learning Operations Checklist For It Leaders</Link></li>
+              <li><Link /blog/apm-application-performance-policy-and-compliance/>Apm Application Performance Policy And Compliance</Link></li>
+<li><Link /blog/ubiquitous-connectivity-2026/>Ubiquitous Connectivity 2026</Link></li>
+<li><Link /blog/natural-language-processing-operations-handbook/>Natural Language Processing Operations Handbook</Link></li>
+<li><Link /blog/machine-learning-operations-checklist-for-it-leaders/>Machine Learning Operations Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For microsaas hr recruitment: checklist for it leaders: pick one workflow, assig
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/machine-learning-operations-starter-template">Machine Learning Operations Starter Template</Link></li>
-<li><Link href="/blog/email-security-2026">Email Security 2026</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-2026-6656">Ai Autonomous Agents 2026 6656</Link></li>
-<li><Link href="/blog/network-security-policy-and-compliance">Network Security Policy And Compliance</Link></li>
+              <li><Link /blog/machine-learning-operations-starter-template/>Machine Learning Operations Starter Template</Link></li>
+<li><Link /blog/email-security-2026/>Email Security 2026</Link></li>
+<li><Link /blog/ai-autonomous-agents-2026-6656/>Ai Autonomous Agents 2026 6656</Link></li>
+<li><Link /blog/network-security-policy-and-compliance/>Network Security Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

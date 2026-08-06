@@ -57,10 +57,10 @@ For resilience engineering: architecture overview: pick one workflow, assign own
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-backup-dr-2026-6890">Enterprise Backup Dr 2026 6890</Link></li>
-<li><Link href="/blog/bot-detection-operations-handbook">Bot Detection Operations Handbook</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026-7065">Ai Accessibility Optimizer 2026 7065</Link></li>
-<li><Link href="/blog/database-migration-service-case-study">Database Migration Service Case Study</Link></li>
+              <li><Link /blog/enterprise-backup-dr-2026-6890/>Enterprise Backup Dr 2026 6890</Link></li>
+<li><Link /blog/bot-detection-operations-handbook/>Bot Detection Operations Handbook</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-2026-7065/>Ai Accessibility Optimizer 2026 7065</Link></li>
+<li><Link /blog/database-migration-service-case-study/>Database Migration Service Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for google cloud migration: implementation playbook: workflow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-as-a-service-policy-and-compliance">Database As A Service Policy And Compliance</Link></li>
-<li><Link href="/blog/genai-devops-cicd-automation-roadmap">Genai Devops Cicd Automation Roadmap</Link></li>
-<li><Link href="/blog/no-code-platform-implementation-playbook">No Code Platform Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-starter-template">Ai Bdr Sdr Starter Template</Link></li>
+              <li><Link /blog/database-as-a-service-policy-and-compliance/>Database As A Service Policy And Compliance</Link></li>
+<li><Link /blog/genai-devops-cicd-automation-roadmap/>Genai Devops Cicd Automation Roadmap</Link></li>
+<li><Link /blog/no-code-platform-implementation-playbook/>No Code Platform Implementation Playbook</Link></li>
+<li><Link /blog/ai-bdr-sdr-starter-template/>Ai Bdr Sdr Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

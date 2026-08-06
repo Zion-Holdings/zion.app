@@ -57,10 +57,10 @@ For edge computing: evaluation framework: pick one workflow, assign ownership, d
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/machine-learning-engineering-security-and-governance">Machine Learning Engineering Security And Governance</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026-6741">Cloud Cost Ai Optimizer 2026 6741</Link></li>
-<li><Link href="/blog/release-management-deployment-patterns">Release Management Deployment Patterns</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-case-study">Microsaas Hr Recruitment Case Study</Link></li>
+              <li><Link /blog/machine-learning-engineering-security-and-governance/>Machine Learning Engineering Security And Governance</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-2026-6741/>Cloud Cost Ai Optimizer 2026 6741</Link></li>
+<li><Link /blog/release-management-deployment-patterns/>Release Management Deployment Patterns</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-case-study/>Microsaas Hr Recruitment Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for data pipeline orchestration: starter template: workflow c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/itil-policy-and-compliance">Itil Policy And Compliance</Link></li>
-<li><Link href="/blog/edge-computing-implementation-playbook">Edge Computing Implementation Playbook</Link></li>
-<li><Link href="/blog/low-code-platform-policy-and-compliance">Low Code Platform Policy And Compliance</Link></li>
-<li><Link href="/blog/endpoint-management-2026-6613">Endpoint Management 2026 6613</Link></li>
+              <li><Link /blog/itil-policy-and-compliance/>Itil Policy And Compliance</Link></li>
+<li><Link /blog/edge-computing-implementation-playbook/>Edge Computing Implementation Playbook</Link></li>
+<li><Link /blog/low-code-platform-policy-and-compliance/>Low Code Platform Policy And Compliance</Link></li>
+<li><Link /blog/endpoint-management-2026-6613/>Endpoint Management 2026 6613</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For error budget: security and governance: pick one workflow, assign ownership, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ubiquitous-connectivity-common-mistakes">Ubiquitous Connectivity Common Mistakes</Link></li>
-<li><Link href="/blog/network-infrastructure-executive-guide">Network Infrastructure Executive Guide</Link></li>
-<li><Link href="/blog/cloud-finops-implementation-playbook">Cloud Finops Implementation Playbook</Link></li>
-<li><Link href="/blog/policy-as-code-executive-guide">Policy As Code Executive Guide</Link></li>
+              <li><Link /blog/ubiquitous-connectivity-common-mistakes/>Ubiquitous Connectivity Common Mistakes</Link></li>
+<li><Link /blog/network-infrastructure-executive-guide/>Network Infrastructure Executive Guide</Link></li>
+<li><Link /blog/cloud-finops-implementation-playbook/>Cloud Finops Implementation Playbook</Link></li>
+<li><Link /blog/policy-as-code-executive-guide/>Policy As Code Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

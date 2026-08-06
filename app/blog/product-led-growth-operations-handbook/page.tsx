@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-translation-engine-2026-6712">Micro Saas Ai Translation Engine 2026 6712</Link></li>
-<li><Link href="/blog/ubiquitous-connectivity-common-mistakes">Ubiquitous Connectivity Common Mistakes</Link></li>
-<li><Link href="/blog/policy-as-code-automation-roadmap">Policy As Code Automation Roadmap</Link></li>
-<li><Link href="/blog/devsecops-pipeline-implementation-playbook">Devsecops Pipeline Implementation Playbook</Link></li>
+              <li><Link /blog/micro-saas-ai-translation-engine-2026-6712/>Micro Saas Ai Translation Engine 2026 6712</Link></li>
+<li><Link /blog/ubiquitous-connectivity-common-mistakes/>Ubiquitous Connectivity Common Mistakes</Link></li>
+<li><Link /blog/policy-as-code-automation-roadmap/>Policy As Code Automation Roadmap</Link></li>
+<li><Link /blog/devsecops-pipeline-implementation-playbook/>Devsecops Pipeline Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

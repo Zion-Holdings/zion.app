@@ -57,10 +57,10 @@ Leading indicators for quality assurance: architecture overview: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/technical-due-diligence-executive-guide">Technical Due Diligence Executive Guide</Link></li>
-<li><Link href="/blog/it-consulting-2026-6915">It Consulting 2026 6915</Link></li>
-<li><Link href="/blog/data-pipeline-orchestration-operations-handbook">Data Pipeline Orchestration Operations Handbook</Link></li>
-<li><Link href="/blog/data-governance-roi-and-cost-model">Data Governance Roi And Cost Model</Link></li>
+              <li><Link /blog/technical-due-diligence-executive-guide/>Technical Due Diligence Executive Guide</Link></li>
+<li><Link /blog/it-consulting-2026-6915/>It Consulting 2026 6915</Link></li>
+<li><Link /blog/data-pipeline-orchestration-operations-handbook/>Data Pipeline Orchestration Operations Handbook</Link></li>
+<li><Link /blog/data-governance-roi-and-cost-model/>Data Governance Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

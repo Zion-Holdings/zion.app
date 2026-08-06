@@ -57,10 +57,10 @@ Leading indicators for ai service desk: architecture overview: workflow completi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/azure-migration-executive-guide">Azure Migration Executive Guide</Link></li>
-<li><Link href="/blog/open-source-strategy-security-and-governance">Open Source Strategy Security And Governance</Link></li>
-<li><Link href="/blog/process-automation-evaluation-framework">Process Automation Evaluation Framework</Link></li>
-<li><Link href="/blog/sase-security-and-governance">Sase Security And Governance</Link></li>
+              <li><Link /blog/azure-migration-executive-guide/>Azure Migration Executive Guide</Link></li>
+<li><Link /blog/open-source-strategy-security-and-governance/>Open Source Strategy Security And Governance</Link></li>
+<li><Link /blog/process-automation-evaluation-framework/>Process Automation Evaluation Framework</Link></li>
+<li><Link /blog/sase-security-and-governance/>Sase Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for open source strategy: operations handbook: workflow compl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-2026-6534">Cloud Cost Ai Optimizer 2026 6534</Link></li>
-<li><Link href="/blog/ai-development-acceleration-architecture-overview">Ai Development Acceleration Architecture Overview</Link></li>
-<li><Link href="/blog/cloud-cost-management-checklist-for-it-leaders">Cloud Cost Management Checklist For It Leaders</Link></li>
-<li><Link href="/blog/kubernetes-roi-and-cost-model">Kubernetes Roi And Cost Model</Link></li>
+              <li><Link /blog/cloud-cost-ai-optimizer-2026-6534/>Cloud Cost Ai Optimizer 2026 6534</Link></li>
+<li><Link /blog/ai-development-acceleration-architecture-overview/>Ai Development Acceleration Architecture Overview</Link></li>
+<li><Link /blog/cloud-cost-management-checklist-for-it-leaders/>Cloud Cost Management Checklist For It Leaders</Link></li>
+<li><Link /blog/kubernetes-roi-and-cost-model/>Kubernetes Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your process automation: policy and compliance initiative,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-predictive-maintenance-executive-guide">Ai Predictive Maintenance Executive Guide</Link></li>
-<li><Link href="/blog/automated-ai-reporting-2026-7073">Automated Ai Reporting 2026 7073</Link></li>
-<li><Link href="/blog/static-application-security-testing-common-mistakes">Static Application Security Testing Common Mistakes</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-7024">Devops Gen Ai Cicd 2026 7024</Link></li>
+              <li><Link /blog/ai-predictive-maintenance-executive-guide/>Ai Predictive Maintenance Executive Guide</Link></li>
+<li><Link /blog/automated-ai-reporting-2026-7073/>Automated Ai Reporting 2026 7073</Link></li>
+<li><Link /blog/static-application-security-testing-common-mistakes/>Static Application Security Testing Common Mistakes</Link></li>
+<li><Link /blog/devops-gen-ai-cicd-2026-7024/>Devops Gen Ai Cicd 2026 7024</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

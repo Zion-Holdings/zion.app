@@ -57,10 +57,10 @@ For compliance automation: deployment patterns: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/platform-engineering-implementation-playbook">Platform Engineering Implementation Playbook</Link></li>
-<li><Link href="/blog/sase-roi-and-cost-model">Sase Roi And Cost Model</Link></li>
-<li><Link href="/blog/hybrid-cloud-evaluation-framework">Hybrid Cloud Evaluation Framework</Link></li>
-<li><Link href="/blog/api-governance-deployment-patterns">Api Governance Deployment Patterns</Link></li>
+              <li><Link /blog/platform-engineering-implementation-playbook/>Platform Engineering Implementation Playbook</Link></li>
+<li><Link /blog/sase-roi-and-cost-model/>Sase Roi And Cost Model</Link></li>
+<li><Link /blog/hybrid-cloud-evaluation-framework/>Hybrid Cloud Evaluation Framework</Link></li>
+<li><Link /blog/api-governance-deployment-patterns/>Api Governance Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

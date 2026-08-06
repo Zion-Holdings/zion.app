@@ -57,10 +57,10 @@ For business intelligence: architecture overview: pick one workflow, assign owne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-security-and-governance">Ai Observability Security And Governance</Link></li>
-<li><Link href="/blog/ai-for-healthcare-analytics-and-clinical-decision-support">Ai For Healthcare Analytics And Clinical Decision Support</Link></li>
-<li><Link href="/blog/azure-migration-roi-and-cost-model">Azure Migration Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-implementation-playbook">Ai Msp Security Compliance Implementation Playbook</Link></li>
+              <li><Link /blog/ai-observability-security-and-governance/>Ai Observability Security And Governance</Link></li>
+<li><Link /blog/ai-for-healthcare-analytics-and-clinical-decision-support/>Ai For Healthcare Analytics And Clinical Decision Support</Link></li>
+<li><Link /blog/azure-migration-roi-and-cost-model/>Azure Migration Roi And Cost Model</Link></li>
+<li><Link /blog/ai-msp-security-compliance-implementation-playbook/>Ai Msp Security Compliance Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

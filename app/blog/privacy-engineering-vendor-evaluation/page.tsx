@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-2026-6673">Cloud Finops 2026 6673</Link></li>
-<li><Link href="/blog/incident-response-retainer-2026-6757">Incident Response Retainer 2026 6757</Link></li>
-<li><Link href="/blog/apm-application-performance-implementation-playbook">Apm Application Performance Implementation Playbook</Link></li>
-<li><Link href="/blog/devsecops-pipeline-checklist-for-it-leaders">Devsecops Pipeline Checklist For It Leaders</Link></li>
+              <li><Link /blog/cloud-finops-2026-6673/>Cloud Finops 2026 6673</Link></li>
+<li><Link /blog/incident-response-retainer-2026-6757/>Incident Response Retainer 2026 6757</Link></li>
+<li><Link /blog/apm-application-performance-implementation-playbook/>Apm Application Performance Implementation Playbook</Link></li>
+<li><Link /blog/devsecops-pipeline-checklist-for-it-leaders/>Devsecops Pipeline Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

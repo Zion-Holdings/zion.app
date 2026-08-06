@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-optimization-case-study">Cloud Optimization Case Study</Link></li>
-<li><Link href="/blog/data-governance-case-study">Data Governance Case Study</Link></li>
-<li><Link href="/blog/oncall-best-practices-vendor-evaluation">Oncall Best Practices Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-risk-assessment-automation-roadmap">Ai Risk Assessment Automation Roadmap</Link></li>
+              <li><Link /blog/cloud-optimization-case-study/>Cloud Optimization Case Study</Link></li>
+<li><Link /blog/data-governance-case-study/>Data Governance Case Study</Link></li>
+<li><Link /blog/oncall-best-practices-vendor-evaluation/>Oncall Best Practices Vendor Evaluation</Link></li>
+<li><Link /blog/ai-risk-assessment-automation-roadmap/>Ai Risk Assessment Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

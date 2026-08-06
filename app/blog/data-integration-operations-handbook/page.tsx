@@ -57,10 +57,10 @@ For data integration: operations handbook: pick one workflow, assign ownership, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-optimization-checklist-2026-7040">Cloud Cost Optimization Checklist 2026 7040</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-vendor-evaluation">Ai Autonomous Agents Vendor Evaluation</Link></li>
-<li><Link href="/blog/infrastructure-monitoring-vendor-evaluation">Infrastructure Monitoring Vendor Evaluation</Link></li>
-<li><Link href="/blog/container-security-lifecycle-2026-6675">Container Security Lifecycle 2026 6675</Link></li>
+              <li><Link /blog/cloud-cost-optimization-checklist-2026-7040/>Cloud Cost Optimization Checklist 2026 7040</Link></li>
+<li><Link /blog/ai-autonomous-agents-vendor-evaluation/>Ai Autonomous Agents Vendor Evaluation</Link></li>
+<li><Link /blog/infrastructure-monitoring-vendor-evaluation/>Infrastructure Monitoring Vendor Evaluation</Link></li>
+<li><Link /blog/container-security-lifecycle-2026-6675/>Container Security Lifecycle 2026 6675</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

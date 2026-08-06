@@ -57,10 +57,10 @@ Leading indicators for api design: automation roadmap: workflow completion rate,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-management-deployment-patterns">Api Gateway Management Deployment Patterns</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-2026-6815">Data Warehouse Modernization 2026 6815</Link></li>
-<li><Link href="/blog/ai-observability-architecture-overview">Ai Observability Architecture Overview</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-automation-roadmap">Microsaas Expense Tracker Automation Roadmap</Link></li>
+              <li><Link /blog/api-gateway-management-deployment-patterns/>Api Gateway Management Deployment Patterns</Link></li>
+<li><Link /blog/data-warehouse-modernization-2026-6815/>Data Warehouse Modernization 2026 6815</Link></li>
+<li><Link /blog/ai-observability-architecture-overview/>Ai Observability Architecture Overview</Link></li>
+<li><Link /blog/microsaas-expense-tracker-automation-roadmap/>Microsaas Expense Tracker Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

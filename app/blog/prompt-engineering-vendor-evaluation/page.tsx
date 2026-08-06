@@ -57,10 +57,10 @@ For prompt engineering: vendor evaluation: pick one workflow, assign ownership, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/vulnerability-assessment-policy-and-compliance">Vulnerability Assessment Policy And Compliance</Link></li>
-<li><Link href="/blog/structured-data-extraction-security-and-governance">Structured Data Extraction Security And Governance</Link></li>
-<li><Link href="/blog/cloud-governance-starter-template">Cloud Governance Starter Template</Link></li>
-<li><Link href="/blog/no-code-platform-executive-guide">No Code Platform Executive Guide</Link></li>
+              <li><Link /blog/vulnerability-assessment-policy-and-compliance/>Vulnerability Assessment Policy And Compliance</Link></li>
+<li><Link /blog/structured-data-extraction-security-and-governance/>Structured Data Extraction Security And Governance</Link></li>
+<li><Link /blog/cloud-governance-starter-template/>Cloud Governance Starter Template</Link></li>
+<li><Link /blog/no-code-platform-executive-guide/>No Code Platform Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

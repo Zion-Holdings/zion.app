@@ -57,10 +57,10 @@ For quality assurance: common mistakes: pick one workflow, assign ownership, def
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/apm-application-performance-architecture-overview">Apm Application Performance Architecture Overview</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-6626">Cloud Cost Optimization Checklist 2026 6626</Link></li>
-<li><Link href="/blog/unified-endpoint-management-2026">Unified Endpoint Management 2026</Link></li>
-<li><Link href="/blog/incident-response-retainer-2026">Incident Response Retainer 2026</Link></li>
+              <li><Link /blog/apm-application-performance-architecture-overview/>Apm Application Performance Architecture Overview</Link></li>
+<li><Link /blog/cloud-cost-optimization-checklist-2026-6626/>Cloud Cost Optimization Checklist 2026 6626</Link></li>
+<li><Link /blog/unified-endpoint-management-2026/>Unified Endpoint Management 2026</Link></li>
+<li><Link /blog/incident-response-retainer-2026/>Incident Response Retainer 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

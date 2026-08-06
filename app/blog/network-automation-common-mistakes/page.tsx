@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-case-study">Endpoint Management Case Study</Link></li>
-<li><Link href="/blog/devsecops-pipeline-2026-7094">Devsecops Pipeline 2026 7094</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-vendor-evaluation">Etl Pipeline Optimization Vendor Evaluation</Link></li>
-<li><Link href="/blog/compliance-automation-evaluation-framework">Compliance Automation Evaluation Framework</Link></li>
+              <li><Link /blog/endpoint-management-case-study/>Endpoint Management Case Study</Link></li>
+<li><Link /blog/devsecops-pipeline-2026-7094/>Devsecops Pipeline 2026 7094</Link></li>
+<li><Link /blog/etl-pipeline-optimization-vendor-evaluation/>Etl Pipeline Optimization Vendor Evaluation</Link></li>
+<li><Link /blog/compliance-automation-evaluation-framework/>Compliance Automation Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

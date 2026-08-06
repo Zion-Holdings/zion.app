@@ -54,10 +54,10 @@ If this guide matches your information security: starter template initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/retrieval-augmented-generation-roi-and-cost-model">Retrieval Augmented Generation Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-implementation-playbook">Ai Msp Security Compliance Implementation Playbook</Link></li>
-<li><Link href="/blog/low-code-platform-evaluation-framework">Low Code Platform Evaluation Framework</Link></li>
-<li><Link href="/blog/siem-case-study">Siem Case Study</Link></li>
+              <li><Link /blog/retrieval-augmented-generation-roi-and-cost-model/>Retrieval Augmented Generation Roi And Cost Model</Link></li>
+<li><Link /blog/ai-msp-security-compliance-implementation-playbook/>Ai Msp Security Compliance Implementation Playbook</Link></li>
+<li><Link /blog/low-code-platform-evaluation-framework/>Low Code Platform Evaluation Framework</Link></li>
+<li><Link /blog/siem-case-study/>Siem Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

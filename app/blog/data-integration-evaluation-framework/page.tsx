@@ -57,10 +57,10 @@ Leading indicators for data integration: evaluation framework: workflow completi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/penetration-testing-case-study">Penetration Testing Case Study</Link></li>
-<li><Link href="/blog/governance-risk-compliance-automation-roadmap">Governance Risk Compliance Automation Roadmap</Link></li>
-<li><Link href="/blog/api-lifecycle-management-starter-template">Api Lifecycle Management Starter Template</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-vendor-evaluation">Microsaas Hr Recruitment Vendor Evaluation</Link></li>
+              <li><Link /blog/penetration-testing-case-study/>Penetration Testing Case Study</Link></li>
+<li><Link /blog/governance-risk-compliance-automation-roadmap/>Governance Risk Compliance Automation Roadmap</Link></li>
+<li><Link /blog/api-lifecycle-management-starter-template/>Api Lifecycle Management Starter Template</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-vendor-evaluation/>Microsaas Hr Recruitment Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

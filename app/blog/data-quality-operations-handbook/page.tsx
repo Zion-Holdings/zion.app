@@ -54,10 +54,10 @@ If this guide matches your data quality: operations handbook initiative, the nex
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automated-ai-reporting-2026">Automated Ai Reporting 2026</Link></li>
-<li><Link href="/blog/virtual-cto-operations-handbook">Virtual Cto Operations Handbook</Link></li>
-<li><Link href="/blog/policy-as-code-checklist-for-it-leaders">Policy As Code Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026-6972">Cybersecurity Platform Msp 2026 6972</Link></li>
+              <li><Link /blog/automated-ai-reporting-2026/>Automated Ai Reporting 2026</Link></li>
+<li><Link /blog/virtual-cto-operations-handbook/>Virtual Cto Operations Handbook</Link></li>
+<li><Link /blog/policy-as-code-checklist-for-it-leaders/>Policy As Code Checklist For It Leaders</Link></li>
+<li><Link /blog/cybersecurity-platform-msp-2026-6972/>Cybersecurity Platform Msp 2026 6972</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your data pipeline orchestration: checklist for it leaders
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/technical-due-diligence-vendor-evaluation">Technical Due Diligence Vendor Evaluation</Link></li>
-<li><Link href="/blog/hybrid-cloud-evaluation-framework">Hybrid Cloud Evaluation Framework</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026-6986">Cloud Migration Services 2026 6986</Link></li>
-<li><Link href="/blog/it-asset-management-case-study">It Asset Management Case Study</Link></li>
+              <li><Link /blog/technical-due-diligence-vendor-evaluation/>Technical Due Diligence Vendor Evaluation</Link></li>
+<li><Link /blog/hybrid-cloud-evaluation-framework/>Hybrid Cloud Evaluation Framework</Link></li>
+<li><Link /blog/cloud-migration-services-2026-6986/>Cloud Migration Services 2026 6986</Link></li>
+<li><Link /blog/it-asset-management-case-study/>It Asset Management Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

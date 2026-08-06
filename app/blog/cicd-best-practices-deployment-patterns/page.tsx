@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/container-security-lifecycle-automation-roadmap">Container Security Lifecycle Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-development-acceleration-architecture-overview">Ai Development Acceleration Architecture Overview</Link></li>
-<li><Link href="/blog/machine-learning-operations-handbook">Machine Learning Operations Handbook</Link></li>
-<li><Link href="/blog/structured-data-extraction-starter-template">Structured Data Extraction Starter Template</Link></li>
+              <li><Link /blog/container-security-lifecycle-automation-roadmap/>Container Security Lifecycle Automation Roadmap</Link></li>
+<li><Link /blog/ai-development-acceleration-architecture-overview/>Ai Development Acceleration Architecture Overview</Link></li>
+<li><Link /blog/machine-learning-operations-handbook/>Machine Learning Operations Handbook</Link></li>
+<li><Link /blog/structured-data-extraction-starter-template/>Structured Data Extraction Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

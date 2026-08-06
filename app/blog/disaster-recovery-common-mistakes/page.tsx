@@ -57,10 +57,10 @@ For disaster recovery: common mistakes: pick one workflow, assign ownership, def
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-operations-handbook">Cloud Finops Operations Handbook</Link></li>
-<li><Link href="/blog/database-as-a-service-2026">Database As A Service 2026</Link></li>
-<li><Link href="/blog/cloud-workload-protection-checklist-for-it-leaders">Cloud Workload Protection Checklist For It Leaders</Link></li>
-<li><Link href="/blog/devops-cicd-2026-7056">Devops Cicd 2026 7056</Link></li>
+              <li><Link /blog/cloud-finops-operations-handbook/>Cloud Finops Operations Handbook</Link></li>
+<li><Link /blog/database-as-a-service-2026/>Database As A Service 2026</Link></li>
+<li><Link /blog/cloud-workload-protection-checklist-for-it-leaders/>Cloud Workload Protection Checklist For It Leaders</Link></li>
+<li><Link /blog/devops-cicd-2026-7056/>Devops Cicd 2026 7056</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For technology roadmap: case study: pick one workflow, assign ownership, define 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cybersecurity-platform-msp-2026-7110">Cybersecurity Platform Msp 2026 7110</Link></li>
-<li><Link href="/blog/ai-process-mining-policy-and-compliance">Ai Process Mining Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-operations-handbook">Ai Bdr Sdr Operations Handbook</Link></li>
-<li><Link href="/blog/api-economy-2026">Api Economy 2026</Link></li>
+              <li><Link /blog/cybersecurity-platform-msp-2026-7110/>Cybersecurity Platform Msp 2026 7110</Link></li>
+<li><Link /blog/ai-process-mining-policy-and-compliance/>Ai Process Mining Policy And Compliance</Link></li>
+<li><Link /blog/ai-bdr-sdr-operations-handbook/>Ai Bdr Sdr Operations Handbook</Link></li>
+<li><Link /blog/api-economy-2026/>Api Economy 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

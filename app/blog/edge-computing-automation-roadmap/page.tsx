@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-email-intelligence-operations-handbook">Ai Email Intelligence Operations Handbook</Link></li>
-<li><Link href="/blog/continuous-delivery-automation-roadmap">Continuous Delivery Automation Roadmap</Link></li>
-<li><Link href="/blog/reinforcement-learning-deployment-patterns">Reinforcement Learning Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-supply-chain-starter-template">Ai Supply Chain Starter Template</Link></li>
+              <li><Link /blog/ai-email-intelligence-operations-handbook/>Ai Email Intelligence Operations Handbook</Link></li>
+<li><Link /blog/continuous-delivery-automation-roadmap/>Continuous Delivery Automation Roadmap</Link></li>
+<li><Link /blog/reinforcement-learning-deployment-patterns/>Reinforcement Learning Deployment Patterns</Link></li>
+<li><Link /blog/ai-supply-chain-starter-template/>Ai Supply Chain Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

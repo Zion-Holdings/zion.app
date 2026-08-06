@@ -57,10 +57,10 @@ Leading indicators for data mesh: roi and cost model: workflow completion rate, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/edge-computing-deployment-2026-6750">Edge Computing Deployment 2026 6750</Link></li>
-<li><Link href="/blog/api-performance-testing-operations-handbook">Api Performance Testing Operations Handbook</Link></li>
-<li><Link href="/blog/cloud-backup-checklist-for-it-leaders">Cloud Backup Checklist For It Leaders</Link></li>
-<li><Link href="/blog/network-infrastructure-operations-handbook">Network Infrastructure Operations Handbook</Link></li>
+              <li><Link /blog/edge-computing-deployment-2026-6750/>Edge Computing Deployment 2026 6750</Link></li>
+<li><Link /blog/api-performance-testing-operations-handbook/>Api Performance Testing Operations Handbook</Link></li>
+<li><Link /blog/cloud-backup-checklist-for-it-leaders/>Cloud Backup Checklist For It Leaders</Link></li>
+<li><Link /blog/network-infrastructure-operations-handbook/>Network Infrastructure Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

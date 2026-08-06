@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/kubernetes-security-roi-and-cost-model">Kubernetes Security Roi And Cost Model</Link></li>
-<li><Link href="/blog/automation-orchestration-architecture-overview">Automation Orchestration Architecture Overview</Link></li>
-<li><Link href="/blog/genai-devops-cicd-checklist-for-it-leaders">Genai Devops Cicd Checklist For It Leaders</Link></li>
-<li><Link href="/blog/disaster-recovery-2026">Disaster Recovery 2026</Link></li>
+              <li><Link /blog/kubernetes-security-roi-and-cost-model/>Kubernetes Security Roi And Cost Model</Link></li>
+<li><Link /blog/automation-orchestration-architecture-overview/>Automation Orchestration Architecture Overview</Link></li>
+<li><Link /blog/genai-devops-cicd-checklist-for-it-leaders/>Genai Devops Cicd Checklist For It Leaders</Link></li>
+<li><Link /blog/disaster-recovery-2026/>Disaster Recovery 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

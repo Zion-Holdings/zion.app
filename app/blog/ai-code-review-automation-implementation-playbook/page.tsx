@@ -57,10 +57,10 @@ Leading indicators for ai code review automation: implementation playbook: workf
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-implementation-playbook">It Consulting Implementation Playbook</Link></li>
-<li><Link href="/blog/cloud-migration-services-vendor-evaluation">Cloud Migration Services Vendor Evaluation</Link></li>
-<li><Link href="/blog/automated-ai-reporting-automation-roadmap">Automated Ai Reporting Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-recruitment-chatbot-case-study">Ai Recruitment Chatbot Case Study</Link></li>
+              <li><Link /blog/it-consulting-implementation-playbook/>It Consulting Implementation Playbook</Link></li>
+<li><Link /blog/cloud-migration-services-vendor-evaluation/>Cloud Migration Services Vendor Evaluation</Link></li>
+<li><Link /blog/automated-ai-reporting-automation-roadmap/>Automated Ai Reporting Automation Roadmap</Link></li>
+<li><Link /blog/ai-recruitment-chatbot-case-study/>Ai Recruitment Chatbot Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

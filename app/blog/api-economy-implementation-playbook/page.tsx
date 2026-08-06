@@ -57,10 +57,10 @@ For api economy: implementation playbook: pick one workflow, assign ownership, d
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/sase-executive-guide">Sase Executive Guide</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-starter-template">Ai Performance Monitoring Starter Template</Link></li>
-<li><Link href="/blog/strategic-it-planning-policy-and-compliance">Strategic It Planning Policy And Compliance</Link></li>
-<li><Link href="/blog/api-documentation-vendor-evaluation">Api Documentation Vendor Evaluation</Link></li>
+              <li><Link /blog/sase-executive-guide/>Sase Executive Guide</Link></li>
+<li><Link /blog/ai-performance-monitoring-starter-template/>Ai Performance Monitoring Starter Template</Link></li>
+<li><Link /blog/strategic-it-planning-policy-and-compliance/>Strategic It Planning Policy And Compliance</Link></li>
+<li><Link /blog/api-documentation-vendor-evaluation/>Api Documentation Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

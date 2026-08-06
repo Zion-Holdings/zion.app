@@ -57,10 +57,10 @@ Leading indicators for microservices architecture: operations handbook: workflow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-2026-6531">Api Management Gateway 2026 6531</Link></li>
-<li><Link href="/blog/apm-application-performance-policy-and-compliance">Apm Application Performance Policy And Compliance</Link></li>
-<li><Link href="/blog/application-modernization-deployment-patterns">Application Modernization Deployment Patterns</Link></li>
-<li><Link href="/blog/data-observability-evaluation-framework">Data Observability Evaluation Framework</Link></li>
+              <li><Link /blog/api-management-gateway-2026-6531/>Api Management Gateway 2026 6531</Link></li>
+<li><Link /blog/apm-application-performance-policy-and-compliance/>Apm Application Performance Policy And Compliance</Link></li>
+<li><Link /blog/application-modernization-deployment-patterns/>Application Modernization Deployment Patterns</Link></li>
+<li><Link /blog/data-observability-evaluation-framework/>Data Observability Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

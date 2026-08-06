@@ -57,10 +57,10 @@ For web application firewall: common mistakes: pick one workflow, assign ownersh
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-pipeline-orchestration-operations-handbook">Data Pipeline Orchestration Operations Handbook</Link></li>
-<li><Link href="/blog/ai-video-analytics-starter-template">Ai Video Analytics Starter Template</Link></li>
-<li><Link href="/blog/natural-language-processing-operations-handbook">Natural Language Processing Operations Handbook</Link></li>
-<li><Link href="/blog/zero-trust-architecture-deployment-patterns">Zero Trust Architecture Deployment Patterns</Link></li>
+              <li><Link /blog/data-pipeline-orchestration-operations-handbook/>Data Pipeline Orchestration Operations Handbook</Link></li>
+<li><Link /blog/ai-video-analytics-starter-template/>Ai Video Analytics Starter Template</Link></li>
+<li><Link /blog/natural-language-processing-operations-handbook/>Natural Language Processing Operations Handbook</Link></li>
+<li><Link /blog/zero-trust-architecture-deployment-patterns/>Zero Trust Architecture Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

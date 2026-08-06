@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cicd-best-practices-roi-and-cost-model">Cicd Best Practices Roi And Cost Model</Link></li>
-<li><Link href="/blog/incident-response-retainer-policy-and-compliance">Incident Response Retainer Policy And Compliance</Link></li>
-<li><Link href="/blog/cicd-pipeline-security-starter-template">Cicd Pipeline Security Starter Template</Link></li>
-<li><Link href="/blog/cloud-backup-roi-and-cost-model">Cloud Backup Roi And Cost Model</Link></li>
+              <li><Link /blog/cicd-best-practices-roi-and-cost-model/>Cicd Best Practices Roi And Cost Model</Link></li>
+<li><Link /blog/incident-response-retainer-policy-and-compliance/>Incident Response Retainer Policy And Compliance</Link></li>
+<li><Link /blog/cicd-pipeline-security-starter-template/>Cicd Pipeline Security Starter Template</Link></li>
+<li><Link /blog/cloud-backup-roi-and-cost-model/>Cloud Backup Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your oncall best practices: case study initiative, the nex
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/sase-case-study">Sase Case Study</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-checklist-for-it-leaders">Autonomous Code Deployment Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cicd-pipeline-security-case-study">Cicd Pipeline Security Case Study</Link></li>
-<li><Link href="/blog/virtual-cto-common-mistakes">Virtual Cto Common Mistakes</Link></li>
+              <li><Link /blog/sase-case-study/>Sase Case Study</Link></li>
+<li><Link /blog/autonomous-code-deployment-checklist-for-it-leaders/>Autonomous Code Deployment Checklist For It Leaders</Link></li>
+<li><Link /blog/cicd-pipeline-security-case-study/>Cicd Pipeline Security Case Study</Link></li>
+<li><Link /blog/virtual-cto-common-mistakes/>Virtual Cto Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For ai workflow automation: operations handbook: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/5g-solutions-checklist-for-it-leaders">5G Solutions Checklist For It Leaders</Link></li>
-<li><Link href="/blog/configuration-management-executive-guide">Configuration Management Executive Guide</Link></li>
-<li><Link href="/blog/ai-observability-2026-6634">Ai Observability 2026 6634</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-vendor-evaluation">Autonomous Qa Engineering Vendor Evaluation</Link></li>
+              <li><Link /blog/5g-solutions-checklist-for-it-leaders/>5G Solutions Checklist For It Leaders</Link></li>
+<li><Link /blog/configuration-management-executive-guide/>Configuration Management Executive Guide</Link></li>
+<li><Link /blog/ai-observability-2026-6634/>Ai Observability 2026 6634</Link></li>
+<li><Link /blog/autonomous-qa-engineering-vendor-evaluation/>Autonomous Qa Engineering Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For api lifecycle management: implementation playbook: pick one workflow, assign
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/genai-devops-cicd-checklist-for-it-leaders">Genai Devops Cicd Checklist For It Leaders</Link></li>
-<li><Link href="/blog/observability-platform-2026">Observability Platform 2026</Link></li>
-<li><Link href="/blog/ubiquitous-connectivity-architecture-overview">Ubiquitous Connectivity Architecture Overview</Link></li>
-<li><Link href="/blog/edge-computing-deployment-security-and-governance">Edge Computing Deployment Security And Governance</Link></li>
+              <li><Link /blog/genai-devops-cicd-checklist-for-it-leaders/>Genai Devops Cicd Checklist For It Leaders</Link></li>
+<li><Link /blog/observability-platform-2026/>Observability Platform 2026</Link></li>
+<li><Link /blog/ubiquitous-connectivity-architecture-overview/>Ubiquitous Connectivity Architecture Overview</Link></li>
+<li><Link /blog/edge-computing-deployment-security-and-governance/>Edge Computing Deployment Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

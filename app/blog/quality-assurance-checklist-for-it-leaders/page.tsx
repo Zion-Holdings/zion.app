@@ -57,10 +57,10 @@ Leading indicators for quality assurance: checklist for it leaders: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bdr-sdr-security-and-governance">Ai Bdr Sdr Security And Governance</Link></li>
-<li><Link href="/blog/generative-ai-2026">Generative Ai 2026</Link></li>
-<li><Link href="/blog/automated-ai-reporting-operations-handbook">Automated Ai Reporting Operations Handbook</Link></li>
-<li><Link href="/blog/performance-testing-roi-and-cost-model">Performance Testing Roi And Cost Model</Link></li>
+              <li><Link /blog/ai-bdr-sdr-security-and-governance/>Ai Bdr Sdr Security And Governance</Link></li>
+<li><Link /blog/generative-ai-2026/>Generative Ai 2026</Link></li>
+<li><Link /blog/automated-ai-reporting-operations-handbook/>Automated Ai Reporting Operations Handbook</Link></li>
+<li><Link /blog/performance-testing-roi-and-cost-model/>Performance Testing Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

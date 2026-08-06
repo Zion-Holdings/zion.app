@@ -57,10 +57,10 @@ Leading indicators for distributed tracing: automation roadmap: workflow complet
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-roi-and-cost-model">Devsecops Pipeline Roi And Cost Model</Link></li>
-<li><Link href="/blog/api-integration-2026-6530">Api Integration 2026 6530</Link></li>
-<li><Link href="/blog/ai-development-acceleration-operations-handbook">Ai Development Acceleration Operations Handbook</Link></li>
-<li><Link href="/blog/infrastructure-as-code-operations-handbook">Infrastructure As Code Operations Handbook</Link></li>
+              <li><Link /blog/devsecops-pipeline-roi-and-cost-model/>Devsecops Pipeline Roi And Cost Model</Link></li>
+<li><Link /blog/api-integration-2026-6530/>Api Integration 2026 6530</Link></li>
+<li><Link /blog/ai-development-acceleration-operations-handbook/>Ai Development Acceleration Operations Handbook</Link></li>
+<li><Link /blog/infrastructure-as-code-operations-handbook/>Infrastructure As Code Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

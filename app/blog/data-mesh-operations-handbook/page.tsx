@@ -54,10 +54,10 @@ If this guide matches your data mesh: operations handbook initiative, the next s
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-safety-evaluation-policy-and-compliance">Ai Agent Safety Evaluation Policy And Compliance</Link></li>
-<li><Link href="/blog/devsecops-pipeline-2026-6887">Devsecops Pipeline 2026 6887</Link></li>
-<li><Link href="/blog/ai-api-gateway-implementation-playbook">Ai Api Gateway Implementation Playbook</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-automation-roadmap">Aiops Anomaly Detection Automation Roadmap</Link></li>
+              <li><Link /blog/ai-agent-safety-evaluation-policy-and-compliance/>Ai Agent Safety Evaluation Policy And Compliance</Link></li>
+<li><Link /blog/devsecops-pipeline-2026-6887/>Devsecops Pipeline 2026 6887</Link></li>
+<li><Link /blog/ai-api-gateway-implementation-playbook/>Ai Api Gateway Implementation Playbook</Link></li>
+<li><Link /blog/aiops-anomaly-detection-automation-roadmap/>Aiops Anomaly Detection Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

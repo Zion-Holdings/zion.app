@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-recruitment-chatbot-deployment-patterns">Ai Recruitment Chatbot Deployment Patterns</Link></li>
-<li><Link href="/blog/data-analytics-platform-implementation-playbook">Data Analytics Platform Implementation Playbook</Link></li>
-<li><Link href="/blog/splunk-migration-2026">Splunk Migration 2026</Link></li>
-<li><Link href="/blog/software-supply-chain-security-executive-guide">Software Supply Chain Security Executive Guide</Link></li>
+              <li><Link /blog/ai-recruitment-chatbot-deployment-patterns/>Ai Recruitment Chatbot Deployment Patterns</Link></li>
+<li><Link /blog/data-analytics-platform-implementation-playbook/>Data Analytics Platform Implementation Playbook</Link></li>
+<li><Link /blog/splunk-migration-2026/>Splunk Migration 2026</Link></li>
+<li><Link /blog/software-supply-chain-security-executive-guide/>Software Supply Chain Security Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

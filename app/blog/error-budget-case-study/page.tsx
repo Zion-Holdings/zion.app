@@ -57,10 +57,10 @@ Leading indicators for error budget: case study: workflow completion rate, escal
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/configuration-management-evaluation-framework">Configuration Management Evaluation Framework</Link></li>
-<li><Link href="/blog/api-integration-2026">Api Integration 2026</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-operations-handbook">Ai Autonomous Agents Operations Handbook</Link></li>
-<li><Link href="/blog/cicd-pipeline-security-roi-and-cost-model">Cicd Pipeline Security Roi And Cost Model</Link></li>
+              <li><Link /blog/configuration-management-evaluation-framework/>Configuration Management Evaluation Framework</Link></li>
+<li><Link /blog/api-integration-2026/>Api Integration 2026</Link></li>
+<li><Link /blog/ai-autonomous-agents-operations-handbook/>Ai Autonomous Agents Operations Handbook</Link></li>
+<li><Link /blog/cicd-pipeline-security-roi-and-cost-model/>Cicd Pipeline Security Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

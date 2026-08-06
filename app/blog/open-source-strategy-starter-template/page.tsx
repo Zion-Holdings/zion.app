@@ -54,10 +54,10 @@ If this guide matches your open source strategy: starter template initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/machine-learning-engineering-common-mistakes">Machine Learning Engineering Common Mistakes</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6690">Api Gateway Management 2026 6690</Link></li>
-<li><Link href="/blog/data-compliance-2026">Data Compliance 2026</Link></li>
-<li><Link href="/blog/threat-intelligence-platform-2026">Threat Intelligence Platform 2026</Link></li>
+              <li><Link /blog/machine-learning-engineering-common-mistakes/>Machine Learning Engineering Common Mistakes</Link></li>
+<li><Link /blog/api-gateway-management-2026-6690/>Api Gateway Management 2026 6690</Link></li>
+<li><Link /blog/data-compliance-2026/>Data Compliance 2026</Link></li>
+<li><Link /blog/threat-intelligence-platform-2026/>Threat Intelligence Platform 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

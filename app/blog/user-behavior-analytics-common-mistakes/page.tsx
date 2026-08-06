@@ -57,10 +57,10 @@ Leading indicators for user behavior analytics: common mistakes: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/deep-learning-starter-template">Deep Learning Starter Template</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-2026-6518">Ai Autonomous Agents 2026 6518</Link></li>
-<li><Link href="/blog/5g-solutions-2026-7052">5G Solutions 2026 7052</Link></li>
-<li><Link href="/blog/5g-solutions-roi-and-cost-model">5G Solutions Roi And Cost Model</Link></li>
+              <li><Link /blog/deep-learning-starter-template/>Deep Learning Starter Template</Link></li>
+<li><Link /blog/ai-autonomous-agents-2026-6518/>Ai Autonomous Agents 2026 6518</Link></li>
+<li><Link /blog/5g-solutions-2026-7052/>5G Solutions 2026 7052</Link></li>
+<li><Link /blog/5g-solutions-roi-and-cost-model/>5G Solutions Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

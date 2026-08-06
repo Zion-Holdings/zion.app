@@ -54,10 +54,10 @@ If this guide matches your governance risk compliance: vendor evaluation initiat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/etl-pipeline-optimization-common-mistakes">Etl Pipeline Optimization Common Mistakes</Link></li>
-<li><Link href="/blog/compliance-automation-architecture-overview">Compliance Automation Architecture Overview</Link></li>
-<li><Link href="/blog/cloud-security-posture-checklist-for-it-leaders">Cloud Security Posture Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026-6721">Ai Ad Copy Generator 2026 6721</Link></li>
+              <li><Link /blog/etl-pipeline-optimization-common-mistakes/>Etl Pipeline Optimization Common Mistakes</Link></li>
+<li><Link /blog/compliance-automation-architecture-overview/>Compliance Automation Architecture Overview</Link></li>
+<li><Link /blog/cloud-security-posture-checklist-for-it-leaders/>Cloud Security Posture Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-ad-copy-generator-2026-6721/>Ai Ad Copy Generator 2026 6721</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

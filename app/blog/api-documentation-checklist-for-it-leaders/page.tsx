@@ -57,10 +57,10 @@ For api documentation: checklist for it leaders: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/integration-testing-starter-template">Integration Testing Starter Template</Link></li>
-<li><Link href="/blog/itil-executive-guide">Itil Executive Guide</Link></li>
-<li><Link href="/blog/automated-ai-reporting-2026">Automated Ai Reporting 2026</Link></li>
-<li><Link href="/blog/infrastructure-as-code-roi-and-cost-model">Infrastructure As Code Roi And Cost Model</Link></li>
+              <li><Link /blog/integration-testing-starter-template/>Integration Testing Starter Template</Link></li>
+<li><Link /blog/itil-executive-guide/>Itil Executive Guide</Link></li>
+<li><Link /blog/automated-ai-reporting-2026/>Automated Ai Reporting 2026</Link></li>
+<li><Link /blog/infrastructure-as-code-roi-and-cost-model/>Infrastructure As Code Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

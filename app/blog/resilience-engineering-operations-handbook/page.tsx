@@ -57,10 +57,10 @@ For resilience engineering: operations handbook: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-management-evaluation-framework">Api Gateway Management Evaluation Framework</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-vendor-evaluation">Cloud Cost Optimization Vendor Evaluation</Link></li>
-<li><Link href="/blog/remote-work-security-2026">Remote Work Security 2026</Link></li>
-<li><Link href="/blog/chaos-engineering-2026-6878">Chaos Engineering 2026 6878</Link></li>
+              <li><Link /blog/api-gateway-management-evaluation-framework/>Api Gateway Management Evaluation Framework</Link></li>
+<li><Link /blog/cloud-cost-optimization-vendor-evaluation/>Cloud Cost Optimization Vendor Evaluation</Link></li>
+<li><Link /blog/remote-work-security-2026/>Remote Work Security 2026</Link></li>
+<li><Link /blog/chaos-engineering-2026-6878/>Chaos Engineering 2026 6878</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

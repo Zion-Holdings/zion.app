@@ -57,10 +57,10 @@ For token optimization: policy and compliance: pick one workflow, assign ownersh
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-optimizer-security-and-governance">Ai Accessibility Optimizer Security And Governance</Link></li>
-<li><Link href="/blog/bot-detection-vendor-evaluation">Bot Detection Vendor Evaluation</Link></li>
-<li><Link href="/blog/threat-hunting-case-study">Threat Hunting Case Study</Link></li>
-<li><Link href="/blog/penetration-testing-roi-and-cost-model">Penetration Testing Roi And Cost Model</Link></li>
+              <li><Link /blog/ai-accessibility-optimizer-security-and-governance/>Ai Accessibility Optimizer Security And Governance</Link></li>
+<li><Link /blog/bot-detection-vendor-evaluation/>Bot Detection Vendor Evaluation</Link></li>
+<li><Link /blog/threat-hunting-case-study/>Threat Hunting Case Study</Link></li>
+<li><Link /blog/penetration-testing-roi-and-cost-model/>Penetration Testing Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

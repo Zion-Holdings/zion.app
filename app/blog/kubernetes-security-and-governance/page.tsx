@@ -57,10 +57,10 @@ Leading indicators for kubernetes: security and governance: workflow completion 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-warehouse-modernization-checklist-for-it-leaders">Data Warehouse Modernization Checklist For It Leaders</Link></li>
-<li><Link href="/blog/low-code-platform-security-and-governance">Low Code Platform Security And Governance</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-implementation-playbook">Aiops Anomaly Detection Implementation Playbook</Link></li>
-<li><Link href="/blog/observability-platform-architecture-overview">Observability Platform Architecture Overview</Link></li>
+              <li><Link /blog/data-warehouse-modernization-checklist-for-it-leaders/>Data Warehouse Modernization Checklist For It Leaders</Link></li>
+<li><Link /blog/low-code-platform-security-and-governance/>Low Code Platform Security And Governance</Link></li>
+<li><Link /blog/aiops-anomaly-detection-implementation-playbook/>Aiops Anomaly Detection Implementation Playbook</Link></li>
+<li><Link /blog/observability-platform-architecture-overview/>Observability Platform Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

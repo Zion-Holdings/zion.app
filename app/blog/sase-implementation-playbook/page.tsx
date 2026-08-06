@@ -54,10 +54,10 @@ If this guide matches your sase: implementation playbook initiative, the next st
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-operations-handbook">Cloud Finops Operations Handbook</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-deployment-patterns">Autonomous Code Deployment Deployment Patterns</Link></li>
-<li><Link href="/blog/blue-green-deployment-automation-roadmap">Blue Green Deployment Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-process-mining-deployment-patterns">Ai Process Mining Deployment Patterns</Link></li>
+              <li><Link /blog/cloud-finops-operations-handbook/>Cloud Finops Operations Handbook</Link></li>
+<li><Link /blog/autonomous-code-deployment-deployment-patterns/>Autonomous Code Deployment Deployment Patterns</Link></li>
+<li><Link /blog/blue-green-deployment-automation-roadmap/>Blue Green Deployment Automation Roadmap</Link></li>
+<li><Link /blog/ai-process-mining-deployment-patterns/>Ai Process Mining Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

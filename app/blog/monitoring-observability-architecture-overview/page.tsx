@@ -54,10 +54,10 @@ If this guide matches your monitoring observability: architecture overview initi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-design-starter-template">Api Design Starter Template</Link></li>
-<li><Link href="/blog/remote-work-security-policy-and-compliance">Remote Work Security Policy And Compliance</Link></li>
-<li><Link href="/blog/blue-green-deployment-evaluation-framework">Blue Green Deployment Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-network-optimization-starter-template">Ai Network Optimization Starter Template</Link></li>
+              <li><Link /blog/api-design-starter-template/>Api Design Starter Template</Link></li>
+<li><Link /blog/remote-work-security-policy-and-compliance/>Remote Work Security Policy And Compliance</Link></li>
+<li><Link /blog/blue-green-deployment-evaluation-framework/>Blue Green Deployment Evaluation Framework</Link></li>
+<li><Link /blog/ai-network-optimization-starter-template/>Ai Network Optimization Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

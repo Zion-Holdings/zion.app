@@ -57,10 +57,10 @@ For disaster recovery: deployment patterns: pick one workflow, assign ownership,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-rate-limiting-architecture-overview">Api Rate Limiting Architecture Overview</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-policy-and-compliance">Ai Performance Monitoring Policy And Compliance</Link></li>
-<li><Link href="/blog/cloud-backup-starter-template">Cloud Backup Starter Template</Link></li>
-<li><Link href="/blog/database-as-a-service-checklist-for-it-leaders">Database As A Service Checklist For It Leaders</Link></li>
+              <li><Link /blog/api-rate-limiting-architecture-overview/>Api Rate Limiting Architecture Overview</Link></li>
+<li><Link /blog/ai-performance-monitoring-policy-and-compliance/>Ai Performance Monitoring Policy And Compliance</Link></li>
+<li><Link /blog/cloud-backup-starter-template/>Cloud Backup Starter Template</Link></li>
+<li><Link /blog/database-as-a-service-checklist-for-it-leaders/>Database As A Service Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For bot detection: starter template: pick one workflow, assign ownership, define
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/vector-database-2026">Vector Database 2026</Link></li>
-<li><Link href="/blog/product-analytics-2026">Product Analytics 2026</Link></li>
-<li><Link href="/blog/ai-process-mining-architecture-overview">Ai Process Mining Architecture Overview</Link></li>
-<li><Link href="/blog/incident-response-retainer-2026-6757">Incident Response Retainer 2026 6757</Link></li>
+              <li><Link /blog/vector-database-2026/>Vector Database 2026</Link></li>
+<li><Link /blog/product-analytics-2026/>Product Analytics 2026</Link></li>
+<li><Link /blog/ai-process-mining-architecture-overview/>Ai Process Mining Architecture Overview</Link></li>
+<li><Link /blog/incident-response-retainer-2026-6757/>Incident Response Retainer 2026 6757</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

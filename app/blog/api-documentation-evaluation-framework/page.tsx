@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/etl-pipeline-optimization-2026">Etl Pipeline Optimization 2026</Link></li>
-<li><Link href="/blog/automated-ai-reporting-security-and-governance">Automated Ai Reporting Security And Governance</Link></li>
-<li><Link href="/blog/patch-management-executive-guide">Patch Management Executive Guide</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-6541">Devops Gen Ai Cicd 2026 6541</Link></li>
+              <li><Link /blog/etl-pipeline-optimization-2026/>Etl Pipeline Optimization 2026</Link></li>
+<li><Link /blog/automated-ai-reporting-security-and-governance/>Automated Ai Reporting Security And Governance</Link></li>
+<li><Link /blog/patch-management-executive-guide/>Patch Management Executive Guide</Link></li>
+<li><Link /blog/devops-gen-ai-cicd-2026-6541/>Devops Gen Ai Cicd 2026 6541</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

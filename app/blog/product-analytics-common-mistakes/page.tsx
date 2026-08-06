@@ -57,10 +57,10 @@ Leading indicators for product analytics: common mistakes: workflow completion r
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-migration-service-2026-7023">Database Migration Service 2026 7023</Link></li>
-<li><Link href="/blog/ai-customer-support-starter-template">Ai Customer Support Starter Template</Link></li>
-<li><Link href="/blog/it-asset-management-common-mistakes">It Asset Management Common Mistakes</Link></li>
-<li><Link href="/blog/crm-automation-trends-2026-ai-driven-customer-journey-personalization">Crm Automation Trends 2026 Ai Driven Customer Journey Personalization</Link></li>
+              <li><Link /blog/database-migration-service-2026-7023/>Database Migration Service 2026 7023</Link></li>
+<li><Link /blog/ai-customer-support-starter-template/>Ai Customer Support Starter Template</Link></li>
+<li><Link /blog/it-asset-management-common-mistakes/>It Asset Management Common Mistakes</Link></li>
+<li><Link /blog/crm-automation-trends-2026-ai-driven-customer-journey-personalization/>Crm Automation Trends 2026 Ai Driven Customer Journey Personalization</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

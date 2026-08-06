@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-workload-protection-common-mistakes">Cloud Workload Protection Common Mistakes</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-checklist-for-it-leaders">Data Warehouse Modernization Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cloud-workload-protection-roi-and-cost-model">Cloud Workload Protection Roi And Cost Model</Link></li>
-<li><Link href="/blog/penetration-testing-evaluation-framework">Penetration Testing Evaluation Framework</Link></li>
+              <li><Link /blog/cloud-workload-protection-common-mistakes/>Cloud Workload Protection Common Mistakes</Link></li>
+<li><Link /blog/data-warehouse-modernization-checklist-for-it-leaders/>Data Warehouse Modernization Checklist For It Leaders</Link></li>
+<li><Link /blog/cloud-workload-protection-roi-and-cost-model/>Cloud Workload Protection Roi And Cost Model</Link></li>
+<li><Link /blog/penetration-testing-evaluation-framework/>Penetration Testing Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

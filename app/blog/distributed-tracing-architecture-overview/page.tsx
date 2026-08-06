@@ -57,10 +57,10 @@ Leading indicators for distributed tracing: architecture overview: workflow comp
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-code-deployment-2026-6867">Autonomous Code Deployment 2026 6867</Link></li>
-<li><Link href="/blog/data-virtualization-case-study">Data Virtualization Case Study</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-7060">Micro Saas Ai Customer Onboarding 2026 7060</Link></li>
-<li><Link href="/blog/ai-video-analytics-vendor-evaluation">Ai Video Analytics Vendor Evaluation</Link></li>
+              <li><Link /blog/autonomous-code-deployment-2026-6867/>Autonomous Code Deployment 2026 6867</Link></li>
+<li><Link /blog/data-virtualization-case-study/>Data Virtualization Case Study</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026-7060/>Micro Saas Ai Customer Onboarding 2026 7060</Link></li>
+<li><Link /blog/ai-video-analytics-vendor-evaluation/>Ai Video Analytics Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

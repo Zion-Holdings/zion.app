@@ -57,10 +57,10 @@ Leading indicators for enterprise integration: evaluation framework: workflow co
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-2026-6756">Graphql Federation Platform 2026 6756</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-security-and-governance">Ai Accessibility Auditor Security And Governance</Link></li>
-<li><Link href="/blog/data-catalog-security-and-governance">Data Catalog Security And Governance</Link></li>
-<li><Link href="/blog/it-automation-case-study">It Automation Case Study</Link></li>
+              <li><Link /blog/graphql-federation-platform-2026-6756/>Graphql Federation Platform 2026 6756</Link></li>
+<li><Link /blog/ai-accessibility-auditor-security-and-governance/>Ai Accessibility Auditor Security And Governance</Link></li>
+<li><Link /blog/data-catalog-security-and-governance/>Data Catalog Security And Governance</Link></li>
+<li><Link /blog/it-automation-case-study/>It Automation Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

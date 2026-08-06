@@ -57,10 +57,10 @@ Leading indicators for sase: operations handbook: workflow completion rate, esca
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-compliance-implementation-playbook">Data Compliance Implementation Playbook</Link></li>
-<li><Link href="/blog/api-rate-limiting-checklist-for-it-leaders">Api Rate Limiting Checklist For It Leaders</Link></li>
-<li><Link href="/blog/content-delivery-network-case-study">Content Delivery Network Case Study</Link></li>
-<li><Link href="/blog/data-quality-case-study">Data Quality Case Study</Link></li>
+              <li><Link /blog/data-compliance-implementation-playbook/>Data Compliance Implementation Playbook</Link></li>
+<li><Link /blog/api-rate-limiting-checklist-for-it-leaders/>Api Rate Limiting Checklist For It Leaders</Link></li>
+<li><Link /blog/content-delivery-network-case-study/>Content Delivery Network Case Study</Link></li>
+<li><Link /blog/data-quality-case-study/>Data Quality Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

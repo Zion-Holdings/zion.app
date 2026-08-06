@@ -54,10 +54,10 @@ If this guide matches your quality assurance: security and governance initiative
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-monetization-evaluation-framework">Api Monetization Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-meeting-assistant-executive-guide">Ai Meeting Assistant Executive Guide</Link></li>
-<li><Link href="/blog/ai-marketing-personalization-policy-and-compliance">Ai Marketing Personalization Policy And Compliance</Link></li>
-<li><Link href="/blog/api-management-gateway-2026-6807">Api Management Gateway 2026 6807</Link></li>
+              <li><Link /blog/api-monetization-evaluation-framework/>Api Monetization Evaluation Framework</Link></li>
+<li><Link /blog/ai-meeting-assistant-executive-guide/>Ai Meeting Assistant Executive Guide</Link></li>
+<li><Link /blog/ai-marketing-personalization-policy-and-compliance/>Ai Marketing Personalization Policy And Compliance</Link></li>
+<li><Link /blog/api-management-gateway-2026-6807/>Api Management Gateway 2026 6807</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

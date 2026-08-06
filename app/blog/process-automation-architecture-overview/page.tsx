@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microservices-architecture-security-and-governance">Microservices Architecture Security And Governance</Link></li>
-<li><Link href="/blog/machine-learning-executive-guide">Machine Learning Executive Guide</Link></li>
-<li><Link href="/blog/process-automation-case-study">Process Automation Case Study</Link></li>
-<li><Link href="/blog/api-design-operations-handbook">Api Design Operations Handbook</Link></li>
+              <li><Link /blog/microservices-architecture-security-and-governance/>Microservices Architecture Security And Governance</Link></li>
+<li><Link /blog/machine-learning-executive-guide/>Machine Learning Executive Guide</Link></li>
+<li><Link /blog/process-automation-case-study/>Process Automation Case Study</Link></li>
+<li><Link /blog/api-design-operations-handbook/>Api Design Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

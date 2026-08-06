@@ -57,10 +57,10 @@ For cost optimization: roi and cost model: pick one workflow, assign ownership, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-lakehouse-pipelines-2026-7050">Ai Data Lakehouse Pipelines 2026 7050</Link></li>
-<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026">Micro Saas Ai Hr Recruitment 2026</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026-7065">Ai Accessibility Optimizer 2026 7065</Link></li>
-<li><Link href="/blog/ai-email-intelligence-2026-6907">Ai Email Intelligence 2026 6907</Link></li>
+              <li><Link /blog/ai-data-lakehouse-pipelines-2026-7050/>Ai Data Lakehouse Pipelines 2026 7050</Link></li>
+<li><Link /blog/micro-saas-ai-hr-recruitment-2026/>Micro Saas Ai Hr Recruitment 2026</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-2026-7065/>Ai Accessibility Optimizer 2026 7065</Link></li>
+<li><Link /blog/ai-email-intelligence-2026-6907/>Ai Email Intelligence 2026 6907</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

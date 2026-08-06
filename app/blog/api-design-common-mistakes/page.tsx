@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-success-churn-2026-6568">Ai Customer Success Churn 2026 6568</Link></li>
-<li><Link href="/blog/data-observability-2026">Data Observability 2026</Link></li>
-<li><Link href="/blog/data-integration-architecture-overview">Data Integration Architecture Overview</Link></li>
-<li><Link href="/blog/kubernetes-security-automation-roadmap">Kubernetes Security Automation Roadmap</Link></li>
+              <li><Link /blog/ai-customer-success-churn-2026-6568/>Ai Customer Success Churn 2026 6568</Link></li>
+<li><Link /blog/data-observability-2026/>Data Observability 2026</Link></li>
+<li><Link /blog/data-integration-architecture-overview/>Data Integration Architecture Overview</Link></li>
+<li><Link /blog/kubernetes-security-automation-roadmap/>Kubernetes Security Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

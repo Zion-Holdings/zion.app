@@ -54,10 +54,10 @@ If this guide matches your data architecture: common mistakes initiative, the ne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/deep-learning-security-and-governance">Deep Learning Security And Governance</Link></li>
-<li><Link href="/blog/ai-bom-procurement-implementation-playbook">Ai Bom Procurement Implementation Playbook</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026-7055">Cloud Migration Services 2026 7055</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026-6913">Ai Customer Success Churn 2026 6913</Link></li>
+              <li><Link /blog/deep-learning-security-and-governance/>Deep Learning Security And Governance</Link></li>
+<li><Link /blog/ai-bom-procurement-implementation-playbook/>Ai Bom Procurement Implementation Playbook</Link></li>
+<li><Link /blog/cloud-migration-services-2026-7055/>Cloud Migration Services 2026 7055</Link></li>
+<li><Link /blog/ai-customer-success-churn-2026-6913/>Ai Customer Success Churn 2026 6913</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

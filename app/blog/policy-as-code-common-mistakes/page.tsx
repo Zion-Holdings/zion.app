@@ -54,10 +54,10 @@ If this guide matches your policy as code: common mistakes initiative, the next 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agentic-workflows-2026-6586">Ai Agentic Workflows 2026 6586</Link></li>
-<li><Link href="/blog/network-infrastructure-deployment-patterns">Network Infrastructure Deployment Patterns</Link></li>
-<li><Link href="/blog/data-quality-evaluation-framework">Data Quality Evaluation Framework</Link></li>
-<li><Link href="/blog/data-observability-operations-handbook">Data Observability Operations Handbook</Link></li>
+              <li><Link /blog/ai-agentic-workflows-2026-6586/>Ai Agentic Workflows 2026 6586</Link></li>
+<li><Link /blog/network-infrastructure-deployment-patterns/>Network Infrastructure Deployment Patterns</Link></li>
+<li><Link /blog/data-quality-evaluation-framework/>Data Quality Evaluation Framework</Link></li>
+<li><Link /blog/data-observability-operations-handbook/>Data Observability Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

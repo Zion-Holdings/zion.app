@@ -57,10 +57,10 @@ For ai hr recruitment: security and governance: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-security-testing-implementation-playbook">Api Security Testing Implementation Playbook</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-6784">Micro Saas Ai Customer Onboarding 2026 6784</Link></li>
-<li><Link href="/blog/sase-vendor-evaluation">Sase Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-2026-6515">Ai Agent Safety Evaluation 2026 6515</Link></li>
+              <li><Link /blog/api-security-testing-implementation-playbook/>Api Security Testing Implementation Playbook</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026-6784/>Micro Saas Ai Customer Onboarding 2026 6784</Link></li>
+<li><Link /blog/sase-vendor-evaluation/>Sase Vendor Evaluation</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-2026-6515/>Ai Agent Safety Evaluation 2026 6515</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

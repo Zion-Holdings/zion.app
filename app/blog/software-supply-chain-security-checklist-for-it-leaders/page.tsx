@@ -54,10 +54,10 @@ If this guide matches your software supply chain security: checklist for it lead
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-versioning-executive-guide">Api Versioning Executive Guide</Link></li>
-<li><Link href="/blog/oncall-best-practices-architecture-overview">Oncall Best Practices Architecture Overview</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-vendor-evaluation">Cloud Cost Optimization Vendor Evaluation</Link></li>
-<li><Link href="/blog/network-security-security-and-governance">Network Security Security And Governance</Link></li>
+              <li><Link /blog/api-versioning-executive-guide/>Api Versioning Executive Guide</Link></li>
+<li><Link /blog/oncall-best-practices-architecture-overview/>Oncall Best Practices Architecture Overview</Link></li>
+<li><Link /blog/cloud-cost-optimization-vendor-evaluation/>Cloud Cost Optimization Vendor Evaluation</Link></li>
+<li><Link /blog/network-security-security-and-governance/>Network Security Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

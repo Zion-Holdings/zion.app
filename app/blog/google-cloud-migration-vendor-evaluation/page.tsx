@@ -54,10 +54,10 @@ If this guide matches your google cloud migration: vendor evaluation initiative,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-qa-engineering-2026-7006">Autonomous Qa Engineering 2026 7006</Link></li>
-<li><Link href="/blog/api-gateway-management-2026">Api Gateway Management 2026</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-2026-6519">Aiops Anomaly Detection 2026 6519</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-evaluation-framework">Microsaas Customer Onboarding Evaluation Framework</Link></li>
+              <li><Link /blog/autonomous-qa-engineering-2026-7006/>Autonomous Qa Engineering 2026 7006</Link></li>
+<li><Link /blog/api-gateway-management-2026/>Api Gateway Management 2026</Link></li>
+<li><Link /blog/aiops-anomaly-detection-2026-6519/>Aiops Anomaly Detection 2026 6519</Link></li>
+<li><Link /blog/microsaas-customer-onboarding-evaluation-framework/>Microsaas Customer Onboarding Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

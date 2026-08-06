@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-management-architecture-overview">Cloud Cost Management Architecture Overview</Link></li>
-<li><Link href="/blog/no-code-platform-deployment-patterns">No Code Platform Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-2026-6593">Ai Bdr Sdr 2026 6593</Link></li>
-<li><Link href="/blog/virtual-cto-executive-guide">Virtual Cto Executive Guide</Link></li>
+              <li><Link /blog/cloud-cost-management-architecture-overview/>Cloud Cost Management Architecture Overview</Link></li>
+<li><Link /blog/no-code-platform-deployment-patterns/>No Code Platform Deployment Patterns</Link></li>
+<li><Link /blog/ai-bdr-sdr-2026-6593/>Ai Bdr Sdr 2026 6593</Link></li>
+<li><Link /blog/virtual-cto-executive-guide/>Virtual Cto Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

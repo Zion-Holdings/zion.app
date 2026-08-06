@@ -54,10 +54,10 @@ If this guide matches your quality assurance: starter template initiative, the n
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/finops-roi-and-cost-model">Finops Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-data-backup-deployment-patterns">Ai Data Backup Deployment Patterns</Link></li>
-<li><Link href="/blog/genai-devops-cicd-starter-template">Genai Devops Cicd Starter Template</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-operations-handbook">Ai Accessibility Optimizer Operations Handbook</Link></li>
+              <li><Link /blog/finops-roi-and-cost-model/>Finops Roi And Cost Model</Link></li>
+<li><Link /blog/ai-data-backup-deployment-patterns/>Ai Data Backup Deployment Patterns</Link></li>
+<li><Link /blog/genai-devops-cicd-starter-template/>Genai Devops Cicd Starter Template</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-operations-handbook/>Ai Accessibility Optimizer Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

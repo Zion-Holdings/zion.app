@@ -54,10 +54,10 @@ If this guide matches your continuous integration: executive guide initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/sase-security-and-governance">Sase Security And Governance</Link></li>
-<li><Link href="/blog/ai-expense-tracker-case-study">Ai Expense Tracker Case Study</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-architecture-overview">Autonomous Qa Engineering Architecture Overview</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-policy-and-compliance">Microsaas Social Media Manager Policy And Compliance</Link></li>
+              <li><Link /blog/sase-security-and-governance/>Sase Security And Governance</Link></li>
+<li><Link /blog/ai-expense-tracker-case-study/>Ai Expense Tracker Case Study</Link></li>
+<li><Link /blog/autonomous-qa-engineering-architecture-overview/>Autonomous Qa Engineering Architecture Overview</Link></li>
+<li><Link /blog/microsaas-social-media-manager-policy-and-compliance/>Microsaas Social Media Manager Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

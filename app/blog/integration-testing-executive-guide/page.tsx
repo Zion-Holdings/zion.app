@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/observability-platform-vendor-evaluation">Observability Platform Vendor Evaluation</Link></li>
-<li><Link href="/blog/infrastructure-as-code-vendor-evaluation">Infrastructure As Code Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-recruitment-chatbot-executive-guide">Ai Recruitment Chatbot Executive Guide</Link></li>
-<li><Link href="/blog/api-integration-evaluation-framework">Api Integration Evaluation Framework</Link></li>
+              <li><Link /blog/observability-platform-vendor-evaluation/>Observability Platform Vendor Evaluation</Link></li>
+<li><Link /blog/infrastructure-as-code-vendor-evaluation/>Infrastructure As Code Vendor Evaluation</Link></li>
+<li><Link /blog/ai-recruitment-chatbot-executive-guide/>Ai Recruitment Chatbot Executive Guide</Link></li>
+<li><Link /blog/api-integration-evaluation-framework/>Api Integration Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for api gateway security: operations handbook: workflow compl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/hybrid-cloud-implementation-playbook">Hybrid Cloud Implementation Playbook</Link></li>
-<li><Link href="/blog/brand-voice-guardian-checklist-for-it-leaders">Brand Voice Guardian Checklist For It Leaders</Link></li>
-<li><Link href="/blog/machine-learning-engineering-case-study">Machine Learning Engineering Case Study</Link></li>
-<li><Link href="/blog/zero-trust-architecture-case-study">Zero Trust Architecture Case Study</Link></li>
+              <li><Link /blog/hybrid-cloud-implementation-playbook/>Hybrid Cloud Implementation Playbook</Link></li>
+<li><Link /blog/brand-voice-guardian-checklist-for-it-leaders/>Brand Voice Guardian Checklist For It Leaders</Link></li>
+<li><Link /blog/machine-learning-engineering-case-study/>Machine Learning Engineering Case Study</Link></li>
+<li><Link /blog/zero-trust-architecture-case-study/>Zero Trust Architecture Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

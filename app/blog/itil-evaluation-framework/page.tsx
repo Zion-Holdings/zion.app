@@ -54,10 +54,10 @@ If this guide matches your itil: evaluation framework initiative, the next step 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-3d-asset-generator-automation-roadmap">Ai 3D Asset Generator Automation Roadmap</Link></li>
-<li><Link href="/blog/strategic-it-planning-executive-guide">Strategic It Planning Executive Guide</Link></li>
-<li><Link href="/blog/ai-it-operations-automation-2026-6625">Ai It Operations Automation 2026 6625</Link></li>
-<li><Link href="/blog/ai-code-review-automation-operations-handbook">Ai Code Review Automation Operations Handbook</Link></li>
+              <li><Link /blog/ai-3d-asset-generator-automation-roadmap/>Ai 3D Asset Generator Automation Roadmap</Link></li>
+<li><Link /blog/strategic-it-planning-executive-guide/>Strategic It Planning Executive Guide</Link></li>
+<li><Link /blog/ai-it-operations-automation-2026-6625/>Ai It Operations Automation 2026 6625</Link></li>
+<li><Link /blog/ai-code-review-automation-operations-handbook/>Ai Code Review Automation Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

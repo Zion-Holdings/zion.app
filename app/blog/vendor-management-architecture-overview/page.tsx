@@ -54,10 +54,10 @@ If this guide matches your vendor management: architecture overview initiative, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-deployment-patterns">Event Driven Architecture Deployment Patterns</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-security-and-governance">Microsaas Expense Tracker Security And Governance</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6966">Api Gateway Management 2026 6966</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-2026-7029">Etl Pipeline Optimization 2026 7029</Link></li>
+              <li><Link /blog/event-driven-architecture-deployment-patterns/>Event Driven Architecture Deployment Patterns</Link></li>
+<li><Link /blog/microsaas-expense-tracker-security-and-governance/>Microsaas Expense Tracker Security And Governance</Link></li>
+<li><Link /blog/api-gateway-management-2026-6966/>Api Gateway Management 2026 6966</Link></li>
+<li><Link /blog/etl-pipeline-optimization-2026-7029/>Etl Pipeline Optimization 2026 7029</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

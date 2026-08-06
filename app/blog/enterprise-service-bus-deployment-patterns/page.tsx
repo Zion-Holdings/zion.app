@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-security-testing-2026-6623">Api Security Testing 2026 6623</Link></li>
-<li><Link href="/blog/software-supply-chain-security-2026">Software Supply Chain Security 2026</Link></li>
-<li><Link href="/blog/siem-checklist-for-it-leaders">Siem Checklist For It Leaders</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-starter-template">Etl Pipeline Optimization Starter Template</Link></li>
+              <li><Link /blog/api-security-testing-2026-6623/>Api Security Testing 2026 6623</Link></li>
+<li><Link /blog/software-supply-chain-security-2026/>Software Supply Chain Security 2026</Link></li>
+<li><Link /blog/siem-checklist-for-it-leaders/>Siem Checklist For It Leaders</Link></li>
+<li><Link /blog/etl-pipeline-optimization-starter-template/>Etl Pipeline Optimization Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

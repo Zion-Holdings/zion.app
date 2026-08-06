@@ -57,10 +57,10 @@ For api versioning: case study: pick one workflow, assign ownership, define succ
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-hr-recruitment-common-mistakes">Ai Hr Recruitment Common Mistakes</Link></li>
-<li><Link href="/blog/incident-management-policy-and-compliance">Incident Management Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-bom-procurement-operations-handbook">Ai Bom Procurement Operations Handbook</Link></li>
-<li><Link href="/blog/cloud-networking-vendor-evaluation">Cloud Networking Vendor Evaluation</Link></li>
+              <li><Link /blog/ai-hr-recruitment-common-mistakes/>Ai Hr Recruitment Common Mistakes</Link></li>
+<li><Link /blog/incident-management-policy-and-compliance/>Incident Management Policy And Compliance</Link></li>
+<li><Link /blog/ai-bom-procurement-operations-handbook/>Ai Bom Procurement Operations Handbook</Link></li>
+<li><Link /blog/cloud-networking-vendor-evaluation/>Cloud Networking Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

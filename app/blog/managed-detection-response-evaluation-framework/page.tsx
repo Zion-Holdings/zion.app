@@ -57,10 +57,10 @@ For managed detection response: evaluation framework: pick one workflow, assign 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/virtual-cto-vendor-evaluation">Virtual Cto Vendor Evaluation</Link></li>
-<li><Link href="/blog/strategic-it-planning-2026">Strategic It Planning 2026</Link></li>
-<li><Link href="/blog/cloud-workload-protection-common-mistakes">Cloud Workload Protection Common Mistakes</Link></li>
-<li><Link href="/blog/ai-risk-assessment-automation-roadmap">Ai Risk Assessment Automation Roadmap</Link></li>
+              <li><Link /blog/virtual-cto-vendor-evaluation/>Virtual Cto Vendor Evaluation</Link></li>
+<li><Link /blog/strategic-it-planning-2026/>Strategic It Planning 2026</Link></li>
+<li><Link /blog/cloud-workload-protection-common-mistakes/>Cloud Workload Protection Common Mistakes</Link></li>
+<li><Link /blog/ai-risk-assessment-automation-roadmap/>Ai Risk Assessment Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

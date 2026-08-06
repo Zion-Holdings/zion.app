@@ -54,10 +54,10 @@ If this guide matches your virtual cto: evaluation framework initiative, the nex
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-vendor-evaluation">Api Management Gateway Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6705">Ai Data Lakehouse Pipelines 2026 6705</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026-6913">Ai Customer Success Churn 2026 6913</Link></li>
-<li><Link href="/blog/container-security-lifecycle-case-study">Container Security Lifecycle Case Study</Link></li>
+              <li><Link /blog/api-management-gateway-vendor-evaluation/>Api Management Gateway Vendor Evaluation</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-2026-6705/>Ai Data Lakehouse Pipelines 2026 6705</Link></li>
+<li><Link /blog/ai-customer-success-churn-2026-6913/>Ai Customer Success Churn 2026 6913</Link></li>
+<li><Link /blog/container-security-lifecycle-case-study/>Container Security Lifecycle Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

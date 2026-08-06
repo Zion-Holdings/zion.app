@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/deep-learning-vendor-evaluation">Deep Learning Vendor Evaluation</Link></li>
-<li><Link href="/blog/database-migration-service-2026-6885">Database Migration Service 2026 6885</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-6679">Devops Gen Ai Cicd 2026 6679</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-case-study">Autonomous Qa Engineering Case Study</Link></li>
+              <li><Link /blog/deep-learning-vendor-evaluation/>Deep Learning Vendor Evaluation</Link></li>
+<li><Link /blog/database-migration-service-2026-6885/>Database Migration Service 2026 6885</Link></li>
+<li><Link /blog/devops-gen-ai-cicd-2026-6679/>Devops Gen Ai Cicd 2026 6679</Link></li>
+<li><Link /blog/autonomous-qa-engineering-case-study/>Autonomous Qa Engineering Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

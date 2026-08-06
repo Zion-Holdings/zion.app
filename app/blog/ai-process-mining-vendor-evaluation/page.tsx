@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-ai-intelligence-hub-architecture-overview">Enterprise Ai Intelligence Hub Architecture Overview</Link></li>
-<li><Link href="/blog/automated-ai-reporting-checklist-for-it-leaders">Automated Ai Reporting Checklist For It Leaders</Link></li>
-<li><Link href="/blog/no-code-platform-starter-template">No Code Platform Starter Template</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-6589">Api Orchestration Layer 2026 6589</Link></li>
+              <li><Link /blog/enterprise-ai-intelligence-hub-architecture-overview/>Enterprise Ai Intelligence Hub Architecture Overview</Link></li>
+<li><Link /blog/automated-ai-reporting-checklist-for-it-leaders/>Automated Ai Reporting Checklist For It Leaders</Link></li>
+<li><Link /blog/no-code-platform-starter-template/>No Code Platform Starter Template</Link></li>
+<li><Link /blog/api-orchestration-layer-2026-6589/>Api Orchestration Layer 2026 6589</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

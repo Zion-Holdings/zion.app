@@ -57,10 +57,10 @@ For it asset management: vendor evaluation: pick one workflow, assign ownership,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-deployment-patterns">Graphql Federation Platform Deployment Patterns</Link></li>
-<li><Link href="/blog/container-security-lifecycle-2026-6675">Container Security Lifecycle 2026 6675</Link></li>
-<li><Link href="/blog/ai-sales-forecasting-vendor-evaluation">Ai Sales Forecasting Vendor Evaluation</Link></li>
-<li><Link href="/blog/endpoint-management-deployment-patterns">Endpoint Management Deployment Patterns</Link></li>
+              <li><Link /blog/graphql-federation-platform-deployment-patterns/>Graphql Federation Platform Deployment Patterns</Link></li>
+<li><Link /blog/container-security-lifecycle-2026-6675/>Container Security Lifecycle 2026 6675</Link></li>
+<li><Link /blog/ai-sales-forecasting-vendor-evaluation/>Ai Sales Forecasting Vendor Evaluation</Link></li>
+<li><Link /blog/endpoint-management-deployment-patterns/>Endpoint Management Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

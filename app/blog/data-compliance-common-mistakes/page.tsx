@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-native-security-vendor-evaluation">Cloud Native Security Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-sales-forecasting-evaluation-framework">Ai Sales Forecasting Evaluation Framework</Link></li>
-<li><Link href="/blog/hybrid-cloud-operations-handbook">Hybrid Cloud Operations Handbook</Link></li>
-<li><Link href="/blog/api-performance-testing-checklist-for-it-leaders">Api Performance Testing Checklist For It Leaders</Link></li>
+              <li><Link /blog/cloud-native-security-vendor-evaluation/>Cloud Native Security Vendor Evaluation</Link></li>
+<li><Link /blog/ai-sales-forecasting-evaluation-framework/>Ai Sales Forecasting Evaluation Framework</Link></li>
+<li><Link /blog/hybrid-cloud-operations-handbook/>Hybrid Cloud Operations Handbook</Link></li>
+<li><Link /blog/api-performance-testing-checklist-for-it-leaders/>Api Performance Testing Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for vendor management: operations handbook: workflow completi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-risk-assessment-starter-template">Ai Risk Assessment Starter Template</Link></li>
-<li><Link href="/blog/web-application-firewall-vendor-evaluation">Web Application Firewall Vendor Evaluation</Link></li>
-<li><Link href="/blog/saas-security-policy-and-compliance">Saas Security Policy And Compliance</Link></li>
-<li><Link href="/blog/aws-cost-optimization-architecture-overview">Aws Cost Optimization Architecture Overview</Link></li>
+              <li><Link /blog/ai-risk-assessment-starter-template/>Ai Risk Assessment Starter Template</Link></li>
+<li><Link /blog/web-application-firewall-vendor-evaluation/>Web Application Firewall Vendor Evaluation</Link></li>
+<li><Link /blog/saas-security-policy-and-compliance/>Saas Security Policy And Compliance</Link></li>
+<li><Link /blog/aws-cost-optimization-architecture-overview/>Aws Cost Optimization Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

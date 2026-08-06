@@ -54,10 +54,10 @@ If this guide matches your voice biometrics: common mistakes initiative, the nex
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-performance-testing-deployment-patterns">Api Performance Testing Deployment Patterns</Link></li>
-<li><Link href="/blog/database-as-a-service-vendor-evaluation">Database As A Service Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-2026-6666">Ai Performance Monitoring 2026 6666</Link></li>
-<li><Link href="/blog/container-security-lifecycle-policy-and-compliance">Container Security Lifecycle Policy And Compliance</Link></li>
+              <li><Link /blog/api-performance-testing-deployment-patterns/>Api Performance Testing Deployment Patterns</Link></li>
+<li><Link /blog/database-as-a-service-vendor-evaluation/>Database As A Service Vendor Evaluation</Link></li>
+<li><Link /blog/ai-performance-monitoring-2026-6666/>Ai Performance Monitoring 2026 6666</Link></li>
+<li><Link /blog/container-security-lifecycle-policy-and-compliance/>Container Security Lifecycle Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

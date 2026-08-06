@@ -57,10 +57,10 @@ For release management: checklist for it leaders: pick one workflow, assign owne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-3d-asset-generator-automation-roadmap">Ai 3D Asset Generator Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-for-agriculture-and-agritech">Ai For Agriculture And Agritech</Link></li>
-<li><Link href="/blog/ai-development-acceleration-2026-6770">Ai Development Acceleration 2026 6770</Link></li>
-<li><Link href="/blog/hybrid-cloud-executive-guide">Hybrid Cloud Executive Guide</Link></li>
+              <li><Link /blog/ai-3d-asset-generator-automation-roadmap/>Ai 3D Asset Generator Automation Roadmap</Link></li>
+<li><Link /blog/ai-for-agriculture-and-agritech/>Ai For Agriculture And Agritech</Link></li>
+<li><Link /blog/ai-development-acceleration-2026-6770/>Ai Development Acceleration 2026 6770</Link></li>
+<li><Link /blog/hybrid-cloud-executive-guide/>Hybrid Cloud Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

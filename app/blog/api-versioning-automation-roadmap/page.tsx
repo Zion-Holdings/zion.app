@@ -57,10 +57,10 @@ Leading indicators for api versioning: automation roadmap: workflow completion r
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-integration-starter-template">Data Integration Starter Template</Link></li>
-<li><Link href="/blog/ai-video-analytics-evaluation-framework">Ai Video Analytics Evaluation Framework</Link></li>
-<li><Link href="/blog/vector-database-executive-guide">Vector Database Executive Guide</Link></li>
-<li><Link href="/blog/cloud-backup-executive-guide">Cloud Backup Executive Guide</Link></li>
+              <li><Link /blog/data-integration-starter-template/>Data Integration Starter Template</Link></li>
+<li><Link /blog/ai-video-analytics-evaluation-framework/>Ai Video Analytics Evaluation Framework</Link></li>
+<li><Link /blog/vector-database-executive-guide/>Vector Database Executive Guide</Link></li>
+<li><Link /blog/cloud-backup-executive-guide/>Cloud Backup Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
