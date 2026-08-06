@@ -59,7 +59,13 @@
 /ai-roi-calculator /ai-roi-calculator/index.html 200
 /ai-roi-calculator/ /ai-roi-calculator/index.html 200
 
-# Missing routes fix - added for stale Pages 404s
-/about/ /about/index.html 200
-/faq/ /faq/index.html 200
-/agents/ /agents/index.html 200
+|# Missing routes fix - added for stale Pages 404s
+|/about/ /about/index.html 200
+|/faq/ /faq/index.html 200
+|/agents/ /agents/index.html 200
+
+#/free-tools and /ai-resources fallbacks
+|/free-tools /free-tools.html 200
+|/free-tools/ /free-tools.html 200
+|/ai-resources /ai-resources.html 200
+|/ai-resources/ /ai-resources.html 200
