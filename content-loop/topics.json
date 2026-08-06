@@ -1,71 +1,1172 @@
 [
-  {"title":"AI IT Operations","slug":"ai-it-operations-automation-2026"},
-  {"title":"Cloud Cost Optimization","slug":"cloud-cost-optimization-checklist-2026"},
-  {"title":"Cybersecurity for MSPs","slug":"cybersecurity-platform-msp-2026"},
-  {"title":"Managed IT Services","slug":"managed-it-services-small-business-2026"},
-  {"title":"Data Analytics Platform","slug":"data-analytics-platform-modern-enterprise-2026"},
-  {"title":"Automation Orchestration","slug":"automation-orchestration-enterprise-2026"},
-  {"title":"AI Email Intelligence","slug":"ai-email-intelligence-2026"},
-  {"title":"AI Development Acceleration","slug":"ai-development-acceleration-2026"},
-  {"title":"AI Customer Support","slug":"ai-customer-support-pro-2026"},
-  {"title":"AI Observability","slug":"ai-observability-2026"},
-  {"title":"AI MSP Security Compliance","slug":"ai-msp-security-compliance-2026"},
-  {"title":"AI Data Lakehouse Pipelines","slug":"ai-data-lakehouse-pipelines-2026"},
-  {"title":"AI Customer Success Churn Prevention","slug":"ai-customer-success-churn-2026"},
-  {"title":"5G Solutions","slug":"5g-solutions-2026"},
-  {"title":"IT Consulting","slug":"it-consulting-2026"},
-  {"title":"Network Infrastructure","slug":"network-infrastructure-2026"},
-  {"title":"Cloud Migration Services","slug":"cloud-migration-services-2026"},
-  {"title":"DevOps CI/CD","slug":"devops-cicd-2026"},
-  {"title":"MicroSaaS Translation Engine","slug":"micro-saas-ai-translation-engine-2026"},
-  {"title":"MicroSaaS Expense Tracker","slug":"micro-saas-ai-expense-tracker-2026"},
-  {"title":"MicroSaaS HR Recruitment","slug":"micro-saas-ai-hr-recruitment-2026"},
-  {"title":"MicroSaaS Customer Onboarding","slug":"micro-saas-ai-customer-onboarding-2026"},
-  {"title":"MicroSaaS Social Media Manager","slug":"micro-saas-ai-social-media-manager-2026"},
-  {"title":"Enterprise AI Intelligence Hub","slug":"enterprise-ai-intelligence-hub-2026"},
-  {"title":"AI 3D Asset Generator","slug":"ai-3d-asset-generator-2026"},
-  {"title":"AI Accessibility Auditor","slug":"ai-accessibility-auditor-2026"},
-  {"title":"AI Accessibility Optimizer","slug":"ai-accessibility-optimizer-2026"},
-  {"title":"AI Ad Copy Generator","slug":"ai-ad-copy-generator-2026"},
-  {"title":"AI Agent Safety Evaluation","slug":"ai-agent-safety-evaluation-2026"},
-  {"title":"AI Agent Tool Builder","slug":"ai-agent-tool-builder-2026"},
-  {"title":"AI Agentic Workflows","slug":"ai-agentic-workflows-2026"},
-  {"title":"AI Autonomous Agents","slug":"ai-autonomous-agents-2026"},
-  {"title":"AIOps Anomaly Detection","slug":"aiops-anomaly-detection-2026"},
-  {"title":"API Orchestration Layer","slug":"api-orchestration-layer-2026"},
-  {"title":"Automated AI Reporting","slug":"automated-ai-reporting-2026"},
-  {"title":"Autonomous Code Deployment","slug":"autonomous-code-deployment-2026"},
-  {"title":"Autonomous QA Engineering","slug":"autonomous-qa-engineering-2026"},
-  {"title":"AI BDR SDR","slug":"ai-bdr-sdr-2026"},
-  {"title":"AI BOM Procurement","slug":"ai-bom-procurement-2026"},
-  {"title":"Brand Voice Guardian","slug":"brand-voice-guardian-2026"},
-  {"title":"Accessibility Compliance","slug":"accessibility-compliance-2026"},
-  {"title":"AI Performance Monitoring","slug":"ai-performance-monitoring-2026"},
-  {"title":"API Gateway Management","slug":"api-gateway-management-2026"},
-  {"title":"API Integration","slug":"api-integration-2026"},
-  {"title":"API Management Gateway","slug":"api-management-gateway-2026"},
-  {"title":"APM Application Performance","slug":"apm-application-performance-2026"},
-  {"title":"Chaos Engineering","slug":"chaos-engineering-2026"},
-  {"title":"Cloud Cost AI Optimizer","slug":"cloud-cost-ai-optimizer-2026"},
-  {"title":"Cloud FinOps","slug":"cloud-finops-2026"},
-  {"title":"Cloud Native App Development","slug":"cloud-native-app-development-2026"},
-  {"title":"Container Security Lifecycle","slug":"container-security-lifecycle-2026"},
-  {"title":"Cyber Threat Intelligence","slug":"cyber-threat-intelligence-2026"},
-  {"title":"Data Warehouse Modernization","slug":"data-warehouse-modernization-2026"},
-  {"title":"Database Migration Service","slug":"database-migration-service-2026"},
-  {"title":"GenAI DevOps CI/CD","slug":"devops-gen-ai-cicd-2026"},
-  {"title":"DevSecOps Pipeline","slug":"devsecops-pipeline-2026"},
-  {"title":"Edge Computing Deployment","slug":"edge-computing-deployment-2026"},
-  {"title":"Endpoint Management","slug":"endpoint-management-2026"},
-  {"title":"Enterprise Backup DR","slug":"enterprise-backup-dr-2026"},
-  {"title":"ETL Pipeline Optimization","slug":"etl-pipeline-optimization-2026"},
-  {"title":"Event Driven Architecture","slug":"event-driven-architecture-2026"},
-  {"title":"Smart Contract Audit","slug":"smart-contract-audit-2026"},
-  {"title":"GraphQL Federation Platform","slug":"graphql-federation-platform-2026"},
-  {"title":"Incident Response Retainer","slug":"incident-response-retainer-2026"},
-  {"title":"AI API Gateway","slug":"ai-api-gateway-2026"},
-  {"title":"API Gateway Management","slug":"api-gateway-management-2026"},
-  {"title":"API Performance Testing","slug":"api-performance-testing-2026"},
-  {"title":"API Security Testing","slug":"api-security-testing-2026"},
-  {"title":"AI Data Backup","slug":"ai-data-backup-2026"}
+  {
+    "title": "AI IT Operations",
+    "slug": "ai-it-operations-automation-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "Cloud Cost Optimization",
+    "slug": "cloud-cost-optimization-checklist-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Cybersecurity for MSPs",
+    "slug": "cybersecurity-platform-msp-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Managed IT Services",
+    "slug": "managed-it-services-small-business-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Data Analytics Platform",
+    "slug": "data-analytics-platform-modern-enterprise-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Automation Orchestration",
+    "slug": "automation-orchestration-enterprise-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "AI Email Intelligence",
+    "slug": "ai-email-intelligence-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Development Acceleration",
+    "slug": "ai-development-acceleration-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Customer Support",
+    "slug": "ai-customer-support-pro-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Observability",
+    "slug": "ai-observability-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI MSP Security Compliance",
+    "slug": "ai-msp-security-compliance-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "AI Data Lakehouse Pipelines",
+    "slug": "ai-data-lakehouse-pipelines-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "AI Customer Success Churn Prevention",
+    "slug": "ai-customer-success-churn-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "5G Solutions",
+    "slug": "5g-solutions-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "IT Consulting",
+    "slug": "it-consulting-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Network Infrastructure",
+    "slug": "network-infrastructure-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Cloud Migration Services",
+    "slug": "cloud-migration-services-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "DevOps CI/CD",
+    "slug": "devops-cicd-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "MicroSaaS Translation Engine",
+    "slug": "micro-saas-ai-translation-engine-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "MicroSaaS Expense Tracker",
+    "slug": "micro-saas-ai-expense-tracker-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "MicroSaaS HR Recruitment",
+    "slug": "micro-saas-ai-hr-recruitment-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "MicroSaaS Customer Onboarding",
+    "slug": "micro-saas-ai-customer-onboarding-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "MicroSaaS Social Media Manager",
+    "slug": "micro-saas-ai-social-media-manager-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Enterprise AI Intelligence Hub",
+    "slug": "enterprise-ai-intelligence-hub-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI 3D Asset Generator",
+    "slug": "ai-3d-asset-generator-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Accessibility Auditor",
+    "slug": "ai-accessibility-auditor-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Accessibility Optimizer",
+    "slug": "ai-accessibility-optimizer-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Ad Copy Generator",
+    "slug": "ai-ad-copy-generator-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Agent Safety Evaluation",
+    "slug": "ai-agent-safety-evaluation-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Agent Tool Builder",
+    "slug": "ai-agent-tool-builder-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Agentic Workflows",
+    "slug": "ai-agentic-workflows-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Autonomous Agents",
+    "slug": "ai-autonomous-agents-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AIOps Anomaly Detection",
+    "slug": "aiops-anomaly-detection-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "API Orchestration Layer",
+    "slug": "api-orchestration-layer-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Automated AI Reporting",
+    "slug": "automated-ai-reporting-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "Autonomous Code Deployment",
+    "slug": "autonomous-code-deployment-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Autonomous QA Engineering",
+    "slug": "autonomous-qa-engineering-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "AI BDR SDR",
+    "slug": "ai-bdr-sdr-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI BOM Procurement",
+    "slug": "ai-bom-procurement-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "Brand Voice Guardian",
+    "slug": "brand-voice-guardian-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "Accessibility Compliance",
+    "slug": "accessibility-compliance-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "AI Performance Monitoring",
+    "slug": "ai-performance-monitoring-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "API Gateway Management",
+    "slug": "api-gateway-management-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "API Integration",
+    "slug": "api-integration-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "API Management Gateway",
+    "slug": "api-management-gateway-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "APM Application Performance",
+    "slug": "apm-application-performance-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Chaos Engineering",
+    "slug": "chaos-engineering-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Cloud Cost AI Optimizer",
+    "slug": "cloud-cost-ai-optimizer-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Cloud FinOps",
+    "slug": "cloud-finops-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Cloud Native App Development",
+    "slug": "cloud-native-app-development-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Container Security Lifecycle",
+    "slug": "container-security-lifecycle-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Cyber Threat Intelligence",
+    "slug": "cyber-threat-intelligence-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Data Warehouse Modernization",
+    "slug": "data-warehouse-modernization-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Database Migration Service",
+    "slug": "database-migration-service-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "GenAI DevOps CI/CD",
+    "slug": "devops-gen-ai-cicd-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "DevSecOps Pipeline",
+    "slug": "devsecops-pipeline-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Edge Computing Deployment",
+    "slug": "edge-computing-deployment-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Endpoint Management",
+    "slug": "endpoint-management-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Enterprise Backup DR",
+    "slug": "enterprise-backup-dr-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "ETL Pipeline Optimization",
+    "slug": "etl-pipeline-optimization-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Event Driven Architecture",
+    "slug": "event-driven-architecture-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Smart Contract Audit",
+    "slug": "smart-contract-audit-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "GraphQL Federation Platform",
+    "slug": "graphql-federation-platform-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Incident Response Retainer",
+    "slug": "incident-response-retainer-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "AI API Gateway",
+    "slug": "ai-api-gateway-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "API Performance Testing",
+    "slug": "api-performance-testing-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "API Security Testing",
+    "slug": "api-security-testing-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "AI Data Backup",
+    "slug": "ai-data-backup-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Customer Onboarding",
+    "slug": "ai-customer-onboarding-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Code Review Automation",
+    "slug": "ai-code-review-automation-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Expense Tracker",
+    "slug": "ai-expense-tracker-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI HR Recruitment",
+    "slug": "ai-hr-recruitment-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI IT Operations Automation",
+    "slug": "ai-it-operations-automation-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Marketing Personalization",
+    "slug": "ai-marketing-personalization-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Meeting Assistant",
+    "slug": "ai-meeting-assistant-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Network Optimization",
+    "slug": "ai-network-optimization-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Predictive Maintenance",
+    "slug": "ai-predictive-maintenance-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Process Mining",
+    "slug": "ai-process-mining-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Recruitment Chatbot",
+    "slug": "ai-recruitment-chatbot-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Risk Assessment",
+    "slug": "ai-risk-assessment-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Sales Forecasting",
+    "slug": "ai-sales-forecasting-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Security Analytics",
+    "slug": "ai-security-analytics-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Service Desk",
+    "slug": "ai-service-desk-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Supply Chain",
+    "slug": "ai-supply-chain-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Video Analytics",
+    "slug": "ai-video-analytics-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Voice Assistant",
+    "slug": "ai-voice-assistant-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI Workflow Automation",
+    "slug": "ai-workflow-automation-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "API Design",
+    "slug": "api-design-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "API Documentation",
+    "slug": "api-documentation-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "API Economy",
+    "slug": "api-economy-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "API Gateway Security",
+    "slug": "api-gateway-security-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "API Governance",
+    "slug": "api-governance-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "API Lifecycle Management",
+    "slug": "api-lifecycle-management-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "API Monetization",
+    "slug": "api-monetization-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "API Rate Limiting",
+    "slug": "api-rate-limiting-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "API Versioning",
+    "slug": "api-versioning-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Application Modernization",
+    "slug": "application-modernization-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "AR VR Enterprise",
+    "slug": "ar-vr-enterprise-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Artificial Intelligence Ethics",
+    "slug": "artificial-intelligence-ethics-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AIOps",
+    "slug": "aiops-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AWS Cost Optimization",
+    "slug": "aws-cost-optimization-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Azure Migration",
+    "slug": "azure-migration-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Blockchain Enterprise",
+    "slug": "blockchain-enterprise-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Blue Green Deployment",
+    "slug": "blue-green-deployment-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Bot Detection",
+    "slug": "bot-detection-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Business Intelligence",
+    "slug": "business-intelligence-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "CI/CD Best Practices",
+    "slug": "cicd-best-practices-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "CI/CD Pipeline Security",
+    "slug": "cicd-pipeline-security-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Cloud Backup",
+    "slug": "cloud-backup-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Cloud Cost Management",
+    "slug": "cloud-cost-management-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Cloud Governance",
+    "slug": "cloud-governance-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Cloud Native Security",
+    "slug": "cloud-native-security-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Cloud Networking",
+    "slug": "cloud-networking-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Cloud Optimization",
+    "slug": "cloud-optimization-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Cloud Security Posture",
+    "slug": "cloud-security-posture-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Cloud Storage Strategy",
+    "slug": "cloud-storage-strategy-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Cloud Workload Protection",
+    "slug": "cloud-workload-protection-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Compliance Automation",
+    "slug": "compliance-automation-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Configuration Management",
+    "slug": "configuration-management-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Content Delivery Network",
+    "slug": "content-delivery-network-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Continuous Delivery",
+    "slug": "continuous-delivery-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Continuous Deployment",
+    "slug": "continuous-deployment-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Continuous Integration",
+    "slug": "continuous-integration-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Cost Optimization",
+    "slug": "cost-optimization-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Customer Data Platform",
+    "slug": "customer-data-platform-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Data Architecture",
+    "slug": "data-architecture-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Data Catalog",
+    "slug": "data-catalog-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Data Compliance",
+    "slug": "data-compliance-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Data Governance",
+    "slug": "data-governance-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Data Integration",
+    "slug": "data-integration-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Data Mesh",
+    "slug": "data-mesh-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Data Modeling",
+    "slug": "data-modeling-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Data Observability",
+    "slug": "data-observability-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Data Pipeline Orchestration",
+    "slug": "data-pipeline-orchestration-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Data Quality",
+    "slug": "data-quality-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Data Security",
+    "slug": "data-security-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Data Virtualization",
+    "slug": "data-virtualization-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Database as a Service",
+    "slug": "database-as-a-service-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Database Performance",
+    "slug": "database-performance-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Database Security",
+    "slug": "database-security-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Deep Learning",
+    "slug": "deep-learning-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "Digital Twin",
+    "slug": "digital-twin-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "Disaster Recovery",
+    "slug": "disaster-recovery-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Distributed Tracing",
+    "slug": "distributed-tracing-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Docker Security",
+    "slug": "docker-security-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Edge Computing",
+    "slug": "edge-computing-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Email Security",
+    "slug": "email-security-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Enterprise Architecture",
+    "slug": "enterprise-architecture-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Enterprise Data Warehouse",
+    "slug": "enterprise-data-warehouse-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Enterprise Integration",
+    "slug": "enterprise-integration-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Enterprise Service Bus",
+    "slug": "enterprise-service-bus-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Error Budget",
+    "slug": "error-budget-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "FinOps",
+    "slug": "finops-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Generative AI",
+    "slug": "generative-ai-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "Generative AI Security",
+    "slug": "generative-ai-security-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Golang Microservices",
+    "slug": "golang-microservices-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Google Cloud Migration",
+    "slug": "google-cloud-migration-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Governance Risk Compliance",
+    "slug": "governance-risk-compliance-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Hybrid Cloud",
+    "slug": "hybrid-cloud-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Identity Access Management",
+    "slug": "identity-access-management-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Infrastructure as Code",
+    "slug": "infrastructure-as-code-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Infrastructure Monitoring",
+    "slug": "infrastructure-monitoring-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Incident Management",
+    "slug": "incident-management-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Information Security",
+    "slug": "information-security-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Integration Testing",
+    "slug": "integration-testing-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "IT Asset Management",
+    "slug": "it-asset-management-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "IT Automation",
+    "slug": "it-automation-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "ITIL",
+    "slug": "itil-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Kubernetes",
+    "slug": "kubernetes-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Kubernetes Security",
+    "slug": "kubernetes-security-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "LLM Operations",
+    "slug": "llm-operations-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "Log Management",
+    "slug": "log-management-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Low Code Platform",
+    "slug": "low-code-platform-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Machine Learning",
+    "slug": "machine-learning-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "Machine Learning Engineering",
+    "slug": "machine-learning-engineering-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "Machine Learning Operations",
+    "slug": "machine-learning-operations-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "Managed Detection Response",
+    "slug": "managed-detection-response-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Microservices Architecture",
+    "slug": "microservices-architecture-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Microservices Security",
+    "slug": "microservices-security-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Mobile Device Management",
+    "slug": "mobile-device-management-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Monitoring Observability",
+    "slug": "monitoring-observability-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Multi Cloud Strategy",
+    "slug": "multi-cloud-strategy-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Natural Language Processing",
+    "slug": "natural-language-processing-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "Network Automation",
+    "slug": "network-automation-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Network Security",
+    "slug": "network-security-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "No Code Platform",
+    "slug": "no-code-platform-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Observability Platform",
+    "slug": "observability-platform-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Oncall Best Practices",
+    "slug": "oncall-best-practices-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Open Source Strategy",
+    "slug": "open-source-strategy-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Patch Management",
+    "slug": "patch-management-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Penetration Testing",
+    "slug": "penetration-testing-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Performance Testing",
+    "slug": "performance-testing-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Platform Engineering",
+    "slug": "platform-engineering-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Policy as Code",
+    "slug": "policy-as-code-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Privacy Engineering",
+    "slug": "privacy-engineering-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Process Automation",
+    "slug": "process-automation-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Product Analytics",
+    "slug": "product-analytics-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Product Led Growth",
+    "slug": "product-led-growth-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Prompt Engineering",
+    "slug": "prompt-engineering-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "Quality Assurance",
+    "slug": "quality-assurance-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Ransomware Recovery",
+    "slug": "ransomware-recovery-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Reinforcement Learning",
+    "slug": "reinforcement-learning-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "Release Management",
+    "slug": "release-management-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Remote Work Security",
+    "slug": "remote-work-security-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Resilience Engineering",
+    "slug": "resilience-engineering-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Retrieval Augmented Generation",
+    "slug": "retrieval-augmented-generation-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "SaaS Security",
+    "slug": "saas-security-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "SASE",
+    "slug": "sase-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Service Mesh",
+    "slug": "service-mesh-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "ServiceNow Automation",
+    "slug": "servicenow-automation-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "SIEM",
+    "slug": "siem-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Site Reliability Engineering",
+    "slug": "site-reliability-engineering-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Software Supply Chain Security",
+    "slug": "software-supply-chain-security-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Splunk Migration",
+    "slug": "splunk-migration-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Static Application Security Testing",
+    "slug": "static-application-security-testing-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Strategic IT Planning",
+    "slug": "strategic-it-planning-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Structured Data Extraction",
+    "slug": "structured-data-extraction-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Technical Due Diligence",
+    "slug": "technical-due-diligence-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Technology Roadmap",
+    "slug": "technology-roadmap-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Terraform",
+    "slug": "terraform-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Test Automation",
+    "slug": "test-automation-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Threat Hunting",
+    "slug": "threat-hunting-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Threat Intelligence Platform",
+    "slug": "threat-intelligence-platform-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Token Optimization",
+    "slug": "token-optimization-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "Ubiquitous Connectivity",
+    "slug": "ubiquitous-connectivity-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Unified Endpoint Management",
+    "slug": "unified-endpoint-management-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "User Behavior Analytics",
+    "slug": "user-behavior-analytics-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Vector Database",
+    "slug": "vector-database-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Vendor Management",
+    "slug": "vendor-management-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Virtual CTO",
+    "slug": "virtual-cto-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Voice Biometrics",
+    "slug": "voice-biometrics-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Vulnerability Assessment",
+    "slug": "vulnerability-assessment-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Web Application Firewall",
+    "slug": "web-application-firewall-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Zero Trust Architecture",
+    "slug": "zero-trust-architecture-2026",
+    "cluster": "security"
+  }
 ]
