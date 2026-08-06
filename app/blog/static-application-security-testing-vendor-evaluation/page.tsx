@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/strategic-it-planning-starter-template">Strategic It Planning Starter Template</Link></li>
-<li><Link href="/blog/database-migration-service-deployment-patterns">Database Migration Service Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-security-and-governance">Ai Customer Success Churn Prevention Security And Governance</Link></li>
-<li><Link href="/blog/automated-ai-reporting-2026-7073">Automated Ai Reporting 2026 7073</Link></li>
+              <li><Link /blog/strategic-it-planning-starter-template/>Strategic It Planning Starter Template</Link></li>
+<li><Link /blog/database-migration-service-deployment-patterns/>Database Migration Service Deployment Patterns</Link></li>
+<li><Link /blog/ai-customer-success-churn-prevention-security-and-governance/>Ai Customer Success Churn Prevention Security And Governance</Link></li>
+<li><Link /blog/automated-ai-reporting-2026-7073/>Automated Ai Reporting 2026 7073</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

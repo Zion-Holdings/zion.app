@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/quality-assurance-policy-and-compliance">Quality Assurance Policy And Compliance</Link></li>
-<li><Link href="/blog/blockchain-enterprise-policy-and-compliance">Blockchain Enterprise Policy And Compliance</Link></li>
-<li><Link href="/blog/token-optimization-automation-roadmap">Token Optimization Automation Roadmap</Link></li>
-<li><Link href="/blog/token-optimization-executive-guide">Token Optimization Executive Guide</Link></li>
+              <li><Link /blog/quality-assurance-policy-and-compliance/>Quality Assurance Policy And Compliance</Link></li>
+<li><Link /blog/blockchain-enterprise-policy-and-compliance/>Blockchain Enterprise Policy And Compliance</Link></li>
+<li><Link /blog/token-optimization-automation-roadmap/>Token Optimization Automation Roadmap</Link></li>
+<li><Link /blog/token-optimization-executive-guide/>Token Optimization Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

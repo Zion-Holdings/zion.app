@@ -54,10 +54,10 @@ If this guide matches your low code platform: vendor evaluation initiative, the 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/distributed-tracing-evaluation-framework">Distributed Tracing Evaluation Framework</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-2026-6891">Etl Pipeline Optimization 2026 6891</Link></li>
-<li><Link href="/blog/observability-platform-2026">Observability Platform 2026</Link></li>
-<li><Link href="/blog/threat-intelligence-platform-vendor-evaluation">Threat Intelligence Platform Vendor Evaluation</Link></li>
+              <li><Link /blog/distributed-tracing-evaluation-framework/>Distributed Tracing Evaluation Framework</Link></li>
+<li><Link /blog/etl-pipeline-optimization-2026-6891/>Etl Pipeline Optimization 2026 6891</Link></li>
+<li><Link /blog/observability-platform-2026/>Observability Platform 2026</Link></li>
+<li><Link /blog/threat-intelligence-platform-vendor-evaluation/>Threat Intelligence Platform Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for oncall best practices: automation roadmap: workflow compl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/blue-green-deployment-automation-roadmap">Blue Green Deployment Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-roi-and-cost-model">Ai Autonomous Agents Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-code-review-automation-case-study">Ai Code Review Automation Case Study</Link></li>
-<li><Link href="/blog/data-observability-starter-template">Data Observability Starter Template</Link></li>
+              <li><Link /blog/blue-green-deployment-automation-roadmap/>Blue Green Deployment Automation Roadmap</Link></li>
+<li><Link /blog/ai-autonomous-agents-roi-and-cost-model/>Ai Autonomous Agents Roi And Cost Model</Link></li>
+<li><Link /blog/ai-code-review-automation-case-study/>Ai Code Review Automation Case Study</Link></li>
+<li><Link /blog/data-observability-starter-template/>Data Observability Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

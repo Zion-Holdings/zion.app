@@ -57,10 +57,10 @@ Leading indicators for finops: common mistakes: workflow completion rate, escala
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-gaming-and-esports">Ai For Gaming And Esports</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-2026-6788">Ai Accessibility Auditor 2026 6788</Link></li>
-<li><Link href="/blog/ai-api-gateway-2026-6551">Ai Api Gateway 2026 6551</Link></li>
-<li><Link href="/blog/oncall-best-practices-implementation-playbook">Oncall Best Practices Implementation Playbook</Link></li>
+              <li><Link /blog/ai-for-gaming-and-esports/>Ai For Gaming And Esports</Link></li>
+<li><Link /blog/ai-accessibility-auditor-2026-6788/>Ai Accessibility Auditor 2026 6788</Link></li>
+<li><Link /blog/ai-api-gateway-2026-6551/>Ai Api Gateway 2026 6551</Link></li>
+<li><Link /blog/oncall-best-practices-implementation-playbook/>Oncall Best Practices Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

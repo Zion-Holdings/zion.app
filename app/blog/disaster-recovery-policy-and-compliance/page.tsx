@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microservices-security-roi-and-cost-model">Microservices Security Roi And Cost Model</Link></li>
-<li><Link href="/blog/data-architecture-operations-handbook">Data Architecture Operations Handbook</Link></li>
-<li><Link href="/blog/generative-ai-architecture-overview">Generative Ai Architecture Overview</Link></li>
-<li><Link href="/blog/terraform-operations-handbook">Terraform Operations Handbook</Link></li>
+              <li><Link /blog/microservices-security-roi-and-cost-model/>Microservices Security Roi And Cost Model</Link></li>
+<li><Link /blog/data-architecture-operations-handbook/>Data Architecture Operations Handbook</Link></li>
+<li><Link /blog/generative-ai-architecture-overview/>Generative Ai Architecture Overview</Link></li>
+<li><Link /blog/terraform-operations-handbook/>Terraform Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

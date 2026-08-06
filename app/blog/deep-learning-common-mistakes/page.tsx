@@ -57,10 +57,10 @@ For deep learning: common mistakes: pick one workflow, assign ownership, define 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-governance-common-mistakes">Data Governance Common Mistakes</Link></li>
-<li><Link href="/blog/ubiquitous-connectivity-starter-template">Ubiquitous Connectivity Starter Template</Link></li>
-<li><Link href="/blog/finops-starter-template">Finops Starter Template</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-operations-handbook">Ai Ad Copy Generator Operations Handbook</Link></li>
+              <li><Link /blog/data-governance-common-mistakes/>Data Governance Common Mistakes</Link></li>
+<li><Link /blog/ubiquitous-connectivity-starter-template/>Ubiquitous Connectivity Starter Template</Link></li>
+<li><Link /blog/finops-starter-template/>Finops Starter Template</Link></li>
+<li><Link /blog/ai-ad-copy-generator-operations-handbook/>Ai Ad Copy Generator Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

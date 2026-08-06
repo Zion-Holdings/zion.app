@@ -57,10 +57,10 @@ For api documentation: implementation playbook: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-ad-copy-generator-case-study">Ai Ad Copy Generator Case Study</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6943">Api Gateway Management 2026 6943</Link></li>
-<li><Link href="/blog/multi-cloud-strategy-starter-template">Multi Cloud Strategy Starter Template</Link></li>
-<li><Link href="/blog/incident-response-retainer-executive-guide">Incident Response Retainer Executive Guide</Link></li>
+              <li><Link /blog/ai-ad-copy-generator-case-study/>Ai Ad Copy Generator Case Study</Link></li>
+<li><Link /blog/api-gateway-management-2026-6943/>Api Gateway Management 2026 6943</Link></li>
+<li><Link /blog/multi-cloud-strategy-starter-template/>Multi Cloud Strategy Starter Template</Link></li>
+<li><Link /blog/incident-response-retainer-executive-guide/>Incident Response Retainer Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

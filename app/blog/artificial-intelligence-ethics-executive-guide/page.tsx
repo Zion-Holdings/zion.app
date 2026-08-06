@@ -57,10 +57,10 @@ For artificial intelligence ethics: executive guide: pick one workflow, assign o
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/patch-management-2026">Patch Management 2026</Link></li>
-<li><Link href="/blog/api-design-executive-guide">Api Design Executive Guide</Link></li>
-<li><Link href="/blog/network-infrastructure-architecture-overview">Network Infrastructure Architecture Overview</Link></li>
-<li><Link href="/blog/blockchain-enterprise-security-and-governance">Blockchain Enterprise Security And Governance</Link></li>
+              <li><Link /blog/patch-management-2026/>Patch Management 2026</Link></li>
+<li><Link /blog/api-design-executive-guide/>Api Design Executive Guide</Link></li>
+<li><Link /blog/network-infrastructure-architecture-overview/>Network Infrastructure Architecture Overview</Link></li>
+<li><Link /blog/blockchain-enterprise-security-and-governance/>Blockchain Enterprise Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

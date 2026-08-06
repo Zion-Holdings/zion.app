@@ -57,10 +57,10 @@ Leading indicators for golang microservices: roi and cost model: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-case-study">Event Driven Architecture Case Study</Link></li>
-<li><Link href="/blog/finops-vendor-evaluation">Finops Vendor Evaluation</Link></li>
-<li><Link href="/blog/data-virtualization-implementation-playbook">Data Virtualization Implementation Playbook</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026-6765">Cybersecurity Platform Msp 2026 6765</Link></li>
+              <li><Link /blog/event-driven-architecture-case-study/>Event Driven Architecture Case Study</Link></li>
+<li><Link /blog/finops-vendor-evaluation/>Finops Vendor Evaluation</Link></li>
+<li><Link /blog/data-virtualization-implementation-playbook/>Data Virtualization Implementation Playbook</Link></li>
+<li><Link /blog/cybersecurity-platform-msp-2026-6765/>Cybersecurity Platform Msp 2026 6765</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

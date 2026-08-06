@@ -54,10 +54,10 @@ If this guide matches your ai recruitment chatbot: vendor evaluation initiative,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-integration-deployment-patterns">Enterprise Integration Deployment Patterns</Link></li>
-<li><Link href="/blog/oncall-best-practices-implementation-playbook">Oncall Best Practices Implementation Playbook</Link></li>
-<li><Link href="/blog/cloud-security-posture-checklist-for-it-leaders">Cloud Security Posture Checklist For It Leaders</Link></li>
-<li><Link href="/blog/software-supply-chain-security-roi-and-cost-model">Software Supply Chain Security Roi And Cost Model</Link></li>
+              <li><Link /blog/enterprise-integration-deployment-patterns/>Enterprise Integration Deployment Patterns</Link></li>
+<li><Link /blog/oncall-best-practices-implementation-playbook/>Oncall Best Practices Implementation Playbook</Link></li>
+<li><Link /blog/cloud-security-posture-checklist-for-it-leaders/>Cloud Security Posture Checklist For It Leaders</Link></li>
+<li><Link /blog/software-supply-chain-security-roi-and-cost-model/>Software Supply Chain Security Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

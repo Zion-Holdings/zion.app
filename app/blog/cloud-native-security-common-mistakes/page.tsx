@@ -57,10 +57,10 @@ For cloud native security: common mistakes: pick one workflow, assign ownership,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/application-modernization-starter-template">Application Modernization Starter Template</Link></li>
-<li><Link href="/blog/ai-for-climate-tech-and-sustainability-operations">Ai For Climate Tech And Sustainability Operations</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-common-mistakes">Microsaas Hr Recruitment Common Mistakes</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-2026-6929">Ai Agent Safety Evaluation 2026 6929</Link></li>
+              <li><Link /blog/application-modernization-starter-template/>Application Modernization Starter Template</Link></li>
+<li><Link /blog/ai-for-climate-tech-and-sustainability-operations/>Ai For Climate Tech And Sustainability Operations</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-common-mistakes/>Microsaas Hr Recruitment Common Mistakes</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-2026-6929/>Ai Agent Safety Evaluation 2026 6929</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

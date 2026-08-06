@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/integration-testing-security-and-governance">Integration Testing Security And Governance</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026-6844">Ai Customer Success Churn 2026 6844</Link></li>
-<li><Link href="/blog/compliance-automation-checklist-for-it-leaders">Compliance Automation Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-supply-chain-implementation-playbook">Ai Supply Chain Implementation Playbook</Link></li>
+              <li><Link /blog/integration-testing-security-and-governance/>Integration Testing Security And Governance</Link></li>
+<li><Link /blog/ai-customer-success-churn-2026-6844/>Ai Customer Success Churn 2026 6844</Link></li>
+<li><Link /blog/compliance-automation-checklist-for-it-leaders/>Compliance Automation Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-supply-chain-implementation-playbook/>Ai Supply Chain Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

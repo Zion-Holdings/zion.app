@@ -57,10 +57,10 @@ Leading indicators for servicenow automation: security and governance: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cost-optimization-policy-and-compliance">Cost Optimization Policy And Compliance</Link></li>
-<li><Link href="/blog/edge-computing-deployment-implementation-playbook">Edge Computing Deployment Implementation Playbook</Link></li>
-<li><Link href="/blog/sase-2026">Sase 2026</Link></li>
-<li><Link href="/blog/data-virtualization-common-mistakes">Data Virtualization Common Mistakes</Link></li>
+              <li><Link /blog/cost-optimization-policy-and-compliance/>Cost Optimization Policy And Compliance</Link></li>
+<li><Link /blog/edge-computing-deployment-implementation-playbook/>Edge Computing Deployment Implementation Playbook</Link></li>
+<li><Link /blog/sase-2026/>Sase 2026</Link></li>
+<li><Link /blog/data-virtualization-common-mistakes/>Data Virtualization Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

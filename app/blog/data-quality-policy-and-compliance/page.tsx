@@ -57,10 +57,10 @@ Leading indicators for data quality: policy and compliance: workflow completion 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/observability-platform-roi-and-cost-model">Observability Platform Roi And Cost Model</Link></li>
-<li><Link href="/blog/docker-security-architecture-overview">Docker Security Architecture Overview</Link></li>
-<li><Link href="/blog/managed-detection-response-automation-roadmap">Managed Detection Response Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-code-review-automation-implementation-playbook">Ai Code Review Automation Implementation Playbook</Link></li>
+              <li><Link /blog/observability-platform-roi-and-cost-model/>Observability Platform Roi And Cost Model</Link></li>
+<li><Link /blog/docker-security-architecture-overview/>Docker Security Architecture Overview</Link></li>
+<li><Link /blog/managed-detection-response-automation-roadmap/>Managed Detection Response Automation Roadmap</Link></li>
+<li><Link /blog/ai-code-review-automation-implementation-playbook/>Ai Code Review Automation Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

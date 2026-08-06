@@ -57,10 +57,10 @@ For microservices architecture: common mistakes: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/disaster-recovery-common-mistakes">Disaster Recovery Common Mistakes</Link></li>
-<li><Link href="/blog/natural-language-processing-security-and-governance">Natural Language Processing Security And Governance</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-security-and-governance">Ai Accessibility Auditor Security And Governance</Link></li>
-<li><Link href="/blog/ai-it-operations-operations-handbook">Ai It Operations Operations Handbook</Link></li>
+              <li><Link /blog/disaster-recovery-common-mistakes/>Disaster Recovery Common Mistakes</Link></li>
+<li><Link /blog/natural-language-processing-security-and-governance/>Natural Language Processing Security And Governance</Link></li>
+<li><Link /blog/ai-accessibility-auditor-security-and-governance/>Ai Accessibility Auditor Security And Governance</Link></li>
+<li><Link /blog/ai-it-operations-operations-handbook/>Ai It Operations Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
