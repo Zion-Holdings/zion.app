@@ -19,6 +19,5 @@ concurrency:
 jobs:
   ci:
     uses: ./.github/workflows/reusable-workflow-ci.yml
-    timeout-minutes: 15
     with:
       run_contracts: ${{ inputs.run_contracts }}

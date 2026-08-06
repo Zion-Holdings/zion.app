@@ -48,30 +48,17 @@ function checkWorkflowIntegrity() {
         issues.push(`${file}:${lineNum} - Invalid trigger syntax 'true:' should be 'on:'`);
       }
 
-      // Check for timeout-minutes after uses: without with: (invalid for reusable workflows)
-      // timeout-minutes AFTER with: block is also invalid
-      if (line.trim().startsWith('uses:')) {
-        const nextLine = lines[i + 1];
-        if (nextLine && nextLine.trim().startsWith('timeout-minutes')) {
-          // Check if with: follows on the next line after timeout-minutes
-          const afterTimeout = lines[i + 2];
-          if (afterTimeout && afterTimeout.trim().startsWith('with:')) {
-            // This is the correct order: uses: → timeout-minutes → with: (VALID)
-          } else {
-            // timeout-minutes after uses: but before with: is actually valid for reusable workflows
-            // The REAL issue is timeout-minutes AFTER with: block
+      // Check for timeout-minutes in reusable workflow calls (invalid - not a supported key)
+      if (line.trim().startsWith('uses:') && line.includes('.github/workflows/reusable-workflow')) {
+        // Check next few lines for timeout-minutes
+        for (let k = i + 1; k < Math.min(i + 5, lines.length); k++) {
+          const checkLine = lines[k].trim();
+          if (checkLine.startsWith('timeout-minutes') && !checkLine.startsWith('//')) {
+            issues.push(`${file}:${k+1} - timeout-minutes is not valid in reusable workflow calls (uses: ... reusable-workflow)`);
           }
-        }
-      }
-
-      // Check for timeout-minutes after with: block (in reusable workflows, should be before with:)
-      if (line.trim() === 'with:') {
-        let j = i + 1;
-        // Check if the next significant line is timeout-minutes (still at same indent level)
-        if (j < lines.length) {
-          const nextLine = lines[j].trim();
-          if (nextLine.startsWith('timeout-minutes')) {
-            issues.push(`${file}:${j+1} - timeout-minutes after with: (reusable workflow) should be before with:`);
+          // Stop checking if we hit next job or end of with: block
+          if (checkLine.includes(':') && !checkLine.startsWith('timeout') && !checkLine.startsWith('    ')) {
+            break;
           }
         }
       }
