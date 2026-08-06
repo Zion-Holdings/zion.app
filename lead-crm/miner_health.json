@@ -1,27 +1,29 @@
 {
   "status": "analyzed",
   "error": "missing_script",
-  "ran_at": "2026-08-06T14:40:00Z",
+  "ran_at": "2026-08-06T20:47:30.900041+00:00",
   "contacts_mined": 0,
   "classified": 0,
   "notes": "Run blocked: lead-crm/historical_email_miner.py not found.",
-  "ts": "2026-08-06T19:57:04.913730+00:00",
   "last_analysis_status": "analyzed_no_send",
+  "contacts_found": 15,
+  "contacts_with_personalized_body": 0,
+  "contacts_missing_fields": 15,
+  "ready_count": 15,
+  "excluded_count": 0,
+  "ts": "2026-08-06T20:48:10.474629+00:00",
   "last_analysis_summary": {
-    "contacts": 0,
+    "contacts": 15,
     "contacts_with_personalized_body": 0,
-    "contacts_missing_fields": 0,
-    "ready_count": 0,
+    "contacts_missing_fields": 15,
+    "ready_count": 15,
     "excluded_count": 0,
     "subject_counts": {},
-    "status_counts": {},
+    "status_counts": {
+      "new": 15
+    },
     "improvement_notes": [
       "Bodies gerados heurísticos para contatos sem thread_body personalizado."
     ]
-  },
-  "contacts_found": 0,
-  "contacts_with_personalized_body": 0,
-  "contacts_missing_fields": 0,
-  "ready_count": 0,
-  "excluded_count": 0
+  }
 }

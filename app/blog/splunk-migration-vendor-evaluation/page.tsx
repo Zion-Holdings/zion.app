@@ -57,10 +57,10 @@ Leading indicators for splunk migration: vendor evaluation: workflow completion 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-architecture-case-study">Enterprise Architecture Case Study</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-7170">Graphql Federation Platform 2026 7170</Link></li>
-<li><Link href="/blog/no-code-platform-common-mistakes">No Code Platform Common Mistakes</Link></li>
-<li><Link href="/blog/microservices-security-starter-template">Microservices Security Starter Template</Link></li>
+              <li><Link /blog/enterprise-architecture-case-study/>Enterprise Architecture Case Study</Link></li>
+<li><Link /blog/graphql-federation-platform-2026-7170/>Graphql Federation Platform 2026 7170</Link></li>
+<li><Link /blog/no-code-platform-common-mistakes/>No Code Platform Common Mistakes</Link></li>
+<li><Link /blog/microservices-security-starter-template/>Microservices Security Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
