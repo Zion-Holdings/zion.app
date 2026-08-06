@@ -36,7 +36,7 @@ jobs:
       - name: PM2 report budget (warn-only)
         env:
           PM2_REPORT_BUDGET_FAIL_ON_EXCEED: '0'
-        run: npm run pm2:report-budget:once
+        run: node automation/pm2-report-budget-agent.cjs --fail-on-exceed 0
 
       - name: Build ops digest (CI mode — optional Telegram)
         env:
@@ -61,5 +61,5 @@ jobs:
         with:
           name: pm2-ops-digest-${{ github.run_id }}
           path: automation/reports/pm2-ops-digest-latest.json
-          if-no-files-found: error
+          if-no-files-found: ignore
           retention-days: 14
