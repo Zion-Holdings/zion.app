@@ -57,10 +57,10 @@ Leading indicators for blue green deployment: starter template: workflow complet
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/email-security-automation-roadmap">Email Security Automation Roadmap</Link></li>
-<li><Link href="/blog/api-management-gateway-implementation-playbook">Api Management Gateway Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-observability-deployment-patterns">Ai Observability Deployment Patterns</Link></li>
-<li><Link href="/blog/chaos-engineering-implementation-playbook">Chaos Engineering Implementation Playbook</Link></li>
+              <li><Link /blog/email-security-automation-roadmap/>Email Security Automation Roadmap</Link></li>
+<li><Link /blog/api-management-gateway-implementation-playbook/>Api Management Gateway Implementation Playbook</Link></li>
+<li><Link /blog/ai-observability-deployment-patterns/>Ai Observability Deployment Patterns</Link></li>
+<li><Link /blog/chaos-engineering-implementation-playbook/>Chaos Engineering Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

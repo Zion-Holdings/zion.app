@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/machine-learning-starter-template">Machine Learning Starter Template</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-6865">Api Orchestration Layer 2026 6865</Link></li>
-<li><Link href="/blog/apm-application-performance-2026-6739">Apm Application Performance 2026 6739</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-implementation-playbook">Ai Accessibility Auditor Implementation Playbook</Link></li>
+              <li><Link /blog/machine-learning-starter-template/>Machine Learning Starter Template</Link></li>
+<li><Link /blog/api-orchestration-layer-2026-6865/>Api Orchestration Layer 2026 6865</Link></li>
+<li><Link /blog/apm-application-performance-2026-6739/>Apm Application Performance 2026 6739</Link></li>
+<li><Link /blog/ai-accessibility-auditor-implementation-playbook/>Ai Accessibility Auditor Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

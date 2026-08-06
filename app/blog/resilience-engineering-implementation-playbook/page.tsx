@@ -57,10 +57,10 @@ For resilience engineering: implementation playbook: pick one workflow, assign o
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/genai-devops-cicd-common-mistakes">Genai Devops Cicd Common Mistakes</Link></li>
-<li><Link href="/blog/product-analytics-automation-roadmap">Product Analytics Automation Roadmap</Link></li>
-<li><Link href="/blog/observability-platform-checklist-for-it-leaders">Observability Platform Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cloud-native-app-development-2026-6674">Cloud Native App Development 2026 6674</Link></li>
+              <li><Link /blog/genai-devops-cicd-common-mistakes/>Genai Devops Cicd Common Mistakes</Link></li>
+<li><Link /blog/product-analytics-automation-roadmap/>Product Analytics Automation Roadmap</Link></li>
+<li><Link /blog/observability-platform-checklist-for-it-leaders/>Observability Platform Checklist For It Leaders</Link></li>
+<li><Link /blog/cloud-native-app-development-2026-6674/>Cloud Native App Development 2026 6674</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

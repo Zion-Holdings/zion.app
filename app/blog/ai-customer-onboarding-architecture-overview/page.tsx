@@ -57,10 +57,10 @@ Leading indicators for ai customer onboarding: architecture overview: workflow c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-2026-6894">Graphql Federation Platform 2026 6894</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026">Ai Customer Success Churn 2026</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-implementation-playbook">Cloud Cost Ai Optimizer Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-checklist-for-it-leaders">Ai Data Lakehouse Pipelines Checklist For It Leaders</Link></li>
+              <li><Link /blog/graphql-federation-platform-2026-6894/>Graphql Federation Platform 2026 6894</Link></li>
+<li><Link /blog/ai-customer-success-churn-2026/>Ai Customer Success Churn 2026</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-implementation-playbook/>Cloud Cost Ai Optimizer Implementation Playbook</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-checklist-for-it-leaders/>Ai Data Lakehouse Pipelines Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

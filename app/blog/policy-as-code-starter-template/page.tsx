@@ -57,10 +57,10 @@ For policy as code: starter template: pick one workflow, assign ownership, defin
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-2026-6604">Cloud Finops 2026 6604</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-2026-7074">Autonomous Code Deployment 2026 7074</Link></li>
-<li><Link href="/blog/devsecops-pipeline-vendor-evaluation">Devsecops Pipeline Vendor Evaluation</Link></li>
-<li><Link href="/blog/artificial-intelligence-ethics-2026">Artificial Intelligence Ethics 2026</Link></li>
+              <li><Link /blog/cloud-finops-2026-6604/>Cloud Finops 2026 6604</Link></li>
+<li><Link /blog/autonomous-code-deployment-2026-7074/>Autonomous Code Deployment 2026 7074</Link></li>
+<li><Link /blog/devsecops-pipeline-vendor-evaluation/>Devsecops Pipeline Vendor Evaluation</Link></li>
+<li><Link /blog/artificial-intelligence-ethics-2026/>Artificial Intelligence Ethics 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

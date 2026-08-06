@@ -54,10 +54,10 @@ If this guide matches your ai service desk: common mistakes initiative, the next
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-api-gateway-deployment-patterns">Ai Api Gateway Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-api-gateway-2026-6620">Ai Api Gateway 2026 6620</Link></li>
-<li><Link href="/blog/api-rate-limiting-roi-and-cost-model">Api Rate Limiting Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-video-analytics-2026">Ai Video Analytics 2026</Link></li>
+              <li><Link /blog/ai-api-gateway-deployment-patterns/>Ai Api Gateway Deployment Patterns</Link></li>
+<li><Link /blog/ai-api-gateway-2026-6620/>Ai Api Gateway 2026 6620</Link></li>
+<li><Link /blog/api-rate-limiting-roi-and-cost-model/>Api Rate Limiting Roi And Cost Model</Link></li>
+<li><Link /blog/ai-video-analytics-2026/>Ai Video Analytics 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

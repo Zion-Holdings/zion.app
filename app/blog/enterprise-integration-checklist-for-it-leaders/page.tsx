@@ -57,10 +57,10 @@ Leading indicators for enterprise integration: checklist for it leaders: workflo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6713">Micro Saas Ai Expense Tracker 2026 6713</Link></li>
-<li><Link href="/blog/automation-orchestration-policy-and-compliance">Automation Orchestration Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-architecture-overview">Ai Agentic Workflows Architecture Overview</Link></li>
-<li><Link href="/blog/brand-voice-guardian-architecture-overview">Brand Voice Guardian Architecture Overview</Link></li>
+              <li><Link /blog/micro-saas-ai-expense-tracker-2026-6713/>Micro Saas Ai Expense Tracker 2026 6713</Link></li>
+<li><Link /blog/automation-orchestration-policy-and-compliance/>Automation Orchestration Policy And Compliance</Link></li>
+<li><Link /blog/ai-agentic-workflows-architecture-overview/>Ai Agentic Workflows Architecture Overview</Link></li>
+<li><Link /blog/brand-voice-guardian-architecture-overview/>Brand Voice Guardian Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

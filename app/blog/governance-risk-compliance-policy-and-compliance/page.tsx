@@ -57,10 +57,10 @@ Leading indicators for governance risk compliance: policy and compliance: workfl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-safety-evaluation-common-mistakes">Ai Agent Safety Evaluation Common Mistakes</Link></li>
-<li><Link href="/blog/ai-observability-2026-6910">Ai Observability 2026 6910</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-deployment-patterns">Microsaas Hr Recruitment Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026-6775">Ai Customer Success Churn 2026 6775</Link></li>
+              <li><Link /blog/ai-agent-safety-evaluation-common-mistakes/>Ai Agent Safety Evaluation Common Mistakes</Link></li>
+<li><Link /blog/ai-observability-2026-6910/>Ai Observability 2026 6910</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-deployment-patterns/>Microsaas Hr Recruitment Deployment Patterns</Link></li>
+<li><Link /blog/ai-customer-success-churn-2026-6775/>Ai Customer Success Churn 2026 6775</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

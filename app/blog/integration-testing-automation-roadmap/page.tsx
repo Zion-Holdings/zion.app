@@ -54,10 +54,10 @@ If this guide matches your integration testing: automation roadmap initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-auditor-2026-6926">Ai Accessibility Auditor 2026 6926</Link></li>
-<li><Link href="/blog/structured-data-extraction-automation-roadmap">Structured Data Extraction Automation Roadmap</Link></li>
-<li><Link href="/blog/api-orchestration-layer-policy-and-compliance">Api Orchestration Layer Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026-6517">Ai Agentic Workflows 2026 6517</Link></li>
+              <li><Link /blog/ai-accessibility-auditor-2026-6926/>Ai Accessibility Auditor 2026 6926</Link></li>
+<li><Link /blog/structured-data-extraction-automation-roadmap/>Structured Data Extraction Automation Roadmap</Link></li>
+<li><Link /blog/api-orchestration-layer-policy-and-compliance/>Api Orchestration Layer Policy And Compliance</Link></li>
+<li><Link /blog/ai-agentic-workflows-2026-6517/>Ai Agentic Workflows 2026 6517</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

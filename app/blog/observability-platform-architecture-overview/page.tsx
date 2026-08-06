@@ -57,10 +57,10 @@ For observability platform: architecture overview: pick one workflow, assign own
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/accessibility-compliance-2026">Accessibility Compliance 2026</Link></li>
-<li><Link href="/blog/ai-customer-support-pro-2026-6840">Ai Customer Support Pro 2026 6840</Link></li>
-<li><Link href="/blog/database-migration-service-security-and-governance">Database Migration Service Security And Governance</Link></li>
-<li><Link href="/blog/cloud-networking-starter-template">Cloud Networking Starter Template</Link></li>
+              <li><Link /blog/accessibility-compliance-2026/>Accessibility Compliance 2026</Link></li>
+<li><Link /blog/ai-customer-support-pro-2026-6840/>Ai Customer Support Pro 2026 6840</Link></li>
+<li><Link /blog/database-migration-service-security-and-governance/>Database Migration Service Security And Governance</Link></li>
+<li><Link /blog/cloud-networking-starter-template/>Cloud Networking Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for no code platform: evaluation framework: workflow completi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-predictive-maintenance-deployment-patterns">Ai Predictive Maintenance Deployment Patterns</Link></li>
-<li><Link href="/blog/data-security-checklist-for-it-leaders">Data Security Checklist For It Leaders</Link></li>
-<li><Link href="/blog/governance-risk-compliance-operations-handbook">Governance Risk Compliance Operations Handbook</Link></li>
-<li><Link href="/blog/database-migration-service-automation-roadmap">Database Migration Service Automation Roadmap</Link></li>
+              <li><Link /blog/ai-predictive-maintenance-deployment-patterns/>Ai Predictive Maintenance Deployment Patterns</Link></li>
+<li><Link /blog/data-security-checklist-for-it-leaders/>Data Security Checklist For It Leaders</Link></li>
+<li><Link /blog/governance-risk-compliance-operations-handbook/>Governance Risk Compliance Operations Handbook</Link></li>
+<li><Link /blog/database-migration-service-automation-roadmap/>Database Migration Service Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

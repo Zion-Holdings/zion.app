@@ -57,10 +57,10 @@ For database security: starter template: pick one workflow, assign ownership, de
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-api-gateway-vendor-evaluation">Ai Api Gateway Vendor Evaluation</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-7031">Smart Contract Audit 2026 7031</Link></li>
-<li><Link href="/blog/blue-green-deployment-automation-roadmap">Blue Green Deployment Automation Roadmap</Link></li>
-<li><Link href="/blog/chaos-engineering-checklist-for-it-leaders">Chaos Engineering Checklist For It Leaders</Link></li>
+              <li><Link /blog/ai-api-gateway-vendor-evaluation/>Ai Api Gateway Vendor Evaluation</Link></li>
+<li><Link /blog/smart-contract-audit-2026-7031/>Smart Contract Audit 2026 7031</Link></li>
+<li><Link /blog/blue-green-deployment-automation-roadmap/>Blue Green Deployment Automation Roadmap</Link></li>
+<li><Link /blog/chaos-engineering-checklist-for-it-leaders/>Chaos Engineering Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

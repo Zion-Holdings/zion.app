@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-native-app-development-2026-6674">Cloud Native App Development 2026 6674</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-case-study">Ai 3D Asset Generator Case Study</Link></li>
-<li><Link href="/blog/cloud-workload-protection-operations-handbook">Cloud Workload Protection Operations Handbook</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026-6779">Cloud Migration Services 2026 6779</Link></li>
+              <li><Link /blog/cloud-native-app-development-2026-6674/>Cloud Native App Development 2026 6674</Link></li>
+<li><Link /blog/ai-3d-asset-generator-case-study/>Ai 3D Asset Generator Case Study</Link></li>
+<li><Link /blog/cloud-workload-protection-operations-handbook/>Cloud Workload Protection Operations Handbook</Link></li>
+<li><Link /blog/cloud-migration-services-2026-6779/>Cloud Migration Services 2026 6779</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

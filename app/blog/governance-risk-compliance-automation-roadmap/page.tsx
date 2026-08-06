@@ -57,10 +57,10 @@ For governance risk compliance: automation roadmap: pick one workflow, assign ow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-security-and-governance">Cloud Finops Security And Governance</Link></li>
-<li><Link href="/blog/ai-for-fleet-management-and-logistics-optimization">Ai For Fleet Management And Logistics Optimization</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-6695">Cloud Cost Optimization Checklist 2026 6695</Link></li>
-<li><Link href="/blog/edge-computing-deployment-roi-and-cost-model">Edge Computing Deployment Roi And Cost Model</Link></li>
+              <li><Link /blog/cloud-finops-security-and-governance/>Cloud Finops Security And Governance</Link></li>
+<li><Link /blog/ai-for-fleet-management-and-logistics-optimization/>Ai For Fleet Management And Logistics Optimization</Link></li>
+<li><Link /blog/cloud-cost-optimization-checklist-2026-6695/>Cloud Cost Optimization Checklist 2026 6695</Link></li>
+<li><Link /blog/edge-computing-deployment-roi-and-cost-model/>Edge Computing Deployment Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

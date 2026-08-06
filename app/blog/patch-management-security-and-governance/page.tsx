@@ -57,10 +57,10 @@ For patch management: security and governance: pick one workflow, assign ownersh
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-architecture-overview">Ai Observability Architecture Overview</Link></li>
-<li><Link href="/blog/static-application-security-testing-executive-guide">Static Application Security Testing Executive Guide</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-starter-template">Microsaas Expense Tracker Starter Template</Link></li>
-<li><Link href="/blog/oncall-best-practices-2026">Oncall Best Practices 2026</Link></li>
+              <li><Link /blog/ai-observability-architecture-overview/>Ai Observability Architecture Overview</Link></li>
+<li><Link /blog/static-application-security-testing-executive-guide/>Static Application Security Testing Executive Guide</Link></li>
+<li><Link /blog/microsaas-expense-tracker-starter-template/>Microsaas Expense Tracker Starter Template</Link></li>
+<li><Link /blog/oncall-best-practices-2026/>Oncall Best Practices 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/smart-contract-audit-security-and-governance">Smart Contract Audit Security And Governance</Link></li>
-<li><Link href="/blog/api-integration-policy-and-compliance">Api Integration Policy And Compliance</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-policy-and-compliance">Cloud Cost Optimization Policy And Compliance</Link></li>
-<li><Link href="/blog/distributed-tracing-2026">Distributed Tracing 2026</Link></li>
+              <li><Link /blog/smart-contract-audit-security-and-governance/>Smart Contract Audit Security And Governance</Link></li>
+<li><Link /blog/api-integration-policy-and-compliance/>Api Integration Policy And Compliance</Link></li>
+<li><Link /blog/cloud-cost-optimization-policy-and-compliance/>Cloud Cost Optimization Policy And Compliance</Link></li>
+<li><Link /blog/distributed-tracing-2026/>Distributed Tracing 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

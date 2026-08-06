@@ -57,10 +57,10 @@ For ai expense tracker: policy and compliance: pick one workflow, assign ownersh
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-6698">Data Analytics Platform Modern Enterprise 2026 6698</Link></li>
-<li><Link href="/blog/devops-cicd-automation-roadmap">Devops Cicd Automation Roadmap</Link></li>
-<li><Link href="/blog/resilience-engineering-roi-and-cost-model">Resilience Engineering Roi And Cost Model</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-6579">Enterprise Ai Intelligence Hub 2026 6579</Link></li>
+              <li><Link /blog/data-analytics-platform-modern-enterprise-2026-6698/>Data Analytics Platform Modern Enterprise 2026 6698</Link></li>
+<li><Link /blog/devops-cicd-automation-roadmap/>Devops Cicd Automation Roadmap</Link></li>
+<li><Link /blog/resilience-engineering-roi-and-cost-model/>Resilience Engineering Roi And Cost Model</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-2026-6579/>Enterprise Ai Intelligence Hub 2026 6579</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

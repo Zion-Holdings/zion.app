@@ -54,10 +54,10 @@ If this guide matches your aws cost optimization: case study initiative, the nex
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-2026-7096">Endpoint Management 2026 7096</Link></li>
-<li><Link href="/blog/managed-it-services-security-and-governance">Managed It Services Security And Governance</Link></li>
-<li><Link href="/blog/ai-voice-assistant-case-study">Ai Voice Assistant Case Study</Link></li>
-<li><Link href="/blog/artificial-intelligence-ethics-2026">Artificial Intelligence Ethics 2026</Link></li>
+              <li><Link /blog/endpoint-management-2026-7096/>Endpoint Management 2026 7096</Link></li>
+<li><Link /blog/managed-it-services-security-and-governance/>Managed It Services Security And Governance</Link></li>
+<li><Link /blog/ai-voice-assistant-case-study/>Ai Voice Assistant Case Study</Link></li>
+<li><Link /blog/artificial-intelligence-ethics-2026/>Artificial Intelligence Ethics 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

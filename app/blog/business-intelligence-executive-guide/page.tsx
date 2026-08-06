@@ -54,10 +54,10 @@ If this guide matches your business intelligence: executive guide initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-architecture-overview">Ai Observability Architecture Overview</Link></li>
-<li><Link href="/blog/natural-language-processing-starter-template">Natural Language Processing Starter Template</Link></li>
-<li><Link href="/blog/mobile-device-management-2026">Mobile Device Management 2026</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-7095">Edge Computing Deployment 2026 7095</Link></li>
+              <li><Link /blog/ai-observability-architecture-overview/>Ai Observability Architecture Overview</Link></li>
+<li><Link /blog/natural-language-processing-starter-template/>Natural Language Processing Starter Template</Link></li>
+<li><Link /blog/mobile-device-management-2026/>Mobile Device Management 2026</Link></li>
+<li><Link /blog/edge-computing-deployment-2026-7095/>Edge Computing Deployment 2026 7095</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

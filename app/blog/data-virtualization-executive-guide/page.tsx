@@ -54,10 +54,10 @@ If this guide matches your data virtualization: executive guide initiative, the 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7058">Micro Saas Ai Expense Tracker 2026 7058</Link></li>
-<li><Link href="/blog/devsecops-pipeline-evaluation-framework">Devsecops Pipeline Evaluation Framework</Link></li>
-<li><Link href="/blog/cloud-migration-services-deployment-patterns">Cloud Migration Services Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-operations-handbook">Ai Performance Monitoring Operations Handbook</Link></li>
+              <li><Link /blog/micro-saas-ai-expense-tracker-2026-7058/>Micro Saas Ai Expense Tracker 2026 7058</Link></li>
+<li><Link /blog/devsecops-pipeline-evaluation-framework/>Devsecops Pipeline Evaluation Framework</Link></li>
+<li><Link /blog/cloud-migration-services-deployment-patterns/>Cloud Migration Services Deployment Patterns</Link></li>
+<li><Link /blog/ai-performance-monitoring-operations-handbook/>Ai Performance Monitoring Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

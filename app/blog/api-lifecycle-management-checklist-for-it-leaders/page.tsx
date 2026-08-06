@@ -57,10 +57,10 @@ Leading indicators for api lifecycle management: checklist for it leaders: workf
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/chaos-engineering-automation-roadmap">Chaos Engineering Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-for-digital-transformation-and-change-management">Ai For Digital Transformation And Change Management</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-executive-guide">Ai Msp Security Compliance Executive Guide</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-vendor-evaluation">Ai Performance Monitoring Vendor Evaluation</Link></li>
+              <li><Link /blog/chaos-engineering-automation-roadmap/>Chaos Engineering Automation Roadmap</Link></li>
+<li><Link /blog/ai-for-digital-transformation-and-change-management/>Ai For Digital Transformation And Change Management</Link></li>
+<li><Link /blog/ai-msp-security-compliance-executive-guide/>Ai Msp Security Compliance Executive Guide</Link></li>
+<li><Link /blog/ai-performance-monitoring-vendor-evaluation/>Ai Performance Monitoring Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

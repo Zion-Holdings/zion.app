@@ -57,10 +57,10 @@ Leading indicators for hybrid cloud: roi and cost model: workflow completion rat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-case-study">Devsecops Pipeline Case Study</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026-6672">Cloud Cost Ai Optimizer 2026 6672</Link></li>
-<li><Link href="/blog/api-rate-limiting-roi-and-cost-model">Api Rate Limiting Roi And Cost Model</Link></li>
-<li><Link href="/blog/quality-assurance-2026">Quality Assurance 2026</Link></li>
+              <li><Link /blog/devsecops-pipeline-case-study/>Devsecops Pipeline Case Study</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-2026-6672/>Cloud Cost Ai Optimizer 2026 6672</Link></li>
+<li><Link /blog/api-rate-limiting-roi-and-cost-model/>Api Rate Limiting Roi And Cost Model</Link></li>
+<li><Link /blog/quality-assurance-2026/>Quality Assurance 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

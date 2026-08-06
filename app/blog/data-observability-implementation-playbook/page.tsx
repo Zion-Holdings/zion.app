@@ -57,10 +57,10 @@ Leading indicators for data observability: implementation playbook: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-orchestration-layer-roi-and-cost-model">Api Orchestration Layer Roi And Cost Model</Link></li>
-<li><Link href="/blog/reinforcement-learning-automation-roadmap">Reinforcement Learning Automation Roadmap</Link></li>
-<li><Link href="/blog/devsecops-pipeline-evaluation-framework">Devsecops Pipeline Evaluation Framework</Link></li>
-<li><Link href="/blog/cloud-native-security-implementation-playbook">Cloud Native Security Implementation Playbook</Link></li>
+              <li><Link /blog/api-orchestration-layer-roi-and-cost-model/>Api Orchestration Layer Roi And Cost Model</Link></li>
+<li><Link /blog/reinforcement-learning-automation-roadmap/>Reinforcement Learning Automation Roadmap</Link></li>
+<li><Link /blog/devsecops-pipeline-evaluation-framework/>Devsecops Pipeline Evaluation Framework</Link></li>
+<li><Link /blog/cloud-native-security-implementation-playbook/>Cloud Native Security Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-architecture-overview">Graphql Federation Platform Architecture Overview</Link></li>
-<li><Link href="/blog/ai-customer-support-pro-2026-6564">Ai Customer Support Pro 2026 6564</Link></li>
-<li><Link href="/blog/api-management-gateway-checklist-for-it-leaders">Api Management Gateway Checklist For It Leaders</Link></li>
-<li><Link href="/blog/network-infrastructure-case-study">Network Infrastructure Case Study</Link></li>
+              <li><Link /blog/graphql-federation-platform-architecture-overview/>Graphql Federation Platform Architecture Overview</Link></li>
+<li><Link /blog/ai-customer-support-pro-2026-6564/>Ai Customer Support Pro 2026 6564</Link></li>
+<li><Link /blog/api-management-gateway-checklist-for-it-leaders/>Api Management Gateway Checklist For It Leaders</Link></li>
+<li><Link /blog/network-infrastructure-case-study/>Network Infrastructure Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

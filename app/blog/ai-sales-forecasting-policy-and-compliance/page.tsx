@@ -57,10 +57,10 @@ Leading indicators for ai sales forecasting: policy and compliance: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-integration-2026-6599">Api Integration 2026 6599</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-2026">Enterprise Backup Dr 2026</Link></li>
-<li><Link href="/blog/integration-testing-2026">Integration Testing 2026</Link></li>
-<li><Link href="/blog/apm-application-performance-2026">Apm Application Performance 2026</Link></li>
+              <li><Link /blog/api-integration-2026-6599/>Api Integration 2026 6599</Link></li>
+<li><Link /blog/enterprise-backup-dr-2026/>Enterprise Backup Dr 2026</Link></li>
+<li><Link /blog/integration-testing-2026/>Integration Testing 2026</Link></li>
+<li><Link /blog/apm-application-performance-2026/>Apm Application Performance 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

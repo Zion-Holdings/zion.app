@@ -54,10 +54,10 @@ If this guide matches your bot detection: security and governance initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-backup-policy-and-compliance">Ai Data Backup Policy And Compliance</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-6589">Api Orchestration Layer 2026 6589</Link></li>
-<li><Link href="/blog/incident-response-retainer-2026-6964">Incident Response Retainer 2026 6964</Link></li>
-<li><Link href="/blog/ai-api-gateway-2026-6827">Ai Api Gateway 2026 6827</Link></li>
+              <li><Link /blog/ai-data-backup-policy-and-compliance/>Ai Data Backup Policy And Compliance</Link></li>
+<li><Link /blog/api-orchestration-layer-2026-6589/>Api Orchestration Layer 2026 6589</Link></li>
+<li><Link /blog/incident-response-retainer-2026-6964/>Incident Response Retainer 2026 6964</Link></li>
+<li><Link /blog/ai-api-gateway-2026-6827/>Ai Api Gateway 2026 6827</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

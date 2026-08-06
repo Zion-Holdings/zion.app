@@ -57,10 +57,10 @@ For api rate limiting: evaluation framework: pick one workflow, assign ownership
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/managed-it-services-small-business-2026-6835">Managed It Services Small Business 2026 6835</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6989">Micro Saas Ai Expense Tracker 2026 6989</Link></li>
-<li><Link href="/blog/cloud-backup-roi-and-cost-model">Cloud Backup Roi And Cost Model</Link></li>
-<li><Link href="/blog/blockchain-enterprise-checklist-for-it-leaders">Blockchain Enterprise Checklist For It Leaders</Link></li>
+              <li><Link /blog/managed-it-services-small-business-2026-6835/>Managed It Services Small Business 2026 6835</Link></li>
+<li><Link /blog/micro-saas-ai-expense-tracker-2026-6989/>Micro Saas Ai Expense Tracker 2026 6989</Link></li>
+<li><Link /blog/cloud-backup-roi-and-cost-model/>Cloud Backup Roi And Cost Model</Link></li>
+<li><Link /blog/blockchain-enterprise-checklist-for-it-leaders/>Blockchain Enterprise Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

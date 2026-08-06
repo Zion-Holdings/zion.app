@@ -54,10 +54,10 @@ If this guide matches your saas security: evaluation framework initiative, the n
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/observability-platform-2026">Observability Platform 2026</Link></li>
-<li><Link href="/blog/managed-detection-response-executive-guide">Managed Detection Response Executive Guide</Link></li>
-<li><Link href="/blog/network-security-operations-handbook">Network Security Operations Handbook</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-implementation-playbook">Microsaas Hr Recruitment Implementation Playbook</Link></li>
+              <li><Link /blog/observability-platform-2026/>Observability Platform 2026</Link></li>
+<li><Link /blog/managed-detection-response-executive-guide/>Managed Detection Response Executive Guide</Link></li>
+<li><Link /blog/network-security-operations-handbook/>Network Security Operations Handbook</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-implementation-playbook/>Microsaas Hr Recruitment Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

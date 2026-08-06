@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-security-2026">Database Security 2026</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026-6696">Cybersecurity Platform Msp 2026 6696</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-7100">Smart Contract Audit 2026 7100</Link></li>
-<li><Link href="/blog/data-virtualization-implementation-playbook">Data Virtualization Implementation Playbook</Link></li>
+              <li><Link /blog/database-security-2026/>Database Security 2026</Link></li>
+<li><Link /blog/cybersecurity-platform-msp-2026-6696/>Cybersecurity Platform Msp 2026 6696</Link></li>
+<li><Link /blog/smart-contract-audit-2026-7100/>Smart Contract Audit 2026 7100</Link></li>
+<li><Link /blog/data-virtualization-implementation-playbook/>Data Virtualization Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

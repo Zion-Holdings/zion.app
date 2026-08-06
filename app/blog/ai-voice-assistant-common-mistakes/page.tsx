@@ -54,10 +54,10 @@ If this guide matches your ai voice assistant: common mistakes initiative, the n
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-implementation-playbook">Cloud Cost Ai Optimizer Implementation Playbook</Link></li>
-<li><Link href="/blog/disaster-recovery-starter-template">Disaster Recovery Starter Template</Link></li>
-<li><Link href="/blog/api-integration-architecture-overview">Api Integration Architecture Overview</Link></li>
-<li><Link href="/blog/cloud-migration-services-vendor-evaluation">Cloud Migration Services Vendor Evaluation</Link></li>
+              <li><Link /blog/cloud-cost-ai-optimizer-implementation-playbook/>Cloud Cost Ai Optimizer Implementation Playbook</Link></li>
+<li><Link /blog/disaster-recovery-starter-template/>Disaster Recovery Starter Template</Link></li>
+<li><Link /blog/api-integration-architecture-overview/>Api Integration Architecture Overview</Link></li>
+<li><Link /blog/cloud-migration-services-vendor-evaluation/>Cloud Migration Services Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

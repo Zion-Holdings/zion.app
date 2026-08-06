@@ -54,10 +54,10 @@ If this guide matches your machine learning engineering initiative, the next ste
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/incident-response-retainer-2026-7033">Incident Response Retainer 2026 7033</Link></li>
-<li><Link href="/blog/automated-ai-reporting-2026-6728">Automated Ai Reporting 2026 6728</Link></li>
-<li><Link href="/blog/data-observability-common-mistakes">Data Observability Common Mistakes</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-7026">Edge Computing Deployment 2026 7026</Link></li>
+              <li><Link /blog/incident-response-retainer-2026-7033/>Incident Response Retainer 2026 7033</Link></li>
+<li><Link /blog/automated-ai-reporting-2026-6728/>Automated Ai Reporting 2026 6728</Link></li>
+<li><Link /blog/data-observability-common-mistakes/>Data Observability Common Mistakes</Link></li>
+<li><Link /blog/edge-computing-deployment-2026-7026/>Edge Computing Deployment 2026 7026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

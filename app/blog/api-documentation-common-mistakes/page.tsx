@@ -57,10 +57,10 @@ Leading indicators for api documentation: common mistakes: workflow completion r
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/natural-language-processing-evaluation-framework">Natural Language Processing Evaluation Framework</Link></li>
-<li><Link href="/blog/edge-computing-deployment-checklist-for-it-leaders">Edge Computing Deployment Checklist For It Leaders</Link></li>
-<li><Link href="/blog/accessibility-compliance-case-study">Accessibility Compliance Case Study</Link></li>
-<li><Link href="/blog/web-application-firewall-2026">Web Application Firewall 2026</Link></li>
+              <li><Link /blog/natural-language-processing-evaluation-framework/>Natural Language Processing Evaluation Framework</Link></li>
+<li><Link /blog/edge-computing-deployment-checklist-for-it-leaders/>Edge Computing Deployment Checklist For It Leaders</Link></li>
+<li><Link /blog/accessibility-compliance-case-study/>Accessibility Compliance Case Study</Link></li>
+<li><Link /blog/web-application-firewall-2026/>Web Application Firewall 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

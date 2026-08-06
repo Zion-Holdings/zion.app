@@ -54,10 +54,10 @@ If this guide matches your network security: starter template initiative, the ne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-social-media-manager-automation-roadmap">Microsaas Social Media Manager Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026-6793">Ai Agentic Workflows 2026 6793</Link></li>
-<li><Link href="/blog/cloud-governance-starter-template">Cloud Governance Starter Template</Link></li>
-<li><Link href="/blog/deep-learning-deployment-patterns">Deep Learning Deployment Patterns</Link></li>
+              <li><Link /blog/microsaas-social-media-manager-automation-roadmap/>Microsaas Social Media Manager Automation Roadmap</Link></li>
+<li><Link /blog/ai-agentic-workflows-2026-6793/>Ai Agentic Workflows 2026 6793</Link></li>
+<li><Link /blog/cloud-governance-starter-template/>Cloud Governance Starter Template</Link></li>
+<li><Link /blog/deep-learning-deployment-patterns/>Deep Learning Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

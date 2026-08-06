@@ -57,10 +57,10 @@ For cloud optimization: executive guide: pick one workflow, assign ownership, de
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/blockchain-enterprise-automation-roadmap">Blockchain Enterprise Automation Roadmap</Link></li>
-<li><Link href="/blog/platform-engineering-automation-roadmap">Platform Engineering Automation Roadmap</Link></li>
-<li><Link href="/blog/managed-it-services-checklist-for-it-leaders">Managed It Services Checklist For It Leaders</Link></li>
-<li><Link href="/blog/edge-computing-deployment-security-and-governance">Edge Computing Deployment Security And Governance</Link></li>
+              <li><Link /blog/blockchain-enterprise-automation-roadmap/>Blockchain Enterprise Automation Roadmap</Link></li>
+<li><Link /blog/platform-engineering-automation-roadmap/>Platform Engineering Automation Roadmap</Link></li>
+<li><Link /blog/managed-it-services-checklist-for-it-leaders/>Managed It Services Checklist For It Leaders</Link></li>
+<li><Link /blog/edge-computing-deployment-security-and-governance/>Edge Computing Deployment Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

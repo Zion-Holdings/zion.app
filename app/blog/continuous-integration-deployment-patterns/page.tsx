@@ -57,10 +57,10 @@ Leading indicators for continuous integration: deployment patterns: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-ad-copy-generator-checklist-for-it-leaders">Ai Ad Copy Generator Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cloud-optimization-deployment-patterns">Cloud Optimization Deployment Patterns</Link></li>
-<li><Link href="/blog/api-governance-policy-and-compliance">Api Governance Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-network-optimization-2026">Ai Network Optimization 2026</Link></li>
+              <li><Link /blog/ai-ad-copy-generator-checklist-for-it-leaders/>Ai Ad Copy Generator Checklist For It Leaders</Link></li>
+<li><Link /blog/cloud-optimization-deployment-patterns/>Cloud Optimization Deployment Patterns</Link></li>
+<li><Link /blog/api-governance-policy-and-compliance/>Api Governance Policy And Compliance</Link></li>
+<li><Link /blog/ai-network-optimization-2026/>Ai Network Optimization 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

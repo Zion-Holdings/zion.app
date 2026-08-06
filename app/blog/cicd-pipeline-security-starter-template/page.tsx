@@ -54,10 +54,10 @@ If this guide matches your ci/cd pipeline security: starter template initiative,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/apm-application-performance-starter-template">Apm Application Performance Starter Template</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-roi-and-cost-model">Microsaas Expense Tracker Roi And Cost Model</Link></li>
-<li><Link href="/blog/brand-voice-guardian-2026-7009">Brand Voice Guardian 2026 7009</Link></li>
-<li><Link href="/blog/devops-cicd-checklist-for-it-leaders">Devops Cicd Checklist For It Leaders</Link></li>
+              <li><Link /blog/apm-application-performance-starter-template/>Apm Application Performance Starter Template</Link></li>
+<li><Link /blog/microsaas-expense-tracker-roi-and-cost-model/>Microsaas Expense Tracker Roi And Cost Model</Link></li>
+<li><Link /blog/brand-voice-guardian-2026-7009/>Brand Voice Guardian 2026 7009</Link></li>
+<li><Link /blog/devops-cicd-checklist-for-it-leaders/>Devops Cicd Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

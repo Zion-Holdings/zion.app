@@ -57,10 +57,10 @@ Leading indicators for it automation: workflow completion rate, escalation rate,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-agriculture-and-agritech">Ai For Agriculture And Agritech</Link></li>
-<li><Link href="/blog/cloud-workload-protection-starter-template">Cloud Workload Protection Starter Template</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026-6720">Ai Accessibility Optimizer 2026 6720</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-2026-6538">Cyber Threat Intelligence 2026 6538</Link></li>
+              <li><Link /blog/ai-for-agriculture-and-agritech/>Ai For Agriculture And Agritech</Link></li>
+<li><Link /blog/cloud-workload-protection-starter-template/>Cloud Workload Protection Starter Template</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-2026-6720/>Ai Accessibility Optimizer 2026 6720</Link></li>
+<li><Link /blog/cyber-threat-intelligence-2026-6538/>Cyber Threat Intelligence 2026 6538</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

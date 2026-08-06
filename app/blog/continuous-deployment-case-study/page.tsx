@@ -54,10 +54,10 @@ If this guide matches your continuous deployment: case study initiative, the nex
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/remote-work-security-evaluation-framework">Remote Work Security Evaluation Framework</Link></li>
-<li><Link href="/blog/golang-microservices-automation-roadmap">Golang Microservices Automation Roadmap</Link></li>
-<li><Link href="/blog/automation-orchestration-enterprise-2026-6699">Automation Orchestration Enterprise 2026 6699</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-automation-roadmap">Ai Bdr Sdr Automation Roadmap</Link></li>
+              <li><Link /blog/remote-work-security-evaluation-framework/>Remote Work Security Evaluation Framework</Link></li>
+<li><Link /blog/golang-microservices-automation-roadmap/>Golang Microservices Automation Roadmap</Link></li>
+<li><Link /blog/automation-orchestration-enterprise-2026-6699/>Automation Orchestration Enterprise 2026 6699</Link></li>
+<li><Link /blog/ai-bdr-sdr-automation-roadmap/>Ai Bdr Sdr Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

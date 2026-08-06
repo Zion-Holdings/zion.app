@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-social-media-manager-2026-6716">Micro Saas Ai Social Media Manager 2026 6716</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-checklist-for-it-leaders">Microsaas Social Media Manager Checklist For It Leaders</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-operations-handbook">Autonomous Qa Engineering Operations Handbook</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-executive-guide">Ai Msp Security Compliance Executive Guide</Link></li>
+              <li><Link /blog/micro-saas-ai-social-media-manager-2026-6716/>Micro Saas Ai Social Media Manager 2026 6716</Link></li>
+<li><Link /blog/microsaas-social-media-manager-checklist-for-it-leaders/>Microsaas Social Media Manager Checklist For It Leaders</Link></li>
+<li><Link /blog/autonomous-qa-engineering-operations-handbook/>Autonomous Qa Engineering Operations Handbook</Link></li>
+<li><Link /blog/ai-msp-security-compliance-executive-guide/>Ai Msp Security Compliance Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

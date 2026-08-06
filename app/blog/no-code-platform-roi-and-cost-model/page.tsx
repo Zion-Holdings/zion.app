@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-pipeline-orchestration-vendor-evaluation">Data Pipeline Orchestration Vendor Evaluation</Link></li>
-<li><Link href="/blog/automation-orchestration-starter-template">Automation Orchestration Starter Template</Link></li>
-<li><Link href="/blog/cloud-governance-security-and-governance">Cloud Governance Security And Governance</Link></li>
-<li><Link href="/blog/compliance-automation-common-mistakes">Compliance Automation Common Mistakes</Link></li>
+              <li><Link /blog/data-pipeline-orchestration-vendor-evaluation/>Data Pipeline Orchestration Vendor Evaluation</Link></li>
+<li><Link /blog/automation-orchestration-starter-template/>Automation Orchestration Starter Template</Link></li>
+<li><Link /blog/cloud-governance-security-and-governance/>Cloud Governance Security And Governance</Link></li>
+<li><Link /blog/compliance-automation-common-mistakes/>Compliance Automation Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

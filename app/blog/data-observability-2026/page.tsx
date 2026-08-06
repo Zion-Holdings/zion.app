@@ -57,10 +57,10 @@ Leading indicators for data observability: workflow completion rate, escalation 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-performance-testing-2026-6967">Api Performance Testing 2026 6967</Link></li>
-<li><Link href="/blog/ai-customer-onboarding-security-and-governance">Ai Customer Onboarding Security And Governance</Link></li>
-<li><Link href="/blog/api-gateway-management-implementation-playbook">Api Gateway Management Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-customer-support-pro-2026-6702">Ai Customer Support Pro 2026 6702</Link></li>
+              <li><Link /blog/api-performance-testing-2026-6967/>Api Performance Testing 2026 6967</Link></li>
+<li><Link /blog/ai-customer-onboarding-security-and-governance/>Ai Customer Onboarding Security And Governance</Link></li>
+<li><Link /blog/api-gateway-management-implementation-playbook/>Api Gateway Management Implementation Playbook</Link></li>
+<li><Link /blog/ai-customer-support-pro-2026-6702/>Ai Customer Support Pro 2026 6702</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

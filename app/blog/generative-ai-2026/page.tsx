@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-migration-services-automation-roadmap">Cloud Migration Services Automation Roadmap</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-6727">Api Orchestration Layer 2026 6727</Link></li>
-<li><Link href="/blog/brand-voice-guardian-automation-roadmap">Brand Voice Guardian Automation Roadmap</Link></li>
-<li><Link href="/blog/splunk-migration-operations-handbook">Splunk Migration Operations Handbook</Link></li>
+              <li><Link /blog/cloud-migration-services-automation-roadmap/>Cloud Migration Services Automation Roadmap</Link></li>
+<li><Link /blog/api-orchestration-layer-2026-6727/>Api Orchestration Layer 2026 6727</Link></li>
+<li><Link /blog/brand-voice-guardian-automation-roadmap/>Brand Voice Guardian Automation Roadmap</Link></li>
+<li><Link /blog/splunk-migration-operations-handbook/>Splunk Migration Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

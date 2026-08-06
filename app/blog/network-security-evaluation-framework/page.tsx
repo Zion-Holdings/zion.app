@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-security-and-governance">Event Driven Architecture Security And Governance</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026-6844">Ai Customer Success Churn 2026 6844</Link></li>
-<li><Link href="/blog/genai-devops-cicd-security-and-governance">Genai Devops Cicd Security And Governance</Link></li>
-<li><Link href="/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning">Ai Finops And Cloud Cost Optimization With Machine Learning</Link></li>
+              <li><Link /blog/event-driven-architecture-security-and-governance/>Event Driven Architecture Security And Governance</Link></li>
+<li><Link /blog/ai-customer-success-churn-2026-6844/>Ai Customer Success Churn 2026 6844</Link></li>
+<li><Link /blog/genai-devops-cicd-security-and-governance/>Genai Devops Cicd Security And Governance</Link></li>
+<li><Link /blog/ai-finops-and-cloud-cost-optimization-with-machine-learning/>Ai Finops And Cloud Cost Optimization With Machine Learning</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

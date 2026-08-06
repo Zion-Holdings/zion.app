@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/hybrid-cloud-common-mistakes">Hybrid Cloud Common Mistakes</Link></li>
-<li><Link href="/blog/digital-twin-architecture-overview">Digital Twin Architecture Overview</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-7095">Edge Computing Deployment 2026 7095</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-vendor-evaluation">Cloud Cost Ai Optimizer Vendor Evaluation</Link></li>
+              <li><Link /blog/hybrid-cloud-common-mistakes/>Hybrid Cloud Common Mistakes</Link></li>
+<li><Link /blog/digital-twin-architecture-overview/>Digital Twin Architecture Overview</Link></li>
+<li><Link /blog/edge-computing-deployment-2026-7095/>Edge Computing Deployment 2026 7095</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-vendor-evaluation/>Cloud Cost Ai Optimizer Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For continuous deployment: checklist for it leaders: pick one workflow, assign o
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/siem-vendor-evaluation">Siem Vendor Evaluation</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-6748">Devops Gen Ai Cicd 2026 6748</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-6855">Enterprise Ai Intelligence Hub 2026 6855</Link></li>
-<li><Link href="/blog/api-gateway-management-deployment-patterns">Api Gateway Management Deployment Patterns</Link></li>
+              <li><Link /blog/siem-vendor-evaluation/>Siem Vendor Evaluation</Link></li>
+<li><Link /blog/devops-gen-ai-cicd-2026-6748/>Devops Gen Ai Cicd 2026 6748</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-2026-6855/>Enterprise Ai Intelligence Hub 2026 6855</Link></li>
+<li><Link /blog/api-gateway-management-deployment-patterns/>Api Gateway Management Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

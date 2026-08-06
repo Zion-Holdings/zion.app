@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/mobile-device-management-operations-handbook">Mobile Device Management Operations Handbook</Link></li>
-<li><Link href="/blog/smart-contract-audit-starter-template">Smart Contract Audit Starter Template</Link></li>
-<li><Link href="/blog/data-observability-starter-template">Data Observability Starter Template</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-starter-template">Ai 3D Asset Generator Starter Template</Link></li>
+              <li><Link /blog/mobile-device-management-operations-handbook/>Mobile Device Management Operations Handbook</Link></li>
+<li><Link /blog/smart-contract-audit-starter-template/>Smart Contract Audit Starter Template</Link></li>
+<li><Link /blog/data-observability-starter-template/>Data Observability Starter Template</Link></li>
+<li><Link /blog/ai-3d-asset-generator-starter-template/>Ai 3D Asset Generator Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

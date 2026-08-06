@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-compliance-policy-and-compliance">Data Compliance Policy And Compliance</Link></li>
-<li><Link href="/blog/database-as-a-service-case-study">Database As A Service Case Study</Link></li>
-<li><Link href="/blog/hybrid-cloud-evaluation-framework">Hybrid Cloud Evaluation Framework</Link></li>
-<li><Link href="/blog/open-source-strategy-policy-and-compliance">Open Source Strategy Policy And Compliance</Link></li>
+              <li><Link /blog/data-compliance-policy-and-compliance/>Data Compliance Policy And Compliance</Link></li>
+<li><Link /blog/database-as-a-service-case-study/>Database As A Service Case Study</Link></li>
+<li><Link /blog/hybrid-cloud-evaluation-framework/>Hybrid Cloud Evaluation Framework</Link></li>
+<li><Link /blog/open-source-strategy-policy-and-compliance/>Open Source Strategy Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

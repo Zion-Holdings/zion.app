@@ -54,10 +54,10 @@ If this guide matches your open source strategy: security and governance initiat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bom-procurement-2026-6663">Ai Bom Procurement 2026 6663</Link></li>
-<li><Link href="/blog/ai-bom-procurement-automation-roadmap">Ai Bom Procurement Automation Roadmap</Link></li>
-<li><Link href="/blog/api-versioning-evaluation-framework">Api Versioning Evaluation Framework</Link></li>
-<li><Link href="/blog/api-management-gateway-operations-handbook">Api Management Gateway Operations Handbook</Link></li>
+              <li><Link /blog/ai-bom-procurement-2026-6663/>Ai Bom Procurement 2026 6663</Link></li>
+<li><Link /blog/ai-bom-procurement-automation-roadmap/>Ai Bom Procurement Automation Roadmap</Link></li>
+<li><Link /blog/api-versioning-evaluation-framework/>Api Versioning Evaluation Framework</Link></li>
+<li><Link /blog/api-management-gateway-operations-handbook/>Api Management Gateway Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

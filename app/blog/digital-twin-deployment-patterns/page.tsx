@@ -54,10 +54,10 @@ If this guide matches your digital twin: deployment patterns initiative, the nex
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automated-ai-reporting-roi-and-cost-model">Automated Ai Reporting Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-development-acceleration-case-study">Ai Development Acceleration Case Study</Link></li>
-<li><Link href="/blog/database-migration-service-2026-6885">Database Migration Service 2026 6885</Link></li>
-<li><Link href="/blog/network-infrastructure-2026-6847">Network Infrastructure 2026 6847</Link></li>
+              <li><Link /blog/automated-ai-reporting-roi-and-cost-model/>Automated Ai Reporting Roi And Cost Model</Link></li>
+<li><Link /blog/ai-development-acceleration-case-study/>Ai Development Acceleration Case Study</Link></li>
+<li><Link /blog/database-migration-service-2026-6885/>Database Migration Service 2026 6885</Link></li>
+<li><Link /blog/network-infrastructure-2026-6847/>Network Infrastructure 2026 6847</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

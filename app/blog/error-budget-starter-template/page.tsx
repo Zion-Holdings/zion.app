@@ -57,10 +57,10 @@ For error budget: starter template: pick one workflow, assign ownership, define 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/network-automation-executive-guide">Network Automation Executive Guide</Link></li>
-<li><Link href="/blog/cicd-best-practices-vendor-evaluation">Cicd Best Practices Vendor Evaluation</Link></li>
-<li><Link href="/blog/automation-orchestration-enterprise-2026-6975">Automation Orchestration Enterprise 2026 6975</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-architecture-overview">Ai Accessibility Auditor Architecture Overview</Link></li>
+              <li><Link /blog/network-automation-executive-guide/>Network Automation Executive Guide</Link></li>
+<li><Link /blog/cicd-best-practices-vendor-evaluation/>Cicd Best Practices Vendor Evaluation</Link></li>
+<li><Link /blog/automation-orchestration-enterprise-2026-6975/>Automation Orchestration Enterprise 2026 6975</Link></li>
+<li><Link /blog/ai-accessibility-auditor-architecture-overview/>Ai Accessibility Auditor Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

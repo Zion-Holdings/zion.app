@@ -54,10 +54,10 @@ If this guide matches your ai service desk: checklist for it leaders initiative,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-backup-dr-evaluation-framework">Enterprise Backup Dr Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-bom-procurement-security-and-governance">Ai Bom Procurement Security And Governance</Link></li>
-<li><Link href="/blog/ai-email-intelligence-deployment-patterns">Ai Email Intelligence Deployment Patterns</Link></li>
-<li><Link href="/blog/finops-policy-and-compliance">Finops Policy And Compliance</Link></li>
+              <li><Link /blog/enterprise-backup-dr-evaluation-framework/>Enterprise Backup Dr Evaluation Framework</Link></li>
+<li><Link /blog/ai-bom-procurement-security-and-governance/>Ai Bom Procurement Security And Governance</Link></li>
+<li><Link /blog/ai-email-intelligence-deployment-patterns/>Ai Email Intelligence Deployment Patterns</Link></li>
+<li><Link /blog/finops-policy-and-compliance/>Finops Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

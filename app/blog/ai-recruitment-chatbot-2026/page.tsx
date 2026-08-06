@@ -54,10 +54,10 @@ If this guide matches your ai recruitment chatbot initiative, the next step is a
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-roi-and-cost-model">Devsecops Pipeline Roi And Cost Model</Link></li>
-<li><Link href="/blog/managed-it-services-case-study">Managed It Services Case Study</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-implementation-playbook">Ai Accessibility Optimizer Implementation Playbook</Link></li>
-<li><Link href="/blog/mobile-device-management-automation-roadmap">Mobile Device Management Automation Roadmap</Link></li>
+              <li><Link /blog/devsecops-pipeline-roi-and-cost-model/>Devsecops Pipeline Roi And Cost Model</Link></li>
+<li><Link /blog/managed-it-services-case-study/>Managed It Services Case Study</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-implementation-playbook/>Ai Accessibility Optimizer Implementation Playbook</Link></li>
+<li><Link /blog/mobile-device-management-automation-roadmap/>Mobile Device Management Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

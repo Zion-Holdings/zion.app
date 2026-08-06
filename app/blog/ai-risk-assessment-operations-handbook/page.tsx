@@ -57,10 +57,10 @@ For ai risk assessment: operations handbook: pick one workflow, assign ownership
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-warehouse-modernization-2026-6608">Data Warehouse Modernization 2026 6608</Link></li>
-<li><Link href="/blog/endpoint-management-starter-template">Endpoint Management Starter Template</Link></li>
-<li><Link href="/blog/retrieval-augmented-generation-architecture-overview">Retrieval Augmented Generation Architecture Overview</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026">Cloud Migration Services 2026</Link></li>
+              <li><Link /blog/data-warehouse-modernization-2026-6608/>Data Warehouse Modernization 2026 6608</Link></li>
+<li><Link /blog/endpoint-management-starter-template/>Endpoint Management Starter Template</Link></li>
+<li><Link /blog/retrieval-augmented-generation-architecture-overview/>Retrieval Augmented Generation Architecture Overview</Link></li>
+<li><Link /blog/cloud-migration-services-2026/>Cloud Migration Services 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

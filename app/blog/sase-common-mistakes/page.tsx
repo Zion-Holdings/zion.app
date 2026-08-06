@@ -57,10 +57,10 @@ Leading indicators for sase: common mistakes: workflow completion rate, escalati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-auditor-policy-and-compliance">Ai Accessibility Auditor Policy And Compliance</Link></li>
-<li><Link href="/blog/managed-detection-response-executive-guide">Managed Detection Response Executive Guide</Link></li>
-<li><Link href="/blog/test-automation-checklist-for-it-leaders">Test Automation Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026-6534">Cloud Cost Ai Optimizer 2026 6534</Link></li>
+              <li><Link /blog/ai-accessibility-auditor-policy-and-compliance/>Ai Accessibility Auditor Policy And Compliance</Link></li>
+<li><Link /blog/managed-detection-response-executive-guide/>Managed Detection Response Executive Guide</Link></li>
+<li><Link /blog/test-automation-checklist-for-it-leaders/>Test Automation Checklist For It Leaders</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-2026-6534/>Cloud Cost Ai Optimizer 2026 6534</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

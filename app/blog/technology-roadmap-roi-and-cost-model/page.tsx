@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-orchestration-layer-automation-roadmap">Api Orchestration Layer Automation Roadmap</Link></li>
-<li><Link href="/blog/technical-due-diligence-checklist-for-it-leaders">Technical Due Diligence Checklist For It Leaders</Link></li>
-<li><Link href="/blog/strategic-it-planning-executive-guide">Strategic It Planning Executive Guide</Link></li>
-<li><Link href="/blog/edge-computing-deployment-common-mistakes">Edge Computing Deployment Common Mistakes</Link></li>
+              <li><Link /blog/api-orchestration-layer-automation-roadmap/>Api Orchestration Layer Automation Roadmap</Link></li>
+<li><Link /blog/technical-due-diligence-checklist-for-it-leaders/>Technical Due Diligence Checklist For It Leaders</Link></li>
+<li><Link /blog/strategic-it-planning-executive-guide/>Strategic It Planning Executive Guide</Link></li>
+<li><Link /blog/edge-computing-deployment-common-mistakes/>Edge Computing Deployment Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

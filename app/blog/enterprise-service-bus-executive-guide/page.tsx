@@ -54,10 +54,10 @@ If this guide matches your enterprise service bus: executive guide initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-security-testing-case-study">Api Security Testing Case Study</Link></li>
-<li><Link href="/blog/vulnerability-assessment-executive-guide">Vulnerability Assessment Executive Guide</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-roi-and-cost-model">Microsaas Customer Onboarding Roi And Cost Model</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-vendor-evaluation">Cloud Cost Ai Optimizer Vendor Evaluation</Link></li>
+              <li><Link /blog/api-security-testing-case-study/>Api Security Testing Case Study</Link></li>
+<li><Link /blog/vulnerability-assessment-executive-guide/>Vulnerability Assessment Executive Guide</Link></li>
+<li><Link /blog/microsaas-customer-onboarding-roi-and-cost-model/>Microsaas Customer Onboarding Roi And Cost Model</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-vendor-evaluation/>Cloud Cost Ai Optimizer Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

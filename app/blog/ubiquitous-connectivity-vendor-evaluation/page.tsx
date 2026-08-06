@@ -54,10 +54,10 @@ If this guide matches your ubiquitous connectivity: vendor evaluation initiative
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bom-procurement-2026-6525">Ai Bom Procurement 2026 6525</Link></li>
-<li><Link href="/blog/retrieval-augmented-generation-checklist-for-it-leaders">Retrieval Augmented Generation Checklist For It Leaders</Link></li>
-<li><Link href="/blog/graphql-federation-platform-policy-and-compliance">Graphql Federation Platform Policy And Compliance</Link></li>
-<li><Link href="/blog/ubiquitous-connectivity-evaluation-framework">Ubiquitous Connectivity Evaluation Framework</Link></li>
+              <li><Link /blog/ai-bom-procurement-2026-6525/>Ai Bom Procurement 2026 6525</Link></li>
+<li><Link /blog/retrieval-augmented-generation-checklist-for-it-leaders/>Retrieval Augmented Generation Checklist For It Leaders</Link></li>
+<li><Link /blog/graphql-federation-platform-policy-and-compliance/>Graphql Federation Platform Policy And Compliance</Link></li>
+<li><Link /blog/ubiquitous-connectivity-evaluation-framework/>Ubiquitous Connectivity Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

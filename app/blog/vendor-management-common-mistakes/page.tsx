@@ -57,10 +57,10 @@ Leading indicators for vendor management: common mistakes: workflow completion r
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-orchestration-layer-2026-6934">Api Orchestration Layer 2026 6934</Link></li>
-<li><Link href="/blog/ai-customer-support-policy-and-compliance">Ai Customer Support Policy And Compliance</Link></li>
-<li><Link href="/blog/chaos-engineering-2026-7085">Chaos Engineering 2026 7085</Link></li>
-<li><Link href="/blog/managed-it-services-case-study">Managed It Services Case Study</Link></li>
+              <li><Link /blog/api-orchestration-layer-2026-6934/>Api Orchestration Layer 2026 6934</Link></li>
+<li><Link /blog/ai-customer-support-policy-and-compliance/>Ai Customer Support Policy And Compliance</Link></li>
+<li><Link /blog/chaos-engineering-2026-7085/>Chaos Engineering 2026 7085</Link></li>
+<li><Link /blog/managed-it-services-case-study/>Managed It Services Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

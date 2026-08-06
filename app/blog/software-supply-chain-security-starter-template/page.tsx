@@ -57,10 +57,10 @@ For software supply chain security: starter template: pick one workflow, assign 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/privacy-engineering-common-mistakes">Privacy Engineering Common Mistakes</Link></li>
-<li><Link href="/blog/ai-it-operations-automation-2026-6556">Ai It Operations Automation 2026 6556</Link></li>
-<li><Link href="/blog/cloud-networking-starter-template">Cloud Networking Starter Template</Link></li>
-<li><Link href="/blog/cloud-native-app-development-architecture-overview">Cloud Native App Development Architecture Overview</Link></li>
+              <li><Link /blog/privacy-engineering-common-mistakes/>Privacy Engineering Common Mistakes</Link></li>
+<li><Link /blog/ai-it-operations-automation-2026-6556/>Ai It Operations Automation 2026 6556</Link></li>
+<li><Link /blog/cloud-networking-starter-template/>Cloud Networking Starter Template</Link></li>
+<li><Link /blog/cloud-native-app-development-architecture-overview/>Cloud Native App Development Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

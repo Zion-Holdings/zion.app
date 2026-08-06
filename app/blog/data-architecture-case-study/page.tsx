@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-workload-protection-evaluation-framework">Cloud Workload Protection Evaluation Framework</Link></li>
-<li><Link href="/blog/cloud-finops-2026-6604">Cloud Finops 2026 6604</Link></li>
-<li><Link href="/blog/email-security-2026">Email Security 2026</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-2026-6794">Ai Autonomous Agents 2026 6794</Link></li>
+              <li><Link /blog/cloud-workload-protection-evaluation-framework/>Cloud Workload Protection Evaluation Framework</Link></li>
+<li><Link /blog/cloud-finops-2026-6604/>Cloud Finops 2026 6604</Link></li>
+<li><Link /blog/email-security-2026/>Email Security 2026</Link></li>
+<li><Link /blog/ai-autonomous-agents-2026-6794/>Ai Autonomous Agents 2026 6794</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

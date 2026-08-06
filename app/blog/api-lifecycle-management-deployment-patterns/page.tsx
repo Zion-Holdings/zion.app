@@ -54,10 +54,10 @@ If this guide matches your api lifecycle management: deployment patterns initiat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-lakehouse-pipelines-roi-and-cost-model">Ai Data Lakehouse Pipelines Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-code-review-automation-2026">Ai Code Review Automation 2026</Link></li>
-<li><Link href="/blog/process-automation-implementation-playbook">Process Automation Implementation Playbook</Link></li>
-<li><Link href="/blog/release-management-2026">Release Management 2026</Link></li>
+              <li><Link /blog/ai-data-lakehouse-pipelines-roi-and-cost-model/>Ai Data Lakehouse Pipelines Roi And Cost Model</Link></li>
+<li><Link /blog/ai-code-review-automation-2026/>Ai Code Review Automation 2026</Link></li>
+<li><Link /blog/process-automation-implementation-playbook/>Process Automation Implementation Playbook</Link></li>
+<li><Link /blog/release-management-2026/>Release Management 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

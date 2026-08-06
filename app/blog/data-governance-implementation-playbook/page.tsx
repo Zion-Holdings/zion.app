@@ -54,10 +54,10 @@ If this guide matches your data governance: implementation playbook initiative, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-email-intelligence-2026-6562">Ai Email Intelligence 2026 6562</Link></li>
-<li><Link href="/blog/token-optimization-automation-roadmap">Token Optimization Automation Roadmap</Link></li>
-<li><Link href="/blog/api-management-gateway-deployment-patterns">Api Management Gateway Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-code-review-automation-architecture-overview">Ai Code Review Automation Architecture Overview</Link></li>
+              <li><Link /blog/ai-email-intelligence-2026-6562/>Ai Email Intelligence 2026 6562</Link></li>
+<li><Link /blog/token-optimization-automation-roadmap/>Token Optimization Automation Roadmap</Link></li>
+<li><Link /blog/api-management-gateway-deployment-patterns/>Api Management Gateway Deployment Patterns</Link></li>
+<li><Link /blog/ai-code-review-automation-architecture-overview/>Ai Code Review Automation Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

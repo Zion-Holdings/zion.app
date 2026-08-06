@@ -54,10 +54,10 @@ If this guide matches your continuous delivery: common mistakes initiative, the 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-sales-forecasting-2026">Ai Sales Forecasting 2026</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-architecture-overview">Microsaas Customer Onboarding Architecture Overview</Link></li>
-<li><Link href="/blog/terraform-2026">Terraform 2026</Link></li>
-<li><Link href="/blog/ai-it-operations-case-study">Ai It Operations Case Study</Link></li>
+              <li><Link /blog/ai-sales-forecasting-2026/>Ai Sales Forecasting 2026</Link></li>
+<li><Link /blog/microsaas-customer-onboarding-architecture-overview/>Microsaas Customer Onboarding Architecture Overview</Link></li>
+<li><Link /blog/terraform-2026/>Terraform 2026</Link></li>
+<li><Link /blog/ai-it-operations-case-study/>Ai It Operations Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

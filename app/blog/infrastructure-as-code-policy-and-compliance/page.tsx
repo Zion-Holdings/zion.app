@@ -57,10 +57,10 @@ Leading indicators for infrastructure as code: policy and compliance: workflow c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-tool-builder-executive-guide">Ai Agent Tool Builder Executive Guide</Link></li>
-<li><Link href="/blog/genai-devops-cicd-implementation-playbook">Genai Devops Cicd Implementation Playbook</Link></li>
-<li><Link href="/blog/email-security-architecture-overview">Email Security Architecture Overview</Link></li>
-<li><Link href="/blog/privacy-engineering-common-mistakes">Privacy Engineering Common Mistakes</Link></li>
+              <li><Link /blog/ai-agent-tool-builder-executive-guide/>Ai Agent Tool Builder Executive Guide</Link></li>
+<li><Link /blog/genai-devops-cicd-implementation-playbook/>Genai Devops Cicd Implementation Playbook</Link></li>
+<li><Link /blog/email-security-architecture-overview/>Email Security Architecture Overview</Link></li>
+<li><Link /blog/privacy-engineering-common-mistakes/>Privacy Engineering Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

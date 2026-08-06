@@ -54,10 +54,10 @@ If this guide matches your data pipeline orchestration: common mistakes initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-qa-engineering-2026">Autonomous Qa Engineering 2026</Link></li>
-<li><Link href="/blog/finops-policy-and-compliance">Finops Policy And Compliance</Link></li>
-<li><Link href="/blog/strategic-it-planning-checklist-for-it-leaders">Strategic It Planning Checklist For It Leaders</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-starter-template">Enterprise Ai Intelligence Hub Starter Template</Link></li>
+              <li><Link /blog/autonomous-qa-engineering-2026/>Autonomous Qa Engineering 2026</Link></li>
+<li><Link /blog/finops-policy-and-compliance/>Finops Policy And Compliance</Link></li>
+<li><Link /blog/strategic-it-planning-checklist-for-it-leaders/>Strategic It Planning Checklist For It Leaders</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-starter-template/>Enterprise Ai Intelligence Hub Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

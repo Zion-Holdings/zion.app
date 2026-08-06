@@ -57,10 +57,10 @@ Leading indicators for cloud storage strategy: operations handbook: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cicd-pipeline-security-2026">Cicd Pipeline Security 2026</Link></li>
-<li><Link href="/blog/it-asset-management-case-study">It Asset Management Case Study</Link></li>
-<li><Link href="/blog/endpoint-management-2026-6820">Endpoint Management 2026 6820</Link></li>
-<li><Link href="/blog/release-management-vendor-evaluation">Release Management Vendor Evaluation</Link></li>
+              <li><Link /blog/cicd-pipeline-security-2026/>Cicd Pipeline Security 2026</Link></li>
+<li><Link /blog/it-asset-management-case-study/>It Asset Management Case Study</Link></li>
+<li><Link /blog/endpoint-management-2026-6820/>Endpoint Management 2026 6820</Link></li>
+<li><Link /blog/release-management-vendor-evaluation/>Release Management Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For cloud networking: evaluation framework: pick one workflow, assign ownership,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/retrieval-augmented-generation-case-study">Retrieval Augmented Generation Case Study</Link></li>
-<li><Link href="/blog/retrieval-augmented-generation-automation-roadmap">Retrieval Augmented Generation Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-development-acceleration-2026-6839">Ai Development Acceleration 2026 6839</Link></li>
-<li><Link href="/blog/ai-it-operations-automation-2026-6763">Ai It Operations Automation 2026 6763</Link></li>
+              <li><Link /blog/retrieval-augmented-generation-case-study/>Retrieval Augmented Generation Case Study</Link></li>
+<li><Link /blog/retrieval-augmented-generation-automation-roadmap/>Retrieval Augmented Generation Automation Roadmap</Link></li>
+<li><Link /blog/ai-development-acceleration-2026-6839/>Ai Development Acceleration 2026 6839</Link></li>
+<li><Link /blog/ai-it-operations-automation-2026-6763/>Ai It Operations Automation 2026 6763</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

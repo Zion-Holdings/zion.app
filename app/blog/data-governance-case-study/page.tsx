@@ -57,10 +57,10 @@ For data governance: case study: pick one workflow, assign ownership, define suc
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-optimizer-security-and-governance">Ai Accessibility Optimizer Security And Governance</Link></li>
-<li><Link href="/blog/database-migration-service-2026-6540">Database Migration Service 2026 6540</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-checklist-for-it-leaders">Microsaas Expense Tracker Checklist For It Leaders</Link></li>
-<li><Link href="/blog/data-modeling-roi-and-cost-model">Data Modeling Roi And Cost Model</Link></li>
+              <li><Link /blog/ai-accessibility-optimizer-security-and-governance/>Ai Accessibility Optimizer Security And Governance</Link></li>
+<li><Link /blog/database-migration-service-2026-6540/>Database Migration Service 2026 6540</Link></li>
+<li><Link /blog/microsaas-expense-tracker-checklist-for-it-leaders/>Microsaas Expense Tracker Checklist For It Leaders</Link></li>
+<li><Link /blog/data-modeling-roi-and-cost-model/>Data Modeling Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

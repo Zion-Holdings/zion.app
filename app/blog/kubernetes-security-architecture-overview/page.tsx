@@ -57,10 +57,10 @@ Leading indicators for kubernetes security: architecture overview: workflow comp
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-monetization-2026">Api Monetization 2026</Link></li>
-<li><Link href="/blog/api-orchestration-layer-vendor-evaluation">Api Orchestration Layer Vendor Evaluation</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-6991">Micro Saas Ai Customer Onboarding 2026 6991</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-2026-6539">Data Warehouse Modernization 2026 6539</Link></li>
+              <li><Link /blog/api-monetization-2026/>Api Monetization 2026</Link></li>
+<li><Link /blog/api-orchestration-layer-vendor-evaluation/>Api Orchestration Layer Vendor Evaluation</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026-6991/>Micro Saas Ai Customer Onboarding 2026 6991</Link></li>
+<li><Link /blog/data-warehouse-modernization-2026-6539/>Data Warehouse Modernization 2026 6539</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

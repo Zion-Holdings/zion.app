@@ -57,10 +57,10 @@ Leading indicators for application modernization: starter template: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/service-mesh-case-study">Service Mesh Case Study</Link></li>
-<li><Link href="/blog/api-integration-2026">Api Integration 2026</Link></li>
-<li><Link href="/blog/ai-it-operations-automation-2026-6970">Ai It Operations Automation 2026 6970</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026-7066">Ai Ad Copy Generator 2026 7066</Link></li>
+              <li><Link /blog/service-mesh-case-study/>Service Mesh Case Study</Link></li>
+<li><Link /blog/api-integration-2026/>Api Integration 2026</Link></li>
+<li><Link /blog/ai-it-operations-automation-2026-6970/>Ai It Operations Automation 2026 6970</Link></li>
+<li><Link /blog/ai-ad-copy-generator-2026-7066/>Ai Ad Copy Generator 2026 7066</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

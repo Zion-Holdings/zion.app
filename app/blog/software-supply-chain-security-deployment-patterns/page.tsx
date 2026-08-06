@@ -57,10 +57,10 @@ For software supply chain security: deployment patterns: pick one workflow, assi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/content-delivery-network-evaluation-framework">Content Delivery Network Evaluation Framework</Link></li>
-<li><Link href="/blog/servicenow-automation-evaluation-framework">Servicenow Automation Evaluation Framework</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026-6904">Managed It Services Small Business 2026 6904</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-2026">Ai Agent Safety Evaluation 2026</Link></li>
+              <li><Link /blog/content-delivery-network-evaluation-framework/>Content Delivery Network Evaluation Framework</Link></li>
+<li><Link /blog/servicenow-automation-evaluation-framework/>Servicenow Automation Evaluation Framework</Link></li>
+<li><Link /blog/managed-it-services-small-business-2026-6904/>Managed It Services Small Business 2026 6904</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-2026/>Ai Agent Safety Evaluation 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

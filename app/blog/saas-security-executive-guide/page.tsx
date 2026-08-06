@@ -57,10 +57,10 @@ For saas security: executive guide: pick one workflow, assign ownership, define 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-optimizer-2026-6858">Ai Accessibility Optimizer 2026 6858</Link></li>
-<li><Link href="/blog/edge-computing-deployment-automation-roadmap">Edge Computing Deployment Automation Roadmap</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-6819">Edge Computing Deployment 2026 6819</Link></li>
-<li><Link href="/blog/automated-ai-reporting-automation-roadmap">Automated Ai Reporting Automation Roadmap</Link></li>
+              <li><Link /blog/ai-accessibility-optimizer-2026-6858/>Ai Accessibility Optimizer 2026 6858</Link></li>
+<li><Link /blog/edge-computing-deployment-automation-roadmap/>Edge Computing Deployment Automation Roadmap</Link></li>
+<li><Link /blog/edge-computing-deployment-2026-6819/>Edge Computing Deployment 2026 6819</Link></li>
+<li><Link /blog/automated-ai-reporting-automation-roadmap/>Automated Ai Reporting Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your data pipeline orchestration: case study initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/technology-roadmap-policy-and-compliance">Technology Roadmap Policy And Compliance</Link></li>
-<li><Link href="/blog/saas-security-2026">Saas Security 2026</Link></li>
-<li><Link href="/blog/event-driven-architecture-checklist-for-it-leaders">Event Driven Architecture Checklist For It Leaders</Link></li>
-<li><Link href="/blog/accessibility-compliance-2026-6596">Accessibility Compliance 2026 6596</Link></li>
+              <li><Link /blog/technology-roadmap-policy-and-compliance/>Technology Roadmap Policy And Compliance</Link></li>
+<li><Link /blog/saas-security-2026/>Saas Security 2026</Link></li>
+<li><Link /blog/event-driven-architecture-checklist-for-it-leaders/>Event Driven Architecture Checklist For It Leaders</Link></li>
+<li><Link /blog/accessibility-compliance-2026-6596/>Accessibility Compliance 2026 6596</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your ai video analytics: roi and cost model initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-as-a-service-2026">Database As A Service 2026</Link></li>
-<li><Link href="/blog/ai-for-digital-transformation-and-change-management">Ai For Digital Transformation And Change Management</Link></li>
-<li><Link href="/blog/automation-orchestration-evaluation-framework">Automation Orchestration Evaluation Framework</Link></li>
-<li><Link href="/blog/api-security-testing-2026-6554">Api Security Testing 2026 6554</Link></li>
+              <li><Link /blog/database-as-a-service-2026/>Database As A Service 2026</Link></li>
+<li><Link /blog/ai-for-digital-transformation-and-change-management/>Ai For Digital Transformation And Change Management</Link></li>
+<li><Link /blog/automation-orchestration-evaluation-framework/>Automation Orchestration Evaluation Framework</Link></li>
+<li><Link /blog/api-security-testing-2026-6554/>Api Security Testing 2026 6554</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

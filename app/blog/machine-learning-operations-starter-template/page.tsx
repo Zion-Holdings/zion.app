@@ -54,10 +54,10 @@ If this guide matches your machine learning operations: starter template initiat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/smart-contract-audit-implementation-playbook">Smart Contract Audit Implementation Playbook</Link></li>
-<li><Link href="/blog/vector-database-checklist-for-it-leaders">Vector Database Checklist For It Leaders</Link></li>
-<li><Link href="/blog/automation-orchestration-evaluation-framework">Automation Orchestration Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026-6652">Ai Ad Copy Generator 2026 6652</Link></li>
+              <li><Link /blog/smart-contract-audit-implementation-playbook/>Smart Contract Audit Implementation Playbook</Link></li>
+<li><Link /blog/vector-database-checklist-for-it-leaders/>Vector Database Checklist For It Leaders</Link></li>
+<li><Link /blog/automation-orchestration-evaluation-framework/>Automation Orchestration Evaluation Framework</Link></li>
+<li><Link /blog/ai-ad-copy-generator-2026-6652/>Ai Ad Copy Generator 2026 6652</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

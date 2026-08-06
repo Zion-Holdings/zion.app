@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/etl-pipeline-optimization-implementation-playbook">Etl Pipeline Optimization Implementation Playbook</Link></li>
-<li><Link href="/blog/cloud-native-app-development-policy-and-compliance">Cloud Native App Development Policy And Compliance</Link></li>
-<li><Link href="/blog/cloud-migration-services-architecture-overview">Cloud Migration Services Architecture Overview</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-6610">Devops Gen Ai Cicd 2026 6610</Link></li>
+              <li><Link /blog/etl-pipeline-optimization-implementation-playbook/>Etl Pipeline Optimization Implementation Playbook</Link></li>
+<li><Link /blog/cloud-native-app-development-policy-and-compliance/>Cloud Native App Development Policy And Compliance</Link></li>
+<li><Link /blog/cloud-migration-services-architecture-overview/>Cloud Migration Services Architecture Overview</Link></li>
+<li><Link /blog/devops-gen-ai-cicd-2026-6610/>Devops Gen Ai Cicd 2026 6610</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your unified endpoint management: architecture overview in
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-native-app-development-deployment-patterns">Cloud Native App Development Deployment Patterns</Link></li>
-<li><Link href="/blog/low-code-and-no-code-ai-for-rapid-deployment">Low Code And No Code Ai For Rapid Deployment</Link></li>
-<li><Link href="/blog/ai-api-gateway-policy-and-compliance">Ai Api Gateway Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026-6655">Ai Agentic Workflows 2026 6655</Link></li>
+              <li><Link /blog/cloud-native-app-development-deployment-patterns/>Cloud Native App Development Deployment Patterns</Link></li>
+<li><Link /blog/low-code-and-no-code-ai-for-rapid-deployment/>Low Code And No Code Ai For Rapid Deployment</Link></li>
+<li><Link /blog/ai-api-gateway-policy-and-compliance/>Ai Api Gateway Policy And Compliance</Link></li>
+<li><Link /blog/ai-agentic-workflows-2026-6655/>Ai Agentic Workflows 2026 6655</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

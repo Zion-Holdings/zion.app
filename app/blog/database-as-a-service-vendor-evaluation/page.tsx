@@ -57,10 +57,10 @@ Leading indicators for database as a service: vendor evaluation: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-catalog-evaluation-framework">Data Catalog Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-video-analytics-vendor-evaluation">Ai Video Analytics Vendor Evaluation</Link></li>
-<li><Link href="/blog/cloud-networking-deployment-patterns">Cloud Networking Deployment Patterns</Link></li>
-<li><Link href="/blog/data-compliance-executive-guide">Data Compliance Executive Guide</Link></li>
+              <li><Link /blog/data-catalog-evaluation-framework/>Data Catalog Evaluation Framework</Link></li>
+<li><Link /blog/ai-video-analytics-vendor-evaluation/>Ai Video Analytics Vendor Evaluation</Link></li>
+<li><Link /blog/cloud-networking-deployment-patterns/>Cloud Networking Deployment Patterns</Link></li>
+<li><Link /blog/data-compliance-executive-guide/>Data Compliance Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

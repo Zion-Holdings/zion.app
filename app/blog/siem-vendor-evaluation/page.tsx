@@ -57,10 +57,10 @@ For siem: vendor evaluation: pick one workflow, assign ownership, define success
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-migration-services-automation-roadmap">Cloud Migration Services Automation Roadmap</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-implementation-playbook">Enterprise Backup Dr Implementation Playbook</Link></li>
-<li><Link href="/blog/graphql-federation-platform-evaluation-framework">Graphql Federation Platform Evaluation Framework</Link></li>
-<li><Link href="/blog/splunk-migration-operations-handbook">Splunk Migration Operations Handbook</Link></li>
+              <li><Link /blog/cloud-migration-services-automation-roadmap/>Cloud Migration Services Automation Roadmap</Link></li>
+<li><Link /blog/enterprise-backup-dr-implementation-playbook/>Enterprise Backup Dr Implementation Playbook</Link></li>
+<li><Link /blog/graphql-federation-platform-evaluation-framework/>Graphql Federation Platform Evaluation Framework</Link></li>
+<li><Link /blog/splunk-migration-operations-handbook/>Splunk Migration Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

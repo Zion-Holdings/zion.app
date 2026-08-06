@@ -57,10 +57,10 @@ Leading indicators for data compliance: roi and cost model: workflow completion 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-6974">Data Analytics Platform Modern Enterprise 2026 6974</Link></li>
-<li><Link href="/blog/api-integration-roi-and-cost-model">Api Integration Roi And Cost Model</Link></li>
-<li><Link href="/blog/database-migration-service-common-mistakes">Database Migration Service Common Mistakes</Link></li>
-<li><Link href="/blog/api-security-testing-case-study">Api Security Testing Case Study</Link></li>
+              <li><Link /blog/data-analytics-platform-modern-enterprise-2026-6974/>Data Analytics Platform Modern Enterprise 2026 6974</Link></li>
+<li><Link /blog/api-integration-roi-and-cost-model/>Api Integration Roi And Cost Model</Link></li>
+<li><Link /blog/database-migration-service-common-mistakes/>Database Migration Service Common Mistakes</Link></li>
+<li><Link /blog/api-security-testing-case-study/>Api Security Testing Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

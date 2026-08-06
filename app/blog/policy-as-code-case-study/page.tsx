@@ -54,10 +54,10 @@ If this guide matches your policy as code: case study initiative, the next step 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/network-automation-policy-and-compliance">Network Automation Policy And Compliance</Link></li>
-<li><Link href="/blog/cloud-governance-security-and-governance">Cloud Governance Security And Governance</Link></li>
-<li><Link href="/blog/ar-vr-enterprise-common-mistakes">Ar Vr Enterprise Common Mistakes</Link></li>
-<li><Link href="/blog/kubernetes-security-roi-and-cost-model">Kubernetes Security Roi And Cost Model</Link></li>
+              <li><Link /blog/network-automation-policy-and-compliance/>Network Automation Policy And Compliance</Link></li>
+<li><Link /blog/cloud-governance-security-and-governance/>Cloud Governance Security And Governance</Link></li>
+<li><Link /blog/ar-vr-enterprise-common-mistakes/>Ar Vr Enterprise Common Mistakes</Link></li>
+<li><Link /blog/kubernetes-security-roi-and-cost-model/>Kubernetes Security Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

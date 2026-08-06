@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-security-and-governance">Endpoint Management Security And Governance</Link></li>
-<li><Link href="/blog/digital-twin-2026">Digital Twin 2026</Link></li>
-<li><Link href="/blog/api-security-testing-evaluation-framework">Api Security Testing Evaluation Framework</Link></li>
-<li><Link href="/blog/blue-green-deployment-case-study">Blue Green Deployment Case Study</Link></li>
+              <li><Link /blog/endpoint-management-security-and-governance/>Endpoint Management Security And Governance</Link></li>
+<li><Link /blog/digital-twin-2026/>Digital Twin 2026</Link></li>
+<li><Link /blog/api-security-testing-evaluation-framework/>Api Security Testing Evaluation Framework</Link></li>
+<li><Link /blog/blue-green-deployment-case-study/>Blue Green Deployment Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

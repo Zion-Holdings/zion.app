@@ -54,10 +54,10 @@ If this guide matches your enterprise integration: roi and cost model initiative
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/smart-contract-audit-executive-guide">Smart Contract Audit Executive Guide</Link></li>
-<li><Link href="/blog/kubernetes-deployment-patterns">Kubernetes Deployment Patterns</Link></li>
-<li><Link href="/blog/data-governance-automation-roadmap">Data Governance Automation Roadmap</Link></li>
-<li><Link href="/blog/artificial-intelligence-ethics-operations-handbook">Artificial Intelligence Ethics Operations Handbook</Link></li>
+              <li><Link /blog/smart-contract-audit-executive-guide/>Smart Contract Audit Executive Guide</Link></li>
+<li><Link /blog/kubernetes-deployment-patterns/>Kubernetes Deployment Patterns</Link></li>
+<li><Link /blog/data-governance-automation-roadmap/>Data Governance Automation Roadmap</Link></li>
+<li><Link /blog/artificial-intelligence-ethics-operations-handbook/>Artificial Intelligence Ethics Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

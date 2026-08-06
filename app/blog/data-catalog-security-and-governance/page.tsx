@@ -57,10 +57,10 @@ Leading indicators for data catalog: security and governance: workflow completio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-roi-and-cost-model">Api Management Gateway Roi And Cost Model</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-common-mistakes">Cyber Threat Intelligence Common Mistakes</Link></li>
-<li><Link href="/blog/endpoint-management-2026-6544">Endpoint Management 2026 6544</Link></li>
-<li><Link href="/blog/finops-roi-and-cost-model">Finops Roi And Cost Model</Link></li>
+              <li><Link /blog/api-management-gateway-roi-and-cost-model/>Api Management Gateway Roi And Cost Model</Link></li>
+<li><Link /blog/cyber-threat-intelligence-common-mistakes/>Cyber Threat Intelligence Common Mistakes</Link></li>
+<li><Link /blog/endpoint-management-2026-6544/>Endpoint Management 2026 6544</Link></li>
+<li><Link /blog/finops-roi-and-cost-model/>Finops Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For api rate limiting: vendor evaluation: pick one workflow, assign ownership, d
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-ai-intelligence-hub-vendor-evaluation">Enterprise Ai Intelligence Hub Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-customer-onboarding-policy-and-compliance">Ai Customer Onboarding Policy And Compliance</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7058">Micro Saas Ai Expense Tracker 2026 7058</Link></li>
-<li><Link href="/blog/api-security-testing-policy-and-compliance">Api Security Testing Policy And Compliance</Link></li>
+              <li><Link /blog/enterprise-ai-intelligence-hub-vendor-evaluation/>Enterprise Ai Intelligence Hub Vendor Evaluation</Link></li>
+<li><Link /blog/ai-customer-onboarding-policy-and-compliance/>Ai Customer Onboarding Policy And Compliance</Link></li>
+<li><Link /blog/micro-saas-ai-expense-tracker-2026-7058/>Micro Saas Ai Expense Tracker 2026 7058</Link></li>
+<li><Link /blog/api-security-testing-policy-and-compliance/>Api Security Testing Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

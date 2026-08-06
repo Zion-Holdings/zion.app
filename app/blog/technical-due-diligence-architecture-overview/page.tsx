@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/accessibility-compliance-evaluation-framework">Accessibility Compliance Evaluation Framework</Link></li>
-<li><Link href="/blog/database-migration-service-case-study">Database Migration Service Case Study</Link></li>
-<li><Link href="/blog/threat-hunting-implementation-playbook">Threat Hunting Implementation Playbook</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-common-mistakes">Enterprise Ai Intelligence Hub Common Mistakes</Link></li>
+              <li><Link /blog/accessibility-compliance-evaluation-framework/>Accessibility Compliance Evaluation Framework</Link></li>
+<li><Link /blog/database-migration-service-case-study/>Database Migration Service Case Study</Link></li>
+<li><Link /blog/threat-hunting-implementation-playbook/>Threat Hunting Implementation Playbook</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-common-mistakes/>Enterprise Ai Intelligence Hub Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

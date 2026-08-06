@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-migration-services-evaluation-framework">Cloud Migration Services Evaluation Framework</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-checklist-for-it-leaders">Enterprise Backup Dr Checklist For It Leaders</Link></li>
-<li><Link href="/blog/continuous-integration-vendor-evaluation">Continuous Integration Vendor Evaluation</Link></li>
-<li><Link href="/blog/configuration-management-checklist-for-it-leaders">Configuration Management Checklist For It Leaders</Link></li>
+              <li><Link /blog/cloud-migration-services-evaluation-framework/>Cloud Migration Services Evaluation Framework</Link></li>
+<li><Link /blog/enterprise-backup-dr-checklist-for-it-leaders/>Enterprise Backup Dr Checklist For It Leaders</Link></li>
+<li><Link /blog/continuous-integration-vendor-evaluation/>Continuous Integration Vendor Evaluation</Link></li>
+<li><Link /blog/configuration-management-checklist-for-it-leaders/>Configuration Management Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

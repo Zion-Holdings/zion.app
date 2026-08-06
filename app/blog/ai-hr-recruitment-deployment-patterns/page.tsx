@@ -54,10 +54,10 @@ If this guide matches your ai hr recruitment: deployment patterns initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-2026-6958">Endpoint Management 2026 6958</Link></li>
-<li><Link href="/blog/cicd-pipeline-security-executive-guide">Cicd Pipeline Security Executive Guide</Link></li>
-<li><Link href="/blog/ai-data-backup-security-and-governance">Ai Data Backup Security And Governance</Link></li>
-<li><Link href="/blog/generative-ai-security-vendor-evaluation">Generative Ai Security Vendor Evaluation</Link></li>
+              <li><Link /blog/endpoint-management-2026-6958/>Endpoint Management 2026 6958</Link></li>
+<li><Link /blog/cicd-pipeline-security-executive-guide/>Cicd Pipeline Security Executive Guide</Link></li>
+<li><Link /blog/ai-data-backup-security-and-governance/>Ai Data Backup Security And Governance</Link></li>
+<li><Link /blog/generative-ai-security-vendor-evaluation/>Generative Ai Security Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

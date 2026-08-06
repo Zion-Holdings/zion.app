@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-support-pro-2026-6978">Ai Customer Support Pro 2026 6978</Link></li>
-<li><Link href="/blog/event-driven-architecture-2026-6823">Event Driven Architecture 2026 6823</Link></li>
-<li><Link href="/blog/event-driven-architecture-automation-roadmap">Event Driven Architecture Automation Roadmap</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026">Micro Saas Ai Customer Onboarding 2026</Link></li>
+              <li><Link /blog/ai-customer-support-pro-2026-6978/>Ai Customer Support Pro 2026 6978</Link></li>
+<li><Link /blog/event-driven-architecture-2026-6823/>Event Driven Architecture 2026 6823</Link></li>
+<li><Link /blog/event-driven-architecture-automation-roadmap/>Event Driven Architecture Automation Roadmap</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026/>Micro Saas Ai Customer Onboarding 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

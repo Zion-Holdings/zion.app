@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-rate-limiting-roi-and-cost-model">Api Rate Limiting Roi And Cost Model</Link></li>
-<li><Link href="/blog/identity-access-management-case-study">Identity Access Management Case Study</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6843">Ai Data Lakehouse Pipelines 2026 6843</Link></li>
-<li><Link href="/blog/ai-expense-tracker-evaluation-framework">Ai Expense Tracker Evaluation Framework</Link></li>
+              <li><Link /blog/api-rate-limiting-roi-and-cost-model/>Api Rate Limiting Roi And Cost Model</Link></li>
+<li><Link /blog/identity-access-management-case-study/>Identity Access Management Case Study</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-2026-6843/>Ai Data Lakehouse Pipelines 2026 6843</Link></li>
+<li><Link /blog/ai-expense-tracker-evaluation-framework/>Ai Expense Tracker Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

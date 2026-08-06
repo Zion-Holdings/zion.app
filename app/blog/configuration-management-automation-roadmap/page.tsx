@@ -54,10 +54,10 @@ If this guide matches your configuration management: automation roadmap initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-orchestration-layer-2026-6520">Api Orchestration Layer 2026 6520</Link></li>
-<li><Link href="/blog/smart-contract-audit-roi-and-cost-model">Smart Contract Audit Roi And Cost Model</Link></li>
-<li><Link href="/blog/technical-due-diligence-starter-template">Technical Due Diligence Starter Template</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-operations-handbook">Enterprise Ai Intelligence Hub Operations Handbook</Link></li>
+              <li><Link /blog/api-orchestration-layer-2026-6520/>Api Orchestration Layer 2026 6520</Link></li>
+<li><Link /blog/smart-contract-audit-roi-and-cost-model/>Smart Contract Audit Roi And Cost Model</Link></li>
+<li><Link /blog/technical-due-diligence-starter-template/>Technical Due Diligence Starter Template</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-operations-handbook/>Enterprise Ai Intelligence Hub Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your enterprise architecture: policy and compliance initia
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-documentation-policy-and-compliance">Api Documentation Policy And Compliance</Link></li>
-<li><Link href="/blog/micro-saas-ai-translation-engine-2026-6781">Micro Saas Ai Translation Engine 2026 6781</Link></li>
-<li><Link href="/blog/patch-management-2026">Patch Management 2026</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026">Cloud Migration Services 2026</Link></li>
+              <li><Link /blog/api-documentation-policy-and-compliance/>Api Documentation Policy And Compliance</Link></li>
+<li><Link /blog/micro-saas-ai-translation-engine-2026-6781/>Micro Saas Ai Translation Engine 2026 6781</Link></li>
+<li><Link /blog/patch-management-2026/>Patch Management 2026</Link></li>
+<li><Link /blog/cloud-migration-services-2026/>Cloud Migration Services 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

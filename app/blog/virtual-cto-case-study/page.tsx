@@ -57,10 +57,10 @@ For virtual cto: case study: pick one workflow, assign ownership, define success
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-expense-tracker-roi-and-cost-model">Microsaas Expense Tracker Roi And Cost Model</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-common-mistakes">Aiops Anomaly Detection Common Mistakes</Link></li>
-<li><Link href="/blog/managed-it-services-automation-roadmap">Managed It Services Automation Roadmap</Link></li>
-<li><Link href="/blog/micro-saas-ai-social-media-manager-2026-6992">Micro Saas Ai Social Media Manager 2026 6992</Link></li>
+              <li><Link /blog/microsaas-expense-tracker-roi-and-cost-model/>Microsaas Expense Tracker Roi And Cost Model</Link></li>
+<li><Link /blog/aiops-anomaly-detection-common-mistakes/>Aiops Anomaly Detection Common Mistakes</Link></li>
+<li><Link /blog/managed-it-services-automation-roadmap/>Managed It Services Automation Roadmap</Link></li>
+<li><Link /blog/micro-saas-ai-social-media-manager-2026-6992/>Micro Saas Ai Social Media Manager 2026 6992</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

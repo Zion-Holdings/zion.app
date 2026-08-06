@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devops-cicd-roi-and-cost-model">Devops Cicd Roi And Cost Model</Link></li>
-<li><Link href="/blog/edge-computing-deployment-automation-roadmap">Edge Computing Deployment Automation Roadmap</Link></li>
-<li><Link href="/blog/cloud-migration-services-vendor-evaluation">Cloud Migration Services Vendor Evaluation</Link></li>
-<li><Link href="/blog/it-consulting-evaluation-framework">It Consulting Evaluation Framework</Link></li>
+              <li><Link /blog/devops-cicd-roi-and-cost-model/>Devops Cicd Roi And Cost Model</Link></li>
+<li><Link /blog/edge-computing-deployment-automation-roadmap/>Edge Computing Deployment Automation Roadmap</Link></li>
+<li><Link /blog/cloud-migration-services-vendor-evaluation/>Cloud Migration Services Vendor Evaluation</Link></li>
+<li><Link /blog/it-consulting-evaluation-framework/>It Consulting Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

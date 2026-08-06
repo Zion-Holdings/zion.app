@@ -57,10 +57,10 @@ For service mesh: deployment patterns: pick one workflow, assign ownership, defi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/governance-risk-compliance-automation-roadmap">Governance Risk Compliance Automation Roadmap</Link></li>
-<li><Link href="/blog/incident-response-retainer-executive-guide">Incident Response Retainer Executive Guide</Link></li>
-<li><Link href="/blog/apm-application-performance-2026-6532">Apm Application Performance 2026 6532</Link></li>
-<li><Link href="/blog/cloud-finops-architecture-overview">Cloud Finops Architecture Overview</Link></li>
+              <li><Link /blog/governance-risk-compliance-automation-roadmap/>Governance Risk Compliance Automation Roadmap</Link></li>
+<li><Link /blog/incident-response-retainer-executive-guide/>Incident Response Retainer Executive Guide</Link></li>
+<li><Link /blog/apm-application-performance-2026-6532/>Apm Application Performance 2026 6532</Link></li>
+<li><Link /blog/cloud-finops-architecture-overview/>Cloud Finops Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

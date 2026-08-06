@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/aws-cost-optimization-case-study">Aws Cost Optimization Case Study</Link></li>
-<li><Link href="/blog/data-observability-operations-handbook">Data Observability Operations Handbook</Link></li>
-<li><Link href="/blog/error-budget-roi-and-cost-model">Error Budget Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-recruitment-chatbot-implementation-playbook">Ai Recruitment Chatbot Implementation Playbook</Link></li>
+              <li><Link /blog/aws-cost-optimization-case-study/>Aws Cost Optimization Case Study</Link></li>
+<li><Link /blog/data-observability-operations-handbook/>Data Observability Operations Handbook</Link></li>
+<li><Link /blog/error-budget-roi-and-cost-model/>Error Budget Roi And Cost Model</Link></li>
+<li><Link /blog/ai-recruitment-chatbot-implementation-playbook/>Ai Recruitment Chatbot Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

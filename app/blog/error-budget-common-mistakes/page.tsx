@@ -57,10 +57,10 @@ Leading indicators for error budget: common mistakes: workflow completion rate, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/strategic-it-planning-executive-guide">Strategic It Planning Executive Guide</Link></li>
-<li><Link href="/blog/cloud-migration-services-case-study">Cloud Migration Services Case Study</Link></li>
-<li><Link href="/blog/ai-for-procurement-and-vendor-management">Ai For Procurement And Vendor Management</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-architecture-overview">Ai Agentic Workflows Architecture Overview</Link></li>
+              <li><Link /blog/strategic-it-planning-executive-guide/>Strategic It Planning Executive Guide</Link></li>
+<li><Link /blog/cloud-migration-services-case-study/>Cloud Migration Services Case Study</Link></li>
+<li><Link /blog/ai-for-procurement-and-vendor-management/>Ai For Procurement And Vendor Management</Link></li>
+<li><Link /blog/ai-agentic-workflows-architecture-overview/>Ai Agentic Workflows Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

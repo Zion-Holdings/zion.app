@@ -57,10 +57,10 @@ Leading indicators for ci/cd pipeline security: executive guide: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-2026-7053">It Consulting 2026 7053</Link></li>
-<li><Link href="/blog/natural-language-processing-starter-template">Natural Language Processing Starter Template</Link></li>
-<li><Link href="/blog/network-infrastructure-2026">Network Infrastructure 2026</Link></li>
-<li><Link href="/blog/network-automation-roi-and-cost-model">Network Automation Roi And Cost Model</Link></li>
+              <li><Link /blog/it-consulting-2026-7053/>It Consulting 2026 7053</Link></li>
+<li><Link /blog/natural-language-processing-starter-template/>Natural Language Processing Starter Template</Link></li>
+<li><Link /blog/network-infrastructure-2026/>Network Infrastructure 2026</Link></li>
+<li><Link /blog/network-automation-roi-and-cost-model/>Network Automation Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

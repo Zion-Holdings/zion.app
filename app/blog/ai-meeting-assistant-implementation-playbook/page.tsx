@@ -54,10 +54,10 @@ If this guide matches your ai meeting assistant: implementation playbook initiat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/log-management-policy-and-compliance">Log Management Policy And Compliance</Link></li>
-<li><Link href="/blog/virtual-cto-roi-and-cost-model">Virtual Cto Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-data-backup-implementation-playbook">Ai Data Backup Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-starter-template">Ai Performance Monitoring Starter Template</Link></li>
+              <li><Link /blog/log-management-policy-and-compliance/>Log Management Policy And Compliance</Link></li>
+<li><Link /blog/virtual-cto-roi-and-cost-model/>Virtual Cto Roi And Cost Model</Link></li>
+<li><Link /blog/ai-data-backup-implementation-playbook/>Ai Data Backup Implementation Playbook</Link></li>
+<li><Link /blog/ai-performance-monitoring-starter-template/>Ai Performance Monitoring Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

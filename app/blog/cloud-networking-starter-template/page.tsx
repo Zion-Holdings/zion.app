@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-automation-roadmap">Cloud Finops Automation Roadmap</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-executive-guide">Autonomous Code Deployment Executive Guide</Link></li>
-<li><Link href="/blog/api-integration-2026-6599">Api Integration 2026 6599</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-6894">Graphql Federation Platform 2026 6894</Link></li>
+              <li><Link /blog/cloud-finops-automation-roadmap/>Cloud Finops Automation Roadmap</Link></li>
+<li><Link /blog/autonomous-code-deployment-executive-guide/>Autonomous Code Deployment Executive Guide</Link></li>
+<li><Link /blog/api-integration-2026-6599/>Api Integration 2026 6599</Link></li>
+<li><Link /blog/graphql-federation-platform-2026-6894/>Graphql Federation Platform 2026 6894</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For infrastructure as code: architecture overview: pick one workflow, assign own
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-2026-6948">Cloud Cost Ai Optimizer 2026 6948</Link></li>
-<li><Link href="/blog/unified-endpoint-management-implementation-playbook">Unified Endpoint Management Implementation Playbook</Link></li>
-<li><Link href="/blog/api-design-2026">Api Design 2026</Link></li>
-<li><Link href="/blog/ai-sales-forecasting-implementation-playbook">Ai Sales Forecasting Implementation Playbook</Link></li>
+              <li><Link /blog/cloud-cost-ai-optimizer-2026-6948/>Cloud Cost Ai Optimizer 2026 6948</Link></li>
+<li><Link /blog/unified-endpoint-management-implementation-playbook/>Unified Endpoint Management Implementation Playbook</Link></li>
+<li><Link /blog/api-design-2026/>Api Design 2026</Link></li>
+<li><Link /blog/ai-sales-forecasting-implementation-playbook/>Ai Sales Forecasting Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for oncall best practices: architecture overview: workflow co
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/llm-operations-executive-guide">Llm Operations Executive Guide</Link></li>
-<li><Link href="/blog/governance-risk-compliance-automation-roadmap">Governance Risk Compliance Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026-6652">Ai Ad Copy Generator 2026 6652</Link></li>
-<li><Link href="/blog/hybrid-cloud-executive-guide">Hybrid Cloud Executive Guide</Link></li>
+              <li><Link /blog/llm-operations-executive-guide/>Llm Operations Executive Guide</Link></li>
+<li><Link /blog/governance-risk-compliance-automation-roadmap/>Governance Risk Compliance Automation Roadmap</Link></li>
+<li><Link /blog/ai-ad-copy-generator-2026-6652/>Ai Ad Copy Generator 2026 6652</Link></li>
+<li><Link /blog/hybrid-cloud-executive-guide/>Hybrid Cloud Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

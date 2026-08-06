@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microservices-architecture-2026">Microservices Architecture 2026</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026-6720">Ai Accessibility Optimizer 2026 6720</Link></li>
-<li><Link href="/blog/api-management-gateway-case-study">Api Management Gateway Case Study</Link></li>
-<li><Link href="/blog/ai-for-warehousing-and-inventory-optimization">Ai For Warehousing And Inventory Optimization</Link></li>
+              <li><Link /blog/microservices-architecture-2026/>Microservices Architecture 2026</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-2026-6720/>Ai Accessibility Optimizer 2026 6720</Link></li>
+<li><Link /blog/api-management-gateway-case-study/>Api Management Gateway Case Study</Link></li>
+<li><Link /blog/ai-for-warehousing-and-inventory-optimization/>Ai For Warehousing And Inventory Optimization</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

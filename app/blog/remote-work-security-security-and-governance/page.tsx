@@ -57,10 +57,10 @@ For remote work security: security and governance: pick one workflow, assign own
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-ad-copy-generator-checklist-for-it-leaders">Ai Ad Copy Generator Checklist For It Leaders</Link></li>
-<li><Link href="/blog/5g-solutions-operations-handbook">5G Solutions Operations Handbook</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-case-study">Autonomous Qa Engineering Case Study</Link></li>
-<li><Link href="/blog/quality-assurance-policy-and-compliance">Quality Assurance Policy And Compliance</Link></li>
+              <li><Link /blog/ai-ad-copy-generator-checklist-for-it-leaders/>Ai Ad Copy Generator Checklist For It Leaders</Link></li>
+<li><Link /blog/5g-solutions-operations-handbook/>5G Solutions Operations Handbook</Link></li>
+<li><Link /blog/autonomous-qa-engineering-case-study/>Autonomous Qa Engineering Case Study</Link></li>
+<li><Link /blog/quality-assurance-policy-and-compliance/>Quality Assurance Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your servicenow automation initiative, the next step is a 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-safety-evaluation-common-mistakes">Ai Agent Safety Evaluation Common Mistakes</Link></li>
-<li><Link href="/blog/process-automation-automation-roadmap">Process Automation Automation Roadmap</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-6853">Micro Saas Ai Customer Onboarding 2026 6853</Link></li>
-<li><Link href="/blog/ai-development-acceleration-starter-template">Ai Development Acceleration Starter Template</Link></li>
+              <li><Link /blog/ai-agent-safety-evaluation-common-mistakes/>Ai Agent Safety Evaluation Common Mistakes</Link></li>
+<li><Link /blog/process-automation-automation-roadmap/>Process Automation Automation Roadmap</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026-6853/>Micro Saas Ai Customer Onboarding 2026 6853</Link></li>
+<li><Link /blog/ai-development-acceleration-starter-template/>Ai Development Acceleration Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

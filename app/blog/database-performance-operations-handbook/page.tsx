@@ -57,10 +57,10 @@ Leading indicators for database performance: operations handbook: workflow compl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cyber-threat-intelligence-2026-6952">Cyber Threat Intelligence 2026 6952</Link></li>
-<li><Link href="/blog/vector-database-executive-guide">Vector Database Executive Guide</Link></li>
-<li><Link href="/blog/kubernetes-2026">Kubernetes 2026</Link></li>
-<li><Link href="/blog/patch-management-checklist-for-it-leaders">Patch Management Checklist For It Leaders</Link></li>
+              <li><Link /blog/cyber-threat-intelligence-2026-6952/>Cyber Threat Intelligence 2026 6952</Link></li>
+<li><Link /blog/vector-database-executive-guide/>Vector Database Executive Guide</Link></li>
+<li><Link /blog/kubernetes-2026/>Kubernetes 2026</Link></li>
+<li><Link /blog/patch-management-checklist-for-it-leaders/>Patch Management Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

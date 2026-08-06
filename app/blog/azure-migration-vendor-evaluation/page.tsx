@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-ad-copy-generator-starter-template">Ai Ad Copy Generator Starter Template</Link></li>
-<li><Link href="/blog/edge-computing-deployment-policy-and-compliance">Edge Computing Deployment Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-architecture-overview">Ai Accessibility Optimizer Architecture Overview</Link></li>
-<li><Link href="/blog/ai-development-acceleration-vendor-evaluation">Ai Development Acceleration Vendor Evaluation</Link></li>
+              <li><Link /blog/ai-ad-copy-generator-starter-template/>Ai Ad Copy Generator Starter Template</Link></li>
+<li><Link /blog/edge-computing-deployment-policy-and-compliance/>Edge Computing Deployment Policy And Compliance</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-architecture-overview/>Ai Accessibility Optimizer Architecture Overview</Link></li>
+<li><Link /blog/ai-development-acceleration-vendor-evaluation/>Ai Development Acceleration Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

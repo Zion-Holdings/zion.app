@@ -57,10 +57,10 @@ For cloud storage strategy: architecture overview: pick one workflow, assign own
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-design-case-study">Api Design Case Study</Link></li>
-<li><Link href="/blog/hybrid-cloud-vendor-evaluation">Hybrid Cloud Vendor Evaluation</Link></li>
-<li><Link href="/blog/quality-assurance-evaluation-framework">Quality Assurance Evaluation Framework</Link></li>
-<li><Link href="/blog/user-behavior-analytics-executive-guide">User Behavior Analytics Executive Guide</Link></li>
+              <li><Link /blog/api-design-case-study/>Api Design Case Study</Link></li>
+<li><Link /blog/hybrid-cloud-vendor-evaluation/>Hybrid Cloud Vendor Evaluation</Link></li>
+<li><Link /blog/quality-assurance-evaluation-framework/>Quality Assurance Evaluation Framework</Link></li>
+<li><Link /blog/user-behavior-analytics-executive-guide/>User Behavior Analytics Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

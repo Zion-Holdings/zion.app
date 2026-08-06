@@ -57,10 +57,10 @@ For token optimization: implementation playbook: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-modeling-case-study">Data Modeling Case Study</Link></li>
-<li><Link href="/blog/monitoring-observability-vendor-evaluation">Monitoring Observability Vendor Evaluation</Link></li>
-<li><Link href="/blog/smart-contract-audit-policy-and-compliance">Smart Contract Audit Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-evaluation-framework">Ai Msp Security Compliance Evaluation Framework</Link></li>
+              <li><Link /blog/data-modeling-case-study/>Data Modeling Case Study</Link></li>
+<li><Link /blog/monitoring-observability-vendor-evaluation/>Monitoring Observability Vendor Evaluation</Link></li>
+<li><Link /blog/smart-contract-audit-policy-and-compliance/>Smart Contract Audit Policy And Compliance</Link></li>
+<li><Link /blog/ai-msp-security-compliance-evaluation-framework/>Ai Msp Security Compliance Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

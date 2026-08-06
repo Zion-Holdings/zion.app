@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-sales-forecasting-security-and-governance">Ai Sales Forecasting Security And Governance</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-2026-6952">Cyber Threat Intelligence 2026 6952</Link></li>
-<li><Link href="/blog/artificial-intelligence-ethics-case-study">Artificial Intelligence Ethics Case Study</Link></li>
-<li><Link href="/blog/api-rate-limiting-starter-template">Api Rate Limiting Starter Template</Link></li>
+              <li><Link /blog/ai-sales-forecasting-security-and-governance/>Ai Sales Forecasting Security And Governance</Link></li>
+<li><Link /blog/cyber-threat-intelligence-2026-6952/>Cyber Threat Intelligence 2026 6952</Link></li>
+<li><Link /blog/artificial-intelligence-ethics-case-study/>Artificial Intelligence Ethics Case Study</Link></li>
+<li><Link /blog/api-rate-limiting-starter-template/>Api Rate Limiting Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

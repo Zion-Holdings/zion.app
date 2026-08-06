@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-2026-6669">Api Management Gateway 2026 6669</Link></li>
-<li><Link href="/blog/data-architecture-implementation-playbook">Data Architecture Implementation Playbook</Link></li>
-<li><Link href="/blog/bot-detection-architecture-overview">Bot Detection Architecture Overview</Link></li>
-<li><Link href="/blog/virtual-cto-executive-guide">Virtual Cto Executive Guide</Link></li>
+              <li><Link /blog/api-management-gateway-2026-6669/>Api Management Gateway 2026 6669</Link></li>
+<li><Link /blog/data-architecture-implementation-playbook/>Data Architecture Implementation Playbook</Link></li>
+<li><Link /blog/bot-detection-architecture-overview/>Bot Detection Architecture Overview</Link></li>
+<li><Link /blog/virtual-cto-executive-guide/>Virtual Cto Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

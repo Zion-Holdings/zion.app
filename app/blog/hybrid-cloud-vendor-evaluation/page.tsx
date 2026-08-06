@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-msp-security-compliance-operations-handbook">Ai Msp Security Compliance Operations Handbook</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-evaluation-framework">Ai Autonomous Agents Evaluation Framework</Link></li>
-<li><Link href="/blog/cloud-optimization-deployment-patterns">Cloud Optimization Deployment Patterns</Link></li>
-<li><Link href="/blog/release-management-security-and-governance">Release Management Security And Governance</Link></li>
+              <li><Link /blog/ai-msp-security-compliance-operations-handbook/>Ai Msp Security Compliance Operations Handbook</Link></li>
+<li><Link /blog/ai-autonomous-agents-evaluation-framework/>Ai Autonomous Agents Evaluation Framework</Link></li>
+<li><Link /blog/cloud-optimization-deployment-patterns/>Cloud Optimization Deployment Patterns</Link></li>
+<li><Link /blog/release-management-security-and-governance/>Release Management Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

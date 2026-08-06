@@ -54,10 +54,10 @@ If this guide matches your data mesh: common mistakes initiative, the next step 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bom-procurement-2026">Ai Bom Procurement 2026</Link></li>
-<li><Link href="/blog/brand-voice-guardian-2026-7009">Brand Voice Guardian 2026 7009</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-2026-7091">Data Warehouse Modernization 2026 7091</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6552">Api Gateway Management 2026 6552</Link></li>
+              <li><Link /blog/ai-bom-procurement-2026/>Ai Bom Procurement 2026</Link></li>
+<li><Link /blog/brand-voice-guardian-2026-7009/>Brand Voice Guardian 2026 7009</Link></li>
+<li><Link /blog/data-warehouse-modernization-2026-7091/>Data Warehouse Modernization 2026 7091</Link></li>
+<li><Link /blog/api-gateway-management-2026-6552/>Api Gateway Management 2026 6552</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

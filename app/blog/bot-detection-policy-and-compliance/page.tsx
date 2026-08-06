@@ -57,10 +57,10 @@ For bot detection: policy and compliance: pick one workflow, assign ownership, d
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-ai-intelligence-hub-operations-handbook">Enterprise Ai Intelligence Hub Operations Handbook</Link></li>
-<li><Link href="/blog/ai-api-gateway-2026-6758">Ai Api Gateway 2026 6758</Link></li>
-<li><Link href="/blog/it-consulting-vendor-evaluation">It Consulting Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-for-food-and-beverage-operations">Ai For Food And Beverage Operations</Link></li>
+              <li><Link /blog/enterprise-ai-intelligence-hub-operations-handbook/>Enterprise Ai Intelligence Hub Operations Handbook</Link></li>
+<li><Link /blog/ai-api-gateway-2026-6758/>Ai Api Gateway 2026 6758</Link></li>
+<li><Link /blog/it-consulting-vendor-evaluation/>It Consulting Vendor Evaluation</Link></li>
+<li><Link /blog/ai-for-food-and-beverage-operations/>Ai For Food And Beverage Operations</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

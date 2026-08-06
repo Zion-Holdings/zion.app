@@ -54,10 +54,10 @@ If this guide matches your ai service desk: policy and compliance initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-2026-7099">Event Driven Architecture 2026 7099</Link></li>
-<li><Link href="/blog/micro-saas-ai-translation-engine-2026-6988">Micro Saas Ai Translation Engine 2026 6988</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-security-and-governance">Data Warehouse Modernization Security And Governance</Link></li>
-<li><Link href="/blog/azure-migration-deployment-patterns">Azure Migration Deployment Patterns</Link></li>
+              <li><Link /blog/event-driven-architecture-2026-7099/>Event Driven Architecture 2026 7099</Link></li>
+<li><Link /blog/micro-saas-ai-translation-engine-2026-6988/>Micro Saas Ai Translation Engine 2026 6988</Link></li>
+<li><Link /blog/data-warehouse-modernization-security-and-governance/>Data Warehouse Modernization Security And Governance</Link></li>
+<li><Link /blog/azure-migration-deployment-patterns/>Azure Migration Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

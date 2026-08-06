@@ -57,10 +57,10 @@ Leading indicators for software supply chain security: policy and compliance: wo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/artificial-intelligence-ethics-architecture-overview">Artificial Intelligence Ethics Architecture Overview</Link></li>
-<li><Link href="/blog/ai-bom-procurement-evaluation-framework">Ai Bom Procurement Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-2026">Ai Msp Security Compliance 2026</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-automation-roadmap">Ai Accessibility Auditor Automation Roadmap</Link></li>
+              <li><Link /blog/artificial-intelligence-ethics-architecture-overview/>Artificial Intelligence Ethics Architecture Overview</Link></li>
+<li><Link /blog/ai-bom-procurement-evaluation-framework/>Ai Bom Procurement Evaluation Framework</Link></li>
+<li><Link /blog/ai-msp-security-compliance-2026/>Ai Msp Security Compliance 2026</Link></li>
+<li><Link /blog/ai-accessibility-auditor-automation-roadmap/>Ai Accessibility Auditor Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

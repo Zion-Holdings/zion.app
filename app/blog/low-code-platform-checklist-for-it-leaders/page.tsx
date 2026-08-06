@@ -57,10 +57,10 @@ Leading indicators for low code platform: checklist for it leaders: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-3d-asset-generator-2026-6787">Ai 3D Asset Generator 2026 6787</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-roi-and-cost-model">Ai Msp Security Compliance Roi And Cost Model</Link></li>
-<li><Link href="/blog/incident-response-retainer-implementation-playbook">Incident Response Retainer Implementation Playbook</Link></li>
-<li><Link href="/blog/azure-migration-case-study">Azure Migration Case Study</Link></li>
+              <li><Link /blog/ai-3d-asset-generator-2026-6787/>Ai 3D Asset Generator 2026 6787</Link></li>
+<li><Link /blog/ai-msp-security-compliance-roi-and-cost-model/>Ai Msp Security Compliance Roi And Cost Model</Link></li>
+<li><Link /blog/incident-response-retainer-implementation-playbook/>Incident Response Retainer Implementation Playbook</Link></li>
+<li><Link /blog/azure-migration-case-study/>Azure Migration Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

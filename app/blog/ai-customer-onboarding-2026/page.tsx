@@ -57,10 +57,10 @@ Leading indicators for ai customer onboarding: workflow completion rate, escalat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automation-orchestration-enterprise-2026-6975">Automation Orchestration Enterprise 2026 6975</Link></li>
-<li><Link href="/blog/multimodal-ai-vision-and-language-models-in-enterprise">Multimodal Ai Vision And Language Models In Enterprise</Link></li>
-<li><Link href="/blog/database-migration-service-2026-6816">Database Migration Service 2026 6816</Link></li>
-<li><Link href="/blog/cicd-best-practices-architecture-overview">Cicd Best Practices Architecture Overview</Link></li>
+              <li><Link /blog/automation-orchestration-enterprise-2026-6975/>Automation Orchestration Enterprise 2026 6975</Link></li>
+<li><Link /blog/multimodal-ai-vision-and-language-models-in-enterprise/>Multimodal Ai Vision And Language Models In Enterprise</Link></li>
+<li><Link /blog/database-migration-service-2026-6816/>Database Migration Service 2026 6816</Link></li>
+<li><Link /blog/cicd-best-practices-architecture-overview/>Cicd Best Practices Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

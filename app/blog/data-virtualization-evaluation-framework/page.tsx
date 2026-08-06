@@ -57,10 +57,10 @@ Leading indicators for data virtualization: evaluation framework: workflow compl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-msp-security-compliance-2026-6911">Ai Msp Security Compliance 2026 6911</Link></li>
-<li><Link href="/blog/continuous-delivery-executive-guide">Continuous Delivery Executive Guide</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-2026-6515">Ai Agent Safety Evaluation 2026 6515</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-common-mistakes">Enterprise Ai Intelligence Hub Common Mistakes</Link></li>
+              <li><Link /blog/ai-msp-security-compliance-2026-6911/>Ai Msp Security Compliance 2026 6911</Link></li>
+<li><Link /blog/continuous-delivery-executive-guide/>Continuous Delivery Executive Guide</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-2026-6515/>Ai Agent Safety Evaluation 2026 6515</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-common-mistakes/>Enterprise Ai Intelligence Hub Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

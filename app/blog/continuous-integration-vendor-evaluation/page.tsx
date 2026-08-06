@@ -57,10 +57,10 @@ Leading indicators for continuous integration: vendor evaluation: workflow compl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders">Cloud Cost Ai Optimizer Checklist For It Leaders</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-6687">Graphql Federation Platform 2026 6687</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-6833">Cloud Cost Optimization Checklist 2026 6833</Link></li>
-<li><Link href="/blog/chaos-engineering-2026-6740">Chaos Engineering 2026 6740</Link></li>
+              <li><Link /blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/>Cloud Cost Ai Optimizer Checklist For It Leaders</Link></li>
+<li><Link /blog/graphql-federation-platform-2026-6687/>Graphql Federation Platform 2026 6687</Link></li>
+<li><Link /blog/cloud-cost-optimization-checklist-2026-6833/>Cloud Cost Optimization Checklist 2026 6833</Link></li>
+<li><Link /blog/chaos-engineering-2026-6740/>Chaos Engineering 2026 6740</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

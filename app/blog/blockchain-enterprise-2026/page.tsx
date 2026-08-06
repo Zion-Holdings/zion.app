@@ -57,10 +57,10 @@ Leading indicators for blockchain enterprise: workflow completion rate, escalati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-architecture-overview">Data Analytics Platform Architecture Overview</Link></li>
-<li><Link href="/blog/endpoint-management-vendor-evaluation">Endpoint Management Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-api-gateway-2026-6689">Ai Api Gateway 2026 6689</Link></li>
-<li><Link href="/blog/api-economy-policy-and-compliance">Api Economy Policy And Compliance</Link></li>
+              <li><Link /blog/data-analytics-platform-architecture-overview/>Data Analytics Platform Architecture Overview</Link></li>
+<li><Link /blog/endpoint-management-vendor-evaluation/>Endpoint Management Vendor Evaluation</Link></li>
+<li><Link /blog/ai-api-gateway-2026-6689/>Ai Api Gateway 2026 6689</Link></li>
+<li><Link /blog/api-economy-policy-and-compliance/>Api Economy Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

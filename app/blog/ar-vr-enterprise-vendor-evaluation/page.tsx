@@ -54,10 +54,10 @@ If this guide matches your ar vr enterprise: vendor evaluation initiative, the n
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/test-automation-common-mistakes">Test Automation Common Mistakes</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-6756">Graphql Federation Platform 2026 6756</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-6679">Devops Gen Ai Cicd 2026 6679</Link></li>
-<li><Link href="/blog/apm-application-performance-implementation-playbook">Apm Application Performance Implementation Playbook</Link></li>
+              <li><Link /blog/test-automation-common-mistakes/>Test Automation Common Mistakes</Link></li>
+<li><Link /blog/graphql-federation-platform-2026-6756/>Graphql Federation Platform 2026 6756</Link></li>
+<li><Link /blog/devops-gen-ai-cicd-2026-6679/>Devops Gen Ai Cicd 2026 6679</Link></li>
+<li><Link /blog/apm-application-performance-implementation-playbook/>Apm Application Performance Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

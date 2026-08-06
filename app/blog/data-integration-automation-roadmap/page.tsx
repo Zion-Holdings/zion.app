@@ -54,10 +54,10 @@ If this guide matches your data integration: automation roadmap initiative, the 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/deep-learning-deployment-patterns">Deep Learning Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-api-gateway-deployment-patterns">Ai Api Gateway Deployment Patterns</Link></li>
-<li><Link href="/blog/genai-devops-cicd-operations-handbook">Genai Devops Cicd Operations Handbook</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-2026-6936">Autonomous Code Deployment 2026 6936</Link></li>
+              <li><Link /blog/deep-learning-deployment-patterns/>Deep Learning Deployment Patterns</Link></li>
+<li><Link /blog/ai-api-gateway-deployment-patterns/>Ai Api Gateway Deployment Patterns</Link></li>
+<li><Link /blog/genai-devops-cicd-operations-handbook/>Genai Devops Cicd Operations Handbook</Link></li>
+<li><Link /blog/autonomous-code-deployment-2026-6936/>Autonomous Code Deployment 2026 6936</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

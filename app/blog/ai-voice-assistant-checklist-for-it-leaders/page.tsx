@@ -57,10 +57,10 @@ Leading indicators for ai voice assistant: checklist for it leaders: workflow co
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/genai-devops-cicd-security-and-governance">Genai Devops Cicd Security And Governance</Link></li>
-<li><Link href="/blog/test-automation-case-study">Test Automation Case Study</Link></li>
-<li><Link href="/blog/aws-cost-optimization-architecture-overview">Aws Cost Optimization Architecture Overview</Link></li>
-<li><Link href="/blog/devops-cicd-2026-6780">Devops Cicd 2026 6780</Link></li>
+              <li><Link /blog/genai-devops-cicd-security-and-governance/>Genai Devops Cicd Security And Governance</Link></li>
+<li><Link /blog/test-automation-case-study/>Test Automation Case Study</Link></li>
+<li><Link /blog/aws-cost-optimization-architecture-overview/>Aws Cost Optimization Architecture Overview</Link></li>
+<li><Link /blog/devops-cicd-2026-6780/>Devops Cicd 2026 6780</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

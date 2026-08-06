@@ -57,10 +57,10 @@ Leading indicators for blue green deployment: workflow completion rate, escalati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-security-testing-common-mistakes">Api Security Testing Common Mistakes</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-roi-and-cost-model">Ai Agentic Workflows Roi And Cost Model</Link></li>
-<li><Link href="/blog/5g-solutions-2026">5G Solutions 2026</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-6543">Edge Computing Deployment 2026 6543</Link></li>
+              <li><Link /blog/api-security-testing-common-mistakes/>Api Security Testing Common Mistakes</Link></li>
+<li><Link /blog/ai-agentic-workflows-roi-and-cost-model/>Ai Agentic Workflows Roi And Cost Model</Link></li>
+<li><Link /blog/5g-solutions-2026/>5G Solutions 2026</Link></li>
+<li><Link /blog/edge-computing-deployment-2026-6543/>Edge Computing Deployment 2026 6543</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

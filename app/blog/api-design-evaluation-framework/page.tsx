@@ -57,10 +57,10 @@ For api design: evaluation framework: pick one workflow, assign ownership, defin
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-management-executive-guide">Api Gateway Management Executive Guide</Link></li>
-<li><Link href="/blog/ai-customer-support-checklist-for-it-leaders">Ai Customer Support Checklist For It Leaders</Link></li>
-<li><Link href="/blog/vector-database-operations-handbook">Vector Database Operations Handbook</Link></li>
-<li><Link href="/blog/multi-cloud-strategy-implementation-playbook">Multi Cloud Strategy Implementation Playbook</Link></li>
+              <li><Link /blog/api-gateway-management-executive-guide/>Api Gateway Management Executive Guide</Link></li>
+<li><Link /blog/ai-customer-support-checklist-for-it-leaders/>Ai Customer Support Checklist For It Leaders</Link></li>
+<li><Link /blog/vector-database-operations-handbook/>Vector Database Operations Handbook</Link></li>
+<li><Link /blog/multi-cloud-strategy-implementation-playbook/>Multi Cloud Strategy Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for generative ai: starter template: workflow completion rate
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/product-led-growth-policy-and-compliance">Product Led Growth Policy And Compliance</Link></li>
-<li><Link href="/blog/api-performance-testing-2026-7105">Api Performance Testing 2026 7105</Link></li>
-<li><Link href="/blog/retrieval-augmented-generation-architecture-overview">Retrieval Augmented Generation Architecture Overview</Link></li>
-<li><Link href="/blog/strategic-it-planning-roi-and-cost-model">Strategic It Planning Roi And Cost Model</Link></li>
+              <li><Link /blog/product-led-growth-policy-and-compliance/>Product Led Growth Policy And Compliance</Link></li>
+<li><Link /blog/api-performance-testing-2026-7105/>Api Performance Testing 2026 7105</Link></li>
+<li><Link /blog/retrieval-augmented-generation-architecture-overview/>Retrieval Augmented Generation Architecture Overview</Link></li>
+<li><Link /blog/strategic-it-planning-roi-and-cost-model/>Strategic It Planning Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

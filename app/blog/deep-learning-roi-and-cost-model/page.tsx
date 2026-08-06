@@ -57,10 +57,10 @@ For deep learning: roi and cost model: pick one workflow, assign ownership, defi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/aiops-anomaly-detection-2026-6795">Aiops Anomaly Detection 2026 6795</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026-6789">Ai Accessibility Optimizer 2026 6789</Link></li>
-<li><Link href="/blog/devops-cicd-common-mistakes">Devops Cicd Common Mistakes</Link></li>
-<li><Link href="/blog/ai-data-backup-security-and-governance">Ai Data Backup Security And Governance</Link></li>
+              <li><Link /blog/aiops-anomaly-detection-2026-6795/>Aiops Anomaly Detection 2026 6795</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-2026-6789/>Ai Accessibility Optimizer 2026 6789</Link></li>
+<li><Link /blog/devops-cicd-common-mistakes/>Devops Cicd Common Mistakes</Link></li>
+<li><Link /blog/ai-data-backup-security-and-governance/>Ai Data Backup Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

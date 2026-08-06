@@ -54,10 +54,10 @@ If this guide matches your customer data platform: evaluation framework initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/generative-ai-security-2026">Generative Ai Security 2026</Link></li>
-<li><Link href="/blog/ai-customer-support-checklist-for-it-leaders">Ai Customer Support Checklist For It Leaders</Link></li>
-<li><Link href="/blog/edge-computing-deployment-security-and-governance">Edge Computing Deployment Security And Governance</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026-6654">Ai Agent Tool Builder 2026 6654</Link></li>
+              <li><Link /blog/generative-ai-security-2026/>Generative Ai Security 2026</Link></li>
+<li><Link /blog/ai-customer-support-checklist-for-it-leaders/>Ai Customer Support Checklist For It Leaders</Link></li>
+<li><Link /blog/edge-computing-deployment-security-and-governance/>Edge Computing Deployment Security And Governance</Link></li>
+<li><Link /blog/ai-agent-tool-builder-2026-6654/>Ai Agent Tool Builder 2026 6654</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

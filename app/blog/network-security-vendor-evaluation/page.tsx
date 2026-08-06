@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/threat-intelligence-platform-starter-template">Threat Intelligence Platform Starter Template</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-6893">Smart Contract Audit 2026 6893</Link></li>
-<li><Link href="/blog/unified-endpoint-management-implementation-playbook">Unified Endpoint Management Implementation Playbook</Link></li>
-<li><Link href="/blog/docker-security-2026">Docker Security 2026</Link></li>
+              <li><Link /blog/threat-intelligence-platform-starter-template/>Threat Intelligence Platform Starter Template</Link></li>
+<li><Link /blog/smart-contract-audit-2026-6893/>Smart Contract Audit 2026 6893</Link></li>
+<li><Link /blog/unified-endpoint-management-implementation-playbook/>Unified Endpoint Management Implementation Playbook</Link></li>
+<li><Link /blog/docker-security-2026/>Docker Security 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For network security: roi and cost model: pick one workflow, assign ownership, d
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-recruitment-chatbot-architecture-overview">Ai Recruitment Chatbot Architecture Overview</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6966">Api Gateway Management 2026 6966</Link></li>
-<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-6836">Data Analytics Platform Modern Enterprise 2026 6836</Link></li>
-<li><Link href="/blog/api-gateway-management-vendor-evaluation">Api Gateway Management Vendor Evaluation</Link></li>
+              <li><Link /blog/ai-recruitment-chatbot-architecture-overview/>Ai Recruitment Chatbot Architecture Overview</Link></li>
+<li><Link /blog/api-gateway-management-2026-6966/>Api Gateway Management 2026 6966</Link></li>
+<li><Link /blog/data-analytics-platform-modern-enterprise-2026-6836/>Data Analytics Platform Modern Enterprise 2026 6836</Link></li>
+<li><Link /blog/api-gateway-management-vendor-evaluation/>Api Gateway Management Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your sase: executive guide initiative, the next step is a 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6644">Micro Saas Ai Expense Tracker 2026 6644</Link></li>
-<li><Link href="/blog/cloud-storage-strategy-2026">Cloud Storage Strategy 2026</Link></li>
-<li><Link href="/blog/distributed-tracing-starter-template">Distributed Tracing Starter Template</Link></li>
-<li><Link href="/blog/chaos-engineering-2026-7016">Chaos Engineering 2026 7016</Link></li>
+              <li><Link /blog/micro-saas-ai-expense-tracker-2026-6644/>Micro Saas Ai Expense Tracker 2026 6644</Link></li>
+<li><Link /blog/cloud-storage-strategy-2026/>Cloud Storage Strategy 2026</Link></li>
+<li><Link /blog/distributed-tracing-starter-template/>Distributed Tracing Starter Template</Link></li>
+<li><Link /blog/chaos-engineering-2026-7016/>Chaos Engineering 2026 7016</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

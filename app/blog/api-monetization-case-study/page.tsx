@@ -57,10 +57,10 @@ Leading indicators for api monetization: case study: workflow completion rate, e
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-storage-strategy-deployment-patterns">Cloud Storage Strategy Deployment Patterns</Link></li>
-<li><Link href="/blog/it-asset-management-starter-template">It Asset Management Starter Template</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-starter-template">Etl Pipeline Optimization Starter Template</Link></li>
-<li><Link href="/blog/brand-voice-guardian-2026-6595">Brand Voice Guardian 2026 6595</Link></li>
+              <li><Link /blog/cloud-storage-strategy-deployment-patterns/>Cloud Storage Strategy Deployment Patterns</Link></li>
+<li><Link /blog/it-asset-management-starter-template/>It Asset Management Starter Template</Link></li>
+<li><Link /blog/etl-pipeline-optimization-starter-template/>Etl Pipeline Optimization Starter Template</Link></li>
+<li><Link /blog/brand-voice-guardian-2026-6595/>Brand Voice Guardian 2026 6595</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

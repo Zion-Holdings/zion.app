@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/apm-application-performance-security-and-governance">Apm Application Performance Security And Governance</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-6886">Devops Gen Ai Cicd 2026 6886</Link></li>
-<li><Link href="/blog/container-security-lifecycle-operations-handbook">Container Security Lifecycle Operations Handbook</Link></li>
-<li><Link href="/blog/api-integration-2026-7082">Api Integration 2026 7082</Link></li>
+              <li><Link /blog/apm-application-performance-security-and-governance/>Apm Application Performance Security And Governance</Link></li>
+<li><Link /blog/devops-gen-ai-cicd-2026-6886/>Devops Gen Ai Cicd 2026 6886</Link></li>
+<li><Link /blog/container-security-lifecycle-operations-handbook/>Container Security Lifecycle Operations Handbook</Link></li>
+<li><Link /blog/api-integration-2026-7082/>Api Integration 2026 7082</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

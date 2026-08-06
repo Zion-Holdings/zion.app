@@ -54,10 +54,10 @@ If this guide matches your reinforcement learning: operations handbook initiativ
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-code-review-automation-operations-handbook">Ai Code Review Automation Operations Handbook</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-deployment-patterns">Ai Performance Monitoring Deployment Patterns</Link></li>
-<li><Link href="/blog/zero-trust-architecture-starter-template">Zero Trust Architecture Starter Template</Link></li>
-<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-6783">Micro Saas Ai Hr Recruitment 2026 6783</Link></li>
+              <li><Link /blog/ai-code-review-automation-operations-handbook/>Ai Code Review Automation Operations Handbook</Link></li>
+<li><Link /blog/ai-performance-monitoring-deployment-patterns/>Ai Performance Monitoring Deployment Patterns</Link></li>
+<li><Link /blog/zero-trust-architecture-starter-template/>Zero Trust Architecture Starter Template</Link></li>
+<li><Link /blog/micro-saas-ai-hr-recruitment-2026-6783/>Micro Saas Ai Hr Recruitment 2026 6783</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your ai predictive maintenance: executive guide initiative
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/smart-contract-audit-executive-guide">Smart Contract Audit Executive Guide</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-starter-template">Ai Customer Success Churn Prevention Starter Template</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-implementation-playbook">Microsaas Hr Recruitment Implementation Playbook</Link></li>
-<li><Link href="/blog/microsaas-translation-engine-operations-handbook">Microsaas Translation Engine Operations Handbook</Link></li>
+              <li><Link /blog/smart-contract-audit-executive-guide/>Smart Contract Audit Executive Guide</Link></li>
+<li><Link /blog/ai-customer-success-churn-prevention-starter-template/>Ai Customer Success Churn Prevention Starter Template</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-implementation-playbook/>Microsaas Hr Recruitment Implementation Playbook</Link></li>
+<li><Link /blog/microsaas-translation-engine-operations-handbook/>Microsaas Translation Engine Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

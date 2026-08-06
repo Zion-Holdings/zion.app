@@ -57,10 +57,10 @@ Leading indicators for cloud workload protection: evaluation framework: workflow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-backup-starter-template">Ai Data Backup Starter Template</Link></li>
-<li><Link href="/blog/multimodal-ai-vision-and-language-models-in-enterprise">Multimodal Ai Vision And Language Models In Enterprise</Link></li>
-<li><Link href="/blog/cost-optimization-2026">Cost Optimization 2026</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-2026-6519">Aiops Anomaly Detection 2026 6519</Link></li>
+              <li><Link /blog/ai-data-backup-starter-template/>Ai Data Backup Starter Template</Link></li>
+<li><Link /blog/multimodal-ai-vision-and-language-models-in-enterprise/>Multimodal Ai Vision And Language Models In Enterprise</Link></li>
+<li><Link /blog/cost-optimization-2026/>Cost Optimization 2026</Link></li>
+<li><Link /blog/aiops-anomaly-detection-2026-6519/>Aiops Anomaly Detection 2026 6519</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

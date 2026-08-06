@@ -57,10 +57,10 @@ Leading indicators for infrastructure as code: vendor evaluation: workflow compl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/machine-learning-operations-checklist-for-it-leaders">Machine Learning Operations Checklist For It Leaders</Link></li>
-<li><Link href="/blog/it-consulting-2026-7053">It Consulting 2026 7053</Link></li>
-<li><Link href="/blog/cloud-governance-deployment-patterns">Cloud Governance Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-voice-assistant-policy-and-compliance">Ai Voice Assistant Policy And Compliance</Link></li>
+              <li><Link /blog/machine-learning-operations-checklist-for-it-leaders/>Machine Learning Operations Checklist For It Leaders</Link></li>
+<li><Link /blog/it-consulting-2026-7053/>It Consulting 2026 7053</Link></li>
+<li><Link /blog/cloud-governance-deployment-patterns/>Cloud Governance Deployment Patterns</Link></li>
+<li><Link /blog/ai-voice-assistant-policy-and-compliance/>Ai Voice Assistant Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

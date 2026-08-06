@@ -57,10 +57,10 @@ For business intelligence: common mistakes: pick one workflow, assign ownership,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-qa-engineering-deployment-patterns">Autonomous Qa Engineering Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-starter-template">Ai Agentic Workflows Starter Template</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-2026">Aiops Anomaly Detection 2026</Link></li>
-<li><Link href="/blog/policy-as-code-starter-template">Policy As Code Starter Template</Link></li>
+              <li><Link /blog/autonomous-qa-engineering-deployment-patterns/>Autonomous Qa Engineering Deployment Patterns</Link></li>
+<li><Link /blog/ai-agentic-workflows-starter-template/>Ai Agentic Workflows Starter Template</Link></li>
+<li><Link /blog/aiops-anomaly-detection-2026/>Aiops Anomaly Detection 2026</Link></li>
+<li><Link /blog/policy-as-code-starter-template/>Policy As Code Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

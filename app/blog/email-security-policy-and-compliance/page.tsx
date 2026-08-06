@@ -57,10 +57,10 @@ For email security: policy and compliance: pick one workflow, assign ownership, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-2026-6570">It Consulting 2026 6570</Link></li>
-<li><Link href="/blog/brand-voice-guardian-checklist-for-it-leaders">Brand Voice Guardian Checklist For It Leaders</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-operations-handbook">Microsaas Social Media Manager Operations Handbook</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026-6724">Ai Agentic Workflows 2026 6724</Link></li>
+              <li><Link /blog/it-consulting-2026-6570/>It Consulting 2026 6570</Link></li>
+<li><Link /blog/brand-voice-guardian-checklist-for-it-leaders/>Brand Voice Guardian Checklist For It Leaders</Link></li>
+<li><Link /blog/microsaas-social-media-manager-operations-handbook/>Microsaas Social Media Manager Operations Handbook</Link></li>
+<li><Link /blog/ai-agentic-workflows-2026-6724/>Ai Agentic Workflows 2026 6724</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

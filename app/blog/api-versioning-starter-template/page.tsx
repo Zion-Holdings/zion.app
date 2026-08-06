@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-qa-engineering-2026-7006">Autonomous Qa Engineering 2026 7006</Link></li>
-<li><Link href="/blog/genai-devops-cicd-evaluation-framework">Genai Devops Cicd Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6567">Ai Data Lakehouse Pipelines 2026 6567</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-2026-6512">Ai Accessibility Auditor 2026 6512</Link></li>
+              <li><Link /blog/autonomous-qa-engineering-2026-7006/>Autonomous Qa Engineering 2026 7006</Link></li>
+<li><Link /blog/genai-devops-cicd-evaluation-framework/>Genai Devops Cicd Evaluation Framework</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-2026-6567/>Ai Data Lakehouse Pipelines 2026 6567</Link></li>
+<li><Link /blog/ai-accessibility-auditor-2026-6512/>Ai Accessibility Auditor 2026 6512</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

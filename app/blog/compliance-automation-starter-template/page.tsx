@@ -57,10 +57,10 @@ For compliance automation: starter template: pick one workflow, assign ownership
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/terraform-implementation-playbook">Terraform Implementation Playbook</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-vendor-evaluation">Cloud Cost Optimization Vendor Evaluation</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-roi-and-cost-model">Microsaas Expense Tracker Roi And Cost Model</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-checklist-for-it-leaders">Enterprise Backup Dr Checklist For It Leaders</Link></li>
+              <li><Link /blog/terraform-implementation-playbook/>Terraform Implementation Playbook</Link></li>
+<li><Link /blog/cloud-cost-optimization-vendor-evaluation/>Cloud Cost Optimization Vendor Evaluation</Link></li>
+<li><Link /blog/microsaas-expense-tracker-roi-and-cost-model/>Microsaas Expense Tracker Roi And Cost Model</Link></li>
+<li><Link /blog/enterprise-backup-dr-checklist-for-it-leaders/>Enterprise Backup Dr Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

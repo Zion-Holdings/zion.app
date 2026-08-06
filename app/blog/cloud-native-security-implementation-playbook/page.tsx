@@ -57,10 +57,10 @@ For cloud native security: implementation playbook: pick one workflow, assign ow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-asset-management-2026">It Asset Management 2026</Link></li>
-<li><Link href="/blog/generative-ai-roi-and-cost-model">Generative Ai Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6912">Ai Data Lakehouse Pipelines 2026 6912</Link></li>
-<li><Link href="/blog/ai-sales-forecasting-case-study">Ai Sales Forecasting Case Study</Link></li>
+              <li><Link /blog/it-asset-management-2026/>It Asset Management 2026</Link></li>
+<li><Link /blog/generative-ai-roi-and-cost-model/>Generative Ai Roi And Cost Model</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-2026-6912/>Ai Data Lakehouse Pipelines 2026 6912</Link></li>
+<li><Link /blog/ai-sales-forecasting-case-study/>Ai Sales Forecasting Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For vendor management: case study: pick one workflow, assign ownership, define s
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-safety-evaluation-security-and-governance">Ai Agent Safety Evaluation Security And Governance</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-case-study">Cybersecurity For Msps Case Study</Link></li>
-<li><Link href="/blog/api-orchestration-layer-architecture-overview">Api Orchestration Layer Architecture Overview</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-2026-6795">Aiops Anomaly Detection 2026 6795</Link></li>
+              <li><Link /blog/ai-agent-safety-evaluation-security-and-governance/>Ai Agent Safety Evaluation Security And Governance</Link></li>
+<li><Link /blog/cybersecurity-for-msps-case-study/>Cybersecurity For Msps Case Study</Link></li>
+<li><Link /blog/api-orchestration-layer-architecture-overview/>Api Orchestration Layer Architecture Overview</Link></li>
+<li><Link /blog/aiops-anomaly-detection-2026-6795/>Aiops Anomaly Detection 2026 6795</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

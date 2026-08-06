@@ -57,10 +57,10 @@ Leading indicators for finops: starter template: workflow completion rate, escal
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-email-intelligence-starter-template">Ai Email Intelligence Starter Template</Link></li>
-<li><Link href="/blog/cloud-finops-security-and-governance">Cloud Finops Security And Governance</Link></li>
-<li><Link href="/blog/remote-work-security-checklist-for-it-leaders">Remote Work Security Checklist For It Leaders</Link></li>
-<li><Link href="/blog/api-gateway-security-checklist-for-it-leaders">Api Gateway Security Checklist For It Leaders</Link></li>
+              <li><Link /blog/ai-email-intelligence-starter-template/>Ai Email Intelligence Starter Template</Link></li>
+<li><Link /blog/cloud-finops-security-and-governance/>Cloud Finops Security And Governance</Link></li>
+<li><Link /blog/remote-work-security-checklist-for-it-leaders/>Remote Work Security Checklist For It Leaders</Link></li>
+<li><Link /blog/api-gateway-security-checklist-for-it-leaders/>Api Gateway Security Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

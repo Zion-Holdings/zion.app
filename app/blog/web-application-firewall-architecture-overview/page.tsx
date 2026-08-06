@@ -57,10 +57,10 @@ Leading indicators for web application firewall: architecture overview: workflow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/web-application-firewall-automation-roadmap">Web Application Firewall Automation Roadmap</Link></li>
-<li><Link href="/blog/devsecops-pipeline-automation-roadmap">Devsecops Pipeline Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-api-gateway-2026-6965">Ai Api Gateway 2026 6965</Link></li>
-<li><Link href="/blog/ai-customer-support-operations-handbook">Ai Customer Support Operations Handbook</Link></li>
+              <li><Link /blog/web-application-firewall-automation-roadmap/>Web Application Firewall Automation Roadmap</Link></li>
+<li><Link /blog/devsecops-pipeline-automation-roadmap/>Devsecops Pipeline Automation Roadmap</Link></li>
+<li><Link /blog/ai-api-gateway-2026-6965/>Ai Api Gateway 2026 6965</Link></li>
+<li><Link /blog/ai-customer-support-operations-handbook/>Ai Customer Support Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

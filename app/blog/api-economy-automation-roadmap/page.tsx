@@ -57,10 +57,10 @@ Leading indicators for api economy: automation roadmap: workflow completion rate
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agentic-workflows-2026-6862">Ai Agentic Workflows 2026 6862</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-6796">Api Orchestration Layer 2026 6796</Link></li>
-<li><Link href="/blog/cicd-pipeline-security-starter-template">Cicd Pipeline Security Starter Template</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-6648">Enterprise Ai Intelligence Hub 2026 6648</Link></li>
+              <li><Link /blog/ai-agentic-workflows-2026-6862/>Ai Agentic Workflows 2026 6862</Link></li>
+<li><Link /blog/api-orchestration-layer-2026-6796/>Api Orchestration Layer 2026 6796</Link></li>
+<li><Link /blog/cicd-pipeline-security-starter-template/>Cicd Pipeline Security Starter Template</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-2026-6648/>Enterprise Ai Intelligence Hub 2026 6648</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

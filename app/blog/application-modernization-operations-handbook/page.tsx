@@ -54,10 +54,10 @@ If this guide matches your application modernization: operations handbook initia
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-security-vendor-evaluation">Database Security Vendor Evaluation</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026-6917">Cloud Migration Services 2026 6917</Link></li>
-<li><Link href="/blog/brand-voice-guardian-case-study">Brand Voice Guardian Case Study</Link></li>
-<li><Link href="/blog/cloud-backup-2026">Cloud Backup 2026</Link></li>
+              <li><Link /blog/database-security-vendor-evaluation/>Database Security Vendor Evaluation</Link></li>
+<li><Link /blog/cloud-migration-services-2026-6917/>Cloud Migration Services 2026 6917</Link></li>
+<li><Link /blog/brand-voice-guardian-case-study/>Brand Voice Guardian Case Study</Link></li>
+<li><Link /blog/cloud-backup-2026/>Cloud Backup 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your vector database: policy and compliance initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-virtualization-policy-and-compliance">Data Virtualization Policy And Compliance</Link></li>
-<li><Link href="/blog/api-orchestration-layer-checklist-for-it-leaders">Api Orchestration Layer Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-development-acceleration-checklist-for-it-leaders">Ai Development Acceleration Checklist For It Leaders</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-7032">Graphql Federation Platform 2026 7032</Link></li>
+              <li><Link /blog/data-virtualization-policy-and-compliance/>Data Virtualization Policy And Compliance</Link></li>
+<li><Link /blog/api-orchestration-layer-checklist-for-it-leaders/>Api Orchestration Layer Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-development-acceleration-checklist-for-it-leaders/>Ai Development Acceleration Checklist For It Leaders</Link></li>
+<li><Link /blog/graphql-federation-platform-2026-7032/>Graphql Federation Platform 2026 7032</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

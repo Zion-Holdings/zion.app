@@ -57,10 +57,10 @@ Leading indicators for policy as code: architecture overview: workflow completio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-customer-onboarding-deployment-patterns">Microsaas Customer Onboarding Deployment Patterns</Link></li>
-<li><Link href="/blog/api-orchestration-layer-evaluation-framework">Api Orchestration Layer Evaluation Framework</Link></li>
-<li><Link href="/blog/micro-saas-ai-translation-engine-2026">Micro Saas Ai Translation Engine 2026</Link></li>
-<li><Link href="/blog/ai-development-acceleration-checklist-for-it-leaders">Ai Development Acceleration Checklist For It Leaders</Link></li>
+              <li><Link /blog/microsaas-customer-onboarding-deployment-patterns/>Microsaas Customer Onboarding Deployment Patterns</Link></li>
+<li><Link /blog/api-orchestration-layer-evaluation-framework/>Api Orchestration Layer Evaluation Framework</Link></li>
+<li><Link /blog/micro-saas-ai-translation-engine-2026/>Micro Saas Ai Translation Engine 2026</Link></li>
+<li><Link /blog/ai-development-acceleration-checklist-for-it-leaders/>Ai Development Acceleration Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your digital twin: roi and cost model initiative, the next
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-native-security-case-study">Cloud Native Security Case Study</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-2026-6773">Ai Msp Security Compliance 2026 6773</Link></li>
-<li><Link href="/blog/endpoint-management-2026-6820">Endpoint Management 2026 6820</Link></li>
-<li><Link href="/blog/enterprise-architecture-deployment-patterns">Enterprise Architecture Deployment Patterns</Link></li>
+              <li><Link /blog/cloud-native-security-case-study/>Cloud Native Security Case Study</Link></li>
+<li><Link /blog/ai-msp-security-compliance-2026-6773/>Ai Msp Security Compliance 2026 6773</Link></li>
+<li><Link /blog/endpoint-management-2026-6820/>Endpoint Management 2026 6820</Link></li>
+<li><Link /blog/enterprise-architecture-deployment-patterns/>Enterprise Architecture Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

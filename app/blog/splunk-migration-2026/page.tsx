@@ -54,10 +54,10 @@ If this guide matches your splunk migration initiative, the next step is a scopi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-auditor-automation-roadmap">Ai Accessibility Auditor Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-2026-6911">Ai Msp Security Compliance 2026 6911</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-policy-and-compliance">Ai Accessibility Auditor Policy And Compliance</Link></li>
-<li><Link href="/blog/api-orchestration-layer-security-and-governance">Api Orchestration Layer Security And Governance</Link></li>
+              <li><Link /blog/ai-accessibility-auditor-automation-roadmap/>Ai Accessibility Auditor Automation Roadmap</Link></li>
+<li><Link /blog/ai-msp-security-compliance-2026-6911/>Ai Msp Security Compliance 2026 6911</Link></li>
+<li><Link /blog/ai-accessibility-auditor-policy-and-compliance/>Ai Accessibility Auditor Policy And Compliance</Link></li>
+<li><Link /blog/api-orchestration-layer-security-and-governance/>Api Orchestration Layer Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

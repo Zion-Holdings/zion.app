@@ -57,10 +57,10 @@ Leading indicators for multi cloud strategy: executive guide: workflow completio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-it-operations-automation-2026-6625">Ai It Operations Automation 2026 6625</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-executive-guide">Ai Agent Safety Evaluation Executive Guide</Link></li>
-<li><Link href="/blog/docker-security-automation-roadmap">Docker Security Automation Roadmap</Link></li>
-<li><Link href="/blog/log-management-deployment-patterns">Log Management Deployment Patterns</Link></li>
+              <li><Link /blog/ai-it-operations-automation-2026-6625/>Ai It Operations Automation 2026 6625</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-executive-guide/>Ai Agent Safety Evaluation Executive Guide</Link></li>
+<li><Link /blog/docker-security-automation-roadmap/>Docker Security Automation Roadmap</Link></li>
+<li><Link /blog/log-management-deployment-patterns/>Log Management Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

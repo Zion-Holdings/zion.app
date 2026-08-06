@@ -57,10 +57,10 @@ Leading indicators for api governance: security and governance: workflow complet
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-economy-architecture-overview">Api Economy Architecture Overview</Link></li>
-<li><Link href="/blog/cloud-native-app-development-starter-template">Cloud Native App Development Starter Template</Link></li>
-<li><Link href="/blog/cloud-native-app-development-2026-7019">Cloud Native App Development 2026 7019</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-automation-roadmap">Microsaas Customer Onboarding Automation Roadmap</Link></li>
+              <li><Link /blog/api-economy-architecture-overview/>Api Economy Architecture Overview</Link></li>
+<li><Link /blog/cloud-native-app-development-starter-template/>Cloud Native App Development Starter Template</Link></li>
+<li><Link /blog/cloud-native-app-development-2026-7019/>Cloud Native App Development 2026 7019</Link></li>
+<li><Link /blog/microsaas-customer-onboarding-automation-roadmap/>Microsaas Customer Onboarding Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

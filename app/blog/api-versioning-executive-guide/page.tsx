@@ -57,10 +57,10 @@ Leading indicators for api versioning: executive guide: workflow completion rate
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-qa-engineering-2026-7006">Autonomous Qa Engineering 2026 7006</Link></li>
-<li><Link href="/blog/ai-api-gateway-2026-6620">Ai Api Gateway 2026 6620</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-2026-7097">Enterprise Backup Dr 2026 7097</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-6612">Edge Computing Deployment 2026 6612</Link></li>
+              <li><Link /blog/autonomous-qa-engineering-2026-7006/>Autonomous Qa Engineering 2026 7006</Link></li>
+<li><Link /blog/ai-api-gateway-2026-6620/>Ai Api Gateway 2026 6620</Link></li>
+<li><Link /blog/enterprise-backup-dr-2026-7097/>Enterprise Backup Dr 2026 7097</Link></li>
+<li><Link /blog/edge-computing-deployment-2026-6612/>Edge Computing Deployment 2026 6612</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

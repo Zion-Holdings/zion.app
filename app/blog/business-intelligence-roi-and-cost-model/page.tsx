@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-migration-service-2026">Database Migration Service 2026</Link></li>
-<li><Link href="/blog/apm-application-performance-checklist-for-it-leaders">Apm Application Performance Checklist For It Leaders</Link></li>
-<li><Link href="/blog/api-integration-2026-6737">Api Integration 2026 6737</Link></li>
-<li><Link href="/blog/api-orchestration-layer-architecture-overview">Api Orchestration Layer Architecture Overview</Link></li>
+              <li><Link /blog/database-migration-service-2026/>Database Migration Service 2026</Link></li>
+<li><Link /blog/apm-application-performance-checklist-for-it-leaders/>Apm Application Performance Checklist For It Leaders</Link></li>
+<li><Link /blog/api-integration-2026-6737/>Api Integration 2026 6737</Link></li>
+<li><Link /blog/api-orchestration-layer-architecture-overview/>Api Orchestration Layer Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

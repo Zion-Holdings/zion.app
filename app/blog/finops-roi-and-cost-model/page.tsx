@@ -54,10 +54,10 @@ If this guide matches your finops: roi and cost model initiative, the next step 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/container-security-lifecycle-2026-6813">Container Security Lifecycle 2026 6813</Link></li>
-<li><Link href="/blog/generative-ai-for-content-and-creative-workflows">Generative Ai For Content And Creative Workflows</Link></li>
-<li><Link href="/blog/cloud-finops-evaluation-framework">Cloud Finops Evaluation Framework</Link></li>
-<li><Link href="/blog/event-driven-architecture-executive-guide">Event Driven Architecture Executive Guide</Link></li>
+              <li><Link /blog/container-security-lifecycle-2026-6813/>Container Security Lifecycle 2026 6813</Link></li>
+<li><Link /blog/generative-ai-for-content-and-creative-workflows/>Generative Ai For Content And Creative Workflows</Link></li>
+<li><Link /blog/cloud-finops-evaluation-framework/>Cloud Finops Evaluation Framework</Link></li>
+<li><Link /blog/event-driven-architecture-executive-guide/>Event Driven Architecture Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

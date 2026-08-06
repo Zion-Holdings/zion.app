@@ -57,10 +57,10 @@ Leading indicators for cloud storage strategy: case study: workflow completion r
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-expense-tracker-implementation-playbook">Microsaas Expense Tracker Implementation Playbook</Link></li>
-<li><Link href="/blog/vendor-management-security-and-governance">Vendor Management Security And Governance</Link></li>
-<li><Link href="/blog/ai-data-backup-roi-and-cost-model">Ai Data Backup Roi And Cost Model</Link></li>
-<li><Link href="/blog/smart-contract-audit-starter-template">Smart Contract Audit Starter Template</Link></li>
+              <li><Link /blog/microsaas-expense-tracker-implementation-playbook/>Microsaas Expense Tracker Implementation Playbook</Link></li>
+<li><Link /blog/vendor-management-security-and-governance/>Vendor Management Security And Governance</Link></li>
+<li><Link /blog/ai-data-backup-roi-and-cost-model/>Ai Data Backup Roi And Cost Model</Link></li>
+<li><Link /blog/smart-contract-audit-starter-template/>Smart Contract Audit Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

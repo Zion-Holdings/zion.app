@@ -57,10 +57,10 @@ For ai sales forecasting: executive guide: pick one workflow, assign ownership, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/software-supply-chain-security-2026">Software Supply Chain Security 2026</Link></li>
-<li><Link href="/blog/apm-application-performance-security-and-governance">Apm Application Performance Security And Governance</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-2026-7071">Aiops Anomaly Detection 2026 7071</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-operations-handbook">Microsaas Expense Tracker Operations Handbook</Link></li>
+              <li><Link /blog/software-supply-chain-security-2026/>Software Supply Chain Security 2026</Link></li>
+<li><Link /blog/apm-application-performance-security-and-governance/>Apm Application Performance Security And Governance</Link></li>
+<li><Link /blog/aiops-anomaly-detection-2026-7071/>Aiops Anomaly Detection 2026 7071</Link></li>
+<li><Link /blog/microsaas-expense-tracker-operations-handbook/>Microsaas Expense Tracker Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

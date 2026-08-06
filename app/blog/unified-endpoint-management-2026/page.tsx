@@ -54,10 +54,10 @@ If this guide matches your unified endpoint management initiative, the next step
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-auditor-2026-6788">Ai Accessibility Auditor 2026 6788</Link></li>
-<li><Link href="/blog/ai-data-backup-2026">Ai Data Backup 2026</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-7040">Cloud Cost Optimization Checklist 2026 7040</Link></li>
-<li><Link href="/blog/devops-cicd-2026-6849">Devops Cicd 2026 6849</Link></li>
+              <li><Link /blog/ai-accessibility-auditor-2026-6788/>Ai Accessibility Auditor 2026 6788</Link></li>
+<li><Link /blog/ai-data-backup-2026/>Ai Data Backup 2026</Link></li>
+<li><Link /blog/cloud-cost-optimization-checklist-2026-7040/>Cloud Cost Optimization Checklist 2026 7040</Link></li>
+<li><Link /blog/devops-cicd-2026-6849/>Devops Cicd 2026 6849</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

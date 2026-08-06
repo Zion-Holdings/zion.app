@@ -57,10 +57,10 @@ Leading indicators for policy as code: checklist for it leaders: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/threat-intelligence-platform-checklist-for-it-leaders">Threat Intelligence Platform Checklist For It Leaders</Link></li>
-<li><Link href="/blog/incident-response-retainer-2026-6895">Incident Response Retainer 2026 6895</Link></li>
-<li><Link href="/blog/automation-orchestration-starter-template">Automation Orchestration Starter Template</Link></li>
-<li><Link href="/blog/cloud-finops-vendor-evaluation">Cloud Finops Vendor Evaluation</Link></li>
+              <li><Link /blog/threat-intelligence-platform-checklist-for-it-leaders/>Threat Intelligence Platform Checklist For It Leaders</Link></li>
+<li><Link /blog/incident-response-retainer-2026-6895/>Incident Response Retainer 2026 6895</Link></li>
+<li><Link /blog/automation-orchestration-starter-template/>Automation Orchestration Starter Template</Link></li>
+<li><Link /blog/cloud-finops-vendor-evaluation/>Cloud Finops Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

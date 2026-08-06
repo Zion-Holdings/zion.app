@@ -57,10 +57,10 @@ For policy as code: deployment patterns: pick one workflow, assign ownership, de
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/smart-contract-audit-2026-6617">Smart Contract Audit 2026 6617</Link></li>
-<li><Link href="/blog/event-driven-architecture-security-and-governance">Event Driven Architecture Security And Governance</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026-7042">Managed It Services Small Business 2026 7042</Link></li>
-<li><Link href="/blog/cloud-native-app-development-executive-guide">Cloud Native App Development Executive Guide</Link></li>
+              <li><Link /blog/smart-contract-audit-2026-6617/>Smart Contract Audit 2026 6617</Link></li>
+<li><Link /blog/event-driven-architecture-security-and-governance/>Event Driven Architecture Security And Governance</Link></li>
+<li><Link /blog/managed-it-services-small-business-2026-7042/>Managed It Services Small Business 2026 7042</Link></li>
+<li><Link /blog/cloud-native-app-development-executive-guide/>Cloud Native App Development Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

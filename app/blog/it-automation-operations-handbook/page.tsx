@@ -57,10 +57,10 @@ For it automation: operations handbook: pick one workflow, assign ownership, def
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/terraform-2026">Terraform 2026</Link></li>
-<li><Link href="/blog/technology-roadmap-starter-template">Technology Roadmap Starter Template</Link></li>
-<li><Link href="/blog/prompt-engineering-common-mistakes">Prompt Engineering Common Mistakes</Link></li>
-<li><Link href="/blog/database-performance-security-and-governance">Database Performance Security And Governance</Link></li>
+              <li><Link /blog/terraform-2026/>Terraform 2026</Link></li>
+<li><Link /blog/technology-roadmap-starter-template/>Technology Roadmap Starter Template</Link></li>
+<li><Link /blog/prompt-engineering-common-mistakes/>Prompt Engineering Common Mistakes</Link></li>
+<li><Link /blog/database-performance-security-and-governance/>Database Performance Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

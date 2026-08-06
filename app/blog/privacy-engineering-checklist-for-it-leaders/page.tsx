@@ -57,10 +57,10 @@ Leading indicators for privacy engineering: checklist for it leaders: workflow c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-deployment-patterns">Ai Observability Deployment Patterns</Link></li>
-<li><Link href="/blog/api-design-executive-guide">Api Design Executive Guide</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026-6513">Ai Accessibility Optimizer 2026 6513</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-implementation-playbook">Autonomous Code Deployment Implementation Playbook</Link></li>
+              <li><Link /blog/ai-observability-deployment-patterns/>Ai Observability Deployment Patterns</Link></li>
+<li><Link /blog/api-design-executive-guide/>Api Design Executive Guide</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-2026-6513/>Ai Accessibility Optimizer 2026 6513</Link></li>
+<li><Link /blog/autonomous-code-deployment-implementation-playbook/>Autonomous Code Deployment Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your disaster recovery: executive guide initiative, the ne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-auditor-2026-6650">Ai Accessibility Auditor 2026 6650</Link></li>
-<li><Link href="/blog/edge-computing-deployment-operations-handbook">Edge Computing Deployment Operations Handbook</Link></li>
-<li><Link href="/blog/golang-microservices-policy-and-compliance">Golang Microservices Policy And Compliance</Link></li>
-<li><Link href="/blog/continuous-integration-2026">Continuous Integration 2026</Link></li>
+              <li><Link /blog/ai-accessibility-auditor-2026-6650/>Ai Accessibility Auditor 2026 6650</Link></li>
+<li><Link /blog/edge-computing-deployment-operations-handbook/>Edge Computing Deployment Operations Handbook</Link></li>
+<li><Link /blog/golang-microservices-policy-and-compliance/>Golang Microservices Policy And Compliance</Link></li>
+<li><Link /blog/continuous-integration-2026/>Continuous Integration 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

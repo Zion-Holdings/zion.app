@@ -54,10 +54,10 @@ If this guide matches your ai workflow automation: deployment patterns initiativ
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/release-management-operations-handbook">Release Management Operations Handbook</Link></li>
-<li><Link href="/blog/azure-migration-operations-handbook">Azure Migration Operations Handbook</Link></li>
-<li><Link href="/blog/cloud-backup-roi-and-cost-model">Cloud Backup Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-executive-guide">Ai Bdr Sdr Executive Guide</Link></li>
+              <li><Link /blog/release-management-operations-handbook/>Release Management Operations Handbook</Link></li>
+<li><Link /blog/azure-migration-operations-handbook/>Azure Migration Operations Handbook</Link></li>
+<li><Link /blog/cloud-backup-roi-and-cost-model/>Cloud Backup Roi And Cost Model</Link></li>
+<li><Link /blog/ai-bdr-sdr-executive-guide/>Ai Bdr Sdr Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

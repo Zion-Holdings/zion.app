@@ -57,10 +57,10 @@ Leading indicators for infrastructure monitoring: operations handbook: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/managed-detection-response-roi-and-cost-model">Managed Detection Response Roi And Cost Model</Link></li>
-<li><Link href="/blog/penetration-testing-common-mistakes">Penetration Testing Common Mistakes</Link></li>
-<li><Link href="/blog/llm-operations-2026">Llm Operations 2026</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-automation-roadmap">Ai Customer Success Churn Prevention Automation Roadmap</Link></li>
+              <li><Link /blog/managed-detection-response-roi-and-cost-model/>Managed Detection Response Roi And Cost Model</Link></li>
+<li><Link /blog/penetration-testing-common-mistakes/>Penetration Testing Common Mistakes</Link></li>
+<li><Link /blog/llm-operations-2026/>Llm Operations 2026</Link></li>
+<li><Link /blog/ai-customer-success-churn-prevention-automation-roadmap/>Ai Customer Success Churn Prevention Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

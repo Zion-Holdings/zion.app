@@ -54,10 +54,10 @@ If this guide matches your docker security initiative, the next step is a scopin
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-success-churn-2026-6844">Ai Customer Success Churn 2026 6844</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-executive-guide">Aiops Anomaly Detection Executive Guide</Link></li>
-<li><Link href="/blog/graphql-federation-platform-security-and-governance">Graphql Federation Platform Security And Governance</Link></li>
-<li><Link href="/blog/api-monetization-2026">Api Monetization 2026</Link></li>
+              <li><Link /blog/ai-customer-success-churn-2026-6844/>Ai Customer Success Churn 2026 6844</Link></li>
+<li><Link /blog/aiops-anomaly-detection-executive-guide/>Aiops Anomaly Detection Executive Guide</Link></li>
+<li><Link /blog/graphql-federation-platform-security-and-governance/>Graphql Federation Platform Security And Governance</Link></li>
+<li><Link /blog/api-monetization-2026/>Api Monetization 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

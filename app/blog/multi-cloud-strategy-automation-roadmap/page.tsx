@@ -57,10 +57,10 @@ For multi cloud strategy: automation roadmap: pick one workflow, assign ownershi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/managed-detection-response-executive-guide">Managed Detection Response Executive Guide</Link></li>
-<li><Link href="/blog/micro-saas-ai-translation-engine-2026-6781">Micro Saas Ai Translation Engine 2026 6781</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-operations-handbook">Ai 3D Asset Generator Operations Handbook</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-operations-handbook">Enterprise Backup Dr Operations Handbook</Link></li>
+              <li><Link /blog/managed-detection-response-executive-guide/>Managed Detection Response Executive Guide</Link></li>
+<li><Link /blog/micro-saas-ai-translation-engine-2026-6781/>Micro Saas Ai Translation Engine 2026 6781</Link></li>
+<li><Link /blog/ai-3d-asset-generator-operations-handbook/>Ai 3D Asset Generator Operations Handbook</Link></li>
+<li><Link /blog/enterprise-backup-dr-operations-handbook/>Enterprise Backup Dr Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

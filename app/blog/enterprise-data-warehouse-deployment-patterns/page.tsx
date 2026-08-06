@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/static-application-security-testing-common-mistakes">Static Application Security Testing Common Mistakes</Link></li>
-<li><Link href="/blog/ai-it-operations-vendor-evaluation">Ai It Operations Vendor Evaluation</Link></li>
-<li><Link href="/blog/token-optimization-starter-template">Token Optimization Starter Template</Link></li>
-<li><Link href="/blog/ai-customer-support-operations-handbook">Ai Customer Support Operations Handbook</Link></li>
+              <li><Link /blog/static-application-security-testing-common-mistakes/>Static Application Security Testing Common Mistakes</Link></li>
+<li><Link /blog/ai-it-operations-vendor-evaluation/>Ai It Operations Vendor Evaluation</Link></li>
+<li><Link /blog/token-optimization-starter-template/>Token Optimization Starter Template</Link></li>
+<li><Link /blog/ai-customer-support-operations-handbook/>Ai Customer Support Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

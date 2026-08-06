@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/artificial-intelligence-ethics-operations-handbook">Artificial Intelligence Ethics Operations Handbook</Link></li>
-<li><Link href="/blog/microservices-security-starter-template">Microservices Security Starter Template</Link></li>
-<li><Link href="/blog/ai-expense-tracker-vendor-evaluation">Ai Expense Tracker Vendor Evaluation</Link></li>
-<li><Link href="/blog/incident-management-implementation-playbook">Incident Management Implementation Playbook</Link></li>
+              <li><Link /blog/artificial-intelligence-ethics-operations-handbook/>Artificial Intelligence Ethics Operations Handbook</Link></li>
+<li><Link /blog/microservices-security-starter-template/>Microservices Security Starter Template</Link></li>
+<li><Link /blog/ai-expense-tracker-vendor-evaluation/>Ai Expense Tracker Vendor Evaluation</Link></li>
+<li><Link /blog/incident-management-implementation-playbook/>Incident Management Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

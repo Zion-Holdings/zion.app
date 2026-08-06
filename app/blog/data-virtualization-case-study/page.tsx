@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-migration-service-2026-6885">Database Migration Service 2026 6885</Link></li>
-<li><Link href="/blog/enterprise-architecture-security-and-governance">Enterprise Architecture Security And Governance</Link></li>
-<li><Link href="/blog/api-performance-testing-starter-template">Api Performance Testing Starter Template</Link></li>
-<li><Link href="/blog/database-security-vendor-evaluation">Database Security Vendor Evaluation</Link></li>
+              <li><Link /blog/database-migration-service-2026-6885/>Database Migration Service 2026 6885</Link></li>
+<li><Link /blog/enterprise-architecture-security-and-governance/>Enterprise Architecture Security And Governance</Link></li>
+<li><Link /blog/api-performance-testing-starter-template/>Api Performance Testing Starter Template</Link></li>
+<li><Link /blog/database-security-vendor-evaluation/>Database Security Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

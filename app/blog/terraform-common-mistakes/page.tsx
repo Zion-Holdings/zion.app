@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-backup-dr-automation-roadmap">Enterprise Backup Dr Automation Roadmap</Link></li>
-<li><Link href="/blog/event-driven-architecture-architecture-overview">Event Driven Architecture Architecture Overview</Link></li>
-<li><Link href="/blog/5g-solutions-roi-and-cost-model">5G Solutions Roi And Cost Model</Link></li>
-<li><Link href="/blog/release-management-evaluation-framework">Release Management Evaluation Framework</Link></li>
+              <li><Link /blog/enterprise-backup-dr-automation-roadmap/>Enterprise Backup Dr Automation Roadmap</Link></li>
+<li><Link /blog/event-driven-architecture-architecture-overview/>Event Driven Architecture Architecture Overview</Link></li>
+<li><Link /blog/5g-solutions-roi-and-cost-model/>5G Solutions Roi And Cost Model</Link></li>
+<li><Link /blog/release-management-evaluation-framework/>Release Management Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

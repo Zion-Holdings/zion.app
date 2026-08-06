@@ -54,10 +54,10 @@ If this guide matches your voice biometrics: evaluation framework initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-backup-dr-checklist-for-it-leaders">Enterprise Backup Dr Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-api-gateway-2026">Ai Api Gateway 2026</Link></li>
-<li><Link href="/blog/machine-learning-engineering-policy-and-compliance">Machine Learning Engineering Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-for-real-estate-and-property-management">Ai For Real Estate And Property Management</Link></li>
+              <li><Link /blog/enterprise-backup-dr-checklist-for-it-leaders/>Enterprise Backup Dr Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-api-gateway-2026/>Ai Api Gateway 2026</Link></li>
+<li><Link /blog/machine-learning-engineering-policy-and-compliance/>Machine Learning Engineering Policy And Compliance</Link></li>
+<li><Link /blog/ai-for-real-estate-and-property-management/>Ai For Real Estate And Property Management</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

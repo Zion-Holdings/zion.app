@@ -57,10 +57,10 @@ Leading indicators for retrieval augmented generation: executive guide: workflow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-native-app-development-2026-6743">Cloud Native App Development 2026 6743</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-deployment-patterns">Ai Accessibility Auditor Deployment Patterns</Link></li>
-<li><Link href="/blog/digital-twin-2026">Digital Twin 2026</Link></li>
-<li><Link href="/blog/api-governance-evaluation-framework">Api Governance Evaluation Framework</Link></li>
+              <li><Link /blog/cloud-native-app-development-2026-6743/>Cloud Native App Development 2026 6743</Link></li>
+<li><Link /blog/ai-accessibility-auditor-deployment-patterns/>Ai Accessibility Auditor Deployment Patterns</Link></li>
+<li><Link /blog/digital-twin-2026/>Digital Twin 2026</Link></li>
+<li><Link /blog/api-governance-evaluation-framework/>Api Governance Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-2026-6876">Api Management Gateway 2026 6876</Link></li>
-<li><Link href="/blog/ai-security-analytics-case-study">Ai Security Analytics Case Study</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-common-mistakes">Ai Agent Tool Builder Common Mistakes</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026-7055">Cloud Migration Services 2026 7055</Link></li>
+              <li><Link /blog/api-management-gateway-2026-6876/>Api Management Gateway 2026 6876</Link></li>
+<li><Link /blog/ai-security-analytics-case-study/>Ai Security Analytics Case Study</Link></li>
+<li><Link /blog/ai-agent-tool-builder-common-mistakes/>Ai Agent Tool Builder Common Mistakes</Link></li>
+<li><Link /blog/cloud-migration-services-2026-7055/>Cloud Migration Services 2026 7055</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your governance risk compliance: implementation playbook i
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-asset-management-roi-and-cost-model">It Asset Management Roi And Cost Model</Link></li>
-<li><Link href="/blog/configuration-management-executive-guide">Configuration Management Executive Guide</Link></li>
-<li><Link href="/blog/5g-solutions-checklist-for-it-leaders">5G Solutions Checklist For It Leaders</Link></li>
-<li><Link href="/blog/technology-roadmap-2026">Technology Roadmap 2026</Link></li>
+              <li><Link /blog/it-asset-management-roi-and-cost-model/>It Asset Management Roi And Cost Model</Link></li>
+<li><Link /blog/configuration-management-executive-guide/>Configuration Management Executive Guide</Link></li>
+<li><Link /blog/5g-solutions-checklist-for-it-leaders/>5G Solutions Checklist For It Leaders</Link></li>
+<li><Link /blog/technology-roadmap-2026/>Technology Roadmap 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

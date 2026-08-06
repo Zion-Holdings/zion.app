@@ -57,10 +57,10 @@ For business intelligence: pick one workflow, assign ownership, define success m
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-security-testing-executive-guide">Api Security Testing Executive Guide</Link></li>
-<li><Link href="/blog/enterprise-service-bus-checklist-for-it-leaders">Enterprise Service Bus Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cloud-finops-2026-7087">Cloud Finops 2026 7087</Link></li>
-<li><Link href="/blog/chaos-engineering-2026-6878">Chaos Engineering 2026 6878</Link></li>
+              <li><Link /blog/api-security-testing-executive-guide/>Api Security Testing Executive Guide</Link></li>
+<li><Link /blog/enterprise-service-bus-checklist-for-it-leaders/>Enterprise Service Bus Checklist For It Leaders</Link></li>
+<li><Link /blog/cloud-finops-2026-7087/>Cloud Finops 2026 7087</Link></li>
+<li><Link /blog/chaos-engineering-2026-6878/>Chaos Engineering 2026 6878</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

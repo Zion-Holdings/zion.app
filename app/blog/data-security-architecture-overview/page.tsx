@@ -57,10 +57,10 @@ Leading indicators for data security: architecture overview: workflow completion
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-security-testing-starter-template">Api Security Testing Starter Template</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-6865">Api Orchestration Layer 2026 6865</Link></li>
-<li><Link href="/blog/automation-orchestration-evaluation-framework">Automation Orchestration Evaluation Framework</Link></li>
-<li><Link href="/blog/devsecops-pipeline-roi-and-cost-model">Devsecops Pipeline Roi And Cost Model</Link></li>
+              <li><Link /blog/api-security-testing-starter-template/>Api Security Testing Starter Template</Link></li>
+<li><Link /blog/api-orchestration-layer-2026-6865/>Api Orchestration Layer 2026 6865</Link></li>
+<li><Link /blog/automation-orchestration-evaluation-framework/>Automation Orchestration Evaluation Framework</Link></li>
+<li><Link /blog/devsecops-pipeline-roi-and-cost-model/>Devsecops Pipeline Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

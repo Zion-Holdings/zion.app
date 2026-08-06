@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-economy-vendor-evaluation">Api Economy Vendor Evaluation</Link></li>
-<li><Link href="/blog/api-gateway-management-implementation-playbook">Api Gateway Management Implementation Playbook</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-7012">Api Gateway Management 2026 7012</Link></li>
-<li><Link href="/blog/incident-response-retainer-2026-6757">Incident Response Retainer 2026 6757</Link></li>
+              <li><Link /blog/api-economy-vendor-evaluation/>Api Economy Vendor Evaluation</Link></li>
+<li><Link /blog/api-gateway-management-implementation-playbook/>Api Gateway Management Implementation Playbook</Link></li>
+<li><Link /blog/api-gateway-management-2026-7012/>Api Gateway Management 2026 7012</Link></li>
+<li><Link /blog/incident-response-retainer-2026-6757/>Incident Response Retainer 2026 6757</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

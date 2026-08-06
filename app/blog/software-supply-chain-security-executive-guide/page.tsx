@@ -57,10 +57,10 @@ Leading indicators for software supply chain security: executive guide: workflow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/network-infrastructure-2026-6778">Network Infrastructure 2026 6778</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-deployment-patterns">Cyber Threat Intelligence Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-risk-assessment-security-and-governance">Ai Risk Assessment Security And Governance</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026-6997">Ai Ad Copy Generator 2026 6997</Link></li>
+              <li><Link /blog/network-infrastructure-2026-6778/>Network Infrastructure 2026 6778</Link></li>
+<li><Link /blog/cyber-threat-intelligence-deployment-patterns/>Cyber Threat Intelligence Deployment Patterns</Link></li>
+<li><Link /blog/ai-risk-assessment-security-and-governance/>Ai Risk Assessment Security And Governance</Link></li>
+<li><Link /blog/ai-ad-copy-generator-2026-6997/>Ai Ad Copy Generator 2026 6997</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

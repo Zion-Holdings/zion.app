@@ -54,10 +54,10 @@ If this guide matches your email security: automation roadmap initiative, the ne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-development-acceleration-executive-guide">Ai Development Acceleration Executive Guide</Link></li>
-<li><Link href="/blog/azure-migration-vendor-evaluation">Azure Migration Vendor Evaluation</Link></li>
-<li><Link href="/blog/disaster-recovery-operations-handbook">Disaster Recovery Operations Handbook</Link></li>
-<li><Link href="/blog/llm-operations-security-and-governance">Llm Operations Security And Governance</Link></li>
+              <li><Link /blog/ai-development-acceleration-executive-guide/>Ai Development Acceleration Executive Guide</Link></li>
+<li><Link /blog/azure-migration-vendor-evaluation/>Azure Migration Vendor Evaluation</Link></li>
+<li><Link /blog/disaster-recovery-operations-handbook/>Disaster Recovery Operations Handbook</Link></li>
+<li><Link /blog/llm-operations-security-and-governance/>Llm Operations Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

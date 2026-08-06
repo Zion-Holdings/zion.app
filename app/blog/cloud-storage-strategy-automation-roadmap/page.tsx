@@ -57,10 +57,10 @@ For cloud storage strategy: automation roadmap: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/container-security-lifecycle-2026-6537">Container Security Lifecycle 2026 6537</Link></li>
-<li><Link href="/blog/devops-cicd-roi-and-cost-model">Devops Cicd Roi And Cost Model</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-case-study">Cybersecurity For Msps Case Study</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-roi-and-cost-model">Aiops Anomaly Detection Roi And Cost Model</Link></li>
+              <li><Link /blog/container-security-lifecycle-2026-6537/>Container Security Lifecycle 2026 6537</Link></li>
+<li><Link /blog/devops-cicd-roi-and-cost-model/>Devops Cicd Roi And Cost Model</Link></li>
+<li><Link /blog/cybersecurity-for-msps-case-study/>Cybersecurity For Msps Case Study</Link></li>
+<li><Link /blog/aiops-anomaly-detection-roi-and-cost-model/>Aiops Anomaly Detection Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

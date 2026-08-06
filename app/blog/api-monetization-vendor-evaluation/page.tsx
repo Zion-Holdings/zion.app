@@ -54,10 +54,10 @@ If this guide matches your api monetization: vendor evaluation initiative, the n
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-warehouse-modernization-2026-6953">Data Warehouse Modernization 2026 6953</Link></li>
-<li><Link href="/blog/edge-computing-implementation-playbook">Edge Computing Implementation Playbook</Link></li>
-<li><Link href="/blog/api-integration-2026-6875">Api Integration 2026 6875</Link></li>
-<li><Link href="/blog/ai-observability-security-and-governance">Ai Observability Security And Governance</Link></li>
+              <li><Link /blog/data-warehouse-modernization-2026-6953/>Data Warehouse Modernization 2026 6953</Link></li>
+<li><Link /blog/edge-computing-implementation-playbook/>Edge Computing Implementation Playbook</Link></li>
+<li><Link /blog/api-integration-2026-6875/>Api Integration 2026 6875</Link></li>
+<li><Link /blog/ai-observability-security-and-governance/>Ai Observability Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

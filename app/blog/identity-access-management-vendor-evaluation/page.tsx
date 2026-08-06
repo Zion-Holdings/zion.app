@@ -54,10 +54,10 @@ If this guide matches your identity access management: vendor evaluation initiat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-migration-service-implementation-playbook">Database Migration Service Implementation Playbook</Link></li>
-<li><Link href="/blog/devsecops-pipeline-case-study">Devsecops Pipeline Case Study</Link></li>
-<li><Link href="/blog/token-optimization-starter-template">Token Optimization Starter Template</Link></li>
-<li><Link href="/blog/ai-expense-tracker-evaluation-framework">Ai Expense Tracker Evaluation Framework</Link></li>
+              <li><Link /blog/database-migration-service-implementation-playbook/>Database Migration Service Implementation Playbook</Link></li>
+<li><Link /blog/devsecops-pipeline-case-study/>Devsecops Pipeline Case Study</Link></li>
+<li><Link /blog/token-optimization-starter-template/>Token Optimization Starter Template</Link></li>
+<li><Link /blog/ai-expense-tracker-evaluation-framework/>Ai Expense Tracker Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

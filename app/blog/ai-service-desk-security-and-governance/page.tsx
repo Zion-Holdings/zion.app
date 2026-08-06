@@ -57,10 +57,10 @@ For ai service desk: security and governance: pick one workflow, assign ownershi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-auditor-2026-6788">Ai Accessibility Auditor 2026 6788</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-operations-handbook">Autonomous Qa Engineering Operations Handbook</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-2026-6684">Etl Pipeline Optimization 2026 6684</Link></li>
-<li><Link href="/blog/token-optimization-security-and-governance">Token Optimization Security And Governance</Link></li>
+              <li><Link /blog/ai-accessibility-auditor-2026-6788/>Ai Accessibility Auditor 2026 6788</Link></li>
+<li><Link /blog/autonomous-qa-engineering-operations-handbook/>Autonomous Qa Engineering Operations Handbook</Link></li>
+<li><Link /blog/etl-pipeline-optimization-2026-6684/>Etl Pipeline Optimization 2026 6684</Link></li>
+<li><Link /blog/token-optimization-security-and-governance/>Token Optimization Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for user behavior analytics: executive guide: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-ad-copy-generator-2026-6721">Ai Ad Copy Generator 2026 6721</Link></li>
-<li><Link href="/blog/ai-email-intelligence-2026-6907">Ai Email Intelligence 2026 6907</Link></li>
-<li><Link href="/blog/user-behavior-analytics-implementation-playbook">User Behavior Analytics Implementation Playbook</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-checklist-for-it-leaders">Cyber Threat Intelligence Checklist For It Leaders</Link></li>
+              <li><Link /blog/ai-ad-copy-generator-2026-6721/>Ai Ad Copy Generator 2026 6721</Link></li>
+<li><Link /blog/ai-email-intelligence-2026-6907/>Ai Email Intelligence 2026 6907</Link></li>
+<li><Link /blog/user-behavior-analytics-implementation-playbook/>User Behavior Analytics Implementation Playbook</Link></li>
+<li><Link /blog/cyber-threat-intelligence-checklist-for-it-leaders/>Cyber Threat Intelligence Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For data observability: security and governance: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/chaos-engineering-security-and-governance">Chaos Engineering Security And Governance</Link></li>
-<li><Link href="/blog/edge-computing-deployment-evaluation-framework">Edge Computing Deployment Evaluation Framework</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-deployment-patterns">Aiops Anomaly Detection Deployment Patterns</Link></li>
-<li><Link href="/blog/business-intelligence-deployment-patterns">Business Intelligence Deployment Patterns</Link></li>
+              <li><Link /blog/chaos-engineering-security-and-governance/>Chaos Engineering Security And Governance</Link></li>
+<li><Link /blog/edge-computing-deployment-evaluation-framework/>Edge Computing Deployment Evaluation Framework</Link></li>
+<li><Link /blog/aiops-anomaly-detection-deployment-patterns/>Aiops Anomaly Detection Deployment Patterns</Link></li>
+<li><Link /blog/business-intelligence-deployment-patterns/>Business Intelligence Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

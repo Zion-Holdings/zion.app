@@ -57,10 +57,10 @@ Leading indicators for ai meeting assistant: workflow completion rate, escalatio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-customer-onboarding-roi-and-cost-model">Microsaas Customer Onboarding Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-api-gateway-policy-and-compliance">Ai Api Gateway Policy And Compliance</Link></li>
-<li><Link href="/blog/cloud-native-app-development-2026-6950">Cloud Native App Development 2026 6950</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-automation-roadmap">Microsaas Customer Onboarding Automation Roadmap</Link></li>
+              <li><Link /blog/microsaas-customer-onboarding-roi-and-cost-model/>Microsaas Customer Onboarding Roi And Cost Model</Link></li>
+<li><Link /blog/ai-api-gateway-policy-and-compliance/>Ai Api Gateway Policy And Compliance</Link></li>
+<li><Link /blog/cloud-native-app-development-2026-6950/>Cloud Native App Development 2026 6950</Link></li>
+<li><Link /blog/microsaas-customer-onboarding-automation-roadmap/>Microsaas Customer Onboarding Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

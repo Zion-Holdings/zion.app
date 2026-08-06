@@ -54,10 +54,10 @@ If this guide matches your network automation: executive guide initiative, the n
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cicd-pipeline-security-starter-template">Cicd Pipeline Security Starter Template</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026-6859">Ai Ad Copy Generator 2026 6859</Link></li>
-<li><Link href="/blog/api-management-gateway-evaluation-framework">Api Management Gateway Evaluation Framework</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-executive-guide">Cyber Threat Intelligence Executive Guide</Link></li>
+              <li><Link /blog/cicd-pipeline-security-starter-template/>Cicd Pipeline Security Starter Template</Link></li>
+<li><Link /blog/ai-ad-copy-generator-2026-6859/>Ai Ad Copy Generator 2026 6859</Link></li>
+<li><Link /blog/api-management-gateway-evaluation-framework/>Api Management Gateway Evaluation Framework</Link></li>
+<li><Link /blog/cyber-threat-intelligence-executive-guide/>Cyber Threat Intelligence Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

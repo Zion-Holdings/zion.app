@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/edge-computing-deployment-security-and-governance">Edge Computing Deployment Security And Governance</Link></li>
-<li><Link href="/blog/container-security-lifecycle-architecture-overview">Container Security Lifecycle Architecture Overview</Link></li>
-<li><Link href="/blog/ai-email-intelligence-2026-6631">Ai Email Intelligence 2026 6631</Link></li>
-<li><Link href="/blog/ai-observability-2026-6772">Ai Observability 2026 6772</Link></li>
+              <li><Link /blog/edge-computing-deployment-security-and-governance/>Edge Computing Deployment Security And Governance</Link></li>
+<li><Link /blog/container-security-lifecycle-architecture-overview/>Container Security Lifecycle Architecture Overview</Link></li>
+<li><Link /blog/ai-email-intelligence-2026-6631/>Ai Email Intelligence 2026 6631</Link></li>
+<li><Link /blog/ai-observability-2026-6772/>Ai Observability 2026 6772</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

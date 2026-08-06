@@ -57,10 +57,10 @@ Leading indicators for llm operations: automation roadmap: workflow completion r
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-security-security-and-governance">Api Gateway Security Security And Governance</Link></li>
-<li><Link href="/blog/unified-endpoint-management-deployment-patterns">Unified Endpoint Management Deployment Patterns</Link></li>
-<li><Link href="/blog/strategic-it-planning-implementation-playbook">Strategic It Planning Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-automation-roadmap">Ai Bdr Sdr Automation Roadmap</Link></li>
+              <li><Link /blog/api-gateway-security-security-and-governance/>Api Gateway Security Security And Governance</Link></li>
+<li><Link /blog/unified-endpoint-management-deployment-patterns/>Unified Endpoint Management Deployment Patterns</Link></li>
+<li><Link /blog/strategic-it-planning-implementation-playbook/>Strategic It Planning Implementation Playbook</Link></li>
+<li><Link /blog/ai-bdr-sdr-automation-roadmap/>Ai Bdr Sdr Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

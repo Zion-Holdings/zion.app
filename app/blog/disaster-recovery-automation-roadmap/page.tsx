@@ -57,10 +57,10 @@ For disaster recovery: automation roadmap: pick one workflow, assign ownership, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cicd-pipeline-security-operations-handbook">Cicd Pipeline Security Operations Handbook</Link></li>
-<li><Link href="/blog/saas-security-deployment-patterns">Saas Security Deployment Patterns</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-7031">Smart Contract Audit 2026 7031</Link></li>
-<li><Link href="/blog/it-automation-evaluation-framework">It Automation Evaluation Framework</Link></li>
+              <li><Link /blog/cicd-pipeline-security-operations-handbook/>Cicd Pipeline Security Operations Handbook</Link></li>
+<li><Link /blog/saas-security-deployment-patterns/>Saas Security Deployment Patterns</Link></li>
+<li><Link /blog/smart-contract-audit-2026-7031/>Smart Contract Audit 2026 7031</Link></li>
+<li><Link /blog/it-automation-evaluation-framework/>It Automation Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

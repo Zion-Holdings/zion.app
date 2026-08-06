@@ -54,10 +54,10 @@ If this guide matches your data catalog: policy and compliance initiative, the n
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/hybrid-cloud-roi-and-cost-model">Hybrid Cloud Roi And Cost Model</Link></li>
-<li><Link href="/blog/customer-data-platform-executive-guide">Customer Data Platform Executive Guide</Link></li>
-<li><Link href="/blog/golang-microservices-evaluation-framework">Golang Microservices Evaluation Framework</Link></li>
-<li><Link href="/blog/data-modeling-executive-guide">Data Modeling Executive Guide</Link></li>
+              <li><Link /blog/hybrid-cloud-roi-and-cost-model/>Hybrid Cloud Roi And Cost Model</Link></li>
+<li><Link /blog/customer-data-platform-executive-guide/>Customer Data Platform Executive Guide</Link></li>
+<li><Link /blog/golang-microservices-evaluation-framework/>Golang Microservices Evaluation Framework</Link></li>
+<li><Link /blog/data-modeling-executive-guide/>Data Modeling Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/aiops-anomaly-detection-2026-7002">Aiops Anomaly Detection 2026 7002</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-common-mistakes">Microsaas Expense Tracker Common Mistakes</Link></li>
-<li><Link href="/blog/api-performance-testing-starter-template">Api Performance Testing Starter Template</Link></li>
-<li><Link href="/blog/compliance-automation-executive-guide">Compliance Automation Executive Guide</Link></li>
+              <li><Link /blog/aiops-anomaly-detection-2026-7002/>Aiops Anomaly Detection 2026 7002</Link></li>
+<li><Link /blog/microsaas-expense-tracker-common-mistakes/>Microsaas Expense Tracker Common Mistakes</Link></li>
+<li><Link /blog/api-performance-testing-starter-template/>Api Performance Testing Starter Template</Link></li>
+<li><Link /blog/compliance-automation-executive-guide/>Compliance Automation Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-2026-7025">Devsecops Pipeline 2026 7025</Link></li>
-<li><Link href="/blog/cicd-best-practices-executive-guide">Cicd Best Practices Executive Guide</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-7075">Autonomous Qa Engineering 2026 7075</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-case-study">Microsaas Hr Recruitment Case Study</Link></li>
+              <li><Link /blog/devsecops-pipeline-2026-7025/>Devsecops Pipeline 2026 7025</Link></li>
+<li><Link /blog/cicd-best-practices-executive-guide/>Cicd Best Practices Executive Guide</Link></li>
+<li><Link /blog/autonomous-qa-engineering-2026-7075/>Autonomous Qa Engineering 2026 7075</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-case-study/>Microsaas Hr Recruitment Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

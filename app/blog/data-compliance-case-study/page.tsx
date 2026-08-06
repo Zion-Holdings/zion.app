@@ -57,10 +57,10 @@ For data compliance: case study: pick one workflow, assign ownership, define suc
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-msp-security-compliance-executive-guide">Ai Msp Security Compliance Executive Guide</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6636">Ai Data Lakehouse Pipelines 2026 6636</Link></li>
-<li><Link href="/blog/micro-saas-ai-social-media-manager-2026-6716">Micro Saas Ai Social Media Manager 2026 6716</Link></li>
-<li><Link href="/blog/endpoint-management-2026-6544">Endpoint Management 2026 6544</Link></li>
+              <li><Link /blog/ai-msp-security-compliance-executive-guide/>Ai Msp Security Compliance Executive Guide</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-2026-6636/>Ai Data Lakehouse Pipelines 2026 6636</Link></li>
+<li><Link /blog/micro-saas-ai-social-media-manager-2026-6716/>Micro Saas Ai Social Media Manager 2026 6716</Link></li>
+<li><Link /blog/endpoint-management-2026-6544/>Endpoint Management 2026 6544</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

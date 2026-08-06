@@ -57,10 +57,10 @@ Leading indicators for web application firewall: security and governance: workfl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-lifecycle-management-operations-handbook">Api Lifecycle Management Operations Handbook</Link></li>
-<li><Link href="/blog/ai-video-analytics-deployment-patterns">Ai Video Analytics Deployment Patterns</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-case-study">Cyber Threat Intelligence Case Study</Link></li>
-<li><Link href="/blog/email-security-policy-and-compliance">Email Security Policy And Compliance</Link></li>
+              <li><Link /blog/api-lifecycle-management-operations-handbook/>Api Lifecycle Management Operations Handbook</Link></li>
+<li><Link /blog/ai-video-analytics-deployment-patterns/>Ai Video Analytics Deployment Patterns</Link></li>
+<li><Link /blog/cyber-threat-intelligence-case-study/>Cyber Threat Intelligence Case Study</Link></li>
+<li><Link /blog/email-security-policy-and-compliance/>Email Security Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

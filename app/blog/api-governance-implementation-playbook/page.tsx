@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-5">Data Analytics Platform Modern Enterprise 2026 5</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-2026-6580">Ai 3D Asset Generator 2026 6580</Link></li>
-<li><Link href="/blog/ai-customer-support-evaluation-framework">Ai Customer Support Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-api-gateway-2026-7103">Ai Api Gateway 2026 7103</Link></li>
+              <li><Link /blog/data-analytics-platform-modern-enterprise-2026-5/>Data Analytics Platform Modern Enterprise 2026 5</Link></li>
+<li><Link /blog/ai-3d-asset-generator-2026-6580/>Ai 3D Asset Generator 2026 6580</Link></li>
+<li><Link /blog/ai-customer-support-evaluation-framework/>Ai Customer Support Evaluation Framework</Link></li>
+<li><Link /blog/ai-api-gateway-2026-7103/>Ai Api Gateway 2026 7103</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

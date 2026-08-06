@@ -57,10 +57,10 @@ For cloud networking: architecture overview: pick one workflow, assign ownership
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-performance-testing-operations-handbook">Api Performance Testing Operations Handbook</Link></li>
-<li><Link href="/blog/it-consulting-2026-6915">It Consulting 2026 6915</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-security-and-governance">Data Warehouse Modernization Security And Governance</Link></li>
-<li><Link href="/blog/ai-hr-recruitment-operations-handbook">Ai Hr Recruitment Operations Handbook</Link></li>
+              <li><Link /blog/api-performance-testing-operations-handbook/>Api Performance Testing Operations Handbook</Link></li>
+<li><Link /blog/it-consulting-2026-6915/>It Consulting 2026 6915</Link></li>
+<li><Link /blog/data-warehouse-modernization-security-and-governance/>Data Warehouse Modernization Security And Governance</Link></li>
+<li><Link /blog/ai-hr-recruitment-operations-handbook/>Ai Hr Recruitment Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

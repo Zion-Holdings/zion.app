@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/brand-voice-guardian-2026-6940">Brand Voice Guardian 2026 6940</Link></li>
-<li><Link href="/blog/graphql-federation-platform-deployment-patterns">Graphql Federation Platform Deployment Patterns</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-common-mistakes">Microsaas Hr Recruitment Common Mistakes</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-checklist-for-it-leaders">Microsaas Expense Tracker Checklist For It Leaders</Link></li>
+              <li><Link /blog/brand-voice-guardian-2026-6940/>Brand Voice Guardian 2026 6940</Link></li>
+<li><Link /blog/graphql-federation-platform-deployment-patterns/>Graphql Federation Platform Deployment Patterns</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-common-mistakes/>Microsaas Hr Recruitment Common Mistakes</Link></li>
+<li><Link /blog/microsaas-expense-tracker-checklist-for-it-leaders/>Microsaas Expense Tracker Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

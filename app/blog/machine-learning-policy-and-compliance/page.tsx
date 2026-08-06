@@ -57,10 +57,10 @@ Leading indicators for machine learning: policy and compliance: workflow complet
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-optimization-starter-template">Cloud Optimization Starter Template</Link></li>
-<li><Link href="/blog/network-security-deployment-patterns">Network Security Deployment Patterns</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-6557">Cloud Cost Optimization Checklist 2026 6557</Link></li>
-<li><Link href="/blog/devsecops-pipeline-implementation-playbook">Devsecops Pipeline Implementation Playbook</Link></li>
+              <li><Link /blog/cloud-optimization-starter-template/>Cloud Optimization Starter Template</Link></li>
+<li><Link /blog/network-security-deployment-patterns/>Network Security Deployment Patterns</Link></li>
+<li><Link /blog/cloud-cost-optimization-checklist-2026-6557/>Cloud Cost Optimization Checklist 2026 6557</Link></li>
+<li><Link /blog/devsecops-pipeline-implementation-playbook/>Devsecops Pipeline Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

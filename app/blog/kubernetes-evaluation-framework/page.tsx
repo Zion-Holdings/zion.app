@@ -57,10 +57,10 @@ Leading indicators for kubernetes: evaluation framework: workflow completion rat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agentic-workflows-2026">Ai Agentic Workflows 2026</Link></li>
-<li><Link href="/blog/ai-it-operations-automation-2026-7108">Ai It Operations Automation 2026 7108</Link></li>
-<li><Link href="/blog/retrieval-augmented-generation-deployment-patterns">Retrieval Augmented Generation Deployment Patterns</Link></li>
-<li><Link href="/blog/event-driven-architecture-architecture-overview">Event Driven Architecture Architecture Overview</Link></li>
+              <li><Link /blog/ai-agentic-workflows-2026/>Ai Agentic Workflows 2026</Link></li>
+<li><Link /blog/ai-it-operations-automation-2026-7108/>Ai It Operations Automation 2026 7108</Link></li>
+<li><Link /blog/retrieval-augmented-generation-deployment-patterns/>Retrieval Augmented Generation Deployment Patterns</Link></li>
+<li><Link /blog/event-driven-architecture-architecture-overview/>Event Driven Architecture Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

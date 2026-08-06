@@ -57,10 +57,10 @@ For disaster recovery: roi and cost model: pick one workflow, assign ownership, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-code-review-automation-architecture-overview">Ai Code Review Automation Architecture Overview</Link></li>
-<li><Link href="/blog/cicd-pipeline-security-case-study">Cicd Pipeline Security Case Study</Link></li>
-<li><Link href="/blog/cloud-storage-strategy-vendor-evaluation">Cloud Storage Strategy Vendor Evaluation</Link></li>
-<li><Link href="/blog/cloud-storage-strategy-automation-roadmap">Cloud Storage Strategy Automation Roadmap</Link></li>
+              <li><Link /blog/ai-code-review-automation-architecture-overview/>Ai Code Review Automation Architecture Overview</Link></li>
+<li><Link /blog/cicd-pipeline-security-case-study/>Cicd Pipeline Security Case Study</Link></li>
+<li><Link /blog/cloud-storage-strategy-vendor-evaluation/>Cloud Storage Strategy Vendor Evaluation</Link></li>
+<li><Link /blog/cloud-storage-strategy-automation-roadmap/>Cloud Storage Strategy Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

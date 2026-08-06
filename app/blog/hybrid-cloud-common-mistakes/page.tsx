@@ -54,10 +54,10 @@ If this guide matches your hybrid cloud: common mistakes initiative, the next st
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-operations-handbook">Devsecops Pipeline Operations Handbook</Link></li>
-<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-6629">Data Analytics Platform Modern Enterprise 2026 6629</Link></li>
-<li><Link href="/blog/api-design-operations-handbook">Api Design Operations Handbook</Link></li>
-<li><Link href="/blog/accessibility-compliance-architecture-overview">Accessibility Compliance Architecture Overview</Link></li>
+              <li><Link /blog/devsecops-pipeline-operations-handbook/>Devsecops Pipeline Operations Handbook</Link></li>
+<li><Link /blog/data-analytics-platform-modern-enterprise-2026-6629/>Data Analytics Platform Modern Enterprise 2026 6629</Link></li>
+<li><Link /blog/api-design-operations-handbook/>Api Design Operations Handbook</Link></li>
+<li><Link /blog/accessibility-compliance-architecture-overview/>Accessibility Compliance Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for enterprise service bus: policy and compliance: workflow c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-migration-services-automation-roadmap">Cloud Migration Services Automation Roadmap</Link></li>
-<li><Link href="/blog/devops-cicd-executive-guide">Devops Cicd Executive Guide</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-6868">Autonomous Qa Engineering 2026 6868</Link></li>
-<li><Link href="/blog/it-consulting-implementation-playbook">It Consulting Implementation Playbook</Link></li>
+              <li><Link /blog/cloud-migration-services-automation-roadmap/>Cloud Migration Services Automation Roadmap</Link></li>
+<li><Link /blog/devops-cicd-executive-guide/>Devops Cicd Executive Guide</Link></li>
+<li><Link /blog/autonomous-qa-engineering-2026-6868/>Autonomous Qa Engineering 2026 6868</Link></li>
+<li><Link /blog/it-consulting-implementation-playbook/>It Consulting Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

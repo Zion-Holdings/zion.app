@@ -54,10 +54,10 @@ If this guide matches your data modeling: policy and compliance initiative, the 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/servicenow-automation-vendor-evaluation">Servicenow Automation Vendor Evaluation</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-2026-6608">Data Warehouse Modernization 2026 6608</Link></li>
-<li><Link href="/blog/terraform-2026">Terraform 2026</Link></li>
-<li><Link href="/blog/network-infrastructure-2026-6985">Network Infrastructure 2026 6985</Link></li>
+              <li><Link /blog/servicenow-automation-vendor-evaluation/>Servicenow Automation Vendor Evaluation</Link></li>
+<li><Link /blog/data-warehouse-modernization-2026-6608/>Data Warehouse Modernization 2026 6608</Link></li>
+<li><Link /blog/terraform-2026/>Terraform 2026</Link></li>
+<li><Link /blog/network-infrastructure-2026-6985/>Network Infrastructure 2026 6985</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

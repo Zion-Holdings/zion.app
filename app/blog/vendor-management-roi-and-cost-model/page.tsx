@@ -57,10 +57,10 @@ For vendor management: roi and cost model: pick one workflow, assign ownership, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-cybersecurity-operations-and-threat-hunting">Ai For Cybersecurity Operations And Threat Hunting</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026-6930">Ai Agent Tool Builder 2026 6930</Link></li>
-<li><Link href="/blog/ai-email-intelligence-2026-6838">Ai Email Intelligence 2026 6838</Link></li>
-<li><Link href="/blog/splunk-migration-2026">Splunk Migration 2026</Link></li>
+              <li><Link /blog/ai-for-cybersecurity-operations-and-threat-hunting/>Ai For Cybersecurity Operations And Threat Hunting</Link></li>
+<li><Link /blog/ai-agent-tool-builder-2026-6930/>Ai Agent Tool Builder 2026 6930</Link></li>
+<li><Link /blog/ai-email-intelligence-2026-6838/>Ai Email Intelligence 2026 6838</Link></li>
+<li><Link /blog/splunk-migration-2026/>Splunk Migration 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for finops: evaluation framework: workflow completion rate, e
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-architecture-overview">Event Driven Architecture Architecture Overview</Link></li>
-<li><Link href="/blog/disaster-recovery-operations-handbook">Disaster Recovery Operations Handbook</Link></li>
-<li><Link href="/blog/ar-vr-enterprise-automation-roadmap">Ar Vr Enterprise Automation Roadmap</Link></li>
-<li><Link href="/blog/user-behavior-analytics-2026">User Behavior Analytics 2026</Link></li>
+              <li><Link /blog/event-driven-architecture-architecture-overview/>Event Driven Architecture Architecture Overview</Link></li>
+<li><Link /blog/disaster-recovery-operations-handbook/>Disaster Recovery Operations Handbook</Link></li>
+<li><Link /blog/ar-vr-enterprise-automation-roadmap/>Ar Vr Enterprise Automation Roadmap</Link></li>
+<li><Link /blog/user-behavior-analytics-2026/>User Behavior Analytics 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for low code platform: policy and compliance: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/virtual-cto-automation-roadmap">Virtual Cto Automation Roadmap</Link></li>
-<li><Link href="/blog/machine-learning-engineering-2026">Machine Learning Engineering 2026</Link></li>
-<li><Link href="/blog/machine-learning-engineering-policy-and-compliance">Machine Learning Engineering Policy And Compliance</Link></li>
-<li><Link href="/blog/microsaas-translation-engine-evaluation-framework">Microsaas Translation Engine Evaluation Framework</Link></li>
+              <li><Link /blog/virtual-cto-automation-roadmap/>Virtual Cto Automation Roadmap</Link></li>
+<li><Link /blog/machine-learning-engineering-2026/>Machine Learning Engineering 2026</Link></li>
+<li><Link /blog/machine-learning-engineering-policy-and-compliance/>Machine Learning Engineering Policy And Compliance</Link></li>
+<li><Link /blog/microsaas-translation-engine-evaluation-framework/>Microsaas Translation Engine Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

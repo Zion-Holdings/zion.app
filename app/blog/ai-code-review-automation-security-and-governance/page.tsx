@@ -57,10 +57,10 @@ Leading indicators for ai code review automation: security and governance: workf
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-governance-2026">Data Governance 2026</Link></li>
-<li><Link href="/blog/platform-engineering-2026">Platform Engineering 2026</Link></li>
-<li><Link href="/blog/database-performance-2026">Database Performance 2026</Link></li>
-<li><Link href="/blog/bot-detection-operations-handbook">Bot Detection Operations Handbook</Link></li>
+              <li><Link /blog/data-governance-2026/>Data Governance 2026</Link></li>
+<li><Link /blog/platform-engineering-2026/>Platform Engineering 2026</Link></li>
+<li><Link /blog/database-performance-2026/>Database Performance 2026</Link></li>
+<li><Link /blog/bot-detection-operations-handbook/>Bot Detection Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your data governance initiative, the next step is a scopin
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/brand-voice-guardian-automation-roadmap">Brand Voice Guardian Automation Roadmap</Link></li>
-<li><Link href="/blog/container-security-lifecycle-executive-guide">Container Security Lifecycle Executive Guide</Link></li>
-<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026">Data Analytics Platform Modern Enterprise 2026</Link></li>
-<li><Link href="/blog/it-consulting-vendor-evaluation">It Consulting Vendor Evaluation</Link></li>
+              <li><Link /blog/brand-voice-guardian-automation-roadmap/>Brand Voice Guardian Automation Roadmap</Link></li>
+<li><Link /blog/container-security-lifecycle-executive-guide/>Container Security Lifecycle Executive Guide</Link></li>
+<li><Link /blog/data-analytics-platform-modern-enterprise-2026/>Data Analytics Platform Modern Enterprise 2026</Link></li>
+<li><Link /blog/it-consulting-vendor-evaluation/>It Consulting Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

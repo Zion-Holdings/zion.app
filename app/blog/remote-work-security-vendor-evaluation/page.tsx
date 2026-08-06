@@ -57,10 +57,10 @@ For remote work security: vendor evaluation: pick one workflow, assign ownership
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-translation-engine-deployment-patterns">Microsaas Translation Engine Deployment Patterns</Link></li>
-<li><Link href="/blog/cloud-storage-strategy-2026">Cloud Storage Strategy 2026</Link></li>
-<li><Link href="/blog/hybrid-cloud-checklist-for-it-leaders">Hybrid Cloud Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cloud-governance-starter-template">Cloud Governance Starter Template</Link></li>
+              <li><Link /blog/microsaas-translation-engine-deployment-patterns/>Microsaas Translation Engine Deployment Patterns</Link></li>
+<li><Link /blog/cloud-storage-strategy-2026/>Cloud Storage Strategy 2026</Link></li>
+<li><Link /blog/hybrid-cloud-checklist-for-it-leaders/>Hybrid Cloud Checklist For It Leaders</Link></li>
+<li><Link /blog/cloud-governance-starter-template/>Cloud Governance Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

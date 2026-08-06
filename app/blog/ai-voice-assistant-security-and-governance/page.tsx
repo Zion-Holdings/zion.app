@@ -57,10 +57,10 @@ For ai voice assistant: security and governance: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/technology-roadmap-policy-and-compliance">Technology Roadmap Policy And Compliance</Link></li>
-<li><Link href="/blog/container-security-lifecycle-vendor-evaluation">Container Security Lifecycle Vendor Evaluation</Link></li>
-<li><Link href="/blog/automation-orchestration-enterprise-2026">Automation Orchestration Enterprise 2026</Link></li>
-<li><Link href="/blog/bot-detection-case-study">Bot Detection Case Study</Link></li>
+              <li><Link /blog/technology-roadmap-policy-and-compliance/>Technology Roadmap Policy And Compliance</Link></li>
+<li><Link /blog/container-security-lifecycle-vendor-evaluation/>Container Security Lifecycle Vendor Evaluation</Link></li>
+<li><Link /blog/automation-orchestration-enterprise-2026/>Automation Orchestration Enterprise 2026</Link></li>
+<li><Link /blog/bot-detection-case-study/>Bot Detection Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

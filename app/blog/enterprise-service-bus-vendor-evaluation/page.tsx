@@ -54,10 +54,10 @@ If this guide matches your enterprise service bus: vendor evaluation initiative,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-starter-template">Cloud Finops Starter Template</Link></li>
-<li><Link href="/blog/machine-learning-operations-case-study">Machine Learning Operations Case Study</Link></li>
-<li><Link href="/blog/ai-development-acceleration-security-and-governance">Ai Development Acceleration Security And Governance</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-6937">Autonomous Qa Engineering 2026 6937</Link></li>
+              <li><Link /blog/cloud-finops-starter-template/>Cloud Finops Starter Template</Link></li>
+<li><Link /blog/machine-learning-operations-case-study/>Machine Learning Operations Case Study</Link></li>
+<li><Link /blog/ai-development-acceleration-security-and-governance/>Ai Development Acceleration Security And Governance</Link></li>
+<li><Link /blog/autonomous-qa-engineering-2026-6937/>Autonomous Qa Engineering 2026 6937</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

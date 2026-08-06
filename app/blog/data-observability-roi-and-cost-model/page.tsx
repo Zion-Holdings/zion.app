@@ -57,10 +57,10 @@ Leading indicators for data observability: roi and cost model: workflow completi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-integration-case-study">Enterprise Integration Case Study</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026">Graphql Federation Platform 2026</Link></li>
-<li><Link href="/blog/user-behavior-analytics-architecture-overview">User Behavior Analytics Architecture Overview</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-2026-6566">Ai Msp Security Compliance 2026 6566</Link></li>
+              <li><Link /blog/enterprise-integration-case-study/>Enterprise Integration Case Study</Link></li>
+<li><Link /blog/graphql-federation-platform-2026/>Graphql Federation Platform 2026</Link></li>
+<li><Link /blog/user-behavior-analytics-architecture-overview/>User Behavior Analytics Architecture Overview</Link></li>
+<li><Link /blog/ai-msp-security-compliance-2026-6566/>Ai Msp Security Compliance 2026 6566</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

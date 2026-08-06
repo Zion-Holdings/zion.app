@@ -57,10 +57,10 @@ Leading indicators for siem: deployment patterns: workflow completion rate, esca
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-observability-case-study">Data Observability Case Study</Link></li>
-<li><Link href="/blog/ai-api-gateway-vendor-evaluation">Ai Api Gateway Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-bom-procurement-2026-6594">Ai Bom Procurement 2026 6594</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-starter-template">Aiops Anomaly Detection Starter Template</Link></li>
+              <li><Link /blog/data-observability-case-study/>Data Observability Case Study</Link></li>
+<li><Link /blog/ai-api-gateway-vendor-evaluation/>Ai Api Gateway Vendor Evaluation</Link></li>
+<li><Link /blog/ai-bom-procurement-2026-6594/>Ai Bom Procurement 2026 6594</Link></li>
+<li><Link /blog/aiops-anomaly-detection-starter-template/>Aiops Anomaly Detection Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

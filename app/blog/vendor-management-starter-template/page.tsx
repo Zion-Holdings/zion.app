@@ -54,10 +54,10 @@ If this guide matches your vendor management: starter template initiative, the n
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-ad-copy-generator-operations-handbook">Ai Ad Copy Generator Operations Handbook</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-policy-and-compliance">Ai Msp Security Compliance Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-for-sales-enablement-and-revenue-operations">Ai For Sales Enablement And Revenue Operations</Link></li>
-<li><Link href="/blog/devops-automation-with-ai-reducing-deployment-failures-by-60">Devops Automation With Ai Reducing Deployment Failures By 60</Link></li>
+              <li><Link /blog/ai-ad-copy-generator-operations-handbook/>Ai Ad Copy Generator Operations Handbook</Link></li>
+<li><Link /blog/ai-msp-security-compliance-policy-and-compliance/>Ai Msp Security Compliance Policy And Compliance</Link></li>
+<li><Link /blog/ai-for-sales-enablement-and-revenue-operations/>Ai For Sales Enablement And Revenue Operations</Link></li>
+<li><Link /blog/devops-automation-with-ai-reducing-deployment-failures-by-60/>Devops Automation With Ai Reducing Deployment Failures By 60</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

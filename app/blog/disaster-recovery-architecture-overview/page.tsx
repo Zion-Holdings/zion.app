@@ -54,10 +54,10 @@ If this guide matches your disaster recovery: architecture overview initiative, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-architecture-overview">Api Management Gateway Architecture Overview</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-2026-6522">Autonomous Code Deployment 2026 6522</Link></li>
-<li><Link href="/blog/enterprise-service-bus-automation-roadmap">Enterprise Service Bus Automation Roadmap</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-6756">Graphql Federation Platform 2026 6756</Link></li>
+              <li><Link /blog/api-management-gateway-architecture-overview/>Api Management Gateway Architecture Overview</Link></li>
+<li><Link /blog/autonomous-code-deployment-2026-6522/>Autonomous Code Deployment 2026 6522</Link></li>
+<li><Link /blog/enterprise-service-bus-automation-roadmap/>Enterprise Service Bus Automation Roadmap</Link></li>
+<li><Link /blog/graphql-federation-platform-2026-6756/>Graphql Federation Platform 2026 6756</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

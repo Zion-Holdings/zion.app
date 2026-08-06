@@ -54,10 +54,10 @@ If this guide matches your ai recruitment chatbot: architecture overview initiat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-warehouse-modernization-2026-6539">Data Warehouse Modernization 2026 6539</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-6886">Devops Gen Ai Cicd 2026 6886</Link></li>
-<li><Link href="/blog/ai-data-backup-2026-6693">Ai Data Backup 2026 6693</Link></li>
-<li><Link href="/blog/devsecops-pipeline-executive-guide">Devsecops Pipeline Executive Guide</Link></li>
+              <li><Link /blog/data-warehouse-modernization-2026-6539/>Data Warehouse Modernization 2026 6539</Link></li>
+<li><Link /blog/devops-gen-ai-cicd-2026-6886/>Devops Gen Ai Cicd 2026 6886</Link></li>
+<li><Link /blog/ai-data-backup-2026-6693/>Ai Data Backup 2026 6693</Link></li>
+<li><Link /blog/devsecops-pipeline-executive-guide/>Devsecops Pipeline Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

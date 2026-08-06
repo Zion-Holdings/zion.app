@@ -57,10 +57,10 @@ Leading indicators for api versioning: workflow completion rate, escalation rate
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-implementation-playbook">Event Driven Architecture Implementation Playbook</Link></li>
-<li><Link href="/blog/customer-data-platform-operations-handbook">Customer Data Platform Operations Handbook</Link></li>
-<li><Link href="/blog/threat-intelligence-platform-2026">Threat Intelligence Platform 2026</Link></li>
-<li><Link href="/blog/cloud-cost-management-2026">Cloud Cost Management 2026</Link></li>
+              <li><Link /blog/event-driven-architecture-implementation-playbook/>Event Driven Architecture Implementation Playbook</Link></li>
+<li><Link /blog/customer-data-platform-operations-handbook/>Customer Data Platform Operations Handbook</Link></li>
+<li><Link /blog/threat-intelligence-platform-2026/>Threat Intelligence Platform 2026</Link></li>
+<li><Link /blog/cloud-cost-management-2026/>Cloud Cost Management 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

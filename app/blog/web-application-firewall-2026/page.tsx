@@ -57,10 +57,10 @@ Leading indicators for web application firewall: workflow completion rate, escal
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-2026-6742">Cloud Finops 2026 6742</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-starter-template">Ai Agent Safety Evaluation Starter Template</Link></li>
-<li><Link href="/blog/blockchain-enterprise-implementation-playbook">Blockchain Enterprise Implementation Playbook</Link></li>
-<li><Link href="/blog/incident-response-retainer-roi-and-cost-model">Incident Response Retainer Roi And Cost Model</Link></li>
+              <li><Link /blog/cloud-finops-2026-6742/>Cloud Finops 2026 6742</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-starter-template/>Ai Agent Safety Evaluation Starter Template</Link></li>
+<li><Link /blog/blockchain-enterprise-implementation-playbook/>Blockchain Enterprise Implementation Playbook</Link></li>
+<li><Link /blog/incident-response-retainer-roi-and-cost-model/>Incident Response Retainer Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

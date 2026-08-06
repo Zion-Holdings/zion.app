@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microservices-architecture-2026">Microservices Architecture 2026</Link></li>
-<li><Link href="/blog/smart-contract-audit-executive-guide">Smart Contract Audit Executive Guide</Link></li>
-<li><Link href="/blog/endpoint-management-common-mistakes">Endpoint Management Common Mistakes</Link></li>
-<li><Link href="/blog/cloud-native-app-development-automation-roadmap">Cloud Native App Development Automation Roadmap</Link></li>
+              <li><Link /blog/microservices-architecture-2026/>Microservices Architecture 2026</Link></li>
+<li><Link /blog/smart-contract-audit-executive-guide/>Smart Contract Audit Executive Guide</Link></li>
+<li><Link /blog/endpoint-management-common-mistakes/>Endpoint Management Common Mistakes</Link></li>
+<li><Link /blog/cloud-native-app-development-automation-roadmap/>Cloud Native App Development Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

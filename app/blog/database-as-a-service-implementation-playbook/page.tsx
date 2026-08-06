@@ -57,10 +57,10 @@ Leading indicators for database as a service: implementation playbook: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/container-security-lifecycle-deployment-patterns">Container Security Lifecycle Deployment Patterns</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-6817">Devops Gen Ai Cicd 2026 6817</Link></li>
-<li><Link href="/blog/devsecops-pipeline-implementation-playbook">Devsecops Pipeline Implementation Playbook</Link></li>
-<li><Link href="/blog/accessibility-compliance-automation-roadmap">Accessibility Compliance Automation Roadmap</Link></li>
+              <li><Link /blog/container-security-lifecycle-deployment-patterns/>Container Security Lifecycle Deployment Patterns</Link></li>
+<li><Link /blog/devops-gen-ai-cicd-2026-6817/>Devops Gen Ai Cicd 2026 6817</Link></li>
+<li><Link /blog/devsecops-pipeline-implementation-playbook/>Devsecops Pipeline Implementation Playbook</Link></li>
+<li><Link /blog/accessibility-compliance-automation-roadmap/>Accessibility Compliance Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

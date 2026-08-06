@@ -57,10 +57,10 @@ Leading indicators for patch management: policy and compliance: workflow complet
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-6921">Micro Saas Ai Hr Recruitment 2026 6921</Link></li>
-<li><Link href="/blog/managed-it-services-evaluation-framework">Managed It Services Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-customer-support-pro-2026-6633">Ai Customer Support Pro 2026 6633</Link></li>
-<li><Link href="/blog/api-security-testing-case-study">Api Security Testing Case Study</Link></li>
+              <li><Link /blog/micro-saas-ai-hr-recruitment-2026-6921/>Micro Saas Ai Hr Recruitment 2026 6921</Link></li>
+<li><Link /blog/managed-it-services-evaluation-framework/>Managed It Services Evaluation Framework</Link></li>
+<li><Link /blog/ai-customer-support-pro-2026-6633/>Ai Customer Support Pro 2026 6633</Link></li>
+<li><Link /blog/api-security-testing-case-study/>Api Security Testing Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

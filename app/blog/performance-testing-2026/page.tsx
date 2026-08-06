@@ -57,10 +57,10 @@ Leading indicators for performance testing: workflow completion rate, escalation
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-security-testing-implementation-playbook">Api Security Testing Implementation Playbook</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-6715">Micro Saas Ai Customer Onboarding 2026 6715</Link></li>
-<li><Link href="/blog/static-application-security-testing-operations-handbook">Static Application Security Testing Operations Handbook</Link></li>
-<li><Link href="/blog/endpoint-management-deployment-patterns">Endpoint Management Deployment Patterns</Link></li>
+              <li><Link /blog/api-security-testing-implementation-playbook/>Api Security Testing Implementation Playbook</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026-6715/>Micro Saas Ai Customer Onboarding 2026 6715</Link></li>
+<li><Link /blog/static-application-security-testing-operations-handbook/>Static Application Security Testing Operations Handbook</Link></li>
+<li><Link /blog/endpoint-management-deployment-patterns/>Endpoint Management Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

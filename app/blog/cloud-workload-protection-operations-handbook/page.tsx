@@ -54,10 +54,10 @@ If this guide matches your cloud workload protection: operations handbook initia
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bdr-sdr-2026-6662">Ai Bdr Sdr 2026 6662</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-2026">Ai Autonomous Agents 2026</Link></li>
-<li><Link href="/blog/low-code-platform-2026">Low Code Platform 2026</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-6548">Smart Contract Audit 2026 6548</Link></li>
+              <li><Link /blog/ai-bdr-sdr-2026-6662/>Ai Bdr Sdr 2026 6662</Link></li>
+<li><Link /blog/ai-autonomous-agents-2026/>Ai Autonomous Agents 2026</Link></li>
+<li><Link /blog/low-code-platform-2026/>Low Code Platform 2026</Link></li>
+<li><Link /blog/smart-contract-audit-2026-6548/>Smart Contract Audit 2026 6548</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

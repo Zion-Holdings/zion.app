@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-msp-security-compliance-roi-and-cost-model">Ai Msp Security Compliance Roi And Cost Model</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-7012">Api Gateway Management 2026 7012</Link></li>
-<li><Link href="/blog/accessibility-compliance-vendor-evaluation">Accessibility Compliance Vendor Evaluation</Link></li>
-<li><Link href="/blog/network-infrastructure-common-mistakes">Network Infrastructure Common Mistakes</Link></li>
+              <li><Link /blog/ai-msp-security-compliance-roi-and-cost-model/>Ai Msp Security Compliance Roi And Cost Model</Link></li>
+<li><Link /blog/api-gateway-management-2026-7012/>Api Gateway Management 2026 7012</Link></li>
+<li><Link /blog/accessibility-compliance-vendor-evaluation/>Accessibility Compliance Vendor Evaluation</Link></li>
+<li><Link /blog/network-infrastructure-common-mistakes/>Network Infrastructure Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

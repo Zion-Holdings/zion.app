@@ -57,10 +57,10 @@ For data architecture: vendor evaluation: pick one workflow, assign ownership, d
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/product-led-growth-implementation-playbook">Product Led Growth Implementation Playbook</Link></li>
-<li><Link href="/blog/observability-platform-2026">Observability Platform 2026</Link></li>
-<li><Link href="/blog/edge-computing-deployment-starter-template">Edge Computing Deployment Starter Template</Link></li>
-<li><Link href="/blog/network-security-2026">Network Security 2026</Link></li>
+              <li><Link /blog/product-led-growth-implementation-playbook/>Product Led Growth Implementation Playbook</Link></li>
+<li><Link /blog/observability-platform-2026/>Observability Platform 2026</Link></li>
+<li><Link /blog/edge-computing-deployment-starter-template/>Edge Computing Deployment Starter Template</Link></li>
+<li><Link /blog/network-security-2026/>Network Security 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

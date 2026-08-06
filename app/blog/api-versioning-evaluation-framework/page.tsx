@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-operations-handbook">Endpoint Management Operations Handbook</Link></li>
-<li><Link href="/blog/ai-bom-procurement-policy-and-compliance">Ai Bom Procurement Policy And Compliance</Link></li>
-<li><Link href="/blog/graphql-federation-platform-case-study">Graphql Federation Platform Case Study</Link></li>
-<li><Link href="/blog/data-governance-2026">Data Governance 2026</Link></li>
+              <li><Link /blog/endpoint-management-operations-handbook/>Endpoint Management Operations Handbook</Link></li>
+<li><Link /blog/ai-bom-procurement-policy-and-compliance/>Ai Bom Procurement Policy And Compliance</Link></li>
+<li><Link /blog/graphql-federation-platform-case-study/>Graphql Federation Platform Case Study</Link></li>
+<li><Link /blog/data-governance-2026/>Data Governance 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

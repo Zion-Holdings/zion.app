@@ -54,10 +54,10 @@ If this guide matches your product analytics: security and governance initiative
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-tool-builder-architecture-overview">Ai Agent Tool Builder Architecture Overview</Link></li>
-<li><Link href="/blog/ar-vr-enterprise-operations-handbook">Ar Vr Enterprise Operations Handbook</Link></li>
-<li><Link href="/blog/network-infrastructure-roi-and-cost-model">Network Infrastructure Roi And Cost Model</Link></li>
-<li><Link href="/blog/data-mesh-deployment-patterns">Data Mesh Deployment Patterns</Link></li>
+              <li><Link /blog/ai-agent-tool-builder-architecture-overview/>Ai Agent Tool Builder Architecture Overview</Link></li>
+<li><Link /blog/ar-vr-enterprise-operations-handbook/>Ar Vr Enterprise Operations Handbook</Link></li>
+<li><Link /blog/network-infrastructure-roi-and-cost-model/>Network Infrastructure Roi And Cost Model</Link></li>
+<li><Link /blog/data-mesh-deployment-patterns/>Data Mesh Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your cloud backup: common mistakes initiative, the next st
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/privacy-engineering-executive-guide">Privacy Engineering Executive Guide</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-6557">Cloud Cost Optimization Checklist 2026 6557</Link></li>
-<li><Link href="/blog/automation-orchestration-enterprise-2026-6837">Automation Orchestration Enterprise 2026 6837</Link></li>
-<li><Link href="/blog/token-optimization-deployment-patterns">Token Optimization Deployment Patterns</Link></li>
+              <li><Link /blog/privacy-engineering-executive-guide/>Privacy Engineering Executive Guide</Link></li>
+<li><Link /blog/cloud-cost-optimization-checklist-2026-6557/>Cloud Cost Optimization Checklist 2026 6557</Link></li>
+<li><Link /blog/automation-orchestration-enterprise-2026-6837/>Automation Orchestration Enterprise 2026 6837</Link></li>
+<li><Link /blog/token-optimization-deployment-patterns/>Token Optimization Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

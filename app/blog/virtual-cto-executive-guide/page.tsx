@@ -57,10 +57,10 @@ Leading indicators for virtual cto: executive guide: workflow completion rate, e
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-voice-assistant-case-study">Ai Voice Assistant Case Study</Link></li>
-<li><Link href="/blog/data-governance-security-and-governance">Data Governance Security And Governance</Link></li>
-<li><Link href="/blog/patch-management-checklist-for-it-leaders">Patch Management Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-observability-case-study">Ai Observability Case Study</Link></li>
+              <li><Link /blog/ai-voice-assistant-case-study/>Ai Voice Assistant Case Study</Link></li>
+<li><Link /blog/data-governance-security-and-governance/>Data Governance Security And Governance</Link></li>
+<li><Link /blog/patch-management-checklist-for-it-leaders/>Patch Management Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-observability-case-study/>Ai Observability Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

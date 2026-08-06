@@ -54,10 +54,10 @@ If this guide matches your no code platform: vendor evaluation initiative, the n
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-hr-recruitment-automation-roadmap">Microsaas Hr Recruitment Automation Roadmap</Link></li>
-<li><Link href="/blog/retrieval-augmented-generation-checklist-for-it-leaders">Retrieval Augmented Generation Checklist For It Leaders</Link></li>
-<li><Link href="/blog/event-driven-architecture-starter-template">Event Driven Architecture Starter Template</Link></li>
-<li><Link href="/blog/infrastructure-monitoring-policy-and-compliance">Infrastructure Monitoring Policy And Compliance</Link></li>
+              <li><Link /blog/microsaas-hr-recruitment-automation-roadmap/>Microsaas Hr Recruitment Automation Roadmap</Link></li>
+<li><Link /blog/retrieval-augmented-generation-checklist-for-it-leaders/>Retrieval Augmented Generation Checklist For It Leaders</Link></li>
+<li><Link /blog/event-driven-architecture-starter-template/>Event Driven Architecture Starter Template</Link></li>
+<li><Link /blog/infrastructure-monitoring-policy-and-compliance/>Infrastructure Monitoring Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

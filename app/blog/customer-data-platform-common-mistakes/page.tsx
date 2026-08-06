@@ -57,10 +57,10 @@ For customer data platform: common mistakes: pick one workflow, assign ownership
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-auditor-policy-and-compliance">Ai Accessibility Auditor Policy And Compliance</Link></li>
-<li><Link href="/blog/smart-contract-audit-checklist-for-it-leaders">Smart Contract Audit Checklist For It Leaders</Link></li>
-<li><Link href="/blog/genai-devops-cicd-checklist-for-it-leaders">Genai Devops Cicd Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-starter-template">Cloud Cost Optimization Starter Template</Link></li>
+              <li><Link /blog/ai-accessibility-auditor-policy-and-compliance/>Ai Accessibility Auditor Policy And Compliance</Link></li>
+<li><Link /blog/smart-contract-audit-checklist-for-it-leaders/>Smart Contract Audit Checklist For It Leaders</Link></li>
+<li><Link /blog/genai-devops-cicd-checklist-for-it-leaders/>Genai Devops Cicd Checklist For It Leaders</Link></li>
+<li><Link /blog/cloud-cost-optimization-starter-template/>Cloud Cost Optimization Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

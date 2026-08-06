@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/open-source-strategy-2026">Open Source Strategy 2026</Link></li>
-<li><Link href="/blog/data-virtualization-architecture-overview">Data Virtualization Architecture Overview</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-security-and-governance">Cyber Threat Intelligence Security And Governance</Link></li>
-<li><Link href="/blog/ai-hr-recruitment-case-study">Ai Hr Recruitment Case Study</Link></li>
+              <li><Link /blog/open-source-strategy-2026/>Open Source Strategy 2026</Link></li>
+<li><Link /blog/data-virtualization-architecture-overview/>Data Virtualization Architecture Overview</Link></li>
+<li><Link /blog/cyber-threat-intelligence-security-and-governance/>Cyber Threat Intelligence Security And Governance</Link></li>
+<li><Link /blog/ai-hr-recruitment-case-study/>Ai Hr Recruitment Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

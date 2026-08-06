@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-msp-security-compliance-2026-7049">Ai Msp Security Compliance 2026 7049</Link></li>
-<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7043">Data Analytics Platform Modern Enterprise 2026 7043</Link></li>
-<li><Link href="/blog/release-management-2026">Release Management 2026</Link></li>
-<li><Link href="/blog/privacy-engineering-implementation-playbook">Privacy Engineering Implementation Playbook</Link></li>
+              <li><Link /blog/ai-msp-security-compliance-2026-7049/>Ai Msp Security Compliance 2026 7049</Link></li>
+<li><Link /blog/data-analytics-platform-modern-enterprise-2026-7043/>Data Analytics Platform Modern Enterprise 2026 7043</Link></li>
+<li><Link /blog/release-management-2026/>Release Management 2026</Link></li>
+<li><Link /blog/privacy-engineering-implementation-playbook/>Privacy Engineering Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

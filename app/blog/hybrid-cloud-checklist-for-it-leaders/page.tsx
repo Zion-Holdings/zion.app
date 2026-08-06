@@ -54,10 +54,10 @@ If this guide matches your hybrid cloud: checklist for it leaders initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-backup-executive-guide">Ai Data Backup Executive Guide</Link></li>
-<li><Link href="/blog/generative-ai-security-automation-roadmap">Generative Ai Security Automation Roadmap</Link></li>
-<li><Link href="/blog/multi-cloud-strategy-security-and-governance">Multi Cloud Strategy Security And Governance</Link></li>
-<li><Link href="/blog/aws-cost-optimization-2026">Aws Cost Optimization 2026</Link></li>
+              <li><Link /blog/ai-data-backup-executive-guide/>Ai Data Backup Executive Guide</Link></li>
+<li><Link /blog/generative-ai-security-automation-roadmap/>Generative Ai Security Automation Roadmap</Link></li>
+<li><Link /blog/multi-cloud-strategy-security-and-governance/>Multi Cloud Strategy Security And Governance</Link></li>
+<li><Link /blog/aws-cost-optimization-2026/>Aws Cost Optimization 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

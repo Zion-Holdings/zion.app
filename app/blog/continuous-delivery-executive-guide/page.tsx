@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-native-security-starter-template">Cloud Native Security Starter Template</Link></li>
-<li><Link href="/blog/api-management-gateway-deployment-patterns">Api Management Gateway Deployment Patterns</Link></li>
-<li><Link href="/blog/generative-ai-security-checklist-for-it-leaders">Generative Ai Security Checklist For It Leaders</Link></li>
-<li><Link href="/blog/api-security-testing-2026-6761">Api Security Testing 2026 6761</Link></li>
+              <li><Link /blog/cloud-native-security-starter-template/>Cloud Native Security Starter Template</Link></li>
+<li><Link /blog/api-management-gateway-deployment-patterns/>Api Management Gateway Deployment Patterns</Link></li>
+<li><Link /blog/generative-ai-security-checklist-for-it-leaders/>Generative Ai Security Checklist For It Leaders</Link></li>
+<li><Link /blog/api-security-testing-2026-6761/>Api Security Testing 2026 6761</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

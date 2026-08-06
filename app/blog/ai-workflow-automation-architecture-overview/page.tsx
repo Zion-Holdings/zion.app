@@ -57,10 +57,10 @@ Leading indicators for ai workflow automation: architecture overview: workflow c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/network-infrastructure-case-study">Network Infrastructure Case Study</Link></li>
-<li><Link href="/blog/automated-ai-reporting-2026-6935">Automated Ai Reporting 2026 6935</Link></li>
-<li><Link href="/blog/incident-response-retainer-2026-6964">Incident Response Retainer 2026 6964</Link></li>
-<li><Link href="/blog/threat-hunting-evaluation-framework">Threat Hunting Evaluation Framework</Link></li>
+              <li><Link /blog/network-infrastructure-case-study/>Network Infrastructure Case Study</Link></li>
+<li><Link /blog/automated-ai-reporting-2026-6935/>Automated Ai Reporting 2026 6935</Link></li>
+<li><Link /blog/incident-response-retainer-2026-6964/>Incident Response Retainer 2026 6964</Link></li>
+<li><Link /blog/threat-hunting-evaluation-framework/>Threat Hunting Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

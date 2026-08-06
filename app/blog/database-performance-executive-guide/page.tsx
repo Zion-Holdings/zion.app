@@ -57,10 +57,10 @@ Leading indicators for database performance: executive guide: workflow completio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/integration-testing-vendor-evaluation">Integration Testing Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-process-mining-implementation-playbook">Ai Process Mining Implementation Playbook</Link></li>
-<li><Link href="/blog/api-integration-2026-7082">Api Integration 2026 7082</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-6825">Graphql Federation Platform 2026 6825</Link></li>
+              <li><Link /blog/integration-testing-vendor-evaluation/>Integration Testing Vendor Evaluation</Link></li>
+<li><Link /blog/ai-process-mining-implementation-playbook/>Ai Process Mining Implementation Playbook</Link></li>
+<li><Link /blog/api-integration-2026-7082/>Api Integration 2026 7082</Link></li>
+<li><Link /blog/graphql-federation-platform-2026-6825/>Graphql Federation Platform 2026 6825</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

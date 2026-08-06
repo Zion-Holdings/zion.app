@@ -54,10 +54,10 @@ If this guide matches your policy as code initiative, the next step is a scoping
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-backup-dr-2026-7028">Enterprise Backup Dr 2026 7028</Link></li>
-<li><Link href="/blog/ai-api-gateway-implementation-playbook">Ai Api Gateway Implementation Playbook</Link></li>
-<li><Link href="/blog/database-security-vendor-evaluation">Database Security Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-video-analytics-vendor-evaluation">Ai Video Analytics Vendor Evaluation</Link></li>
+              <li><Link /blog/enterprise-backup-dr-2026-7028/>Enterprise Backup Dr 2026 7028</Link></li>
+<li><Link /blog/ai-api-gateway-implementation-playbook/>Ai Api Gateway Implementation Playbook</Link></li>
+<li><Link /blog/database-security-vendor-evaluation/>Database Security Vendor Evaluation</Link></li>
+<li><Link /blog/ai-video-analytics-vendor-evaluation/>Ai Video Analytics Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

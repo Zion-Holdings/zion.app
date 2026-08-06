@@ -54,10 +54,10 @@ If this guide matches your siem: executive guide initiative, the next step is a 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-success-churn-prevention-implementation-playbook">Ai Customer Success Churn Prevention Implementation Playbook</Link></li>
-<li><Link href="/blog/cloud-finops-policy-and-compliance">Cloud Finops Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-evaluation-framework">Ai Accessibility Optimizer Evaluation Framework</Link></li>
-<li><Link href="/blog/smart-contract-audit-starter-template">Smart Contract Audit Starter Template</Link></li>
+              <li><Link /blog/ai-customer-success-churn-prevention-implementation-playbook/>Ai Customer Success Churn Prevention Implementation Playbook</Link></li>
+<li><Link /blog/cloud-finops-policy-and-compliance/>Cloud Finops Policy And Compliance</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-evaluation-framework/>Ai Accessibility Optimizer Evaluation Framework</Link></li>
+<li><Link /blog/smart-contract-audit-starter-template/>Smart Contract Audit Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

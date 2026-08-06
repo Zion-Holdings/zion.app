@@ -57,10 +57,10 @@ For hybrid cloud: evaluation framework: pick one workflow, assign ownership, def
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-security-testing-2026-7106">Api Security Testing 2026 7106</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-implementation-playbook">Cybersecurity For Msps Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-operations-handbook">Ai Accessibility Optimizer Operations Handbook</Link></li>
-<li><Link href="/blog/aws-cost-optimization-operations-handbook">Aws Cost Optimization Operations Handbook</Link></li>
+              <li><Link /blog/api-security-testing-2026-7106/>Api Security Testing 2026 7106</Link></li>
+<li><Link /blog/cybersecurity-for-msps-implementation-playbook/>Cybersecurity For Msps Implementation Playbook</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-operations-handbook/>Ai Accessibility Optimizer Operations Handbook</Link></li>
+<li><Link /blog/aws-cost-optimization-operations-handbook/>Aws Cost Optimization Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

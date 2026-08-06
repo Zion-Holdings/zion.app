@@ -54,10 +54,10 @@ If this guide matches your user behavior analytics: evaluation framework initiat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-translation-engine-automation-roadmap">Microsaas Translation Engine Automation Roadmap</Link></li>
-<li><Link href="/blog/managed-detection-response-roi-and-cost-model">Managed Detection Response Roi And Cost Model</Link></li>
-<li><Link href="/blog/observability-platform-vendor-evaluation">Observability Platform Vendor Evaluation</Link></li>
-<li><Link href="/blog/graphql-federation-platform-security-and-governance">Graphql Federation Platform Security And Governance</Link></li>
+              <li><Link /blog/microsaas-translation-engine-automation-roadmap/>Microsaas Translation Engine Automation Roadmap</Link></li>
+<li><Link /blog/managed-detection-response-roi-and-cost-model/>Managed Detection Response Roi And Cost Model</Link></li>
+<li><Link /blog/observability-platform-vendor-evaluation/>Observability Platform Vendor Evaluation</Link></li>
+<li><Link /blog/graphql-federation-platform-security-and-governance/>Graphql Federation Platform Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

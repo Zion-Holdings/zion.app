@@ -57,10 +57,10 @@ Leading indicators for application modernization: deployment patterns: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/voice-biometrics-evaluation-framework">Voice Biometrics Evaluation Framework</Link></li>
-<li><Link href="/blog/it-consulting-policy-and-compliance">It Consulting Policy And Compliance</Link></li>
-<li><Link href="/blog/machine-learning-operations-starter-template">Machine Learning Operations Starter Template</Link></li>
-<li><Link href="/blog/vulnerability-assessment-implementation-playbook">Vulnerability Assessment Implementation Playbook</Link></li>
+              <li><Link /blog/voice-biometrics-evaluation-framework/>Voice Biometrics Evaluation Framework</Link></li>
+<li><Link /blog/it-consulting-policy-and-compliance/>It Consulting Policy And Compliance</Link></li>
+<li><Link /blog/machine-learning-operations-starter-template/>Machine Learning Operations Starter Template</Link></li>
+<li><Link /blog/vulnerability-assessment-implementation-playbook/>Vulnerability Assessment Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

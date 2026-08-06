@@ -57,10 +57,10 @@ Leading indicators for bot detection: case study: workflow completion rate, esca
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-social-media-manager-deployment-patterns">Microsaas Social Media Manager Deployment Patterns</Link></li>
-<li><Link href="/blog/quality-assurance-operations-handbook">Quality Assurance Operations Handbook</Link></li>
-<li><Link href="/blog/apm-application-performance-starter-template">Apm Application Performance Starter Template</Link></li>
-<li><Link href="/blog/generative-ai-security-operations-handbook">Generative Ai Security Operations Handbook</Link></li>
+              <li><Link /blog/microsaas-social-media-manager-deployment-patterns/>Microsaas Social Media Manager Deployment Patterns</Link></li>
+<li><Link /blog/quality-assurance-operations-handbook/>Quality Assurance Operations Handbook</Link></li>
+<li><Link /blog/apm-application-performance-starter-template/>Apm Application Performance Starter Template</Link></li>
+<li><Link /blog/generative-ai-security-operations-handbook/>Generative Ai Security Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

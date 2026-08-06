@@ -57,10 +57,10 @@ For data integration: pick one workflow, assign ownership, define success metric
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-social-media-manager-2026-6647">Micro Saas Ai Social Media Manager 2026 6647</Link></li>
-<li><Link href="/blog/api-versioning-vendor-evaluation">Api Versioning Vendor Evaluation</Link></li>
-<li><Link href="/blog/automation-orchestration-evaluation-framework">Automation Orchestration Evaluation Framework</Link></li>
-<li><Link href="/blog/api-lifecycle-management-evaluation-framework">Api Lifecycle Management Evaluation Framework</Link></li>
+              <li><Link /blog/micro-saas-ai-social-media-manager-2026-6647/>Micro Saas Ai Social Media Manager 2026 6647</Link></li>
+<li><Link /blog/api-versioning-vendor-evaluation/>Api Versioning Vendor Evaluation</Link></li>
+<li><Link /blog/automation-orchestration-evaluation-framework/>Automation Orchestration Evaluation Framework</Link></li>
+<li><Link /blog/api-lifecycle-management-evaluation-framework/>Api Lifecycle Management Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

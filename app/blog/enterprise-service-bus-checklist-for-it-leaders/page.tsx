@@ -57,10 +57,10 @@ Leading indicators for enterprise service bus: checklist for it leaders: workflo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/hybrid-cloud-architecture-overview">Hybrid Cloud Architecture Overview</Link></li>
-<li><Link href="/blog/brand-voice-guardian-executive-guide">Brand Voice Guardian Executive Guide</Link></li>
-<li><Link href="/blog/bot-detection-vendor-evaluation">Bot Detection Vendor Evaluation</Link></li>
-<li><Link href="/blog/servicenow-automation-policy-and-compliance">Servicenow Automation Policy And Compliance</Link></li>
+              <li><Link /blog/hybrid-cloud-architecture-overview/>Hybrid Cloud Architecture Overview</Link></li>
+<li><Link /blog/brand-voice-guardian-executive-guide/>Brand Voice Guardian Executive Guide</Link></li>
+<li><Link /blog/bot-detection-vendor-evaluation/>Bot Detection Vendor Evaluation</Link></li>
+<li><Link /blog/servicenow-automation-policy-and-compliance/>Servicenow Automation Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

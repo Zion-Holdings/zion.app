@@ -57,10 +57,10 @@ Leading indicators for email security: common mistakes: workflow completion rate
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bom-procurement-2026">Ai Bom Procurement 2026</Link></li>
-<li><Link href="/blog/ai-predictive-maintenance-2026">Ai Predictive Maintenance 2026</Link></li>
-<li><Link href="/blog/database-migration-service-2026-6678">Database Migration Service 2026 6678</Link></li>
-<li><Link href="/blog/cloud-native-security-case-study">Cloud Native Security Case Study</Link></li>
+              <li><Link /blog/ai-bom-procurement-2026/>Ai Bom Procurement 2026</Link></li>
+<li><Link /blog/ai-predictive-maintenance-2026/>Ai Predictive Maintenance 2026</Link></li>
+<li><Link /blog/database-migration-service-2026-6678/>Database Migration Service 2026 6678</Link></li>
+<li><Link /blog/cloud-native-security-case-study/>Cloud Native Security Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

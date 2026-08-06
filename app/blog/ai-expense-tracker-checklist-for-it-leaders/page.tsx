@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-code-deployment-2026-6729">Autonomous Code Deployment 2026 6729</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-6756">Graphql Federation Platform 2026 6756</Link></li>
-<li><Link href="/blog/strategic-it-planning-architecture-overview">Strategic It Planning Architecture Overview</Link></li>
-<li><Link href="/blog/oncall-best-practices-security-and-governance">Oncall Best Practices Security And Governance</Link></li>
+              <li><Link /blog/autonomous-code-deployment-2026-6729/>Autonomous Code Deployment 2026 6729</Link></li>
+<li><Link /blog/graphql-federation-platform-2026-6756/>Graphql Federation Platform 2026 6756</Link></li>
+<li><Link /blog/strategic-it-planning-architecture-overview/>Strategic It Planning Architecture Overview</Link></li>
+<li><Link /blog/oncall-best-practices-security-and-governance/>Oncall Best Practices Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

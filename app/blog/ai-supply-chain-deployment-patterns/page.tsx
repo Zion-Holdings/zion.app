@@ -57,10 +57,10 @@ For ai supply chain: deployment patterns: pick one workflow, assign ownership, d
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-it-operations-automation-2026-1">Ai It Operations Automation 2026 1</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-checklist-for-it-leaders">Ai Performance Monitoring Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cloud-finops-starter-template">Cloud Finops Starter Template</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-6817">Devops Gen Ai Cicd 2026 6817</Link></li>
+              <li><Link /blog/ai-it-operations-automation-2026-1/>Ai It Operations Automation 2026 1</Link></li>
+<li><Link /blog/ai-performance-monitoring-checklist-for-it-leaders/>Ai Performance Monitoring Checklist For It Leaders</Link></li>
+<li><Link /blog/cloud-finops-starter-template/>Cloud Finops Starter Template</Link></li>
+<li><Link /blog/devops-gen-ai-cicd-2026-6817/>Devops Gen Ai Cicd 2026 6817</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

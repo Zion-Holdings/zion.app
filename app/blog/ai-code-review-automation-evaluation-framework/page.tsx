@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/software-supply-chain-security-2026">Software Supply Chain Security 2026</Link></li>
-<li><Link href="/blog/ai-it-operations-automation-2026-7">Ai It Operations Automation 2026 7</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-evaluation-framework">Ai Autonomous Agents Evaluation Framework</Link></li>
-<li><Link href="/blog/application-modernization-starter-template">Application Modernization Starter Template</Link></li>
+              <li><Link /blog/software-supply-chain-security-2026/>Software Supply Chain Security 2026</Link></li>
+<li><Link /blog/ai-it-operations-automation-2026-7/>Ai It Operations Automation 2026 7</Link></li>
+<li><Link /blog/ai-autonomous-agents-evaluation-framework/>Ai Autonomous Agents Evaluation Framework</Link></li>
+<li><Link /blog/application-modernization-starter-template/>Application Modernization Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

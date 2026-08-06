@@ -57,10 +57,10 @@ For software supply chain security: implementation playbook: pick one workflow, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/voice-biometrics-architecture-overview">Voice Biometrics Architecture Overview</Link></li>
-<li><Link href="/blog/servicenow-automation-deployment-patterns">Servicenow Automation Deployment Patterns</Link></li>
-<li><Link href="/blog/api-management-gateway-2026-6807">Api Management Gateway 2026 6807</Link></li>
-<li><Link href="/blog/incident-response-retainer-architecture-overview">Incident Response Retainer Architecture Overview</Link></li>
+              <li><Link /blog/voice-biometrics-architecture-overview/>Voice Biometrics Architecture Overview</Link></li>
+<li><Link /blog/servicenow-automation-deployment-patterns/>Servicenow Automation Deployment Patterns</Link></li>
+<li><Link /blog/api-management-gateway-2026-6807/>Api Management Gateway 2026 6807</Link></li>
+<li><Link /blog/incident-response-retainer-architecture-overview/>Incident Response Retainer Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

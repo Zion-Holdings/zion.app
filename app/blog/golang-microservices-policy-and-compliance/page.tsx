@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-optimization-deployment-patterns">Cloud Cost Optimization Deployment Patterns</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-deployment-patterns">Etl Pipeline Optimization Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-code-review-automation-policy-and-compliance">Ai Code Review Automation Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-for-cybersecurity-operations-and-threat-hunting">Ai For Cybersecurity Operations And Threat Hunting</Link></li>
+              <li><Link /blog/cloud-cost-optimization-deployment-patterns/>Cloud Cost Optimization Deployment Patterns</Link></li>
+<li><Link /blog/etl-pipeline-optimization-deployment-patterns/>Etl Pipeline Optimization Deployment Patterns</Link></li>
+<li><Link /blog/ai-code-review-automation-policy-and-compliance/>Ai Code Review Automation Policy And Compliance</Link></li>
+<li><Link /blog/ai-for-cybersecurity-operations-and-threat-hunting/>Ai For Cybersecurity Operations And Threat Hunting</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

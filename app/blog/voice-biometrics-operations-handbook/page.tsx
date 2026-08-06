@@ -57,10 +57,10 @@ Leading indicators for voice biometrics: operations handbook: workflow completio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-2026-7096">Endpoint Management 2026 7096</Link></li>
-<li><Link href="/blog/vendor-management-implementation-playbook">Vendor Management Implementation Playbook</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-implementation-playbook">Autonomous Code Deployment Implementation Playbook</Link></li>
-<li><Link href="/blog/customer-data-platform-evaluation-framework">Customer Data Platform Evaluation Framework</Link></li>
+              <li><Link /blog/endpoint-management-2026-7096/>Endpoint Management 2026 7096</Link></li>
+<li><Link /blog/vendor-management-implementation-playbook/>Vendor Management Implementation Playbook</Link></li>
+<li><Link /blog/autonomous-code-deployment-implementation-playbook/>Autonomous Code Deployment Implementation Playbook</Link></li>
+<li><Link /blog/customer-data-platform-evaluation-framework/>Customer Data Platform Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For network automation: implementation playbook: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-migration-services-executive-guide">Cloud Migration Services Executive Guide</Link></li>
-<li><Link href="/blog/ai-for-compliance-and-regulatory-reporting">Ai For Compliance And Regulatory Reporting</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-implementation-playbook">Ai Autonomous Agents Implementation Playbook</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7062">Enterprise Ai Intelligence Hub 2026 7062</Link></li>
+              <li><Link /blog/cloud-migration-services-executive-guide/>Cloud Migration Services Executive Guide</Link></li>
+<li><Link /blog/ai-for-compliance-and-regulatory-reporting/>Ai For Compliance And Regulatory Reporting</Link></li>
+<li><Link /blog/ai-autonomous-agents-implementation-playbook/>Ai Autonomous Agents Implementation Playbook</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-2026-7062/>Enterprise Ai Intelligence Hub 2026 7062</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

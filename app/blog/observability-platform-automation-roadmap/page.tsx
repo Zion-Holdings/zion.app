@@ -57,10 +57,10 @@ For observability platform: automation roadmap: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/error-budget-deployment-patterns">Error Budget Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-workflow-automation-security-and-governance">Ai Workflow Automation Security And Governance</Link></li>
-<li><Link href="/blog/accessibility-compliance-roi-and-cost-model">Accessibility Compliance Roi And Cost Model</Link></li>
-<li><Link href="/blog/api-monetization-architecture-overview">Api Monetization Architecture Overview</Link></li>
+              <li><Link /blog/error-budget-deployment-patterns/>Error Budget Deployment Patterns</Link></li>
+<li><Link /blog/ai-workflow-automation-security-and-governance/>Ai Workflow Automation Security And Governance</Link></li>
+<li><Link /blog/accessibility-compliance-roi-and-cost-model/>Accessibility Compliance Roi And Cost Model</Link></li>
+<li><Link /blog/api-monetization-architecture-overview/>Api Monetization Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

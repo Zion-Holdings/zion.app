@@ -54,10 +54,10 @@ If this guide matches your service mesh: checklist for it leaders initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-support-architecture-overview">Ai Customer Support Architecture Overview</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026">Cybersecurity Platform Msp 2026</Link></li>
-<li><Link href="/blog/devops-cicd-2026-6987">Devops Cicd 2026 6987</Link></li>
-<li><Link href="/blog/machine-learning-architecture-overview">Machine Learning Architecture Overview</Link></li>
+              <li><Link /blog/ai-customer-support-architecture-overview/>Ai Customer Support Architecture Overview</Link></li>
+<li><Link /blog/cybersecurity-platform-msp-2026/>Cybersecurity Platform Msp 2026</Link></li>
+<li><Link /blog/devops-cicd-2026-6987/>Devops Cicd 2026 6987</Link></li>
+<li><Link /blog/machine-learning-architecture-overview/>Machine Learning Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

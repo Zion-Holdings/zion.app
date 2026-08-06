@@ -57,10 +57,10 @@ For api design: operations handbook: pick one workflow, assign ownership, define
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-expense-tracker-security-and-governance">Microsaas Expense Tracker Security And Governance</Link></li>
-<li><Link href="/blog/ai-it-operations-executive-guide">Ai It Operations Executive Guide</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-policy-and-compliance">Microsaas Social Media Manager Policy And Compliance</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-6894">Graphql Federation Platform 2026 6894</Link></li>
+              <li><Link /blog/microsaas-expense-tracker-security-and-governance/>Microsaas Expense Tracker Security And Governance</Link></li>
+<li><Link /blog/ai-it-operations-executive-guide/>Ai It Operations Executive Guide</Link></li>
+<li><Link /blog/microsaas-social-media-manager-policy-and-compliance/>Microsaas Social Media Manager Policy And Compliance</Link></li>
+<li><Link /blog/graphql-federation-platform-2026-6894/>Graphql Federation Platform 2026 6894</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

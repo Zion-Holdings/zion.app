@@ -57,10 +57,10 @@ Leading indicators for threat intelligence platform: security and governance: wo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/vector-database-automation-roadmap">Vector Database Automation Roadmap</Link></li>
-<li><Link href="/blog/generative-ai-security-operations-handbook">Generative Ai Security Operations Handbook</Link></li>
-<li><Link href="/blog/ai-development-acceleration-2026-6908">Ai Development Acceleration 2026 6908</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-implementation-playbook">Data Warehouse Modernization Implementation Playbook</Link></li>
+              <li><Link /blog/vector-database-automation-roadmap/>Vector Database Automation Roadmap</Link></li>
+<li><Link /blog/generative-ai-security-operations-handbook/>Generative Ai Security Operations Handbook</Link></li>
+<li><Link /blog/ai-development-acceleration-2026-6908/>Ai Development Acceleration 2026 6908</Link></li>
+<li><Link /blog/data-warehouse-modernization-implementation-playbook/>Data Warehouse Modernization Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

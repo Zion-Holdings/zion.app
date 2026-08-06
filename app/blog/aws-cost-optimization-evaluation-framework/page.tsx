@@ -54,10 +54,10 @@ If this guide matches your aws cost optimization: evaluation framework initiativ
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-2026-6825">Graphql Federation Platform 2026 6825</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-security-and-governance">Aiops Anomaly Detection Security And Governance</Link></li>
-<li><Link href="/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning">Ai Finops And Cloud Cost Optimization With Machine Learning</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-6661">Autonomous Qa Engineering 2026 6661</Link></li>
+              <li><Link /blog/graphql-federation-platform-2026-6825/>Graphql Federation Platform 2026 6825</Link></li>
+<li><Link /blog/aiops-anomaly-detection-security-and-governance/>Aiops Anomaly Detection Security And Governance</Link></li>
+<li><Link /blog/ai-finops-and-cloud-cost-optimization-with-machine-learning/>Ai Finops And Cloud Cost Optimization With Machine Learning</Link></li>
+<li><Link /blog/autonomous-qa-engineering-2026-6661/>Autonomous Qa Engineering 2026 6661</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

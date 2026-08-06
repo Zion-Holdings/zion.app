@@ -57,10 +57,10 @@ For api gateway security: pick one workflow, assign ownership, define success me
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/technology-roadmap-deployment-patterns">Technology Roadmap Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-implementation-playbook">Ai 3D Asset Generator Implementation Playbook</Link></li>
-<li><Link href="/blog/azure-migration-implementation-playbook">Azure Migration Implementation Playbook</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026-6903">Cybersecurity Platform Msp 2026 6903</Link></li>
+              <li><Link /blog/technology-roadmap-deployment-patterns/>Technology Roadmap Deployment Patterns</Link></li>
+<li><Link /blog/ai-3d-asset-generator-implementation-playbook/>Ai 3D Asset Generator Implementation Playbook</Link></li>
+<li><Link /blog/azure-migration-implementation-playbook/>Azure Migration Implementation Playbook</Link></li>
+<li><Link /blog/cybersecurity-platform-msp-2026-6903/>Cybersecurity Platform Msp 2026 6903</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

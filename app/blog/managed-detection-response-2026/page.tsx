@@ -57,10 +57,10 @@ For managed detection response: pick one workflow, assign ownership, define succ
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/apm-application-performance-operations-handbook">Apm Application Performance Operations Handbook</Link></li>
-<li><Link href="/blog/edge-computing-deployment-operations-handbook">Edge Computing Deployment Operations Handbook</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-deployment-patterns">Cybersecurity For Msps Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-email-intelligence-2026-6562">Ai Email Intelligence 2026 6562</Link></li>
+              <li><Link /blog/apm-application-performance-operations-handbook/>Apm Application Performance Operations Handbook</Link></li>
+<li><Link /blog/edge-computing-deployment-operations-handbook/>Edge Computing Deployment Operations Handbook</Link></li>
+<li><Link /blog/cybersecurity-for-msps-deployment-patterns/>Cybersecurity For Msps Deployment Patterns</Link></li>
+<li><Link /blog/ai-email-intelligence-2026-6562/>Ai Email Intelligence 2026 6562</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

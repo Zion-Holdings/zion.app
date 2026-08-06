@@ -54,10 +54,10 @@ If this guide matches your resilience engineering initiative, the next step is a
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/aiops-anomaly-detection-executive-guide">Aiops Anomaly Detection Executive Guide</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6567">Ai Data Lakehouse Pipelines 2026 6567</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-6592">Autonomous Qa Engineering 2026 6592</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-common-mistakes">Enterprise Ai Intelligence Hub Common Mistakes</Link></li>
+              <li><Link /blog/aiops-anomaly-detection-executive-guide/>Aiops Anomaly Detection Executive Guide</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-2026-6567/>Ai Data Lakehouse Pipelines 2026 6567</Link></li>
+<li><Link /blog/autonomous-qa-engineering-2026-6592/>Autonomous Qa Engineering 2026 6592</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-common-mistakes/>Enterprise Ai Intelligence Hub Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your aiops: common mistakes initiative, the next step is a
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-policy-and-compliance">Devsecops Pipeline Policy And Compliance</Link></li>
-<li><Link href="/blog/kubernetes-security-policy-and-compliance">Kubernetes Security Policy And Compliance</Link></li>
-<li><Link href="/blog/network-security-roi-and-cost-model">Network Security Roi And Cost Model</Link></li>
-<li><Link href="/blog/business-intelligence-automation-roadmap">Business Intelligence Automation Roadmap</Link></li>
+              <li><Link /blog/devsecops-pipeline-policy-and-compliance/>Devsecops Pipeline Policy And Compliance</Link></li>
+<li><Link /blog/kubernetes-security-policy-and-compliance/>Kubernetes Security Policy And Compliance</Link></li>
+<li><Link /blog/network-security-roi-and-cost-model/>Network Security Roi And Cost Model</Link></li>
+<li><Link /blog/business-intelligence-automation-roadmap/>Business Intelligence Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

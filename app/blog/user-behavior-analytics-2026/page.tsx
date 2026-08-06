@@ -57,10 +57,10 @@ For user behavior analytics: pick one workflow, assign ownership, define success
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-fintech-and-digital-banking-operations">Ai For Fintech And Digital Banking Operations</Link></li>
-<li><Link href="/blog/ai-bom-procurement-2026-6939">Ai Bom Procurement 2026 6939</Link></li>
-<li><Link href="/blog/api-gateway-management-executive-guide">Api Gateway Management Executive Guide</Link></li>
-<li><Link href="/blog/ai-data-backup-vendor-evaluation">Ai Data Backup Vendor Evaluation</Link></li>
+              <li><Link /blog/ai-for-fintech-and-digital-banking-operations/>Ai For Fintech And Digital Banking Operations</Link></li>
+<li><Link /blog/ai-bom-procurement-2026-6939/>Ai Bom Procurement 2026 6939</Link></li>
+<li><Link /blog/api-gateway-management-executive-guide/>Api Gateway Management Executive Guide</Link></li>
+<li><Link /blog/ai-data-backup-vendor-evaluation/>Ai Data Backup Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

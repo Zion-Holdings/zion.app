@@ -54,10 +54,10 @@ If this guide matches your api governance: evaluation framework initiative, the 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-email-intelligence-2026">Ai Email Intelligence 2026</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-case-study">Ai Ad Copy Generator Case Study</Link></li>
-<li><Link href="/blog/quality-assurance-operations-handbook">Quality Assurance Operations Handbook</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-automation-roadmap">Ai Agent Safety Evaluation Automation Roadmap</Link></li>
+              <li><Link /blog/ai-email-intelligence-2026/>Ai Email Intelligence 2026</Link></li>
+<li><Link /blog/ai-ad-copy-generator-case-study/>Ai Ad Copy Generator Case Study</Link></li>
+<li><Link /blog/quality-assurance-operations-handbook/>Quality Assurance Operations Handbook</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-automation-roadmap/>Ai Agent Safety Evaluation Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

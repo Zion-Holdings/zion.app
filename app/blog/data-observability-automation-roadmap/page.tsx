@@ -57,10 +57,10 @@ Leading indicators for data observability: automation roadmap: workflow completi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-expense-tracker-2026">Ai Expense Tracker 2026</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7062">Enterprise Ai Intelligence Hub 2026 7062</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-operations-handbook">Cloud Cost Ai Optimizer Operations Handbook</Link></li>
-<li><Link href="/blog/ai-customer-onboarding-architecture-overview">Ai Customer Onboarding Architecture Overview</Link></li>
+              <li><Link /blog/ai-expense-tracker-2026/>Ai Expense Tracker 2026</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-2026-7062/>Enterprise Ai Intelligence Hub 2026 7062</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-operations-handbook/>Cloud Cost Ai Optimizer Operations Handbook</Link></li>
+<li><Link /blog/ai-customer-onboarding-architecture-overview/>Ai Customer Onboarding Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

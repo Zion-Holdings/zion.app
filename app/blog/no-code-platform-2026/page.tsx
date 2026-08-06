@@ -57,10 +57,10 @@ For no code platform: pick one workflow, assign ownership, define success metric
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/crm-automation-trends-2026-ai-driven-customer-journey-personalization">Crm Automation Trends 2026 Ai Driven Customer Journey Personalization</Link></li>
-<li><Link href="/blog/static-application-security-testing-checklist-for-it-leaders">Static Application Security Testing Checklist For It Leaders</Link></li>
-<li><Link href="/blog/incident-response-retainer-starter-template">Incident Response Retainer Starter Template</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-architecture-overview">Microsaas Hr Recruitment Architecture Overview</Link></li>
+              <li><Link /blog/crm-automation-trends-2026-ai-driven-customer-journey-personalization/>Crm Automation Trends 2026 Ai Driven Customer Journey Personalization</Link></li>
+<li><Link /blog/static-application-security-testing-checklist-for-it-leaders/>Static Application Security Testing Checklist For It Leaders</Link></li>
+<li><Link /blog/incident-response-retainer-starter-template/>Incident Response Retainer Starter Template</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-architecture-overview/>Microsaas Hr Recruitment Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

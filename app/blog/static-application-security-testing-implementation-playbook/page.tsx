@@ -57,10 +57,10 @@ Leading indicators for static application security testing: implementation playb
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-service-bus-common-mistakes">Enterprise Service Bus Common Mistakes</Link></li>
-<li><Link href="/blog/docker-security-policy-and-compliance">Docker Security Policy And Compliance</Link></li>
-<li><Link href="/blog/cloud-optimization-policy-and-compliance">Cloud Optimization Policy And Compliance</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-architecture-overview">Microsaas Social Media Manager Architecture Overview</Link></li>
+              <li><Link /blog/enterprise-service-bus-common-mistakes/>Enterprise Service Bus Common Mistakes</Link></li>
+<li><Link /blog/docker-security-policy-and-compliance/>Docker Security Policy And Compliance</Link></li>
+<li><Link /blog/cloud-optimization-policy-and-compliance/>Cloud Optimization Policy And Compliance</Link></li>
+<li><Link /blog/microsaas-social-media-manager-architecture-overview/>Microsaas Social Media Manager Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

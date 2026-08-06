@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/continuous-integration-common-mistakes">Continuous Integration Common Mistakes</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-operations-handbook">Autonomous Code Deployment Operations Handbook</Link></li>
-<li><Link href="/blog/api-security-testing-policy-and-compliance">Api Security Testing Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-api-gateway-2026-7034">Ai Api Gateway 2026 7034</Link></li>
+              <li><Link /blog/continuous-integration-common-mistakes/>Continuous Integration Common Mistakes</Link></li>
+<li><Link /blog/autonomous-code-deployment-operations-handbook/>Autonomous Code Deployment Operations Handbook</Link></li>
+<li><Link /blog/api-security-testing-policy-and-compliance/>Api Security Testing Policy And Compliance</Link></li>
+<li><Link /blog/ai-api-gateway-2026-7034/>Ai Api Gateway 2026 7034</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

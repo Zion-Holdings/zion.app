@@ -57,10 +57,10 @@ For unified endpoint management: case study: pick one workflow, assign ownership
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/network-infrastructure-case-study">Network Infrastructure Case Study</Link></li>
-<li><Link href="/blog/smart-contract-audit-vendor-evaluation">Smart Contract Audit Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-email-intelligence-checklist-for-it-leaders">Ai Email Intelligence Checklist For It Leaders</Link></li>
-<li><Link href="/blog/api-economy-automation-roadmap">Api Economy Automation Roadmap</Link></li>
+              <li><Link /blog/network-infrastructure-case-study/>Network Infrastructure Case Study</Link></li>
+<li><Link /blog/smart-contract-audit-vendor-evaluation/>Smart Contract Audit Vendor Evaluation</Link></li>
+<li><Link /blog/ai-email-intelligence-checklist-for-it-leaders/>Ai Email Intelligence Checklist For It Leaders</Link></li>
+<li><Link /blog/api-economy-automation-roadmap/>Api Economy Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

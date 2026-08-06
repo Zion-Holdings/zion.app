@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-food-and-beverage-operations">Ai For Food And Beverage Operations</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-case-study">Ai Msp Security Compliance Case Study</Link></li>
-<li><Link href="/blog/splunk-migration-policy-and-compliance">Splunk Migration Policy And Compliance</Link></li>
-<li><Link href="/blog/continuous-deployment-roi-and-cost-model">Continuous Deployment Roi And Cost Model</Link></li>
+              <li><Link /blog/ai-for-food-and-beverage-operations/>Ai For Food And Beverage Operations</Link></li>
+<li><Link /blog/ai-msp-security-compliance-case-study/>Ai Msp Security Compliance Case Study</Link></li>
+<li><Link /blog/splunk-migration-policy-and-compliance/>Splunk Migration Policy And Compliance</Link></li>
+<li><Link /blog/continuous-deployment-roi-and-cost-model/>Continuous Deployment Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

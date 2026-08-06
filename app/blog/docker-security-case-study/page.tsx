@@ -57,10 +57,10 @@ For docker security: case study: pick one workflow, assign ownership, define suc
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/remote-work-security-common-mistakes">Remote Work Security Common Mistakes</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-implementation-playbook">Ai Performance Monitoring Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-in-sustainability-and-esg-reporting">Ai In Sustainability And Esg Reporting</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-common-mistakes">Autonomous Code Deployment Common Mistakes</Link></li>
+              <li><Link /blog/remote-work-security-common-mistakes/>Remote Work Security Common Mistakes</Link></li>
+<li><Link /blog/ai-performance-monitoring-implementation-playbook/>Ai Performance Monitoring Implementation Playbook</Link></li>
+<li><Link /blog/ai-in-sustainability-and-esg-reporting/>Ai In Sustainability And Esg Reporting</Link></li>
+<li><Link /blog/autonomous-code-deployment-common-mistakes/>Autonomous Code Deployment Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

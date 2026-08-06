@@ -57,10 +57,10 @@ Leading indicators for data pipeline orchestration: vendor evaluation: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-audit-and-compliance-automation">Ai For Audit And Compliance Automation</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026-6789">Ai Accessibility Optimizer 2026 6789</Link></li>
-<li><Link href="/blog/graphql-federation-platform-deployment-patterns">Graphql Federation Platform Deployment Patterns</Link></li>
-<li><Link href="/blog/incident-response-retainer-2026-6688">Incident Response Retainer 2026 6688</Link></li>
+              <li><Link /blog/ai-for-audit-and-compliance-automation/>Ai For Audit And Compliance Automation</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-2026-6789/>Ai Accessibility Optimizer 2026 6789</Link></li>
+<li><Link /blog/graphql-federation-platform-deployment-patterns/>Graphql Federation Platform Deployment Patterns</Link></li>
+<li><Link /blog/incident-response-retainer-2026-6688/>Incident Response Retainer 2026 6688</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

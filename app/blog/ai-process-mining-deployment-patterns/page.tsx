@@ -54,10 +54,10 @@ If this guide matches your ai process mining: deployment patterns initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-auditor-policy-and-compliance">Ai Accessibility Auditor Policy And Compliance</Link></li>
-<li><Link href="/blog/cloud-governance-checklist-for-it-leaders">Cloud Governance Checklist For It Leaders</Link></li>
-<li><Link href="/blog/devops-cicd-2026-6987">Devops Cicd 2026 6987</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-evaluation-framework">Ai Performance Monitoring Evaluation Framework</Link></li>
+              <li><Link /blog/ai-accessibility-auditor-policy-and-compliance/>Ai Accessibility Auditor Policy And Compliance</Link></li>
+<li><Link /blog/cloud-governance-checklist-for-it-leaders/>Cloud Governance Checklist For It Leaders</Link></li>
+<li><Link /blog/devops-cicd-2026-6987/>Devops Cicd 2026 6987</Link></li>
+<li><Link /blog/ai-performance-monitoring-evaluation-framework/>Ai Performance Monitoring Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

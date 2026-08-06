@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-it-operations-automation-2026-6625">Ai It Operations Automation 2026 6625</Link></li>
-<li><Link href="/blog/technical-due-diligence-starter-template">Technical Due Diligence Starter Template</Link></li>
-<li><Link href="/blog/enterprise-data-warehouse-2026">Enterprise Data Warehouse 2026</Link></li>
-<li><Link href="/blog/ai-for-insurance-claims-and-underwriting">Ai For Insurance Claims And Underwriting</Link></li>
+              <li><Link /blog/ai-it-operations-automation-2026-6625/>Ai It Operations Automation 2026 6625</Link></li>
+<li><Link /blog/technical-due-diligence-starter-template/>Technical Due Diligence Starter Template</Link></li>
+<li><Link /blog/enterprise-data-warehouse-2026/>Enterprise Data Warehouse 2026</Link></li>
+<li><Link /blog/ai-for-insurance-claims-and-underwriting/>Ai For Insurance Claims And Underwriting</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

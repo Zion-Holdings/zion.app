@@ -57,10 +57,10 @@ For continuous delivery: architecture overview: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-development-acceleration-2026">Ai Development Acceleration 2026</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-checklist-for-it-leaders">Data Warehouse Modernization Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cloud-workload-protection-automation-roadmap">Cloud Workload Protection Automation Roadmap</Link></li>
-<li><Link href="/blog/performance-testing-policy-and-compliance">Performance Testing Policy And Compliance</Link></li>
+              <li><Link /blog/ai-development-acceleration-2026/>Ai Development Acceleration 2026</Link></li>
+<li><Link /blog/data-warehouse-modernization-checklist-for-it-leaders/>Data Warehouse Modernization Checklist For It Leaders</Link></li>
+<li><Link /blog/cloud-workload-protection-automation-roadmap/>Cloud Workload Protection Automation Roadmap</Link></li>
+<li><Link /blog/performance-testing-policy-and-compliance/>Performance Testing Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

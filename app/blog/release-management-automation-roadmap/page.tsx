@@ -54,10 +54,10 @@ If this guide matches your release management: automation roadmap initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-it-operations-roi-and-cost-model">Ai It Operations Roi And Cost Model</Link></li>
-<li><Link href="/blog/enterprise-architecture-security-and-governance">Enterprise Architecture Security And Governance</Link></li>
-<li><Link href="/blog/ai-in-construction-and-project-management">Ai In Construction And Project Management</Link></li>
-<li><Link href="/blog/ai-security-analytics-roi-and-cost-model">Ai Security Analytics Roi And Cost Model</Link></li>
+              <li><Link /blog/ai-it-operations-roi-and-cost-model/>Ai It Operations Roi And Cost Model</Link></li>
+<li><Link /blog/enterprise-architecture-security-and-governance/>Enterprise Architecture Security And Governance</Link></li>
+<li><Link /blog/ai-in-construction-and-project-management/>Ai In Construction And Project Management</Link></li>
+<li><Link /blog/ai-security-analytics-roi-and-cost-model/>Ai Security Analytics Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

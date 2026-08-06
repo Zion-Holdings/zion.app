@@ -57,10 +57,10 @@ For splunk migration: roi and cost model: pick one workflow, assign ownership, d
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-automation-roadmap">Devsecops Pipeline Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-development-acceleration-automation-roadmap">Ai Development Acceleration Automation Roadmap</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-evaluation-framework">Cyber Threat Intelligence Evaluation Framework</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6805">Api Gateway Management 2026 6805</Link></li>
+              <li><Link /blog/devsecops-pipeline-automation-roadmap/>Devsecops Pipeline Automation Roadmap</Link></li>
+<li><Link /blog/ai-development-acceleration-automation-roadmap/>Ai Development Acceleration Automation Roadmap</Link></li>
+<li><Link /blog/cyber-threat-intelligence-evaluation-framework/>Cyber Threat Intelligence Evaluation Framework</Link></li>
+<li><Link /blog/api-gateway-management-2026-6805/>Api Gateway Management 2026 6805</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

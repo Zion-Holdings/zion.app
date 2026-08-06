@@ -54,10 +54,10 @@ If this guide matches your product led growth: architecture overview initiative,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cybersecurity-platform-msp-2026-6696">Cybersecurity Platform Msp 2026 6696</Link></li>
-<li><Link href="/blog/api-monetization-2026">Api Monetization 2026</Link></li>
-<li><Link href="/blog/ai-bom-procurement-checklist-for-it-leaders">Ai Bom Procurement Checklist For It Leaders</Link></li>
-<li><Link href="/blog/threat-intelligence-platform-starter-template">Threat Intelligence Platform Starter Template</Link></li>
+              <li><Link /blog/cybersecurity-platform-msp-2026-6696/>Cybersecurity Platform Msp 2026 6696</Link></li>
+<li><Link /blog/api-monetization-2026/>Api Monetization 2026</Link></li>
+<li><Link /blog/ai-bom-procurement-checklist-for-it-leaders/>Ai Bom Procurement Checklist For It Leaders</Link></li>
+<li><Link /blog/threat-intelligence-platform-starter-template/>Threat Intelligence Platform Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

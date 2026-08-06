@@ -57,10 +57,10 @@ For generative ai: case study: pick one workflow, assign ownership, define succe
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-3d-asset-generator-starter-template">Ai 3D Asset Generator Starter Template</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-2026">Ai Msp Security Compliance 2026</Link></li>
-<li><Link href="/blog/cost-optimization-evaluation-framework">Cost Optimization Evaluation Framework</Link></li>
-<li><Link href="/blog/test-automation-common-mistakes">Test Automation Common Mistakes</Link></li>
+              <li><Link /blog/ai-3d-asset-generator-starter-template/>Ai 3D Asset Generator Starter Template</Link></li>
+<li><Link /blog/ai-msp-security-compliance-2026/>Ai Msp Security Compliance 2026</Link></li>
+<li><Link /blog/cost-optimization-evaluation-framework/>Cost Optimization Evaluation Framework</Link></li>
+<li><Link /blog/test-automation-common-mistakes/>Test Automation Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

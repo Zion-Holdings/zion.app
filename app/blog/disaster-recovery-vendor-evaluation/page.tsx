@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/llm-operations-starter-template">Llm Operations Starter Template</Link></li>
-<li><Link href="/blog/api-economy-executive-guide">Api Economy Executive Guide</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6575">Micro Saas Ai Expense Tracker 2026 6575</Link></li>
-<li><Link href="/blog/endpoint-management-architecture-overview">Endpoint Management Architecture Overview</Link></li>
+              <li><Link /blog/llm-operations-starter-template/>Llm Operations Starter Template</Link></li>
+<li><Link /blog/api-economy-executive-guide/>Api Economy Executive Guide</Link></li>
+<li><Link /blog/micro-saas-ai-expense-tracker-2026-6575/>Micro Saas Ai Expense Tracker 2026 6575</Link></li>
+<li><Link /blog/endpoint-management-architecture-overview/>Endpoint Management Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

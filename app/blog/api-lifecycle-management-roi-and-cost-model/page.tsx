@@ -54,10 +54,10 @@ If this guide matches your api lifecycle management: roi and cost model initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-food-and-beverage-operations">Ai For Food And Beverage Operations</Link></li>
-<li><Link href="/blog/software-supply-chain-security-executive-guide">Software Supply Chain Security Executive Guide</Link></li>
-<li><Link href="/blog/api-rate-limiting-2026">Api Rate Limiting 2026</Link></li>
-<li><Link href="/blog/generative-ai-security-evaluation-framework">Generative Ai Security Evaluation Framework</Link></li>
+              <li><Link /blog/ai-for-food-and-beverage-operations/>Ai For Food And Beverage Operations</Link></li>
+<li><Link /blog/software-supply-chain-security-executive-guide/>Software Supply Chain Security Executive Guide</Link></li>
+<li><Link /blog/api-rate-limiting-2026/>Api Rate Limiting 2026</Link></li>
+<li><Link /blog/generative-ai-security-evaluation-framework/>Generative Ai Security Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

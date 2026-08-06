@@ -57,10 +57,10 @@ For product led growth: checklist for it leaders: pick one workflow, assign owne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-marketing-personalization-automation-roadmap">Ai Marketing Personalization Automation Roadmap</Link></li>
-<li><Link href="/blog/event-driven-architecture-2026">Event Driven Architecture 2026</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-checklist-for-it-leaders">Microsaas Social Media Manager Checklist For It Leaders</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-2026-6519">Aiops Anomaly Detection 2026 6519</Link></li>
+              <li><Link /blog/ai-marketing-personalization-automation-roadmap/>Ai Marketing Personalization Automation Roadmap</Link></li>
+<li><Link /blog/event-driven-architecture-2026/>Event Driven Architecture 2026</Link></li>
+<li><Link /blog/microsaas-social-media-manager-checklist-for-it-leaders/>Microsaas Social Media Manager Checklist For It Leaders</Link></li>
+<li><Link /blog/aiops-anomaly-detection-2026-6519/>Aiops Anomaly Detection 2026 6519</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

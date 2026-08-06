@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-management-2026-6690">Api Gateway Management 2026 6690</Link></li>
-<li><Link href="/blog/automation-orchestration-enterprise-2026-6906">Automation Orchestration Enterprise 2026 6906</Link></li>
-<li><Link href="/blog/network-automation-executive-guide">Network Automation Executive Guide</Link></li>
-<li><Link href="/blog/devsecops-pipeline-2026">Devsecops Pipeline 2026</Link></li>
+              <li><Link /blog/api-gateway-management-2026-6690/>Api Gateway Management 2026 6690</Link></li>
+<li><Link /blog/automation-orchestration-enterprise-2026-6906/>Automation Orchestration Enterprise 2026 6906</Link></li>
+<li><Link /blog/network-automation-executive-guide/>Network Automation Executive Guide</Link></li>
+<li><Link /blog/devsecops-pipeline-2026/>Devsecops Pipeline 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

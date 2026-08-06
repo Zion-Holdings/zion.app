@@ -54,10 +54,10 @@ If this guide matches your blue green deployment: security and governance initia
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-code-deployment-2026-6591">Autonomous Code Deployment 2026 6591</Link></li>
-<li><Link href="/blog/ar-vr-enterprise-automation-roadmap">Ar Vr Enterprise Automation Roadmap</Link></li>
-<li><Link href="/blog/api-lifecycle-management-checklist-for-it-leaders">Api Lifecycle Management Checklist For It Leaders</Link></li>
-<li><Link href="/blog/configuration-management-2026">Configuration Management 2026</Link></li>
+              <li><Link /blog/autonomous-code-deployment-2026-6591/>Autonomous Code Deployment 2026 6591</Link></li>
+<li><Link /blog/ar-vr-enterprise-automation-roadmap/>Ar Vr Enterprise Automation Roadmap</Link></li>
+<li><Link /blog/api-lifecycle-management-checklist-for-it-leaders/>Api Lifecycle Management Checklist For It Leaders</Link></li>
+<li><Link /blog/configuration-management-2026/>Configuration Management 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your ai voice assistant: roi and cost model initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-lakehouse-pipelines-case-study">Ai Data Lakehouse Pipelines Case Study</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-6934">Api Orchestration Layer 2026 6934</Link></li>
-<li><Link href="/blog/graphql-federation-platform-checklist-for-it-leaders">Graphql Federation Platform Checklist For It Leaders</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026">Micro Saas Ai Customer Onboarding 2026</Link></li>
+              <li><Link /blog/ai-data-lakehouse-pipelines-case-study/>Ai Data Lakehouse Pipelines Case Study</Link></li>
+<li><Link /blog/api-orchestration-layer-2026-6934/>Api Orchestration Layer 2026 6934</Link></li>
+<li><Link /blog/graphql-federation-platform-checklist-for-it-leaders/>Graphql Federation Platform Checklist For It Leaders</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026/>Micro Saas Ai Customer Onboarding 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

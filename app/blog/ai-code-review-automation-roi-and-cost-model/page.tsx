@@ -54,10 +54,10 @@ If this guide matches your ai code review automation: roi and cost model initiat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bdr-sdr-2026-6800">Ai Bdr Sdr 2026 6800</Link></li>
-<li><Link href="/blog/devops-cicd-deployment-patterns">Devops Cicd Deployment Patterns</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-roi-and-cost-model">Aiops Anomaly Detection Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-hr-recruitment-operations-handbook">Ai Hr Recruitment Operations Handbook</Link></li>
+              <li><Link /blog/ai-bdr-sdr-2026-6800/>Ai Bdr Sdr 2026 6800</Link></li>
+<li><Link /blog/devops-cicd-deployment-patterns/>Devops Cicd Deployment Patterns</Link></li>
+<li><Link /blog/aiops-anomaly-detection-roi-and-cost-model/>Aiops Anomaly Detection Roi And Cost Model</Link></li>
+<li><Link /blog/ai-hr-recruitment-operations-handbook/>Ai Hr Recruitment Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

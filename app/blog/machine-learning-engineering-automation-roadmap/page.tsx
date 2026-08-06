@@ -57,10 +57,10 @@ For machine learning engineering: automation roadmap: pick one workflow, assign 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-code-deployment-2026-7074">Autonomous Code Deployment 2026 7074</Link></li>
-<li><Link href="/blog/api-integration-2026-7013">Api Integration 2026 7013</Link></li>
-<li><Link href="/blog/test-automation-roi-and-cost-model">Test Automation Roi And Cost Model</Link></li>
-<li><Link href="/blog/cloud-finops-roi-and-cost-model">Cloud Finops Roi And Cost Model</Link></li>
+              <li><Link /blog/autonomous-code-deployment-2026-7074/>Autonomous Code Deployment 2026 7074</Link></li>
+<li><Link /blog/api-integration-2026-7013/>Api Integration 2026 7013</Link></li>
+<li><Link /blog/test-automation-roi-and-cost-model/>Test Automation Roi And Cost Model</Link></li>
+<li><Link /blog/cloud-finops-roi-and-cost-model/>Cloud Finops Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

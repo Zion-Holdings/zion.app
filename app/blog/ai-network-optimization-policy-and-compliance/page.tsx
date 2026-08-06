@@ -57,10 +57,10 @@ Leading indicators for ai network optimization: policy and compliance: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/network-infrastructure-2026-6847">Network Infrastructure 2026 6847</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026-6986">Cloud Migration Services 2026 6986</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-2026">Enterprise Ai Intelligence Hub 2026</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-operations-handbook">Ai Accessibility Optimizer Operations Handbook</Link></li>
+              <li><Link /blog/network-infrastructure-2026-6847/>Network Infrastructure 2026 6847</Link></li>
+<li><Link /blog/cloud-migration-services-2026-6986/>Cloud Migration Services 2026 6986</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-2026/>Enterprise Ai Intelligence Hub 2026</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-operations-handbook/>Ai Accessibility Optimizer Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

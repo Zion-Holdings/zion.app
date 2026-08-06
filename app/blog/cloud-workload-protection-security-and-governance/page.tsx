@@ -57,10 +57,10 @@ Leading indicators for cloud workload protection: security and governance: workf
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-optimization-case-study">Cloud Cost Optimization Case Study</Link></li>
-<li><Link href="/blog/api-orchestration-layer-policy-and-compliance">Api Orchestration Layer Policy And Compliance</Link></li>
-<li><Link href="/blog/api-orchestration-layer-starter-template">Api Orchestration Layer Starter Template</Link></li>
-<li><Link href="/blog/ubiquitous-connectivity-implementation-playbook">Ubiquitous Connectivity Implementation Playbook</Link></li>
+              <li><Link /blog/cloud-cost-optimization-case-study/>Cloud Cost Optimization Case Study</Link></li>
+<li><Link /blog/api-orchestration-layer-policy-and-compliance/>Api Orchestration Layer Policy And Compliance</Link></li>
+<li><Link /blog/api-orchestration-layer-starter-template/>Api Orchestration Layer Starter Template</Link></li>
+<li><Link /blog/ubiquitous-connectivity-implementation-playbook/>Ubiquitous Connectivity Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

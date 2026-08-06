@@ -57,10 +57,10 @@ For artificial intelligence ethics: vendor evaluation: pick one workflow, assign
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-performance-monitoring-2026-6942">Ai Performance Monitoring 2026 6942</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-6962">Smart Contract Audit 2026 6962</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-6686">Smart Contract Audit 2026 6686</Link></li>
-<li><Link href="/blog/test-automation-evaluation-framework">Test Automation Evaluation Framework</Link></li>
+              <li><Link /blog/ai-performance-monitoring-2026-6942/>Ai Performance Monitoring 2026 6942</Link></li>
+<li><Link /blog/smart-contract-audit-2026-6962/>Smart Contract Audit 2026 6962</Link></li>
+<li><Link /blog/smart-contract-audit-2026-6686/>Smart Contract Audit 2026 6686</Link></li>
+<li><Link /blog/test-automation-evaluation-framework/>Test Automation Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

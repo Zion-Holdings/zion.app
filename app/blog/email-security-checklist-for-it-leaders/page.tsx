@@ -54,10 +54,10 @@ If this guide matches your email security: checklist for it leaders initiative, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ubiquitous-connectivity-automation-roadmap">Ubiquitous Connectivity Automation Roadmap</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6920">Micro Saas Ai Expense Tracker 2026 6920</Link></li>
-<li><Link href="/blog/ai-customer-support-pro-2026-6840">Ai Customer Support Pro 2026 6840</Link></li>
-<li><Link href="/blog/platform-engineering-automation-roadmap">Platform Engineering Automation Roadmap</Link></li>
+              <li><Link /blog/ubiquitous-connectivity-automation-roadmap/>Ubiquitous Connectivity Automation Roadmap</Link></li>
+<li><Link /blog/micro-saas-ai-expense-tracker-2026-6920/>Micro Saas Ai Expense Tracker 2026 6920</Link></li>
+<li><Link /blog/ai-customer-support-pro-2026-6840/>Ai Customer Support Pro 2026 6840</Link></li>
+<li><Link /blog/platform-engineering-automation-roadmap/>Platform Engineering Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

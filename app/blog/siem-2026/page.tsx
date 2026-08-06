@@ -57,10 +57,10 @@ Leading indicators for siem: workflow completion rate, escalation rate, time-to-
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/unified-endpoint-management-2026">Unified Endpoint Management 2026</Link></li>
-<li><Link href="/blog/infrastructure-as-code-2026">Infrastructure As Code 2026</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-2026-6864">Aiops Anomaly Detection 2026 6864</Link></li>
-<li><Link href="/blog/incident-response-retainer-evaluation-framework">Incident Response Retainer Evaluation Framework</Link></li>
+              <li><Link /blog/unified-endpoint-management-2026/>Unified Endpoint Management 2026</Link></li>
+<li><Link /blog/infrastructure-as-code-2026/>Infrastructure As Code 2026</Link></li>
+<li><Link /blog/aiops-anomaly-detection-2026-6864/>Aiops Anomaly Detection 2026 6864</Link></li>
+<li><Link /blog/incident-response-retainer-evaluation-framework/>Incident Response Retainer Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

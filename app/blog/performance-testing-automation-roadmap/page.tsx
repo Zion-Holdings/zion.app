@@ -57,10 +57,10 @@ Leading indicators for performance testing: automation roadmap: workflow complet
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/monitoring-observability-implementation-playbook">Monitoring Observability Implementation Playbook</Link></li>
-<li><Link href="/blog/micro-saas-ai-social-media-manager-2026-6578">Micro Saas Ai Social Media Manager 2026 6578</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026-6793">Ai Agentic Workflows 2026 6793</Link></li>
-<li><Link href="/blog/vulnerability-assessment-starter-template">Vulnerability Assessment Starter Template</Link></li>
+              <li><Link /blog/monitoring-observability-implementation-playbook/>Monitoring Observability Implementation Playbook</Link></li>
+<li><Link /blog/micro-saas-ai-social-media-manager-2026-6578/>Micro Saas Ai Social Media Manager 2026 6578</Link></li>
+<li><Link /blog/ai-agentic-workflows-2026-6793/>Ai Agentic Workflows 2026 6793</Link></li>
+<li><Link /blog/vulnerability-assessment-starter-template/>Vulnerability Assessment Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

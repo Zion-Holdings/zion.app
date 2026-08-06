@@ -54,10 +54,10 @@ If this guide matches your ai marketing personalization: implementation playbook
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-backup-2026-6900">Ai Data Backup 2026 6900</Link></li>
-<li><Link href="/blog/devsecops-pipeline-case-study">Devsecops Pipeline Case Study</Link></li>
-<li><Link href="/blog/cloud-governance-starter-template">Cloud Governance Starter Template</Link></li>
-<li><Link href="/blog/5g-solutions-vendor-evaluation">5G Solutions Vendor Evaluation</Link></li>
+              <li><Link /blog/ai-data-backup-2026-6900/>Ai Data Backup 2026 6900</Link></li>
+<li><Link /blog/devsecops-pipeline-case-study/>Devsecops Pipeline Case Study</Link></li>
+<li><Link /blog/cloud-governance-starter-template/>Cloud Governance Starter Template</Link></li>
+<li><Link /blog/5g-solutions-vendor-evaluation/>5G Solutions Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

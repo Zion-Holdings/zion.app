@@ -57,10 +57,10 @@ For ai supply chain: architecture overview: pick one workflow, assign ownership,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-msp-security-compliance-roi-and-cost-model">Ai Msp Security Compliance Roi And Cost Model</Link></li>
-<li><Link href="/blog/devsecops-pipeline-2026-7094">Devsecops Pipeline 2026 7094</Link></li>
-<li><Link href="/blog/observability-platform-common-mistakes">Observability Platform Common Mistakes</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026-7042">Managed It Services Small Business 2026 7042</Link></li>
+              <li><Link /blog/ai-msp-security-compliance-roi-and-cost-model/>Ai Msp Security Compliance Roi And Cost Model</Link></li>
+<li><Link /blog/devsecops-pipeline-2026-7094/>Devsecops Pipeline 2026 7094</Link></li>
+<li><Link /blog/observability-platform-common-mistakes/>Observability Platform Common Mistakes</Link></li>
+<li><Link /blog/managed-it-services-small-business-2026-7042/>Managed It Services Small Business 2026 7042</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devops-automation-with-ai-reducing-deployment-failures-by-60">Devops Automation With Ai Reducing Deployment Failures By 60</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-vendor-evaluation">Ai Agent Tool Builder Vendor Evaluation</Link></li>
-<li><Link href="/blog/vector-database-architecture-overview">Vector Database Architecture Overview</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-2026-6800">Ai Bdr Sdr 2026 6800</Link></li>
+              <li><Link /blog/devops-automation-with-ai-reducing-deployment-failures-by-60/>Devops Automation With Ai Reducing Deployment Failures By 60</Link></li>
+<li><Link /blog/ai-agent-tool-builder-vendor-evaluation/>Ai Agent Tool Builder Vendor Evaluation</Link></li>
+<li><Link /blog/vector-database-architecture-overview/>Vector Database Architecture Overview</Link></li>
+<li><Link /blog/ai-bdr-sdr-2026-6800/>Ai Bdr Sdr 2026 6800</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

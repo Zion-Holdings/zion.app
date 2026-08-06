@@ -57,10 +57,10 @@ Leading indicators for site reliability engineering: security and governance: wo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bdr-sdr-checklist-for-it-leaders">Ai Bdr Sdr Checklist For It Leaders</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-common-mistakes">Microsaas Expense Tracker Common Mistakes</Link></li>
-<li><Link href="/blog/chaos-engineering-evaluation-framework">Chaos Engineering Evaluation Framework</Link></li>
-<li><Link href="/blog/cloud-native-app-development-2026-6605">Cloud Native App Development 2026 6605</Link></li>
+              <li><Link /blog/ai-bdr-sdr-checklist-for-it-leaders/>Ai Bdr Sdr Checklist For It Leaders</Link></li>
+<li><Link /blog/microsaas-expense-tracker-common-mistakes/>Microsaas Expense Tracker Common Mistakes</Link></li>
+<li><Link /blog/chaos-engineering-evaluation-framework/>Chaos Engineering Evaluation Framework</Link></li>
+<li><Link /blog/cloud-native-app-development-2026-6605/>Cloud Native App Development 2026 6605</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

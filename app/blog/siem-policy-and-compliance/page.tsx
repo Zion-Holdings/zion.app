@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/vendor-management-automation-roadmap">Vendor Management Automation Roadmap</Link></li>
-<li><Link href="/blog/chaos-engineering-executive-guide">Chaos Engineering Executive Guide</Link></li>
-<li><Link href="/blog/ai-voice-assistant-vendor-evaluation">Ai Voice Assistant Vendor Evaluation</Link></li>
-<li><Link href="/blog/chaos-engineering-policy-and-compliance">Chaos Engineering Policy And Compliance</Link></li>
+              <li><Link /blog/vendor-management-automation-roadmap/>Vendor Management Automation Roadmap</Link></li>
+<li><Link /blog/chaos-engineering-executive-guide/>Chaos Engineering Executive Guide</Link></li>
+<li><Link /blog/ai-voice-assistant-vendor-evaluation/>Ai Voice Assistant Vendor Evaluation</Link></li>
+<li><Link /blog/chaos-engineering-policy-and-compliance/>Chaos Engineering Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

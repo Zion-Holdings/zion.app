@@ -57,10 +57,10 @@ Leading indicators for log management: policy and compliance: workflow completio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-ad-copy-generator-vendor-evaluation">Ai Ad Copy Generator Vendor Evaluation</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-2">Cloud Cost Optimization Checklist 2026 2</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-policy-and-compliance">Cyber Threat Intelligence Policy And Compliance</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-6764">Cloud Cost Optimization Checklist 2026 6764</Link></li>
+              <li><Link /blog/ai-ad-copy-generator-vendor-evaluation/>Ai Ad Copy Generator Vendor Evaluation</Link></li>
+<li><Link /blog/cloud-cost-optimization-checklist-2026-2/>Cloud Cost Optimization Checklist 2026 2</Link></li>
+<li><Link /blog/cyber-threat-intelligence-policy-and-compliance/>Cyber Threat Intelligence Policy And Compliance</Link></li>
+<li><Link /blog/cloud-cost-optimization-checklist-2026-6764/>Cloud Cost Optimization Checklist 2026 6764</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

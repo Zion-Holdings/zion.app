@@ -54,10 +54,10 @@ If this guide matches your product led growth: case study initiative, the next s
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agentic-workflows-executive-guide">Ai Agentic Workflows Executive Guide</Link></li>
-<li><Link href="/blog/azure-migration-automation-roadmap">Azure Migration Automation Roadmap</Link></li>
-<li><Link href="/blog/graphql-federation-platform-evaluation-framework">Graphql Federation Platform Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-process-mining-evaluation-framework">Ai Process Mining Evaluation Framework</Link></li>
+              <li><Link /blog/ai-agentic-workflows-executive-guide/>Ai Agentic Workflows Executive Guide</Link></li>
+<li><Link /blog/azure-migration-automation-roadmap/>Azure Migration Automation Roadmap</Link></li>
+<li><Link /blog/graphql-federation-platform-evaluation-framework/>Graphql Federation Platform Evaluation Framework</Link></li>
+<li><Link /blog/ai-process-mining-evaluation-framework/>Ai Process Mining Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

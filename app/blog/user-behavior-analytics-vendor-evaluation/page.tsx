@@ -57,10 +57,10 @@ Leading indicators for user behavior analytics: vendor evaluation: workflow comp
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-ad-copy-generator-architecture-overview">Ai Ad Copy Generator Architecture Overview</Link></li>
-<li><Link href="/blog/endpoint-management-2026-7096">Endpoint Management 2026 7096</Link></li>
-<li><Link href="/blog/ai-it-operations-automation-2026-7108">Ai It Operations Automation 2026 7108</Link></li>
-<li><Link href="/blog/observability-platform-vendor-evaluation">Observability Platform Vendor Evaluation</Link></li>
+              <li><Link /blog/ai-ad-copy-generator-architecture-overview/>Ai Ad Copy Generator Architecture Overview</Link></li>
+<li><Link /blog/endpoint-management-2026-7096/>Endpoint Management 2026 7096</Link></li>
+<li><Link /blog/ai-it-operations-automation-2026-7108/>Ai It Operations Automation 2026 7108</Link></li>
+<li><Link /blog/observability-platform-vendor-evaluation/>Observability Platform Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

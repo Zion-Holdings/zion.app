@@ -57,10 +57,10 @@ Leading indicators for ai customer onboarding: vendor evaluation: workflow compl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-storage-strategy-vendor-evaluation">Cloud Storage Strategy Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-roi-and-cost-model">Ai Agent Safety Evaluation Roi And Cost Model</Link></li>
-<li><Link href="/blog/network-infrastructure-2026-6916">Network Infrastructure 2026 6916</Link></li>
-<li><Link href="/blog/cloud-migration-services-automation-roadmap">Cloud Migration Services Automation Roadmap</Link></li>
+              <li><Link /blog/cloud-storage-strategy-vendor-evaluation/>Cloud Storage Strategy Vendor Evaluation</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-roi-and-cost-model/>Ai Agent Safety Evaluation Roi And Cost Model</Link></li>
+<li><Link /blog/network-infrastructure-2026-6916/>Network Infrastructure 2026 6916</Link></li>
+<li><Link /blog/cloud-migration-services-automation-roadmap/>Cloud Migration Services Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

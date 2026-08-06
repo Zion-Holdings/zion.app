@@ -57,10 +57,10 @@ Leading indicators for cloud storage strategy: implementation playbook: workflow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/retrieval-augmented-generation-checklist-for-it-leaders">Retrieval Augmented Generation Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-executive-guide">Ai Agent Safety Evaluation Executive Guide</Link></li>
-<li><Link href="/blog/apm-application-performance-2026-6601">Apm Application Performance 2026 6601</Link></li>
-<li><Link href="/blog/smart-contract-audit-executive-guide">Smart Contract Audit Executive Guide</Link></li>
+              <li><Link /blog/retrieval-augmented-generation-checklist-for-it-leaders/>Retrieval Augmented Generation Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-executive-guide/>Ai Agent Safety Evaluation Executive Guide</Link></li>
+<li><Link /blog/apm-application-performance-2026-6601/>Apm Application Performance 2026 6601</Link></li>
+<li><Link /blog/smart-contract-audit-executive-guide/>Smart Contract Audit Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

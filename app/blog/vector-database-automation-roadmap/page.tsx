@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/network-automation-executive-guide">Network Automation Executive Guide</Link></li>
-<li><Link href="/blog/oncall-best-practices-vendor-evaluation">Oncall Best Practices Vendor Evaluation</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-6543">Edge Computing Deployment 2026 6543</Link></li>
-<li><Link href="/blog/api-performance-testing-2026-6760">Api Performance Testing 2026 6760</Link></li>
+              <li><Link /blog/network-automation-executive-guide/>Network Automation Executive Guide</Link></li>
+<li><Link /blog/oncall-best-practices-vendor-evaluation/>Oncall Best Practices Vendor Evaluation</Link></li>
+<li><Link /blog/edge-computing-deployment-2026-6543/>Edge Computing Deployment 2026 6543</Link></li>
+<li><Link /blog/api-performance-testing-2026-6760/>Api Performance Testing 2026 6760</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for blockchain enterprise: deployment patterns: workflow comp
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-api-gateway-2026-6689">Ai Api Gateway 2026 6689</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-operations-handbook">Ai Performance Monitoring Operations Handbook</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-checklist-for-it-leaders">Ai Accessibility Auditor Checklist For It Leaders</Link></li>
-<li><Link href="/blog/golang-microservices-starter-template">Golang Microservices Starter Template</Link></li>
+              <li><Link /blog/ai-api-gateway-2026-6689/>Ai Api Gateway 2026 6689</Link></li>
+<li><Link /blog/ai-performance-monitoring-operations-handbook/>Ai Performance Monitoring Operations Handbook</Link></li>
+<li><Link /blog/ai-accessibility-auditor-checklist-for-it-leaders/>Ai Accessibility Auditor Checklist For It Leaders</Link></li>
+<li><Link /blog/golang-microservices-starter-template/>Golang Microservices Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

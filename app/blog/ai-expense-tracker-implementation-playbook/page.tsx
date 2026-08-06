@@ -54,10 +54,10 @@ If this guide matches your ai expense tracker: implementation playbook initiativ
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-code-review-automation-evaluation-framework">Ai Code Review Automation Evaluation Framework</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-evaluation-framework">Cyber Threat Intelligence Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-implementation-playbook">Ai Accessibility Auditor Implementation Playbook</Link></li>
-<li><Link href="/blog/retrieval-augmented-generation-checklist-for-it-leaders">Retrieval Augmented Generation Checklist For It Leaders</Link></li>
+              <li><Link /blog/ai-code-review-automation-evaluation-framework/>Ai Code Review Automation Evaluation Framework</Link></li>
+<li><Link /blog/cyber-threat-intelligence-evaluation-framework/>Cyber Threat Intelligence Evaluation Framework</Link></li>
+<li><Link /blog/ai-accessibility-auditor-implementation-playbook/>Ai Accessibility Auditor Implementation Playbook</Link></li>
+<li><Link /blog/retrieval-augmented-generation-checklist-for-it-leaders/>Retrieval Augmented Generation Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

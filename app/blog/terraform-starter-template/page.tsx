@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/itil-2026">Itil 2026</Link></li>
-<li><Link href="/blog/database-performance-architecture-overview">Database Performance Architecture Overview</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-starter-template">Ai Agent Tool Builder Starter Template</Link></li>
-<li><Link href="/blog/devops-cicd-policy-and-compliance">Devops Cicd Policy And Compliance</Link></li>
+              <li><Link /blog/itil-2026/>Itil 2026</Link></li>
+<li><Link /blog/database-performance-architecture-overview/>Database Performance Architecture Overview</Link></li>
+<li><Link /blog/ai-agent-tool-builder-starter-template/>Ai Agent Tool Builder Starter Template</Link></li>
+<li><Link /blog/devops-cicd-policy-and-compliance/>Devops Cicd Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

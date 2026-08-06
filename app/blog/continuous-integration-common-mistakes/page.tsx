@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-performance-monitoring-architecture-overview">Ai Performance Monitoring Architecture Overview</Link></li>
-<li><Link href="/blog/ai-data-backup-automation-roadmap">Ai Data Backup Automation Roadmap</Link></li>
-<li><Link href="/blog/policy-as-code-roi-and-cost-model">Policy As Code Roi And Cost Model</Link></li>
-<li><Link href="/blog/infrastructure-monitoring-policy-and-compliance">Infrastructure Monitoring Policy And Compliance</Link></li>
+              <li><Link /blog/ai-performance-monitoring-architecture-overview/>Ai Performance Monitoring Architecture Overview</Link></li>
+<li><Link /blog/ai-data-backup-automation-roadmap/>Ai Data Backup Automation Roadmap</Link></li>
+<li><Link /blog/policy-as-code-roi-and-cost-model/>Policy As Code Roi And Cost Model</Link></li>
+<li><Link /blog/infrastructure-monitoring-policy-and-compliance/>Infrastructure Monitoring Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

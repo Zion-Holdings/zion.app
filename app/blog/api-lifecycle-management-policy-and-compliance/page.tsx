@@ -54,10 +54,10 @@ If this guide matches your api lifecycle management: policy and compliance initi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-security-starter-template">Data Security Starter Template</Link></li>
-<li><Link href="/blog/generative-ai-security-operations-handbook">Generative Ai Security Operations Handbook</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-2026-7076">Ai Bdr Sdr 2026 7076</Link></li>
-<li><Link href="/blog/network-infrastructure-starter-template">Network Infrastructure Starter Template</Link></li>
+              <li><Link /blog/data-security-starter-template/>Data Security Starter Template</Link></li>
+<li><Link /blog/generative-ai-security-operations-handbook/>Generative Ai Security Operations Handbook</Link></li>
+<li><Link /blog/ai-bdr-sdr-2026-7076/>Ai Bdr Sdr 2026 7076</Link></li>
+<li><Link /blog/network-infrastructure-starter-template/>Network Infrastructure Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

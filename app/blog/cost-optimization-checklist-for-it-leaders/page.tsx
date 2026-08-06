@@ -57,10 +57,10 @@ For cost optimization: checklist for it leaders: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-asset-management-policy-and-compliance">It Asset Management Policy And Compliance</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-implementation-playbook">Data Warehouse Modernization Implementation Playbook</Link></li>
-<li><Link href="/blog/api-orchestration-layer-deployment-patterns">Api Orchestration Layer Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-2026-6653">Ai Agent Safety Evaluation 2026 6653</Link></li>
+              <li><Link /blog/it-asset-management-policy-and-compliance/>It Asset Management Policy And Compliance</Link></li>
+<li><Link /blog/data-warehouse-modernization-implementation-playbook/>Data Warehouse Modernization Implementation Playbook</Link></li>
+<li><Link /blog/api-orchestration-layer-deployment-patterns/>Api Orchestration Layer Deployment Patterns</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-2026-6653/>Ai Agent Safety Evaluation 2026 6653</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

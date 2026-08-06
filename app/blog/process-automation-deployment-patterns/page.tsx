@@ -54,10 +54,10 @@ If this guide matches your process automation: deployment patterns initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/apm-application-performance-2026-6808">Apm Application Performance 2026 6808</Link></li>
-<li><Link href="/blog/process-automation-checklist-for-it-leaders">Process Automation Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-common-mistakes">Ai Agentic Workflows Common Mistakes</Link></li>
-<li><Link href="/blog/ai-it-operations-vendor-evaluation">Ai It Operations Vendor Evaluation</Link></li>
+              <li><Link /blog/apm-application-performance-2026-6808/>Apm Application Performance 2026 6808</Link></li>
+<li><Link /blog/process-automation-checklist-for-it-leaders/>Process Automation Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-agentic-workflows-common-mistakes/>Ai Agentic Workflows Common Mistakes</Link></li>
+<li><Link /blog/ai-it-operations-vendor-evaluation/>Ai It Operations Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

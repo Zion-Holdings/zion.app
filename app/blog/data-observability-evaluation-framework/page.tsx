@@ -57,10 +57,10 @@ Leading indicators for data observability: evaluation framework: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automation-orchestration-case-study">Automation Orchestration Case Study</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026">Ai Accessibility Optimizer 2026</Link></li>
-<li><Link href="/blog/endpoint-management-vendor-evaluation">Endpoint Management Vendor Evaluation</Link></li>
-<li><Link href="/blog/enterprise-service-bus-automation-roadmap">Enterprise Service Bus Automation Roadmap</Link></li>
+              <li><Link /blog/automation-orchestration-case-study/>Automation Orchestration Case Study</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-2026/>Ai Accessibility Optimizer 2026</Link></li>
+<li><Link /blog/endpoint-management-vendor-evaluation/>Endpoint Management Vendor Evaluation</Link></li>
+<li><Link /blog/enterprise-service-bus-automation-roadmap/>Enterprise Service Bus Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

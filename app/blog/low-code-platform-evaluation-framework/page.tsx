@@ -54,10 +54,10 @@ If this guide matches your low code platform: evaluation framework initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-autonomous-agents-2026-6725">Ai Autonomous Agents 2026 6725</Link></li>
-<li><Link href="/blog/chaos-engineering-2026-6947">Chaos Engineering 2026 6947</Link></li>
-<li><Link href="/blog/api-lifecycle-management-checklist-for-it-leaders">Api Lifecycle Management Checklist For It Leaders</Link></li>
-<li><Link href="/blog/api-integration-vendor-evaluation">Api Integration Vendor Evaluation</Link></li>
+              <li><Link /blog/ai-autonomous-agents-2026-6725/>Ai Autonomous Agents 2026 6725</Link></li>
+<li><Link /blog/chaos-engineering-2026-6947/>Chaos Engineering 2026 6947</Link></li>
+<li><Link /blog/api-lifecycle-management-checklist-for-it-leaders/>Api Lifecycle Management Checklist For It Leaders</Link></li>
+<li><Link /blog/api-integration-vendor-evaluation/>Api Integration Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

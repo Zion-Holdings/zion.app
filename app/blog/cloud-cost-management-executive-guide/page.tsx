@@ -57,10 +57,10 @@ Leading indicators for cloud cost management: executive guide: workflow completi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-security-checklist-for-it-leaders">Data Security Checklist For It Leaders</Link></li>
-<li><Link href="/blog/api-management-gateway-executive-guide">Api Management Gateway Executive Guide</Link></li>
-<li><Link href="/blog/api-lifecycle-management-vendor-evaluation">Api Lifecycle Management Vendor Evaluation</Link></li>
-<li><Link href="/blog/machine-learning-engineering-2026">Machine Learning Engineering 2026</Link></li>
+              <li><Link /blog/data-security-checklist-for-it-leaders/>Data Security Checklist For It Leaders</Link></li>
+<li><Link /blog/api-management-gateway-executive-guide/>Api Management Gateway Executive Guide</Link></li>
+<li><Link /blog/api-lifecycle-management-vendor-evaluation/>Api Lifecycle Management Vendor Evaluation</Link></li>
+<li><Link /blog/machine-learning-engineering-2026/>Machine Learning Engineering 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

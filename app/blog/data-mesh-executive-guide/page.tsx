@@ -57,10 +57,10 @@ Leading indicators for data mesh: executive guide: workflow completion rate, esc
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/etl-pipeline-optimization-evaluation-framework">Etl Pipeline Optimization Evaluation Framework</Link></li>
-<li><Link href="/blog/managed-it-services-evaluation-framework">Managed It Services Evaluation Framework</Link></li>
-<li><Link href="/blog/machine-learning-case-study">Machine Learning Case Study</Link></li>
-<li><Link href="/blog/ai-network-optimization-evaluation-framework">Ai Network Optimization Evaluation Framework</Link></li>
+              <li><Link /blog/etl-pipeline-optimization-evaluation-framework/>Etl Pipeline Optimization Evaluation Framework</Link></li>
+<li><Link /blog/managed-it-services-evaluation-framework/>Managed It Services Evaluation Framework</Link></li>
+<li><Link /blog/machine-learning-case-study/>Machine Learning Case Study</Link></li>
+<li><Link /blog/ai-network-optimization-evaluation-framework/>Ai Network Optimization Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

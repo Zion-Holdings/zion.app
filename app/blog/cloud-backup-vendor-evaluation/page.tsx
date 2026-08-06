@@ -57,10 +57,10 @@ For cloud backup: vendor evaluation: pick one workflow, assign ownership, define
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-integration-policy-and-compliance">Api Integration Policy And Compliance</Link></li>
-<li><Link href="/blog/hybrid-cloud-common-mistakes">Hybrid Cloud Common Mistakes</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-security-and-governance">Aiops Anomaly Detection Security And Governance</Link></li>
-<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-6629">Data Analytics Platform Modern Enterprise 2026 6629</Link></li>
+              <li><Link /blog/api-integration-policy-and-compliance/>Api Integration Policy And Compliance</Link></li>
+<li><Link /blog/hybrid-cloud-common-mistakes/>Hybrid Cloud Common Mistakes</Link></li>
+<li><Link /blog/aiops-anomaly-detection-security-and-governance/>Aiops Anomaly Detection Security And Governance</Link></li>
+<li><Link /blog/data-analytics-platform-modern-enterprise-2026-6629/>Data Analytics Platform Modern Enterprise 2026 6629</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

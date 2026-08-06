@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/technology-roadmap-policy-and-compliance">Technology Roadmap Policy And Compliance</Link></li>
-<li><Link href="/blog/privacy-engineering-case-study">Privacy Engineering Case Study</Link></li>
-<li><Link href="/blog/machine-learning-operations-deployment-patterns">Machine Learning Operations Deployment Patterns</Link></li>
-<li><Link href="/blog/cloud-finops-executive-guide">Cloud Finops Executive Guide</Link></li>
+              <li><Link /blog/technology-roadmap-policy-and-compliance/>Technology Roadmap Policy And Compliance</Link></li>
+<li><Link /blog/privacy-engineering-case-study/>Privacy Engineering Case Study</Link></li>
+<li><Link /blog/machine-learning-operations-deployment-patterns/>Machine Learning Operations Deployment Patterns</Link></li>
+<li><Link /blog/cloud-finops-executive-guide/>Cloud Finops Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For database as a service: pick one workflow, assign ownership, define success m
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/distributed-tracing-starter-template">Distributed Tracing Starter Template</Link></li>
-<li><Link href="/blog/technical-due-diligence-common-mistakes">Technical Due Diligence Common Mistakes</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-executive-guide">Ai Bdr Sdr Executive Guide</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-7075">Autonomous Qa Engineering 2026 7075</Link></li>
+              <li><Link /blog/distributed-tracing-starter-template/>Distributed Tracing Starter Template</Link></li>
+<li><Link /blog/technical-due-diligence-common-mistakes/>Technical Due Diligence Common Mistakes</Link></li>
+<li><Link /blog/ai-bdr-sdr-executive-guide/>Ai Bdr Sdr Executive Guide</Link></li>
+<li><Link /blog/autonomous-qa-engineering-2026-7075/>Autonomous Qa Engineering 2026 7075</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

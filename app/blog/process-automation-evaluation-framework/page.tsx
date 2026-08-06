@@ -54,10 +54,10 @@ If this guide matches your process automation: evaluation framework initiative, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-email-intelligence-2026">Ai Email Intelligence 2026</Link></li>
-<li><Link href="/blog/generative-ai-security-automation-roadmap">Generative Ai Security Automation Roadmap</Link></li>
-<li><Link href="/blog/threat-hunting-policy-and-compliance">Threat Hunting Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-policy-and-compliance">Ai Agentic Workflows Policy And Compliance</Link></li>
+              <li><Link /blog/ai-email-intelligence-2026/>Ai Email Intelligence 2026</Link></li>
+<li><Link /blog/generative-ai-security-automation-roadmap/>Generative Ai Security Automation Roadmap</Link></li>
+<li><Link /blog/threat-hunting-policy-and-compliance/>Threat Hunting Policy And Compliance</Link></li>
+<li><Link /blog/ai-agentic-workflows-policy-and-compliance/>Ai Agentic Workflows Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

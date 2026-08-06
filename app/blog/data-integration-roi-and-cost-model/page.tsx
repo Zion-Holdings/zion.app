@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6851">Micro Saas Ai Expense Tracker 2026 6851</Link></li>
-<li><Link href="/blog/edge-computing-deployment-deployment-patterns">Edge Computing Deployment Deployment Patterns</Link></li>
-<li><Link href="/blog/chaos-engineering-evaluation-framework">Chaos Engineering Evaluation Framework</Link></li>
-<li><Link href="/blog/automation-orchestration-enterprise-2026-7044">Automation Orchestration Enterprise 2026 7044</Link></li>
+              <li><Link /blog/micro-saas-ai-expense-tracker-2026-6851/>Micro Saas Ai Expense Tracker 2026 6851</Link></li>
+<li><Link /blog/edge-computing-deployment-deployment-patterns/>Edge Computing Deployment Deployment Patterns</Link></li>
+<li><Link /blog/chaos-engineering-evaluation-framework/>Chaos Engineering Evaluation Framework</Link></li>
+<li><Link /blog/automation-orchestration-enterprise-2026-7044/>Automation Orchestration Enterprise 2026 7044</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

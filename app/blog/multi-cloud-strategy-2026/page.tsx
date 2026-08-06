@@ -57,10 +57,10 @@ For multi cloud strategy: pick one workflow, assign ownership, define success me
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-msp-security-compliance-operations-handbook">Ai Msp Security Compliance Operations Handbook</Link></li>
-<li><Link href="/blog/data-modeling-implementation-playbook">Data Modeling Implementation Playbook</Link></li>
-<li><Link href="/blog/cloud-finops-2026-6811">Cloud Finops 2026 6811</Link></li>
-<li><Link href="/blog/api-integration-architecture-overview">Api Integration Architecture Overview</Link></li>
+              <li><Link /blog/ai-msp-security-compliance-operations-handbook/>Ai Msp Security Compliance Operations Handbook</Link></li>
+<li><Link /blog/data-modeling-implementation-playbook/>Data Modeling Implementation Playbook</Link></li>
+<li><Link /blog/cloud-finops-2026-6811/>Cloud Finops 2026 6811</Link></li>
+<li><Link /blog/api-integration-architecture-overview/>Api Integration Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

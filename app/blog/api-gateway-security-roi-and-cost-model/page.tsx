@@ -57,10 +57,10 @@ Leading indicators for api gateway security: roi and cost model: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-management-operations-handbook">Api Gateway Management Operations Handbook</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-2026">Ai Msp Security Compliance 2026</Link></li>
-<li><Link href="/blog/apm-application-performance-deployment-patterns">Apm Application Performance Deployment Patterns</Link></li>
-<li><Link href="/blog/blue-green-deployment-checklist-for-it-leaders">Blue Green Deployment Checklist For It Leaders</Link></li>
+              <li><Link /blog/api-gateway-management-operations-handbook/>Api Gateway Management Operations Handbook</Link></li>
+<li><Link /blog/ai-msp-security-compliance-2026/>Ai Msp Security Compliance 2026</Link></li>
+<li><Link /blog/apm-application-performance-deployment-patterns/>Apm Application Performance Deployment Patterns</Link></li>
+<li><Link /blog/blue-green-deployment-checklist-for-it-leaders/>Blue Green Deployment Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your terraform: case study initiative, the next step is a 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-performance-architecture-overview">Database Performance Architecture Overview</Link></li>
-<li><Link href="/blog/chaos-engineering-security-and-governance">Chaos Engineering Security And Governance</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-automation-roadmap">Autonomous Code Deployment Automation Roadmap</Link></li>
-<li><Link href="/blog/network-infrastructure-2026-6985">Network Infrastructure 2026 6985</Link></li>
+              <li><Link /blog/database-performance-architecture-overview/>Database Performance Architecture Overview</Link></li>
+<li><Link /blog/chaos-engineering-security-and-governance/>Chaos Engineering Security And Governance</Link></li>
+<li><Link /blog/autonomous-code-deployment-automation-roadmap/>Autonomous Code Deployment Automation Roadmap</Link></li>
+<li><Link /blog/network-infrastructure-2026-6985/>Network Infrastructure 2026 6985</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

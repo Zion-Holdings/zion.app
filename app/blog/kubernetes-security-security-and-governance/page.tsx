@@ -57,10 +57,10 @@ Leading indicators for kubernetes security: security and governance: workflow co
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/managed-it-services-implementation-playbook">Managed It Services Implementation Playbook</Link></li>
-<li><Link href="/blog/automated-ai-reporting-starter-template">Automated Ai Reporting Starter Template</Link></li>
-<li><Link href="/blog/smart-contract-audit-implementation-playbook">Smart Contract Audit Implementation Playbook</Link></li>
-<li><Link href="/blog/api-management-gateway-2026-6600">Api Management Gateway 2026 6600</Link></li>
+              <li><Link /blog/managed-it-services-implementation-playbook/>Managed It Services Implementation Playbook</Link></li>
+<li><Link /blog/automated-ai-reporting-starter-template/>Automated Ai Reporting Starter Template</Link></li>
+<li><Link /blog/smart-contract-audit-implementation-playbook/>Smart Contract Audit Implementation Playbook</Link></li>
+<li><Link /blog/api-management-gateway-2026-6600/>Api Management Gateway 2026 6600</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for test automation: implementation playbook: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-ai-intelligence-hub-2026-6648">Enterprise Ai Intelligence Hub 2026 6648</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-deployment-patterns">Ai Customer Success Churn Prevention Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-2026-6653">Ai Agent Safety Evaluation 2026 6653</Link></li>
-<li><Link href="/blog/ai-video-analytics-executive-guide">Ai Video Analytics Executive Guide</Link></li>
+              <li><Link /blog/enterprise-ai-intelligence-hub-2026-6648/>Enterprise Ai Intelligence Hub 2026 6648</Link></li>
+<li><Link /blog/ai-customer-success-churn-prevention-deployment-patterns/>Ai Customer Success Churn Prevention Deployment Patterns</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-2026-6653/>Ai Agent Safety Evaluation 2026 6653</Link></li>
+<li><Link /blog/ai-video-analytics-executive-guide/>Ai Video Analytics Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

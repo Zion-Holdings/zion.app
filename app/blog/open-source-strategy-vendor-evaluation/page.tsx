@@ -54,10 +54,10 @@ If this guide matches your open source strategy: vendor evaluation initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/building-a-tailored-implementation-roadmap-from-proof-of-concept-to-full-deployment">Building A Tailored Implementation Roadmap From Proof Of Concept To Full Deployment</Link></li>
-<li><Link href="/blog/static-application-security-testing-architecture-overview">Static Application Security Testing Architecture Overview</Link></li>
-<li><Link href="/blog/continuous-deployment-case-study">Continuous Deployment Case Study</Link></li>
-<li><Link href="/blog/ai-security-analytics-architecture-overview">Ai Security Analytics Architecture Overview</Link></li>
+              <li><Link /blog/building-a-tailored-implementation-roadmap-from-proof-of-concept-to-full-deployment/>Building A Tailored Implementation Roadmap From Proof Of Concept To Full Deployment</Link></li>
+<li><Link /blog/static-application-security-testing-architecture-overview/>Static Application Security Testing Architecture Overview</Link></li>
+<li><Link /blog/continuous-deployment-case-study/>Continuous Deployment Case Study</Link></li>
+<li><Link /blog/ai-security-analytics-architecture-overview/>Ai Security Analytics Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

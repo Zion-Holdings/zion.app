@@ -57,10 +57,10 @@ For servicenow automation: vendor evaluation: pick one workflow, assign ownershi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-roi-and-cost-model">Data Analytics Platform Roi And Cost Model</Link></li>
-<li><Link href="/blog/patch-management-starter-template">Patch Management Starter Template</Link></li>
-<li><Link href="/blog/enterprise-service-bus-2026">Enterprise Service Bus 2026</Link></li>
-<li><Link href="/blog/graphql-federation-platform-case-study">Graphql Federation Platform Case Study</Link></li>
+              <li><Link /blog/data-analytics-platform-roi-and-cost-model/>Data Analytics Platform Roi And Cost Model</Link></li>
+<li><Link /blog/patch-management-starter-template/>Patch Management Starter Template</Link></li>
+<li><Link /blog/enterprise-service-bus-2026/>Enterprise Service Bus 2026</Link></li>
+<li><Link /blog/graphql-federation-platform-case-study/>Graphql Federation Platform Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

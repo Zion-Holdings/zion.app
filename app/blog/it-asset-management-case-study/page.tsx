@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cicd-best-practices-roi-and-cost-model">Cicd Best Practices Roi And Cost Model</Link></li>
-<li><Link href="/blog/ar-vr-enterprise-operations-handbook">Ar Vr Enterprise Operations Handbook</Link></li>
-<li><Link href="/blog/remote-work-security-2026">Remote Work Security 2026</Link></li>
-<li><Link href="/blog/micro-saas-ai-social-media-manager-2026-6647">Micro Saas Ai Social Media Manager 2026 6647</Link></li>
+              <li><Link /blog/cicd-best-practices-roi-and-cost-model/>Cicd Best Practices Roi And Cost Model</Link></li>
+<li><Link /blog/ar-vr-enterprise-operations-handbook/>Ar Vr Enterprise Operations Handbook</Link></li>
+<li><Link /blog/remote-work-security-2026/>Remote Work Security 2026</Link></li>
+<li><Link /blog/micro-saas-ai-social-media-manager-2026-6647/>Micro Saas Ai Social Media Manager 2026 6647</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

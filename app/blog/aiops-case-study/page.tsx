@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-management-implementation-playbook">Cloud Cost Management Implementation Playbook</Link></li>
-<li><Link href="/blog/prompt-engineering-deployment-patterns">Prompt Engineering Deployment Patterns</Link></li>
-<li><Link href="/blog/blockchain-enterprise-implementation-playbook">Blockchain Enterprise Implementation Playbook</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-implementation-playbook">Autonomous Code Deployment Implementation Playbook</Link></li>
+              <li><Link /blog/cloud-cost-management-implementation-playbook/>Cloud Cost Management Implementation Playbook</Link></li>
+<li><Link /blog/prompt-engineering-deployment-patterns/>Prompt Engineering Deployment Patterns</Link></li>
+<li><Link /blog/blockchain-enterprise-implementation-playbook/>Blockchain Enterprise Implementation Playbook</Link></li>
+<li><Link /blog/autonomous-code-deployment-implementation-playbook/>Autonomous Code Deployment Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

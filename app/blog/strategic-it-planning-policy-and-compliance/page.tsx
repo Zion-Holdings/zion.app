@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization">5 Proven Ai Automation Strategies For Enterprise Workflow Optimization</Link></li>
-<li><Link href="/blog/infrastructure-monitoring-evaluation-framework">Infrastructure Monitoring Evaluation Framework</Link></li>
-<li><Link href="/blog/software-supply-chain-security-case-study">Software Supply Chain Security Case Study</Link></li>
-<li><Link href="/blog/finops-policy-and-compliance">Finops Policy And Compliance</Link></li>
+              <li><Link /blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/>5 Proven Ai Automation Strategies For Enterprise Workflow Optimization</Link></li>
+<li><Link /blog/infrastructure-monitoring-evaluation-framework/>Infrastructure Monitoring Evaluation Framework</Link></li>
+<li><Link /blog/software-supply-chain-security-case-study/>Software Supply Chain Security Case Study</Link></li>
+<li><Link /blog/finops-policy-and-compliance/>Finops Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

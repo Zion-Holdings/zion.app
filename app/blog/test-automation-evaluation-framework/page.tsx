@@ -57,10 +57,10 @@ Leading indicators for test automation: evaluation framework: workflow completio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/etl-pipeline-optimization-vendor-evaluation">Etl Pipeline Optimization Vendor Evaluation</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-2026">Etl Pipeline Optimization 2026</Link></li>
-<li><Link href="/blog/devsecops-pipeline-implementation-playbook">Devsecops Pipeline Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-2026-6666">Ai Performance Monitoring 2026 6666</Link></li>
+              <li><Link /blog/etl-pipeline-optimization-vendor-evaluation/>Etl Pipeline Optimization Vendor Evaluation</Link></li>
+<li><Link /blog/etl-pipeline-optimization-2026/>Etl Pipeline Optimization 2026</Link></li>
+<li><Link /blog/devsecops-pipeline-implementation-playbook/>Devsecops Pipeline Implementation Playbook</Link></li>
+<li><Link /blog/ai-performance-monitoring-2026-6666/>Ai Performance Monitoring 2026 6666</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

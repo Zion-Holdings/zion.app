@@ -57,10 +57,10 @@ For machine learning engineering: starter template: pick one workflow, assign ow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bom-procurement-implementation-playbook">Ai Bom Procurement Implementation Playbook</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-6548">Smart Contract Audit 2026 6548</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-roi-and-cost-model">Cloud Cost Ai Optimizer Roi And Cost Model</Link></li>
-<li><Link href="/blog/genai-devops-cicd-policy-and-compliance">Genai Devops Cicd Policy And Compliance</Link></li>
+              <li><Link /blog/ai-bom-procurement-implementation-playbook/>Ai Bom Procurement Implementation Playbook</Link></li>
+<li><Link /blog/smart-contract-audit-2026-6548/>Smart Contract Audit 2026 6548</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-roi-and-cost-model/>Cloud Cost Ai Optimizer Roi And Cost Model</Link></li>
+<li><Link /blog/genai-devops-cicd-policy-and-compliance/>Genai Devops Cicd Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

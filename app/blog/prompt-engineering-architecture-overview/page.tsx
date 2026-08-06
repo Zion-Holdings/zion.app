@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-development-acceleration-2026-6839">Ai Development Acceleration 2026 6839</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6912">Ai Data Lakehouse Pipelines 2026 6912</Link></li>
-<li><Link href="/blog/api-rate-limiting-roi-and-cost-model">Api Rate Limiting Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-architecture-overview">Ai Msp Security Compliance Architecture Overview</Link></li>
+              <li><Link /blog/ai-development-acceleration-2026-6839/>Ai Development Acceleration 2026 6839</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-2026-6912/>Ai Data Lakehouse Pipelines 2026 6912</Link></li>
+<li><Link /blog/api-rate-limiting-roi-and-cost-model/>Api Rate Limiting Roi And Cost Model</Link></li>
+<li><Link /blog/ai-msp-security-compliance-architecture-overview/>Ai Msp Security Compliance Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

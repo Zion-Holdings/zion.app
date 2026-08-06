@@ -54,10 +54,10 @@ If this guide matches your ai data lakehouse pipelines: architecture overview in
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/virtual-cto-deployment-patterns">Virtual Cto Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-bom-procurement-2026-6594">Ai Bom Procurement 2026 6594</Link></li>
-<li><Link href="/blog/software-supply-chain-security-starter-template">Software Supply Chain Security Starter Template</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-deployment-patterns">Cloud Cost Ai Optimizer Deployment Patterns</Link></li>
+              <li><Link /blog/virtual-cto-deployment-patterns/>Virtual Cto Deployment Patterns</Link></li>
+<li><Link /blog/ai-bom-procurement-2026-6594/>Ai Bom Procurement 2026 6594</Link></li>
+<li><Link /blog/software-supply-chain-security-starter-template/>Software Supply Chain Security Starter Template</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-deployment-patterns/>Cloud Cost Ai Optimizer Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

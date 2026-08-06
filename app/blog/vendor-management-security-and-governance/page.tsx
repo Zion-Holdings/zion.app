@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/aiops-anomaly-detection-2026-6795">Aiops Anomaly Detection 2026 6795</Link></li>
-<li><Link href="/blog/managed-it-services-architecture-overview">Managed It Services Architecture Overview</Link></li>
-<li><Link href="/blog/apm-application-performance-2026-6739">Apm Application Performance 2026 6739</Link></li>
-<li><Link href="/blog/kubernetes-security-roi-and-cost-model">Kubernetes Security Roi And Cost Model</Link></li>
+              <li><Link /blog/aiops-anomaly-detection-2026-6795/>Aiops Anomaly Detection 2026 6795</Link></li>
+<li><Link /blog/managed-it-services-architecture-overview/>Managed It Services Architecture Overview</Link></li>
+<li><Link /blog/apm-application-performance-2026-6739/>Apm Application Performance 2026 6739</Link></li>
+<li><Link /blog/kubernetes-security-roi-and-cost-model/>Kubernetes Security Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

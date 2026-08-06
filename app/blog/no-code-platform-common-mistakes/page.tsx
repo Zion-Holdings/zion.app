@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/distributed-tracing-case-study">Distributed Tracing Case Study</Link></li>
-<li><Link href="/blog/api-orchestration-layer-automation-roadmap">Api Orchestration Layer Automation Roadmap</Link></li>
-<li><Link href="/blog/saas-security-checklist-for-it-leaders">Saas Security Checklist For It Leaders</Link></li>
-<li><Link href="/blog/docker-security-deployment-patterns">Docker Security Deployment Patterns</Link></li>
+              <li><Link /blog/distributed-tracing-case-study/>Distributed Tracing Case Study</Link></li>
+<li><Link /blog/api-orchestration-layer-automation-roadmap/>Api Orchestration Layer Automation Roadmap</Link></li>
+<li><Link /blog/saas-security-checklist-for-it-leaders/>Saas Security Checklist For It Leaders</Link></li>
+<li><Link /blog/docker-security-deployment-patterns/>Docker Security Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

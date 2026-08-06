@@ -57,10 +57,10 @@ For content delivery network: automation roadmap: pick one workflow, assign owne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-it-operations-automation-2026-7108">Ai It Operations Automation 2026 7108</Link></li>
-<li><Link href="/blog/ai-api-gateway-case-study">Ai Api Gateway Case Study</Link></li>
-<li><Link href="/blog/api-lifecycle-management-2026">Api Lifecycle Management 2026</Link></li>
-<li><Link href="/blog/ai-customer-support-pro-2026-6840">Ai Customer Support Pro 2026 6840</Link></li>
+              <li><Link /blog/ai-it-operations-automation-2026-7108/>Ai It Operations Automation 2026 7108</Link></li>
+<li><Link /blog/ai-api-gateway-case-study/>Ai Api Gateway Case Study</Link></li>
+<li><Link /blog/api-lifecycle-management-2026/>Api Lifecycle Management 2026</Link></li>
+<li><Link /blog/ai-customer-support-pro-2026-6840/>Ai Customer Support Pro 2026 6840</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

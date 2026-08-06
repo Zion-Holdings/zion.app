@@ -57,10 +57,10 @@ Leading indicators for content delivery network: implementation playbook: workfl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-roi-and-cost-model">Endpoint Management Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-2026-7076">Ai Bdr Sdr 2026 7076</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026-4">Managed It Services Small Business 2026 4</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-starter-template">Ai 3D Asset Generator Starter Template</Link></li>
+              <li><Link /blog/endpoint-management-roi-and-cost-model/>Endpoint Management Roi And Cost Model</Link></li>
+<li><Link /blog/ai-bdr-sdr-2026-7076/>Ai Bdr Sdr 2026 7076</Link></li>
+<li><Link /blog/managed-it-services-small-business-2026-4/>Managed It Services Small Business 2026 4</Link></li>
+<li><Link /blog/ai-3d-asset-generator-starter-template/>Ai 3D Asset Generator Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

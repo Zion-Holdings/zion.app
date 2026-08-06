@@ -57,10 +57,10 @@ For ai msp security compliance: vendor evaluation: pick one workflow, assign own
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-security-vendor-evaluation">Api Gateway Security Vendor Evaluation</Link></li>
-<li><Link href="/blog/azure-migration-checklist-for-it-leaders">Azure Migration Checklist For It Leaders</Link></li>
-<li><Link href="/blog/log-management-security-and-governance">Log Management Security And Governance</Link></li>
-<li><Link href="/blog/enterprise-integration-policy-and-compliance">Enterprise Integration Policy And Compliance</Link></li>
+              <li><Link /blog/api-gateway-security-vendor-evaluation/>Api Gateway Security Vendor Evaluation</Link></li>
+<li><Link /blog/azure-migration-checklist-for-it-leaders/>Azure Migration Checklist For It Leaders</Link></li>
+<li><Link /blog/log-management-security-and-governance/>Log Management Security And Governance</Link></li>
+<li><Link /blog/enterprise-integration-policy-and-compliance/>Enterprise Integration Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microservices-architecture-2026">Microservices Architecture 2026</Link></li>
-<li><Link href="/blog/network-infrastructure-2026-6985">Network Infrastructure 2026 6985</Link></li>
-<li><Link href="/blog/cloud-finops-2026-6949">Cloud Finops 2026 6949</Link></li>
-<li><Link href="/blog/ai-email-intelligence-2026-6562">Ai Email Intelligence 2026 6562</Link></li>
+              <li><Link /blog/microservices-architecture-2026/>Microservices Architecture 2026</Link></li>
+<li><Link /blog/network-infrastructure-2026-6985/>Network Infrastructure 2026 6985</Link></li>
+<li><Link /blog/cloud-finops-2026-6949/>Cloud Finops 2026 6949</Link></li>
+<li><Link /blog/ai-email-intelligence-2026-6562/>Ai Email Intelligence 2026 6562</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

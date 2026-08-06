@@ -57,10 +57,10 @@ For data architecture: evaluation framework: pick one workflow, assign ownership
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/smart-contract-audit-2026-7100">Smart Contract Audit 2026 7100</Link></li>
-<li><Link href="/blog/chaos-engineering-deployment-patterns">Chaos Engineering Deployment Patterns</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-policy-and-compliance">Cloud Cost Ai Optimizer Policy And Compliance</Link></li>
-<li><Link href="/blog/api-gateway-security-architecture-overview">Api Gateway Security Architecture Overview</Link></li>
+              <li><Link /blog/smart-contract-audit-2026-7100/>Smart Contract Audit 2026 7100</Link></li>
+<li><Link /blog/chaos-engineering-deployment-patterns/>Chaos Engineering Deployment Patterns</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-policy-and-compliance/>Cloud Cost Ai Optimizer Policy And Compliance</Link></li>
+<li><Link /blog/api-gateway-security-architecture-overview/>Api Gateway Security Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/etl-pipeline-optimization-evaluation-framework">Etl Pipeline Optimization Evaluation Framework</Link></li>
-<li><Link href="/blog/database-migration-service-2026-6885">Database Migration Service 2026 6885</Link></li>
-<li><Link href="/blog/cloud-migration-services-executive-guide">Cloud Migration Services Executive Guide</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-starter-template">Ai Customer Success Churn Prevention Starter Template</Link></li>
+              <li><Link /blog/etl-pipeline-optimization-evaluation-framework/>Etl Pipeline Optimization Evaluation Framework</Link></li>
+<li><Link /blog/database-migration-service-2026-6885/>Database Migration Service 2026 6885</Link></li>
+<li><Link /blog/cloud-migration-services-executive-guide/>Cloud Migration Services Executive Guide</Link></li>
+<li><Link /blog/ai-customer-success-churn-prevention-starter-template/>Ai Customer Success Churn Prevention Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

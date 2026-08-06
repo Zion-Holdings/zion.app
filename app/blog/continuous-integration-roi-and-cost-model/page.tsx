@@ -54,10 +54,10 @@ If this guide matches your continuous integration: roi and cost model initiative
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-2026-6756">Graphql Federation Platform 2026 6756</Link></li>
-<li><Link href="/blog/generative-ai-security-and-governance">Generative Ai Security And Governance</Link></li>
-<li><Link href="/blog/kubernetes-security-deployment-patterns">Kubernetes Security Deployment Patterns</Link></li>
-<li><Link href="/blog/genai-devops-cicd-implementation-playbook">Genai Devops Cicd Implementation Playbook</Link></li>
+              <li><Link /blog/graphql-federation-platform-2026-6756/>Graphql Federation Platform 2026 6756</Link></li>
+<li><Link /blog/generative-ai-security-and-governance/>Generative Ai Security And Governance</Link></li>
+<li><Link /blog/kubernetes-security-deployment-patterns/>Kubernetes Security Deployment Patterns</Link></li>
+<li><Link /blog/genai-devops-cicd-implementation-playbook/>Genai Devops Cicd Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

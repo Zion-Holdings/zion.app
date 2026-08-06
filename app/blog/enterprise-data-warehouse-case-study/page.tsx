@@ -57,10 +57,10 @@ Leading indicators for enterprise data warehouse: case study: workflow completio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-translation-engine-operations-handbook">Microsaas Translation Engine Operations Handbook</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-checklist-for-it-leaders">Enterprise Ai Intelligence Hub Checklist For It Leaders</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-vendor-evaluation">Aiops Anomaly Detection Vendor Evaluation</Link></li>
-<li><Link href="/blog/cicd-pipeline-security-starter-template">Cicd Pipeline Security Starter Template</Link></li>
+              <li><Link /blog/microsaas-translation-engine-operations-handbook/>Microsaas Translation Engine Operations Handbook</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-checklist-for-it-leaders/>Enterprise Ai Intelligence Hub Checklist For It Leaders</Link></li>
+<li><Link /blog/aiops-anomaly-detection-vendor-evaluation/>Aiops Anomaly Detection Vendor Evaluation</Link></li>
+<li><Link /blog/cicd-pipeline-security-starter-template/>Cicd Pipeline Security Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

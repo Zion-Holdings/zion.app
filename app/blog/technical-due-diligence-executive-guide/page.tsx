@@ -57,10 +57,10 @@ For technical due diligence: executive guide: pick one workflow, assign ownershi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/finops-deployment-patterns">Finops Deployment Patterns</Link></li>
-<li><Link href="/blog/data-modeling-2026">Data Modeling 2026</Link></li>
-<li><Link href="/blog/accessibility-compliance-common-mistakes">Accessibility Compliance Common Mistakes</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-starter-template">Microsaas Social Media Manager Starter Template</Link></li>
+              <li><Link /blog/finops-deployment-patterns/>Finops Deployment Patterns</Link></li>
+<li><Link /blog/data-modeling-2026/>Data Modeling 2026</Link></li>
+<li><Link /blog/accessibility-compliance-common-mistakes/>Accessibility Compliance Common Mistakes</Link></li>
+<li><Link /blog/microsaas-social-media-manager-starter-template/>Microsaas Social Media Manager Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

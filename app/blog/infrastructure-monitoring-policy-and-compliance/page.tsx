@@ -54,10 +54,10 @@ If this guide matches your infrastructure monitoring: policy and compliance init
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-migration-services-deployment-patterns">Cloud Migration Services Deployment Patterns</Link></li>
-<li><Link href="/blog/event-driven-architecture-2026-6616">Event Driven Architecture 2026 6616</Link></li>
-<li><Link href="/blog/api-gateway-management-evaluation-framework">Api Gateway Management Evaluation Framework</Link></li>
-<li><Link href="/blog/it-consulting-2026-6570">It Consulting 2026 6570</Link></li>
+              <li><Link /blog/cloud-migration-services-deployment-patterns/>Cloud Migration Services Deployment Patterns</Link></li>
+<li><Link /blog/event-driven-architecture-2026-6616/>Event Driven Architecture 2026 6616</Link></li>
+<li><Link /blog/api-gateway-management-evaluation-framework/>Api Gateway Management Evaluation Framework</Link></li>
+<li><Link /blog/it-consulting-2026-6570/>It Consulting 2026 6570</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your identity access management: policy and compliance ini
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-native-app-development-evaluation-framework">Cloud Native App Development Evaluation Framework</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-2026-6607">Cyber Threat Intelligence 2026 6607</Link></li>
-<li><Link href="/blog/chaos-engineering-2026-6878">Chaos Engineering 2026 6878</Link></li>
-<li><Link href="/blog/finops-evaluation-framework">Finops Evaluation Framework</Link></li>
+              <li><Link /blog/cloud-native-app-development-evaluation-framework/>Cloud Native App Development Evaluation Framework</Link></li>
+<li><Link /blog/cyber-threat-intelligence-2026-6607/>Cyber Threat Intelligence 2026 6607</Link></li>
+<li><Link /blog/chaos-engineering-2026-6878/>Chaos Engineering 2026 6878</Link></li>
+<li><Link /blog/finops-evaluation-framework/>Finops Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

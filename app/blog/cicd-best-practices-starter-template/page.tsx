@@ -57,10 +57,10 @@ For ci/cd best practices: starter template: pick one workflow, assign ownership,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-development-acceleration-security-and-governance">Ai Development Acceleration Security And Governance</Link></li>
-<li><Link href="/blog/accessibility-compliance-deployment-patterns">Accessibility Compliance Deployment Patterns</Link></li>
-<li><Link href="/blog/5g-solutions-checklist-for-it-leaders">5G Solutions Checklist For It Leaders</Link></li>
-<li><Link href="/blog/technical-due-diligence-starter-template">Technical Due Diligence Starter Template</Link></li>
+              <li><Link /blog/ai-development-acceleration-security-and-governance/>Ai Development Acceleration Security And Governance</Link></li>
+<li><Link /blog/accessibility-compliance-deployment-patterns/>Accessibility Compliance Deployment Patterns</Link></li>
+<li><Link /blog/5g-solutions-checklist-for-it-leaders/>5G Solutions Checklist For It Leaders</Link></li>
+<li><Link /blog/technical-due-diligence-starter-template/>Technical Due Diligence Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

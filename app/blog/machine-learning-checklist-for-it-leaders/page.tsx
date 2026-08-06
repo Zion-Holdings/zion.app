@@ -57,10 +57,10 @@ Leading indicators for machine learning: checklist for it leaders: workflow comp
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/retrieval-augmented-generation-security-and-governance">Retrieval Augmented Generation Security And Governance</Link></li>
-<li><Link href="/blog/api-integration-roi-and-cost-model">Api Integration Roi And Cost Model</Link></li>
-<li><Link href="/blog/multimodal-ai-vision-and-language-models-in-enterprise">Multimodal Ai Vision And Language Models In Enterprise</Link></li>
-<li><Link href="/blog/sase-roi-and-cost-model">Sase Roi And Cost Model</Link></li>
+              <li><Link /blog/retrieval-augmented-generation-security-and-governance/>Retrieval Augmented Generation Security And Governance</Link></li>
+<li><Link /blog/api-integration-roi-and-cost-model/>Api Integration Roi And Cost Model</Link></li>
+<li><Link /blog/multimodal-ai-vision-and-language-models-in-enterprise/>Multimodal Ai Vision And Language Models In Enterprise</Link></li>
+<li><Link /blog/sase-roi-and-cost-model/>Sase Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

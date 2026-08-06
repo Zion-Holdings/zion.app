@@ -54,10 +54,10 @@ If this guide matches your mobile device management: policy and compliance initi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-tool-builder-deployment-patterns">Ai Agent Tool Builder Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-code-review-automation-policy-and-compliance">Ai Code Review Automation Policy And Compliance</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-starter-template">Autonomous Code Deployment Starter Template</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-case-study">Cybersecurity For Msps Case Study</Link></li>
+              <li><Link /blog/ai-agent-tool-builder-deployment-patterns/>Ai Agent Tool Builder Deployment Patterns</Link></li>
+<li><Link /blog/ai-code-review-automation-policy-and-compliance/>Ai Code Review Automation Policy And Compliance</Link></li>
+<li><Link /blog/autonomous-code-deployment-starter-template/>Autonomous Code Deployment Starter Template</Link></li>
+<li><Link /blog/cybersecurity-for-msps-case-study/>Cybersecurity For Msps Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

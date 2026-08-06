@@ -57,10 +57,10 @@ Leading indicators for data observability: deployment patterns: workflow complet
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-it-operations-vendor-evaluation">Ai It Operations Vendor Evaluation</Link></li>
-<li><Link href="/blog/enterprise-integration-operations-handbook">Enterprise Integration Operations Handbook</Link></li>
-<li><Link href="/blog/compliance-automation-automation-roadmap">Compliance Automation Automation Roadmap</Link></li>
-<li><Link href="/blog/event-driven-architecture-roi-and-cost-model">Event Driven Architecture Roi And Cost Model</Link></li>
+              <li><Link /blog/ai-it-operations-vendor-evaluation/>Ai It Operations Vendor Evaluation</Link></li>
+<li><Link /blog/enterprise-integration-operations-handbook/>Enterprise Integration Operations Handbook</Link></li>
+<li><Link /blog/compliance-automation-automation-roadmap/>Compliance Automation Automation Roadmap</Link></li>
+<li><Link /blog/event-driven-architecture-roi-and-cost-model/>Event Driven Architecture Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

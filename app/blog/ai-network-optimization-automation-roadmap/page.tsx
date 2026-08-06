@@ -57,10 +57,10 @@ For ai network optimization: automation roadmap: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-onboarding-operations-handbook">Ai Customer Onboarding Operations Handbook</Link></li>
-<li><Link href="/blog/api-security-testing-checklist-for-it-leaders">Api Security Testing Checklist For It Leaders</Link></li>
-<li><Link href="/blog/technical-due-diligence-common-mistakes">Technical Due Diligence Common Mistakes</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-6612">Edge Computing Deployment 2026 6612</Link></li>
+              <li><Link /blog/ai-customer-onboarding-operations-handbook/>Ai Customer Onboarding Operations Handbook</Link></li>
+<li><Link /blog/api-security-testing-checklist-for-it-leaders/>Api Security Testing Checklist For It Leaders</Link></li>
+<li><Link /blog/technical-due-diligence-common-mistakes/>Technical Due Diligence Common Mistakes</Link></li>
+<li><Link /blog/edge-computing-deployment-2026-6612/>Edge Computing Deployment 2026 6612</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

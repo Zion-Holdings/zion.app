@@ -57,10 +57,10 @@ Leading indicators for virtual cto: workflow completion rate, escalation rate, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-roi-and-cost-model">Api Management Gateway Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-starter-template">Ai Agentic Workflows Starter Template</Link></li>
-<li><Link href="/blog/api-security-testing-automation-roadmap">Api Security Testing Automation Roadmap</Link></li>
-<li><Link href="/blog/5g-solutions-evaluation-framework">5G Solutions Evaluation Framework</Link></li>
+              <li><Link /blog/api-management-gateway-roi-and-cost-model/>Api Management Gateway Roi And Cost Model</Link></li>
+<li><Link /blog/ai-agentic-workflows-starter-template/>Ai Agentic Workflows Starter Template</Link></li>
+<li><Link /blog/api-security-testing-automation-roadmap/>Api Security Testing Automation Roadmap</Link></li>
+<li><Link /blog/5g-solutions-evaluation-framework/>5G Solutions Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

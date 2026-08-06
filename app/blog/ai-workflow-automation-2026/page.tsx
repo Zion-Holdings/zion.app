@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-backup-dr-2026-6821">Enterprise Backup Dr 2026 6821</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026-7041">Cybersecurity Platform Msp 2026 7041</Link></li>
-<li><Link href="/blog/container-security-lifecycle-2026-6606">Container Security Lifecycle 2026 6606</Link></li>
-<li><Link href="/blog/vulnerability-assessment-common-mistakes">Vulnerability Assessment Common Mistakes</Link></li>
+              <li><Link /blog/enterprise-backup-dr-2026-6821/>Enterprise Backup Dr 2026 6821</Link></li>
+<li><Link /blog/cybersecurity-platform-msp-2026-7041/>Cybersecurity Platform Msp 2026 7041</Link></li>
+<li><Link /blog/container-security-lifecycle-2026-6606/>Container Security Lifecycle 2026 6606</Link></li>
+<li><Link /blog/vulnerability-assessment-common-mistakes/>Vulnerability Assessment Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-expense-tracker-2026">Ai Expense Tracker 2026</Link></li>
-<li><Link href="/blog/genai-devops-cicd-automation-roadmap">Genai Devops Cicd Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-it-operations-vendor-evaluation">Ai It Operations Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-2026-6787">Ai 3D Asset Generator 2026 6787</Link></li>
+              <li><Link /blog/ai-expense-tracker-2026/>Ai Expense Tracker 2026</Link></li>
+<li><Link /blog/genai-devops-cicd-automation-roadmap/>Genai Devops Cicd Automation Roadmap</Link></li>
+<li><Link /blog/ai-it-operations-vendor-evaluation/>Ai It Operations Vendor Evaluation</Link></li>
+<li><Link /blog/ai-3d-asset-generator-2026-6787/>Ai 3D Asset Generator 2026 6787</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

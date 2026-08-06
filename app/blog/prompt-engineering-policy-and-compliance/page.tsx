@@ -57,10 +57,10 @@ For prompt engineering: policy and compliance: pick one workflow, assign ownersh
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-video-analytics-evaluation-framework">Ai Video Analytics Evaluation Framework</Link></li>
-<li><Link href="/blog/data-governance-automation-roadmap">Data Governance Automation Roadmap</Link></li>
-<li><Link href="/blog/multimodal-ai-vision-and-language-models-in-enterprise">Multimodal Ai Vision And Language Models In Enterprise</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026-6637">Ai Customer Success Churn 2026 6637</Link></li>
+              <li><Link /blog/ai-video-analytics-evaluation-framework/>Ai Video Analytics Evaluation Framework</Link></li>
+<li><Link /blog/data-governance-automation-roadmap/>Data Governance Automation Roadmap</Link></li>
+<li><Link /blog/multimodal-ai-vision-and-language-models-in-enterprise/>Multimodal Ai Vision And Language Models In Enterprise</Link></li>
+<li><Link /blog/ai-customer-success-churn-2026-6637/>Ai Customer Success Churn 2026 6637</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

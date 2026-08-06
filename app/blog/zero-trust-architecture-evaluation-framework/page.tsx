@@ -54,10 +54,10 @@ If this guide matches your zero trust architecture: evaluation framework initiat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-mesh-implementation-playbook">Data Mesh Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-automation-roadmap">Ai Accessibility Auditor Automation Roadmap</Link></li>
-<li><Link href="/blog/hybrid-cloud-roi-and-cost-model">Hybrid Cloud Roi And Cost Model</Link></li>
-<li><Link href="/blog/reinforcement-learning-executive-guide">Reinforcement Learning Executive Guide</Link></li>
+              <li><Link /blog/data-mesh-implementation-playbook/>Data Mesh Implementation Playbook</Link></li>
+<li><Link /blog/ai-accessibility-auditor-automation-roadmap/>Ai Accessibility Auditor Automation Roadmap</Link></li>
+<li><Link /blog/hybrid-cloud-roi-and-cost-model/>Hybrid Cloud Roi And Cost Model</Link></li>
+<li><Link /blog/reinforcement-learning-executive-guide/>Reinforcement Learning Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

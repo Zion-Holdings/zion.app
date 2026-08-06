@@ -57,10 +57,10 @@ For performance testing: policy and compliance: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-it-operations-automation-2026-1">Ai It Operations Automation 2026 1</Link></li>
-<li><Link href="/blog/cloud-native-app-development-2026">Cloud Native App Development 2026</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-vendor-evaluation">Autonomous Code Deployment Vendor Evaluation</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-policy-and-compliance">Cloud Cost Optimization Policy And Compliance</Link></li>
+              <li><Link /blog/ai-it-operations-automation-2026-1/>Ai It Operations Automation 2026 1</Link></li>
+<li><Link /blog/cloud-native-app-development-2026/>Cloud Native App Development 2026</Link></li>
+<li><Link /blog/autonomous-code-deployment-vendor-evaluation/>Autonomous Code Deployment Vendor Evaluation</Link></li>
+<li><Link /blog/cloud-cost-optimization-policy-and-compliance/>Cloud Cost Optimization Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

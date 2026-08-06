@@ -57,10 +57,10 @@ For monitoring observability: implementation playbook: pick one workflow, assign
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-success-churn-2026-6844">Ai Customer Success Churn 2026 6844</Link></li>
-<li><Link href="/blog/api-design-operations-handbook">Api Design Operations Handbook</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-policy-and-compliance">Ai Msp Security Compliance Policy And Compliance</Link></li>
-<li><Link href="/blog/strategic-it-planning-common-mistakes">Strategic It Planning Common Mistakes</Link></li>
+              <li><Link /blog/ai-customer-success-churn-2026-6844/>Ai Customer Success Churn 2026 6844</Link></li>
+<li><Link /blog/api-design-operations-handbook/>Api Design Operations Handbook</Link></li>
+<li><Link /blog/ai-msp-security-compliance-policy-and-compliance/>Ai Msp Security Compliance Policy And Compliance</Link></li>
+<li><Link /blog/strategic-it-planning-common-mistakes/>Strategic It Planning Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

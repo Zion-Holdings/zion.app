@@ -57,10 +57,10 @@ For ai marketing personalization: common mistakes: pick one workflow, assign own
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-translation-engine-2026-6919">Micro Saas Ai Translation Engine 2026 6919</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026-7041">Cybersecurity Platform Msp 2026 7041</Link></li>
-<li><Link href="/blog/microsaas-translation-engine-executive-guide">Microsaas Translation Engine Executive Guide</Link></li>
-<li><Link href="/blog/ai-observability-vendor-evaluation">Ai Observability Vendor Evaluation</Link></li>
+              <li><Link /blog/micro-saas-ai-translation-engine-2026-6919/>Micro Saas Ai Translation Engine 2026 6919</Link></li>
+<li><Link /blog/cybersecurity-platform-msp-2026-7041/>Cybersecurity Platform Msp 2026 7041</Link></li>
+<li><Link /blog/microsaas-translation-engine-executive-guide/>Microsaas Translation Engine Executive Guide</Link></li>
+<li><Link /blog/ai-observability-vendor-evaluation/>Ai Observability Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

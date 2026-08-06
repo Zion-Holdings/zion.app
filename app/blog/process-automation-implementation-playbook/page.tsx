@@ -57,10 +57,10 @@ For process automation: implementation playbook: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-integration-security-and-governance">Api Integration Security And Governance</Link></li>
-<li><Link href="/blog/automation-orchestration-enterprise-2026-6630">Automation Orchestration Enterprise 2026 6630</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-automation-roadmap">Data Warehouse Modernization Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-development-acceleration-2026-6701">Ai Development Acceleration 2026 6701</Link></li>
+              <li><Link /blog/api-integration-security-and-governance/>Api Integration Security And Governance</Link></li>
+<li><Link /blog/automation-orchestration-enterprise-2026-6630/>Automation Orchestration Enterprise 2026 6630</Link></li>
+<li><Link /blog/data-warehouse-modernization-automation-roadmap/>Data Warehouse Modernization Automation Roadmap</Link></li>
+<li><Link /blog/ai-development-acceleration-2026-6701/>Ai Development Acceleration 2026 6701</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

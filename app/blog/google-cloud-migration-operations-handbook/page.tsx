@@ -57,10 +57,10 @@ For google cloud migration: operations handbook: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-2026-6820">Endpoint Management 2026 6820</Link></li>
-<li><Link href="/blog/cloud-native-app-development-operations-handbook">Cloud Native App Development Operations Handbook</Link></li>
-<li><Link href="/blog/policy-as-code-2026">Policy As Code 2026</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-architecture-overview">Cyber Threat Intelligence Architecture Overview</Link></li>
+              <li><Link /blog/endpoint-management-2026-6820/>Endpoint Management 2026 6820</Link></li>
+<li><Link /blog/cloud-native-app-development-operations-handbook/>Cloud Native App Development Operations Handbook</Link></li>
+<li><Link /blog/policy-as-code-2026/>Policy As Code 2026</Link></li>
+<li><Link /blog/cyber-threat-intelligence-architecture-overview/>Cyber Threat Intelligence Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

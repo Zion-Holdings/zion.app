@@ -57,10 +57,10 @@ For cloud governance: roi and cost model: pick one workflow, assign ownership, d
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cyber-threat-intelligence-case-study">Cyber Threat Intelligence Case Study</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-deployment-patterns">Microsaas Customer Onboarding Deployment Patterns</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-case-study">Microsaas Expense Tracker Case Study</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-7024">Devops Gen Ai Cicd 2026 7024</Link></li>
+              <li><Link /blog/cyber-threat-intelligence-case-study/>Cyber Threat Intelligence Case Study</Link></li>
+<li><Link /blog/microsaas-customer-onboarding-deployment-patterns/>Microsaas Customer Onboarding Deployment Patterns</Link></li>
+<li><Link /blog/microsaas-expense-tracker-case-study/>Microsaas Expense Tracker Case Study</Link></li>
+<li><Link /blog/devops-gen-ai-cicd-2026-7024/>Devops Gen Ai Cicd 2026 7024</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

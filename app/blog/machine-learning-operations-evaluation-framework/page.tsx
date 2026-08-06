@@ -57,10 +57,10 @@ Leading indicators for machine learning operations: evaluation framework: workfl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-governance-evaluation-framework">Api Governance Evaluation Framework</Link></li>
-<li><Link href="/blog/enterprise-architecture-2026">Enterprise Architecture 2026</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-2026-6591">Autonomous Code Deployment 2026 6591</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-policy-and-compliance">Ai Bdr Sdr Policy And Compliance</Link></li>
+              <li><Link /blog/api-governance-evaluation-framework/>Api Governance Evaluation Framework</Link></li>
+<li><Link /blog/enterprise-architecture-2026/>Enterprise Architecture 2026</Link></li>
+<li><Link /blog/autonomous-code-deployment-2026-6591/>Autonomous Code Deployment 2026 6591</Link></li>
+<li><Link /blog/ai-bdr-sdr-policy-and-compliance/>Ai Bdr Sdr Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

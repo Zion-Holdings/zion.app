@@ -57,10 +57,10 @@ For ai supply chain: vendor evaluation: pick one workflow, assign ownership, def
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/patch-management-case-study">Patch Management Case Study</Link></li>
-<li><Link href="/blog/golang-microservices-operations-handbook">Golang Microservices Operations Handbook</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-automation-roadmap">Microsaas Expense Tracker Automation Roadmap</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-common-mistakes">Microsaas Expense Tracker Common Mistakes</Link></li>
+              <li><Link /blog/patch-management-case-study/>Patch Management Case Study</Link></li>
+<li><Link /blog/golang-microservices-operations-handbook/>Golang Microservices Operations Handbook</Link></li>
+<li><Link /blog/microsaas-expense-tracker-automation-roadmap/>Microsaas Expense Tracker Automation Roadmap</Link></li>
+<li><Link /blog/microsaas-expense-tracker-common-mistakes/>Microsaas Expense Tracker Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

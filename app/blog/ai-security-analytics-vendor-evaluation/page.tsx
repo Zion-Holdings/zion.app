@@ -57,10 +57,10 @@ For ai security analytics: vendor evaluation: pick one workflow, assign ownershi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-pipeline-orchestration-operations-handbook">Data Pipeline Orchestration Operations Handbook</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-case-study">Ai Agentic Workflows Case Study</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026">Ai Agentic Workflows 2026</Link></li>
-<li><Link href="/blog/managed-detection-response-checklist-for-it-leaders">Managed Detection Response Checklist For It Leaders</Link></li>
+              <li><Link /blog/data-pipeline-orchestration-operations-handbook/>Data Pipeline Orchestration Operations Handbook</Link></li>
+<li><Link /blog/ai-agentic-workflows-case-study/>Ai Agentic Workflows Case Study</Link></li>
+<li><Link /blog/ai-agentic-workflows-2026/>Ai Agentic Workflows 2026</Link></li>
+<li><Link /blog/managed-detection-response-checklist-for-it-leaders/>Managed Detection Response Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

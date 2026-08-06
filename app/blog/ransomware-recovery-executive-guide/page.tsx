@@ -54,10 +54,10 @@ If this guide matches your ransomware recovery: executive guide initiative, the 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-management-deployment-patterns">Cloud Cost Management Deployment Patterns</Link></li>
-<li><Link href="/blog/api-gateway-security-vendor-evaluation">Api Gateway Security Vendor Evaluation</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026-6917">Cloud Migration Services 2026 6917</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-2026-6891">Etl Pipeline Optimization 2026 6891</Link></li>
+              <li><Link /blog/cloud-cost-management-deployment-patterns/>Cloud Cost Management Deployment Patterns</Link></li>
+<li><Link /blog/api-gateway-security-vendor-evaluation/>Api Gateway Security Vendor Evaluation</Link></li>
+<li><Link /blog/cloud-migration-services-2026-6917/>Cloud Migration Services 2026 6917</Link></li>
+<li><Link /blog/etl-pipeline-optimization-2026-6891/>Etl Pipeline Optimization 2026 6891</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

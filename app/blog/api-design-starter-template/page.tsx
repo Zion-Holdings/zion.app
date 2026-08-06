@@ -54,10 +54,10 @@ If this guide matches your api design: starter template initiative, the next ste
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-warehouse-modernization-starter-template">Data Warehouse Modernization Starter Template</Link></li>
-<li><Link href="/blog/cloud-migration-services-common-mistakes">Cloud Migration Services Common Mistakes</Link></li>
-<li><Link href="/blog/automated-ai-reporting-automation-roadmap">Automated Ai Reporting Automation Roadmap</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-7109">Cloud Cost Optimization Checklist 2026 7109</Link></li>
+              <li><Link /blog/data-warehouse-modernization-starter-template/>Data Warehouse Modernization Starter Template</Link></li>
+<li><Link /blog/cloud-migration-services-common-mistakes/>Cloud Migration Services Common Mistakes</Link></li>
+<li><Link /blog/automated-ai-reporting-automation-roadmap/>Automated Ai Reporting Automation Roadmap</Link></li>
+<li><Link /blog/cloud-cost-optimization-checklist-2026-7109/>Cloud Cost Optimization Checklist 2026 7109</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

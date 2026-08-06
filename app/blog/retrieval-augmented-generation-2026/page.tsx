@@ -54,10 +54,10 @@ If this guide matches your retrieval augmented generation initiative, the next s
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/5g-solutions-2026-7052">5G Solutions 2026 7052</Link></li>
-<li><Link href="/blog/ai-it-operations-automation-2026-6694">Ai It Operations Automation 2026 6694</Link></li>
-<li><Link href="/blog/bot-detection-policy-and-compliance">Bot Detection Policy And Compliance</Link></li>
-<li><Link href="/blog/splunk-migration-operations-handbook">Splunk Migration Operations Handbook</Link></li>
+              <li><Link /blog/5g-solutions-2026-7052/>5G Solutions 2026 7052</Link></li>
+<li><Link /blog/ai-it-operations-automation-2026-6694/>Ai It Operations Automation 2026 6694</Link></li>
+<li><Link /blog/bot-detection-policy-and-compliance/>Bot Detection Policy And Compliance</Link></li>
+<li><Link /blog/splunk-migration-operations-handbook/>Splunk Migration Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for incident management: executive guide: workflow completion
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/digital-twin-architecture-overview">Digital Twin Architecture Overview</Link></li>
-<li><Link href="/blog/cloud-native-app-development-operations-handbook">Cloud Native App Development Operations Handbook</Link></li>
-<li><Link href="/blog/data-virtualization-automation-roadmap">Data Virtualization Automation Roadmap</Link></li>
-<li><Link href="/blog/api-rate-limiting-automation-roadmap">Api Rate Limiting Automation Roadmap</Link></li>
+              <li><Link /blog/digital-twin-architecture-overview/>Digital Twin Architecture Overview</Link></li>
+<li><Link /blog/cloud-native-app-development-operations-handbook/>Cloud Native App Development Operations Handbook</Link></li>
+<li><Link /blog/data-virtualization-automation-roadmap/>Data Virtualization Automation Roadmap</Link></li>
+<li><Link /blog/api-rate-limiting-automation-roadmap/>Api Rate Limiting Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

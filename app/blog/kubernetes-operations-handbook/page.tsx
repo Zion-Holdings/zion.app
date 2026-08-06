@@ -57,10 +57,10 @@ For kubernetes: operations handbook: pick one workflow, assign ownership, define
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/static-application-security-testing-implementation-playbook">Static Application Security Testing Implementation Playbook</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-2026-6657">Aiops Anomaly Detection 2026 6657</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-starter-template">Aiops Anomaly Detection Starter Template</Link></li>
-<li><Link href="/blog/docker-security-policy-and-compliance">Docker Security Policy And Compliance</Link></li>
+              <li><Link /blog/static-application-security-testing-implementation-playbook/>Static Application Security Testing Implementation Playbook</Link></li>
+<li><Link /blog/aiops-anomaly-detection-2026-6657/>Aiops Anomaly Detection 2026 6657</Link></li>
+<li><Link /blog/aiops-anomaly-detection-starter-template/>Aiops Anomaly Detection Starter Template</Link></li>
+<li><Link /blog/docker-security-policy-and-compliance/>Docker Security Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

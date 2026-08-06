@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automation-orchestration-enterprise-2026-6561">Automation Orchestration Enterprise 2026 6561</Link></li>
-<li><Link href="/blog/cicd-best-practices-starter-template">Cicd Best Practices Starter Template</Link></li>
-<li><Link href="/blog/saas-security-automation-roadmap">Saas Security Automation Roadmap</Link></li>
-<li><Link href="/blog/blue-green-deployment-case-study">Blue Green Deployment Case Study</Link></li>
+              <li><Link /blog/automation-orchestration-enterprise-2026-6561/>Automation Orchestration Enterprise 2026 6561</Link></li>
+<li><Link /blog/cicd-best-practices-starter-template/>Cicd Best Practices Starter Template</Link></li>
+<li><Link /blog/saas-security-automation-roadmap/>Saas Security Automation Roadmap</Link></li>
+<li><Link /blog/blue-green-deployment-case-study/>Blue Green Deployment Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

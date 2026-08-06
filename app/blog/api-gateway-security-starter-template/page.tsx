@@ -54,10 +54,10 @@ If this guide matches your api gateway security: starter template initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-management-2026-7012">Api Gateway Management 2026 7012</Link></li>
-<li><Link href="/blog/ai-data-backup-2026-6693">Ai Data Backup 2026 6693</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-case-study">Autonomous Qa Engineering Case Study</Link></li>
-<li><Link href="/blog/email-security-checklist-for-it-leaders">Email Security Checklist For It Leaders</Link></li>
+              <li><Link /blog/api-gateway-management-2026-7012/>Api Gateway Management 2026 7012</Link></li>
+<li><Link /blog/ai-data-backup-2026-6693/>Ai Data Backup 2026 6693</Link></li>
+<li><Link /blog/autonomous-qa-engineering-case-study/>Autonomous Qa Engineering Case Study</Link></li>
+<li><Link /blog/email-security-checklist-for-it-leaders/>Email Security Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

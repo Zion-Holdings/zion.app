@@ -57,10 +57,10 @@ For threat intelligence platform: starter template: pick one workflow, assign ow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-integration-vendor-evaluation">Api Integration Vendor Evaluation</Link></li>
-<li><Link href="/blog/continuous-deployment-case-study">Continuous Deployment Case Study</Link></li>
-<li><Link href="/blog/machine-learning-engineering-checklist-for-it-leaders">Machine Learning Engineering Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-api-gateway-deployment-patterns">Ai Api Gateway Deployment Patterns</Link></li>
+              <li><Link /blog/api-integration-vendor-evaluation/>Api Integration Vendor Evaluation</Link></li>
+<li><Link /blog/continuous-deployment-case-study/>Continuous Deployment Case Study</Link></li>
+<li><Link /blog/machine-learning-engineering-checklist-for-it-leaders/>Machine Learning Engineering Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-api-gateway-deployment-patterns/>Ai Api Gateway Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

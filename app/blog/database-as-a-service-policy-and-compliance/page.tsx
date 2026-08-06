@@ -57,10 +57,10 @@ For database as a service: policy and compliance: pick one workflow, assign owne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-compliance-2026">Data Compliance 2026</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-deployment-patterns">Data Warehouse Modernization Deployment Patterns</Link></li>
-<li><Link href="/blog/endpoint-management-starter-template">Endpoint Management Starter Template</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-checklist-for-it-leaders">Microsaas Expense Tracker Checklist For It Leaders</Link></li>
+              <li><Link /blog/data-compliance-2026/>Data Compliance 2026</Link></li>
+<li><Link /blog/data-warehouse-modernization-deployment-patterns/>Data Warehouse Modernization Deployment Patterns</Link></li>
+<li><Link /blog/endpoint-management-starter-template/>Endpoint Management Starter Template</Link></li>
+<li><Link /blog/microsaas-expense-tracker-checklist-for-it-leaders/>Microsaas Expense Tracker Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

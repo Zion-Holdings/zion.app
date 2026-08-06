@@ -54,10 +54,10 @@ If this guide matches your ci/cd best practices: operations handbook initiative,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/vendor-management-executive-guide">Vendor Management Executive Guide</Link></li>
-<li><Link href="/blog/api-rate-limiting-starter-template">Api Rate Limiting Starter Template</Link></li>
-<li><Link href="/blog/sase-roi-and-cost-model">Sase Roi And Cost Model</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-6819">Edge Computing Deployment 2026 6819</Link></li>
+              <li><Link /blog/vendor-management-executive-guide/>Vendor Management Executive Guide</Link></li>
+<li><Link /blog/api-rate-limiting-starter-template/>Api Rate Limiting Starter Template</Link></li>
+<li><Link /blog/sase-roi-and-cost-model/>Sase Roi And Cost Model</Link></li>
+<li><Link /blog/edge-computing-deployment-2026-6819/>Edge Computing Deployment 2026 6819</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

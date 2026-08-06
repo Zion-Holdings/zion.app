@@ -54,10 +54,10 @@ If this guide matches your zero trust architecture: executive guide initiative, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-ad-copy-generator-implementation-playbook">Ai Ad Copy Generator Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-2026-6515">Ai Agent Safety Evaluation 2026 6515</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-6548">Smart Contract Audit 2026 6548</Link></li>
-<li><Link href="/blog/api-orchestration-layer-executive-guide">Api Orchestration Layer Executive Guide</Link></li>
+              <li><Link /blog/ai-ad-copy-generator-implementation-playbook/>Ai Ad Copy Generator Implementation Playbook</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-2026-6515/>Ai Agent Safety Evaluation 2026 6515</Link></li>
+<li><Link /blog/smart-contract-audit-2026-6548/>Smart Contract Audit 2026 6548</Link></li>
+<li><Link /blog/api-orchestration-layer-executive-guide/>Api Orchestration Layer Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

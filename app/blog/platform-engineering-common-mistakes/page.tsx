@@ -57,10 +57,10 @@ Leading indicators for platform engineering: common mistakes: workflow completio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-safety-evaluation-operations-handbook">Ai Agent Safety Evaluation Operations Handbook</Link></li>
-<li><Link href="/blog/api-lifecycle-management-2026">Api Lifecycle Management 2026</Link></li>
-<li><Link href="/blog/graphql-federation-platform-common-mistakes">Graphql Federation Platform Common Mistakes</Link></li>
-<li><Link href="/blog/technical-due-diligence-case-study">Technical Due Diligence Case Study</Link></li>
+              <li><Link /blog/ai-agent-safety-evaluation-operations-handbook/>Ai Agent Safety Evaluation Operations Handbook</Link></li>
+<li><Link /blog/api-lifecycle-management-2026/>Api Lifecycle Management 2026</Link></li>
+<li><Link /blog/graphql-federation-platform-common-mistakes/>Graphql Federation Platform Common Mistakes</Link></li>
+<li><Link /blog/technical-due-diligence-case-study/>Technical Due Diligence Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

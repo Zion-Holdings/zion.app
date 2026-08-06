@@ -57,10 +57,10 @@ Leading indicators for business intelligence: policy and compliance: workflow co
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-migration-services-2026">Cloud Migration Services 2026</Link></li>
-<li><Link href="/blog/it-consulting-architecture-overview">It Consulting Architecture Overview</Link></li>
-<li><Link href="/blog/product-analytics-case-study">Product Analytics Case Study</Link></li>
-<li><Link href="/blog/api-integration-2026-6875">Api Integration 2026 6875</Link></li>
+              <li><Link /blog/cloud-migration-services-2026/>Cloud Migration Services 2026</Link></li>
+<li><Link /blog/it-consulting-architecture-overview/>It Consulting Architecture Overview</Link></li>
+<li><Link /blog/product-analytics-case-study/>Product Analytics Case Study</Link></li>
+<li><Link /blog/api-integration-2026-6875/>Api Integration 2026 6875</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

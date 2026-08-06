@@ -57,10 +57,10 @@ Leading indicators for api monetization: checklist for it leaders: workflow comp
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-optimizer-starter-template">Ai Accessibility Optimizer Starter Template</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-policy-and-compliance">Ai Accessibility Optimizer Policy And Compliance</Link></li>
-<li><Link href="/blog/disaster-recovery-operations-handbook">Disaster Recovery Operations Handbook</Link></li>
-<li><Link href="/blog/azure-migration-case-study">Azure Migration Case Study</Link></li>
+              <li><Link /blog/ai-accessibility-optimizer-starter-template/>Ai Accessibility Optimizer Starter Template</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-policy-and-compliance/>Ai Accessibility Optimizer Policy And Compliance</Link></li>
+<li><Link /blog/disaster-recovery-operations-handbook/>Disaster Recovery Operations Handbook</Link></li>
+<li><Link /blog/azure-migration-case-study/>Azure Migration Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

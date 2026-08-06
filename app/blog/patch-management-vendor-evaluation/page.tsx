@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/static-application-security-testing-executive-guide">Static Application Security Testing Executive Guide</Link></li>
-<li><Link href="/blog/microservices-security-policy-and-compliance">Microservices Security Policy And Compliance</Link></li>
-<li><Link href="/blog/graphql-federation-platform-starter-template">Graphql Federation Platform Starter Template</Link></li>
-<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026">Data Analytics Platform Modern Enterprise 2026</Link></li>
+              <li><Link /blog/static-application-security-testing-executive-guide/>Static Application Security Testing Executive Guide</Link></li>
+<li><Link /blog/microservices-security-policy-and-compliance/>Microservices Security Policy And Compliance</Link></li>
+<li><Link /blog/graphql-federation-platform-starter-template/>Graphql Federation Platform Starter Template</Link></li>
+<li><Link /blog/data-analytics-platform-modern-enterprise-2026/>Data Analytics Platform Modern Enterprise 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

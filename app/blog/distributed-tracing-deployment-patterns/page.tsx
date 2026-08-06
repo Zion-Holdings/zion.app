@@ -57,10 +57,10 @@ Leading indicators for distributed tracing: deployment patterns: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/smart-contract-audit-starter-template">Smart Contract Audit Starter Template</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-vendor-evaluation">Cloud Cost Ai Optimizer Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-email-intelligence-security-and-governance">Ai Email Intelligence Security And Governance</Link></li>
-<li><Link href="/blog/enterprise-service-bus-operations-handbook">Enterprise Service Bus Operations Handbook</Link></li>
+              <li><Link /blog/smart-contract-audit-starter-template/>Smart Contract Audit Starter Template</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-vendor-evaluation/>Cloud Cost Ai Optimizer Vendor Evaluation</Link></li>
+<li><Link /blog/ai-email-intelligence-security-and-governance/>Ai Email Intelligence Security And Governance</Link></li>
+<li><Link /blog/enterprise-service-bus-operations-handbook/>Enterprise Service Bus Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for llm operations: deployment patterns: workflow completion 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-tool-builder-2026-6654">Ai Agent Tool Builder 2026 6654</Link></li>
-<li><Link href="/blog/saas-security-checklist-for-it-leaders">Saas Security Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-bom-procurement-2026-6939">Ai Bom Procurement 2026 6939</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026-6879">Cloud Cost Ai Optimizer 2026 6879</Link></li>
+              <li><Link /blog/ai-agent-tool-builder-2026-6654/>Ai Agent Tool Builder 2026 6654</Link></li>
+<li><Link /blog/saas-security-checklist-for-it-leaders/>Saas Security Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-bom-procurement-2026-6939/>Ai Bom Procurement 2026 6939</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-2026-6879/>Cloud Cost Ai Optimizer 2026 6879</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

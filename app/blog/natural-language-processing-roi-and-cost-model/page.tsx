@@ -57,10 +57,10 @@ Leading indicators for natural language processing: roi and cost model: workflow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-policy-and-compliance">Graphql Federation Platform Policy And Compliance</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-2026-6960">Etl Pipeline Optimization 2026 6960</Link></li>
-<li><Link href="/blog/api-management-gateway-security-and-governance">Api Management Gateway Security And Governance</Link></li>
-<li><Link href="/blog/it-consulting-policy-and-compliance">It Consulting Policy And Compliance</Link></li>
+              <li><Link /blog/graphql-federation-platform-policy-and-compliance/>Graphql Federation Platform Policy And Compliance</Link></li>
+<li><Link /blog/etl-pipeline-optimization-2026-6960/>Etl Pipeline Optimization 2026 6960</Link></li>
+<li><Link /blog/api-management-gateway-security-and-governance/>Api Management Gateway Security And Governance</Link></li>
+<li><Link /blog/it-consulting-policy-and-compliance/>It Consulting Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

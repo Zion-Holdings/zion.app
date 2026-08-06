@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-performance-testing-roi-and-cost-model">Api Performance Testing Roi And Cost Model</Link></li>
-<li><Link href="/blog/resilience-engineering-2026">Resilience Engineering 2026</Link></li>
-<li><Link href="/blog/cloud-finops-implementation-playbook">Cloud Finops Implementation Playbook</Link></li>
-<li><Link href="/blog/apm-application-performance-2026-6946">Apm Application Performance 2026 6946</Link></li>
+              <li><Link /blog/api-performance-testing-roi-and-cost-model/>Api Performance Testing Roi And Cost Model</Link></li>
+<li><Link /blog/resilience-engineering-2026/>Resilience Engineering 2026</Link></li>
+<li><Link /blog/cloud-finops-implementation-playbook/>Cloud Finops Implementation Playbook</Link></li>
+<li><Link /blog/apm-application-performance-2026-6946/>Apm Application Performance 2026 6946</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

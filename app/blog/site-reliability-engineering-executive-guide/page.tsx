@@ -54,10 +54,10 @@ If this guide matches your site reliability engineering: executive guide initiat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/brand-voice-guardian-2026-6664">Brand Voice Guardian 2026 6664</Link></li>
-<li><Link href="/blog/data-security-operations-handbook">Data Security Operations Handbook</Link></li>
-<li><Link href="/blog/ai-bom-procurement-architecture-overview">Ai Bom Procurement Architecture Overview</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-automation-roadmap">Ai 3D Asset Generator Automation Roadmap</Link></li>
+              <li><Link /blog/brand-voice-guardian-2026-6664/>Brand Voice Guardian 2026 6664</Link></li>
+<li><Link /blog/data-security-operations-handbook/>Data Security Operations Handbook</Link></li>
+<li><Link /blog/ai-bom-procurement-architecture-overview/>Ai Bom Procurement Architecture Overview</Link></li>
+<li><Link /blog/ai-3d-asset-generator-automation-roadmap/>Ai 3D Asset Generator Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For aiops: pick one workflow, assign ownership, define success metrics, instrume
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/log-management-case-study">Log Management Case Study</Link></li>
-<li><Link href="/blog/apm-application-performance-2026-6532">Apm Application Performance 2026 6532</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-common-mistakes">Etl Pipeline Optimization Common Mistakes</Link></li>
-<li><Link href="/blog/api-performance-testing-evaluation-framework">Api Performance Testing Evaluation Framework</Link></li>
+              <li><Link /blog/log-management-case-study/>Log Management Case Study</Link></li>
+<li><Link /blog/apm-application-performance-2026-6532/>Apm Application Performance 2026 6532</Link></li>
+<li><Link /blog/etl-pipeline-optimization-common-mistakes/>Etl Pipeline Optimization Common Mistakes</Link></li>
+<li><Link /blog/api-performance-testing-evaluation-framework/>Api Performance Testing Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

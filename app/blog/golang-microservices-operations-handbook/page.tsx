@@ -57,10 +57,10 @@ Leading indicators for golang microservices: operations handbook: workflow compl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cyber-threat-intelligence-policy-and-compliance">Cyber Threat Intelligence Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-2026-6929">Ai Agent Safety Evaluation 2026 6929</Link></li>
-<li><Link href="/blog/ai-api-gateway-checklist-for-it-leaders">Ai Api Gateway Checklist For It Leaders</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-7006">Autonomous Qa Engineering 2026 7006</Link></li>
+              <li><Link /blog/cyber-threat-intelligence-policy-and-compliance/>Cyber Threat Intelligence Policy And Compliance</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-2026-6929/>Ai Agent Safety Evaluation 2026 6929</Link></li>
+<li><Link /blog/ai-api-gateway-checklist-for-it-leaders/>Ai Api Gateway Checklist For It Leaders</Link></li>
+<li><Link /blog/autonomous-qa-engineering-2026-7006/>Autonomous Qa Engineering 2026 7006</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

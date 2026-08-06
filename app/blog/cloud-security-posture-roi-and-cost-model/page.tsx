@@ -57,10 +57,10 @@ For cloud security posture: roi and cost model: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-migration-services-implementation-playbook">Cloud Migration Services Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-customer-support-pro-2026-6633">Ai Customer Support Pro 2026 6633</Link></li>
-<li><Link href="/blog/api-integration-architecture-overview">Api Integration Architecture Overview</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-2026-7001">Ai Autonomous Agents 2026 7001</Link></li>
+              <li><Link /blog/cloud-migration-services-implementation-playbook/>Cloud Migration Services Implementation Playbook</Link></li>
+<li><Link /blog/ai-customer-support-pro-2026-6633/>Ai Customer Support Pro 2026 6633</Link></li>
+<li><Link /blog/api-integration-architecture-overview/>Api Integration Architecture Overview</Link></li>
+<li><Link /blog/ai-autonomous-agents-2026-7001/>Ai Autonomous Agents 2026 7001</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

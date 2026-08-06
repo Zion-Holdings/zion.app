@@ -54,10 +54,10 @@ If this guide matches your itil: architecture overview initiative, the next step
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-tool-builder-policy-and-compliance">Ai Agent Tool Builder Policy And Compliance</Link></li>
-<li><Link href="/blog/accessibility-compliance-deployment-patterns">Accessibility Compliance Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-it-operations-automation-2026-6763">Ai It Operations Automation 2026 6763</Link></li>
-<li><Link href="/blog/api-economy-2026">Api Economy 2026</Link></li>
+              <li><Link /blog/ai-agent-tool-builder-policy-and-compliance/>Ai Agent Tool Builder Policy And Compliance</Link></li>
+<li><Link /blog/accessibility-compliance-deployment-patterns/>Accessibility Compliance Deployment Patterns</Link></li>
+<li><Link /blog/ai-it-operations-automation-2026-6763/>Ai It Operations Automation 2026 6763</Link></li>
+<li><Link /blog/api-economy-2026/>Api Economy 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

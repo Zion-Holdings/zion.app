@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-social-media-manager-operations-handbook">Microsaas Social Media Manager Operations Handbook</Link></li>
-<li><Link href="/blog/container-security-lifecycle-case-study">Container Security Lifecycle Case Study</Link></li>
-<li><Link href="/blog/ai-bom-procurement-policy-and-compliance">Ai Bom Procurement Policy And Compliance</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-implementation-playbook">Cyber Threat Intelligence Implementation Playbook</Link></li>
+              <li><Link /blog/microsaas-social-media-manager-operations-handbook/>Microsaas Social Media Manager Operations Handbook</Link></li>
+<li><Link /blog/container-security-lifecycle-case-study/>Container Security Lifecycle Case Study</Link></li>
+<li><Link /blog/ai-bom-procurement-policy-and-compliance/>Ai Bom Procurement Policy And Compliance</Link></li>
+<li><Link /blog/cyber-threat-intelligence-implementation-playbook/>Cyber Threat Intelligence Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for machine learning engineering: policy and compliance: work
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-native-app-development-security-and-governance">Cloud Native App Development Security And Governance</Link></li>
-<li><Link href="/blog/network-security-roi-and-cost-model">Network Security Roi And Cost Model</Link></li>
-<li><Link href="/blog/edge-computing-deployment-deployment-patterns">Edge Computing Deployment Deployment Patterns</Link></li>
-<li><Link href="/blog/database-migration-service-2026-6885">Database Migration Service 2026 6885</Link></li>
+              <li><Link /blog/cloud-native-app-development-security-and-governance/>Cloud Native App Development Security And Governance</Link></li>
+<li><Link /blog/network-security-roi-and-cost-model/>Network Security Roi And Cost Model</Link></li>
+<li><Link /blog/edge-computing-deployment-deployment-patterns/>Edge Computing Deployment Deployment Patterns</Link></li>
+<li><Link /blog/database-migration-service-2026-6885/>Database Migration Service 2026 6885</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cyber-threat-intelligence-common-mistakes">Cyber Threat Intelligence Common Mistakes</Link></li>
-<li><Link href="/blog/ai-data-backup-roi-and-cost-model">Ai Data Backup Roi And Cost Model</Link></li>
-<li><Link href="/blog/api-performance-testing-implementation-playbook">Api Performance Testing Implementation Playbook</Link></li>
-<li><Link href="/blog/incident-response-retainer-2026">Incident Response Retainer 2026</Link></li>
+              <li><Link /blog/cyber-threat-intelligence-common-mistakes/>Cyber Threat Intelligence Common Mistakes</Link></li>
+<li><Link /blog/ai-data-backup-roi-and-cost-model/>Ai Data Backup Roi And Cost Model</Link></li>
+<li><Link /blog/api-performance-testing-implementation-playbook/>Api Performance Testing Implementation Playbook</Link></li>
+<li><Link /blog/incident-response-retainer-2026/>Incident Response Retainer 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

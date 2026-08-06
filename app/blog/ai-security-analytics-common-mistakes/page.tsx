@@ -57,10 +57,10 @@ For ai security analytics: common mistakes: pick one workflow, assign ownership,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-2026-6751">Endpoint Management 2026 6751</Link></li>
-<li><Link href="/blog/endpoint-management-case-study">Endpoint Management Case Study</Link></li>
-<li><Link href="/blog/api-monetization-deployment-patterns">Api Monetization Deployment Patterns</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-6893">Smart Contract Audit 2026 6893</Link></li>
+              <li><Link /blog/endpoint-management-2026-6751/>Endpoint Management 2026 6751</Link></li>
+<li><Link /blog/endpoint-management-case-study/>Endpoint Management Case Study</Link></li>
+<li><Link /blog/api-monetization-deployment-patterns/>Api Monetization Deployment Patterns</Link></li>
+<li><Link /blog/smart-contract-audit-2026-6893/>Smart Contract Audit 2026 6893</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

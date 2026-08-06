@@ -54,10 +54,10 @@ If this guide matches your api economy: common mistakes initiative, the next ste
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/edge-computing-deployment-operations-handbook">Edge Computing Deployment Operations Handbook</Link></li>
-<li><Link href="/blog/zero-trust-architecture-vendor-evaluation">Zero Trust Architecture Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-for-fintech-and-digital-banking-operations">Ai For Fintech And Digital Banking Operations</Link></li>
-<li><Link href="/blog/ai-recruitment-chatbot-evaluation-framework">Ai Recruitment Chatbot Evaluation Framework</Link></li>
+              <li><Link /blog/edge-computing-deployment-operations-handbook/>Edge Computing Deployment Operations Handbook</Link></li>
+<li><Link /blog/zero-trust-architecture-vendor-evaluation/>Zero Trust Architecture Vendor Evaluation</Link></li>
+<li><Link /blog/ai-for-fintech-and-digital-banking-operations/>Ai For Fintech And Digital Banking Operations</Link></li>
+<li><Link /blog/ai-recruitment-chatbot-evaluation-framework/>Ai Recruitment Chatbot Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

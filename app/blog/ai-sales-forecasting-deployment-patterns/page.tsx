@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/resilience-engineering-2026">Resilience Engineering 2026</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-checklist-for-it-leaders">Microsaas Expense Tracker Checklist For It Leaders</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-vendor-evaluation">Etl Pipeline Optimization Vendor Evaluation</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-security-and-governance">Enterprise Backup Dr Security And Governance</Link></li>
+              <li><Link /blog/resilience-engineering-2026/>Resilience Engineering 2026</Link></li>
+<li><Link /blog/microsaas-expense-tracker-checklist-for-it-leaders/>Microsaas Expense Tracker Checklist For It Leaders</Link></li>
+<li><Link /blog/etl-pipeline-optimization-vendor-evaluation/>Etl Pipeline Optimization Vendor Evaluation</Link></li>
+<li><Link /blog/enterprise-backup-dr-security-and-governance/>Enterprise Backup Dr Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

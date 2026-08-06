@@ -57,10 +57,10 @@ For customer data platform: operations handbook: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-success-churn-prevention-deployment-patterns">Ai Customer Success Churn Prevention Deployment Patterns</Link></li>
-<li><Link href="/blog/log-management-case-study">Log Management Case Study</Link></li>
-<li><Link href="/blog/api-lifecycle-management-starter-template">Api Lifecycle Management Starter Template</Link></li>
-<li><Link href="/blog/strategic-it-planning-common-mistakes">Strategic It Planning Common Mistakes</Link></li>
+              <li><Link /blog/ai-customer-success-churn-prevention-deployment-patterns/>Ai Customer Success Churn Prevention Deployment Patterns</Link></li>
+<li><Link /blog/log-management-case-study/>Log Management Case Study</Link></li>
+<li><Link /blog/api-lifecycle-management-starter-template/>Api Lifecycle Management Starter Template</Link></li>
+<li><Link /blog/strategic-it-planning-common-mistakes/>Strategic It Planning Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

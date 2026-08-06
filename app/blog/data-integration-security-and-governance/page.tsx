@@ -57,10 +57,10 @@ For data integration: security and governance: pick one workflow, assign ownersh
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-social-media-manager-executive-guide">Microsaas Social Media Manager Executive Guide</Link></li>
-<li><Link href="/blog/ai-marketing-personalization-2026">Ai Marketing Personalization 2026</Link></li>
-<li><Link href="/blog/ai-process-mining-executive-guide">Ai Process Mining Executive Guide</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-architecture-overview">Ai Data Lakehouse Pipelines Architecture Overview</Link></li>
+              <li><Link /blog/microsaas-social-media-manager-executive-guide/>Microsaas Social Media Manager Executive Guide</Link></li>
+<li><Link /blog/ai-marketing-personalization-2026/>Ai Marketing Personalization 2026</Link></li>
+<li><Link /blog/ai-process-mining-executive-guide/>Ai Process Mining Executive Guide</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-architecture-overview/>Ai Data Lakehouse Pipelines Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

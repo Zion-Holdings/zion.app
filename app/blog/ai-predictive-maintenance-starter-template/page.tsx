@@ -57,10 +57,10 @@ Leading indicators for ai predictive maintenance: starter template: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/platform-engineering-2026">Platform Engineering 2026</Link></li>
-<li><Link href="/blog/no-code-platform-architecture-overview">No Code Platform Architecture Overview</Link></li>
-<li><Link href="/blog/vendor-management-security-and-governance">Vendor Management Security And Governance</Link></li>
-<li><Link href="/blog/microservices-security-implementation-playbook">Microservices Security Implementation Playbook</Link></li>
+              <li><Link /blog/platform-engineering-2026/>Platform Engineering 2026</Link></li>
+<li><Link /blog/no-code-platform-architecture-overview/>No Code Platform Architecture Overview</Link></li>
+<li><Link /blog/vendor-management-security-and-governance/>Vendor Management Security And Governance</Link></li>
+<li><Link /blog/microservices-security-implementation-playbook/>Microservices Security Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

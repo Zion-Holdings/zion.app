@@ -57,10 +57,10 @@ Leading indicators for data quality: implementation playbook: workflow completio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/policy-as-code-starter-template">Policy As Code Starter Template</Link></li>
-<li><Link href="/blog/continuous-delivery-case-study">Continuous Delivery Case Study</Link></li>
-<li><Link href="/blog/api-orchestration-layer-architecture-overview">Api Orchestration Layer Architecture Overview</Link></li>
-<li><Link href="/blog/container-security-lifecycle-2026-6882">Container Security Lifecycle 2026 6882</Link></li>
+              <li><Link /blog/policy-as-code-starter-template/>Policy As Code Starter Template</Link></li>
+<li><Link /blog/continuous-delivery-case-study/>Continuous Delivery Case Study</Link></li>
+<li><Link /blog/api-orchestration-layer-architecture-overview/>Api Orchestration Layer Architecture Overview</Link></li>
+<li><Link /blog/container-security-lifecycle-2026-6882/>Container Security Lifecycle 2026 6882</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

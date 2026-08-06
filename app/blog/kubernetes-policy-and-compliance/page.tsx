@@ -54,10 +54,10 @@ If this guide matches your kubernetes: policy and compliance initiative, the nex
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6774">Ai Data Lakehouse Pipelines 2026 6774</Link></li>
-<li><Link href="/blog/network-infrastructure-2026-7054">Network Infrastructure 2026 7054</Link></li>
-<li><Link href="/blog/generative-ai-2026">Generative Ai 2026</Link></li>
-<li><Link href="/blog/ai-data-backup-automation-roadmap">Ai Data Backup Automation Roadmap</Link></li>
+              <li><Link /blog/ai-data-lakehouse-pipelines-2026-6774/>Ai Data Lakehouse Pipelines 2026 6774</Link></li>
+<li><Link /blog/network-infrastructure-2026-7054/>Network Infrastructure 2026 7054</Link></li>
+<li><Link /blog/generative-ai-2026/>Generative Ai 2026</Link></li>
+<li><Link /blog/ai-data-backup-automation-roadmap/>Ai Data Backup Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

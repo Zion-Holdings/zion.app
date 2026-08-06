@@ -54,10 +54,10 @@ If this guide matches your technology roadmap: checklist for it leaders initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-storage-strategy-case-study">Cloud Storage Strategy Case Study</Link></li>
-<li><Link href="/blog/event-driven-architecture-policy-and-compliance">Event Driven Architecture Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-starter-template">Ai 3D Asset Generator Starter Template</Link></li>
-<li><Link href="/blog/golang-microservices-automation-roadmap">Golang Microservices Automation Roadmap</Link></li>
+              <li><Link /blog/cloud-storage-strategy-case-study/>Cloud Storage Strategy Case Study</Link></li>
+<li><Link /blog/event-driven-architecture-policy-and-compliance/>Event Driven Architecture Policy And Compliance</Link></li>
+<li><Link /blog/ai-3d-asset-generator-starter-template/>Ai 3D Asset Generator Starter Template</Link></li>
+<li><Link /blog/golang-microservices-automation-roadmap/>Golang Microservices Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

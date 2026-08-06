@@ -54,10 +54,10 @@ If this guide matches your api economy: security and governance initiative, the 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ransomware-recovery-automation-roadmap">Ransomware Recovery Automation Roadmap</Link></li>
-<li><Link href="/blog/api-performance-testing-executive-guide">Api Performance Testing Executive Guide</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-2026-7070">Ai Autonomous Agents 2026 7070</Link></li>
-<li><Link href="/blog/error-budget-checklist-for-it-leaders">Error Budget Checklist For It Leaders</Link></li>
+              <li><Link /blog/ransomware-recovery-automation-roadmap/>Ransomware Recovery Automation Roadmap</Link></li>
+<li><Link /blog/api-performance-testing-executive-guide/>Api Performance Testing Executive Guide</Link></li>
+<li><Link /blog/ai-autonomous-agents-2026-7070/>Ai Autonomous Agents 2026 7070</Link></li>
+<li><Link /blog/error-budget-checklist-for-it-leaders/>Error Budget Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

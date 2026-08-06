@@ -57,10 +57,10 @@ For continuous integration: security and governance: pick one workflow, assign o
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/continuous-delivery-case-study">Continuous Delivery Case Study</Link></li>
-<li><Link href="/blog/enterprise-architecture-roi-and-cost-model">Enterprise Architecture Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-development-acceleration-executive-guide">Ai Development Acceleration Executive Guide</Link></li>
-<li><Link href="/blog/data-governance-policy-and-compliance">Data Governance Policy And Compliance</Link></li>
+              <li><Link /blog/continuous-delivery-case-study/>Continuous Delivery Case Study</Link></li>
+<li><Link /blog/enterprise-architecture-roi-and-cost-model/>Enterprise Architecture Roi And Cost Model</Link></li>
+<li><Link /blog/ai-development-acceleration-executive-guide/>Ai Development Acceleration Executive Guide</Link></li>
+<li><Link /blog/data-governance-policy-and-compliance/>Data Governance Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

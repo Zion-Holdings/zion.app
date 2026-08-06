@@ -54,10 +54,10 @@ If this guide matches your api versioning: security and governance initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/kubernetes-automation-roadmap">Kubernetes Automation Roadmap</Link></li>
-<li><Link href="/blog/data-analytics-platform-case-study">Data Analytics Platform Case Study</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-operations-handbook">Microsaas Expense Tracker Operations Handbook</Link></li>
-<li><Link href="/blog/api-management-gateway-checklist-for-it-leaders">Api Management Gateway Checklist For It Leaders</Link></li>
+              <li><Link /blog/kubernetes-automation-roadmap/>Kubernetes Automation Roadmap</Link></li>
+<li><Link /blog/data-analytics-platform-case-study/>Data Analytics Platform Case Study</Link></li>
+<li><Link /blog/microsaas-expense-tracker-operations-handbook/>Microsaas Expense Tracker Operations Handbook</Link></li>
+<li><Link /blog/api-management-gateway-checklist-for-it-leaders/>Api Management Gateway Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

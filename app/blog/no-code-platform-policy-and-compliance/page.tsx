@@ -57,10 +57,10 @@ Leading indicators for no code platform: policy and compliance: workflow complet
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/hybrid-cloud-evaluation-framework">Hybrid Cloud Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-executive-guide">Ai 3D Asset Generator Executive Guide</Link></li>
-<li><Link href="/blog/vendor-management-starter-template">Vendor Management Starter Template</Link></li>
-<li><Link href="/blog/genai-devops-cicd-common-mistakes">Genai Devops Cicd Common Mistakes</Link></li>
+              <li><Link /blog/hybrid-cloud-evaluation-framework/>Hybrid Cloud Evaluation Framework</Link></li>
+<li><Link /blog/ai-3d-asset-generator-executive-guide/>Ai 3D Asset Generator Executive Guide</Link></li>
+<li><Link /blog/vendor-management-starter-template/>Vendor Management Starter Template</Link></li>
+<li><Link /blog/genai-devops-cicd-common-mistakes/>Genai Devops Cicd Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

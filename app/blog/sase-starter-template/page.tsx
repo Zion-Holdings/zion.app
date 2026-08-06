@@ -57,10 +57,10 @@ For sase: starter template: pick one workflow, assign ownership, define success 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/vendor-management-implementation-playbook">Vendor Management Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-policy-and-compliance">Ai Agentic Workflows Policy And Compliance</Link></li>
-<li><Link href="/blog/database-migration-service-case-study">Database Migration Service Case Study</Link></li>
-<li><Link href="/blog/resilience-engineering-roi-and-cost-model">Resilience Engineering Roi And Cost Model</Link></li>
+              <li><Link /blog/vendor-management-implementation-playbook/>Vendor Management Implementation Playbook</Link></li>
+<li><Link /blog/ai-agentic-workflows-policy-and-compliance/>Ai Agentic Workflows Policy And Compliance</Link></li>
+<li><Link /blog/database-migration-service-case-study/>Database Migration Service Case Study</Link></li>
+<li><Link /blog/resilience-engineering-roi-and-cost-model/>Resilience Engineering Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

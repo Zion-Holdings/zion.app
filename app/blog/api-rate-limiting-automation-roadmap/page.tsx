@@ -54,10 +54,10 @@ If this guide matches your api rate limiting: automation roadmap initiative, the
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-economy-architecture-overview">Api Economy Architecture Overview</Link></li>
-<li><Link href="/blog/test-automation-roi-and-cost-model">Test Automation Roi And Cost Model</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-6610">Devops Gen Ai Cicd 2026 6610</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-checklist-for-it-leaders">Ai Agent Tool Builder Checklist For It Leaders</Link></li>
+              <li><Link /blog/api-economy-architecture-overview/>Api Economy Architecture Overview</Link></li>
+<li><Link /blog/test-automation-roi-and-cost-model/>Test Automation Roi And Cost Model</Link></li>
+<li><Link /blog/devops-gen-ai-cicd-2026-6610/>Devops Gen Ai Cicd 2026 6610</Link></li>
+<li><Link /blog/ai-agent-tool-builder-checklist-for-it-leaders/>Ai Agent Tool Builder Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

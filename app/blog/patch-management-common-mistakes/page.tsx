@@ -57,10 +57,10 @@ For patch management: common mistakes: pick one workflow, assign ownership, defi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ransomware-recovery-starter-template">Ransomware Recovery Starter Template</Link></li>
-<li><Link href="/blog/data-governance-policy-and-compliance">Data Governance Policy And Compliance</Link></li>
-<li><Link href="/blog/data-integration-implementation-playbook">Data Integration Implementation Playbook</Link></li>
-<li><Link href="/blog/endpoint-management-2026-6820">Endpoint Management 2026 6820</Link></li>
+              <li><Link /blog/ransomware-recovery-starter-template/>Ransomware Recovery Starter Template</Link></li>
+<li><Link /blog/data-governance-policy-and-compliance/>Data Governance Policy And Compliance</Link></li>
+<li><Link /blog/data-integration-implementation-playbook/>Data Integration Implementation Playbook</Link></li>
+<li><Link /blog/endpoint-management-2026-6820/>Endpoint Management 2026 6820</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

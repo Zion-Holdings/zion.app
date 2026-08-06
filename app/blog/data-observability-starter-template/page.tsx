@@ -54,10 +54,10 @@ If this guide matches your data observability: starter template initiative, the 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-auditor-2026">Ai Accessibility Auditor 2026</Link></li>
-<li><Link href="/blog/api-orchestration-layer-deployment-patterns">Api Orchestration Layer Deployment Patterns</Link></li>
-<li><Link href="/blog/digital-twin-checklist-for-it-leaders">Digital Twin Checklist For It Leaders</Link></li>
-<li><Link href="/blog/reinforcement-learning-case-study">Reinforcement Learning Case Study</Link></li>
+              <li><Link /blog/ai-accessibility-auditor-2026/>Ai Accessibility Auditor 2026</Link></li>
+<li><Link /blog/api-orchestration-layer-deployment-patterns/>Api Orchestration Layer Deployment Patterns</Link></li>
+<li><Link /blog/digital-twin-checklist-for-it-leaders/>Digital Twin Checklist For It Leaders</Link></li>
+<li><Link /blog/reinforcement-learning-case-study/>Reinforcement Learning Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

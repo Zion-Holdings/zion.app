@@ -57,10 +57,10 @@ For identity access management: checklist for it leaders: pick one workflow, ass
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/strategic-it-planning-architecture-overview">Strategic It Planning Architecture Overview</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-common-mistakes">Microsaas Hr Recruitment Common Mistakes</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026-6641">Cloud Migration Services 2026 6641</Link></li>
-<li><Link href="/blog/accessibility-compliance-architecture-overview">Accessibility Compliance Architecture Overview</Link></li>
+              <li><Link /blog/strategic-it-planning-architecture-overview/>Strategic It Planning Architecture Overview</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-common-mistakes/>Microsaas Hr Recruitment Common Mistakes</Link></li>
+<li><Link /blog/cloud-migration-services-2026-6641/>Cloud Migration Services 2026 6641</Link></li>
+<li><Link /blog/accessibility-compliance-architecture-overview/>Accessibility Compliance Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for api design: architecture overview: workflow completion ra
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/infrastructure-monitoring-evaluation-framework">Infrastructure Monitoring Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-evaluation-framework">Ai Accessibility Auditor Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-customer-onboarding-starter-template">Ai Customer Onboarding Starter Template</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-6577">Micro Saas Ai Customer Onboarding 2026 6577</Link></li>
+              <li><Link /blog/infrastructure-monitoring-evaluation-framework/>Infrastructure Monitoring Evaluation Framework</Link></li>
+<li><Link /blog/ai-accessibility-auditor-evaluation-framework/>Ai Accessibility Auditor Evaluation Framework</Link></li>
+<li><Link /blog/ai-customer-onboarding-starter-template/>Ai Customer Onboarding Starter Template</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026-6577/>Micro Saas Ai Customer Onboarding 2026 6577</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

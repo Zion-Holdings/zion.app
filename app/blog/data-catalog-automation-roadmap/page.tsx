@@ -54,10 +54,10 @@ If this guide matches your data catalog: automation roadmap initiative, the next
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bom-procurement-architecture-overview">Ai Bom Procurement Architecture Overview</Link></li>
-<li><Link href="/blog/network-security-evaluation-framework">Network Security Evaluation Framework</Link></li>
-<li><Link href="/blog/network-infrastructure-automation-roadmap">Network Infrastructure Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-automation-roadmap">Ai Autonomous Agents Automation Roadmap</Link></li>
+              <li><Link /blog/ai-bom-procurement-architecture-overview/>Ai Bom Procurement Architecture Overview</Link></li>
+<li><Link /blog/network-security-evaluation-framework/>Network Security Evaluation Framework</Link></li>
+<li><Link /blog/network-infrastructure-automation-roadmap/>Network Infrastructure Automation Roadmap</Link></li>
+<li><Link /blog/ai-autonomous-agents-automation-roadmap/>Ai Autonomous Agents Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

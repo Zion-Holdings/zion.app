@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-migration-service-case-study">Database Migration Service Case Study</Link></li>
-<li><Link href="/blog/rag-for-enterprise-knowledge-bases">Rag For Enterprise Knowledge Bases</Link></li>
-<li><Link href="/blog/securing-ai-models-a-practical-guide-to-threat-mitigation-in-production">Securing Ai Models A Practical Guide To Threat Mitigation In Production</Link></li>
-<li><Link href="/blog/llm-operations-roi-and-cost-model">Llm Operations Roi And Cost Model</Link></li>
+              <li><Link /blog/database-migration-service-case-study/>Database Migration Service Case Study</Link></li>
+<li><Link /blog/rag-for-enterprise-knowledge-bases/>Rag For Enterprise Knowledge Bases</Link></li>
+<li><Link /blog/securing-ai-models-a-practical-guide-to-threat-mitigation-in-production/>Securing Ai Models A Practical Guide To Threat Mitigation In Production</Link></li>
+<li><Link /blog/llm-operations-roi-and-cost-model/>Llm Operations Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

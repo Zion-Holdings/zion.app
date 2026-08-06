@@ -57,10 +57,10 @@ Leading indicators for test automation: case study: workflow completion rate, es
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-2026-7014">Api Management Gateway 2026 7014</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-security-and-governance">Ai Agent Tool Builder Security And Governance</Link></li>
-<li><Link href="/blog/vector-databases-and-enterprise-rag-systems">Vector Databases And Enterprise Rag Systems</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-2026-6587">Ai Autonomous Agents 2026 6587</Link></li>
+              <li><Link /blog/api-management-gateway-2026-7014/>Api Management Gateway 2026 7014</Link></li>
+<li><Link /blog/ai-agent-tool-builder-security-and-governance/>Ai Agent Tool Builder Security And Governance</Link></li>
+<li><Link /blog/vector-databases-and-enterprise-rag-systems/>Vector Databases And Enterprise Rag Systems</Link></li>
+<li><Link /blog/ai-autonomous-agents-2026-6587/>Ai Autonomous Agents 2026 6587</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

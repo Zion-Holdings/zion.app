@@ -54,10 +54,10 @@ If this guide matches your enterprise integration: executive guide initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-it-operations-automation-2026-1">Ai It Operations Automation 2026 1</Link></li>
-<li><Link href="/blog/threat-hunting-2026">Threat Hunting 2026</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-operations-handbook">Ai Accessibility Optimizer Operations Handbook</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-executive-guide">Enterprise Ai Intelligence Hub Executive Guide</Link></li>
+              <li><Link /blog/ai-it-operations-automation-2026-1/>Ai It Operations Automation 2026 1</Link></li>
+<li><Link /blog/threat-hunting-2026/>Threat Hunting 2026</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-operations-handbook/>Ai Accessibility Optimizer Operations Handbook</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-executive-guide/>Enterprise Ai Intelligence Hub Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

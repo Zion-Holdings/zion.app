@@ -57,10 +57,10 @@ Leading indicators for enterprise data warehouse: automation roadmap: workflow c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-hr-recruitment-evaluation-framework">Microsaas Hr Recruitment Evaluation Framework</Link></li>
-<li><Link href="/blog/cost-optimization-policy-and-compliance">Cost Optimization Policy And Compliance</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-2026-7002">Aiops Anomaly Detection 2026 7002</Link></li>
-<li><Link href="/blog/bot-detection-roi-and-cost-model">Bot Detection Roi And Cost Model</Link></li>
+              <li><Link /blog/microsaas-hr-recruitment-evaluation-framework/>Microsaas Hr Recruitment Evaluation Framework</Link></li>
+<li><Link /blog/cost-optimization-policy-and-compliance/>Cost Optimization Policy And Compliance</Link></li>
+<li><Link /blog/aiops-anomaly-detection-2026-7002/>Aiops Anomaly Detection 2026 7002</Link></li>
+<li><Link /blog/bot-detection-roi-and-cost-model/>Bot Detection Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

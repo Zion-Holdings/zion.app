@@ -54,10 +54,10 @@ If this guide matches your data architecture: operations handbook initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-ad-copy-generator-security-and-governance">Ai Ad Copy Generator Security And Governance</Link></li>
-<li><Link href="/blog/graphql-federation-platform-case-study">Graphql Federation Platform Case Study</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-architecture-overview">Ai Data Lakehouse Pipelines Architecture Overview</Link></li>
-<li><Link href="/blog/platform-engineering-common-mistakes">Platform Engineering Common Mistakes</Link></li>
+              <li><Link /blog/ai-ad-copy-generator-security-and-governance/>Ai Ad Copy Generator Security And Governance</Link></li>
+<li><Link /blog/graphql-federation-platform-case-study/>Graphql Federation Platform Case Study</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-architecture-overview/>Ai Data Lakehouse Pipelines Architecture Overview</Link></li>
+<li><Link /blog/platform-engineering-common-mistakes/>Platform Engineering Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

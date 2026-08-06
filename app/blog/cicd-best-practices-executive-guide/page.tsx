@@ -54,10 +54,10 @@ If this guide matches your ci/cd best practices: executive guide initiative, the
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-translation-engine-security-and-governance">Microsaas Translation Engine Security And Governance</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6851">Micro Saas Ai Expense Tracker 2026 6851</Link></li>
-<li><Link href="/blog/api-lifecycle-management-executive-guide">Api Lifecycle Management Executive Guide</Link></li>
-<li><Link href="/blog/ai-for-customer-service-and-support-automation">Ai For Customer Service And Support Automation</Link></li>
+              <li><Link /blog/microsaas-translation-engine-security-and-governance/>Microsaas Translation Engine Security And Governance</Link></li>
+<li><Link /blog/micro-saas-ai-expense-tracker-2026-6851/>Micro Saas Ai Expense Tracker 2026 6851</Link></li>
+<li><Link /blog/api-lifecycle-management-executive-guide/>Api Lifecycle Management Executive Guide</Link></li>
+<li><Link /blog/ai-for-customer-service-and-support-automation/>Ai For Customer Service And Support Automation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

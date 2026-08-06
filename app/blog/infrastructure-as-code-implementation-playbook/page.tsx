@@ -54,10 +54,10 @@ If this guide matches your infrastructure as code: implementation playbook initi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/blockchain-enterprise-implementation-playbook">Blockchain Enterprise Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-starter-template">Ai Accessibility Optimizer Starter Template</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026-6927">Ai Accessibility Optimizer 2026 6927</Link></li>
-<li><Link href="/blog/patch-management-executive-guide">Patch Management Executive Guide</Link></li>
+              <li><Link /blog/blockchain-enterprise-implementation-playbook/>Blockchain Enterprise Implementation Playbook</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-starter-template/>Ai Accessibility Optimizer Starter Template</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-2026-6927/>Ai Accessibility Optimizer 2026 6927</Link></li>
+<li><Link /blog/patch-management-executive-guide/>Patch Management Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

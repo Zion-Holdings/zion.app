@@ -57,10 +57,10 @@ For api economy: operations handbook: pick one workflow, assign ownership, defin
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/network-automation-deployment-patterns">Network Automation Deployment Patterns</Link></li>
-<li><Link href="/blog/machine-learning-engineering-starter-template">Machine Learning Engineering Starter Template</Link></li>
-<li><Link href="/blog/ai-customer-support-pro-2026-6840">Ai Customer Support Pro 2026 6840</Link></li>
-<li><Link href="/blog/data-architecture-deployment-patterns">Data Architecture Deployment Patterns</Link></li>
+              <li><Link /blog/network-automation-deployment-patterns/>Network Automation Deployment Patterns</Link></li>
+<li><Link /blog/machine-learning-engineering-starter-template/>Machine Learning Engineering Starter Template</Link></li>
+<li><Link /blog/ai-customer-support-pro-2026-6840/>Ai Customer Support Pro 2026 6840</Link></li>
+<li><Link /blog/data-architecture-deployment-patterns/>Data Architecture Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

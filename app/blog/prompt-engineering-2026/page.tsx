@@ -57,10 +57,10 @@ Leading indicators for prompt engineering: workflow completion rate, escalation 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-code-deployment-2026-6522">Autonomous Code Deployment 2026 6522</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-implementation-playbook">Cloud Cost Ai Optimizer Implementation Playbook</Link></li>
-<li><Link href="/blog/sase-architecture-overview">Sase Architecture Overview</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-6681">Edge Computing Deployment 2026 6681</Link></li>
+              <li><Link /blog/autonomous-code-deployment-2026-6522/>Autonomous Code Deployment 2026 6522</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-implementation-playbook/>Cloud Cost Ai Optimizer Implementation Playbook</Link></li>
+<li><Link /blog/sase-architecture-overview/>Sase Architecture Overview</Link></li>
+<li><Link /blog/edge-computing-deployment-2026-6681/>Edge Computing Deployment 2026 6681</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

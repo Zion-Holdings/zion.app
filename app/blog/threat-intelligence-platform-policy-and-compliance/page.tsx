@@ -54,10 +54,10 @@ If this guide matches your threat intelligence platform: policy and compliance i
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/smart-contract-audit-case-study">Smart Contract Audit Case Study</Link></li>
-<li><Link href="/blog/devops-cicd-deployment-patterns">Devops Cicd Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-in-pharmaceuticals-and-life-sciences">Ai In Pharmaceuticals And Life Sciences</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-6957">Edge Computing Deployment 2026 6957</Link></li>
+              <li><Link /blog/smart-contract-audit-case-study/>Smart Contract Audit Case Study</Link></li>
+<li><Link /blog/devops-cicd-deployment-patterns/>Devops Cicd Deployment Patterns</Link></li>
+<li><Link /blog/ai-in-pharmaceuticals-and-life-sciences/>Ai In Pharmaceuticals And Life Sciences</Link></li>
+<li><Link /blog/edge-computing-deployment-2026-6957/>Edge Computing Deployment 2026 6957</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

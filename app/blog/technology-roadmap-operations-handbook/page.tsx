@@ -54,10 +54,10 @@ If this guide matches your technology roadmap: operations handbook initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/sase-architecture-overview">Sase Architecture Overview</Link></li>
-<li><Link href="/blog/test-automation-deployment-patterns">Test Automation Deployment Patterns</Link></li>
-<li><Link href="/blog/devops-cicd-architecture-overview">Devops Cicd Architecture Overview</Link></li>
-<li><Link href="/blog/genai-devops-cicd-security-and-governance">Genai Devops Cicd Security And Governance</Link></li>
+              <li><Link /blog/sase-architecture-overview/>Sase Architecture Overview</Link></li>
+<li><Link /blog/test-automation-deployment-patterns/>Test Automation Deployment Patterns</Link></li>
+<li><Link /blog/devops-cicd-architecture-overview/>Devops Cicd Architecture Overview</Link></li>
+<li><Link /blog/genai-devops-cicd-security-and-governance/>Genai Devops Cicd Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

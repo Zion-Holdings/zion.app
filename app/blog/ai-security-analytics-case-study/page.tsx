@@ -57,10 +57,10 @@ Leading indicators for ai security analytics: case study: workflow completion ra
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-optimizer-evaluation-framework">Ai Accessibility Optimizer Evaluation Framework</Link></li>
-<li><Link href="/blog/machine-learning-deployment-patterns">Machine Learning Deployment Patterns</Link></li>
-<li><Link href="/blog/cloud-finops-automation-roadmap">Cloud Finops Automation Roadmap</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-2">Cloud Cost Optimization Checklist 2026 2</Link></li>
+              <li><Link /blog/ai-accessibility-optimizer-evaluation-framework/>Ai Accessibility Optimizer Evaluation Framework</Link></li>
+<li><Link /blog/machine-learning-deployment-patterns/>Machine Learning Deployment Patterns</Link></li>
+<li><Link /blog/cloud-finops-automation-roadmap/>Cloud Finops Automation Roadmap</Link></li>
+<li><Link /blog/cloud-cost-optimization-checklist-2026-2/>Cloud Cost Optimization Checklist 2026 2</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

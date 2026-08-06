@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/smart-contract-audit-2026-6548">Smart Contract Audit 2026 6548</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-checklist-for-it-leaders">Ai Customer Success Churn Prevention Checklist For It Leaders</Link></li>
-<li><Link href="/blog/5g-solutions-automation-roadmap">5G Solutions Automation Roadmap</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-6893">Smart Contract Audit 2026 6893</Link></li>
+              <li><Link /blog/smart-contract-audit-2026-6548/>Smart Contract Audit 2026 6548</Link></li>
+<li><Link /blog/ai-customer-success-churn-prevention-checklist-for-it-leaders/>Ai Customer Success Churn Prevention Checklist For It Leaders</Link></li>
+<li><Link /blog/5g-solutions-automation-roadmap/>5G Solutions Automation Roadmap</Link></li>
+<li><Link /blog/smart-contract-audit-2026-6893/>Smart Contract Audit 2026 6893</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For quality assurance: evaluation framework: pick one workflow, assign ownership
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/apm-application-performance-checklist-for-it-leaders">Apm Application Performance Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-for-healthcare-analytics-and-clinical-decision-support">Ai For Healthcare Analytics And Clinical Decision Support</Link></li>
-<li><Link href="/blog/devsecops-pipeline-evaluation-framework">Devsecops Pipeline Evaluation Framework</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-7031">Smart Contract Audit 2026 7031</Link></li>
+              <li><Link /blog/apm-application-performance-checklist-for-it-leaders/>Apm Application Performance Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-for-healthcare-analytics-and-clinical-decision-support/>Ai For Healthcare Analytics And Clinical Decision Support</Link></li>
+<li><Link /blog/devsecops-pipeline-evaluation-framework/>Devsecops Pipeline Evaluation Framework</Link></li>
+<li><Link /blog/smart-contract-audit-2026-7031/>Smart Contract Audit 2026 7031</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

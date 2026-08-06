@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/static-application-security-testing-2026">Static Application Security Testing 2026</Link></li>
-<li><Link href="/blog/ai-customer-onboarding-deployment-patterns">Ai Customer Onboarding Deployment Patterns</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-executive-guide">Cyber Threat Intelligence Executive Guide</Link></li>
-<li><Link href="/blog/zero-trust-architecture-executive-guide">Zero Trust Architecture Executive Guide</Link></li>
+              <li><Link /blog/static-application-security-testing-2026/>Static Application Security Testing 2026</Link></li>
+<li><Link /blog/ai-customer-onboarding-deployment-patterns/>Ai Customer Onboarding Deployment Patterns</Link></li>
+<li><Link /blog/cyber-threat-intelligence-executive-guide/>Cyber Threat Intelligence Executive Guide</Link></li>
+<li><Link /blog/zero-trust-architecture-executive-guide/>Zero Trust Architecture Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

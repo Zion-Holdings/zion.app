@@ -57,10 +57,10 @@ Leading indicators for data quality: common mistakes: workflow completion rate, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/configuration-management-architecture-overview">Configuration Management Architecture Overview</Link></li>
-<li><Link href="/blog/cloud-native-app-development-security-and-governance">Cloud Native App Development Security And Governance</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-security-and-governance">Cloud Cost Ai Optimizer Security And Governance</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-2026">Ai Bdr Sdr 2026</Link></li>
+              <li><Link /blog/configuration-management-architecture-overview/>Configuration Management Architecture Overview</Link></li>
+<li><Link /blog/cloud-native-app-development-security-and-governance/>Cloud Native App Development Security And Governance</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-security-and-governance/>Cloud Cost Ai Optimizer Security And Governance</Link></li>
+<li><Link /blog/ai-bdr-sdr-2026/>Ai Bdr Sdr 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

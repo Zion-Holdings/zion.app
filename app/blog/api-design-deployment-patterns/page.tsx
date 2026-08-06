@@ -57,10 +57,10 @@ For api design: deployment patterns: pick one workflow, assign ownership, define
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-integration-2026-7082">Api Integration 2026 7082</Link></li>
-<li><Link href="/blog/voice-biometrics-2026">Voice Biometrics 2026</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6874">Api Gateway Management 2026 6874</Link></li>
-<li><Link href="/blog/patch-management-2026">Patch Management 2026</Link></li>
+              <li><Link /blog/api-integration-2026-7082/>Api Integration 2026 7082</Link></li>
+<li><Link /blog/voice-biometrics-2026/>Voice Biometrics 2026</Link></li>
+<li><Link /blog/api-gateway-management-2026-6874/>Api Gateway Management 2026 6874</Link></li>
+<li><Link /blog/patch-management-2026/>Patch Management 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

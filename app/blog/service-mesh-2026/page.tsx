@@ -57,10 +57,10 @@ Leading indicators for service mesh: workflow completion rate, escalation rate, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-optimization-policy-and-compliance">Cloud Optimization Policy And Compliance</Link></li>
-<li><Link href="/blog/micro-saas-ai-social-media-manager-2026-6923">Micro Saas Ai Social Media Manager 2026 6923</Link></li>
-<li><Link href="/blog/ai-development-acceleration-2026-6770">Ai Development Acceleration 2026 6770</Link></li>
-<li><Link href="/blog/ai-development-acceleration-evaluation-framework">Ai Development Acceleration Evaluation Framework</Link></li>
+              <li><Link /blog/cloud-optimization-policy-and-compliance/>Cloud Optimization Policy And Compliance</Link></li>
+<li><Link /blog/micro-saas-ai-social-media-manager-2026-6923/>Micro Saas Ai Social Media Manager 2026 6923</Link></li>
+<li><Link /blog/ai-development-acceleration-2026-6770/>Ai Development Acceleration 2026 6770</Link></li>
+<li><Link /blog/ai-development-acceleration-evaluation-framework/>Ai Development Acceleration Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

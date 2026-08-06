@@ -57,10 +57,10 @@ For unified endpoint management: executive guide: pick one workflow, assign owne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/email-security-2026">Email Security 2026</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-operations-handbook">Autonomous Qa Engineering Operations Handbook</Link></li>
-<li><Link href="/blog/chaos-engineering-security-and-governance">Chaos Engineering Security And Governance</Link></li>
-<li><Link href="/blog/data-mesh-implementation-playbook">Data Mesh Implementation Playbook</Link></li>
+              <li><Link /blog/email-security-2026/>Email Security 2026</Link></li>
+<li><Link /blog/autonomous-qa-engineering-operations-handbook/>Autonomous Qa Engineering Operations Handbook</Link></li>
+<li><Link /blog/chaos-engineering-security-and-governance/>Chaos Engineering Security And Governance</Link></li>
+<li><Link /blog/data-mesh-implementation-playbook/>Data Mesh Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

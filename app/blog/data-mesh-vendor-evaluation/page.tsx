@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/configuration-management-deployment-patterns">Configuration Management Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-2026-7063">Ai 3D Asset Generator 2026 7063</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-starter-template">Ai Accessibility Optimizer Starter Template</Link></li>
-<li><Link href="/blog/ai-for-fleet-and-logistics-operations">Ai For Fleet And Logistics Operations</Link></li>
+              <li><Link /blog/configuration-management-deployment-patterns/>Configuration Management Deployment Patterns</Link></li>
+<li><Link /blog/ai-3d-asset-generator-2026-7063/>Ai 3D Asset Generator 2026 7063</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-starter-template/>Ai Accessibility Optimizer Starter Template</Link></li>
+<li><Link /blog/ai-for-fleet-and-logistics-operations/>Ai For Fleet And Logistics Operations</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

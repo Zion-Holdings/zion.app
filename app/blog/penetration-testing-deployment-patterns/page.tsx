@@ -57,10 +57,10 @@ Leading indicators for penetration testing: deployment patterns: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-security-roi-and-cost-model">Database Security Roi And Cost Model</Link></li>
-<li><Link href="/blog/digital-twin-architecture-overview">Digital Twin Architecture Overview</Link></li>
-<li><Link href="/blog/api-gateway-management-2026">Api Gateway Management 2026</Link></li>
-<li><Link href="/blog/ai-bom-procurement-operations-handbook">Ai Bom Procurement Operations Handbook</Link></li>
+              <li><Link /blog/database-security-roi-and-cost-model/>Database Security Roi And Cost Model</Link></li>
+<li><Link /blog/digital-twin-architecture-overview/>Digital Twin Architecture Overview</Link></li>
+<li><Link /blog/api-gateway-management-2026/>Api Gateway Management 2026</Link></li>
+<li><Link /blog/ai-bom-procurement-operations-handbook/>Ai Bom Procurement Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

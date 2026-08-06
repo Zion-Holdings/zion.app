@@ -54,10 +54,10 @@ If this guide matches your microservices security: security and governance initi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automation-orchestration-operations-handbook">Automation Orchestration Operations Handbook</Link></li>
-<li><Link href="/blog/edge-computing-2026">Edge Computing 2026</Link></li>
-<li><Link href="/blog/servicenow-automation-deployment-patterns">Servicenow Automation Deployment Patterns</Link></li>
-<li><Link href="/blog/enterprise-integration-policy-and-compliance">Enterprise Integration Policy And Compliance</Link></li>
+              <li><Link /blog/automation-orchestration-operations-handbook/>Automation Orchestration Operations Handbook</Link></li>
+<li><Link /blog/edge-computing-2026/>Edge Computing 2026</Link></li>
+<li><Link /blog/servicenow-automation-deployment-patterns/>Servicenow Automation Deployment Patterns</Link></li>
+<li><Link /blog/enterprise-integration-policy-and-compliance/>Enterprise Integration Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

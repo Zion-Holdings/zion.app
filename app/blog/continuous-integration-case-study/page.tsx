@@ -54,10 +54,10 @@ If this guide matches your continuous integration: case study initiative, the ne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-performance-monitoring-starter-template">Ai Performance Monitoring Starter Template</Link></li>
-<li><Link href="/blog/it-consulting-executive-guide">It Consulting Executive Guide</Link></li>
-<li><Link href="/blog/api-security-testing-vendor-evaluation">Api Security Testing Vendor Evaluation</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-security-and-governance">Enterprise Backup Dr Security And Governance</Link></li>
+              <li><Link /blog/ai-performance-monitoring-starter-template/>Ai Performance Monitoring Starter Template</Link></li>
+<li><Link /blog/it-consulting-executive-guide/>It Consulting Executive Guide</Link></li>
+<li><Link /blog/api-security-testing-vendor-evaluation/>Api Security Testing Vendor Evaluation</Link></li>
+<li><Link /blog/enterprise-backup-dr-security-and-governance/>Enterprise Backup Dr Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

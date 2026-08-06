@@ -54,10 +54,10 @@ If this guide matches your mobile device management: checklist for it leaders in
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cyber-threat-intelligence-evaluation-framework">Cyber Threat Intelligence Evaluation Framework</Link></li>
-<li><Link href="/blog/machine-learning-operations-case-study">Machine Learning Operations Case Study</Link></li>
-<li><Link href="/blog/saas-security-checklist-for-it-leaders">Saas Security Checklist For It Leaders</Link></li>
-<li><Link href="/blog/endpoint-management-evaluation-framework">Endpoint Management Evaluation Framework</Link></li>
+              <li><Link /blog/cyber-threat-intelligence-evaluation-framework/>Cyber Threat Intelligence Evaluation Framework</Link></li>
+<li><Link /blog/machine-learning-operations-case-study/>Machine Learning Operations Case Study</Link></li>
+<li><Link /blog/saas-security-checklist-for-it-leaders/>Saas Security Checklist For It Leaders</Link></li>
+<li><Link /blog/endpoint-management-evaluation-framework/>Endpoint Management Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

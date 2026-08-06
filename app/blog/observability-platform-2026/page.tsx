@@ -57,10 +57,10 @@ Leading indicators for observability platform: workflow completion rate, escalat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/brand-voice-guardian-architecture-overview">Brand Voice Guardian Architecture Overview</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-automation-roadmap">Enterprise Ai Intelligence Hub Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-data-backup-2026-6624">Ai Data Backup 2026 6624</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6920">Micro Saas Ai Expense Tracker 2026 6920</Link></li>
+              <li><Link /blog/brand-voice-guardian-architecture-overview/>Brand Voice Guardian Architecture Overview</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-automation-roadmap/>Enterprise Ai Intelligence Hub Automation Roadmap</Link></li>
+<li><Link /blog/ai-data-backup-2026-6624/>Ai Data Backup 2026 6624</Link></li>
+<li><Link /blog/micro-saas-ai-expense-tracker-2026-6920/>Micro Saas Ai Expense Tracker 2026 6920</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

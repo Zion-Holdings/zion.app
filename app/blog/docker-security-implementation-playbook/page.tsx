@@ -57,10 +57,10 @@ For docker security: implementation playbook: pick one workflow, assign ownershi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devops-cicd-2026-7056">Devops Cicd 2026 7056</Link></li>
-<li><Link href="/blog/edge-computing-deployment-starter-template">Edge Computing Deployment Starter Template</Link></li>
-<li><Link href="/blog/accessibility-compliance-2026-6665">Accessibility Compliance 2026 6665</Link></li>
-<li><Link href="/blog/micro-saas-ai-translation-engine-2026-6850">Micro Saas Ai Translation Engine 2026 6850</Link></li>
+              <li><Link /blog/devops-cicd-2026-7056/>Devops Cicd 2026 7056</Link></li>
+<li><Link /blog/edge-computing-deployment-starter-template/>Edge Computing Deployment Starter Template</Link></li>
+<li><Link /blog/accessibility-compliance-2026-6665/>Accessibility Compliance 2026 6665</Link></li>
+<li><Link /blog/micro-saas-ai-translation-engine-2026-6850/>Micro Saas Ai Translation Engine 2026 6850</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

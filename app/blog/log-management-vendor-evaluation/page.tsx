@@ -54,10 +54,10 @@ If this guide matches your log management: vendor evaluation initiative, the nex
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-optimization-checklist-2026-6764">Cloud Cost Optimization Checklist 2026 6764</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-evaluation-framework">Data Warehouse Modernization Evaluation Framework</Link></li>
-<li><Link href="/blog/genai-devops-cicd-deployment-patterns">Genai Devops Cicd Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-roi-and-cost-model">Ai Agent Safety Evaluation Roi And Cost Model</Link></li>
+              <li><Link /blog/cloud-cost-optimization-checklist-2026-6764/>Cloud Cost Optimization Checklist 2026 6764</Link></li>
+<li><Link /blog/data-warehouse-modernization-evaluation-framework/>Data Warehouse Modernization Evaluation Framework</Link></li>
+<li><Link /blog/genai-devops-cicd-deployment-patterns/>Genai Devops Cicd Deployment Patterns</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-roi-and-cost-model/>Ai Agent Safety Evaluation Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

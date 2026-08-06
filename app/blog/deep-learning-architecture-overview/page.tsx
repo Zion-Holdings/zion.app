@@ -54,10 +54,10 @@ If this guide matches your deep learning: architecture overview initiative, the 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/no-code-platform-security-and-governance">No Code Platform Security And Governance</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-deployment-patterns">Etl Pipeline Optimization Deployment Patterns</Link></li>
-<li><Link href="/blog/cloud-cost-management-implementation-playbook">Cloud Cost Management Implementation Playbook</Link></li>
-<li><Link href="/blog/token-optimization-architecture-overview">Token Optimization Architecture Overview</Link></li>
+              <li><Link /blog/no-code-platform-security-and-governance/>No Code Platform Security And Governance</Link></li>
+<li><Link /blog/etl-pipeline-optimization-deployment-patterns/>Etl Pipeline Optimization Deployment Patterns</Link></li>
+<li><Link /blog/cloud-cost-management-implementation-playbook/>Cloud Cost Management Implementation Playbook</Link></li>
+<li><Link /blog/token-optimization-architecture-overview/>Token Optimization Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

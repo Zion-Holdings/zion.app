@@ -57,10 +57,10 @@ Leading indicators for edge computing: security and governance: workflow complet
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ransomware-recovery-architecture-overview">Ransomware Recovery Architecture Overview</Link></li>
-<li><Link href="/blog/ai-service-desk-executive-guide">Ai Service Desk Executive Guide</Link></li>
-<li><Link href="/blog/accessibility-compliance-evaluation-framework">Accessibility Compliance Evaluation Framework</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026-6848">Cloud Migration Services 2026 6848</Link></li>
+              <li><Link /blog/ransomware-recovery-architecture-overview/>Ransomware Recovery Architecture Overview</Link></li>
+<li><Link /blog/ai-service-desk-executive-guide/>Ai Service Desk Executive Guide</Link></li>
+<li><Link /blog/accessibility-compliance-evaluation-framework/>Accessibility Compliance Evaluation Framework</Link></li>
+<li><Link /blog/cloud-migration-services-2026-6848/>Cloud Migration Services 2026 6848</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

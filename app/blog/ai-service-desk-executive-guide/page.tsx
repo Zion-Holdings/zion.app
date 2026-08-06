@@ -54,10 +54,10 @@ If this guide matches your ai service desk: executive guide initiative, the next
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/etl-pipeline-optimization-2026-6753">Etl Pipeline Optimization 2026 6753</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-implementation-playbook">Cyber Threat Intelligence Implementation Playbook</Link></li>
-<li><Link href="/blog/data-analytics-platform-deployment-patterns">Data Analytics Platform Deployment Patterns</Link></li>
-<li><Link href="/blog/cloud-finops-security-and-governance">Cloud Finops Security And Governance</Link></li>
+              <li><Link /blog/etl-pipeline-optimization-2026-6753/>Etl Pipeline Optimization 2026 6753</Link></li>
+<li><Link /blog/cyber-threat-intelligence-implementation-playbook/>Cyber Threat Intelligence Implementation Playbook</Link></li>
+<li><Link /blog/data-analytics-platform-deployment-patterns/>Data Analytics Platform Deployment Patterns</Link></li>
+<li><Link /blog/cloud-finops-security-and-governance/>Cloud Finops Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

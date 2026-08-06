@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/edge-computing-checklist-for-it-leaders">Edge Computing Checklist For It Leaders</Link></li>
-<li><Link href="/blog/automation-orchestration-enterprise-2026-6837">Automation Orchestration Enterprise 2026 6837</Link></li>
-<li><Link href="/blog/api-orchestration-layer-deployment-patterns">Api Orchestration Layer Deployment Patterns</Link></li>
-<li><Link href="/blog/business-intelligence-vendor-evaluation">Business Intelligence Vendor Evaluation</Link></li>
+              <li><Link /blog/edge-computing-checklist-for-it-leaders/>Edge Computing Checklist For It Leaders</Link></li>
+<li><Link /blog/automation-orchestration-enterprise-2026-6837/>Automation Orchestration Enterprise 2026 6837</Link></li>
+<li><Link /blog/api-orchestration-layer-deployment-patterns/>Api Orchestration Layer Deployment Patterns</Link></li>
+<li><Link /blog/business-intelligence-vendor-evaluation/>Business Intelligence Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

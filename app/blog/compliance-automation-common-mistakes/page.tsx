@@ -54,10 +54,10 @@ If this guide matches your compliance automation: common mistakes initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-6990">Micro Saas Ai Hr Recruitment 2026 6990</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-policy-and-compliance">Autonomous Qa Engineering Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026-6790">Ai Ad Copy Generator 2026 6790</Link></li>
-<li><Link href="/blog/database-as-a-service-implementation-playbook">Database As A Service Implementation Playbook</Link></li>
+              <li><Link /blog/micro-saas-ai-hr-recruitment-2026-6990/>Micro Saas Ai Hr Recruitment 2026 6990</Link></li>
+<li><Link /blog/autonomous-qa-engineering-policy-and-compliance/>Autonomous Qa Engineering Policy And Compliance</Link></li>
+<li><Link /blog/ai-ad-copy-generator-2026-6790/>Ai Ad Copy Generator 2026 6790</Link></li>
+<li><Link /blog/database-as-a-service-implementation-playbook/>Database As A Service Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

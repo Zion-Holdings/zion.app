@@ -54,10 +54,10 @@ If this guide matches your compliance automation: security and governance initia
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-lakehouse-pipelines-security-and-governance">Ai Data Lakehouse Pipelines Security And Governance</Link></li>
-<li><Link href="/blog/data-compliance-roi-and-cost-model">Data Compliance Roi And Cost Model</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6759">Api Gateway Management 2026 6759</Link></li>
-<li><Link href="/blog/observability-platform-2026">Observability Platform 2026</Link></li>
+              <li><Link /blog/ai-data-lakehouse-pipelines-security-and-governance/>Ai Data Lakehouse Pipelines Security And Governance</Link></li>
+<li><Link /blog/data-compliance-roi-and-cost-model/>Data Compliance Roi And Cost Model</Link></li>
+<li><Link /blog/api-gateway-management-2026-6759/>Api Gateway Management 2026 6759</Link></li>
+<li><Link /blog/observability-platform-2026/>Observability Platform 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

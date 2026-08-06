@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/machine-learning-common-mistakes">Machine Learning Common Mistakes</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-architecture-overview">Cloud Cost Ai Optimizer Architecture Overview</Link></li>
-<li><Link href="/blog/configuration-management-checklist-for-it-leaders">Configuration Management Checklist For It Leaders</Link></li>
-<li><Link href="/blog/5g-solutions-deployment-patterns">5G Solutions Deployment Patterns</Link></li>
+              <li><Link /blog/machine-learning-common-mistakes/>Machine Learning Common Mistakes</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-architecture-overview/>Cloud Cost Ai Optimizer Architecture Overview</Link></li>
+<li><Link /blog/configuration-management-checklist-for-it-leaders/>Configuration Management Checklist For It Leaders</Link></li>
+<li><Link /blog/5g-solutions-deployment-patterns/>5G Solutions Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

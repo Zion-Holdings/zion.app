@@ -54,10 +54,10 @@ If this guide matches your data integration: deployment patterns initiative, the
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-ai-intelligence-hub-vendor-evaluation">Enterprise Ai Intelligence Hub Vendor Evaluation</Link></li>
-<li><Link href="/blog/service-mesh-2026">Service Mesh 2026</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-deployment-patterns">Ai Agent Tool Builder Deployment Patterns</Link></li>
-<li><Link href="/blog/zero-trust-architecture-2026">Zero Trust Architecture 2026</Link></li>
+              <li><Link /blog/enterprise-ai-intelligence-hub-vendor-evaluation/>Enterprise Ai Intelligence Hub Vendor Evaluation</Link></li>
+<li><Link /blog/service-mesh-2026/>Service Mesh 2026</Link></li>
+<li><Link /blog/ai-agent-tool-builder-deployment-patterns/>Ai Agent Tool Builder Deployment Patterns</Link></li>
+<li><Link /blog/zero-trust-architecture-2026/>Zero Trust Architecture 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

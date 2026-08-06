@@ -57,10 +57,10 @@ Leading indicators for governance risk compliance: deployment patterns: workflow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-autonomous-agents-security-and-governance">Ai Autonomous Agents Security And Governance</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-case-study">Ai Data Lakehouse Pipelines Case Study</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-architecture-overview">Ai Agent Tool Builder Architecture Overview</Link></li>
-<li><Link href="/blog/apm-application-performance-case-study">Apm Application Performance Case Study</Link></li>
+              <li><Link /blog/ai-autonomous-agents-security-and-governance/>Ai Autonomous Agents Security And Governance</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-case-study/>Ai Data Lakehouse Pipelines Case Study</Link></li>
+<li><Link /blog/ai-agent-tool-builder-architecture-overview/>Ai Agent Tool Builder Architecture Overview</Link></li>
+<li><Link /blog/apm-application-performance-case-study/>Apm Application Performance Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

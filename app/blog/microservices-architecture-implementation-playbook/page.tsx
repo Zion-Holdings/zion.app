@@ -57,10 +57,10 @@ For microservices architecture: implementation playbook: pick one workflow, assi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/privacy-engineering-common-mistakes">Privacy Engineering Common Mistakes</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026">Cybersecurity Platform Msp 2026</Link></li>
-<li><Link href="/blog/user-behavior-analytics-implementation-playbook">User Behavior Analytics Implementation Playbook</Link></li>
-<li><Link href="/blog/multi-cloud-strategy-deployment-patterns">Multi Cloud Strategy Deployment Patterns</Link></li>
+              <li><Link /blog/privacy-engineering-common-mistakes/>Privacy Engineering Common Mistakes</Link></li>
+<li><Link /blog/cybersecurity-platform-msp-2026/>Cybersecurity Platform Msp 2026</Link></li>
+<li><Link /blog/user-behavior-analytics-implementation-playbook/>User Behavior Analytics Implementation Playbook</Link></li>
+<li><Link /blog/multi-cloud-strategy-deployment-patterns/>Multi Cloud Strategy Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

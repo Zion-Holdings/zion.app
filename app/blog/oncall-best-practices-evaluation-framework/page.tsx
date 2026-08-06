@@ -54,10 +54,10 @@ If this guide matches your oncall best practices: evaluation framework initiativ
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-success-churn-prevention-operations-handbook">Ai Customer Success Churn Prevention Operations Handbook</Link></li>
-<li><Link href="/blog/monitoring-observability-starter-template">Monitoring Observability Starter Template</Link></li>
-<li><Link href="/blog/ai-bom-procurement-automation-roadmap">Ai Bom Procurement Automation Roadmap</Link></li>
-<li><Link href="/blog/api-performance-testing-vendor-evaluation">Api Performance Testing Vendor Evaluation</Link></li>
+              <li><Link /blog/ai-customer-success-churn-prevention-operations-handbook/>Ai Customer Success Churn Prevention Operations Handbook</Link></li>
+<li><Link /blog/monitoring-observability-starter-template/>Monitoring Observability Starter Template</Link></li>
+<li><Link /blog/ai-bom-procurement-automation-roadmap/>Ai Bom Procurement Automation Roadmap</Link></li>
+<li><Link /blog/api-performance-testing-vendor-evaluation/>Api Performance Testing Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

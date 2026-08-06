@@ -57,10 +57,10 @@ For vendor management: policy and compliance: pick one workflow, assign ownershi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-modern-enterprise-2026">Data Analytics Platform Modern Enterprise 2026</Link></li>
-<li><Link href="/blog/network-automation-executive-guide">Network Automation Executive Guide</Link></li>
-<li><Link href="/blog/endpoint-management-case-study">Endpoint Management Case Study</Link></li>
-<li><Link href="/blog/natural-language-processing-2026">Natural Language Processing 2026</Link></li>
+              <li><Link /blog/data-analytics-platform-modern-enterprise-2026/>Data Analytics Platform Modern Enterprise 2026</Link></li>
+<li><Link /blog/network-automation-executive-guide/>Network Automation Executive Guide</Link></li>
+<li><Link /blog/endpoint-management-case-study/>Endpoint Management Case Study</Link></li>
+<li><Link /blog/natural-language-processing-2026/>Natural Language Processing 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

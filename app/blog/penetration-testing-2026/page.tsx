@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-code-deployment-2026-6936">Autonomous Code Deployment 2026 6936</Link></li>
-<li><Link href="/blog/edge-computing-deployment-case-study">Edge Computing Deployment Case Study</Link></li>
-<li><Link href="/blog/network-infrastructure-checklist-for-it-leaders">Network Infrastructure Checklist For It Leaders</Link></li>
-<li><Link href="/blog/network-infrastructure-roi-and-cost-model">Network Infrastructure Roi And Cost Model</Link></li>
+              <li><Link /blog/autonomous-code-deployment-2026-6936/>Autonomous Code Deployment 2026 6936</Link></li>
+<li><Link /blog/edge-computing-deployment-case-study/>Edge Computing Deployment Case Study</Link></li>
+<li><Link /blog/network-infrastructure-checklist-for-it-leaders/>Network Infrastructure Checklist For It Leaders</Link></li>
+<li><Link /blog/network-infrastructure-roi-and-cost-model/>Network Infrastructure Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for artificial intelligence ethics: case study: workflow comp
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-customer-onboarding-policy-and-compliance">Microsaas Customer Onboarding Policy And Compliance</Link></li>
-<li><Link href="/blog/policy-as-code-executive-guide">Policy As Code Executive Guide</Link></li>
-<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-6576">Micro Saas Ai Hr Recruitment 2026 6576</Link></li>
-<li><Link href="/blog/api-lifecycle-management-starter-template">Api Lifecycle Management Starter Template</Link></li>
+              <li><Link /blog/microsaas-customer-onboarding-policy-and-compliance/>Microsaas Customer Onboarding Policy And Compliance</Link></li>
+<li><Link /blog/policy-as-code-executive-guide/>Policy As Code Executive Guide</Link></li>
+<li><Link /blog/micro-saas-ai-hr-recruitment-2026-6576/>Micro Saas Ai Hr Recruitment 2026 6576</Link></li>
+<li><Link /blog/api-lifecycle-management-starter-template/>Api Lifecycle Management Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

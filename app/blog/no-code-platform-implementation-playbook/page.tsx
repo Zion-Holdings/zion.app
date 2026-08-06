@@ -54,10 +54,10 @@ If this guide matches your no code platform: implementation playbook initiative,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-migration-services-vendor-evaluation">Cloud Migration Services Vendor Evaluation</Link></li>
-<li><Link href="/blog/api-rate-limiting-roi-and-cost-model">Api Rate Limiting Roi And Cost Model</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-roi-and-cost-model">Etl Pipeline Optimization Roi And Cost Model</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-policy-and-compliance">Microsaas Hr Recruitment Policy And Compliance</Link></li>
+              <li><Link /blog/cloud-migration-services-vendor-evaluation/>Cloud Migration Services Vendor Evaluation</Link></li>
+<li><Link /blog/api-rate-limiting-roi-and-cost-model/>Api Rate Limiting Roi And Cost Model</Link></li>
+<li><Link /blog/etl-pipeline-optimization-roi-and-cost-model/>Etl Pipeline Optimization Roi And Cost Model</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-policy-and-compliance/>Microsaas Hr Recruitment Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

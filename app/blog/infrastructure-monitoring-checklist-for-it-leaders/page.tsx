@@ -54,10 +54,10 @@ If this guide matches your infrastructure monitoring: checklist for it leaders i
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/technology-roadmap-roi-and-cost-model">Technology Roadmap Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-executive-guide">Ai Ad Copy Generator Executive Guide</Link></li>
-<li><Link href="/blog/cloud-cost-management-2026">Cloud Cost Management 2026</Link></li>
-<li><Link href="/blog/monitoring-observability-implementation-playbook">Monitoring Observability Implementation Playbook</Link></li>
+              <li><Link /blog/technology-roadmap-roi-and-cost-model/>Technology Roadmap Roi And Cost Model</Link></li>
+<li><Link /blog/ai-ad-copy-generator-executive-guide/>Ai Ad Copy Generator Executive Guide</Link></li>
+<li><Link /blog/cloud-cost-management-2026/>Cloud Cost Management 2026</Link></li>
+<li><Link /blog/monitoring-observability-implementation-playbook/>Monitoring Observability Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

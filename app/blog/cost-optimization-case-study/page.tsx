@@ -54,10 +54,10 @@ If this guide matches your cost optimization: case study initiative, the next st
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/platform-engineering-architecture-overview">Platform Engineering Architecture Overview</Link></li>
-<li><Link href="/blog/mobile-device-management-deployment-patterns">Mobile Device Management Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-bom-procurement-2026-6939">Ai Bom Procurement 2026 6939</Link></li>
-<li><Link href="/blog/threat-hunting-case-study">Threat Hunting Case Study</Link></li>
+              <li><Link /blog/platform-engineering-architecture-overview/>Platform Engineering Architecture Overview</Link></li>
+<li><Link /blog/mobile-device-management-deployment-patterns/>Mobile Device Management Deployment Patterns</Link></li>
+<li><Link /blog/ai-bom-procurement-2026-6939/>Ai Bom Procurement 2026 6939</Link></li>
+<li><Link /blog/threat-hunting-case-study/>Threat Hunting Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

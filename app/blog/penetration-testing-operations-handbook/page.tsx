@@ -54,10 +54,10 @@ If this guide matches your penetration testing: operations handbook initiative, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-orchestration-layer-checklist-for-it-leaders">Api Orchestration Layer Checklist For It Leaders</Link></li>
-<li><Link href="/blog/customer-data-platform-2026">Customer Data Platform 2026</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-deployment-patterns">Ai Agentic Workflows Deployment Patterns</Link></li>
-<li><Link href="/blog/test-automation-checklist-for-it-leaders">Test Automation Checklist For It Leaders</Link></li>
+              <li><Link /blog/api-orchestration-layer-checklist-for-it-leaders/>Api Orchestration Layer Checklist For It Leaders</Link></li>
+<li><Link /blog/customer-data-platform-2026/>Customer Data Platform 2026</Link></li>
+<li><Link /blog/ai-agentic-workflows-deployment-patterns/>Ai Agentic Workflows Deployment Patterns</Link></li>
+<li><Link /blog/test-automation-checklist-for-it-leaders/>Test Automation Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

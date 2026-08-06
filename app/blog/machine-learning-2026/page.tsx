@@ -54,10 +54,10 @@ If this guide matches your machine learning initiative, the next step is a scopi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-backup-dr-roi-and-cost-model">Enterprise Backup Dr Roi And Cost Model</Link></li>
-<li><Link href="/blog/continuous-delivery-checklist-for-it-leaders">Continuous Delivery Checklist For It Leaders</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-automation-roadmap">Microsaas Social Media Manager Automation Roadmap</Link></li>
-<li><Link href="/blog/microservices-security-2026">Microservices Security 2026</Link></li>
+              <li><Link /blog/enterprise-backup-dr-roi-and-cost-model/>Enterprise Backup Dr Roi And Cost Model</Link></li>
+<li><Link /blog/continuous-delivery-checklist-for-it-leaders/>Continuous Delivery Checklist For It Leaders</Link></li>
+<li><Link /blog/microsaas-social-media-manager-automation-roadmap/>Microsaas Social Media Manager Automation Roadmap</Link></li>
+<li><Link /blog/microservices-security-2026/>Microservices Security 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

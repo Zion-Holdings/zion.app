@@ -57,10 +57,10 @@ Leading indicators for hybrid cloud: architecture overview: workflow completion 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-migration-service-2026-6816">Database Migration Service 2026 6816</Link></li>
-<li><Link href="/blog/api-gateway-management-operations-handbook">Api Gateway Management Operations Handbook</Link></li>
-<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-6576">Micro Saas Ai Hr Recruitment 2026 6576</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-security-and-governance">Microsaas Hr Recruitment Security And Governance</Link></li>
+              <li><Link /blog/database-migration-service-2026-6816/>Database Migration Service 2026 6816</Link></li>
+<li><Link /blog/api-gateway-management-operations-handbook/>Api Gateway Management Operations Handbook</Link></li>
+<li><Link /blog/micro-saas-ai-hr-recruitment-2026-6576/>Micro Saas Ai Hr Recruitment 2026 6576</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-security-and-governance/>Microsaas Hr Recruitment Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

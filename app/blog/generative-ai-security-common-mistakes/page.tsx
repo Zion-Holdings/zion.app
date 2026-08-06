@@ -57,10 +57,10 @@ For generative ai security: common mistakes: pick one workflow, assign ownership
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-native-security-policy-and-compliance">Cloud Native Security Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-hr-recruitment-architecture-overview">Ai Hr Recruitment Architecture Overview</Link></li>
-<li><Link href="/blog/ai-risk-assessment-operations-handbook">Ai Risk Assessment Operations Handbook</Link></li>
-<li><Link href="/blog/ai-bom-procurement-executive-guide">Ai Bom Procurement Executive Guide</Link></li>
+              <li><Link /blog/cloud-native-security-policy-and-compliance/>Cloud Native Security Policy And Compliance</Link></li>
+<li><Link /blog/ai-hr-recruitment-architecture-overview/>Ai Hr Recruitment Architecture Overview</Link></li>
+<li><Link /blog/ai-risk-assessment-operations-handbook/>Ai Risk Assessment Operations Handbook</Link></li>
+<li><Link /blog/ai-bom-procurement-executive-guide/>Ai Bom Procurement Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

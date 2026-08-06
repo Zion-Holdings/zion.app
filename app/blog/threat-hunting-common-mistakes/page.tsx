@@ -54,10 +54,10 @@ If this guide matches your threat hunting: common mistakes initiative, the next 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/servicenow-automation-2026">Servicenow Automation 2026</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-2026-6650">Ai Accessibility Auditor 2026 6650</Link></li>
-<li><Link href="/blog/cost-optimization-evaluation-framework">Cost Optimization Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-starter-template">Ai Autonomous Agents Starter Template</Link></li>
+              <li><Link /blog/servicenow-automation-2026/>Servicenow Automation 2026</Link></li>
+<li><Link /blog/ai-accessibility-auditor-2026-6650/>Ai Accessibility Auditor 2026 6650</Link></li>
+<li><Link /blog/cost-optimization-evaluation-framework/>Cost Optimization Evaluation Framework</Link></li>
+<li><Link /blog/ai-autonomous-agents-starter-template/>Ai Autonomous Agents Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

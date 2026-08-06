@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-migration-service-2026-6816">Database Migration Service 2026 6816</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-6626">Cloud Cost Optimization Checklist 2026 6626</Link></li>
-<li><Link href="/blog/api-integration-2026-7013">Api Integration 2026 7013</Link></li>
-<li><Link href="/blog/remote-work-security-common-mistakes">Remote Work Security Common Mistakes</Link></li>
+              <li><Link /blog/database-migration-service-2026-6816/>Database Migration Service 2026 6816</Link></li>
+<li><Link /blog/cloud-cost-optimization-checklist-2026-6626/>Cloud Cost Optimization Checklist 2026 6626</Link></li>
+<li><Link /blog/api-integration-2026-7013/>Api Integration 2026 7013</Link></li>
+<li><Link /blog/remote-work-security-common-mistakes/>Remote Work Security Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

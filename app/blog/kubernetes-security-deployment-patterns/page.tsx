@@ -57,10 +57,10 @@ Leading indicators for kubernetes security: deployment patterns: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6843">Ai Data Lakehouse Pipelines 2026 6843</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-security-and-governance">Ai Agent Safety Evaluation Security And Governance</Link></li>
-<li><Link href="/blog/generative-ai-security-automation-roadmap">Generative Ai Security Automation Roadmap</Link></li>
-<li><Link href="/blog/database-performance-implementation-playbook">Database Performance Implementation Playbook</Link></li>
+              <li><Link /blog/ai-data-lakehouse-pipelines-2026-6843/>Ai Data Lakehouse Pipelines 2026 6843</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-security-and-governance/>Ai Agent Safety Evaluation Security And Governance</Link></li>
+<li><Link /blog/generative-ai-security-automation-roadmap/>Generative Ai Security Automation Roadmap</Link></li>
+<li><Link /blog/database-performance-implementation-playbook/>Database Performance Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

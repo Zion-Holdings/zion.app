@@ -57,10 +57,10 @@ Leading indicators for data observability: common mistakes: workflow completion 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/performance-testing-architecture-overview">Performance Testing Architecture Overview</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-2026-6933">Aiops Anomaly Detection 2026 6933</Link></li>
-<li><Link href="/blog/cloud-native-app-development-case-study">Cloud Native App Development Case Study</Link></li>
-<li><Link href="/blog/brand-voice-guardian-operations-handbook">Brand Voice Guardian Operations Handbook</Link></li>
+              <li><Link /blog/performance-testing-architecture-overview/>Performance Testing Architecture Overview</Link></li>
+<li><Link /blog/aiops-anomaly-detection-2026-6933/>Aiops Anomaly Detection 2026 6933</Link></li>
+<li><Link /blog/cloud-native-app-development-case-study/>Cloud Native App Development Case Study</Link></li>
+<li><Link /blog/brand-voice-guardian-operations-handbook/>Brand Voice Guardian Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

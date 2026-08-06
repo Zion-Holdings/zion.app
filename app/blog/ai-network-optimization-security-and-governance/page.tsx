@@ -57,10 +57,10 @@ For ai network optimization: security and governance: pick one workflow, assign 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-qa-engineering-architecture-overview">Autonomous Qa Engineering Architecture Overview</Link></li>
-<li><Link href="/blog/database-migration-service-2026-6747">Database Migration Service 2026 6747</Link></li>
-<li><Link href="/blog/database-as-a-service-starter-template">Database As A Service Starter Template</Link></li>
-<li><Link href="/blog/5g-solutions-2026-6983">5G Solutions 2026 6983</Link></li>
+              <li><Link /blog/autonomous-qa-engineering-architecture-overview/>Autonomous Qa Engineering Architecture Overview</Link></li>
+<li><Link /blog/database-migration-service-2026-6747/>Database Migration Service 2026 6747</Link></li>
+<li><Link /blog/database-as-a-service-starter-template/>Database As A Service Starter Template</Link></li>
+<li><Link /blog/5g-solutions-2026-6983/>5G Solutions 2026 6983</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

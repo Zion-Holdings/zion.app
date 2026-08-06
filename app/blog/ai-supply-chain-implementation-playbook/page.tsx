@@ -54,10 +54,10 @@ If this guide matches your ai supply chain: implementation playbook initiative, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/resilience-engineering-case-study">Resilience Engineering Case Study</Link></li>
-<li><Link href="/blog/low-code-platform-architecture-overview">Low Code Platform Architecture Overview</Link></li>
-<li><Link href="/blog/machine-learning-operations-case-study">Machine Learning Operations Case Study</Link></li>
-<li><Link href="/blog/saas-security-implementation-playbook">Saas Security Implementation Playbook</Link></li>
+              <li><Link /blog/resilience-engineering-case-study/>Resilience Engineering Case Study</Link></li>
+<li><Link /blog/low-code-platform-architecture-overview/>Low Code Platform Architecture Overview</Link></li>
+<li><Link /blog/machine-learning-operations-case-study/>Machine Learning Operations Case Study</Link></li>
+<li><Link /blog/saas-security-implementation-playbook/>Saas Security Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

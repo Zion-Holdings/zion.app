@@ -57,10 +57,10 @@ For it automation: evaluation framework: pick one workflow, assign ownership, de
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/container-security-lifecycle-automation-roadmap">Container Security Lifecycle Automation Roadmap</Link></li>
-<li><Link href="/blog/cloud-networking-implementation-playbook">Cloud Networking Implementation Playbook</Link></li>
-<li><Link href="/blog/performance-testing-2026">Performance Testing 2026</Link></li>
-<li><Link href="/blog/cloud-cost-management-architecture-overview">Cloud Cost Management Architecture Overview</Link></li>
+              <li><Link /blog/container-security-lifecycle-automation-roadmap/>Container Security Lifecycle Automation Roadmap</Link></li>
+<li><Link /blog/cloud-networking-implementation-playbook/>Cloud Networking Implementation Playbook</Link></li>
+<li><Link /blog/performance-testing-2026/>Performance Testing 2026</Link></li>
+<li><Link /blog/cloud-cost-management-architecture-overview/>Cloud Cost Management Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

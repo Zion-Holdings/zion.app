@@ -57,10 +57,10 @@ For ai marketing personalization: automation roadmap: pick one workflow, assign 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-evaluation-framework">Graphql Federation Platform Evaluation Framework</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6782">Micro Saas Ai Expense Tracker 2026 6782</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-starter-template">Microsaas Customer Onboarding Starter Template</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026-6766">Managed It Services Small Business 2026 6766</Link></li>
+              <li><Link /blog/graphql-federation-platform-evaluation-framework/>Graphql Federation Platform Evaluation Framework</Link></li>
+<li><Link /blog/micro-saas-ai-expense-tracker-2026-6782/>Micro Saas Ai Expense Tracker 2026 6782</Link></li>
+<li><Link /blog/microsaas-customer-onboarding-starter-template/>Microsaas Customer Onboarding Starter Template</Link></li>
+<li><Link /blog/managed-it-services-small-business-2026-6766/>Managed It Services Small Business 2026 6766</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

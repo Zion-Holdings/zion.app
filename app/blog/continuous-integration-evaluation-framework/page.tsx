@@ -57,10 +57,10 @@ Leading indicators for continuous integration: evaluation framework: workflow co
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/sase-architecture-overview">Sase Architecture Overview</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026-6879">Cloud Cost Ai Optimizer 2026 6879</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026-6862">Ai Agentic Workflows 2026 6862</Link></li>
-<li><Link href="/blog/network-infrastructure-starter-template">Network Infrastructure Starter Template</Link></li>
+              <li><Link /blog/sase-architecture-overview/>Sase Architecture Overview</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-2026-6879/>Cloud Cost Ai Optimizer 2026 6879</Link></li>
+<li><Link /blog/ai-agentic-workflows-2026-6862/>Ai Agentic Workflows 2026 6862</Link></li>
+<li><Link /blog/network-infrastructure-starter-template/>Network Infrastructure Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

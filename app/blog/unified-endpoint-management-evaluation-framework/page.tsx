@@ -57,10 +57,10 @@ Leading indicators for unified endpoint management: evaluation framework: workfl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-customer-onboarding-implementation-playbook">Microsaas Customer Onboarding Implementation Playbook</Link></li>
-<li><Link href="/blog/5g-solutions-common-mistakes">5G Solutions Common Mistakes</Link></li>
-<li><Link href="/blog/chaos-engineering-implementation-playbook">Chaos Engineering Implementation Playbook</Link></li>
-<li><Link href="/blog/software-supply-chain-security-evaluation-framework">Software Supply Chain Security Evaluation Framework</Link></li>
+              <li><Link /blog/microsaas-customer-onboarding-implementation-playbook/>Microsaas Customer Onboarding Implementation Playbook</Link></li>
+<li><Link /blog/5g-solutions-common-mistakes/>5G Solutions Common Mistakes</Link></li>
+<li><Link /blog/chaos-engineering-implementation-playbook/>Chaos Engineering Implementation Playbook</Link></li>
+<li><Link /blog/software-supply-chain-security-evaluation-framework/>Software Supply Chain Security Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

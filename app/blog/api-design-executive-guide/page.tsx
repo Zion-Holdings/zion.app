@@ -54,10 +54,10 @@ If this guide matches your api design: executive guide initiative, the next step
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-expense-tracker-executive-guide">Ai Expense Tracker Executive Guide</Link></li>
-<li><Link href="/blog/deep-learning-checklist-for-it-leaders">Deep Learning Checklist For It Leaders</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-6748">Devops Gen Ai Cicd 2026 6748</Link></li>
-<li><Link href="/blog/ai-email-intelligence-2026-6700">Ai Email Intelligence 2026 6700</Link></li>
+              <li><Link /blog/ai-expense-tracker-executive-guide/>Ai Expense Tracker Executive Guide</Link></li>
+<li><Link /blog/deep-learning-checklist-for-it-leaders/>Deep Learning Checklist For It Leaders</Link></li>
+<li><Link /blog/devops-gen-ai-cicd-2026-6748/>Devops Gen Ai Cicd 2026 6748</Link></li>
+<li><Link /blog/ai-email-intelligence-2026-6700/>Ai Email Intelligence 2026 6700</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

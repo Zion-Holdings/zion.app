@@ -54,10 +54,10 @@ If this guide matches your network security: executive guide initiative, the nex
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/aiops-anomaly-detection-2026-6726">Aiops Anomaly Detection 2026 6726</Link></li>
-<li><Link href="/blog/accessibility-compliance-vendor-evaluation">Accessibility Compliance Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-2026">Ai 3D Asset Generator 2026</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-common-mistakes">Ai Performance Monitoring Common Mistakes</Link></li>
+              <li><Link /blog/aiops-anomaly-detection-2026-6726/>Aiops Anomaly Detection 2026 6726</Link></li>
+<li><Link /blog/accessibility-compliance-vendor-evaluation/>Accessibility Compliance Vendor Evaluation</Link></li>
+<li><Link /blog/ai-3d-asset-generator-2026/>Ai 3D Asset Generator 2026</Link></li>
+<li><Link /blog/ai-performance-monitoring-common-mistakes/>Ai Performance Monitoring Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

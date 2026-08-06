@@ -54,10 +54,10 @@ If this guide matches your microservices architecture: checklist for it leaders 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-2026-7017">Cloud Cost Ai Optimizer 2026 7017</Link></li>
-<li><Link href="/blog/event-driven-architecture-2026-7030">Event Driven Architecture 2026 7030</Link></li>
-<li><Link href="/blog/cost-optimization-checklist-for-it-leaders">Cost Optimization Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-for-sales-enablement-and-revenue-operations">Ai For Sales Enablement And Revenue Operations</Link></li>
+              <li><Link /blog/cloud-cost-ai-optimizer-2026-7017/>Cloud Cost Ai Optimizer 2026 7017</Link></li>
+<li><Link /blog/event-driven-architecture-2026-7030/>Event Driven Architecture 2026 7030</Link></li>
+<li><Link /blog/cost-optimization-checklist-for-it-leaders/>Cost Optimization Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-for-sales-enablement-and-revenue-operations/>Ai For Sales Enablement And Revenue Operations</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

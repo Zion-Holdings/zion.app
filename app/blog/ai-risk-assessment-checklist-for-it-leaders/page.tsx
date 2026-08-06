@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/no-code-platform-roi-and-cost-model">No Code Platform Roi And Cost Model</Link></li>
-<li><Link href="/blog/database-security-architecture-overview">Database Security Architecture Overview</Link></li>
-<li><Link href="/blog/technical-due-diligence-starter-template">Technical Due Diligence Starter Template</Link></li>
-<li><Link href="/blog/data-security-evaluation-framework">Data Security Evaluation Framework</Link></li>
+              <li><Link /blog/no-code-platform-roi-and-cost-model/>No Code Platform Roi And Cost Model</Link></li>
+<li><Link /blog/database-security-architecture-overview/>Database Security Architecture Overview</Link></li>
+<li><Link /blog/technical-due-diligence-starter-template/>Technical Due Diligence Starter Template</Link></li>
+<li><Link /blog/data-security-evaluation-framework/>Data Security Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

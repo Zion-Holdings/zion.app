@@ -57,10 +57,10 @@ Leading indicators for golang microservices: security and governance: workflow c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-integration-2026-6806">Api Integration 2026 6806</Link></li>
-<li><Link href="/blog/micro-saas-ai-translation-engine-2026-6781">Micro Saas Ai Translation Engine 2026 6781</Link></li>
-<li><Link href="/blog/smart-contract-audit-starter-template">Smart Contract Audit Starter Template</Link></li>
-<li><Link href="/blog/database-security-security-and-governance">Database Security Security And Governance</Link></li>
+              <li><Link /blog/api-integration-2026-6806/>Api Integration 2026 6806</Link></li>
+<li><Link /blog/micro-saas-ai-translation-engine-2026-6781/>Micro Saas Ai Translation Engine 2026 6781</Link></li>
+<li><Link /blog/smart-contract-audit-starter-template/>Smart Contract Audit Starter Template</Link></li>
+<li><Link /blog/database-security-security-and-governance/>Database Security Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bdr-sdr-2026-6869">Ai Bdr Sdr 2026 6869</Link></li>
-<li><Link href="/blog/threat-hunting-policy-and-compliance">Threat Hunting Policy And Compliance</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026-6766">Managed It Services Small Business 2026 6766</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-security-and-governance">Autonomous Qa Engineering Security And Governance</Link></li>
+              <li><Link /blog/ai-bdr-sdr-2026-6869/>Ai Bdr Sdr 2026 6869</Link></li>
+<li><Link /blog/threat-hunting-policy-and-compliance/>Threat Hunting Policy And Compliance</Link></li>
+<li><Link /blog/managed-it-services-small-business-2026-6766/>Managed It Services Small Business 2026 6766</Link></li>
+<li><Link /blog/autonomous-qa-engineering-security-and-governance/>Autonomous Qa Engineering Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

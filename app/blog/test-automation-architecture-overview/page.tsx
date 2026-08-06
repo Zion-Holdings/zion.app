@@ -57,10 +57,10 @@ For test automation: architecture overview: pick one workflow, assign ownership,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-6921">Micro Saas Ai Hr Recruitment 2026 6921</Link></li>
-<li><Link href="/blog/api-performance-testing-evaluation-framework">Api Performance Testing Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-observability-2026-6979">Ai Observability 2026 6979</Link></li>
-<li><Link href="/blog/ai-development-acceleration-security-and-governance">Ai Development Acceleration Security And Governance</Link></li>
+              <li><Link /blog/micro-saas-ai-hr-recruitment-2026-6921/>Micro Saas Ai Hr Recruitment 2026 6921</Link></li>
+<li><Link /blog/api-performance-testing-evaluation-framework/>Api Performance Testing Evaluation Framework</Link></li>
+<li><Link /blog/ai-observability-2026-6979/>Ai Observability 2026 6979</Link></li>
+<li><Link /blog/ai-development-acceleration-security-and-governance/>Ai Development Acceleration Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

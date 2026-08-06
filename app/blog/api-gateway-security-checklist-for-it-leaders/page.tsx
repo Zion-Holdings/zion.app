@@ -57,10 +57,10 @@ For api gateway security: checklist for it leaders: pick one workflow, assign ow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/google-cloud-migration-automation-roadmap">Google Cloud Migration Automation Roadmap</Link></li>
-<li><Link href="/blog/kubernetes-evaluation-framework">Kubernetes Evaluation Framework</Link></li>
-<li><Link href="/blog/aiops-architecture-overview">Aiops Architecture Overview</Link></li>
-<li><Link href="/blog/it-asset-management-deployment-patterns">It Asset Management Deployment Patterns</Link></li>
+              <li><Link /blog/google-cloud-migration-automation-roadmap/>Google Cloud Migration Automation Roadmap</Link></li>
+<li><Link /blog/kubernetes-evaluation-framework/>Kubernetes Evaluation Framework</Link></li>
+<li><Link /blog/aiops-architecture-overview/>Aiops Architecture Overview</Link></li>
+<li><Link /blog/it-asset-management-deployment-patterns/>It Asset Management Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

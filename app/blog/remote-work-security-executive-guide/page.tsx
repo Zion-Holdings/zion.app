@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/oncall-best-practices-2026">Oncall Best Practices 2026</Link></li>
-<li><Link href="/blog/api-management-gateway-common-mistakes">Api Management Gateway Common Mistakes</Link></li>
-<li><Link href="/blog/api-rate-limiting-evaluation-framework">Api Rate Limiting Evaluation Framework</Link></li>
-<li><Link href="/blog/test-automation-deployment-patterns">Test Automation Deployment Patterns</Link></li>
+              <li><Link /blog/oncall-best-practices-2026/>Oncall Best Practices 2026</Link></li>
+<li><Link /blog/api-management-gateway-common-mistakes/>Api Management Gateway Common Mistakes</Link></li>
+<li><Link /blog/api-rate-limiting-evaluation-framework/>Api Rate Limiting Evaluation Framework</Link></li>
+<li><Link /blog/test-automation-deployment-patterns/>Test Automation Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your ai security analytics initiative, the next step is a 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-2026-6742">Cloud Finops 2026 6742</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026-6585">Ai Agent Tool Builder 2026 6585</Link></li>
-<li><Link href="/blog/vector-database-implementation-playbook">Vector Database Implementation Playbook</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-2026-7097">Enterprise Backup Dr 2026 7097</Link></li>
+              <li><Link /blog/cloud-finops-2026-6742/>Cloud Finops 2026 6742</Link></li>
+<li><Link /blog/ai-agent-tool-builder-2026-6585/>Ai Agent Tool Builder 2026 6585</Link></li>
+<li><Link /blog/vector-database-implementation-playbook/>Vector Database Implementation Playbook</Link></li>
+<li><Link /blog/enterprise-backup-dr-2026-7097/>Enterprise Backup Dr 2026 7097</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

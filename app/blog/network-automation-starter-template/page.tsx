@@ -57,10 +57,10 @@ Leading indicators for network automation: starter template: workflow completion
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/unified-endpoint-management-common-mistakes">Unified Endpoint Management Common Mistakes</Link></li>
-<li><Link href="/blog/oncall-best-practices-checklist-for-it-leaders">Oncall Best Practices Checklist For It Leaders</Link></li>
-<li><Link href="/blog/infrastructure-monitoring-common-mistakes">Infrastructure Monitoring Common Mistakes</Link></li>
-<li><Link href="/blog/email-security-security-and-governance">Email Security Security And Governance</Link></li>
+              <li><Link /blog/unified-endpoint-management-common-mistakes/>Unified Endpoint Management Common Mistakes</Link></li>
+<li><Link /blog/oncall-best-practices-checklist-for-it-leaders/>Oncall Best Practices Checklist For It Leaders</Link></li>
+<li><Link /blog/infrastructure-monitoring-common-mistakes/>Infrastructure Monitoring Common Mistakes</Link></li>
+<li><Link /blog/email-security-security-and-governance/>Email Security Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

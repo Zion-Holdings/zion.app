@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders">Cloud Cost Ai Optimizer Checklist For It Leaders</Link></li>
-<li><Link href="/blog/genai-devops-cicd-deployment-patterns">Genai Devops Cicd Deployment Patterns</Link></li>
-<li><Link href="/blog/configuration-management-deployment-patterns">Configuration Management Deployment Patterns</Link></li>
-<li><Link href="/blog/apm-application-performance-evaluation-framework">Apm Application Performance Evaluation Framework</Link></li>
+              <li><Link /blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/>Cloud Cost Ai Optimizer Checklist For It Leaders</Link></li>
+<li><Link /blog/genai-devops-cicd-deployment-patterns/>Genai Devops Cicd Deployment Patterns</Link></li>
+<li><Link /blog/configuration-management-deployment-patterns/>Configuration Management Deployment Patterns</Link></li>
+<li><Link /blog/apm-application-performance-evaluation-framework/>Apm Application Performance Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for zero trust architecture: policy and compliance: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/machine-learning-operations-architecture-overview">Machine Learning Operations Architecture Overview</Link></li>
-<li><Link href="/blog/llm-operations-deployment-patterns">Llm Operations Deployment Patterns</Link></li>
-<li><Link href="/blog/llm-operations-executive-guide">Llm Operations Executive Guide</Link></li>
-<li><Link href="/blog/enterprise-integration-implementation-playbook">Enterprise Integration Implementation Playbook</Link></li>
+              <li><Link /blog/machine-learning-operations-architecture-overview/>Machine Learning Operations Architecture Overview</Link></li>
+<li><Link /blog/llm-operations-deployment-patterns/>Llm Operations Deployment Patterns</Link></li>
+<li><Link /blog/llm-operations-executive-guide/>Llm Operations Executive Guide</Link></li>
+<li><Link /blog/enterprise-integration-implementation-playbook/>Enterprise Integration Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

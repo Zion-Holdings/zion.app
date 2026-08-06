@@ -54,10 +54,10 @@ If this guide matches your privacy engineering: evaluation framework initiative,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/machine-learning-engineering-evaluation-framework">Machine Learning Engineering Evaluation Framework</Link></li>
-<li><Link href="/blog/cost-optimization-automation-roadmap">Cost Optimization Automation Roadmap</Link></li>
-<li><Link href="/blog/machine-learning-architecture-overview">Machine Learning Architecture Overview</Link></li>
-<li><Link href="/blog/prompt-engineering-common-mistakes">Prompt Engineering Common Mistakes</Link></li>
+              <li><Link /blog/machine-learning-engineering-evaluation-framework/>Machine Learning Engineering Evaluation Framework</Link></li>
+<li><Link /blog/cost-optimization-automation-roadmap/>Cost Optimization Automation Roadmap</Link></li>
+<li><Link /blog/machine-learning-architecture-overview/>Machine Learning Architecture Overview</Link></li>
+<li><Link /blog/prompt-engineering-common-mistakes/>Prompt Engineering Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

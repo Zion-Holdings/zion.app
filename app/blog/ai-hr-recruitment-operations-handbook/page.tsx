@@ -57,10 +57,10 @@ For ai hr recruitment: operations handbook: pick one workflow, assign ownership,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-safety-evaluation-deployment-patterns">Ai Agent Safety Evaluation Deployment Patterns</Link></li>
-<li><Link href="/blog/reinforcement-learning-policy-and-compliance">Reinforcement Learning Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-2026-6929">Ai Agent Safety Evaluation 2026 6929</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-policy-and-compliance">Enterprise Backup Dr Policy And Compliance</Link></li>
+              <li><Link /blog/ai-agent-safety-evaluation-deployment-patterns/>Ai Agent Safety Evaluation Deployment Patterns</Link></li>
+<li><Link /blog/reinforcement-learning-policy-and-compliance/>Reinforcement Learning Policy And Compliance</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-2026-6929/>Ai Agent Safety Evaluation 2026 6929</Link></li>
+<li><Link /blog/enterprise-backup-dr-policy-and-compliance/>Enterprise Backup Dr Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

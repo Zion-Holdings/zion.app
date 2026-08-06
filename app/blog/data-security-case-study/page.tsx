@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-backup-dr-case-study">Enterprise Backup Dr Case Study</Link></li>
-<li><Link href="/blog/remote-work-security-security-and-governance">Remote Work Security Security And Governance</Link></li>
-<li><Link href="/blog/distributed-tracing-starter-template">Distributed Tracing Starter Template</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-automation-roadmap">Microsaas Social Media Manager Automation Roadmap</Link></li>
+              <li><Link /blog/enterprise-backup-dr-case-study/>Enterprise Backup Dr Case Study</Link></li>
+<li><Link /blog/remote-work-security-security-and-governance/>Remote Work Security Security And Governance</Link></li>
+<li><Link /blog/distributed-tracing-starter-template/>Distributed Tracing Starter Template</Link></li>
+<li><Link /blog/microsaas-social-media-manager-automation-roadmap/>Microsaas Social Media Manager Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

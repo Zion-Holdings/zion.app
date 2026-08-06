@@ -54,10 +54,10 @@ If this guide matches your data catalog: executive guide initiative, the next st
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-management-2026-6667">Api Gateway Management 2026 6667</Link></li>
-<li><Link href="/blog/api-versioning-security-and-governance">Api Versioning Security And Governance</Link></li>
-<li><Link href="/blog/cloud-finops-2026-6673">Cloud Finops 2026 6673</Link></li>
-<li><Link href="/blog/multi-cloud-strategy-implementation-playbook">Multi Cloud Strategy Implementation Playbook</Link></li>
+              <li><Link /blog/api-gateway-management-2026-6667/>Api Gateway Management 2026 6667</Link></li>
+<li><Link /blog/api-versioning-security-and-governance/>Api Versioning Security And Governance</Link></li>
+<li><Link /blog/cloud-finops-2026-6673/>Cloud Finops 2026 6673</Link></li>
+<li><Link /blog/multi-cloud-strategy-implementation-playbook/>Multi Cloud Strategy Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

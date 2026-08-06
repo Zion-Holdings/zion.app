@@ -57,10 +57,10 @@ Leading indicators for azure migration: case study: workflow completion rate, es
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-ai-intelligence-hub-2026-6579">Enterprise Ai Intelligence Hub 2026 6579</Link></li>
-<li><Link href="/blog/ai-observability-and-mlops-best-practices">Ai Observability And Mlops Best Practices</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026-6879">Cloud Cost Ai Optimizer 2026 6879</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-checklist-for-it-leaders">Ai Accessibility Optimizer Checklist For It Leaders</Link></li>
+              <li><Link /blog/enterprise-ai-intelligence-hub-2026-6579/>Enterprise Ai Intelligence Hub 2026 6579</Link></li>
+<li><Link /blog/ai-observability-and-mlops-best-practices/>Ai Observability And Mlops Best Practices</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-2026-6879/>Cloud Cost Ai Optimizer 2026 6879</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-checklist-for-it-leaders/>Ai Accessibility Optimizer Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

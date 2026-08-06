@@ -57,10 +57,10 @@ Leading indicators for data security: policy and compliance: workflow completion
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/vulnerability-assessment-architecture-overview">Vulnerability Assessment Architecture Overview</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-2026-6512">Ai Accessibility Auditor 2026 6512</Link></li>
-<li><Link href="/blog/endpoint-management-2026-7096">Endpoint Management 2026 7096</Link></li>
-<li><Link href="/blog/low-code-platform-2026">Low Code Platform 2026</Link></li>
+              <li><Link /blog/vulnerability-assessment-architecture-overview/>Vulnerability Assessment Architecture Overview</Link></li>
+<li><Link /blog/ai-accessibility-auditor-2026-6512/>Ai Accessibility Auditor 2026 6512</Link></li>
+<li><Link /blog/endpoint-management-2026-7096/>Endpoint Management 2026 7096</Link></li>
+<li><Link /blog/low-code-platform-2026/>Low Code Platform 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

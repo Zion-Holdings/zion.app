@@ -57,10 +57,10 @@ Leading indicators for api economy: starter template: workflow completion rate, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/5g-solutions-policy-and-compliance">5G Solutions Policy And Compliance</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-operations-handbook">Autonomous Code Deployment Operations Handbook</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-2026-6729">Autonomous Code Deployment 2026 6729</Link></li>
-<li><Link href="/blog/api-monetization-architecture-overview">Api Monetization Architecture Overview</Link></li>
+              <li><Link /blog/5g-solutions-policy-and-compliance/>5G Solutions Policy And Compliance</Link></li>
+<li><Link /blog/autonomous-code-deployment-operations-handbook/>Autonomous Code Deployment Operations Handbook</Link></li>
+<li><Link /blog/autonomous-code-deployment-2026-6729/>Autonomous Code Deployment 2026 6729</Link></li>
+<li><Link /blog/api-monetization-architecture-overview/>Api Monetization Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

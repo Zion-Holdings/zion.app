@@ -57,10 +57,10 @@ For itil: common mistakes: pick one workflow, assign ownership, define success m
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-warehouse-modernization-2026-6746">Data Warehouse Modernization 2026 6746</Link></li>
-<li><Link href="/blog/cloud-migration-services-policy-and-compliance">Cloud Migration Services Policy And Compliance</Link></li>
-<li><Link href="/blog/brand-voice-guardian-deployment-patterns">Brand Voice Guardian Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026-7051">Ai Customer Success Churn 2026 7051</Link></li>
+              <li><Link /blog/data-warehouse-modernization-2026-6746/>Data Warehouse Modernization 2026 6746</Link></li>
+<li><Link /blog/cloud-migration-services-policy-and-compliance/>Cloud Migration Services Policy And Compliance</Link></li>
+<li><Link /blog/brand-voice-guardian-deployment-patterns/>Brand Voice Guardian Deployment Patterns</Link></li>
+<li><Link /blog/ai-customer-success-churn-2026-7051/>Ai Customer Success Churn 2026 7051</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

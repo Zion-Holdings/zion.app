@@ -57,10 +57,10 @@ Leading indicators for technical due diligence: policy and compliance: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-social-media-manager-2026-6923">Micro Saas Ai Social Media Manager 2026 6923</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-6955">Devops Gen Ai Cicd 2026 6955</Link></li>
-<li><Link href="/blog/data-security-common-mistakes">Data Security Common Mistakes</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-2026-6857">Ai Accessibility Auditor 2026 6857</Link></li>
+              <li><Link /blog/micro-saas-ai-social-media-manager-2026-6923/>Micro Saas Ai Social Media Manager 2026 6923</Link></li>
+<li><Link /blog/devops-gen-ai-cicd-2026-6955/>Devops Gen Ai Cicd 2026 6955</Link></li>
+<li><Link /blog/data-security-common-mistakes/>Data Security Common Mistakes</Link></li>
+<li><Link /blog/ai-accessibility-auditor-2026-6857/>Ai Accessibility Auditor 2026 6857</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

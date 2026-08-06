@@ -57,10 +57,10 @@ Leading indicators for continuous delivery: automation roadmap: workflow complet
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-backup-case-study">Cloud Backup Case Study</Link></li>
-<li><Link href="/blog/devops-cicd-starter-template">Devops Cicd Starter Template</Link></li>
-<li><Link href="/blog/cloud-cost-management-2026">Cloud Cost Management 2026</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-checklist-for-it-leaders">Ai Customer Success Churn Prevention Checklist For It Leaders</Link></li>
+              <li><Link /blog/cloud-backup-case-study/>Cloud Backup Case Study</Link></li>
+<li><Link /blog/devops-cicd-starter-template/>Devops Cicd Starter Template</Link></li>
+<li><Link /blog/cloud-cost-management-2026/>Cloud Cost Management 2026</Link></li>
+<li><Link /blog/ai-customer-success-churn-prevention-checklist-for-it-leaders/>Ai Customer Success Churn Prevention Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

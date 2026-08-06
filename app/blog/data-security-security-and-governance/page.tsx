@@ -57,10 +57,10 @@ Leading indicators for data security: security and governance: workflow completi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/bot-detection-2026">Bot Detection 2026</Link></li>
-<li><Link href="/blog/digital-twin-2026">Digital Twin 2026</Link></li>
-<li><Link href="/blog/compliance-automation-architecture-overview">Compliance Automation Architecture Overview</Link></li>
-<li><Link href="/blog/edge-computing-deployment-policy-and-compliance">Edge Computing Deployment Policy And Compliance</Link></li>
+              <li><Link /blog/bot-detection-2026/>Bot Detection 2026</Link></li>
+<li><Link /blog/digital-twin-2026/>Digital Twin 2026</Link></li>
+<li><Link /blog/compliance-automation-architecture-overview/>Compliance Automation Architecture Overview</Link></li>
+<li><Link /blog/edge-computing-deployment-policy-and-compliance/>Edge Computing Deployment Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

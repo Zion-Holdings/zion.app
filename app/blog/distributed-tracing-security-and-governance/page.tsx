@@ -57,10 +57,10 @@ For distributed tracing: security and governance: pick one workflow, assign owne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/multi-cloud-strategy-checklist-for-it-leaders">Multi Cloud Strategy Checklist For It Leaders</Link></li>
-<li><Link href="/blog/data-virtualization-evaluation-framework">Data Virtualization Evaluation Framework</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-checklist-for-it-leaders">Microsaas Expense Tracker Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-data-backup-starter-template">Ai Data Backup Starter Template</Link></li>
+              <li><Link /blog/multi-cloud-strategy-checklist-for-it-leaders/>Multi Cloud Strategy Checklist For It Leaders</Link></li>
+<li><Link /blog/data-virtualization-evaluation-framework/>Data Virtualization Evaluation Framework</Link></li>
+<li><Link /blog/microsaas-expense-tracker-checklist-for-it-leaders/>Microsaas Expense Tracker Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-data-backup-starter-template/>Ai Data Backup Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

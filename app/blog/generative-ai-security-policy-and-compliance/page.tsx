@@ -54,10 +54,10 @@ If this guide matches your generative ai security: policy and compliance initiat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bdr-sdr-evaluation-framework">Ai Bdr Sdr Evaluation Framework</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-automation-roadmap">Enterprise Backup Dr Automation Roadmap</Link></li>
-<li><Link href="/blog/5g-solutions-2026-6638">5G Solutions 2026 6638</Link></li>
-<li><Link href="/blog/data-analytics-platform-checklist-for-it-leaders">Data Analytics Platform Checklist For It Leaders</Link></li>
+              <li><Link /blog/ai-bdr-sdr-evaluation-framework/>Ai Bdr Sdr Evaluation Framework</Link></li>
+<li><Link /blog/enterprise-backup-dr-automation-roadmap/>Enterprise Backup Dr Automation Roadmap</Link></li>
+<li><Link /blog/5g-solutions-2026-6638/>5G Solutions 2026 6638</Link></li>
+<li><Link /blog/data-analytics-platform-checklist-for-it-leaders/>Data Analytics Platform Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

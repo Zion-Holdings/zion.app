@@ -57,10 +57,10 @@ For data catalog: evaluation framework: pick one workflow, assign ownership, def
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-optimization-checklist-2026-7109">Cloud Cost Optimization Checklist 2026 7109</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-2026-7021">Cyber Threat Intelligence 2026 7021</Link></li>
-<li><Link href="/blog/strategic-it-planning-checklist-for-it-leaders">Strategic It Planning Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-roi-and-cost-model">Cloud Cost Optimization Roi And Cost Model</Link></li>
+              <li><Link /blog/cloud-cost-optimization-checklist-2026-7109/>Cloud Cost Optimization Checklist 2026 7109</Link></li>
+<li><Link /blog/cyber-threat-intelligence-2026-7021/>Cyber Threat Intelligence 2026 7021</Link></li>
+<li><Link /blog/strategic-it-planning-checklist-for-it-leaders/>Strategic It Planning Checklist For It Leaders</Link></li>
+<li><Link /blog/cloud-cost-optimization-roi-and-cost-model/>Cloud Cost Optimization Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

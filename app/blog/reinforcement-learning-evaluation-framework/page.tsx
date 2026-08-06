@@ -54,10 +54,10 @@ If this guide matches your reinforcement learning: evaluation framework initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-management-policy-and-compliance">Api Gateway Management Policy And Compliance</Link></li>
-<li><Link href="/blog/chaos-engineering-policy-and-compliance">Chaos Engineering Policy And Compliance</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026-6834">Cybersecurity Platform Msp 2026 6834</Link></li>
-<li><Link href="/blog/api-performance-testing-security-and-governance">Api Performance Testing Security And Governance</Link></li>
+              <li><Link /blog/api-gateway-management-policy-and-compliance/>Api Gateway Management Policy And Compliance</Link></li>
+<li><Link /blog/chaos-engineering-policy-and-compliance/>Chaos Engineering Policy And Compliance</Link></li>
+<li><Link /blog/cybersecurity-platform-msp-2026-6834/>Cybersecurity Platform Msp 2026 6834</Link></li>
+<li><Link /blog/api-performance-testing-security-and-governance/>Api Performance Testing Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

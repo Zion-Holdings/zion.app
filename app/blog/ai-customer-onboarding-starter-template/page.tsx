@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-virtualization-starter-template">Data Virtualization Starter Template</Link></li>
-<li><Link href="/blog/managed-detection-response-policy-and-compliance">Managed Detection Response Policy And Compliance</Link></li>
-<li><Link href="/blog/log-management-2026">Log Management 2026</Link></li>
-<li><Link href="/blog/no-code-platform-security-and-governance">No Code Platform Security And Governance</Link></li>
+              <li><Link /blog/data-virtualization-starter-template/>Data Virtualization Starter Template</Link></li>
+<li><Link /blog/managed-detection-response-policy-and-compliance/>Managed Detection Response Policy And Compliance</Link></li>
+<li><Link /blog/log-management-2026/>Log Management 2026</Link></li>
+<li><Link /blog/no-code-platform-security-and-governance/>No Code Platform Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

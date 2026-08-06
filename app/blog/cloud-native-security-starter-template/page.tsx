@@ -54,10 +54,10 @@ If this guide matches your cloud native security: starter template initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/sase-architecture-overview">Sase Architecture Overview</Link></li>
-<li><Link href="/blog/smart-contract-audit-architecture-overview">Smart Contract Audit Architecture Overview</Link></li>
-<li><Link href="/blog/smart-contract-audit-case-study">Smart Contract Audit Case Study</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-6592">Autonomous Qa Engineering 2026 6592</Link></li>
+              <li><Link /blog/sase-architecture-overview/>Sase Architecture Overview</Link></li>
+<li><Link /blog/smart-contract-audit-architecture-overview/>Smart Contract Audit Architecture Overview</Link></li>
+<li><Link /blog/smart-contract-audit-case-study/>Smart Contract Audit Case Study</Link></li>
+<li><Link /blog/autonomous-qa-engineering-2026-6592/>Autonomous Qa Engineering 2026 6592</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

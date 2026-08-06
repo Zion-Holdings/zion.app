@@ -57,10 +57,10 @@ Leading indicators for data mesh: evaluation framework: workflow completion rate
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-safety-evaluation-2026-6929">Ai Agent Safety Evaluation 2026 6929</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-6592">Autonomous Qa Engineering 2026 6592</Link></li>
-<li><Link href="/blog/ai-bom-procurement-2026-6939">Ai Bom Procurement 2026 6939</Link></li>
-<li><Link href="/blog/ai-observability-2026-6565">Ai Observability 2026 6565</Link></li>
+              <li><Link /blog/ai-agent-safety-evaluation-2026-6929/>Ai Agent Safety Evaluation 2026 6929</Link></li>
+<li><Link /blog/autonomous-qa-engineering-2026-6592/>Autonomous Qa Engineering 2026 6592</Link></li>
+<li><Link /blog/ai-bom-procurement-2026-6939/>Ai Bom Procurement 2026 6939</Link></li>
+<li><Link /blog/ai-observability-2026-6565/>Ai Observability 2026 6565</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

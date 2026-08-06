@@ -57,10 +57,10 @@ Leading indicators for data pipeline orchestration: operations handbook: workflo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-optimization-checklist-2026-7040">Cloud Cost Optimization Checklist 2026 7040</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026-6654">Ai Agent Tool Builder 2026 6654</Link></li>
-<li><Link href="/blog/continuous-deployment-automation-roadmap">Continuous Deployment Automation Roadmap</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-security-and-governance">Autonomous Qa Engineering Security And Governance</Link></li>
+              <li><Link /blog/cloud-cost-optimization-checklist-2026-7040/>Cloud Cost Optimization Checklist 2026 7040</Link></li>
+<li><Link /blog/ai-agent-tool-builder-2026-6654/>Ai Agent Tool Builder 2026 6654</Link></li>
+<li><Link /blog/continuous-deployment-automation-roadmap/>Continuous Deployment Automation Roadmap</Link></li>
+<li><Link /blog/autonomous-qa-engineering-security-and-governance/>Autonomous Qa Engineering Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

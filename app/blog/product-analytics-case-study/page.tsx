@@ -57,10 +57,10 @@ For product analytics: case study: pick one workflow, assign ownership, define s
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automation-orchestration-architecture-overview">Automation Orchestration Architecture Overview</Link></li>
-<li><Link href="/blog/5g-solutions-architecture-overview">5G Solutions Architecture Overview</Link></li>
-<li><Link href="/blog/api-integration-policy-and-compliance">Api Integration Policy And Compliance</Link></li>
-<li><Link href="/blog/microsaas-translation-engine-architecture-overview">Microsaas Translation Engine Architecture Overview</Link></li>
+              <li><Link /blog/automation-orchestration-architecture-overview/>Automation Orchestration Architecture Overview</Link></li>
+<li><Link /blog/5g-solutions-architecture-overview/>5G Solutions Architecture Overview</Link></li>
+<li><Link /blog/api-integration-policy-and-compliance/>Api Integration Policy And Compliance</Link></li>
+<li><Link /blog/microsaas-translation-engine-architecture-overview/>Microsaas Translation Engine Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

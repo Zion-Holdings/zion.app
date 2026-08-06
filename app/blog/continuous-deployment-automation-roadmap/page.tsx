@@ -57,10 +57,10 @@ For continuous deployment: automation roadmap: pick one workflow, assign ownersh
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-pipeline-orchestration-implementation-playbook">Data Pipeline Orchestration Implementation Playbook</Link></li>
-<li><Link href="/blog/technology-roadmap-starter-template">Technology Roadmap Starter Template</Link></li>
-<li><Link href="/blog/container-security-lifecycle-automation-roadmap">Container Security Lifecycle Automation Roadmap</Link></li>
-<li><Link href="/blog/oncall-best-practices-2026">Oncall Best Practices 2026</Link></li>
+              <li><Link /blog/data-pipeline-orchestration-implementation-playbook/>Data Pipeline Orchestration Implementation Playbook</Link></li>
+<li><Link /blog/technology-roadmap-starter-template/>Technology Roadmap Starter Template</Link></li>
+<li><Link /blog/container-security-lifecycle-automation-roadmap/>Container Security Lifecycle Automation Roadmap</Link></li>
+<li><Link /blog/oncall-best-practices-2026/>Oncall Best Practices 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

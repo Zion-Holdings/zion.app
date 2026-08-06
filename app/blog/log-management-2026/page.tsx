@@ -57,10 +57,10 @@ Leading indicators for log management: workflow completion rate, escalation rate
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-2026-6634">Ai Observability 2026 6634</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-2026-6752">Enterprise Backup Dr 2026 6752</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-2026-6719">Ai Accessibility Auditor 2026 6719</Link></li>
-<li><Link href="/blog/api-orchestration-layer-deployment-patterns">Api Orchestration Layer Deployment Patterns</Link></li>
+              <li><Link /blog/ai-observability-2026-6634/>Ai Observability 2026 6634</Link></li>
+<li><Link /blog/enterprise-backup-dr-2026-6752/>Enterprise Backup Dr 2026 6752</Link></li>
+<li><Link /blog/ai-accessibility-auditor-2026-6719/>Ai Accessibility Auditor 2026 6719</Link></li>
+<li><Link /blog/api-orchestration-layer-deployment-patterns/>Api Orchestration Layer Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

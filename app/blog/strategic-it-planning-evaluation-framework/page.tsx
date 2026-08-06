@@ -57,10 +57,10 @@ For strategic it planning: evaluation framework: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/chaos-engineering-architecture-overview">Chaos Engineering Architecture Overview</Link></li>
-<li><Link href="/blog/api-performance-testing-2026-6760">Api Performance Testing 2026 6760</Link></li>
-<li><Link href="/blog/cloud-native-app-development-security-and-governance">Cloud Native App Development Security And Governance</Link></li>
-<li><Link href="/blog/endpoint-management-roi-and-cost-model">Endpoint Management Roi And Cost Model</Link></li>
+              <li><Link /blog/chaos-engineering-architecture-overview/>Chaos Engineering Architecture Overview</Link></li>
+<li><Link /blog/api-performance-testing-2026-6760/>Api Performance Testing 2026 6760</Link></li>
+<li><Link /blog/cloud-native-app-development-security-and-governance/>Cloud Native App Development Security And Governance</Link></li>
+<li><Link /blog/endpoint-management-roi-and-cost-model/>Endpoint Management Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

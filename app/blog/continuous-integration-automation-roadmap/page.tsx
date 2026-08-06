@@ -57,10 +57,10 @@ Leading indicators for continuous integration: automation roadmap: workflow comp
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/log-management-implementation-playbook">Log Management Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-email-intelligence-2026">Ai Email Intelligence 2026</Link></li>
-<li><Link href="/blog/artificial-intelligence-ethics-automation-roadmap">Artificial Intelligence Ethics Automation Roadmap</Link></li>
-<li><Link href="/blog/terraform-starter-template">Terraform Starter Template</Link></li>
+              <li><Link /blog/log-management-implementation-playbook/>Log Management Implementation Playbook</Link></li>
+<li><Link /blog/ai-email-intelligence-2026/>Ai Email Intelligence 2026</Link></li>
+<li><Link /blog/artificial-intelligence-ethics-automation-roadmap/>Artificial Intelligence Ethics Automation Roadmap</Link></li>
+<li><Link /blog/terraform-starter-template/>Terraform Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

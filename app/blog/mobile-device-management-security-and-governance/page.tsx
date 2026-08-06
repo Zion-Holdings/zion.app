@@ -57,10 +57,10 @@ For mobile device management: security and governance: pick one workflow, assign
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/building-a-tailored-implementation-roadmap-from-proof-of-concept-to-full-deployment">Building A Tailored Implementation Roadmap From Proof Of Concept To Full Deployment</Link></li>
-<li><Link href="/blog/network-automation-roi-and-cost-model">Network Automation Roi And Cost Model</Link></li>
-<li><Link href="/blog/business-intelligence-starter-template">Business Intelligence Starter Template</Link></li>
-<li><Link href="/blog/cicd-best-practices-roi-and-cost-model">Cicd Best Practices Roi And Cost Model</Link></li>
+              <li><Link /blog/building-a-tailored-implementation-roadmap-from-proof-of-concept-to-full-deployment/>Building A Tailored Implementation Roadmap From Proof Of Concept To Full Deployment</Link></li>
+<li><Link /blog/network-automation-roi-and-cost-model/>Network Automation Roi And Cost Model</Link></li>
+<li><Link /blog/business-intelligence-starter-template/>Business Intelligence Starter Template</Link></li>
+<li><Link /blog/cicd-best-practices-roi-and-cost-model/>Cicd Best Practices Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

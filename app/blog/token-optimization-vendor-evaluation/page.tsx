@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/machine-learning-engineering-evaluation-framework">Machine Learning Engineering Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-checklist-for-it-leaders">Ai Agentic Workflows Checklist For It Leaders</Link></li>
-<li><Link href="/blog/multi-cloud-strategy-implementation-playbook">Multi Cloud Strategy Implementation Playbook</Link></li>
-<li><Link href="/blog/data-integration-common-mistakes">Data Integration Common Mistakes</Link></li>
+              <li><Link /blog/machine-learning-engineering-evaluation-framework/>Machine Learning Engineering Evaluation Framework</Link></li>
+<li><Link /blog/ai-agentic-workflows-checklist-for-it-leaders/>Ai Agentic Workflows Checklist For It Leaders</Link></li>
+<li><Link /blog/multi-cloud-strategy-implementation-playbook/>Multi Cloud Strategy Implementation Playbook</Link></li>
+<li><Link /blog/data-integration-common-mistakes/>Data Integration Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

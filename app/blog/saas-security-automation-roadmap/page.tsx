@@ -57,10 +57,10 @@ For saas security: automation roadmap: pick one workflow, assign ownership, defi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-autonomous-agents-2026-7001">Ai Autonomous Agents 2026 7001</Link></li>
-<li><Link href="/blog/ai-data-backup-vendor-evaluation">Ai Data Backup Vendor Evaluation</Link></li>
-<li><Link href="/blog/cloud-native-app-development-starter-template">Cloud Native App Development Starter Template</Link></li>
-<li><Link href="/blog/smart-contract-audit-deployment-patterns">Smart Contract Audit Deployment Patterns</Link></li>
+              <li><Link /blog/ai-autonomous-agents-2026-7001/>Ai Autonomous Agents 2026 7001</Link></li>
+<li><Link /blog/ai-data-backup-vendor-evaluation/>Ai Data Backup Vendor Evaluation</Link></li>
+<li><Link /blog/cloud-native-app-development-starter-template/>Cloud Native App Development Starter Template</Link></li>
+<li><Link /blog/smart-contract-audit-deployment-patterns/>Smart Contract Audit Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

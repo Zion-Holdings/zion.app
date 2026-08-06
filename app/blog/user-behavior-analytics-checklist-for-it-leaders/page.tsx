@@ -57,10 +57,10 @@ For user behavior analytics: checklist for it leaders: pick one workflow, assign
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/incident-response-retainer-checklist-for-it-leaders">Incident Response Retainer Checklist For It Leaders</Link></li>
-<li><Link href="/blog/mobile-device-management-evaluation-framework">Mobile Device Management Evaluation Framework</Link></li>
-<li><Link href="/blog/prompt-engineering-implementation-playbook">Prompt Engineering Implementation Playbook</Link></li>
-<li><Link href="/blog/cloud-networking-2026">Cloud Networking 2026</Link></li>
+              <li><Link /blog/incident-response-retainer-checklist-for-it-leaders/>Incident Response Retainer Checklist For It Leaders</Link></li>
+<li><Link /blog/mobile-device-management-evaluation-framework/>Mobile Device Management Evaluation Framework</Link></li>
+<li><Link /blog/prompt-engineering-implementation-playbook/>Prompt Engineering Implementation Playbook</Link></li>
+<li><Link /blog/cloud-networking-2026/>Cloud Networking 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

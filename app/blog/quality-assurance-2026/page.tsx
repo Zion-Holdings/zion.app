@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/genai-devops-cicd-starter-template">Genai Devops Cicd Starter Template</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-executive-guide">Ai Msp Security Compliance Executive Guide</Link></li>
-<li><Link href="/blog/it-automation-architecture-overview">It Automation Architecture Overview</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-roi-and-cost-model">Etl Pipeline Optimization Roi And Cost Model</Link></li>
+              <li><Link /blog/genai-devops-cicd-starter-template/>Genai Devops Cicd Starter Template</Link></li>
+<li><Link /blog/ai-msp-security-compliance-executive-guide/>Ai Msp Security Compliance Executive Guide</Link></li>
+<li><Link /blog/it-automation-architecture-overview/>It Automation Architecture Overview</Link></li>
+<li><Link /blog/etl-pipeline-optimization-roi-and-cost-model/>Etl Pipeline Optimization Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

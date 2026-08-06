@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-hr-recruitment-roi-and-cost-model">Microsaas Hr Recruitment Roi And Cost Model</Link></li>
-<li><Link href="/blog/microservices-architecture-starter-template">Microservices Architecture Starter Template</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-6784">Micro Saas Ai Customer Onboarding 2026 6784</Link></li>
-<li><Link href="/blog/hybrid-cloud-vendor-evaluation">Hybrid Cloud Vendor Evaluation</Link></li>
+              <li><Link /blog/microsaas-hr-recruitment-roi-and-cost-model/>Microsaas Hr Recruitment Roi And Cost Model</Link></li>
+<li><Link /blog/microservices-architecture-starter-template/>Microservices Architecture Starter Template</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026-6784/>Micro Saas Ai Customer Onboarding 2026 6784</Link></li>
+<li><Link /blog/hybrid-cloud-vendor-evaluation/>Hybrid Cloud Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

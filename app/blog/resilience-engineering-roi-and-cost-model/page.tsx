@@ -54,10 +54,10 @@ If this guide matches your resilience engineering: roi and cost model initiative
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/llm-operations-architecture-overview">Llm Operations Architecture Overview</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-policy-and-compliance">Microsaas Hr Recruitment Policy And Compliance</Link></li>
-<li><Link href="/blog/sase-roi-and-cost-model">Sase Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-expense-tracker-evaluation-framework">Ai Expense Tracker Evaluation Framework</Link></li>
+              <li><Link /blog/llm-operations-architecture-overview/>Llm Operations Architecture Overview</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-policy-and-compliance/>Microsaas Hr Recruitment Policy And Compliance</Link></li>
+<li><Link /blog/sase-roi-and-cost-model/>Sase Roi And Cost Model</Link></li>
+<li><Link /blog/ai-expense-tracker-evaluation-framework/>Ai Expense Tracker Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

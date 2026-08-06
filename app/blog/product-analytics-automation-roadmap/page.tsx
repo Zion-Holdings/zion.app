@@ -57,10 +57,10 @@ Leading indicators for product analytics: automation roadmap: workflow completio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-checklist-for-it-leaders">It Consulting Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-automation-roadmap">Ai Customer Success Churn Prevention Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-implementation-playbook">Ai 3D Asset Generator Implementation Playbook</Link></li>
-<li><Link href="/blog/devsecops-pipeline-2026-6542">Devsecops Pipeline 2026 6542</Link></li>
+              <li><Link /blog/it-consulting-checklist-for-it-leaders/>It Consulting Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-customer-success-churn-prevention-automation-roadmap/>Ai Customer Success Churn Prevention Automation Roadmap</Link></li>
+<li><Link /blog/ai-3d-asset-generator-implementation-playbook/>Ai 3D Asset Generator Implementation Playbook</Link></li>
+<li><Link /blog/devsecops-pipeline-2026-6542/>Devsecops Pipeline 2026 6542</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/managed-it-services-small-business-2026-6973">Managed It Services Small Business 2026 6973</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-6756">Graphql Federation Platform 2026 6756</Link></li>
-<li><Link href="/blog/ai-predictive-maintenance-common-mistakes">Ai Predictive Maintenance Common Mistakes</Link></li>
-<li><Link href="/blog/enterprise-service-bus-implementation-playbook">Enterprise Service Bus Implementation Playbook</Link></li>
+              <li><Link /blog/managed-it-services-small-business-2026-6973/>Managed It Services Small Business 2026 6973</Link></li>
+<li><Link /blog/graphql-federation-platform-2026-6756/>Graphql Federation Platform 2026 6756</Link></li>
+<li><Link /blog/ai-predictive-maintenance-common-mistakes/>Ai Predictive Maintenance Common Mistakes</Link></li>
+<li><Link /blog/enterprise-service-bus-implementation-playbook/>Enterprise Service Bus Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

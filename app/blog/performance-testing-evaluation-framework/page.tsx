@@ -54,10 +54,10 @@ If this guide matches your performance testing: evaluation framework initiative,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/network-infrastructure-executive-guide">Network Infrastructure Executive Guide</Link></li>
-<li><Link href="/blog/api-orchestration-layer-automation-roadmap">Api Orchestration Layer Automation Roadmap</Link></li>
-<li><Link href="/blog/cloud-finops-deployment-patterns">Cloud Finops Deployment Patterns</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-6888">Edge Computing Deployment 2026 6888</Link></li>
+              <li><Link /blog/network-infrastructure-executive-guide/>Network Infrastructure Executive Guide</Link></li>
+<li><Link /blog/api-orchestration-layer-automation-roadmap/>Api Orchestration Layer Automation Roadmap</Link></li>
+<li><Link /blog/cloud-finops-deployment-patterns/>Cloud Finops Deployment Patterns</Link></li>
+<li><Link /blog/edge-computing-deployment-2026-6888/>Edge Computing Deployment 2026 6888</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

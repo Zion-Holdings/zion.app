@@ -57,10 +57,10 @@ Leading indicators for distributed tracing: workflow completion rate, escalation
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-vendor-evaluation">Event Driven Architecture Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-2026-6518">Ai Autonomous Agents 2026 6518</Link></li>
-<li><Link href="/blog/container-security-lifecycle-2026-7020">Container Security Lifecycle 2026 7020</Link></li>
-<li><Link href="/blog/event-driven-architecture-2026-6685">Event Driven Architecture 2026 6685</Link></li>
+              <li><Link /blog/event-driven-architecture-vendor-evaluation/>Event Driven Architecture Vendor Evaluation</Link></li>
+<li><Link /blog/ai-autonomous-agents-2026-6518/>Ai Autonomous Agents 2026 6518</Link></li>
+<li><Link /blog/container-security-lifecycle-2026-7020/>Container Security Lifecycle 2026 7020</Link></li>
+<li><Link /blog/event-driven-architecture-2026-6685/>Event Driven Architecture 2026 6685</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

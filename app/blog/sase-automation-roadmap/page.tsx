@@ -57,10 +57,10 @@ Leading indicators for sase: automation roadmap: workflow completion rate, escal
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/infrastructure-monitoring-implementation-playbook">Infrastructure Monitoring Implementation Playbook</Link></li>
-<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-6852">Micro Saas Ai Hr Recruitment 2026 6852</Link></li>
-<li><Link href="/blog/devsecops-pipeline-vendor-evaluation">Devsecops Pipeline Vendor Evaluation</Link></li>
-<li><Link href="/blog/genai-devops-cicd-security-and-governance">Genai Devops Cicd Security And Governance</Link></li>
+              <li><Link /blog/infrastructure-monitoring-implementation-playbook/>Infrastructure Monitoring Implementation Playbook</Link></li>
+<li><Link /blog/micro-saas-ai-hr-recruitment-2026-6852/>Micro Saas Ai Hr Recruitment 2026 6852</Link></li>
+<li><Link /blog/devsecops-pipeline-vendor-evaluation/>Devsecops Pipeline Vendor Evaluation</Link></li>
+<li><Link /blog/genai-devops-cicd-security-and-governance/>Genai Devops Cicd Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

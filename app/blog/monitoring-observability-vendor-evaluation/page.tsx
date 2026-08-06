@@ -57,10 +57,10 @@ For monitoring observability: vendor evaluation: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-email-intelligence-2026-6769">Ai Email Intelligence 2026 6769</Link></li>
-<li><Link href="/blog/incident-response-retainer-checklist-for-it-leaders">Incident Response Retainer Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-2026-6584">Ai Agent Safety Evaluation 2026 6584</Link></li>
-<li><Link href="/blog/chaos-engineering-2026-6740">Chaos Engineering 2026 6740</Link></li>
+              <li><Link /blog/ai-email-intelligence-2026-6769/>Ai Email Intelligence 2026 6769</Link></li>
+<li><Link /blog/incident-response-retainer-checklist-for-it-leaders/>Incident Response Retainer Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-2026-6584/>Ai Agent Safety Evaluation 2026 6584</Link></li>
+<li><Link /blog/chaos-engineering-2026-6740/>Chaos Engineering 2026 6740</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

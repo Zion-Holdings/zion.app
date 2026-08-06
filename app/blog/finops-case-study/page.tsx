@@ -57,10 +57,10 @@ For finops: case study: pick one workflow, assign ownership, define success metr
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/structured-data-extraction-case-study">Structured Data Extraction Case Study</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-vendor-evaluation">Ai Bdr Sdr Vendor Evaluation</Link></li>
-<li><Link href="/blog/incident-management-vendor-evaluation">Incident Management Vendor Evaluation</Link></li>
-<li><Link href="/blog/microsaas-translation-engine-deployment-patterns">Microsaas Translation Engine Deployment Patterns</Link></li>
+              <li><Link /blog/structured-data-extraction-case-study/>Structured Data Extraction Case Study</Link></li>
+<li><Link /blog/ai-bdr-sdr-vendor-evaluation/>Ai Bdr Sdr Vendor Evaluation</Link></li>
+<li><Link /blog/incident-management-vendor-evaluation/>Incident Management Vendor Evaluation</Link></li>
+<li><Link /blog/microsaas-translation-engine-deployment-patterns/>Microsaas Translation Engine Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

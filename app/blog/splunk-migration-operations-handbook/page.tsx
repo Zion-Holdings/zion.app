@@ -57,10 +57,10 @@ Leading indicators for splunk migration: operations handbook: workflow completio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/chaos-engineering-evaluation-framework">Chaos Engineering Evaluation Framework</Link></li>
-<li><Link href="/blog/api-integration-vendor-evaluation">Api Integration Vendor Evaluation</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026-7017">Cloud Cost Ai Optimizer 2026 7017</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026-6861">Ai Agent Tool Builder 2026 6861</Link></li>
+              <li><Link /blog/chaos-engineering-evaluation-framework/>Chaos Engineering Evaluation Framework</Link></li>
+<li><Link /blog/api-integration-vendor-evaluation/>Api Integration Vendor Evaluation</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-2026-7017/>Cloud Cost Ai Optimizer 2026 7017</Link></li>
+<li><Link /blog/ai-agent-tool-builder-2026-6861/>Ai Agent Tool Builder 2026 6861</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

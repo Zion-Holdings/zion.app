@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-qa-engineering-starter-template">Autonomous Qa Engineering Starter Template</Link></li>
-<li><Link href="/blog/devops-cicd-2026-6573">Devops Cicd 2026 6573</Link></li>
-<li><Link href="/blog/api-integration-2026-6599">Api Integration 2026 6599</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-6799">Autonomous Qa Engineering 2026 6799</Link></li>
+              <li><Link /blog/autonomous-qa-engineering-starter-template/>Autonomous Qa Engineering Starter Template</Link></li>
+<li><Link /blog/devops-cicd-2026-6573/>Devops Cicd 2026 6573</Link></li>
+<li><Link /blog/api-integration-2026-6599/>Api Integration 2026 6599</Link></li>
+<li><Link /blog/autonomous-qa-engineering-2026-6799/>Autonomous Qa Engineering 2026 6799</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

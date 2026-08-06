@@ -54,10 +54,10 @@ If this guide matches your application modernization: evaluation framework initi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ubiquitous-connectivity-implementation-playbook">Ubiquitous Connectivity Implementation Playbook</Link></li>
-<li><Link href="/blog/automated-ai-reporting-2026-6797">Automated Ai Reporting 2026 6797</Link></li>
-<li><Link href="/blog/natural-language-processing-checklist-for-it-leaders">Natural Language Processing Checklist For It Leaders</Link></li>
-<li><Link href="/blog/servicenow-automation-automation-roadmap">Servicenow Automation Automation Roadmap</Link></li>
+              <li><Link /blog/ubiquitous-connectivity-implementation-playbook/>Ubiquitous Connectivity Implementation Playbook</Link></li>
+<li><Link /blog/automated-ai-reporting-2026-6797/>Automated Ai Reporting 2026 6797</Link></li>
+<li><Link /blog/natural-language-processing-checklist-for-it-leaders/>Natural Language Processing Checklist For It Leaders</Link></li>
+<li><Link /blog/servicenow-automation-automation-roadmap/>Servicenow Automation Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

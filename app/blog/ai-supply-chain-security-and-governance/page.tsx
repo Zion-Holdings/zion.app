@@ -57,10 +57,10 @@ For ai supply chain: security and governance: pick one workflow, assign ownershi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/genai-devops-cicd-vendor-evaluation">Genai Devops Cicd Vendor Evaluation</Link></li>
-<li><Link href="/blog/terraform-executive-guide">Terraform Executive Guide</Link></li>
-<li><Link href="/blog/zero-trust-architecture-executive-guide">Zero Trust Architecture Executive Guide</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-security-and-governance">Cloud Cost Ai Optimizer Security And Governance</Link></li>
+              <li><Link /blog/genai-devops-cicd-vendor-evaluation/>Genai Devops Cicd Vendor Evaluation</Link></li>
+<li><Link /blog/terraform-executive-guide/>Terraform Executive Guide</Link></li>
+<li><Link /blog/zero-trust-architecture-executive-guide/>Zero Trust Architecture Executive Guide</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-security-and-governance/>Cloud Cost Ai Optimizer Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

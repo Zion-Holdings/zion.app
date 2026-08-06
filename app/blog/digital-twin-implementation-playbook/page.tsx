@@ -54,10 +54,10 @@ If this guide matches your digital twin: implementation playbook initiative, the
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-2026-6880">Cloud Finops 2026 6880</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6736">Api Gateway Management 2026 6736</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026">Ai Accessibility Optimizer 2026</Link></li>
-<li><Link href="/blog/application-modernization-common-mistakes">Application Modernization Common Mistakes</Link></li>
+              <li><Link /blog/cloud-finops-2026-6880/>Cloud Finops 2026 6880</Link></li>
+<li><Link /blog/api-gateway-management-2026-6736/>Api Gateway Management 2026 6736</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-2026/>Ai Accessibility Optimizer 2026</Link></li>
+<li><Link /blog/application-modernization-common-mistakes/>Application Modernization Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

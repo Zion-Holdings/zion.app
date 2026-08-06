@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-versioning-starter-template">Api Versioning Starter Template</Link></li>
-<li><Link href="/blog/technology-roadmap-checklist-for-it-leaders">Technology Roadmap Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-code-review-automation-starter-template">Ai Code Review Automation Starter Template</Link></li>
-<li><Link href="/blog/ai-bom-procurement-2026-6801">Ai Bom Procurement 2026 6801</Link></li>
+              <li><Link /blog/api-versioning-starter-template/>Api Versioning Starter Template</Link></li>
+<li><Link /blog/technology-roadmap-checklist-for-it-leaders/>Technology Roadmap Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-code-review-automation-starter-template/>Ai Code Review Automation Starter Template</Link></li>
+<li><Link /blog/ai-bom-procurement-2026-6801/>Ai Bom Procurement 2026 6801</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

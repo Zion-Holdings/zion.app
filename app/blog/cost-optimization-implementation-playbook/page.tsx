@@ -57,10 +57,10 @@ For cost optimization: implementation playbook: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-native-security-case-study">Cloud Native Security Case Study</Link></li>
-<li><Link href="/blog/database-security-policy-and-compliance">Database Security Policy And Compliance</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-security-and-governance">Microsaas Hr Recruitment Security And Governance</Link></li>
-<li><Link href="/blog/process-automation-roi-and-cost-model">Process Automation Roi And Cost Model</Link></li>
+              <li><Link /blog/cloud-native-security-case-study/>Cloud Native Security Case Study</Link></li>
+<li><Link /blog/database-security-policy-and-compliance/>Database Security Policy And Compliance</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-security-and-governance/>Microsaas Hr Recruitment Security And Governance</Link></li>
+<li><Link /blog/process-automation-roi-and-cost-model/>Process Automation Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

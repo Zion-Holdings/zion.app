@@ -54,10 +54,10 @@ If this guide matches your data governance: security and governance initiative, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/multi-cloud-strategy-2026">Multi Cloud Strategy 2026</Link></li>
-<li><Link href="/blog/cloud-native-app-development-2026-7088">Cloud Native App Development 2026 7088</Link></li>
-<li><Link href="/blog/sase-roi-and-cost-model">Sase Roi And Cost Model</Link></li>
-<li><Link href="/blog/data-compliance-roi-and-cost-model">Data Compliance Roi And Cost Model</Link></li>
+              <li><Link /blog/multi-cloud-strategy-2026/>Multi Cloud Strategy 2026</Link></li>
+<li><Link /blog/cloud-native-app-development-2026-7088/>Cloud Native App Development 2026 7088</Link></li>
+<li><Link /blog/sase-roi-and-cost-model/>Sase Roi And Cost Model</Link></li>
+<li><Link /blog/data-compliance-roi-and-cost-model/>Data Compliance Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

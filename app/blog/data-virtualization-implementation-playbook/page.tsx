@@ -54,10 +54,10 @@ If this guide matches your data virtualization: implementation playbook initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-2026-7096">Endpoint Management 2026 7096</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-2026-6545">Enterprise Backup Dr 2026 6545</Link></li>
-<li><Link href="/blog/accessibility-compliance-vendor-evaluation">Accessibility Compliance Vendor Evaluation</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-vendor-evaluation">Cybersecurity For Msps Vendor Evaluation</Link></li>
+              <li><Link /blog/endpoint-management-2026-7096/>Endpoint Management 2026 7096</Link></li>
+<li><Link /blog/enterprise-backup-dr-2026-6545/>Enterprise Backup Dr 2026 6545</Link></li>
+<li><Link /blog/accessibility-compliance-vendor-evaluation/>Accessibility Compliance Vendor Evaluation</Link></li>
+<li><Link /blog/cybersecurity-for-msps-vendor-evaluation/>Cybersecurity For Msps Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

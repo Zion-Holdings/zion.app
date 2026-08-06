@@ -57,10 +57,10 @@ Leading indicators for data security: common mistakes: workflow completion rate,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-optimizer-deployment-patterns">Ai Accessibility Optimizer Deployment Patterns</Link></li>
-<li><Link href="/blog/api-management-gateway-checklist-for-it-leaders">Api Management Gateway Checklist For It Leaders</Link></li>
-<li><Link href="/blog/remote-work-security-checklist-for-it-leaders">Remote Work Security Checklist For It Leaders</Link></li>
-<li><Link href="/blog/smart-contract-audit-starter-template">Smart Contract Audit Starter Template</Link></li>
+              <li><Link /blog/ai-accessibility-optimizer-deployment-patterns/>Ai Accessibility Optimizer Deployment Patterns</Link></li>
+<li><Link /blog/api-management-gateway-checklist-for-it-leaders/>Api Management Gateway Checklist For It Leaders</Link></li>
+<li><Link /blog/remote-work-security-checklist-for-it-leaders/>Remote Work Security Checklist For It Leaders</Link></li>
+<li><Link /blog/smart-contract-audit-starter-template/>Smart Contract Audit Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for api economy: executive guide: workflow completion rate, e
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-orchestration-layer-common-mistakes">Api Orchestration Layer Common Mistakes</Link></li>
-<li><Link href="/blog/cloud-migration-services-common-mistakes">Cloud Migration Services Common Mistakes</Link></li>
-<li><Link href="/blog/golang-microservices-automation-roadmap">Golang Microservices Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-starter-template">Ai Autonomous Agents Starter Template</Link></li>
+              <li><Link /blog/api-orchestration-layer-common-mistakes/>Api Orchestration Layer Common Mistakes</Link></li>
+<li><Link /blog/cloud-migration-services-common-mistakes/>Cloud Migration Services Common Mistakes</Link></li>
+<li><Link /blog/golang-microservices-automation-roadmap/>Golang Microservices Automation Roadmap</Link></li>
+<li><Link /blog/ai-autonomous-agents-starter-template/>Ai Autonomous Agents Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

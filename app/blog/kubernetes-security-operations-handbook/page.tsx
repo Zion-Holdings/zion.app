@@ -57,10 +57,10 @@ For kubernetes security: operations handbook: pick one workflow, assign ownershi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/governance-risk-compliance-automation-roadmap">Governance Risk Compliance Automation Roadmap</Link></li>
-<li><Link href="/blog/database-migration-service-2026">Database Migration Service 2026</Link></li>
-<li><Link href="/blog/data-analytics-platform-operations-handbook">Data Analytics Platform Operations Handbook</Link></li>
-<li><Link href="/blog/servicenow-automation-case-study">Servicenow Automation Case Study</Link></li>
+              <li><Link /blog/governance-risk-compliance-automation-roadmap/>Governance Risk Compliance Automation Roadmap</Link></li>
+<li><Link /blog/database-migration-service-2026/>Database Migration Service 2026</Link></li>
+<li><Link /blog/data-analytics-platform-operations-handbook/>Data Analytics Platform Operations Handbook</Link></li>
+<li><Link /blog/servicenow-automation-case-study/>Servicenow Automation Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

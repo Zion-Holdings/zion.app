@@ -57,10 +57,10 @@ For oncall best practices: roi and cost model: pick one workflow, assign ownersh
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-autonomous-agents-vendor-evaluation">Ai Autonomous Agents Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-automation-roadmap">Ai Msp Security Compliance Automation Roadmap</Link></li>
-<li><Link href="/blog/devops-cicd-2026-6711">Devops Cicd 2026 6711</Link></li>
-<li><Link href="/blog/apm-application-performance-operations-handbook">Apm Application Performance Operations Handbook</Link></li>
+              <li><Link /blog/ai-autonomous-agents-vendor-evaluation/>Ai Autonomous Agents Vendor Evaluation</Link></li>
+<li><Link /blog/ai-msp-security-compliance-automation-roadmap/>Ai Msp Security Compliance Automation Roadmap</Link></li>
+<li><Link /blog/devops-cicd-2026-6711/>Devops Cicd 2026 6711</Link></li>
+<li><Link /blog/apm-application-performance-operations-handbook/>Apm Application Performance Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

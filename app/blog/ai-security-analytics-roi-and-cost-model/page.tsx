@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bdr-sdr-2026-7007">Ai Bdr Sdr 2026 7007</Link></li>
-<li><Link href="/blog/vulnerability-assessment-starter-template">Vulnerability Assessment Starter Template</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-policy-and-compliance">Autonomous Code Deployment Policy And Compliance</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-6579">Enterprise Ai Intelligence Hub 2026 6579</Link></li>
+              <li><Link /blog/ai-bdr-sdr-2026-7007/>Ai Bdr Sdr 2026 7007</Link></li>
+<li><Link /blog/vulnerability-assessment-starter-template/>Vulnerability Assessment Starter Template</Link></li>
+<li><Link /blog/autonomous-code-deployment-policy-and-compliance/>Autonomous Code Deployment Policy And Compliance</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-2026-6579/>Enterprise Ai Intelligence Hub 2026 6579</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

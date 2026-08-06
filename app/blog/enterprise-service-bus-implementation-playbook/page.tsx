@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-native-app-development-policy-and-compliance">Cloud Native App Development Policy And Compliance</Link></li>
-<li><Link href="/blog/microsaas-translation-engine-roi-and-cost-model">Microsaas Translation Engine Roi And Cost Model</Link></li>
-<li><Link href="/blog/automated-ai-reporting-policy-and-compliance">Automated Ai Reporting Policy And Compliance</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-6922">Micro Saas Ai Customer Onboarding 2026 6922</Link></li>
+              <li><Link /blog/cloud-native-app-development-policy-and-compliance/>Cloud Native App Development Policy And Compliance</Link></li>
+<li><Link /blog/microsaas-translation-engine-roi-and-cost-model/>Microsaas Translation Engine Roi And Cost Model</Link></li>
+<li><Link /blog/automated-ai-reporting-policy-and-compliance/>Automated Ai Reporting Policy And Compliance</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026-6922/>Micro Saas Ai Customer Onboarding 2026 6922</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

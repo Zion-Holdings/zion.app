@@ -54,10 +54,10 @@ If this guide matches your ai hr recruitment: policy and compliance initiative, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cicd-pipeline-security-executive-guide">Cicd Pipeline Security Executive Guide</Link></li>
-<li><Link href="/blog/vector-database-architecture-overview">Vector Database Architecture Overview</Link></li>
-<li><Link href="/blog/web-application-firewall-architecture-overview">Web Application Firewall Architecture Overview</Link></li>
-<li><Link href="/blog/microservices-security-architecture-overview">Microservices Security Architecture Overview</Link></li>
+              <li><Link /blog/cicd-pipeline-security-executive-guide/>Cicd Pipeline Security Executive Guide</Link></li>
+<li><Link /blog/vector-database-architecture-overview/>Vector Database Architecture Overview</Link></li>
+<li><Link /blog/web-application-firewall-architecture-overview/>Web Application Firewall Architecture Overview</Link></li>
+<li><Link /blog/microservices-security-architecture-overview/>Microservices Security Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

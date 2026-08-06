@@ -57,10 +57,10 @@ Leading indicators for patch management: deployment patterns: workflow completio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-msp-security-compliance-case-study">Ai Msp Security Compliance Case Study</Link></li>
-<li><Link href="/blog/accessibility-compliance-2026-7079">Accessibility Compliance 2026 7079</Link></li>
-<li><Link href="/blog/edge-computing-deployment-deployment-patterns">Edge Computing Deployment Deployment Patterns</Link></li>
-<li><Link href="/blog/genai-devops-cicd-common-mistakes">Genai Devops Cicd Common Mistakes</Link></li>
+              <li><Link /blog/ai-msp-security-compliance-case-study/>Ai Msp Security Compliance Case Study</Link></li>
+<li><Link /blog/accessibility-compliance-2026-7079/>Accessibility Compliance 2026 7079</Link></li>
+<li><Link /blog/edge-computing-deployment-deployment-patterns/>Edge Computing Deployment Deployment Patterns</Link></li>
+<li><Link /blog/genai-devops-cicd-common-mistakes/>Genai Devops Cicd Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

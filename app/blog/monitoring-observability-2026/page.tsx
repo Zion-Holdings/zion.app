@@ -54,10 +54,10 @@ If this guide matches your monitoring observability initiative, the next step is
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/managed-it-services-small-business-2026-6697">Managed It Services Small Business 2026 6697</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-starter-template">Ai Performance Monitoring Starter Template</Link></li>
-<li><Link href="/blog/api-security-testing-common-mistakes">Api Security Testing Common Mistakes</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-security-and-governance">Cloud Cost Ai Optimizer Security And Governance</Link></li>
+              <li><Link /blog/managed-it-services-small-business-2026-6697/>Managed It Services Small Business 2026 6697</Link></li>
+<li><Link /blog/ai-performance-monitoring-starter-template/>Ai Performance Monitoring Starter Template</Link></li>
+<li><Link /blog/api-security-testing-common-mistakes/>Api Security Testing Common Mistakes</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-security-and-governance/>Cloud Cost Ai Optimizer Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

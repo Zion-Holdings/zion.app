@@ -57,10 +57,10 @@ For ai supply chain: checklist for it leaders: pick one workflow, assign ownersh
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-security-testing-2026-6968">Api Security Testing 2026 6968</Link></li>
-<li><Link href="/blog/api-performance-testing-roi-and-cost-model">Api Performance Testing Roi And Cost Model</Link></li>
-<li><Link href="/blog/automated-ai-reporting-roi-and-cost-model">Automated Ai Reporting Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-data-backup-implementation-playbook">Ai Data Backup Implementation Playbook</Link></li>
+              <li><Link /blog/api-security-testing-2026-6968/>Api Security Testing 2026 6968</Link></li>
+<li><Link /blog/api-performance-testing-roi-and-cost-model/>Api Performance Testing Roi And Cost Model</Link></li>
+<li><Link /blog/automated-ai-reporting-roi-and-cost-model/>Automated Ai Reporting Roi And Cost Model</Link></li>
+<li><Link /blog/ai-data-backup-implementation-playbook/>Ai Data Backup Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

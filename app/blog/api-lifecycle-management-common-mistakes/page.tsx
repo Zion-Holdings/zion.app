@@ -54,10 +54,10 @@ If this guide matches your api lifecycle management: common mistakes initiative,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/information-security-2026">Information Security 2026</Link></li>
-<li><Link href="/blog/api-gateway-management-evaluation-framework">Api Gateway Management Evaluation Framework</Link></li>
-<li><Link href="/blog/database-performance-2026">Database Performance 2026</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-6618">Graphql Federation Platform 2026 6618</Link></li>
+              <li><Link /blog/information-security-2026/>Information Security 2026</Link></li>
+<li><Link /blog/api-gateway-management-evaluation-framework/>Api Gateway Management Evaluation Framework</Link></li>
+<li><Link /blog/database-performance-2026/>Database Performance 2026</Link></li>
+<li><Link /blog/graphql-federation-platform-2026-6618/>Graphql Federation Platform 2026 6618</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

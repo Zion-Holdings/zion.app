@@ -54,10 +54,10 @@ If this guide matches your ai network optimization: architecture overview initia
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cyber-threat-intelligence-2026-6538">Cyber Threat Intelligence 2026 6538</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-implementation-playbook">Cloud Cost Ai Optimizer Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-observability-2026-6910">Ai Observability 2026 6910</Link></li>
-<li><Link href="/blog/vector-database-architecture-overview">Vector Database Architecture Overview</Link></li>
+              <li><Link /blog/cyber-threat-intelligence-2026-6538/>Cyber Threat Intelligence 2026 6538</Link></li>
+<li><Link /blog/cloud-cost-ai-optimizer-implementation-playbook/>Cloud Cost Ai Optimizer Implementation Playbook</Link></li>
+<li><Link /blog/ai-observability-2026-6910/>Ai Observability 2026 6910</Link></li>
+<li><Link /blog/vector-database-architecture-overview/>Vector Database Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

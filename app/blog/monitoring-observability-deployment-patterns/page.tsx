@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/smart-contract-audit-2026-6686">Smart Contract Audit 2026 6686</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6552">Api Gateway Management 2026 6552</Link></li>
-<li><Link href="/blog/responsible-ai-practices-for-enterprise-deployment">Responsible Ai Practices For Enterprise Deployment</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026-6996">Ai Accessibility Optimizer 2026 6996</Link></li>
+              <li><Link /blog/smart-contract-audit-2026-6686/>Smart Contract Audit 2026 6686</Link></li>
+<li><Link /blog/api-gateway-management-2026-6552/>Api Gateway Management 2026 6552</Link></li>
+<li><Link /blog/responsible-ai-practices-for-enterprise-deployment/>Responsible Ai Practices For Enterprise Deployment</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-2026-6996/>Ai Accessibility Optimizer 2026 6996</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

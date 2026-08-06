@@ -54,10 +54,10 @@ If this guide matches your itil: operations handbook initiative, the next step i
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/no-code-platform-2026">No Code Platform 2026</Link></li>
-<li><Link href="/blog/machine-learning-deployment-patterns">Machine Learning Deployment Patterns</Link></li>
-<li><Link href="/blog/network-security-2026">Network Security 2026</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026-6517">Ai Agentic Workflows 2026 6517</Link></li>
+              <li><Link /blog/no-code-platform-2026/>No Code Platform 2026</Link></li>
+<li><Link /blog/machine-learning-deployment-patterns/>Machine Learning Deployment Patterns</Link></li>
+<li><Link /blog/network-security-2026/>Network Security 2026</Link></li>
+<li><Link /blog/ai-agentic-workflows-2026-6517/>Ai Agentic Workflows 2026 6517</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

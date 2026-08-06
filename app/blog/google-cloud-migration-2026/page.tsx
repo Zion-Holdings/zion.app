@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/apm-application-performance-2026-6670">Apm Application Performance 2026 6670</Link></li>
-<li><Link href="/blog/container-security-lifecycle-roi-and-cost-model">Container Security Lifecycle Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026-6982">Ai Customer Success Churn 2026 6982</Link></li>
-<li><Link href="/blog/ai-development-acceleration-2026-6632">Ai Development Acceleration 2026 6632</Link></li>
+              <li><Link /blog/apm-application-performance-2026-6670/>Apm Application Performance 2026 6670</Link></li>
+<li><Link /blog/container-security-lifecycle-roi-and-cost-model/>Container Security Lifecycle Roi And Cost Model</Link></li>
+<li><Link /blog/ai-customer-success-churn-2026-6982/>Ai Customer Success Churn 2026 6982</Link></li>
+<li><Link /blog/ai-development-acceleration-2026-6632/>Ai Development Acceleration 2026 6632</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

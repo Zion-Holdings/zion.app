@@ -57,10 +57,10 @@ Leading indicators for continuous delivery: security and governance: workflow co
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/servicenow-automation-deployment-patterns">Servicenow Automation Deployment Patterns</Link></li>
-<li><Link href="/blog/it-consulting-executive-guide">It Consulting Executive Guide</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026-6844">Ai Customer Success Churn 2026 6844</Link></li>
-<li><Link href="/blog/it-consulting-checklist-for-it-leaders">It Consulting Checklist For It Leaders</Link></li>
+              <li><Link /blog/servicenow-automation-deployment-patterns/>Servicenow Automation Deployment Patterns</Link></li>
+<li><Link /blog/it-consulting-executive-guide/>It Consulting Executive Guide</Link></li>
+<li><Link /blog/ai-customer-success-churn-2026-6844/>Ai Customer Success Churn 2026 6844</Link></li>
+<li><Link /blog/it-consulting-checklist-for-it-leaders/>It Consulting Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

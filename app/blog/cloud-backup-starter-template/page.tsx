@@ -57,10 +57,10 @@ For cloud backup: starter template: pick one workflow, assign ownership, define 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-development-acceleration-2026-6563">Ai Development Acceleration 2026 6563</Link></li>
-<li><Link href="/blog/observability-platform-2026">Observability Platform 2026</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-2026">Cyber Threat Intelligence 2026</Link></li>
-<li><Link href="/blog/apm-application-performance-vendor-evaluation">Apm Application Performance Vendor Evaluation</Link></li>
+              <li><Link /blog/ai-development-acceleration-2026-6563/>Ai Development Acceleration 2026 6563</Link></li>
+<li><Link /blog/observability-platform-2026/>Observability Platform 2026</Link></li>
+<li><Link /blog/cyber-threat-intelligence-2026/>Cyber Threat Intelligence 2026</Link></li>
+<li><Link /blog/apm-application-performance-vendor-evaluation/>Apm Application Performance Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

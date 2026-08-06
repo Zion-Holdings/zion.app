@@ -57,10 +57,10 @@ Leading indicators for ai supply chain: common mistakes: workflow completion rat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-predictive-maintenance-implementation-playbook">Ai Predictive Maintenance Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026-7000">Ai Agentic Workflows 2026 7000</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026-6792">Ai Agent Tool Builder 2026 6792</Link></li>
-<li><Link href="/blog/micro-saas-ai-translation-engine-2026-6781">Micro Saas Ai Translation Engine 2026 6781</Link></li>
+              <li><Link /blog/ai-predictive-maintenance-implementation-playbook/>Ai Predictive Maintenance Implementation Playbook</Link></li>
+<li><Link /blog/ai-agentic-workflows-2026-7000/>Ai Agentic Workflows 2026 7000</Link></li>
+<li><Link /blog/ai-agent-tool-builder-2026-6792/>Ai Agent Tool Builder 2026 6792</Link></li>
+<li><Link /blog/micro-saas-ai-translation-engine-2026-6781/>Micro Saas Ai Translation Engine 2026 6781</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

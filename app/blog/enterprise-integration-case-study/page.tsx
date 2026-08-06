@@ -57,10 +57,10 @@ For enterprise integration: case study: pick one workflow, assign ownership, def
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-api-gateway-deployment-patterns">Ai Api Gateway Deployment Patterns</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-deployment-patterns">Data Warehouse Modernization Deployment Patterns</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026-6641">Cloud Migration Services 2026 6641</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-deployment-patterns">Ai Bdr Sdr Deployment Patterns</Link></li>
+              <li><Link /blog/ai-api-gateway-deployment-patterns/>Ai Api Gateway Deployment Patterns</Link></li>
+<li><Link /blog/data-warehouse-modernization-deployment-patterns/>Data Warehouse Modernization Deployment Patterns</Link></li>
+<li><Link /blog/cloud-migration-services-2026-6641/>Cloud Migration Services 2026 6641</Link></li>
+<li><Link /blog/ai-bdr-sdr-deployment-patterns/>Ai Bdr Sdr Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

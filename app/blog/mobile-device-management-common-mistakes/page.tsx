@@ -57,10 +57,10 @@ For mobile device management: common mistakes: pick one workflow, assign ownersh
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-security-vendor-evaluation">Database Security Vendor Evaluation</Link></li>
-<li><Link href="/blog/integration-testing-security-and-governance">Integration Testing Security And Governance</Link></li>
-<li><Link href="/blog/ai-data-backup-deployment-patterns">Ai Data Backup Deployment Patterns</Link></li>
-<li><Link href="/blog/penetration-testing-common-mistakes">Penetration Testing Common Mistakes</Link></li>
+              <li><Link /blog/database-security-vendor-evaluation/>Database Security Vendor Evaluation</Link></li>
+<li><Link /blog/integration-testing-security-and-governance/>Integration Testing Security And Governance</Link></li>
+<li><Link /blog/ai-data-backup-deployment-patterns/>Ai Data Backup Deployment Patterns</Link></li>
+<li><Link /blog/penetration-testing-common-mistakes/>Penetration Testing Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

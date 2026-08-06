@@ -54,10 +54,10 @@ If this guide matches your artificial intelligence ethics initiative, the next s
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-implementation-playbook">Cloud Cost Ai Optimizer Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-meeting-assistant-architecture-overview">Ai Meeting Assistant Architecture Overview</Link></li>
-<li><Link href="/blog/incident-response-retainer-architecture-overview">Incident Response Retainer Architecture Overview</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-architecture-overview">Etl Pipeline Optimization Architecture Overview</Link></li>
+              <li><Link /blog/cloud-cost-ai-optimizer-implementation-playbook/>Cloud Cost Ai Optimizer Implementation Playbook</Link></li>
+<li><Link /blog/ai-meeting-assistant-architecture-overview/>Ai Meeting Assistant Architecture Overview</Link></li>
+<li><Link /blog/incident-response-retainer-architecture-overview/>Incident Response Retainer Architecture Overview</Link></li>
+<li><Link /blog/etl-pipeline-optimization-architecture-overview/>Etl Pipeline Optimization Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

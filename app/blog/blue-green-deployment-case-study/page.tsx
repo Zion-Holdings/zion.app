@@ -57,10 +57,10 @@ For blue green deployment: case study: pick one workflow, assign ownership, defi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/incident-response-retainer-2026-6964">Incident Response Retainer 2026 6964</Link></li>
-<li><Link href="/blog/genai-devops-cicd-deployment-patterns">Genai Devops Cicd Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-case-study">Ai Ad Copy Generator Case Study</Link></li>
-<li><Link href="/blog/policy-as-code-architecture-overview">Policy As Code Architecture Overview</Link></li>
+              <li><Link /blog/incident-response-retainer-2026-6964/>Incident Response Retainer 2026 6964</Link></li>
+<li><Link /blog/genai-devops-cicd-deployment-patterns/>Genai Devops Cicd Deployment Patterns</Link></li>
+<li><Link /blog/ai-ad-copy-generator-case-study/>Ai Ad Copy Generator Case Study</Link></li>
+<li><Link /blog/policy-as-code-architecture-overview/>Policy As Code Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

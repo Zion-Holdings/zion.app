@@ -54,10 +54,10 @@ If this guide matches your token optimization: architecture overview initiative,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-2026-7099">Event Driven Architecture 2026 7099</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-architecture-overview">Microsaas Hr Recruitment Architecture Overview</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-6962">Smart Contract Audit 2026 6962</Link></li>
-<li><Link href="/blog/virtual-cto-vendor-evaluation">Virtual Cto Vendor Evaluation</Link></li>
+              <li><Link /blog/event-driven-architecture-2026-7099/>Event Driven Architecture 2026 7099</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-architecture-overview/>Microsaas Hr Recruitment Architecture Overview</Link></li>
+<li><Link /blog/smart-contract-audit-2026-6962/>Smart Contract Audit 2026 6962</Link></li>
+<li><Link /blog/virtual-cto-vendor-evaluation/>Virtual Cto Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

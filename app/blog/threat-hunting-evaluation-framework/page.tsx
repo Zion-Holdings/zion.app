@@ -57,10 +57,10 @@ Leading indicators for threat hunting: evaluation framework: workflow completion
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/disaster-recovery-starter-template">Disaster Recovery Starter Template</Link></li>
-<li><Link href="/blog/automated-ai-reporting-2026-6590">Automated Ai Reporting 2026 6590</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-6934">Api Orchestration Layer 2026 6934</Link></li>
-<li><Link href="/blog/business-intelligence-executive-guide">Business Intelligence Executive Guide</Link></li>
+              <li><Link /blog/disaster-recovery-starter-template/>Disaster Recovery Starter Template</Link></li>
+<li><Link /blog/automated-ai-reporting-2026-6590/>Automated Ai Reporting 2026 6590</Link></li>
+<li><Link /blog/api-orchestration-layer-2026-6934/>Api Orchestration Layer 2026 6934</Link></li>
+<li><Link /blog/business-intelligence-executive-guide/>Business Intelligence Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

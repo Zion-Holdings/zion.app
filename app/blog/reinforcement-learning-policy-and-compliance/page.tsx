@@ -57,10 +57,10 @@ For reinforcement learning: policy and compliance: pick one workflow, assign own
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-design-2026">Api Design 2026</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6529">Api Gateway Management 2026 6529</Link></li>
-<li><Link href="/blog/ai-development-acceleration-vendor-evaluation">Ai Development Acceleration Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026-6858">Ai Accessibility Optimizer 2026 6858</Link></li>
+              <li><Link /blog/api-design-2026/>Api Design 2026</Link></li>
+<li><Link /blog/api-gateway-management-2026-6529/>Api Gateway Management 2026 6529</Link></li>
+<li><Link /blog/ai-development-acceleration-vendor-evaluation/>Ai Development Acceleration Vendor Evaluation</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-2026-6858/>Ai Accessibility Optimizer 2026 6858</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

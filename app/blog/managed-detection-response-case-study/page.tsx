@@ -57,10 +57,10 @@ For managed detection response: case study: pick one workflow, assign ownership,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/identity-access-management-2026">Identity Access Management 2026</Link></li>
-<li><Link href="/blog/api-management-gateway-deployment-patterns">Api Management Gateway Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-observability-2026-6772">Ai Observability 2026 6772</Link></li>
-<li><Link href="/blog/data-virtualization-starter-template">Data Virtualization Starter Template</Link></li>
+              <li><Link /blog/identity-access-management-2026/>Identity Access Management 2026</Link></li>
+<li><Link /blog/api-management-gateway-deployment-patterns/>Api Management Gateway Deployment Patterns</Link></li>
+<li><Link /blog/ai-observability-2026-6772/>Ai Observability 2026 6772</Link></li>
+<li><Link /blog/data-virtualization-starter-template/>Data Virtualization Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

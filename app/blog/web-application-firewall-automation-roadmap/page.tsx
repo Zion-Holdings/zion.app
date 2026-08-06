@@ -57,10 +57,10 @@ For web application firewall: automation roadmap: pick one workflow, assign owne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/static-application-security-testing-checklist-for-it-leaders">Static Application Security Testing Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-automation-roadmap">Ai Agentic Workflows Automation Roadmap</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-policy-and-compliance">Cybersecurity For Msps Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-2026-6719">Ai Accessibility Auditor 2026 6719</Link></li>
+              <li><Link /blog/static-application-security-testing-checklist-for-it-leaders/>Static Application Security Testing Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-agentic-workflows-automation-roadmap/>Ai Agentic Workflows Automation Roadmap</Link></li>
+<li><Link /blog/cybersecurity-for-msps-policy-and-compliance/>Cybersecurity For Msps Policy And Compliance</Link></li>
+<li><Link /blog/ai-accessibility-auditor-2026-6719/>Ai Accessibility Auditor 2026 6719</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

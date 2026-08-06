@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/hybrid-cloud-evaluation-framework">Hybrid Cloud Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026-6793">Ai Agentic Workflows 2026 6793</Link></li>
-<li><Link href="/blog/data-security-policy-and-compliance">Data Security Policy And Compliance</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-6648">Enterprise Ai Intelligence Hub 2026 6648</Link></li>
+              <li><Link /blog/hybrid-cloud-evaluation-framework/>Hybrid Cloud Evaluation Framework</Link></li>
+<li><Link /blog/ai-agentic-workflows-2026-6793/>Ai Agentic Workflows 2026 6793</Link></li>
+<li><Link /blog/data-security-policy-and-compliance/>Data Security Policy And Compliance</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-2026-6648/>Enterprise Ai Intelligence Hub 2026 6648</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

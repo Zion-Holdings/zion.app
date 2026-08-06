@@ -54,10 +54,10 @@ If this guide matches your prompt engineering: deployment patterns initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-code-deployment-2026-6591">Autonomous Code Deployment 2026 6591</Link></li>
-<li><Link href="/blog/ai-for-climate-tech-and-sustainability-operations">Ai For Climate Tech And Sustainability Operations</Link></li>
-<li><Link href="/blog/cloud-workload-protection-evaluation-framework">Cloud Workload Protection Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026-6999">Ai Agent Tool Builder 2026 6999</Link></li>
+              <li><Link /blog/autonomous-code-deployment-2026-6591/>Autonomous Code Deployment 2026 6591</Link></li>
+<li><Link /blog/ai-for-climate-tech-and-sustainability-operations/>Ai For Climate Tech And Sustainability Operations</Link></li>
+<li><Link /blog/cloud-workload-protection-evaluation-framework/>Cloud Workload Protection Evaluation Framework</Link></li>
+<li><Link /blog/ai-agent-tool-builder-2026-6999/>Ai Agent Tool Builder 2026 6999</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

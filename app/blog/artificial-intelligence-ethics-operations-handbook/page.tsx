@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-process-mining-case-study">Ai Process Mining Case Study</Link></li>
-<li><Link href="/blog/servicenow-automation-2026">Servicenow Automation 2026</Link></li>
-<li><Link href="/blog/it-consulting-policy-and-compliance">It Consulting Policy And Compliance</Link></li>
-<li><Link href="/blog/low-code-platform-checklist-for-it-leaders">Low Code Platform Checklist For It Leaders</Link></li>
+              <li><Link /blog/ai-process-mining-case-study/>Ai Process Mining Case Study</Link></li>
+<li><Link /blog/servicenow-automation-2026/>Servicenow Automation 2026</Link></li>
+<li><Link /blog/it-consulting-policy-and-compliance/>It Consulting Policy And Compliance</Link></li>
+<li><Link /blog/low-code-platform-checklist-for-it-leaders/>Low Code Platform Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

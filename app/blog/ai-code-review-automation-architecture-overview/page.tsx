@@ -57,10 +57,10 @@ For ai code review automation: architecture overview: pick one workflow, assign 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-onboarding-roi-and-cost-model">Ai Customer Onboarding Roi And Cost Model</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-6799">Autonomous Qa Engineering 2026 6799</Link></li>
-<li><Link href="/blog/technology-roadmap-policy-and-compliance">Technology Roadmap Policy And Compliance</Link></li>
-<li><Link href="/blog/cloud-workload-protection-evaluation-framework">Cloud Workload Protection Evaluation Framework</Link></li>
+              <li><Link /blog/ai-customer-onboarding-roi-and-cost-model/>Ai Customer Onboarding Roi And Cost Model</Link></li>
+<li><Link /blog/autonomous-qa-engineering-2026-6799/>Autonomous Qa Engineering 2026 6799</Link></li>
+<li><Link /blog/technology-roadmap-policy-and-compliance/>Technology Roadmap Policy And Compliance</Link></li>
+<li><Link /blog/cloud-workload-protection-evaluation-framework/>Cloud Workload Protection Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For configuration management: roi and cost model: pick one workflow, assign owne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-workload-protection-automation-roadmap">Cloud Workload Protection Automation Roadmap</Link></li>
-<li><Link href="/blog/api-performance-testing-2026-6622">Api Performance Testing 2026 6622</Link></li>
-<li><Link href="/blog/ai-observability-deployment-patterns">Ai Observability Deployment Patterns</Link></li>
-<li><Link href="/blog/edge-computing-deployment-operations-handbook">Edge Computing Deployment Operations Handbook</Link></li>
+              <li><Link /blog/cloud-workload-protection-automation-roadmap/>Cloud Workload Protection Automation Roadmap</Link></li>
+<li><Link /blog/api-performance-testing-2026-6622/>Api Performance Testing 2026 6622</Link></li>
+<li><Link /blog/ai-observability-deployment-patterns/>Ai Observability Deployment Patterns</Link></li>
+<li><Link /blog/edge-computing-deployment-operations-handbook/>Edge Computing Deployment Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

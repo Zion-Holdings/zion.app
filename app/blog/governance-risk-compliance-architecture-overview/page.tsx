@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/container-security-lifecycle-2026">Container Security Lifecycle 2026</Link></li>
-<li><Link href="/blog/ubiquitous-connectivity-roi-and-cost-model">Ubiquitous Connectivity Roi And Cost Model</Link></li>
-<li><Link href="/blog/data-analytics-platform-case-study">Data Analytics Platform Case Study</Link></li>
-<li><Link href="/blog/network-automation-case-study">Network Automation Case Study</Link></li>
+              <li><Link /blog/container-security-lifecycle-2026/>Container Security Lifecycle 2026</Link></li>
+<li><Link /blog/ubiquitous-connectivity-roi-and-cost-model/>Ubiquitous Connectivity Roi And Cost Model</Link></li>
+<li><Link /blog/data-analytics-platform-case-study/>Data Analytics Platform Case Study</Link></li>
+<li><Link /blog/network-automation-case-study/>Network Automation Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

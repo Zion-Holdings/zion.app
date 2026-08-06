@@ -57,10 +57,10 @@ For cloud security posture: pick one workflow, assign ownership, define success 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agentic-workflows-deployment-patterns">Ai Agentic Workflows Deployment Patterns</Link></li>
-<li><Link href="/blog/cloud-finops-2026-6811">Cloud Finops 2026 6811</Link></li>
-<li><Link href="/blog/accessibility-compliance-common-mistakes">Accessibility Compliance Common Mistakes</Link></li>
-<li><Link href="/blog/container-security-lifecycle-2026-6744">Container Security Lifecycle 2026 6744</Link></li>
+              <li><Link /blog/ai-agentic-workflows-deployment-patterns/>Ai Agentic Workflows Deployment Patterns</Link></li>
+<li><Link /blog/cloud-finops-2026-6811/>Cloud Finops 2026 6811</Link></li>
+<li><Link /blog/accessibility-compliance-common-mistakes/>Accessibility Compliance Common Mistakes</Link></li>
+<li><Link /blog/container-security-lifecycle-2026-6744/>Container Security Lifecycle 2026 6744</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

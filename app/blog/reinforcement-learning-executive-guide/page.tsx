@@ -57,10 +57,10 @@ For reinforcement learning: executive guide: pick one workflow, assign ownership
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-migration-service-evaluation-framework">Database Migration Service Evaluation Framework</Link></li>
-<li><Link href="/blog/apm-application-performance-2026-6946">Apm Application Performance 2026 6946</Link></li>
-<li><Link href="/blog/content-delivery-network-automation-roadmap">Content Delivery Network Automation Roadmap</Link></li>
-<li><Link href="/blog/genai-devops-cicd-vendor-evaluation">Genai Devops Cicd Vendor Evaluation</Link></li>
+              <li><Link /blog/database-migration-service-evaluation-framework/>Database Migration Service Evaluation Framework</Link></li>
+<li><Link /blog/apm-application-performance-2026-6946/>Apm Application Performance 2026 6946</Link></li>
+<li><Link /blog/content-delivery-network-automation-roadmap/>Content Delivery Network Automation Roadmap</Link></li>
+<li><Link /blog/genai-devops-cicd-vendor-evaluation/>Genai Devops Cicd Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ For customer data platform: pick one workflow, assign ownership, define success 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-performance-testing-2026-6760">Api Performance Testing 2026 6760</Link></li>
-<li><Link href="/blog/automation-orchestration-evaluation-framework">Automation Orchestration Evaluation Framework</Link></li>
-<li><Link href="/blog/devsecops-pipeline-policy-and-compliance">Devsecops Pipeline Policy And Compliance</Link></li>
-<li><Link href="/blog/brand-voice-guardian-executive-guide">Brand Voice Guardian Executive Guide</Link></li>
+              <li><Link /blog/api-performance-testing-2026-6760/>Api Performance Testing 2026 6760</Link></li>
+<li><Link /blog/automation-orchestration-evaluation-framework/>Automation Orchestration Evaluation Framework</Link></li>
+<li><Link /blog/devsecops-pipeline-policy-and-compliance/>Devsecops Pipeline Policy And Compliance</Link></li>
+<li><Link /blog/brand-voice-guardian-executive-guide/>Brand Voice Guardian Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

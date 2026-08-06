@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/edge-computing-deployment-security-and-governance">Edge Computing Deployment Security And Governance</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-evaluation-framework">Ai Agent Safety Evaluation Evaluation Framework</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-common-mistakes">Microsaas Hr Recruitment Common Mistakes</Link></li>
-<li><Link href="/blog/ai-bom-procurement-2026-6801">Ai Bom Procurement 2026 6801</Link></li>
+              <li><Link /blog/edge-computing-deployment-security-and-governance/>Edge Computing Deployment Security And Governance</Link></li>
+<li><Link /blog/ai-agent-safety-evaluation-evaluation-framework/>Ai Agent Safety Evaluation Evaluation Framework</Link></li>
+<li><Link /blog/microsaas-hr-recruitment-common-mistakes/>Microsaas Hr Recruitment Common Mistakes</Link></li>
+<li><Link /blog/ai-bom-procurement-2026-6801/>Ai Bom Procurement 2026 6801</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your product analytics initiative, the next step is a scop
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/container-security-lifecycle-deployment-patterns">Container Security Lifecycle Deployment Patterns</Link></li>
-<li><Link href="/blog/container-security-lifecycle-architecture-overview">Container Security Lifecycle Architecture Overview</Link></li>
-<li><Link href="/blog/ai-recruitment-chatbot-deployment-patterns">Ai Recruitment Chatbot Deployment Patterns</Link></li>
-<li><Link href="/blog/api-integration-implementation-playbook">Api Integration Implementation Playbook</Link></li>
+              <li><Link /blog/container-security-lifecycle-deployment-patterns/>Container Security Lifecycle Deployment Patterns</Link></li>
+<li><Link /blog/container-security-lifecycle-architecture-overview/>Container Security Lifecycle Architecture Overview</Link></li>
+<li><Link /blog/ai-recruitment-chatbot-deployment-patterns/>Ai Recruitment Chatbot Deployment Patterns</Link></li>
+<li><Link /blog/api-integration-implementation-playbook/>Api Integration Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

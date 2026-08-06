@@ -57,10 +57,10 @@ For data quality: architecture overview: pick one workflow, assign ownership, de
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-common-mistakes">Cloud Cost Ai Optimizer Common Mistakes</Link></li>
-<li><Link href="/blog/smart-contract-audit-vendor-evaluation">Smart Contract Audit Vendor Evaluation</Link></li>
-<li><Link href="/blog/technology-roadmap-checklist-for-it-leaders">Technology Roadmap Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cloud-native-app-development-common-mistakes">Cloud Native App Development Common Mistakes</Link></li>
+              <li><Link /blog/cloud-cost-ai-optimizer-common-mistakes/>Cloud Cost Ai Optimizer Common Mistakes</Link></li>
+<li><Link /blog/smart-contract-audit-vendor-evaluation/>Smart Contract Audit Vendor Evaluation</Link></li>
+<li><Link /blog/technology-roadmap-checklist-for-it-leaders/>Technology Roadmap Checklist For It Leaders</Link></li>
+<li><Link /blog/cloud-native-app-development-common-mistakes/>Cloud Native App Development Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for infrastructure as code: operations handbook: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-code-deployment-architecture-overview">Autonomous Code Deployment Architecture Overview</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026-6637">Ai Customer Success Churn 2026 6637</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-2026-6873">Ai Performance Monitoring 2026 6873</Link></li>
-<li><Link href="/blog/api-security-testing-policy-and-compliance">Api Security Testing Policy And Compliance</Link></li>
+              <li><Link /blog/autonomous-code-deployment-architecture-overview/>Autonomous Code Deployment Architecture Overview</Link></li>
+<li><Link /blog/ai-customer-success-churn-2026-6637/>Ai Customer Success Churn 2026 6637</Link></li>
+<li><Link /blog/ai-performance-monitoring-2026-6873/>Ai Performance Monitoring 2026 6873</Link></li>
+<li><Link /blog/api-security-testing-policy-and-compliance/>Api Security Testing Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your data integration: common mistakes initiative, the nex
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-rate-limiting-checklist-for-it-leaders">Api Rate Limiting Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-security-and-governance">Cyber Threat Intelligence Security And Governance</Link></li>
-<li><Link href="/blog/multimodal-ai-vision-and-language-models-in-enterprise">Multimodal Ai Vision And Language Models In Enterprise</Link></li>
-<li><Link href="/blog/product-led-growth-automation-roadmap">Product Led Growth Automation Roadmap</Link></li>
+              <li><Link /blog/api-rate-limiting-checklist-for-it-leaders/>Api Rate Limiting Checklist For It Leaders</Link></li>
+<li><Link /blog/cyber-threat-intelligence-security-and-governance/>Cyber Threat Intelligence Security And Governance</Link></li>
+<li><Link /blog/multimodal-ai-vision-and-language-models-in-enterprise/>Multimodal Ai Vision And Language Models In Enterprise</Link></li>
+<li><Link /blog/product-led-growth-automation-roadmap/>Product Led Growth Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

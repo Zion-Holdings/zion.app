@@ -57,10 +57,10 @@ For database security: checklist for it leaders: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-rate-limiting-architecture-overview">Api Rate Limiting Architecture Overview</Link></li>
-<li><Link href="/blog/database-security-2026">Database Security 2026</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026-6651">Ai Accessibility Optimizer 2026 6651</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026-6641">Cloud Migration Services 2026 6641</Link></li>
+              <li><Link /blog/api-rate-limiting-architecture-overview/>Api Rate Limiting Architecture Overview</Link></li>
+<li><Link /blog/database-security-2026/>Database Security 2026</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-2026-6651/>Ai Accessibility Optimizer 2026 6651</Link></li>
+<li><Link /blog/cloud-migration-services-2026-6641/>Cloud Migration Services 2026 6641</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for data governance: policy and compliance: workflow completi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/aiops-anomaly-detection-vendor-evaluation">Aiops Anomaly Detection Vendor Evaluation</Link></li>
-<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026">Micro Saas Ai Hr Recruitment 2026</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-policy-and-compliance">Ai Bdr Sdr Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-development-acceleration-vendor-evaluation">Ai Development Acceleration Vendor Evaluation</Link></li>
+              <li><Link /blog/aiops-anomaly-detection-vendor-evaluation/>Aiops Anomaly Detection Vendor Evaluation</Link></li>
+<li><Link /blog/micro-saas-ai-hr-recruitment-2026/>Micro Saas Ai Hr Recruitment 2026</Link></li>
+<li><Link /blog/ai-bdr-sdr-policy-and-compliance/>Ai Bdr Sdr Policy And Compliance</Link></li>
+<li><Link /blog/ai-development-acceleration-vendor-evaluation/>Ai Development Acceleration Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

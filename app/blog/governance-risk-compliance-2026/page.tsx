@@ -57,10 +57,10 @@ Leading indicators for governance risk compliance: workflow completion rate, esc
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/5g-solutions-starter-template">5G Solutions Starter Template</Link></li>
-<li><Link href="/blog/enterprise-integration-deployment-patterns">Enterprise Integration Deployment Patterns</Link></li>
-<li><Link href="/blog/network-infrastructure-2026-6847">Network Infrastructure 2026 6847</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-2026-6822">Etl Pipeline Optimization 2026 6822</Link></li>
+              <li><Link /blog/5g-solutions-starter-template/>5G Solutions Starter Template</Link></li>
+<li><Link /blog/enterprise-integration-deployment-patterns/>Enterprise Integration Deployment Patterns</Link></li>
+<li><Link /blog/network-infrastructure-2026-6847/>Network Infrastructure 2026 6847</Link></li>
+<li><Link /blog/etl-pipeline-optimization-2026-6822/>Etl Pipeline Optimization 2026 6822</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

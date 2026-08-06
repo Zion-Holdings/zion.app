@@ -54,10 +54,10 @@ If this guide matches your sase: roi and cost model initiative, the next step is
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-email-intelligence-policy-and-compliance">Ai Email Intelligence Policy And Compliance</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-6888">Edge Computing Deployment 2026 6888</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-automation-roadmap">Ai Msp Security Compliance Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-2026-6662">Ai Bdr Sdr 2026 6662</Link></li>
+              <li><Link /blog/ai-email-intelligence-policy-and-compliance/>Ai Email Intelligence Policy And Compliance</Link></li>
+<li><Link /blog/edge-computing-deployment-2026-6888/>Edge Computing Deployment 2026 6888</Link></li>
+<li><Link /blog/ai-msp-security-compliance-automation-roadmap/>Ai Msp Security Compliance Automation Roadmap</Link></li>
+<li><Link /blog/ai-bdr-sdr-2026-6662/>Ai Bdr Sdr 2026 6662</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

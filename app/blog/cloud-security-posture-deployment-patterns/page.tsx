@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-integration-implementation-playbook">Data Integration Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-predictive-maintenance-evaluation-framework">Ai Predictive Maintenance Evaluation Framework</Link></li>
-<li><Link href="/blog/cloud-cost-management-deployment-patterns">Cloud Cost Management Deployment Patterns</Link></li>
-<li><Link href="/blog/graphql-federation-platform-roi-and-cost-model">Graphql Federation Platform Roi And Cost Model</Link></li>
+              <li><Link /blog/data-integration-implementation-playbook/>Data Integration Implementation Playbook</Link></li>
+<li><Link /blog/ai-predictive-maintenance-evaluation-framework/>Ai Predictive Maintenance Evaluation Framework</Link></li>
+<li><Link /blog/cloud-cost-management-deployment-patterns/>Cloud Cost Management Deployment Patterns</Link></li>
+<li><Link /blog/graphql-federation-platform-roi-and-cost-model/>Graphql Federation Platform Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

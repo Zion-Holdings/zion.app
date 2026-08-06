@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-networking-security-and-governance">Cloud Networking Security And Governance</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-policy-and-compliance">Microsaas Customer Onboarding Policy And Compliance</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-deployment-patterns">Data Warehouse Modernization Deployment Patterns</Link></li>
-<li><Link href="/blog/splunk-migration-deployment-patterns">Splunk Migration Deployment Patterns</Link></li>
+              <li><Link /blog/cloud-networking-security-and-governance/>Cloud Networking Security And Governance</Link></li>
+<li><Link /blog/microsaas-customer-onboarding-policy-and-compliance/>Microsaas Customer Onboarding Policy And Compliance</Link></li>
+<li><Link /blog/data-warehouse-modernization-deployment-patterns/>Data Warehouse Modernization Deployment Patterns</Link></li>
+<li><Link /blog/splunk-migration-deployment-patterns/>Splunk Migration Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

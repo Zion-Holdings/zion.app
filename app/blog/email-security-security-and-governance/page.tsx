@@ -54,10 +54,10 @@ If this guide matches your email security: security and governance initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-social-media-manager-security-and-governance">Microsaas Social Media Manager Security And Governance</Link></li>
-<li><Link href="/blog/configuration-management-2026">Configuration Management 2026</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-2026-6666">Ai Performance Monitoring 2026 6666</Link></li>
-<li><Link href="/blog/low-code-platform-case-study">Low Code Platform Case Study</Link></li>
+              <li><Link /blog/microsaas-social-media-manager-security-and-governance/>Microsaas Social Media Manager Security And Governance</Link></li>
+<li><Link /blog/configuration-management-2026/>Configuration Management 2026</Link></li>
+<li><Link /blog/ai-performance-monitoring-2026-6666/>Ai Performance Monitoring 2026 6666</Link></li>
+<li><Link /blog/low-code-platform-case-study/>Low Code Platform Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -54,10 +54,10 @@ If this guide matches your disaster recovery: security and governance initiative
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-voice-assistant-vendor-evaluation">Ai Voice Assistant Vendor Evaluation</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026-6766">Managed It Services Small Business 2026 6766</Link></li>
-<li><Link href="/blog/ai-for-media-and-content-production">Ai For Media And Content Production</Link></li>
-<li><Link href="/blog/customer-data-platform-common-mistakes">Customer Data Platform Common Mistakes</Link></li>
+              <li><Link /blog/ai-voice-assistant-vendor-evaluation/>Ai Voice Assistant Vendor Evaluation</Link></li>
+<li><Link /blog/managed-it-services-small-business-2026-6766/>Managed It Services Small Business 2026 6766</Link></li>
+<li><Link /blog/ai-for-media-and-content-production/>Ai For Media And Content Production</Link></li>
+<li><Link /blog/customer-data-platform-common-mistakes/>Customer Data Platform Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

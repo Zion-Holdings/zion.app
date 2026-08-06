@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-customer-service-and-support-automation">Ai For Customer Service And Support Automation</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-deployment-patterns">Ai Customer Success Churn Prevention Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-api-gateway-vendor-evaluation">Ai Api Gateway Vendor Evaluation</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-common-mistakes">Aiops Anomaly Detection Common Mistakes</Link></li>
+              <li><Link /blog/ai-for-customer-service-and-support-automation/>Ai For Customer Service And Support Automation</Link></li>
+<li><Link /blog/ai-customer-success-churn-prevention-deployment-patterns/>Ai Customer Success Churn Prevention Deployment Patterns</Link></li>
+<li><Link /blog/ai-api-gateway-vendor-evaluation/>Ai Api Gateway Vendor Evaluation</Link></li>
+<li><Link /blog/aiops-anomaly-detection-common-mistakes/>Aiops Anomaly Detection Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

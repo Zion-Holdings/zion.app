@@ -57,10 +57,10 @@ For ai meeting assistant: case study: pick one workflow, assign ownership, defin
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/vendor-management-case-study">Vendor Management Case Study</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-2026-6863">Ai Autonomous Agents 2026 6863</Link></li>
-<li><Link href="/blog/incident-management-architecture-overview">Incident Management Architecture Overview</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-vendor-evaluation">Enterprise Ai Intelligence Hub Vendor Evaluation</Link></li>
+              <li><Link /blog/vendor-management-case-study/>Vendor Management Case Study</Link></li>
+<li><Link /blog/ai-autonomous-agents-2026-6863/>Ai Autonomous Agents 2026 6863</Link></li>
+<li><Link /blog/incident-management-architecture-overview/>Incident Management Architecture Overview</Link></li>
+<li><Link /blog/enterprise-ai-intelligence-hub-vendor-evaluation/>Enterprise Ai Intelligence Hub Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

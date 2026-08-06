@@ -57,10 +57,10 @@ Leading indicators for product led growth: evaluation framework: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-implementation-playbook">Data Analytics Platform Implementation Playbook</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-7081">Api Gateway Management 2026 7081</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-executive-guide">Ai Customer Success Churn Prevention Executive Guide</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026-6999">Ai Agent Tool Builder 2026 6999</Link></li>
+              <li><Link /blog/data-analytics-platform-implementation-playbook/>Data Analytics Platform Implementation Playbook</Link></li>
+<li><Link /blog/api-gateway-management-2026-7081/>Api Gateway Management 2026 7081</Link></li>
+<li><Link /blog/ai-customer-success-churn-prevention-executive-guide/>Ai Customer Success Churn Prevention Executive Guide</Link></li>
+<li><Link /blog/ai-agent-tool-builder-2026-6999/>Ai Agent Tool Builder 2026 6999</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

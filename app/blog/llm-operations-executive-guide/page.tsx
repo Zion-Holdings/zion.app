@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-ai-intelligence-hub-2026-6855">Enterprise Ai Intelligence Hub 2026 6855</Link></li>
-<li><Link href="/blog/cloud-native-app-development-security-and-governance">Cloud Native App Development Security And Governance</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-2026-7080">Ai Performance Monitoring 2026 7080</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026-6559">Managed It Services Small Business 2026 6559</Link></li>
+              <li><Link /blog/enterprise-ai-intelligence-hub-2026-6855/>Enterprise Ai Intelligence Hub 2026 6855</Link></li>
+<li><Link /blog/cloud-native-app-development-security-and-governance/>Cloud Native App Development Security And Governance</Link></li>
+<li><Link /blog/ai-performance-monitoring-2026-7080/>Ai Performance Monitoring 2026 7080</Link></li>
+<li><Link /blog/managed-it-services-small-business-2026-6559/>Managed It Services Small Business 2026 6559</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

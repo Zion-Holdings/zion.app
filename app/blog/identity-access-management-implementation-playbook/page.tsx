@@ -57,10 +57,10 @@ Leading indicators for identity access management: implementation playbook: work
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devops-cicd-2026-6780">Devops Cicd 2026 6780</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6805">Api Gateway Management 2026 6805</Link></li>
-<li><Link href="/blog/chaos-engineering-2026-6533">Chaos Engineering 2026 6533</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-6833">Cloud Cost Optimization Checklist 2026 6833</Link></li>
+              <li><Link /blog/devops-cicd-2026-6780/>Devops Cicd 2026 6780</Link></li>
+<li><Link /blog/api-gateway-management-2026-6805/>Api Gateway Management 2026 6805</Link></li>
+<li><Link /blog/chaos-engineering-2026-6533/>Chaos Engineering 2026 6533</Link></li>
+<li><Link /blog/cloud-cost-optimization-checklist-2026-6833/>Cloud Cost Optimization Checklist 2026 6833</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

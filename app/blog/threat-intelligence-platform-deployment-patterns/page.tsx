@@ -57,10 +57,10 @@ For threat intelligence platform: deployment patterns: pick one workflow, assign
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-backup-dr-2026-6752">Enterprise Backup Dr 2026 6752</Link></li>
-<li><Link href="/blog/network-infrastructure-2026-6640">Network Infrastructure 2026 6640</Link></li>
-<li><Link href="/blog/ai-it-operations-automation-2026-7">Ai It Operations Automation 2026 7</Link></li>
-<li><Link href="/blog/ai-for-fleet-management-and-logistics-optimization">Ai For Fleet Management And Logistics Optimization</Link></li>
+              <li><Link /blog/enterprise-backup-dr-2026-6752/>Enterprise Backup Dr 2026 6752</Link></li>
+<li><Link /blog/network-infrastructure-2026-6640/>Network Infrastructure 2026 6640</Link></li>
+<li><Link /blog/ai-it-operations-automation-2026-7/>Ai It Operations Automation 2026 7</Link></li>
+<li><Link /blog/ai-for-fleet-management-and-logistics-optimization/>Ai For Fleet Management And Logistics Optimization</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

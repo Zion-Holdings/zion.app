@@ -57,10 +57,10 @@ Leading indicators for cloud native security: case study: workflow completion ra
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/product-analytics-roi-and-cost-model">Product Analytics Roi And Cost Model</Link></li>
-<li><Link href="/blog/it-consulting-common-mistakes">It Consulting Common Mistakes</Link></li>
-<li><Link href="/blog/database-migration-service-automation-roadmap">Database Migration Service Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-vendor-evaluation">Ai Accessibility Auditor Vendor Evaluation</Link></li>
+              <li><Link /blog/product-analytics-roi-and-cost-model/>Product Analytics Roi And Cost Model</Link></li>
+<li><Link /blog/it-consulting-common-mistakes/>It Consulting Common Mistakes</Link></li>
+<li><Link /blog/database-migration-service-automation-roadmap/>Database Migration Service Automation Roadmap</Link></li>
+<li><Link /blog/ai-accessibility-auditor-vendor-evaluation/>Ai Accessibility Auditor Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

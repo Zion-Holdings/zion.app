@@ -57,10 +57,10 @@ Leading indicators for integration testing: workflow completion rate, escalation
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/smart-contract-audit-common-mistakes">Smart Contract Audit Common Mistakes</Link></li>
-<li><Link href="/blog/ai-data-backup-2026-7038">Ai Data Backup 2026 7038</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-6963">Graphql Federation Platform 2026 6963</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-2026-6524">Ai Bdr Sdr 2026 6524</Link></li>
+              <li><Link /blog/smart-contract-audit-common-mistakes/>Smart Contract Audit Common Mistakes</Link></li>
+<li><Link /blog/ai-data-backup-2026-7038/>Ai Data Backup 2026 7038</Link></li>
+<li><Link /blog/graphql-federation-platform-2026-6963/>Graphql Federation Platform 2026 6963</Link></li>
+<li><Link /blog/ai-bdr-sdr-2026-6524/>Ai Bdr Sdr 2026 6524</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

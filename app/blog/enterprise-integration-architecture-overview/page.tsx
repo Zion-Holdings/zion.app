@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-it-operations-automation-2026-7">Ai It Operations Automation 2026 7</Link></li>
-<li><Link href="/blog/no-code-platform-evaluation-framework">No Code Platform Evaluation Framework</Link></li>
-<li><Link href="/blog/aws-cost-optimization-evaluation-framework">Aws Cost Optimization Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-implementation-playbook">Ai Customer Success Churn Prevention Implementation Playbook</Link></li>
+              <li><Link /blog/ai-it-operations-automation-2026-7/>Ai It Operations Automation 2026 7</Link></li>
+<li><Link /blog/no-code-platform-evaluation-framework/>No Code Platform Evaluation Framework</Link></li>
+<li><Link /blog/aws-cost-optimization-evaluation-framework/>Aws Cost Optimization Evaluation Framework</Link></li>
+<li><Link /blog/ai-customer-success-churn-prevention-implementation-playbook/>Ai Customer Success Churn Prevention Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

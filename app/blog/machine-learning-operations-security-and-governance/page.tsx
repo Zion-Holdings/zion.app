@@ -54,10 +54,10 @@ If this guide matches your machine learning operations: security and governance 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-climate-tech-and-sustainability-operations">Ai For Climate Tech And Sustainability Operations</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-evaluation-framework">Ai Accessibility Optimizer Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-for-food-and-beverage-operations">Ai For Food And Beverage Operations</Link></li>
-<li><Link href="/blog/smart-contract-audit-vendor-evaluation">Smart Contract Audit Vendor Evaluation</Link></li>
+              <li><Link /blog/ai-for-climate-tech-and-sustainability-operations/>Ai For Climate Tech And Sustainability Operations</Link></li>
+<li><Link /blog/ai-accessibility-optimizer-evaluation-framework/>Ai Accessibility Optimizer Evaluation Framework</Link></li>
+<li><Link /blog/ai-for-food-and-beverage-operations/>Ai For Food And Beverage Operations</Link></li>
+<li><Link /blog/smart-contract-audit-vendor-evaluation/>Smart Contract Audit Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

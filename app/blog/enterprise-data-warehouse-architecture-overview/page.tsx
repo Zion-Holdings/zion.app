@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/integration-testing-case-study">Integration Testing Case Study</Link></li>
-<li><Link href="/blog/ai-recruitment-chatbot-implementation-playbook">Ai Recruitment Chatbot Implementation Playbook</Link></li>
-<li><Link href="/blog/microservices-architecture-automation-roadmap">Microservices Architecture Automation Roadmap</Link></li>
-<li><Link href="/blog/database-migration-service-operations-handbook">Database Migration Service Operations Handbook</Link></li>
+              <li><Link /blog/integration-testing-case-study/>Integration Testing Case Study</Link></li>
+<li><Link /blog/ai-recruitment-chatbot-implementation-playbook/>Ai Recruitment Chatbot Implementation Playbook</Link></li>
+<li><Link /blog/microservices-architecture-automation-roadmap/>Microservices Architecture Automation Roadmap</Link></li>
+<li><Link /blog/database-migration-service-operations-handbook/>Database Migration Service Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

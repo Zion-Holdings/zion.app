@@ -54,10 +54,10 @@ If this guide matches your ci/cd pipeline security initiative, the next step is 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/performance-testing-starter-template">Performance Testing Starter Template</Link></li>
-<li><Link href="/blog/incident-response-retainer-policy-and-compliance">Incident Response Retainer Policy And Compliance</Link></li>
-<li><Link href="/blog/token-optimization-deployment-patterns">Token Optimization Deployment Patterns</Link></li>
-<li><Link href="/blog/api-gateway-management-executive-guide">Api Gateway Management Executive Guide</Link></li>
+              <li><Link /blog/performance-testing-starter-template/>Performance Testing Starter Template</Link></li>
+<li><Link /blog/incident-response-retainer-policy-and-compliance/>Incident Response Retainer Policy And Compliance</Link></li>
+<li><Link /blog/token-optimization-deployment-patterns/>Token Optimization Deployment Patterns</Link></li>
+<li><Link /blog/api-gateway-management-executive-guide/>Api Gateway Management Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

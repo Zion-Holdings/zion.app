@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-policy-and-compliance">Devsecops Pipeline Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6912">Ai Data Lakehouse Pipelines 2026 6912</Link></li>
-<li><Link href="/blog/integration-testing-automation-roadmap">Integration Testing Automation Roadmap</Link></li>
-<li><Link href="/blog/cloud-native-app-development-architecture-overview">Cloud Native App Development Architecture Overview</Link></li>
+              <li><Link /blog/devsecops-pipeline-policy-and-compliance/>Devsecops Pipeline Policy And Compliance</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-2026-6912/>Ai Data Lakehouse Pipelines 2026 6912</Link></li>
+<li><Link /blog/integration-testing-automation-roadmap/>Integration Testing Automation Roadmap</Link></li>
+<li><Link /blog/cloud-native-app-development-architecture-overview/>Cloud Native App Development Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

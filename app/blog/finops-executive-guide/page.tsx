@@ -57,10 +57,10 @@ Leading indicators for finops: executive guide: workflow completion rate, escala
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/oncall-best-practices-security-and-governance">Oncall Best Practices Security And Governance</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026-7042">Managed It Services Small Business 2026 7042</Link></li>
-<li><Link href="/blog/software-supply-chain-security-case-study">Software Supply Chain Security Case Study</Link></li>
-<li><Link href="/blog/event-driven-architecture-vendor-evaluation">Event Driven Architecture Vendor Evaluation</Link></li>
+              <li><Link /blog/oncall-best-practices-security-and-governance/>Oncall Best Practices Security And Governance</Link></li>
+<li><Link /blog/managed-it-services-small-business-2026-7042/>Managed It Services Small Business 2026 7042</Link></li>
+<li><Link /blog/software-supply-chain-security-case-study/>Software Supply Chain Security Case Study</Link></li>
+<li><Link /blog/event-driven-architecture-vendor-evaluation/>Event Driven Architecture Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

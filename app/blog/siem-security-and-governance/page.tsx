@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-expense-tracker-deployment-patterns">Microsaas Expense Tracker Deployment Patterns</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026">Micro Saas Ai Customer Onboarding 2026</Link></li>
-<li><Link href="/blog/database-migration-service-roi-and-cost-model">Database Migration Service Roi And Cost Model</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-6727">Api Orchestration Layer 2026 6727</Link></li>
+              <li><Link /blog/microsaas-expense-tracker-deployment-patterns/>Microsaas Expense Tracker Deployment Patterns</Link></li>
+<li><Link /blog/micro-saas-ai-customer-onboarding-2026/>Micro Saas Ai Customer Onboarding 2026</Link></li>
+<li><Link /blog/database-migration-service-roi-and-cost-model/>Database Migration Service Roi And Cost Model</Link></li>
+<li><Link /blog/api-orchestration-layer-2026-6727/>Api Orchestration Layer 2026 6727</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

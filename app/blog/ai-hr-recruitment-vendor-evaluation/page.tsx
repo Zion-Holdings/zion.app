@@ -57,10 +57,10 @@ Leading indicators for ai hr recruitment: vendor evaluation: workflow completion
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-support-starter-template">Ai Customer Support Starter Template</Link></li>
-<li><Link href="/blog/enterprise-data-warehouse-case-study">Enterprise Data Warehouse Case Study</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-checklist-for-it-leaders">Ai Data Lakehouse Pipelines Checklist For It Leaders</Link></li>
-<li><Link href="/blog/incident-response-retainer-case-study">Incident Response Retainer Case Study</Link></li>
+              <li><Link /blog/ai-customer-support-starter-template/>Ai Customer Support Starter Template</Link></li>
+<li><Link /blog/enterprise-data-warehouse-case-study/>Enterprise Data Warehouse Case Study</Link></li>
+<li><Link /blog/ai-data-lakehouse-pipelines-checklist-for-it-leaders/>Ai Data Lakehouse Pipelines Checklist For It Leaders</Link></li>
+<li><Link /blog/incident-response-retainer-case-study/>Incident Response Retainer Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

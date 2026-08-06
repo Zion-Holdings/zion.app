@@ -57,10 +57,10 @@ Leading indicators for machine learning: vendor evaluation: workflow completion 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/release-management-common-mistakes">Release Management Common Mistakes</Link></li>
-<li><Link href="/blog/network-infrastructure-deployment-patterns">Network Infrastructure Deployment Patterns</Link></li>
-<li><Link href="/blog/database-migration-service-2026-6747">Database Migration Service 2026 6747</Link></li>
-<li><Link href="/blog/api-monetization-deployment-patterns">Api Monetization Deployment Patterns</Link></li>
+              <li><Link /blog/release-management-common-mistakes/>Release Management Common Mistakes</Link></li>
+<li><Link /blog/network-infrastructure-deployment-patterns/>Network Infrastructure Deployment Patterns</Link></li>
+<li><Link /blog/database-migration-service-2026-6747/>Database Migration Service 2026 6747</Link></li>
+<li><Link /blog/api-monetization-deployment-patterns/>Api Monetization Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

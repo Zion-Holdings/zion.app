@@ -54,10 +54,10 @@ If this guide matches your data architecture: executive guide initiative, the ne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/chaos-engineering-2026-6602">Chaos Engineering 2026 6602</Link></li>
-<li><Link href="/blog/it-consulting-checklist-for-it-leaders">It Consulting Checklist For It Leaders</Link></li>
-<li><Link href="/blog/brand-voice-guardian-2026-6595">Brand Voice Guardian 2026 6595</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-case-study">Microsaas Customer Onboarding Case Study</Link></li>
+              <li><Link /blog/chaos-engineering-2026-6602/>Chaos Engineering 2026 6602</Link></li>
+<li><Link /blog/it-consulting-checklist-for-it-leaders/>It Consulting Checklist For It Leaders</Link></li>
+<li><Link /blog/brand-voice-guardian-2026-6595/>Brand Voice Guardian 2026 6595</Link></li>
+<li><Link /blog/microsaas-customer-onboarding-case-study/>Microsaas Customer Onboarding Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

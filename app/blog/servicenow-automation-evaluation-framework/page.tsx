@@ -57,10 +57,10 @@ Leading indicators for servicenow automation: evaluation framework: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-success-churn-prevention-evaluation-framework">Ai Customer Success Churn Prevention Evaluation Framework</Link></li>
-<li><Link href="/blog/accessibility-compliance-common-mistakes">Accessibility Compliance Common Mistakes</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-roi-and-cost-model">Ai Msp Security Compliance Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-executive-guide">Ai Bdr Sdr Executive Guide</Link></li>
+              <li><Link /blog/ai-customer-success-churn-prevention-evaluation-framework/>Ai Customer Success Churn Prevention Evaluation Framework</Link></li>
+<li><Link /blog/accessibility-compliance-common-mistakes/>Accessibility Compliance Common Mistakes</Link></li>
+<li><Link /blog/ai-msp-security-compliance-roi-and-cost-model/>Ai Msp Security Compliance Roi And Cost Model</Link></li>
+<li><Link /blog/ai-bdr-sdr-executive-guide/>Ai Bdr Sdr Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

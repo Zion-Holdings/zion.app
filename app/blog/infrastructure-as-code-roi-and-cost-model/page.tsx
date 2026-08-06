@@ -57,10 +57,10 @@ For infrastructure as code: roi and cost model: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-2026-6823">Event Driven Architecture 2026 6823</Link></li>
-<li><Link href="/blog/api-gateway-management-operations-handbook">Api Gateway Management Operations Handbook</Link></li>
-<li><Link href="/blog/ai-for-fintech-and-digital-banking-operations">Ai For Fintech And Digital Banking Operations</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-common-mistakes">Microsaas Customer Onboarding Common Mistakes</Link></li>
+              <li><Link /blog/event-driven-architecture-2026-6823/>Event Driven Architecture 2026 6823</Link></li>
+<li><Link /blog/api-gateway-management-operations-handbook/>Api Gateway Management Operations Handbook</Link></li>
+<li><Link /blog/ai-for-fintech-and-digital-banking-operations/>Ai For Fintech And Digital Banking Operations</Link></li>
+<li><Link /blog/microsaas-customer-onboarding-common-mistakes/>Microsaas Customer Onboarding Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

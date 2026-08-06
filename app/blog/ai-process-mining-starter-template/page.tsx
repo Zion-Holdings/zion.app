@@ -54,10 +54,10 @@ If this guide matches your ai process mining: starter template initiative, the n
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/low-code-platform-evaluation-framework">Low Code Platform Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-2026-6656">Ai Autonomous Agents 2026 6656</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-2026-6593">Ai Bdr Sdr 2026 6593</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026-7042">Managed It Services Small Business 2026 7042</Link></li>
+              <li><Link /blog/low-code-platform-evaluation-framework/>Low Code Platform Evaluation Framework</Link></li>
+<li><Link /blog/ai-autonomous-agents-2026-6656/>Ai Autonomous Agents 2026 6656</Link></li>
+<li><Link /blog/ai-bdr-sdr-2026-6593/>Ai Bdr Sdr 2026 6593</Link></li>
+<li><Link /blog/managed-it-services-small-business-2026-7042/>Managed It Services Small Business 2026 7042</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

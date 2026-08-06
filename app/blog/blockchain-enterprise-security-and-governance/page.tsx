@@ -54,10 +54,10 @@ If this guide matches your blockchain enterprise: security and governance initia
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-onboarding-deployment-patterns">Ai Customer Onboarding Deployment Patterns</Link></li>
-<li><Link href="/blog/data-architecture-deployment-patterns">Data Architecture Deployment Patterns</Link></li>
-<li><Link href="/blog/event-driven-architecture-2026">Event Driven Architecture 2026</Link></li>
-<li><Link href="/blog/ai-voice-agents-and-conversational-automation">Ai Voice Agents And Conversational Automation</Link></li>
+              <li><Link /blog/ai-customer-onboarding-deployment-patterns/>Ai Customer Onboarding Deployment Patterns</Link></li>
+<li><Link /blog/data-architecture-deployment-patterns/>Data Architecture Deployment Patterns</Link></li>
+<li><Link /blog/event-driven-architecture-2026/>Event Driven Architecture 2026</Link></li>
+<li><Link /blog/ai-voice-agents-and-conversational-automation/>Ai Voice Agents And Conversational Automation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

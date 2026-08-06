@@ -54,10 +54,10 @@ If this guide matches your ai code review automation initiative, the next step i
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/apm-application-performance-2026-6601">Apm Application Performance 2026 6601</Link></li>
-<li><Link href="/blog/api-integration-case-study">Api Integration Case Study</Link></li>
-<li><Link href="/blog/api-rate-limiting-checklist-for-it-leaders">Api Rate Limiting Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-executive-guide">Ai Autonomous Agents Executive Guide</Link></li>
+              <li><Link /blog/apm-application-performance-2026-6601/>Apm Application Performance 2026 6601</Link></li>
+<li><Link /blog/api-integration-case-study/>Api Integration Case Study</Link></li>
+<li><Link /blog/api-rate-limiting-checklist-for-it-leaders/>Api Rate Limiting Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-autonomous-agents-executive-guide/>Ai Autonomous Agents Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

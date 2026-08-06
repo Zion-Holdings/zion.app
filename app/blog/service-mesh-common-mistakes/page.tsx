@@ -57,10 +57,10 @@ For service mesh: common mistakes: pick one workflow, assign ownership, define s
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/siem-deployment-patterns">Siem Deployment Patterns</Link></li>
-<li><Link href="/blog/api-versioning-vendor-evaluation">Api Versioning Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-customer-support-operations-handbook">Ai Customer Support Operations Handbook</Link></li>
-<li><Link href="/blog/machine-learning-engineering-2026">Machine Learning Engineering 2026</Link></li>
+              <li><Link /blog/siem-deployment-patterns/>Siem Deployment Patterns</Link></li>
+<li><Link /blog/api-versioning-vendor-evaluation/>Api Versioning Vendor Evaluation</Link></li>
+<li><Link /blog/ai-customer-support-operations-handbook/>Ai Customer Support Operations Handbook</Link></li>
+<li><Link /blog/machine-learning-engineering-2026/>Machine Learning Engineering 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

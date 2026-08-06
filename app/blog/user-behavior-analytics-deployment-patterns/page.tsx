@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/edge-computing-deployment-2026-6750">Edge Computing Deployment 2026 6750</Link></li>
-<li><Link href="/blog/api-management-gateway-2026-6876">Api Management Gateway 2026 6876</Link></li>
-<li><Link href="/blog/open-source-strategy-2026">Open Source Strategy 2026</Link></li>
-<li><Link href="/blog/it-consulting-architecture-overview">It Consulting Architecture Overview</Link></li>
+              <li><Link /blog/edge-computing-deployment-2026-6750/>Edge Computing Deployment 2026 6750</Link></li>
+<li><Link /blog/api-management-gateway-2026-6876/>Api Management Gateway 2026 6876</Link></li>
+<li><Link /blog/open-source-strategy-2026/>Open Source Strategy 2026</Link></li>
+<li><Link /blog/it-consulting-architecture-overview/>It Consulting Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

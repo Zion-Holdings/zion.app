@@ -54,10 +54,10 @@ If this guide matches your machine learning engineering: security and governance
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-architecture-overview">Graphql Federation Platform Architecture Overview</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-2026-6938">Ai Bdr Sdr 2026 6938</Link></li>
-<li><Link href="/blog/ai-it-operations-roi-and-cost-model">Ai It Operations Roi And Cost Model</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-6888">Edge Computing Deployment 2026 6888</Link></li>
+              <li><Link /blog/graphql-federation-platform-architecture-overview/>Graphql Federation Platform Architecture Overview</Link></li>
+<li><Link /blog/ai-bdr-sdr-2026-6938/>Ai Bdr Sdr 2026 6938</Link></li>
+<li><Link /blog/ai-it-operations-roi-and-cost-model/>Ai It Operations Roi And Cost Model</Link></li>
+<li><Link /blog/edge-computing-deployment-2026-6888/>Edge Computing Deployment 2026 6888</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

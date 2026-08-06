@@ -57,10 +57,10 @@ Leading indicators for generative ai: vendor evaluation: workflow completion rat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/chaos-engineering-2026-6533">Chaos Engineering 2026 6533</Link></li>
-<li><Link href="/blog/database-security-2026">Database Security 2026</Link></li>
-<li><Link href="/blog/api-management-gateway-executive-guide">Api Management Gateway Executive Guide</Link></li>
-<li><Link href="/blog/automated-ai-reporting-2026-6866">Automated Ai Reporting 2026 6866</Link></li>
+              <li><Link /blog/chaos-engineering-2026-6533/>Chaos Engineering 2026 6533</Link></li>
+<li><Link /blog/database-security-2026/>Database Security 2026</Link></li>
+<li><Link /blog/api-management-gateway-executive-guide/>Api Management Gateway Executive Guide</Link></li>
+<li><Link /blog/automated-ai-reporting-2026-6866/>Automated Ai Reporting 2026 6866</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

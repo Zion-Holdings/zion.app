@@ -57,10 +57,10 @@ Leading indicators for ci/cd best practices: vendor evaluation: workflow complet
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/machine-learning-case-study">Machine Learning Case Study</Link></li>
-<li><Link href="/blog/graphql-federation-platform-common-mistakes">Graphql Federation Platform Common Mistakes</Link></li>
-<li><Link href="/blog/blue-green-deployment-roi-and-cost-model">Blue Green Deployment Roi And Cost Model</Link></li>
-<li><Link href="/blog/data-mesh-implementation-playbook">Data Mesh Implementation Playbook</Link></li>
+              <li><Link /blog/machine-learning-case-study/>Machine Learning Case Study</Link></li>
+<li><Link /blog/graphql-federation-platform-common-mistakes/>Graphql Federation Platform Common Mistakes</Link></li>
+<li><Link /blog/blue-green-deployment-roi-and-cost-model/>Blue Green Deployment Roi And Cost Model</Link></li>
+<li><Link /blog/data-mesh-implementation-playbook/>Data Mesh Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-integration-case-study">Api Integration Case Study</Link></li>
-<li><Link href="/blog/business-intelligence-security-and-governance">Business Intelligence Security And Governance</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-6755">Smart Contract Audit 2026 6755</Link></li>
-<li><Link href="/blog/vendor-management-executive-guide">Vendor Management Executive Guide</Link></li>
+              <li><Link /blog/api-integration-case-study/>Api Integration Case Study</Link></li>
+<li><Link /blog/business-intelligence-security-and-governance/>Business Intelligence Security And Governance</Link></li>
+<li><Link /blog/smart-contract-audit-2026-6755/>Smart Contract Audit 2026 6755</Link></li>
+<li><Link /blog/vendor-management-executive-guide/>Vendor Management Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

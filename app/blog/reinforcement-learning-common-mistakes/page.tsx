@@ -57,10 +57,10 @@ Leading indicators for reinforcement learning: common mistakes: workflow complet
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/machine-learning-architecture-overview">Machine Learning Architecture Overview</Link></li>
-<li><Link href="/blog/automated-ai-reporting-common-mistakes">Automated Ai Reporting Common Mistakes</Link></li>
-<li><Link href="/blog/database-migration-service-operations-handbook">Database Migration Service Operations Handbook</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-7003">Api Orchestration Layer 2026 7003</Link></li>
+              <li><Link /blog/machine-learning-architecture-overview/>Machine Learning Architecture Overview</Link></li>
+<li><Link /blog/automated-ai-reporting-common-mistakes/>Automated Ai Reporting Common Mistakes</Link></li>
+<li><Link /blog/database-migration-service-operations-handbook/>Database Migration Service Operations Handbook</Link></li>
+<li><Link /blog/api-orchestration-layer-2026-7003/>Api Orchestration Layer 2026 7003</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

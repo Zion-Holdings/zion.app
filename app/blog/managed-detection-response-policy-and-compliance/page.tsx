@@ -57,10 +57,10 @@ Leading indicators for managed detection response: policy and compliance: workfl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/process-automation-automation-roadmap">Process Automation Automation Roadmap</Link></li>
-<li><Link href="/blog/incident-response-retainer-evaluation-framework">Incident Response Retainer Evaluation Framework</Link></li>
-<li><Link href="/blog/retrieval-augmented-generation-checklist-for-it-leaders">Retrieval Augmented Generation Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026-6706">Ai Customer Success Churn 2026 6706</Link></li>
+              <li><Link /blog/process-automation-automation-roadmap/>Process Automation Automation Roadmap</Link></li>
+<li><Link /blog/incident-response-retainer-evaluation-framework/>Incident Response Retainer Evaluation Framework</Link></li>
+<li><Link /blog/retrieval-augmented-generation-checklist-for-it-leaders/>Retrieval Augmented Generation Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-customer-success-churn-2026-6706/>Ai Customer Success Churn 2026 6706</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

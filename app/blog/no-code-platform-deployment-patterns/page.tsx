@@ -54,10 +54,10 @@ If this guide matches your no code platform: deployment patterns initiative, the
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-safety-evaluation-2026-6998">Ai Agent Safety Evaluation 2026 6998</Link></li>
-<li><Link href="/blog/ai-data-backup-2026">Ai Data Backup 2026</Link></li>
-<li><Link href="/blog/api-management-gateway-case-study">Api Management Gateway Case Study</Link></li>
-<li><Link href="/blog/infrastructure-monitoring-checklist-for-it-leaders">Infrastructure Monitoring Checklist For It Leaders</Link></li>
+              <li><Link /blog/ai-agent-safety-evaluation-2026-6998/>Ai Agent Safety Evaluation 2026 6998</Link></li>
+<li><Link /blog/ai-data-backup-2026/>Ai Data Backup 2026</Link></li>
+<li><Link /blog/api-management-gateway-case-study/>Api Management Gateway Case Study</Link></li>
+<li><Link /blog/infrastructure-monitoring-checklist-for-it-leaders/>Infrastructure Monitoring Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

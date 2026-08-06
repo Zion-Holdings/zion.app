@@ -57,10 +57,10 @@ Leading indicators for patch management: workflow completion rate, escalation ra
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-auditor-automation-roadmap">Ai Accessibility Auditor Automation Roadmap</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026">Micro Saas Ai Expense Tracker 2026</Link></li>
-<li><Link href="/blog/ai-bom-procurement-starter-template">Ai Bom Procurement Starter Template</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-6658">Api Orchestration Layer 2026 6658</Link></li>
+              <li><Link /blog/ai-accessibility-auditor-automation-roadmap/>Ai Accessibility Auditor Automation Roadmap</Link></li>
+<li><Link /blog/micro-saas-ai-expense-tracker-2026/>Micro Saas Ai Expense Tracker 2026</Link></li>
+<li><Link /blog/ai-bom-procurement-starter-template/>Ai Bom Procurement Starter Template</Link></li>
+<li><Link /blog/api-orchestration-layer-2026-6658/>Api Orchestration Layer 2026 6658</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

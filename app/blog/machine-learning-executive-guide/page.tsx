@@ -57,10 +57,10 @@ Leading indicators for machine learning: executive guide: workflow completion ra
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-quality-roi-and-cost-model">Data Quality Roi And Cost Model</Link></li>
-<li><Link href="/blog/open-source-strategy-common-mistakes">Open Source Strategy Common Mistakes</Link></li>
-<li><Link href="/blog/graphql-federation-platform-vendor-evaluation">Graphql Federation Platform Vendor Evaluation</Link></li>
-<li><Link href="/blog/chaos-engineering-security-and-governance">Chaos Engineering Security And Governance</Link></li>
+              <li><Link /blog/data-quality-roi-and-cost-model/>Data Quality Roi And Cost Model</Link></li>
+<li><Link /blog/open-source-strategy-common-mistakes/>Open Source Strategy Common Mistakes</Link></li>
+<li><Link /blog/graphql-federation-platform-vendor-evaluation/>Graphql Federation Platform Vendor Evaluation</Link></li>
+<li><Link /blog/chaos-engineering-security-and-governance/>Chaos Engineering Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
