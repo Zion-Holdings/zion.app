@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/customer-data-platform-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Customer Data Platform: automation roadmap", "description": "Customer Data Platform: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:11:42Z", "dateModified": "2026-08-06T18:11:42Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/customer-data-platform-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Customer Data Platform: automation roadmap", "description": "Customer Data Platform: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:13:09Z", "dateModified": "2026-08-06T18:13:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/customer-data-platform-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-customer-onboarding-executive-guide">Microsaas Customer Onboarding Executive Guide</Link></li>
-<li><Link href="/blog/penetration-testing-deployment-patterns">Penetration Testing Deployment Patterns</Link></li>
-<li><Link href="/blog/product-analytics-automation-roadmap">Product Analytics Automation Roadmap</Link></li>
-<li><Link href="/blog/log-management-checklist-for-it-leaders">Log Management Checklist For It Leaders</Link></li>
+              <li><Link href="/blog/cloud-storage-strategy-policy-and-compliance">Cloud Storage Strategy Policy And Compliance</Link></li>
+<li><Link href="/blog/ai-msp-security-compliance-2026-6842">Ai Msp Security Compliance 2026 6842</Link></li>
+<li><Link href="/blog/threat-hunting-roi-and-cost-model">Threat Hunting Roi And Cost Model</Link></li>
+<li><Link href="/blog/ai-msp-security-compliance-automation-roadmap">Ai Msp Security Compliance Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

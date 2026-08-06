@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/vector-database-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Vector Database: automation roadmap", "description": "Vector Database: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:11:02Z", "dateModified": "2026-08-06T18:11:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/vector-database-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Vector Database: automation roadmap", "description": "Vector Database: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:12:50Z", "dateModified": "2026-08-06T18:12:50Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/vector-database-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/saas-security-2026">Saas Security 2026</Link></li>
-<li><Link href="/blog/blue-green-deployment-starter-template">Blue Green Deployment Starter Template</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-automation-roadmap">Enterprise Ai Intelligence Hub Automation Roadmap</Link></li>
-<li><Link href="/blog/cicd-best-practices-evaluation-framework">Cicd Best Practices Evaluation Framework</Link></li>
+              <li><Link href="/blog/network-automation-executive-guide">Network Automation Executive Guide</Link></li>
+<li><Link href="/blog/oncall-best-practices-vendor-evaluation">Oncall Best Practices Vendor Evaluation</Link></li>
+<li><Link href="/blog/edge-computing-deployment-2026-6543">Edge Computing Deployment 2026 6543</Link></li>
+<li><Link href="/blog/api-performance-testing-2026-6760">Api Performance Testing 2026 6760</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

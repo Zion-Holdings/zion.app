@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-meeting-assistant-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Meeting Assistant: case study", "description": "AI Meeting Assistant: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:11:55Z", "dateModified": "2026-08-06T18:11:55Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-meeting-assistant-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Meeting Assistant: case study", "description": "AI Meeting Assistant: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:13:07Z", "dateModified": "2026-08-06T18:13:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-meeting-assistant-case-study/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For ai meeting assistant: case study: pick one workflow, assign ownership, defin
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-2026-6600">Api Management Gateway 2026 6600</Link></li>
-<li><Link href="/blog/devsecops-pipeline-2026-6818">Devsecops Pipeline 2026 6818</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-security-and-governance">Ai Msp Security Compliance Security And Governance</Link></li>
-<li><Link href="/blog/ai-video-analytics-2026">Ai Video Analytics 2026</Link></li>
+              <li><Link href="/blog/vendor-management-case-study">Vendor Management Case Study</Link></li>
+<li><Link href="/blog/ai-autonomous-agents-2026-6863">Ai Autonomous Agents 2026 6863</Link></li>
+<li><Link href="/blog/incident-management-architecture-overview">Incident Management Architecture Overview</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-vendor-evaluation">Enterprise Ai Intelligence Hub Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

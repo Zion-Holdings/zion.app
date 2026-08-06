@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/continuous-delivery-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Continuous Delivery", "description": "Continuous Delivery", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:11:14Z", "dateModified": "2026-08-06T18:11:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/continuous-delivery-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Continuous Delivery", "description": "Continuous Delivery", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:12:35Z", "dateModified": "2026-08-06T18:12:35Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/continuous-delivery-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bom-procurement-2026-6870">Ai Bom Procurement 2026 6870</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-deployment-patterns">Cybersecurity For Msps Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-bom-procurement-policy-and-compliance">Ai Bom Procurement Policy And Compliance</Link></li>
-<li><Link href="/blog/open-source-strategy-vendor-evaluation">Open Source Strategy Vendor Evaluation</Link></li>
+              <li><Link href="/blog/api-monetization-vendor-evaluation">Api Monetization Vendor Evaluation</Link></li>
+<li><Link href="/blog/automation-orchestration-enterprise-2026">Automation Orchestration Enterprise 2026</Link></li>
+<li><Link href="/blog/autonomous-code-deployment-executive-guide">Autonomous Code Deployment Executive Guide</Link></li>
+<li><Link href="/blog/microsaas-translation-engine-starter-template">Microsaas Translation Engine Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

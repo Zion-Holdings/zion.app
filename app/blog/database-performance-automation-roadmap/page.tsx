@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/database-performance-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Database Performance: automation roadmap", "description": "Database Performance: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:12:21Z", "dateModified": "2026-08-06T18:12:21Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/database-performance-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Database Performance: automation roadmap", "description": "Database Performance: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:12:53Z", "dateModified": "2026-08-06T18:12:53Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/database-performance-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/open-source-strategy-security-and-governance">Open Source Strategy Security And Governance</Link></li>
-<li><Link href="/blog/data-analytics-platform-operations-handbook">Data Analytics Platform Operations Handbook</Link></li>
-<li><Link href="/blog/vulnerability-assessment-case-study">Vulnerability Assessment Case Study</Link></li>
-<li><Link href="/blog/api-governance-evaluation-framework">Api Governance Evaluation Framework</Link></li>
+              <li><Link href="/blog/api-management-gateway-2026-6669">Api Management Gateway 2026 6669</Link></li>
+<li><Link href="/blog/data-architecture-implementation-playbook">Data Architecture Implementation Playbook</Link></li>
+<li><Link href="/blog/bot-detection-architecture-overview">Bot Detection Architecture Overview</Link></li>
+<li><Link href="/blog/virtual-cto-executive-guide">Virtual Cto Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

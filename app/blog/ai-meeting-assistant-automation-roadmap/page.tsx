@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-meeting-assistant-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Meeting Assistant: automation roadmap", "description": "AI Meeting Assistant: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:09:45Z", "dateModified": "2026-08-06T18:09:45Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-meeting-assistant-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Meeting Assistant: automation roadmap", "description": "AI Meeting Assistant: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:12:40Z", "dateModified": "2026-08-06T18:12:40Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-meeting-assistant-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for ai meeting assistant: automation roadmap: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/unified-endpoint-management-starter-template">Unified Endpoint Management Starter Template</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-2026-7050">Ai Data Lakehouse Pipelines 2026 7050</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6989">Micro Saas Ai Expense Tracker 2026 6989</Link></li>
-<li><Link href="/blog/ai-bom-procurement-2026-7008">Ai Bom Procurement 2026 7008</Link></li>
+              <li><Link href="/blog/ai-api-gateway-operations-handbook">Ai Api Gateway Operations Handbook</Link></li>
+<li><Link href="/blog/enterprise-integration-checklist-for-it-leaders">Enterprise Integration Checklist For It Leaders</Link></li>
+<li><Link href="/blog/it-consulting-automation-roadmap">It Consulting Automation Roadmap</Link></li>
+<li><Link href="/blog/ai-agent-tool-builder-security-and-governance">Ai Agent Tool Builder Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/data-governance-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Governance: implementation playbook", "description": "Data Governance: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:10:51Z", "dateModified": "2026-08-06T18:10:51Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-governance-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Governance: implementation playbook", "description": "Data Governance: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:12:51Z", "dateModified": "2026-08-06T18:12:51Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-governance-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your data governance: implementation playbook initiative, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cyber-threat-intelligence-security-and-governance">Cyber Threat Intelligence Security And Governance</Link></li>
-<li><Link href="/blog/retrieval-augmented-generation-case-study">Retrieval Augmented Generation Case Study</Link></li>
-<li><Link href="/blog/cloud-governance-executive-guide">Cloud Governance Executive Guide</Link></li>
-<li><Link href="/blog/cloud-networking-roi-and-cost-model">Cloud Networking Roi And Cost Model</Link></li>
+              <li><Link href="/blog/ai-email-intelligence-2026-6562">Ai Email Intelligence 2026 6562</Link></li>
+<li><Link href="/blog/token-optimization-automation-roadmap">Token Optimization Automation Roadmap</Link></li>
+<li><Link href="/blog/api-management-gateway-deployment-patterns">Api Management Gateway Deployment Patterns</Link></li>
+<li><Link href="/blog/ai-code-review-automation-architecture-overview">Ai Code Review Automation Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

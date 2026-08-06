@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/platform-engineering-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Platform Engineering: case study", "description": "Platform Engineering: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:12:01Z", "dateModified": "2026-08-06T18:12:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/platform-engineering-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Platform Engineering: case study", "description": "Platform Engineering: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:12:58Z", "dateModified": "2026-08-06T18:12:58Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/platform-engineering-case-study/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For platform engineering: case study: pick one workflow, assign ownership, defin
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-autonomous-agents-2026-6518">Ai Autonomous Agents 2026 6518</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-vendor-evaluation">Cloud Cost Ai Optimizer Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-observability-2026-6703">Ai Observability 2026 6703</Link></li>
-<li><Link href="/blog/site-reliability-engineering-case-study">Site Reliability Engineering Case Study</Link></li>
+              <li><Link href="/blog/vulnerability-assessment-vendor-evaluation">Vulnerability Assessment Vendor Evaluation</Link></li>
+<li><Link href="/blog/automated-ai-reporting-architecture-overview">Automated Ai Reporting Architecture Overview</Link></li>
+<li><Link href="/blog/ai-data-backup-2026-6969">Ai Data Backup 2026 6969</Link></li>
+<li><Link href="/blog/graphql-federation-platform-2026-6894">Graphql Federation Platform 2026 6894</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

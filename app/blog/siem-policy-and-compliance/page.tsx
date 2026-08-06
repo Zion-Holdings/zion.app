@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/siem-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "SIEM: policy and compliance", "description": "SIEM: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:12:22Z", "dateModified": "2026-08-06T18:12:22Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/siem-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "SIEM: policy and compliance", "description": "SIEM: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:13:03Z", "dateModified": "2026-08-06T18:13:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/siem-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-asset-management-automation-roadmap">It Asset Management Automation Roadmap</Link></li>
-<li><Link href="/blog/patch-management-executive-guide">Patch Management Executive Guide</Link></li>
-<li><Link href="/blog/oncall-best-practices-2026">Oncall Best Practices 2026</Link></li>
-<li><Link href="/blog/identity-access-management-architecture-overview">Identity Access Management Architecture Overview</Link></li>
+              <li><Link href="/blog/vendor-management-automation-roadmap">Vendor Management Automation Roadmap</Link></li>
+<li><Link href="/blog/chaos-engineering-executive-guide">Chaos Engineering Executive Guide</Link></li>
+<li><Link href="/blog/ai-voice-assistant-vendor-evaluation">Ai Voice Assistant Vendor Evaluation</Link></li>
+<li><Link href="/blog/chaos-engineering-policy-and-compliance">Chaos Engineering Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

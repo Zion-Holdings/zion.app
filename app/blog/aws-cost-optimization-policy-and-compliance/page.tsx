@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/aws-cost-optimization-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AWS Cost Optimization: policy and compliance", "description": "AWS Cost Optimization: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:10:50Z", "dateModified": "2026-08-06T18:10:50Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aws-cost-optimization-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AWS Cost Optimization: policy and compliance", "description": "AWS Cost Optimization: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:12:39Z", "dateModified": "2026-08-06T18:12:39Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aws-cost-optimization-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For aws cost optimization: policy and compliance: pick one workflow, assign owne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/log-management-roi-and-cost-model">Log Management Roi And Cost Model</Link></li>
-<li><Link href="/blog/data-analytics-platform-architecture-overview">Data Analytics Platform Architecture Overview</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-2026-7028">Enterprise Backup Dr 2026 7028</Link></li>
-<li><Link href="/blog/edge-computing-2026">Edge Computing 2026</Link></li>
+              <li><Link href="/blog/graphql-federation-platform-2026-7101">Graphql Federation Platform 2026 7101</Link></li>
+<li><Link href="/blog/strategic-it-planning-2026">Strategic It Planning 2026</Link></li>
+<li><Link href="/blog/technical-due-diligence-executive-guide">Technical Due Diligence Executive Guide</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-automation-roadmap">Enterprise Ai Intelligence Hub Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

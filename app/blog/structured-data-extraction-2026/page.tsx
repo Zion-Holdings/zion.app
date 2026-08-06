@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/structured-data-extraction-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Structured Data Extraction", "description": "Structured Data Extraction", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:12:07Z", "dateModified": "2026-08-06T18:12:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/structured-data-extraction-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Structured Data Extraction", "description": "Structured Data Extraction", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:12:38Z", "dateModified": "2026-08-06T18:12:38Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/structured-data-extraction-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for structured data extraction: workflow completion rate, esc
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/no-code-platform-architecture-overview">No Code Platform Architecture Overview</Link></li>
-<li><Link href="/blog/api-security-testing-2026-6830">Api Security Testing 2026 6830</Link></li>
-<li><Link href="/blog/cloud-security-posture-policy-and-compliance">Cloud Security Posture Policy And Compliance</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-6799">Autonomous Qa Engineering 2026 6799</Link></li>
+              <li><Link href="/blog/database-performance-automation-roadmap">Database Performance Automation Roadmap</Link></li>
+<li><Link href="/blog/api-gateway-management-2026-6966">Api Gateway Management 2026 6966</Link></li>
+<li><Link href="/blog/database-migration-service-vendor-evaluation">Database Migration Service Vendor Evaluation</Link></li>
+<li><Link href="/blog/api-orchestration-layer-case-study">Api Orchestration Layer Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

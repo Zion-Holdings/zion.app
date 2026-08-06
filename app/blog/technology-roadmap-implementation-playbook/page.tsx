@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/technology-roadmap-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Technology Roadmap: implementation playbook", "description": "Technology Roadmap: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:09:40Z", "dateModified": "2026-08-06T18:09:40Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/technology-roadmap-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Technology Roadmap: implementation playbook", "description": "Technology Roadmap: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:12:45Z", "dateModified": "2026-08-06T18:12:45Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/technology-roadmap-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For technology roadmap: implementation playbook: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-optimizer-2026-7065">Ai Accessibility Optimizer 2026 7065</Link></li>
-<li><Link href="/blog/product-analytics-deployment-patterns">Product Analytics Deployment Patterns</Link></li>
-<li><Link href="/blog/siem-case-study">Siem Case Study</Link></li>
-<li><Link href="/blog/5g-solutions-starter-template">5G Solutions Starter Template</Link></li>
+              <li><Link href="/blog/blue-green-deployment-automation-roadmap">Blue Green Deployment Automation Roadmap</Link></li>
+<li><Link href="/blog/integration-testing-policy-and-compliance">Integration Testing Policy And Compliance</Link></li>
+<li><Link href="/blog/ai-security-analytics-common-mistakes">Ai Security Analytics Common Mistakes</Link></li>
+<li><Link href="/blog/api-orchestration-layer-operations-handbook">Api Orchestration Layer Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/data-governance-security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Governance: security and governance", "description": "Data Governance: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:11:56Z", "dateModified": "2026-08-06T18:11:56Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-governance-security-and-governance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Governance: security and governance", "description": "Data Governance: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:13:05Z", "dateModified": "2026-08-06T18:13:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-governance-security-and-governance/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your data governance: security and governance initiative, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-safety-evaluation-2026-7067">Ai Agent Safety Evaluation 2026 7067</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-security-and-governance">Ai Autonomous Agents Security And Governance</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6690">Api Gateway Management 2026 6690</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-starter-template">Ai Ad Copy Generator Starter Template</Link></li>
+              <li><Link href="/blog/multi-cloud-strategy-2026">Multi Cloud Strategy 2026</Link></li>
+<li><Link href="/blog/cloud-native-app-development-2026-7088">Cloud Native App Development 2026 7088</Link></li>
+<li><Link href="/blog/sase-roi-and-cost-model">Sase Roi And Cost Model</Link></li>
+<li><Link href="/blog/data-compliance-roi-and-cost-model">Data Compliance Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

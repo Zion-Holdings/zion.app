@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-customer-onboarding-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Customer Onboarding: automation roadmap", "description": "AI Customer Onboarding: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:12:12Z", "dateModified": "2026-08-06T18:12:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-customer-onboarding-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Customer Onboarding: automation roadmap", "description": "AI Customer Onboarding: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:12:46Z", "dateModified": "2026-08-06T18:12:46Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-customer-onboarding-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For ai customer onboarding: automation roadmap: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/servicenow-automation-evaluation-framework">Servicenow Automation Evaluation Framework</Link></li>
-<li><Link href="/blog/docker-security-deployment-patterns">Docker Security Deployment Patterns</Link></li>
-<li><Link href="/blog/database-performance-security-and-governance">Database Performance Security And Governance</Link></li>
-<li><Link href="/blog/ai-customer-support-common-mistakes">Ai Customer Support Common Mistakes</Link></li>
+              <li><Link href="/blog/aws-cost-optimization-checklist-for-it-leaders">Aws Cost Optimization Checklist For It Leaders</Link></li>
+<li><Link href="/blog/generative-ai-security-architecture-overview">Generative Ai Security Architecture Overview</Link></li>
+<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-6783">Micro Saas Ai Hr Recruitment 2026 6783</Link></li>
+<li><Link href="/blog/automation-orchestration-vendor-evaluation">Automation Orchestration Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

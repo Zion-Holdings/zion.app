@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/machine-learning-operations-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Machine Learning Operations: vendor evaluation", "description": "Machine Learning Operations: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:10:58Z", "dateModified": "2026-08-06T18:10:58Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/machine-learning-operations-vendor-evaluation/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Machine Learning Operations: vendor evaluation", "description": "Machine Learning Operations: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:13:12Z", "dateModified": "2026-08-06T18:13:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/machine-learning-operations-vendor-evaluation/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For machine learning operations: vendor evaluation: pick one workflow, assign ow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-translation-engine-case-study">Microsaas Translation Engine Case Study</Link></li>
-<li><Link href="/blog/identity-access-management-implementation-playbook">Identity Access Management Implementation Playbook</Link></li>
-<li><Link href="/blog/vector-database-operations-handbook">Vector Database Operations Handbook</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026-6741">Cloud Cost Ai Optimizer 2026 6741</Link></li>
+              <li><Link href="/blog/ai-autonomous-agents-automation-roadmap">Ai Autonomous Agents Automation Roadmap</Link></li>
+<li><Link href="/blog/ai-service-desk-common-mistakes">Ai Service Desk Common Mistakes</Link></li>
+<li><Link href="/blog/monitoring-observability-case-study">Monitoring Observability Case Study</Link></li>
+<li><Link href="/blog/api-gateway-security-architecture-overview">Api Gateway Security Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

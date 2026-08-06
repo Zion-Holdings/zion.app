@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/open-source-strategy-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Open Source Strategy: checklist for IT leaders", "description": "Open Source Strategy: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:11:52Z", "dateModified": "2026-08-06T18:11:52Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/open-source-strategy-checklist-for-it-leaders/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Open Source Strategy: checklist for IT leaders", "description": "Open Source Strategy: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-06T18:13:04Z", "dateModified": "2026-08-06T18:13:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/open-source-strategy-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For open source strategy: checklist for it leaders: pick one workflow, assign ow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/golang-microservices-security-and-governance">Golang Microservices Security And Governance</Link></li>
-<li><Link href="/blog/api-monetization-executive-guide">Api Monetization Executive Guide</Link></li>
-<li><Link href="/blog/event-driven-architecture-policy-and-compliance">Event Driven Architecture Policy And Compliance</Link></li>
-<li><Link href="/blog/data-mesh-evaluation-framework">Data Mesh Evaluation Framework</Link></li>
+              <li><Link href="/blog/monitoring-observability-case-study">Monitoring Observability Case Study</Link></li>
+<li><Link href="/blog/cybersecurity-for-msps-evaluation-framework">Cybersecurity For Msps Evaluation Framework</Link></li>
+<li><Link href="/blog/customer-data-platform-policy-and-compliance">Customer Data Platform Policy And Compliance</Link></li>
+<li><Link href="/blog/cloud-native-app-development-2026-7019">Cloud Native App Development 2026 7019</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
