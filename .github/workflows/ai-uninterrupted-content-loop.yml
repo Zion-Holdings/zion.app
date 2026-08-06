@@ -1,0 +1,39 @@
+name: AI Uninterrupted SEO Content Loop
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+jobs:
+  content-loop:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run SEO content loop
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_BRANCH: main
+        run: |
+          python scripts/content-loop/robust_content_loop.py
+
+      - name: Commit generated manifest
+        if: success()
+        run: |
+          git config user.name "hermes-agent[bot]"
+          git config user.email "hermes-agent@users.noreply.github.com"
+          git add content-loop/ || true
+          git diff --staged || true
+          git commit -m "chore: content loop manifest $(date -u +%Y-%m-%dT%H:%M:%SZ)" || true
+          git push origin HEAD:main || true
