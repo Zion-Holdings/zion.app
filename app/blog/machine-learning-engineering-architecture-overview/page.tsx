@@ -54,10 +54,10 @@ If this guide matches your machine learning engineering: architecture overview i
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/bot-detection-automation-roadmap">Bot Detection Automation Roadmap</Link></li>
-<li><Link href="/blog/static-application-security-testing-architecture-overview">Static Application Security Testing Architecture Overview</Link></li>
-<li><Link href="/blog/edge-computing-security-and-governance">Edge Computing Security And Governance</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6782">Micro Saas Ai Expense Tracker 2026 6782</Link></li>
+              <li><Link /blog/bot-detection-automation-roadmap/>Bot Detection Automation Roadmap</Link></li>
+<li><Link /blog/static-application-security-testing-architecture-overview/>Static Application Security Testing Architecture Overview</Link></li>
+<li><Link /blog/edge-computing-security-and-governance/>Edge Computing Security And Governance</Link></li>
+<li><Link /blog/micro-saas-ai-expense-tracker-2026-6782/>Micro Saas Ai Expense Tracker 2026 6782</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -57,10 +57,10 @@ Leading indicators for low code platform: executive guide: workflow completion r
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-security-posture-evaluation-framework">Cloud Security Posture Evaluation Framework</Link></li>
-<li><Link href="/blog/it-consulting-2026-6777">It Consulting 2026 6777</Link></li>
-<li><Link href="/blog/network-security-operations-handbook">Network Security Operations Handbook</Link></li>
-<li><Link href="/blog/policy-as-code-executive-guide">Policy As Code Executive Guide</Link></li>
+              <li><Link /blog/cloud-security-posture-evaluation-framework/>Cloud Security Posture Evaluation Framework</Link></li>
+<li><Link /blog/it-consulting-2026-6777/>It Consulting 2026 6777</Link></li>
+<li><Link /blog/network-security-operations-handbook/>Network Security Operations Handbook</Link></li>
+<li><Link /blog/policy-as-code-executive-guide/>Policy As Code Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

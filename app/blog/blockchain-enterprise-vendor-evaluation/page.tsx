@@ -57,10 +57,10 @@ For blockchain enterprise: vendor evaluation: pick one workflow, assign ownershi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-backup-evaluation-framework">Cloud Backup Evaluation Framework</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-2026-6952">Cyber Threat Intelligence 2026 6952</Link></li>
-<li><Link href="/blog/mobile-device-management-automation-roadmap">Mobile Device Management Automation Roadmap</Link></li>
-<li><Link href="/blog/incident-response-retainer-evaluation-framework">Incident Response Retainer Evaluation Framework</Link></li>
+              <li><Link /blog/cloud-backup-evaluation-framework/>Cloud Backup Evaluation Framework</Link></li>
+<li><Link /blog/cyber-threat-intelligence-2026-6952/>Cyber Threat Intelligence 2026 6952</Link></li>
+<li><Link /blog/mobile-device-management-automation-roadmap/>Mobile Device Management Automation Roadmap</Link></li>
+<li><Link /blog/incident-response-retainer-evaluation-framework/>Incident Response Retainer Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

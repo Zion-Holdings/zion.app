@@ -57,10 +57,10 @@ For microsaas customer onboarding: security and governance: pick one workflow, a
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-api-gateway-implementation-playbook">Ai Api Gateway Implementation Playbook</Link></li>
-<li><Link href="/blog/api-security-testing-2026-6830">Api Security Testing 2026 6830</Link></li>
-<li><Link href="/blog/ai-bom-procurement-2026-6663">Ai Bom Procurement 2026 6663</Link></li>
-<li><Link href="/blog/api-performance-testing-2026-6967">Api Performance Testing 2026 6967</Link></li>
+              <li><Link /blog/ai-api-gateway-implementation-playbook/>Ai Api Gateway Implementation Playbook</Link></li>
+<li><Link /blog/api-security-testing-2026-6830/>Api Security Testing 2026 6830</Link></li>
+<li><Link /blog/ai-bom-procurement-2026-6663/>Ai Bom Procurement 2026 6663</Link></li>
+<li><Link /blog/api-performance-testing-2026-6967/>Api Performance Testing 2026 6967</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

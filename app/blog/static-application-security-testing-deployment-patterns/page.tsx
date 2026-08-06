@@ -57,10 +57,10 @@ For static application security testing: deployment patterns: pick one workflow,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-social-media-manager-case-study">Microsaas Social Media Manager Case Study</Link></li>
-<li><Link href="/blog/google-cloud-migration-vendor-evaluation">Google Cloud Migration Vendor Evaluation</Link></li>
-<li><Link href="/blog/cloud-networking-executive-guide">Cloud Networking Executive Guide</Link></li>
-<li><Link href="/blog/test-automation-2026">Test Automation 2026</Link></li>
+              <li><Link /blog/microsaas-social-media-manager-case-study/>Microsaas Social Media Manager Case Study</Link></li>
+<li><Link /blog/google-cloud-migration-vendor-evaluation/>Google Cloud Migration Vendor Evaluation</Link></li>
+<li><Link /blog/cloud-networking-executive-guide/>Cloud Networking Executive Guide</Link></li>
+<li><Link /blog/test-automation-2026/>Test Automation 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

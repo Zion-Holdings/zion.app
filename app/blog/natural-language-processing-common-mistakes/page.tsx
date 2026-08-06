@@ -54,10 +54,10 @@ If this guide matches your natural language processing: common mistakes initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-2026-6703">Ai Observability 2026 6703</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-6658">Api Orchestration Layer 2026 6658</Link></li>
-<li><Link href="/blog/api-governance-implementation-playbook">Api Governance Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-for-climate-tech-and-sustainability-operations">Ai For Climate Tech And Sustainability Operations</Link></li>
+              <li><Link /blog/ai-observability-2026-6703/>Ai Observability 2026 6703</Link></li>
+<li><Link /blog/api-orchestration-layer-2026-6658/>Api Orchestration Layer 2026 6658</Link></li>
+<li><Link /blog/api-governance-implementation-playbook/>Api Governance Implementation Playbook</Link></li>
+<li><Link /blog/ai-for-climate-tech-and-sustainability-operations/>Ai For Climate Tech And Sustainability Operations</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

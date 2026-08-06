@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-as-a-service-implementation-playbook">Database As A Service Implementation Playbook</Link></li>
-<li><Link href="/blog/cloud-governance-vendor-evaluation">Cloud Governance Vendor Evaluation</Link></li>
-<li><Link href="/blog/voice-biometrics-common-mistakes">Voice Biometrics Common Mistakes</Link></li>
-<li><Link href="/blog/container-security-lifecycle-executive-guide">Container Security Lifecycle Executive Guide</Link></li>
+              <li><Link /blog/database-as-a-service-implementation-playbook/>Database As A Service Implementation Playbook</Link></li>
+<li><Link /blog/cloud-governance-vendor-evaluation/>Cloud Governance Vendor Evaluation</Link></li>
+<li><Link /blog/voice-biometrics-common-mistakes/>Voice Biometrics Common Mistakes</Link></li>
+<li><Link /blog/container-security-lifecycle-executive-guide/>Container Security Lifecycle Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

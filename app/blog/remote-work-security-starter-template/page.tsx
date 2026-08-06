@@ -57,10 +57,10 @@ For remote work security: starter template: pick one workflow, assign ownership,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-virtualization-operations-handbook">Data Virtualization Operations Handbook</Link></li>
-<li><Link href="/blog/bot-detection-operations-handbook">Bot Detection Operations Handbook</Link></li>
-<li><Link href="/blog/splunk-migration-policy-and-compliance">Splunk Migration Policy And Compliance</Link></li>
-<li><Link href="/blog/cloud-finops-2026-6811">Cloud Finops 2026 6811</Link></li>
+              <li><Link /blog/data-virtualization-operations-handbook/>Data Virtualization Operations Handbook</Link></li>
+<li><Link /blog/bot-detection-operations-handbook/>Bot Detection Operations Handbook</Link></li>
+<li><Link /blog/splunk-migration-policy-and-compliance/>Splunk Migration Policy And Compliance</Link></li>
+<li><Link /blog/cloud-finops-2026-6811/>Cloud Finops 2026 6811</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

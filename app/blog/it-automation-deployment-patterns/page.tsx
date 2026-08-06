@@ -57,10 +57,10 @@ For it automation: deployment patterns: pick one workflow, assign ownership, def
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders">Cloud Cost Ai Optimizer Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-expense-tracker-architecture-overview">Ai Expense Tracker Architecture Overview</Link></li>
-<li><Link href="/blog/ai-it-operations-automation-2026-6901">Ai It Operations Automation 2026 6901</Link></li>
-<li><Link href="/blog/incident-response-retainer-policy-and-compliance">Incident Response Retainer Policy And Compliance</Link></li>
+              <li><Link /blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/>Cloud Cost Ai Optimizer Checklist For It Leaders</Link></li>
+<li><Link /blog/ai-expense-tracker-architecture-overview/>Ai Expense Tracker Architecture Overview</Link></li>
+<li><Link /blog/ai-it-operations-automation-2026-6901/>Ai It Operations Automation 2026 6901</Link></li>
+<li><Link /blog/incident-response-retainer-policy-and-compliance/>Incident Response Retainer Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

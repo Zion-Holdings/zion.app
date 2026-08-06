@@ -57,10 +57,10 @@ Leading indicators for microsaas social media manager: roi and cost model: workf
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/continuous-integration-evaluation-framework">Continuous Integration Evaluation Framework</Link></li>
-<li><Link href="/blog/smart-contract-audit-architecture-overview">Smart Contract Audit Architecture Overview</Link></li>
-<li><Link href="/blog/machine-learning-architecture-overview">Machine Learning Architecture Overview</Link></li>
-<li><Link href="/blog/apm-application-performance-executive-guide">Apm Application Performance Executive Guide</Link></li>
+              <li><Link /blog/continuous-integration-evaluation-framework/>Continuous Integration Evaluation Framework</Link></li>
+<li><Link /blog/smart-contract-audit-architecture-overview/>Smart Contract Audit Architecture Overview</Link></li>
+<li><Link /blog/machine-learning-architecture-overview/>Machine Learning Architecture Overview</Link></li>
+<li><Link /blog/apm-application-performance-executive-guide/>Apm Application Performance Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

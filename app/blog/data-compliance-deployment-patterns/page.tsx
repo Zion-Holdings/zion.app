@@ -54,10 +54,10 @@ If this guide matches your data compliance: deployment patterns initiative, the 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/process-automation-checklist-for-it-leaders">Process Automation Checklist For It Leaders</Link></li>
-<li><Link href="/blog/virtual-cto-vendor-evaluation">Virtual Cto Vendor Evaluation</Link></li>
-<li><Link href="/blog/data-pipeline-orchestration-automation-roadmap">Data Pipeline Orchestration Automation Roadmap</Link></li>
-<li><Link href="/blog/site-reliability-engineering-automation-roadmap">Site Reliability Engineering Automation Roadmap</Link></li>
+              <li><Link /blog/process-automation-checklist-for-it-leaders/>Process Automation Checklist For It Leaders</Link></li>
+<li><Link /blog/virtual-cto-vendor-evaluation/>Virtual Cto Vendor Evaluation</Link></li>
+<li><Link /blog/data-pipeline-orchestration-automation-roadmap/>Data Pipeline Orchestration Automation Roadmap</Link></li>
+<li><Link /blog/site-reliability-engineering-automation-roadmap/>Site Reliability Engineering Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
