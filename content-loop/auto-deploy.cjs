@@ -32,13 +32,13 @@ async function waitForRun(createdAt) {
   const timeoutMs = 20 * 60 * 1000;
   while (Date.now() - started < timeoutMs) {
     const list = JSON.parse(run(`curl -s -H "${auth}" -H "Accept: application/vnd.github+json" https://api.github.com/repos/${repo}/actions/workflows/gh-pages.yml/runs?per_page=5`, { allowFail: true }) || '{"workflow_runs":[]}');
-    const run = (list.workflow_runs || []).find(r => r.head_sha && r.created_at && r.created_at >= createdAt);
-    if (!run) {
+    const foundRun = (list.workflow_runs || []).find(r => r.head_sha && r.created_at && r.created_at >= createdAt);
+    if (!foundRun) {
       await new Promise(r => setTimeout(r, 5000));
       continue;
     }
-    if (run.status === 'completed') {
-      return run.conclusion === 'success';
+    if (foundRun.status === 'completed') {
+      return foundRun.conclusion === 'success';
     }
     await new Promise(r => setTimeout(r, 5000));
   }
