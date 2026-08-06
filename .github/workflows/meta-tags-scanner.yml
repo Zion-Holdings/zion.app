@@ -1,7 +1,7 @@
 permissions:
   contents: read
 name: Autonomous Meta Tags Quality Scanner
-true:
+on:
   schedule:
   - cron: 0 11 * * 3
   workflow_dispatch: null

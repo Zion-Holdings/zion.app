@@ -1,5 +1,5 @@
 name: Minimal Build Test
-true:
+on:
   workflow_dispatch: null
   push:
     branches:

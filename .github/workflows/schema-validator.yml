@@ -1,7 +1,7 @@
 permissions:
   contents: read
 name: Autonomous Structured Data (Schema.org) Validator
-true:
+on:
   schedule:
   - cron: 0 9 * * 1
   workflow_dispatch: null
