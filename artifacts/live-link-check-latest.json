@@ -1,0 +1,83 @@
+{
+  "ts": "2026-08-06T18:17:55.625520+00:00",
+  "base": "https://ziontechgroup.com",
+  "results": [
+    {
+      "route": "/",
+      "code": 200
+    },
+    {
+      "route": "/services/",
+      "code": 200
+    },
+    {
+      "route": "/blog/",
+      "code": 200
+    },
+    {
+      "route": "/contact/",
+      "code": 200
+    },
+    {
+      "route": "/case-studies/",
+      "code": 200
+    },
+    {
+      "route": "/about/",
+      "code": 200
+    },
+    {
+      "route": "/pricing/",
+      "code": 200
+    },
+    {
+      "route": "/tools/",
+      "code": 200
+    },
+    {
+      "route": "/free-tools/",
+      "code": 200
+    },
+    {
+      "route": "/ai-services-index/",
+      "code": 404
+    },
+    {
+      "route": "/new-ai-services/",
+      "code": 404
+    },
+    {
+      "route": "/free-resources/",
+      "code": 404
+    },
+    {
+      "route": "/blog/5g-solutions-2026/",
+      "code": 404
+    },
+    {
+      "route": "/blog/accessibility-compliance-2026/",
+      "code": 404
+    },
+    {
+      "route": "/blog/ai-3d-asset-generator-2026/",
+      "code": 404
+    },
+    {
+      "route": "/blog/ai-customer-support-pro-2026/",
+      "code": 404
+    },
+    {
+      "route": "/blog/ai-observability-2026/",
+      "code": 404
+    },
+    {
+      "route": "/blog/ai-performance-monitoring-2026/",
+      "code": 404
+    }
+  ],
+  "summary": {
+    "checked": 18,
+    "ok": 9,
+    "broken": 9
+  }
+}
