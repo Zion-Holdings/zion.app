@@ -54,10 +54,10 @@ If this guide matches your ai data backup: operations handbook initiative, the n
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-native-app-development-automation-roadmap">Cloud Native App Development Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-vendor-evaluation">Ai 3D Asset Generator Vendor Evaluation</Link></li>
-<li><Link href="/blog/devsecops-pipeline-2026-6956">Devsecops Pipeline 2026 6956</Link></li>
-<li><Link href="/blog/graphql-federation-platform-common-mistakes">Graphql Federation Platform Common Mistakes</Link></li>
+              <li><Link /blog/cloud-native-app-development-automation-roadmap/>Cloud Native App Development Automation Roadmap</Link></li>
+<li><Link /blog/ai-3d-asset-generator-vendor-evaluation/>Ai 3D Asset Generator Vendor Evaluation</Link></li>
+<li><Link /blog/devsecops-pipeline-2026-6956/>Devsecops Pipeline 2026 6956</Link></li>
+<li><Link /blog/graphql-federation-platform-common-mistakes/>Graphql Federation Platform Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
