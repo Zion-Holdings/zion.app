@@ -7,7 +7,7 @@ import { getToolVisits } from '@/data/tools_tracker';
 const TOOL_META: Record<string, {emoji:string;name:string;href:string}> = {
   'ai-service-router':   {emoji:'🤖',name:'AI Service Router',   href:'/tools/ai-service-router'},
   'roi-calculator':      {emoji:'📈',name:'ROI Calculator',      href:'/tools/roi-calculator'},
-  'service-comparison':  {emoji:'⚖️', name:'Service Comparison',  href:'/tools/service-comparison'},
+  'service-comparison':  {emoji:'⚖️', name:'Service Comparison',  href:'/service-comparison'},
   'service-recommender': {emoji:'🎯',name:'Service Recommender', href:'/tools/service-recommender'},
   'port-scanner':        {emoji:'🔓',name:'Port Scanner',        href:'/tools/port-scanner'},
   'ssl-checker':         {emoji:'🔒',name:'SSL Checker',         href:'/tools/ssl-checker'},

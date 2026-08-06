@@ -1,0 +1,20 @@
+{
+  "sent_threads": [
+    {
+      "thread_id": "19f945e11aa2122c",
+      "message_id": "19fd185c7820e81b",
+      "to": "jhlinka@cds.net",
+      "subject": "Re: ZION ENTITY DETAILS",
+      "sent_at": "2026-08-05T10:43:50.705383+00:00",
+      "status": "sent"
+    },
+    {
+      "thread_id": "19edee898f3c7964",
+      "message_id": "19fd4d59726fa9ca",
+      "to": "gemini-notes@google.com",
+      "subject": "Notes: “Abhimanyu Dass and Kleber Garcia Alcatrão” Jun 19, 2026",
+      "sent_at": "2026-08-06T02:09:52.191504+00:00",
+      "status": "error"
+    }
+  ]
+}

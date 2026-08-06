@@ -28,7 +28,7 @@ const TOOLS = [
     desc: 'Verify SSL certificate expiry, issuer, and chain trust for any domain. Catch expiring certs before your users do.',
   },
   {
-    href: '/tools/service-comparison',
+    href: '/service-comparison',
     emoji: '⚖️',
     title: 'Service Comparison',
     desc: 'Compare Zion Tech Group AI, IT, cloud, and automation services side by side. Add to shortlist, deep-compare features, pricing, and timelines.',
