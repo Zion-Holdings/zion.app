@@ -1,0 +1,60 @@
+name: AI Site Watchdog
+
+permissions:
+  contents: read
+  issues: write
+
+on:
+  schedule:
+    - cron: '*/20 * * * *'
+  workflow_dispatch:
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Probe critical routes
+        id: watchdog
+        run: |
+          set -euo pipefail
+          base="https://ziontechgroup.com"
+          ok=0; fail=0
+          for p in / /contact/ /services/ /blog/ /tools/ /solutions/ /case-studies/ /about/ /pricing/ /portal/ /ai-services-index /free-ai-it-tools; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "$base$p" || true)
+            if [ "$code" = "200" ] || [ "$code" = "301" ] || [ "$code" = "302" ]; then
+              ok=$((ok+1))
+            else
+              fail=$((fail+1))
+              echo "FAIL $p -> $code"
+            fi
+          done
+          echo "ok=$ok" >> "$GITHUB_OUTPUT"
+          echo "fail=$fail" >> "$GITHUB_OUTPUT"
+
+      - name: Open deduped issue on failures
+        if: ${{ failure() || steps.watchdog.outputs.fail != '0' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_TITLE: Site watchdog failures detected
+          ISSUE_FINGERPRINT: site-watchdog-route-failures
+          ISSUE_LABELS: bug,automation,site
+          COOLDOWN_HOURS: '2'
+        run: |
+          cat > site-watchdog.md <<'EOF'
+          ## Site watchdog failures detected
+
+          - Route probes failed or returned non-OK status.
+          - Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          EOF
+          export ISSUE_BODY_FILE=site-watchdog.md
+          export ISSUE_FINGERPRINT="site-watchdog-route-failures"
+          node scripts/automation/gh-issue-dedupe-or-create.cjs || true
+
+      - name: Close watchdog issue on recovery
+        if: ${{ success() && steps.watchdog.outputs.fail == '0' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_FINGERPRINT: site-watchdog-route-failures
+          CLOSE_COMMENT: "Auto-closing: site watchdog recovered."
+        run: node scripts/automation/gh-issue-close-on-recovery.cjs || true
