@@ -1,7 +1,7 @@
 name: AI Content Generator Ultra
 
 concurrency:
-  group: content-commit
+  group: content-commit-generator-ultra
   cancel-in-progress: false
 
 permissions:

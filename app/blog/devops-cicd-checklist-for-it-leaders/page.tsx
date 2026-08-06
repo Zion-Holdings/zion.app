@@ -54,10 +54,10 @@ If this guide matches your devops ci/cd: checklist for it leaders initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-operations-handbook">Data Analytics Platform Operations Handbook</Link></li>
-<li><Link href="/blog/endpoint-management-2026-6889">Endpoint Management 2026 6889</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6759">Api Gateway Management 2026 6759</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-2026-6719">Ai Accessibility Auditor 2026 6719</Link></li>
+              <li><Link /blog/data-analytics-platform-operations-handbook/>Data Analytics Platform Operations Handbook</Link></li>
+<li><Link /blog/endpoint-management-2026-6889/>Endpoint Management 2026 6889</Link></li>
+<li><Link /blog/api-gateway-management-2026-6759/>Api Gateway Management 2026 6759</Link></li>
+<li><Link /blog/ai-accessibility-auditor-2026-6719/>Ai Accessibility Auditor 2026 6719</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

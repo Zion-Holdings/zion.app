@@ -7,7 +7,7 @@
 name: AI Services & Content Automation
 
 concurrency:
-  group: content-commit
+  group: content-commit-services-automation
   cancel-in-progress: false
 
 permissions:

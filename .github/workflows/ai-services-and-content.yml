@@ -1,7 +1,7 @@
 name: AI Services and Front Page Content
 
 concurrency:
-  group: content-commit
+  group: content-commit-services
   cancel-in-progress: false
 
 permissions:

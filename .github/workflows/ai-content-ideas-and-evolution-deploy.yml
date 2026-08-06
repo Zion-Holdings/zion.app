@@ -5,7 +5,7 @@
 name: AI Content Ideas and Evolution Deploy
 
 concurrency:
-  group: content-commit
+  group: content-commit-ideas-evolution
   cancel-in-progress: false
 
 permissions:

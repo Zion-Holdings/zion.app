@@ -5,7 +5,7 @@
 name: AI Live Content Ideas Daily
 
 concurrency:
-  group: content-commit
+  group: content-commit-live-ideas
   cancel-in-progress: false
 
 permissions:

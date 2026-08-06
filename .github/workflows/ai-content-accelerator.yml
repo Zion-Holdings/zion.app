@@ -6,7 +6,7 @@
 name: AI Content Accelerator
 
 concurrency:
-  group: content-commit
+  group: content-commit-accelerator
   cancel-in-progress: false
 
 permissions:

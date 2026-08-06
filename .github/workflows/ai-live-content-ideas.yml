@@ -6,7 +6,7 @@
 name: AI Live Content Ideas
 
 concurrency:
-  group: autonomous-main-writer
+  group: autonomous-main-writer-live-content-ideas
   cancel-in-progress: false
 
 permissions:

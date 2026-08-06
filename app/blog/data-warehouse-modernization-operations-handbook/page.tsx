@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/securing-ai-models-a-practical-guide-to-threat-mitigation-in-production">Securing Ai Models A Practical Guide To Threat Mitigation In Production</Link></li>
-<li><Link href="/blog/accessibility-compliance-vendor-evaluation">Accessibility Compliance Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-vendor-evaluation">Ai Customer Success Churn Prevention Vendor Evaluation</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-automation-roadmap">Cyber Threat Intelligence Automation Roadmap</Link></li>
+              <li><Link /blog/securing-ai-models-a-practical-guide-to-threat-mitigation-in-production/>Securing Ai Models A Practical Guide To Threat Mitigation In Production</Link></li>
+<li><Link /blog/accessibility-compliance-vendor-evaluation/>Accessibility Compliance Vendor Evaluation</Link></li>
+<li><Link /blog/ai-customer-success-churn-prevention-vendor-evaluation/>Ai Customer Success Churn Prevention Vendor Evaluation</Link></li>
+<li><Link /blog/cyber-threat-intelligence-automation-roadmap/>Cyber Threat Intelligence Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

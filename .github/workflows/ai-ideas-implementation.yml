@@ -6,7 +6,7 @@
 name: AI Ideas to Implementation
 
 concurrency:
-  group: content-commit
+  group: content-commit-ideas-implementation
   cancel-in-progress: false
 
 permissions:
