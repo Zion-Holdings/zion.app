@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Markdown to HTML Converter | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Convert Markdown to HTML instantly. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/markdown-to-html-converter/" />
+</head>
+<body>
+  <main>
+    <h1>Markdown to HTML Converter</h1>
+    <textarea id="md" rows="6" cols="60"># Hello World
+
+This is **bold** and *italic*.</textarea>
+    <button onclick="convert()">Convert</button>
+    <pre id="out"></pre>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function convert(){
+        let md = document.getElementById('md').value;
+        md = md.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+        md = md.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+        md = md.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+        md = md.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        md = md.replace(/\*(.*?)\*/g, '<em>$1</em>');
+        document.getElementById('out').textContent = md;
+      }
+    </script>
+  </main>
+</body>
+</html>
