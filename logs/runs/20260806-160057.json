@@ -1,0 +1,19 @@
+{
+  "action": "autonomous_lead_generation",
+  "ts": "20260806-160057",
+  "leads_generated": 5,
+  "total_potential_value": 10400,
+  "conversion_rate_target": "25%",
+  "expected_revenue": 2600.0,
+  "automation_score": "100%",
+  "output_files": [
+    "outreach_ready_canonical.json",
+    "pipeline_log.json",
+    "outreach-log.jsonl",
+    "lead-crm/outreach_ready_canonical.json",
+    "lead-crm/pipeline_log.json",
+    "lead-crm/outreach-log.jsonl"
+  ],
+  "follow_up_sequences": 15,
+  "ok": true
+}
