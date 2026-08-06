@@ -1,5 +1,5 @@
 name: Test Coverage Enforcement
-true:
+on:
   pull_request:
     branches:
     - main

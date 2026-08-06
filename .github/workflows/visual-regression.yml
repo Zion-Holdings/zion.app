@@ -1,7 +1,7 @@
 permissions:
   contents: read
 name: Autonomous Visual Regression Detector
-true:
+on:
   schedule:
   - cron: 30 2 * * *
   workflow_dispatch: null

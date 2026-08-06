@@ -1,5 +1,5 @@
 name: Emergency Recovery - Minimal Build
-true:
+on:
   workflow_dispatch: null
   push:
     branches:
