@@ -8,5 +8,15 @@
     "conversion_rate_target": "25%",
     "expected_revenue": 2600.0,
     "automation_score": "100%"
+  },
+  {
+    "timestamp": "2026-08-06T18:00:54.052394",
+    "event": "pipeline_tick",
+    "action": "lead_generation_run",
+    "leads_generated": 5,
+    "total_potential_value": 9900,
+    "conversion_rate_target": "25%",
+    "expected_revenue": 2475.0,
+    "automation_score": "100%"
   }
 ]

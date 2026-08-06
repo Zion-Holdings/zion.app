@@ -1,19 +1,4 @@
-/ /index.html 200
-/services/ /docs/services/index.html 200
-/blog/ /docs/blog/index.html 200
-/contact/ /docs/contact/index.html 200
-/case-studies/ /docs/case-studies/index.html 200
-/about/ /docs/about/index.html 200
-/pricing/ /docs/pricing/index.html 200
-/industries/ /docs/industries/index.html 200
-/search/ /docs/search/index.html 200
-/solutions/ /docs/solutions/index.html 200
-/ai-resources/ /docs/ai-resources/index.html 200
-/ai-services-index /docs/ai-services-index/index.html 301
-/ai-services-index/ /docs/ai-services-index/index.html 200
-/free-ai-it-tools /docs/free-ai-it-tools/index.html 301
-/new-ai-services /docs/new-ai-services/index.html 301
-/new-ai-services/ /docs/new-ai-services/index.html 200
-/free-resources /docs/free-resources/index.html 301
-/free-resources/ /docs/free-resources/index.html 200
-/tools/ /docs/tools/index.html 200
+# GitHub Pages Redirects Configuration
+/ai-services-index/    /ai-services/index.html    200
+/free-ai-it-tools/    /free-ai-it-tools/index.html    200
+/new-ai-services/    /new-ai-services/index.html    200

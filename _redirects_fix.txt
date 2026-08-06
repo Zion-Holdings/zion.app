@@ -1,0 +1,16 @@
+# Redirects for routes that exist as HTML files
+/ai-services-index /ai-services-index/index.html 200
+/ai-services-index/ /ai-services-index/index.html 200
+/free-ai-it-tools /free-ai-it-tools/index.html 200
+/free-ai-it-tools/ /free-ai-it-tools/index.html 200
+/new-ai-services /new-ai-services/index.html 200
+/new-ai-services/ /new-ai-services/index.html 200
+
+# Existing redirects
+/ai-services /ai-services/index.html 301
+/ai-services/ /ai-services/index.html 301
+/docs/new-ai-services /new-ai-services/ 301
+/docs/new-ai-services/ /new-ai-services/ 301
+/free-ai-readiness-audit/ /ai-services/ 301
+/roi-calculator/ /ai-services/ 301
+/ai/ai-readiness-assessment/ /ai-services/ 301
