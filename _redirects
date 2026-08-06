@@ -63,15 +63,3 @@
 /about/ /about/index.html 200
 /faq/ /faq/index.html 200
 /agents/ /agents/index.html 200
-
-# Missing routes fix
-/free-tools /tools/ 301
-/free-tools/ /tools/ 301
-/free-consultation /contact/ 301
-/free-consultation/ /contact/ 301
-/agents-monitoring /services/ 301
-/agents-monitoring/ /services/ 301
-/dashboard /services/ 301
-/dashboard/ /services/ 301
-/sla /services/ 301
-/sla/ /services/ 301
