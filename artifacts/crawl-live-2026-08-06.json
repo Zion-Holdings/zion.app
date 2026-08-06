@@ -1,0 +1,72 @@
+{
+  "origin": "https://ziontechgroup.com",
+  "total_checked": 8,
+  "ok": 8,
+  "failed": [],
+  "results": {
+    "https://ziontechgroup.com/blog/": {
+      "status": 200,
+      "final_url": "https://ziontechgroup.com/blog/",
+      "redirect": null,
+      "size": 1361,
+      "ok": true,
+      "error": null
+    },
+    "https://ziontechgroup.com/": {
+      "status": 200,
+      "final_url": "https://ziontechgroup.com/",
+      "redirect": null,
+      "size": 3518,
+      "ok": true,
+      "error": null
+    },
+    "https://ziontechgroup.com/contact/": {
+      "status": 200,
+      "final_url": "https://ziontechgroup.com/contact/",
+      "redirect": null,
+      "size": 866,
+      "ok": true,
+      "error": null
+    },
+    "https://ziontechgroup.com/about/": {
+      "status": 200,
+      "final_url": "https://ziontechgroup.com/about/",
+      "redirect": null,
+      "size": 894,
+      "ok": true,
+      "error": null
+    },
+    "https://ziontechgroup.com/solutions/": {
+      "status": 200,
+      "final_url": "https://ziontechgroup.com/solutions/",
+      "redirect": null,
+      "size": 1839,
+      "ok": true,
+      "error": null
+    },
+    "https://ziontechgroup.com/tools/": {
+      "status": 200,
+      "final_url": "https://ziontechgroup.com/tools/",
+      "redirect": null,
+      "size": 35296,
+      "ok": true,
+      "error": null
+    },
+    "https://ziontechgroup.com/pricing/": {
+      "status": 200,
+      "final_url": "https://ziontechgroup.com/pricing/",
+      "redirect": null,
+      "size": 1653,
+      "ok": true,
+      "error": null
+    },
+    "https://ziontechgroup.com/services/": {
+      "status": 200,
+      "final_url": "https://ziontechgroup.com/services/",
+      "redirect": null,
+      "size": 1320,
+      "ok": true,
+      "error": null
+    }
+  }
+}
