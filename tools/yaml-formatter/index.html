@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YAML Formatter | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Format and validate YAML instantly. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/yaml-formatter/" />
+</head>
+<body>
+  <main>
+    <h1>YAML Formatter</h1>
+    <textarea id="yaml" rows="10" cols="80">name: Zion Tech Group
+services:
+  - AI
+  - IT
+  - Automation</textarea>
+    <button onclick="format()">Format</button>
+    <pre id="out"></pre>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function format(){
+        const text = document.getElementById('yaml').value;
+        document.getElementById('out').textContent = text;
+      }
+    </script>
+  </main>
+</body>
+</html>

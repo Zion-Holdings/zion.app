@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Markdown Preview | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Preview Markdown rendering instantly. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/markdown-preview/" />
+</head>
+<body>
+  <main>
+    <h1>Markdown Preview</h1>
+    <textarea id="md" rows="12" cols="80"># Title
+
+- item 1
+- item 2
+
+**bold** and *italic*</textarea>
+    <button onclick="render()">Preview</button>
+    <div id="preview" style="border:1px solid #ccc;padding:10px;margin-top:10px;"></div>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function render(){
+        const md = document.getElementById('md').value;
+        const html = md
+          .replace(/^###### (.*$)/gim, '<h6>$1</h6>')
+          .replace(/^##### (.*$)/gim, '<h5>$1</h5>')
+          .replace(/^#### (.*$)/gim, '<h4>$1</h4>')
+          .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+          .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+          .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+          .replace(/\*(.*?)\*/g, '<em>$1</em>')
+          .replace(/`([^`]+)`/g, '<code>$1</code>');
+        document.getElementById('preview').innerHTML = html;
+      }
+    </script>
+  </main>
+</body>
+</html>
