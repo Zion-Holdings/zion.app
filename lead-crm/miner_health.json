@@ -1,11 +1,11 @@
 {
   "status": "analyzed",
   "error": "missing_script",
-  "ran_at": "2026-08-06T14:32:14Z",
+  "ran_at": "2026-08-06T14:40:00Z",
   "contacts_mined": 0,
   "classified": 0,
   "notes": "Run blocked: lead-crm/historical_email_miner.py not found.",
-  "ts": "2026-08-06T18:32:39.521575+00:00",
+  "ts": "2026-08-06T18:54:00.131896+00:00",
   "last_analysis_status": "analyzed_no_send",
   "last_analysis_summary": {
     "contacts": 24,
