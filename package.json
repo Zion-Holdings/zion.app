@@ -73,8 +73,9 @@
     "automation:workflow-integrity:audit": "node automation/github-workflow-integrity-auditor.cjs",
     "pin-actions:strict": "node scripts/automation/validate-pin-actions.cjs",
     "rsc:guard": "echo \"stub: no-op\" && exit 0",
-    "pm2:drift-guard:once": "echo \"stub: no-op\" && exit 0"
-  },
+    "pm2:drift-guard:once": "echo \"stub: no-op\" && exit 0",
+        "pm2:report-budget:once": "echo \"stub: no-op\" && exit 0"
+      },
   "dependencies": {
     "@react-pdf/renderer": "^4.5.1",
     "framer-motion": "^12.0.0",
