@@ -11,10 +11,13 @@ const REPO_DIR = path.resolve(__dirname, '..');
 const TOKEN_PATH = path.resolve(process.env.HOME || process.env.USERPROFILE || '~', '.gh_token');
 
 function run(cmd, opts = {}) {
-  const shell = process.platform === 'win32' ? 'bash' : undefined;
   const args = typeof cmd === 'string' ? cmd : cmd.join(' ');
   try {
-    return spawnSync('bash', ['-lc', args], { cwd: REPO_DIR, encoding: 'utf8', stdio: 'pipe', shell, ...opts }).stdout.trim();
+    const result = spawnSync('bash', ['-lc', args], { cwd: REPO_DIR, encoding: 'utf8', stdio: 'pipe', ...opts });
+    if (result.status !== 0 && !opts.allowFail) {
+      throw new Error(`Command failed: ${args}\n${result.stdout || result.stderr || ''}`.trim());
+    }
+    return (result.stdout || '').trim();
   } catch (e) {
     if (opts.allowFail) return '';
     throw new Error(`Command failed: ${args}\n${e.message}`);
