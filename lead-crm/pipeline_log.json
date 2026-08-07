@@ -55,5 +55,68 @@
     "service_pages": 2,
     "case_studies": 1,
     "status": "draft"
+  },
+  {
+    "timestamp": "2026-08-07T10:00:02.340620",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11300,
+    "expected_revenue": 2825.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-07T12:00:04.631221",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11000,
+    "expected_revenue": 2750.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-07T14:00:02.170854",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11000,
+    "expected_revenue": 2750.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-07T16:00:12.556337",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10500,
+    "expected_revenue": 2625.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-07T16:00:56.735434",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10100,
+    "expected_revenue": 2525.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-07T17:26:28.892372",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11500,
+    "expected_revenue": 2875.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-07T18:00:01.555539",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
+    "conversion_rate_target": "25%"
   }
 ]
