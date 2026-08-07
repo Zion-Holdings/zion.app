@@ -1,6 +1,6 @@
 /pricing /solutions/index.html 301
-/free-tools /free-tools-hub/ 301
-/free-tools/ /free-tools-hub/ 301
+/free-tools /tools/ 301
+/free-tools/ /tools/ 301
 /ai-services /ai-services/index.html 301
 /ai-services/ /ai-services/index.html 301
 /help /faq/index.html 301
@@ -67,7 +67,7 @@
 /tools/subnet-calculator/ /tools/ 301
 /tools/uuid-generator/ /tools/ 301
 /tools/word-counter/ /tools/ 301
-/free-ai-it-tools/ /free-tools-hub/ 301
+/free-ai-it-tools/ /tools/ 301
 /services/cloud-cost-optimization-platform/ /services/ 301
 /services/saas-appointment-scheduler/ /services/ 301
 /services/saas-form-builder/ /services/ 301
