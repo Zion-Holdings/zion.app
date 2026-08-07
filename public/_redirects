@@ -25,3 +25,8 @@
 
 # Configurator fallback
 /configurator/ /docs/configurator/index.html 200
+
+# Orphaned route fallbacks
+/ai-services-index /services/ai-services 301
+/free-ai-it-tools /tools 301
+/new-ai-services /services 301
