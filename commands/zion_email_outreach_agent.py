@@ -116,7 +116,7 @@ Body: Keep it under 200 words, include a brief intro, mention the value proposit
         )
         return resp.choices[0].message.content.strip()
     except Exception as e:
-        log(f'GPT‑4 email generation failed for {lead.get('email', 'no email')}: {e}')
+        log(f"GPT‑4 email generation failed for {lead.get('email', 'no email')}: {e}")
         return """Dear Sir/Madam,\n\nI hope this message finds you well. I am reaching out because Zion Tech Group offers AI‑driven automation solutions that could help your company streamline operations.\n\nI would be happy to schedule a brief 15‑minute call to discuss how we can add value.\n\nBest regards,\nKleber"""
 
 # Main workflow
@@ -193,4 +193,4 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Outreach leads via Google Workspace')
     parser.add_argument('--limit', type=int, default=50, help='Maximum number of leads to process')
     args = parser.parse_args()
-    main(args.limit)"}
+    main(args.limit)
