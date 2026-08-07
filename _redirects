@@ -1,31 +1,31 @@
-/free-tools-hub    /free-ai-it-tools/  301
-/free-tools-hub/  /free-ai-it-tools/  301
-/products/    /services/    301
-/consultation/    /contact/    301
-/site-map/    /    301
-/faq/    /about/    301
-/status/    /    301
-/configurator/    /contact/    301
-/dashboard/    /contact/    301
-/docs/    /    301
-/free-ai-itools /free-ai-it-tools/ 301
-/free-ai-itools/ /free-ai-it-tools/ 301
-/careers/  /contact/  301
+/pricing /solutions/index.html 301
+/free-tools /free-tools-hub/ 301
+/free-tools/ /free-tools-hub/ 301
+/ai-services /ai-services/index.html 301
+/ai-services/ /ai-services/index.html 301
+/help /faq/index.html 301
+/help/ /faq/index.html 301
+/cookies /privacy/index.html 301
+/cookies/ /privacy/index.html 301
+/providers /partners/index.html 301
+/providers/ /partners/index.html 301
+/integrators /partners/index.html 301
+/integrators/ /partners/index.html 301
+/it-vendors /partners/index.html 301
+/it-vendors/ /partners/index.html 301
+/business-customers /contact/index.html 301
+/business-customers/ /contact/index.html 301
+/governments /industries/index.html 301
+/governments/ /industries/index.html 301
+/industry-solutions /industries/index.html 301
+/industry-solutions/ /industries/index.html 301
+/academy /faq/index.html 301
+/academy/ /faq/index.html 301
+/case-studies /case-studies/index.html 200
+/site-map /site-map/index.html 301
+/success-stories /success-stories/index.html 301
 
-/free-consultation /free-consultation/index.html 200
-/free-consultation/ /free-consultation/index.html 200
-/industries/insurance/ /industries/insurance/index.html 200
-/industries/healthcare/ /industries/healthcare/index.html 200
-/industries/legal/ /industries/legal/index.html 200
-/industries/financial-services /industries/financial-services/index.html 200
-/industries/financial-services/ /industries/financial-services/index.html 200
-/tools/ai-quick-audit /tools/ai-quick-audit/index.html 200
-/tools/ai-quick-audit/ /tools/ai-quick-audit/index.html 200
-/tools/phishing-analyzer /tools/phishing-analyzer/index.html 200
-/tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200
-/assets/js/conversion-events.js /assets/js/conversion-events.js 200
-
-# Redirect routes
+# Redirect routes for orphaned legacy paths
 /ai-services-index /ai-services/ 301
 /ai-services-index/ /ai-services/ 301
 /free-ai-it-tools /tools/ 301
@@ -33,54 +33,52 @@
 /new-ai-services /services/ 301
 /new-ai-services/ /services/ 301
 
-# Search
-/search /docs/search/index.html 200
-/search/ /docs/search/index.html 200
+# Canonical sitemap
 
-# Free tools fallbacks
-/free-tools /free-tools.html 200
-/free-toolss/ /free-tools.html 200
-
-# AI resources fallback
-/ai-resources /docs/ai-resources/index.html 200
-/ai-resources/ /docs/ai-resources/index.html 200
-
-# Configurator fallback
-/configurator/ /docs/configurator/index.html 200
-/mobile-app  /mobile-app/index.html  200
-/desktop-app  /desktop-app/index.html  200
-/plugin-marketplace  /plugin-marketplace/index.html  200
-/changelogs  /changelogs/index.html  200
-/public-roadmap  /roadmap/  301
-/public-roadmap/ /roadmap/ 301
-/status-page  /status-page/index.html  200
-/status-page/ /status-page/index.html 200
-/use-cases /use-cases/index.html 200
-/use-cases/ /use-cases/index.html 200
-/computer-vision-services/ /computer-vision-services/index.html 200
-/machine-learning-ops/ /machine-learning-ops/index.html 200
-/intelligent-document-processing/ /intelligent-document-processing/index.html 200
-/generative-ai-enterprise/ /generative-ai-enterprise/index.html 200
-/computer-vision-services/ /computer-vision-services/index.html 200
-/machine-learning-ops/ /machine-learning-ops/index.html 200
-/intelligent-document-processing/ /intelligent-document-processing/index.html 200
-/generative-ai-enterprise/ /generative-ai-enterprise/index.html 200
-/ai-customer-360/ /ai-customer-360/index.html 200
-/ai-recommendation-engine/ /ai-recommendation-engine/index.html 200
-/ai-price-optimizer/ /ai-price-optimizer/index.html 200
-/ai-chatbot-customer-service/index/ 200 /ai-chatbot-customer-service/index/
-/ai-content-generation-enterprise/index/ 200 /ai-content-generation-enterprise/index/
-/ai-supply-chain-optimization/index/ 200 /ai-supply-chain-optimization/index/
-/ai-human-resources-automation/index/ 200 /ai-human-resources-automation/index/
-/ai-cybersecurity-threat-detection/index/ 200 /ai-cybersecurity-threat-detection/index/
-
-/free-ai-consultation /free-ai-consultation/index.html 200
-/free-ai-consultation/ /free-ai-consultation/index.html 200
-
-/ai-roi-calculator /ai-roi-calculator/index.html 200
-/ai-roi-calculator/ /ai-roi-calculator/index.html 200
-
-# Missing routes fix - added for stale Pages 404s
-/about/ /about/index.html 200
-/faq/ /faq/index.html 200
-/agents/ /agents/index.html 200
+/docs/new-ai-services /new-ai-services/ 301
+/docs/new-ai-services/ /new-ai-services/ 301
+/blog/ai-performance-monitoring/ /blog/ 301
+/blog/cloud-cost-ai-optimizer/ /blog/ 301
+/blog/cyber-threat-intelligence/ /blog/ 301
+/blog/devops-gen-ai-cicd/ /blog/ 301
+/solutions/construction-engineering/ /industries/ 301
+/solutions/ecommerce-retail/ /industries/ 301
+/solutions/education-training/ /industries/ 301
+/solutions/energy-utilities/ /industries/ 301
+/solutions/financial-services/ /industries/ 301
+/solutions/government-and-public-sector/ /industries/ 301
+/solutions/healthcare/ /industries/ 301
+/solutions/insurance/ /industries/ 301
+/solutions/logistics-supply-chain/ /industries/ 301
+/solutions/manufacturing-industrial/ /industries/ 301
+/solutions/media-entertainment/ /industries/ 301
+/solutions/technology-and-saas/ /industries/ 301
+/services/saas-email-campaigns/ /services/ 301
+/services/ai-chatbot-builder/ /services/ 301
+/services/managed-observability-247/ /services/ 301
+/services/sec-soc-as-a-service/ /services/ 301
+/tools/ssl-checker/ /tools/ 301
+/free-ai-readiness-audit/ /ai-services/ 301
+/roi-calculator/ /ai-services/ 301
+/ai/ai-readiness-assessment/ /ai-services/ 301
+/services/ai-observability-aiops/ /services/ 301
+/status-page/ /contact/ 301
+/agents-monitoring/ /services/ 301
+/dashboard/ /services/ 301
+/sla/ /faq/ 301
+/cookie-policy/ /privacy/ 301
+/free-consultation/ /contact/ 301
+/tools/ai-quick-audit/ /tools/ 301
+/tools/base64/ /tools/ 301
+/tools/json-formatter/ /tools/ 301
+/tools/jwt-decoder/ /tools/ 301
+/tools/qr-code-generator/ /tools/ 301
+/tools/regex-tester/ /tools/ 301
+/tools/subnet-calculator/ /tools/ 301
+/tools/uuid-generator/ /tools/ 301
+/tools/word-counter/ /tools/ 301
+/services/cloud-cost-optimization-platform/ /services/ 301
+/services/saas-appointment-scheduler/ /services/ 301
+/services/saas-form-builder/ /services/ 301
+/services/saas-subscription-analytics/ /services/ 301
+/search/ /search.html 200
