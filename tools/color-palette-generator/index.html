@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color Palette Generator | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Generate random color palettes. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/color-palette-generator/" />
+</head>
+<body>
+  <main>
+    <h1>Color Palette Generator</h1>
+    <label>Count: <input id="count" type="number" min="1" max="10" value="5" /></label>
+    <button onclick="generate()">Generate</button>
+    <div id="palettes"></div>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function generate(){
+        const count = parseInt(document.getElementById('count').value);
+        const palettes = document.getElementById('palettes');
+        palettes.innerHTML = '';
+        for (let i = 0; i < count; i++) {
+          const c = '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+          const div = document.createElement('div');
+          div.style.background = c;
+          div.style.padding = '20px';
+          div.style.margin = '5px';
+          div.style.color = '#fff';
+          div.textContent = c;
+          palettes.appendChild(div);
+        }
+      }
+    </script>
+  </main>
+</body>
+</html>
