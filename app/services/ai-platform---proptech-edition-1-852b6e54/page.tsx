@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Platform - Proptech Edition #1 - Zion Tech Group",
-  description: "Revolutionize proptech through intelligent automation. Our AI Platform - Proptech Edition #1 leverages advanced machine learning to deliver energy management at",
+  description: "Revolutionize proptech through intelligent automation. Our AI Platform - Proptech Edition #1 leverages advanced machine learning to deliver quality control at s",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-platform---proptech-edition-1-852b6e54`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Platform - Proptech Edition #1</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize proptech through intelligent automation. Our AI Platform - Proptech Edition #1 leverages advanced machine learning to deliver energy management at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize proptech through intelligent automation. Our AI Platform - Proptech Edition #1 leverages advanced machine learning to deliver quality control at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Performance dashboards with real-time metrics</li>
-            <li>HIPAA ready with healthcare data protection</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Financial risk management with scenario analysis</li>
             <li>Manufacturing quality control with defect detection</li>
-            <li>Inventory prediction with demand forecasting</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Energy optimization with consumption tracking</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Reduced churn with proactive customer retention</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         
