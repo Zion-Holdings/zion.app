@@ -1,33 +1,17 @@
-const fs = require('fs');
+#!/usr/bin/env node
+/**
+ * Build Deploy Health Check - Wrapper for ci_health_dashboard.py
+ * Validates CI/CD pipeline health
+ */
+const { execSync } = require('child_process');
 const path = require('path');
 
-const repoRoot = process.cwd();
-const statePaths = [
-  path.join(repoRoot, 'automation', 'reports', 'build-deploy-runner-latest.json'),
-  path.join(repoRoot, 'automation', 'reports', 'continuous-build-deploy-latest.json'),
-];
-const outDir = path.join(repoRoot, 'out');
-const statePath = path.join(repoRoot, 'automation', 'reports', 'build-deploy-health-latest.json');
-
-function readJson(p) {
-  try { return JSON.parse(fs.readFileSync(p, 'utf8')); } catch { return null; }
+const scriptPath = path.resolve(__dirname, '../../commands/ci_health_dashboard.py');
+console.log('🏗️ Checking build/deploy health via ci_health_dashboard.py...');
+try {
+    const output = execSync(`python3 "${scriptPath}"`, { encoding: 'utf8', stdio: 'pipe' });
+    console.log(output);
+} catch (err) {
+    console.error('❌ CI health check failed:', err.message);
+    process.exit(1);
 }
-
-const states = statePaths.map(readJson).filter(Boolean);
-const latest = states[states.length - 1] || null;
-
-const outExists = fs.existsSync(outDir);
-const indexHtmlExists = outExists && fs.existsSync(path.join(outDir, 'index.html'));
-
-const now = new Date().toISOString();
-const report = {
-  checkedAt: now,
-  outExists,
-  indexHtmlExists,
-  artifacts: latest || null,
-  sourceReports: states.map((s, i) => ({ path: statePaths[i], object: s })),
-};
-
-fs.mkdirSync(path.dirname(statePath), { recursive: true });
-fs.writeFileSync(statePath, JSON.stringify(report, null, 2));
-console.log(JSON.stringify(report, null, 2));
