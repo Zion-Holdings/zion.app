@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/network-infrastructure-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: implementation playbook", "description": "Network Infrastructure: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:59Z", "dateModified": "2026-08-07T04:51:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: implementation playbook", "description": "Network Infrastructure: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:16Z", "dateModified": "2026-08-07T04:52:16Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-2026-6879">Cloud Cost Ai Optimizer 2026 6879</Link></li>
-<li><Link href="/blog/chaos-engineering-2026">Chaos Engineering 2026</Link></li>
-<li><Link href="/blog/endpoint-management-2026-7303">Endpoint Management 2026 7303</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-architecture-overview">Autonomous Qa Engineering Architecture Overview</Link></li>
+              <li><Link href="/blog/cloud-migration-services-2026-6779">Cloud Migration Services 2026 6779</Link></li>
+<li><Link href="/blog/ai-data-backup-executive-guide">Ai Data Backup Executive Guide</Link></li>
+<li><Link href="/blog/ai-agent-safety-evaluation-2026-7136">Ai Agent Safety Evaluation 2026 7136</Link></li>
+<li><Link href="/blog/autonomous-qa-engineering-2026-6937">Autonomous Qa Engineering 2026 6937</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

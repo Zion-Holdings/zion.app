@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'MicroSaaS HR Recruitment | Zion Tech Group',
   description: 'MicroSaaS HR Recruitment',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'MicroSaaS HR Recruitment',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/micro-saas-ai-hr-recruitment-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS HR Recruitment", "description": "MicroSaaS HR Recruitment", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:56Z", "dateModified": "2026-08-07T04:51:56Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/micro-saas-ai-hr-recruitment-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS HR Recruitment", "description": "MicroSaaS HR Recruitment", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:38Z", "dateModified": "2026-08-07T04:52:38Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/micro-saas-ai-hr-recruitment-2026/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your microsaas hr recruitment initiative, the next step is
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-lakehouse-pipelines-2026-7257">Ai Data Lakehouse Pipelines 2026 7257</Link></li>
-<li><Link href="/blog/multimodal-ai-vision-and-language-models-in-enterprise">Multimodal Ai Vision And Language Models In Enterprise</Link></li>
-<li><Link href="/blog/accessibility-compliance-architecture-overview">Accessibility Compliance Architecture Overview</Link></li>
-<li><Link href="/blog/it-consulting-2026-6708">It Consulting 2026 6708</Link></li>
+              <li><Link href="/blog/endpoint-management-2026-7303">Endpoint Management 2026 7303</Link></li>
+<li><Link href="/blog/ai-agentic-workflows-2026-6655">Ai Agentic Workflows 2026 6655</Link></li>
+<li><Link href="/blog/ai-it-operations-vendor-evaluation">Ai It Operations Vendor Evaluation</Link></li>
+<li><Link href="/blog/api-management-gateway-security-and-governance">Api Management Gateway Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

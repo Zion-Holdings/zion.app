@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/autonomous-qa-engineering-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering: policy and compliance", "description": "Autonomous QA Engineering: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:45Z", "dateModified": "2026-08-07T04:51:45Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering: policy and compliance", "description": "Autonomous QA Engineering: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:19Z", "dateModified": "2026-08-07T04:52:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For autonomous qa engineering: policy and compliance: pick one workflow, assign 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-msp-security-compliance-2026-7187">Ai Msp Security Compliance 2026 7187</Link></li>
-<li><Link href="/blog/devsecops-pipeline-evaluation-framework">Devsecops Pipeline Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-in-supply-chain-predictive-inventory-and-demand-forecasting">Ai In Supply Chain Predictive Inventory And Demand Forecasting</Link></li>
-<li><Link href="/blog/api-integration-2026-7220">Api Integration 2026 7220</Link></li>
+              <li><Link href="/blog/endpoint-management-2026-7165">Endpoint Management 2026 7165</Link></li>
+<li><Link href="/blog/api-management-gateway-2026-7221">Api Management Gateway 2026 7221</Link></li>
+<li><Link href="/blog/autonomous-qa-engineering-automation-roadmap">Autonomous Qa Engineering Automation Roadmap</Link></li>
+<li><Link href="/blog/ai-performance-monitoring-2026-7218">Ai Performance Monitoring 2026 7218</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

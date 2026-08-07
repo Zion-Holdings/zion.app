@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Cloud Migration Services: checklist for IT leaders | Zion Tech Group',
   description: 'Cloud Migration Services: checklist for IT leaders',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Cloud Migration Services: checklist for IT leaders',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-migration-services-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: checklist for IT leaders", "description": "Cloud Migration Services: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:47Z", "dateModified": "2026-08-07T04:51:47Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-checklist-for-it-leaders/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: checklist for IT leaders", "description": "Cloud Migration Services: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:31Z", "dateModified": "2026-08-07T04:52:31Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for cloud migration services: checklist for it leaders: workf
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-2026-6889">Endpoint Management 2026 6889</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-2026-6936">Autonomous Code Deployment 2026 6936</Link></li>
-<li><Link href="/blog/ai-for-insurance-claims-and-underwriting">Ai For Insurance Claims And Underwriting</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-2026-6524">Ai Bdr Sdr 2026 6524</Link></li>
+              <li><Link href="/blog/api-security-testing-2026-6899">Api Security Testing 2026 6899</Link></li>
+<li><Link href="/blog/ai-msp-security-compliance-2026-6911">Ai Msp Security Compliance 2026 6911</Link></li>
+<li><Link href="/blog/ai-api-gateway-2026-7103">Ai Api Gateway 2026 7103</Link></li>
+<li><Link href="/blog/aiops-anomaly-detection-starter-template">Aiops Anomaly Detection Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/autonomous-qa-engineering-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering: automation roadmap", "description": "Autonomous QA Engineering: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:52Z", "dateModified": "2026-08-07T04:51:52Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering: automation roadmap", "description": "Autonomous QA Engineering: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:23Z", "dateModified": "2026-08-07T04:52:23Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-social-media-manager-2026-7199">Micro Saas Ai Social Media Manager 2026 7199</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-2026-6656">Ai Autonomous Agents 2026 6656</Link></li>
-<li><Link href="/blog/accessibility-compliance-2026-6872">Accessibility Compliance 2026 6872</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-7173">Api Gateway Management 2026 7173</Link></li>
+              <li><Link href="/blog/smart-contract-audit-2026-6893">Smart Contract Audit 2026 6893</Link></li>
+<li><Link href="/blog/5g-solutions-2026-7259">5G Solutions 2026 7259</Link></li>
+<li><Link href="/blog/api-orchestration-layer-2026-7210">Api Orchestration Layer 2026 7210</Link></li>
+<li><Link href="/blog/graphql-federation-platform-2026-6618">Graphql Federation Platform 2026 6618</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

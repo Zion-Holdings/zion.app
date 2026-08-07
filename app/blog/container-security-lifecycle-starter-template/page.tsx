@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Container Security Lifecycle: starter template | Zion Tech Group',
   description: 'Container Security Lifecycle: starter template',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Container Security Lifecycle: starter template',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/container-security-lifecycle-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Container Security Lifecycle: starter template", "description": "Container Security Lifecycle: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:04Z", "dateModified": "2026-08-07T04:52:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/container-security-lifecycle-starter-template/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Container Security Lifecycle: starter template", "description": "Container Security Lifecycle: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:16Z", "dateModified": "2026-08-07T04:52:16Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/container-security-lifecycle-starter-template/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-autonomous-agents-2026-6794">Ai Autonomous Agents 2026 6794</Link></li>
-<li><Link href="/blog/automation-orchestration-starter-template">Automation Orchestration Starter Template</Link></li>
-<li><Link href="/blog/devops-cicd-2026-7125">Devops Cicd 2026 7125</Link></li>
-<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7250">Data Analytics Platform Modern Enterprise 2026 7250</Link></li>
+              <li><Link href="/blog/api-performance-testing-2026">Api Performance Testing 2026</Link></li>
+<li><Link href="/blog/managed-it-services-automation-roadmap">Managed It Services Automation Roadmap</Link></li>
+<li><Link href="/blog/ai-agent-safety-evaluation-2026-6791">Ai Agent Safety Evaluation 2026 6791</Link></li>
+<li><Link href="/blog/accessibility-compliance-2026-6734">Accessibility Compliance 2026 6734</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

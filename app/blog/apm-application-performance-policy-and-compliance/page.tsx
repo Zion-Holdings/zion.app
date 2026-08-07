@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/apm-application-performance-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "APM Application Performance: policy and compliance", "description": "APM Application Performance: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:52Z", "dateModified": "2026-08-07T04:51:52Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/apm-application-performance-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "APM Application Performance: policy and compliance", "description": "APM Application Performance: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:27Z", "dateModified": "2026-08-07T04:52:27Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/apm-application-performance-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-ad-copy-generator-2026-6790">Ai Ad Copy Generator 2026 6790</Link></li>
-<li><Link href="/blog/network-infrastructure-2026-7261">Network Infrastructure 2026 7261</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026-3">Cybersecurity Platform Msp 2026 3</Link></li>
-<li><Link href="/blog/ai-in-supply-chain-predictive-inventory-and-demand-forecasting">Ai In Supply Chain Predictive Inventory And Demand Forecasting</Link></li>
+              <li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-7336">Micro Saas Ai Customer Onboarding 2026 7336</Link></li>
+<li><Link href="/blog/cloud-cost-optimization-case-study">Cloud Cost Optimization Case Study</Link></li>
+<li><Link href="/blog/graphql-federation-platform-executive-guide">Graphql Federation Platform Executive Guide</Link></li>
+<li><Link href="/blog/apm-application-performance-2026">Apm Application Performance 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

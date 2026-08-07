@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Enterprise AI Intelligence Hub | Zion Tech Group',
   description: 'Enterprise AI Intelligence Hub',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Enterprise AI Intelligence Hub',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise AI Intelligence Hub", "description": "Enterprise AI Intelligence Hub", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:44Z", "dateModified": "2026-08-07T04:51:44Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise AI Intelligence Hub", "description": "Enterprise AI Intelligence Hub", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:25Z", "dateModified": "2026-08-07T04:52:25Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-2026/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your enterprise ai intelligence hub initiative, the next s
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-2026-6742">Cloud Finops 2026 6742</Link></li>
-<li><Link href="/blog/5g-solutions-checklist-for-it-leaders">5G Solutions Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cloud-finops-2026-6811">Cloud Finops 2026 6811</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6667">Api Gateway Management 2026 6667</Link></li>
+              <li><Link href="/blog/ai-observability-implementation-playbook">Ai Observability Implementation Playbook</Link></li>
+<li><Link href="/blog/cloud-cost-ai-optimizer-policy-and-compliance">Cloud Cost Ai Optimizer Policy And Compliance</Link></li>
+<li><Link href="/blog/cloud-native-app-development-common-mistakes">Cloud Native App Development Common Mistakes</Link></li>
+<li><Link href="/blog/cyber-threat-intelligence-2026-6676">Cyber Threat Intelligence 2026 6676</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

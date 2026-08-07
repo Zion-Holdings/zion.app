@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI BOM Procurement | Zion Tech Group',
   description: 'AI BOM Procurement',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI BOM Procurement',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-bom-procurement-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BOM Procurement", "description": "AI BOM Procurement", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:00Z", "dateModified": "2026-08-07T04:52:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bom-procurement-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BOM Procurement", "description": "AI BOM Procurement", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:28Z", "dateModified": "2026-08-07T04:52:28Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bom-procurement-2026/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your ai bom procurement initiative, the next step is a sco
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-auditor-2026-6995">Ai Accessibility Auditor 2026 6995</Link></li>
-<li><Link href="/blog/database-migration-service-2026-6816">Database Migration Service 2026 6816</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-case-study">Microsaas Hr Recruitment Case Study</Link></li>
-<li><Link href="/blog/api-performance-testing-2026-6898">Api Performance Testing 2026 6898</Link></li>
+              <li><Link href="/blog/cloud-cost-optimization-checklist-2026-7247">Cloud Cost Optimization Checklist 2026 7247</Link></li>
+<li><Link href="/blog/ai-performance-monitoring-implementation-playbook">Ai Performance Monitoring Implementation Playbook</Link></li>
+<li><Link href="/blog/accessibility-compliance-2026-6665">Accessibility Compliance 2026 6665</Link></li>
+<li><Link href="/blog/cloud-cost-ai-optimizer-2026-7155">Cloud Cost Ai Optimizer 2026 7155</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

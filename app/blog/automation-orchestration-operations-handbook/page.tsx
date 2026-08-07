@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/automation-orchestration-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation Orchestration: operations handbook", "description": "Automation Orchestration: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:03Z", "dateModified": "2026-08-07T04:52:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automation-orchestration-operations-handbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation Orchestration: operations handbook", "description": "Automation Orchestration: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:31Z", "dateModified": "2026-08-07T04:52:31Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automation-orchestration-operations-handbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-2026-7306">Event Driven Architecture 2026 7306</Link></li>
-<li><Link href="/blog/cloud-native-app-development-2026-7226">Cloud Native App Development 2026 7226</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-7198">Micro Saas Ai Customer Onboarding 2026 7198</Link></li>
-<li><Link href="/blog/api-management-gateway-evaluation-framework">Api Management Gateway Evaluation Framework</Link></li>
+              <li><Link href="/blog/ai-3d-asset-generator-2026-7339">Ai 3D Asset Generator 2026 7339</Link></li>
+<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-6836">Data Analytics Platform Modern Enterprise 2026 6836</Link></li>
+<li><Link href="/blog/it-consulting-security-and-governance">It Consulting Security And Governance</Link></li>
+<li><Link href="/blog/ai-accessibility-auditor-2026-7133">Ai Accessibility Auditor 2026 7133</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

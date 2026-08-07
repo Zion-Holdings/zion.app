@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Enterprise Backup DR: case study | Zion Tech Group',
   description: 'Enterprise Backup DR: case study',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Enterprise Backup DR: case study',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/enterprise-backup-dr-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR: case study", "description": "Enterprise Backup DR: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:52Z", "dateModified": "2026-08-07T04:51:52Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR: case study", "description": "Enterprise Backup DR: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:21Z", "dateModified": "2026-08-07T04:52:21Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-case-study/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-evaluation-framework">Api Management Gateway Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-2026-6722">Ai Agent Safety Evaluation 2026 6722</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-2026">Data Warehouse Modernization 2026</Link></li>
-<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-6974">Data Analytics Platform Modern Enterprise 2026 6974</Link></li>
+              <li><Link href="/blog/enterprise-backup-dr-2026-6821">Enterprise Backup Dr 2026 6821</Link></li>
+<li><Link href="/blog/network-infrastructure-2026-7123">Network Infrastructure 2026 7123</Link></li>
+<li><Link href="/blog/ai-observability-common-mistakes">Ai Observability Common Mistakes</Link></li>
+<li><Link href="/blog/enterprise-backup-dr-checklist-for-it-leaders">Enterprise Backup Dr Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

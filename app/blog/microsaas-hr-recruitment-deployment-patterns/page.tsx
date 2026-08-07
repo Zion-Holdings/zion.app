@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'MicroSaaS HR Recruitment: deployment patterns | Zion Tech Group',
   description: 'MicroSaaS HR Recruitment: deployment patterns',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'MicroSaaS HR Recruitment: deployment patterns',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/microsaas-hr-recruitment-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS HR Recruitment: deployment patterns", "description": "MicroSaaS HR Recruitment: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:59Z", "dateModified": "2026-08-07T04:51:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-hr-recruitment-deployment-patterns/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS HR Recruitment: deployment patterns", "description": "MicroSaaS HR Recruitment: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:30Z", "dateModified": "2026-08-07T04:52:30Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-hr-recruitment-deployment-patterns/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/smart-contract-audit-2026-6755">Smart Contract Audit 2026 6755</Link></li>
-<li><Link href="/blog/automation-orchestration-enterprise-2026-7251">Automation Orchestration Enterprise 2026 7251</Link></li>
-<li><Link href="/blog/edge-computing-deployment-vendor-evaluation">Edge Computing Deployment Vendor Evaluation</Link></li>
-<li><Link href="/blog/api-gateway-management-vendor-evaluation">Api Gateway Management Vendor Evaluation</Link></li>
+              <li><Link href="/blog/brand-voice-guardian-2026">Brand Voice Guardian 2026</Link></li>
+<li><Link href="/blog/autonomous-code-deployment-executive-guide">Autonomous Code Deployment Executive Guide</Link></li>
+<li><Link href="/blog/ai-ad-copy-generator-2026-6859">Ai Ad Copy Generator 2026 6859</Link></li>
+<li><Link href="/blog/ai-accessibility-optimizer-deployment-patterns">Ai Accessibility Optimizer Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/autonomous-qa-engineering-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering: deployment patterns", "description": "Autonomous QA Engineering: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:50Z", "dateModified": "2026-08-07T04:51:50Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-deployment-patterns/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering: deployment patterns", "description": "Autonomous QA Engineering: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:34Z", "dateModified": "2026-08-07T04:52:34Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-deployment-patterns/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-7267">Micro Saas Ai Customer Onboarding 2026 7267</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-2026">Ai Agent Safety Evaluation 2026</Link></li>
-<li><Link href="/blog/automation-orchestration-implementation-playbook">Automation Orchestration Implementation Playbook</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-2026-7140">Aiops Anomaly Detection 2026 7140</Link></li>
+              <li><Link href="/blog/ai-ad-copy-generator-2026-7273">Ai Ad Copy Generator 2026 7273</Link></li>
+<li><Link href="/blog/api-orchestration-layer-2026-7210">Api Orchestration Layer 2026 7210</Link></li>
+<li><Link href="/blog/managed-it-services-small-business-2026-6973">Managed It Services Small Business 2026 6973</Link></li>
+<li><Link href="/blog/ai-customer-success-churn-2026-6775">Ai Customer Success Churn 2026 6775</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
