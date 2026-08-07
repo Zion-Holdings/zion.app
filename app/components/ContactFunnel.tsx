@@ -140,7 +140,7 @@ export default function ContactFunnel() {
         </div>
 
         {/* ── Direct action buttons (4-column grid) ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
 
           <DirectAction
             href={`tel:${PHONE.replace(/\s+/g, '')}`}
@@ -169,6 +169,26 @@ export default function ContactFunnel() {
             label="System Status"
             sub="24/7 uptime monitoring"
           />
+        </div>
+
+        {/* ── Scheduling CTAs — Calendly + Google Meet ── */}
+        <div className="flex flex-wrap justify-center gap-4 mb-10">
+          <a
+            href="https://calendly.com/kleber-ziontechgroup"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-purple-600 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-purple-500 active:scale-[0.97] transition-all shadow-lg shadow-purple-600/25"
+          >
+            📅 Schedule a Call — Calendly
+          </a>
+          <a
+            href="https://meet.google.com/ouu-khao-kuy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-slate-800 border border-slate-600 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:bg-slate-700 hover:border-purple-500/30 active:scale-[0.97] transition-all"
+          >
+            🎥 Join Google Meet
+          </a>
         </div>
 
         {/* ── Office address + hours ───────────────── */}
