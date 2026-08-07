@@ -25,8 +25,8 @@
 /site-map /site-map/index.html 301
 /success-stories /success-stories/index.html 301
 # rebuild 1785934545
-/docs/new-ai-services /new-ai-services/ 301
-/docs/new-ai-services/ /new-ai-services/ 301
+/new-ai-services /services/ 301
+/new-ai-services/ /services/ 301
 /blog/ai-performance-monitoring/ /blog/ 301
 /blog/cloud-cost-ai-optimizer/ /blog/ 301
 /blog/cyber-threat-intelligence/ /blog/ 301
@@ -67,11 +67,13 @@
 /tools/subnet-calculator/ /tools/ 301
 /tools/uuid-generator/ /tools/ 301
 /tools/word-counter/ /tools/ 301
+/free-ai-it-tools /tools/ 301
 /free-ai-it-tools/ /tools/ 301
 /services/cloud-cost-optimization-platform/ /services/ 301
 /services/saas-appointment-scheduler/ /services/ 301
 /services/saas-form-builder/ /services/ 301
 /services/saas-subscription-analytics/ /services/ 301
+/ai-services-index /ai-services/ 301
 /ai-services-index/ /ai-services/ 301
 /search/ /search.html 200
 # Force rebuild 2026-08-05 14:42:49
