@@ -1,0 +1,2280 @@
+[
+  {
+    "title": "AI Customer Success Churn Prevention: case study",
+    "slug": "ai-customer-success-churn-prevention-case-study",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS Social Media Manager: checklist for IT leaders",
+    "slug": "microsaas-social-media-manager-checklist-for-it-leaders",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Customer Success Churn Prevention: automation roadmap",
+    "slug": "ai-customer-success-churn-prevention-automation-roadmap",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Gateway Management: automation roadmap",
+    "slug": "api-gateway-management-automation-roadmap",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Accessibility Auditor: executive guide",
+    "slug": "ai-accessibility-auditor-executive-guide",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Enterprise Backup DR: implementation playbook",
+    "slug": "enterprise-backup-dr-implementation-playbook",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Agent Tool Builder: deployment patterns",
+    "slug": "ai-agent-tool-builder-deployment-patterns",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "APM Application Performance",
+    "slug": "apm-application-performance-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "GraphQL Federation Platform: policy and compliance",
+    "slug": "graphql-federation-platform-policy-and-compliance",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Agent Safety Evaluation: checklist for IT leaders",
+    "slug": "ai-agent-safety-evaluation-checklist-for-it-leaders",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cyber Threat Intelligence: ROI and cost model",
+    "slug": "cyber-threat-intelligence-roi-and-cost-model",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS Translation Engine: security and governance",
+    "slug": "microsaas-translation-engine-security-and-governance",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Accessibility Auditor: automation roadmap",
+    "slug": "ai-accessibility-auditor-automation-roadmap",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Agentic Workflows: policy and compliance",
+    "slug": "ai-agentic-workflows-policy-and-compliance",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "DevOps CI/CD: ROI and cost model",
+    "slug": "devops-cicd-roi-and-cost-model",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Database Migration Service: deployment patterns",
+    "slug": "database-migration-service-deployment-patterns",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Observability: implementation playbook",
+    "slug": "ai-observability-implementation-playbook",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "APM Application Performance: architecture overview",
+    "slug": "apm-application-performance-architecture-overview",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "5G Solutions",
+    "slug": "5g-solutions-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "MicroSaaS Social Media Manager: starter template",
+    "slug": "microsaas-social-media-manager-starter-template",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "IT Consulting",
+    "slug": "it-consulting-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "AI Ad Copy Generator: starter template",
+    "slug": "ai-ad-copy-generator-starter-template",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Ad Copy Generator",
+    "slug": "ai-ad-copy-generator-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "AI BDR SDR: evaluation framework",
+    "slug": "ai-bdr-sdr-evaluation-framework",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Automation Orchestration: starter template",
+    "slug": "automation-orchestration-starter-template",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Observability: deployment patterns",
+    "slug": "ai-observability-deployment-patterns",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "IT Consulting: implementation playbook",
+    "slug": "it-consulting-implementation-playbook",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Automation Orchestration: architecture overview",
+    "slug": "automation-orchestration-architecture-overview",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Automated AI Reporting: common mistakes",
+    "slug": "automated-ai-reporting-common-mistakes",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Data Warehouse Modernization: operations handbook",
+    "slug": "data-warehouse-modernization-operations-handbook",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Accessibility Auditor: common mistakes",
+    "slug": "ai-accessibility-auditor-common-mistakes",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Accessibility Auditor",
+    "slug": "ai-accessibility-auditor-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "AI Email Intelligence: security and governance",
+    "slug": "ai-email-intelligence-security-and-governance",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cloud Cost Optimization",
+    "slug": "cloud-cost-optimization-checklist-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "AI IT Operations: case study",
+    "slug": "ai-it-operations-case-study",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Chaos Engineering: ROI and cost model",
+    "slug": "chaos-engineering-roi-and-cost-model",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Event Driven Architecture: executive guide",
+    "slug": "event-driven-architecture-executive-guide",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Integration: implementation playbook",
+    "slug": "api-integration-implementation-playbook",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Observability: common mistakes",
+    "slug": "ai-observability-common-mistakes",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Autonomous Code Deployment: policy and compliance",
+    "slug": "autonomous-code-deployment-policy-and-compliance",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "ETL Pipeline Optimization: implementation playbook",
+    "slug": "etl-pipeline-optimization-implementation-playbook",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Incident Response Retainer",
+    "slug": "incident-response-retainer-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "AI MSP Security Compliance: deployment patterns",
+    "slug": "ai-msp-security-compliance-deployment-patterns",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI API Gateway: evaluation framework",
+    "slug": "ai-api-gateway-evaluation-framework",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI 3D Asset Generator: common mistakes",
+    "slug": "ai-3d-asset-generator-common-mistakes",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Gateway Management: vendor evaluation",
+    "slug": "api-gateway-management-vendor-evaluation",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cyber Threat Intelligence",
+    "slug": "cyber-threat-intelligence-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Cloud Migration Services: operations handbook",
+    "slug": "cloud-migration-services-operations-handbook",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS Translation Engine",
+    "slug": "micro-saas-ai-translation-engine-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "AIOps Anomaly Detection: automation roadmap",
+    "slug": "aiops-anomaly-detection-automation-roadmap",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "GenAI DevOps CI/CD: automation roadmap",
+    "slug": "genai-devops-cicd-automation-roadmap",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Security Testing: operations handbook",
+    "slug": "api-security-testing-operations-handbook",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "GraphQL Federation Platform: executive guide",
+    "slug": "graphql-federation-platform-executive-guide",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Autonomous Code Deployment: case study",
+    "slug": "autonomous-code-deployment-case-study",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS Translation Engine: case study",
+    "slug": "microsaas-translation-engine-case-study",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Agent Tool Builder: implementation playbook",
+    "slug": "ai-agent-tool-builder-implementation-playbook",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Management Gateway",
+    "slug": "api-management-gateway-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "API Performance Testing: policy and compliance",
+    "slug": "api-performance-testing-policy-and-compliance",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI 3D Asset Generator: starter template",
+    "slug": "ai-3d-asset-generator-starter-template",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI IT Operations: operations handbook",
+    "slug": "ai-it-operations-operations-handbook",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Network Infrastructure: common mistakes",
+    "slug": "network-infrastructure-common-mistakes",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Enterprise AI Intelligence Hub: starter template",
+    "slug": "enterprise-ai-intelligence-hub-starter-template",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Automated AI Reporting: starter template",
+    "slug": "automated-ai-reporting-starter-template",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS Expense Tracker: executive guide",
+    "slug": "microsaas-expense-tracker-executive-guide",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Network Infrastructure: executive guide",
+    "slug": "network-infrastructure-executive-guide",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Data Lakehouse Pipelines: automation roadmap",
+    "slug": "ai-data-lakehouse-pipelines-automation-roadmap",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI BOM Procurement: security and governance",
+    "slug": "ai-bom-procurement-security-and-governance",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Accessibility Optimizer: architecture overview",
+    "slug": "ai-accessibility-optimizer-architecture-overview",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Accessibility Compliance: case study",
+    "slug": "accessibility-compliance-case-study",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cyber Threat Intelligence: security and governance",
+    "slug": "cyber-threat-intelligence-security-and-governance",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Agent Safety Evaluation: deployment patterns",
+    "slug": "ai-agent-safety-evaluation-deployment-patterns",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI API Gateway: common mistakes",
+    "slug": "ai-api-gateway-common-mistakes",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Gateway Management: evaluation framework",
+    "slug": "api-gateway-management-evaluation-framework",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI BDR SDR: operations handbook",
+    "slug": "ai-bdr-sdr-operations-handbook",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Development Acceleration: policy and compliance",
+    "slug": "ai-development-acceleration-policy-and-compliance",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "APM Application Performance: operations handbook",
+    "slug": "apm-application-performance-operations-handbook",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Autonomous Code Deployment: vendor evaluation",
+    "slug": "autonomous-code-deployment-vendor-evaluation",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS Customer Onboarding: executive guide",
+    "slug": "microsaas-customer-onboarding-executive-guide",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AIOps Anomaly Detection: deployment patterns",
+    "slug": "aiops-anomaly-detection-deployment-patterns",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI API Gateway: implementation playbook",
+    "slug": "ai-api-gateway-implementation-playbook",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cloud Cost AI Optimizer: implementation playbook",
+    "slug": "cloud-cost-ai-optimizer-implementation-playbook",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Managed IT Services",
+    "slug": "managed-it-services-small-business-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "Cloud Cost AI Optimizer: operations handbook",
+    "slug": "cloud-cost-ai-optimizer-operations-handbook",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Observability: architecture overview",
+    "slug": "ai-observability-architecture-overview",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Data Backup: checklist for IT leaders",
+    "slug": "ai-data-backup-checklist-for-it-leaders",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Performance Monitoring: checklist for IT leaders",
+    "slug": "ai-performance-monitoring-checklist-for-it-leaders",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS Social Media Manager",
+    "slug": "micro-saas-ai-social-media-manager-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Endpoint Management: case study",
+    "slug": "endpoint-management-case-study",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Autonomous QA Engineering: deployment patterns",
+    "slug": "autonomous-qa-engineering-deployment-patterns",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Performance Monitoring",
+    "slug": "ai-performance-monitoring-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AIOps Anomaly Detection: security and governance",
+    "slug": "aiops-anomaly-detection-security-and-governance",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "APM Application Performance: automation roadmap",
+    "slug": "apm-application-performance-automation-roadmap",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS HR Recruitment: implementation playbook",
+    "slug": "microsaas-hr-recruitment-implementation-playbook",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI 3D Asset Generator: checklist for IT leaders",
+    "slug": "ai-3d-asset-generator-checklist-for-it-leaders",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "DevSecOps Pipeline: starter template",
+    "slug": "devsecops-pipeline-starter-template",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS HR Recruitment: starter template",
+    "slug": "microsaas-hr-recruitment-starter-template",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Data Warehouse Modernization: ROI and cost model",
+    "slug": "data-warehouse-modernization-roi-and-cost-model",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Enterprise AI Intelligence Hub: operations handbook",
+    "slug": "enterprise-ai-intelligence-hub-operations-handbook",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Customer Support: implementation playbook",
+    "slug": "ai-customer-support-implementation-playbook",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Data Lakehouse Pipelines",
+    "slug": "ai-data-lakehouse-pipelines-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Cyber Threat Intelligence: common mistakes",
+    "slug": "cyber-threat-intelligence-common-mistakes",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Email Intelligence",
+    "slug": "ai-email-intelligence-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "AI Email Intelligence: case study",
+    "slug": "ai-email-intelligence-case-study",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "DevOps CI/CD: policy and compliance",
+    "slug": "devops-cicd-policy-and-compliance",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Security Testing: executive guide",
+    "slug": "api-security-testing-executive-guide",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Performance Monitoring: common mistakes",
+    "slug": "ai-performance-monitoring-common-mistakes",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "IT Consulting: vendor evaluation",
+    "slug": "it-consulting-vendor-evaluation",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS Expense Tracker: ROI and cost model",
+    "slug": "microsaas-expense-tracker-roi-and-cost-model",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Container Security Lifecycle: automation roadmap",
+    "slug": "container-security-lifecycle-automation-roadmap",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Database Migration Service: common mistakes",
+    "slug": "database-migration-service-common-mistakes",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Container Security Lifecycle: implementation playbook",
+    "slug": "container-security-lifecycle-implementation-playbook",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Data Backup: architecture overview",
+    "slug": "ai-data-backup-architecture-overview",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cloud Migration Services",
+    "slug": "cloud-migration-services-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "API Integration",
+    "slug": "api-integration-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "MicroSaaS Customer Onboarding: deployment patterns",
+    "slug": "microsaas-customer-onboarding-deployment-patterns",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Container Security Lifecycle",
+    "slug": "container-security-lifecycle-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "API Performance Testing: architecture overview",
+    "slug": "api-performance-testing-architecture-overview",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Automated AI Reporting",
+    "slug": "automated-ai-reporting-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "API Performance Testing: evaluation framework",
+    "slug": "api-performance-testing-evaluation-framework",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Agent Tool Builder",
+    "slug": "ai-agent-tool-builder-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "MicroSaaS Expense Tracker: vendor evaluation",
+    "slug": "microsaas-expense-tracker-vendor-evaluation",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS Expense Tracker: policy and compliance",
+    "slug": "microsaas-expense-tracker-policy-and-compliance",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI BOM Procurement",
+    "slug": "ai-bom-procurement-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Automation Orchestration: implementation playbook",
+    "slug": "automation-orchestration-implementation-playbook",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Incident Response Retainer: architecture overview",
+    "slug": "incident-response-retainer-architecture-overview",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "APM Application Performance: executive guide",
+    "slug": "apm-application-performance-executive-guide",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Gateway Management",
+    "slug": "api-gateway-management-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI API Gateway",
+    "slug": "ai-api-gateway-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "AI Data Backup",
+    "slug": "ai-data-backup-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "MicroSaaS Expense Tracker: evaluation framework",
+    "slug": "microsaas-expense-tracker-evaluation-framework",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Ad Copy Generator: implementation playbook",
+    "slug": "ai-ad-copy-generator-implementation-playbook",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Data Analytics Platform: security and governance",
+    "slug": "data-analytics-platform-security-and-governance",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Managed IT Services: policy and compliance",
+    "slug": "managed-it-services-policy-and-compliance",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Network Infrastructure: checklist for IT leaders",
+    "slug": "network-infrastructure-checklist-for-it-leaders",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Endpoint Management",
+    "slug": "endpoint-management-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "AI Customer Support: starter template",
+    "slug": "ai-customer-support-starter-template",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI MSP Security Compliance: executive guide",
+    "slug": "ai-msp-security-compliance-executive-guide",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Management Gateway: policy and compliance",
+    "slug": "api-management-gateway-policy-and-compliance",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI MSP Security Compliance",
+    "slug": "ai-msp-security-compliance-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "Data Warehouse Modernization: deployment patterns",
+    "slug": "data-warehouse-modernization-deployment-patterns",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Automation Orchestration: policy and compliance",
+    "slug": "automation-orchestration-policy-and-compliance",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Endpoint Management: common mistakes",
+    "slug": "endpoint-management-common-mistakes",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Data Warehouse Modernization",
+    "slug": "data-warehouse-modernization-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "API Orchestration Layer: ROI and cost model",
+    "slug": "api-orchestration-layer-roi-and-cost-model",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Data Lakehouse Pipelines: evaluation framework",
+    "slug": "ai-data-lakehouse-pipelines-evaluation-framework",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Accessibility Optimizer: starter template",
+    "slug": "ai-accessibility-optimizer-starter-template",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Automated AI Reporting: checklist for IT leaders",
+    "slug": "automated-ai-reporting-checklist-for-it-leaders",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Ad Copy Generator: automation roadmap",
+    "slug": "ai-ad-copy-generator-automation-roadmap",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Incident Response Retainer: executive guide",
+    "slug": "incident-response-retainer-executive-guide",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Data Analytics Platform: architecture overview",
+    "slug": "data-analytics-platform-architecture-overview",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Accessibility Compliance",
+    "slug": "accessibility-compliance-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "API Gateway Management: policy and compliance",
+    "slug": "api-gateway-management-policy-and-compliance",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Agent Safety Evaluation",
+    "slug": "ai-agent-safety-evaluation-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Cloud Cost Optimization: ROI and cost model",
+    "slug": "cloud-cost-optimization-roi-and-cost-model",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "GenAI DevOps CI/CD: executive guide",
+    "slug": "genai-devops-cicd-executive-guide",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Data Backup: deployment patterns",
+    "slug": "ai-data-backup-deployment-patterns",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cloud Native App Development: automation roadmap",
+    "slug": "cloud-native-app-development-automation-roadmap",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "GraphQL Federation Platform: implementation playbook",
+    "slug": "graphql-federation-platform-implementation-playbook",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Autonomous Agents: starter template",
+    "slug": "ai-autonomous-agents-starter-template",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Automated AI Reporting: case study",
+    "slug": "automated-ai-reporting-case-study",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cybersecurity for MSPs: security and governance",
+    "slug": "cybersecurity-for-msps-security-and-governance",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Smart Contract Audit: policy and compliance",
+    "slug": "smart-contract-audit-policy-and-compliance",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Orchestration Layer",
+    "slug": "api-orchestration-layer-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Cybersecurity for MSPs: vendor evaluation",
+    "slug": "cybersecurity-for-msps-vendor-evaluation",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Accessibility Compliance: architecture overview",
+    "slug": "accessibility-compliance-architecture-overview",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI BDR SDR: policy and compliance",
+    "slug": "ai-bdr-sdr-policy-and-compliance",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Performance Monitoring: vendor evaluation",
+    "slug": "ai-performance-monitoring-vendor-evaluation",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "IT Consulting: security and governance",
+    "slug": "it-consulting-security-and-governance",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Security Testing: policy and compliance",
+    "slug": "api-security-testing-policy-and-compliance",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Agent Safety Evaluation: common mistakes",
+    "slug": "ai-agent-safety-evaluation-common-mistakes",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cloud Native App Development: checklist for IT leaders",
+    "slug": "cloud-native-app-development-checklist-for-it-leaders",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "GenAI DevOps CI/CD: vendor evaluation",
+    "slug": "genai-devops-cicd-vendor-evaluation",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "5G Solutions: policy and compliance",
+    "slug": "5g-solutions-policy-and-compliance",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cloud Cost AI Optimizer: security and governance",
+    "slug": "cloud-cost-ai-optimizer-security-and-governance",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cloud Cost Optimization: starter template",
+    "slug": "cloud-cost-optimization-starter-template",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cloud FinOps: checklist for IT leaders",
+    "slug": "cloud-finops-checklist-for-it-leaders",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Autonomous QA Engineering: implementation playbook",
+    "slug": "autonomous-qa-engineering-implementation-playbook",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Event Driven Architecture: case study",
+    "slug": "event-driven-architecture-case-study",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Chaos Engineering: starter template",
+    "slug": "chaos-engineering-starter-template",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Container Security Lifecycle: common mistakes",
+    "slug": "container-security-lifecycle-common-mistakes",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS Translation Engine: executive guide",
+    "slug": "microsaas-translation-engine-executive-guide",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI BOM Procurement: case study",
+    "slug": "ai-bom-procurement-case-study",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI BOM Procurement: operations handbook",
+    "slug": "ai-bom-procurement-operations-handbook",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Observability: operations handbook",
+    "slug": "ai-observability-operations-handbook",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Autonomous Code Deployment: executive guide",
+    "slug": "autonomous-code-deployment-executive-guide",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Event Driven Architecture: starter template",
+    "slug": "event-driven-architecture-starter-template",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI MSP Security Compliance",
+    "slug": "ai-msp-security-compliance-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Event Driven Architecture",
+    "slug": "event-driven-architecture-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "AI Accessibility Auditor",
+    "slug": "ai-accessibility-auditor-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Cloud FinOps: common mistakes",
+    "slug": "cloud-finops-common-mistakes",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cloud Migration Services",
+    "slug": "cloud-migration-services-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "DevOps CI/CD: executive guide",
+    "slug": "devops-cicd-executive-guide",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Security Testing: architecture overview",
+    "slug": "api-security-testing-architecture-overview",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Data Warehouse Modernization: executive guide",
+    "slug": "data-warehouse-modernization-executive-guide",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI API Gateway: policy and compliance",
+    "slug": "ai-api-gateway-policy-and-compliance",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Smart Contract Audit: deployment patterns",
+    "slug": "smart-contract-audit-deployment-patterns",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Autonomous Code Deployment: policy and compliance",
+    "slug": "autonomous-code-deployment-policy-and-compliance",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Observability",
+    "slug": "ai-observability-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "API Gateway Management: security and governance",
+    "slug": "api-gateway-management-security-and-governance",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Autonomous Agents",
+    "slug": "ai-autonomous-agents-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "IT Consulting: common mistakes",
+    "slug": "it-consulting-common-mistakes",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "GraphQL Federation Platform",
+    "slug": "graphql-federation-platform-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Cloud Cost AI Optimizer: implementation playbook",
+    "slug": "cloud-cost-ai-optimizer-implementation-playbook",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Smart Contract Audit: case study",
+    "slug": "smart-contract-audit-case-study",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cloud Cost Optimization",
+    "slug": "cloud-cost-optimization-checklist-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "AI Customer Success Churn Prevention: policy and compliance",
+    "slug": "ai-customer-success-churn-prevention-policy-and-compliance",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AIOps Anomaly Detection: automation roadmap",
+    "slug": "aiops-anomaly-detection-automation-roadmap",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AIOps Anomaly Detection: security and governance",
+    "slug": "aiops-anomaly-detection-security-and-governance",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS Social Media Manager: implementation playbook",
+    "slug": "microsaas-social-media-manager-implementation-playbook",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI IT Operations: case study",
+    "slug": "ai-it-operations-case-study",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Agent Safety Evaluation: policy and compliance",
+    "slug": "ai-agent-safety-evaluation-policy-and-compliance",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Development Acceleration: executive guide",
+    "slug": "ai-development-acceleration-executive-guide",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Edge Computing Deployment: vendor evaluation",
+    "slug": "edge-computing-deployment-vendor-evaluation",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Event Driven Architecture: vendor evaluation",
+    "slug": "event-driven-architecture-vendor-evaluation",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Agent Safety Evaluation: checklist for IT leaders",
+    "slug": "ai-agent-safety-evaluation-checklist-for-it-leaders",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Incident Response Retainer: implementation playbook",
+    "slug": "incident-response-retainer-implementation-playbook",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Accessibility Auditor: common mistakes",
+    "slug": "ai-accessibility-auditor-common-mistakes",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Data Lakehouse Pipelines: evaluation framework",
+    "slug": "ai-data-lakehouse-pipelines-evaluation-framework",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "DevOps CI/CD",
+    "slug": "devops-cicd-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Edge Computing Deployment",
+    "slug": "edge-computing-deployment-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "Enterprise Backup DR: security and governance",
+    "slug": "enterprise-backup-dr-security-and-governance",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Ad Copy Generator: operations handbook",
+    "slug": "ai-ad-copy-generator-operations-handbook",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AIOps Anomaly Detection: policy and compliance",
+    "slug": "aiops-anomaly-detection-policy-and-compliance",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS Expense Tracker: implementation playbook",
+    "slug": "microsaas-expense-tracker-implementation-playbook",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "IT Consulting: operations handbook",
+    "slug": "it-consulting-operations-handbook",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Data Lakehouse Pipelines: ROI and cost model",
+    "slug": "ai-data-lakehouse-pipelines-roi-and-cost-model",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI BDR SDR: architecture overview",
+    "slug": "ai-bdr-sdr-architecture-overview",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Ad Copy Generator: starter template",
+    "slug": "ai-ad-copy-generator-starter-template",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Accessibility Compliance",
+    "slug": "accessibility-compliance-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "Cloud Native App Development",
+    "slug": "cloud-native-app-development-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "AI Agent Tool Builder: implementation playbook",
+    "slug": "ai-agent-tool-builder-implementation-playbook",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Enterprise Backup DR: ROI and cost model",
+    "slug": "enterprise-backup-dr-roi-and-cost-model",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Gateway Management",
+    "slug": "api-gateway-management-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "AI BDR SDR: vendor evaluation",
+    "slug": "ai-bdr-sdr-vendor-evaluation",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Development Acceleration: evaluation framework",
+    "slug": "ai-development-acceleration-evaluation-framework",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Management Gateway: executive guide",
+    "slug": "api-management-gateway-executive-guide",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Autonomous Code Deployment: implementation playbook",
+    "slug": "autonomous-code-deployment-implementation-playbook",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS Customer Onboarding: operations handbook",
+    "slug": "microsaas-customer-onboarding-operations-handbook",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AIOps Anomaly Detection: checklist for IT leaders",
+    "slug": "aiops-anomaly-detection-checklist-for-it-leaders",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Chaos Engineering: security and governance",
+    "slug": "chaos-engineering-security-and-governance",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cybersecurity for MSPs: checklist for IT leaders",
+    "slug": "cybersecurity-for-msps-checklist-for-it-leaders",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cloud Cost AI Optimizer: automation roadmap",
+    "slug": "cloud-cost-ai-optimizer-automation-roadmap",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Observability: executive guide",
+    "slug": "ai-observability-executive-guide",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Security Testing: security and governance",
+    "slug": "api-security-testing-security-and-governance",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Accessibility Compliance: automation roadmap",
+    "slug": "accessibility-compliance-automation-roadmap",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS Social Media Manager",
+    "slug": "micro-saas-ai-social-media-manager-2026",
+    "cluster": "ai"
+  },
+  {
+    "title": "Autonomous QA Engineering",
+    "slug": "autonomous-qa-engineering-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Accessibility Compliance: operations handbook",
+    "slug": "accessibility-compliance-operations-handbook",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AIOps Anomaly Detection: ROI and cost model",
+    "slug": "aiops-anomaly-detection-roi-and-cost-model",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "APM Application Performance: ROI and cost model",
+    "slug": "apm-application-performance-roi-and-cost-model",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS Expense Tracker: case study",
+    "slug": "microsaas-expense-tracker-case-study",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI 3D Asset Generator: executive guide",
+    "slug": "ai-3d-asset-generator-executive-guide",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Data Warehouse Modernization: policy and compliance",
+    "slug": "data-warehouse-modernization-policy-and-compliance",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS Customer Onboarding",
+    "slug": "micro-saas-ai-customer-onboarding-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Enterprise AI Intelligence Hub: automation roadmap",
+    "slug": "enterprise-ai-intelligence-hub-automation-roadmap",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Data Backup: policy and compliance",
+    "slug": "ai-data-backup-policy-and-compliance",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Data Lakehouse Pipelines",
+    "slug": "ai-data-lakehouse-pipelines-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Cyber Threat Intelligence: common mistakes",
+    "slug": "cyber-threat-intelligence-common-mistakes",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Email Intelligence: policy and compliance",
+    "slug": "ai-email-intelligence-policy-and-compliance",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Email Intelligence: vendor evaluation",
+    "slug": "ai-email-intelligence-vendor-evaluation",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "DevOps CI/CD: architecture overview",
+    "slug": "devops-cicd-architecture-overview",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Performance Testing: security and governance",
+    "slug": "api-performance-testing-security-and-governance",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Performance Monitoring",
+    "slug": "ai-performance-monitoring-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "5G Solutions: vendor evaluation",
+    "slug": "5g-solutions-vendor-evaluation",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS Translation Engine: vendor evaluation",
+    "slug": "microsaas-translation-engine-vendor-evaluation",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Container Security Lifecycle: security and governance",
+    "slug": "container-security-lifecycle-security-and-governance",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Data Warehouse Modernization: vendor evaluation",
+    "slug": "data-warehouse-modernization-vendor-evaluation",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Container Security Lifecycle: ROI and cost model",
+    "slug": "container-security-lifecycle-roi-and-cost-model",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Security Testing: implementation playbook",
+    "slug": "api-security-testing-implementation-playbook",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Network Infrastructure: automation roadmap",
+    "slug": "network-infrastructure-automation-roadmap",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Gateway Management: implementation playbook",
+    "slug": "api-gateway-management-implementation-playbook",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS Customer Onboarding: common mistakes",
+    "slug": "microsaas-customer-onboarding-common-mistakes",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cloud Native App Development: case study",
+    "slug": "cloud-native-app-development-case-study",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Incident Response Retainer: vendor evaluation",
+    "slug": "incident-response-retainer-vendor-evaluation",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Automated AI Reporting",
+    "slug": "automated-ai-reporting-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "Incident Response Retainer: executive guide",
+    "slug": "incident-response-retainer-executive-guide",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Agent Tool Builder: vendor evaluation",
+    "slug": "ai-agent-tool-builder-vendor-evaluation",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS Expense Tracker: deployment patterns",
+    "slug": "microsaas-expense-tracker-deployment-patterns",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS Expense Tracker: architecture overview",
+    "slug": "microsaas-expense-tracker-architecture-overview",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI BDR SDR: case study",
+    "slug": "ai-bdr-sdr-case-study",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Automation Orchestration: operations handbook",
+    "slug": "automation-orchestration-operations-handbook",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Smart Contract Audit",
+    "slug": "smart-contract-audit-2026",
+    "cluster": "data"
+  },
+  {
+    "title": "APM Application Performance: starter template",
+    "slug": "apm-application-performance-starter-template",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Performance Monitoring: operations handbook",
+    "slug": "ai-performance-monitoring-operations-handbook",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Endpoint Management: checklist for IT leaders",
+    "slug": "endpoint-management-checklist-for-it-leaders",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Performance Testing: vendor evaluation",
+    "slug": "api-performance-testing-vendor-evaluation",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "MicroSaaS Expense Tracker",
+    "slug": "micro-saas-ai-expense-tracker-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "AI Ad Copy Generator: checklist for IT leaders",
+    "slug": "ai-ad-copy-generator-checklist-for-it-leaders",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Data Analytics Platform: implementation playbook",
+    "slug": "data-analytics-platform-implementation-playbook",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cybersecurity for MSPs: ROI and cost model",
+    "slug": "cybersecurity-for-msps-roi-and-cost-model",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Network Infrastructure: starter template",
+    "slug": "network-infrastructure-starter-template",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "DevSecOps Pipeline: ROI and cost model",
+    "slug": "devsecops-pipeline-roi-and-cost-model",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Customer Support: executive guide",
+    "slug": "ai-customer-support-executive-guide",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI MSP Security Compliance: security and governance",
+    "slug": "ai-msp-security-compliance-security-and-governance",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Management Gateway: architecture overview",
+    "slug": "api-management-gateway-architecture-overview",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Observability: evaluation framework",
+    "slug": "ai-observability-evaluation-framework",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cyber Threat Intelligence: starter template",
+    "slug": "cyber-threat-intelligence-starter-template",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Automation Orchestration: architecture overview",
+    "slug": "automation-orchestration-architecture-overview",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Edge Computing Deployment: ROI and cost model",
+    "slug": "edge-computing-deployment-roi-and-cost-model",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cyber Threat Intelligence: executive guide",
+    "slug": "cyber-threat-intelligence-executive-guide",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Orchestration Layer: checklist for IT leaders",
+    "slug": "api-orchestration-layer-checklist-for-it-leaders",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Data Lakehouse Pipelines: checklist for IT leaders",
+    "slug": "ai-data-lakehouse-pipelines-checklist-for-it-leaders",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Accessibility Optimizer: vendor evaluation",
+    "slug": "ai-accessibility-optimizer-vendor-evaluation",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Automated AI Reporting: vendor evaluation",
+    "slug": "automated-ai-reporting-vendor-evaluation",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Agent Safety Evaluation: architecture overview",
+    "slug": "ai-agent-safety-evaluation-architecture-overview",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Smart Contract Audit: vendor evaluation",
+    "slug": "smart-contract-audit-vendor-evaluation",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Data Analytics Platform: security and governance",
+    "slug": "data-analytics-platform-security-and-governance",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Brand Voice Guardian: checklist for IT leaders",
+    "slug": "brand-voice-guardian-checklist-for-it-leaders",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Gateway Management: vendor evaluation",
+    "slug": "api-gateway-management-vendor-evaluation",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Agent Safety Evaluation: common mistakes",
+    "slug": "ai-agent-safety-evaluation-common-mistakes",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cloud Cost Optimization: vendor evaluation",
+    "slug": "cloud-cost-optimization-vendor-evaluation",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "GenAI DevOps CI/CD: checklist for IT leaders",
+    "slug": "genai-devops-cicd-checklist-for-it-leaders",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Security Testing",
+    "slug": "api-security-testing-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "Cloud FinOps: implementation playbook",
+    "slug": "cloud-finops-implementation-playbook",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Smart Contract Audit: executive guide",
+    "slug": "smart-contract-audit-executive-guide",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Autonomous Agents: policy and compliance",
+    "slug": "ai-autonomous-agents-policy-and-compliance",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Automated AI Reporting: policy and compliance",
+    "slug": "automated-ai-reporting-policy-and-compliance",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cybersecurity for MSPs: implementation playbook",
+    "slug": "cybersecurity-for-msps-implementation-playbook",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Event Driven Architecture: ROI and cost model",
+    "slug": "event-driven-architecture-roi-and-cost-model",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "API Orchestration Layer",
+    "slug": "api-orchestration-layer-2026",
+    "cluster": "cloud"
+  },
+  {
+    "title": "Cybersecurity for MSPs",
+    "slug": "cybersecurity-platform-msp-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Brand Voice Guardian: automation roadmap",
+    "slug": "brand-voice-guardian-automation-roadmap",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Autonomous QA Engineering: architecture overview",
+    "slug": "autonomous-qa-engineering-architecture-overview",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Performance Monitoring: vendor evaluation",
+    "slug": "ai-performance-monitoring-vendor-evaluation",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "IT Consulting",
+    "slug": "it-consulting-2026",
+    "cluster": "it"
+  },
+  {
+    "title": "AI API Gateway: common mistakes",
+    "slug": "ai-api-gateway-common-mistakes",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Agent Tool Builder: deployment patterns",
+    "slug": "ai-agent-tool-builder-deployment-patterns",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cloud FinOps: ROI and cost model",
+    "slug": "cloud-finops-roi-and-cost-model",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "GenAI DevOps CI/CD",
+    "slug": "devops-gen-ai-cicd-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "5G Solutions: operations handbook",
+    "slug": "5g-solutions-operations-handbook",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cloud Cost AI Optimizer: starter template",
+    "slug": "cloud-cost-ai-optimizer-starter-template",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cloud Cost Optimization: deployment patterns",
+    "slug": "cloud-cost-optimization-deployment-patterns",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cloud Cost AI Optimizer: policy and compliance",
+    "slug": "cloud-cost-ai-optimizer-policy-and-compliance",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Autonomous QA Engineering: deployment patterns",
+    "slug": "autonomous-qa-engineering-deployment-patterns",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Event Driven Architecture: policy and compliance",
+    "slug": "event-driven-architecture-policy-and-compliance",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "APM Application Performance: implementation playbook",
+    "slug": "apm-application-performance-implementation-playbook",
+    "cluster": "automation",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Container Security Lifecycle",
+    "slug": "container-security-lifecycle-2026",
+    "cluster": "automation"
+  },
+  {
+    "title": "MicroSaaS Translation Engine: deployment patterns",
+    "slug": "microsaas-translation-engine-deployment-patterns",
+    "cluster": "cloud",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Cloud Cost AI Optimizer: executive guide",
+    "slug": "cloud-cost-ai-optimizer-executive-guide",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Customer Support: implementation playbook",
+    "slug": "ai-customer-support-implementation-playbook",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Customer Support",
+    "slug": "ai-customer-support-pro-2026",
+    "cluster": "security"
+  },
+  {
+    "title": "Managed IT Services: architecture overview",
+    "slug": "managed-it-services-architecture-overview",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  }
+]
