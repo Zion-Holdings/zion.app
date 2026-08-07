@@ -12,8 +12,6 @@ mkdir -p "$REPORT_DIR"
 REPORT="$REPORT_DIR/broken-links-report.json"
 TIMESTAMP=$(date -Iseconds)
 
-echo "{\"timestamp\":\"$TIMESTAMP\",\"broken_links\":[]," > "$REPORT
-
 BROKEN=0
 TOTAL=0
 
@@ -42,6 +40,6 @@ if [ "${1:-}" = "--external" ]; then
   done
 fi
 
-echo "\"total_checked\":$TOTAL,\"broken_count\":$BROKEN}" >> "$REPORT"
+printf '{"timestamp":"%s","broken_links":[],"total_checked":%d,"broken_count":%d}\n' "$TIMESTAMP" "$TOTAL" "$BROKEN" > "$REPORT"
 echo "Done: $TOTAL URLs checked, $BROKEN broken"
 exit $BROKEN

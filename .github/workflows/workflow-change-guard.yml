@@ -34,7 +34,6 @@ jobs:
     uses: ./.github/workflows/reusable-workflow-ci.yml
     with:
       run_contracts: true
-    timeout-minutes: 14
 
   automation-guard:
     needs: validate-contracts

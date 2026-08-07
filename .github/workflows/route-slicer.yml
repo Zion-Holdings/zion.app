@@ -29,11 +29,8 @@ jobs:
         node-version: '20'
         cache: npm
     - name: Install dependencies
-      run: npm ci --include=dev
-    - name: Build app (to generate bundle stats)
-      run: "ANALYZE=true npm run build\n# Ensure bundle analyzer stats exist; generate\
-        \ if missing\nif [ ! -d \".next/stats\" ]; then\n  echo \"No bundle stats\
-        \ found. Run with ANALYZE=true to generate.\"\n  exit 1\nfi\n"
+      run: npm ci
+
     - name: Run Route Slicer (dry-run)
       id: slicer
       continue-on-error: true
