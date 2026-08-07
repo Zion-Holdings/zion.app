@@ -1,0 +1,37 @@
+/managed-it /services/it-managed-it-ops 301
+/services/managed-it /services/it-managed-it-ops 301
+/consultation /contact 301
+/services/cloud-migration-services-2026-1121/ /services/cloud-migration-services-2026-500/ 301
+/blog/cloud-migration-services-2026-1121/ /blog/cloud-migration-services-2026-500/ 301
+/services/enterprise-ai-intelligence-hub-2026-1143/ /services/enterprise-ai-intelligence-hub-2026-507/ 301
+/blog/enterprise-ai-intelligence-hub-2026-1143/ /blog/enterprise-ai-intelligence-hub-2026-507/ 301
+
+# Redirect routes
+/ai-services-index /ai-services/ 301
+/free-ai-it-tools /tools/ 301
+/free-ai-it-tools/ /tools/ 301
+/new-ai-services /services/ 301
+/new-ai-services/ /services/ 301
+
+# Search
+/search /docs/search/index.html 200
+/search/ /docs/search/index.html 200
+
+# Free tools fallbacks
+/free-tools /free-tools.html 200
+/free-toolss/ /free-tools.html 200
+
+# AI resources fallback
+/ai-resources /docs/ai-resources/index.html 200
+/ai-resources/ /docs/ai-resources/index.html 200
+
+# Configurator fallback
+/configurator/ /docs/configurator/index.html 200
+
+# Orphaned route fallbacks
+/ai-services-index /services/ai-services 301
+/ai-services-index/ /services/ai-services 301
+/free-ai-it-tools /tools 301
+/free-ai-it-tools/ /tools 301
+/new-ai-services /services 301
+/new-ai-services/ /services 301
