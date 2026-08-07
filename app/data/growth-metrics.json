@@ -1,17 +1,17 @@
 {
-  "total_services": 14131,
-  "last_run": "2026-08-07T09:47:43Z",
-  "services_discovered": 500,
-  "engine_version": "ultra-fast-micro-growth-engine-v11.0",
+  "total_services": 3500,
+  "last_run": "2026-08-07T11:57:40Z",
+  "services_discovered": 1200,
+  "engine_version": "ultra-fast-micro-growth-engine-v2.0",
   "run_history": [
     {
-      "timestamp": "2026-08-07T09:47:43Z",
-      "services_added": 700,
-      "total_services": 14131,
-      "unique_ids": 13931,
-      "sitemap_urls": 13931,
-      "duration_seconds": 2.25,
-      "rate_services_per_second": 222.7
+      "timestamp": "2026-08-07T11:57:40Z",
+      "services_added": 500,
+      "total_services": 3500,
+      "unique_ids": 3500,
+      "sitemap_urls": 3500,
+      "duration_seconds": 4.03,
+      "rate_services_per_second": 123.9
     },
     {
       "timestamp": "2026-08-07T11:31:23Z",
@@ -106,6 +106,6 @@
     "legal",
     "transportation"
   ],
-  "unique_ids": 13931,
-  "sitemap_urls": 13931
+  "unique_ids": 3500,
+  "sitemap_urls": 3500
 }
