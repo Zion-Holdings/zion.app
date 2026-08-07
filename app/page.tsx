@@ -791,15 +791,21 @@ let list = services;
               Delivered to your inbox as a PDF within 24 hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/configurator/" className="btn-primary text-lg px-10 py-4">
-                ⚙️ Start Configurator →
+              <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noopener" className="btn-primary text-lg px-10 py-4">
+                📅 Book a Call
+              </a>
+              <a href="https://meet.google.com/ouu-khao-kuy" target="_blank" rel="noopener" className="btn-secondary text-lg px-10 py-4">
+                🎥 Google Meet
+              </a>
+              <Link href="/configurator/" className="btn-secondary text-lg px-10 py-4">
+                ⚙️ Get Custom Proposal
               </Link>
               <a href="mailto:kleber@ziontechgroup.com" className="btn-secondary text-lg px-10 py-4">
                 ✉️ Email Us
               </a>
-              <a href="tel:+13024640950" className="btn-secondary text-lg px-10 py-4">
-                                            ☎ +1 302 464 0950
-                                          </a>
+              <a href="tel:+130****0950" className="btn-secondary text-lg px-10 py-4">
+                ☎ +1 302 464 0950
+              </a>
             </div>
           </div>
         </div>
@@ -1055,4 +1061,4 @@ let list = services;
     </main>
   );
 }
-
+

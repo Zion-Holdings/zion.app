@@ -22,3 +22,6 @@
 # AI resources fallback
 /ai-resources /docs/ai-resources/index.html 200
 /ai-resources/ /docs/ai-resources/index.html 200
+
+# Configurator fallback
+/configurator/ /docs/configurator/index.html 200
