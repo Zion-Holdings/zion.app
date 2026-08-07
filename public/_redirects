@@ -1,7 +1,7 @@
 #%20Fixed 404 Routes
-/ai-services-index   /ai-services/   311
-/ai-services-index/   /ai-services/   311
+/ai-services-index   /ai-services/   301
+/ai-services-index/   /ai-services/   301
 /free-ai-it-tools    /tools/   301
-/free-ai-tools/    /tools/   301
+/free-ai-it-tools/    /tools/   301
 /new-ai-services    /services/  301
 /new-ai-services/   /services/  301
