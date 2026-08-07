@@ -75,7 +75,7 @@ Leading indicators for devops ci/cd: roi and cost model: workflow completion rat
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

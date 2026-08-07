@@ -75,7 +75,7 @@ Leading indicators for enterprise backup dr: deployment patterns: workflow compl
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>
