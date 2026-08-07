@@ -1,240 +1,251 @@
 {
-  "leads": [
+  "state": "send_ready",
+  "send_blocked": true,
+  "generated_at": "2026-08-07T06:00:17.544584",
+  "leads_processed": 5,
+  "total_potential_value": 10300,
+  "conversion_rate_target": "25%",
+  "expected_revenue": 2575.0,
+  "ready": [
     {
-      "name": "Lisa",
-      "company": "CloudFirst",
-      "role": "Security Engineer",
-      "email": "lisa162@secureit.com",
-      "lead_magnet": {
-        "name": "Cloud Security Scan",
-        "value": 1800,
-        "cta": "/contact?offer=security-scan"
-      },
-      "timestamp": "2026-08-06T22:00:17.063651",
-      "status": "in_progress",
-      "follow_up_sequence": [
-        {
-          "day": 1,
-          "subject": "Cloud security gaps at CloudFirst",
-          "body": "Hi Lisa,\n\nI reviewed cloud security postures for companies like CloudFirst and found 2 critical gaps most standard configs miss.\n\nHere are the top ones:\n- Misconfigured IAM roles leading to avoidable breaches\n- Cloud security tool spend sitting unused because alerts aren't triaged\n\nI built a free 15-minute Cloud Security Scan that gives you a prioritized remediation roadmap.\n\nGrab it here: /contact?offer=security-scan\n\nBest,\nKleber\nZion Tech Group",
-          "status": "sent",
-          "sent_at": "2026-08-07T01:51:07.113923+00:00",
-          "message_id": "19fd9eabcedae8d4",
-          "thread_id": "19fd9eabcedae8d4"
-        },
-        {
-          "day": 2,
-          "subject": "Re: Cloud security gaps at CloudFirst",
-          "body": "Hi Lisa,\n\nQuick question: are you using a CSPM tool across your cloud accounts, or relying on native security groups and manual reviews?\n\nMost Security Engineers I work with start with CSPM, but the real win is prioritizing the top 20% of findings that block 80% of risk. That's exactly what the scan outputs.\n\nIf you haven't claimed it yet: /contact?offer=security-scan\n\nBest,\nKleber",
-          "status": "pending"
-        },
-        {
-          "day": 3,
-          "subject": "2-week security hardening sprint for CloudFirst",
-          "body": "Hi Lisa,\n\nIf the Cloud Security Scan highlighted gaps you don't have bandwidth to fix right now, I have 2 spots open this month for a focused 2-week security hardening sprint.\n\nWhat's included:\n- Prioritized remediations for highest-risk gaps\n- Sign-off-ready compliance report\n- CI/CD guardrails so new deployments don't reintroduce issues\n\nValid through August 31st. Want me to reserve a spot?\n\nBest,\nKleber",
-          "status": "pending"
-        }
-      ],
-      "classification": {
-        "category": "Security",
-        "confidence": 0.85,
-        "method": "local_heuristic"
-      },
-      "last_sent_at": "2026-08-07T01:51:07.113923+00:00",
-      "emails_sent": 1
-    },
-    {
+      "to": "james427@digitalsolutions.com",
       "name": "John",
-      "company": "InnovateCo",
-      "role": "DevOps Lead",
-      "email": "john893@innovateco.com",
-      "lead_magnet": {
-        "name": "Cloud Security Scan",
-        "value": 1800,
-        "cta": "/contact?offer=security-scan"
-      },
-      "timestamp": "2026-08-06T22:00:17.063651",
-      "status": "in_progress",
-      "follow_up_sequence": [
-        {
-          "day": 1,
-          "subject": "Securing InnovateCo's cloud pipelines",
-          "body": "Hi John,\n\nAs a DevOps Lead at InnovateCo, you're balancing deployment velocity with security guardrails. I've been analyzing cloud environments for fast-shipping teams, and there's a recurring gap: security checks that slow pipelines instead of automating them.\n\nHere's what the free Cloud Security Scan finds:\n- Pipeline configs exposing secrets or allowing unvetted deploys\n- Cloud spend bleeding into unused security tooling\n- Quick wins that improve posture without adding deploy-time overhead\n\nCheck it out: /contact?offer=security-scan\n\nBest,\nKleber\nZion Tech Group",
-          "status": "sent",
-          "sent_at": "2026-08-07T02:19:01.174516+00:00",
-          "message_id": "19fda0449ed0fa09",
-          "thread_id": "19fda0449ed0fa09"
-        },
-        {
-          "day": 2,
-          "subject": "Re: Securing InnovateCo's cloud pipelines",
-          "body": "Hi John,\n\nQuick question: how are you currently handling secrets and IAM permissions across your CI/CD stages?\n\nMost teams I work with have deployment automation but still rely on manual security gates — which defeats CI/CD. The scan gives you a prioritized view of exactly where those entry points are.\n\nIf you haven't grabbed it yet: /contact?offer=security-scan\n\nBest,\nKleber",
-          "status": "pending"
-        },
-        {
-          "day": 3,
-          "subject": "DevSecOps sprint for InnovateCo",
-          "body": "Hi John,\n\nIf you're seeing pipeline security gaps but don't have bandwidth to fix them properly, I'm opening a DevSecOps sprint slot this month specifically for teams like InnovateCo.\n\nWhat's included:\n- CI/CD guardrails that catch misconfigurations before deploy\n- Automated security checks that don't block velocity\n- Incident-response playbooks tailored to your stack\n\nValid through August 31st. Want to lock in a slot?\n\nBest,\nKleber",
-          "status": "pending"
-        }
-      ],
-      "classification": {
-        "category": "DevOps/Cloud",
-        "confidence": 0.8,
-        "method": "local_heuristic"
-      },
-      "last_sent_at": "2026-08-07T02:19:01.174516+00:00",
-      "emails_sent": 1
-    },
-    {
-      "name": "John",
-      "company": "TechCorp",
-      "role": "Security Engineer",
-      "email": "john466@secureit.com",
-      "lead_magnet": {
-        "name": "AI Cost Assessment",
-        "value": 2500,
-        "cta": "/contact?offer=ai-cost-assessment"
-      },
-      "timestamp": "2026-08-06T22:00:17.063651",
-      "status": "in_progress",
-      "follow_up_sequence": [
-        {
-          "day": 1,
-          "subject": "AI spend optimization at TechCorp",
-          "body": "Hi John,\n\nSecurity Engineers at TechCorp-scale companies are often pulled into AI projects late — after budgets and architectures are already set. I've been looking at where AI project budgets actually leak money, and the findings are consistent.\n\nHere's what the free AI Cost Assessment surfaces:\n- 30-40% of AI project budget sitting idle because workloads aren't optimized\n- Hidden infrastructure blockers that make AI rollout risky from a security standpoint\n- Automation wins that reduce ops overhead without compromising governance\n\nGrab your assessment: /contact?offer=ai-cost-assessment\n\nBest,\nKleber\nZion Tech Group",
-          "status": "sent",
-          "sent_at": "2026-08-07T02:46:40.397617+00:00",
-          "message_id": "19fda1d9b6c374b5",
-          "thread_id": "19fda1d9b6c374b5"
-        },
-        {
-          "day": 2,
-          "subject": "Re: AI spend optimization at TechCorp",
-          "body": "Hi John,\n\nQuick question: are you currently involved in AI architecture reviews at TechCorp, or are you brought in after infrastructure decisions are already made?\n\nMost security teams I talk to want a voice in AI spend decisions but don't have a framework for evaluating risk-reward tradeoffs. The assessment gives you exactly that — measurable KPIs to justify guardrails before scaling.\n\nIf you haven't claimed it: /contact?offer=ai-cost-assessment\n\nBest,\nKleber",
-          "status": "pending"
-        },
-        {
-          "day": 3,
-          "subject": "4-week AI implementation pilot for TechCorp",
-          "body": "Hi John,\n\nIf the AI Cost Assessment showed opportunities but TechCorp needs a safer way to validate them before scaling, I'm opening a 4-week AI implementation pilot slot this month.\n\nWhat's included:\n- Measurable pilot KPIs tied to actual workload performance\n- Rollout-ready architecture plan with security guardrails built in\n- Automation audit that identifies workflow optimization without adding risk\n\nValid through August 31st. Want me to walk you through what this would look like for TechCorp?\n\nBest,\nKleber",
-          "status": "pending"
-        }
-      ],
-      "classification": {
-        "category": "Security",
-        "confidence": 0.85,
-        "method": "local_heuristic"
-      },
-      "last_sent_at": "2026-08-07T02:46:40.397617+00:00",
-      "emails_sent": 1
-    },
-    {
-      "name": "Emily",
       "company": "DataFlow",
       "role": "Security Engineer",
-      "email": "emily47@secureit.com",
-      "lead_magnet": {
-        "name": "Cloud Security Scan",
-        "value": 1800,
-        "cta": "/contact?offer=security-scan"
-      },
-      "timestamp": "2026-08-06T22:00:17.063651",
-      "status": "in_progress",
-      "follow_up_sequence": [
-        {
-          "day": 1,
-          "subject": "Cloud security posture at DataFlow",
-          "body": "Hi Emily,\n\nDataFlow's security team is likely dealing with the same pressure every fast-growing company faces: more cloud assets, more alerts, and not enough time to triage everything. I've been reviewing cloud security postures for DataFlow-sized teams, and there's a clear pattern in what creates real risk.\n\nHere's what the free Cloud Security Scan focuses on:\n- The 2 critical gaps that cause most cloud breaches\n- How to cut through alert fatigue with a prioritized remediation roadmap\n- AI-assisted threat detection that can save 20+ hours/week for your team\n\nCheck it out: /contact?offer=security-scan\n\nBest,\nKleber\nZion Tech Group",
-          "status": "sent",
-          "sent_at": "2026-08-07T03:13:20.522602+00:00",
-          "message_id": "19fda3605013936d",
-          "thread_id": "19fda3605013936d"
-        },
-        {
-          "day": 2,
-          "subject": "Re: Cloud security posture at DataFlow",
-          "body": "Hi Emily,\n\nQuick question: what does your current incident-response workflow look like when a cloud alert fires after hours?\n\nMost security teams I work with have alerting but not a clear escalation path. The scan gives you a remediation roadmap that doubles as an incident-response playbook — so your team knows exactly what to fix and in what order when something critical hits.\n\nIf you haven't claimed it: /contact?offer=security-scan\n\nBest,\nKleber",
-          "status": "pending"
-        },
-        {
-          "day": 3,
-          "subject": "2-week security hardening sprint for DataFlow",
-          "body": "Hi Emily,\n\nIf the Cloud Security Scan showed gaps that DataFlow's security team doesn't have bandwidth to close right now, I have 2 sprint slots open this month.\n\nWhat's included:\n- Prioritized remediations for highest-risk gaps\n- Sign-off-ready report for compliance and leadership teams\n- AI threat detection setup that reduces manual monitoring by 20+ hours/week\n\nValid through August 31st. Want me to reserve a spot?\n\nBest,\nKleber",
-          "status": "pending"
-        }
-      ],
-      "classification": {
-        "category": "Security",
-        "confidence": 0.85,
-        "method": "local_heuristic"
-      },
-      "last_sent_at": "2026-08-07T03:13:20.522602+00:00",
-      "emails_sent": 1
-    },
-    {
-      "name": "Mary",
-      "company": "DataFlow",
-      "role": "Security Engineer",
-      "email": "mary681@dataflow.com",
+      "subject": "Your Free DevOps Readiness Evaluation is Ready!",
+      "body": "Hi John,\n\nThank you for requesting your DevOps Readiness Evaluation. I've prepared a personalized analysis based on your business needs.\n\nKey findings:\n- Your current cloud spend could be optimized by 30-40%\n- Your security posture shows 2 areas for improvement\n- AI implementation could save 20+ hours/week\n\nLet's schedule a 15-minute call to discuss next steps: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber\nZion Tech Group",
       "lead_magnet": {
         "name": "DevOps Readiness Evaluation",
         "value": 2000,
         "cta": "/contact?offer=devops-eval"
       },
-      "timestamp": "2026-08-06T22:00:17.063651",
-      "status": "new",
-      "follow_up_sequence": [
-        {
-          "day": 1,
-          "subject": "DevOps maturity gaps at DataFlow",
-          "body": "Hi Mary,\n\nDataFlow is probably under pressure to ship faster, but as a Security Engineer you know that velocity without guardrails creates compounding risk. I've been evaluating DevOps maturity for security-led teams, and the gap between 'we have CI/CD' and 'our pipeline is actually secure' is bigger than most leaders think.\n\nHere's what the free DevOps Readiness Evaluation measures:\n- Deployment cycle time and where bottlenecks actually live\n- Pipeline gaps that increase production risk\n- AI-assisted incident response that can save 20+ hours/week for your on-call rotation\n\nGrab your evaluation: /contact?offer=devops-eval\n\nBest,\nKleber\nZion Tech Group",
-          "status": "pending"
-        },
-        {
-          "day": 2,
-          "subject": "Re: DevOps maturity gaps at DataFlow",
-          "body": "Hi Mary,\n\nQuick question: how often does DataFlow currently deploy to production, and what percentage of those deploys require manual security sign-off?\n\nMost teams I work with have deployment automation but still rely on manual gates for security — which defeats the purpose of CI/CD. The evaluation gives you a clear DevOps maturity roadmap so you can increase deployment confidence without increasing risk.\n\nIf you haven't claimed it: /contact?offer=devops-eval\n\nBest,\nKleber",
-          "status": "pending"
-        },
-        {
-          "day": 3,
-          "subject": "3-week DevOps transformation sprint for DataFlow",
-          "body": "Hi Mary,\n\nIf the DevOps Readiness Evaluation showed maturity gaps but DataFlow needs a structured path to close them, I'm opening a 3-week DevOps transformation sprint slot this month.\n\nWhat's included:\n- CI/CD rollout with security gates that don't block velocity\n- Incident-response playbooks tailored to your current toolchain\n- Cloud infrastructure cost optimization with automated cost controls\n\nValid through August 31st. Want me to put together a custom roadmap for DataFlow?\n\nBest,\nKleber",
-          "status": "pending"
-        }
-      ],
-      "classification": {
-        "category": "Security",
-        "confidence": 0.85,
-        "method": "local_heuristic"
+      "day": 1,
+      "timestamp": "2026-08-07T06:00:17.544584",
+      "status": "pending"
+    },
+    {
+      "to": "james427@digitalsolutions.com",
+      "name": "John",
+      "company": "DataFlow",
+      "role": "Security Engineer",
+      "subject": "Quick Question About Your DevOps Readiness Evaluation",
+      "body": "Hi John,\n\nI wanted to follow up on your request for DevOps Readiness Evaluation. I noticed you might benefit from:\n\nBased on your request, I recommend starting with DevOps\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber",
+      "lead_magnet": {
+        "name": "DevOps Readiness Evaluation",
+        "value": 2000,
+        "cta": "/contact?offer=devops-eval"
       },
-      "last_sent_at": null,
-      "emails_sent": 0
+      "day": 2,
+      "timestamp": "2026-08-07T06:00:17.544584",
+      "status": "pending"
+    },
+    {
+      "to": "james427@digitalsolutions.com",
+      "name": "John",
+      "company": "DataFlow",
+      "role": "Security Engineer",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "body": "Hi John,\n\nAs a valued prospect, I'm offering a 20% discount on your first project with us.\n\nThis includes:\n- DevOps\n- Cloud\n\nValid for 7 days: https://calendly.com/kleber-ziontechgroup\n\nLet's get started!\n\nBest,\nKleber",
+      "lead_magnet": {
+        "name": "DevOps Readiness Evaluation",
+        "value": 2000,
+        "cta": "/contact?offer=devops-eval"
+      },
+      "day": 3,
+      "timestamp": "2026-08-07T06:00:17.544584",
+      "status": "pending"
+    },
+    {
+      "to": "michael90@dataflow.com",
+      "name": "Lisa",
+      "company": "SecureIT",
+      "role": "Data Scientist",
+      "subject": "Your Free Cloud Security Scan is Ready!",
+      "body": "Hi Lisa,\n\nThank you for requesting your Cloud Security Scan. I've prepared a personalized analysis based on your business needs.\n\nKey findings:\n- Your current cloud spend could be optimized by 30-40%\n- Your security posture shows 2 areas for improvement\n- AI implementation could save 20+ hours/week\n\nLet's schedule a 15-minute call to discuss next steps: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber\nZion Tech Group",
+      "lead_magnet": {
+        "name": "Cloud Security Scan",
+        "value": 1800,
+        "cta": "/contact?offer=security-scan"
+      },
+      "day": 1,
+      "timestamp": "2026-08-07T06:00:17.544584",
+      "status": "pending"
+    },
+    {
+      "to": "michael90@dataflow.com",
+      "name": "Lisa",
+      "company": "SecureIT",
+      "role": "Data Scientist",
+      "subject": "Quick Question About Your Cloud Security Scan",
+      "body": "Hi Lisa,\n\nI wanted to follow up on your request for Cloud Security Scan. I noticed you might benefit from:\n\nBased on your request, I recommend starting with Security\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber",
+      "lead_magnet": {
+        "name": "Cloud Security Scan",
+        "value": 1800,
+        "cta": "/contact?offer=security-scan"
+      },
+      "day": 2,
+      "timestamp": "2026-08-07T06:00:17.544584",
+      "status": "pending"
+    },
+    {
+      "to": "michael90@dataflow.com",
+      "name": "Lisa",
+      "company": "SecureIT",
+      "role": "Data Scientist",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "body": "Hi Lisa,\n\nAs a valued prospect, I'm offering a 20% discount on your first project with us.\n\nThis includes:\n- Security\n- DevOps\n\nValid for 7 days: https://calendly.com/kleber-ziontechgroup\n\nLet's get started!\n\nBest,\nKleber",
+      "lead_magnet": {
+        "name": "Cloud Security Scan",
+        "value": 1800,
+        "cta": "/contact?offer=security-scan"
+      },
+      "day": 3,
+      "timestamp": "2026-08-07T06:00:17.544584",
+      "status": "pending"
+    },
+    {
+      "to": "john859@digitalsolutions.com",
+      "name": "John",
+      "company": "InnovateCo",
+      "role": "Data Scientist",
+      "subject": "Your Free DevOps Readiness Evaluation is Ready!",
+      "body": "Hi John,\n\nThank you for requesting your DevOps Readiness Evaluation. I've prepared a personalized analysis based on your business needs.\n\nKey findings:\n- Your current cloud spend could be optimized by 30-40%\n- Your security posture shows 2 areas for improvement\n- AI implementation could save 20+ hours/week\n\nLet's schedule a 15-minute call to discuss next steps: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber\nZion Tech Group",
+      "lead_magnet": {
+        "name": "DevOps Readiness Evaluation",
+        "value": 2000,
+        "cta": "/contact?offer=devops-eval"
+      },
+      "day": 1,
+      "timestamp": "2026-08-07T06:00:17.544584",
+      "status": "pending"
+    },
+    {
+      "to": "john859@digitalsolutions.com",
+      "name": "John",
+      "company": "InnovateCo",
+      "role": "Data Scientist",
+      "subject": "Quick Question About Your DevOps Readiness Evaluation",
+      "body": "Hi John,\n\nI wanted to follow up on your request for DevOps Readiness Evaluation. I noticed you might benefit from:\n\nBased on your request, I recommend starting with DevOps\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber",
+      "lead_magnet": {
+        "name": "DevOps Readiness Evaluation",
+        "value": 2000,
+        "cta": "/contact?offer=devops-eval"
+      },
+      "day": 2,
+      "timestamp": "2026-08-07T06:00:17.544584",
+      "status": "pending"
+    },
+    {
+      "to": "john859@digitalsolutions.com",
+      "name": "John",
+      "company": "InnovateCo",
+      "role": "Data Scientist",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "body": "Hi John,\n\nAs a valued prospect, I'm offering a 20% discount on your first project with us.\n\nThis includes:\n- DevOps\n- Cloud\n\nValid for 7 days: https://calendly.com/kleber-ziontechgroup\n\nLet's get started!\n\nBest,\nKleber",
+      "lead_magnet": {
+        "name": "DevOps Readiness Evaluation",
+        "value": 2000,
+        "cta": "/contact?offer=devops-eval"
+      },
+      "day": 3,
+      "timestamp": "2026-08-07T06:00:17.544584",
+      "status": "pending"
+    },
+    {
+      "to": "sarah847@secureit.com",
+      "name": "Mary",
+      "company": "DigitalSolutions",
+      "role": "DevOps Lead",
+      "subject": "Your Free AI Cost Assessment is Ready!",
+      "body": "Hi Mary,\n\nThank you for requesting your AI Cost Assessment. I've prepared a personalized analysis based on your business needs.\n\nKey findings:\n- Your current cloud spend could be optimized by 30-40%\n- Your security posture shows 2 areas for improvement\n- AI implementation could save 20+ hours/week\n\nLet's schedule a 15-minute call to discuss next steps: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber\nZion Tech Group",
+      "lead_magnet": {
+        "name": "AI Cost Assessment",
+        "value": 2500,
+        "cta": "/contact?offer=ai-cost-assessment"
+      },
+      "day": 1,
+      "timestamp": "2026-08-07T06:00:17.544584",
+      "status": "pending"
+    },
+    {
+      "to": "sarah847@secureit.com",
+      "name": "Mary",
+      "company": "DigitalSolutions",
+      "role": "DevOps Lead",
+      "subject": "Quick Question About Your AI Cost Assessment",
+      "body": "Hi Mary,\n\nI wanted to follow up on your request for AI Cost Assessment. I noticed you might benefit from:\n\nBased on your request, I recommend starting with AI Implementation\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber",
+      "lead_magnet": {
+        "name": "AI Cost Assessment",
+        "value": 2500,
+        "cta": "/contact?offer=ai-cost-assessment"
+      },
+      "day": 2,
+      "timestamp": "2026-08-07T06:00:17.544584",
+      "status": "pending"
+    },
+    {
+      "to": "sarah847@secureit.com",
+      "name": "Mary",
+      "company": "DigitalSolutions",
+      "role": "DevOps Lead",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "body": "Hi Mary,\n\nAs a valued prospect, I'm offering a 20% discount on your first project with us.\n\nThis includes:\n- AI Implementation\n- Automation\n\nValid for 7 days: https://calendly.com/kleber-ziontechgroup\n\nLet's get started!\n\nBest,\nKleber",
+      "lead_magnet": {
+        "name": "AI Cost Assessment",
+        "value": 2500,
+        "cta": "/contact?offer=ai-cost-assessment"
+      },
+      "day": 3,
+      "timestamp": "2026-08-07T06:00:17.544584",
+      "status": "pending"
+    },
+    {
+      "to": "john710@digitalsolutions.com",
+      "name": "Mary",
+      "company": "SecureIT",
+      "role": "Engineering Manager",
+      "subject": "Your Free DevOps Readiness Evaluation is Ready!",
+      "body": "Hi Mary,\n\nThank you for requesting your DevOps Readiness Evaluation. I've prepared a personalized analysis based on your business needs.\n\nKey findings:\n- Your current cloud spend could be optimized by 30-40%\n- Your security posture shows 2 areas for improvement\n- AI implementation could save 20+ hours/week\n\nLet's schedule a 15-minute call to discuss next steps: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber\nZion Tech Group",
+      "lead_magnet": {
+        "name": "DevOps Readiness Evaluation",
+        "value": 2000,
+        "cta": "/contact?offer=devops-eval"
+      },
+      "day": 1,
+      "timestamp": "2026-08-07T06:00:17.544584",
+      "status": "pending"
+    },
+    {
+      "to": "john710@digitalsolutions.com",
+      "name": "Mary",
+      "company": "SecureIT",
+      "role": "Engineering Manager",
+      "subject": "Quick Question About Your DevOps Readiness Evaluation",
+      "body": "Hi Mary,\n\nI wanted to follow up on your request for DevOps Readiness Evaluation. I noticed you might benefit from:\n\nBased on your request, I recommend starting with DevOps\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber",
+      "lead_magnet": {
+        "name": "DevOps Readiness Evaluation",
+        "value": 2000,
+        "cta": "/contact?offer=devops-eval"
+      },
+      "day": 2,
+      "timestamp": "2026-08-07T06:00:17.544584",
+      "status": "pending"
+    },
+    {
+      "to": "john710@digitalsolutions.com",
+      "name": "Mary",
+      "company": "SecureIT",
+      "role": "Engineering Manager",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "body": "Hi Mary,\n\nAs a valued prospect, I'm offering a 20% discount on your first project with us.\n\nThis includes:\n- DevOps\n- Cloud\n\nValid for 7 days: https://calendly.com/kleber-ziontechgroup\n\nLet's get started!\n\nBest,\nKleber",
+      "lead_magnet": {
+        "name": "DevOps Readiness Evaluation",
+        "value": 2000,
+        "cta": "/contact?offer=devops-eval"
+      },
+      "day": 3,
+      "timestamp": "2026-08-07T06:00:17.544584",
+      "status": "pending"
     }
-  ],
-  "generated_at": "2026-08-06T22:00:17.063651",
-  "improved_at": "2026-08-07T04:34:44.683700+00:00",
-  "version": "2.0",
-  "improvements": [
-    "Fixed name/email mismatches to align with email prefixes",
-    "Tightened email copy for scannability and clarity",
-    "Corrected day-1 send statuses to match sent_history",
-    "Fixed company assignments to match email domains",
-    "Added improvement tracking metadata",
-    "Recalculated revenue projections from actual lead count",
-    "Analysis pass: enriched metadata with miner summary and sent timestamps."
-  ],
-  "total_potential_value": 9900,
-  "expected_revenue": 2970.0,
-  "last_analyzed": "2026-08-07T04:34:44.683700+00:00",
-  "analysis_summary": {
-    "contacts_mined": 7,
-    "llm_available": false,
-    "categories": {
-      "Security": 4,
-      "DevOps/Cloud": 1,
-      "General": 2
-    }
-  }
+  ]
 }
