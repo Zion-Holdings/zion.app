@@ -25,3 +25,12 @@
 
 # Configurator fallback
 /configurator/ /docs/configurator/index.html 200
+
+# Broken tool pages fallback -> /tools/
+/tools/roi-calculator/ /tools/ 301
+/tools/port-scanner/ /tools/ 301
+/tools/ssl-checker/ /tools/ 301
+/tools/ai-service-router/ /tools/ 301
+/tools/health-check/ /tools/ 301
+/tools/analytics/ /tools/ 301
+/service-comparison/ /tools/ 301
