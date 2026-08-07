@@ -1,0 +1,127 @@
+{
+  "run_started": "2026-08-07T02:33:30.848742+00:00",
+  "run_finished": "2026-08-07T02:33:30.851234+00:00",
+  "script": "lead-crm/historical_email_miner.py",
+  "sources": [
+    "outreach_ready_canonical.json",
+    "lead-crm/outreach-log.jsonl",
+    "lead-crm/outreach_sent_history.jsonl",
+    "data/email_intelligence.json"
+  ],
+  "contacts_mined": 7,
+  "llm_available": false,
+  "classification_method": "local_heuristic",
+  "summary": {
+    "timestamp": "2026-08-07T02:33:30.848742+00:00",
+    "contacts_mined": 7,
+    "llm_available": false,
+    "categories": {
+      "Security": 4,
+      "DevOps/Cloud": 1,
+      "General": 2
+    }
+  },
+  "contacts": [
+    {
+      "name": "David",
+      "email": "lisa162@secureit.com",
+      "company": "CloudFirst",
+      "role": "Security Engineer",
+      "lead_magnet": "Cloud Security Scan",
+      "status": "in_progress",
+      "source": "outreach_ready_canonical.json",
+      "classification": {
+        "category": "Security",
+        "confidence": 0.85,
+        "method": "local_heuristic"
+      }
+    },
+    {
+      "name": "David",
+      "email": "john893@innovateco.com",
+      "company": "DataFlow",
+      "role": "DevOps Lead",
+      "lead_magnet": "Cloud Security Scan",
+      "status": "in_progress",
+      "source": "outreach_ready_canonical.json",
+      "classification": {
+        "category": "DevOps/Cloud",
+        "confidence": 0.8,
+        "method": "local_heuristic"
+      }
+    },
+    {
+      "name": "Emily",
+      "email": "john466@secureit.com",
+      "company": "TechCorp",
+      "role": "Security Engineer",
+      "lead_magnet": "AI Cost Assessment",
+      "status": "new",
+      "source": "outreach_ready_canonical.json",
+      "classification": {
+        "category": "Security",
+        "confidence": 0.85,
+        "method": "local_heuristic"
+      }
+    },
+    {
+      "name": "Mary",
+      "email": "emily47@secureit.com",
+      "company": "DataFlow",
+      "role": "Security Engineer",
+      "lead_magnet": "Cloud Security Scan",
+      "status": "new",
+      "source": "outreach_ready_canonical.json",
+      "classification": {
+        "category": "Security",
+        "confidence": 0.85,
+        "method": "local_heuristic"
+      }
+    },
+    {
+      "name": "John",
+      "email": "mary681@dataflow.com",
+      "company": "InnovateCo",
+      "role": "Security Engineer",
+      "lead_magnet": "DevOps Readiness Evaluation",
+      "status": "new",
+      "source": "outreach_ready_canonical.json",
+      "classification": {
+        "category": "Security",
+        "confidence": 0.85,
+        "method": "local_heuristic"
+      }
+    },
+    {
+      "name": "Widiman",
+      "email": null,
+      "company": null,
+      "role": null,
+      "lead_magnet": null,
+      "status": "responded",
+      "source": "data/email_intelligence.json",
+      "thread_id": "19e3d593e5a5874f",
+      "classification": {
+        "category": "General",
+        "confidence": 0.5,
+        "method": "local_heuristic"
+      }
+    },
+    {
+      "name": "Caixa",
+      "email": null,
+      "company": null,
+      "role": null,
+      "lead_magnet": null,
+      "status": "responded",
+      "source": "data/email_intelligence.json",
+      "thread_id": "19e3d71d6a027340",
+      "classification": {
+        "category": "General",
+        "confidence": 0.5,
+        "method": "local_heuristic"
+      }
+    }
+  ],
+  "errors": []
+}
