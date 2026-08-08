@@ -1,0 +1,52 @@
+{
+  "date": "2026-08-08",
+  "paths": {
+    "/": {
+      "status": 200,
+      "size": "normal"
+    },
+    "/services/": {
+      "status": 200,
+      "size": "normal"
+    },
+    "/tools/": {
+      "status": 404,
+      "size": 0,
+      "fix": "docs/tools/index.html redirect to /services/"
+    },
+    "/contact/": {
+      "status": 200,
+      "size": "normal"
+    },
+    "/pricing/": {
+      "status": 200,
+      "size": "normal"
+    },
+    "/solutions/": {
+      "status": 200,
+      "size": "normal"
+    },
+    "/blog/": {
+      "status": 200,
+      "size": "normal"
+    },
+    "/about/": {
+      "status": 200,
+      "size": "normal"
+    }
+  },
+  "broken_links_found": 1,
+  "fixes_applied": [
+    "docs/tools/index.html redirect to /services/",
+    "docs/tools/roi-calculator/index.html redirect to /services/",
+    "docs/tools/port-scanner/index.html redirect to /services/",
+    "docs/tools/ssl-checker/index.html redirect to /services/",
+    "docs/tools/ai-service-router/index.html redirect to /services/",
+    "docs/tools/service-recommender/index.html redirect to /services/",
+    "docs/tools/health-check/index.html redirect to /services/",
+    "docs/tools/service-comparison/index.html redirect to /services/",
+    "docs/tools/analytics/index.html redirect to /services/"
+  ],
+  "homepage_ctas": "strong - configurator, services, contact, pricing",
+  "data_binding_drift": "none detected"
+}
