@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI API Gateway | Zion Tech Group',
   description: 'AI API Gateway',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI API Gateway',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-api-gateway-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway", "description": "AI API Gateway", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:18Z", "dateModified": "2026-08-07T04:51:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway", "description": "AI API Gateway", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-2026/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your ai api gateway initiative, the next step is a scoping
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-qa-engineering-2026-7213">Autonomous Qa Engineering 2026 7213</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026-4">Managed It Services Small Business 2026 4</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-7231">Devops Gen Ai Cicd 2026 7231</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-6617">Smart Contract Audit 2026 6617</Link></li>
+              <li><Link href="/blog/ai-api-gateway-policy-and-compliance">Ai Api Gateway Policy And Compliance</Link></li>
+<li><Link href="/blog/api-integration-operations-handbook">Api Integration Operations Handbook</Link></li>
+<li><Link href="/blog/api-gateway-management-2026-7656">Api Gateway Management 2026 7656</Link></li>
+<li><Link href="/blog/ai-agent-tool-builder-2026-7689">Ai Agent Tool Builder 2026 7689</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your ai api gateway initiative, the next step is a scoping
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

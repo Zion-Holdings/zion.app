@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: '5G Solutions: case study | Zion Tech Group',
   description: '5G Solutions: case study',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: '5G Solutions: case study',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/5g-solutions-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "5G Solutions: case study", "description": "5G Solutions: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:19Z", "dateModified": "2026-08-07T04:51:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/5g-solutions-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "5G Solutions: case study", "description": "5G Solutions: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/5g-solutions-case-study/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your 5g solutions: case study initiative, the next step is
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-email-intelligence-2026-7183">Ai Email Intelligence 2026 7183</Link></li>
-<li><Link href="/blog/event-driven-architecture-2026-7237">Event Driven Architecture 2026 7237</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-6617">Smart Contract Audit 2026 6617</Link></li>
-<li><Link href="/blog/accessibility-compliance-architecture-overview">Accessibility Compliance Architecture Overview</Link></li>
+              <li><Link href="/blog/ai-agent-safety-evaluation-2026-7757">Ai Agent Safety Evaluation 2026 7757</Link></li>
+<li><Link href="/blog/ai-accessibility-optimizer-evaluation-framework">Ai Accessibility Optimizer Evaluation Framework</Link></li>
+<li><Link href="/blog/ai-performance-monitoring-2026-7494">Ai Performance Monitoring 2026 7494</Link></li>
+<li><Link href="/blog/container-security-lifecycle-2026-7779">Container Security Lifecycle 2026 7779</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your 5g solutions: case study initiative, the next step is
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

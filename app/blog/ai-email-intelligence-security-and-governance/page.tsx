@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-email-intelligence-security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Email Intelligence: security and governance", "description": "AI Email Intelligence: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:25Z", "dateModified": "2026-08-07T04:52:25Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-intelligence-security-and-governance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Email Intelligence: security and governance", "description": "AI Email Intelligence: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-intelligence-security-and-governance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/incident-response-retainer-2026-6550">Incident Response Retainer 2026 6550</Link></li>
-<li><Link href="/blog/accessibility-compliance-2026">Accessibility Compliance 2026</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-7144">Autonomous Qa Engineering 2026 7144</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-2026-6936">Autonomous Code Deployment 2026 6936</Link></li>
+              <li><Link href="/blog/cloud-cost-ai-optimizer-2026-7500">Cloud Cost Ai Optimizer 2026 7500</Link></li>
+<li><Link href="/blog/container-security-lifecycle-security-and-governance">Container Security Lifecycle Security And Governance</Link></li>
+<li><Link href="/blog/ai-bom-procurement-2026-7422">Ai Bom Procurement 2026 7422</Link></li>
+<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7748">Micro Saas Ai Expense Tracker 2026 7748</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

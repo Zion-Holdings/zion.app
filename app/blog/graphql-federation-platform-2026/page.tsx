@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'GraphQL Federation Platform | Zion Tech Group',
   description: 'GraphQL Federation Platform',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'GraphQL Federation Platform',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/graphql-federation-platform-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GraphQL Federation Platform", "description": "GraphQL Federation Platform", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:07Z", "dateModified": "2026-08-07T04:51:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/graphql-federation-platform-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GraphQL Federation Platform", "description": "GraphQL Federation Platform", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/graphql-federation-platform-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-safety-evaluation-2026-6515">Ai Agent Safety Evaluation 2026 6515</Link></li>
-<li><Link href="/blog/ai-data-backup-2026-7038">Ai Data Backup 2026 7038</Link></li>
-<li><Link href="/blog/network-infrastructure-2026-6916">Network Infrastructure 2026 6916</Link></li>
-<li><Link href="/blog/event-driven-architecture-2026-6823">Event Driven Architecture 2026 6823</Link></li>
+              <li><Link href="/blog/devops-cicd-roi-and-cost-model">Devops Cicd Roi And Cost Model</Link></li>
+<li><Link href="/blog/ai-api-gateway-2026-7586">Ai Api Gateway 2026 7586</Link></li>
+<li><Link href="/blog/ai-performance-monitoring-2026-7770">Ai Performance Monitoring 2026 7770</Link></li>
+<li><Link href="/blog/ai-customer-support-vendor-evaluation">Ai Customer Support Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

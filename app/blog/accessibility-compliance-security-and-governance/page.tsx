@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Accessibility Compliance: security and governance | Zion Tech Group',
   description: 'Accessibility Compliance: security and governance',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Accessibility Compliance: security and governance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/accessibility-compliance-security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance: security and governance", "description": "Accessibility Compliance: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:08:11Z", "dateModified": "2026-08-07T05:08:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-security-and-governance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance: security and governance", "description": "Accessibility Compliance: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-security-and-governance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for accessibility compliance: security and governance: workfl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-2026-7239">Graphql Federation Platform 2026 7239</Link></li>
-<li><Link href="/blog/cloud-native-app-development-starter-template">Cloud Native App Development Starter Template</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-7231">Devops Gen Ai Cicd 2026 7231</Link></li>
-<li><Link href="/blog/brand-voice-guardian-2026-7285">Brand Voice Guardian 2026 7285</Link></li>
+              <li><Link href="/blog/api-performance-testing-2026-7519">Api Performance Testing 2026 7519</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7614">Enterprise Ai Intelligence Hub 2026 7614</Link></li>
+<li><Link href="/blog/container-security-lifecycle-2026-7710">Container Security Lifecycle 2026 7710</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7752">Enterprise Ai Intelligence Hub 2026 7752</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for accessibility compliance: security and governance: workfl
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Ad Copy Generator: vendor evaluation | Zion Tech Group',
   description: 'AI Ad Copy Generator: vendor evaluation',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Ad Copy Generator: vendor evaluation',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-ad-copy-generator-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Ad Copy Generator: vendor evaluation", "description": "AI Ad Copy Generator: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:51Z", "dateModified": "2026-08-07T04:51:51Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-ad-copy-generator-vendor-evaluation/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Ad Copy Generator: vendor evaluation", "description": "AI Ad Copy Generator: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-ad-copy-generator-vendor-evaluation/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for ai ad copy generator: vendor evaluation: workflow complet
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cyber-threat-intelligence-implementation-playbook">Cyber Threat Intelligence Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-data-backup-2026-6969">Ai Data Backup 2026 6969</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-2026-7007">Ai Bdr Sdr 2026 7007</Link></li>
-<li><Link href="/blog/ai-email-intelligence-deployment-patterns">Ai Email Intelligence Deployment Patterns</Link></li>
+              <li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-22">Kubernetes Platform Engineering Build Internal Developer Platform K8S 22</Link></li>
+<li><Link href="/blog/api-orchestration-layer-2026-7555">Api Orchestration Layer 2026 7555</Link></li>
+<li><Link href="/blog/api-gateway-management-2026-7449">Api Gateway Management 2026 7449</Link></li>
+<li><Link href="/blog/container-security-lifecycle-2026-7779">Container Security Lifecycle 2026 7779</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for ai ad copy generator: vendor evaluation: workflow complet
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

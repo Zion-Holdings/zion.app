@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'MicroSaaS Customer Onboarding: implementation playbook | Zion Tech Group',
   description: 'MicroSaaS Customer Onboarding: implementation playbook',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'MicroSaaS Customer Onboarding: implementation playbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/microsaas-customer-onboarding-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Customer Onboarding: implementation playbook", "description": "MicroSaaS Customer Onboarding: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:56Z", "dateModified": "2026-08-07T04:51:56Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-customer-onboarding-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Customer Onboarding: implementation playbook", "description": "MicroSaaS Customer Onboarding: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-customer-onboarding-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-2026-6846">It Consulting 2026 6846</Link></li>
-<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-6905">Data Analytics Platform Modern Enterprise 2026 6905</Link></li>
-<li><Link href="/blog/ai-bom-procurement-checklist-for-it-leaders">Ai Bom Procurement Checklist For It Leaders</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6989">Micro Saas Ai Expense Tracker 2026 6989</Link></li>
+              <li><Link href="/blog/container-security-lifecycle-2026-7779">Container Security Lifecycle 2026 7779</Link></li>
+<li><Link href="/blog/devops-gen-ai-cicd-2026-7576">Devops Gen Ai Cicd 2026 7576</Link></li>
+<li><Link href="/blog/network-infrastructure-2026-7399">Network Infrastructure 2026 7399</Link></li>
+<li><Link href="/blog/aiops-anomaly-detection-2026-7485">Aiops Anomaly Detection 2026 7485</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

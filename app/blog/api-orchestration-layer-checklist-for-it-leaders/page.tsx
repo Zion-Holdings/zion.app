@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-orchestration-layer-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Orchestration Layer: checklist for IT leaders", "description": "API Orchestration Layer: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:53Z", "dateModified": "2026-08-07T04:51:53Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-orchestration-layer-checklist-for-it-leaders/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Orchestration Layer: checklist for IT leaders", "description": "API Orchestration Layer: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-orchestration-layer-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for api orchestration layer: checklist for it leaders: workfl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-optimization-checklist-2026-2">Cloud Cost Optimization Checklist 2026 2</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6989">Micro Saas Ai Expense Tracker 2026 6989</Link></li>
-<li><Link href="/blog/cloud-migration-services-checklist-for-it-leaders">Cloud Migration Services Checklist For It Leaders</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-2026-7074">Autonomous Code Deployment 2026 7074</Link></li>
+              <li><Link href="/blog/it-consulting-2026-7743">It Consulting 2026 7743</Link></li>
+<li><Link href="/blog/enterprise-backup-dr-2026-7649">Enterprise Backup Dr 2026 7649</Link></li>
+<li><Link href="/blog/it-consulting-2026-7536">It Consulting 2026 7536</Link></li>
+<li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-8">Ai Cloud Finops Anomaly Detection And Budget Guardrails 8</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for api orchestration layer: checklist for it leaders: workfl
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

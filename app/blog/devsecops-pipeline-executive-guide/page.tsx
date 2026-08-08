@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'DevSecOps Pipeline: executive guide | Zion Tech Group',
   description: 'DevSecOps Pipeline: executive guide',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'DevSecOps Pipeline: executive guide',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/devsecops-pipeline-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline: executive guide", "description": "DevSecOps Pipeline: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:09Z", "dateModified": "2026-08-07T04:52:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline: executive guide", "description": "DevSecOps Pipeline: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-executive-guide/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bom-procurement-2026-7353">Ai Bom Procurement 2026 7353</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-evaluation-framework">Etl Pipeline Optimization Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-2026-6719">Ai Accessibility Auditor 2026 6719</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026">Devops Gen Ai Cicd 2026</Link></li>
+              <li><Link href="/blog/micro-saas-ai-translation-engine-2026-7678">Micro Saas Ai Translation Engine 2026 7678</Link></li>
+<li><Link href="/blog/cloud-native-app-development-evaluation-framework">Cloud Native App Development Evaluation Framework</Link></li>
+<li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-38">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 38</Link></li>
+<li><Link href="/blog/managed-it-services-small-business-2026-7732">Managed It Services Small Business 2026 7732</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

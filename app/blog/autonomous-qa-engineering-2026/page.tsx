@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Autonomous QA Engineering | Zion Tech Group',
   description: 'Autonomous QA Engineering',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Autonomous QA Engineering',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/autonomous-qa-engineering-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering", "description": "Autonomous QA Engineering", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:40Z", "dateModified": "2026-08-07T04:51:40Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering", "description": "Autonomous QA Engineering", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for autonomous qa engineering: workflow completion rate, esca
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-autonomous-agents-2026">Ai Autonomous Agents 2026</Link></li>
-<li><Link href="/blog/cloud-native-app-development-implementation-playbook">Cloud Native App Development Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-bom-procurement-automation-roadmap">Ai Bom Procurement Automation Roadmap</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026-6973">Managed It Services Small Business 2026 6973</Link></li>
+              <li><Link href="/blog/api-orchestration-layer-2026-7486">Api Orchestration Layer 2026 7486</Link></li>
+<li><Link href="/blog/event-driven-architecture-2026-7582">Event Driven Architecture 2026 7582</Link></li>
+<li><Link href="/blog/ai-email-intelligence-2026-7666">Ai Email Intelligence 2026 7666</Link></li>
+<li><Link href="/blog/cybersecurity-platform-msp-2026">Cybersecurity Platform Msp 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for autonomous qa engineering: workflow completion rate, esca
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Customer Success Churn Prevention: security and governance | Zion Tech Group',
   description: 'AI Customer Success Churn Prevention: security and governance',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Customer Success Churn Prevention: security and governance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-customer-success-churn-prevention-security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Customer Success Churn Prevention: security and governance", "description": "AI Customer Success Churn Prevention: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:09Z", "dateModified": "2026-08-07T04:52:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-security-and-governance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Customer Success Churn Prevention: security and governance", "description": "AI Customer Success Churn Prevention: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-security-and-governance/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your ai customer success churn prevention: security and go
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-management-2026-6874">Api Gateway Management 2026 6874</Link></li>
-<li><Link href="/blog/cloud-finops-2026-6811">Cloud Finops 2026 6811</Link></li>
-<li><Link href="/blog/endpoint-management-2026-6958">Endpoint Management 2026 6958</Link></li>
-<li><Link href="/blog/ai-development-acceleration-starter-template">Ai Development Acceleration Starter Template</Link></li>
+              <li><Link href="/blog/devops-gen-ai-cicd-2026-7507">Devops Gen Ai Cicd 2026 7507</Link></li>
+<li><Link href="/blog/chaos-engineering-2026-7775">Chaos Engineering 2026 7775</Link></li>
+<li><Link href="/blog/chaos-engineering-2026">Chaos Engineering 2026</Link></li>
+<li><Link href="/blog/ai-data-backup-2026-7590">Ai Data Backup 2026 7590</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your ai customer success churn prevention: security and go
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'API Integration: automation roadmap | Zion Tech Group',
   description: 'API Integration: automation roadmap',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'API Integration: automation roadmap',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-integration-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Integration: automation roadmap", "description": "API Integration: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:24Z", "dateModified": "2026-08-07T04:52:24Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-integration-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Integration: automation roadmap", "description": "API Integration: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-integration-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your api integration: automation roadmap initiative, the n
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/smart-contract-audit-2026-7307">Smart Contract Audit 2026 7307</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-7231">Devops Gen Ai Cicd 2026 7231</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-security-and-governance">Ai Agentic Workflows Security And Governance</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-6658">Api Orchestration Layer 2026 6658</Link></li>
+              <li><Link href="/blog/database-migration-service-2026-7575">Database Migration Service 2026 7575</Link></li>
+<li><Link href="/blog/ai-accessibility-optimizer-evaluation-framework">Ai Accessibility Optimizer Evaluation Framework</Link></li>
+<li><Link href="/blog/ai-agentic-workflows-2026-7483">Ai Agentic Workflows 2026 7483</Link></li>
+<li><Link href="/blog/ai-capacity-planning-for-saas-and-cloud-platforms-in-2026-42">Ai Capacity Planning For Saas And Cloud Platforms In 2026 42</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your api integration: automation roadmap initiative, the n
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

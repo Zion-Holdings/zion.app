@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Automated AI Reporting: executive guide | Zion Tech Group',
   description: 'Automated AI Reporting: executive guide',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Automated AI Reporting: executive guide',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/automated-ai-reporting-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automated AI Reporting: executive guide", "description": "Automated AI Reporting: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:59Z", "dateModified": "2026-08-07T04:51:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automated-ai-reporting-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automated AI Reporting: executive guide", "description": "Automated AI Reporting: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automated-ai-reporting-executive-guide/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for automated ai reporting: executive guide: workflow complet
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-2026-7032">Graphql Federation Platform 2026 7032</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-architecture-overview">Autonomous Qa Engineering Architecture Overview</Link></li>
-<li><Link href="/blog/ai-data-backup-common-mistakes">Ai Data Backup Common Mistakes</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6920">Micro Saas Ai Expense Tracker 2026 6920</Link></li>
+              <li><Link href="/blog/ai-data-lakehouse-pipelines-2026-7395">Ai Data Lakehouse Pipelines 2026 7395</Link></li>
+<li><Link href="/blog/autonomous-qa-engineering-2026-7489">Autonomous Qa Engineering 2026 7489</Link></li>
+<li><Link href="/blog/autonomous-code-deployment-2026-7488">Autonomous Code Deployment 2026 7488</Link></li>
+<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7595">Data Analytics Platform Modern Enterprise 2026 7595</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for automated ai reporting: executive guide: workflow complet
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

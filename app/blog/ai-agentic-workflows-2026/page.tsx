@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-agentic-workflows-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agentic Workflows", "description": "AI Agentic Workflows", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:40Z", "dateModified": "2026-08-07T04:51:40Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agentic-workflows-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agentic Workflows", "description": "AI Agentic Workflows", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agentic-workflows-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-2026-6846">It Consulting 2026 6846</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026-7193">Cloud Migration Services 2026 7193</Link></li>
-<li><Link href="/blog/incident-response-retainer-2026-6757">Incident Response Retainer 2026 6757</Link></li>
-<li><Link href="/blog/genai-devops-cicd-roi-and-cost-model">Genai Devops Cicd Roi And Cost Model</Link></li>
+              <li><Link href="/blog/ai-development-acceleration-architecture-overview">Ai Development Acceleration Architecture Overview</Link></li>
+<li><Link href="/blog/cloud-native-app-development-architecture-overview">Cloud Native App Development Architecture Overview</Link></li>
+<li><Link href="/blog/ai-development-acceleration-2026-7667">Ai Development Acceleration 2026 7667</Link></li>
+<li><Link href="/blog/cloud-native-app-development-2026">Cloud Native App Development 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

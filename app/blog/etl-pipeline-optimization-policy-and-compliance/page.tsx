@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'ETL Pipeline Optimization: policy and compliance | Zion Tech Group',
   description: 'ETL Pipeline Optimization: policy and compliance',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'ETL Pipeline Optimization: policy and compliance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/etl-pipeline-optimization-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "ETL Pipeline Optimization: policy and compliance", "description": "ETL Pipeline Optimization: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:56Z", "dateModified": "2026-08-07T04:51:56Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/etl-pipeline-optimization-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "ETL Pipeline Optimization: policy and compliance", "description": "ETL Pipeline Optimization: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/etl-pipeline-optimization-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for etl pipeline optimization: policy and compliance: workflo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-security-and-governance">Cloud Cost Ai Optimizer Security And Governance</Link></li>
-<li><Link href="/blog/it-consulting-2026-6915">It Consulting 2026 6915</Link></li>
-<li><Link href="/blog/api-security-testing-2026-6554">Api Security Testing 2026 6554</Link></li>
-<li><Link href="/blog/database-migration-service-2026-7092">Database Migration Service 2026 7092</Link></li>
+              <li><Link href="/blog/cloud-finops-2026-7708">Cloud Finops 2026 7708</Link></li>
+<li><Link href="/blog/it-consulting-2026-7605">It Consulting 2026 7605</Link></li>
+<li><Link href="/blog/ai-agentic-workflows-2026-7552">Ai Agentic Workflows 2026 7552</Link></li>
+<li><Link href="/blog/ai-autonomous-agents-2026-7484">Ai Autonomous Agents 2026 7484</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for etl pipeline optimization: policy and compliance: workflo
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

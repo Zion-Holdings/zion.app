@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: '5G Solutions: automation roadmap | Zion Tech Group',
   description: '5G Solutions: automation roadmap',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: '5G Solutions: automation roadmap',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/5g-solutions-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "5G Solutions: automation roadmap", "description": "5G Solutions: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:38Z", "dateModified": "2026-08-07T04:51:38Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/5g-solutions-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "5G Solutions: automation roadmap", "description": "5G Solutions: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/5g-solutions-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for 5g solutions: automation roadmap: workflow completion rat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-management-2026-6736">Api Gateway Management 2026 6736</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-6681">Edge Computing Deployment 2026 6681</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026-6672">Cloud Cost Ai Optimizer 2026 6672</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026-6585">Ai Agent Tool Builder 2026 6585</Link></li>
+              <li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-31">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 31</Link></li>
+<li><Link href="/blog/cyber-threat-intelligence-2026-7711">Cyber Threat Intelligence 2026 7711</Link></li>
+<li><Link href="/blog/event-driven-architecture-implementation-playbook">Event Driven Architecture Implementation Playbook</Link></li>
+<li><Link href="/blog/graphql-federation-platform-2026-7653">Graphql Federation Platform 2026 7653</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for 5g solutions: automation roadmap: workflow completion rat
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

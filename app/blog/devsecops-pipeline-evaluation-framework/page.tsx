@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'DevSecOps Pipeline: evaluation framework | Zion Tech Group',
   description: 'DevSecOps Pipeline: evaluation framework',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'DevSecOps Pipeline: evaluation framework',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/devsecops-pipeline-evaluation-framework/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline: evaluation framework", "description": "DevSecOps Pipeline: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:25Z", "dateModified": "2026-08-07T04:51:25Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-evaluation-framework/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline: evaluation framework", "description": "DevSecOps Pipeline: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-evaluation-framework/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your devsecops pipeline: evaluation framework initiative, 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-2026-7083">Api Management Gateway 2026 7083</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-6784">Micro Saas Ai Customer Onboarding 2026 6784</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-6764">Cloud Cost Optimization Checklist 2026 6764</Link></li>
-<li><Link href="/blog/smart-contract-audit-roi-and-cost-model">Smart Contract Audit Roi And Cost Model</Link></li>
+              <li><Link href="/blog/api-security-testing-2026-7520">Api Security Testing 2026 7520</Link></li>
+<li><Link href="/blog/database-migration-service-2026-7575">Database Migration Service 2026 7575</Link></li>
+<li><Link href="/blog/ai-customer-success-churn-prevention-roi-and-cost-model">Ai Customer Success Churn Prevention Roi And Cost Model</Link></li>
+<li><Link href="/blog/ai-api-gateway-2026-7724">Ai Api Gateway 2026 7724</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your devsecops pipeline: evaluation framework initiative, 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

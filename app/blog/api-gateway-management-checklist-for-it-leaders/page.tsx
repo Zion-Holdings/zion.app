@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'API Gateway Management: checklist for IT leaders | Zion Tech Group',
   description: 'API Gateway Management: checklist for IT leaders',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'API Gateway Management: checklist for IT leaders',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-gateway-management-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Gateway Management: checklist for IT leaders", "description": "API Gateway Management: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:49Z", "dateModified": "2026-08-07T07:56:49Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-gateway-management-checklist-for-it-leaders/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Gateway Management: checklist for IT leaders", "description": "API Gateway Management: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-gateway-management-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for api gateway management: checklist for it leaders: workflo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-ai-intelligence-hub-policy-and-compliance">Enterprise Ai Intelligence Hub Policy And Compliance</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-2026-7350">Autonomous Code Deployment 2026 7350</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-2026">Aiops Anomaly Detection 2026</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-7357">Api Gateway Management 2026 7357</Link></li>
+              <li><Link href="/blog/api-orchestration-layer-operations-handbook">Api Orchestration Layer Operations Handbook</Link></li>
+<li><Link href="/blog/ai-bom-procurement-policy-and-compliance">Ai Bom Procurement Policy And Compliance</Link></li>
+<li><Link href="/blog/ai-api-gateway-2026-7448">Ai Api Gateway 2026 7448</Link></li>
+<li><Link href="/blog/ai-ad-copy-generator-2026-7687">Ai Ad Copy Generator 2026 7687</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for api gateway management: checklist for it leaders: workflo
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

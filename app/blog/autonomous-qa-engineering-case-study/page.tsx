@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Autonomous QA Engineering: case study | Zion Tech Group',
   description: 'Autonomous QA Engineering: case study',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Autonomous QA Engineering: case study',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/autonomous-qa-engineering-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering: case study", "description": "Autonomous QA Engineering: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:08:05Z", "dateModified": "2026-08-07T05:08:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering: case study", "description": "Autonomous QA Engineering: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-case-study/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-translation-engine-2026-7264">Micro Saas Ai Translation Engine 2026 7264</Link></li>
-<li><Link href="/blog/database-migration-service-2026-6816">Database Migration Service 2026 6816</Link></li>
-<li><Link href="/blog/devsecops-pipeline-2026-6611">Devsecops Pipeline 2026 6611</Link></li>
-<li><Link href="/blog/api-security-testing-2026-6623">Api Security Testing 2026 6623</Link></li>
+              <li><Link href="/blog/cybersecurity-for-msps-policy-and-compliance">Cybersecurity For Msps Policy And Compliance</Link></li>
+<li><Link href="/blog/ai-agent-tool-builder-2026-7758">Ai Agent Tool Builder 2026 7758</Link></li>
+<li><Link href="/blog/enterprise-backup-dr-2026-7718">Enterprise Backup Dr 2026 7718</Link></li>
+<li><Link href="/blog/network-infrastructure-2026-7744">Network Infrastructure 2026 7744</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

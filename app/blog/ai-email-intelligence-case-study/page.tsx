@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Email Intelligence: case study | Zion Tech Group',
   description: 'AI Email Intelligence: case study',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Email Intelligence: case study',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-email-intelligence-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Email Intelligence: case study", "description": "AI Email Intelligence: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:55Z", "dateModified": "2026-08-07T04:51:55Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-intelligence-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Email Intelligence: case study", "description": "AI Email Intelligence: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-intelligence-case-study/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For ai email intelligence: case study: pick one workflow, assign ownership, defi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-migration-services-2026-6779">Cloud Migration Services 2026 6779</Link></li>
-<li><Link href="/blog/ai-customer-support-pro-2026-6978">Ai Customer Support Pro 2026 6978</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-6612">Edge Computing Deployment 2026 6612</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-6888">Edge Computing Deployment 2026 6888</Link></li>
+              <li><Link href="/blog/cloud-native-app-development-starter-template">Cloud Native App Development Starter Template</Link></li>
+<li><Link href="/blog/api-orchestration-layer-2026-7693">Api Orchestration Layer 2026 7693</Link></li>
+<li><Link href="/blog/cloud-finops-2026-7777">Cloud Finops 2026 7777</Link></li>
+<li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-44">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 44</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For ai email intelligence: case study: pick one workflow, assign ownership, defi
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

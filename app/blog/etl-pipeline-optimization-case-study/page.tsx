@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'ETL Pipeline Optimization: case study | Zion Tech Group',
   description: 'ETL Pipeline Optimization: case study',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'ETL Pipeline Optimization: case study',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/etl-pipeline-optimization-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "ETL Pipeline Optimization: case study", "description": "ETL Pipeline Optimization: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:26:07Z", "dateModified": "2026-08-07T07:26:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/etl-pipeline-optimization-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "ETL Pipeline Optimization: case study", "description": "ETL Pipeline Optimization: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/etl-pipeline-optimization-case-study/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for etl pipeline optimization: case study: workflow completio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-auditor-2026-7271">Ai Accessibility Auditor 2026 7271</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026-6637">Ai Customer Success Churn 2026 6637</Link></li>
-<li><Link href="/blog/apm-application-performance-executive-guide">Apm Application Performance Executive Guide</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7269">Enterprise Ai Intelligence Hub 2026 7269</Link></li>
+              <li><Link href="/blog/api-orchestration-layer-executive-guide">Api Orchestration Layer Executive Guide</Link></li>
+<li><Link href="/blog/cyber-threat-intelligence-automation-roadmap">Cyber Threat Intelligence Automation Roadmap</Link></li>
+<li><Link href="/blog/data-warehouse-modernization-executive-guide">Data Warehouse Modernization Executive Guide</Link></li>
+<li><Link href="/blog/it-consulting-vendor-evaluation">It Consulting Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for etl pipeline optimization: case study: workflow completio
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

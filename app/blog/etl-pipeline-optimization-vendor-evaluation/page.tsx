@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'ETL Pipeline Optimization: vendor evaluation | Zion Tech Group',
   description: 'ETL Pipeline Optimization: vendor evaluation',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'ETL Pipeline Optimization: vendor evaluation',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/etl-pipeline-optimization-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "ETL Pipeline Optimization: vendor evaluation", "description": "ETL Pipeline Optimization: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:03Z", "dateModified": "2026-08-07T04:51:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/etl-pipeline-optimization-vendor-evaluation/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "ETL Pipeline Optimization: vendor evaluation", "description": "ETL Pipeline Optimization: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/etl-pipeline-optimization-vendor-evaluation/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your etl pipeline optimization: vendor evaluation initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-2026-6811">Cloud Finops 2026 6811</Link></li>
-<li><Link href="/blog/endpoint-management-2026-7165">Endpoint Management 2026 7165</Link></li>
-<li><Link href="/blog/api-management-gateway-2026-7221">Api Management Gateway 2026 7221</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-6727">Api Orchestration Layer 2026 6727</Link></li>
+              <li><Link href="/blog/api-integration-2026-7703">Api Integration 2026 7703</Link></li>
+<li><Link href="/blog/ai-customer-support-pro-2026-7461">Ai Customer Support Pro 2026 7461</Link></li>
+<li><Link href="/blog/container-security-lifecycle-2026-7434">Container Security Lifecycle 2026 7434</Link></li>
+<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7457">Data Analytics Platform Modern Enterprise 2026 7457</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your etl pipeline optimization: vendor evaluation initiati
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

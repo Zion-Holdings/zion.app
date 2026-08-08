@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/endpoint-management-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Endpoint Management: executive guide", "description": "Endpoint Management: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:26Z", "dateModified": "2026-08-07T04:51:26Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/endpoint-management-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Endpoint Management: executive guide", "description": "Endpoint Management: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/endpoint-management-executive-guide/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For endpoint management: executive guide: pick one workflow, assign ownership, d
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-success-churn-2026-6775">Ai Customer Success Churn 2026 6775</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6598">Api Gateway Management 2026 6598</Link></li>
-<li><Link href="/blog/ai-data-backup-2026-7107">Ai Data Backup 2026 7107</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-2026">Cyber Threat Intelligence 2026</Link></li>
+              <li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7457">Data Analytics Platform Modern Enterprise 2026 7457</Link></li>
+<li><Link href="/blog/ai-ad-copy-generator-2026-7756">Ai Ad Copy Generator 2026 7756</Link></li>
+<li><Link href="/blog/ai-agent-tool-builder-2026-7689">Ai Agent Tool Builder 2026 7689</Link></li>
+<li><Link href="/blog/brand-voice-guardian-2026-7492">Brand Voice Guardian 2026 7492</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For endpoint management: executive guide: pick one workflow, assign ownership, d
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

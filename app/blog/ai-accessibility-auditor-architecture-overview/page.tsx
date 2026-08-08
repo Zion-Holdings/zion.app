@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Accessibility Auditor: architecture overview | Zion Tech Group',
   description: 'AI Accessibility Auditor: architecture overview',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Accessibility Auditor: architecture overview',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-accessibility-auditor-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Auditor: architecture overview", "description": "AI Accessibility Auditor: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:26Z", "dateModified": "2026-08-07T04:51:26Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-auditor-architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Auditor: architecture overview", "description": "AI Accessibility Auditor: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-auditor-architecture-overview/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For ai accessibility auditor: architecture overview: pick one workflow, assign o
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-it-operations-automation-2026-7246">Ai It Operations Automation 2026 7246</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-6730">Autonomous Qa Engineering 2026 6730</Link></li>
-<li><Link href="/blog/devsecops-pipeline-2026-6818">Devsecops Pipeline 2026 6818</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-2026-6649">Ai 3D Asset Generator 2026 6649</Link></li>
+              <li><Link href="/blog/api-gateway-management-2026-7656">Api Gateway Management 2026 7656</Link></li>
+<li><Link href="/blog/chaos-engineering-2026-7775">Chaos Engineering 2026 7775</Link></li>
+<li><Link href="/blog/endpoint-management-checklist-for-it-leaders">Endpoint Management Checklist For It Leaders</Link></li>
+<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-7749">Micro Saas Ai Hr Recruitment 2026 7749</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For ai accessibility auditor: architecture overview: pick one workflow, assign o
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-autonomous-agents-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Autonomous Agents", "description": "AI Autonomous Agents", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:30Z", "dateModified": "2026-08-07T04:51:30Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-autonomous-agents-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Autonomous Agents", "description": "AI Autonomous Agents", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-autonomous-agents-2026/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your ai autonomous agents initiative, the next step is a s
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-it-operations-automation-2026-7108">Ai It Operations Automation 2026 7108</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-2026-6752">Enterprise Backup Dr 2026 6752</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026-6641">Cloud Migration Services 2026 6641</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-2026">Ai Accessibility Auditor 2026</Link></li>
+              <li><Link href="/blog/autonomous-code-deployment-2026-7419">Autonomous Code Deployment 2026 7419</Link></li>
+<li><Link href="/blog/automation-orchestration-enterprise-2026-7734">Automation Orchestration Enterprise 2026 7734</Link></li>
+<li><Link href="/blog/ai-customer-support-pro-2026-7668">Ai Customer Support Pro 2026 7668</Link></li>
+<li><Link href="/blog/ai-bdr-sdr-2026-7766">Ai Bdr Sdr 2026 7766</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your ai autonomous agents initiative, the next step is a s
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

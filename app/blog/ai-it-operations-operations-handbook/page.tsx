@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI IT Operations: operations handbook | Zion Tech Group',
   description: 'AI IT Operations: operations handbook',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI IT Operations: operations handbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-it-operations-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI IT Operations: operations handbook", "description": "AI IT Operations: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:54Z", "dateModified": "2026-08-07T04:51:54Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-it-operations-operations-handbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI IT Operations: operations handbook", "description": "AI IT Operations: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-it-operations-operations-handbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for ai it operations: operations handbook: workflow completio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-2026-6756">Graphql Federation Platform 2026 6756</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-7173">Api Gateway Management 2026 7173</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-policy-and-compliance">Ai Ad Copy Generator Policy And Compliance</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-2026">Aiops Anomaly Detection 2026</Link></li>
+              <li><Link href="/blog/api-gateway-management-2026-7564">Api Gateway Management 2026 7564</Link></li>
+<li><Link href="/blog/ai-bdr-sdr-2026-7559">Ai Bdr Sdr 2026 7559</Link></li>
+<li><Link href="/blog/etl-pipeline-optimization-2026-7512">Etl Pipeline Optimization 2026 7512</Link></li>
+<li><Link href="/blog/chaos-engineering-2026-7568">Chaos Engineering 2026 7568</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for ai it operations: operations handbook: workflow completio
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

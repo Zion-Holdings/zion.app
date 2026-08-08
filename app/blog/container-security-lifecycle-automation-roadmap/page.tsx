@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/container-security-lifecycle-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Container Security Lifecycle: automation roadmap", "description": "Container Security Lifecycle: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:21Z", "dateModified": "2026-08-07T04:51:21Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/container-security-lifecycle-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Container Security Lifecycle: automation roadmap", "description": "Container Security Lifecycle: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/container-security-lifecycle-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For container security lifecycle: automation roadmap: pick one workflow, assign 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automated-ai-reporting-2026-6659">Automated Ai Reporting 2026 6659</Link></li>
-<li><Link href="/blog/api-performance-testing-2026-6760">Api Performance Testing 2026 6760</Link></li>
-<li><Link href="/blog/ai-for-warehousing-and-inventory-optimization">Ai For Warehousing And Inventory Optimization</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-2026-7228">Cyber Threat Intelligence 2026 7228</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-10">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 10</Link></li>
+<li><Link href="/blog/it-consulting-2026-7743">It Consulting 2026 7743</Link></li>
+<li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-38">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 38</Link></li>
+<li><Link href="/blog/autonomous-code-deployment-2026-7488">Autonomous Code Deployment 2026 7488</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For container security lifecycle: automation roadmap: pick one workflow, assign 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

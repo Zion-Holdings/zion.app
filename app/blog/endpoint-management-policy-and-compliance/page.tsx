@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Endpoint Management: policy and compliance | Zion Tech Group',
   description: 'Endpoint Management: policy and compliance',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Endpoint Management: policy and compliance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/endpoint-management-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Endpoint Management: policy and compliance", "description": "Endpoint Management: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:21:35Z", "dateModified": "2026-08-07T04:21:35Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/endpoint-management-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Endpoint Management: policy and compliance", "description": "Endpoint Management: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/endpoint-management-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-automation-roadmap">Data Analytics Platform Automation Roadmap</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-7169">Smart Contract Audit 2026 7169</Link></li>
-<li><Link href="/blog/api-integration-2026-7220">Api Integration 2026 7220</Link></li>
-<li><Link href="/blog/chaos-engineering-starter-template">Chaos Engineering Starter Template</Link></li>
+              <li><Link href="/blog/incident-response-retainer-2026-7585">Incident Response Retainer 2026 7585</Link></li>
+<li><Link href="/blog/ai-it-operations-automation-2026-7591">Ai It Operations Automation 2026 7591</Link></li>
+<li><Link href="/blog/api-management-gateway-operations-handbook">Api Management Gateway Operations Handbook</Link></li>
+<li><Link href="/blog/ai-agentic-workflows-2026-7759">Ai Agentic Workflows 2026 7759</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

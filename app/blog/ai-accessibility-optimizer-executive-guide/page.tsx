@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Accessibility Optimizer: executive guide | Zion Tech Group',
   description: 'AI Accessibility Optimizer: executive guide',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Accessibility Optimizer: executive guide',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-accessibility-optimizer-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Optimizer: executive guide", "description": "AI Accessibility Optimizer: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:25Z", "dateModified": "2026-08-07T04:52:25Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Optimizer: executive guide", "description": "AI Accessibility Optimizer: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-executive-guide/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For ai accessibility optimizer: executive guide: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-2026-7290">Api Management Gateway 2026 7290</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-vendor-evaluation">Microsaas Expense Tracker Vendor Evaluation</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-case-study">Microsaas Hr Recruitment Case Study</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-executive-guide">Cloud Cost Ai Optimizer Executive Guide</Link></li>
+              <li><Link href="/blog/ai-soc-modernization-for-mssps-in-2026-37">Ai Soc Modernization For Mssps In 2026 37</Link></li>
+<li><Link href="/blog/ai-msp-security-compliance-2026-7532">Ai Msp Security Compliance 2026 7532</Link></li>
+<li><Link href="/blog/api-integration-2026">Api Integration 2026</Link></li>
+<li><Link href="/blog/micro-saas-ai-translation-engine-2026">Micro Saas Ai Translation Engine 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For ai accessibility optimizer: executive guide: pick one workflow, assign owner
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

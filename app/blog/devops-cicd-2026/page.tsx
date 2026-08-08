@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'DevOps CI/CD | Zion Tech Group',
   description: 'DevOps CI/CD',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'DevOps CI/CD',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/devops-cicd-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevOps CI/CD", "description": "DevOps CI/CD", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:00Z", "dateModified": "2026-08-07T04:51:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devops-cicd-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevOps CI/CD", "description": "DevOps CI/CD", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devops-cicd-2026/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your devops ci/cd initiative, the next step is a scoping c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-2026-6738">Api Management Gateway 2026 6738</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-2026-6873">Ai Performance Monitoring 2026 6873</Link></li>
-<li><Link href="/blog/cloud-finops-2026-6673">Cloud Finops 2026 6673</Link></li>
-<li><Link href="/blog/ai-api-gateway-2026-7241">Ai Api Gateway 2026 7241</Link></li>
+              <li><Link href="/blog/cloud-cost-ai-optimizer-automation-roadmap">Cloud Cost Ai Optimizer Automation Roadmap</Link></li>
+<li><Link href="/blog/cloud-finops-2026-7570">Cloud Finops 2026 7570</Link></li>
+<li><Link href="/blog/api-gateway-management-2026">Api Gateway Management 2026</Link></li>
+<li><Link href="/blog/autonomous-qa-engineering-starter-template">Autonomous Qa Engineering Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your devops ci/cd initiative, the next step is a scoping c
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Cloud FinOps: case study | Zion Tech Group',
   description: 'Cloud FinOps: case study',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Cloud FinOps: case study',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-finops-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud FinOps: case study", "description": "Cloud FinOps: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:38Z", "dateModified": "2026-08-07T04:52:38Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-finops-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud FinOps: case study", "description": "Cloud FinOps: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-finops-case-study/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for cloud finops: case study: workflow completion rate, escal
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cyber-threat-intelligence-2026-6676">Cyber Threat Intelligence 2026 6676</Link></li>
-<li><Link href="/blog/it-consulting-architecture-overview">It Consulting Architecture Overview</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-automation-roadmap">Cloud Cost Ai Optimizer Automation Roadmap</Link></li>
-<li><Link href="/blog/devops-cicd-2026-6849">Devops Cicd 2026 6849</Link></li>
+              <li><Link href="/blog/etl-pipeline-optimization-2026-7512">Etl Pipeline Optimization 2026 7512</Link></li>
+<li><Link href="/blog/devops-gen-ai-cicd-2026-7645">Devops Gen Ai Cicd 2026 7645</Link></li>
+<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-7474">Micro Saas Ai Customer Onboarding 2026 7474</Link></li>
+<li><Link href="/blog/automated-ai-reporting-2026-7556">Automated Ai Reporting 2026 7556</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for cloud finops: case study: workflow completion rate, escal
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

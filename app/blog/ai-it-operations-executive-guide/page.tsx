@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI IT Operations: executive guide | Zion Tech Group',
   description: 'AI IT Operations: executive guide',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI IT Operations: executive guide',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-it-operations-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI IT Operations: executive guide", "description": "AI IT Operations: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:31Z", "dateModified": "2026-08-07T04:51:31Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-it-operations-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI IT Operations: executive guide", "description": "AI IT Operations: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-it-operations-executive-guide/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your ai it operations: executive guide initiative, the nex
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-2026-6708">It Consulting 2026 6708</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-operations-handbook">Enterprise Backup Dr Operations Handbook</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-7095">Edge Computing Deployment 2026 7095</Link></li>
-<li><Link href="/blog/micro-saas-ai-social-media-manager-2026-6854">Micro Saas Ai Social Media Manager 2026 6854</Link></li>
+              <li><Link href="/blog/autonomous-code-deployment-2026">Autonomous Code Deployment 2026</Link></li>
+<li><Link href="/blog/ai-customer-support-pro-2026">Ai Customer Support Pro 2026</Link></li>
+<li><Link href="/blog/ai-bom-procurement-2026">Ai Bom Procurement 2026</Link></li>
+<li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-1">Ai Customer Onboarding Automation Reduce Time To Value 1</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your ai it operations: executive guide initiative, the nex
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

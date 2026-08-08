@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/smart-contract-audit-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Smart Contract Audit: case study", "description": "Smart Contract Audit: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:26:16Z", "dateModified": "2026-08-07T07:26:16Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/smart-contract-audit-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Smart Contract Audit: case study", "description": "Smart Contract Audit: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/smart-contract-audit-case-study/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For smart contract audit: case study: pick one workflow, assign ownership, defin
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-performance-monitoring-2026-6528">Ai Performance Monitoring 2026 6528</Link></li>
-<li><Link href="/blog/ai-bom-procurement-roi-and-cost-model">Ai Bom Procurement Roi And Cost Model</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026-7180">Managed It Services Small Business 2026 7180</Link></li>
-<li><Link href="/blog/api-integration-operations-handbook">Api Integration Operations Handbook</Link></li>
+              <li><Link href="/blog/autonomous-qa-engineering-2026-7765">Autonomous Qa Engineering 2026 7765</Link></li>
+<li><Link href="/blog/ai-autonomous-agents-2026-7553">Ai Autonomous Agents 2026 7553</Link></li>
+<li><Link href="/blog/micro-saas-ai-translation-engine-2026-7747">Micro Saas Ai Translation Engine 2026 7747</Link></li>
+<li><Link href="/blog/ai-api-gateway-2026-7655">Ai Api Gateway 2026 7655</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For smart contract audit: case study: pick one workflow, assign ownership, defin
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

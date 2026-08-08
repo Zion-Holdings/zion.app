@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-orchestration-layer-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Orchestration Layer: policy and compliance", "description": "API Orchestration Layer: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:32Z", "dateModified": "2026-08-07T04:51:32Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-orchestration-layer-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Orchestration Layer: policy and compliance", "description": "API Orchestration Layer: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-orchestration-layer-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for api orchestration layer: policy and compliance: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-it-operations-automation-2026-6763">Ai It Operations Automation 2026 6763</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026-7000">Ai Agentic Workflows 2026 7000</Link></li>
-<li><Link href="/blog/ai-api-gateway-evaluation-framework">Ai Api Gateway Evaluation Framework</Link></li>
-<li><Link href="/blog/network-infrastructure-2026">Network Infrastructure 2026</Link></li>
+              <li><Link href="/blog/ai-msp-security-compliance-2026-7394">Ai Msp Security Compliance 2026 7394</Link></li>
+<li><Link href="/blog/api-management-gateway-vendor-evaluation">Api Management Gateway Vendor Evaluation</Link></li>
+<li><Link href="/blog/cloud-finops-2026-7432">Cloud Finops 2026 7432</Link></li>
+<li><Link href="/blog/cloud-cost-ai-optimizer-2026-7569">Cloud Cost Ai Optimizer 2026 7569</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for api orchestration layer: policy and compliance: workflow 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

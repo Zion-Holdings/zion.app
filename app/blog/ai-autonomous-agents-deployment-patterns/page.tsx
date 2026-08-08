@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-autonomous-agents-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Autonomous Agents: deployment patterns", "description": "AI Autonomous Agents: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:07Z", "dateModified": "2026-08-07T04:51:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-autonomous-agents-deployment-patterns/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Autonomous Agents: deployment patterns", "description": "AI Autonomous Agents: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-autonomous-agents-deployment-patterns/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for ai autonomous agents: deployment patterns: workflow compl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-warehouse-modernization-2026-7229">Data Warehouse Modernization 2026 7229</Link></li>
-<li><Link href="/blog/ai-bom-procurement-2026-6594">Ai Bom Procurement 2026 6594</Link></li>
-<li><Link href="/blog/incident-response-retainer-2026-7171">Incident Response Retainer 2026 7171</Link></li>
-<li><Link href="/blog/ai-data-backup-2026-6555">Ai Data Backup 2026 6555</Link></li>
+              <li><Link href="/blog/genai-devops-cicd-security-and-governance">Genai Devops Cicd Security And Governance</Link></li>
+<li><Link href="/blog/cybersecurity-platform-msp-2026-7386">Cybersecurity Platform Msp 2026 7386</Link></li>
+<li><Link href="/blog/aiops-anomaly-detection-2026-7554">Aiops Anomaly Detection 2026 7554</Link></li>
+<li><Link href="/blog/data-warehouse-modernization-2026-7574">Data Warehouse Modernization 2026 7574</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for ai autonomous agents: deployment patterns: workflow compl
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Data Warehouse Modernization: ROI and cost model | Zion Tech Group',
   description: 'Data Warehouse Modernization: ROI and cost model',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Data Warehouse Modernization: ROI and cost model',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/data-warehouse-modernization-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Warehouse Modernization: ROI and cost model", "description": "Data Warehouse Modernization: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:28Z", "dateModified": "2026-08-07T04:51:28Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-warehouse-modernization-roi-and-cost-model/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Warehouse Modernization: ROI and cost model", "description": "Data Warehouse Modernization: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-warehouse-modernization-roi-and-cost-model/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6981">Ai Data Lakehouse Pipelines 2026 6981</Link></li>
-<li><Link href="/blog/devsecops-pipeline-2026-7232">Devsecops Pipeline 2026 7232</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-2026">Ai Data Lakehouse Pipelines 2026</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026-7204">Ai Ad Copy Generator 2026 7204</Link></li>
+              <li><Link href="/blog/endpoint-management-automation-roadmap">Endpoint Management Automation Roadmap</Link></li>
+<li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-45">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 45</Link></li>
+<li><Link href="/blog/automated-ai-reporting-2026-7487">Automated Ai Reporting 2026 7487</Link></li>
+<li><Link href="/blog/cloud-finops-2026-7708">Cloud Finops 2026 7708</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

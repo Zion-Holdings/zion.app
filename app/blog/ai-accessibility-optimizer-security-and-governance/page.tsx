@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Accessibility Optimizer: security and governance | Zion Tech Group',
   description: 'AI Accessibility Optimizer: security and governance',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Accessibility Optimizer: security and governance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-accessibility-optimizer-security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Optimizer: security and governance", "description": "AI Accessibility Optimizer: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T08:27:35Z", "dateModified": "2026-08-07T08:27:35Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-security-and-governance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Optimizer: security and governance", "description": "AI Accessibility Optimizer: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-security-and-governance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For ai accessibility optimizer: security and governance: pick one workflow, assi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bom-procurement-2026">Ai Bom Procurement 2026</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-vendor-evaluation">Ai Ad Copy Generator Vendor Evaluation</Link></li>
-<li><Link href="/blog/accessibility-compliance-2026-7217">Accessibility Compliance 2026 7217</Link></li>
-<li><Link href="/blog/data-analytics-platform-case-study">Data Analytics Platform Case Study</Link></li>
+              <li><Link href="/blog/endpoint-management-2026-7441">Endpoint Management 2026 7441</Link></li>
+<li><Link href="/blog/it-consulting-2026-7743">It Consulting 2026 7743</Link></li>
+<li><Link href="/blog/devops-gen-ai-cicd-2026-7576">Devops Gen Ai Cicd 2026 7576</Link></li>
+<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7388">Data Analytics Platform Modern Enterprise 2026 7388</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For ai accessibility optimizer: security and governance: pick one workflow, assi
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

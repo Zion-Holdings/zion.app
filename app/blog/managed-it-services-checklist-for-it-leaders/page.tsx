@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Managed IT Services: checklist for IT leaders | Zion Tech Group',
   description: 'Managed IT Services: checklist for IT leaders',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Managed IT Services: checklist for IT leaders',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/managed-it-services-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services: checklist for IT leaders", "description": "Managed IT Services: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:56Z", "dateModified": "2026-08-07T07:56:56Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-checklist-for-it-leaders/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services: checklist for IT leaders", "description": "Managed IT Services: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for managed it services: checklist for it leaders: workflow c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-fleet-and-logistics-operations">Ai For Fleet And Logistics Operations</Link></li>
-<li><Link href="/blog/ai-observability-case-study">Ai Observability Case Study</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-architecture-overview">Ai Bdr Sdr Architecture Overview</Link></li>
-<li><Link href="/blog/ai-for-hr-and-talent-acquisition-streamlining-recruitment">Ai For Hr And Talent Acquisition Streamlining Recruitment</Link></li>
+              <li><Link href="/blog/micro-saas-ai-social-media-manager-2026-7544">Micro Saas Ai Social Media Manager 2026 7544</Link></li>
+<li><Link href="/blog/api-security-testing-2026-7658">Api Security Testing 2026 7658</Link></li>
+<li><Link href="/blog/endpoint-management-executive-guide">Endpoint Management Executive Guide</Link></li>
+<li><Link href="/blog/event-driven-architecture-roi-and-cost-model">Event Driven Architecture Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for managed it services: checklist for it leaders: workflow c
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

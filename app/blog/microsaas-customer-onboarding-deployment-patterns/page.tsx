@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/microsaas-customer-onboarding-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Customer Onboarding: deployment patterns", "description": "MicroSaaS Customer Onboarding: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:14Z", "dateModified": "2026-08-07T04:51:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-customer-onboarding-deployment-patterns/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Customer Onboarding: deployment patterns", "description": "MicroSaaS Customer Onboarding: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-customer-onboarding-deployment-patterns/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for microsaas customer onboarding: deployment patterns: workf
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/5g-solutions-2026-6776">5G Solutions 2026 6776</Link></li>
-<li><Link href="/blog/incident-response-retainer-2026-6688">Incident Response Retainer 2026 6688</Link></li>
-<li><Link href="/blog/ai-for-government-services-and-public-sector-automation">Ai For Government Services And Public Sector Automation</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026-7275">Ai Agent Tool Builder 2026 7275</Link></li>
+              <li><Link href="/blog/it-consulting-2026-7743">It Consulting 2026 7743</Link></li>
+<li><Link href="/blog/ai-agent-tool-builder-2026-7758">Ai Agent Tool Builder 2026 7758</Link></li>
+<li><Link href="/blog/edge-computing-deployment-roi-and-cost-model">Edge Computing Deployment Roi And Cost Model</Link></li>
+<li><Link href="/blog/ai-observability-2026-7600">Ai Observability 2026 7600</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for microsaas customer onboarding: deployment patterns: workf
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-observability-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: starter template", "description": "AI Observability: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:26:14Z", "dateModified": "2026-08-07T07:26:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-starter-template/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: starter template", "description": "AI Observability: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-starter-template/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-native-app-development-2026-6743">Cloud Native App Development 2026 6743</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6912">Ai Data Lakehouse Pipelines 2026 6912</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-7170">Graphql Federation Platform 2026 7170</Link></li>
-<li><Link href="/blog/it-consulting-vendor-evaluation">It Consulting Vendor Evaluation</Link></li>
+              <li><Link href="/blog/devsecops-pipeline-2026-7646">Devsecops Pipeline 2026 7646</Link></li>
+<li><Link href="/blog/api-gateway-management-operations-handbook">Api Gateway Management Operations Handbook</Link></li>
+<li><Link href="/blog/ai-api-gateway-2026-7517">Ai Api Gateway 2026 7517</Link></li>
+<li><Link href="/blog/aiops-anomaly-detection-2026-7623">Aiops Anomaly Detection 2026 7623</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

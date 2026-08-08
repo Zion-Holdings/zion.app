@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-agent-tool-builder-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Tool Builder: policy and compliance", "description": "AI Agent Tool Builder: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:33Z", "dateModified": "2026-08-07T04:51:33Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-tool-builder-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Tool Builder: policy and compliance", "description": "AI Agent Tool Builder: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-tool-builder-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for ai agent tool builder: policy and compliance: workflow co
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/incident-response-retainer-2026-7309">Incident Response Retainer 2026 7309</Link></li>
-<li><Link href="/blog/ai-api-gateway-architecture-overview">Ai Api Gateway Architecture Overview</Link></li>
-<li><Link href="/blog/smart-contract-audit-deployment-patterns">Smart Contract Audit Deployment Patterns</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-security-and-governance">Cloud Cost Ai Optimizer Security And Governance</Link></li>
+              <li><Link href="/blog/brand-voice-guardian-2026-7423">Brand Voice Guardian 2026 7423</Link></li>
+<li><Link href="/blog/accessibility-compliance-2026-7562">Accessibility Compliance 2026 7562</Link></li>
+<li><Link href="/blog/endpoint-management-2026-7648">Endpoint Management 2026 7648</Link></li>
+<li><Link href="/blog/kubernetes-platform-engineering-build-internal-developer-platform-k8s-22">Kubernetes Platform Engineering Build Internal Developer Platform K8S 22</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for ai agent tool builder: policy and compliance: workflow co
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

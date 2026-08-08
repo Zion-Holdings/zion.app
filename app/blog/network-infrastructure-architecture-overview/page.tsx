@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Network Infrastructure: architecture overview | Zion Tech Group',
   description: 'Network Infrastructure: architecture overview',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Network Infrastructure: architecture overview',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/network-infrastructure-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: architecture overview", "description": "Network Infrastructure: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:34Z", "dateModified": "2026-08-07T04:51:34Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: architecture overview", "description": "Network Infrastructure: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-architecture-overview/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for network infrastructure: architecture overview: workflow c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-support-pro-2026-6564">Ai Customer Support Pro 2026 6564</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6966">Api Gateway Management 2026 6966</Link></li>
-<li><Link href="/blog/api-gateway-management-architecture-overview">Api Gateway Management Architecture Overview</Link></li>
-<li><Link href="/blog/it-consulting-2026">It Consulting 2026</Link></li>
+              <li><Link href="/blog/cloud-migration-services-2026-7676">Cloud Migration Services 2026 7676</Link></li>
+<li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-35">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 35</Link></li>
+<li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-39">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 39</Link></li>
+<li><Link href="/blog/devops-cicd-2026-7470">Devops Cicd 2026 7470</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for network infrastructure: architecture overview: workflow c
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

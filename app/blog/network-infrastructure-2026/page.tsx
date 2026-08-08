@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Network Infrastructure | Zion Tech Group',
   description: 'Network Infrastructure',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Network Infrastructure',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/network-infrastructure-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure", "description": "Network Infrastructure", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:30Z", "dateModified": "2026-08-07T04:51:30Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure", "description": "Network Infrastructure", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for network infrastructure: workflow completion rate, escalat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/rag-for-enterprise-knowledge-bases">Rag For Enterprise Knowledge Bases</Link></li>
-<li><Link href="/blog/ai-for-cybersecurity-threat-detection">Ai For Cybersecurity Threat Detection</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6644">Micro Saas Ai Expense Tracker 2026 6644</Link></li>
-<li><Link href="/blog/container-security-lifecycle-2026-6537">Container Security Lifecycle 2026 6537</Link></li>
+              <li><Link href="/blog/api-gateway-management-2026-7564">Api Gateway Management 2026 7564</Link></li>
+<li><Link href="/blog/brand-voice-guardian-2026-7561">Brand Voice Guardian 2026 7561</Link></li>
+<li><Link href="/blog/automated-ai-reporting-2026-7763">Automated Ai Reporting 2026 7763</Link></li>
+<li><Link href="/blog/5g-solutions-2026-7604">5G Solutions 2026 7604</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for network infrastructure: workflow completion rate, escalat
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

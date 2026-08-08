@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI MSP Security Compliance: common mistakes | Zion Tech Group',
   description: 'AI MSP Security Compliance: common mistakes',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI MSP Security Compliance: common mistakes',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-msp-security-compliance-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI MSP Security Compliance: common mistakes", "description": "AI MSP Security Compliance: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T08:12:15Z", "dateModified": "2026-08-07T08:12:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-msp-security-compliance-common-mistakes/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI MSP Security Compliance: common mistakes", "description": "AI MSP Security Compliance: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-msp-security-compliance-common-mistakes/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for ai msp security compliance: common mistakes: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-checklist-for-it-leaders">Cloud Finops Checklist For It Leaders</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-6579">Enterprise Ai Intelligence Hub 2026 6579</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-7282">Autonomous Qa Engineering 2026 7282</Link></li>
-<li><Link href="/blog/ai-customer-support-deployment-patterns">Ai Customer Support Deployment Patterns</Link></li>
+              <li><Link href="/blog/cloud-cost-ai-optimizer-2026-7638">Cloud Cost Ai Optimizer 2026 7638</Link></li>
+<li><Link href="/blog/managed-it-services-policy-and-compliance">Managed It Services Policy And Compliance</Link></li>
+<li><Link href="/blog/ai-customer-success-churn-2026-7465">Ai Customer Success Churn 2026 7465</Link></li>
+<li><Link href="/blog/ai-accessibility-optimizer-2026-7686">Ai Accessibility Optimizer 2026 7686</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for ai msp security compliance: common mistakes: workflow com
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

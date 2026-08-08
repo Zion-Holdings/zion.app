@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Ad Copy Generator: starter template | Zion Tech Group',
   description: 'AI Ad Copy Generator: starter template',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Ad Copy Generator: starter template',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-ad-copy-generator-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Ad Copy Generator: starter template", "description": "AI Ad Copy Generator: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:52Z", "dateModified": "2026-08-07T07:56:52Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-ad-copy-generator-starter-template/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Ad Copy Generator: starter template", "description": "AI Ad Copy Generator: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-ad-copy-generator-starter-template/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For ai ad copy generator: starter template: pick one workflow, assign ownership,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-deployment-patterns">Cloud Finops Deployment Patterns</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-operations-handbook">Autonomous Code Deployment Operations Handbook</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-evaluation-framework">Ai Bdr Sdr Evaluation Framework</Link></li>
-<li><Link href="/blog/event-driven-architecture-evaluation-framework">Event Driven Architecture Evaluation Framework</Link></li>
+              <li><Link href="/blog/ai-desktop-support-automation-for-enterprise-it-27">Ai Desktop Support Automation For Enterprise It 27</Link></li>
+<li><Link href="/blog/it-consulting-2026-7536">It Consulting 2026 7536</Link></li>
+<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7748">Micro Saas Ai Expense Tracker 2026 7748</Link></li>
+<li><Link href="/blog/cloud-migration-services-2026-7745">Cloud Migration Services 2026 7745</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For ai ad copy generator: starter template: pick one workflow, assign ownership,
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

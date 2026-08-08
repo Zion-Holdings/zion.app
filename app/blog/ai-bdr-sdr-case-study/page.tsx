@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI BDR SDR: case study | Zion Tech Group',
   description: 'AI BDR SDR: case study',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI BDR SDR: case study',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-bdr-sdr-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BDR SDR: case study", "description": "AI BDR SDR: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:23Z", "dateModified": "2026-08-07T04:51:23Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bdr-sdr-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BDR SDR: case study", "description": "AI BDR SDR: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bdr-sdr-case-study/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For ai bdr sdr: case study: pick one workflow, assign ownership, define success 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-management-2026-6966">Api Gateway Management 2026 6966</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026-6655">Ai Agentic Workflows 2026 6655</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-2026-6597">Ai Performance Monitoring 2026 6597</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7269">Enterprise Ai Intelligence Hub 2026 7269</Link></li>
+              <li><Link href="/blog/ai-observability-2026-7462">Ai Observability 2026 7462</Link></li>
+<li><Link href="/blog/ai-agent-tool-builder-architecture-overview">Ai Agent Tool Builder Architecture Overview</Link></li>
+<li><Link href="/blog/graphql-federation-platform-2026-7446">Graphql Federation Platform 2026 7446</Link></li>
+<li><Link href="/blog/cloud-cost-ai-optimizer-2026-7776">Cloud Cost Ai Optimizer 2026 7776</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For ai bdr sdr: case study: pick one workflow, assign ownership, define success 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

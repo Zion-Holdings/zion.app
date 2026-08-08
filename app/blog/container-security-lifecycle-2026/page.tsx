@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/container-security-lifecycle-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Container Security Lifecycle", "description": "Container Security Lifecycle", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:43Z", "dateModified": "2026-08-07T04:51:43Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/container-security-lifecycle-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Container Security Lifecycle", "description": "Container Security Lifecycle", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/container-security-lifecycle-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/managed-it-services-small-business-2026-6835">Managed It Services Small Business 2026 6835</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026-7000">Ai Agentic Workflows 2026 7000</Link></li>
-<li><Link href="/blog/ai-development-acceleration-starter-template">Ai Development Acceleration Starter Template</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026-6697">Managed It Services Small Business 2026 6697</Link></li>
+              <li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-48">Ai Incident Response Orchestration Triage Runbooks Chatops 48</Link></li>
+<li><Link href="/blog/enterprise-backup-dr-2026-7511">Enterprise Backup Dr 2026 7511</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7683">Enterprise Ai Intelligence Hub 2026 7683</Link></li>
+<li><Link href="/blog/smart-contract-audit-2026-7445">Smart Contract Audit 2026 7445</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

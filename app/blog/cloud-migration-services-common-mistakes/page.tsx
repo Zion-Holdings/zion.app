@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-migration-services-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: common mistakes", "description": "Cloud Migration Services: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:03Z", "dateModified": "2026-08-07T04:52:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-common-mistakes/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: common mistakes", "description": "Cloud Migration Services: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-common-mistakes/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For cloud migration services: common mistakes: pick one workflow, assign ownersh
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-2026-7359">Api Management Gateway 2026 7359</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026-6835">Managed It Services Small Business 2026 6835</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-architecture-overview">Ai Agentic Workflows Architecture Overview</Link></li>
-<li><Link href="/blog/event-driven-architecture-2026-7030">Event Driven Architecture 2026 7030</Link></li>
+              <li><Link href="/blog/it-consulting-2026">It Consulting 2026</Link></li>
+<li><Link href="/blog/api-gateway-management-2026-7702">Api Gateway Management 2026 7702</Link></li>
+<li><Link href="/blog/edge-computing-deployment-executive-guide">Edge Computing Deployment Executive Guide</Link></li>
+<li><Link href="/blog/cloud-finops-2026-7570">Cloud Finops 2026 7570</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For cloud migration services: common mistakes: pick one workflow, assign ownersh
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

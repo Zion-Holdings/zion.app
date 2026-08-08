@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'API Performance Testing: vendor evaluation | Zion Tech Group',
   description: 'API Performance Testing: vendor evaluation',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'API Performance Testing: vendor evaluation',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-performance-testing-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Performance Testing: vendor evaluation", "description": "API Performance Testing: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:43Z", "dateModified": "2026-08-07T07:56:43Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-performance-testing-vendor-evaluation/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Performance Testing: vendor evaluation", "description": "API Performance Testing: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-performance-testing-vendor-evaluation/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for api performance testing: vendor evaluation: workflow comp
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-integration-2026-7358">Api Integration 2026 7358</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-2026-6660">Autonomous Code Deployment 2026 6660</Link></li>
-<li><Link href="/blog/graphql-federation-platform-evaluation-framework">Graphql Federation Platform Evaluation Framework</Link></li>
-<li><Link href="/blog/network-infrastructure-2026-6916">Network Infrastructure 2026 6916</Link></li>
+              <li><Link href="/blog/brand-voice-guardian-2026-7492">Brand Voice Guardian 2026 7492</Link></li>
+<li><Link href="/blog/ai-accessibility-optimizer-2026-7617">Ai Accessibility Optimizer 2026 7617</Link></li>
+<li><Link href="/blog/endpoint-management-2026-7717">Endpoint Management 2026 7717</Link></li>
+<li><Link href="/blog/ai-msp-security-compliance-2026-7532">Ai Msp Security Compliance 2026 7532</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for api performance testing: vendor evaluation: workflow comp
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

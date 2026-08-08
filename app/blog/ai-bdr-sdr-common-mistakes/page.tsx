@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI BDR SDR: common mistakes | Zion Tech Group',
   description: 'AI BDR SDR: common mistakes',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI BDR SDR: common mistakes',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-bdr-sdr-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BDR SDR: common mistakes", "description": "AI BDR SDR: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T08:12:16Z", "dateModified": "2026-08-07T08:12:16Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bdr-sdr-common-mistakes/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BDR SDR: common mistakes", "description": "AI BDR SDR: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bdr-sdr-common-mistakes/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for ai bdr sdr: common mistakes: workflow completion rate, es
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-6645">Micro Saas Ai Hr Recruitment 2026 6645</Link></li>
-<li><Link href="/blog/container-security-lifecycle-deployment-patterns">Container Security Lifecycle Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-api-gateway-architecture-overview">Ai Api Gateway Architecture Overview</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-policy-and-compliance">Cybersecurity For Msps Policy And Compliance</Link></li>
+              <li><Link href="/blog/smart-contract-audit-2026-7514">Smart Contract Audit 2026 7514</Link></li>
+<li><Link href="/blog/digital-workplace-strategy-secure-productive-remote-and-hybrid-work-environments-45">Digital Workplace Strategy Secure Productive Remote And Hybrid Work Environments 45</Link></li>
+<li><Link href="/blog/database-migration-service-2026-7437">Database Migration Service 2026 7437</Link></li>
+<li><Link href="/blog/ai-msp-security-compliance-2026-7532">Ai Msp Security Compliance 2026 7532</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for ai bdr sdr: common mistakes: workflow completion rate, es
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

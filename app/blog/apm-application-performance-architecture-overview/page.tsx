@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'APM Application Performance: architecture overview | Zion Tech Group',
   description: 'APM Application Performance: architecture overview',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'APM Application Performance: architecture overview',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/apm-application-performance-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "APM Application Performance: architecture overview", "description": "APM Application Performance: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:49Z", "dateModified": "2026-08-07T04:51:49Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/apm-application-performance-architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "APM Application Performance: architecture overview", "description": "APM Application Performance: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/apm-application-performance-architecture-overview/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your apm application performance: architecture overview in
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-2026-6751">Endpoint Management 2026 6751</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026-6973">Managed It Services Small Business 2026 6973</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-operations-handbook">Ai Agentic Workflows Operations Handbook</Link></li>
-<li><Link href="/blog/micro-saas-ai-translation-engine-2026-7195">Micro Saas Ai Translation Engine 2026 7195</Link></li>
+              <li><Link href="/blog/brand-voice-guardian-2026-7423">Brand Voice Guardian 2026 7423</Link></li>
+<li><Link href="/blog/cloud-cost-ai-optimizer-starter-template">Cloud Cost Ai Optimizer Starter Template</Link></li>
+<li><Link href="/blog/managed-it-services-small-business-2026-7456">Managed It Services Small Business 2026 7456</Link></li>
+<li><Link href="/blog/ai-data-lakehouse-pipelines-2026-7671">Ai Data Lakehouse Pipelines 2026 7671</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your apm application performance: architecture overview in
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

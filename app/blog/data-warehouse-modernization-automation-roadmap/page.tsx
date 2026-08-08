@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Data Warehouse Modernization: automation roadmap | Zion Tech Group',
   description: 'Data Warehouse Modernization: automation roadmap',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Data Warehouse Modernization: automation roadmap',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/data-warehouse-modernization-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Warehouse Modernization: automation roadmap", "description": "Data Warehouse Modernization: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:38Z", "dateModified": "2026-08-07T04:52:38Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-warehouse-modernization-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Warehouse Modernization: automation roadmap", "description": "Data Warehouse Modernization: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-warehouse-modernization-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-management-2026-7150">Api Gateway Management 2026 7150</Link></li>
-<li><Link href="/blog/cloud-native-app-development-2026-6950">Cloud Native App Development 2026 6950</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-6679">Devops Gen Ai Cicd 2026 6679</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026-7110">Cybersecurity Platform Msp 2026 7110</Link></li>
+              <li><Link href="/blog/chaos-engineering-2026-7775">Chaos Engineering 2026 7775</Link></li>
+<li><Link href="/blog/ai-bom-procurement-2026-7491">Ai Bom Procurement 2026 7491</Link></li>
+<li><Link href="/blog/etl-pipeline-optimization-2026-7512">Etl Pipeline Optimization 2026 7512</Link></li>
+<li><Link href="/blog/ai-agent-tool-builder-2026-7551">Ai Agent Tool Builder 2026 7551</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

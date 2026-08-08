@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'DevOps CI/CD: security and governance | Zion Tech Group',
   description: 'DevOps CI/CD: security and governance',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'DevOps CI/CD: security and governance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/devops-cicd-security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevOps CI/CD: security and governance", "description": "DevOps CI/CD: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:26Z", "dateModified": "2026-08-07T04:51:26Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devops-cicd-security-and-governance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevOps CI/CD: security and governance", "description": "DevOps CI/CD: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devops-cicd-security-and-governance/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your devops ci/cd: security and governance initiative, the
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-msp-security-compliance-2026-7325">Ai Msp Security Compliance 2026 7325</Link></li>
-<li><Link href="/blog/network-infrastructure-2026-6985">Network Infrastructure 2026 6985</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026-6927">Ai Accessibility Optimizer 2026 6927</Link></li>
-<li><Link href="/blog/event-driven-architecture-2026-7237">Event Driven Architecture 2026 7237</Link></li>
+              <li><Link href="/blog/event-driven-architecture-2026-7582">Event Driven Architecture 2026 7582</Link></li>
+<li><Link href="/blog/cybersecurity-platform-msp-2026-7386">Cybersecurity Platform Msp 2026 7386</Link></li>
+<li><Link href="/blog/autonomous-code-deployment-2026-7695">Autonomous Code Deployment 2026 7695</Link></li>
+<li><Link href="/blog/ai-accessibility-optimizer-security-and-governance">Ai Accessibility Optimizer Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your devops ci/cd: security and governance initiative, the
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

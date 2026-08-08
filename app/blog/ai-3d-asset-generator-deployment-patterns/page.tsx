@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI 3D Asset Generator: deployment patterns | Zion Tech Group',
   description: 'AI 3D Asset Generator: deployment patterns',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI 3D Asset Generator: deployment patterns',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-3d-asset-generator-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator: deployment patterns", "description": "AI 3D Asset Generator: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:38Z", "dateModified": "2026-08-07T04:51:38Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-deployment-patterns/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator: deployment patterns", "description": "AI 3D Asset Generator: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-deployment-patterns/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-optimization-checklist-2026-6764">Cloud Cost Optimization Checklist 2026 6764</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-6523">Autonomous Qa Engineering 2026 6523</Link></li>
-<li><Link href="/blog/automated-ai-reporting-2026-6590">Automated Ai Reporting 2026 6590</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-2026-6960">Etl Pipeline Optimization 2026 6960</Link></li>
+              <li><Link href="/blog/chaos-engineering-roi-and-cost-model">Chaos Engineering Roi And Cost Model</Link></li>
+<li><Link href="/blog/5g-solutions-2026-7742">5G Solutions 2026 7742</Link></li>
+<li><Link href="/blog/brand-voice-guardian-deployment-patterns">Brand Voice Guardian Deployment Patterns</Link></li>
+<li><Link href="/blog/apm-application-performance-implementation-playbook">Apm Application Performance Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

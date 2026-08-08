@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/endpoint-management-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Endpoint Management: automation roadmap", "description": "Endpoint Management: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:42Z", "dateModified": "2026-08-07T07:56:42Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/endpoint-management-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Endpoint Management: automation roadmap", "description": "Endpoint Management: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/endpoint-management-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for endpoint management: automation roadmap: workflow complet
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-tool-builder-roi-and-cost-model">Ai Agent Tool Builder Roi And Cost Model</Link></li>
-<li><Link href="/blog/container-security-lifecycle-automation-roadmap">Container Security Lifecycle Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-for-gaming-and-esports">Ai For Gaming And Esports</Link></li>
-<li><Link href="/blog/cloud-finops-roi-and-cost-model">Cloud Finops Roi And Cost Model</Link></li>
+              <li><Link href="/blog/ai-ad-copy-generator-2026-7756">Ai Ad Copy Generator 2026 7756</Link></li>
+<li><Link href="/blog/devops-gen-ai-cicd-2026-7438">Devops Gen Ai Cicd 2026 7438</Link></li>
+<li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-26">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 26</Link></li>
+<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-7749">Micro Saas Ai Hr Recruitment 2026 7749</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for endpoint management: automation roadmap: workflow complet
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Cloud Cost AI Optimizer | Zion Tech Group',
   description: 'Cloud Cost AI Optimizer',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Cloud Cost AI Optimizer',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-cost-ai-optimizer-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer", "description": "Cloud Cost AI Optimizer", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:06Z", "dateModified": "2026-08-07T04:51:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer", "description": "Cloud Cost AI Optimizer", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-ad-copy-generator-2026-7342">Ai Ad Copy Generator 2026 7342</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-2026-7352">Ai Bdr Sdr 2026 7352</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-2026-7029">Etl Pipeline Optimization 2026 7029</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026-6793">Ai Agentic Workflows 2026 6793</Link></li>
+              <li><Link href="/blog/cybersecurity-for-msps-policy-and-compliance">Cybersecurity For Msps Policy And Compliance</Link></li>
+<li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-39">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 39</Link></li>
+<li><Link href="/blog/ai-data-backup-executive-guide">Ai Data Backup Executive Guide</Link></li>
+<li><Link href="/blog/container-security-lifecycle-automation-roadmap">Container Security Lifecycle Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Data Warehouse Modernization: common mistakes | Zion Tech Group',
   description: 'Data Warehouse Modernization: common mistakes',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Data Warehouse Modernization: common mistakes',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/data-warehouse-modernization-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Warehouse Modernization: common mistakes", "description": "Data Warehouse Modernization: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:02Z", "dateModified": "2026-08-07T04:52:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-warehouse-modernization-common-mistakes/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Warehouse Modernization: common mistakes", "description": "Data Warehouse Modernization: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-warehouse-modernization-common-mistakes/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for data warehouse modernization: common mistakes: workflow c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automation-orchestration-enterprise-2026-7320">Automation Orchestration Enterprise 2026 7320</Link></li>
-<li><Link href="/blog/incident-response-retainer-2026-6964">Incident Response Retainer 2026 6964</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026">Devops Gen Ai Cicd 2026</Link></li>
-<li><Link href="/blog/network-infrastructure-vendor-evaluation">Network Infrastructure Vendor Evaluation</Link></li>
+              <li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7541">Micro Saas Ai Expense Tracker 2026 7541</Link></li>
+<li><Link href="/blog/graphql-federation-platform-2026-7446">Graphql Federation Platform 2026 7446</Link></li>
+<li><Link href="/blog/api-integration-deployment-patterns">Api Integration Deployment Patterns</Link></li>
+<li><Link href="/blog/micro-saas-ai-translation-engine-2026-7402">Micro Saas Ai Translation Engine 2026 7402</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for data warehouse modernization: common mistakes: workflow c
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

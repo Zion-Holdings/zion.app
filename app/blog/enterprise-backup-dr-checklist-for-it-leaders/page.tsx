@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Enterprise Backup DR: checklist for IT leaders | Zion Tech Group',
   description: 'Enterprise Backup DR: checklist for IT leaders',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Enterprise Backup DR: checklist for IT leaders',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/enterprise-backup-dr-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR: checklist for IT leaders", "description": "Enterprise Backup DR: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:16Z", "dateModified": "2026-08-07T04:51:16Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-checklist-for-it-leaders/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR: checklist for IT leaders", "description": "Enterprise Backup DR: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for enterprise backup dr: checklist for it leaders: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bdr-sdr-2026-6731">Ai Bdr Sdr 2026 6731</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026-6861">Ai Agent Tool Builder 2026 6861</Link></li>
-<li><Link href="/blog/api-integration-2026-6530">Api Integration 2026 6530</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-6612">Edge Computing Deployment 2026 6612</Link></li>
+              <li><Link href="/blog/cybersecurity-platform-msp-2026-7386">Cybersecurity Platform Msp 2026 7386</Link></li>
+<li><Link href="/blog/ai-performance-monitoring-2026-7632">Ai Performance Monitoring 2026 7632</Link></li>
+<li><Link href="/blog/ai-bdr-sdr-2026-7697">Ai Bdr Sdr 2026 7697</Link></li>
+<li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-34">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 34</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for enterprise backup dr: checklist for it leaders: workflow 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

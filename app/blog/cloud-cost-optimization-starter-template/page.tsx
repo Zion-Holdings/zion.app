@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Cloud Cost Optimization: starter template | Zion Tech Group',
   description: 'Cloud Cost Optimization: starter template',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Cloud Cost Optimization: starter template',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-cost-optimization-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost Optimization: starter template", "description": "Cloud Cost Optimization: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:08:07Z", "dateModified": "2026-08-07T05:08:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-optimization-starter-template/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost Optimization: starter template", "description": "Cloud Cost Optimization: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-optimization-starter-template/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for cloud cost optimization: starter template: workflow compl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-2026-7170">Graphql Federation Platform 2026 7170</Link></li>
-<li><Link href="/blog/ai-customer-support-checklist-for-it-leaders">Ai Customer Support Checklist For It Leaders</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-7239">Graphql Federation Platform 2026 7239</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-2026">Ai 3D Asset Generator 2026</Link></li>
+              <li><Link href="/blog/automated-ai-reporting-2026-7418">Automated Ai Reporting 2026 7418</Link></li>
+<li><Link href="/blog/ai-email-intelligence-operations-handbook">Ai Email Intelligence Operations Handbook</Link></li>
+<li><Link href="/blog/microsaas-expense-tracker-executive-guide">Microsaas Expense Tracker Executive Guide</Link></li>
+<li><Link href="/blog/it-financial-management-showback-chargeback-and-cloud-cost-allocation-12">It Financial Management Showback Chargeback And Cloud Cost Allocation 12</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for cloud cost optimization: starter template: workflow compl
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

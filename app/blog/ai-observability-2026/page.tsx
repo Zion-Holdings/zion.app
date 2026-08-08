@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Observability | Zion Tech Group',
   description: 'AI Observability',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Observability',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-observability-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability", "description": "AI Observability", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:13Z", "dateModified": "2026-08-07T04:52:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability", "description": "AI Observability", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For ai observability: pick one workflow, assign ownership, define success metric
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-3d-asset-generator-2026-7201">Ai 3D Asset Generator 2026 7201</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-7040">Cloud Cost Optimization Checklist 2026 7040</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026">Cybersecurity Platform Msp 2026</Link></li>
-<li><Link href="/blog/api-security-testing-2026-6761">Api Security Testing 2026 6761</Link></li>
+              <li><Link href="/blog/api-performance-testing-2026-7381">Api Performance Testing 2026 7381</Link></li>
+<li><Link href="/blog/devops-gen-ai-cicd-2026-7576">Devops Gen Ai Cicd 2026 7576</Link></li>
+<li><Link href="/blog/accessibility-compliance-automation-roadmap">Accessibility Compliance Automation Roadmap</Link></li>
+<li><Link href="/blog/ai-bom-procurement-vendor-evaluation">Ai Bom Procurement Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For ai observability: pick one workflow, assign ownership, define success metric
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Cloud FinOps: starter template | Zion Tech Group',
   description: 'Cloud FinOps: starter template',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Cloud FinOps: starter template',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-finops-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud FinOps: starter template", "description": "Cloud FinOps: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:41Z", "dateModified": "2026-08-07T04:51:41Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-finops-starter-template/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud FinOps: starter template", "description": "Cloud FinOps: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-finops-starter-template/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for cloud finops: starter template: workflow completion rate,
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/apm-application-performance-2026-6808">Apm Application Performance 2026 6808</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-2026-6869">Ai Bdr Sdr 2026 6869</Link></li>
-<li><Link href="/blog/cloud-finops-2026-7156">Cloud Finops 2026 7156</Link></li>
-<li><Link href="/blog/edge-computing-deployment-vendor-evaluation">Edge Computing Deployment Vendor Evaluation</Link></li>
+              <li><Link href="/blog/managed-it-services-small-business-2026-7663">Managed It Services Small Business 2026 7663</Link></li>
+<li><Link href="/blog/graphql-federation-platform-2026-7446">Graphql Federation Platform 2026 7446</Link></li>
+<li><Link href="/blog/cybersecurity-for-msps-security-and-governance">Cybersecurity For Msps Security And Governance</Link></li>
+<li><Link href="/blog/edge-computing-deployment-roi-and-cost-model">Edge Computing Deployment Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for cloud finops: starter template: workflow completion rate,
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

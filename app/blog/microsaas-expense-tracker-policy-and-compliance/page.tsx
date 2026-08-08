@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'MicroSaaS Expense Tracker: policy and compliance | Zion Tech Group',
   description: 'MicroSaaS Expense Tracker: policy and compliance',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'MicroSaaS Expense Tracker: policy and compliance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/microsaas-expense-tracker-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Expense Tracker: policy and compliance", "description": "MicroSaaS Expense Tracker: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:40Z", "dateModified": "2026-08-07T04:52:40Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-expense-tracker-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Expense Tracker: policy and compliance", "description": "MicroSaaS Expense Tracker: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-expense-tracker-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for microsaas expense tracker: policy and compliance: workflo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/apm-application-performance-checklist-for-it-leaders">Apm Application Performance Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-2026-6587">Ai Autonomous Agents 2026 6587</Link></li>
-<li><Link href="/blog/ai-for-gaming-and-esports">Ai For Gaming And Esports</Link></li>
-<li><Link href="/blog/chaos-engineering-2026-6740">Chaos Engineering 2026 6740</Link></li>
+              <li><Link href="/blog/ai-agentic-workflows-2026-7621">Ai Agentic Workflows 2026 7621</Link></li>
+<li><Link href="/blog/graphql-federation-platform-2026-7722">Graphql Federation Platform 2026 7722</Link></li>
+<li><Link href="/blog/ai-customer-success-churn-2026-7603">Ai Customer Success Churn 2026 7603</Link></li>
+<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7679">Micro Saas Ai Expense Tracker 2026 7679</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for microsaas expense tracker: policy and compliance: workflo
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

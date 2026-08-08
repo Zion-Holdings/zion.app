@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Data Analytics Platform: architecture overview | Zion Tech Group',
   description: 'Data Analytics Platform: architecture overview',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Data Analytics Platform: architecture overview',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/data-analytics-platform-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Analytics Platform: architecture overview", "description": "Data Analytics Platform: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:36Z", "dateModified": "2026-08-07T04:51:36Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-analytics-platform-architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Analytics Platform: architecture overview", "description": "Data Analytics Platform: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-analytics-platform-architecture-overview/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-backup-2026-7107">Ai Data Backup 2026 7107</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026-7193">Cloud Migration Services 2026 7193</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-2026-6980">Ai Msp Security Compliance 2026 6980</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-7075">Autonomous Qa Engineering 2026 7075</Link></li>
+              <li><Link href="/blog/ai-it-operations-automation-2026-7384">Ai It Operations Automation 2026 7384</Link></li>
+<li><Link href="/blog/invoice-processing-automation-from-receipt-to-payment-with-ai-extraction-24">Invoice Processing Automation From Receipt To Payment With Ai Extraction 24</Link></li>
+<li><Link href="/blog/cloud-cost-ai-optimizer-2026-7431">Cloud Cost Ai Optimizer 2026 7431</Link></li>
+<li><Link href="/blog/aiops-anomaly-detection-2026-7623">Aiops Anomaly Detection 2026 7623</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

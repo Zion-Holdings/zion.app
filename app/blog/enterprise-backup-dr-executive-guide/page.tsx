@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Enterprise Backup DR: executive guide | Zion Tech Group',
   description: 'Enterprise Backup DR: executive guide',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Enterprise Backup DR: executive guide',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/enterprise-backup-dr-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR: executive guide", "description": "Enterprise Backup DR: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:22Z", "dateModified": "2026-08-07T04:51:22Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR: executive guide", "description": "Enterprise Backup DR: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-executive-guide/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devops-cicd-policy-and-compliance">Devops Cicd Policy And Compliance</Link></li>
-<li><Link href="/blog/5g-solutions-2026-7052">5G Solutions 2026 7052</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-2026-7166">Enterprise Backup Dr 2026 7166</Link></li>
-<li><Link href="/blog/endpoint-management-2026-7027">Endpoint Management 2026 7027</Link></li>
+              <li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7476">Enterprise Ai Intelligence Hub 2026 7476</Link></li>
+<li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-1">Ai Customer Onboarding Automation Reduce Time To Value 1</Link></li>
+<li><Link href="/blog/database-migration-service-2026-7644">Database Migration Service 2026 7644</Link></li>
+<li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-26">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 26</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'DevSecOps Pipeline: common mistakes | Zion Tech Group',
   description: 'DevSecOps Pipeline: common mistakes',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'DevSecOps Pipeline: common mistakes',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/devsecops-pipeline-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline: common mistakes", "description": "DevSecOps Pipeline: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:21Z", "dateModified": "2026-08-07T04:52:21Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-common-mistakes/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline: common mistakes", "description": "DevSecOps Pipeline: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-common-mistakes/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your devsecops pipeline: common mistakes initiative, the n
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-performance-monitoring-2026-6666">Ai Performance Monitoring 2026 6666</Link></li>
-<li><Link href="/blog/cloud-native-app-development-2026-7019">Cloud Native App Development 2026 7019</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-2026">Ai Agent Safety Evaluation 2026</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-2026">Enterprise Backup Dr 2026</Link></li>
+              <li><Link href="/blog/cloud-cost-ai-optimizer-2026-7431">Cloud Cost Ai Optimizer 2026 7431</Link></li>
+<li><Link href="/blog/api-integration-common-mistakes">Api Integration Common Mistakes</Link></li>
+<li><Link href="/blog/autonomous-qa-engineering-starter-template">Autonomous Qa Engineering Starter Template</Link></li>
+<li><Link href="/blog/apm-application-performance-2026-7429">Apm Application Performance 2026 7429</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your devsecops pipeline: common mistakes initiative, the n
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

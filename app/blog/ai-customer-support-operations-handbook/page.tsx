@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Customer Support: operations handbook | Zion Tech Group',
   description: 'AI Customer Support: operations handbook',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Customer Support: operations handbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-customer-support-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Customer Support: operations handbook", "description": "AI Customer Support: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:09Z", "dateModified": "2026-08-07T04:51:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-customer-support-operations-handbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Customer Support: operations handbook", "description": "AI Customer Support: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-customer-support-operations-handbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for ai customer support: operations handbook: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7265">Micro Saas Ai Expense Tracker 2026 7265</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-6963">Graphql Federation Platform 2026 6963</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026">Graphql Federation Platform 2026</Link></li>
-<li><Link href="/blog/it-consulting-2026-7329">It Consulting 2026 7329</Link></li>
+              <li><Link href="/blog/incident-response-retainer-2026-7585">Incident Response Retainer 2026 7585</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7614">Enterprise Ai Intelligence Hub 2026 7614</Link></li>
+<li><Link href="/blog/ai-3d-asset-generator-2026-7684">Ai 3D Asset Generator 2026 7684</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7545">Enterprise Ai Intelligence Hub 2026 7545</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for ai customer support: operations handbook: workflow comple
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

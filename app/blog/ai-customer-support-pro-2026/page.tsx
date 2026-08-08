@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-customer-support-pro-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Customer Support", "description": "AI Customer Support", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:01Z", "dateModified": "2026-08-07T04:52:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-customer-support-pro-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Customer Support", "description": "AI Customer Support", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-customer-support-pro-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for ai customer support: workflow completion rate, escalation
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-api-gateway-2026-7034">Ai Api Gateway 2026 7034</Link></li>
-<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-6698">Data Analytics Platform Modern Enterprise 2026 6698</Link></li>
-<li><Link href="/blog/micro-saas-ai-translation-engine-2026-6643">Micro Saas Ai Translation Engine 2026 6643</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-2026-7298">Data Warehouse Modernization 2026 7298</Link></li>
+              <li><Link href="/blog/ai-customer-success-churn-2026-7672">Ai Customer Success Churn 2026 7672</Link></li>
+<li><Link href="/blog/cybersecurity-platform-msp-2026-7455">Cybersecurity Platform Msp 2026 7455</Link></li>
+<li><Link href="/blog/it-consulting-automation-roadmap">It Consulting Automation Roadmap</Link></li>
+<li><Link href="/blog/ai-agent-safety-evaluation-2026-7481">Ai Agent Safety Evaluation 2026 7481</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for ai customer support: workflow completion rate, escalation
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

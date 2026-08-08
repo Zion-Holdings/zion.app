@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Network Infrastructure: security and governance | Zion Tech Group',
   description: 'Network Infrastructure: security and governance',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Network Infrastructure: security and governance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/network-infrastructure-security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: security and governance", "description": "Network Infrastructure: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:56Z", "dateModified": "2026-08-07T04:51:56Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-security-and-governance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: security and governance", "description": "Network Infrastructure: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-security-and-governance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for network infrastructure: security and governance: workflow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/5g-solutions-policy-and-compliance">5G Solutions Policy And Compliance</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-7242">Api Gateway Management 2026 7242</Link></li>
-<li><Link href="/blog/container-security-lifecycle-2026-6675">Container Security Lifecycle 2026 6675</Link></li>
-<li><Link href="/blog/api-performance-testing-2026-7174">Api Performance Testing 2026 7174</Link></li>
+              <li><Link href="/blog/managed-it-services-policy-and-compliance">Managed It Services Policy And Compliance</Link></li>
+<li><Link href="/blog/accessibility-compliance-automation-roadmap">Accessibility Compliance Automation Roadmap</Link></li>
+<li><Link href="/blog/ai-bdr-sdr-starter-template">Ai Bdr Sdr Starter Template</Link></li>
+<li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-41">Ai Network Detection And Response For Hybrid Infrastructures In 2026 41</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for network infrastructure: security and governance: workflow
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

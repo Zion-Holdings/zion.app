@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Agentic Workflows: checklist for IT leaders | Zion Tech Group',
   description: 'AI Agentic Workflows: checklist for IT leaders',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Agentic Workflows: checklist for IT leaders',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-agentic-workflows-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agentic Workflows: checklist for IT leaders", "description": "AI Agentic Workflows: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:07:49Z", "dateModified": "2026-08-07T05:07:49Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agentic-workflows-checklist-for-it-leaders/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agentic Workflows: checklist for IT leaders", "description": "AI Agentic Workflows: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agentic-workflows-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for ai agentic workflows: checklist for it leaders: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/smart-contract-audit-architecture-overview">Smart Contract Audit Architecture Overview</Link></li>
-<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-6921">Micro Saas Ai Hr Recruitment 2026 6921</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-roi-and-cost-model">Microsaas Hr Recruitment Roi And Cost Model</Link></li>
-<li><Link href="/blog/brand-voice-guardian-operations-handbook">Brand Voice Guardian Operations Handbook</Link></li>
+              <li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7748">Micro Saas Ai Expense Tracker 2026 7748</Link></li>
+<li><Link href="/blog/smart-contract-audit-checklist-for-it-leaders">Smart Contract Audit Checklist For It Leaders</Link></li>
+<li><Link href="/blog/enterprise-backup-dr-2026-7649">Enterprise Backup Dr 2026 7649</Link></li>
+<li><Link href="/blog/ai-email-intelligence-2026-7459">Ai Email Intelligence 2026 7459</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for ai agentic workflows: checklist for it leaders: workflow 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

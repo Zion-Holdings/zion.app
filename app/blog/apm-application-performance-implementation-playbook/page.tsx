@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'APM Application Performance: implementation playbook | Zion Tech Group',
   description: 'APM Application Performance: implementation playbook',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'APM Application Performance: implementation playbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/apm-application-performance-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "APM Application Performance: implementation playbook", "description": "APM Application Performance: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:02Z", "dateModified": "2026-08-07T04:51:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/apm-application-performance-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "APM Application Performance: implementation playbook", "description": "APM Application Performance: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/apm-application-performance-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-2026-7237">Event Driven Architecture 2026 7237</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-2">Cloud Cost Optimization Checklist 2026 2</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-2026-6725">Ai Autonomous Agents 2026 6725</Link></li>
-<li><Link href="/blog/ai-for-real-estate-and-property-management">Ai For Real Estate And Property Management</Link></li>
+              <li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-7749">Micro Saas Ai Hr Recruitment 2026 7749</Link></li>
+<li><Link href="/blog/api-gateway-management-2026-7564">Api Gateway Management 2026 7564</Link></li>
+<li><Link href="/blog/micro-saas-ai-social-media-manager-2026-7682">Micro Saas Ai Social Media Manager 2026 7682</Link></li>
+<li><Link href="/blog/ai-data-backup-2026-7521">Ai Data Backup 2026 7521</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

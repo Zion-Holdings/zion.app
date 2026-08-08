@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'DevOps CI/CD: ROI and cost model | Zion Tech Group',
   description: 'DevOps CI/CD: ROI and cost model',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'DevOps CI/CD: ROI and cost model',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/devops-cicd-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevOps CI/CD: ROI and cost model", "description": "DevOps CI/CD: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:24Z", "dateModified": "2026-08-07T04:51:24Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devops-cicd-roi-and-cost-model/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevOps CI/CD: ROI and cost model", "description": "DevOps CI/CD: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devops-cicd-roi-and-cost-model/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for devops ci/cd: roi and cost model: workflow completion rat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bdr-sdr-2026-6662">Ai Bdr Sdr 2026 6662</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-2026-6660">Autonomous Code Deployment 2026 6660</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-architecture-overview">Enterprise Ai Intelligence Hub Architecture Overview</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-7178">Cloud Cost Optimization Checklist 2026 7178</Link></li>
+              <li><Link href="/blog/api-gateway-management-2026-7426">Api Gateway Management 2026 7426</Link></li>
+<li><Link href="/blog/ai-ad-copy-generator-2026-7480">Ai Ad Copy Generator 2026 7480</Link></li>
+<li><Link href="/blog/autonomous-code-deployment-2026-7695">Autonomous Code Deployment 2026 7695</Link></li>
+<li><Link href="/blog/cloud-finops-2026-7432">Cloud Finops 2026 7432</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for devops ci/cd: roi and cost model: workflow completion rat
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

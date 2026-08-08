@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'MicroSaaS Social Media Manager: operations handbook | Zion Tech Group',
   description: 'MicroSaaS Social Media Manager: operations handbook',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'MicroSaaS Social Media Manager: operations handbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/microsaas-social-media-manager-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Social Media Manager: operations handbook", "description": "MicroSaaS Social Media Manager: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T08:27:32Z", "dateModified": "2026-08-07T08:27:32Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-social-media-manager-operations-handbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Social Media Manager: operations handbook", "description": "MicroSaaS Social Media Manager: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-social-media-manager-operations-handbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For microsaas social media manager: operations handbook: pick one workflow, assi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/etl-pipeline-optimization-common-mistakes">Etl Pipeline Optimization Common Mistakes</Link></li>
-<li><Link href="/blog/event-driven-architecture-2026-6961">Event Driven Architecture 2026 6961</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-security-and-governance">Cyber Threat Intelligence Security And Governance</Link></li>
-<li><Link href="/blog/api-integration-vendor-evaluation">Api Integration Vendor Evaluation</Link></li>
+              <li><Link href="/blog/api-management-gateway-operations-handbook">Api Management Gateway Operations Handbook</Link></li>
+<li><Link href="/blog/microsaas-expense-tracker-executive-guide">Microsaas Expense Tracker Executive Guide</Link></li>
+<li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-7">Process Mining For Operations Discover Bottlenecks And Automate What Matters 7</Link></li>
+<li><Link href="/blog/ai-data-backup-2026-7659">Ai Data Backup 2026 7659</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For microsaas social media manager: operations handbook: pick one workflow, assi
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

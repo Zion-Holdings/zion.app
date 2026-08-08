@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/endpoint-management-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Endpoint Management", "description": "Endpoint Management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:50:59Z", "dateModified": "2026-08-07T04:50:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/endpoint-management-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Endpoint Management", "description": "Endpoint Management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/endpoint-management-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For endpoint management: pick one workflow, assign ownership, define success met
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-7198">Micro Saas Ai Customer Onboarding 2026 7198</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-2026-6539">Data Warehouse Modernization 2026 6539</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-2026-7002">Aiops Anomaly Detection 2026 7002</Link></li>
-<li><Link href="/blog/automation-orchestration-enterprise-2026-6">Automation Orchestration Enterprise 2026 6</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-33">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 33</Link></li>
+<li><Link href="/blog/ai-agent-safety-evaluation-starter-template">Ai Agent Safety Evaluation Starter Template</Link></li>
+<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-7474">Micro Saas Ai Customer Onboarding 2026 7474</Link></li>
+<li><Link href="/blog/api-security-testing-2026-7382">Api Security Testing 2026 7382</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For endpoint management: pick one workflow, assign ownership, define success met
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Managed IT Services | Zion Tech Group',
   description: 'Managed IT Services',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Managed IT Services',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/managed-it-services-small-business-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services", "description": "Managed IT Services", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:20Z", "dateModified": "2026-08-07T04:51:20Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-small-business-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services", "description": "Managed IT Services", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-small-business-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for managed it services: workflow completion rate, escalation
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-security-testing-2026-7037">Api Security Testing 2026 7037</Link></li>
-<li><Link href="/blog/api-performance-testing-2026-6553">Api Performance Testing 2026 6553</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7127">Micro Saas Ai Expense Tracker 2026 7127</Link></li>
-<li><Link href="/blog/brand-voice-guardian-2026-6733">Brand Voice Guardian 2026 6733</Link></li>
+              <li><Link href="/blog/ai-msp-security-compliance-2026-7463">Ai Msp Security Compliance 2026 7463</Link></li>
+<li><Link href="/blog/ai-customer-support-pro-2026-7668">Ai Customer Support Pro 2026 7668</Link></li>
+<li><Link href="/blog/endpoint-management-2026-7441">Endpoint Management 2026 7441</Link></li>
+<li><Link href="/blog/accessibility-compliance-case-study">Accessibility Compliance Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for managed it services: workflow completion rate, escalation
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

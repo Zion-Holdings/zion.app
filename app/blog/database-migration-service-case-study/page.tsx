@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Database Migration Service: case study | Zion Tech Group',
   description: 'Database Migration Service: case study',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Database Migration Service: case study',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/database-migration-service-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Database Migration Service: case study", "description": "Database Migration Service: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:11Z", "dateModified": "2026-08-07T04:51:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/database-migration-service-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Database Migration Service: case study", "description": "Database Migration Service: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/database-migration-service-case-study/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your database migration service: case study initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-api-gateway-2026-6689">Ai Api Gateway 2026 6689</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026-7275">Ai Agent Tool Builder 2026 7275</Link></li>
-<li><Link href="/blog/chaos-engineering-2026-7292">Chaos Engineering 2026 7292</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026-7068">Ai Agent Tool Builder 2026 7068</Link></li>
+              <li><Link href="/blog/cybersecurity-platform-msp-2026-7386">Cybersecurity Platform Msp 2026 7386</Link></li>
+<li><Link href="/blog/it-consulting-2026-7674">It Consulting 2026 7674</Link></li>
+<li><Link href="/blog/cloud-migration-services-2026-7469">Cloud Migration Services 2026 7469</Link></li>
+<li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-44">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 44</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your database migration service: case study initiative, th
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

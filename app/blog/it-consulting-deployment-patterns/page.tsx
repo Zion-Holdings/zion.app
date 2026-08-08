@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'IT Consulting: deployment patterns | Zion Tech Group',
   description: 'IT Consulting: deployment patterns',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'IT Consulting: deployment patterns',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/it-consulting-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: deployment patterns", "description": "IT Consulting: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T08:27:39Z", "dateModified": "2026-08-07T08:27:39Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-deployment-patterns/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: deployment patterns", "description": "IT Consulting: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-deployment-patterns/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your it consulting: deployment patterns initiative, the ne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-starter-template">Cloud Cost Ai Optimizer Starter Template</Link></li>
-<li><Link href="/blog/ai-bom-procurement-2026-6870">Ai Bom Procurement 2026 6870</Link></li>
-<li><Link href="/blog/ai-data-backup-operations-handbook">Ai Data Backup Operations Handbook</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-automation-roadmap">Enterprise Ai Intelligence Hub Automation Roadmap</Link></li>
+              <li><Link href="/blog/automated-ai-reporting-executive-guide">Automated Ai Reporting Executive Guide</Link></li>
+<li><Link href="/blog/api-gateway-management-2026-7702">Api Gateway Management 2026 7702</Link></li>
+<li><Link href="/blog/micro-saas-ai-translation-engine-2026">Micro Saas Ai Translation Engine 2026</Link></li>
+<li><Link href="/blog/apm-application-performance-2026-7429">Apm Application Performance 2026 7429</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your it consulting: deployment patterns initiative, the ne
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

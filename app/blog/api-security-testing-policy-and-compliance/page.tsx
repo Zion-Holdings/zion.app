@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'API Security Testing: policy and compliance | Zion Tech Group',
   description: 'API Security Testing: policy and compliance',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'API Security Testing: policy and compliance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-security-testing-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Security Testing: policy and compliance", "description": "API Security Testing: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:00Z", "dateModified": "2026-08-07T04:52:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-security-testing-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Security Testing: policy and compliance", "description": "API Security Testing: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-security-testing-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For api security testing: policy and compliance: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-optimizer-2026-6651">Ai Accessibility Optimizer 2026 6651</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6713">Micro Saas Ai Expense Tracker 2026 6713</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-6612">Edge Computing Deployment 2026 6612</Link></li>
-<li><Link href="/blog/ai-for-fleet-management-and-logistics-optimization">Ai For Fleet Management And Logistics Optimization</Link></li>
+              <li><Link href="/blog/ai-data-lakehouse-pipelines-2026">Ai Data Lakehouse Pipelines 2026</Link></li>
+<li><Link href="/blog/remote-work-enablement-secure-vpn-alternatives-and-zero-trust-access-3">Remote Work Enablement Secure Vpn Alternatives And Zero Trust Access 3</Link></li>
+<li><Link href="/blog/automated-ai-reporting-2026-7418">Automated Ai Reporting 2026 7418</Link></li>
+<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7610">Micro Saas Ai Expense Tracker 2026 7610</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For api security testing: policy and compliance: pick one workflow, assign owner
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

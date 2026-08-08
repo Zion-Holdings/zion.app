@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Enterprise AI Intelligence Hub: checklist for IT leaders | Zion Tech Group',
   description: 'Enterprise AI Intelligence Hub: checklist for IT leaders',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Enterprise AI Intelligence Hub: checklist for IT leaders',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise AI Intelligence Hub: checklist for IT leaders", "description": "Enterprise AI Intelligence Hub: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:50:59Z", "dateModified": "2026-08-07T04:50:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-checklist-for-it-leaders/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise AI Intelligence Hub: checklist for IT leaders", "description": "Enterprise AI Intelligence Hub: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agentic-workflows-2026-6931">Ai Agentic Workflows 2026 6931</Link></li>
-<li><Link href="/blog/devsecops-pipeline-automation-roadmap">Devsecops Pipeline Automation Roadmap</Link></li>
-<li><Link href="/blog/cloud-finops-2026-6673">Cloud Finops 2026 6673</Link></li>
-<li><Link href="/blog/api-security-testing-2026-6899">Api Security Testing 2026 6899</Link></li>
+              <li><Link href="/blog/apm-application-performance-2026-7636">Apm Application Performance 2026 7636</Link></li>
+<li><Link href="/blog/business-observability-connect-metrics-to-revenue-conversion-and-cx-23">Business Observability Connect Metrics To Revenue Conversion And Cx 23</Link></li>
+<li><Link href="/blog/ai-agentic-workflows-checklist-for-it-leaders">Ai Agentic Workflows Checklist For It Leaders</Link></li>
+<li><Link href="/blog/microsaas-expense-tracker-deployment-patterns">Microsaas Expense Tracker Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

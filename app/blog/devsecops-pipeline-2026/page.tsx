@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'DevSecOps Pipeline | Zion Tech Group',
   description: 'DevSecOps Pipeline',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'DevSecOps Pipeline',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/devsecops-pipeline-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline", "description": "DevSecOps Pipeline", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:28Z", "dateModified": "2026-08-07T04:51:28Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline", "description": "DevSecOps Pipeline", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for devsecops pipeline: workflow completion rate, escalation 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-optimizer-automation-roadmap">Ai Accessibility Optimizer Automation Roadmap</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-2026-6684">Etl Pipeline Optimization 2026 6684</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-6543">Edge Computing Deployment 2026 6543</Link></li>
-<li><Link href="/blog/automated-ai-reporting-2026-6590">Automated Ai Reporting 2026 6590</Link></li>
+              <li><Link href="/blog/network-infrastructure-2026-7744">Network Infrastructure 2026 7744</Link></li>
+<li><Link href="/blog/data-analytics-platform-security-and-governance">Data Analytics Platform Security And Governance</Link></li>
+<li><Link href="/blog/etl-pipeline-optimization-2026-7512">Etl Pipeline Optimization 2026 7512</Link></li>
+<li><Link href="/blog/devops-cicd-2026-7401">Devops Cicd 2026 7401</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for devsecops pipeline: workflow completion rate, escalation 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Performance Monitoring: deployment patterns | Zion Tech Group',
   description: 'AI Performance Monitoring: deployment patterns',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Performance Monitoring: deployment patterns',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-performance-monitoring-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Performance Monitoring: deployment patterns", "description": "AI Performance Monitoring: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:29Z", "dateModified": "2026-08-07T04:52:29Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-performance-monitoring-deployment-patterns/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Performance Monitoring: deployment patterns", "description": "AI Performance Monitoring: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-performance-monitoring-deployment-patterns/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for ai performance monitoring: deployment patterns: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-2026-6777">It Consulting 2026 6777</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-security-and-governance">Ai Agent Tool Builder Security And Governance</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7269">Enterprise Ai Intelligence Hub 2026 7269</Link></li>
-<li><Link href="/blog/ai-for-product-development-and-innovation">Ai For Product Development And Innovation</Link></li>
+              <li><Link href="/blog/it-consulting-2026-7743">It Consulting 2026 7743</Link></li>
+<li><Link href="/blog/autonomous-qa-engineering-2026-7627">Autonomous Qa Engineering 2026 7627</Link></li>
+<li><Link href="/blog/api-gateway-management-2026-7449">Api Gateway Management 2026 7449</Link></li>
+<li><Link href="/blog/sustainable-it-green-cloud-measure-reduce-carbon-footprint-infrastructure-40">Sustainable It Green Cloud Measure Reduce Carbon Footprint Infrastructure 40</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for ai performance monitoring: deployment patterns: workflow 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

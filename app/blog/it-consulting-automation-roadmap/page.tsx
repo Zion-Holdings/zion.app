@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'IT Consulting: automation roadmap | Zion Tech Group',
   description: 'IT Consulting: automation roadmap',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'IT Consulting: automation roadmap',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/it-consulting-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: automation roadmap", "description": "IT Consulting: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T08:12:15Z", "dateModified": "2026-08-07T08:12:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: automation roadmap", "description": "IT Consulting: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your it consulting: automation roadmap initiative, the nex
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/genai-devops-cicd-security-and-governance">Genai Devops Cicd Security And Governance</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-2026-7149">Ai Performance Monitoring 2026 7149</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026-7193">Cloud Migration Services 2026 7193</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-case-study">Microsaas Social Media Manager Case Study</Link></li>
+              <li><Link href="/blog/api-gateway-management-2026-7564">Api Gateway Management 2026 7564</Link></li>
+<li><Link href="/blog/micro-saas-ai-translation-engine-2026-7471">Micro Saas Ai Translation Engine 2026 7471</Link></li>
+<li><Link href="/blog/micro-saas-ai-translation-engine-2026-7609">Micro Saas Ai Translation Engine 2026 7609</Link></li>
+<li><Link href="/blog/container-security-lifecycle-2026-7572">Container Security Lifecycle 2026 7572</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your it consulting: automation roadmap initiative, the nex
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'API Integration | Zion Tech Group',
   description: 'API Integration',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'API Integration',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-integration-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Integration", "description": "API Integration", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:50:59Z", "dateModified": "2026-08-07T04:50:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-integration-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Integration", "description": "API Integration", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-integration-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for api integration: workflow completion rate, escalation rat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/container-security-lifecycle-2026-7089">Container Security Lifecycle 2026 7089</Link></li>
-<li><Link href="/blog/accessibility-compliance-2026-6665">Accessibility Compliance 2026 6665</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-2026-6581">Ai Accessibility Auditor 2026 6581</Link></li>
-<li><Link href="/blog/micro-saas-ai-social-media-manager-2026-6992">Micro Saas Ai Social Media Manager 2026 6992</Link></li>
+              <li><Link href="/blog/ai-email-intelligence-2026-7459">Ai Email Intelligence 2026 7459</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7476">Enterprise Ai Intelligence Hub 2026 7476</Link></li>
+<li><Link href="/blog/cloud-native-app-development-2026-7433">Cloud Native App Development 2026 7433</Link></li>
+<li><Link href="/blog/ai-performance-monitoring-2026-7632">Ai Performance Monitoring 2026 7632</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for api integration: workflow completion rate, escalation rat
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

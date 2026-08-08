@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Customer Success Churn Prevention: ROI and cost model | Zion Tech Group',
   description: 'AI Customer Success Churn Prevention: ROI and cost model',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Customer Success Churn Prevention: ROI and cost model',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-customer-success-churn-prevention-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Customer Success Churn Prevention: ROI and cost model", "description": "AI Customer Success Churn Prevention: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:19Z", "dateModified": "2026-08-07T04:51:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-roi-and-cost-model/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Customer Success Churn Prevention: ROI and cost model", "description": "AI Customer Success Churn Prevention: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-roi-and-cost-model/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-management-2026-6759">Api Gateway Management 2026 6759</Link></li>
-<li><Link href="/blog/micro-saas-ai-translation-engine-2026-6781">Micro Saas Ai Translation Engine 2026 6781</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-policy-and-compliance">Cybersecurity For Msps Policy And Compliance</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-6886">Devops Gen Ai Cicd 2026 6886</Link></li>
+              <li><Link href="/blog/api-management-gateway-2026-7773">Api Management Gateway 2026 7773</Link></li>
+<li><Link href="/blog/devops-gen-ai-cicd-2026-7576">Devops Gen Ai Cicd 2026 7576</Link></li>
+<li><Link href="/blog/ai-observability-2026-7600">Ai Observability 2026 7600</Link></li>
+<li><Link href="/blog/api-performance-testing-2026-7381">Api Performance Testing 2026 7381</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

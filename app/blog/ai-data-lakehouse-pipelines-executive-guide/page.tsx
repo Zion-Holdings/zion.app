@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Data Lakehouse Pipelines: executive guide | Zion Tech Group',
   description: 'AI Data Lakehouse Pipelines: executive guide',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Data Lakehouse Pipelines: executive guide',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Lakehouse Pipelines: executive guide", "description": "AI Data Lakehouse Pipelines: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:53Z", "dateModified": "2026-08-07T07:56:53Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Lakehouse Pipelines: executive guide", "description": "AI Data Lakehouse Pipelines: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-executive-guide/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your ai data lakehouse pipelines: executive guide initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automation-orchestration-enterprise-2026-7320">Automation Orchestration Enterprise 2026 7320</Link></li>
-<li><Link href="/blog/ai-observability-executive-guide">Ai Observability Executive Guide</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-case-study">Autonomous Qa Engineering Case Study</Link></li>
-<li><Link href="/blog/chaos-engineering-2026-6809">Chaos Engineering 2026 6809</Link></li>
+              <li><Link href="/blog/ai-agent-safety-evaluation-operations-handbook">Ai Agent Safety Evaluation Operations Handbook</Link></li>
+<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-7749">Micro Saas Ai Hr Recruitment 2026 7749</Link></li>
+<li><Link href="/blog/autonomous-code-deployment-2026-7419">Autonomous Code Deployment 2026 7419</Link></li>
+<li><Link href="/blog/accessibility-compliance-2026-7562">Accessibility Compliance 2026 7562</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your ai data lakehouse pipelines: executive guide initiati
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

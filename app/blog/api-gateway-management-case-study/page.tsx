@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'API Gateway Management: case study | Zion Tech Group',
   description: 'API Gateway Management: case study',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'API Gateway Management: case study',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-gateway-management-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Gateway Management: case study", "description": "API Gateway Management: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:59Z", "dateModified": "2026-08-07T04:51:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-gateway-management-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Gateway Management: case study", "description": "API Gateway Management: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-gateway-management-case-study/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cybersecurity-for-msps-security-and-governance">Cybersecurity For Msps Security And Governance</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026-6628">Managed It Services Small Business 2026 6628</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026-6517">Ai Agentic Workflows 2026 6517</Link></li>
-<li><Link href="/blog/cloud-finops-starter-template">Cloud Finops Starter Template</Link></li>
+              <li><Link href="/blog/ai-bom-procurement-policy-and-compliance">Ai Bom Procurement Policy And Compliance</Link></li>
+<li><Link href="/blog/brand-voice-guardian-2026-7561">Brand Voice Guardian 2026 7561</Link></li>
+<li><Link href="/blog/ai-api-gateway-checklist-for-it-leaders">Ai Api Gateway Checklist For It Leaders</Link></li>
+<li><Link href="/blog/automated-ai-reporting-2026-7694">Automated Ai Reporting 2026 7694</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

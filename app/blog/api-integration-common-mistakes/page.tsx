@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'API Integration: common mistakes | Zion Tech Group',
   description: 'API Integration: common mistakes',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'API Integration: common mistakes',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-integration-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Integration: common mistakes", "description": "API Integration: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:07Z", "dateModified": "2026-08-07T04:52:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-integration-common-mistakes/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Integration: common mistakes", "description": "API Integration: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-integration-common-mistakes/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your api integration: common mistakes initiative, the next
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/brand-voice-guardian-2026-6526">Brand Voice Guardian 2026 6526</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-checklist-for-it-leaders">Ai Data Lakehouse Pipelines Checklist For It Leaders</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-vendor-evaluation">Autonomous Qa Engineering Vendor Evaluation</Link></li>
-<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-6576">Micro Saas Ai Hr Recruitment 2026 6576</Link></li>
+              <li><Link href="/blog/ai-data-lakehouse-pipelines-2026-7464">Ai Data Lakehouse Pipelines 2026 7464</Link></li>
+<li><Link href="/blog/micro-saas-ai-social-media-manager-2026-7751">Micro Saas Ai Social Media Manager 2026 7751</Link></li>
+<li><Link href="/blog/ai-it-operations-automation-2026-7522">Ai It Operations Automation 2026 7522</Link></li>
+<li><Link href="/blog/automated-ai-reporting-2026-7418">Automated Ai Reporting 2026 7418</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your api integration: common mistakes initiative, the next
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

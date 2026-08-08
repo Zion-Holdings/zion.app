@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Automated AI Reporting | Zion Tech Group',
   description: 'Automated AI Reporting',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Automated AI Reporting',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/automated-ai-reporting-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automated AI Reporting", "description": "Automated AI Reporting", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:17Z", "dateModified": "2026-08-07T04:51:17Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automated-ai-reporting-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automated AI Reporting", "description": "Automated AI Reporting", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automated-ai-reporting-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for automated ai reporting: workflow completion rate, escalat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-2026-7221">Api Management Gateway 2026 7221</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-2026-6588">Aiops Anomaly Detection 2026 6588</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-7357">Api Gateway Management 2026 7357</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-2026-6842">Ai Msp Security Compliance 2026 6842</Link></li>
+              <li><Link href="/blog/event-driven-architecture-2026-7582">Event Driven Architecture 2026 7582</Link></li>
+<li><Link href="/blog/ai-it-operations-automation-2026-7522">Ai It Operations Automation 2026 7522</Link></li>
+<li><Link href="/blog/data-mesh-implementation-domain-owned-data-products-self-serve-infrastructure-39">Data Mesh Implementation Domain Owned Data Products Self Serve Infrastructure 39</Link></li>
+<li><Link href="/blog/api-orchestration-layer-2026-7486">Api Orchestration Layer 2026 7486</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for automated ai reporting: workflow completion rate, escalat
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

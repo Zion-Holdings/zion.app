@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AIOps Anomaly Detection | Zion Tech Group',
   description: 'AIOps Anomaly Detection',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AIOps Anomaly Detection',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/aiops-anomaly-detection-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection", "description": "AIOps Anomaly Detection", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:36Z", "dateModified": "2026-08-07T04:51:36Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection", "description": "AIOps Anomaly Detection", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for aiops anomaly detection: workflow completion rate, escala
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-2026-6639">It Consulting 2026 6639</Link></li>
-<li><Link href="/blog/network-infrastructure-2026-7054">Network Infrastructure 2026 7054</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-6549">Graphql Federation Platform 2026 6549</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-2026-6960">Etl Pipeline Optimization 2026 6960</Link></li>
+              <li><Link href="/blog/it-asset-management-automation-track-hardware-software-and-licenses-in-real-time-19">It Asset Management Automation Track Hardware Software And Licenses In Real Time 19</Link></li>
+<li><Link href="/blog/ai-performance-monitoring-2026-7494">Ai Performance Monitoring 2026 7494</Link></li>
+<li><Link href="/blog/ai-msp-security-compliance-2026-7463">Ai Msp Security Compliance 2026 7463</Link></li>
+<li><Link href="/blog/enterprise-backup-dr-security-and-governance">Enterprise Backup Dr Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for aiops anomaly detection: workflow completion rate, escala
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

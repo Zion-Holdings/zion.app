@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Observability: executive guide | Zion Tech Group',
   description: 'AI Observability: executive guide',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Observability: executive guide',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-observability-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: executive guide", "description": "AI Observability: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:05Z", "dateModified": "2026-08-07T04:51:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: executive guide", "description": "AI Observability: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-executive-guide/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For ai observability: executive guide: pick one workflow, assign ownership, defi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-safety-evaluation-deployment-patterns">Ai Agent Safety Evaluation Deployment Patterns</Link></li>
-<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-6576">Micro Saas Ai Hr Recruitment 2026 6576</Link></li>
-<li><Link href="/blog/ai-observability-2026-6841">Ai Observability 2026 6841</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026-6655">Ai Agentic Workflows 2026 6655</Link></li>
+              <li><Link href="/blog/ai-api-gateway-roi-and-cost-model">Ai Api Gateway Roi And Cost Model</Link></li>
+<li><Link href="/blog/ai-ad-copy-generator-2026-7618">Ai Ad Copy Generator 2026 7618</Link></li>
+<li><Link href="/blog/micro-saas-ai-social-media-manager-2026-7475">Micro Saas Ai Social Media Manager 2026 7475</Link></li>
+<li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-33">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 33</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For ai observability: executive guide: pick one workflow, assign ownership, defi
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

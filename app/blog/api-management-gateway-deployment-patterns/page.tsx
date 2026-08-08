@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'API Management Gateway: deployment patterns | Zion Tech Group',
   description: 'API Management Gateway: deployment patterns',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'API Management Gateway: deployment patterns',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-management-gateway-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Management Gateway: deployment patterns", "description": "API Management Gateway: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T09:13:17Z", "dateModified": "2026-08-07T09:13:17Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-management-gateway-deployment-patterns/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Management Gateway: deployment patterns", "description": "API Management Gateway: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-management-gateway-deployment-patterns/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For api management gateway: deployment patterns: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cyber-threat-intelligence-starter-template">Cyber Threat Intelligence Starter Template</Link></li>
-<li><Link href="/blog/api-integration-executive-guide">Api Integration Executive Guide</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-common-mistakes">Microsaas Social Media Manager Common Mistakes</Link></li>
-<li><Link href="/blog/api-orchestration-layer-automation-roadmap">Api Orchestration Layer Automation Roadmap</Link></li>
+              <li><Link href="/blog/it-consulting-2026-7674">It Consulting 2026 7674</Link></li>
+<li><Link href="/blog/ai-autonomous-agents-2026">Ai Autonomous Agents 2026</Link></li>
+<li><Link href="/blog/ai-application-modernization-monolith-to-microservices-safely-17">Ai Application Modernization Monolith To Microservices Safely 17</Link></li>
+<li><Link href="/blog/ai-api-gateway-2026-7724">Ai Api Gateway 2026 7724</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For api management gateway: deployment patterns: pick one workflow, assign owner
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

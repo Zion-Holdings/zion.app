@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Smart Contract Audit | Zion Tech Group',
   description: 'Smart Contract Audit',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Smart Contract Audit',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/smart-contract-audit-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Smart Contract Audit", "description": "Smart Contract Audit", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:42Z", "dateModified": "2026-08-07T04:51:42Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/smart-contract-audit-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Smart Contract Audit", "description": "Smart Contract Audit", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/smart-contract-audit-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For smart contract audit: pick one workflow, assign ownership, define success me
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-lakehouse-pipelines-policy-and-compliance">Ai Data Lakehouse Pipelines Policy And Compliance</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026-6903">Cybersecurity Platform Msp 2026 6903</Link></li>
-<li><Link href="/blog/ai-for-government-services-and-public-sector-automation">Ai For Government Services And Public Sector Automation</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-6626">Cloud Cost Optimization Checklist 2026 6626</Link></li>
+              <li><Link href="/blog/ai-it-operations-automation-2026-7522">Ai It Operations Automation 2026 7522</Link></li>
+<li><Link href="/blog/ai-it-operations-operations-handbook">Ai It Operations Operations Handbook</Link></li>
+<li><Link href="/blog/ai-bom-procurement-2026-7767">Ai Bom Procurement 2026 7767</Link></li>
+<li><Link href="/blog/ai-api-gateway-roi-and-cost-model">Ai Api Gateway Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For smart contract audit: pick one workflow, assign ownership, define success me
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

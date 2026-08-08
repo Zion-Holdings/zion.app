@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI BOM Procurement: executive guide | Zion Tech Group',
   description: 'AI BOM Procurement: executive guide',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI BOM Procurement: executive guide',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-bom-procurement-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BOM Procurement: executive guide", "description": "AI BOM Procurement: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T08:12:13Z", "dateModified": "2026-08-07T08:12:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bom-procurement-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BOM Procurement: executive guide", "description": "AI BOM Procurement: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bom-procurement-executive-guide/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your ai bom procurement: executive guide initiative, the n
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/network-infrastructure-2026-6709">Network Infrastructure 2026 6709</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026">Ai Agent Tool Builder 2026</Link></li>
-<li><Link href="/blog/devsecops-pipeline-2026-7094">Devsecops Pipeline 2026 7094</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-2026-6515">Ai Agent Safety Evaluation 2026 6515</Link></li>
+              <li><Link href="/blog/ai-email-intelligence-operations-handbook">Ai Email Intelligence Operations Handbook</Link></li>
+<li><Link href="/blog/aiops-anomaly-detection-roi-and-cost-model">Aiops Anomaly Detection Roi And Cost Model</Link></li>
+<li><Link href="/blog/network-infrastructure-2026-7468">Network Infrastructure 2026 7468</Link></li>
+<li><Link href="/blog/ai-customer-success-churn-prevention-roi-and-cost-model">Ai Customer Success Churn Prevention Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your ai bom procurement: executive guide initiative, the n
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

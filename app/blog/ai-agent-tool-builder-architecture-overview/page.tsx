@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-agent-tool-builder-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Tool Builder: architecture overview", "description": "AI Agent Tool Builder: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:49Z", "dateModified": "2026-08-07T04:51:49Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-tool-builder-architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Tool Builder: architecture overview", "description": "AI Agent Tool Builder: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-tool-builder-architecture-overview/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your ai agent tool builder: architecture overview initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-2026-7168">Event Driven Architecture 2026 7168</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026-6603">Cloud Cost Ai Optimizer 2026 6603</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026-7180">Managed It Services Small Business 2026 7180</Link></li>
-<li><Link href="/blog/it-consulting-starter-template">It Consulting Starter Template</Link></li>
+              <li><Link href="/blog/ai-email-intelligence-2026-7528">Ai Email Intelligence 2026 7528</Link></li>
+<li><Link href="/blog/ai-bom-procurement-2026-7491">Ai Bom Procurement 2026 7491</Link></li>
+<li><Link href="/blog/event-driven-architecture-2026">Event Driven Architecture 2026</Link></li>
+<li><Link href="/blog/autonomous-qa-engineering-2026-7765">Autonomous Qa Engineering 2026 7765</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your ai agent tool builder: architecture overview initiati
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

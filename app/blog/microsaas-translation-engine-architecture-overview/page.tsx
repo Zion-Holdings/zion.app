@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'MicroSaaS Translation Engine: architecture overview | Zion Tech Group',
   description: 'MicroSaaS Translation Engine: architecture overview',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'MicroSaaS Translation Engine: architecture overview',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/microsaas-translation-engine-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Translation Engine: architecture overview", "description": "MicroSaaS Translation Engine: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:08:09Z", "dateModified": "2026-08-07T05:08:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-translation-engine-architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Translation Engine: architecture overview", "description": "MicroSaaS Translation Engine: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-translation-engine-architecture-overview/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-implementation-playbook">Ai Observability Implementation Playbook</Link></li>
-<li><Link href="/blog/genai-devops-cicd-security-and-governance">Genai Devops Cicd Security And Governance</Link></li>
-<li><Link href="/blog/accessibility-compliance-2026-6665">Accessibility Compliance 2026 6665</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026-7086">Cloud Cost Ai Optimizer 2026 7086</Link></li>
+              <li><Link href="/blog/ai-bdr-sdr-2026-7766">Ai Bdr Sdr 2026 7766</Link></li>
+<li><Link href="/blog/enterprise-backup-dr-2026">Enterprise Backup Dr 2026</Link></li>
+<li><Link href="/blog/cloud-migration-services-2026-7538">Cloud Migration Services 2026 7538</Link></li>
+<li><Link href="/blog/cyber-threat-intelligence-2026-7435">Cyber Threat Intelligence 2026 7435</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

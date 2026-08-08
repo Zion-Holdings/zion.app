@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Accessibility Optimizer: common mistakes | Zion Tech Group',
   description: 'AI Accessibility Optimizer: common mistakes',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Accessibility Optimizer: common mistakes',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-accessibility-optimizer-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Optimizer: common mistakes", "description": "AI Accessibility Optimizer: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T08:27:35Z", "dateModified": "2026-08-07T08:27:35Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-common-mistakes/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Optimizer: common mistakes", "description": "AI Accessibility Optimizer: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-common-mistakes/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your ai accessibility optimizer: common mistakes initiativ
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-2026-6535">Cloud Finops 2026 6535</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-7170">Graphql Federation Platform 2026 7170</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-implementation-playbook">Ai Customer Success Churn Prevention Implementation Playbook</Link></li>
-<li><Link href="/blog/database-migration-service-2026">Database Migration Service 2026</Link></li>
+              <li><Link href="/blog/autonomous-code-deployment-2026-7557">Autonomous Code Deployment 2026 7557</Link></li>
+<li><Link href="/blog/network-infrastructure-2026-7399">Network Infrastructure 2026 7399</Link></li>
+<li><Link href="/blog/ai-development-acceleration-policy-and-compliance">Ai Development Acceleration Policy And Compliance</Link></li>
+<li><Link href="/blog/ai-agent-safety-evaluation-2026-7757">Ai Agent Safety Evaluation 2026 7757</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your ai accessibility optimizer: common mistakes initiativ
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

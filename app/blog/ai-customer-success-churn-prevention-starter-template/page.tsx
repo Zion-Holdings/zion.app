@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Customer Success Churn Prevention: starter template | Zion Tech Group',
   description: 'AI Customer Success Churn Prevention: starter template',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Customer Success Churn Prevention: starter template',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-customer-success-churn-prevention-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Customer Success Churn Prevention: starter template", "description": "AI Customer Success Churn Prevention: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:49Z", "dateModified": "2026-08-07T07:56:49Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-starter-template/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Customer Success Churn Prevention: starter template", "description": "AI Customer Success Churn Prevention: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-starter-template/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for ai customer success churn prevention: starter template: w
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-tool-builder-checklist-for-it-leaders">Ai Agent Tool Builder Checklist For It Leaders</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026">Devops Gen Ai Cicd 2026</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026-6931">Ai Agentic Workflows 2026 6931</Link></li>
-<li><Link href="/blog/accessibility-compliance-2026">Accessibility Compliance 2026</Link></li>
+              <li><Link href="/blog/api-integration-2026-7427">Api Integration 2026 7427</Link></li>
+<li><Link href="/blog/accessibility-compliance-2026-7424">Accessibility Compliance 2026 7424</Link></li>
+<li><Link href="/blog/cloud-cost-ai-optimizer-2026-7776">Cloud Cost Ai Optimizer 2026 7776</Link></li>
+<li><Link href="/blog/enterprise-backup-dr-2026-7580">Enterprise Backup Dr 2026 7580</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for ai customer success churn prevention: starter template: w
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

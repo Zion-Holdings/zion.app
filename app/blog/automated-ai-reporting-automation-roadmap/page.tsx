@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Automated AI Reporting: automation roadmap | Zion Tech Group',
   description: 'Automated AI Reporting: automation roadmap',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Automated AI Reporting: automation roadmap',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/automated-ai-reporting-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automated AI Reporting: automation roadmap", "description": "Automated AI Reporting: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:08:06Z", "dateModified": "2026-08-07T05:08:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automated-ai-reporting-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automated AI Reporting: automation roadmap", "description": "Automated AI Reporting: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automated-ai-reporting-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your automated ai reporting: automation roadmap initiative
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-backup-starter-template">Ai Data Backup Starter Template</Link></li>
-<li><Link href="/blog/ai-for-food-and-beverage-operations">Ai For Food And Beverage Operations</Link></li>
-<li><Link href="/blog/devops-cicd-2026-7332">Devops Cicd 2026 7332</Link></li>
-<li><Link href="/blog/ai-voice-agents-and-conversational-automation">Ai Voice Agents And Conversational Automation</Link></li>
+              <li><Link href="/blog/data-warehouse-modernization-executive-guide">Data Warehouse Modernization Executive Guide</Link></li>
+<li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-18">Document Processing Automation Extract Data Invoices Contracts Forms 18</Link></li>
+<li><Link href="/blog/accessibility-compliance-policy-and-compliance">Accessibility Compliance Policy And Compliance</Link></li>
+<li><Link href="/blog/cloud-cost-optimization-vendor-evaluation">Cloud Cost Optimization Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your automated ai reporting: automation roadmap initiative
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

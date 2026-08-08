@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cyber-threat-intelligence-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cyber Threat Intelligence: implementation playbook", "description": "Cyber Threat Intelligence: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:45Z", "dateModified": "2026-08-07T04:51:45Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cyber-threat-intelligence-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cyber Threat Intelligence: implementation playbook", "description": "Cyber Threat Intelligence: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cyber-threat-intelligence-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For cyber threat intelligence: implementation playbook: pick one workflow, assig
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/smart-contract-audit-2026-6962">Smart Contract Audit 2026 6962</Link></li>
-<li><Link href="/blog/micro-saas-ai-translation-engine-2026-7057">Micro Saas Ai Translation Engine 2026 7057</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-6727">Api Orchestration Layer 2026 6727</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-7031">Smart Contract Audit 2026 7031</Link></li>
+              <li><Link href="/blog/rag-optimization-playbook-reduce-hallucination-improve-retrieval-accuracy-13">Rag Optimization Playbook Reduce Hallucination Improve Retrieval Accuracy 13</Link></li>
+<li><Link href="/blog/chaos-engineering-2026-7637">Chaos Engineering 2026 7637</Link></li>
+<li><Link href="/blog/api-management-gateway-2026">Api Management Gateway 2026</Link></li>
+<li><Link href="/blog/api-security-testing-vendor-evaluation">Api Security Testing Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For cyber threat intelligence: implementation playbook: pick one workflow, assig
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'IT Consulting: policy and compliance | Zion Tech Group',
   description: 'IT Consulting: policy and compliance',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'IT Consulting: policy and compliance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/it-consulting-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: policy and compliance", "description": "IT Consulting: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:48Z", "dateModified": "2026-08-07T07:56:48Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: policy and compliance", "description": "IT Consulting: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for it consulting: policy and compliance: workflow completion
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-tool-builder-common-mistakes">Ai Agent Tool Builder Common Mistakes</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026-6996">Ai Accessibility Optimizer 2026 6996</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026-6710">Cloud Migration Services 2026 6710</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-for-it-leaders">Cloud Cost Optimization Checklist For It Leaders</Link></li>
+              <li><Link href="/blog/it-consulting-2026-7743">It Consulting 2026 7743</Link></li>
+<li><Link href="/blog/accessibility-compliance-2026-7424">Accessibility Compliance 2026 7424</Link></li>
+<li><Link href="/blog/cybersecurity-for-msps-case-study">Cybersecurity For Msps Case Study</Link></li>
+<li><Link href="/blog/endpoint-management-2026-7510">Endpoint Management 2026 7510</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for it consulting: policy and compliance: workflow completion
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

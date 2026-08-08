@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'MicroSaaS HR Recruitment: implementation playbook | Zion Tech Group',
   description: 'MicroSaaS HR Recruitment: implementation playbook',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'MicroSaaS HR Recruitment: implementation playbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/microsaas-hr-recruitment-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS HR Recruitment: implementation playbook", "description": "MicroSaaS HR Recruitment: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:01Z", "dateModified": "2026-08-07T04:52:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-hr-recruitment-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS HR Recruitment: implementation playbook", "description": "MicroSaaS HR Recruitment: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-hr-recruitment-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for microsaas hr recruitment: implementation playbook: workfl
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automation-orchestration-enterprise-2026-6">Automation Orchestration Enterprise 2026 6</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-7279">Api Orchestration Layer 2026 7279</Link></li>
-<li><Link href="/blog/container-security-lifecycle-2026-6606">Container Security Lifecycle 2026 6606</Link></li>
-<li><Link href="/blog/ai-it-operations-automation-2026-7039">Ai It Operations Automation 2026 7039</Link></li>
+              <li><Link href="/blog/ai-customer-support-pro-2026-7461">Ai Customer Support Pro 2026 7461</Link></li>
+<li><Link href="/blog/ai-autonomous-agents-vendor-evaluation">Ai Autonomous Agents Vendor Evaluation</Link></li>
+<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-7542">Micro Saas Ai Hr Recruitment 2026 7542</Link></li>
+<li><Link href="/blog/ai-development-acceleration-2026-7667">Ai Development Acceleration 2026 7667</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for microsaas hr recruitment: implementation playbook: workfl
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

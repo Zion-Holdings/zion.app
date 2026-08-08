@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/aiops-anomaly-detection-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection: policy and compliance", "description": "AIOps Anomaly Detection: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:36Z", "dateModified": "2026-08-07T04:52:36Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection: policy and compliance", "description": "AIOps Anomaly Detection: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your aiops anomaly detection: policy and compliance initia
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-security-testing-2026">Api Security Testing 2026</Link></li>
-<li><Link href="/blog/network-infrastructure-executive-guide">Network Infrastructure Executive Guide</Link></li>
-<li><Link href="/blog/ai-development-acceleration-2026-6632">Ai Development Acceleration 2026 6632</Link></li>
-<li><Link href="/blog/ai-in-sustainability-and-esg-reporting">Ai In Sustainability And Esg Reporting</Link></li>
+              <li><Link href="/blog/endpoint-management-2026-7579">Endpoint Management 2026 7579</Link></li>
+<li><Link href="/blog/ai-incident-response-orchestration-triage-runbooks-chatops-48">Ai Incident Response Orchestration Triage Runbooks Chatops 48</Link></li>
+<li><Link href="/blog/graphql-federation-platform-security-and-governance">Graphql Federation Platform Security And Governance</Link></li>
+<li><Link href="/blog/cloud-cost-optimization-checklist-2026-7454">Cloud Cost Optimization Checklist 2026 7454</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your aiops anomaly detection: policy and compliance initia
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

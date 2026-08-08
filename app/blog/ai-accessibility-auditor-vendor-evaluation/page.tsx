@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Accessibility Auditor: vendor evaluation | Zion Tech Group',
   description: 'AI Accessibility Auditor: vendor evaluation',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Accessibility Auditor: vendor evaluation',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-accessibility-auditor-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Auditor: vendor evaluation", "description": "AI Accessibility Auditor: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:26:14Z", "dateModified": "2026-08-07T07:26:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-auditor-vendor-evaluation/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Auditor: vendor evaluation", "description": "AI Accessibility Auditor: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-auditor-vendor-evaluation/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for ai accessibility auditor: vendor evaluation: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automated-ai-reporting-2026-6797">Automated Ai Reporting 2026 6797</Link></li>
-<li><Link href="/blog/ai-email-intelligence-2026-7114">Ai Email Intelligence 2026 7114</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-evaluation-framework">Ai Data Lakehouse Pipelines Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-development-acceleration-operations-handbook">Ai Development Acceleration Operations Handbook</Link></li>
+              <li><Link href="/blog/autonomous-code-deployment-starter-template">Autonomous Code Deployment Starter Template</Link></li>
+<li><Link href="/blog/devsecops-pipeline-2026-7646">Devsecops Pipeline 2026 7646</Link></li>
+<li><Link href="/blog/cyber-threat-intelligence-2026-7435">Cyber Threat Intelligence 2026 7435</Link></li>
+<li><Link href="/blog/cybersecurity-platform-msp-2026-7455">Cybersecurity Platform Msp 2026 7455</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for ai accessibility auditor: vendor evaluation: workflow com
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

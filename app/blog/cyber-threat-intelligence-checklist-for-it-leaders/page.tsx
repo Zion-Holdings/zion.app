@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Cyber Threat Intelligence: checklist for IT leaders | Zion Tech Group',
   description: 'Cyber Threat Intelligence: checklist for IT leaders',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Cyber Threat Intelligence: checklist for IT leaders',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cyber-threat-intelligence-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cyber Threat Intelligence: checklist for IT leaders", "description": "Cyber Threat Intelligence: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:37Z", "dateModified": "2026-08-07T04:51:37Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cyber-threat-intelligence-checklist-for-it-leaders/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cyber Threat Intelligence: checklist for IT leaders", "description": "Cyber Threat Intelligence: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cyber-threat-intelligence-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your cyber threat intelligence: checklist for it leaders i
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7062">Enterprise Ai Intelligence Hub 2026 7062</Link></li>
-<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-6714">Micro Saas Ai Hr Recruitment 2026 6714</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-2026-6545">Enterprise Backup Dr 2026 6545</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-checklist-for-it-leaders">Aiops Anomaly Detection Checklist For It Leaders</Link></li>
+              <li><Link href="/blog/ai-accessibility-optimizer-2026-7410">Ai Accessibility Optimizer 2026 7410</Link></li>
+<li><Link href="/blog/api-gateway-management-checklist-for-it-leaders">Api Gateway Management Checklist For It Leaders</Link></li>
+<li><Link href="/blog/data-warehouse-modernization-2026-7643">Data Warehouse Modernization 2026 7643</Link></li>
+<li><Link href="/blog/aiops-anomaly-detection-2026-7761">Aiops Anomaly Detection 2026 7761</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your cyber threat intelligence: checklist for it leaders i
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

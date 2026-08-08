@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'MicroSaaS Expense Tracker: executive guide | Zion Tech Group',
   description: 'MicroSaaS Expense Tracker: executive guide',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'MicroSaaS Expense Tracker: executive guide',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/microsaas-expense-tracker-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Expense Tracker: executive guide", "description": "MicroSaaS Expense Tracker: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:07:57Z", "dateModified": "2026-08-07T05:07:57Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-expense-tracker-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Expense Tracker: executive guide", "description": "MicroSaaS Expense Tracker: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-expense-tracker-executive-guide/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For microsaas expense tracker: executive guide: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-optimization-case-study">Cloud Cost Optimization Case Study</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-6991">Micro Saas Ai Customer Onboarding 2026 6991</Link></li>
-<li><Link href="/blog/graphql-federation-platform-architecture-overview">Graphql Federation Platform Architecture Overview</Link></li>
-<li><Link href="/blog/microsaas-translation-engine-roi-and-cost-model">Microsaas Translation Engine Roi And Cost Model</Link></li>
+              <li><Link href="/blog/aiops-anomaly-detection-2026-7416">Aiops Anomaly Detection 2026 7416</Link></li>
+<li><Link href="/blog/ai-customer-journey-analytics-from-click-to-retention-43">Ai Customer Journey Analytics From Click To Retention 43</Link></li>
+<li><Link href="/blog/cloud-finops-2026-7777">Cloud Finops 2026 7777</Link></li>
+<li><Link href="/blog/cybersecurity-platform-msp-2026-7455">Cybersecurity Platform Msp 2026 7455</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For microsaas expense tracker: executive guide: pick one workflow, assign owners
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

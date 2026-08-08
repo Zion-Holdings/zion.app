@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-3d-asset-generator-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator: starter template", "description": "AI 3D Asset Generator: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:26:15Z", "dateModified": "2026-08-07T07:26:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-starter-template/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator: starter template", "description": "AI 3D Asset Generator: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-starter-template/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your ai 3d asset generator: starter template initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-2026-7053">It Consulting 2026 7053</Link></li>
-<li><Link href="/blog/endpoint-management-checklist-for-it-leaders">Endpoint Management Checklist For It Leaders</Link></li>
-<li><Link href="/blog/devops-cicd-policy-and-compliance">Devops Cicd Policy And Compliance</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-evaluation-framework">Cloud Cost Optimization Evaluation Framework</Link></li>
+              <li><Link href="/blog/chaos-engineering-2026-7637">Chaos Engineering 2026 7637</Link></li>
+<li><Link href="/blog/ai-agent-safety-evaluation-2026-7757">Ai Agent Safety Evaluation 2026 7757</Link></li>
+<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7595">Data Analytics Platform Modern Enterprise 2026 7595</Link></li>
+<li><Link href="/blog/it-consulting-2026-7743">It Consulting 2026 7743</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your ai 3d asset generator: starter template initiative, t
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

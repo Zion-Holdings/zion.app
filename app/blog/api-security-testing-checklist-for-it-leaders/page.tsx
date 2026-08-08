@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'API Security Testing: checklist for IT leaders | Zion Tech Group',
   description: 'API Security Testing: checklist for IT leaders',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'API Security Testing: checklist for IT leaders',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-security-testing-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Security Testing: checklist for IT leaders", "description": "API Security Testing: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:08:04Z", "dateModified": "2026-08-07T05:08:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-security-testing-checklist-for-it-leaders/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Security Testing: checklist for IT leaders", "description": "API Security Testing: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-security-testing-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your api security testing: checklist for it leaders initia
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bom-procurement-security-and-governance">Ai Bom Procurement Security And Governance</Link></li>
-<li><Link href="/blog/ai-data-backup-2026">Ai Data Backup 2026</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-vendor-evaluation">Microsaas Customer Onboarding Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-observability-operations-handbook">Ai Observability Operations Handbook</Link></li>
+              <li><Link href="/blog/ai-cloud-finops-anomaly-detection-and-budget-guardrails-8">Ai Cloud Finops Anomaly Detection And Budget Guardrails 8</Link></li>
+<li><Link href="/blog/5g-solutions-2026-7535">5G Solutions 2026 7535</Link></li>
+<li><Link href="/blog/smart-contract-audit-case-study">Smart Contract Audit Case Study</Link></li>
+<li><Link href="/blog/ai-agent-safety-evaluation-starter-template">Ai Agent Safety Evaluation Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your api security testing: checklist for it leaders initia
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

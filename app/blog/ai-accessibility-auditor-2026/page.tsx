@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Accessibility Auditor | Zion Tech Group',
   description: 'AI Accessibility Auditor',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Accessibility Auditor',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-accessibility-auditor-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Auditor", "description": "AI Accessibility Auditor", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:26Z", "dateModified": "2026-08-07T04:51:26Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-auditor-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Auditor", "description": "AI Accessibility Auditor", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-auditor-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7112">Data Analytics Platform Modern Enterprise 2026 7112</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-2026-7011">Ai Performance Monitoring 2026 7011</Link></li>
-<li><Link href="/blog/ai-it-operations-automation-2026-6901">Ai It Operations Automation 2026 6901</Link></li>
-<li><Link href="/blog/devops-cicd-2026-7194">Devops Cicd 2026 7194</Link></li>
+              <li><Link href="/blog/incident-response-retainer-2026">Incident Response Retainer 2026</Link></li>
+<li><Link href="/blog/ai-observability-2026-7738">Ai Observability 2026 7738</Link></li>
+<li><Link href="/blog/genai-devops-cicd-roi-and-cost-model">Genai Devops Cicd Roi And Cost Model</Link></li>
+<li><Link href="/blog/ai-agent-safety-evaluation-2026-7757">Ai Agent Safety Evaluation 2026 7757</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

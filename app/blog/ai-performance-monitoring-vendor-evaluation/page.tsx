@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Performance Monitoring: vendor evaluation | Zion Tech Group',
   description: 'AI Performance Monitoring: vendor evaluation',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Performance Monitoring: vendor evaluation',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-performance-monitoring-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Performance Monitoring: vendor evaluation", "description": "AI Performance Monitoring: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:55Z", "dateModified": "2026-08-07T07:56:55Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-performance-monitoring-vendor-evaluation/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Performance Monitoring: vendor evaluation", "description": "AI Performance Monitoring: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-performance-monitoring-vendor-evaluation/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For ai performance monitoring: vendor evaluation: pick one workflow, assign owne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/container-security-lifecycle-2026-7296">Container Security Lifecycle 2026 7296</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-architecture-overview">Ai Bdr Sdr Architecture Overview</Link></li>
-<li><Link href="/blog/ai-email-intelligence-2026-6976">Ai Email Intelligence 2026 6976</Link></li>
-<li><Link href="/blog/ai-it-operations-vendor-evaluation">Ai It Operations Vendor Evaluation</Link></li>
+              <li><Link href="/blog/autonomous-code-deployment-2026-7419">Autonomous Code Deployment 2026 7419</Link></li>
+<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7403">Micro Saas Ai Expense Tracker 2026 7403</Link></li>
+<li><Link href="/blog/ai-it-operations-automation-2026-7384">Ai It Operations Automation 2026 7384</Link></li>
+<li><Link href="/blog/ai-development-acceleration-2026-7391">Ai Development Acceleration 2026 7391</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For ai performance monitoring: vendor evaluation: pick one workflow, assign owne
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

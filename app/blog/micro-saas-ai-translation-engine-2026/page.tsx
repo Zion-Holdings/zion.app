@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'MicroSaaS Translation Engine | Zion Tech Group',
   description: 'MicroSaaS Translation Engine',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'MicroSaaS Translation Engine',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/micro-saas-ai-translation-engine-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Translation Engine", "description": "MicroSaaS Translation Engine", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:58Z", "dateModified": "2026-08-07T04:51:58Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/micro-saas-ai-translation-engine-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Translation Engine", "description": "MicroSaaS Translation Engine", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/micro-saas-ai-translation-engine-2026/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your microsaas translation engine initiative, the next ste
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-email-intelligence-architecture-overview">Ai Email Intelligence Architecture Overview</Link></li>
-<li><Link href="/blog/api-integration-2026-6806">Api Integration 2026 6806</Link></li>
-<li><Link href="/blog/devops-cicd-policy-and-compliance">Devops Cicd Policy And Compliance</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-6955">Devops Gen Ai Cicd 2026 6955</Link></li>
+              <li><Link href="/blog/network-infrastructure-2026-7675">Network Infrastructure 2026 7675</Link></li>
+<li><Link href="/blog/ai-api-gateway-2026-7517">Ai Api Gateway 2026 7517</Link></li>
+<li><Link href="/blog/ai-bom-procurement-deployment-patterns">Ai Bom Procurement Deployment Patterns</Link></li>
+<li><Link href="/blog/ai-msp-security-compliance-2026-7739">Ai Msp Security Compliance 2026 7739</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your microsaas translation engine initiative, the next ste
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

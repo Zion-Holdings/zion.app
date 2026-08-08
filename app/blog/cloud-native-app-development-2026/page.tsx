@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Cloud Native App Development | Zion Tech Group',
   description: 'Cloud Native App Development',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Cloud Native App Development',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-native-app-development-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Native App Development", "description": "Cloud Native App Development", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:18Z", "dateModified": "2026-08-07T04:52:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-native-app-development-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Native App Development", "description": "Cloud Native App Development", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-native-app-development-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-management-2026-6529">Api Gateway Management 2026 6529</Link></li>
-<li><Link href="/blog/apm-application-performance-architecture-overview">Apm Application Performance Architecture Overview</Link></li>
-<li><Link href="/blog/endpoint-management-2026-6544">Endpoint Management 2026 6544</Link></li>
-<li><Link href="/blog/container-security-lifecycle-automation-roadmap">Container Security Lifecycle Automation Roadmap</Link></li>
+              <li><Link href="/blog/cloud-migration-services-2026-7400">Cloud Migration Services 2026 7400</Link></li>
+<li><Link href="/blog/micro-saas-ai-social-media-manager-2026-7613">Micro Saas Ai Social Media Manager 2026 7613</Link></li>
+<li><Link href="/blog/ai-accessibility-auditor-2026-7478">Ai Accessibility Auditor 2026 7478</Link></li>
+<li><Link href="/blog/ai-data-lakehouse-pipelines-2026-7533">Ai Data Lakehouse Pipelines 2026 7533</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

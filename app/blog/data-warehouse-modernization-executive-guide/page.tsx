@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Data Warehouse Modernization: executive guide | Zion Tech Group',
   description: 'Data Warehouse Modernization: executive guide',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Data Warehouse Modernization: executive guide',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/data-warehouse-modernization-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Warehouse Modernization: executive guide", "description": "Data Warehouse Modernization: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:08:11Z", "dateModified": "2026-08-07T05:08:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-warehouse-modernization-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Warehouse Modernization: executive guide", "description": "Data Warehouse Modernization: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-warehouse-modernization-executive-guide/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your data warehouse modernization: executive guide initiat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-backup-dr-security-and-governance">Enterprise Backup Dr Security And Governance</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026-7055">Cloud Migration Services 2026 7055</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-executive-guide">Microsaas Customer Onboarding Executive Guide</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-policy-and-compliance">Aiops Anomaly Detection Policy And Compliance</Link></li>
+              <li><Link href="/blog/cloud-finops-2026-7501">Cloud Finops 2026 7501</Link></li>
+<li><Link href="/blog/ai-data-backup-2026-7383">Ai Data Backup 2026 7383</Link></li>
+<li><Link href="/blog/cyber-threat-intelligence-automation-roadmap">Cyber Threat Intelligence Automation Roadmap</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-starter-template">Enterprise Ai Intelligence Hub Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your data warehouse modernization: executive guide initiat
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Cloud Migration Services: architecture overview | Zion Tech Group',
   description: 'Cloud Migration Services: architecture overview',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Cloud Migration Services: architecture overview',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-migration-services-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: architecture overview", "description": "Cloud Migration Services: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:31Z", "dateModified": "2026-08-07T04:51:31Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: architecture overview", "description": "Cloud Migration Services: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-architecture-overview/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for cloud migration services: architecture overview: workflow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-warehouse-modernization-vendor-evaluation">Data Warehouse Modernization Vendor Evaluation</Link></li>
-<li><Link href="/blog/it-consulting-2026-6570">It Consulting 2026 6570</Link></li>
-<li><Link href="/blog/network-infrastructure-2026">Network Infrastructure 2026</Link></li>
-<li><Link href="/blog/endpoint-management-case-study">Endpoint Management Case Study</Link></li>
+              <li><Link href="/blog/ai-accessibility-optimizer-security-and-governance">Ai Accessibility Optimizer Security And Governance</Link></li>
+<li><Link href="/blog/cyber-threat-intelligence-2026-7780">Cyber Threat Intelligence 2026 7780</Link></li>
+<li><Link href="/blog/ai-performance-monitoring-2026-7770">Ai Performance Monitoring 2026 7770</Link></li>
+<li><Link href="/blog/cybersecurity-platform-msp-2026-7386">Cybersecurity Platform Msp 2026 7386</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for cloud migration services: architecture overview: workflow
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

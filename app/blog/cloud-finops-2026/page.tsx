@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Cloud FinOps | Zion Tech Group',
   description: 'Cloud FinOps',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Cloud FinOps',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-finops-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud FinOps", "description": "Cloud FinOps", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:32Z", "dateModified": "2026-08-07T04:51:32Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-finops-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud FinOps", "description": "Cloud FinOps", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-finops-2026/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your cloud finops initiative, the next step is a scoping c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automated-ai-reporting-2026-6935">Automated Ai Reporting 2026 6935</Link></li>
-<li><Link href="/blog/api-performance-testing-2026-6898">Api Performance Testing 2026 6898</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026-7000">Ai Agentic Workflows 2026 7000</Link></li>
-<li><Link href="/blog/5g-solutions-2026-6983">5G Solutions 2026 6983</Link></li>
+              <li><Link href="/blog/managed-it-services-small-business-2026-7732">Managed It Services Small Business 2026 7732</Link></li>
+<li><Link href="/blog/api-performance-testing-2026-7519">Api Performance Testing 2026 7519</Link></li>
+<li><Link href="/blog/accessibility-compliance-policy-and-compliance">Accessibility Compliance Policy And Compliance</Link></li>
+<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7403">Micro Saas Ai Expense Tracker 2026 7403</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your cloud finops initiative, the next step is a scoping c
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

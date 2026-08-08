@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI 3D Asset Generator | Zion Tech Group',
   description: 'AI 3D Asset Generator',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI 3D Asset Generator',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-3d-asset-generator-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator", "description": "AI 3D Asset Generator", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:54Z", "dateModified": "2026-08-07T04:51:54Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator", "description": "AI 3D Asset Generator", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-2026/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your ai 3d asset generator initiative, the next step is a 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-warehouse-modernization-2026">Data Warehouse Modernization 2026</Link></li>
-<li><Link href="/blog/api-integration-deployment-patterns">Api Integration Deployment Patterns</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-6824">Smart Contract Audit 2026 6824</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-2026-7028">Enterprise Backup Dr 2026 7028</Link></li>
+              <li><Link href="/blog/cloud-finops-case-study">Cloud Finops Case Study</Link></li>
+<li><Link href="/blog/etl-pipeline-optimization-vendor-evaluation">Etl Pipeline Optimization Vendor Evaluation</Link></li>
+<li><Link href="/blog/cloud-migration-services-vendor-evaluation">Cloud Migration Services Vendor Evaluation</Link></li>
+<li><Link href="/blog/container-security-lifecycle-2026-7503">Container Security Lifecycle 2026 7503</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your ai 3d asset generator initiative, the next step is a 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

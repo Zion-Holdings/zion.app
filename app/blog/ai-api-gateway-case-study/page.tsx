@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-api-gateway-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway: case study", "description": "AI API Gateway: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:26Z", "dateModified": "2026-08-07T04:52:26Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway: case study", "description": "AI API Gateway: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-case-study/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your ai api gateway: case study initiative, the next step 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bdr-sdr-2026-6662">Ai Bdr Sdr 2026 6662</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-policy-and-compliance">Microsaas Social Media Manager Policy And Compliance</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7196">Micro Saas Ai Expense Tracker 2026 7196</Link></li>
-<li><Link href="/blog/api-performance-testing-deployment-patterns">Api Performance Testing Deployment Patterns</Link></li>
+              <li><Link href="/blog/5g-solutions-2026-7742">5G Solutions 2026 7742</Link></li>
+<li><Link href="/blog/ai-customer-onboarding-automation-reduce-time-to-value-1">Ai Customer Onboarding Automation Reduce Time To Value 1</Link></li>
+<li><Link href="/blog/apm-application-performance-implementation-playbook">Apm Application Performance Implementation Playbook</Link></li>
+<li><Link href="/blog/it-consulting-2026-7536">It Consulting 2026 7536</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your ai api gateway: case study initiative, the next step 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

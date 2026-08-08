@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Accessibility Auditor: automation roadmap | Zion Tech Group',
   description: 'AI Accessibility Auditor: automation roadmap',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Accessibility Auditor: automation roadmap',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-accessibility-auditor-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Auditor: automation roadmap", "description": "AI Accessibility Auditor: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:58Z", "dateModified": "2026-08-07T07:56:58Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-auditor-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Auditor: automation roadmap", "description": "AI Accessibility Auditor: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-auditor-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your ai accessibility auditor: automation roadmap initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/accessibility-compliance-implementation-playbook">Accessibility Compliance Implementation Playbook</Link></li>
-<li><Link href="/blog/brand-voice-guardian-case-study">Brand Voice Guardian Case Study</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-executive-guide">Microsaas Social Media Manager Executive Guide</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-2026-7136">Ai Agent Safety Evaluation 2026 7136</Link></li>
+              <li><Link href="/blog/ai-it-operations-operations-handbook">Ai It Operations Operations Handbook</Link></li>
+<li><Link href="/blog/chaos-engineering-policy-and-compliance">Chaos Engineering Policy And Compliance</Link></li>
+<li><Link href="/blog/ai-accessibility-optimizer-2026-7686">Ai Accessibility Optimizer 2026 7686</Link></li>
+<li><Link href="/blog/ai-bom-procurement-2026-7698">Ai Bom Procurement 2026 7698</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your ai accessibility auditor: automation roadmap initiati
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

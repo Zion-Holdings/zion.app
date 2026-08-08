@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Automation Orchestration: evaluation framework | Zion Tech Group',
   description: 'Automation Orchestration: evaluation framework',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Automation Orchestration: evaluation framework',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/automation-orchestration-evaluation-framework/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation Orchestration: evaluation framework", "description": "Automation Orchestration: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T09:43:51Z", "dateModified": "2026-08-07T09:43:51Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automation-orchestration-evaluation-framework/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation Orchestration: evaluation framework", "description": "Automation Orchestration: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automation-orchestration-evaluation-framework/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for automation orchestration: evaluation framework: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-safety-evaluation-2026-6929">Ai Agent Safety Evaluation 2026 6929</Link></li>
-<li><Link href="/blog/ai-development-acceleration-2026-7046">Ai Development Acceleration 2026 7046</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026-7189">Ai Customer Success Churn 2026 7189</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-2026-7074">Autonomous Code Deployment 2026 7074</Link></li>
+              <li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7610">Micro Saas Ai Expense Tracker 2026 7610</Link></li>
+<li><Link href="/blog/autonomous-code-deployment-2026-7626">Autonomous Code Deployment 2026 7626</Link></li>
+<li><Link href="/blog/ai-ad-copy-generator-2026-7480">Ai Ad Copy Generator 2026 7480</Link></li>
+<li><Link href="/blog/api-management-gateway-2026-7704">Api Management Gateway 2026 7704</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for automation orchestration: evaluation framework: workflow 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

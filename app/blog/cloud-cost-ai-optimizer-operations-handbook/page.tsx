@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-cost-ai-optimizer-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer: operations handbook", "description": "Cloud Cost AI Optimizer: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:07:59Z", "dateModified": "2026-08-07T05:07:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-operations-handbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer: operations handbook", "description": "Cloud Cost AI Optimizer: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-operations-handbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for cloud cost ai optimizer: operations handbook: workflow co
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/managed-it-services-small-business-2026-6904">Managed It Services Small Business 2026 6904</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-policy-and-compliance">Ai Autonomous Agents Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-2026">Ai Agent Safety Evaluation 2026</Link></li>
-<li><Link href="/blog/automation-orchestration-enterprise-2026-6561">Automation Orchestration Enterprise 2026 6561</Link></li>
+              <li><Link href="/blog/automation-orchestration-enterprise-2026-7665">Automation Orchestration Enterprise 2026 7665</Link></li>
+<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7595">Data Analytics Platform Modern Enterprise 2026 7595</Link></li>
+<li><Link href="/blog/ai-autonomous-agents-2026-7415">Ai Autonomous Agents 2026 7415</Link></li>
+<li><Link href="/blog/cyber-threat-intelligence-2026-7711">Cyber Threat Intelligence 2026 7711</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for cloud cost ai optimizer: operations handbook: workflow co
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

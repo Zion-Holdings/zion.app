@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Data Lakehouse Pipelines: automation roadmap | Zion Tech Group',
   description: 'AI Data Lakehouse Pipelines: automation roadmap',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Data Lakehouse Pipelines: automation roadmap',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Lakehouse Pipelines: automation roadmap", "description": "AI Data Lakehouse Pipelines: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:18Z", "dateModified": "2026-08-07T04:52:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Lakehouse Pipelines: automation roadmap", "description": "AI Data Lakehouse Pipelines: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For ai data lakehouse pipelines: automation roadmap: pick one workflow, assign o
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/network-infrastructure-2026-7261">Network Infrastructure 2026 7261</Link></li>
-<li><Link href="/blog/endpoint-management-2026-6820">Endpoint Management 2026 6820</Link></li>
-<li><Link href="/blog/devops-cicd-2026-6711">Devops Cicd 2026 6711</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-7336">Micro Saas Ai Customer Onboarding 2026 7336</Link></li>
+              <li><Link href="/blog/endpoint-management-automation-roadmap">Endpoint Management Automation Roadmap</Link></li>
+<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7733">Data Analytics Platform Modern Enterprise 2026 7733</Link></li>
+<li><Link href="/blog/chaos-engineering-2026-7706">Chaos Engineering 2026 7706</Link></li>
+<li><Link href="/blog/container-security-lifecycle-security-and-governance">Container Security Lifecycle Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For ai data lakehouse pipelines: automation roadmap: pick one workflow, assign o
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

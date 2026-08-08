@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-accessibility-optimizer-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Optimizer", "description": "AI Accessibility Optimizer", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:42Z", "dateModified": "2026-08-07T04:51:42Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Optimizer", "description": "AI Accessibility Optimizer", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For ai accessibility optimizer: pick one workflow, assign ownership, define succ
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-real-estate-and-property-management">Ai For Real Estate And Property Management</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-2026-6735">Ai Performance Monitoring 2026 6735</Link></li>
-<li><Link href="/blog/api-management-gateway-2026-6807">Api Management Gateway 2026 6807</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6843">Ai Data Lakehouse Pipelines 2026 6843</Link></li>
+              <li><Link href="/blog/autonomous-qa-engineering-2026-7696">Autonomous Qa Engineering 2026 7696</Link></li>
+<li><Link href="/blog/ai-bdr-sdr-starter-template">Ai Bdr Sdr Starter Template</Link></li>
+<li><Link href="/blog/autonomous-qa-engineering-case-study">Autonomous Qa Engineering Case Study</Link></li>
+<li><Link href="/blog/microsaas-social-media-manager-common-mistakes">Microsaas Social Media Manager Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For ai accessibility optimizer: pick one workflow, assign ownership, define succ
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

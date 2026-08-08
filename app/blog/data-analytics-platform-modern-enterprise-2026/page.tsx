@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Data Analytics Platform | Zion Tech Group',
   description: 'Data Analytics Platform',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Data Analytics Platform',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/data-analytics-platform-modern-enterprise-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Analytics Platform", "description": "Data Analytics Platform", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:11Z", "dateModified": "2026-08-07T04:51:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-analytics-platform-modern-enterprise-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Analytics Platform", "description": "Data Analytics Platform", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-analytics-platform-modern-enterprise-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For data analytics platform: pick one workflow, assign ownership, define success
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-it-operations-automation-2026-6970">Ai It Operations Automation 2026 6970</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-policy-and-compliance">Data Warehouse Modernization Policy And Compliance</Link></li>
-<li><Link href="/blog/automated-ai-reporting-2026-6521">Automated Ai Reporting 2026 6521</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-2026-6704">Ai Msp Security Compliance 2026 6704</Link></li>
+              <li><Link href="/blog/ai-bdr-sdr-2026-7490">Ai Bdr Sdr 2026 7490</Link></li>
+<li><Link href="/blog/etl-pipeline-optimization-2026-7512">Etl Pipeline Optimization 2026 7512</Link></li>
+<li><Link href="/blog/brand-voice-guardian-2026-7630">Brand Voice Guardian 2026 7630</Link></li>
+<li><Link href="/blog/devops-cicd-roi-and-cost-model">Devops Cicd Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For data analytics platform: pick one workflow, assign ownership, define success
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

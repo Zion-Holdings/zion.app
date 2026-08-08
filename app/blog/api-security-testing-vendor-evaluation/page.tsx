@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'API Security Testing: vendor evaluation | Zion Tech Group',
   description: 'API Security Testing: vendor evaluation',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'API Security Testing: vendor evaluation',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-security-testing-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Security Testing: vendor evaluation", "description": "API Security Testing: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:36Z", "dateModified": "2026-08-07T04:52:36Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-security-testing-vendor-evaluation/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Security Testing: vendor evaluation", "description": "API Security Testing: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-security-testing-vendor-evaluation/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For api security testing: vendor evaluation: pick one workflow, assign ownership
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-gaming-and-esports">Ai For Gaming And Esports</Link></li>
-<li><Link href="/blog/api-performance-testing-implementation-playbook">Api Performance Testing Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-automation-roadmap">Ai Msp Security Compliance Automation Roadmap</Link></li>
-<li><Link href="/blog/api-integration-2026-6875">Api Integration 2026 6875</Link></li>
+              <li><Link href="/blog/micro-saas-ai-translation-engine-2026-7678">Micro Saas Ai Translation Engine 2026 7678</Link></li>
+<li><Link href="/blog/brand-voice-guardian-2026-7699">Brand Voice Guardian 2026 7699</Link></li>
+<li><Link href="/blog/endpoint-management-2026-7648">Endpoint Management 2026 7648</Link></li>
+<li><Link href="/blog/ai-data-backup-2026-7383">Ai Data Backup 2026 7383</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For api security testing: vendor evaluation: pick one workflow, assign ownership
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

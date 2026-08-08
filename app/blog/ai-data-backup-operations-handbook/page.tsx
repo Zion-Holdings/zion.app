@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-data-backup-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Backup: operations handbook", "description": "AI Data Backup: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:26:20Z", "dateModified": "2026-08-07T07:26:20Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-backup-operations-handbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Backup: operations handbook", "description": "AI Data Backup: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-backup-operations-handbook/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your ai data backup: operations handbook initiative, the n
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-2026-7027">Endpoint Management 2026 7027</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026-7272">Ai Accessibility Optimizer 2026 7272</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7265">Micro Saas Ai Expense Tracker 2026 7265</Link></li>
-<li><Link href="/blog/micro-saas-ai-translation-engine-2026-7264">Micro Saas Ai Translation Engine 2026 7264</Link></li>
+              <li><Link href="/blog/devops-cicd-2026-7470">Devops Cicd 2026 7470</Link></li>
+<li><Link href="/blog/devops-gen-ai-cicd-2026-7645">Devops Gen Ai Cicd 2026 7645</Link></li>
+<li><Link href="/blog/ai-3d-asset-generator-starter-template">Ai 3D Asset Generator Starter Template</Link></li>
+<li><Link href="/blog/api-management-gateway-2026-7704">Api Management Gateway 2026 7704</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your ai data backup: operations handbook initiative, the n
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

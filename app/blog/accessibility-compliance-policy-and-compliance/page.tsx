@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Accessibility Compliance: policy and compliance | Zion Tech Group',
   description: 'Accessibility Compliance: policy and compliance',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Accessibility Compliance: policy and compliance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/accessibility-compliance-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance: policy and compliance", "description": "Accessibility Compliance: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:37Z", "dateModified": "2026-08-07T04:52:37Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance: policy and compliance", "description": "Accessibility Compliance: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-2026-6535">Cloud Finops 2026 6535</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-2026-6545">Enterprise Backup Dr 2026 6545</Link></li>
-<li><Link href="/blog/brand-voice-guardian-2026-7216">Brand Voice Guardian 2026 7216</Link></li>
-<li><Link href="/blog/cloud-finops-2026-6880">Cloud Finops 2026 6880</Link></li>
+              <li><Link href="/blog/apm-application-performance-2026-7636">Apm Application Performance 2026 7636</Link></li>
+<li><Link href="/blog/5g-solutions-2026-7466">5G Solutions 2026 7466</Link></li>
+<li><Link href="/blog/ai-customer-success-churn-prevention-roi-and-cost-model">Ai Customer Success Churn Prevention Roi And Cost Model</Link></li>
+<li><Link href="/blog/cloud-cost-ai-optimizer-2026-7776">Cloud Cost Ai Optimizer 2026 7776</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'API Performance Testing: implementation playbook | Zion Tech Group',
   description: 'API Performance Testing: implementation playbook',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'API Performance Testing: implementation playbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-performance-testing-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Performance Testing: implementation playbook", "description": "API Performance Testing: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:08Z", "dateModified": "2026-08-07T04:51:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-performance-testing-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Performance Testing: implementation playbook", "description": "API Performance Testing: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-performance-testing-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/managed-it-services-small-business-2026-6904">Managed It Services Small Business 2026 6904</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026-6652">Ai Ad Copy Generator 2026 6652</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-2026-7188">Ai Data Lakehouse Pipelines 2026 7188</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-6543">Edge Computing Deployment 2026 6543</Link></li>
+              <li><Link href="/blog/autonomous-code-deployment-2026-7419">Autonomous Code Deployment 2026 7419</Link></li>
+<li><Link href="/blog/graphql-federation-platform-2026-7515">Graphql Federation Platform 2026 7515</Link></li>
+<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-7473">Micro Saas Ai Hr Recruitment 2026 7473</Link></li>
+<li><Link href="/blog/ai-agent-tool-builder-2026-7482">Ai Agent Tool Builder 2026 7482</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

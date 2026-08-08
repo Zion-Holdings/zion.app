@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'IT Consulting: security and governance | Zion Tech Group',
   description: 'IT Consulting: security and governance',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'IT Consulting: security and governance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/it-consulting-security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: security and governance", "description": "IT Consulting: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:07Z", "dateModified": "2026-08-07T04:52:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-security-and-governance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: security and governance", "description": "IT Consulting: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-security-and-governance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for it consulting: security and governance: workflow completi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-performance-monitoring-2026-6735">Ai Performance Monitoring 2026 6735</Link></li>
-<li><Link href="/blog/micro-saas-ai-translation-engine-2026-7264">Micro Saas Ai Translation Engine 2026 7264</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-6523">Autonomous Qa Engineering 2026 6523</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-7144">Autonomous Qa Engineering 2026 7144</Link></li>
+              <li><Link href="/blog/managed-it-services-small-business-2026-7663">Managed It Services Small Business 2026 7663</Link></li>
+<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-7611">Micro Saas Ai Hr Recruitment 2026 7611</Link></li>
+<li><Link href="/blog/container-security-lifecycle-2026-7434">Container Security Lifecycle 2026 7434</Link></li>
+<li><Link href="/blog/ai-bom-procurement-2026-7629">Ai Bom Procurement 2026 7629</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for it consulting: security and governance: workflow completi
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

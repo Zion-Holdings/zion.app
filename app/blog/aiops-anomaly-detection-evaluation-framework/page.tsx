@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AIOps Anomaly Detection: evaluation framework | Zion Tech Group',
   description: 'AIOps Anomaly Detection: evaluation framework',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AIOps Anomaly Detection: evaluation framework',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/aiops-anomaly-detection-evaluation-framework/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection: evaluation framework", "description": "AIOps Anomaly Detection: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:08:05Z", "dateModified": "2026-08-07T05:08:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-evaluation-framework/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection: evaluation framework", "description": "AIOps Anomaly Detection: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-evaluation-framework/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For aiops anomaly detection: evaluation framework: pick one workflow, assign own
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-implementation-playbook">Devsecops Pipeline Implementation Playbook</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026-7055">Cloud Migration Services 2026 7055</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6567">Ai Data Lakehouse Pipelines 2026 6567</Link></li>
-<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-7060">Micro Saas Ai Customer Onboarding 2026 7060</Link></li>
+              <li><Link href="/blog/endpoint-management-2026-7441">Endpoint Management 2026 7441</Link></li>
+<li><Link href="/blog/event-driven-architecture-2026-7720">Event Driven Architecture 2026 7720</Link></li>
+<li><Link href="/blog/api-security-testing-2026-7727">Api Security Testing 2026 7727</Link></li>
+<li><Link href="/blog/hyperautomation-strategy-2026-combine-rpa-ai-process-mining-26">Hyperautomation Strategy 2026 Combine Rpa Ai Process Mining 26</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For aiops anomaly detection: evaluation framework: pick one workflow, assign own
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

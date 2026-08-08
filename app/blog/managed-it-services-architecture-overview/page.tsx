@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Managed IT Services: architecture overview | Zion Tech Group',
   description: 'Managed IT Services: architecture overview',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Managed IT Services: architecture overview',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/managed-it-services-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services: architecture overview", "description": "Managed IT Services: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:07Z", "dateModified": "2026-08-07T04:51:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services: architecture overview", "description": "Managed IT Services: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-architecture-overview/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For managed it services: architecture overview: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning">Ai Finops And Cloud Cost Optimization With Machine Learning</Link></li>
-<li><Link href="/blog/container-security-lifecycle-2026-7227">Container Security Lifecycle 2026 7227</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7269">Enterprise Ai Intelligence Hub 2026 7269</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-2026-6926">Ai Accessibility Auditor 2026 6926</Link></li>
+              <li><Link href="/blog/ai-accessibility-auditor-vendor-evaluation">Ai Accessibility Auditor Vendor Evaluation</Link></li>
+<li><Link href="/blog/it-consulting-2026-7398">It Consulting 2026 7398</Link></li>
+<li><Link href="/blog/ai-development-acceleration-2026-7460">Ai Development Acceleration 2026 7460</Link></li>
+<li><Link href="/blog/endpoint-management-2026-7648">Endpoint Management 2026 7648</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For managed it services: architecture overview: pick one workflow, assign owners
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Ad Copy Generator: case study | Zion Tech Group',
   description: 'AI Ad Copy Generator: case study',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Ad Copy Generator: case study',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-ad-copy-generator-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Ad Copy Generator: case study", "description": "AI Ad Copy Generator: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T08:42:52Z", "dateModified": "2026-08-07T08:42:52Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-ad-copy-generator-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Ad Copy Generator: case study", "description": "AI Ad Copy Generator: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-ad-copy-generator-case-study/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For ai ad copy generator: case study: pick one workflow, assign ownership, defin
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-operations-handbook">Ai Observability Operations Handbook</Link></li>
-<li><Link href="/blog/event-driven-architecture-starter-template">Event Driven Architecture Starter Template</Link></li>
-<li><Link href="/blog/ai-customer-support-case-study">Ai Customer Support Case Study</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-6902">Cloud Cost Optimization Checklist 2026 6902</Link></li>
+              <li><Link href="/blog/cloud-cost-optimization-checklist-2026-7454">Cloud Cost Optimization Checklist 2026 7454</Link></li>
+<li><Link href="/blog/network-infrastructure-2026">Network Infrastructure 2026</Link></li>
+<li><Link href="/blog/edge-computing-deployment-2026-7578">Edge Computing Deployment 2026 7578</Link></li>
+<li><Link href="/blog/cloud-finops-2026-7432">Cloud Finops 2026 7432</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For ai ad copy generator: case study: pick one workflow, assign ownership, defin
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

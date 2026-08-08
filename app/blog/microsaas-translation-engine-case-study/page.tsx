@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'MicroSaaS Translation Engine: case study | Zion Tech Group',
   description: 'MicroSaaS Translation Engine: case study',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'MicroSaaS Translation Engine: case study',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/microsaas-translation-engine-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Translation Engine: case study", "description": "MicroSaaS Translation Engine: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:07:50Z", "dateModified": "2026-08-07T05:07:50Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-translation-engine-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Translation Engine: case study", "description": "MicroSaaS Translation Engine: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-translation-engine-case-study/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for microsaas translation engine: case study: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-roi-and-cost-model">Cloud Cost Ai Optimizer Roi And Cost Model</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-7219">Api Gateway Management 2026 7219</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6644">Micro Saas Ai Expense Tracker 2026 6644</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-2026">Aiops Anomaly Detection 2026</Link></li>
+              <li><Link href="/blog/devops-gen-ai-cicd-2026-7438">Devops Gen Ai Cicd 2026 7438</Link></li>
+<li><Link href="/blog/ai-agent-tool-builder-policy-and-compliance">Ai Agent Tool Builder Policy And Compliance</Link></li>
+<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-7750">Micro Saas Ai Customer Onboarding 2026 7750</Link></li>
+<li><Link href="/blog/ai-email-intelligence-security-and-governance">Ai Email Intelligence Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for microsaas translation engine: case study: workflow comple
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/event-driven-architecture-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Event Driven Architecture: ROI and cost model", "description": "Event Driven Architecture: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:15Z", "dateModified": "2026-08-07T04:52:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/event-driven-architecture-roi-and-cost-model/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Event Driven Architecture: ROI and cost model", "description": "Event Driven Architecture: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/event-driven-architecture-roi-and-cost-model/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For event driven architecture: roi and cost model: pick one workflow, assign own
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-autonomous-agents-2026-6656">Ai Autonomous Agents 2026 6656</Link></li>
-<li><Link href="/blog/api-security-testing-2026-7244">Api Security Testing 2026 7244</Link></li>
-<li><Link href="/blog/automated-ai-reporting-policy-and-compliance">Automated Ai Reporting Policy And Compliance</Link></li>
-<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-7335">Micro Saas Ai Hr Recruitment 2026 7335</Link></li>
+              <li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-7">Process Mining For Operations Discover Bottlenecks And Automate What Matters 7</Link></li>
+<li><Link href="/blog/graphql-federation-platform-2026-7446">Graphql Federation Platform 2026 7446</Link></li>
+<li><Link href="/blog/it-consulting-2026-7467">It Consulting 2026 7467</Link></li>
+<li><Link href="/blog/autonomous-code-deployment-2026-7419">Autonomous Code Deployment 2026 7419</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For event driven architecture: roi and cost model: pick one workflow, assign own
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

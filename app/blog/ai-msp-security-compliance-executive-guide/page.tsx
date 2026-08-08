@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-msp-security-compliance-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI MSP Security Compliance: executive guide", "description": "AI MSP Security Compliance: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:03Z", "dateModified": "2026-08-07T04:52:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-msp-security-compliance-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI MSP Security Compliance: executive guide", "description": "AI MSP Security Compliance: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-msp-security-compliance-executive-guide/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for ai msp security compliance: executive guide: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7181">Data Analytics Platform Modern Enterprise 2026 7181</Link></li>
-<li><Link href="/blog/endpoint-management-2026-7303">Endpoint Management 2026 7303</Link></li>
-<li><Link href="/blog/automated-ai-reporting-2026-6590">Automated Ai Reporting 2026 6590</Link></li>
-<li><Link href="/blog/endpoint-management-2026-6889">Endpoint Management 2026 6889</Link></li>
+              <li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-7543">Micro Saas Ai Customer Onboarding 2026 7543</Link></li>
+<li><Link href="/blog/managed-it-services-small-business-2026-7663">Managed It Services Small Business 2026 7663</Link></li>
+<li><Link href="/blog/container-security-lifecycle-2026">Container Security Lifecycle 2026</Link></li>
+<li><Link href="/blog/cloud-migration-services-2026-7469">Cloud Migration Services 2026 7469</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for ai msp security compliance: executive guide: workflow com
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

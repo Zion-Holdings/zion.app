@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'GenAI DevOps CI/CD: ROI and cost model | Zion Tech Group',
   description: 'GenAI DevOps CI/CD: ROI and cost model',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'GenAI DevOps CI/CD: ROI and cost model',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/genai-devops-cicd-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GenAI DevOps CI/CD: ROI and cost model", "description": "GenAI DevOps CI/CD: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:02Z", "dateModified": "2026-08-07T04:51:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/genai-devops-cicd-roi-and-cost-model/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GenAI DevOps CI/CD: ROI and cost model", "description": "GenAI DevOps CI/CD: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/genai-devops-cicd-roi-and-cost-model/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your genai devops ci/cd: roi and cost model initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bom-procurement-vendor-evaluation">Ai Bom Procurement Vendor Evaluation</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-6924">Enterprise Ai Intelligence Hub 2026 6924</Link></li>
-<li><Link href="/blog/ai-customer-support-pro-2026-7047">Ai Customer Support Pro 2026 7047</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-7219">Api Gateway Management 2026 7219</Link></li>
+              <li><Link href="/blog/cloud-cost-ai-optimizer-2026-7776">Cloud Cost Ai Optimizer 2026 7776</Link></li>
+<li><Link href="/blog/network-infrastructure-2026-7744">Network Infrastructure 2026 7744</Link></li>
+<li><Link href="/blog/apm-application-performance-2026">Apm Application Performance 2026</Link></li>
+<li><Link href="/blog/ai-accessibility-auditor-2026-7409">Ai Accessibility Auditor 2026 7409</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your genai devops ci/cd: roi and cost model initiative, th
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

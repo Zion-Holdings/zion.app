@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI API Gateway: policy and compliance | Zion Tech Group',
   description: 'AI API Gateway: policy and compliance',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI API Gateway: policy and compliance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-api-gateway-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway: policy and compliance", "description": "AI API Gateway: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:48Z", "dateModified": "2026-08-07T04:51:48Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway: policy and compliance", "description": "AI API Gateway: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your ai api gateway: policy and compliance initiative, the
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cybersecurity-platform-msp-2026">Cybersecurity Platform Msp 2026</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-7307">Smart Contract Audit 2026 7307</Link></li>
-<li><Link href="/blog/cloud-migration-services-checklist-for-it-leaders">Cloud Migration Services Checklist For It Leaders</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026-7111">Managed It Services Small Business 2026 7111</Link></li>
+              <li><Link href="/blog/automated-ai-reporting-2026-7487">Automated Ai Reporting 2026 7487</Link></li>
+<li><Link href="/blog/ai-customer-support-pro-2026-7737">Ai Customer Support Pro 2026 7737</Link></li>
+<li><Link href="/blog/cloud-migration-services-vendor-evaluation">Cloud Migration Services Vendor Evaluation</Link></li>
+<li><Link href="/blog/ai-accessibility-optimizer-evaluation-framework">Ai Accessibility Optimizer Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your ai api gateway: policy and compliance initiative, the
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

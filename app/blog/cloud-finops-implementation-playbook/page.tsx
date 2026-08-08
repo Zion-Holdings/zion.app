@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-finops-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud FinOps: implementation playbook", "description": "Cloud FinOps: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:57:04Z", "dateModified": "2026-08-07T07:57:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-finops-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud FinOps: implementation playbook", "description": "Cloud FinOps: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-finops-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-3d-asset-generator-2026-6994">Ai 3D Asset Generator 2026 6994</Link></li>
-<li><Link href="/blog/event-driven-architecture-security-and-governance">Event Driven Architecture Security And Governance</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-7300">Devops Gen Ai Cicd 2026 7300</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-security-and-governance">Microsaas Expense Tracker Security And Governance</Link></li>
+              <li><Link href="/blog/devops-gen-ai-cicd-2026-7714">Devops Gen Ai Cicd 2026 7714</Link></li>
+<li><Link href="/blog/database-migration-service-2026-7644">Database Migration Service 2026 7644</Link></li>
+<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-7611">Micro Saas Ai Hr Recruitment 2026 7611</Link></li>
+<li><Link href="/blog/automated-ai-reporting-2026-7418">Automated Ai Reporting 2026 7418</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

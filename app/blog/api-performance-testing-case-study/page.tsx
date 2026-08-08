@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-performance-testing-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Performance Testing: case study", "description": "API Performance Testing: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T09:28:31Z", "dateModified": "2026-08-07T09:28:31Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-performance-testing-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Performance Testing: case study", "description": "API Performance Testing: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-performance-testing-case-study/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For api performance testing: case study: pick one workflow, assign ownership, de
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-integration-2026-6944">Api Integration 2026 6944</Link></li>
-<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-6921">Micro Saas Ai Hr Recruitment 2026 6921</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026-6790">Ai Ad Copy Generator 2026 6790</Link></li>
-<li><Link href="/blog/container-security-lifecycle-case-study">Container Security Lifecycle Case Study</Link></li>
+              <li><Link href="/blog/ai-autonomous-agents-2026-7622">Ai Autonomous Agents 2026 7622</Link></li>
+<li><Link href="/blog/api-integration-2026-7772">Api Integration 2026 7772</Link></li>
+<li><Link href="/blog/database-migration-service-2026-7575">Database Migration Service 2026 7575</Link></li>
+<li><Link href="/blog/cloud-cost-optimization-checklist-2026-7661">Cloud Cost Optimization Checklist 2026 7661</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For api performance testing: case study: pick one workflow, assign ownership, de
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

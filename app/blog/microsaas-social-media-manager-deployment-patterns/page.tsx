@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'MicroSaaS Social Media Manager: deployment patterns | Zion Tech Group',
   description: 'MicroSaaS Social Media Manager: deployment patterns',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'MicroSaaS Social Media Manager: deployment patterns',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/microsaas-social-media-manager-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Social Media Manager: deployment patterns", "description": "MicroSaaS Social Media Manager: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:55Z", "dateModified": "2026-08-07T07:56:55Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-social-media-manager-deployment-patterns/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Social Media Manager: deployment patterns", "description": "MicroSaaS Social Media Manager: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-social-media-manager-deployment-patterns/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your microsaas social media manager: deployment patterns i
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/generative-ai-for-content-and-creative-workflows">Generative Ai For Content And Creative Workflows</Link></li>
-<li><Link href="/blog/securing-ai-models-a-practical-guide-to-threat-mitigation-in-production">Securing Ai Models A Practical Guide To Threat Mitigation In Production</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026-6517">Ai Agentic Workflows 2026 6517</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-7101">Graphql Federation Platform 2026 7101</Link></li>
+              <li><Link href="/blog/database-migration-service-2026">Database Migration Service 2026</Link></li>
+<li><Link href="/blog/autonomous-code-deployment-2026-7764">Autonomous Code Deployment 2026 7764</Link></li>
+<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7595">Data Analytics Platform Modern Enterprise 2026 7595</Link></li>
+<li><Link href="/blog/slo-driven-development-set-error-budgets-build-features-without-breaking-reliability-47">Slo Driven Development Set Error Budgets Build Features Without Breaking Reliability 47</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your microsaas social media manager: deployment patterns i
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

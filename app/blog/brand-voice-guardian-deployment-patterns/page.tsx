@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Brand Voice Guardian: deployment patterns | Zion Tech Group',
   description: 'Brand Voice Guardian: deployment patterns',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Brand Voice Guardian: deployment patterns',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/brand-voice-guardian-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Brand Voice Guardian: deployment patterns", "description": "Brand Voice Guardian: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:26:05Z", "dateModified": "2026-08-07T07:26:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/brand-voice-guardian-deployment-patterns/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Brand Voice Guardian: deployment patterns", "description": "Brand Voice Guardian: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/brand-voice-guardian-deployment-patterns/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For brand voice guardian: deployment patterns: pick one workflow, assign ownersh
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-autonomous-agents-2026-6518">Ai Autonomous Agents 2026 6518</Link></li>
-<li><Link href="/blog/api-management-gateway-2026-7152">Api Management Gateway 2026 7152</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6805">Api Gateway Management 2026 6805</Link></li>
-<li><Link href="/blog/micro-saas-ai-social-media-manager-2026-6923">Micro Saas Ai Social Media Manager 2026 6923</Link></li>
+              <li><Link href="/blog/ai-network-detection-and-response-for-hybrid-infrastructures-in-2026-41">Ai Network Detection And Response For Hybrid Infrastructures In 2026 41</Link></li>
+<li><Link href="/blog/brand-voice-guardian-2026-7492">Brand Voice Guardian 2026 7492</Link></li>
+<li><Link href="/blog/aiops-anomaly-detection-2026-7692">Aiops Anomaly Detection 2026 7692</Link></li>
+<li><Link href="/blog/micro-saas-ai-translation-engine-2026-7609">Micro Saas Ai Translation Engine 2026 7609</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For brand voice guardian: deployment patterns: pick one workflow, assign ownersh
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

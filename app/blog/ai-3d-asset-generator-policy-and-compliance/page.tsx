@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI 3D Asset Generator: policy and compliance | Zion Tech Group',
   description: 'AI 3D Asset Generator: policy and compliance',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI 3D Asset Generator: policy and compliance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-3d-asset-generator-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator: policy and compliance", "description": "AI 3D Asset Generator: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T08:27:31Z", "dateModified": "2026-08-07T08:27:31Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator: policy and compliance", "description": "AI 3D Asset Generator: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For ai 3d asset generator: policy and compliance: pick one workflow, assign owne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/accessibility-compliance-implementation-playbook">Accessibility Compliance Implementation Playbook</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-7279">Api Orchestration Layer 2026 7279</Link></li>
-<li><Link href="/blog/database-migration-service-implementation-playbook">Database Migration Service Implementation Playbook</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-operations-handbook">Microsaas Hr Recruitment Operations Handbook</Link></li>
+              <li><Link href="/blog/automated-ai-reporting-2026-7556">Automated Ai Reporting 2026 7556</Link></li>
+<li><Link href="/blog/cybersecurity-platform-msp-2026-7524">Cybersecurity Platform Msp 2026 7524</Link></li>
+<li><Link href="/blog/accessibility-compliance-2026-7493">Accessibility Compliance 2026 7493</Link></li>
+<li><Link href="/blog/cloud-native-app-development-2026-7640">Cloud Native App Development 2026 7640</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For ai 3d asset generator: policy and compliance: pick one workflow, assign owne
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

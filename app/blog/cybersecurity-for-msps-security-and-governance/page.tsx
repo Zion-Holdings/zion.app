@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Cybersecurity for MSPs: security and governance | Zion Tech Group',
   description: 'Cybersecurity for MSPs: security and governance',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Cybersecurity for MSPs: security and governance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cybersecurity-for-msps-security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cybersecurity for MSPs: security and governance", "description": "Cybersecurity for MSPs: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:21Z", "dateModified": "2026-08-07T04:51:21Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cybersecurity-for-msps-security-and-governance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cybersecurity for MSPs: security and governance", "description": "Cybersecurity for MSPs: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cybersecurity-for-msps-security-and-governance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For cybersecurity for msps: security and governance: pick one workflow, assign o
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/chaos-engineering-2026-7223">Chaos Engineering 2026 7223</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026-7155">Cloud Cost Ai Optimizer 2026 7155</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-6894">Graphql Federation Platform 2026 6894</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-2026-7281">Autonomous Code Deployment 2026 7281</Link></li>
+              <li><Link href="/blog/it-consulting-2026-7743">It Consulting 2026 7743</Link></li>
+<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7610">Micro Saas Ai Expense Tracker 2026 7610</Link></li>
+<li><Link href="/blog/brand-voice-guardian-2026-7630">Brand Voice Guardian 2026 7630</Link></li>
+<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7526">Data Analytics Platform Modern Enterprise 2026 7526</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For cybersecurity for msps: security and governance: pick one workflow, assign o
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

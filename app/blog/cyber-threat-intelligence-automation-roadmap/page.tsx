@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cyber-threat-intelligence-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cyber Threat Intelligence: automation roadmap", "description": "Cyber Threat Intelligence: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:10Z", "dateModified": "2026-08-07T04:52:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cyber-threat-intelligence-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cyber Threat Intelligence: automation roadmap", "description": "Cyber Threat Intelligence: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cyber-threat-intelligence-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your cyber threat intelligence: automation roadmap initiat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-ai-intelligence-hub-automation-roadmap">Enterprise Ai Intelligence Hub Automation Roadmap</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-starter-template">Enterprise Ai Intelligence Hub Starter Template</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-7219">Api Gateway Management 2026 7219</Link></li>
-<li><Link href="/blog/devops-cicd-2026-7263">Devops Cicd 2026 7263</Link></li>
+              <li><Link href="/blog/ai-ad-copy-generator-security-and-governance">Ai Ad Copy Generator Security And Governance</Link></li>
+<li><Link href="/blog/event-driven-architecture-roi-and-cost-model">Event Driven Architecture Roi And Cost Model</Link></li>
+<li><Link href="/blog/cloud-migration-services-2026-7538">Cloud Migration Services 2026 7538</Link></li>
+<li><Link href="/blog/ai-customer-success-churn-prevention-roi-and-cost-model">Ai Customer Success Churn Prevention Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your cyber threat intelligence: automation roadmap initiat
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

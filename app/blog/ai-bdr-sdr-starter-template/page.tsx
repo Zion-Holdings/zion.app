@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI BDR SDR: starter template | Zion Tech Group',
   description: 'AI BDR SDR: starter template',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI BDR SDR: starter template',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-bdr-sdr-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BDR SDR: starter template", "description": "AI BDR SDR: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:32Z", "dateModified": "2026-08-07T04:52:32Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bdr-sdr-starter-template/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BDR SDR: starter template", "description": "AI BDR SDR: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bdr-sdr-starter-template/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for ai bdr sdr: starter template: workflow completion rate, e
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-auditor-security-and-governance">Ai Accessibility Auditor Security And Governance</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026-6652">Ai Ad Copy Generator 2026 6652</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026-7248">Cybersecurity Platform Msp 2026 7248</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6874">Api Gateway Management 2026 6874</Link></li>
+              <li><Link href="/blog/cloud-cost-ai-optimizer-2026-7431">Cloud Cost Ai Optimizer 2026 7431</Link></li>
+<li><Link href="/blog/automated-ai-reporting-2026-7487">Automated Ai Reporting 2026 7487</Link></li>
+<li><Link href="/blog/data-analytics-platform-security-and-governance">Data Analytics Platform Security And Governance</Link></li>
+<li><Link href="/blog/ai-customer-support-pro-2026-7461">Ai Customer Support Pro 2026 7461</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for ai bdr sdr: starter template: workflow completion rate, e
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

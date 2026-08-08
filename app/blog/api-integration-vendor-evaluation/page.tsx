@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'API Integration: vendor evaluation | Zion Tech Group',
   description: 'API Integration: vendor evaluation',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'API Integration: vendor evaluation',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-integration-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Integration: vendor evaluation", "description": "API Integration: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:41Z", "dateModified": "2026-08-07T07:56:41Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-integration-vendor-evaluation/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Integration: vendor evaluation", "description": "API Integration: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-integration-vendor-evaluation/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your api integration: vendor evaluation initiative, the ne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7062">Enterprise Ai Intelligence Hub 2026 7062</Link></li>
-<li><Link href="/blog/brand-voice-guardian-2026-6526">Brand Voice Guardian 2026 6526</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026-6844">Ai Customer Success Churn 2026 6844</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-implementation-playbook">Microsaas Hr Recruitment Implementation Playbook</Link></li>
+              <li><Link href="/blog/cyber-threat-intelligence-starter-template">Cyber Threat Intelligence Starter Template</Link></li>
+<li><Link href="/blog/ai-bdr-sdr-2026-7421">Ai Bdr Sdr 2026 7421</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7407">Enterprise Ai Intelligence Hub 2026 7407</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7683">Enterprise Ai Intelligence Hub 2026 7683</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your api integration: vendor evaluation initiative, the ne
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Accessibility Compliance: automation roadmap | Zion Tech Group',
   description: 'Accessibility Compliance: automation roadmap',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Accessibility Compliance: automation roadmap',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/accessibility-compliance-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance: automation roadmap", "description": "Accessibility Compliance: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:26:16Z", "dateModified": "2026-08-07T07:26:16Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance: automation roadmap", "description": "Accessibility Compliance: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -37,7 +37,7 @@ export default function Page() {
 
         <section className="prose prose-invert max-w-none">
 ## Why this matters now
-Buyers evaluating accessibility compliance: automation roadmap in 2026 are prioritizing measurable outcomes over feature checklists. This guide focuses on practical adoption, risk reduction, and ROI because generic data marketing no longer converts informed buyers. Teams that invest in accessibility compliance: automation roadmap with clear success metrics and phased delivery consistently outperform teams that chase experimental AI hype. The organizations that win in 2026 will treat accessibility compliance: automation roadmap as a durable capability, not a one-off project, and they will instrument execution from day one. If your team is still debating whether accessibility compliance: automation roadmap is worth investing in, use this guide to build the business case with evidence rather than vendor claims.
+Buyers evaluating accessibility compliance: automation roadmap in 2026 are prioritizing measurable outcomes over feature checklists. This guide focuses on practical adoption, risk reduction, and ROI because generic security marketing no longer converts informed buyers. Teams that invest in accessibility compliance: automation roadmap with clear success metrics and phased delivery consistently outperform teams that chase experimental AI hype. The organizations that win in 2026 will treat accessibility compliance: automation roadmap as a durable capability, not a one-off project, and they will instrument execution from day one. If your team is still debating whether accessibility compliance: automation roadmap is worth investing in, use this guide to build the business case with evidence rather than vendor claims.
 
 ## Executive summary
 This post gives executives a concise view of accessibility compliance: automation roadmap: value drivers, adoption blockers, realistic timelines, and the ownership model required for success. The bottom line: accessibility compliance: automation roadmap can shorten delivery cycles, reduce manual exceptions, and improve customer outcomes when scoped correctly and operated responsibly. Recommendation: start with one workflow, assign ownership, define success metrics, and review after 30 days before broader rollout. Use this guide to align leadership, set expectations, and avoid the common mistake of piloting without service ownership or alerting.
@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cybersecurity-for-msps-case-study">Cybersecurity For Msps Case Study</Link></li>
-<li><Link href="/blog/it-consulting-2026-7329">It Consulting 2026 7329</Link></li>
-<li><Link href="/blog/apm-application-performance-executive-guide">Apm Application Performance Executive Guide</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-2026-6753">Etl Pipeline Optimization 2026 6753</Link></li>
+              <li><Link href="/blog/ai-it-operations-automation-2026-7384">Ai It Operations Automation 2026 7384</Link></li>
+<li><Link href="/blog/enterprise-backup-dr-2026-7718">Enterprise Backup Dr 2026 7718</Link></li>
+<li><Link href="/blog/api-security-testing-2026-7589">Api Security Testing 2026 7589</Link></li>
+<li><Link href="/blog/api-integration-2026-7565">Api Integration 2026 7565</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

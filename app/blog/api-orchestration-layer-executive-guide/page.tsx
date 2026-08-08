@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'API Orchestration Layer: executive guide | Zion Tech Group',
   description: 'API Orchestration Layer: executive guide',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'API Orchestration Layer: executive guide',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-orchestration-layer-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Orchestration Layer: executive guide", "description": "API Orchestration Layer: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T08:27:30Z", "dateModified": "2026-08-07T08:27:30Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-orchestration-layer-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Orchestration Layer: executive guide", "description": "API Orchestration Layer: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-orchestration-layer-executive-guide/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for api orchestration layer: executive guide: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/chaos-engineering-implementation-playbook">Chaos Engineering Implementation Playbook</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-2026-6795">Aiops Anomaly Detection 2026 6795</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-2026-7080">Ai Performance Monitoring 2026 7080</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-6681">Edge Computing Deployment 2026 6681</Link></li>
+              <li><Link href="/blog/cloud-migration-services-2026-7676">Cloud Migration Services 2026 7676</Link></li>
+<li><Link href="/blog/smart-contract-audit-2026-7514">Smart Contract Audit 2026 7514</Link></li>
+<li><Link href="/blog/api-integration-2026-7427">Api Integration 2026 7427</Link></li>
+<li><Link href="/blog/network-infrastructure-2026-7675">Network Infrastructure 2026 7675</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for api orchestration layer: executive guide: workflow comple
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

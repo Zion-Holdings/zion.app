@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Data Analytics Platform: policy and compliance | Zion Tech Group',
   description: 'Data Analytics Platform: policy and compliance',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Data Analytics Platform: policy and compliance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/data-analytics-platform-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Analytics Platform: policy and compliance", "description": "Data Analytics Platform: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:08Z", "dateModified": "2026-08-07T04:52:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-analytics-platform-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Analytics Platform: policy and compliance", "description": "Data Analytics Platform: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-analytics-platform-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for data analytics platform: policy and compliance: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-common-mistakes">Cloud Finops Common Mistakes</Link></li>
-<li><Link href="/blog/ai-data-backup-2026-6969">Ai Data Backup 2026 6969</Link></li>
-<li><Link href="/blog/micro-saas-ai-translation-engine-2026-7333">Micro Saas Ai Translation Engine 2026 7333</Link></li>
-<li><Link href="/blog/5g-solutions-2026-7328">5G Solutions 2026 7328</Link></li>
+              <li><Link href="/blog/ai-email-intelligence-operations-handbook">Ai Email Intelligence Operations Handbook</Link></li>
+<li><Link href="/blog/automated-ai-reporting-policy-and-compliance">Automated Ai Reporting Policy And Compliance</Link></li>
+<li><Link href="/blog/graphql-federation-platform-2026-7722">Graphql Federation Platform 2026 7722</Link></li>
+<li><Link href="/blog/ai-data-backup-2026-7452">Ai Data Backup 2026 7452</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for data analytics platform: policy and compliance: workflow 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

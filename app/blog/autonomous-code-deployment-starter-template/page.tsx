@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Autonomous Code Deployment: starter template | Zion Tech Group',
   description: 'Autonomous Code Deployment: starter template',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Autonomous Code Deployment: starter template',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/autonomous-code-deployment-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous Code Deployment: starter template", "description": "Autonomous Code Deployment: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:07:51Z", "dateModified": "2026-08-07T05:07:51Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-code-deployment-starter-template/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous Code Deployment: starter template", "description": "Autonomous Code Deployment: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-code-deployment-starter-template/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your autonomous code deployment: starter template initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-common-mistakes">Ai Observability Common Mistakes</Link></li>
-<li><Link href="/blog/ai-customer-support-pro-2026-6702">Ai Customer Support Pro 2026 6702</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-case-study">Ai Customer Success Churn Prevention Case Study</Link></li>
-<li><Link href="/blog/automated-ai-reporting-2026-6659">Automated Ai Reporting 2026 6659</Link></li>
+              <li><Link href="/blog/cyber-threat-intelligence-2026-7504">Cyber Threat Intelligence 2026 7504</Link></li>
+<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-7749">Micro Saas Ai Hr Recruitment 2026 7749</Link></li>
+<li><Link href="/blog/devops-cicd-2026-7677">Devops Cicd 2026 7677</Link></li>
+<li><Link href="/blog/graphql-federation-platform-2026-7446">Graphql Federation Platform 2026 7446</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your autonomous code deployment: starter template initiati
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

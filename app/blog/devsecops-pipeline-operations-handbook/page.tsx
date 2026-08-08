@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'DevSecOps Pipeline: operations handbook | Zion Tech Group',
   description: 'DevSecOps Pipeline: operations handbook',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'DevSecOps Pipeline: operations handbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/devsecops-pipeline-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline: operations handbook", "description": "DevSecOps Pipeline: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:49Z", "dateModified": "2026-08-07T07:56:49Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-operations-handbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevSecOps Pipeline: operations handbook", "description": "DevSecOps Pipeline: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devsecops-pipeline-operations-handbook/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your devsecops pipeline: operations handbook initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/apm-application-performance-automation-roadmap">Apm Application Performance Automation Roadmap</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-deployment-patterns">Microsaas Customer Onboarding Deployment Patterns</Link></li>
-<li><Link href="/blog/cloud-finops-2026">Cloud Finops 2026</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-6592">Autonomous Qa Engineering 2026 6592</Link></li>
+              <li><Link href="/blog/chaos-engineering-2026-7568">Chaos Engineering 2026 7568</Link></li>
+<li><Link href="/blog/devops-cicd-roi-and-cost-model">Devops Cicd Roi And Cost Model</Link></li>
+<li><Link href="/blog/ai-accessibility-optimizer-2026-7617">Ai Accessibility Optimizer 2026 7617</Link></li>
+<li><Link href="/blog/ai-agentic-workflows-2026-7483">Ai Agentic Workflows 2026 7483</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your devsecops pipeline: operations handbook initiative, t
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

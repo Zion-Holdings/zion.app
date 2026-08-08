@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'API Performance Testing | Zion Tech Group',
   description: 'API Performance Testing',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'API Performance Testing',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-performance-testing-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Performance Testing", "description": "API Performance Testing", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:01Z", "dateModified": "2026-08-07T04:51:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-performance-testing-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Performance Testing", "description": "API Performance Testing", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-performance-testing-2026/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your api performance testing initiative, the next step is 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-ad-copy-generator-2026-7273">Ai Ad Copy Generator 2026 7273</Link></li>
-<li><Link href="/blog/ai-for-audit-and-compliance-automation">Ai For Audit And Compliance Automation</Link></li>
-<li><Link href="/blog/ai-for-procurement-and-vendor-management">Ai For Procurement And Vendor Management</Link></li>
-<li><Link href="/blog/api-performance-testing-2026-7105">Api Performance Testing 2026 7105</Link></li>
+              <li><Link href="/blog/ai-autonomous-agents-2026-7691">Ai Autonomous Agents 2026 7691</Link></li>
+<li><Link href="/blog/database-migration-service-2026-7437">Database Migration Service 2026 7437</Link></li>
+<li><Link href="/blog/ai-agentic-workflows-2026-7621">Ai Agentic Workflows 2026 7621</Link></li>
+<li><Link href="/blog/itsm-modernization-from-jira-service-management-to-ai-augmented-service-desks-34">Itsm Modernization From Jira Service Management To Ai Augmented Service Desks 34</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your api performance testing initiative, the next step is 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

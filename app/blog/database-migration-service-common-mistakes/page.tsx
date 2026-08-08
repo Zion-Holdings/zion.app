@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Database Migration Service: common mistakes | Zion Tech Group',
   description: 'Database Migration Service: common mistakes',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Database Migration Service: common mistakes',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/database-migration-service-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Database Migration Service: common mistakes", "description": "Database Migration Service: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:24Z", "dateModified": "2026-08-07T04:52:24Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/database-migration-service-common-mistakes/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Database Migration Service: common mistakes", "description": "Database Migration Service: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/database-migration-service-common-mistakes/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For database migration service: common mistakes: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-2026-6979">Ai Observability 2026 6979</Link></li>
-<li><Link href="/blog/cloud-migration-services-checklist-for-it-leaders">Cloud Migration Services Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-data-backup-automation-roadmap">Ai Data Backup Automation Roadmap</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-case-study">Microsaas Expense Tracker Case Study</Link></li>
+              <li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-35">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 35</Link></li>
+<li><Link href="/blog/data-warehouse-modernization-2026">Data Warehouse Modernization 2026</Link></li>
+<li><Link href="/blog/automation-orchestration-enterprise-2026-7734">Automation Orchestration Enterprise 2026 7734</Link></li>
+<li><Link href="/blog/api-orchestration-layer-2026-7555">Api Orchestration Layer 2026 7555</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For database migration service: common mistakes: pick one workflow, assign owner
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-api-gateway-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway: ROI and cost model", "description": "AI API Gateway: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:36Z", "dateModified": "2026-08-07T04:52:36Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-roi-and-cost-model/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway: ROI and cost model", "description": "AI API Gateway: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-roi-and-cost-model/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-email-intelligence-security-and-governance">Ai Email Intelligence Security And Governance</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-architecture-overview">Cloud Cost Ai Optimizer Architecture Overview</Link></li>
-<li><Link href="/blog/devsecops-pipeline-2026-6749">Devsecops Pipeline 2026 6749</Link></li>
-<li><Link href="/blog/edge-computing-deployment-automation-roadmap">Edge Computing Deployment Automation Roadmap</Link></li>
+              <li><Link href="/blog/api-management-gateway-2026-7497">Api Management Gateway 2026 7497</Link></li>
+<li><Link href="/blog/etl-pipeline-optimization-2026-7719">Etl Pipeline Optimization 2026 7719</Link></li>
+<li><Link href="/blog/cloud-cost-optimization-implementation-playbook">Cloud Cost Optimization Implementation Playbook</Link></li>
+<li><Link href="/blog/api-management-gateway-2026-7428">Api Management Gateway 2026 7428</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

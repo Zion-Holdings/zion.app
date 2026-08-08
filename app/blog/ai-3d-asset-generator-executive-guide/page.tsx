@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI 3D Asset Generator: executive guide | Zion Tech Group',
   description: 'AI 3D Asset Generator: executive guide',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI 3D Asset Generator: executive guide',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-3d-asset-generator-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator: executive guide", "description": "AI 3D Asset Generator: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:22Z", "dateModified": "2026-08-07T04:51:22Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator: executive guide", "description": "AI 3D Asset Generator: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-executive-guide/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for ai 3d asset generator: executive guide: workflow completi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-2026-6756">Graphql Federation Platform 2026 6756</Link></li>
-<li><Link href="/blog/ai-email-intelligence-2026-6631">Ai Email Intelligence 2026 6631</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6567">Ai Data Lakehouse Pipelines 2026 6567</Link></li>
-<li><Link href="/blog/ai-it-operations-automation-2026-6832">Ai It Operations Automation 2026 6832</Link></li>
+              <li><Link href="/blog/ai-accessibility-auditor-automation-roadmap">Ai Accessibility Auditor Automation Roadmap</Link></li>
+<li><Link href="/blog/5g-solutions-2026-7397">5G Solutions 2026 7397</Link></li>
+<li><Link href="/blog/5g-solutions-2026-7673">5G Solutions 2026 7673</Link></li>
+<li><Link href="/blog/ai-bom-procurement-2026-7629">Ai Bom Procurement 2026 7629</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for ai 3d asset generator: executive guide: workflow completi
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

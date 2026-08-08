@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Enterprise Backup DR | Zion Tech Group',
   description: 'Enterprise Backup DR',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Enterprise Backup DR',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/enterprise-backup-dr-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR", "description": "Enterprise Backup DR", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:17Z", "dateModified": "2026-08-07T04:51:17Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR", "description": "Enterprise Backup DR", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For enterprise backup dr: pick one workflow, assign ownership, define success me
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-6629">Data Analytics Platform Modern Enterprise 2026 6629</Link></li>
-<li><Link href="/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization">5 Proven Ai Automation Strategies For Enterprise Workflow Optimization</Link></li>
-<li><Link href="/blog/chaos-engineering-operations-handbook">Chaos Engineering Operations Handbook</Link></li>
-<li><Link href="/blog/cloud-finops-2026-6811">Cloud Finops 2026 6811</Link></li>
+              <li><Link href="/blog/api-performance-testing-2026-7726">Api Performance Testing 2026 7726</Link></li>
+<li><Link href="/blog/etl-pipeline-optimization-2026-7719">Etl Pipeline Optimization 2026 7719</Link></li>
+<li><Link href="/blog/cloud-cost-ai-optimizer-automation-roadmap">Cloud Cost Ai Optimizer Automation Roadmap</Link></li>
+<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-7474">Micro Saas Ai Customer Onboarding 2026 7474</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For enterprise backup dr: pick one workflow, assign ownership, define success me
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

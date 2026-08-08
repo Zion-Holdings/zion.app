@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Brand Voice Guardian: implementation playbook | Zion Tech Group',
   description: 'Brand Voice Guardian: implementation playbook',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Brand Voice Guardian: implementation playbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/brand-voice-guardian-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Brand Voice Guardian: implementation playbook", "description": "Brand Voice Guardian: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T08:12:15Z", "dateModified": "2026-08-07T08:12:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/brand-voice-guardian-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Brand Voice Guardian: implementation playbook", "description": "Brand Voice Guardian: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/brand-voice-guardian-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-code-deployment-2026-6867">Autonomous Code Deployment 2026 6867</Link></li>
-<li><Link href="/blog/ai-api-gateway-vendor-evaluation">Ai Api Gateway Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-roi-and-cost-model">Ai Customer Success Churn Prevention Roi And Cost Model</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-starter-template">Enterprise Ai Intelligence Hub Starter Template</Link></li>
+              <li><Link href="/blog/ai-ad-copy-generator-2026-7618">Ai Ad Copy Generator 2026 7618</Link></li>
+<li><Link href="/blog/ai-bdr-sdr-2026-7766">Ai Bdr Sdr 2026 7766</Link></li>
+<li><Link href="/blog/cloud-cost-ai-optimizer-2026-7431">Cloud Cost Ai Optimizer 2026 7431</Link></li>
+<li><Link href="/blog/automated-ai-reporting-policy-and-compliance">Automated Ai Reporting Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

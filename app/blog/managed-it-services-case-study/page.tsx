@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Managed IT Services: case study | Zion Tech Group',
   description: 'Managed IT Services: case study',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Managed IT Services: case study',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/managed-it-services-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services: case study", "description": "Managed IT Services: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:38Z", "dateModified": "2026-08-07T04:51:38Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services: case study", "description": "Managed IT Services: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-case-study/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your managed it services: case study initiative, the next 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-email-intelligence-2026-6976">Ai Email Intelligence 2026 6976</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026-6792">Ai Agent Tool Builder 2026 6792</Link></li>
-<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7043">Data Analytics Platform Modern Enterprise 2026 7043</Link></li>
-<li><Link href="/blog/chaos-engineering-implementation-playbook">Chaos Engineering Implementation Playbook</Link></li>
+              <li><Link href="/blog/api-orchestration-layer-2026">Api Orchestration Layer 2026</Link></li>
+<li><Link href="/blog/event-driven-architecture-2026-7582">Event Driven Architecture 2026 7582</Link></li>
+<li><Link href="/blog/ai-autonomous-agents-deployment-patterns">Ai Autonomous Agents Deployment Patterns</Link></li>
+<li><Link href="/blog/ai-data-backup-2026-7728">Ai Data Backup 2026 7728</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your managed it services: case study initiative, the next 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

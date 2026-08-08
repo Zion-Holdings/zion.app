@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI BOM Procurement: policy and compliance | Zion Tech Group',
   description: 'AI BOM Procurement: policy and compliance',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI BOM Procurement: policy and compliance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-bom-procurement-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BOM Procurement: policy and compliance", "description": "AI BOM Procurement: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:57Z", "dateModified": "2026-08-07T07:56:57Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bom-procurement-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BOM Procurement: policy and compliance", "description": "AI BOM Procurement: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bom-procurement-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -37,7 +37,7 @@ export default function Page() {
 
         <section className="prose prose-invert max-w-none">
 ## Why this matters now
-Buyers evaluating ai bom procurement: policy and compliance in 2026 are prioritizing measurable outcomes over feature checklists. This guide focuses on practical adoption, risk reduction, and ROI because generic ai marketing no longer converts informed buyers. Teams that invest in ai bom procurement: policy and compliance with clear success metrics and phased delivery consistently outperform teams that chase experimental AI hype. The organizations that win in 2026 will treat ai bom procurement: policy and compliance as a durable capability, not a one-off project, and they will instrument execution from day one. If your team is still debating whether ai bom procurement: policy and compliance is worth investing in, use this guide to build the business case with evidence rather than vendor claims.
+Buyers evaluating ai bom procurement: policy and compliance in 2026 are prioritizing measurable outcomes over feature checklists. This guide focuses on practical adoption, risk reduction, and ROI because generic cloud marketing no longer converts informed buyers. Teams that invest in ai bom procurement: policy and compliance with clear success metrics and phased delivery consistently outperform teams that chase experimental AI hype. The organizations that win in 2026 will treat ai bom procurement: policy and compliance as a durable capability, not a one-off project, and they will instrument execution from day one. If your team is still debating whether ai bom procurement: policy and compliance is worth investing in, use this guide to build the business case with evidence rather than vendor claims.
 
 ## Executive summary
 This post gives executives a concise view of ai bom procurement: policy and compliance: value drivers, adoption blockers, realistic timelines, and the ownership model required for success. The bottom line: ai bom procurement: policy and compliance can shorten delivery cycles, reduce manual exceptions, and improve customer outcomes when scoped correctly and operated responsibly. Recommendation: start with one workflow, assign ownership, define success metrics, and review after 30 days before broader rollout. Use this guide to align leadership, set expectations, and avoid the common mistake of piloting without service ownership or alerting.
@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/apm-application-performance-operations-handbook">Apm Application Performance Operations Handbook</Link></li>
-<li><Link href="/blog/ai-api-gateway-2026-6551">Ai Api Gateway 2026 6551</Link></li>
-<li><Link href="/blog/api-performance-testing-implementation-playbook">Api Performance Testing Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-2026-6800">Ai Bdr Sdr 2026 6800</Link></li>
+              <li><Link href="/blog/autonomous-qa-engineering-2026-7627">Autonomous Qa Engineering 2026 7627</Link></li>
+<li><Link href="/blog/endpoint-management-checklist-for-it-leaders">Endpoint Management Checklist For It Leaders</Link></li>
+<li><Link href="/blog/devops-gen-ai-cicd-2026-7714">Devops Gen Ai Cicd 2026 7714</Link></li>
+<li><Link href="/blog/ai-3d-asset-generator-2026-7408">Ai 3D Asset Generator 2026 7408</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

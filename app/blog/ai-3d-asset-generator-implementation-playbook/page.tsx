@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI 3D Asset Generator: implementation playbook | Zion Tech Group',
   description: 'AI 3D Asset Generator: implementation playbook',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI 3D Asset Generator: implementation playbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-3d-asset-generator-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator: implementation playbook", "description": "AI 3D Asset Generator: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:08:02Z", "dateModified": "2026-08-07T05:08:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator: implementation playbook", "description": "AI 3D Asset Generator: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For ai 3d asset generator: implementation playbook: pick one workflow, assign ow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automation-orchestration-enterprise-2026-6630">Automation Orchestration Enterprise 2026 6630</Link></li>
-<li><Link href="/blog/ai-observability-deployment-patterns">Ai Observability Deployment Patterns</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-implementation-playbook">Enterprise Ai Intelligence Hub Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-observability-2026-7117">Ai Observability 2026 7117</Link></li>
+              <li><Link href="/blog/cloud-cost-optimization-checklist-2026-7730">Cloud Cost Optimization Checklist 2026 7730</Link></li>
+<li><Link href="/blog/cyber-threat-intelligence-2026-7573">Cyber Threat Intelligence 2026 7573</Link></li>
+<li><Link href="/blog/passwordless-authentication-strategy-fido2-passkeys-sso-integration-31">Passwordless Authentication Strategy Fido2 Passkeys Sso Integration 31</Link></li>
+<li><Link href="/blog/autonomous-qa-engineering-case-study">Autonomous Qa Engineering Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For ai 3d asset generator: implementation playbook: pick one workflow, assign ow
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

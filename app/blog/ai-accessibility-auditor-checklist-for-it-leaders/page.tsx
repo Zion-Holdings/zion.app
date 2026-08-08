@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-accessibility-auditor-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Auditor: checklist for IT leaders", "description": "AI Accessibility Auditor: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:59Z", "dateModified": "2026-08-07T04:51:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-auditor-checklist-for-it-leaders/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Auditor: checklist for IT leaders", "description": "AI Accessibility Auditor: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-auditor-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/managed-it-services-case-study">Managed It Services Case Study</Link></li>
-<li><Link href="/blog/event-driven-architecture-2026-7306">Event Driven Architecture 2026 7306</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-implementation-playbook">Cloud Cost Optimization Implementation Playbook</Link></li>
-<li><Link href="/blog/api-security-testing-starter-template">Api Security Testing Starter Template</Link></li>
+              <li><Link href="/blog/micro-saas-ai-social-media-manager-2026-7682">Micro Saas Ai Social Media Manager 2026 7682</Link></li>
+<li><Link href="/blog/aiops-anomaly-detection-2026-7623">Aiops Anomaly Detection 2026 7623</Link></li>
+<li><Link href="/blog/ai-msp-security-compliance-2026-7670">Ai Msp Security Compliance 2026 7670</Link></li>
+<li><Link href="/blog/endpoint-management-2026-7441">Endpoint Management 2026 7441</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

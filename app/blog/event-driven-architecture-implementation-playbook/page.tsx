@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/event-driven-architecture-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Event Driven Architecture: implementation playbook", "description": "Event Driven Architecture: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:13Z", "dateModified": "2026-08-07T04:52:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/event-driven-architecture-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Event Driven Architecture: implementation playbook", "description": "Event Driven Architecture: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/event-driven-architecture-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for event driven architecture: implementation playbook: workf
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-social-media-manager-2026-6992">Micro Saas Ai Social Media Manager 2026 6992</Link></li>
-<li><Link href="/blog/chaos-engineering-2026-6533">Chaos Engineering 2026 6533</Link></li>
-<li><Link href="/blog/automation-orchestration-starter-template">Automation Orchestration Starter Template</Link></li>
-<li><Link href="/blog/ai-data-backup-2026-6831">Ai Data Backup 2026 6831</Link></li>
+              <li><Link href="/blog/5g-solutions-2026-7397">5G Solutions 2026 7397</Link></li>
+<li><Link href="/blog/container-security-lifecycle-2026-7572">Container Security Lifecycle 2026 7572</Link></li>
+<li><Link href="/blog/apm-application-performance-2026-7429">Apm Application Performance 2026 7429</Link></li>
+<li><Link href="/blog/document-processing-automation-extract-data-invoices-contracts-forms-18">Document Processing Automation Extract Data Invoices Contracts Forms 18</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for event driven architecture: implementation playbook: workf
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

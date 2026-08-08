@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-accessibility-optimizer-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Optimizer: automation roadmap", "description": "AI Accessibility Optimizer: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:03Z", "dateModified": "2026-08-07T04:51:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Optimizer: automation roadmap", "description": "AI Accessibility Optimizer: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for ai accessibility optimizer: automation roadmap: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-support-pro-2026-6633">Ai Customer Support Pro 2026 6633</Link></li>
-<li><Link href="/blog/micro-saas-ai-social-media-manager-2026-6578">Micro Saas Ai Social Media Manager 2026 6578</Link></li>
-<li><Link href="/blog/ai-data-backup-2026-7245">Ai Data Backup 2026 7245</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026-6930">Ai Agent Tool Builder 2026 6930</Link></li>
+              <li><Link href="/blog/cloud-finops-starter-template">Cloud Finops Starter Template</Link></li>
+<li><Link href="/blog/ai-accessibility-optimizer-2026-7617">Ai Accessibility Optimizer 2026 7617</Link></li>
+<li><Link href="/blog/ai-msp-security-compliance-executive-guide">Ai Msp Security Compliance Executive Guide</Link></li>
+<li><Link href="/blog/edge-computing-deployment-2026-7440">Edge Computing Deployment 2026 7440</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for ai accessibility optimizer: automation roadmap: workflow 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

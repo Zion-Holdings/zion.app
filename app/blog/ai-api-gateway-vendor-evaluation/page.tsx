@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-api-gateway-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway: vendor evaluation", "description": "AI API Gateway: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:21Z", "dateModified": "2026-08-07T04:52:21Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-vendor-evaluation/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway: vendor evaluation", "description": "AI API Gateway: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-vendor-evaluation/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for ai api gateway: vendor evaluation: workflow completion ra
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-frameworks-for-business-automation">Ai Agent Frameworks For Business Automation</Link></li>
-<li><Link href="/blog/database-migration-service-roi-and-cost-model">Database Migration Service Roi And Cost Model</Link></li>
-<li><Link href="/blog/event-driven-architecture-2026-7306">Event Driven Architecture 2026 7306</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-deployment-patterns">Microsaas Hr Recruitment Deployment Patterns</Link></li>
+              <li><Link href="/blog/ai-data-engineering-strategy-for-latam-enterprises-in-2026-11">Ai Data Engineering Strategy For Latam Enterprises In 2026 11</Link></li>
+<li><Link href="/blog/ai-agentic-workflows-2026-7690">Ai Agentic Workflows 2026 7690</Link></li>
+<li><Link href="/blog/event-driven-architecture-roi-and-cost-model">Event Driven Architecture Roi And Cost Model</Link></li>
+<li><Link href="/blog/ai-autonomous-agents-vendor-evaluation">Ai Autonomous Agents Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for ai api gateway: vendor evaluation: workflow completion ra
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

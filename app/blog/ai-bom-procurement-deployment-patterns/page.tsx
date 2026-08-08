@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI BOM Procurement: deployment patterns | Zion Tech Group',
   description: 'AI BOM Procurement: deployment patterns',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI BOM Procurement: deployment patterns',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-bom-procurement-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BOM Procurement: deployment patterns", "description": "AI BOM Procurement: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T08:58:05Z", "dateModified": "2026-08-07T08:58:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bom-procurement-deployment-patterns/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BOM Procurement: deployment patterns", "description": "AI BOM Procurement: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bom-procurement-deployment-patterns/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your ai bom procurement: deployment patterns initiative, t
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devops-cicd-2026-6642">Devops Cicd 2026 6642</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026">Managed It Services Small Business 2026</Link></li>
-<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7250">Data Analytics Platform Modern Enterprise 2026 7250</Link></li>
-<li><Link href="/blog/container-security-lifecycle-operations-handbook">Container Security Lifecycle Operations Handbook</Link></li>
+              <li><Link href="/blog/api-integration-2026-7703">Api Integration 2026 7703</Link></li>
+<li><Link href="/blog/process-mining-for-operations-discover-bottlenecks-and-automate-what-matters-7">Process Mining For Operations Discover Bottlenecks And Automate What Matters 7</Link></li>
+<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7403">Micro Saas Ai Expense Tracker 2026 7403</Link></li>
+<li><Link href="/blog/ai-autonomous-agents-2026-7622">Ai Autonomous Agents 2026 7622</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your ai bom procurement: deployment patterns initiative, t
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

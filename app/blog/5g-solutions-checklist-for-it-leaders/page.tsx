@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: '5G Solutions: checklist for IT leaders | Zion Tech Group',
   description: '5G Solutions: checklist for IT leaders',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: '5G Solutions: checklist for IT leaders',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/5g-solutions-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "5G Solutions: checklist for IT leaders", "description": "5G Solutions: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:39Z", "dateModified": "2026-08-07T04:51:39Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/5g-solutions-checklist-for-it-leaders/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "5G Solutions: checklist for IT leaders", "description": "5G Solutions: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/5g-solutions-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your 5g solutions: checklist for it leaders initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/edge-computing-deployment-2026-7302">Edge Computing Deployment 2026 7302</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-2026-6511">Ai 3D Asset Generator 2026 6511</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-executive-guide">Ai Autonomous Agents Executive Guide</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026-7003">Api Orchestration Layer 2026 7003</Link></li>
+              <li><Link href="/blog/enterprise-backup-dr-2026-7718">Enterprise Backup Dr 2026 7718</Link></li>
+<li><Link href="/blog/ai-accessibility-auditor-2026-7754">Ai Accessibility Auditor 2026 7754</Link></li>
+<li><Link href="/blog/api-management-gateway-2026-7635">Api Management Gateway 2026 7635</Link></li>
+<li><Link href="/blog/brand-voice-guardian-2026-7423">Brand Voice Guardian 2026 7423</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your 5g solutions: checklist for it leaders initiative, th
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

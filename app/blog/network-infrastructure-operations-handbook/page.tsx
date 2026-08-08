@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Network Infrastructure: operations handbook | Zion Tech Group',
   description: 'Network Infrastructure: operations handbook',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Network Infrastructure: operations handbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/network-infrastructure-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: operations handbook", "description": "Network Infrastructure: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:29Z", "dateModified": "2026-08-07T04:51:29Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-operations-handbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: operations handbook", "description": "Network Infrastructure: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-operations-handbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for network infrastructure: operations handbook: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-backup-2026-7107">Ai Data Backup 2026 7107</Link></li>
-<li><Link href="/blog/api-integration-2026-6944">Api Integration 2026 6944</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7334">Micro Saas Ai Expense Tracker 2026 7334</Link></li>
-<li><Link href="/blog/ai-in-education-and-learning-systems">Ai In Education And Learning Systems</Link></li>
+              <li><Link href="/blog/ai-ad-copy-generator-2026-7756">Ai Ad Copy Generator 2026 7756</Link></li>
+<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7610">Micro Saas Ai Expense Tracker 2026 7610</Link></li>
+<li><Link href="/blog/ai-bdr-sdr-2026-7559">Ai Bdr Sdr 2026 7559</Link></li>
+<li><Link href="/blog/ai-autonomous-agents-2026-7415">Ai Autonomous Agents 2026 7415</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for network infrastructure: operations handbook: workflow com
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

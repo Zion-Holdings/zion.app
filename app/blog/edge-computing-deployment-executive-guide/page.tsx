@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Edge Computing Deployment: executive guide | Zion Tech Group',
   description: 'Edge Computing Deployment: executive guide',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Edge Computing Deployment: executive guide',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/edge-computing-deployment-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Edge Computing Deployment: executive guide", "description": "Edge Computing Deployment: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:19Z", "dateModified": "2026-08-07T04:52:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/edge-computing-deployment-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Edge Computing Deployment: executive guide", "description": "Edge Computing Deployment: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/edge-computing-deployment-executive-guide/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For edge computing deployment: executive guide: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-optimization-checklist-2026-6971">Cloud Cost Optimization Checklist 2026 6971</Link></li>
-<li><Link href="/blog/ai-email-intelligence-2026-7114">Ai Email Intelligence 2026 7114</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-implementation-playbook">Ai Ad Copy Generator Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-api-gateway-2026-7310">Ai Api Gateway 2026 7310</Link></li>
+              <li><Link href="/blog/api-orchestration-layer-2026-7762">Api Orchestration Layer 2026 7762</Link></li>
+<li><Link href="/blog/agentic-ai-orchestration-build-multi-agent-systems-collaborate-29">Agentic Ai Orchestration Build Multi Agent Systems Collaborate 29</Link></li>
+<li><Link href="/blog/automation-orchestration-enterprise-2026-7389">Automation Orchestration Enterprise 2026 7389</Link></li>
+<li><Link href="/blog/devsecops-pipeline-2026-7508">Devsecops Pipeline 2026 7508</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For edge computing deployment: executive guide: pick one workflow, assign owners
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

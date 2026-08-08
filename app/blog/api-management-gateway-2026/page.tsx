@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-management-gateway-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Management Gateway", "description": "API Management Gateway", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:17Z", "dateModified": "2026-08-07T04:51:17Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-management-gateway-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Management Gateway", "description": "API Management Gateway", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-management-gateway-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For api management gateway: pick one workflow, assign ownership, define success 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-warehouse-modernization-2026-6815">Data Warehouse Modernization 2026 6815</Link></li>
-<li><Link href="/blog/it-consulting-2026-7260">It Consulting 2026 7260</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-6755">Smart Contract Audit 2026 6755</Link></li>
-<li><Link href="/blog/api-gateway-management-2026-6690">Api Gateway Management 2026 6690</Link></li>
+              <li><Link href="/blog/ai-msp-security-compliance-2026-7739">Ai Msp Security Compliance 2026 7739</Link></li>
+<li><Link href="/blog/api-management-gateway-2026-7428">Api Management Gateway 2026 7428</Link></li>
+<li><Link href="/blog/genai-devops-cicd-security-and-governance">Genai Devops Cicd Security And Governance</Link></li>
+<li><Link href="/blog/devops-cicd-roi-and-cost-model">Devops Cicd Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For api management gateway: pick one workflow, assign ownership, define success 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-management-gateway-security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Management Gateway: security and governance", "description": "API Management Gateway: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:50Z", "dateModified": "2026-08-07T04:51:50Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-management-gateway-security-and-governance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Management Gateway: security and governance", "description": "API Management Gateway: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-management-gateway-security-and-governance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agentic-workflows-implementation-playbook">Ai Agentic Workflows Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-email-intelligence-2026-7045">Ai Email Intelligence 2026 7045</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026-7017">Cloud Cost Ai Optimizer 2026 7017</Link></li>
-<li><Link href="/blog/cloud-native-app-development-2026-7019">Cloud Native App Development 2026 7019</Link></li>
+              <li><Link href="/blog/api-management-gateway-2026-7566">Api Management Gateway 2026 7566</Link></li>
+<li><Link href="/blog/ai-agentic-workflows-2026-7759">Ai Agentic Workflows 2026 7759</Link></li>
+<li><Link href="/blog/graphql-federation-platform-2026-7446">Graphql Federation Platform 2026 7446</Link></li>
+<li><Link href="/blog/ai-bom-procurement-deployment-patterns">Ai Bom Procurement Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

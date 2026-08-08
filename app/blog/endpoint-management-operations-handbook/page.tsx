@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Endpoint Management: operations handbook | Zion Tech Group',
   description: 'Endpoint Management: operations handbook',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Endpoint Management: operations handbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/endpoint-management-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Endpoint Management: operations handbook", "description": "Endpoint Management: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T09:43:49Z", "dateModified": "2026-08-07T09:43:49Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/endpoint-management-operations-handbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Endpoint Management: operations handbook", "description": "Endpoint Management: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/endpoint-management-operations-handbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for endpoint management: operations handbook: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-hr-recruitment-2026">Micro Saas Ai Hr Recruitment 2026</Link></li>
-<li><Link href="/blog/automation-orchestration-case-study">Automation Orchestration Case Study</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-vendor-evaluation">Enterprise Backup Dr Vendor Evaluation</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-security-and-governance">Microsaas Hr Recruitment Security And Governance</Link></li>
+              <li><Link href="/blog/ai-customer-support-pro-2026-7668">Ai Customer Support Pro 2026 7668</Link></li>
+<li><Link href="/blog/api-performance-testing-2026-7726">Api Performance Testing 2026 7726</Link></li>
+<li><Link href="/blog/ai-it-operations-automation-2026-7591">Ai It Operations Automation 2026 7591</Link></li>
+<li><Link href="/blog/it-consulting-automation-roadmap">It Consulting Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for endpoint management: operations handbook: workflow comple
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

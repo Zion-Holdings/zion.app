@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI MSP Security Compliance: case study | Zion Tech Group',
   description: 'AI MSP Security Compliance: case study',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI MSP Security Compliance: case study',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-msp-security-compliance-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI MSP Security Compliance: case study", "description": "AI MSP Security Compliance: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:26:03Z", "dateModified": "2026-08-07T07:26:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-msp-security-compliance-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI MSP Security Compliance: case study", "description": "AI MSP Security Compliance: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-msp-security-compliance-case-study/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for ai msp security compliance: case study: workflow completi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-integration-2026-7151">Api Integration 2026 7151</Link></li>
-<li><Link href="/blog/cloud-native-app-development-vendor-evaluation">Cloud Native App Development Vendor Evaluation</Link></li>
-<li><Link href="/blog/edge-computing-deployment-operations-handbook">Edge Computing Deployment Operations Handbook</Link></li>
-<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-6974">Data Analytics Platform Modern Enterprise 2026 6974</Link></li>
+              <li><Link href="/blog/microsaas-customer-onboarding-deployment-patterns">Microsaas Customer Onboarding Deployment Patterns</Link></li>
+<li><Link href="/blog/cloud-finops-2026-7777">Cloud Finops 2026 7777</Link></li>
+<li><Link href="/blog/ai-performance-monitoring-case-study">Ai Performance Monitoring Case Study</Link></li>
+<li><Link href="/blog/event-driven-architecture-2026-7651">Event Driven Architecture 2026 7651</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for ai msp security compliance: case study: workflow completi
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

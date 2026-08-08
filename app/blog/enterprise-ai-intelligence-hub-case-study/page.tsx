@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Enterprise AI Intelligence Hub: case study | Zion Tech Group',
   description: 'Enterprise AI Intelligence Hub: case study',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Enterprise AI Intelligence Hub: case study',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise AI Intelligence Hub: case study", "description": "Enterprise AI Intelligence Hub: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T08:12:12Z", "dateModified": "2026-08-07T08:12:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise AI Intelligence Hub: case study", "description": "Enterprise AI Intelligence Hub: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-case-study/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For enterprise ai intelligence hub: case study: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-development-acceleration-2026">Ai Development Acceleration 2026</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-6661">Autonomous Qa Engineering 2026 6661</Link></li>
-<li><Link href="/blog/cloud-finops-implementation-playbook">Cloud Finops Implementation Playbook</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-checklist-for-it-leaders">Autonomous Code Deployment Checklist For It Leaders</Link></li>
+              <li><Link href="/blog/ai-observability-2026-7669">Ai Observability 2026 7669</Link></li>
+<li><Link href="/blog/devops-gen-ai-cicd-2026-7507">Devops Gen Ai Cicd 2026 7507</Link></li>
+<li><Link href="/blog/cloud-native-app-development-2026-7640">Cloud Native App Development 2026 7640</Link></li>
+<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-7542">Micro Saas Ai Hr Recruitment 2026 7542</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For enterprise ai intelligence hub: case study: pick one workflow, assign owners
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

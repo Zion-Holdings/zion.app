@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'GraphQL Federation Platform: implementation playbook | Zion Tech Group',
   description: 'GraphQL Federation Platform: implementation playbook',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'GraphQL Federation Platform: implementation playbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/graphql-federation-platform-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GraphQL Federation Platform: implementation playbook", "description": "GraphQL Federation Platform: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:08:03Z", "dateModified": "2026-08-07T05:08:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/graphql-federation-platform-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GraphQL Federation Platform: implementation playbook", "description": "GraphQL Federation Platform: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/graphql-federation-platform-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For graphql federation platform: implementation playbook: pick one workflow, ass
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-auditor-architecture-overview">Ai Accessibility Auditor Architecture Overview</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-2026">Ai Autonomous Agents 2026</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-security-and-governance">Ai Agentic Workflows Security And Governance</Link></li>
-<li><Link href="/blog/it-consulting-2026-6708">It Consulting 2026 6708</Link></li>
+              <li><Link href="/blog/incident-response-retainer-2026-7447">Incident Response Retainer 2026 7447</Link></li>
+<li><Link href="/blog/edge-computing-deployment-2026-7440">Edge Computing Deployment 2026 7440</Link></li>
+<li><Link href="/blog/ai-observability-2026">Ai Observability 2026</Link></li>
+<li><Link href="/blog/ai-accessibility-optimizer-evaluation-framework">Ai Accessibility Optimizer Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For graphql federation platform: implementation playbook: pick one workflow, ass
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

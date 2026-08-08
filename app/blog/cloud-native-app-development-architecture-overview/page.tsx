@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Cloud Native App Development: architecture overview | Zion Tech Group',
   description: 'Cloud Native App Development: architecture overview',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Cloud Native App Development: architecture overview',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-native-app-development-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Native App Development: architecture overview", "description": "Cloud Native App Development: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:47Z", "dateModified": "2026-08-07T04:51:47Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-native-app-development-architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Native App Development: architecture overview", "description": "Cloud Native App Development: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-native-app-development-architecture-overview/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your cloud native app development: architecture overview i
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automation-orchestration-implementation-playbook">Automation Orchestration Implementation Playbook</Link></li>
-<li><Link href="/blog/container-security-lifecycle-2026-7089">Container Security Lifecycle 2026 7089</Link></li>
-<li><Link href="/blog/api-performance-testing-2026-6898">Api Performance Testing 2026 6898</Link></li>
-<li><Link href="/blog/automated-ai-reporting-2026-7280">Automated Ai Reporting 2026 7280</Link></li>
+              <li><Link href="/blog/apm-application-performance-2026">Apm Application Performance 2026</Link></li>
+<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-7612">Micro Saas Ai Customer Onboarding 2026 7612</Link></li>
+<li><Link href="/blog/cloud-cost-ai-optimizer-automation-roadmap">Cloud Cost Ai Optimizer Automation Roadmap</Link></li>
+<li><Link href="/blog/ai-accessibility-optimizer-2026-7548">Ai Accessibility Optimizer 2026 7548</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your cloud native app development: architecture overview i
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

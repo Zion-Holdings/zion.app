@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Database Migration Service: ROI and cost model | Zion Tech Group',
   description: 'Database Migration Service: ROI and cost model',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Database Migration Service: ROI and cost model',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/database-migration-service-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Database Migration Service: ROI and cost model", "description": "Database Migration Service: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:54Z", "dateModified": "2026-08-07T04:51:54Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/database-migration-service-roi-and-cost-model/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Database Migration Service: ROI and cost model", "description": "Database Migration Service: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/database-migration-service-roi-and-cost-model/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for database migration service: roi and cost model: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/container-security-lifecycle-2026-6951">Container Security Lifecycle 2026 6951</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026-6720">Ai Accessibility Optimizer 2026 6720</Link></li>
-<li><Link href="/blog/devsecops-pipeline-policy-and-compliance">Devsecops Pipeline Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-2026-7063">Ai 3D Asset Generator 2026 7063</Link></li>
+              <li><Link href="/blog/api-orchestration-layer-operations-handbook">Api Orchestration Layer Operations Handbook</Link></li>
+<li><Link href="/blog/cloud-finops-2026-7708">Cloud Finops 2026 7708</Link></li>
+<li><Link href="/blog/ai-msp-security-compliance-2026-7394">Ai Msp Security Compliance 2026 7394</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7407">Enterprise Ai Intelligence Hub 2026 7407</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for database migration service: roi and cost model: workflow 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

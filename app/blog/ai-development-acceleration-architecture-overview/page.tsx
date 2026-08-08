@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Development Acceleration: architecture overview | Zion Tech Group',
   description: 'AI Development Acceleration: architecture overview',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Development Acceleration: architecture overview',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-development-acceleration-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Development Acceleration: architecture overview", "description": "AI Development Acceleration: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:22Z", "dateModified": "2026-08-07T04:51:22Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-development-acceleration-architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Development Acceleration: architecture overview", "description": "AI Development Acceleration: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-development-acceleration-architecture-overview/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For ai development acceleration: architecture overview: pick one workflow, assig
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-auditor-2026-6857">Ai Accessibility Auditor 2026 6857</Link></li>
-<li><Link href="/blog/it-consulting-2026-6984">It Consulting 2026 6984</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7127">Micro Saas Ai Expense Tracker 2026 7127</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-6868">Autonomous Qa Engineering 2026 6868</Link></li>
+              <li><Link href="/blog/brand-voice-guardian-2026-7561">Brand Voice Guardian 2026 7561</Link></li>
+<li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-20">Customer Success Automation Trigger Health Checks Outreach And Product Signals 20</Link></li>
+<li><Link href="/blog/brand-voice-guardian-2026-7423">Brand Voice Guardian 2026 7423</Link></li>
+<li><Link href="/blog/devops-cicd-2026-7401">Devops Cicd 2026 7401</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For ai development acceleration: architecture overview: pick one workflow, assig
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AIOps Anomaly Detection: starter template | Zion Tech Group',
   description: 'AIOps Anomaly Detection: starter template',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AIOps Anomaly Detection: starter template',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/aiops-anomaly-detection-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection: starter template", "description": "AIOps Anomaly Detection: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:19Z", "dateModified": "2026-08-07T04:51:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-starter-template/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection: starter template", "description": "AIOps Anomaly Detection: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-starter-template/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For aiops anomaly detection: starter template: pick one workflow, assign ownersh
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automation-orchestration-enterprise-2026-6561">Automation Orchestration Enterprise 2026 6561</Link></li>
-<li><Link href="/blog/devsecops-pipeline-2026-7094">Devsecops Pipeline 2026 7094</Link></li>
-<li><Link href="/blog/graphql-federation-platform-2026-7239">Graphql Federation Platform 2026 7239</Link></li>
-<li><Link href="/blog/api-integration-2026-7151">Api Integration 2026 7151</Link></li>
+              <li><Link href="/blog/smart-contract-audit-2026-7445">Smart Contract Audit 2026 7445</Link></li>
+<li><Link href="/blog/ai-ad-copy-generator-2026-7687">Ai Ad Copy Generator 2026 7687</Link></li>
+<li><Link href="/blog/aiops-anomaly-detection-evaluation-framework">Aiops Anomaly Detection Evaluation Framework</Link></li>
+<li><Link href="/blog/managed-it-services-small-business-2026-7456">Managed It Services Small Business 2026 7456</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For aiops anomaly detection: starter template: pick one workflow, assign ownersh
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

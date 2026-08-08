@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Managed IT Services: implementation playbook | Zion Tech Group',
   description: 'Managed IT Services: implementation playbook',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Managed IT Services: implementation playbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/managed-it-services-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services: implementation playbook", "description": "Managed IT Services: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:26:07Z", "dateModified": "2026-08-07T07:26:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services: implementation playbook", "description": "Managed IT Services: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for managed it services: implementation playbook: workflow co
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-msp-security-compliance-2026-7118">Ai Msp Security Compliance 2026 7118</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-starter-template">Enterprise Ai Intelligence Hub Starter Template</Link></li>
-<li><Link href="/blog/api-integration-2026-7358">Api Integration 2026 7358</Link></li>
-<li><Link href="/blog/ai-email-intelligence-2026-6769">Ai Email Intelligence 2026 6769</Link></li>
+              <li><Link href="/blog/ai-development-acceleration-policy-and-compliance">Ai Development Acceleration Policy And Compliance</Link></li>
+<li><Link href="/blog/network-infrastructure-operations-handbook">Network Infrastructure Operations Handbook</Link></li>
+<li><Link href="/blog/autonomous-qa-engineering-2026-7696">Autonomous Qa Engineering 2026 7696</Link></li>
+<li><Link href="/blog/cloud-cost-optimization-checklist-2026-7385">Cloud Cost Optimization Checklist 2026 7385</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for managed it services: implementation playbook: workflow co
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

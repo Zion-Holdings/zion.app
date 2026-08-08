@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Performance Monitoring: architecture overview | Zion Tech Group',
   description: 'AI Performance Monitoring: architecture overview',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Performance Monitoring: architecture overview',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-performance-monitoring-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Performance Monitoring: architecture overview", "description": "AI Performance Monitoring: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:46Z", "dateModified": "2026-08-07T04:51:46Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-performance-monitoring-architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Performance Monitoring: architecture overview", "description": "AI Performance Monitoring: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-performance-monitoring-architecture-overview/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your ai performance monitoring: architecture overview init
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/chaos-engineering-2026-6947">Chaos Engineering 2026 6947</Link></li>
-<li><Link href="/blog/apm-application-performance-2026-7360">Apm Application Performance 2026 7360</Link></li>
-<li><Link href="/blog/smart-contract-audit-2026-6548">Smart Contract Audit 2026 6548</Link></li>
-<li><Link href="/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning">Ai Finops And Cloud Cost Optimization With Machine Learning</Link></li>
+              <li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-33">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 33</Link></li>
+<li><Link href="/blog/event-driven-architecture-implementation-playbook">Event Driven Architecture Implementation Playbook</Link></li>
+<li><Link href="/blog/brand-voice-guardian-2026-7423">Brand Voice Guardian 2026 7423</Link></li>
+<li><Link href="/blog/api-orchestration-layer-checklist-for-it-leaders">Api Orchestration Layer Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your ai performance monitoring: architecture overview init
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

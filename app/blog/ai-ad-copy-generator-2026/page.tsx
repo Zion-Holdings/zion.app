@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Ad Copy Generator | Zion Tech Group',
   description: 'AI Ad Copy Generator',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Ad Copy Generator',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-ad-copy-generator-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Ad Copy Generator", "description": "AI Ad Copy Generator", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:29Z", "dateModified": "2026-08-07T04:51:29Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-ad-copy-generator-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Ad Copy Generator", "description": "AI Ad Copy Generator", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-ad-copy-generator-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For ai ad copy generator: pick one workflow, assign ownership, define success me
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7043">Data Analytics Platform Modern Enterprise 2026 7043</Link></li>
-<li><Link href="/blog/ai-email-intelligence-checklist-for-it-leaders">Ai Email Intelligence Checklist For It Leaders</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-2026-6545">Enterprise Backup Dr 2026 6545</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7338">Enterprise Ai Intelligence Hub 2026 7338</Link></li>
+              <li><Link href="/blog/ai-bom-procurement-2026-7698">Ai Bom Procurement 2026 7698</Link></li>
+<li><Link href="/blog/database-migration-service-2026-7644">Database Migration Service 2026 7644</Link></li>
+<li><Link href="/blog/api-performance-testing-2026-7450">Api Performance Testing 2026 7450</Link></li>
+<li><Link href="/blog/ai-development-acceleration-2026-7460">Ai Development Acceleration 2026 7460</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For ai ad copy generator: pick one workflow, assign ownership, define success me
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

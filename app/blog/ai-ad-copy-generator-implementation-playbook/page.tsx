@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Ad Copy Generator: implementation playbook | Zion Tech Group',
   description: 'AI Ad Copy Generator: implementation playbook',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Ad Copy Generator: implementation playbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-ad-copy-generator-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Ad Copy Generator: implementation playbook", "description": "AI Ad Copy Generator: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:46Z", "dateModified": "2026-08-07T04:51:46Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-ad-copy-generator-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Ad Copy Generator: implementation playbook", "description": "AI Ad Copy Generator: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-ad-copy-generator-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For ai ad copy generator: implementation playbook: pick one workflow, assign own
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cyber-threat-intelligence-2026-6745">Cyber Threat Intelligence 2026 6745</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-2026-6523">Autonomous Qa Engineering 2026 6523</Link></li>
-<li><Link href="/blog/database-migration-service-evaluation-framework">Database Migration Service Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-implementation-playbook">Ai Agentic Workflows Implementation Playbook</Link></li>
+              <li><Link href="/blog/ai-agent-safety-evaluation-starter-template">Ai Agent Safety Evaluation Starter Template</Link></li>
+<li><Link href="/blog/ai-accessibility-optimizer-2026-7479">Ai Accessibility Optimizer 2026 7479</Link></li>
+<li><Link href="/blog/event-driven-architecture-2026-7582">Event Driven Architecture 2026 7582</Link></li>
+<li><Link href="/blog/ai-api-gateway-case-study">Ai Api Gateway Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For ai ad copy generator: implementation playbook: pick one workflow, assign own
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

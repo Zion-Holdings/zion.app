@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/accessibility-compliance-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance: case study", "description": "Accessibility Compliance: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:46Z", "dateModified": "2026-08-07T07:56:46Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance: case study", "description": "Accessibility Compliance: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-case-study/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for accessibility compliance: case study: workflow completion
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6912">Ai Data Lakehouse Pipelines 2026 6912</Link></li>
-<li><Link href="/blog/api-integration-2026-7358">Api Integration 2026 7358</Link></li>
-<li><Link href="/blog/ai-email-intelligence-2026">Ai Email Intelligence 2026</Link></li>
-<li><Link href="/blog/ai-email-intelligence-2026-6769">Ai Email Intelligence 2026 6769</Link></li>
+              <li><Link href="/blog/ai-it-operations-automation-2026-7660">Ai It Operations Automation 2026 7660</Link></li>
+<li><Link href="/blog/automated-provisioning-and-deprovisioning-identity-and-access-lifecycle-automation-35">Automated Provisioning And Deprovisioning Identity And Access Lifecycle Automation 35</Link></li>
+<li><Link href="/blog/ai-agent-safety-evaluation-2026-7550">Ai Agent Safety Evaluation 2026 7550</Link></li>
+<li><Link href="/blog/api-gateway-management-2026-7518">Api Gateway Management 2026 7518</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for accessibility compliance: case study: workflow completion
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

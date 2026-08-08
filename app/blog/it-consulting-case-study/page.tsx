@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'IT Consulting: case study | Zion Tech Group',
   description: 'IT Consulting: case study',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'IT Consulting: case study',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/it-consulting-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: case study", "description": "IT Consulting: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:43Z", "dateModified": "2026-08-07T04:51:43Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: case study", "description": "IT Consulting: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-case-study/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for it consulting: case study: workflow completion rate, esca
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-migration-services-2026-7124">Cloud Migration Services 2026 7124</Link></li>
-<li><Link href="/blog/devsecops-pipeline-2026-6542">Devsecops Pipeline 2026 6542</Link></li>
-<li><Link href="/blog/cloud-native-app-development-2026-7226">Cloud Native App Development 2026 7226</Link></li>
-<li><Link href="/blog/api-security-testing-2026-6968">Api Security Testing 2026 6968</Link></li>
+              <li><Link href="/blog/network-infrastructure-2026-7537">Network Infrastructure 2026 7537</Link></li>
+<li><Link href="/blog/api-integration-2026-7703">Api Integration 2026 7703</Link></li>
+<li><Link href="/blog/ai-data-backup-2026-7521">Ai Data Backup 2026 7521</Link></li>
+<li><Link href="/blog/automated-ai-reporting-2026-7487">Automated Ai Reporting 2026 7487</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for it consulting: case study: workflow completion rate, esca
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

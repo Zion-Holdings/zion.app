@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Automated AI Reporting: checklist for IT leaders | Zion Tech Group',
   description: 'Automated AI Reporting: checklist for IT leaders',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Automated AI Reporting: checklist for IT leaders',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/automated-ai-reporting-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automated AI Reporting: checklist for IT leaders", "description": "Automated AI Reporting: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:59Z", "dateModified": "2026-08-07T07:56:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automated-ai-reporting-checklist-for-it-leaders/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automated AI Reporting: checklist for IT leaders", "description": "Automated AI Reporting: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automated-ai-reporting-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for automated ai reporting: checklist for it leaders: workflo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-code-deployment-implementation-playbook">Autonomous Code Deployment Implementation Playbook</Link></li>
-<li><Link href="/blog/api-security-testing-2026-6692">Api Security Testing 2026 6692</Link></li>
-<li><Link href="/blog/apm-application-performance-2026">Apm Application Performance 2026</Link></li>
-<li><Link href="/blog/managed-it-services-policy-and-compliance">Managed It Services Policy And Compliance</Link></li>
+              <li><Link href="/blog/ai-agent-tool-builder-2026-7482">Ai Agent Tool Builder 2026 7482</Link></li>
+<li><Link href="/blog/automated-ai-reporting-executive-guide">Automated Ai Reporting Executive Guide</Link></li>
+<li><Link href="/blog/apm-application-performance-2026-7636">Apm Application Performance 2026 7636</Link></li>
+<li><Link href="/blog/ai-bdr-sdr-2026-7766">Ai Bdr Sdr 2026 7766</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for automated ai reporting: checklist for it leaders: workflo
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

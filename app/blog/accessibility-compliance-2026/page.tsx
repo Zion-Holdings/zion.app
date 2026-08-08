@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Accessibility Compliance | Zion Tech Group',
   description: 'Accessibility Compliance',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Accessibility Compliance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/accessibility-compliance-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance", "description": "Accessibility Compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:49Z", "dateModified": "2026-08-07T04:51:49Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance", "description": "Accessibility Compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For accessibility compliance: pick one workflow, assign ownership, define succes
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/aiops-anomaly-detection-2026-7347">Aiops Anomaly Detection 2026 7347</Link></li>
-<li><Link href="/blog/ai-it-operations-automation-2026-7177">Ai It Operations Automation 2026 7177</Link></li>
-<li><Link href="/blog/ai-for-gaming-and-esports">Ai For Gaming And Esports</Link></li>
-<li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7196">Micro Saas Ai Expense Tracker 2026 7196</Link></li>
+              <li><Link href="/blog/opentelemetry-implementation-guide-instrument-any-language-export-anywhere-10">Opentelemetry Implementation Guide Instrument Any Language Export Anywhere 10</Link></li>
+<li><Link href="/blog/5g-solutions-2026-7466">5G Solutions 2026 7466</Link></li>
+<li><Link href="/blog/ai-accessibility-auditor-common-mistakes">Ai Accessibility Auditor Common Mistakes</Link></li>
+<li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-50">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 50</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For accessibility compliance: pick one workflow, assign ownership, define succes
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Email Intelligence: operations handbook | Zion Tech Group',
   description: 'AI Email Intelligence: operations handbook',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Email Intelligence: operations handbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-email-intelligence-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Email Intelligence: operations handbook", "description": "AI Email Intelligence: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:33Z", "dateModified": "2026-08-07T04:51:33Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-intelligence-operations-handbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Email Intelligence: operations handbook", "description": "AI Email Intelligence: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-intelligence-operations-handbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for ai email intelligence: operations handbook: workflow comp
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-2026-6958">Endpoint Management 2026 6958</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-2026-6566">Ai Msp Security Compliance 2026 6566</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-2026-7356">Ai Performance Monitoring 2026 7356</Link></li>
-<li><Link href="/blog/ai-observability-2026-6910">Ai Observability 2026 6910</Link></li>
+              <li><Link href="/blog/brand-voice-guardian-2026-7630">Brand Voice Guardian 2026 7630</Link></li>
+<li><Link href="/blog/chaos-engineering-2026-7430">Chaos Engineering 2026 7430</Link></li>
+<li><Link href="/blog/ai-autonomous-agents-2026-7760">Ai Autonomous Agents 2026 7760</Link></li>
+<li><Link href="/blog/ai-email-intelligence-security-and-governance">Ai Email Intelligence Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for ai email intelligence: operations handbook: workflow comp
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Cloud Native App Development: starter template | Zion Tech Group',
   description: 'Cloud Native App Development: starter template',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Cloud Native App Development: starter template',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-native-app-development-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Native App Development: starter template", "description": "Cloud Native App Development: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:23Z", "dateModified": "2026-08-07T04:52:23Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-native-app-development-starter-template/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Native App Development: starter template", "description": "Cloud Native App Development: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-native-app-development-starter-template/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for cloud native app development: starter template: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-operations-handbook">Event Driven Architecture Operations Handbook</Link></li>
-<li><Link href="/blog/5g-solutions-2026-7259">5G Solutions 2026 7259</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-executive-guide">Autonomous Code Deployment Executive Guide</Link></li>
-<li><Link href="/blog/api-security-testing-2026-7106">Api Security Testing 2026 7106</Link></li>
+              <li><Link href="/blog/ai-customer-support-pro-2026-7668">Ai Customer Support Pro 2026 7668</Link></li>
+<li><Link href="/blog/microsaas-translation-engine-policy-and-compliance">Microsaas Translation Engine Policy And Compliance</Link></li>
+<li><Link href="/blog/erp-automation-automate-sap-oracle-dynamics-workflows-without-custom-code-49">Erp Automation Automate Sap Oracle Dynamics Workflows Without Custom Code 49</Link></li>
+<li><Link href="/blog/ai-data-pipeline-observability-lineage-freshness-and-quality-in-2026-38">Ai Data Pipeline Observability Lineage Freshness And Quality In 2026 38</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for cloud native app development: starter template: workflow 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

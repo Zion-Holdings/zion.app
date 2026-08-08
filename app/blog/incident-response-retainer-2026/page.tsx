@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Incident Response Retainer | Zion Tech Group',
   description: 'Incident Response Retainer',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Incident Response Retainer',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/incident-response-retainer-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Incident Response Retainer", "description": "Incident Response Retainer", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:13Z", "dateModified": "2026-08-07T04:51:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/incident-response-retainer-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Incident Response Retainer", "description": "Incident Response Retainer", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/incident-response-retainer-2026/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your incident response retainer initiative, the next step 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/etl-pipeline-optimization-2026-7236">Etl Pipeline Optimization 2026 7236</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026-6834">Cybersecurity Platform Msp 2026 6834</Link></li>
-<li><Link href="/blog/micro-saas-ai-social-media-manager-2026-6992">Micro Saas Ai Social Media Manager 2026 6992</Link></li>
-<li><Link href="/blog/network-infrastructure-2026-6640">Network Infrastructure 2026 6640</Link></li>
+              <li><Link href="/blog/enterprise-ai-intelligence-hub-starter-template">Enterprise Ai Intelligence Hub Starter Template</Link></li>
+<li><Link href="/blog/cloud-migration-services-2026-7400">Cloud Migration Services 2026 7400</Link></li>
+<li><Link href="/blog/api-orchestration-layer-checklist-for-it-leaders">Api Orchestration Layer Checklist For It Leaders</Link></li>
+<li><Link href="/blog/endpoint-management-implementation-playbook">Endpoint Management Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your incident response retainer initiative, the next step 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

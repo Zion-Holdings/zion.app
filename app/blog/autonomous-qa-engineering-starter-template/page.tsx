@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Autonomous QA Engineering: starter template | Zion Tech Group',
   description: 'Autonomous QA Engineering: starter template',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Autonomous QA Engineering: starter template',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/autonomous-qa-engineering-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering: starter template", "description": "Autonomous QA Engineering: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:07:51Z", "dateModified": "2026-08-07T05:07:51Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-starter-template/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering: starter template", "description": "Autonomous QA Engineering: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-starter-template/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for autonomous qa engineering: starter template: workflow com
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-success-churn-2026-7258">Ai Customer Success Churn 2026 7258</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-2026-6615">Etl Pipeline Optimization 2026 6615</Link></li>
-<li><Link href="/blog/5g-solutions-checklist-for-it-leaders">5G Solutions Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-for-climate-tech-and-sustainability-operations">Ai For Climate Tech And Sustainability Operations</Link></li>
+              <li><Link href="/blog/ai-data-lakehouse-pipelines-2026-7533">Ai Data Lakehouse Pipelines 2026 7533</Link></li>
+<li><Link href="/blog/ai-msp-security-compliance-2026-7739">Ai Msp Security Compliance 2026 7739</Link></li>
+<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-7474">Micro Saas Ai Customer Onboarding 2026 7474</Link></li>
+<li><Link href="/blog/email-and-calendar-automation-with-ai-agents-schedule-follow-up-and-summarize-50">Email And Calendar Automation With Ai Agents Schedule Follow Up And Summarize 50</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for autonomous qa engineering: starter template: workflow com
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

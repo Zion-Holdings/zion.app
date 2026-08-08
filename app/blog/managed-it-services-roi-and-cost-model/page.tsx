@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Managed IT Services: ROI and cost model | Zion Tech Group',
   description: 'Managed IT Services: ROI and cost model',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Managed IT Services: ROI and cost model',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/managed-it-services-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services: ROI and cost model", "description": "Managed IT Services: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:11Z", "dateModified": "2026-08-07T04:51:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-roi-and-cost-model/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services: ROI and cost model", "description": "Managed IT Services: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-roi-and-cost-model/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For managed it services: roi and cost model: pick one workflow, assign ownership
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-2026-7225">Cloud Finops 2026 7225</Link></li>
-<li><Link href="/blog/api-security-testing-2026-6761">Api Security Testing 2026 6761</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-2026-6746">Data Warehouse Modernization 2026 6746</Link></li>
-<li><Link href="/blog/accessibility-compliance-2026-6665">Accessibility Compliance 2026 6665</Link></li>
+              <li><Link href="/blog/ai-agent-safety-evaluation-2026-7757">Ai Agent Safety Evaluation 2026 7757</Link></li>
+<li><Link href="/blog/ai-platform-engineering-patterns-idp-backstage-and-golden-paths-33">Ai Platform Engineering Patterns Idp Backstage And Golden Paths 33</Link></li>
+<li><Link href="/blog/api-integration-vendor-evaluation">Api Integration Vendor Evaluation</Link></li>
+<li><Link href="/blog/distributed-tracing-with-jaeger-and-zipkin-debug-microservices-without-log-dumps-44">Distributed Tracing With Jaeger And Zipkin Debug Microservices Without Log Dumps 44</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For managed it services: roi and cost model: pick one workflow, assign ownership
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

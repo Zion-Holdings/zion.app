@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/5g-solutions-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "5G Solutions: deployment patterns", "description": "5G Solutions: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:26:21Z", "dateModified": "2026-08-07T07:26:21Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/5g-solutions-deployment-patterns/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "5G Solutions: deployment patterns", "description": "5G Solutions: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/5g-solutions-deployment-patterns/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for 5g solutions: deployment patterns: workflow completion ra
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-2026-7048">Ai Observability 2026 7048</Link></li>
-<li><Link href="/blog/devops-gen-ai-cicd-2026-7300">Devops Gen Ai Cicd 2026 7300</Link></li>
-<li><Link href="/blog/api-security-testing-2026-6623">Api Security Testing 2026 6623</Link></li>
-<li><Link href="/blog/ai-it-operations-implementation-playbook">Ai It Operations Implementation Playbook</Link></li>
+              <li><Link href="/blog/ai-accessibility-optimizer-2026-7686">Ai Accessibility Optimizer 2026 7686</Link></li>
+<li><Link href="/blog/micro-saas-ai-translation-engine-2026-7471">Micro Saas Ai Translation Engine 2026 7471</Link></li>
+<li><Link href="/blog/automation-orchestration-enterprise-2026-7665">Automation Orchestration Enterprise 2026 7665</Link></li>
+<li><Link href="/blog/ai-it-operations-automation-2026-7384">Ai It Operations Automation 2026 7384</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for 5g solutions: deployment patterns: workflow completion ra
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

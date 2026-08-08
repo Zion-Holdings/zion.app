@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Edge Computing Deployment: common mistakes | Zion Tech Group',
   description: 'Edge Computing Deployment: common mistakes',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Edge Computing Deployment: common mistakes',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/edge-computing-deployment-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Edge Computing Deployment: common mistakes", "description": "Edge Computing Deployment: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:44Z", "dateModified": "2026-08-07T07:56:44Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/edge-computing-deployment-common-mistakes/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Edge Computing Deployment: common mistakes", "description": "Edge Computing Deployment: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/edge-computing-deployment-common-mistakes/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-safety-evaluation-2026">Ai Agent Safety Evaluation 2026</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026-6568">Ai Customer Success Churn 2026 6568</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-2026-6656">Ai Autonomous Agents 2026 6656</Link></li>
-<li><Link href="/blog/event-driven-architecture-2026-6892">Event Driven Architecture 2026 6892</Link></li>
+              <li><Link href="/blog/ai-data-backup-executive-guide">Ai Data Backup Executive Guide</Link></li>
+<li><Link href="/blog/ai-observability-2026-7600">Ai Observability 2026 7600</Link></li>
+<li><Link href="/blog/microsaas-social-media-manager-executive-guide">Microsaas Social Media Manager Executive Guide</Link></li>
+<li><Link href="/blog/cloud-finops-2026-7708">Cloud Finops 2026 7708</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

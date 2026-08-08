@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Data Backup: architecture overview | Zion Tech Group',
   description: 'AI Data Backup: architecture overview',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Data Backup: architecture overview',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-data-backup-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Backup: architecture overview", "description": "AI Data Backup: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:08:08Z", "dateModified": "2026-08-07T05:08:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-backup-architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Backup: architecture overview", "description": "AI Data Backup: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-backup-architecture-overview/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for ai data backup: architecture overview: workflow completio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-2026-7163">Devsecops Pipeline 2026 7163</Link></li>
-<li><Link href="/blog/ai-email-intelligence-case-study">Ai Email Intelligence Case Study</Link></li>
-<li><Link href="/blog/api-security-testing-vendor-evaluation">Api Security Testing Vendor Evaluation</Link></li>
-<li><Link href="/blog/endpoint-management-policy-and-compliance">Endpoint Management Policy And Compliance</Link></li>
+              <li><Link href="/blog/event-driven-architecture-2026-7513">Event Driven Architecture 2026 7513</Link></li>
+<li><Link href="/blog/aiops-anomaly-detection-2026-7416">Aiops Anomaly Detection 2026 7416</Link></li>
+<li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-7612">Micro Saas Ai Customer Onboarding 2026 7612</Link></li>
+<li><Link href="/blog/api-management-gateway-2026-7566">Api Management Gateway 2026 7566</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for ai data backup: architecture overview: workflow completio
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

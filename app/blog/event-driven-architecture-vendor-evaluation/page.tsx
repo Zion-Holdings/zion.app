@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Event Driven Architecture: vendor evaluation | Zion Tech Group',
   description: 'Event Driven Architecture: vendor evaluation',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Event Driven Architecture: vendor evaluation',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/event-driven-architecture-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Event Driven Architecture: vendor evaluation", "description": "Event Driven Architecture: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:00Z", "dateModified": "2026-08-07T04:51:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/event-driven-architecture-vendor-evaluation/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Event Driven Architecture: vendor evaluation", "description": "Event Driven Architecture: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/event-driven-architecture-vendor-evaluation/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For event driven architecture: vendor evaluation: pick one workflow, assign owne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/responsible-ai-practices-for-enterprise-deployment">Responsible Ai Practices For Enterprise Deployment</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-2026-7160">Data Warehouse Modernization 2026 7160</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-implementation-playbook">Ai Accessibility Optimizer Implementation Playbook</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026-7041">Cybersecurity Platform Msp 2026 7041</Link></li>
+              <li><Link href="/blog/chaos-engineering-2026-7775">Chaos Engineering 2026 7775</Link></li>
+<li><Link href="/blog/ai-performance-monitoring-2026-7701">Ai Performance Monitoring 2026 7701</Link></li>
+<li><Link href="/blog/it-asset-discovery-automation-for-hybrid-cloud-environments-36">It Asset Discovery Automation For Hybrid Cloud Environments 36</Link></li>
+<li><Link href="/blog/aiops-anomaly-detection-2026-7416">Aiops Anomaly Detection 2026 7416</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For event driven architecture: vendor evaluation: pick one workflow, assign owne
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

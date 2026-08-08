@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/endpoint-management-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Endpoint Management: implementation playbook", "description": "Endpoint Management: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:12Z", "dateModified": "2026-08-07T04:51:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/endpoint-management-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Endpoint Management: implementation playbook", "description": "Endpoint Management: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/endpoint-management-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-2026-7255">Ai Observability 2026 7255</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-2026-7228">Cyber Threat Intelligence 2026 7228</Link></li>
-<li><Link href="/blog/autonomous-qa-engineering-vendor-evaluation">Autonomous Qa Engineering Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-observability-2026-7117">Ai Observability 2026 7117</Link></li>
+              <li><Link href="/blog/micro-saas-ai-social-media-manager-2026-7544">Micro Saas Ai Social Media Manager 2026 7544</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7614">Enterprise Ai Intelligence Hub 2026 7614</Link></li>
+<li><Link href="/blog/event-driven-architecture-2026-7513">Event Driven Architecture 2026 7513</Link></li>
+<li><Link href="/blog/ai-api-gateway-checklist-for-it-leaders">Ai Api Gateway Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

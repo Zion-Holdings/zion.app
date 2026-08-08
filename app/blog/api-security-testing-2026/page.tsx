@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'API Security Testing | Zion Tech Group',
   description: 'API Security Testing',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'API Security Testing',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-security-testing-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Security Testing", "description": "API Security Testing", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:40Z", "dateModified": "2026-08-07T04:51:40Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-security-testing-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Security Testing", "description": "API Security Testing", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-security-testing-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ For api security testing: pick one workflow, assign ownership, define success me
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-3d-asset-generator-2026-6718">Ai 3D Asset Generator 2026 6718</Link></li>
-<li><Link href="/blog/apm-application-performance-2026-6739">Apm Application Performance 2026 6739</Link></li>
-<li><Link href="/blog/ai-data-backup-2026-7107">Ai Data Backup 2026 7107</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-common-mistakes">Ai Autonomous Agents Common Mistakes</Link></li>
+              <li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-20">Customer Success Automation Trigger Health Checks Outreach And Product Signals 20</Link></li>
+<li><Link href="/blog/ai-observability-pipeline-for-kubernetes-and-cloud-in-2026-14">Ai Observability Pipeline For Kubernetes And Cloud In 2026 14</Link></li>
+<li><Link href="/blog/microsaas-social-media-manager-common-mistakes">Microsaas Social Media Manager Common Mistakes</Link></li>
+<li><Link href="/blog/api-integration-2026-7772">Api Integration 2026 7772</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ For api security testing: pick one workflow, assign ownership, define success me
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

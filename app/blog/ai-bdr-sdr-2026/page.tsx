@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI BDR SDR | Zion Tech Group',
   description: 'AI BDR SDR',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI BDR SDR',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-bdr-sdr-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BDR SDR", "description": "AI BDR SDR", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:05Z", "dateModified": "2026-08-07T04:51:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bdr-sdr-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BDR SDR", "description": "AI BDR SDR", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bdr-sdr-2026/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your ai bdr sdr initiative, the next step is a scoping cal
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-3d-asset-generator-2026-6787">Ai 3D Asset Generator 2026 6787</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026-6654">Ai Agent Tool Builder 2026 6654</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-2026-7139">Ai Autonomous Agents 2026 7139</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026-7040">Cloud Cost Optimization Checklist 2026 7040</Link></li>
+              <li><Link href="/blog/apm-application-performance-policy-and-compliance">Apm Application Performance Policy And Compliance</Link></li>
+<li><Link href="/blog/5g-solutions-checklist-for-it-leaders">5G Solutions Checklist For It Leaders</Link></li>
+<li><Link href="/blog/api-gateway-management-case-study">Api Gateway Management Case Study</Link></li>
+<li><Link href="/blog/database-migration-service-case-study">Database Migration Service Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your ai bdr sdr initiative, the next step is a scoping cal
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

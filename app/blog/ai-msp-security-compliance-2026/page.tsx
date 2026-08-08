@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI MSP Security Compliance | Zion Tech Group',
   description: 'AI MSP Security Compliance',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI MSP Security Compliance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-msp-security-compliance-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI MSP Security Compliance", "description": "AI MSP Security Compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:13Z", "dateModified": "2026-08-07T04:52:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-msp-security-compliance-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI MSP Security Compliance", "description": "AI MSP Security Compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:19Z", "dateModified": "2026-08-08T04:13:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-msp-security-compliance-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-2026-7306">Event Driven Architecture 2026 7306</Link></li>
-<li><Link href="/blog/ai-for-product-development-and-innovation">Ai For Product Development And Innovation</Link></li>
-<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-6645">Micro Saas Ai Hr Recruitment 2026 6645</Link></li>
-<li><Link href="/blog/graphql-federation-platform-evaluation-framework">Graphql Federation Platform Evaluation Framework</Link></li>
+              <li><Link href="/blog/data-warehouse-modernization-2026-7643">Data Warehouse Modernization 2026 7643</Link></li>
+<li><Link href="/blog/cloud-cost-ai-optimizer-2026-7500">Cloud Cost Ai Optimizer 2026 7500</Link></li>
+<li><Link href="/blog/enterprise-backup-dr-2026">Enterprise Backup Dr 2026</Link></li>
+<li><Link href="/blog/event-driven-architecture-2026-7720">Event Driven Architecture 2026 7720</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

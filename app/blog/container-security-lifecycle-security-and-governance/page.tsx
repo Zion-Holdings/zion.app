@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Container Security Lifecycle: security and governance | Zion Tech Group',
   description: 'Container Security Lifecycle: security and governance',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Container Security Lifecycle: security and governance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/container-security-lifecycle-security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Container Security Lifecycle: security and governance", "description": "Container Security Lifecycle: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:47Z", "dateModified": "2026-08-07T07:56:47Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/container-security-lifecycle-security-and-governance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Container Security Lifecycle: security and governance", "description": "Container Security Lifecycle: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/container-security-lifecycle-security-and-governance/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ If this guide matches your container security lifecycle: security and governance
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/etl-pipeline-optimization-roi-and-cost-model">Etl Pipeline Optimization Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-2026-6580">Ai 3D Asset Generator 2026 6580</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-2026-7097">Enterprise Backup Dr 2026 7097</Link></li>
-<li><Link href="/blog/ai-observability-2026-6772">Ai Observability 2026 6772</Link></li>
+              <li><Link href="/blog/managed-it-services-small-business-2026-7663">Managed It Services Small Business 2026 7663</Link></li>
+<li><Link href="/blog/cloud-migration-services-2026-7469">Cloud Migration Services 2026 7469</Link></li>
+<li><Link href="/blog/ai-it-operations-automation-2026-7660">Ai It Operations Automation 2026 7660</Link></li>
+<li><Link href="/blog/api-gateway-management-2026-7633">Api Gateway Management 2026 7633</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ If this guide matches your container security lifecycle: security and governance
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

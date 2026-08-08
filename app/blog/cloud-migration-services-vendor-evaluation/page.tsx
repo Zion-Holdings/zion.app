@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-migration-services-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: vendor evaluation", "description": "Cloud Migration Services: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:03Z", "dateModified": "2026-08-07T04:52:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-vendor-evaluation/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: vendor evaluation", "description": "Cloud Migration Services: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-vendor-evaluation/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-2026-6682">Endpoint Management 2026 6682</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-deployment-patterns">Ai Accessibility Optimizer Deployment Patterns</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-automation-roadmap">Cloud Cost Ai Optimizer Automation Roadmap</Link></li>
-<li><Link href="/blog/endpoint-management-2026-7234">Endpoint Management 2026 7234</Link></li>
+              <li><Link href="/blog/ai-3d-asset-generator-2026-7615">Ai 3D Asset Generator 2026 7615</Link></li>
+<li><Link href="/blog/ai-msp-security-compliance-2026-7532">Ai Msp Security Compliance 2026 7532</Link></li>
+<li><Link href="/blog/api-orchestration-layer-2026-7693">Api Orchestration Layer 2026 7693</Link></li>
+<li><Link href="/blog/ai-customer-success-churn-2026-7534">Ai Customer Success Churn 2026 7534</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

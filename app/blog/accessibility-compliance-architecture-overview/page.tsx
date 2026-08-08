@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Accessibility Compliance: architecture overview | Zion Tech Group',
   description: 'Accessibility Compliance: architecture overview',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Accessibility Compliance: architecture overview',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/accessibility-compliance-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance: architecture overview", "description": "Accessibility Compliance: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:18Z", "dateModified": "2026-08-07T04:51:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance: architecture overview", "description": "Accessibility Compliance: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-08T04:13:18Z", "dateModified": "2026-08-08T04:13:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-architecture-overview/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ Leading indicators for accessibility compliance: architecture overview: workflow
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devops-cicd-2026-6711">Devops Cicd 2026 6711</Link></li>
-<li><Link href="/blog/edge-computing-deployment-2026-7026">Edge Computing Deployment 2026 7026</Link></li>
-<li><Link href="/blog/ai-data-backup-2026-7314">Ai Data Backup 2026 7314</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-2026-7160">Data Warehouse Modernization 2026 7160</Link></li>
+              <li><Link href="/blog/ai-bom-procurement-2026-7491">Ai Bom Procurement 2026 7491</Link></li>
+<li><Link href="/blog/ai-data-lakehouse-pipelines-2026-7740">Ai Data Lakehouse Pipelines 2026 7740</Link></li>
+<li><Link href="/blog/customer-success-automation-trigger-health-checks-outreach-and-product-signals-20">Customer Success Automation Trigger Health Checks Outreach And Product Signals 20</Link></li>
+<li><Link href="/blog/automated-ai-reporting-2026-7418">Automated Ai Reporting 2026 7418</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ Leading indicators for accessibility compliance: architecture overview: workflow
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>
