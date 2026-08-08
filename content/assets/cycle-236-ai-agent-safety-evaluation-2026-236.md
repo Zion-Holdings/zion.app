@@ -1,4 +1,4 @@
-# AI Agent Safety Evaluation — assets cycle 236
+# AI Agent Safety Evaluation - assets cycle 236
 
 ## Social carousel
 1) Hook: "Most AI Agent Safety Evaluation programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: AI Agent Safety Evaluation — a practical path from pilot to production
+Subject: AI Agent Safety Evaluation - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

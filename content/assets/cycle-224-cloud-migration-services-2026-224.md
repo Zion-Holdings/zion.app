@@ -1,4 +1,4 @@
-# Cloud Migration Services — assets cycle 224
+# Cloud Migration Services - assets cycle 224
 
 ## Social carousel
 1) Hook: "Most Cloud Migration Services programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Cloud Migration Services — a practical path from pilot to production
+Subject: Cloud Migration Services - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

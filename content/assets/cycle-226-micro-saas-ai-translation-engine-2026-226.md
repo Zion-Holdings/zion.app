@@ -1,4 +1,4 @@
-# MicroSaaS Translation Engine — assets cycle 226
+# MicroSaaS Translation Engine - assets cycle 226
 
 ## Social carousel
 1) Hook: "Most MicroSaaS Translation Engine programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: MicroSaaS Translation Engine — a practical path from pilot to production
+Subject: MicroSaaS Translation Engine - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

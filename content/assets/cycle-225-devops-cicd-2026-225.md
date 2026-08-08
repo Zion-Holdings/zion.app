@@ -1,4 +1,4 @@
-# DevOps CI/CD — assets cycle 225
+# DevOps CI/CD - assets cycle 225
 
 ## Social carousel
 1) Hook: "Most DevOps CI/CD programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: DevOps CI/CD — a practical path from pilot to production
+Subject: DevOps CI/CD - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

@@ -1,4 +1,4 @@
-# API Orchestration Layer — assets cycle 241
+# API Orchestration Layer - assets cycle 241
 
 ## Social carousel
 1) Hook: "Most API Orchestration Layer programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: API Orchestration Layer — a practical path from pilot to production
+Subject: API Orchestration Layer - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

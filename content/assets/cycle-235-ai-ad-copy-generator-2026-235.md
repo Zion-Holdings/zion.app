@@ -1,4 +1,4 @@
-# AI Ad Copy Generator — assets cycle 235
+# AI Ad Copy Generator - assets cycle 235
 
 ## Social carousel
 1) Hook: "Most AI Ad Copy Generator programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: AI Ad Copy Generator — a practical path from pilot to production
+Subject: AI Ad Copy Generator - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

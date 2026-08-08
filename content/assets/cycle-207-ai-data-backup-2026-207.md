@@ -1,4 +1,4 @@
-# AI Data Backup — assets cycle 207
+# AI Data Backup - assets cycle 207
 
 ## Social carousel
 1) Hook: "Most AI Data Backup programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: AI Data Backup — a practical path from pilot to production
+Subject: AI Data Backup - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

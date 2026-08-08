@@ -1,4 +1,4 @@
-# Autonomous Code Deployment — assets cycle 243
+# Autonomous Code Deployment - assets cycle 243
 
 ## Social carousel
 1) Hook: "Most Autonomous Code Deployment programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Autonomous Code Deployment — a practical path from pilot to production
+Subject: Autonomous Code Deployment - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

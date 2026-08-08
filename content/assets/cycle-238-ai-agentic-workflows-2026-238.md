@@ -1,4 +1,4 @@
-# AI Agentic Workflows — assets cycle 238
+# AI Agentic Workflows - assets cycle 238
 
 ## Social carousel
 1) Hook: "Most AI Agentic Workflows programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: AI Agentic Workflows — a practical path from pilot to production
+Subject: AI Agentic Workflows - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

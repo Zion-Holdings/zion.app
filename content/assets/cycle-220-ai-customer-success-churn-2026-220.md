@@ -1,4 +1,4 @@
-# AI Customer Success Churn Prevention — assets cycle 220
+# AI Customer Success Churn Prevention - assets cycle 220
 
 ## Social carousel
 1) Hook: "Most AI Customer Success Churn Prevention programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: AI Customer Success Churn Prevention — a practical path from pilot to production
+Subject: AI Customer Success Churn Prevention - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

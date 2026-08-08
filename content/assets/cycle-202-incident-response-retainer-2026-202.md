@@ -1,4 +1,4 @@
-# Incident Response Retainer — assets cycle 202
+# Incident Response Retainer - assets cycle 202
 
 ## Social carousel
 1) Hook: "Most Incident Response Retainer programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Incident Response Retainer — a practical path from pilot to production
+Subject: Incident Response Retainer - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

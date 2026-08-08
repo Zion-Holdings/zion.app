@@ -1,4 +1,4 @@
-# API Performance Testing — assets cycle 205
+# API Performance Testing - assets cycle 205
 
 ## Social carousel
 1) Hook: "Most API Performance Testing programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: API Performance Testing — a practical path from pilot to production
+Subject: API Performance Testing - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework
