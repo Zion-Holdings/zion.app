@@ -6,6 +6,27 @@
 /services/enterprise-ai-intelligence-hub-2026-1143/ /services/enterprise-ai-intelligence-hub-2026-507/ 301
 /blog/enterprise-ai-intelligence-hub-2026-1143/ /blog/enterprise-ai-intelligence-hub-2026-507/ 301
 
+# Orphaned route fallbacks
+/ai-services-index /services/ 301
+/ai-services-index/ /services/ 301
+/free-ai-it-tools /tools/ 301
+/free-ai-it-tools/ /tools/ 301
+/new-ai-services /services/ 301
+/new-ai-services/ /services/ 301
+
+# Category anchors
+/services?category=ai /services/#ai 301
+/services?category=it /services/#it 301
+/services?category=cloud /services/#cloud 301
+/services?category=security /services/#security 301
+/services?category=data /services/#data 301
+/services?category=automation /services/#automation 301
+/services?category=micro-saas /services/#micro-saas 301
+/services?category=devops /services/#devops 301
+/services?category=blockchain /services/#blockchain 301
+/services?category=iot /services/#iot 301
+/services?category=seo /services/ 301
+
 # Search
 /search /docs/search/index.html 200
 /search/ /docs/search/index.html 200
@@ -17,12 +38,4 @@
 # AI resources fallback
 /ai-resources /docs/ai-resources/index.html 200
 /ai-resources/ /docs/ai-resources/index.html 200
-2026-08-04T16:45:49Z
-
-# Orphaned route fallbacks
-/ai-services-index /services/ 301
-/ai-services-index/ /services/ 301
-/free-ai-it-tools /tools 301
-/free-ai-it-tools/ /tools 301
-/new-ai-services /services/ 301
-/new-ai-services/ /services/ 301
+2026-08-08T19:30:00Z
