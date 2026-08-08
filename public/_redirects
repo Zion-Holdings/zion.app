@@ -14,6 +14,16 @@
 /new-ai-services /services/ 301
 /new-ai-services/ /services/ 301
 
+# Missing routes fallbacks
+/ai /services/ 301
+/ai/ /services/ 301
+/industry-solutions /solutions/ 301
+/industry-solutions/ /solutions/ 301
+/5g-solutions /services/ 301
+/5g-solutions/ /services/ 301
+/faq /support/ 301
+/faq/ /support/ 301
+
 # Category anchors
 /services?category=ai /services/#ai 301
 /services?category=it /services/#it 301
@@ -38,4 +48,4 @@
 # AI resources fallback
 /ai-resources /docs/ai-resources/index.html 200
 /ai-resources/ /docs/ai-resources/index.html 200
-2026-08-08T19:30:00Z
+2026-08-08T20:49:01Z
