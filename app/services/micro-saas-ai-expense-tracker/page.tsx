@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Policy enforcement</li>
             <li>Approval workflows</li>
             <li>Accounting integration</li>
-            <li>Real-time reporting</li>
           </ul>
         </div>
         

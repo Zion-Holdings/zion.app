@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Invoice Processing & Auto-Posting - Zion Tech Group",
-  description: "Invoice automation: three-way PO matching, OCR line-item extraction, GL coding by vendor and line item, approval workflow per threshold, and ERP auto-post to NetSuite, SAP, or QuickBooks with zero hum",
+  description: "Invoice automation: three-way PO matching, OCR line-item extraction, GL coding by vendor and line item, approval workflow per threshold, and ERP auto-post to Ne",
   alternates: {
     canonical: `https://ziontechgroup.com/services/invoice-ai-automation`
   }

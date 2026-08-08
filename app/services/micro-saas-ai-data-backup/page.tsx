@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Auto recovery testing</li>
             <li>Cross-platform support</li>
             <li>Encryption at rest and in transit</li>
-            <li>Ransomware protection</li>
           </ul>
         </div>
         

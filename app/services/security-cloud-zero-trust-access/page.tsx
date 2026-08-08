@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cloud Zero Trust Access (ZTNA) - Zion Tech Group",
-  description: "Zero trust network access for cloud and on-prem resources: per-application least-privilege policy, device posture context, 1-click revoke per identity, 75% faster access time for legitimate users, ful",
+  description: "Zero trust network access for cloud and on-prem resources: per-application least-privilege policy, device posture context, 1-click revoke per identity, 75% fast",
   alternates: {
     canonical: `https://ziontechgroup.com/services/security-cloud-zero-trust-access`
   }

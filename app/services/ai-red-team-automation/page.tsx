@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Red Team Automation - Zion Tech Group",
-  description: "Automated adversary simulation: C2 beaconing lateral movement privilege escalation data exfiltration mapped to MITRE ATT&CK auto-remediation playbooks continuous on-env testing.",
+  description: "Automated adversary simulation: C2 beaconing lateral movement privilege escalation data exfiltration mapped to MITRE ATT&CK auto-remediation playbooks continuou",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-red-team-automation`
   }

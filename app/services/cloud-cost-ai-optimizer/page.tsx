@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Cloud Cost Optimizer - Zion Tech Group",
-  description: "Continuously analyze cloud spend (AWS, Azure, GCP) and automatically implement cost-saving actions: rightsizing, reserved instances, spot instance switching, and idle resource cleanup.",
+  description: "Continuously analyze cloud spend (AWS, Azure, GCP) and automatically implement cost-saving actions: rightsizing, reserved instances, spot instance switching, an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cloud-cost-ai-optimizer`
   }

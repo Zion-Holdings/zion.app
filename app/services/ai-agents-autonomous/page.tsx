@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-Agent Orchestration</li>
             <li>Human-in-the-Loop</li>
             <li>Memory &amp; Context</li>
-            <li>Observability &amp; Safety</li>
           </ul>
         </div>
         

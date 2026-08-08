@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Knowledge Base & Knowledge Graph Agent - Zion Tech Group",
-  description: "Turn your documents, wikis, and internal data into an intelligent, queryable knowledge graph with conversational AI search and automated content synchronization.",
+  description: "Turn your documents, wikis, and internal data into an intelligent, queryable knowledge graph with conversational AI search and automated content synchronization",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-knowledge-base-agent`
   }

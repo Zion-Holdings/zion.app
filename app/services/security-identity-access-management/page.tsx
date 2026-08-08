@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Privileged access management</li>
             <li>Automated user lifecycle</li>
             <li>Directory synchronization</li>
-            <li>Access certification</li>
           </ul>
         </div>
         

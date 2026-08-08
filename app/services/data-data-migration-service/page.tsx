@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Validation and reconciliation</li>
             <li>Zero-downtime cutover</li>
             <li>Rollback planning</li>
-            <li>Post-migration validation</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Kubernetes Optimizer - Zion Tech Group",
-  description: "Ai Kubernetes Optimizer — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurabl",
+  description: "Ai Kubernetes Optimizer — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-kubernetes-optimizer`
   }

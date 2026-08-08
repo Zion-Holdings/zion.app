@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>State management and drift detection</li>
             <li>Cost optimization scanning</li>
             <li>Security compliance checks</li>
-            <li>Module library</li>
           </ul>
         </div>
         

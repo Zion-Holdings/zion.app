@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Endpoint Security & Compliance Monitor - Zion Tech Group",
-  description: "Endpoint security continuous monitoring: EDR detection + endpoint firewall + exploit prevention, CVE auto-fix via patch catalog, compliance posture for HIPAA/PCI/SOX/ISO27001 with automated audit evid",
+  description: "Endpoint security continuous monitoring: EDR detection + endpoint firewall + exploit prevention, CVE auto-fix via patch catalog, compliance posture for HIPAA/PC",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-endpoint-security-compliance-monitor`
   }

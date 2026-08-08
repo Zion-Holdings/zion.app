@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data quality testing framework</li>
             <li>Schema evolution handling</li>
             <li>Data lineage tracking</li>
-            <li>Modern data stack setup</li>
           </ul>
         </div>
         

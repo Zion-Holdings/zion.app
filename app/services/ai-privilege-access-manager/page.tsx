@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Privilege Access Manager - Zion Tech Group",
-  description: "Ai Privilege Access Manager — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measu",
+  description: "Ai Privilege Access Manager — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operatio",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-privilege-access-manager`
   }

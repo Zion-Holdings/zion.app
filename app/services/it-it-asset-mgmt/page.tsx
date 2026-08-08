@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Warranty and maintenance alerts</li>
             <li>Hardware lifecycle planning</li>
             <li>Disposal certificates</li>
-            <li>Financial depreciation tracking</li>
           </ul>
         </div>
         

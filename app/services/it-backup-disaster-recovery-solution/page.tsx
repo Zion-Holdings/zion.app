@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Backup & Disaster Recovery Solution - Zion Tech Group",
-  description: "Immutable backup engine with RPO as low as 5 minutes, RTO of 30 minutes, off-site air-gapped storage, Lamport-timestamp chain-of-custody for tamper evidence, ransomware-hold per snapshot, point-in-tim",
+  description: "Immutable backup engine with RPO as low as 5 minutes, RTO of 30 minutes, off-site air-gapped storage, Lamport-timestamp chain-of-custody for tamper evidence, ra",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-backup-disaster-recovery-solution`
   }

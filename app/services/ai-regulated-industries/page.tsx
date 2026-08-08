@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Bias &amp; Fairness Monitoring</li>
             <li>Documentation &amp; Transparency</li>
             <li>Sector-Specific Workflows</li>
-            <li>Vendor &amp; Model Governance</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Privacy Enhancing Technologies - Zion Tech Group",
-  description: "Privacy Enhancing Technologies consulting and implementation: differential privacy budget tracking, homomorphic encryption proof-of-concept, zero-knowledge proof circuits, TEE enclave design, syntheti",
+  description: "Privacy Enhancing Technologies consulting and implementation: differential privacy budget tracking, homomorphic encryption proof-of-concept, zero-knowledge proo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/security-privacy-enhancing-technologies`
   }

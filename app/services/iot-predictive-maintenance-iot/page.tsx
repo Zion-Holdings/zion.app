@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Maintenance scheduling optimization</li>
             <li>Spare parts inventory integration</li>
             <li>Equipment health scoring</li>
-            <li>ROI tracking dashboard</li>
           </ul>
         </div>
         

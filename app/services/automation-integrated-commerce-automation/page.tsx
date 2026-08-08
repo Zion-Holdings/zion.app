@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Integrated Commerce Automation - Zion Tech Group",
-  description: "End-to-end e-commerce automation: product sync per multi-marketplace including Amazon, Shopify, eBay, and Etsy; inventory sync; order and workflow routing; auto-generated review request post-delivery;",
+  description: "End-to-end e-commerce automation: product sync per multi-marketplace including Amazon, Shopify, eBay, and Etsy; inventory sync; order and workflow routing; auto",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automation-integrated-commerce-automation`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Dropship workflow — auto-route orders to supplier per stock-level threshold</li>
             <li>Auto-review generator sends per-buyer review request post-delivery with personalised template</li>
             <li>Return and refund auto-process — auto-compute refund amount and inventory return per policy</li>
-            <li>Carrier shipping auto-label — auto-chooses cheapest carrier per weight and destination</li>
           </ul>
         </div>
         

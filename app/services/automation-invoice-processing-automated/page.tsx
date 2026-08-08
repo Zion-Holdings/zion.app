@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>PO matching and validation</li>
             <li>Approval routing</li>
             <li>ERP/accounting integration</li>
-            <li>Duplicate detection</li>
           </ul>
         </div>
         

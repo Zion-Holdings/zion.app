@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Network Security Monitoring & SIEM - Zion Tech Group",
-  description: "Real-time network traffic analysis, threat correlation, and centralized Security Information and Event Management (SIEM) for enterprises requiring continuous security posture visibility.",
+  description: "Real-time network traffic analysis, threat correlation, and centralized Security Information and Event Management (SIEM) for enterprises requiring continuous se",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-network-security-monitoring`
   }

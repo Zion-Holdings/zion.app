@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Hierarchical management</li>
             <li>Data stewards workflow</li>
             <li>Real-time synchronization</li>
-            <li>Data quality scoring</li>
           </ul>
         </div>
         

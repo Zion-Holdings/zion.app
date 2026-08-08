@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Voice biometrics and verification</li>
             <li>30+ language support</li>
             <li>Custom voice cloning</li>
-            <li>Real-time streaming</li>
           </ul>
         </div>
         

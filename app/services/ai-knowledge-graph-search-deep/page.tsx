@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Knowledge Graph Search Engine - Zion Tech Group",
-  description: "Deep semantic search across structured + unstructured corporate knowledge: auto-builds a navigable knowledge graph from Confluence, Slack, Drive, Jira, and CRM; facet navigation, path-finding between ",
+  description: "Deep semantic search across structured + unstructured corporate knowledge: auto-builds a navigable knowledge graph from Confluence, Slack, Drive, Jira, and CRM;",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-knowledge-graph-search-deep`
   }

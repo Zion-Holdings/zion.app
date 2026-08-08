@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Fair launch mechanics</li>
             <li>Liquidity pool setup</li>
             <li>Regulatory compliance review</li>
-            <li>Launch strategy and marketing</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Cloud Cost Optimizer - Zion Tech Group",
-  description: "ML-powered cloud cost optimizer: continuously rightsizes VMs, containers, serverless across AWS/GCP/Azure — reducing cloud spend 30-50% with zero manual intervention via smart scaling policies.",
+  description: "ML-powered cloud cost optimizer: continuously rightsizes VMs, containers, serverless across AWS/GCP/Azure — reducing cloud spend 30-50% with zero manual interve",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-cloud-cost-optimizer`
   }

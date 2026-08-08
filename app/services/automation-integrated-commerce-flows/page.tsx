@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Integrated Commerce Flow Orchestrator - Zion Tech Group",
-  description: "Commerce workflow automation: cart-to-delivery orchestrator connecting Shopify/BigCommerce/WooCommerce with payment and shipping providers, automated RMA/return-handling, subscription-billing orchestr",
+  description: "Commerce workflow automation: cart-to-delivery orchestrator connecting Shopify/BigCommerce/WooCommerce with payment and shipping providers, automated RMA/return",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automation-integrated-commerce-flows`
   }

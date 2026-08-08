@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "SBOM & Supply Chain Security - Zion Tech Group",
-  description: "Supply chain security platform: SBOM & VEX generation (every build/build event), CVE SLSA provenance score, dependency-graph diff for every PR, SLSA Level 3 attestation, reproducible-build verificatio",
+  description: "Supply chain security platform: SBOM & VEX generation (every build/build event), CVE SLSA provenance score, dependency-graph diff for every PR, SLSA Level 3 att",
   alternates: {
     canonical: `https://ziontechgroup.com/services/security-sbom-supply-chain`
   }

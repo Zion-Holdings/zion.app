@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Legal Research Engine - Zion Tech Group",
-  description: "LLM legal research: semantic search across case law statutes regulations SEC filings patents. Produces cited answers source attribution alerts law changes per jurisdiction.",
+  description: "LLM legal research: semantic search across case law statutes regulations SEC filings patents. Produces cited answers source attribution alerts law changes per j",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-legal-research`
   }

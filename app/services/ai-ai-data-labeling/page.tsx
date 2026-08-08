@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Video frame annotation</li>
             <li>Audio transcription and labeling</li>
             <li>Quality control with consensus</li>
-            <li>API for automated pipelines</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Engagement tracking</li>
             <li>Sales-ready lead alerts</li>
             <li>CRM integration</li>
-            <li>Custom scoring rules</li>
           </ul>
         </div>
         

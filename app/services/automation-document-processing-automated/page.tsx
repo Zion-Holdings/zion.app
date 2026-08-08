@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data extraction with validation</li>
             <li>Approval workflows</li>
             <li>ERP/CRM integration</li>
-            <li>Full audit trail</li>
           </ul>
         </div>
         

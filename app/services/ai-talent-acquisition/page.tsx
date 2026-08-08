@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automated interview scheduling &amp; coordination</li>
             <li>Predictive hiring success modeling</li>
             <li>Competitor talent mapping &amp; intelligence</li>
-            <li>DEI analytics &amp; reporting dashboard</li>
           </ul>
         </div>
         

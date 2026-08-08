@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Strategy & Roadmap Consulting - Zion Tech Group",
-  description: "Executive AI strategy: opportunity assessment model selection custom vs off-the-shelf stack design data readiness audit pilot roadmap prioritization 90-day win plan.",
+  description: "Executive AI strategy: opportunity assessment model selection custom vs off-the-shelf stack design data readiness audit pilot roadmap prioritization 90-day win ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-roadmap-strategy`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Multi-Channel Campaign Manager - Zion Tech Group",
-  description: "Orchestrate campaigns across email, SMS, social, push, and ads from one campaign studio: audience-segmentation engine, content-Calendar view, A/B-n testing, real-time ROI dashboard, attribution across",
+  description: "Orchestrate campaigns across email, SMS, social, push, and ads from one campaign studio: audience-segmentation engine, content-Calendar view, A/B-n testing, rea",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automation-multi-channel-campaign-manager`
   }

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>App deployment and management</li>
             <li>Remote lock and wipe</li>
             <li>HIPAA/PCI compliance reporting</li>
-            <li>BYOD containerization</li>
           </ul>
         </div>
         

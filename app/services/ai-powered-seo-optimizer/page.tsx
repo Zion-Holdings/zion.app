@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered SEO Content Optimizer - Zion Tech Group",
-  description: "Real-time SEO analysis and content optimization: auto-suggest keywords, restructure sentences for readability, generate meta tags, and audit for E-E-A-T signals.",
+  description: "Real-time SEO analysis and content optimization: auto-suggest keywords, restructure sentences for readability, generate meta tags, and audit for E-E-A-T signals",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-seo-optimizer`
   }

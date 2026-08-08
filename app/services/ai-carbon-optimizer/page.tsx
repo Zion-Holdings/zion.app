@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Carbon Footprint Optimizer - Zion Tech Group",
-  description: "Automated Scope 1-3 carbon accounting: ingests utility bills, cloud usage, travel itineraries, supplier invoices, and calculates real-time carbon intensity scores with prioritised reduction actions an",
+  description: "Automated Scope 1-3 carbon accounting: ingests utility bills, cloud usage, travel itineraries, supplier invoices, and calculates real-time carbon intensity scor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-carbon-optimizer`
   }

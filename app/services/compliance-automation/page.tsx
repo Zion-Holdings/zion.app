@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Compliance Automation - Zion Tech Group",
-  description: "Compliance automation platform: maps your controls to SOC 2, ISO 27001, HIPAA, PCI-DSS, and GDPR. Auto-generates evidence, provides continuous monitoring, and produces pre-built audit reports for fast",
+  description: "Compliance automation platform: maps your controls to SOC 2, ISO 27001, HIPAA, PCI-DSS, and GDPR. Auto-generates evidence, provides continuous monitoring, and p",
   alternates: {
     canonical: `https://ziontechgroup.com/services/compliance-automation`
   }

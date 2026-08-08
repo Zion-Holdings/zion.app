@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Managed EDR + SIEM SOC Service - Zion Tech Group",
-  description: "24/7 managed detection: EDR (CrowdStrike/SentinelOne) + SIEM (Splunk/QRadar/Sentinel), managed SOC tier 1/2 triage, kill-chain containment, executive monthly threat report.",
+  description: "24/7 managed detection: EDR (CrowdStrike/SentinelOne) + SIEM (Splunk/QRadar/Sentinel), managed SOC tier 1/2 triage, kill-chain containment, executive monthly th",
   alternates: {
     canonical: `https://ziontechgroup.com/services/managed-edr-siem`
   }

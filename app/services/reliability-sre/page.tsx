@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Reliability Platform & SRE Enablement - Zion Tech Group",
-  description: "SRE as a Service: SLO and SLI and SLA design, error-budget management, incident command, postmortem facilitation, and runbook automation. 99.9% uptime guarantee for regulated digital services.",
+  description: "SRE as a Service: SLO and SLI and SLA design, error-budget management, incident command, postmortem facilitation, and runbook automation. 99.9% uptime guarantee",
   alternates: {
     canonical: `https://ziontechgroup.com/services/reliability-sre`
   }

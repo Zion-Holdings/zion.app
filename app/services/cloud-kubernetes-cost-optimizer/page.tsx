@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Kubernetes Cost Optimizer - Zion Tech Group",
-  description: "K8s cluster cost engine: per-container CPU and RAM right-sizing via VPA plus workload profiling, spot-compatible scheduling for bursty workloads, cost attribution per team or namespace, idle resource ",
+  description: "K8s cluster cost engine: per-container CPU and RAM right-sizing via VPA plus workload profiling, spot-compatible scheduling for bursty workloads, cost attributi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cloud-kubernetes-cost-optimizer`
   }

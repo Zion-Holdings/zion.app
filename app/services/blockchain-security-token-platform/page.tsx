@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>KYC/AML integration</li>
             <li>Dividend and distribution automation</li>
             <li>Secondary trading support</li>
-            <li>Investor dashboard and reporting</li>
           </ul>
         </div>
         

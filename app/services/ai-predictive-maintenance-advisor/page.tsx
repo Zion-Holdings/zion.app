@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Maintenance Advisor - Zion Tech Group",
-  description: "Asset remaining useful life prediction via multimodal sensor fusion — vibration, thermal, acoustic, and electrical. Plain-English root-cause narration, part recommendation, and HSE safety-risk layer f",
+  description: "Asset remaining useful life prediction via multimodal sensor fusion — vibration, thermal, acoustic, and electrical. Plain-English root-cause narration, part rec",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-predictive-maintenance-advisor`
   }

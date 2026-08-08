@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Churn and LTV prediction</li>
             <li>What-if scenario modeling</li>
             <li>Explainable AI (SHAP values)</li>
-            <li>API for real-time predictions</li>
           </ul>
         </div>
         

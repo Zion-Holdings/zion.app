@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Role-based training paths</li>
             <li>Compliance tracking and reporting</li>
             <li>Gamification and leaderboards</li>
-            <li>Custom policy content</li>
           </ul>
         </div>
         

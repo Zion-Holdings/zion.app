@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Document translation</li>
             <li>Real-time chat translation</li>
             <li>Website localization</li>
-            <li>API access</li>
           </ul>
         </div>
         

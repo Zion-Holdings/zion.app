@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Meeting AI Assistant (Record, Transcribe, Summarize) - Zion Tech Group",
-  description: "Automatic meeting assistant that records, transcribes with speaker ID, generates action items, decisions, and summaries; integrates with Zoom, Teams, Google Meet.",
+  description: "Automatic meeting assistant that records, transcribes with speaker ID, generates action items, decisions, and summaries; integrates with Zoom, Teams, Google Mee",
   alternates: {
     canonical: `https://ziontechgroup.com/services/meeting-ai-assistant`
   }

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>DR testing and validation</li>
             <li>Crisis communication templates</li>
             <li>Recovery time objective planning</li>
-            <li>Tabletop exercise facilitation</li>
           </ul>
         </div>
         

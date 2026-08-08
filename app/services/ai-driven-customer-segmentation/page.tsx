@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Driven Customer Segmentation & Persona Engine - Zion Tech Group",
-  description: "Cluster your customer base into meaningful personas using behavioral data, purchase history, and engagement patterns; deliver personalized marketing automatically.",
+  description: "Cluster your customer base into meaningful personas using behavioral data, purchase history, and engagement patterns; deliver personalized marketing automatical",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-driven-customer-segmentation`
   }

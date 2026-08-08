@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-tenant data isolation</li>
             <li>API-first architecture</li>
             <li>Custom theming and branding</li>
-            <li>Usage-based billing support</li>
           </ul>
         </div>
         

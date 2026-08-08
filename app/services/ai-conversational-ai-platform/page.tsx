@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Omnichannel: web, mobile, WhatsApp, SMS</li>
             <li>CRM and helpdesk integration</li>
             <li>Human handoff with full context</li>
-            <li>Analytics: intent, sentiment, resolution</li>
           </ul>
         </div>
         

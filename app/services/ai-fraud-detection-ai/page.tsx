@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Account takeover detection</li>
             <li>Application fraud scoring</li>
             <li>Explainable decline reasons</li>
-            <li>Continuous model retraining</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "API Gateway + OpenAPI Management - Zion Tech Group",
-  description: "Enterprise API gateway: OpenAPI 3.1 lifecycle, rate-limit/quota per key, threat-protection WAF rules, schema registry, live API analytics, developer portal with interactive docs and sandbox.",
+  description: "Enterprise API gateway: OpenAPI 3.1 lifecycle, rate-limit/quota per key, threat-protection WAF rules, schema registry, live API analytics, developer portal with",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-api-gateway-openapi`
   }

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Knowledge Graph Integration</li>
             <li>Real-Time Data Grounding</li>
             <li>Chunking &amp; Embedding Strategies</li>
-            <li>Evaluation &amp; Continuous Improvement</li>
           </ul>
         </div>
         

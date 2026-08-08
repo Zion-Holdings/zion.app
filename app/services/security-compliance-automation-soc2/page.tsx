@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Policy management</li>
             <li>Vendor risk management</li>
             <li>Audit-ready reports on demand</li>
-            <li>SOC 2 Type I and Type II</li>
           </ul>
         </div>
         

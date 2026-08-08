@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Immutable ransomware-proof backups</li>
             <li>Cloud and on-prem targets</li>
             <li>Point-in-time DB recovery</li>
-            <li>Documented recovery runbooks</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Pre-deployment test sandbox</li>
             <li>Approval workflows and scheduling</li>
             <li>Instant rollback on issues</li>
-            <li>Compliance patch reporting</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Optimal timing per platform</li>
             <li>Auto-responses to common queries</li>
             <li>Mention monitoring</li>
-            <li>Engagement analytics</li>
           </ul>
         </div>
         

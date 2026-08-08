@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Graph Analytics & Network Intelligence - Zion Tech Group",
-  description: "Large-scale network analytics: entity relationship graph builder, centrality and community detection, per-edge anomaly scoring, influencer score per node, GNN-ready feature export, and interactive gra",
+  description: "Large-scale network analytics: entity relationship graph builder, centrality and community detection, per-edge anomaly scoring, influencer score per node, GNN-r",
   alternates: {
     canonical: `https://ziontechgroup.com/services/data-graph-analytics-platform`
   }

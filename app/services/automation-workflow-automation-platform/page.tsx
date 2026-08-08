@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Conditional logic and branching</li>
             <li>Scheduled and trigger-based flows</li>
             <li>Error handling and notifications</li>
-            <li>Team collaboration features</li>
           </ul>
         </div>
         

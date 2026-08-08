@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Vulnerability scanning</li>
             <li>Compliance reporting</li>
             <li>Dark web monitoring</li>
-            <li>Incident response playbooks</li>
           </ul>
         </div>
         

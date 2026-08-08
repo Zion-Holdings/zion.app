@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Commercial Leasing & Property Tour Scheduler - Zion Tech Group",
-  description: "End-to-end commercial-property tour scheduling and lead qualification: booking agent handoff, CRM opportunity creation, automated reminders, post-tour follow-up nurturing, and leasing-commission attri",
+  description: "End-to-end commercial-property tour scheduling and lead qualification: booking agent handoff, CRM opportunity creation, automated reminders, post-tour follow-up",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automation-commercial-leasing-tour-scheduler`
   }

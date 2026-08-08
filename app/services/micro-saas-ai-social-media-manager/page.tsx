@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Engagement analytics</li>
             <li>Competitor monitoring</li>
             <li>Hashtag optimization</li>
-            <li>A/B testing</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Software Bill-of-Materials Manager - Zion Tech Group",
-  description: "Full SBOM lifecycle management: auto-generate SPDX and Cyclone-DX per build, license-compliance check, vulnerability and CVE matching per component, attestation signing, and SBOM consumer portal per v",
+  description: "Full SBOM lifecycle management: auto-generate SPDX and Cyclone-DX per build, license-compliance check, vulnerability and CVE matching per component, attestation",
   alternates: {
     canonical: `https://ziontechgroup.com/services/security-supply-chain-sbom-manager`
   }

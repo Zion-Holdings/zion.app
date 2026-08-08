@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Lead Scoring Model - Zion Tech Group",
-  description: "ML lead scoring: technographics intent signals website pages email engagement ABM data produces rank-ordered lead score with explanation per scoring dimension per lead toward target ICP.",
+  description: "ML lead scoring: technographics intent signals website pages email engagement ABM data produces rank-ordered lead score with explanation per scoring dimension p",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-lead-scoring`
   }

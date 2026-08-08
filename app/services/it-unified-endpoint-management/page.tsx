@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Unified Endpoint & Device Management - Zion Tech Group",
-  description: "Unified endpoint management across Windows, macOS, iOS, Android, ChromeOS, and IoT: OS patch deployment, remote wipe, app catalog + distribution, inventory management, and compliance policy enforcemen",
+  description: "Unified endpoint management across Windows, macOS, iOS, Android, ChromeOS, and IoT: OS patch deployment, remote wipe, app catalog + distribution, inventory mana",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-unified-endpoint-management`
   }

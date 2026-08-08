@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Access control integration</li>
             <li>Energy monitoring and reporting</li>
             <li>Indoor air quality monitoring</li>
-            <li>Mobile app for tenants</li>
           </ul>
         </div>
         

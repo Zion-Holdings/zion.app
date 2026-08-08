@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Image and Video Search Engine - Zion Tech Group",
-  description: "Visual search engine for media libraries: CLIP-compatible index built from images and video frames up to 60 frames per second; multi-modal query with text or image; auto-cluster same-scene per video c",
+  description: "Visual search engine for media libraries: CLIP-compatible index built from images and video frames up to 60 frames per second; multi-modal query with text or im",
   alternates: {
     canonical: `https://ziontechgroup.com/services/data-image-video-search-engine`
   }

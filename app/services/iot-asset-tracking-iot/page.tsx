@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Asset utilization analytics</li>
             <li>Maintenance history per asset</li>
             <li>Theft detection and recovery</li>
-            <li>Integration with ERP and WMS</li>
           </ul>
         </div>
         

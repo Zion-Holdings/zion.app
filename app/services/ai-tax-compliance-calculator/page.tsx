@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Tax Compliance Calculator - Zion Tech Group",
-  description: "Ai Tax Compliance Calculator — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve meas",
+  description: "Ai Tax Compliance Calculator — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operati",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-tax-compliance-calculator`
   }

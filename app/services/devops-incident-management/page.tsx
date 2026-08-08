@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Status page automation</li>
             <li>Post-mortem templates</li>
             <li>SLI/SLO tracking</li>
-            <li>Runbook automation</li>
           </ul>
         </div>
         

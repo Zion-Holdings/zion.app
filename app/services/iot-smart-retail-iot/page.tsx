@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer journey tracking</li>
             <li>Automated checkout systems</li>
             <li>Inventory accuracy 99%</li>
-            <li>Personalized in-store offers</li>
           </ul>
         </div>
         

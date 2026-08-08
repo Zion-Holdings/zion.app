@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Zero-downtime deployments</li>
             <li>Automatic rollback on failure</li>
             <li>Infrastructure as code</li>
-            <li>Deployment analytics</li>
           </ul>
         </div>
         

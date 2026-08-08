@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Route optimization</li>
             <li>Interactive map visualizations</li>
             <li>Trade area analysis</li>
-            <li>Location-based recommendations</li>
           </ul>
         </div>
         

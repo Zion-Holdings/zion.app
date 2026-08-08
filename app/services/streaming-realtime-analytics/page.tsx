@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Real-Time Streaming Analytics - Zion Tech Group",
-  description: "Sub-second analytics on event streams: Kafka/Redpanda/PubSub to Flink/Spark — sessionization, windowed aggregates, anomaly detection. Sub-second refresh dashboard.",
+  description: "Sub-second analytics on event streams: Kafka/Redpanda/PubSub to Flink/Spark — sessionization, windowed aggregates, anomaly detection. Sub-second refresh dashboa",
   alternates: {
     canonical: `https://ziontechgroup.com/services/streaming-realtime-analytics`
   }

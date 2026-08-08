@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Quality rules and monitoring</li>
             <li>Access policy automation</li>
             <li>PII detection and masking</li>
-            <li>Compliance reporting</li>
           </ul>
         </div>
         

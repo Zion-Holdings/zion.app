@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Retention &amp; Expansion Playbooks</li>
             <li>Autonomous Experimentation</li>
             <li>Growth Data Foundation</li>
-            <li>Executive Growth Dashboard</li>
           </ul>
         </div>
         

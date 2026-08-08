@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Call routing, IVR, auto-attendant</li>
             <li>Call recording and analytics</li>
             <li>CRM integration</li>
-            <li>Mobile and desk phone support</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "It Incident Response Simulator - Zion Tech Group",
-  description: "It Incident Response Simulator — a professional IT solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve me",
+  description: "It Incident Response Simulator — a professional IT solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline opera",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-incident-response-simulator`
   }

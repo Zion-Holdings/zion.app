@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automated resilience scoring</li>
             <li>Failure scenario library</li>
             <li>Recovery time validation</li>
-            <li>Compliance resilience reporting</li>
           </ul>
         </div>
         

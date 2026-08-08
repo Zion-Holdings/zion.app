@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Template comparison</li>
             <li>Redline suggestions</li>
             <li>Multi-language support</li>
-            <li>Version tracking</li>
           </ul>
         </div>
         

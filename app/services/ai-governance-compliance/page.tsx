@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Governance Compliance - Zion Tech Group",
-  description: "Ai Governance Compliance — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurab",
+  description: "Ai Governance Compliance — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations,",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-governance-compliance`
   }

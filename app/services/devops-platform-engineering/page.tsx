@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automated environment provisioning</li>
             <li>Developer experience analytics</li>
             <li>Backstage.io deployment</li>
-            <li>Service catalog</li>
           </ul>
         </div>
         

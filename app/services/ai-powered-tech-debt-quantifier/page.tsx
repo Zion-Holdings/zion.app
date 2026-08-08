@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Tech Debt Quantifier - Zion Tech Group",
-  description: "Automatically identify, classify, and quantify technical debt: code complexity, duplication, outdated deps, test gaps, and architectural violations with remediation cost estimates.",
+  description: "Automatically identify, classify, and quantify technical debt: code complexity, duplication, outdated deps, test gaps, and architectural violations with remedia",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-tech-debt-quantifier`
   }

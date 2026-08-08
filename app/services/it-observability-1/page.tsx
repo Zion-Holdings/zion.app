@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Observability & SRE - Zion Tech Group",
-  description: "Comprehensive observability platform combining metrics, logs, traces, and AI-powered anomaly detection to achieve proactive reliability and reduce MTTR to minutes.",
+  description: "Comprehensive observability platform combining metrics, logs, traces, and AI-powered anomaly detection to achieve proactive reliability and reduce MTTR to minut",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-observability-1`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automated incident classification and routing</li>
             <li>SLO/SLI management with error budget tracking</li>
             <li>Predictive alerting — detect issues before users do</li>
-            <li>Runbook automation and remediation playbooks</li>
           </ul>
         </div>
         

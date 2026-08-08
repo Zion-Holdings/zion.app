@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Regulatory Compliance Monitor - Zion Tech Group",
-  description: "Continuous regulatory change monitoring across 150+ jurisdictions with automated impact analysis, gap detection, and compliance report generation for financial services and healthcare.",
+  description: "Continuous regulatory change monitoring across 150+ jurisdictions with automated impact analysis, gap detection, and compliance report generation for financial ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-regulatory-compliance-monitor`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automated compliance gap detection</li>
             <li>Real-time deadline and filing alerts</li>
             <li>Audit-ready evidence collection</li>
-            <li>Integration with GRC platforms</li>
           </ul>
         </div>
         

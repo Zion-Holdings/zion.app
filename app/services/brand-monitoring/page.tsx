@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Brand Monitoring & Fake Domain Detection - Zion Tech Group",
-  description: "Scans global DNS+WHOIS+SSL cert feeds 24/7 for lookalike typosquatting phishing domains targeting your brand. Auto-generates registrar takedown request sent to DNS provider.",
+  description: "Scans global DNS+WHOIS+SSL cert feeds 24/7 for lookalike typosquatting phishing domains targeting your brand. Auto-generates registrar takedown request sent to ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/brand-monitoring`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "IT Vendor & Contract Management - Zion Tech Group",
-  description: "Centralise IT vendor contracts, SLAs, and renewal dates. AI monitors terms, flags expiring agreements, and automates renewal workflows with configurable approval chains.",
+  description: "Centralise IT vendor contracts, SLAs, and renewal dates. AI monitors terms, flags expiring agreements, and automates renewal workflows with configurable approva",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-vendor-contract-mgmt`
   }

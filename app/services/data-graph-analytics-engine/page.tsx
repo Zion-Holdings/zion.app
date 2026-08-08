@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Graph Analytics & Network Intelligence Engine - Zion Tech Group",
-  description: "Enterprise graph analytics for fraud, risk, ESG, and recommendations: ingest tabular data to build dynamic relationship graphs, community detection, shortest-path analysis, centrality scoring, and int",
+  description: "Enterprise graph analytics for fraud, risk, ESG, and recommendations: ingest tabular data to build dynamic relationship graphs, community detection, shortest-pa",
   alternates: {
     canonical: `https://ziontechgroup.com/services/data-graph-analytics-engine`
   }

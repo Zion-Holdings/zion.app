@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Meeting Pre-read Generator - Zion Tech Group",
-  description: "AI analyses your calendar, gathers Slack threads and CRM context, then auto-generates a structured meeting pre-read with agenda, talking points, and decision log.",
+  description: "AI analyses your calendar, gathers Slack threads and CRM context, then auto-generates a structured meeting pre-read with agenda, talking points, and decision lo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-meeting-preread`
   }

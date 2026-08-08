@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Personalized results per user</li>
             <li>Faceted search and filtering</li>
             <li>Search analytics dashboard</li>
-            <li>API-first architecture</li>
           </ul>
         </div>
         

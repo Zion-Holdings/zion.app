@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Real-Time Trending Analytics - Zion Tech Group",
-  description: "Real-time windowed aggregation engine: 1-minute tumbling and hopping windows per dimension, per-interval top-K ranking, out-of-norm alerting, sigma deviation triggering, and curated drill-down with ro",
+  description: "Real-time windowed aggregation engine: 1-minute tumbling and hopping windows per dimension, per-interval top-K ranking, out-of-norm alerting, sigma deviation tr",
   alternates: {
     canonical: `https://ziontechgroup.com/services/data-realtime-trending-analytics`
   }

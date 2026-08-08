@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Multimodal Video Understanding Engine - Zion Tech Group",
-  description: "End-to-end video understanding pipeline: per-frame CLIP + action recognition, temporal scene segmentation, automatic transcript + OCR extraction, chapter/time-stamped topic indexing, and natural-langu",
+  description: "End-to-end video understanding pipeline: per-frame CLIP + action recognition, temporal scene segmentation, automatic transcript + OCR extraction, chapter/time-s",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-multimodal-video-understanding`
   }

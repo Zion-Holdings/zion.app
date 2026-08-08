@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Over-the-air OTA firmware updates</li>
             <li>Device health monitoring</li>
             <li>Rule-based alerting</li>
-            <li>Edge computing management</li>
           </ul>
         </div>
         

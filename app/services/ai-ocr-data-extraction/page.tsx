@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Table and form extraction</li>
             <li>Multi-language support</li>
             <li>Batch processing (10,000+ pages/hr)</li>
-            <li>Structured JSON output</li>
           </ul>
         </div>
         

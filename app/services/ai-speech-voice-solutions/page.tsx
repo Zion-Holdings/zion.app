@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Speech & Voice Solutions - Zion Tech Group",
-  description: "Enterprise-grade speech technology including high-accuracy transcription, AI voice cloning, real-time translation, voice biometrics, and conversational AI for customer service.",
+  description: "Enterprise-grade speech technology including high-accuracy transcription, AI voice cloning, real-time translation, voice biometrics, and conversational AI for c",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-speech-voice-solutions`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Voice cloning for personalized brand audio content</li>
             <li>Voice biometrics for secure identity verification</li>
             <li>Conversational IVR with natural language understanding</li>
-            <li>Meeting transcription with speaker diarization &amp; summaries</li>
           </ul>
         </div>
         

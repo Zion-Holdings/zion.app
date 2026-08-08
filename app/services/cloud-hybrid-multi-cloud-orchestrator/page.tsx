@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Hybrid Multi-Cloud Orchestrator - Zion Tech Group",
-  description: "Single-pane hybrid-multi-cloud management: deploy, monitor, and govern workloads across AWS, Azure, GCP, and on-prem from a unified control plane with standardised cost, security, and compliance dashb",
+  description: "Single-pane hybrid-multi-cloud management: deploy, monitor, and govern workloads across AWS, Azure, GCP, and on-prem from a unified control plane with standardi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cloud-hybrid-multi-cloud-orchestrator`
   }

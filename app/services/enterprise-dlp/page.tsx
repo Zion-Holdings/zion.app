@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Enterprise Data Loss Prevention (DLP) - Zion Tech Group",
-  description: "Prevent data exfiltration at rest, in transit, in-use: endpoint DLP, network DLP, cloud DLP (S3/GDrive/SharePoint/Box). Content inspection + policy enforcement + remediation.",
+  description: "Prevent data exfiltration at rest, in transit, in-use: endpoint DLP, network DLP, cloud DLP (S3/GDrive/SharePoint/Box). Content inspection + policy enforcement ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/enterprise-dlp`
   }

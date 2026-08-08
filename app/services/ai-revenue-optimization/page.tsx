@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Revenue Optimization & Pricing Intelligence - Zion Tech Group",
-  description: "Dynamic pricing engine powered by machine learning — analyze competitor pricing, demand elasticity, customer segments, and market conditions to maximize revenue in real time.",
+  description: "Dynamic pricing engine powered by machine learning — analyze competitor pricing, demand elasticity, customer segments, and market conditions to maximize revenue",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-revenue-optimization`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer segment willingness-to-pay analysis</li>
             <li>Demand forecasting &amp; inventory alignment</li>
             <li>A/B price testing &amp; revenue attribution</li>
-            <li>Multi-channel price synchronization</li>
           </ul>
         </div>
         

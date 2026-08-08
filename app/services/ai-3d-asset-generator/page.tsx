@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai 3D Asset Generator - Zion Tech Group",
-  description: "Ai 3D Asset Generator — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurable ",
+  description: "Ai 3D Asset Generator — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, ac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-3d-asset-generator`
   }

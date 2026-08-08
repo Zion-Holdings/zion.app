@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Security Breach & Attack Simulation Platform - Zion Tech Group",
-  description: "Automated adversary emulation: APT29, ransomware, insider-threat vectors. Subject your defences to realistic attack chains and measure D&R effectiveness against MITRE ATT&CK.",
+  description: "Automated adversary emulation: APT29, ransomware, insider-threat vectors. Subject your defences to realistic attack chains and measure D&R effectiveness against",
   alternates: {
     canonical: `https://ziontechgroup.com/services/security-bas-platform`
   }

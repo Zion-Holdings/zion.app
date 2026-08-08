@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Intelligent Document Processing & Routing - Zion Tech Group",
-  description: "Automated document intake with AI extraction, classification, and intelligent routing to the right team or workflow — invoices, claims, applications, and contracts.",
+  description: "Automated document intake with AI extraction, classification, and intelligent routing to the right team or workflow — invoices, claims, applications, and contra",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-intelligent-routing`
   }

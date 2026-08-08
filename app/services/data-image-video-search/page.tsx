@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Image & Video Semantic Search - Zion Tech Group",
-  description: "CLIP + multi-modal embedding semantic search across image and video libraries: object/scene/action detection, temporal segmentation, thumbnail clustering, natural-language query support, and vector-po",
+  description: "CLIP + multi-modal embedding semantic search across image and video libraries: object/scene/action detection, temporal segmentation, thumbnail clustering, natur",
   alternates: {
     canonical: `https://ziontechgroup.com/services/data-image-video-search`
   }

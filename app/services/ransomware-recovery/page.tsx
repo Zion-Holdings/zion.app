@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ransomware Recovery & IR for Insurers - Zion Tech Group",
-  description: "Ransomware IR + recovery: forensic analysis, containment, payment negotiation assistance, clean restore from immutable backup, SLA-backed segmentation, post-incident hardening.",
+  description: "Ransomware IR + recovery: forensic analysis, containment, payment negotiation assistance, clean restore from immutable backup, SLA-backed segmentation, post-inc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ransomware-recovery`
   }

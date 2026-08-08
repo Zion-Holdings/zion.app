@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Edge Computing & Edge AI Deployment - Zion Tech Group",
-  description: "Deploy distributed edge workloads: CDN edge functions, edge ML inference, IoT pipelines, regional failover with 10-50ms p99 latency and per-edge-node observability.",
+  description: "Deploy distributed edge workloads: CDN edge functions, edge ML inference, IoT pipelines, regional failover with 10-50ms p99 latency and per-edge-node observabil",
   alternates: {
     canonical: `https://ziontechgroup.com/services/edge-computing-deploy`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "It Observability Logging - Zion Tech Group",
-  description: "It Observability Logging — a professional IT solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurab",
+  description: "It Observability Logging — a professional IT solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations,",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-observability-logging`
   }

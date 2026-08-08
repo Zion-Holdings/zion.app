@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Gas optimization analysis</li>
             <li>Economic attack simulation</li>
             <li>Compliance checking</li>
-            <li>Detailed remediation report</li>
           </ul>
         </div>
         

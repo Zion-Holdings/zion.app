@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Proposal lifecycle management</li>
             <li>Treasury multisig management</li>
             <li>Delegation and voting rights</li>
-            <li>Governance analytics</li>
           </ul>
         </div>
         

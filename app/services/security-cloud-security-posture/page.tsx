@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Auto-remediation of violations</li>
             <li>IAM and permission analysis</li>
             <li>Network security group audit</li>
-            <li>Cost and security optimization</li>
           </ul>
         </div>
         

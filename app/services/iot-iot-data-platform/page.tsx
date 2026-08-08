@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Custom dashboard builder</li>
             <li>Predictive analytics on IoT</li>
             <li>Data lake integration</li>
-            <li>API for third-party access</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Sales Coach & Call Analysis - Zion Tech Group",
-  description: "Real-time analysis: talk-listen ratio objection handling competitor mention pricing signal detection recommended next-step per call stage with CRM auto-scorecard team leaderboard.",
+  description: "Real-time analysis: talk-listen ratio objection handling competitor mention pricing signal detection recommended next-step per call stage with CRM auto-scorecar",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-sales-coach`
   }

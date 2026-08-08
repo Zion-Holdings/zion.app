@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Real-Time Time-Series Analytics Platform - Zion Tech Group",
-  description: "High-throughput real-time analytics for IoT, monitoring, and business metrics: stores, aggregates, and queries billions of events per day at <200ms p99 latency. Includes alert rules, anomaly detection",
+  description: "High-throughput real-time analytics for IoT, monitoring, and business metrics: stores, aggregates, and queries billions of events per day at <200ms p99 latency.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/data-realtime-time-series-analytics`
   }

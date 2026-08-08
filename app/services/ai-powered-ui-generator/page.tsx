@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered UI Generator (Text-to-UI) - Zion Tech Group",
-  description: "Turn natural language descriptions into production-ready React/Next.js components with Tailwind styling; customize variants, states, and accessibility attributes via chat.",
+  description: "Turn natural language descriptions into production-ready React/Next.js components with Tailwind styling; customize variants, states, and accessibility attribute",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-ui-generator`
   }

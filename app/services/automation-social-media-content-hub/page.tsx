@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Social Media Content Hub & Publisher - Zion Tech Group",
-  description: "All-in-one social media content hub: AI-assisted content ideation and drafting per platform, content calendar, multi-platform publishing (LinkedIn, X/Twitter, Instagram, Facebook, TikTok, YouTube), re",
+  description: "All-in-one social media content hub: AI-assisted content ideation and drafting per platform, content calendar, multi-platform publishing (LinkedIn, X/Twitter, I",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automation-social-media-content-hub`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Application Development - Zion Tech Group",
-  description: "End-to-end development service for building production-ready AI applications — from LLM-powered chatbots and RAG systems to multi-agent workflows and AI-native products.",
+  description: "End-to-end development service for building production-ready AI applications — from LLM-powered chatbots and RAG systems to multi-agent workflows and AI-native ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-gen-app-dev-1`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-agent system design and orchestration (LangChain, LangGraph, CrewAI)</li>
             <li>Vector database selection and optimization (Pinecone, Weaviate, Qdrant)</li>
             <li>Prompt engineering and fine-tuning workflows</li>
-            <li>AI safety, guardrails, and output validation</li>
           </ul>
         </div>
         

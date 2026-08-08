@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Legacy App Refactoring & Strangler Fig - Zion Tech Group",
-  description: "Strangler fig: reverse-engineer monolith deps, incrementally migrate bounded contexts to modern services with feature-flags, dual-run validation, rollback at every step.",
+  description: "Strangler fig: reverse-engineer monolith deps, incrementally migrate bounded contexts to modern services with feature-flags, dual-run validation, rollback at ev",
   alternates: {
     canonical: `https://ziontechgroup.com/services/legacy-app-refactor`
   }

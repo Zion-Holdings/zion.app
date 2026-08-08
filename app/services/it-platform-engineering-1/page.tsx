@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Internal Developer Platform (IDP) Engineering - Zion Tech Group",
-  description: "Design and build an Internal Developer Platform (IDP) that provides self-service capabilities for developers — spinning up environments, deploying applications, and managing infrastructure through gol",
+  description: "Design and build an Internal Developer Platform (IDP) that provides self-service capabilities for developers — spinning up environments, deploying applications,",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-platform-engineering-1`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Internal API marketplace and service catalog</li>
             <li>Automated deployment pipelines per service type</li>
             <li>Developer portal with documentation and onboarding</li>
-            <li>Abstractions over cloud services for simplicity</li>
           </ul>
         </div>
         

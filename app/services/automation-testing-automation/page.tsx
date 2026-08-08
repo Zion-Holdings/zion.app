@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Performance and load testing</li>
             <li>Security vulnerability scanning</li>
             <li>CI/CD integration</li>
-            <li>Parallel test execution</li>
           </ul>
         </div>
         

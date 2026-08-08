@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Browser Isolation & Web Security - Zion Tech Group",
-  description: "Remote browser isolation for internet access: containerised browser runs in cloud, pixel-streamed to the user, no download can reach the corporate device, URL categorisation, DLP inspection on every r",
+  description: "Remote browser isolation for internet access: containerised browser runs in cloud, pixel-streamed to the user, no download can reach the corporate device, URL c",
   alternates: {
     canonical: `https://ziontechgroup.com/services/security-browser-isolation`
   }

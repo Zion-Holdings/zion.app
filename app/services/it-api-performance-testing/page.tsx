@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "It Api Performance Testing - Zion Tech Group",
-  description: "It Api Performance Testing — a professional IT solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measur",
+  description: "It Api Performance Testing — a professional IT solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operation",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-api-performance-testing`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Fraud Pattern Analyzer - Zion Tech Group",
-  description: "Deep behavioral profiling: baseline per user then alerts on anomalous patterns — login geography, transaction velocity, amount/type deviation, withdrawn account signals. Links across accounts to detec",
+  description: "Deep behavioral profiling: baseline per user then alerts on anomalous patterns — login geography, transaction velocity, amount/type deviation, withdrawn account",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-fraud-pattern-analyzer`
   }

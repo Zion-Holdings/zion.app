@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Visual drag-and-drop flow designer</li>
             <li>Smart human handoff with context transfer</li>
             <li>Analytics — resolution rates, satisfaction, trends</li>
-            <li>Continuous learning from unanswered questions</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Continuous self-improvement</li>
             <li>Seamless human handoff</li>
             <li>Built-in analytics dashboard</li>
-            <li>No-code visual flow designer</li>
           </ul>
         </div>
         

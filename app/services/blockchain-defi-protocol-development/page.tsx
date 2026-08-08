@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Yield farming and staking</li>
             <li>Liquidation engine</li>
             <li>Oracle integration Chainlink</li>
-            <li>Flash loan protection</li>
           </ul>
         </div>
         

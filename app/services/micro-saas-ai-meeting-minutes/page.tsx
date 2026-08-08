@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Decision tracking</li>
             <li>Speaker identification</li>
             <li>Calendar integration</li>
-            <li>Searchable archive</li>
           </ul>
         </div>
         

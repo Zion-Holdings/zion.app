@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Credential verification</li>
             <li>Session management</li>
             <li>Multi-chain wallet support</li>
-            <li>Compatible with Web3Auth</li>
           </ul>
         </div>
         

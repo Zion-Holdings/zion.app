@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Alert escalation workflows</li>
             <li>HIPAA-compliant data platform</li>
             <li>Integration with EHR systems</li>
-            <li>Family caregiver dashboard</li>
           </ul>
         </div>
         

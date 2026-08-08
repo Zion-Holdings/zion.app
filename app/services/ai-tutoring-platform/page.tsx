@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Tutoring Platform - Zion Tech Group",
-  description: "Ai Tutoring Platform — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurable R",
+  description: "Ai Tutoring Platform — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-tutoring-platform`
   }

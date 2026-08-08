@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Network architecture review</li>
             <li>Access control audit</li>
             <li>HIPAA/PCI/SOC2 gap analysis</li>
-            <li>Prioritized remediation roadmap</li>
           </ul>
         </div>
         

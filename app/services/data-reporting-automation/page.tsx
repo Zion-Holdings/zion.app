@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Scheduled and trigger-based</li>
             <li>Excel PDF PowerPoint output</li>
             <li>Email and Slack distribution</li>
-            <li>Drill-down and self-service</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Progress analytics</li>
             <li>Automated email sequences</li>
             <li>In-app guidance</li>
-            <li>Success milestone tracking</li>
           </ul>
         </div>
         

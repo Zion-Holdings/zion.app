@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Chaos Engineering as a Service - Zion Tech Group",
-  description: "Hosted chaos experiment platform: inject latency, packet loss, CPU or memory spikes, or database failover per Kubernetes namespace or instance, blast-radius boundary, auto-generated results report per",
+  description: "Hosted chaos experiment platform: inject latency, packet loss, CPU or memory spikes, or database failover per Kubernetes namespace or instance, blast-radius bou",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cloud-chaos-engineering-platform`
   }

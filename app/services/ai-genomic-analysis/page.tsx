@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Genomic Analysis - Zion Tech Group",
-  description: "Ai Genomic Analysis — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurable RO",
+  description: "Ai Genomic Analysis — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, acce",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-genomic-analysis`
   }

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Auto-draft replies</li>
             <li>Reply-all verification</li>
             <li>Sentiment analysis</li>
-            <li>Follow-up reminders</li>
           </ul>
         </div>
         

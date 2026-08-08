@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Cyber Threat Hunting & Incident Response - Zion Tech Group",
-  description: "Proactive threat detection using advanced AI behavioral analysis, anomaly detection, and automated incident response orchestration for enterprises under constant attack.",
+  description: "Proactive threat detection using advanced AI behavioral analysis, anomaly detection, and automated incident response orchestration for enterprises under constan",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-cyber-threat-hunting`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automated incident response playbooks</li>
             <li>Threat intelligence correlation &amp; enrichment</li>
             <li>Forensic analysis &amp; root-cause reconstruction</li>
-            <li>Compliance reporting for SOC 2, ISO 27001, NIST</li>
           </ul>
         </div>
         

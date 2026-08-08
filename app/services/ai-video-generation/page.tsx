@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Brand kit — colors, logos, auto-applied</li>
             <li>Video editing timeline with AI-assisted cuts</li>
             <li>Multi-platform export — YouTube, TikTok, Reels</li>
-            <li>Template marketplace — 500+ pre-built designs</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>50+ language voiceover</li>
             <li>Consistent brand presentation</li>
             <li>Multi-format export</li>
-            <li>Built-in editing suite</li>
           </ul>
         </div>
         

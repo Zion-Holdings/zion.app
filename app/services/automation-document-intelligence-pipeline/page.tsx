@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Legal Document Intelligence Pipeline - Zion Tech Group",
-  description: "OCR + NLP document-intelligence: pipeline-abstract multi-service orchestration for contracts, invoices, and regulatory submissions; auto-classification, clause extraction, anomaly flag, e-signature re",
+  description: "OCR + NLP document-intelligence: pipeline-abstract multi-service orchestration for contracts, invoices, and regulatory submissions; auto-classification, clause ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automation-document-intelligence-pipeline`
   }

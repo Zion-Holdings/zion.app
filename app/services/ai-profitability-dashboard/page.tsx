@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Profitability Dashboard - Zion Tech Group",
-  description: "Ai Profitability Dashboard — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measur",
+  description: "Ai Profitability Dashboard — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operation",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-profitability-dashboard`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "DevSecOps & Security Automation - Zion Tech Group",
-  description: "Embed security into CI/CD pipelines with automated SAST, DAST, SCA, container scanning, and infrastructure-as-code security checks — shifting security left without slowing delivery.",
+  description: "Embed security into CI/CD pipelines with automated SAST, DAST, SCA, container scanning, and infrastructure-as-code security checks — shifting security left with",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-devsecops-1`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Container and Kubernetes security scanning</li>
             <li>Infrastructure-as-code security validation (Terraform, CloudFormation)</li>
             <li>Secrets detection and rotation automation</li>
-            <li>SBOM generation and vulnerability tracking</li>
           </ul>
         </div>
         

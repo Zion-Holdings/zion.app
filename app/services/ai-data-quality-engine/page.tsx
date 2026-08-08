@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Data Quality & Enforcement Engine - Zion Tech Group",
-  description: "Continuous data quality at pipeline scale: automated profiling, statistical anomaly detection, schema drift + auto-fix. GE/Soda/DBT quality gates prevent bad data flowing to warehouse.",
+  description: "Continuous data quality at pipeline scale: automated profiling, statistical anomaly detection, schema drift + auto-fix. GE/Soda/DBT quality gates prevent bad da",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-data-quality-engine`
   }

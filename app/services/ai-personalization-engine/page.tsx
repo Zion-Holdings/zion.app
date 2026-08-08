@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cross-channel personalized messaging</li>
             <li>AI-powered product recommendation engine</li>
             <li>A/B/n testing with multi-armed bandit optimization</li>
-            <li>Revenue attribution and ROI measurement</li>
           </ul>
         </div>
         

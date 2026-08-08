@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Passwordless Authentication - Zion Tech Group",
-  description: "Behavioral biometrics & risk-based authentication: continuous fraud detection using device fingerprinting, typing patterns, and anomaly detection without passwords.",
+  description: "Behavioral biometrics & risk-based authentication: continuous fraud detection using device fingerprinting, typing patterns, and anomaly detection without passwo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-passwordless-auth`
   }

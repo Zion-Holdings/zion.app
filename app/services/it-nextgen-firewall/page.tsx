@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>SSL/TLS inspection</li>
             <li>Web and application filtering</li>
             <li>24/7 SOC monitoring</li>
-            <li>Monthly health reports</li>
           </ul>
         </div>
         

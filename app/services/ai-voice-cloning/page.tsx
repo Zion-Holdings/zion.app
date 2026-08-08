@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Real-time audio streaming for voice assistants</li>
             <li>Multi-speaker conversation generation</li>
             <li>Studio-quality audio with noise reduction</li>
-            <li>Ethical consent tracking and ownership verification</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Real-time streaming capability</li>
             <li>Reduce voice talent costs by 80%</li>
             <li>Ethical consent management</li>
-            <li>Custom emotion and tone controls</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Multi-Channel Campaign Orchestrator - Zion Tech Group",
-  description: "Orchestrate campaigns across email, SMS, WhatsApp, Telegram, and LinkedIn with sequence branching, per-channel A/B testing, delay per touchpoint, re-engagement windows, engaged versus unengaged segmen",
+  description: "Orchestrate campaigns across email, SMS, WhatsApp, Telegram, and LinkedIn with sequence branching, per-channel A/B testing, delay per touchpoint, re-engagement ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automation-multi-channel-campaign-orchestrator`
   }

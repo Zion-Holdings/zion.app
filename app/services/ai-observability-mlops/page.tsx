@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cost &amp; Usage Analytics</li>
             <li>MLOps Pipeline Management</li>
             <li>Debugging &amp; Root Cause</li>
-            <li>Compliance &amp; Audit</li>
           </ul>
         </div>
         

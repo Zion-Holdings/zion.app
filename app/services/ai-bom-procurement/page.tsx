@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI BOM & Procurement Optimiser - Zion Tech Group",
-  description: "Multi-tier bill-of-materials analyser. Optimises part sourcing, predicts shortages, recommends alternative components, and benchmarks against global market pricing for manufacturing.",
+  description: "Multi-tier bill-of-materials analyser. Optimises part sourcing, predicts shortages, recommends alternative components, and benchmarks against global market pric",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-bom-procurement`
   }

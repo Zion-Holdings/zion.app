@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Infra Provisioner - Zion Tech Group",
-  description: "Ai Infra Provisioner — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurable R",
+  description: "Ai Infra Provisioner — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-infra-provisioner`
   }

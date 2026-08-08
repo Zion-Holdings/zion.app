@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Product Photo Enhancer - Zion Tech Group",
-  description: "Ai Product Photo Enhancer — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measura",
+  description: "Ai Product Photo Enhancer — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-product-photo-enhancer`
   }

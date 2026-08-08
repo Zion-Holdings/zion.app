@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Privacy Program & Data Governance - Zion Tech Group",
-  description: "Full privacy program: data mapping, discovery, inventory, classification, consent management, DSAR automation, PIAs, DPO support, regulatory reporting (GDPR/CCPA/PIPEDA/CPC).",
+  description: "Full privacy program: data mapping, discovery, inventory, classification, consent management, DSAR automation, PIAs, DPO support, regulatory reporting (GDPR/CCP",
   alternates: {
     canonical: `https://ziontechgroup.com/services/privacy-program`
   }

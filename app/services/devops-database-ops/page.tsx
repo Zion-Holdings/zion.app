@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Read replica management</li>
             <li>Schema migration automation</li>
             <li>24/7 monitoring and alerting</li>
-            <li>Cross-cloud deployment</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Threat Hunter - Zion Tech Group",
-  description: "Autonomous AI-powered threat hunting: continuous behavioural anomaly detection, novel attack chain reconstruction, MITRE ATT&CK mapping, custom hunt queries, natural-language investigation interface, ",
+  description: "Autonomous AI-powered threat hunting: continuous behavioural anomaly detection, novel attack chain reconstruction, MITRE ATT&CK mapping, custom hunt queries, na",
   alternates: {
     canonical: `https://ziontechgroup.com/services/security-ai-threat-hunter`
   }

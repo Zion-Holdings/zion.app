@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Dependency vulnerability scanning</li>
             <li>Secret detection GitLeaks</li>
             <li>Compliance as code</li>
-            <li>Security dashboard</li>
           </ul>
         </div>
         

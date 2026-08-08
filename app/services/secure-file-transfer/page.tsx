@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Secure File Transfer - Zion Tech Group",
-  description: "Secure File Transfer — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurable R",
+  description: "Secure File Transfer — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/secure-file-transfer`
   }

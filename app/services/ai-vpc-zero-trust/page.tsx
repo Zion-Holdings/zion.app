@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Vpc Zero Trust - Zion Tech Group",
-  description: "Ai Vpc Zero Trust — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurable ROI.",
+  description: "Ai Vpc Zero Trust — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accele",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-vpc-zero-trust`
   }

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data quality validation</li>
             <li>Scheduling and orchestration</li>
             <li>Error alerting and retry</li>
-            <li>Lineage and impact analysis</li>
           </ul>
         </div>
         

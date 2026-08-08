@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Contract clause identification</li>
             <li>Form field extraction</li>
             <li>Auto-classification by type</li>
-            <li>Human-in-the-loop verification</li>
           </ul>
         </div>
         

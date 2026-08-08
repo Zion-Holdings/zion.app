@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cloud FinOps & Cost Intelligence - Zion Tech Group",
-  description: "Comprehensive cloud cost management service combining automated tooling, reserved instance optimization, anomaly detection, and organizational FinOps culture to reduce cloud spend by 30-40% without pe",
+  description: "Comprehensive cloud cost management service combining automated tooling, reserved instance optimization, anomaly detection, and organizational FinOps culture to",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cloud-finops-1`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automated reserved instance and savings plan optimization</li>
             <li>Real-time cost anomaly detection and budget alerts</li>
             <li>Kubernetes cost optimization (HPA, node optimization)</li>
-            <li>Tag governance and resource ownership tracking</li>
           </ul>
         </div>
         

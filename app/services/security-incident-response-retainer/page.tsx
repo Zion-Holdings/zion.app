@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Under 1-hour activation</li>
             <li>Forensic investigation</li>
             <li>Legal and PR coordination</li>
-            <li>Post-incident hardening</li>
           </ul>
         </div>
         

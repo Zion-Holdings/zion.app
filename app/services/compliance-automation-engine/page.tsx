@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Compliance Automation Engine - Zion Tech Group",
-  description: "Rule-based compliance engine that embeds regulatory logic into your data pipelines and APIs. Automates access reviews, entitlement certifications, policy violation detection, and remediation tracking.",
+  description: "Rule-based compliance engine that embeds regulatory logic into your data pipelines and APIs. Automates access reviews, entitlement certifications, policy violat",
   alternates: {
     canonical: `https://ziontechgroup.com/services/compliance-automation-engine`
   }

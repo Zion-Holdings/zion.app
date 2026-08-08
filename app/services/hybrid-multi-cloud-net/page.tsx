@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Hybrid Multi-Cloud Networking - Zion Tech Group",
-  description: "Unified networking across private DC + public clouds: VPC peering, VPN/Direct Connect/Interconnect, centralized routing, cloud firewall, Istio/Linkerd cross-cloud mesh.",
+  description: "Unified networking across private DC + public clouds: VPC peering, VPN/Direct Connect/Interconnect, centralized routing, cloud firewall, Istio/Linkerd cross-clo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/hybrid-multi-cloud-net`
   }

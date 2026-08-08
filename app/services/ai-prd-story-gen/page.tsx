@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI PRD & User Story Generator - Zion Tech Group",
-  description: "Transform vague feature requests into comprehensive Product Requirements Documents with acceptance criteria, user flows, and ready-for-engineering technical specs.",
+  description: "Transform vague feature requests into comprehensive Product Requirements Documents with acceptance criteria, user flows, and ready-for-engineering technical spe",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-prd-story-gen`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Knowledge Graph Builder - Zion Tech Group",
-  description: "Ingest internal docs, wikis, tickets, and code — extract entity relations, build searchable knowledge graph. Surfaces hidden connections: which team owns what, what service is blocked by which team.",
+  description: "Ingest internal docs, wikis, tickets, and code — extract entity relations, build searchable knowledge graph. Surfaces hidden connections: which team owns what, ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-knowledge-graph`
   }

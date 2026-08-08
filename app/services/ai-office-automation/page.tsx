@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Office Automation - Zion Tech Group",
-  description: "AI copilot for office workflows: document classification, contract parsing, email triage, invoice data extraction, and workflow routing — all with no-code builder.",
+  description: "AI copilot for office workflows: document classification, contract parsing, email triage, invoice data extraction, and workflow routing — all with no-code build",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-office-automation`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Voice Agent Builder - Zion Tech Group",
-  description: "Ai Voice Agent Builder — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurable",
+  description: "Ai Voice Agent Builder — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-voice-agent-builder`
   }

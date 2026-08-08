@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "IT Service Catalog Builder - Zion Tech Group",
-  description: "Drag-and-drop service catalog designer for ITSM teams. Auto-generates from CMDB data, supports multi-language publication, and integrates with ServiceNow and Jira.",
+  description: "Drag-and-drop service catalog designer for ITSM teams. Auto-generates from CMDB data, supports multi-language publication, and integrates with ServiceNow and Ji",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-service-catalog-builder`
   }

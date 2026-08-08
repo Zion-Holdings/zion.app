@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Procurement Intelligence - Zion Tech Group",
-  description: "Auto-sources suppliers compares prices negotiates contracts tracks delivery and manages supplier risk: e-procurement spend analysis contract mgmt supplier scorecards.",
+  description: "Auto-sources suppliers compares prices negotiates contracts tracks delivery and manages supplier risk: e-procurement spend analysis contract mgmt supplier score",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-procurement`
   }

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Event-Driven Pipelines</li>
             <li>Structured Outputs &amp; Orchestration</li>
             <li>Security &amp; Access Control</li>
-            <li>Observability &amp; Versioning</li>
           </ul>
         </div>
         

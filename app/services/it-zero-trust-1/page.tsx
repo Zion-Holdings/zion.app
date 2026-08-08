@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Zero Trust Security Implementation - Zion Tech Group",
-  description: "Complete Zero Trust architecture implementation — from identity and access management to network microsegmentation, device trust, and continuous verification across your entire infrastructure.",
+  description: "Complete Zero Trust architecture implementation — from identity and access management to network microsegmentation, device trust, and continuous verification ac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-zero-trust-1`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Network microsegmentation design and implementation</li>
             <li>Multi-factor authentication everywhere (MFA/SSO)</li>
             <li>Device trust and endpoint verification</li>
-            <li>Least-privilege access policy design</li>
           </ul>
         </div>
         

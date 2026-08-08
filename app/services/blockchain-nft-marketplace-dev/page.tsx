@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>English and Dutch auctions</li>
             <li>Creator royalty enforcement</li>
             <li>User wallet integration</li>
-            <li>Admin dashboard and analytics</li>
           </ul>
         </div>
         

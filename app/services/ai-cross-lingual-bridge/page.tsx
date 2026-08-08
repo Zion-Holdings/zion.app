@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Cross-Lingual Bridge - Zion Tech Group",
-  description: "Enterprise-grade cross-language content and support platform: semantic translation, accent-normalised speech, multilingual chatbot/knowledge base build, automatic locale detection, and compliance-chec",
+  description: "Enterprise-grade cross-language content and support platform: semantic translation, accent-normalised speech, multilingual chatbot/knowledge base build, automat",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-cross-lingual-bridge`
   }

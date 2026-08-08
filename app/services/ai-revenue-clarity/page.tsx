@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Revenue Clarity & Forecasting - Zion Tech Group",
-  description: "Ingest pipeline, CRM custom objects, deal stages. ML forecasts: probability-adjusted revenue by rep, team, region. Detect stalled deals. Auto-generate pipeline coverage report.",
+  description: "Ingest pipeline, CRM custom objects, deal stages. ML forecasts: probability-adjusted revenue by rep, team, region. Detect stalled deals. Auto-generate pipeline ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-revenue-clarity`
   }

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Health sensor integration</li>
             <li>Mobile companion app</li>
             <li>Cloud data platform</li>
-            <li>FDA compliance guidance</li>
           </ul>
         </div>
         

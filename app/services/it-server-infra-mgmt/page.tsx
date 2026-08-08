@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Capacity planning and right-sizing</li>
             <li>Performance baseline and tuning</li>
             <li>Under 15-min incident response</li>
-            <li>Monthly health reports</li>
           </ul>
         </div>
         

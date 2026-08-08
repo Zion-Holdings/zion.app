@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Code Audit & Security Scanner - Zion Tech Group",
-  description: "Comprehensive static analysis powered by AI: detect vulnerabilities, code smells, license compliance issues, and security anti-patterns before they reach production.",
+  description: "Comprehensive static analysis powered by AI: detect vulnerabilities, code smells, license compliance issues, and security anti-patterns before they reach produc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-code-audit-security`
   }

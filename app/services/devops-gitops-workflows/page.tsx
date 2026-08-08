@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Auto-sync from Git repos</li>
             <li>Drift detection and correction</li>
             <li>Multi-cluster management</li>
-            <li>RBAC and policy enforcement</li>
           </ul>
         </div>
         

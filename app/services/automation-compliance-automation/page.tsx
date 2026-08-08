@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Policy management and attestation</li>
             <li>Violation alerting</li>
             <li>Audit-ready reports</li>
-            <li>SOC2/HIPAA/PCI/GDPR frameworks</li>
           </ul>
         </div>
         

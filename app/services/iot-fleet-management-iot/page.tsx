@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Fuel consumption optimization</li>
             <li>Route optimization</li>
             <li>Maintenance scheduling</li>
-            <li>ELD and compliance reporting</li>
           </ul>
         </div>
         

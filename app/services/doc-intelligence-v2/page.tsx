@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Document Processing v2 - Zion Tech Group",
-  description: "Intelligent document processing: layout-aware OCR, handwriting recognition, table extraction, and form auto-fill. Handles invoices, contracts, medical records, and tax forms at 1000 pages per hour via",
+  description: "Intelligent document processing: layout-aware OCR, handwriting recognition, table extraction, and form auto-fill. Handles invoices, contracts, medical records, ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/doc-intelligence-v2`
   }

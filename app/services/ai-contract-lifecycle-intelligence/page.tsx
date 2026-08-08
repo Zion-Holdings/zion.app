@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Contract Lifecycle Intelligence - Zion Tech Group",
-  description: "AI contract lifecycle management: extract clauses and dates, auto-flag risk, renewal calendar, benchmark against market terms, amendment tracker across 200+ contract types.",
+  description: "AI contract lifecycle management: extract clauses and dates, auto-flag risk, renewal calendar, benchmark against market terms, amendment tracker across 200+ con",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-contract-lifecycle-intelligence`
   }

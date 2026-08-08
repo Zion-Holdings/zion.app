@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Knowledge Graph Search Engine - Zion Tech Group",
-  description: "Semantic graph search engine: turn siloed docs, databases, and APIs into a unified knowledge graph with entity disambiguation, NL query rewriting, and cited ranked answers across 50+ connected tools.",
+  description: "Semantic graph search engine: turn siloed docs, databases, and APIs into a unified knowledge graph with entity disambiguation, NL query rewriting, and cited ran",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-knowledge-graph-search-engine`
   }

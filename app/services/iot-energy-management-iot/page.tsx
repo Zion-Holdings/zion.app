@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Load balancing and optimization</li>
             <li>Demand response automation</li>
             <li>Solar and battery integration</li>
-            <li>Utility bill analysis and savings</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Kubernetes GitOps Platform - Zion Tech Group",
-  description: "GitOps-driven Kubernetes operations: declarative manifests stored in Git, automated drift detection and reconciliation, environment promotion workflows, progressive delivery (canary/blue-green), and b",
+  description: "GitOps-driven Kubernetes operations: declarative manifests stored in Git, automated drift detection and reconciliation, environment promotion workflows, progres",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cloud-kubernetes-gitops-platform`
   }

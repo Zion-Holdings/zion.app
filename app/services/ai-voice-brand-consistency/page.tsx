@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Voice Brand Consistency - Zion Tech Group",
-  description: "Ai Voice Brand Consistency — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measur",
+  description: "Ai Voice Brand Consistency — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operation",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-voice-brand-consistency`
   }

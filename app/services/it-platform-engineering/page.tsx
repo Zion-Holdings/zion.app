@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Platform Engineering & Internal Developer Portal - Zion Tech Group",
-  description: "Build internal developer platforms with self-service infrastructure provisioning, golden paths, and developer experience optimization to accelerate team productivity.",
+  description: "Build internal developer platforms with self-service infrastructure provisioning, golden paths, and developer experience optimization to accelerate team product",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-platform-engineering`
   }

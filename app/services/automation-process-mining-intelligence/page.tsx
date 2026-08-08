@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Process Mining Intelligence - Zion Tech Group",
-  description: "Event-log based process discovery: take event-logs from ERP, CRM, BPM systems, discover actual vs. intended process maps, identify bottleneck and deviation, quantify handoff wait time, change-impact s",
+  description: "Event-log based process discovery: take event-logs from ERP, CRM, BPM systems, discover actual vs. intended process maps, identify bottleneck and deviation, qua",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automation-process-mining-intelligence`
   }

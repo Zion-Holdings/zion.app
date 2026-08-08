@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Invoice & Purchase Order Processing - Zion Tech Group",
-  description: "AI-powered invoice + PO processing pipeline: scans, OCR, vendor matching via payment history, line-item validation vs. PO, three-way match against GRN, GL-code auto-suggestion, ERP posting stub, and e",
+  description: "AI-powered invoice + PO processing pipeline: scans, OCR, vendor matching via payment history, line-item validation vs. PO, three-way match against GRN, GL-code ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automation-invoice-purchase-order-processing`
   }

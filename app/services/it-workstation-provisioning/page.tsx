@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Security policy application</li>
             <li>User profile migration</li>
             <li>Asset tag and inventory</li>
-            <li>Remote setup available</li>
           </ul>
         </div>
         

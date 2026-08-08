@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>What-if scenario modeling</li>
             <li>Predictive failure simulation</li>
             <li>Performance optimization</li>
-            <li>Integration with SCADA and MES</li>
           </ul>
         </div>
         

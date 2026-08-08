@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Disaster Recovery Orchestration - Zion Tech Group",
-  description: "Zero-downtime DR orchestration across regions: continuous async replication, warm-standby spin-up automation in 30 seconds, failover runbook executor with per-step human-halt, DR test runner, and RPO ",
+  description: "Zero-downtime DR orchestration across regions: continuous async replication, warm-standby spin-up automation in 30 seconds, failover runbook executor with per-s",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cloud-disaster-recovery-orchestration`
   }

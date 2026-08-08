@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Interview Conduct Bot - Zion Tech Group",
-  description: "Ai Interview Conduct Bot — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurab",
+  description: "Ai Interview Conduct Bot — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations,",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-interview-conduct-bot`
   }

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Vendor &amp; Build-vs-Buy Evaluation</li>
             <li>Phased Roadmap Design</li>
             <li>KPI &amp; Success Metrics</li>
-            <li>Governance &amp; Risk Alignment</li>
           </ul>
         </div>
         

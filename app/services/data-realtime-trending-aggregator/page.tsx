@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Real-time Event & Trending Aggregator - Zion Tech Group",
-  description: "Streaming data platform: Flink/Redpanda backbone, windowed aggregation at sub-second latency, trend-detection anomaly alerts, opentelemetry distributed-tracing per event, dashboarding per team with li",
+  description: "Streaming data platform: Flink/Redpanda backbone, windowed aggregation at sub-second latency, trend-detection anomaly alerts, opentelemetry distributed-tracing ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/data-realtime-trending-aggregator`
   }

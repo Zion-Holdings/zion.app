@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Sentiment & Brand Pulse Monitor - Zion Tech Group",
-  description: "Monitor brand mentions across social, reviews, news, forums. Sentiment trend analysis per region, product, issue. Alert on sentiment spike. Generate weekly brand health executive summary.",
+  description: "Monitor brand mentions across social, reviews, news, forums. Sentiment trend analysis per region, product, issue. Alert on sentiment spike. Generate weekly bran",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-sentiment-brand-pulse`
   }

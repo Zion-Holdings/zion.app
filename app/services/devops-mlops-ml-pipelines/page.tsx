@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>A/B model testing</li>
             <li>Drift detection and auto-retrain</li>
             <li>Feature store management</li>
-            <li>GPU resource optimization</li>
           </ul>
         </div>
         

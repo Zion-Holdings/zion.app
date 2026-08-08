@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Sustainable Supply Chain Radar - Zion Tech Group",
-  description: "Supply-chain ESG tracking: carbon-intensity per supplier tier, green-alternative sourcing score, Scope 3 quantification, regulatory dashboard for CSRD and CBAM, and regulatory penalty simulator per sc",
+  description: "Supply-chain ESG tracking: carbon-intensity per supplier tier, green-alternative sourcing score, Scope 3 quantification, regulatory dashboard for CSRD and CBAM,",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-sustainable-supply-chain-radar`
   }

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Personalization with merge tags</li>
             <li>A/B testing automation</li>
             <li>Deliverability optimization</li>
-            <li>Analytics and reporting</li>
           </ul>
         </div>
         

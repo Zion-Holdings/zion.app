@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Auto-scaling HPA/VPA</li>
             <li>Service mesh Istio/Linkerd</li>
             <li>Prometheus/Grafana monitoring</li>
-            <li>Container security scanning</li>
           </ul>
         </div>
         

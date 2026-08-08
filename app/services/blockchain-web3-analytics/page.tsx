@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>NFT marketplace intelligence</li>
             <li>Whale and smart money alerts</li>
             <li>Risk scoring for addresses</li>
-            <li>Custom dashboards and API</li>
           </ul>
         </div>
         

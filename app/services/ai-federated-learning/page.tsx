@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Federated Learning - Zion Tech Group",
-  description: "Ai Federated Learning — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurable ",
+  description: "Ai Federated Learning — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, ac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-federated-learning`
   }

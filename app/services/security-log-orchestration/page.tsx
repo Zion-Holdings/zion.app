@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Security Log Orchestration & Correlation - Zion Tech Group",
-  description: "Ingest logs from 200+ sources, normalise at scale, and run correlation rules across the full attack chain. Reduces alert fatigue with context-enriched triage views.",
+  description: "Ingest logs from 200+ sources, normalise at scale, and run correlation rules across the full attack chain. Reduces alert fatigue with context-enriched triage vi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/security-log-orchestration`
   }

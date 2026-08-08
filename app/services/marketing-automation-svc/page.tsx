@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Marketing Automation Platform - Zion Tech Group",
-  description: "Full marketing automation: lead scoring, nurture campaigns, A/B test + auto-optimize, multi-channel (email/SMS/push/social/ads), CRM sync, customer journey per segment.",
+  description: "Full marketing automation: lead scoring, nurture campaigns, A/B test + auto-optimize, multi-channel (email/SMS/push/social/ads), CRM sync, customer journey per ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/marketing-automation-svc`
   }

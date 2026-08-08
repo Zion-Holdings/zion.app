@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Hybrid + Multi-Cloud Networking - Zion Tech Group",
-  description: "Zero-trust networking across on-prem/edge/cloud: cloud-router fabric connects VPCs across AWS/GCP/Azure, on-prem data-centre via WireGuard or IPSec, global anycast front-door with WAF.",
+  description: "Zero-trust networking across on-prem/edge/cloud: cloud-router fabric connects VPCs across AWS/GCP/Azure, on-prem data-centre via WireGuard or IPSec, global anyc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cloud-hybrid-multicloud-networking`
   }

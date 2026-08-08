@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Network segmentation for IoT</li>
             <li>Encrypted data transmission</li>
             <li>Anomaly detection on device</li>
-            <li>Compliance IEC 62443</li>
           </ul>
         </div>
         

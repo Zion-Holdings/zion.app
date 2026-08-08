@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Event-Driven Architecture (EDA) Platform - Zion Tech Group",
-  description: "Design and implement event-driven microservices: Apache Kafka or Pulsar event mesh, schema registry, CQRS plus event sourcing patterns, exactly-once delivery, and replay and replay-sanitise pipelines.",
+  description: "Design and implement event-driven microservices: Apache Kafka or Pulsar event mesh, schema registry, CQRS plus event sourcing patterns, exactly-once delivery, a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/event-driven-architecture`
   }

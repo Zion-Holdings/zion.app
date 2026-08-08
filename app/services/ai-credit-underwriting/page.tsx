@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Credit Underwriting - Zion Tech Group",
-  description: "Ai Credit Underwriting — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurable",
+  description: "Ai Credit Underwriting — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-credit-underwriting`
   }

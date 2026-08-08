@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Threat Hunting & Investigation - Zion Tech Group",
-  description: "AI-assisted threat hunting: hypothesis-driven search across SIEM, EDR, network, and cloud logs. Auto-generates hunting queries, correlates anomalies, and produces confirmed incidents with remediation ",
+  description: "AI-assisted threat hunting: hypothesis-driven search across SIEM, EDR, network, and cloud logs. Auto-generates hunting queries, correlates anomalies, and produc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-threat-hunting`
   }

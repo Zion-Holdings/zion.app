@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Endpoint Security & Compliance Monitor - Zion Tech Group",
-  description: "EDR and XDR endpoint coverage with compliance attestation: CIS benchmark checks, disk-encrypt status, OS patch-level verification, software-inventory SBOM per asset, CISA KEV auto-detection, and SCAP ",
+  description: "EDR and XDR endpoint coverage with compliance attestation: CIS benchmark checks, disk-encrypt status, OS patch-level verification, software-inventory SBOM per a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-endpoint-security-compliance`
   }

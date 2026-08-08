@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>100+ data source connectors</li>
             <li>Real-time data refresh</li>
             <li>Row-level security</li>
-            <li>Embedded analytics for your app</li>
           </ul>
         </div>
         

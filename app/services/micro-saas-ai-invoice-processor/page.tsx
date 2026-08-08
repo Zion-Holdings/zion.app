@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Micro-SAAS AI Invoice Processor - Zion Tech Group",
-  description: "Automated invoice data extraction and processing using AI. Reads PDF/scan invoices, extracts line items, validates against POs, and syncs with accounting systems.",
+  description: "Automated invoice data extraction and processing using AI. Reads PDF/scan invoices, extracts line items, validates against POs, and syncs with accounting system",
   alternates: {
     canonical: `https://ziontechgroup.com/services/micro-saas-ai-invoice-processor`
   }

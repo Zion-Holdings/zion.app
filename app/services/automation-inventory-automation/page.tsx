@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Demand forecasting integration</li>
             <li>Supplier management</li>
             <li>Multi-location support</li>
-            <li>Shrinkage detection</li>
           </ul>
         </div>
         

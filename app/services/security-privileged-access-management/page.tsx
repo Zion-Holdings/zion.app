@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Privileged Access Management - Zion Tech Group",
-  description: "PAM platform: just-in-time privilege elevation, live session recording with playback, FIPS-140-2 certified credential vault, break-glass override, least-privilege policy engine per role, and quarterly",
+  description: "PAM platform: just-in-time privilege elevation, live session recording with playback, FIPS-140-2 certified credential vault, break-glass override, least-privile",
   alternates: {
     canonical: `https://ziontechgroup.com/services/security-privileged-access-management`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>FIPS-140-2 certified credential vault — secrets never persisted to disk</li>
             <li>Break-glass override with approval chain and board-level notification per use</li>
             <li>Least-privilege policy engine auto-generates per role and per system access policies</li>
-            <li>Access certification per quarter — auto-approve or manager re-approve within 90-day window</li>
           </ul>
         </div>
         

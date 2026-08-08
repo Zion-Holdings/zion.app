@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Spam and scam detection</li>
             <li>Custom policy rules</li>
             <li>Human review queue</li>
-            <li>Real-time and batch processing</li>
           </ul>
         </div>
         

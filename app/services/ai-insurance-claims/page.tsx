@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Insurance Claims - Zion Tech Group",
-  description: "Ai Insurance Claims — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurable RO",
+  description: "Ai Insurance Claims — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, acce",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-insurance-claims`
   }

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Network pentest internal/external</li>
             <li>Mobile app iOS/Android testing</li>
             <li>Cloud configuration review</li>
-            <li>Detailed remediation report</li>
           </ul>
         </div>
         

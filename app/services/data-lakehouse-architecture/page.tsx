@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Schema enforcement and evolution</li>
             <li>Time travel and versioning</li>
             <li>Cost-optimized storage layers</li>
-            <li>Governance and access control</li>
           </ul>
         </div>
         

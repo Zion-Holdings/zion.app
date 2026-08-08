@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Legal Document Redlining & Review - Zion Tech Group",
-  description: "Automated contract review against playbooks: flag risky clauses, missing obligations, fee anomalies, and unfavorable T&Cs. Generates redlines + executive summary per document type (MSA, SOW, NDA, EULA",
+  description: "Automated contract review against playbooks: flag risky clauses, missing obligations, fee anomalies, and unfavorable T&Cs. Generates redlines + executive summar",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-legal-redline`
   }

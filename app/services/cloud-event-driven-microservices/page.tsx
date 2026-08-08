@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Event-Driven Microservices Platform - Zion Tech Group",
-  description: "Event backbone as a service: managed Pub-Sub broker, event schema registry, replay from any timestamp, dead-letter queue management, per-service event-sourcing, per-event observability, and fan-out ha",
+  description: "Event backbone as a service: managed Pub-Sub broker, event schema registry, replay from any timestamp, dead-letter queue management, per-service event-sourcing,",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cloud-event-driven-microservices`
   }

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Hybrid Cloud-Edge Orchestration</li>
             <li>Model Optimization &amp; Quantization</li>
             <li>Low-Latency APIs</li>
-            <li>Observability at the Edge</li>
           </ul>
         </div>
         

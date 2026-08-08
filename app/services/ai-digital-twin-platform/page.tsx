@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Digital Twin Platform - Zion Tech Group",
-  description: "Ai Digital Twin Platform — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurab",
+  description: "Ai Digital Twin Platform — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations,",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-digital-twin-platform`
   }

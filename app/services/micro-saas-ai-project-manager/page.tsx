@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Resource optimization</li>
             <li>Status report generation</li>
             <li>Risk identification</li>
-            <li>Gantt chart auto-generation</li>
           </ul>
         </div>
         

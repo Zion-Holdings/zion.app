@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Text classification</li>
             <li>Search relevance tuning</li>
             <li>Multi-language support 20+</li>
-            <li>Custom model training</li>
           </ul>
         </div>
         

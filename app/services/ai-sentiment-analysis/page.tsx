@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Sentiment Analysis & Brand Monitoring - Zion Tech Group",
-  description: "Real-time brand perception tracking across social media, reviews, news, and forums. Understand customer emotion at scale and act on insights before they become crises.",
+  description: "Real-time brand perception tracking across social media, reviews, news, and forums. Understand customer emotion at scale and act on insights before they become ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-sentiment-analysis`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Brand mention clustering &amp; trending topic detection</li>
             <li>Influencer identification &amp; partnership scoring</li>
             <li>Crisis early-warning system with alert triage</li>
-            <li>Competitor sentiment benchmarking &amp; gap analysis</li>
           </ul>
         </div>
         

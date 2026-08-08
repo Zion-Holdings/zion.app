@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Performance suggestions with benchmarks</li>
             <li>Team coding standards enforcement</li>
             <li>PR integration — GitHub, GitLab, Bitbucket</li>
-            <li>Custom rules engine for team-specific checks</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>PR integration with inline comments</li>
             <li>Team custom rules enforcement</li>
             <li>Reduces senior review time by 60%</li>
-            <li>Supports 50+ programming languages</li>
           </ul>
         </div>
         

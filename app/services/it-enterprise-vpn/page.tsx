@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Multi-factor authentication</li>
             <li>Auto VPN client deployment</li>
             <li>Connection analytics</li>
-            <li>All major platforms</li>
           </ul>
         </div>
         

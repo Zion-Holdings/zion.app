@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Spot Instance Optimizer - Zion Tech Group",
-  description: "Multi-cloud spot and preemptible instance optimizer: smart bin-packing job scheduler, diversity-aware fallback strategy, SLA mix-ratio optimizer, graceful preempt handler with state checkpoint, and co",
+  description: "Multi-cloud spot and preemptible instance optimizer: smart bin-packing job scheduler, diversity-aware fallback strategy, SLA mix-ratio optimizer, graceful preem",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cloud-spot-instance-optimizer`
   }

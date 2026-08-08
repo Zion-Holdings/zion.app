@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cross-Provider Model Orchestration</li>
             <li>Production-Ready RAG &amp; Knowledge Systems</li>
             <li>Enterprise Copilots and Assistants</li>
-            <li>End-to-End Observability &amp; MLOps</li>
           </ul>
         </div>
         

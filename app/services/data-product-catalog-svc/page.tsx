@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Data Product Catalog & Lineage - Zion Tech Group",
-  description: "Auto-discover data assets from warehouse/lakehouse/BI. Business glossary auto-linked. Column-level lineage: table to report to dashboard. Auto-generated data contracts per product.",
+  description: "Auto-discover data assets from warehouse/lakehouse/BI. Business glossary auto-linked. Column-level lineage: table to report to dashboard. Auto-generated data co",
   alternates: {
     canonical: `https://ziontechgroup.com/services/data-product-catalog-svc`
   }

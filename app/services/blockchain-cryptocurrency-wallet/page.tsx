@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>NFT display and management</li>
             <li>Hardware wallet support</li>
             <li>Biometric authentication</li>
-            <li>Transaction simulation</li>
           </ul>
         </div>
         

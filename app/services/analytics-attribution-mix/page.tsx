@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Analytics Attribution & Marketing Mix Modeling - Zion Tech Group",
-  description: "Multi-touch attribution (first/last/linear/time-decay/position-based) + marketing mix modeling. CAC, LTV, ROAS per channel, campaign, cohort. Recommended budget allocation.",
+  description: "Multi-touch attribution (first/last/linear/time-decay/position-based) + marketing mix modeling. CAC, LTV, ROAS per channel, campaign, cohort. Recommended budget",
   alternates: {
     canonical: `https://ziontechgroup.com/services/analytics-attribution-mix`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Process Mining Deep Dive - Zion Tech Group",
-  description: "Deep-dive process analytics: auto-discover process maps from ERP, CRM, and BPM event logs; conformance checking per transaction; bottleneck and rework hotspot analysis with cycle-time and handover was",
+  description: "Deep-dive process analytics: auto-discover process maps from ERP, CRM, and BPM event logs; conformance checking per transaction; bottleneck and rework hotspot a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automation-process-mining-deep-dive`
   }

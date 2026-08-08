@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Resume Optimizer - Zion Tech Group",
-  description: "AI reads your resume vs JD: scores ATS compatibility rewrites bullet points quantifies achievements fills keyword gaps produces one-click export + cover letter draft.",
+  description: "AI reads your resume vs JD: scores ATS compatibility rewrites bullet points quantifies achievements fills keyword gaps produces one-click export + cover letter ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-resume-optimizer`
   }

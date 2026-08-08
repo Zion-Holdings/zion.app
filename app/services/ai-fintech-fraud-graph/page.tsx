@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Fintech Fraud Graph - Zion Tech Group",
-  description: "Real-time fraud detection as a knowledge graph: entity resolution across accounts, IP, device, and card fingerprints; ML scoring per transaction in under 15ms; SAR and CTR auto-draft; global rule engi",
+  description: "Real-time fraud detection as a knowledge graph: entity resolution across accounts, IP, device, and card fingerprints; ML scoring per transaction in under 15ms; ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-fintech-fraud-graph`
   }

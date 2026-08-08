@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Data Quality Fabric - Zion Tech Group",
-  description: "Ai Data Quality Fabric — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurable",
+  description: "Ai Data Quality Fabric — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-data-quality-fabric`
   }

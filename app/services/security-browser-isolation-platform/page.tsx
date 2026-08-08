@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Browser Isolation Platform - Zion Tech Group",
-  description: "Remote browser isolation: inspect every uncertified or risky site in cloud sandbox, drive-by download protection, credential-forwarding safe mock environment, phishing-engine sandbox analysis, bandwid",
+  description: "Remote browser isolation: inspect every uncertified or risky site in cloud sandbox, drive-by download protection, credential-forwarding safe mock environment, p",
   alternates: {
     canonical: `https://ziontechgroup.com/services/security-browser-isolation-platform`
   }

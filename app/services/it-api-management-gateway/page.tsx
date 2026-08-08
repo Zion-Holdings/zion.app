@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "API Management & Gateway - Zion Tech Group",
-  description: "Full API lifecycle management: unified gateway with auth, rate-limit, circuit-breaker, developer portal with auto-generated OpenAPI docs, per-tenant analytics, and API monetisation. Supports REST, Gra",
+  description: "Full API lifecycle management: unified gateway with auth, rate-limit, circuit-breaker, developer portal with auto-generated OpenAPI docs, per-tenant analytics, ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-api-management-gateway`
   }

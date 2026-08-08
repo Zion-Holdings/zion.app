@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Instant rollback</li>
             <li>A/B testing framework</li>
             <li>Audit trail for all changes</li>
-            <li>CI/CD integration</li>
           </ul>
         </div>
         

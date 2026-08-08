@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Screen scraping and OCR</li>
             <li>Excel, PDF, email automation</li>
             <li>Error handling and retry logic</li>
-            <li>Execution monitoring dashboard</li>
           </ul>
         </div>
         

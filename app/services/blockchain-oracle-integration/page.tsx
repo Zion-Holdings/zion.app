@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Off-chain computation</li>
             <li>Verifiable randomness VRF</li>
             <li>Cross-chain messaging CCIP</li>
-            <li>Keepers for automation</li>
           </ul>
         </div>
         

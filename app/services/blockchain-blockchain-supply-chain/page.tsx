@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Temperature and condition monitoring</li>
             <li>Compliance documentation</li>
             <li>Consumer-facing verification</li>
-            <li>Integration with ERP systems</li>
           </ul>
         </div>
         

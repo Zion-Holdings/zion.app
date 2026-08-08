@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data quality ratings</li>
             <li>Usage analytics</li>
             <li>Publisher and consumer roles</li>
-            <li>Automated provisioning</li>
           </ul>
         </div>
         

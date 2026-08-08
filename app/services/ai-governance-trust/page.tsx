@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Audit Trails &amp; Traceability</li>
             <li>Model Risk Management</li>
             <li>Regulatory Compliance</li>
-            <li>Responsible AI Frameworks</li>
           </ul>
         </div>
         

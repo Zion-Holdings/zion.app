@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Promotion and pricing impact modeling</li>
             <li>SKU-level and aggregate forecasts</li>
             <li>Confidence intervals</li>
-            <li>What-if scenario planning</li>
           </ul>
         </div>
         

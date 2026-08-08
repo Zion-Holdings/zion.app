@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Excel, PDF, PowerPoint output</li>
             <li>Email and Slack distribution</li>
             <li>Template library</li>
-            <li>Drill-down dashboards</li>
           </ul>
         </div>
         

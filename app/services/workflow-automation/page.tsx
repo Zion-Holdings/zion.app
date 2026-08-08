@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Workflow Automation & Integration Platform - Zion Tech Group",
-  description: "Low-code workflow builder: connect 500+ apps Zaps custom logic conditional branching retry error handling webhook triggers scheduling and approvals — replaces manual copy-paste.",
+  description: "Low-code workflow builder: connect 500+ apps Zaps custom logic conditional branching retry error handling webhook triggers scheduling and approvals — replaces m",
   alternates: {
     canonical: `https://ziontechgroup.com/services/workflow-automation`
   }

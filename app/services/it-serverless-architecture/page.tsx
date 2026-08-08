@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Serverless Architecture & Function-as-a-Service - Zion Tech Group",
-  description: "Design and migrate to serverless architectures - automatic scaling, pay-per-use pricing, and zero infrastructure management across AWS Lambda, Azure, and GCP Cloud Run.",
+  description: "Design and migrate to serverless architectures - automatic scaling, pay-per-use pricing, and zero infrastructure management across AWS Lambda, Azure, and GCP Cl",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-serverless-architecture`
   }

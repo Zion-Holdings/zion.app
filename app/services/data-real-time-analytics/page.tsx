@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Streaming data quality</li>
             <li>Event-driven architecture</li>
             <li>Sub-second latency analytics</li>
-            <li>Anomaly detection on streams</li>
           </ul>
         </div>
         

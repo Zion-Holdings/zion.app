@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Load Testing - Zion Tech Group",
-  description: "Ai Load Testing — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurable ROI.",
+  description: "Ai Load Testing — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelera",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-load-testing`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Serverless API Platform - Zion Tech Group",
-  description: "Zero-infrastructure serverless REST + GraphQL API layer: auto-scales to millions of RPS, pay-per-invocation billing, built-in authentication, rate-limiting, caching, and observability. Includes free t",
+  description: "Zero-infrastructure serverless REST + GraphQL API layer: auto-scales to millions of RPS, pay-per-invocation billing, built-in authentication, rate-limiting, cac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cloud-serverless-api-platform`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Chaos Engineering & Resilience Testing - Zion Tech Group",
-  description: "Proactive chaos experiments: inject failures (latency, pod kill, DB disconnect) on non-production to validate recovery paths. Auto-generate incident response playbooks from results.",
+  description: "Proactive chaos experiments: inject failures (latency, pod kill, DB disconnect) on non-production to validate recovery paths. Auto-generate incident response pl",
   alternates: {
     canonical: `https://ziontechgroup.com/services/chaos-engineering-svc`
   }

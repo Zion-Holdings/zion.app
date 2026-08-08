@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Supply Chain SBOM & Vulnerability Intelligence - Zion Tech Group",
-  description: "Automated SBOM generation, dependency attestation, real-time CVE/SSVC scoring, exploitability prediction, automated PR patch suggestions, and SLSA provenance verification — closing the software supply",
+  description: "Automated SBOM generation, dependency attestation, real-time CVE/SSVC scoring, exploitability prediction, automated PR patch suggestions, and SLSA provenance ve",
   alternates: {
     canonical: `https://ziontechgroup.com/services/security-supply-chain-sbom`
   }

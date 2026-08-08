@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI FedRAMP Compliance Assistant - Zion Tech Group",
-  description: "Maps your control implementations to FedRAMP Rev 5 generates POA&M tracks continuous monitoring artifacts auto-generates audit evidence bundles readiness gap report.",
+  description: "Maps your control implementations to FedRAMP Rev 5 generates POA&M tracks continuous monitoring artifacts auto-generates audit evidence bundles readiness gap re",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-fedrisk-compliance`
   }

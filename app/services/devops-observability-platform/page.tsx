@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Distributed tracing Jaeger</li>
             <li>AI anomaly detection</li>
             <li>Custom SLO dashboards</li>
-            <li>PagerDuty/Opsgenie integration</li>
           </ul>
         </div>
         

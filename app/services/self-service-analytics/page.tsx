@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Service Analytics Platform - Zion Tech Group",
-  description: "Self-service analytics for business analysts: semantic layer + named metric layer, NL to SQL, dashboard builder, governance + lineage. No SQL required by end user.",
+  description: "Self-service analytics for business analysts: semantic layer + named metric layer, NL to SQL, dashboard builder, governance + lineage. No SQL required by end us",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-service-analytics`
   }

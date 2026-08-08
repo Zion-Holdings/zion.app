@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Drone crop health imaging</li>
             <li>Automated irrigation control</li>
             <li>Yield prediction models</li>
-            <li>Pest and disease early detection</li>
           </ul>
         </div>
         

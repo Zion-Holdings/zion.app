@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Synthetic Data Generator & Privacy Shield - Zion Tech Group",
-  description: "Generative synthetic data platform for ML training, software testing, and GDPR/CCPA privacy compliance: maintains statistical distributions of real data while producing 100% synthetic records that pas",
+  description: "Generative synthetic data platform for ML training, software testing, and GDPR/CCPA privacy compliance: maintains statistical distributions of real data while p",
   alternates: {
     canonical: `https://ziontechgroup.com/services/data-synthetic-data-generator`
   }

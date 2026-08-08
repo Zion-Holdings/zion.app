@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Proactive maintenance and patching</li>
             <li>IT budget and vendor management</li>
             <li>Quarterly tech reviews</li>
-            <li>Dedicated account manager</li>
           </ul>
         </div>
         

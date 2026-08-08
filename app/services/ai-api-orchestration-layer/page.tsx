@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Api Orchestration Layer - Zion Tech Group",
-  description: "Ai Api Orchestration Layer — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measur",
+  description: "Ai Api Orchestration Layer — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operation",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-api-orchestration-layer`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>ML model training and fine-tuning</li>
             <li>Real-time inference API</li>
             <li>Model monitoring and drift detection</li>
-            <li>A/B testing framework</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "ITIL Service Management (ITSM) Platform - Zion Tech Group",
-  description: "Full ITIL-aligned service management with AI-powered ticketing, change management automation, CMDB discovery, and self-service portal for enterprise IT operations.",
+  description: "Full ITIL-aligned service management with AI-powered ticketing, change management automation, CMDB discovery, and self-service portal for enterprise IT operatio",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-itil-service-management`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Service catalog &amp; self-service portal</li>
             <li>CMDB auto-discovery &amp; dependency mapping</li>
             <li>SLA monitoring &amp; escalation engine</li>
-            <li>Knowledge base integration with AI search</li>
           </ul>
         </div>
         

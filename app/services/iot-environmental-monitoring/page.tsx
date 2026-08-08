@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Noise level measurement</li>
             <li>Temperature and humidity</li>
             <li>ESG compliance reporting</li>
-            <li>Historical trend analysis</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Audience activation to 50+ destinations</li>
             <li>Privacy and consent management</li>
             <li>Customer 360-degree view</li>
-            <li>Predictive customer scoring</li>
           </ul>
         </div>
         

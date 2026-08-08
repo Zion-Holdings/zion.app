@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Medical Image Diagnosis - Zion Tech Group",
-  description: "Ai Medical Image Diagnosis — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measur",
+  description: "Ai Medical Image Diagnosis — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operation",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-medical-image-diagnosis`
   }

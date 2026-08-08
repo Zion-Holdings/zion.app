@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Anomaly detection on data</li>
             <li>Remediation workflows</li>
             <li>Quality score dashboards</li>
-            <li>SLA monitoring for data</li>
           </ul>
         </div>
         

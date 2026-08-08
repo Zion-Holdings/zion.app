@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Customer risk profiling with dynamic baselines</li>
             <li>Automated case management with evidence bundling</li>
             <li>False positive reduction with adaptive learning</li>
-            <li>Regulatory reporting (BSA, AML, SAR) automation</li>
           </ul>
         </div>
         

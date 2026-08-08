@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Graph Database & Analytics - Zion Tech Group",
-  description: "Graph database: fraud rings, social networks, knowledge graphs, recommendation engine. Neo4j + GDS — community detection, centrality, shortest-path, link prediction, visual dashboard.",
+  description: "Graph database: fraud rings, social networks, knowledge graphs, recommendation engine. Neo4j + GDS — community detection, centrality, shortest-path, link predic",
   alternates: {
     canonical: `https://ziontechgroup.com/services/graph-database-analytics`
   }

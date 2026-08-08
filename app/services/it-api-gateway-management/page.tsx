@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "API Gateway Management - Zion Tech Group",
-  description: "Enterprise API gateway: rate limiting, API key management, OAuth2 + mTLS, usage analytics, developer portal, request/response transforms, and dead-letter queue handling across cloud and on-prem APIs.",
+  description: "Enterprise API gateway: rate limiting, API key management, OAuth2 + mTLS, usage analytics, developer portal, request/response transforms, and dead-letter queue ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-api-gateway-management`
   }

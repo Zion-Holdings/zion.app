@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Human-in-the-loop approval gates</li>
             <li>Self-healing workflows with error recovery</li>
             <li>Real-time monitoring dashboards</li>
-            <li>Integration with 200+ enterprise tools</li>
           </ul>
         </div>
         

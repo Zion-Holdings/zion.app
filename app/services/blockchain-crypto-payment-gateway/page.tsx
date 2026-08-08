@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Blockchain confirmation tracking</li>
             <li>Invoice and checkout integration</li>
             <li>Compliance and tax reporting</li>
-            <li>Woocommerce Shopify integration</li>
           </ul>
         </div>
         

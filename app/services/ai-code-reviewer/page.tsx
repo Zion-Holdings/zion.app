@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Code Reviewer - Zion Tech Group",
-  description: "Ai Code Reviewer — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurable ROI.",
+  description: "Ai Code Reviewer — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, acceler",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-code-reviewer`
   }

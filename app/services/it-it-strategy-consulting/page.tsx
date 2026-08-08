@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Vendor evaluation and RFP management</li>
             <li>IT governance framework</li>
             <li>Digital transformation workshops</li>
-            <li>Monthly strategy sessions</li>
           </ul>
         </div>
         

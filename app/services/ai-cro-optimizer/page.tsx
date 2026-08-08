@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Cro Optimizer - Zion Tech Group",
-  description: "Ai Cro Optimizer — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurable ROI.",
+  description: "Ai Cro Optimizer — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, acceler",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-cro-optimizer`
   }

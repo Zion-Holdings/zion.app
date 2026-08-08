@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "It Api Gateway Ai - Zion Tech Group",
-  description: "It Api Gateway Ai — a professional IT solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurable ROI.",
+  description: "It Api Gateway Ai — a professional IT solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accele",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-api-gateway-ai`
   }

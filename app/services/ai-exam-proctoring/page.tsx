@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Exam Proctoring - Zion Tech Group",
-  description: "Ai Exam Proctoring — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurable ROI",
+  description: "Ai Exam Proctoring — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accel",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-exam-proctoring`
   }

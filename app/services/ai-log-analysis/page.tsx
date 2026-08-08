@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Log Analysis - Zion Tech Group",
-  description: "Ai Log Analysis — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurable ROI.",
+  description: "Ai Log Analysis — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelera",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-log-analysis`
   }

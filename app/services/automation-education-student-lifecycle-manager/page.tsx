@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Education Student Lifecycle Manager - Zion Tech Group",
-  description: "Full-cycle student lifecycle automation for higher ed and EdTech: inquiry-to-enrolment funnel, personalised nurture sequences, academic-risk detection, parents-and-alumni engagement, and LMS grade-imp",
+  description: "Full-cycle student lifecycle automation for higher ed and EdTech: inquiry-to-enrolment funnel, personalised nurture sequences, academic-risk detection, parents-",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automation-education-student-lifecycle-manager`
   }

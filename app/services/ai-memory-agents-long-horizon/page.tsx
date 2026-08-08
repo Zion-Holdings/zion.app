@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Memory Agents Long Horizon - Zion Tech Group",
-  description: "Ai Memory Agents Long Horizon — a professional AI solution featuring ai-powered automation, enterprise integration, real-time analytics. Delivered by Zion Tech Group with enterprise-grade support, cus",
+  description: "Ai Memory Agents Long Horizon — a professional AI solution featuring ai-powered automation, enterprise integration, real-time analytics. Delivered by Zion Tech ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-memory-agents-long-horizon`
   }

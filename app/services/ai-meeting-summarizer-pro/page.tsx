@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Meeting Summarizer & Action Tracker - Zion Tech Group",
-  description: "Record + transcribe with speaker diarization. AI summary: decisions made, action items, owners, deadlines, topic timeline. Auto-pushes to Slack/Asana/Notion/Jira + recurring meeting agenda builder.",
+  description: "Record + transcribe with speaker diarization. AI summary: decisions made, action items, owners, deadlines, topic timeline. Auto-pushes to Slack/Asana/Notion/Jir",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-meeting-summarizer-pro`
   }

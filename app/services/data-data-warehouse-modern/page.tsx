@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>ETL/ELT pipeline setup</li>
             <li>Cost monitoring and controls</li>
             <li>Data governance and catalog</li>
-            <li>Performance optimization</li>
           </ul>
         </div>
         

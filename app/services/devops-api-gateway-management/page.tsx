@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>OAuth/JWT/API key auth</li>
             <li>Usage analytics and monetization</li>
             <li>Versioning and deprecation</li>
-            <li>Developer portal</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Agent Safety Evaluation - Zion Tech Group",
-  description: "Ai Agent Safety Evaluation — a professional AI solution featuring ai-powered automation, enterprise integration, real-time analytics. Delivered by Zion Tech Group with enterprise-grade support, custom",
+  description: "Ai Agent Safety Evaluation — a professional AI solution featuring ai-powered automation, enterprise integration, real-time analytics. Delivered by Zion Tech Gro",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-agent-safety-evaluation`
   }

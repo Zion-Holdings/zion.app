@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Trading Signal Engine - Zion Tech Group",
-  description: "Ai Trading Signal Engine — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurab",
+  description: "Ai Trading Signal Engine — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations,",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-trading-signal-engine`
   }

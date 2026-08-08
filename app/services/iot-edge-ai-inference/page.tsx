@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Model versioning and updates</li>
             <li>Offline inference support</li>
             <li>Device performance monitoring</li>
-            <li>Cloud-edge orchestration</li>
           </ul>
         </div>
         

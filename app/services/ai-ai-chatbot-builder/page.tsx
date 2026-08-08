@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Website, WhatsApp, FB Messenger deploy</li>
             <li>Lead qualification built-in</li>
             <li>CRM integration</li>
-            <li>Conversation analytics</li>
           </ul>
         </div>
         

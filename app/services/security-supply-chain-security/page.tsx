@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Vendor security assessments</li>
             <li>Third-party code audit</li>
             <li>License compliance checking</li>
-            <li>Supply chain risk scoring</li>
           </ul>
         </div>
         

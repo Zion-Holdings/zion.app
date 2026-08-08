@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Kubernetes GitOps Enterprise Platform - Zion Tech Group",
-  description: "Enterprise Kubernetes with GitOps: ArgoCD or Flux continuous delivery, OPA or Gatekeeper policy enforcement, cluster fleet management, cost allocation, namespace quotas, and image scanning — all via G",
+  description: "Enterprise Kubernetes with GitOps: ArgoCD or Flux continuous delivery, OPA or Gatekeeper policy enforcement, cluster fleet management, cost allocation, namespac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/k8s-gitops-enterprise`
   }

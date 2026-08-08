@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Disaster Recovery & Business Continuity - Zion Tech Group",
-  description: "Comprehensive disaster recovery planning, automated failover systems, and business continuity solutions ensuring zero data loss and minimal downtime for mission-critical operations.",
+  description: "Comprehensive disaster recovery planning, automated failover systems, and business continuity solutions ensuring zero data loss and minimal downtime for mission",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-disaster-recovery`
   }

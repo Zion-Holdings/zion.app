@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Intent signal — hiring, mentions, website visits</li>
             <li>CRM auto-sync to Salesforce, HubSpot, Pipedrive</li>
             <li>Personalized outreach — email, LinkedIn, sequences</li>
-            <li>ML-powered lead quality scoring and ranking</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Intent targeting increases conversion 3x</li>
             <li>Seamless CRM integration</li>
             <li>ML-powered scoring models</li>
-            <li>Personalized outreach at scale</li>
           </ul>
         </div>
         

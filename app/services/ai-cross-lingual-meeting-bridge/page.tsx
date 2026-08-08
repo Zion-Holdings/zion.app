@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cross-Lingual Meeting Bridge - Zion Tech Group",
-  description: "Multi-language meeting platform: real-time simultaneous interpretation across 40+ languages and dialects, live bilingual captions, cultural-adaptation annotations, silent-watch spectator mode, executi",
+  description: "Multi-language meeting platform: real-time simultaneous interpretation across 40+ languages and dialects, live bilingual captions, cultural-adaptation annotatio",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-cross-lingual-meeting-bridge`
   }

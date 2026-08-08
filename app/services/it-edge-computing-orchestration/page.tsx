@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Edge Computing Orchestration - Zion Tech Group",
-  description: "Deploy and manage containerized workloads across distributed edge nodes. Auto-scaling, zero-trust networking, and offline sync for true edge-native applications.",
+  description: "Deploy and manage containerized workloads across distributed edge nodes. Auto-scaling, zero-trust networking, and offline sync for true edge-native applications",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-edge-computing-orchestration`
   }

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Conflict resolution rules</li>
             <li>Data transformation mapping</li>
             <li>Sync monitoring and alerts</li>
-            <li>Historical sync audit</li>
           </ul>
         </div>
         

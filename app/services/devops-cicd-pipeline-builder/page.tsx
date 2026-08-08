@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Automated testing integration</li>
             <li>Docker and K8s deployment</li>
             <li>Rollback and canary releases</li>
-            <li>Pipeline analytics</li>
           </ul>
         </div>
         

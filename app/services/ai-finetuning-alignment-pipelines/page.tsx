@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Finetuning Alignment Pipelines - Zion Tech Group",
-  description: "Ai Finetuning Alignment Pipelines — a professional AI solution featuring ai-powered automation, enterprise integration, real-time analytics. Delivered by Zion Tech Group with enterprise-grade support,",
+  description: "Ai Finetuning Alignment Pipelines — a professional AI solution featuring ai-powered automation, enterprise integration, real-time analytics. Delivered by Zion T",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-finetuning-alignment-pipelines`
   }

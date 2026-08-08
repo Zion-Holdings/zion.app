@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Failure prediction (days/weeks ahead)</li>
             <li>Maintenance scheduling optimization</li>
             <li>Remaining useful life estimates</li>
-            <li>Dashboard with equipment health</li>
           </ul>
         </div>
         

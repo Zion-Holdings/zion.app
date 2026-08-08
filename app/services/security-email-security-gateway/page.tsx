@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>URL rewriting and time-of-click</li>
             <li>DMARC/DKIM/SPF management</li>
             <li>Email encryption TLS/S-MIME</li>
-            <li>DLP for email</li>
           </ul>
         </div>
         

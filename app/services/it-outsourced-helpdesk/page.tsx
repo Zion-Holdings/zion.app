@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Under 5-min first response</li>
             <li>Escalation for complex issues</li>
             <li>Your environment knowledge base</li>
-            <li>SLA-backed response times</li>
           </ul>
         </div>
         

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Zero-downtime migration</li>
             <li>Post-migration optimization (35% savings)</li>
             <li>Data validation checks</li>
-            <li>Team training</li>
           </ul>
         </div>
         

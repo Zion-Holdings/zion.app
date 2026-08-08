@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Managed SOC + Threat Intelligence as a Service - Zion Tech Group",
-  description: "24x7 managed SOC: SIEM event correlation threat hunting from 50+ feeds incident response managed alert triage monthly executive cyber risk report compliance evidence B2B enterprise.",
+  description: "24x7 managed SOC: SIEM event correlation threat hunting from 50+ feeds incident response managed alert triage monthly executive cyber risk report compliance evi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-managed-soc`
   }

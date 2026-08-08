@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>IT access provisioning</li>
             <li>Equipment ordering</li>
             <li>30/60/90 day check-ins</li>
-            <li>Manager and buddy assignments</li>
           </ul>
         </div>
         

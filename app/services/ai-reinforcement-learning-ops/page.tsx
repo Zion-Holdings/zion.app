@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Reinforcement Learning Ops - Zion Tech Group",
-  description: "Ai Reinforcement Learning Ops — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve mea",
+  description: "Ai Reinforcement Learning Ops — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operat",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-reinforcement-learning-ops`
   }

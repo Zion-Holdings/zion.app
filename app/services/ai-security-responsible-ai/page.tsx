@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data Privacy &amp; Confidentiality</li>
             <li>Model Supply Chain Security</li>
             <li>Fairness &amp; Bias Mitigation</li>
-            <li>Incident Response &amp; Recovery</li>
           </ul>
         </div>
         

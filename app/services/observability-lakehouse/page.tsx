@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Observability Data Lakehouse - Zion Tech Group",
-  description: "Unified observability: metrics, traces, logs, events in one Iceberg-format lakehouse. OpenMetadata catalog, standard SQL across all signals. Retention hours to years per data class.",
+  description: "Unified observability: metrics, traces, logs, events in one Iceberg-format lakehouse. OpenMetadata catalog, standard SQL across all signals. Retention hours to ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/observability-lakehouse`
   }

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Interview scheduling</li>
             <li>Predictive hiring analytics</li>
             <li>ATS integration</li>
-            <li>Diversity analytics</li>
           </ul>
         </div>
         

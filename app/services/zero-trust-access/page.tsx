@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Zero Trust Access Gateway - Zion Tech Group",
-  description: "Replace traditional VPN with continuous identity-verified access — least-privilege, device-aware, audit-logged connections to every app for hybrid and remote-first enterprises.",
+  description: "Replace traditional VPN with continuous identity-verified access — least-privilege, device-aware, audit-logged connections to every app for hybrid and remote-fi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/zero-trust-access`
   }

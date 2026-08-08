@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Continuous verification</li>
             <li>Least privilege access</li>
             <li>Device trust scoring</li>
-            <li>Network analytics and visibility</li>
           </ul>
         </div>
         

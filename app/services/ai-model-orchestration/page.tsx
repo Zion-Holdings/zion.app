@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cost &amp; Latency Optimization</li>
             <li>Unified API Layer</li>
             <li>A/B Testing &amp; Evaluation</li>
-            <li>Observability &amp; Analytics</li>
           </ul>
         </div>
         

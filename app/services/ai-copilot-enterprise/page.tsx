@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Embedded in Your Tools</li>
             <li>Controlled &amp; Governed</li>
             <li>Learning &amp; Improvement</li>
-            <li>Multi-Modal Interaction</li>
           </ul>
         </div>
         

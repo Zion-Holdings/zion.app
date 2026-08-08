@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Responsive templates</li>
             <li>Built-in analytics</li>
             <li>E-commerce ready</li>
-            <li>Custom domain support</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Agentic Workflow Orchestrator - Zion Tech Group",
-  description: "Orchestrate multi-agent AI workflows: DAG of agents with routing, handoff, conditional branches, state persistence, retry logic, human-review gates. LangGraph/Semantic Kernel backend.",
+  description: "Orchestrate multi-agent AI workflows: DAG of agents with routing, handoff, conditional branches, state persistence, retry logic, human-review gates. LangGraph/S",
   alternates: {
     canonical: `https://ziontechgroup.com/services/agentic-workflow-orchestrator`
   }

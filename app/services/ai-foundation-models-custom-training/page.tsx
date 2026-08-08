@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Alignment &amp; Safety Training</li>
             <li>Continuous Learning Pipelines</li>
             <li>Model Compression &amp; Export</li>
-            <li>Data Pipeline &amp; Curation</li>
           </ul>
         </div>
         

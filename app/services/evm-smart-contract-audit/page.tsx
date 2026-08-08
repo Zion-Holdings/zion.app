@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "EVM Smart Contract Audit - Zion Tech Group",
-  description: "Comprehensive audit: static analysis (Slither), manual line-by-line review, fuzz testing (Foundry), formal verification for critical invariants, post-audit re-audit.",
+  description: "Comprehensive audit: static analysis (Slither), manual line-by-line review, fuzz testing (Foundry), formal verification for critical invariants, post-audit re-a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/evm-smart-contract-audit`
   }

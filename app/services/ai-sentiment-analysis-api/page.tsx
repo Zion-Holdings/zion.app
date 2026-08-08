@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Aspect-based sentiment</li>
             <li>Real-time streaming API</li>
             <li>Historical trend analysis</li>
-            <li>Custom model training</li>
           </ul>
         </div>
         

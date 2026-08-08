@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Data Lakehouse Platform - Zion Tech Group",
-  description: "Unified data lakehouse: ingest CSV, JSON, Parquet, and streams; implement ACID semantics with open-table format Delta Lake or Iceberg engine; SQL query with cardinality optimizer; built-in BI tool con",
+  description: "Unified data lakehouse: ingest CSV, JSON, Parquet, and streams; implement ACID semantics with open-table format Delta Lake or Iceberg engine; SQL query with car",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cloud-data-lakehouse-platform`
   }

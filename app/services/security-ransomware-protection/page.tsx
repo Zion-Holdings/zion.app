@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Network segmentation review</li>
             <li>EDR with anti-ransomware</li>
             <li>Incident response runbook</li>
-            <li>Recovery testing</li>
           </ul>
         </div>
         

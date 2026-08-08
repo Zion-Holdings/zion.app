@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Insurance Pricing Advisor - Zion Tech Group",
-  description: "ML pricing model for underwriters: ingests claim history risk factors market data produces per-risk pricing with confidence interval exposure summary benchmark vs competitors.",
+  description: "ML pricing model for underwriters: ingests claim history risk factors market data produces per-risk pricing with confidence interval exposure summary benchmark ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-insurance-pricing`
   }

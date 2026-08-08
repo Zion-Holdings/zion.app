@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Dyslexia Assist - Zion Tech Group",
-  description: "Ai Dyslexia Assist — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurable ROI",
+  description: "Ai Dyslexia Assist — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accel",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-dyslexia-assist`
   }

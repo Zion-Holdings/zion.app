@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Performance suggestions</li>
             <li>Style enforcement</li>
             <li>Custom rules engine</li>
-            <li>CI/CD integration</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cloud-Native Application Development - Zion Tech Group",
-  description: "Full-stack cloud-native: containerized microservices, event-driven architecture, Kubernetes, CI/CD from code to production with OpenTelemetry observability from day one.",
+  description: "Full-stack cloud-native: containerized microservices, event-driven architecture, Kubernetes, CI/CD from code to production with OpenTelemetry observability from",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cloud-native-app-dev`
   }

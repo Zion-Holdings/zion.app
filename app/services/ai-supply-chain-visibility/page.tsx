@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Supply Chain Visibility Platform - Zion Tech Group",
-  description: "End-to-end supply chain monitoring with AI-driven anomaly detection, predictive ETAs, and automated disruption alerts across suppliers, logistics, and inventory.",
+  description: "End-to-end supply chain monitoring with AI-driven anomaly detection, predictive ETAs, and automated disruption alerts across suppliers, logistics, and inventory",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-supply-chain-visibility`
   }

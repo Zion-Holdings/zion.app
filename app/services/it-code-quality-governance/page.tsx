@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Code Quality & Governance Platform - Zion Tech Group",
-  description: "Automated code-quality scanning: static analysis, lint coverage gates, dependency vulnerability CVE detection, code smell auditor, branch-protection + quality-gate CI/CD enforcement, and actionable fi",
+  description: "Automated code-quality scanning: static analysis, lint coverage gates, dependency vulnerability CVE detection, code smell auditor, branch-protection + quality-g",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-code-quality-governance`
   }

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "IT Change Risk Analyser - Zion Tech Group",
-  description: "Assess change request risk using historical data, blast-radius modelling, and ML-predicted outage probability. Integrates with ServiceNow and Jira change management.",
+  description: "Assess change request risk using historical data, blast-radius modelling, and ML-predicted outage probability. Integrates with ServiceNow and Jira change manage",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-change-risk-analyser`
   }

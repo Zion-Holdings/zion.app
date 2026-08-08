@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Predictive Churn & Retention - Zion Tech Group",
-  description: "Predicts customer churn 30-90 days before event: ML ingests product usage behavior support tickets NPS scores contract data produces ranked at-risk list recommended retention.",
+  description: "Predicts customer churn 30-90 days before event: ML ingests product usage behavior support tickets NPS scores contract data produces ranked at-risk list recomme",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-predictive-churn`
   }

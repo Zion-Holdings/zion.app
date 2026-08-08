@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Software Supply Chain Security - Zion Tech Group",
-  description: "End-to-end supply chain: SBOM generation+attestation, dependency verification, code-signing (SLSA L3+), vulnerability patch management, artifact provenance tracking.",
+  description: "End-to-end supply chain: SBOM generation+attestation, dependency verification, code-signing (SLSA L3+), vulnerability patch management, artifact provenance trac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/software-supply-chain-sec`
   }

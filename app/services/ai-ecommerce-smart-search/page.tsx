@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Ecommerce Smart Search - Zion Tech Group",
-  description: "Ai Ecommerce Smart Search — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measura",
+  description: "Ai Ecommerce Smart Search — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-ecommerce-smart-search`
   }

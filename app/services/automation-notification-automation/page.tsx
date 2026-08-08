@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Priority-based escalation</li>
             <li>Quiet hours and preferences</li>
             <li>Delivery confirmation</li>
-            <li>Notification analytics</li>
           </ul>
         </div>
         

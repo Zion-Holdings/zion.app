@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Incident response and containment</li>
             <li>Threat intelligence feeds</li>
             <li>Compliance reporting SOC2/HIPAA/PCI</li>
-            <li>Dedicated security analyst</li>
           </ul>
         </div>
         

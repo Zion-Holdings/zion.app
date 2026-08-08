@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Statistical modeling support</li>
             <li>AutoML for common use cases</li>
             <li>Scheduled model execution</li>
-            <li>Result dashboards</li>
           </ul>
         </div>
         

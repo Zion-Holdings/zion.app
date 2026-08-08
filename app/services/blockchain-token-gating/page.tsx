@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Tiered access levels</li>
             <li>Integration with Shopify and Discord</li>
             <li>Analytics on token holder engagement</li>
-            <li>Automated access management</li>
           </ul>
         </div>
         

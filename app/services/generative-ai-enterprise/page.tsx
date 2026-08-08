@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Custom Model Fine-Tuning</li>
             <li>Multi-Modal Generation</li>
             <li>Governance &amp; Compliance</li>
-            <li>Cost &amp; Performance Optimization</li>
           </ul>
         </div>
         

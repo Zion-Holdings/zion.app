@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Predictive Maintenance & Asset Monitoring - Zion Tech Group",
-  description: "IoT-enabled predictive maintenance that monitors equipment health in real time, predicts failures before they happen, and optimizes maintenance schedules to reduce downtime.",
+  description: "IoT-enabled predictive maintenance that monitors equipment health in real time, predicts failures before they happen, and optimizes maintenance schedules to red",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-predictive-maintenance`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Anomaly detection for early fault signatures</li>
             <li>Automated maintenance scheduling &amp; work order generation</li>
             <li>Fleet-wide asset health dashboards</li>
-            <li>Integration with CMMS, SAP, and ERP systems</li>
           </ul>
         </div>
         

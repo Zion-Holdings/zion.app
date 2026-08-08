@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Competitive Price Tracker - Zion Tech Group",
-  description: "Ai Competitive Price Tracker — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve meas",
+  description: "Ai Competitive Price Tracker — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operati",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-competitive-price-tracker`
   }

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Device encryption enforcement</li>
             <li>Application whitelisting</li>
             <li>USB and media controls</li>
-            <li>Threat hunting and investigation</li>
           </ul>
         </div>
         

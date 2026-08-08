@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Threat actor tracking</li>
             <li>Industry-specific briefings</li>
             <li>Incident context enrichment</li>
-            <li>Threat intelligence platform</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "DevSecOps Pipeline Automation - Zion Tech Group",
-  description: "Security-baked CI/CD pipeline: SAST, DAST, secrets scanning, container image signing, SBOM generation, and penetration-test gates. Enforces policy as code before every production deployment.",
+  description: "Security-baked CI/CD pipeline: SAST, DAST, secrets scanning, container image signing, SBOM generation, and penetration-test gates. Enforces policy as code befor",
   alternates: {
     canonical: `https://ziontechgroup.com/services/devsecops-pipeline`
   }

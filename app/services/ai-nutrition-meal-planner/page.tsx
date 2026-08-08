@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ai Nutrition Meal Planner - Zion Tech Group",
-  description: "Ai Nutrition Meal Planner — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measura",
+  description: "Ai Nutrition Meal Planner — a professional AI solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-nutrition-meal-planner`
   }

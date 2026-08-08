@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Feature Engineering Platform - Zion Tech Group",
-  description: "Feature store as-a-service: feature definition registry, feature pipeline orchestration, online + offline serving, point-in-time correctness, model drift detection.",
+  description: "Feature store as-a-service: feature definition registry, feature pipeline orchestration, online + offline serving, point-in-time correctness, model drift detect",
   alternates: {
     canonical: `https://ziontechgroup.com/services/feature-engineering-platform`
   }

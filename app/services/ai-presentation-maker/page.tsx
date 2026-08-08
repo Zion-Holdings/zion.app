@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>AI-generated speaker notes and timing cues</li>
             <li>Brand-consistent — apply company guidelines</li>
             <li>Multi-format export — PowerPoint, Google Slides, PDF</li>
-            <li>Real-time collaboration with team editing</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Data-driven visualizations</li>
             <li>Brand consistency across teams</li>
             <li>Speaker notes automatically included</li>
-            <li>Multi-format export options</li>
           </ul>
         </div>
         

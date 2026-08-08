@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Rx Prior-Auth Automation - Zion Tech Group",
-  description: "Automated prior authorization: eligibility check formulary check code auto-populate payer portal submission clinical note attach outcome tracking denial tracking remittance per payer analytics.",
+  description: "Automated prior authorization: eligibility check formulary check code auto-populate payer portal submission clinical note attach outcome tracking denial trackin",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-rx-prior-auth`
   }

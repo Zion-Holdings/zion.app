@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Data Science Platform (Managed) - Zion Tech Group",
-  description: "Managed data science on Kubernetes: MLflow tracking, model registry, managed feature store, KServe/Seldon inference, model CI/CD, GPU scheduling. Batch + real-time inference.",
+  description: "Managed data science on Kubernetes: MLflow tracking, model registry, managed feature store, KServe/Seldon inference, model CI/CD, GPU scheduling. Batch + real-t",
   alternates: {
     canonical: `https://ziontechgroup.com/services/data-science-platform`
   }

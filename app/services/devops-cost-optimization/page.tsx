@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Reserved instance planning</li>
             <li>Rightsizing recommendations</li>
             <li>Billing anomaly alerts</li>
-            <li>Monthly optimization reports</li>
           </ul>
         </div>
         

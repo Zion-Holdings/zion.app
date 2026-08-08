@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Liquidity pool management</li>
             <li>Validator consensus mechanism</li>
             <li>Real-time monitoring and alerts</li>
-            <li>Insurance fund mechanisms</li>
           </ul>
         </div>
         

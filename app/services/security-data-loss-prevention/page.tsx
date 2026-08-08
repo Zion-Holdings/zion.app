@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cloud SaaS/IaaS DLP</li>
             <li>Email DLP and encryption</li>
             <li>USB and media controls</li>
-            <li>GDPR/HIPAA policy templates</li>
           </ul>
         </div>
         

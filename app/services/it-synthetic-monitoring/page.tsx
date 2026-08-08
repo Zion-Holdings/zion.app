@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "It Synthetic Monitoring - Zion Tech Group",
-  description: "It Synthetic Monitoring — a professional IT solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, accelerate growth, and achieve measurabl",
+  description: "It Synthetic Monitoring — a professional IT solution delivered by Zion Tech Group. Enterprise-grade capabilities enable organizations to streamline operations, ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-synthetic-monitoring`
   }

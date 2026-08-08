@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Real-time personalization API</li>
             <li>A/B testing framework</li>
             <li>Cold-start handling</li>
-            <li>Explainable recommendations</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Edge AI Deployment Platform - Zion Tech Group",
-  description: "One-click edge AI model deployment to 50k+ global edge points-of-presence: ONNX/TensorRT/GGUF model package, auto-scaling inference, A/B model rollout, cold-warm-cache tiering, and robust offline-firs",
+  description: "One-click edge AI model deployment to 50k+ global edge points-of-presence: ONNX/TensorRT/GGUF model package, auto-scaling inference, A/B model rollout, cold-war",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cloud-edge-ai-deployment-platform`
   }

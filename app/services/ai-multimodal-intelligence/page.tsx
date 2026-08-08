@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Image &amp; Visual Analysis</li>
             <li>Document-to-Insight Pipelines</li>
             <li>Real-Time &amp; Batch Processing</li>
-            <li>Enterprise Security &amp; Compliance</li>
           </ul>
         </div>
         

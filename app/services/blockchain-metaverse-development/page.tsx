@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Spatial voice chat</li>
             <li>Virtual commerce and NFTs</li>
             <li>VR and AR support</li>
-            <li>Cross-platform web/mobile/VR</li>
           </ul>
         </div>
         

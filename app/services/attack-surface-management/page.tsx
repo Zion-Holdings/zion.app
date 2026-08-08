@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Attack Surface Management (ASM) - Zion Tech Group",
-  description: "Continuous external attack surface discovery: internet-facing assets, domains, IPs, subdomains, APIs, TLS certs, shadow IT. Continuous monitoring. Attack vector prioritization.",
+  description: "Continuous external attack surface discovery: internet-facing assets, domains, IPs, subdomains, APIs, TLS certs, shadow IT. Continuous monitoring. Attack vector",
   alternates: {
     canonical: `https://ziontechgroup.com/services/attack-surface-management`
   }

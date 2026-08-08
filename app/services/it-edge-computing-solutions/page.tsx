@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Edge Computing & IoT Infrastructure - Zion Tech Group",
-  description: "Deploy compute closer to your data sources with edge computing architecture — low-latency processing, distributed AI inference, and resilient IoT device management.",
+  description: "Deploy compute closer to your data sources with edge computing architecture — low-latency processing, distributed AI inference, and resilient IoT device managem",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-edge-computing-solutions`
   }

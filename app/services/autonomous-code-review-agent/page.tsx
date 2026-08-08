@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Code Review Agent - Zion Tech Group",
-  description: "AI-powered code review bot that analyzes pull requests for security flaws, performance antipatterns, style violations, and architectural drift across JavaScript/TypeScript, Python, and Go.",
+  description: "AI-powered code review bot that analyzes pull requests for security flaws, performance antipatterns, style violations, and architectural drift across JavaScript",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-code-review-agent`
   }

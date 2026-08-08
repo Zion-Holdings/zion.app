@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "IT Asset Lifecycle Manager - Zion Tech Group",
-  description: "Track hardware and software assets from procurement to disposal. Auto-discovery, compliance tracking, depreciation schedules, and end-of-life automation in one dashboard.",
+  description: "Track hardware and software assets from procurement to disposal. Auto-discovery, compliance tracking, depreciation schedules, and end-of-life automation in one ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-asset-lifecycle`
   }

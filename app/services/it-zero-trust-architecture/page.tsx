@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Zero Trust Security Architecture - Zion Tech Group",
-  description: "Implement Zero Trust principles across your enterprise — identity verification, micro-segmentation, least-privilege access, and continuous authentication for every request.",
+  description: "Implement Zero Trust principles across your enterprise — identity verification, micro-segmentation, least-privilege access, and continuous authentication for ev",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-zero-trust-architecture`
   }

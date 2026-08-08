@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Ethics Audit & Bias Assessment - Zion Tech Group",
-  description: "Independent AI ethics audits examining your AI systems for bias, fairness, transparency, and regulatory compliance. Includes algorithmic impact assessments, bias testing across protected classes, and ",
+  description: "Independent AI ethics audits examining your AI systems for bias, fairness, transparency, and regulatory compliance. Includes algorithmic impact assessments, bia",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-ethics-audit-1`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>EU AI Act compliance assessment and readiness</li>
             <li>AI impact assessment for high-risk applications</li>
             <li>Fairness metrics evaluation (demographic parity, equalized odds)</li>
-            <li>AI governance framework design (NIST AI RMF, OECD)</li>
           </ul>
         </div>
         

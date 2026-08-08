@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Unstructured Data Lake - Zion Tech Group",
-  description: "Unstructured data pipeline and lake: ingest PDF, Images, Audio, and Video at scale; auto-classify per document schema; OCR, ASR, object-detection hooks per file type; natural-language query with cited",
+  description: "Unstructured data pipeline and lake: ingest PDF, Images, Audio, and Video at scale; auto-classify per document schema; OCR, ASR, object-detection hooks per file",
   alternates: {
     canonical: `https://ziontechgroup.com/services/data-unstructured-data-lake`
   }

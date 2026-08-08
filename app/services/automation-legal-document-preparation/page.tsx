@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Legal Document Preparation and Filing - Zion Tech Group",
-  description: "Legal document preparation: template-per-case-type, clause auto-match per case facts, e-sign per jurisdiction, deadline tracking, regulatory filing per state and federal authority, and evidence binder",
+  description: "Legal document preparation: template-per-case-type, clause auto-match per case facts, e-sign per jurisdiction, deadline tracking, regulatory filing per state an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automation-legal-document-preparation`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Deadline auto-calculation per court rules per state</li>
             <li>Evidence binder auto-compile with exhibit auto-order by relevance per document</li>
             <li>Regulatory filing per authority per batch or per individual case per filing limit</li>
-            <li>Prior precedent search per case law by citation auto-detected per case type</li>
           </ul>
         </div>
         

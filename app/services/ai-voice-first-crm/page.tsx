@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Voice-First CRM & Sales Assistant - Zion Tech Group",
-  description: "Voice-first CRM for field sales and inside sales teams: automatic call transcription, real-time deal coaching via live prompt injection, pipeline update via voice command, contact enrichment, and post",
+  description: "Voice-first CRM for field sales and inside sales teams: automatic call transcription, real-time deal coaching via live prompt injection, pipeline update via voi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-voice-first-crm`
   }

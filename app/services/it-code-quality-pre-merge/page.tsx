@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Code Quality & Pre-Merge Automation - Zion Tech Group",
-  description: "Pre-merge quality gate: SAST, secret-scan, dependency-audit, trunk-based branch review, automated PR reviewer with inline comments, per-PR quality score, and merge-blocking on regressions across 25+ l",
+  description: "Pre-merge quality gate: SAST, secret-scan, dependency-audit, trunk-based branch review, automated PR reviewer with inline comments, per-PR quality score, and me",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-code-quality-pre-merge`
   }
