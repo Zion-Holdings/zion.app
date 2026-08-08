@@ -1,250 +1,250 @@
 {
   "state": "send_ready",
   "send_blocked": true,
-  "generated_at": "2026-08-08T10:00:02.353310",
+  "generated_at": "2026-08-08T16:00:01.478227",
   "leads_processed": 5,
-  "total_potential_value": 12000,
+  "total_potential_value": 10000,
   "conversion_rate_target": "25%",
-  "expected_revenue": 3000.0,
+  "expected_revenue": 2500.0,
   "ready": [
     {
-      "to": "amanda.cybe@innovateco.com",
-      "name": "Amanda",
-      "company": "CyberSecure",
-      "role": "CIO",
-      "subject": "Your Free AI Cost Assessment is Ready!",
-      "body": "Hi Amanda,\n\nThank you for requesting your AI Cost Assessment. I've prepared a personalized analysis based on your business needs.\n\nKey findings:\n- Your current cloud spend could be optimized by 30-40%\n- Your security posture shows 2 areas for improvement\n- AI implementation could save 20+ hours/week\n\nLet's schedule a 15-minute call to discuss next steps: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber\nZion Tech Group",
+      "to": "jennifer.tech@innovateco.com",
+      "name": "Jennifer",
+      "company": "TechCorp",
+      "role": "IT Manager",
+      "subject": "Your Free IT Infrastructure Audit is Ready!",
+      "body": "Hi Jennifer,\n\nThank you for requesting your IT Infrastructure Audit. I've prepared a personalized analysis based on your business needs.\n\nKey findings:\n- Your current cloud spend could be optimized by 30-40%\n- Your security posture shows 2 areas for improvement\n- AI implementation could save 20+ hours/week\n\nLet's schedule a 15-minute call to discuss next steps: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber\nZion Tech Group",
       "lead_magnet": {
-        "name": "AI Cost Assessment",
-        "value": 2500,
-        "cta": "/contact?offer=ai-cost-assessment"
+        "name": "IT Infrastructure Audit",
+        "value": 1500,
+        "cta": "/contact?offer=it-audit"
       },
       "day": 1,
-      "timestamp": "2026-08-08T10:00:02.353310",
+      "timestamp": "2026-08-08T16:00:01.478227",
       "status": "pending"
     },
     {
-      "to": "amanda.cybe@innovateco.com",
-      "name": "Amanda",
-      "company": "CyberSecure",
-      "role": "CIO",
-      "subject": "Quick Question About Your AI Cost Assessment",
-      "body": "Hi Amanda,\n\nI wanted to follow up on your request for AI Cost Assessment. I noticed you might benefit from:\n\nBased on your request, I recommend starting with AI Implementation\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber",
+      "to": "jennifer.tech@innovateco.com",
+      "name": "Jennifer",
+      "company": "TechCorp",
+      "role": "IT Manager",
+      "subject": "Quick Question About Your IT Infrastructure Audit",
+      "body": "Hi Jennifer,\n\nI wanted to follow up on your request for IT Infrastructure Audit. I noticed you might benefit from:\n\nBased on your request, I recommend starting with Infrastructure\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber",
       "lead_magnet": {
-        "name": "AI Cost Assessment",
-        "value": 2500,
-        "cta": "/contact?offer=ai-cost-assessment"
+        "name": "IT Infrastructure Audit",
+        "value": 1500,
+        "cta": "/contact?offer=it-audit"
       },
       "day": 2,
-      "timestamp": "2026-08-08T10:00:02.353310",
+      "timestamp": "2026-08-08T16:00:01.478227",
       "status": "pending"
     },
     {
-      "to": "amanda.cybe@innovateco.com",
-      "name": "Amanda",
-      "company": "CyberSecure",
-      "role": "CIO",
+      "to": "jennifer.tech@innovateco.com",
+      "name": "Jennifer",
+      "company": "TechCorp",
+      "role": "IT Manager",
       "subject": "Exclusive Offer for Zion Tech Group Clients",
-      "body": "Hi Amanda,\n\nAs a valued prospect, I'm offering a 20% discount on your first project with us.\n\nThis includes:\n- AI Implementation\n- Automation\n\nValid for 7 days: https://calendly.com/kleber-ziontechgroup\n\nLet's get started!\n\nBest,\nKleber",
+      "body": "Hi Jennifer,\n\nAs a valued prospect, I'm offering a 20% discount on your first project with us.\n\nThis includes:\n- Infrastructure\n- Security\n\nValid for 7 days: https://calendly.com/kleber-ziontechgroup\n\nLet's get started!\n\nBest,\nKleber",
       "lead_magnet": {
-        "name": "AI Cost Assessment",
-        "value": 2500,
-        "cta": "/contact?offer=ai-cost-assessment"
+        "name": "IT Infrastructure Audit",
+        "value": 1500,
+        "cta": "/contact?offer=it-audit"
       },
       "day": 3,
-      "timestamp": "2026-08-08T10:00:02.353310",
+      "timestamp": "2026-08-08T16:00:01.478227",
       "status": "pending"
     },
     {
-      "to": "emily.cybe@innovateco.com",
-      "name": "Emily",
-      "company": "CyberSecure",
-      "role": "VP of Engineering",
-      "subject": "Your Free DevOps Readiness Evaluation is Ready!",
-      "body": "Hi Emily,\n\nThank you for requesting your DevOps Readiness Evaluation. I've prepared a personalized analysis based on your business needs.\n\nKey findings:\n- Your current cloud spend could be optimized by 30-40%\n- Your security posture shows 2 areas for improvement\n- AI implementation could save 20+ hours/week\n\nLet's schedule a 15-minute call to discuss next steps: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber\nZion Tech Group",
-      "lead_magnet": {
-        "name": "DevOps Readiness Evaluation",
-        "value": 2000,
-        "cta": "/contact?offer=devops-eval"
-      },
-      "day": 1,
-      "timestamp": "2026-08-08T10:00:02.353310",
-      "status": "pending"
-    },
-    {
-      "to": "emily.cybe@innovateco.com",
-      "name": "Emily",
-      "company": "CyberSecure",
-      "role": "VP of Engineering",
-      "subject": "Quick Question About Your DevOps Readiness Evaluation",
-      "body": "Hi Emily,\n\nI wanted to follow up on your request for DevOps Readiness Evaluation. I noticed you might benefit from:\n\nBased on your request, I recommend starting with DevOps\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber",
-      "lead_magnet": {
-        "name": "DevOps Readiness Evaluation",
-        "value": 2000,
-        "cta": "/contact?offer=devops-eval"
-      },
-      "day": 2,
-      "timestamp": "2026-08-08T10:00:02.353310",
-      "status": "pending"
-    },
-    {
-      "to": "emily.cybe@innovateco.com",
-      "name": "Emily",
-      "company": "CyberSecure",
-      "role": "VP of Engineering",
-      "subject": "Exclusive Offer for Zion Tech Group Clients",
-      "body": "Hi Emily,\n\nAs a valued prospect, I'm offering a 20% discount on your first project with us.\n\nThis includes:\n- DevOps\n- Cloud\n\nValid for 7 days: https://calendly.com/kleber-ziontechgroup\n\nLet's get started!\n\nBest,\nKleber",
-      "lead_magnet": {
-        "name": "DevOps Readiness Evaluation",
-        "value": 2000,
-        "cta": "/contact?offer=devops-eval"
-      },
-      "day": 3,
-      "timestamp": "2026-08-08T10:00:02.353310",
-      "status": "pending"
-    },
-    {
-      "to": "emily.data@digitalsolutions.com",
-      "name": "Emily",
-      "company": "DataFlow",
-      "role": "VP of Engineering",
-      "subject": "Your Free DevOps Readiness Evaluation is Ready!",
-      "body": "Hi Emily,\n\nThank you for requesting your DevOps Readiness Evaluation. I've prepared a personalized analysis based on your business needs.\n\nKey findings:\n- Your current cloud spend could be optimized by 30-40%\n- Your security posture shows 2 areas for improvement\n- AI implementation could save 20+ hours/week\n\nLet's schedule a 15-minute call to discuss next steps: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber\nZion Tech Group",
-      "lead_magnet": {
-        "name": "DevOps Readiness Evaluation",
-        "value": 2000,
-        "cta": "/contact?offer=devops-eval"
-      },
-      "day": 1,
-      "timestamp": "2026-08-08T10:00:02.353310",
-      "status": "pending"
-    },
-    {
-      "to": "emily.data@digitalsolutions.com",
-      "name": "Emily",
-      "company": "DataFlow",
-      "role": "VP of Engineering",
-      "subject": "Quick Question About Your DevOps Readiness Evaluation",
-      "body": "Hi Emily,\n\nI wanted to follow up on your request for DevOps Readiness Evaluation. I noticed you might benefit from:\n\nBased on your request, I recommend starting with DevOps\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber",
-      "lead_magnet": {
-        "name": "DevOps Readiness Evaluation",
-        "value": 2000,
-        "cta": "/contact?offer=devops-eval"
-      },
-      "day": 2,
-      "timestamp": "2026-08-08T10:00:02.353310",
-      "status": "pending"
-    },
-    {
-      "to": "emily.data@digitalsolutions.com",
-      "name": "Emily",
-      "company": "DataFlow",
-      "role": "VP of Engineering",
-      "subject": "Exclusive Offer for Zion Tech Group Clients",
-      "body": "Hi Emily,\n\nAs a valued prospect, I'm offering a 20% discount on your first project with us.\n\nThis includes:\n- DevOps\n- Cloud\n\nValid for 7 days: https://calendly.com/kleber-ziontechgroup\n\nLet's get started!\n\nBest,\nKleber",
-      "lead_magnet": {
-        "name": "DevOps Readiness Evaluation",
-        "value": 2000,
-        "cta": "/contact?offer=devops-eval"
-      },
-      "day": 3,
-      "timestamp": "2026-08-08T10:00:02.353310",
-      "status": "pending"
-    },
-    {
-      "to": "james.data@innovateco.com",
-      "name": "James",
-      "company": "DataFlow",
-      "role": "Security Director",
-      "subject": "Your Free AI Cost Assessment is Ready!",
-      "body": "Hi James,\n\nThank you for requesting your AI Cost Assessment. I've prepared a personalized analysis based on your business needs.\n\nKey findings:\n- Your current cloud spend could be optimized by 30-40%\n- Your security posture shows 2 areas for improvement\n- AI implementation could save 20+ hours/week\n\nLet's schedule a 15-minute call to discuss next steps: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber\nZion Tech Group",
-      "lead_magnet": {
-        "name": "AI Cost Assessment",
-        "value": 2500,
-        "cta": "/contact?offer=ai-cost-assessment"
-      },
-      "day": 1,
-      "timestamp": "2026-08-08T10:00:02.353310",
-      "status": "pending"
-    },
-    {
-      "to": "james.data@innovateco.com",
-      "name": "James",
-      "company": "DataFlow",
-      "role": "Security Director",
-      "subject": "Quick Question About Your AI Cost Assessment",
-      "body": "Hi James,\n\nI wanted to follow up on your request for AI Cost Assessment. I noticed you might benefit from:\n\nBased on your request, I recommend starting with AI Implementation\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber",
-      "lead_magnet": {
-        "name": "AI Cost Assessment",
-        "value": 2500,
-        "cta": "/contact?offer=ai-cost-assessment"
-      },
-      "day": 2,
-      "timestamp": "2026-08-08T10:00:02.353310",
-      "status": "pending"
-    },
-    {
-      "to": "james.data@innovateco.com",
-      "name": "James",
-      "company": "DataFlow",
-      "role": "Security Director",
-      "subject": "Exclusive Offer for Zion Tech Group Clients",
-      "body": "Hi James,\n\nAs a valued prospect, I'm offering a 20% discount on your first project with us.\n\nThis includes:\n- AI Implementation\n- Automation\n\nValid for 7 days: https://calendly.com/kleber-ziontechgroup\n\nLet's get started!\n\nBest,\nKleber",
-      "lead_magnet": {
-        "name": "AI Cost Assessment",
-        "value": 2500,
-        "cta": "/contact?offer=ai-cost-assessment"
-      },
-      "day": 3,
-      "timestamp": "2026-08-08T10:00:02.353310",
-      "status": "pending"
-    },
-    {
-      "to": "ashley.inno@devopspro.io",
-      "name": "Ashley",
-      "company": "InnovateCo",
+      "to": "michael.clou@secureit.com",
+      "name": "Michael",
+      "company": "CloudFirst",
       "role": "CTO",
       "subject": "Your Free Digital Transformation Roadmap is Ready!",
-      "body": "Hi Ashley,\n\nThank you for requesting your Digital Transformation Roadmap. I've prepared a personalized analysis based on your business needs.\n\nKey findings:\n- Your current cloud spend could be optimized by 30-40%\n- Your security posture shows 2 areas for improvement\n- AI implementation could save 20+ hours/week\n\nLet's schedule a 15-minute call to discuss next steps: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber\nZion Tech Group",
+      "body": "Hi Michael,\n\nThank you for requesting your Digital Transformation Roadmap. I've prepared a personalized analysis based on your business needs.\n\nKey findings:\n- Your current cloud spend could be optimized by 30-40%\n- Your security posture shows 2 areas for improvement\n- AI implementation could save 20+ hours/week\n\nLet's schedule a 15-minute call to discuss next steps: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber\nZion Tech Group",
       "lead_magnet": {
         "name": "Digital Transformation Roadmap",
         "value": 3000,
         "cta": "/contact?offer=digital-roadmap"
       },
       "day": 1,
-      "timestamp": "2026-08-08T10:00:02.353310",
+      "timestamp": "2026-08-08T16:00:01.478227",
       "status": "pending"
     },
     {
-      "to": "ashley.inno@devopspro.io",
-      "name": "Ashley",
-      "company": "InnovateCo",
+      "to": "michael.clou@secureit.com",
+      "name": "Michael",
+      "company": "CloudFirst",
       "role": "CTO",
       "subject": "Quick Question About Your Digital Transformation Roadmap",
-      "body": "Hi Ashley,\n\nI wanted to follow up on your request for Digital Transformation Roadmap. I noticed you might benefit from:\n\nBased on your request, I recommend starting with Digital Strategy\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber",
+      "body": "Hi Michael,\n\nI wanted to follow up on your request for Digital Transformation Roadmap. I noticed you might benefit from:\n\nBased on your request, I recommend starting with Digital Strategy\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber",
       "lead_magnet": {
         "name": "Digital Transformation Roadmap",
         "value": 3000,
         "cta": "/contact?offer=digital-roadmap"
       },
       "day": 2,
-      "timestamp": "2026-08-08T10:00:02.353310",
+      "timestamp": "2026-08-08T16:00:01.478227",
       "status": "pending"
     },
     {
-      "to": "ashley.inno@devopspro.io",
-      "name": "Ashley",
-      "company": "InnovateCo",
+      "to": "michael.clou@secureit.com",
+      "name": "Michael",
+      "company": "CloudFirst",
       "role": "CTO",
       "subject": "Exclusive Offer for Zion Tech Group Clients",
-      "body": "Hi Ashley,\n\nAs a valued prospect, I'm offering a 20% discount on your first project with us.\n\nThis includes:\n- Digital Strategy\n- AI Implementation\n\nValid for 7 days: https://calendly.com/kleber-ziontechgroup\n\nLet's get started!\n\nBest,\nKleber",
+      "body": "Hi Michael,\n\nAs a valued prospect, I'm offering a 20% discount on your first project with us.\n\nThis includes:\n- Digital Strategy\n- AI Implementation\n\nValid for 7 days: https://calendly.com/kleber-ziontechgroup\n\nLet's get started!\n\nBest,\nKleber",
       "lead_magnet": {
         "name": "Digital Transformation Roadmap",
         "value": 3000,
         "cta": "/contact?offer=digital-roadmap"
       },
       "day": 3,
-      "timestamp": "2026-08-08T10:00:02.353310",
+      "timestamp": "2026-08-08T16:00:01.478227",
+      "status": "pending"
+    },
+    {
+      "to": "christopher.digi@techcorp.io",
+      "name": "Christopher",
+      "company": "DigitalSolutions",
+      "role": "CTO",
+      "subject": "Your Free DevOps Readiness Evaluation is Ready!",
+      "body": "Hi Christopher,\n\nThank you for requesting your DevOps Readiness Evaluation. I've prepared a personalized analysis based on your business needs.\n\nKey findings:\n- Your current cloud spend could be optimized by 30-40%\n- Your security posture shows 2 areas for improvement\n- AI implementation could save 20+ hours/week\n\nLet's schedule a 15-minute call to discuss next steps: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber\nZion Tech Group",
+      "lead_magnet": {
+        "name": "DevOps Readiness Evaluation",
+        "value": 2000,
+        "cta": "/contact?offer=devops-eval"
+      },
+      "day": 1,
+      "timestamp": "2026-08-08T16:00:01.478227",
+      "status": "pending"
+    },
+    {
+      "to": "christopher.digi@techcorp.io",
+      "name": "Christopher",
+      "company": "DigitalSolutions",
+      "role": "CTO",
+      "subject": "Quick Question About Your DevOps Readiness Evaluation",
+      "body": "Hi Christopher,\n\nI wanted to follow up on your request for DevOps Readiness Evaluation. I noticed you might benefit from:\n\nBased on your request, I recommend starting with DevOps\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber",
+      "lead_magnet": {
+        "name": "DevOps Readiness Evaluation",
+        "value": 2000,
+        "cta": "/contact?offer=devops-eval"
+      },
+      "day": 2,
+      "timestamp": "2026-08-08T16:00:01.478227",
+      "status": "pending"
+    },
+    {
+      "to": "christopher.digi@techcorp.io",
+      "name": "Christopher",
+      "company": "DigitalSolutions",
+      "role": "CTO",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "body": "Hi Christopher,\n\nAs a valued prospect, I'm offering a 20% discount on your first project with us.\n\nThis includes:\n- DevOps\n- Cloud\n\nValid for 7 days: https://calendly.com/kleber-ziontechgroup\n\nLet's get started!\n\nBest,\nKleber",
+      "lead_magnet": {
+        "name": "DevOps Readiness Evaluation",
+        "value": 2000,
+        "cta": "/contact?offer=devops-eval"
+      },
+      "day": 3,
+      "timestamp": "2026-08-08T16:00:01.478227",
+      "status": "pending"
+    },
+    {
+      "to": "jessica.next@dataflow.com",
+      "name": "Jessica",
+      "company": "NextGen",
+      "role": "Engineering Lead",
+      "subject": "Your Free IT Infrastructure Audit is Ready!",
+      "body": "Hi Jessica,\n\nThank you for requesting your IT Infrastructure Audit. I've prepared a personalized analysis based on your business needs.\n\nKey findings:\n- Your current cloud spend could be optimized by 30-40%\n- Your security posture shows 2 areas for improvement\n- AI implementation could save 20+ hours/week\n\nLet's schedule a 15-minute call to discuss next steps: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber\nZion Tech Group",
+      "lead_magnet": {
+        "name": "IT Infrastructure Audit",
+        "value": 1500,
+        "cta": "/contact?offer=it-audit"
+      },
+      "day": 1,
+      "timestamp": "2026-08-08T16:00:01.478227",
+      "status": "pending"
+    },
+    {
+      "to": "jessica.next@dataflow.com",
+      "name": "Jessica",
+      "company": "NextGen",
+      "role": "Engineering Lead",
+      "subject": "Quick Question About Your IT Infrastructure Audit",
+      "body": "Hi Jessica,\n\nI wanted to follow up on your request for IT Infrastructure Audit. I noticed you might benefit from:\n\nBased on your request, I recommend starting with Infrastructure\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber",
+      "lead_magnet": {
+        "name": "IT Infrastructure Audit",
+        "value": 1500,
+        "cta": "/contact?offer=it-audit"
+      },
+      "day": 2,
+      "timestamp": "2026-08-08T16:00:01.478227",
+      "status": "pending"
+    },
+    {
+      "to": "jessica.next@dataflow.com",
+      "name": "Jessica",
+      "company": "NextGen",
+      "role": "Engineering Lead",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "body": "Hi Jessica,\n\nAs a valued prospect, I'm offering a 20% discount on your first project with us.\n\nThis includes:\n- Infrastructure\n- Security\n\nValid for 7 days: https://calendly.com/kleber-ziontechgroup\n\nLet's get started!\n\nBest,\nKleber",
+      "lead_magnet": {
+        "name": "IT Infrastructure Audit",
+        "value": 1500,
+        "cta": "/contact?offer=it-audit"
+      },
+      "day": 3,
+      "timestamp": "2026-08-08T16:00:01.478227",
+      "status": "pending"
+    },
+    {
+      "to": "sarah.aite@innovateco.com",
+      "name": "Sarah",
+      "company": "AITech",
+      "role": "Security Director",
+      "subject": "Your Free DevOps Readiness Evaluation is Ready!",
+      "body": "Hi Sarah,\n\nThank you for requesting your DevOps Readiness Evaluation. I've prepared a personalized analysis based on your business needs.\n\nKey findings:\n- Your current cloud spend could be optimized by 30-40%\n- Your security posture shows 2 areas for improvement\n- AI implementation could save 20+ hours/week\n\nLet's schedule a 15-minute call to discuss next steps: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber\nZion Tech Group",
+      "lead_magnet": {
+        "name": "DevOps Readiness Evaluation",
+        "value": 2000,
+        "cta": "/contact?offer=devops-eval"
+      },
+      "day": 1,
+      "timestamp": "2026-08-08T16:00:01.478227",
+      "status": "pending"
+    },
+    {
+      "to": "sarah.aite@innovateco.com",
+      "name": "Sarah",
+      "company": "AITech",
+      "role": "Security Director",
+      "subject": "Quick Question About Your DevOps Readiness Evaluation",
+      "body": "Hi Sarah,\n\nI wanted to follow up on your request for DevOps Readiness Evaluation. I noticed you might benefit from:\n\nBased on your request, I recommend starting with DevOps\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber",
+      "lead_magnet": {
+        "name": "DevOps Readiness Evaluation",
+        "value": 2000,
+        "cta": "/contact?offer=devops-eval"
+      },
+      "day": 2,
+      "timestamp": "2026-08-08T16:00:01.478227",
+      "status": "pending"
+    },
+    {
+      "to": "sarah.aite@innovateco.com",
+      "name": "Sarah",
+      "company": "AITech",
+      "role": "Security Director",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "body": "Hi Sarah,\n\nAs a valued prospect, I'm offering a 20% discount on your first project with us.\n\nThis includes:\n- DevOps\n- Cloud\n\nValid for 7 days: https://calendly.com/kleber-ziontechgroup\n\nLet's get started!\n\nBest,\nKleber",
+      "lead_magnet": {
+        "name": "DevOps Readiness Evaluation",
+        "value": 2000,
+        "cta": "/contact?offer=devops-eval"
+      },
+      "day": 3,
+      "timestamp": "2026-08-08T16:00:01.478227",
       "status": "pending"
     }
   ]
