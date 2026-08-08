@@ -182,7 +182,7 @@ function runCycle() {
   console.log(`content loop: cycle ${n} -> blog/${blogSlug}, services/${svcSlug}`);
 }
 
-const CYCLES_PER_RUN = parseInt(process.argv[2], 10) || 100;
+const CYCLES_PER_RUN = 50;
 for (let i = 0; i < CYCLES_PER_RUN; i++) {
   runCycle();
 }
