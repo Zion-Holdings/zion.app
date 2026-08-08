@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-08-08T19:30:00Z",
+  "token_found": true,
+  "label_id": "Label_4207916705207178948",
+  "label_name": "!!!!HOT FOLLOW-UP",
+  "messages_found": 50,
+  "unique_threads_checked": 4,
+  "safe_threads": [],
+  "blockers": [],
+  "result": "0 safe threads, 0 sends",
+  "threads_reviewed": [
+    {
+      "thread_id": "19fdcf7cf7bf01bb",
+      "subject": "Re: Invitation to Speak – GSDC Global Leadership Panel Series",
+      "latest_from": "kleber@ziontechgroup.com",
+      "skip_reason": "prior CEO outbound"
+    },
+    {
+      "thread_id": "19ecccc10bb351de",
+      "subject": "RES: Renovação do serviço de manutenção Zion 2026 - DTI - SDCOMPRASTIC-6963",
+      "latest_from": "kleber@ziontechgroup.com",
+      "skip_reason": "recent CEO/team outbound (Kleber + Carlos)"
+    },
+    {
+      "thread_id": "19edf026a1318750",
+      "subject": "Boost Cockroachlabs revenue with AI personalization",
+      "latest_from": "kleber@ziontechgroup.com",
+      "skip_reason": "prior CEO outbound"
+    },
+    {
+      "thread_id": "19eddd1ac68db5c6",
+      "subject": "Cut Newrelic production costs with AI",
+      "latest_from": "kleber@ziontechgroup.com",
+      "skip_reason": "prior CEO outbound"
+    }
+  ]
+}
