@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-08-08T11:33:40.703Z",
+  "targetUrl": "https://ziontechgroup.com/contact",
+  "httpStatus": 200,
+  "finalUrl": "https://ziontechgroup.com/contact/",
+  "targetEmail": "commercial@ziontechgroup.com",
+  "status": "healthy",
+  "targetEmailFound": true,
+  "formActions": [
+    "no-form-action-found"
+  ],
+  "findings": [
+    {
+      "severity": "warn",
+      "type": "no-form-action",
+      "file": "/contact",
+      "detail": "No form action attribute found on the contact page"
+    }
+  ],
+  "findingsCount": 1
+}
