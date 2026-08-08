@@ -1,0 +1,43 @@
+{
+  "total_services": 38780,
+  "last_run": "2026-08-08 15:40:42 UTC",
+  "services_discovered": 38043,
+  "engine_version": "ultra-fast-micro-growth-engine-v11.0",
+  "run_history": [
+    {
+      "timestamp": "2026-08-08 15:40:42 UTC",
+      "services_added": 38043,
+      "total_services": 38780,
+      "unique_ids": 38456,
+      "sitemap_urls": 38680,
+      "duration_seconds": 0.17,
+      "rate_services_per_second": 2891.0
+    }
+  ],
+  "landing_pages_generated": 0,
+  "outreach_messages_generated": 0,
+  "prospects_per_service": 0,
+  "industries_targeted": [
+    "real-estate",
+    "telecommunications",
+    "gaming",
+    "healthcare",
+    "finance",
+    "manufacturing",
+    "retail",
+    "logistics",
+    "energy",
+    "education",
+    "automotive",
+    "hospitality",
+    "media",
+    "sports",
+    "legal",
+    "transportation",
+    "insurance",
+    "agriculture",
+    "technology"
+  ],
+  "unique_ids": 38456,
+  "sitemap_urls": 38680
+}
