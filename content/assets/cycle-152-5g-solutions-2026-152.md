@@ -1,4 +1,4 @@
-# 5G Solutions — assets cycle 152
+# 5G Solutions - assets cycle 152
 
 ## Social carousel
 1) Hook: "Most 5G Solutions programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: 5G Solutions — a practical path from pilot to production
+Subject: 5G Solutions - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

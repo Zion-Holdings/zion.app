@@ -1,4 +1,4 @@
-# ETL Pipeline Optimization — assets cycle 198
+# ETL Pipeline Optimization - assets cycle 198
 
 ## Social carousel
 1) Hook: "Most ETL Pipeline Optimization programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: ETL Pipeline Optimization — a practical path from pilot to production
+Subject: ETL Pipeline Optimization - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

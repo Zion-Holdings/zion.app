@@ -1,4 +1,4 @@
-# AIOps Anomaly Detection — assets cycle 171
+# AIOps Anomaly Detection - assets cycle 171
 
 ## Social carousel
 1) Hook: "Most AIOps Anomaly Detection programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: AIOps Anomaly Detection — a practical path from pilot to production
+Subject: AIOps Anomaly Detection - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

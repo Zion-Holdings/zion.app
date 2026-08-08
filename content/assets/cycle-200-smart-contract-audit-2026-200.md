@@ -1,4 +1,4 @@
-# Smart Contract Audit — assets cycle 200
+# Smart Contract Audit - assets cycle 200
 
 ## Social carousel
 1) Hook: "Most Smart Contract Audit programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Smart Contract Audit — a practical path from pilot to production
+Subject: Smart Contract Audit - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

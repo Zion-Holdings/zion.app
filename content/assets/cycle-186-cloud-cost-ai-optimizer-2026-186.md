@@ -1,4 +1,4 @@
-# Cloud Cost AI Optimizer — assets cycle 186
+# Cloud Cost AI Optimizer - assets cycle 186
 
 ## Social carousel
 1) Hook: "Most Cloud Cost AI Optimizer programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Cloud Cost AI Optimizer — a practical path from pilot to production
+Subject: Cloud Cost AI Optimizer - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

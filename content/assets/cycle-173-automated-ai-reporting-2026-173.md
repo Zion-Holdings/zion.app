@@ -1,4 +1,4 @@
-# Automated AI Reporting — assets cycle 173
+# Automated AI Reporting - assets cycle 173
 
 ## Social carousel
 1) Hook: "Most Automated AI Reporting programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Automated AI Reporting — a practical path from pilot to production
+Subject: Automated AI Reporting - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

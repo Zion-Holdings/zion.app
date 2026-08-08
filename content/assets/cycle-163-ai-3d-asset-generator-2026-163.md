@@ -1,4 +1,4 @@
-# AI 3D Asset Generator — assets cycle 163
+# AI 3D Asset Generator - assets cycle 163
 
 ## Social carousel
 1) Hook: "Most AI 3D Asset Generator programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: AI 3D Asset Generator — a practical path from pilot to production
+Subject: AI 3D Asset Generator - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework
