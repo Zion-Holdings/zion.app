@@ -155,7 +155,7 @@
     "nav:live-audit": "echo \"stub: npm run nav:live-audit (no-op)\" && exit 0",
     "deps:outdated": "echo \"stub: npm run deps:outdated (no-op)\" && exit 0",
     "autonomy:quality-drift": "echo \"stub: npm run autonomy:quality-drift (no-op)\" && exit 0",
-    "autonomy:release-guardian": "echo \"stub: npm run autonomy:release-guardian (no-op)\" && exit 0",
+    "autonomy:release-guardian": "node automation/autonomous-release-guardian.cjs",
     "nav:audit-scan": "echo \"stub: npm run nav:audit-scan (no-op)\" && exit 0",
     "site:links:validate": "echo \"stub: npm run site:links:validate (no-op)\" && exit 0"
   },
