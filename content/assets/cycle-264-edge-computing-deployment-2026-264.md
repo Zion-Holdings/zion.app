@@ -1,4 +1,4 @@
-# Edge Computing Deployment — assets cycle 264
+# Edge Computing Deployment - assets cycle 264
 
 ## Social carousel
 1) Hook: "Most Edge Computing Deployment programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Edge Computing Deployment — a practical path from pilot to production
+Subject: Edge Computing Deployment - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

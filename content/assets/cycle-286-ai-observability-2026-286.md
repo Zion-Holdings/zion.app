@@ -1,4 +1,4 @@
-# AI Observability — assets cycle 286
+# AI Observability - assets cycle 286
 
 ## Social carousel
 1) Hook: "Most AI Observability programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: AI Observability — a practical path from pilot to production
+Subject: AI Observability - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

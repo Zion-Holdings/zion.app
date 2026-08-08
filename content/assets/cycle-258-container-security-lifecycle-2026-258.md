@@ -1,4 +1,4 @@
-# Container Security Lifecycle — assets cycle 258
+# Container Security Lifecycle - assets cycle 258
 
 ## Social carousel
 1) Hook: "Most Container Security Lifecycle programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Container Security Lifecycle — a practical path from pilot to production
+Subject: Container Security Lifecycle - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

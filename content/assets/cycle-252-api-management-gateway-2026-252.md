@@ -1,4 +1,4 @@
-# API Management Gateway — assets cycle 252
+# API Management Gateway - assets cycle 252
 
 ## Social carousel
 1) Hook: "Most API Management Gateway programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: API Management Gateway — a practical path from pilot to production
+Subject: API Management Gateway - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

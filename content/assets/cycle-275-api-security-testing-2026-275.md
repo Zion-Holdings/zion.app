@@ -1,4 +1,4 @@
-# API Security Testing — assets cycle 275
+# API Security Testing - assets cycle 275
 
 ## Social carousel
 1) Hook: "Most API Security Testing programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: API Security Testing — a practical path from pilot to production
+Subject: API Security Testing - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

@@ -1,4 +1,4 @@
-# Network Infrastructure — assets cycle 292
+# Network Infrastructure - assets cycle 292
 
 ## Social carousel
 1) Hook: "Most Network Infrastructure programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Network Infrastructure — a practical path from pilot to production
+Subject: Network Infrastructure - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

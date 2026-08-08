@@ -1,4 +1,4 @@
-# Cloud Native App Development — assets cycle 257
+# Cloud Native App Development - assets cycle 257
 
 ## Social carousel
 1) Hook: "Most Cloud Native App Development programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Cloud Native App Development — a practical path from pilot to production
+Subject: Cloud Native App Development - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

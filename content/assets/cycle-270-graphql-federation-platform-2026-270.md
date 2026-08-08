@@ -1,4 +1,4 @@
-# GraphQL Federation Platform — assets cycle 270
+# GraphQL Federation Platform - assets cycle 270
 
 ## Social carousel
 1) Hook: "Most GraphQL Federation Platform programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: GraphQL Federation Platform — a practical path from pilot to production
+Subject: GraphQL Federation Platform - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

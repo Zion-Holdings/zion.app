@@ -1,4 +1,4 @@
-# Data Warehouse Modernization — assets cycle 260
+# Data Warehouse Modernization - assets cycle 260
 
 ## Social carousel
 1) Hook: "Most Data Warehouse Modernization programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Data Warehouse Modernization — a practical path from pilot to production
+Subject: Data Warehouse Modernization - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

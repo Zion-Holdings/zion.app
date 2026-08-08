@@ -1,4 +1,4 @@
-# Enterprise Backup DR — assets cycle 266
+# Enterprise Backup DR - assets cycle 266
 
 ## Social carousel
 1) Hook: "Most Enterprise Backup DR programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Enterprise Backup DR — a practical path from pilot to production
+Subject: Enterprise Backup DR - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

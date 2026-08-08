@@ -1,4 +1,4 @@
-# Cloud Cost Optimization — assets cycle 278
+# Cloud Cost Optimization - assets cycle 278
 
 ## Social carousel
 1) Hook: "Most Cloud Cost Optimization programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Cloud Cost Optimization — a practical path from pilot to production
+Subject: Cloud Cost Optimization - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

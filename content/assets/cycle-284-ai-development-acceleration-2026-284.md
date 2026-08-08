@@ -1,4 +1,4 @@
-# AI Development Acceleration — assets cycle 284
+# AI Development Acceleration - assets cycle 284
 
 ## Social carousel
 1) Hook: "Most AI Development Acceleration programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: AI Development Acceleration — a practical path from pilot to production
+Subject: AI Development Acceleration - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

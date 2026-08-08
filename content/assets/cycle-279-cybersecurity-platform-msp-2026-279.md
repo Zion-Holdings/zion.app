@@ -1,4 +1,4 @@
-# Cybersecurity for MSPs — assets cycle 279
+# Cybersecurity for MSPs - assets cycle 279
 
 ## Social carousel
 1) Hook: "Most Cybersecurity for MSPs programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Cybersecurity for MSPs — a practical path from pilot to production
+Subject: Cybersecurity for MSPs - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

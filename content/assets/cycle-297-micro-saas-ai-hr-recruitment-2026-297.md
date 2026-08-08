@@ -1,4 +1,4 @@
-# MicroSaaS HR Recruitment — assets cycle 297
+# MicroSaaS HR Recruitment - assets cycle 297
 
 ## Social carousel
 1) Hook: "Most MicroSaaS HR Recruitment programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: MicroSaaS HR Recruitment — a practical path from pilot to production
+Subject: MicroSaaS HR Recruitment - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

@@ -1,4 +1,4 @@
-# Managed IT Services — assets cycle 280
+# Managed IT Services - assets cycle 280
 
 ## Social carousel
 1) Hook: "Most Managed IT Services programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Managed IT Services — a practical path from pilot to production
+Subject: Managed IT Services - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

@@ -1,4 +1,4 @@
-# Cloud FinOps — assets cycle 256
+# Cloud FinOps - assets cycle 256
 
 ## Social carousel
 1) Hook: "Most Cloud FinOps programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Cloud FinOps — a practical path from pilot to production
+Subject: Cloud FinOps - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

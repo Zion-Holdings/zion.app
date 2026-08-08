@@ -1,4 +1,4 @@
-# APM Application Performance — assets cycle 253
+# APM Application Performance - assets cycle 253
 
 ## Social carousel
 1) Hook: "Most APM Application Performance programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: APM Application Performance — a practical path from pilot to production
+Subject: APM Application Performance - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

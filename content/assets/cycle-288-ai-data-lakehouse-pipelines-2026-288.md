@@ -1,4 +1,4 @@
-# AI Data Lakehouse Pipelines — assets cycle 288
+# AI Data Lakehouse Pipelines - assets cycle 288
 
 ## Social carousel
 1) Hook: "Most AI Data Lakehouse Pipelines programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: AI Data Lakehouse Pipelines — a practical path from pilot to production
+Subject: AI Data Lakehouse Pipelines - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework
