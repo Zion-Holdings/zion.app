@@ -1,0 +1,70 @@
+import { } from 'next/navigation';
+
+export const metadata = {
+  title: "Data Sync & Change Capture - Zion Tech Group",
+  description: "Change data capture (CDC) sync engine that replicates real-time changes from Postgres, MySQL, MongoDB, and Snowflake to any destination with schema evolution.",
+  alternates: {
+    canonical: `https://ziontechgroup.com/services/data-sync-engineering`
+  }
+};
+
+export default function ServicePage() {
+  return (
+    <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-6">Data Sync &amp; Change Capture</h1>
+        <p className="text-lg text-gray-300 mb-8">Change data capture (CDC) sync engine that replicates real-time changes from Postgres, MySQL, MongoDB, and Snowflake to any destination with schema evolution.</p>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>CDC from 10+ databases</li>
+            <li>Schema evolution handled</li>
+            <li>Exactly-once delivery</li>
+            <li>Conflict resolution config</li>
+            <li>Backfill historical data</li>
+          </ul>
+        </div>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Keep all stores in sync</li>
+            <li>ELT pipelines in minutes</li>
+            <li>No custom CDC code</li>
+            <li>SDN-driven conflict resolution</li>
+          </ul>
+        </div>
+        
+        <div className="border border-purple-500 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Basic</h3>
+              <p className="text-2xl font-bold mb-2">$0</p>
+            </div>
+            <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
+              <h3 className="font-semibold mb-2">Pro</h3>
+              <p className="text-2xl font-bold mb-2">$99</p>
+            </div>
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Enterprise</h3>
+              <p className="text-2xl font-bold mb-2">$699</p>
+            </div>
+          </div>
+        </div>
+        
+        <div className="text-center">
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
+          >
+            Book a Consultation
+          </a>
+        </div>
+      </div>
+    </main>
+  );
+}

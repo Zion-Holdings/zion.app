@@ -23840,5 +23840,70 @@
     "popular": false,
     "category": "iot",
     "industry": "General"
+  },
+  {
+    "id": "queue-processor",
+    "name": "Queue Processor",
+    "category": "automation",
+    "description": "Instant automation microservice with zero-config deployment",
+    "created_at": "2026-08-08T03:24:24.820339+00:00",
+    "status": "active",
+    "tags": [
+      "automation",
+      "microservice",
+      "instant-deployment"
+    ]
+  },
+  {
+    "id": "nlp-entity-extractor",
+    "name": "NLP Entity Extractor",
+    "category": "ai",
+    "description": "Instant ai microservice with zero-config deployment",
+    "created_at": "2026-08-08T03:24:24.842480+00:00",
+    "status": "active",
+    "tags": [
+      "ai",
+      "microservice",
+      "instant-deployment"
+    ]
+  },
+  {
+    "id": "performance-monitor",
+    "name": "Performance Monitor",
+    "category": "devops",
+    "description": "Instant devops microservice with zero-config deployment",
+    "created_at": "2026-08-08T03:24:24.863465+00:00",
+    "status": "active",
+    "tags": [
+      "devops",
+      "microservice",
+      "instant-deployment"
+    ]
+  },
+  {
+    "id": "log-filter-service",
+    "name": "Log Filter Service",
+    "category": "cloud",
+    "description": "Instant cloud microservice with zero-config deployment",
+    "created_at": "2026-08-08T03:24:24.884812+00:00",
+    "status": "active",
+    "tags": [
+      "cloud",
+      "microservice",
+      "instant-deployment"
+    ]
+  },
+  {
+    "id": "config-sync",
+    "name": "Config Sync",
+    "category": "cloud",
+    "description": "Instant cloud microservice with zero-config deployment",
+    "created_at": "2026-08-08T03:24:24.906323+00:00",
+    "status": "active",
+    "tags": [
+      "cloud",
+      "microservice",
+      "instant-deployment"
+    ]
   }
 ]
