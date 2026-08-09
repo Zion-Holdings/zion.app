@@ -1,4 +1,4 @@
-# Event Driven Architecture — assets cycle 130
+# Event Driven Architecture - assets cycle 130
 
 ## Social carousel
 1) Hook: "Most Event Driven Architecture programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Event Driven Architecture — a practical path from pilot to production
+Subject: Event Driven Architecture - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

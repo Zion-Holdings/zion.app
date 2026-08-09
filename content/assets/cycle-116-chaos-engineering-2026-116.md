@@ -1,4 +1,4 @@
-# Chaos Engineering — assets cycle 116
+# Chaos Engineering - assets cycle 116
 
 ## Social carousel
 1) Hook: "Most Chaos Engineering programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Chaos Engineering — a practical path from pilot to production
+Subject: Chaos Engineering - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

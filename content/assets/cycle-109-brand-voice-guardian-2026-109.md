@@ -1,4 +1,4 @@
-# Brand Voice Guardian — assets cycle 109
+# Brand Voice Guardian - assets cycle 109
 
 ## Social carousel
 1) Hook: "Most Brand Voice Guardian programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Brand Voice Guardian — a practical path from pilot to production
+Subject: Brand Voice Guardian - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

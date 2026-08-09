@@ -1,4 +1,4 @@
-# Autonomous QA Engineering — assets cycle 106
+# Autonomous QA Engineering - assets cycle 106
 
 ## Social carousel
 1) Hook: "Most Autonomous QA Engineering programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Autonomous QA Engineering — a practical path from pilot to production
+Subject: Autonomous QA Engineering - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

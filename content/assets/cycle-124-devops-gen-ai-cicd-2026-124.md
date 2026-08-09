@@ -1,4 +1,4 @@
-# GenAI DevOps CI/CD — assets cycle 124
+# GenAI DevOps CI/CD - assets cycle 124
 
 ## Social carousel
 1) Hook: "Most GenAI DevOps CI/CD programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: GenAI DevOps CI/CD — a practical path from pilot to production
+Subject: GenAI DevOps CI/CD - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

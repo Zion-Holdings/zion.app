@@ -1,4 +1,4 @@
-# API Integration — assets cycle 113
+# API Integration - assets cycle 113
 
 ## Social carousel
 1) Hook: "Most API Integration programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: API Integration — a practical path from pilot to production
+Subject: API Integration - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

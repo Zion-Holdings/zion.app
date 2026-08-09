@@ -1,4 +1,4 @@
-# AI Performance Monitoring — assets cycle 111
+# AI Performance Monitoring - assets cycle 111
 
 ## Social carousel
 1) Hook: "Most AI Performance Monitoring programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: AI Performance Monitoring — a practical path from pilot to production
+Subject: AI Performance Monitoring - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

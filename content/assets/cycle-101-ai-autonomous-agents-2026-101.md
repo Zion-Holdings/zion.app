@@ -1,4 +1,4 @@
-# AI Autonomous Agents — assets cycle 101
+# AI Autonomous Agents - assets cycle 101
 
 ## Social carousel
 1) Hook: "Most AI Autonomous Agents programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: AI Autonomous Agents — a practical path from pilot to production
+Subject: AI Autonomous Agents - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

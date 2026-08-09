@@ -1,4 +1,4 @@
-# Accessibility Compliance — assets cycle 110
+# Accessibility Compliance - assets cycle 110
 
 ## Social carousel
 1) Hook: "Most Accessibility Compliance programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Accessibility Compliance — a practical path from pilot to production
+Subject: Accessibility Compliance - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

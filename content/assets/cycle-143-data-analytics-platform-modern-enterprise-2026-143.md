@@ -1,4 +1,4 @@
-# Data Analytics Platform — assets cycle 143
+# Data Analytics Platform - assets cycle 143
 
 ## Social carousel
 1) Hook: "Most Data Analytics Platform programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Data Analytics Platform — a practical path from pilot to production
+Subject: Data Analytics Platform - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework
