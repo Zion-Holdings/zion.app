@@ -1,0 +1,9 @@
+{
+  "timestamp": "2026-08-09T15:30:00Z",
+  "token_found": true,
+  "label_id": null,
+  "threads_checked": 12,
+  "safe_threads": [],
+  "blockers": [],
+  "note": "Threads found were non-business (Airbnb booking, CasaTemporada rental). No safe client threads to reply."
+}

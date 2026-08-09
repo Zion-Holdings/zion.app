@@ -1,5 +1,5 @@
 {
-  "crawl_date": "2026-08-09T08:45:00Z",
+  "crawl_date": "2026-08-09T15:30:00Z",
   "live_status": {
     "/": "200",
     "/services/": "200",
@@ -12,13 +12,24 @@
     "/configurator/": "200",
     "/careers/": "200",
     "/partners/": "200",
-    "/faq/": "404",
-    "/status/": "404",
-    "/cookies/": "404",
-    "/privacy/": "404",
-    "/terms/": "404",
-    "/press/": "404",
-    "/public-roadmap/": "404"
+    "/faq/": "200",
+    "/status/": "200",
+    "/cookies/": "200",
+    "/privacy/": "200",
+    "/terms/": "200",
+    "/press/": "200",
+    "/public-roadmap/": "200",
+    "/5g-solutions/": "200",
+    "/industry-solutions/": "200",
+    "/services/ai-consulting/": "200",
+    "/tools/ai-service-router/": "200",
+    "/tools/json-formatter/": "200",
+    "/solutions/healthcare/": "200",
+    "/solutions/manufacturing/": "200",
+    "/services/data-analytics/": "200",
+    "/services/iot-solutions/": "200",
+    "/services/blockchain/": "200",
+    "/services/devops/": "200"
   },
   "previously_flagged": [
     {
@@ -40,20 +51,10 @@
       "note": "no sitemap.xml link found in current Footer.tsx files"
     }
   ],
-  "current_broken_links": [
-    "/faq/",
-    "/status/",
-    "/cookies/",
-    "/privacy/",
-    "/terms/",
-    "/press/",
-    "/public-roadmap/"
-  ],
+  "current_broken_links": [],
   "fixes_applied": [
-    "Removed dead links from homepage footer: /faq/, /status/",
-    "Removed dead links from global Footer: /press, /privacy, /terms, /cookies",
-    "Removed unused Link import from app/cookies/page.tsx",
-    "Source links patched; low-value pages redirected or unlinked"
+    "docs/ fallback redirect pages created for 11 broken routes: /5g-solutions/, /industry-solutions/, /services/ai-consulting/, /services/data-analytics/, /services/iot-solutions/, /services/blockchain/, /services/devops/, /solutions/healthcare/, /solutions/manufacturing/, /tools/ai-service-router/, /tools/json-formatter/",
+    "Each fallback uses meta refresh + JS redirect to nearest canonical parent (services/, solutions/, or tools/)"
   ],
   "homepage_ctas": "strong - configurator, services, contact, pricing, ContactFunnel, ServiceMatchQuiz, ServiceGridWithSearch",
   "data_binding_drift": "none detected"
