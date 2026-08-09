@@ -433,3 +433,39 @@
 # Free tools alias
 /free-ai-tools /free-tools.html 301
 /free-ai-tools/ /free-tools.html 301
+
+# Added free-consultation
+/free-consultation /free-consultation/index.html 200
+/free-consultation/ /free-consultation/index.html 200
+
+# Added industries/financial-services
+/industries/financial-services /industries/financial-services/index.html 200
+/industries/financial-services/ /industries/financial-services/index.html 200
+
+# Added solutions/healthcare
+/solutions/healthcare /solutions/healthcare/index.html 200
+/solutions/healthcare/ /solutions/healthcare/index.html 200
+
+# Added agents-monitoring
+/agents-monitoring /agents-monitoring/index.html 200
+/agents-monitoring/ /agents-monitoring/index.html 200
+
+# Added ai-services
+/ai-services /ai-services/index.html 200
+/ai-services/ /ai-services/index.html 200
+
+# Added dashboard
+/dashboard /dashboard/index.html 200
+/dashboard/ /dashboard/index.html 200
+
+# Added partners
+/partners /partners/index.html 200
+/partners/ /partners/index.html 200
+
+# Added academy
+/academy /academy/index.html 200
+/academy/ /academy/index.html 200
+
+# Added sla
+/sla /sla/index.html 200
+/sla/ /sla/index.html 200
