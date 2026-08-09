@@ -1,14 +1,60 @@
-[
-  {
-    "file": "tools/ssl-checker/page.tsx",
-    "link": "/services/ai-compliance"
+{
+  "crawl_date": "2026-08-09T08:45:00Z",
+  "live_status": {
+    "/": "200",
+    "/services/": "200",
+    "/tools/": "200",
+    "/contact/": "200",
+    "/pricing/": "200",
+    "/solutions/": "200",
+    "/blog/": "200",
+    "/about/": "200",
+    "/configurator/": "200",
+    "/careers/": "200",
+    "/partners/": "200",
+    "/faq/": "404",
+    "/status/": "404",
+    "/cookies/": "404",
+    "/privacy/": "404",
+    "/terms/": "404",
+    "/press/": "404",
+    "/public-roadmap/": "404"
   },
-  {
-    "file": "tools/port-scanner/page.tsx",
-    "link": "/services/ai-compliance"
-  },
-  {
-    "file": "components/Footer.tsx",
-    "link": "/sitemap.xml"
-  }
-]
+  "previously_flagged": [
+    {
+      "file": "tools/ssl-checker/page.tsx",
+      "link": "/services/ai-compliance",
+      "status": "resolved_301_redirect",
+      "note": "source links to /services/ai-compliance/ with trailing slash; live site handles via 301"
+    },
+    {
+      "file": "tools/port-scanner/page.tsx",
+      "link": "/services/ai-compliance",
+      "status": "resolved_301_redirect",
+      "note": "source links to /services/ai-compliance/ with trailing slash; live site handles via 301"
+    },
+    {
+      "file": "components/Footer.tsx",
+      "link": "/sitemap.xml",
+      "status": "false_positive",
+      "note": "no sitemap.xml link found in current Footer.tsx files"
+    }
+  ],
+  "current_broken_links": [
+    "/faq/",
+    "/status/",
+    "/cookies/",
+    "/privacy/",
+    "/terms/",
+    "/press/",
+    "/public-roadmap/"
+  ],
+  "fixes_applied": [
+    "Removed dead links from homepage footer: /faq/, /status/",
+    "Removed dead links from global Footer: /press, /privacy, /terms, /cookies",
+    "Removed unused Link import from app/cookies/page.tsx",
+    "Source links patched; low-value pages redirected or unlinked"
+  ],
+  "homepage_ctas": "strong - configurator, services, contact, pricing, ContactFunnel, ServiceMatchQuiz, ServiceGridWithSearch",
+  "data_binding_drift": "none detected"
+}
