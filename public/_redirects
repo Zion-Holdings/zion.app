@@ -26,3 +26,25 @@
 /free-ai-tools/ /free-tools.html 301
 /new-ai-services /services/ 301
 /new-ai-services/ /services/ 301
+
+# Trailing-slash/normalization fixes for existing pages
+/ai /ai/ 301
+/ai-lab /ai-lab/ 301
+/5g-solutions /5g-solutions/ 301
+/faq /faq/ 301
+/press /press/ 301
+/privacy /privacy/ 301
+/terms /terms/ 301
+/cookies /cookies/ 301
+/pricing-calculator /pricing-calculator/ 301
+/proposal-generator /proposal-generator/ 301
+/proposals /proposals/ 301
+
+# Fallbacks for genuinely missing routes
+/industries /industry-solutions/ 301
+/industry-solutions /industry-solutions/ 301
+/industries/financial-services /industry-solutions/ 301
+/dashboard /status/ 301
+/academy /services/ 301
+/agents-monitoring /services/ 301
+/free-consultation /contact 301
