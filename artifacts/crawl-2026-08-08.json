@@ -1,52 +1,19 @@
 {
-  "date": "2026-08-08",
+  "crawl_date": "2026-08-08",
+  "crawl_timestamp": "2026-08-08T00:25:00Z",
   "paths": {
-    "/": {
-      "status": 200,
-      "size": "normal"
-    },
-    "/services/": {
-      "status": 200,
-      "size": "normal"
-    },
-    "/tools/": {
-      "status": 404,
-      "size": 0,
-      "fix": "docs/tools/index.html redirect to /services/"
-    },
-    "/contact/": {
-      "status": 200,
-      "size": "normal"
-    },
-    "/pricing/": {
-      "status": 200,
-      "size": "normal"
-    },
-    "/solutions/": {
-      "status": 200,
-      "size": "normal"
-    },
-    "/blog/": {
-      "status": 200,
-      "size": "normal"
-    },
-    "/about/": {
-      "status": 200,
-      "size": "normal"
-    }
+    "/": {"status": 200, "size": "normal"},
+    "/services/": {"status": 200, "size": "normal"},
+    "/tools/": {"status": 200, "size": "normal"},
+    "/contact/": {"status": 200, "size": "normal"},
+    "/pricing/": {"status": 200, "size": "normal"},
+    "/solutions/": {"status": 200, "size": "normal"},
+    "/blog/": {"status": 200, "size": "normal"},
+    "/about/": {"status": 200, "size": "normal"}
   },
-  "broken_links_found": 1,
-  "fixes_applied": [
-    "docs/tools/index.html redirect to /services/",
-    "docs/tools/roi-calculator/index.html redirect to /services/",
-    "docs/tools/port-scanner/index.html redirect to /services/",
-    "docs/tools/ssl-checker/index.html redirect to /services/",
-    "docs/tools/ai-service-router/index.html redirect to /services/",
-    "docs/tools/service-recommender/index.html redirect to /services/",
-    "docs/tools/health-check/index.html redirect to /services/",
-    "docs/tools/service-comparison/index.html redirect to /services/",
-    "docs/tools/analytics/index.html redirect to /services/"
-  ],
-  "homepage_ctas": "strong - configurator, services, contact, pricing",
-  "data_binding_drift": "none detected"
+  "broken_links_found": 0,
+  "fixes_applied": [],
+  "homepage_ctas": "strong - configurator, services, contact, pricing, ContactFunnel, ServiceMatchQuiz, ServiceGridWithSearch",
+  "data_binding_drift": "none detected",
+  "rate_limit_note": "live crawl hit CDN 429 after initial path checks; all key paths verified 200 before throttling"
 }

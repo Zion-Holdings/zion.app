@@ -1,14 +1,37 @@
-[
-  {
-    "file": "tools/ssl-checker/page.tsx",
-    "link": "/services/ai-compliance"
+{
+  "crawl_date": "2026-08-08T00:25:00Z",
+  "live_status": {
+    "/": "200",
+    "/services/": "200",
+    "/tools/": "200",
+    "/contact/": "200",
+    "/pricing/": "200",
+    "/solutions/": "200",
+    "/blog/": "200",
+    "/about/": "200"
   },
-  {
-    "file": "tools/port-scanner/page.tsx",
-    "link": "/services/ai-compliance"
-  },
-  {
-    "file": "components/Footer.tsx",
-    "link": "/sitemap.xml"
-  }
-]
+  "previously_flagged": [
+    {
+      "file": "tools/ssl-checker/page.tsx",
+      "link": "/services/ai-compliance",
+      "status": "resolved_301_redirect",
+      "note": "source links to /services/ai-compliance/ with trailing slash; live site handles via 301"
+    },
+    {
+      "file": "tools/port-scanner/page.tsx",
+      "link": "/services/ai-compliance",
+      "status": "resolved_301_redirect",
+      "note": "source links to /services/ai-compliance/ with trailing slash; live site handles via 301"
+    },
+    {
+      "file": "components/Footer.tsx",
+      "link": "/sitemap.xml",
+      "status": "false_positive",
+      "note": "no sitemap.xml link found in current Footer.tsx files"
+    }
+  ],
+  "current_broken_links": [],
+  "fixes_applied": [],
+  "homepage_ctas": "strong - configurator, services, contact, pricing, ContactFunnel, ServiceMatchQuiz, ServiceGridWithSearch",
+  "data_binding_drift": "none detected"
+}

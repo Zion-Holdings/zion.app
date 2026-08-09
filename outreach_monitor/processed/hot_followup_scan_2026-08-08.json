@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-08-08T00:25:00Z",
+  "token_found": true,
+  "label_id": "Label_4207916705207178948",
+  "label_name": "!!!!HOT FOLLOW-UP",
+  "messages_in_label": 0,
+  "unique_threads_checked": 0,
+  "safe_threads": [],
+  "blockers": [],
+  "result": "0 safe threads, 0 sends",
+  "notes": "Label empty; prior scan at 19:30 found 50 messages but they are no longer in the label. Bare text search for '!!!!HOT FOLLOW-UP' returned 20 messages — all from kleber@ziontechgroup.com or postmaster bounces. No external safe threads available."
+}
