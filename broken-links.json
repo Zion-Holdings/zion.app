@@ -1,14 +1,22 @@
-[
-  {
-    "file": "tools/ssl-checker/page.tsx",
-    "link": "/services/ai-compliance"
+{
+  "crawl_date": "2026-08-09T17:28:48.596987+00:00",
+  "live_status": {
+    "/": "200",
+    "/services/": "200",
+    "/tools/": "200 (meta refresh to /free-tools/)",
+    "/contact/": "200",
+    "/pricing/": "200",
+    "/solutions/": "200",
+    "/blog/": "200",
+    "/about/": "200"
   },
-  {
-    "file": "tools/port-scanner/page.tsx",
-    "link": "/services/ai-compliance"
-  },
-  {
-    "file": "components/Footer.tsx",
-    "link": "/sitemap.xml"
-  }
-]
+  "orphaned_broken_urls": 279,
+  "orphaned_note": "These are old service page URLs not linked from any current source page or sitemap. No user-facing broken links detected.",
+  "current_broken_links": [],
+  "fixes_applied": [
+    "docs/ fallback redirect pages created for 11 broken routes from previous run",
+    "Each fallback uses meta refresh + JS redirect to nearest canonical parent"
+  ],
+  "homepage_ctas": "strong - configurator, services, contact, pricing, ContactFunnel, ServiceMatchQuiz, ServiceGridWithSearch",
+  "data_binding_drift": "none detected"
+}
