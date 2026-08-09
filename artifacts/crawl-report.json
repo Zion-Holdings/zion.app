@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-09T11:59:01.780Z",
+  "generatedAt": "2026-08-09T13:47:50.359Z",
   "base": "https://ziontechgroup.com",
   "checked": 12,
-  "healthy": 7,
-  "failed": 5,
+  "healthy": 12,
+  "failed": 0,
   "results": [
     {
       "url": "https://ziontechgroup.com/",
@@ -22,8 +22,8 @@
     },
     {
       "url": "https://ziontechgroup.com/case-studies/",
-      "code": "404",
-      "ok": false
+      "code": "200",
+      "ok": true
     },
     {
       "url": "https://ziontechgroup.com/about/",
@@ -42,13 +42,13 @@
     },
     {
       "url": "https://ziontechgroup.com/services/ai-customer-support-pro/",
-      "code": "404",
-      "ok": false
+      "code": "200",
+      "ok": true
     },
     {
       "url": "https://ziontechgroup.com/services/cloud-cost-optimization-platform/",
-      "code": "404",
-      "ok": false
+      "code": "200",
+      "ok": true
     },
     {
       "url": "https://ziontechgroup.com/services/siem-security-platform/",
@@ -57,13 +57,13 @@
     },
     {
       "url": "https://ziontechgroup.com/services/managed-it/",
-      "code": "404",
-      "ok": false
+      "code": "200",
+      "ok": true
     },
     {
       "url": "https://ziontechgroup.com/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/",
-      "code": "404",
-      "ok": false
+      "code": "200",
+      "ok": true
     }
   ]
 }

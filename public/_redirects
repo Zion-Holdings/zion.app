@@ -42,8 +42,21 @@
 /dashboard /status/ 301
 /academy /services/ 301
 /agents-monitoring /services/ 301
-/free-consultation /contact 301
+/free-consultation /free-consultation/ 301
+/free-consultation/ /free-consultation/ 301
+/free-audit /free-audit/ 301
+/free-audit/ /free-audit/ 301
+/proposal /proposal/ 301
+/proposal/ /proposal/ 301
+/ai /ai/ 301
+/ai/ /ai/ 301
+/industries/insurance /industries/insurance/ 301
+/industries/insurance/ /industries/insurance/ 301
+/industries/healthcare /industries/healthcare/ 301
+/industries/healthcare/ /industries/healthcare/ 301
+/industries/legal /industries/legal/ 301
+/industries/legal/ /industries/legal/ 301
 /free-ai-tools /free-tools 301
 /free-ai-tools/ /free-tools/ 301
 
-# cache-bust: 2026-08-09T13:15:00Z
+# cache-bust: 2026-08-09T14:00:00Z
