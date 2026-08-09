@@ -43,5 +43,7 @@
 /academy /services/ 301
 /agents-monitoring /services/ 301
 /free-consultation /contact 301
+/free-ai-tools /free-tools 301
+/free-ai-tools/ /free-tools/ 301
 
-# cache-bust: 2026-08-09T12:29:46.732321Z
+# cache-bust: 2026-08-09T13:15:00Z
