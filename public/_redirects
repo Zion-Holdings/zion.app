@@ -17,7 +17,6 @@
 # AI resources fallback
 /ai-resources /docs/ai-resources/index.html 200
 /ai-resources/ /docs/ai-resources/index.html 200
-2026-08-04T16:45:49Z
 
 # Orphaned route fallbacks
 /ai-services-index /services/ 301
