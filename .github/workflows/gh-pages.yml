@@ -154,5 +154,3 @@ jobs:
             code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "${{ steps.deployment.outputs.page_url }}${p}" || true)
             echo "$p -> $code"
           done
-trigger
-# trigger rebuild
