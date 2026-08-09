@@ -429,3 +429,7 @@
 /transportation-logistics /transportation-logistics/index.html 200
 /transportation-logistics/ /transportation-logistics/index.html 200
 # Bulk fallback rules added 2026-08-08
+
+# Free tools alias
+/free-ai-tools /free-tools.html 301
+/free-ai-tools/ /free-tools.html 301
