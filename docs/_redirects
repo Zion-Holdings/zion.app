@@ -16,6 +16,8 @@
 # Free tools fallbacks
 /free-tools /free-tools.html 200
 /free-tools/ /free-tools.html 200
+/free-ai-tools /free-tools.html 301
+/free-ai-tools/ /free-tools.html 301
 /tools /free-tools.html 200
 /tools/ /free-tools.html 200
 
