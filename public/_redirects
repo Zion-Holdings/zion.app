@@ -6,6 +6,10 @@
 /services/enterprise-ai-intelligence-hub-2026-1143/ /services/enterprise-ai-intelligence-hub-2026-507/ 301
 /blog/enterprise-ai-intelligence-hub-2026-1143/ /blog/enterprise-ai-intelligence-hub-2026-507/ 301
 
+# Services fallback
+/services /services/ 301
+/services/* /services/ 301
+
 # Search
 /search /docs/search/index.html 200
 /search/ /docs/search/index.html 200
