@@ -1,5 +1,5 @@
 # Content Queue
 
-Last cycle: 7910
-Next slug prefix: 7911
+Last cycle: 7960
+Next slug prefix: 7961
 Seeds ready: 69
