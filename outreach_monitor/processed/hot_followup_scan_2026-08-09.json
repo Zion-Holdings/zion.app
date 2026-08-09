@@ -1,0 +1,41 @@
+{
+  "timestamp": "2026-08-09T02:09:08.002098+00:00",
+  "label_id": "Label_4207916705207178948",
+  "threads_api_returned": 100,
+  "threads_checked": 4,
+  "safe_threads": [
+    {
+      "thread_id": "19fe3d51cd173c44",
+      "message_id": "19fe3d51cd173c44",
+      "subject": "Prudential do Brasil \u2013 Solicita\u00e7\u00e3o realizada",
+      "sender": "\"Prudential - \u00c1rea do Cliente\" <noreply@prudentialonline.com.br>",
+      "date": "Sun, 09 Aug 2026 00:03:36 +0000",
+      "messages_count": 1
+    },
+    {
+      "thread_id": "19fe3d45430f36a7",
+      "message_id": "19fe3d45430f36a7",
+      "subject": "Prudential do Brasil \u2013 C\u00f3digo de seguran\u00e7a",
+      "sender": "Prudential do Brasil <noreply@prudentialonline.com.br>",
+      "date": "Sun, 09 Aug 2026 00:02:46 +0000",
+      "messages_count": 1
+    },
+    {
+      "thread_id": "19fe3cf0d199ed78",
+      "message_id": "19fe3cf0d199ed78",
+      "subject": "Dispositivo confi\u00e1vel adicionado com sucesso",
+      "sender": "no-reply-otp@prudential.com",
+      "date": "Sat, 8 Aug 2026 23:56:47 +0000 (GMT)",
+      "messages_count": 1
+    },
+    {
+      "thread_id": "19fe3ce1057f45da",
+      "message_id": "19fe3ce1057f45da",
+      "subject": "Prudential do Brasil \u2013 C\u00f3digo de verifica\u00e7\u00e3o",
+      "sender": "no-reply-co@prudential.com",
+      "date": "Sat, 8 Aug 2026 23:55:42 +0000 (GMT)",
+      "messages_count": 1
+    }
+  ],
+  "threads_sent": 0
+}
