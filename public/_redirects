@@ -13,6 +13,8 @@
 # Free tools fallbacks
 /free-tools /free-tools.html 200
 /free-tools/ /free-tools.html 200
+/tools /free-tools.html 200
+/tools/ /free-tools.html 200
 
 # AI resources fallback
 /ai-resources /docs/ai-resources/index.html 200
