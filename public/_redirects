@@ -26,3 +26,23 @@
 /free-ai-it-tools/ /tools 301
 /new-ai-services /services/ 301
 /new-ai-services/ /services/ 301
+
+# Missing page fallbacks
+/case-studies /case-studies/ 301
+/case-studies/ /case-studies/ 200
+/services/cloud-cost-optimization-platform /services/cloud-cost-optimization-platform/ 301
+/services/cloud-cost-optimization-platform/ /services/cloud-cost-optimization-platform/ 200
+/services/ai-customer-support-pro /services/ai-customer-support-pro/ 301
+/services/ai-customer-support-pro/ /services/ai-customer-support-pro/ 200
+/services/managed-it /services/it-managed-it-ops 301
+/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/ /blog/ 301
+
+# Common missing paths
+/industries /industry-solutions/ 301
+/industry-solutions /industry-solutions/ 301
+/dashboard /status/ 301
+/academy /services/ 301
+/agents-monitoring /services/ 301
+/free-consultation /contact 301
+/status-page /status/ 301
+/public-roadmap /services/ 301

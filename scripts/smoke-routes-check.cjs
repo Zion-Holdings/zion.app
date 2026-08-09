@@ -1,4 +1,4 @@
-// smoke:routes:check — validates navigation links match built routes
+// smoke:routes:check - validates navigation links match built routes
 const fs = require('fs');
 try {
   const built = fs.readdirSync('zion.app/out').filter(d => fs.statSync('zion.app/out/'+d).isDirectory());

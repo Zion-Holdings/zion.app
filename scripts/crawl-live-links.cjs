@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * scripts/crawl-live-links.cjs — sample-based live link checker
+ * scripts/crawl-live-links.cjs - sample-based live link checker
  * Usage: node scripts/crawl-live-links.cjs [baseUrl] [sampleSize]
  * Default: https://ziontechgroup.com 250
  */
