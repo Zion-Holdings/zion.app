@@ -59,4 +59,9 @@
 /free-ai-tools /free-tools 301
 /free-ai-tools/ /free-tools/ 301
 
+# Key route fallbacks
+/solutions/healthcare/ /docs/solutions/healthcare/index.html 200
+/tools/phishing-analyzer/ /docs/tools/phishing-analyzer/index.html 200
+/industries/financial-services/ /docs/industries/financial-services/index.html 200
+
 # cache-bust: 2026-08-09T14:00:00Z
