@@ -1,4 +1,4 @@
-# DevSecOps Pipeline — assets cycle 56
+# DevSecOps Pipeline - assets cycle 56
 
 ## Social carousel
 1) Hook: "Most DevSecOps Pipeline programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: DevSecOps Pipeline — a practical path from pilot to production
+Subject: DevSecOps Pipeline - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

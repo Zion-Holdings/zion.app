@@ -1,4 +1,4 @@
-# Endpoint Management — assets cycle 58
+# Endpoint Management - assets cycle 58
 
 ## Social carousel
 1) Hook: "Most Endpoint Management programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Endpoint Management — a practical path from pilot to production
+Subject: Endpoint Management - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

@@ -1,4 +1,4 @@
-# MicroSaaS Social Media Manager — assets cycle 92
+# MicroSaaS Social Media Manager - assets cycle 92
 
 ## Social carousel
 1) Hook: "Most MicroSaaS Social Media Manager programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: MicroSaaS Social Media Manager — a practical path from pilot to production
+Subject: MicroSaaS Social Media Manager - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

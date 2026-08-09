@@ -1,4 +1,4 @@
-# Database Migration Service — assets cycle 54
+# Database Migration Service - assets cycle 54
 
 ## Social carousel
 1) Hook: "Most Database Migration Service programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Database Migration Service — a practical path from pilot to production
+Subject: Database Migration Service - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

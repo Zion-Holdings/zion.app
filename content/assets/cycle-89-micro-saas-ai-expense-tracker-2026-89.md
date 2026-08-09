@@ -1,4 +1,4 @@
-# MicroSaaS Expense Tracker — assets cycle 89
+# MicroSaaS Expense Tracker - assets cycle 89
 
 ## Social carousel
 1) Hook: "Most MicroSaaS Expense Tracker programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: MicroSaaS Expense Tracker — a practical path from pilot to production
+Subject: MicroSaaS Expense Tracker - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

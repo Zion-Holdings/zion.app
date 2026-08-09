@@ -1,4 +1,4 @@
-# AI Customer Support — assets cycle 78
+# AI Customer Support - assets cycle 78
 
 ## Social carousel
 1) Hook: "Most AI Customer Support programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: AI Customer Support — a practical path from pilot to production
+Subject: AI Customer Support - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

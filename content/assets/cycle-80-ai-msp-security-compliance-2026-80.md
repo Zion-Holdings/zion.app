@@ -1,4 +1,4 @@
-# AI MSP Security Compliance — assets cycle 80
+# AI MSP Security Compliance - assets cycle 80
 
 ## Social carousel
 1) Hook: "Most AI MSP Security Compliance programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: AI MSP Security Compliance — a practical path from pilot to production
+Subject: AI MSP Security Compliance - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

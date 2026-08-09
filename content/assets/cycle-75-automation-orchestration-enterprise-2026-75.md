@@ -1,4 +1,4 @@
-# Automation Orchestration — assets cycle 75
+# Automation Orchestration - assets cycle 75
 
 ## Social carousel
 1) Hook: "Most Automation Orchestration programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Automation Orchestration — a practical path from pilot to production
+Subject: Automation Orchestration - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework

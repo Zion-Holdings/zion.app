@@ -1,4 +1,4 @@
-# Cyber Threat Intelligence — assets cycle 52
+# Cyber Threat Intelligence - assets cycle 52
 
 ## Social carousel
 1) Hook: "Most Cyber Threat Intelligence programs stall after pilot."
@@ -8,7 +8,7 @@
 5) CTA: "Get the Zion Tech Group checklist"
 
 ## Email/WhatsApp copy
-Subject: Cyber Threat Intelligence — a practical path from pilot to production
+Subject: Cyber Threat Intelligence - a practical path from pilot to production
 Body:
 - Pain opener
 - 3-step framework
