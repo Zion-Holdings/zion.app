@@ -42,7 +42,7 @@ jobs:
 
       - name: Upload report-size artifacts
         if: always()
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        uses: actions/upload-artifact@v4
         with:
           name: report-size-budget-${{ github.run_id }}
           path: |

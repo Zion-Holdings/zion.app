@@ -66,7 +66,7 @@ jobs:
 
       - name: Upload freshness report
         if: always()
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        uses: actions/upload-artifact@v4
         with:
           name: automation-health-static-freshness-${{ github.run_id }}
           path: automation/reports/automation-health-static-freshness-latest.json

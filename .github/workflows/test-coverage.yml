@@ -12,11 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
     - name: Setup Node
-      uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
+      uses: actions/setup-node@v4
       with:
         node-version: '20'
         cache: npm
@@ -29,30 +29,32 @@ jobs:
         COVERAGE_MIN_GLOBAL: ${{ secrets.COVERAGE_MIN_GLOBAL || '80' }}
         COVERAGE_REGRESSION_PCT: ${{ secrets.COVERAGE_REGRESSION_PCT || '5' }}
         COVERAGE_INPUT: coverage/coverage-final.json
-        COVERAGE_UPDATE_BASELINE_ON_MAIN: ${{ secrets.COVERAGE_UPDATE_BASELINE_ON_MAIN
-          || 'false' }}
+        COVERAGE_UPDATE_BASELINE_ON_MAIN: ${{ secrets.COVERAGE_UPDATE_BASELINE_ON_MAIN || 'false' }}
         GITHUB_REF: ${{ github.ref }}
         GITHUB_EVENT_NAME: ${{ github.event_name }}
       run: node automation/test-coverage-enforcer.cjs
     - name: Post coverage comment on PR
       if: github.event_name == 'pull_request'
-      uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd
+      uses: actions/github-script@v7
       with:
-        script: "const fs = require('fs');\nlet comment = '\U0001F4CA **Test Coverage\
-          \ Report**\\n\\n';\ntry {\n  const summary = JSON.parse(fs.readFileSync('coverage/coverage-summary.json',\
-          \ 'utf8'));\n  const total = summary.total;\n  comment += `- **Global:**\
-          \ ${total.lines.pct.toFixed(2)}% lines, ${total.branches.pct.toFixed(2)}%\
-          \ branches, ${total.functions.pct.toFixed(2)}% functions, ${total.statements.pct.toFixed(2)}%\
-          \ statements\\n`;\n} catch (e) {\n  comment += '\u26A0\uFE0F Could not parse\
-          \ coverage summary.';\n}\ncomment += '\\n*Coverage thresholds: global \u2265\
-          \ 80%, regression \u2264 5%. Baseline will update on merge to main.*';\n\
-          github.rest.issues.createComment({\n  issue_number: context.issue.number,\n\
-          \  owner: context.repo.owner,\n  repo: context.repo.repo,\n  body: comment\n\
-          });\n"
+        script: |
+          const fs = require('fs');
+          let comment = '📊 **Test Coverage Report**\n\n';
+          try {
+            const summary = JSON.parse(fs.readFileSync('coverage/coverage-summary.json', 'utf8'));
+            const total = summary.total;
+            comment += `- **Global:** ${total.lines.pct.toFixed(2)}% lines, ${total.branches.pct.toFixed(2)}% branches, ${total.functions.pct.toFixed(2)}% functions, ${total.statements.pct.toFixed(2)}% statements\n`;
+          } catch (e) {
+            comment += '⚠️ Could not parse coverage summary.';
+          }
+          comment += '\n*Coverage thresholds: global ≥ 80%, regression ≤ 5%. Baseline will update on merge to main.*';
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: comment
+          });
     - name: Notify Telegram on failure
       if: failure()
-      run: "node automation/notify-telegram.js \"\u26A0\uFE0F Test coverage check\
-        \ failed on ${{ github.repository }} PR #${{ github.event.pull_request.number\
-        \ || 'unknown' }}. See: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{\
-        \ github.run_id }}\"\n"
+      run: "node automation/notify-telegram.js \"⚠️ Test coverage check failed on ${{ github.repository }} PR #${{ github.event.pull_request.number || 'unknown' }}. See: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\"\n"
     timeout-minutes: 10

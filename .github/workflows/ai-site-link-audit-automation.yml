@@ -58,7 +58,7 @@ jobs:
 
       - name: Upload audit artifact
         if: always()
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        uses: actions/upload-artifact@v4
         with:
           name: site-link-audit-${{ github.run_id }}
           path: automation/reports/site-link-audit-latest.json

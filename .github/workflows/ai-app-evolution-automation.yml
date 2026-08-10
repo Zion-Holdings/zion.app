@@ -65,7 +65,7 @@ jobs:
           bash scripts/automation/commit-and-push-main.sh "chore(automation): app evolution backlog"
 
       - name: Upload evolution report
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        uses: actions/upload-artifact@v4
         with:
           name: app-evolution-report
           path: |
