@@ -58,8 +58,8 @@ async function main() {
   run("git commit -m 'chore: autonomous content loop batch'");
 
   // 3) push master/main
-  run('git push origin master --force');
-  run('git push origin master:main --force');
+  run('git push origin HEAD:master --force');
+  run('git push origin HEAD:main --force');
 
   // 4) dispatch Pages workflow via GitHub API
   let token = '';
@@ -69,7 +69,7 @@ async function main() {
     return;
   }
   const payload = JSON.stringify({ ref: 'main' });
-  const createdAt = new Date().toISOString();
+  const createdAt = new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
   const curl = `curl -s -o /dev/null -w '%{http_code}' -X POST -H "Authorization: token ${token}" -H "Accept: application/vnd.github+json" -H "Content-Type: application/json" https://api.github.com/repos/Zion-support/zion-support.github.io/actions/workflows/gh-pages.yml/dispatches -d '${payload}'`;
   const code = run(curl, { allowFail: true });
   if ((code || '').includes('204')) {
