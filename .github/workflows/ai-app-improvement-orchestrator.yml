@@ -67,6 +67,7 @@ jobs:
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: openrouter/auto
+          OFFLINE_MODE: ${{ !secrets.OPENROUTER_API_KEY && '1' || '' }}
           AUTO_COMMIT: ${{ (github.event_name == 'schedule' || github.event.inputs.auto_commit == 'true') && '1' || '0' }}
           LAYOUT_AUDIT: ${{ github.event.inputs.layout_audit == 'true' && '1' || '' }}
           CONTENT_IDEAS: ${{ github.event.inputs.content_ideas == 'true' && '1' || '' }}

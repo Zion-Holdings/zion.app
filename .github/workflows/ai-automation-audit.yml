@@ -43,6 +43,7 @@ jobs:
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           OPENROUTER_MODEL: meta-llama/llama-3.2-3b-instruct:free
+          OFFLINE_MODE: ${{ !secrets.OPENROUTER_API_KEY && '1' || '' }}
         run: node automation/ai-automation-audit-agent.cjs run
 
       - name: Run automation self-healing
