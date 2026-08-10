@@ -1,5 +1,5 @@
 {
-  "state": "send_ready",
+  "state": "send_blocked_analysis",
   "send_blocked": true,
   "generated_at": "2026-08-10T14:00:01.046522",
   "leads_processed": 5,
@@ -29,7 +29,7 @@
       "company": "DevOpsPro",
       "role": "VP of Engineering",
       "subject": "Quick Question About Your Digital Transformation Roadmap",
-      "body": "Hi David,\n\nI wanted to follow up on your request for Digital Transformation Roadmap. I noticed you might benefit from:\n\nBased on your request, I recommend starting with Digital Strategy\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber",
+      "body": "Hi David,\n\nI wanted to follow up on your request for Digital Transformation Roadmap. I noticed you might benefit from:\n\nBased on your request, I recommend starting with Digital Strategy\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber\n\nBased on your request and your role at DevOpsPro, I recommend starting with Digital Strategy.\n\nA short next step: 10-minute discovery call focused on where you can see ROI first: https://calendly.com/kleber-ziontechgroup\n\nBest,\nKleber\nZion Tech Group",
       "lead_magnet": {
         "name": "Digital Transformation Roadmap",
         "value": 3000,
@@ -77,7 +77,7 @@
       "company": "TechCorp",
       "role": "Engineering Lead",
       "subject": "Quick Question About Your IT Infrastructure Audit",
-      "body": "Hi John,\n\nI wanted to follow up on your request for IT Infrastructure Audit. I noticed you might benefit from:\n\nBased on your request, I recommend starting with Infrastructure\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber",
+      "body": "Hi John,\n\nI wanted to follow up on your request for IT Infrastructure Audit. I noticed you might benefit from:\n\nBased on your request, I recommend starting with Infrastructure\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber\n\nBased on your request and your role at TechCorp, I recommend starting with Infrastructure.\n\nA short next step: 10-minute discovery call focused on where you can see ROI first: https://calendly.com/kleber-ziontechgroup\n\nBest,\nKleber\nZion Tech Group",
       "lead_magnet": {
         "name": "IT Infrastructure Audit",
         "value": 1500,
@@ -125,7 +125,7 @@
       "company": "DataFlow",
       "role": "Head of DevOps",
       "subject": "Quick Question About Your Cloud Security Scan",
-      "body": "Hi Daniel,\n\nI wanted to follow up on your request for Cloud Security Scan. I noticed you might benefit from:\n\nBased on your request, I recommend starting with Security\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber",
+      "body": "Hi Daniel,\n\nI wanted to follow up on your request for Cloud Security Scan. I noticed you might benefit from:\n\nBased on your request, I recommend starting with Security\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber\n\nBased on your request and your role at DataFlow, I recommend starting with Security.\n\nA short next step: 10-minute discovery call focused on where you can see ROI first: https://calendly.com/kleber-ziontechgroup\n\nBest,\nKleber\nZion Tech Group",
       "lead_magnet": {
         "name": "Cloud Security Scan",
         "value": 1800,
@@ -173,7 +173,7 @@
       "company": "SecureIT",
       "role": "Engineering Lead",
       "subject": "Quick Question About Your DevOps Readiness Evaluation",
-      "body": "Hi Amanda,\n\nI wanted to follow up on your request for DevOps Readiness Evaluation. I noticed you might benefit from:\n\nBased on your request, I recommend starting with DevOps\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber",
+      "body": "Hi Amanda,\n\nI wanted to follow up on your request for DevOps Readiness Evaluation. I noticed you might benefit from:\n\nBased on your request, I recommend starting with DevOps\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber\n\nBased on your request and your role at SecureIT, I recommend starting with DevOps.\n\nA short next step: 10-minute discovery call focused on where you can see ROI first: https://calendly.com/kleber-ziontechgroup\n\nBest,\nKleber\nZion Tech Group",
       "lead_magnet": {
         "name": "DevOps Readiness Evaluation",
         "value": 2000,
@@ -221,7 +221,7 @@
       "company": "NextGen",
       "role": "IT Manager",
       "subject": "Quick Question About Your IT Infrastructure Audit",
-      "body": "Hi Matthew,\n\nI wanted to follow up on your request for IT Infrastructure Audit. I noticed you might benefit from:\n\nBased on your request, I recommend starting with Infrastructure\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber",
+      "body": "Hi Matthew,\n\nI wanted to follow up on your request for IT Infrastructure Audit. I noticed you might benefit from:\n\nBased on your request, I recommend starting with Infrastructure\n\nWould you be available for a quick 10-minute call this week?\n\nBest,\nKleber\n\nBased on your request and your role at NextGen, I recommend starting with Infrastructure.\n\nA short next step: 10-minute discovery call focused on where you can see ROI first: https://calendly.com/kleber-ziontechgroup\n\nBest,\nKleber\nZion Tech Group",
       "lead_magnet": {
         "name": "IT Infrastructure Audit",
         "value": 1500,
@@ -247,5 +247,7 @@
       "timestamp": "2026-08-10T14:00:01.046522",
       "status": "pending"
     }
-  ]
+  ],
+  "last_analyzed_at": "2026-08-10T18:54:34.398012Z",
+  "improved_records": 5
 }
