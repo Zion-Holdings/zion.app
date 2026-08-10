@@ -34,7 +34,7 @@ export default function Page() {
         <p>Most organizations treat this as experimental. The teams that get results operationalize it: runbooks, reviews, ownership, and clear metrics.</p>
         <h2>Outcome</h2>
         <p>With strong governance, aiops anomaly detection becomes reliable infrastructure.</p>
-        <p><Link href="/contact" className="text-purple-400 hover:underline">Talk to Zion Tech Group →</Link></p>
+        <p><Link href="/contact/" className="text-purple-400 hover:underline">Talk to Zion Tech Group →</Link></p>
       </article>
     </PageShell>
   );

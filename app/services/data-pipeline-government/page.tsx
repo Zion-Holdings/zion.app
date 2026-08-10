@@ -34,7 +34,7 @@ export default function Page() {
             <p className="text-slate-300 text-sm">44% cost reduction</p>
           </div>
         </div>
-        <Link href="/contact" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
+        <Link href="/contact/" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
       </div>
     </main>
   
