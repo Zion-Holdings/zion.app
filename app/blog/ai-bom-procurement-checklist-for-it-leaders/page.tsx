@@ -75,7 +75,7 @@ For ai bom procurement: checklist for it leaders: pick one workflow, assign owne
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

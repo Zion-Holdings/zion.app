@@ -75,7 +75,7 @@ Leading indicators for ai data lakehouse pipelines: evaluation framework: workfl
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

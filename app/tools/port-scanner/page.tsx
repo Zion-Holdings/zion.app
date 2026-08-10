@@ -67,7 +67,9 @@ export default function PortScannerPage() {
                 mode: 'no-cors',
               });
               portOpen = true; // no-cors means we got a response
-            } catch {}
+            } catch {
+              // ignore fetch errors for unreachable ports
+            }
           }
           
           return { port, name, desc, open: portOpen, dnsResolves: reachable };

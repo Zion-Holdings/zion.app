@@ -75,7 +75,7 @@ Leading indicators for ai 3d asset generator: checklist for it leaders: workflow
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

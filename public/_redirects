@@ -26,3 +26,27 @@
 /free-ai-it-tools/ /tools 301
 /new-ai-services /services/ 301
 /new-ai-services/ /services/ 301
+
+# Broken/missing live route fallbacks
+/free-consultation /free-consultation/ 301
+/free-consultation/ /contact/ 301
+/industry-solutions /industry-solutions/ 301
+/industry-solutions/ /industry-solutions/ 301
+/service-comparison /tools/service-comparison/ 301
+/service-comparison/ /tools/service-comparison/ 301
+/configurator /configurator/ 301
+/configurator/ /configurator/ 301
+/tools/service-comparison /tools/service-comparison/ 301
+/tools/service-comparison/ /tools/service-comparison/ 301
+/tools/phishing-analyzer /tools/ 301
+/tools/phishing-analyzer/ /tools/ 301
+
+# Additional broken/missing live route fallbacks
+/products /products/ 301
+/products/ /products/ 301
+/solutions /solutions/ 301
+/solutions/ /solutions/ 301
+/automation /automation/ 301
+/automation/ /automation/ 301
+/services/ai-customer-support-pro /services/ai-customer-support-pro-2026-8082/ 301
+/services/ai-customer-support-pro/ /services/ai-customer-support-pro-2026-8082/ 301
