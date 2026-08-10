@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/proposal-generator/page.tsx
 'use client';
 
@@ -8,7 +10,9 @@ import Link from 'next/link';
 export default function ProposalGeneratorPage() {
   const [generated, setGenerated] = useState(false);
   return (
-    <div className="container-page py-16">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <div className="container-page py-16">
       <h1 className="text-4xl font-bold text-white mb-4">Proposal Generator</h1>
       <p className="text-slate-400 mb-8 max-w-2xl">
         Generate a custom service proposal in minutes. Select services, budget, and timeline — get a ready-to-send PDF.
@@ -25,5 +29,7 @@ export default function ProposalGeneratorPage() {
         </div>
       )}
     </div>
-  );
+  
+      <Footer />
+    </div>);
 }

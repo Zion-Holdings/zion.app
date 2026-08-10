@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
@@ -10,7 +12,9 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <ProductPageLayout
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <ProductPageLayout
       data={{
         title: 'Zion AI Compliance Checker',
         category: 'Compliance',
@@ -47,5 +51,7 @@ export default function Page() {
         ctaLabel: 'Get Started with Zion AI Compliance Checker',
       }}
     />
-  );
+  
+      <Footer />
+    </div>);
 }

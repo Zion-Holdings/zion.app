@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 'use client';
 
 import Link from 'next/link';
@@ -11,7 +13,9 @@ const INDUSTRIES = [
 
 export default function SolutionsPage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Solutions</h1>
@@ -28,5 +32,7 @@ export default function SolutionsPage() {
         </div>
       </div>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }

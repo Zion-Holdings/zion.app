@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -9,7 +11,9 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
         <h1 className="text-4xl font-bold text-white mb-8">Terms of Service</h1>
         <section className="mb-10">
@@ -30,5 +34,7 @@ export default function TermsPage() {
         </section>
       </div>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }

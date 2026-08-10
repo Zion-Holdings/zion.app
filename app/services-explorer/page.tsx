@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/services-explorer/page.tsx — Interactive Service Explorer
 'use client';
 
@@ -37,7 +39,9 @@ export default function ServicesExplorerPage() {
   }, []);
 
   const catCounts = useMemo(() => {
-    const m: Record<string, number> = {};
+    const m: Record<div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <string, number> = {};
     services.forEach(s => m[s.category] = (m[s.category] || 0) + 1);
     return m;
   }, [services]);
@@ -169,5 +173,7 @@ export default function ServicesExplorerPage() {
         )}
       </div>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }

@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/ai-lab/page.tsx — AI Lab: Interactive Playgrounds & Demos
 'use client';
 
@@ -141,7 +143,9 @@ const TAG_COLORS: Record<string, string> = {
 
 function TagBadge({ label, color }: { label: string; color: string }) {
   return (
-    <span
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <span
       className={`inline-block rounded-full border px-3 py-0.5 text-[11px] font-semibold uppercase tracking-wider ${TAG_COLORS[color] || TAG_COLORS.purple}`}
     >
       {label}
@@ -351,5 +355,7 @@ export default function AILabPage() {
         </section>
       </div>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }

@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/proposals/view/[id]/page.tsx
 // Dynamic proposal viewer — reads from automation/proposals/{id}.html or .json
 import { notFound } from 'next/navigation';
@@ -80,7 +82,9 @@ ${needsList ? `<h2>Stated Needs</h2><ul>${needsList}</ul>` : ''}
   if (!html) notFound();
 
   return (
-    <div className="min-h-screen bg-slate-950 py-8">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <div className="min-h-screen bg-slate-950 py-8">
       <div className="container-page">
         <div className="flex justify-between items-center mb-6">
           <Link href="/proposals/" className="text-slate-400 hover:text-white text-sm">&larr; Back to Proposals</Link>
@@ -103,5 +107,7 @@ ${needsList ? `<h2>Stated Needs</h2><ul>${needsList}</ul>` : ''}
         />
       </div>
     </div>
-  );
+  
+      <Footer />
+    </div>);
 }

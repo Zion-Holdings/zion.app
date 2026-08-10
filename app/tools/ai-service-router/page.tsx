@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 // app/tools/ai-service-router/page.tsx — AI Service Router (server wrapper)
 import RouterPing from './pingClient';

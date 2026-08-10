@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // Service Configurator Wizard — multi-step proposal builder
 // Fully client-side: generates proposal HTML in-browser, no server needed
 'use client';
@@ -186,7 +188,9 @@ ${services.length > 0 ? `<p style="margin-top:12px;color:#666;font-size:14px">
 
   // ── Render ────────────────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-slate-950 py-12">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <div className="min-h-screen bg-slate-950 py-12">
       <div className="container-page max-w-4xl">
         <h1 className="text-4xl font-bold text-white mb-2 text-center">
           Build Your Custom Solution
@@ -401,5 +405,7 @@ ${services.length > 0 ? `<p style="margin-top:12px;color:#666;font-size:14px">
         </div>
       </div>
     </div>
-  );
+  
+      <Footer />
+    </div>);
 }

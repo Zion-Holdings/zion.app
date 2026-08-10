@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import Link from 'next/link';
 
 export const metadata = {
@@ -8,7 +10,9 @@ export const metadata = {
 
 export default function ServicePage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
         <h1 className="text-4xl font-bold text-white mb-4">Database Migration Service</h1>
         <p className="text-slate-300 text-lg leading-relaxed max-w-3xl mb-10">
@@ -29,5 +33,7 @@ export default function ServicePage() {
         </div>
       </div>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }

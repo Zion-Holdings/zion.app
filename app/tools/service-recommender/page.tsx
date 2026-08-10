@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/tools/service-recommender/page.tsx
 'use client';
 import { pingTool } from '@/data/tools_ping_client';
@@ -39,7 +41,9 @@ export default function ServiceRecommenderPage() {
   };
 
   return (
-    <div className="container-page py-16">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <div className="container-page py-16">
       <h1 className="text-4xl font-bold text-white mb-4">Service Recommender</h1>
       <p className="text-slate-400 mb-12 max-w-2xl">
         Answer a few questions and we&apos;ll match you with the right AI, IT, or Cloud solution from our catalog of 416+ services.
@@ -90,5 +94,7 @@ export default function ServiceRecommenderPage() {
         </div>
       )}
     </div>
-  );
+  
+      <Footer />
+    </div>);
 }

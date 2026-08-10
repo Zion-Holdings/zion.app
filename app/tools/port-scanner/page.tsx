@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/tools/port-scanner/page.tsx — Free Port Scanner (client-side via public API)
 'use client';
 import { pingTool } from '@/data/tools_ping_client';
@@ -86,7 +88,9 @@ export default function PortScannerPage() {
   const openCount = results.filter(r => r.open).length;
 
   return (
-    <div className="container-page py-16">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <div className="container-page py-16">
       <div className="max-w-3xl mx-auto">
         <Link href="/tools/" className="text-purple-400 text-sm hover:underline mb-6 inline-block">← All Tools</Link>
         <h1 className="text-4xl font-bold text-white mb-4">🔍 Port Scanner</h1>
@@ -184,5 +188,7 @@ export default function PortScannerPage() {
         </div>
       </div>
     </div>
-  );
+  
+      <Footer />
+    </div>);
 }

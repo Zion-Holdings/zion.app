@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
@@ -19,7 +21,9 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="relative min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <div className="relative min-h-screen bg-slate-950">
       <BlogPostStructuredData
         title="AI Agent Frameworks for Business Automation"
         description="Agentic workflows, tool use, planning and execution, multi-step reasoning. Building autonomous AI agents that complete complex business tasks end-to-end."
@@ -118,5 +122,7 @@ export default function Page() {
         </div>
       </article>
     </div>
-  );
+  
+      <Footer />
+    </div>);
 }

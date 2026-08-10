@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
@@ -19,7 +21,9 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="relative min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <div className="relative min-h-screen bg-slate-950">
       <ArticleStructuredData
         headline="AI in Aviation and Aerospace Operations"
         description="Predictive maintenance, crew scheduling, cargo optimization, and safety analytics. How airlines and aerospace companies use AI for operational excellence."
@@ -117,5 +121,7 @@ export default function Page() {
         </div>
       </article>
     </div>
-  );
+  
+      <Footer />
+    </div>);
 }

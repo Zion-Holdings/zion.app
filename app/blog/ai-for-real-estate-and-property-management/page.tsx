@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
@@ -19,7 +21,9 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className="relative min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <div className="relative min-h-screen bg-slate-950">
       <ArticleStructuredData
         headline="AI for Real Estate and Property Management"
         description="Lease abstraction, tenant analytics, maintenance prediction, and valuation. Transforming property operations with intelligent automation."
@@ -117,5 +121,7 @@ export default function Page() {
         </div>
       </article>
     </div>
-  );
+  
+      <Footer />
+    </div>);
 }

@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/service-comparison/page.tsx — Interactive service comparison matrix
 'use client';
 
@@ -59,7 +61,9 @@ export default function ServiceComparisonPage() {
   );
 
   return (
-    <div className="container-page py-16">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <div className="container-page py-16">
       {/* ── Header ── */}
       <div className="text-center mb-10">
         <h1 className="text-4xl font-bold text-white mb-3">Service Comparison</h1>
@@ -253,5 +257,7 @@ export default function ServiceComparisonPage() {
         </Link>
       </div>
     </div>
-  );
+  
+      <Footer />
+    </div>);
 }

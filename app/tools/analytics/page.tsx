@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/tools/analytics/page.tsx
 'use client';
 import { useMemo } from 'react';
@@ -22,7 +24,9 @@ function fmt(n:number):string{
 export default function Analytics(){
   const { byTool, total } = useMemo(()=>{
     const data = getToolVisits();
-    const byTool:Record<string,number>={};
+    const byTool:Record<div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <string,number>={};
     let total=0;
     for(const [k,v] of Object.entries(data)){byTool[k]=v;total+=v;}
     return {byTool,total};
@@ -76,5 +80,7 @@ export default function Analytics(){
         </p>
       </div>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }

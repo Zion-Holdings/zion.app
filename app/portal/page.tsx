@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/portal/page.tsx
 import Link from 'next/link';
 
@@ -7,7 +9,9 @@ export const metadata = {
 
 export default function PortalPage() {
   return (
-    <div className="container-page py-16">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <div className="container-page py-16">
       <h1 className="text-4xl font-bold text-white mb-4">Client Portal</h1>
       <p className="text-slate-400 mb-8 max-w-2xl">
         Access your dashboards, support tickets, billing, and knowledge base.
@@ -27,5 +31,7 @@ export default function PortalPage() {
         ))}
       </div>
     </div>
-  );
+  
+      <Footer />
+    </div>);
 }

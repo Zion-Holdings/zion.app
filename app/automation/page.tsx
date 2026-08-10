@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -15,7 +17,9 @@ export default function AutomationPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Automation</h1>
         <p className="text-slate-400 text-lg max-w-2xl mb-10">
@@ -31,5 +35,7 @@ export default function AutomationPage() {
         </div>
       </div>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }

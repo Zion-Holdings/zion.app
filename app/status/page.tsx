@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -10,7 +12,9 @@ export default function StatusPage() {
       .catch(() => setUp(false));
   }, []);
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
         <h1 className="text-4xl font-bold text-white mb-4">Site Status</h1>
         <p className="text-slate-300 mb-6">
@@ -21,5 +25,7 @@ export default function StatusPage() {
         </p>
       </div>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }

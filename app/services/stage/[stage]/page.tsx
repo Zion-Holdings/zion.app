@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/services/stage/[stage]/page.tsx — Service Stage Filter
 import { allServices } from '@/data/servicesData';
 import type { Service } from '@/data/servicesData';
@@ -26,7 +28,9 @@ export default async function StagePage({ params }: { params: Promise<{ stage: s
   const otherStages = (['published', 'beta', 'planned'] as const).filter(s => s !== stage);
 
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
         {/* Header */}
         <div className="text-center mb-12">
@@ -92,5 +96,7 @@ export default async function StagePage({ params }: { params: Promise<{ stage: s
         </div>
       </div>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }

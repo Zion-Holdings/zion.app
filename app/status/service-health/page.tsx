@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/status/service-health/page.tsx — Live Service Health Monitor
 import { allServices } from '@/data/servicesData';
 import type { Metadata } from 'next';
@@ -64,7 +66,9 @@ export default function ServiceHealthPage() {
     });
 
   return (
-    <main className="min-h-screen bg-slate-950 py-20 px-4">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950 py-20 px-4">
       <div className="container-page max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-3">Service Health Monitor</h1>
@@ -132,5 +136,7 @@ export default function ServiceHealthPage() {
         </p>
       </div>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }

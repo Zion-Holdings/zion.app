@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -33,7 +35,9 @@ export default function BlogIndexPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Blog</h1>
@@ -59,5 +63,7 @@ export default function BlogIndexPage() {
         </div>
       </div>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }

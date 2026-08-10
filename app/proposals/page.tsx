@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/proposals/page.tsx — Saved Proposals Viewer
 'use client';
 
@@ -32,6 +34,8 @@ export default function ProposalsPage() {
 
   if (loading) {
     return (
+      <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
       <main className="min-h-screen bg-slate-950 py-20">
         <div className="container-page text-center text-slate-400">Loading proposals...</div>
       </main>
@@ -112,5 +116,7 @@ export default function ProposalsPage() {
         </section>
       </div>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }

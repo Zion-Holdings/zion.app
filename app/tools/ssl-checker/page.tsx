@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/tools/ssl-checker/page.tsx — Free SSL/TLS Certificate Checker
 'use client';
 import { pingTool } from '@/data/tools_ping_client';
@@ -44,7 +46,9 @@ export default function SSLCheckerPage() {
   };
 
   return (
-    <div className="container-page py-16">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <div className="container-page py-16">
       <div className="max-w-3xl mx-auto">
         <Link href="/tools/" className="text-purple-400 text-sm hover:underline mb-6 inline-block">← All Tools</Link>
         <h1 className="text-4xl font-bold text-white mb-4">🔒 SSL/TLS Certificate Checker</h1>
@@ -149,5 +153,7 @@ export default function SSLCheckerPage() {
         </div>
       </div>
     </div>
-  );
+  
+      <Footer />
+    </div>);
 }

@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/tools/roi-calculator/page.tsx — ROI Calculator (server wrapper + ping tracking)
 // Metadata exported by layout.tsx
 
@@ -14,7 +16,9 @@ export const metadata: Metadata = {
 
 export default function ROICalculatorPage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950 py-20">
       <RouterPing />
 
       {/* ── JSON-LD Structured Data ── */}
@@ -229,5 +233,7 @@ export default function ROICalculatorPage() {
         </div>
       </div>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }

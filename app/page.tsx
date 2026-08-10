@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/page.tsx — Home / Landing Page
 'use client';
 
@@ -203,7 +205,9 @@ let list = services;
   }, [allServices, releaseNotes]);
 
   return (
-    <main className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950">
       {/* ── JSON-LD: Organization + WebSite ── */}
       <script
         type="application/ld+json"
@@ -1056,6 +1060,8 @@ let list = services;
       </section>
     <FloatingActionDock />
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }
 

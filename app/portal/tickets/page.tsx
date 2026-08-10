@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/portal/tickets/page.tsx
 import Link from 'next/link';
 
@@ -14,7 +16,9 @@ export default function TicketsPage() {
   ];
 
   return (
-    <div className="container-page py-16">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <div className="container-page py-16">
       <Link href="/portal/" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">&larr; Back to Client Portal</Link>
       <div className="glass-card max-w-2xl">
         <div className="text-5xl mb-4">&#x1F3AB;</div>
@@ -39,5 +43,7 @@ export default function TicketsPage() {
         </div>
       </div>
     </div>
-  );
+  
+      <Footer />
+    </div>);
 }

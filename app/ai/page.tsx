@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, Cog, Search } from 'lucide-react';
@@ -27,7 +29,9 @@ const tools = [
 
 export default function AILabPage() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-slate-950">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <div className="relative min-h-screen overflow-hidden bg-slate-950">
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
         <div className="absolute -top-20 left-1/4 h-[28rem] w-[28rem] rounded-full bg-purple-500/15 blur-3xl" />
         <div className="absolute bottom-[-12rem] right-[-8rem] h-[24rem] w-[24rem] rounded-full bg-blue-500/10 blur-3xl" />
@@ -104,5 +108,7 @@ export default function AILabPage() {
         </div>
       </section>
     </div>
-  );
+  
+      <Footer />
+    </div>);
 }

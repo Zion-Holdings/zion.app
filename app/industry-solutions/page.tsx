@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/industry-solutions/page.tsx — Industry Solutions Landing (dynamic)
 'use client';
 import { useState, useMemo } from 'react';
@@ -71,7 +73,9 @@ export default function IndustrySolutionsPage() {
   }, [services]);
 
   return (
-    <main className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950">
       {/* ── Hero ── */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_30%,rgba(120,50,200,0.18),rgba(20,10,40,0.92))]" />
@@ -217,5 +221,7 @@ export default function IndustrySolutionsPage() {
         </div>
       </section>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }

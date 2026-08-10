@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // Health Check Tool — Free autonomous platform status
 'use client';
 import { useState, useEffect, useCallback } from 'react';
@@ -26,7 +28,9 @@ interface StatusCardProps {
 
 function StatusCard({ name, icon, className, children }: StatusCardProps) {
   return (
-    <div className={`border rounded-xl p-5 transition ${className}`}>
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <div className={`border rounded-xl p-5 transition ${className}`}>
       <div className="flex items-center gap-3">
         <span className="text-xl">{icon}</span>
         <div>
@@ -147,5 +151,7 @@ export default function HealthCheckToolPage() {
         )}
       </div>
     </div>
-  );
+  
+      <Footer />
+    </div>);
 }

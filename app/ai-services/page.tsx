@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 'use client';
 
 import Link from 'next/link';
@@ -58,7 +60,9 @@ export default function AIServicesPage() {
   const [open, setOpen] = useState<string | null>(null);
 
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-6xl mb-4 block">🤖</span>
@@ -78,5 +82,7 @@ export default function AIServicesPage() {
         </div>
       </div>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }

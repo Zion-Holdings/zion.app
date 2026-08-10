@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -86,7 +88,9 @@ const contactInfo = {
 
 export default function TestimonialsPage() {
   return (
-    <main className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950">
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(56,189,248,0.15),transparent_60%)]" />
@@ -188,5 +192,7 @@ export default function TestimonialsPage() {
         </div>
       </section>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }

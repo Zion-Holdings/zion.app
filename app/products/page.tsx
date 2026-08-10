@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/products/page.tsx — Products & Platforms
 'use client';
 import Link from 'next/link';
@@ -112,7 +114,9 @@ const PRODUCTS: readonly {
 
 export default function ProductsPage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
         <nav className="mb-6 text-sm text-slate-400">
           <Link href="/" className="hover:text-purple-400 transition">Home</Link>
@@ -179,5 +183,7 @@ export default function ProductsPage() {
         </section>
       </div>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }

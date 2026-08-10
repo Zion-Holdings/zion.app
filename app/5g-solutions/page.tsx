@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/5g-solutions/page.tsx
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -9,7 +11,9 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
         <nav className="mb-8 text-sm text-slate-400">
           <Link href="/" className="hover:text-purple-400 transition">Home</Link>
@@ -87,5 +91,7 @@ export default function Page() {
         </section>
       </div>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }

@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 'use client';
 
 import { useState } from 'react';
@@ -18,7 +20,9 @@ export default function SearchPage() {
   const filtered = SERVICES.filter((s) => s.title.toLowerCase().includes(query.toLowerCase()) || s.category.toLowerCase().includes(query.toLowerCase()));
 
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Search Services</h1>
         <p className="text-slate-400 mb-8">Find the right service for your business.</p>
@@ -39,5 +43,7 @@ export default function SearchPage() {
         </div>
       </div>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }

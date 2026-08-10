@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import type { Metadata } from 'next';
 import DemoSandboxClient from './DemoSandboxClient';
 
@@ -9,12 +11,16 @@ export const metadata: Metadata = {
 
 export default function AIDemoPage() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-slate-950">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <div className="relative min-h-screen overflow-hidden bg-slate-950">
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div className="absolute top-[-6rem] right-[-8rem] h-[28rem] w-[28rem] rounded-full bg-purple-600/10 blur-3xl" />
         <div className="absolute bottom-[-6rem] left-[-6rem] h-[24rem] w-[24rem] rounded-full bg-blue-600/08 blur-3xl" />
       </div>
       <DemoSandboxClient />
     </div>
-  );
+  
+      <Footer />
+    </div>);
 }

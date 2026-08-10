@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -9,7 +11,9 @@ export const metadata: Metadata = {
 
 export default function CaseStudySOC() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
         <div className="mb-8 text-sm text-slate-400">
           <Link href="/" className="hover:text-purple-400 transition">Home</Link>
@@ -54,5 +58,7 @@ export default function CaseStudySOC() {
         </div>
       </div>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }

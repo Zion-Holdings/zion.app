@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -55,7 +57,9 @@ const TOOLS = [
 
 export default function ToolsIndexPage() {
   return (
-    <div className="relative min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <div className="relative min-h-screen bg-slate-950">
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
         <div className="absolute -top-16 left-[-10rem] h-[30rem] w-[30rem] rounded-full bg-purple-500/15 blur-3xl" />
         <div className="absolute right-[-10rem] top-32 h-[26rem] w-[26rem] rounded-full bg-blue-500/10 blur-3xl" />
@@ -105,5 +109,7 @@ export default function ToolsIndexPage() {
         </div>
       </div>
     </div>
-  );
+  
+      <Footer />
+    </div>);
 }

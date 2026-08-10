@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -11,6 +13,8 @@ export const metadata: Metadata = {
 export default function PartnersPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <div className="min-h-screen bg-slate-950 text-white">
       <section className="py-20 px-4 text-center bg-gradient-to-b from-purple-900/20 to-transparent">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
@@ -84,5 +88,7 @@ export default function PartnersPage() {
         </section>
       </div>
     </div>
-  );
+  
+      <Footer />
+    </div>);
 }

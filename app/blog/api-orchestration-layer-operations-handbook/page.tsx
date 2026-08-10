@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
@@ -20,7 +22,9 @@ const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headl
 
 export default function Page() {
   return (
-    <div className="relative min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <div className="relative min-h-screen bg-slate-950">
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'API Orchestration Layer: operations handbook' }]} className="mb-8" />
         <header className="mb-10">
@@ -67,5 +71,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
         />
       </article>
     </div>
-  );
+  
+      <Footer />
+    </div>);
 }

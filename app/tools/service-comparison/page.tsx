@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/tools/service-comparison/page.tsx — Full Service Comparison
 'use client';
 import { pingTool } from '@/data/tools_ping_client';
@@ -75,7 +77,9 @@ export default function ServiceComparisonPage() {
   ];
 
   return (
-    <div className="container-page py-16">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <div className="container-page py-16">
       {/* ── Header ─────────────────────────────────────────────── */}
       <div className="mb-10">
         <h1 className="text-4xl font-bold text-white mb-3">Service Comparison</h1>
@@ -336,5 +340,7 @@ export default function ServiceComparisonPage() {
         )}
       </section>
     </div>
-  );
+  
+      <Footer />
+    </div>);
 }

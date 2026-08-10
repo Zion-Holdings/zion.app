@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/contact/page.tsx
 import Link from 'next/link';
 import { LocalBusinessJsonLd } from '@/components/LocalBusinessStructuredData';
@@ -9,7 +11,9 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950 py-20">
       <LocalBusinessJsonLd />
       <div className="container-page">
         <div className="text-center mb-16">
@@ -78,5 +82,7 @@ export default function ContactPage() {
         </section>
       </div>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }

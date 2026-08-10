@@ -1,3 +1,5 @@
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 // app/services/[id]/page.tsx — Dynamic Service Detail Page
 import { notFound } from 'next/navigation';
 import { allServices } from '@/data/servicesData';
@@ -117,7 +119,9 @@ export default async function ServicePage({ params }: PageProps) {
   };
 
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950 py-20">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -362,5 +366,7 @@ export default async function ServicePage({ params }: PageProps) {
         </section>
       </div>
     </main>
-  );
+  
+      <Footer />
+    </div>);
 }
