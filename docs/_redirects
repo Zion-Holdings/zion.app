@@ -1,0 +1,8 @@
+
+# Linked fallbacks for 404 secondary routes
+/testimonials /docs/testimonials/index.html 301
+/testimonials/ /docs/testimonials/index.html 301
+/faq /docs/faq/index.html 301
+/faq/ /docs/faq/index.html 301
+/status /docs/status/index.html 301
+/status/ /docs/status/index.html 301

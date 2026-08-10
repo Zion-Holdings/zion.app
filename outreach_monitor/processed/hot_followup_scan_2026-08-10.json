@@ -1,0 +1,15 @@
+{
+  "status": "ok",
+  "threads_api_returned": 100,
+  "threads_checked": 1,
+  "candidates": [
+    {
+      "thread_id": "19ecccc10bb351de",
+      "from": "Mauro Aparecido Castello Faria <Mauro.Faria@fgv.br>",
+      "subject": "Renovação do serviço de manutenção Zion 2026 - DTI - SDCOMPRASTIC-6963",
+      "date": "Mon, 15 Jun 2026 19:39:38 +0000",
+      "message_id": "19ecccc10bb351de"
+    }
+  ],
+  "sent": 0
+}
