@@ -4292,6 +4292,7 @@
       "file": "reusable-workflow-ci.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/cache@v4",
         "Job 'validate' missing timeout-minutes"
       ],
       "improvements": [
@@ -5769,5 +5770,5 @@
       "score": 84
     }
   ],
-  "generated_at": "2026-08-10T01:22:13.004Z"
+  "generated_at": "2026-08-10T19:32:06.494Z"
 }
