@@ -77,4 +77,3 @@ jobs:
       if: failure()
       run: "node automation/notify-telegram.js \"\u26A0\uFE0F Route Slicer encountered\
         \ errors. Check workflow logs.\""
-    timeout-minutes: 10
