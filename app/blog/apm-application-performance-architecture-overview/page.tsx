@@ -36,18 +36,9 @@ export default function Page() {
         </header>
 
         <section className="prose prose-invert max-w-none">
-## Market signal
-Demand is rising for durable apm application performance: architecture overview capabilities rather than one-off automations. Buyers want measurable outcomes, stable operations, and vendor partnerships that grow with their environment. The strongest programs differentiate themselves with operational maturity, not feature breadth. Focus on outcomes, roadmap clarity, and evidence-based improvements rather than generic AI marketing. Use market signal analysis to prioritize investments that align with buyer expectations and competitive positioning.
-
-## Capability map
-Map capabilities against current workflow friction for apm application performance: architecture overview. Highest-ROI automations reduce handoffs and rework rather than simply digitizing existing handoffs. A capability map makes priorities visible to leadership and creates a shared view of where automation should start. Revisit the map quarterly; new opportunities emerge as teams mature and data quality improves. Share the map with operators and validate assumptions before investing in automation.
-
-## Execution playbook
-1) Define success metrics. 2) Choose one primary workflow. 3) Automate the lowest-risk step first. 4) Add observability. 5) Expand only after stable operation. Document decisions, owners, dates, and metrics in a shared workspace so progress remains visible to all stakeholders. Review the playbook after each phase and update it with lessons learned; the playbook becomes organizational memory. Repeatable execution separates successful teams from teams that rely on heroics and undocumented workarounds. Keep the playbook short and actionable; long strategy documents rarely change behavior on the ground.
-
-## Conversion path
+<h2 className="text-2xl font-bold text-white mt-10 mb-4">Conversion path</h2>
 If this guide matches your apm application performance: architecture overview initiative, the next step is a scoping call with Zion Tech Group. We will define one measurable outcome, identify dependencies, and outline a pilot plan you can start in days. Contact us to move from assessment to execution with a timeline and success criteria already in place.
-
+<p className="mb-4 text-slate-300"><h2 className="text-2xl font-bold text-white mt-10 mb-4">Conversion path</h2> If this guide matches your apm application performance: architecture overview initiative, the next step is a scoping call with Zion Tech Group. We will define one measurable outcome, identify dependencies, and outline a pilot plan you can start in days. Contact us to move from assessment to execution with a timeline and success criteria already in place.</p>
         </section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">

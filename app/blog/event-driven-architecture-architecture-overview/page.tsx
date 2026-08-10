@@ -36,21 +36,9 @@ export default function Page() {
         </header>
 
         <section className="prose prose-invert max-w-none">
-## Problem definition
-Teams frequently over-index on proofs of concept without production guardrails for event driven architecture: architecture overview: monitoring, access control, incident response, and change management. Without these guardrails, promising pilots become operational liabilities that consume more time than they save. A clear problem definition separates experiments from production-ready programs by stating the exact outcome, constraints, and success criteria. Invest time in problem definition before automation; it pays back in faster delivery and fewer rework cycles. Write the problem statement in one paragraph and share it with stakeholders to align expectations before work begins.
-
-## Architecture overview
-For event driven architecture: architecture overview, start with lightweight integration points, centralize data contracts, and expose only the actions required for human approval or escalation. Composable architectures outperform monolith replacements because they let teams evolve individual capabilities without disrupting the whole system. Keep the architecture observable: logs, metrics, and traces should answer why an action occurred, not just that it occurred. Avoid hidden coupling between services; explicit interfaces and clear ownership reduce coordination costs as the system scales. Revisit architecture after each phase and refactor coupling points before they become hard dependencies.
-
-## Deployment patterns
-Use staged rollout for event driven architecture: architecture overview with explicit rollback criteria, synthetic monitors for critical paths, and defined ownership for alerts and incidents. Small, reversible changes reduce blast radius and make incidents easier to diagnose and recover from. Deployments should be boring by design: predictable, automated, and reversible with one command or control plane action. Pair deployment automation with canary or blue-green strategies when user-facing behavior changes. Track deployment frequency, failure rate, and recovery time; these metrics predict long-term operational health.
-
-## Cost and ROI
-Calculate ROI for event driven architecture: architecture overview using saved hours, avoided incidents, faster throughput, or improved conversion. Use a rolling 90-day window and re-baseline monthly so stakeholders see real trend data rather than one-time estimates. Include operational costs: monitoring, on-call coverage, training, and exception handling. Ignoring these creates unrealistic ROI models. ROI should be owned by the program sponsor and reviewed publicly; transparency keeps teams accountable and funding intact. Update the ROI model after each phase so it reflects actual performance, not optimistic assumptions.
-
-## Action checklist
+<h2 className="text-2xl font-bold text-white mt-10 mb-4">Action checklist</h2>
 For event driven architecture: architecture overview: pick one workflow, assign ownership, define success metrics, instrument execution, and set a 30-day review date. Write the checklist down and share it with stakeholders so expectations are explicit. Before launch, verify access controls, monitoring, rollback criteria, and on-call coverage. After launch, review metrics weekly and escalate deviations immediately; small drifts become large incidents when ignored. Use the checklist as a living document and update it as the program learns from real operation.
-
+<p className="mb-4 text-slate-300"><h2 className="text-2xl font-bold text-white mt-10 mb-4">Action checklist</h2> For event driven architecture: architecture overview: pick one workflow, assign ownership, define success metrics, instrument execution, and set a 30-day review date. Write the checklist down and share it with stakeholders so expectations are explicit. Before launch, verify access controls, monitoring, rollback criteria, and on-call coverage. After launch, review metrics weekly and escalate deviations immediately; small drifts become large incidents when ignored. Use the checklist as a living document and update it as the program learns from real operation.</p>
         </section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">

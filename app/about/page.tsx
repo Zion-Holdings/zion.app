@@ -3,7 +3,8 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'Learn about Zion Tech Group: mission, leadership, delivery model, and US-based team.',
+  description:
+    'Learn about Zion Tech Group: mission, leadership, delivery model, and US-based team.',
   alternates: { canonical: '/about/' },
 };
 
@@ -16,7 +17,8 @@ export default function About() {
             About Zion Tech Group
           </h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            We build intelligent systems that transform enterprise operations — from AI-powered automation to cloud infrastructure and beyond.
+            We build intelligent systems that transform enterprise operations — from
+            AI-powered automation to cloud infrastructure and beyond.
           </p>
         </div>
       </section>
@@ -25,10 +27,15 @@ export default function About() {
         <section className="mb-16">
           <h2 className="text-2xl font-bold text-white mb-4">Our Mission</h2>
           <p className="text-slate-300 mb-4">
-            Zion Tech Group helps enterprises harness artificial intelligence, modern cloud infrastructure, and intelligent automation to achieve measurable business outcomes. We believe every organization — from startups to Fortune 500s — deserves access to world-class technology solutions.
+            Zion Tech Group helps enterprises harness artificial intelligence, modern
+            cloud infrastructure, and intelligent automation to achieve measurable
+            business outcomes. We believe every organization — from startups to Fortune
+            500s — deserves access to world-class technology solutions.
           </p>
           <p className="text-slate-300">
-            Founded and led by Kleber Garcia Alcatrão, we operate as a US-based team with deep expertise across AI/ML, cybersecurity, cloud architecture, and enterprise software delivery.
+            Founded and led by Kleber Garcia Alcatrão, we operate as a US-based team
+            with deep expertise across AI/ML, cybersecurity, cloud architecture, and
+            enterprise software delivery.
           </p>
         </section>
 
@@ -46,6 +53,9 @@ export default function About() {
               <div key={item.title} className="bg-slate-900/60 border border-slate-700/50 rounded-xl p-6">
                 <h3 className="text-purple-400 font-semibold mb-2">{item.title}</h3>
                 <p className="text-slate-400 text-sm">{item.desc}</p>
+                <Link href="/services/" className="text-purple-300 text-sm mt-3 inline-block hover:underline">
+                  Explore services →
+                </Link>
               </div>
             ))}
           </div>
