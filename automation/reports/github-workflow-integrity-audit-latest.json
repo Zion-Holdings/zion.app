@@ -9,301 +9,301 @@
   },
   "findings": [
     {
-      "file": ".github\\workflows\\accessibility-scorecard.yml",
+      "file": ".github/workflows/accessibility-scorecard.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'scorecard' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-accessibility-audit-smoke-weekly.yml",
+      "file": ".github/workflows/ai-accessibility-audit-smoke-weekly.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'a11y-audit-anchors' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-accessibility-audit.yml",
+      "file": ".github/workflows/ai-accessibility-audit.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'accessibility-audit' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-actions-pin-strict-guard.yml",
+      "file": ".github/workflows/ai-actions-pin-strict-guard.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'strict-pin-audit' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-actions-pin-strict-guard.yml",
+      "file": ".github/workflows/ai-actions-pin-strict-guard.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'strict-pin-hint' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-advanced-ai-content-smoke-weekly.yml",
+      "file": ".github/workflows/ai-advanced-ai-content-smoke-weekly.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'advanced-ai-content-anchors' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-advanced-ai-content.yml",
+      "file": ".github/workflows/ai-advanced-ai-content.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'advanced-ai-content' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-agents-docs-updater.yml",
+      "file": ".github/workflows/ai-agents-docs-updater.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'update-docs' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-aggregate-dashboard-refresh-smoke-weekly.yml",
+      "file": ".github/workflows/ai-aggregate-dashboard-refresh-smoke-weekly.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'aggregate-refresh-anchors' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-aggregate-dashboard-refresh.yml",
+      "file": ".github/workflows/ai-aggregate-dashboard-refresh.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'refresh' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-aggregate-regression-alert-smoke-weekly.yml",
+      "file": ".github/workflows/ai-aggregate-regression-alert-smoke-weekly.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'aggregate-regression-alert-anchors' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-aggregate-regression-alert.yml",
+      "file": ".github/workflows/ai-aggregate-regression-alert.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'alert' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-aggregate-regression-diff-alert-smoke-weekly.yml",
+      "file": ".github/workflows/ai-aggregate-regression-diff-alert-smoke-weekly.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'diff-anchors' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-aggregate-regression-diff-alert.yml",
+      "file": ".github/workflows/ai-aggregate-regression-diff-alert.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'diff' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-aggregate-regression-diff-pr-comment.yml",
+      "file": ".github/workflows/ai-aggregate-regression-diff-pr-comment.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'comment' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-ai-experiences-health-smoke-weekly.yml",
+      "file": ".github/workflows/ai-ai-experiences-health-smoke-weekly.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'experiences-health-anchors' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-ai-experiences-health.yml",
+      "file": ".github/workflows/ai-ai-experiences-health.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'experiences-health' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-ai-lab-hub-links-smoke-weekly.yml",
+      "file": ".github/workflows/ai-ai-lab-hub-links-smoke-weekly.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'playwright' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-ai-lab-integrity-smoke-contract.yml",
+      "file": ".github/workflows/ai-ai-lab-integrity-smoke-contract.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'contract' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-ai-lab-legacy-scaffold-weekly.yml",
+      "file": ".github/workflows/ai-ai-lab-legacy-scaffold-weekly.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'legacy-scan' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-ai-lab-route-contract-autofix-pr.yml",
+      "file": ".github/workflows/ai-ai-lab-route-contract-autofix-pr.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'autofix-pr' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-ai-lab-route-contract-pr-comment.yml",
+      "file": ".github/workflows/ai-ai-lab-route-contract-pr-comment.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'contract-comment' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-ai-lab-safe-scaffold-migrate-pr.yml",
+      "file": ".github/workflows/ai-ai-lab-safe-scaffold-migrate-pr.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'open-draft-pr' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-app-audit-automation.yml",
+      "file": ".github/workflows/ai-app-audit-automation.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'audit' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-app-autonomy-guarded-cycle.yml",
+      "file": ".github/workflows/ai-app-autonomy-guarded-cycle.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'autonomy-guarded' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-app-evolution-audit.yml",
+      "file": ".github/workflows/ai-app-evolution-audit.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'evolution-audit' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-app-evolution-automation.yml",
+      "file": ".github/workflows/ai-app-evolution-automation.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'evolution' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-app-evolution-trigger-on-regression.yml",
+      "file": ".github/workflows/ai-app-evolution-trigger-on-regression.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'check-and-trigger' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-app-improvement-daily-quick.yml",
+      "file": ".github/workflows/ai-app-improvement-daily-quick.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'daily-quick' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-app-improvement-evolution-full-quality.yml",
+      "file": ".github/workflows/ai-app-improvement-evolution-full-quality.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'evolution-full-quality' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-app-improvement-evolution.yml",
+      "file": ".github/workflows/ai-app-improvement-evolution.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'app-improvement-evolution' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-app-improvement-on-push.yml",
+      "file": ".github/workflows/ai-app-improvement-on-push.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'app-improvement-on-push' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-app-improvement-orchestrator.yml",
+      "file": ".github/workflows/ai-app-improvement-orchestrator.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'improve' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-app-improvement-specialist.yml",
+      "file": ".github/workflows/ai-app-improvement-specialist.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'improve-app' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-app-quality-audit.yml",
+      "file": ".github/workflows/ai-app-quality-audit.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'app-quality-audit' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-app-visit-audit-implement-deploy-smoke-weekly.yml",
+      "file": ".github/workflows/ai-app-visit-audit-implement-deploy-smoke-weekly.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'app-visit-anchors' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-app-visit-audit-implement-deploy.yml",
+      "file": ".github/workflows/ai-app-visit-audit-implement-deploy.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'visit-audit-implement-deploy' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-app-visit-intelligence.yml",
+      "file": ".github/workflows/ai-app-visit-intelligence.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'app-visit-intelligence' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-artifact-freshness-mesh.yml",
+      "file": ".github/workflows/ai-artifact-freshness-mesh.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'freshness-mesh' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-auto-fix-weekly.yml",
+      "file": ".github/workflows/ai-auto-fix-weekly.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'fix' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-automation-audit-smoke-weekly.yml",
+      "file": ".github/workflows/ai-automation-audit-smoke-weekly.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'automation-audit-anchors' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-automation-audit.yml",
+      "file": ".github/workflows/ai-automation-audit.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'audit' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-automation-context-pr-comment.yml",
+      "file": ".github/workflows/ai-automation-context-pr-comment.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'comment' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-automation-fingerprint-digest-freshness.yml",
+      "file": ".github/workflows/ai-automation-fingerprint-digest-freshness.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'check' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-automation-fingerprint-digest-pr-label.yml",
+      "file": ".github/workflows/ai-automation-fingerprint-digest-pr-label.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'label' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-automation-fingerprint-digest-preflight.yml",
+      "file": ".github/workflows/ai-automation-fingerprint-digest-preflight.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'preflight' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-automation-fingerprint-digest-weekly.yml",
+      "file": ".github/workflows/ai-automation-fingerprint-digest-weekly.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'digest' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-automation-fingerprint-stale-nudge-weekly.yml",
+      "file": ".github/workflows/ai-automation-fingerprint-stale-nudge-weekly.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'stale-nudge' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-automation-health-monitor-smoke-weekly.yml",
+      "file": ".github/workflows/ai-automation-health-monitor-smoke-weekly.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'automation-health-monitor-anchors' has no timeout-minutes set"
     },
     {
-      "file": ".github\\workflows\\ai-automation-health-monitor.yml",
+      "file": ".github/workflows/ai-automation-health-monitor.yml",
       "severity": "info",
       "type": "missing-timeout",
       "detail": "Job 'health' has no timeout-minutes set"
@@ -704,5 +704,5 @@
     "workflow-yaml-sanity-smoke-weekly.yml",
     "workflow-yaml-sanity.yml"
   ],
-  "generated_at": "2026-08-10T20:09:06.466Z"
+  "generated_at": "2026-08-10T18:30:17.068Z"
 }
