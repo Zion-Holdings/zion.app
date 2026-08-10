@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Status Page',
@@ -15,23 +17,27 @@ export default function StatusPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
-      <div className="container-page">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Status Page</h1>
-        <p className="text-slate-400 text-lg max-w-2xl mb-10">
-          Current operational status for core Zion Tech Group services.
-        </p>
-        <div className="grid md:grid-cols-2 gap-4">
-          {services.map((s) => (
-            <div key={s.name} className="glass-card p-6 flex items-center justify-between">
-              <div>
-                <h3 className="text-white font-semibold">{s.name}</h3>
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="py-20">
+        <div className="container-page">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Status Page</h1>
+          <p className="text-slate-400 text-lg max-w-2xl mb-10">
+            Current operational status for core Zion Tech Group services.
+          </p>
+          <div className="grid md:grid-cols-2 gap-4">
+            {services.map((s) => (
+              <div key={s.name} className="glass-card p-6 flex items-center justify-between">
+                <div>
+                  <h3 className="text-white font-semibold">{s.name}</h3>
+                </div>
+                <span className="text-green-400 text-sm font-medium">{s.status}</span>
               </div>
-              <span className="text-green-400 text-sm font-medium">{s.status}</span>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </div>
   );
 }
