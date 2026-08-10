@@ -143,9 +143,7 @@ const TAG_COLORS: Record<string, string> = {
 
 function TagBadge({ label, color }: { label: string; color: string }) {
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
-      <Navigation />
-      <span
+    <span
       className={`inline-block rounded-full border px-3 py-0.5 text-[11px] font-semibold uppercase tracking-wider ${TAG_COLORS[color] || TAG_COLORS.purple}`}
     >
       {label}
@@ -159,8 +157,10 @@ export default function AILabPage() {
   const [demoVisible, setDemoVisible] = useState(false);
 
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
-      <div className="container-page">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950 py-20">
+        <div className="container-page">
         {/* ── Breadcrumb ── */}
         <nav className="mb-8 text-sm text-slate-400">
           <Link href="/" className="hover:text-purple-400 transition">
@@ -354,8 +354,8 @@ export default function AILabPage() {
           </p>
         </section>
       </div>
-    </main>
-  
       <Footer />
-    </div>);
+    </main>
+    </div>
+  );
 }

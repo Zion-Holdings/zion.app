@@ -35,17 +35,20 @@ export default function ProposalsPage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-slate-950 text-white">
-      <Navigation />
-      <main className="min-h-screen bg-slate-950 py-20">
-        <div className="container-page text-center text-slate-400">Loading proposals...</div>
-      </main>
+        <Navigation />
+        <main className="min-h-screen bg-slate-950 py-20">
+          <div className="container-page text-center text-slate-400">Loading proposals...</div>
+        </main>
+      </div>
     );
   }
 
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
-      <div className="container-page">
-        <h1 className="text-4xl font-bold text-white mb-2">Your Proposals</h1>
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950 py-20">
+        <div className="container-page">
+          <h1 className="text-4xl font-bold text-white mb-2">Your Proposals</h1>
         <p className="section-subheading">View and manage your service proposals</p>
 
         {proposals.length === 0 ? (
@@ -115,8 +118,8 @@ export default function ProposalsPage() {
           </p>
         </section>
       </div>
-    </main>
-  
       <Footer />
-    </div>);
+    </main>
+    </div>
+  );
 }

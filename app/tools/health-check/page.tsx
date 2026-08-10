@@ -28,9 +28,7 @@ interface StatusCardProps {
 
 function StatusCard({ name, icon, className, children }: StatusCardProps) {
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
-      <Navigation />
-      <div className={`border rounded-xl p-5 transition ${className}`}>
+    <div className={`border rounded-xl p-5 transition ${className}`}>
       <div className="flex items-center gap-3">
         <span className="text-xl">{icon}</span>
         <div>
@@ -101,7 +99,7 @@ export default function HealthCheckToolPage() {
     : null;
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white py-12 px-4">
+    <div className="min-h-screen bg-slate-950 text-white">
       <div className="max-w-3xl mx-auto">
         <Link href="/status/" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">← Status Home</Link>
         <h1 className="text-4xl font-bold mb-2">Platform Health Check 🩺</h1>
@@ -150,8 +148,7 @@ export default function HealthCheckToolPage() {
           <p className="text-slate-500 text-xs mt-6">Last run: {new Date(lastRan).toLocaleString()}</p>
         )}
       </div>
-    </div>
-  
       <Footer />
-    </div>);
+    </div>
+  );
 }

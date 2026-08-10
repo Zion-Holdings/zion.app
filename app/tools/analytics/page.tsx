@@ -24,10 +24,8 @@ function fmt(n:number):string{
 export default function Analytics(){
   const { byTool, total } = useMemo(()=>{
     const data = getToolVisits();
-    const byTool:Record<div className="min-h-screen bg-slate-950 text-white">
-      <Navigation />
-      <string,number>={};
-    let total=0;
+    const byTool: Record<string, number> = {};
+    let total = 0;
     for(const [k,v] of Object.entries(data)){byTool[k]=v;total+=v;}
     return {byTool,total};
   },[]);
@@ -38,8 +36,9 @@ export default function Analytics(){
   const maxCount = ranking[0]?.count||1;
 
   return(
-    <main className="min-h-screen bg-slate-950 py-20 px-4">
-      <div className="container-page max-w-4xl mx-auto">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <main className="min-h-screen bg-slate-950 py-20 px-4">
+        <div className="container-page max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-3">Free Tools — Usage Analytics</h1>
           <p className="section-subheading">Client-side page view counter. No tracking, no cookies, no external calls. Data lives in your browser only.</p>
