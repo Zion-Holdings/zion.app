@@ -44,6 +44,8 @@ const Footer: React.FC = () => {
                 { name: 'Pricing', href: '/pricing/' },
                 { name: 'Tools & Resources', href: '/tools/' },
                 { name: 'Service Comparison', href: '/service-comparison/' },
+                { name: 'Free Consultation', href: '/free-consultation/' },
+                { name: 'Case Studies', href: '/case-studies/' },
               ].map(l => (
                 <li key={l.href}>
                   <Link href={l.href} className="text-slate-400 hover:text-purple-400 text-sm transition-colors">{l.name}</Link>
@@ -61,6 +63,9 @@ const Footer: React.FC = () => {
                 { name: 'Blog', href: '/blog/' },
                 { name: 'Careers', href: '/careers/' },
                 { name: 'Partners', href: '/partners/' },
+                { name: 'Case Studies', href: '/case-studies/' },
+                { name: 'Status Page', href: '/status-page/' },
+                { name: 'Roadmap', href: '/public-roadmap/' },
                 { name: 'Client Portal', href: '/portal/' },
                 { name: 'Press', href: '/press/' },
               ].map(l => (

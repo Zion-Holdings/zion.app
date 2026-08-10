@@ -105,7 +105,7 @@ jobs:
     timeout-minutes: 20
     env:
       NEXT_TELEMETRY_DISABLED: '1'
-      BASE_URL: https://zion-support.github.io/zion.app
+      BASE_URL: https://ziontechgroup.com
     steps:
     - name: Checkout
       uses: actions/checkout@v6.0.2
