@@ -1,9 +1,1 @@
-{
-  "timestamp": "2026-08-07T04:33:25.642225+00:00",
-  "last_run": "2026-08-07T04:33:25.642275+00:00",
-  "send_allowed": false,
-  "note": "analysis_completed:mined=7:llm=False",
-  "error": null,
-  "contacts_in_log": 7,
-  "llm_classification_used": false
-}
+{"status":"send_blocked","allowed":false,"env":"ZTG_SEND_ALLOWED unset","batch_script":"lead-crm/send_outreach_batch.py missing","outreach_file":"lead-crm/outreach_ready_canonical.json","last_action":"analysis_and_improvements_only","updated_at":"2026-08-10T14:00:01.046522","note":"No sends attempted. Outreach records were analyzed and improved."}
