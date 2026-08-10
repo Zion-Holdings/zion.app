@@ -72,7 +72,7 @@ If this guide matches your ai bdr sdr: automation roadmap initiative, the next s
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

@@ -10,7 +10,7 @@ FIXED for proper conversation threading
 import urllib.request, urllib.parse, json, datetime, sys, time, base64
 from pathlib import Path
 
-WORKSPACE = Path('/root/.openclaw/workspace')
+WORKSPACE = Path.home() / '.openclaw' / 'workspace'
 TOKENS_FILE = WORKSPACE / 'gog_tokens.json'
 if not TOKENS_FILE.exists():
     _win_tokens = Path.home() / '.openclaw' / 'workspace' / 'gog_tokens.json'
@@ -55,13 +55,21 @@ def gog_headers():
 
 # ── Gmail ──────────────────────────────────────────────────────────────────
 
-def gmail_search(query, limit=20):
-    q = query + ' label:INBOX'
+def gmail_search(query, limit=20, all_folders=False):
+    if not all_folders and 'in:' not in query:
+        q = query + ' label:INBOX'
+    else:
+        q = query
     url = ('https://gmail.googleapis.com/gmail/v1/users/me/messages'
            f'?q={urllib.parse.quote(q)}&maxResults={limit}')
     req = urllib.request.Request(url, headers=gog_headers())
     resp = json.loads(urllib.request.urlopen(req).read())
     return resp.get('messages', [])
+
+def gmail_sent(to_addr, subject, within_seconds=60, limit=5):
+    since = (datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(seconds=within_seconds)).strftime('%Y/%m/%d %H:%M:%S')
+    q = f'to:{to_addr} subject:"{subject}" after:{since.replace(" ", "%20")} in:sent'
+    return bool(gmail_search(q, limit=limit, all_folders=True))
 
 def gmail_get(message_id):
     url = f'https://gmail.googleapis.com/gmail/v1/users/me/messages/{message_id}?format=full'

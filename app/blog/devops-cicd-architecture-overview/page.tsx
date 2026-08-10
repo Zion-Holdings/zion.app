@@ -75,7 +75,7 @@ For devops ci/cd: architecture overview: pick one workflow, assign ownership, de
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
     </div>

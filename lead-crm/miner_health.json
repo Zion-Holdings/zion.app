@@ -1,1 +1,29 @@
-{"status":"send_blocked","allowed":false,"env":"ZTG_SEND_ALLOWED unset","batch_script":"lead-crm/send_outreach_batch.py missing","outreach_file":"lead-crm/outreach_ready_canonical.json","last_action":"analysis_and_improvements_only","updated_at":"2026-08-10T14:00:01.046522","note":"No sends attempted. Outreach records were analyzed and improved."}
+{
+  "ts": "2026-08-10T20:40:16.503380+00:00",
+  "queries_run": 5,
+  "contacts_found": 0,
+  "new_leads_added": 0,
+  "elapsed_s": 228.401,
+  "queries_per_second": 0.0219,
+  "avg_query_s": 45.676,
+  "max_query_s": 129.6687,
+  "status": "ok",
+  "high_signal_leads": 0,
+  "lead_quality_ratio": null,
+  "rolling": {
+    "last_5_queries": [
+      9.242162877999363,
+      69.74618291200022,
+      9.827604877002159,
+      9.895183954002277,
+      129.66868467699896
+    ],
+    "last_5_qps": [
+      0.1082,
+      0.0143,
+      0.1018,
+      0.1011,
+      0.0077
+    ]
+  }
+}
