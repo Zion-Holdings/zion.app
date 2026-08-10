@@ -21,4 +21,3 @@ jobs:
     uses: ./.github/workflows/reusable-workflow-ci.yml
     with:
       run_contracts: ${{ inputs.run_contracts }}
-    timeout-minutes: 15
