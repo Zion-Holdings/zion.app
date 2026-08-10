@@ -1,5 +1,5 @@
 {
-  "trust_score": 98,
+  "trust_score": 97,
   "status": "healthy",
   "workflowCount": 393,
   "workflows": [
@@ -24,13 +24,12 @@
     {
       "name": "ai accessibility audit workflow smoke (weekly)",
       "file": "ai-accessibility-audit-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'a11y-audit-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "fe2af634"
     },
     {
@@ -38,11 +37,11 @@
       "file": "ai-accessibility-audit.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'accessibility-audit' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/github-script@ed597411",
         "Uses caching",
         "Node.js dependency caching"
@@ -63,13 +62,12 @@
     {
       "name": "ai advanced-ai content workflow smoke (weekly)",
       "file": "ai-advanced-ai-content-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'advanced-ai-content-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "c16d3050"
     },
     {
@@ -77,11 +75,11 @@
       "file": "ai-advanced-ai-content.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'advanced-ai-content' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -92,11 +90,11 @@
       "file": "ai-agents-docs-updater.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'update-docs' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -106,13 +104,12 @@
     {
       "name": "ai aggregate dashboard refresh workflow smoke (weekly)",
       "file": "ai-aggregate-dashboard-refresh-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'aggregate-refresh-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "565712d8"
     },
     {
@@ -120,12 +117,12 @@
       "file": "ai-aggregate-dashboard-refresh.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'refresh' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -135,13 +132,12 @@
     {
       "name": "ai aggregate regression alert workflow smoke (weekly)",
       "file": "ai-aggregate-regression-alert-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'aggregate-regression-alert-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "2fdf1853"
     },
     {
@@ -149,11 +145,11 @@
       "file": "ai-aggregate-regression-alert.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'alert' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -163,13 +159,12 @@
     {
       "name": "ai aggregate regression diff alert workflow smoke (weekly)",
       "file": "ai-aggregate-regression-diff-alert-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'diff-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "3af7bf86"
     },
     {
@@ -177,11 +172,11 @@
       "file": "ai-aggregate-regression-diff-alert.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'diff' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -193,11 +188,11 @@
       "file": "ai-aggregate-regression-diff-pr-comment.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'comment' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -206,13 +201,12 @@
     {
       "name": "ai ai experiences health workflow smoke (weekly)",
       "file": "ai-ai-experiences-health-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'experiences-health-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "e43e9eee"
     },
     {
@@ -220,11 +214,11 @@
       "file": "ai-ai-experiences-health.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'experiences-health' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -236,11 +230,11 @@
       "file": "ai-ai-lab-hub-links-smoke-weekly.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'playwright' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -252,11 +246,11 @@
       "file": "ai-ai-lab-integrity-smoke-contract.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'contract' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -267,11 +261,11 @@
       "file": "ai-ai-lab-legacy-scaffold-weekly.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'legacy-scan' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -283,11 +277,11 @@
       "file": "ai-ai-lab-route-contract-autofix-pr.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'autofix-pr' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -298,12 +292,12 @@
       "file": "ai-ai-lab-route-contract-pr-comment.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'contract-comment' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -314,11 +308,11 @@
       "file": "ai-ai-lab-safe-scaffold-migrate-pr.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'open-draft-pr' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -329,11 +323,11 @@
       "file": "ai-app-audit-automation.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'audit' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
@@ -346,11 +340,11 @@
       "file": "ai-app-autonomy-guarded-cycle.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'autonomy-guarded' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -361,11 +355,11 @@
       "file": "ai-app-evolution-audit.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'evolution-audit' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -376,11 +370,11 @@
       "file": "ai-app-evolution-automation.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'evolution' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -392,13 +386,13 @@
       "file": "ai-app-evolution-trigger-on-regression.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'check-and-trigger' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
         "Pinned action: actions/download-artifact@3e5f45b2",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -409,11 +403,11 @@
       "file": "ai-app-improvement-daily-quick.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'daily-quick' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -424,11 +418,11 @@
       "file": "ai-app-improvement-evolution-full-quality.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'evolution-full-quality' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -439,12 +433,12 @@
       "file": "ai-app-improvement-evolution.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'app-improvement-evolution' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -456,11 +450,11 @@
       "file": "ai-app-improvement-on-push.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'app-improvement-on-push' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -471,11 +465,11 @@
       "file": "ai-app-improvement-orchestrator.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'improve' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -487,11 +481,11 @@
       "file": "ai-app-improvement-specialist.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'improve-app' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -503,11 +497,11 @@
       "file": "ai-app-quality-audit.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'app-quality-audit' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -517,13 +511,12 @@
     {
       "name": "ai app visit audit implement deploy workflow smoke (weekly)",
       "file": "ai-app-visit-audit-implement-deploy-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'app-visit-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "a2b7fe69"
     },
     {
@@ -531,11 +524,11 @@
       "file": "ai-app-visit-audit-implement-deploy.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'visit-audit-implement-deploy' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -547,11 +540,11 @@
       "file": "ai-app-visit-intelligence.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'app-visit-intelligence' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -562,12 +555,12 @@
       "file": "ai-artifact-freshness-mesh.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'freshness-mesh' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -589,13 +582,12 @@
     {
       "name": "ai automation audit workflow smoke (weekly)",
       "file": "ai-automation-audit-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'automation-audit-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "a376f98a"
     },
     {
@@ -603,11 +595,11 @@
       "file": "ai-automation-audit.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'audit' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -619,11 +611,11 @@
       "file": "ai-automation-context-pr-comment.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'comment' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -634,11 +626,11 @@
       "file": "ai-automation-fingerprint-digest-freshness.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'check' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -659,11 +651,11 @@
       "file": "ai-automation-fingerprint-digest-preflight.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'preflight' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -672,14 +664,14 @@
     {
       "name": "AI Automation fingerprint incident digest",
       "file": "ai-automation-fingerprint-digest-weekly.yml",
-      "score": 100,
+      "score": 99,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
+        "Partially pinned action: actions/cache@v4",
         "Job 'digest' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
-        "Pinned action: actions/cache@66822842",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -691,11 +683,11 @@
       "file": "ai-automation-fingerprint-stale-nudge-weekly.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'stale-nudge' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -704,13 +696,12 @@
     {
       "name": "ai automation health monitor workflow smoke (weekly)",
       "file": "ai-automation-health-monitor-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'automation-health-monitor-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "fb1ecfe8"
     },
     {
@@ -718,11 +709,11 @@
       "file": "ai-automation-health-monitor.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'health' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -734,11 +725,11 @@
       "file": "ai-automation-health-pr-comment.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'comment' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -747,13 +738,12 @@
     {
       "name": "ai automation health static freshness guard smoke (weekly)",
       "file": "ai-automation-health-static-freshness-guard-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'freshness-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "0d0d60b2"
     },
     {
@@ -761,11 +751,11 @@
       "file": "ai-automation-health-static-freshness-guard.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'guard' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -775,13 +765,12 @@
     {
       "name": "ai automation improvements workflow smoke (weekly)",
       "file": "ai-automation-improvements-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'automation-improvements-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "5050efe3"
     },
     {
@@ -789,11 +778,11 @@
       "file": "ai-automation-improvements.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'improve' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -803,13 +792,12 @@
     {
       "name": "ai automation issue index workflow smoke (weekly)",
       "file": "ai-automation-issue-index-weekly-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'issue-index-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "15736092"
     },
     {
@@ -817,11 +805,11 @@
       "file": "ai-automation-issue-index-weekly.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'issue-index' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -832,11 +820,11 @@
       "file": "ai-automation-pr-preflight.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'preflight' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -847,11 +835,11 @@
       "file": "ai-automation-risk-label.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'label' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -860,33 +848,32 @@
     {
       "name": "ai automations workflow smoke (weekly)",
       "file": "ai-automations-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'ai-automations-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "c024a494"
     },
     {
       "name": "AI Automations (Weekly)",
       "file": "ai-automations.yml",
-      "score": 99,
+      "score": 87,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'seo-audit' missing timeout-minutes",
         "Job 'changelog' missing timeout-minutes",
         "Job 'performance' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -898,11 +885,11 @@
       "file": "ai-autonomous-idea-guarded-cycle.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'run-guarded-cycle' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -911,13 +898,12 @@
     {
       "name": "ai autonomous improvements workflow smoke (weekly)",
       "file": "ai-autonomous-improvements-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'autonomous-improvements-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "715fba28"
     },
     {
@@ -925,11 +911,11 @@
       "file": "ai-autonomous-improvements.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'autonomous-improvements' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -941,11 +927,11 @@
       "file": "ai-autonomous-opportunity-radar-refresh.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'refresh-radar' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -957,11 +943,11 @@
       "file": "ai-autonomous-runtime-guardian.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'runtime_guardian' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -971,13 +957,12 @@
     {
       "name": "ai autonomous self-heal factory workflow smoke (weekly)",
       "file": "ai-autonomous-self-heal-factory-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'self-heal-factory-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "71b2bef8"
     },
     {
@@ -985,11 +970,11 @@
       "file": "ai-autonomous-self-heal-factory.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'self_heal' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -999,13 +984,12 @@
     {
       "name": "ai autonomy intelligence planner workflow smoke (weekly)",
       "file": "ai-autonomy-intelligence-planner-daily-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'autonomy-planner-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "702e64be"
     },
     {
@@ -1013,12 +997,12 @@
       "file": "ai-autonomy-intelligence-planner-daily.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'planner' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1030,11 +1014,11 @@
       "file": "ai-autonomy-quick.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'autonomy-quick-cycle' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1045,11 +1029,11 @@
       "file": "ai-backlog-auto-runner.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'backlog-auto-runner' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1058,13 +1042,12 @@
     {
       "name": "ai broken link fixer workflow smoke (weekly)",
       "file": "ai-broken-link-fixer-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'broken-link-fixer-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "8d6a6220"
     },
     {
@@ -1072,11 +1055,11 @@
       "file": "ai-broken-link-fixer.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'broken-link-fixer' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1088,11 +1071,11 @@
       "file": "ai-broken-link-page-automation.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'broken-link-audit' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1104,11 +1087,11 @@
       "file": "ai-build-fixer.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'fix-build' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1120,11 +1103,11 @@
       "file": "ai-ci-recovery.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'recovery' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1136,12 +1119,12 @@
       "file": "ai-conservative-autofix-audit.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'audit' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1153,11 +1136,11 @@
       "file": "ai-content-accelerator.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'accelerator' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1168,11 +1151,11 @@
       "file": "ai-content-automation.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'content' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1183,11 +1166,11 @@
       "file": "ai-content-burst-high-frequency.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'burst-high-freq' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1198,11 +1181,11 @@
       "file": "ai-content-burst-ultra.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'burst-ultra' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1213,11 +1196,11 @@
       "file": "ai-content-burst.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'burst' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1228,11 +1211,11 @@
       "file": "ai-content-generator-ultra.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'content-generator-ultra' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1243,11 +1226,11 @@
       "file": "ai-content-ideas-and-evolution-deploy.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'ideas-evolution' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1256,14 +1239,14 @@
     {
       "name": "AI Content Ideas to Deploy",
       "file": "ai-content-ideas-deploy.yml",
-      "score": 100,
+      "score": 99,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
+        "Partially pinned action: actions/cache@v4",
         "Job 'ideas-deploy' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
-        "Pinned action: actions/cache@66822842",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1272,14 +1255,14 @@
     {
       "name": "AI Content Max Velocity Deploy",
       "file": "ai-content-max-velocity-deploy.yml",
-      "score": 100,
+      "score": 99,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
+        "Partially pinned action: actions/cache@v4",
         "Job 'max-velocity' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
-        "Pinned action: actions/cache@66822842",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1288,14 +1271,14 @@
     {
       "name": "AI Content Maximum Velocity",
       "file": "ai-content-maximum-velocity.yml",
-      "score": 100,
+      "score": 99,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
+        "Partially pinned action: actions/cache@v4",
         "Job 'maximum-velocity' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
-        "Pinned action: actions/cache@66822842",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1306,11 +1289,11 @@
       "file": "ai-content-quality-auditor.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'content-audit' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1322,11 +1305,11 @@
       "file": "ai-content-rapid.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'rapid' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1337,11 +1320,11 @@
       "file": "ai-content-velocity.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'velocity' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1352,11 +1335,11 @@
       "file": "ai-continuous-improvement.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'continuous-improvement' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1368,11 +1351,11 @@
       "file": "ai-cron-collision-tuner.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'cron-collision-tuner' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1384,11 +1367,11 @@
       "file": "ai-cron-tuner.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'cron-tuner' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1400,11 +1383,11 @@
       "file": "ai-dependency-upgrade-train-monthly.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'outdated' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
@@ -1417,11 +1400,11 @@
       "file": "ai-development-agent.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'ai-development' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1433,11 +1416,11 @@
       "file": "ai-development-speed-accelerator.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'development-speed-accelerator' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1448,11 +1431,11 @@
       "file": "ai-ecosystem-intelligence.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'ecosystem-intelligence' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1464,12 +1447,12 @@
       "file": "ai-experiment-outcome-ledger.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'ledger' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1481,11 +1464,11 @@
       "file": "ai-friday-automation.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'friday-automation' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1496,11 +1479,11 @@
       "file": "ai-front-page-services-content.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'front-page-services-content' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1511,11 +1494,11 @@
       "file": "ai-gha-cost-estimate-weekly.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'estimate' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1527,11 +1510,11 @@
       "file": "ai-gha-npm-cache-audit-pr.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'strict' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1542,11 +1525,11 @@
       "file": "ai-gha-npm-cache-audit-scheduled.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'audit' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1558,12 +1541,12 @@
       "file": "ai-github-actions-audit.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'audit' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1575,11 +1558,11 @@
       "file": "ai-github-integrity-fix-factory.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'integrity-and-plan' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1591,11 +1574,11 @@
       "file": "ai-github-workflow-integrity-audit-daily.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'audit' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1607,11 +1590,11 @@
       "file": "ai-ideas-implementation.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'ideas-impl' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1622,11 +1605,11 @@
       "file": "ai-image-optimization-audit.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'image-audit' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/github-script@ed597411",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
@@ -1637,13 +1620,12 @@
     {
       "name": "ai incident severity orchestrator workflow smoke (weekly)",
       "file": "ai-incident-severity-orchestrator-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'incident-severity-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "97377030"
     },
     {
@@ -1651,11 +1633,11 @@
       "file": "ai-incident-severity-orchestrator.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'severity-orchestrator' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1666,11 +1648,11 @@
       "file": "ai-incident-sibling-crosslink-weekly.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'crosslink' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1679,13 +1661,12 @@
     {
       "name": "ai incident suppression registry workflow smoke (weekly)",
       "file": "ai-incident-suppression-registry-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'suppression-registry-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "a9e7c299"
     },
     {
@@ -1693,11 +1674,11 @@
       "file": "ai-incident-suppression-registry.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'suppression-registry' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1720,11 +1701,11 @@
       "file": "ai-launch-digest-freshness-sla.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'digest-freshness' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1735,12 +1716,12 @@
       "file": "ai-layout-design-audit.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'layout-design-audit' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1752,12 +1733,12 @@
       "file": "ai-layout-design-automation-weekly.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'layout-automation' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1769,11 +1750,11 @@
       "file": "ai-layout-design-automation.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'layout-automation' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1785,11 +1766,11 @@
       "file": "ai-layout-improvement.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'layout-improvement' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1801,11 +1782,11 @@
       "file": "ai-lead-form-routing-guard-daily.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'guard' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1817,12 +1798,12 @@
       "file": "ai-lead-gen-contact-route-guard.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'guard' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1833,11 +1814,11 @@
       "file": "ai-lead-routing-synthetic-intelligence-v2.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'lead_routing_v2' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1849,11 +1830,11 @@
       "file": "ai-lead-routing-synthetic-trend-v3.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'lead_routing_trend' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1865,11 +1846,11 @@
       "file": "ai-live-accessibility-audit.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'live-a11y' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1881,11 +1862,11 @@
       "file": "ai-live-app-audit.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'audit' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1895,14 +1876,14 @@
     {
       "name": "AI Live Content Ideas Daily",
       "file": "ai-live-content-ideas-daily.yml",
-      "score": 100,
+      "score": 99,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
+        "Partially pinned action: actions/cache@v4",
         "Job 'live-daily' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
-        "Pinned action: actions/cache@66822842",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1911,14 +1892,14 @@
     {
       "name": "AI Live Content Ideas",
       "file": "ai-live-content-ideas.yml",
-      "score": 100,
+      "score": 99,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
+        "Partially pinned action: actions/cache@v4",
         "Job 'live-content-ideas' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
-        "Pinned action: actions/cache@66822842",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1930,11 +1911,11 @@
       "file": "ai-live-ux-audit.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'live-ux' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -1946,11 +1927,11 @@
       "file": "ai-local-llm-app-automation.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'local-llm-automation' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1961,11 +1942,11 @@
       "file": "ai-local-llm-specialists.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'local-llm-specialists' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1976,11 +1957,11 @@
       "file": "ai-midweek-auto-impl.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'auto-impl' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -1991,11 +1972,11 @@
       "file": "ai-mttr-fingerprint-arbitration-digest-daily.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'digest' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2005,13 +1986,12 @@
     {
       "name": "ai mttr fingerprint regression daily workflow smoke (weekly)",
       "file": "ai-mttr-fingerprint-regression-daily-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'mttr-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "d2dbe961"
     },
     {
@@ -2019,11 +1999,11 @@
       "file": "ai-mttr-fingerprint-regression-daily.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'guard' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2035,12 +2015,12 @@
       "file": "ai-mttr-slo-guard-daily.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'guard' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2052,11 +2032,11 @@
       "file": "ai-navigation-audit-fix.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'nav-audit-fix' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2068,11 +2048,11 @@
       "file": "ai-navigation-improvement-automation.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'nav-improve' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2084,11 +2064,11 @@
       "file": "ai-navigation-pages-audit.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'nav-pages-audit' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2098,13 +2078,12 @@
     {
       "name": "ai netlify playwright smoke workflow smoke (weekly)",
       "file": "ai-netlify-playwright-smoke-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'netlify-playwright-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "83239f41"
     },
     {
@@ -2112,11 +2091,11 @@
       "file": "ai-netlify-playwright-smoke.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'smoke' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2128,12 +2107,12 @@
       "file": "ai-netlify-preview-smoke-scheduled.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'preview' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
@@ -2146,12 +2125,12 @@
       "file": "ai-next-build-lock-guardian.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'lock-guardian' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2163,12 +2142,12 @@
       "file": "ai-observability-digest.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'digest' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2178,13 +2157,12 @@
     {
       "name": "ai observability ema webhook daily workflow smoke (weekly)",
       "file": "ai-observability-ema-webhook-daily-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'ema-webhook-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "bc510ad1"
     },
     {
@@ -2192,11 +2170,11 @@
       "file": "ai-observability-ema-webhook-daily.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'digest' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -2207,11 +2185,11 @@
       "file": "ai-observability-history-freshness-guard.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'freshness' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -2220,13 +2198,12 @@
     {
       "name": "ai openclaw anomaly trend breach guard workflow smoke (weekly)",
       "file": "ai-openclaw-anomaly-trend-breach-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'openclaw-anomaly-trend-breach-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "1770ce50"
     },
     {
@@ -2234,11 +2211,11 @@
       "file": "ai-openclaw-anomaly-trend-breach.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'guard' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -2247,13 +2224,12 @@
     {
       "name": "ai openclaw auth runtime diagnostic workflow smoke (weekly)",
       "file": "ai-openclaw-auth-runtime-diagnostic-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'auth-runtime-diagnostic-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "efcd736f"
     },
     {
@@ -2261,12 +2237,12 @@
       "file": "ai-openclaw-auth-runtime-diagnostic.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'auth-runtime-diagnostic' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2276,27 +2252,26 @@
     {
       "name": "ai openclaw autonomous cycle workflow smoke (weekly)",
       "file": "ai-openclaw-autonomous-cycle-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'openclaw-autonomous-cycle-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "7c27c1dc"
     },
     {
       "name": "AI Openclaw Autonomous Cycle",
       "file": "ai-openclaw-autonomous-cycle.yml",
-      "score": 100,
+      "score": 98,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'openclaw-cycle' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2306,13 +2281,12 @@
     {
       "name": "ai openclaw autonomy handoff snapshot workflow smoke (weekly)",
       "file": "ai-openclaw-autonomy-handoff-snapshot-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'openclaw-autonomy-handoff-snapshot-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "2cc73e4d"
     },
     {
@@ -2320,11 +2294,11 @@
       "file": "ai-openclaw-autonomy-handoff-snapshot.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'handoff-artifact' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2334,65 +2308,60 @@
     {
       "name": "ai openclaw freshness SLA workflow smoke (weekly)",
       "file": "ai-openclaw-freshness-sla-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'openclaw-freshness-sla-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "c752df85"
     },
     {
       "name": "AI Openclaw Freshness SLA",
       "file": "ai-openclaw-freshness-sla.yml",
-      "score": 96,
+      "score": 92,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'freshness-sla' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947"
-      ],
+      "improvements": [],
       "fingerprint": "0f311839"
     },
     {
       "name": "ai openclaw incident escalator workflow smoke (weekly)",
       "file": "ai-openclaw-incident-escalator-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'openclaw-incident-escalator-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "bdef049e"
     },
     {
       "name": "AI Openclaw Incident Escalator",
       "file": "ai-openclaw-incident-escalator.yml",
-      "score": 96,
+      "score": 92,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'incident-escalator' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947"
-      ],
+      "improvements": [],
       "fingerprint": "8a896c6d"
     },
     {
       "name": "ai openclaw insights CI workflow smoke (weekly)",
       "file": "ai-openclaw-insights-ci-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'openclaw-insights-ci-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "4c47fc30"
     },
     {
@@ -2400,12 +2369,12 @@
       "file": "ai-openclaw-insights-ci.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'insights' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2415,13 +2384,12 @@
     {
       "name": "ai openclaw PR hot-file advisory workflow smoke (weekly)",
       "file": "ai-openclaw-pr-hotfile-comment-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'openclaw-pr-hotfile-comment-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "5355dac1"
     },
     {
@@ -2429,11 +2397,11 @@
       "file": "ai-openclaw-pr-hotfile-comment.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'comment' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -2442,13 +2410,12 @@
     {
       "name": "ai openclaw PR merge stability workflow smoke (weekly)",
       "file": "ai-openclaw-pr-merge-stability-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'openclaw-pr-merge-stability-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "655df391"
     },
     {
@@ -2456,11 +2423,11 @@
       "file": "ai-openclaw-pr-merge-stability.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'merge-stability' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/github-script@ed597411",
         "Uses caching",
         "Node.js dependency caching"
@@ -2470,27 +2437,26 @@
     {
       "name": "ai openclaw runner guard workflow smoke (weekly)",
       "file": "ai-openclaw-runner-guard-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'openclaw-runner-guard-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "920a9eb2"
     },
     {
       "name": "OpenClaw runner guard",
       "file": "ai-openclaw-runner-guard.yml",
-      "score": 100,
+      "score": 98,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
+        "Partially pinned action: actions/cache@v4",
         "Job 'dry-run' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
-        "Pinned action: actions/cache@66822842",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2500,13 +2466,12 @@
     {
       "name": "ai openclaw runtime applier workflow smoke (weekly)",
       "file": "ai-openclaw-runtime-applier-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'openclaw-runtime-applier-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "3993fbd1"
     },
     {
@@ -2514,11 +2479,11 @@
       "file": "ai-openclaw-runtime-applier.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'apply-runtime' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2528,13 +2493,12 @@
     {
       "name": "ai openclaw skill auto tuner workflow smoke (weekly)",
       "file": "ai-openclaw-skill-auto-tuner-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'openclaw-skill-auto-tuner-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "d7a7e80c"
     },
     {
@@ -2542,11 +2506,11 @@
       "file": "ai-openclaw-skill-auto-tuner.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'tune' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2556,13 +2520,12 @@
     {
       "name": "ai openclaw skill cadence audit workflow smoke (weekly)",
       "file": "ai-openclaw-skill-cadence-audit-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'openclaw-skill-cadence-audit-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "89dda5e3"
     },
     {
@@ -2570,11 +2533,11 @@
       "file": "ai-openclaw-skill-cadence-audit.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'audit' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2586,12 +2549,12 @@
       "file": "ai-package-script-dedup-guard.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'dedup-guard' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2603,11 +2566,11 @@
       "file": "ai-patch-only-auto-pr.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'open' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -2618,11 +2581,11 @@
       "file": "ai-patch-only-stale-pr-cleanup.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'cleanup' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -2633,11 +2596,11 @@
       "file": "ai-performance-optimizer.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'performance-optimization' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2649,11 +2612,11 @@
       "file": "ai-pm2-config-drift-guard.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'drift-guard' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2665,11 +2628,11 @@
       "file": "ai-pm2-ops-digest.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'digest' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2681,11 +2644,11 @@
       "file": "ai-pm2-restart-guardian.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'restart-guardian' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2697,11 +2660,11 @@
       "file": "ai-pm2-slo-agent.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'slo-agent' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2713,12 +2676,12 @@
       "file": "ai-pm2-static-checks.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'static' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -2727,25 +2690,24 @@
     {
       "name": "AI Post Push Route Verify",
       "file": "ai-post-push-route-verify.yml",
-      "score": 97,
+      "score": 93,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'verify-routes' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947"
-      ],
+      "improvements": [],
       "fingerprint": "4650a6bc"
     },
     {
       "name": "AI PR Code Review",
       "file": "ai-pr-code-review.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'ai-review' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
         "Pinned action: actions/github-script@ed597411"
       ],
       "fingerprint": "cfa7760e"
@@ -2753,13 +2715,12 @@
     {
       "name": "ai production deploy validation workflow smoke (weekly)",
       "file": "ai-production-deploy-validation-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'deploy-validation-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "6227963c"
     },
     {
@@ -2767,12 +2728,12 @@
       "file": "ai-production-deploy-validation.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'validate' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2782,13 +2743,12 @@
     {
       "name": "ai production smoke scheduled workflow smoke (weekly)",
       "file": "ai-production-smoke-scheduled-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'scheduled-production-smoke-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "a188aff7"
     },
     {
@@ -2796,12 +2756,12 @@
       "file": "ai-production-smoke-scheduled.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'smoke' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2811,14 +2771,13 @@
     {
       "name": "AI Promotion Anomaly Remediation Seed",
       "file": "ai-promotion-anomaly-remediation-seed.yml",
-      "score": 97,
+      "score": 93,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'remediation-seed' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947"
-      ],
+      "improvements": [],
       "fingerprint": "25ab2bf1"
     },
     {
@@ -2826,11 +2785,11 @@
       "file": "ai-promotion-confidence-anomaly.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'confidence-anomaly' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -2841,11 +2800,11 @@
       "file": "ai-push-helper-adoption-audit-weekly.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'audit' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2855,13 +2814,12 @@
     {
       "name": "ai release risk score workflow smoke (weekly)",
       "file": "ai-release-risk-score-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'release-risk-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "00cde525"
     },
     {
@@ -2869,11 +2827,11 @@
       "file": "ai-release-risk-score.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'score' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2885,12 +2843,12 @@
       "file": "ai-report-aggregator.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'report-aggregator' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2902,11 +2860,11 @@
       "file": "ai-report-hygiene-weekly.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'hygiene' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -2917,12 +2875,12 @@
       "file": "ai-report-size-budget-guard.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'report-size-guard' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2932,13 +2890,12 @@
     {
       "name": "ai route sitemap drift scheduled workflow smoke (weekly)",
       "file": "ai-route-sitemap-drift-scheduled-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'drift-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "7e2c1fe3"
     },
     {
@@ -2946,11 +2903,11 @@
       "file": "ai-route-sitemap-drift-scheduled.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'drift' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -2962,11 +2919,11 @@
       "file": "ai-schema-validator.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'schema-audit' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/github-script@ed597411",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
@@ -2977,13 +2934,12 @@
     {
       "name": "ai seo content optimizer workflow smoke (weekly)",
       "file": "ai-seo-content-optimizer-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'seo-optimizer-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "8cbad860"
     },
     {
@@ -2991,11 +2947,11 @@
       "file": "ai-seo-content-optimizer.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'seo-optimize' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3007,11 +2963,11 @@
       "file": "ai-services-and-content-automation.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'services-content' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -3022,11 +2978,11 @@
       "file": "ai-services-and-content.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'services-and-content' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -3037,11 +2993,11 @@
       "file": "ai-site-link-audit-automation.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'site-link-audit' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3051,12 +3007,12 @@
     {
       "name": "AI Smart Release Notes",
       "file": "ai-smart-release-notes.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'release-notes' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
         "Pinned action: actions/github-script@ed597411"
       ],
       "fingerprint": "10d009f1"
@@ -3066,12 +3022,12 @@
       "file": "ai-stale-promotion-guard.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'stale-promotion-guard' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3083,11 +3039,11 @@
       "file": "ai-stale-promotion-remediator.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'remediate' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3099,11 +3055,11 @@
       "file": "ai-stale-promotion-repromoter.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'repromote' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -3114,11 +3070,11 @@
       "file": "ai-telemetry-history-compactor.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'compactor' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -3129,11 +3085,11 @@
       "file": "ai-telemetry-snapshot-scheduler.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'snapshot' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -3142,14 +3098,14 @@
     {
       "name": "AI Ultra-Fast Content",
       "file": "ai-ultra-fast-content.yml",
-      "score": 100,
+      "score": 99,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
+        "Partially pinned action: actions/cache@v4",
         "Job 'ultra-fast' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
-        "Pinned action: actions/cache@66822842",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -3158,14 +3114,14 @@
     {
       "name": "AI Uninterruptable Content Loop",
       "file": "ai-uninterruptable-content-loop.yml",
-      "score": 100,
+      "score": 99,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
+        "Partially pinned action: actions/cache@v4",
         "Job 'loop' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
-        "Pinned action: actions/cache@66822842",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3177,11 +3133,11 @@
       "file": "ai-weekly-automation-health-digest.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'digest' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3193,11 +3149,11 @@
       "file": "ai-weekly-automation-health-linker-orchestrator.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'linker' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3209,11 +3165,11 @@
       "file": "ai-weekly-automation-health-sla-orchestrator.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'sla-orchestrator' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3225,11 +3181,11 @@
       "file": "ai-weekly-automation-ideas-from-live-audit.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'automation-ideas' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3241,11 +3197,11 @@
       "file": "ai-weekly-automation-triage-digest.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'digest' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3255,13 +3211,12 @@
     {
       "name": "ai weekly content seo hygiene workflow smoke (weekly)",
       "file": "ai-weekly-content-seo-hygiene-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'hygiene-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "b4cf7479"
     },
     {
@@ -3269,11 +3224,11 @@
       "file": "ai-weekly-content-seo-hygiene.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'content-seo-hygiene' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3285,11 +3240,11 @@
       "file": "ai-weekly-dependency-hygiene.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'dependency-hygiene' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Pinned action: actions/github-script@ed597411",
         "Uses caching",
@@ -3302,11 +3257,11 @@
       "file": "ai-weekly-launch-digest.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'launch-digest' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3318,11 +3273,11 @@
       "file": "ai-weekly-live-app-audit-auto-fix.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'audit-and-fix' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3334,11 +3289,11 @@
       "file": "ai-weekly-live-ideas-implement.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'live-ideas-implement' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3350,11 +3305,11 @@
       "file": "ai-weekly-live-link-audit.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'audit' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/github-script@ed597411",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
@@ -3367,11 +3322,11 @@
       "file": "ai-weekly-live-navigation-audit.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'live-nav-audit' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3383,11 +3338,11 @@
       "file": "ai-weekly-maintenance.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'weekly-maintenance' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3397,13 +3352,12 @@
     {
       "name": "ai weekly security audit workflow smoke (weekly)",
       "file": "ai-weekly-security-audit-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'weekly-security-audit-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "2e8330c9"
     },
     {
@@ -3411,11 +3365,11 @@
       "file": "ai-weekly-security-audit.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'security-audit' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/github-script@ed597411",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
@@ -3426,13 +3380,13 @@
     {
       "name": "AI workflow failure triage hourly",
       "file": "ai-workflow-failure-triage-hourly.yml",
-      "score": 97,
+      "score": 93,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'triage' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd"
       ],
       "fingerprint": "73f961a0"
@@ -3440,13 +3394,12 @@
     {
       "name": "ai workflow flake detector workflow smoke (weekly)",
       "file": "ai-workflow-flake-detector-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'workflow-flake-detector-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "bae02b9c"
     },
     {
@@ -3454,11 +3407,11 @@
       "file": "ai-workflow-flake-detector.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'flake-detector' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3468,13 +3421,12 @@
     {
       "name": "ai workflow slo monitor workflow smoke (weekly)",
       "file": "ai-workflow-slo-monitor-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'workflow-slo-monitor-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "65458e38"
     },
     {
@@ -3482,11 +3434,11 @@
       "file": "ai-workflow-slo-monitor.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'slo-monitor' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3496,13 +3448,12 @@
     {
       "name": "ai workflow trust regression guard workflow smoke (weekly)",
       "file": "ai-workflow-trust-regression-guard-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'workflow-trust-guard-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "942b98a0"
     },
     {
@@ -3510,11 +3461,11 @@
       "file": "ai-workflow-trust-regression-guard.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'trust_guard' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3540,12 +3491,12 @@
     {
       "name": "Auto Label PRs",
       "file": "auto-label.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'label' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
         "Pinned action: actions/labeler@634933ed"
       ],
       "fingerprint": "9c2223f1"
@@ -3555,11 +3506,11 @@
       "file": "autonomous-ai-developer.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'autonomous-development' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3571,11 +3522,11 @@
       "file": "autonomous-growth-signal-monitor.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'growth-signal' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3587,11 +3538,11 @@
       "file": "autonomous-quality-drift-sentinel.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'quality-drift' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3601,13 +3552,12 @@
     {
       "name": "autonomous release guardian workflow smoke (weekly)",
       "file": "autonomous-release-guardian-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'release-guardian-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "e11df7ee"
     },
     {
@@ -3615,11 +3565,11 @@
       "file": "autonomous-release-guardian.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'release-guardian' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3631,11 +3581,11 @@
       "file": "autonomous-writer-queue-guard.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'queue-guard' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -3645,13 +3595,12 @@
     {
       "name": "bundle size workflow smoke (weekly)",
       "file": "bundle-size-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'bundle-size-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "a61d7d6b"
     },
     {
@@ -3659,11 +3608,11 @@
       "file": "bundle-size.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'bundle-size' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/github-script@ed597411",
         "Uses caching",
         "Node.js dependency caching"
@@ -3727,27 +3676,26 @@
     {
       "name": "CI/CD pipeline smoke (weekly)",
       "file": "ci-cd-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'ci-cd-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "03bc4180"
     },
     {
       "name": "CI/CD Pipeline",
       "file": "ci-cd.yml",
-      "score": 100,
+      "score": 98,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
+        "Partially pinned action: actions/cache@v4",
         "Job 'test' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
-        "Pinned action: actions/cache@66822842",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -3756,36 +3704,34 @@
     {
       "name": "CODEOWNERS smoke (weekly)",
       "file": "codeowners-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'check' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "18fbf9b7"
     },
     {
       "name": "CodeQL analysis smoke (weekly)",
       "file": "codeql-analysis-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'codeql-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "03dfe304"
     },
     {
       "name": "CodeQL Security Analysis",
       "file": "codeql-analysis.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'analyze' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
         "Pinned action: github/codeql-action/init@c10b8064",
         "Pinned action: github/codeql-action/autobuild@c10b8064",
         "Pinned action: github/codeql-action/analyze@c10b8064"
@@ -3829,25 +3775,24 @@
     {
       "name": "core web vitals monitor workflow smoke (weekly)",
       "file": "core-web-vitals-monitor-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'cwv-monitor-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "f509e130"
     },
     {
       "name": "Core Web Vitals Monitor",
       "file": "core-web-vitals-monitor.yml",
-      "score": 97,
+      "score": 93,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'measure' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/github-script@ed597411",
         "Pinned action: actions/upload-artifact@bbbca2dd"
       ],
@@ -3892,48 +3837,45 @@
     {
       "name": "dependabot config validate smoke (weekly)",
       "file": "dependabot-config-validate-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'dependabot-validate' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "7c3e511f"
     },
     {
       "name": "Dependabot config validate",
       "file": "dependabot-config-validate.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'yaml' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "84d7d582"
     },
     {
       "name": "dependency review smoke (weekly)",
       "file": "dependency-review-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'dependency-review-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "c52d6950"
     },
     {
       "name": "Dependency Review",
       "file": "dependency-review.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'dependency-review' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
         "Pinned action: actions/dependency-review-action@2031cfc0"
       ],
       "fingerprint": "84f09d2e"
@@ -3957,27 +3899,26 @@
     {
       "name": "deploy on push smoke (weekly)",
       "file": "deploy-on-push-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'deploy-on-push-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "435afbe1"
     },
     {
       "name": "Deploy on Push",
       "file": "deploy-on-push.yml",
-      "score": 79,
+      "score": 82,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
-        "Unpinned or old action: actions/upload-pages-artifact@v3.0.1",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
+        "Partially pinned action: actions/upload-pages-artifact@v4",
         "Partially pinned action: actions/upload-artifact@v4.4.0",
-        "Partially pinned action: actions/deploy-pages@v4.0.5",
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/deploy-pages@v4",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/upload-artifact@v4.4.0",
         "Job 'build' missing timeout-minutes",
         "Job 'deploy' missing timeout-minutes",
@@ -3993,13 +3934,12 @@
     {
       "name": "deploy preflight smoke (weekly)",
       "file": "deploy-preflight-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'deploy-preflight' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "7e98f403"
     },
     {
@@ -4007,11 +3947,11 @@
       "file": "deploy-preflight.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'validate' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -4033,17 +3973,20 @@
     {
       "name": "Continuous Pages Deploy",
       "file": "gh-pages.yml",
-      "score": 84,
+      "score": 92,
       "issues": [
-        "Partially pinned action: actions/checkout@v5",
-        "Partially pinned action: actions/setup-node@v5",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/upload-artifact@v4",
         "Partially pinned action: actions/upload-pages-artifact@v4",
         "Partially pinned action: actions/deploy-pages@v4.0.5",
         "Job 'build' missing timeout-minutes",
         "Job 'deploy' missing timeout-minutes"
       ],
-      "improvements": [],
+      "improvements": [
+        "Uses caching",
+        "Node.js dependency caching"
+      ],
       "fingerprint": "93ebb833"
     },
     {
@@ -4067,13 +4010,12 @@
     {
       "name": "lighthouse ci workflow smoke (weekly)",
       "file": "lighthouse-ci-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'lighthouse-ci-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "51fdb2f1"
     },
     {
@@ -4081,11 +4023,11 @@
       "file": "lighthouse-ci.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'lighthouse' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/github-script@ed597411",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
@@ -4096,13 +4038,12 @@
     {
       "name": "lighthouse production workflow smoke (weekly)",
       "file": "lighthouse-production-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'lighthouse-production-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "6964e563"
     },
     {
@@ -4110,11 +4051,11 @@
       "file": "lighthouse-production.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'lighthouse-production' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -4210,13 +4151,12 @@
     {
       "name": "pin actions weekly workflow smoke (weekly)",
       "file": "pin-actions-weekly-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'pin-weekly' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "aac87412"
     },
     {
@@ -4224,11 +4164,11 @@
       "file": "pin-actions-weekly.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'main' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -4238,13 +4178,12 @@
     {
       "name": "production health monitor smoke (weekly)",
       "file": "production-health-monitor-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'health-monitor-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "206249f7"
     },
     {
@@ -4262,13 +4201,12 @@
     {
       "name": "production smoke test workflow smoke (weekly)",
       "file": "production-smoke-test-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'production-smoke-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "eee3ab20"
     },
     {
@@ -4276,12 +4214,12 @@
       "file": "production-smoke-test.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'smoke-test' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -4290,14 +4228,14 @@
     {
       "name": "Reusable workflow CI (validate + optional contracts)",
       "file": "reusable-workflow-ci.yml",
-      "score": 100,
+      "score": 99,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/cache@v4",
         "Job 'validate' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -4320,10 +4258,10 @@
       "file": "route-slicer.yml",
       "score": 96,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/upload-artifact@v4",
-        "Partially pinned action: peter-evans/create-pull-request@v5",
+        "Partially pinned action: peter-evans/create-pull-request@v4",
         "Job 'route-slicer' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
@@ -4355,11 +4293,11 @@
       "file": "site-improv-agent.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'site-improv' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -4386,13 +4324,12 @@
     {
       "name": "stale workflow smoke (weekly)",
       "file": "stale-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'stale-anchors' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "255c19e9"
     },
     {
@@ -4461,196 +4398,181 @@
     {
       "name": "workflow action pin guard smoke (weekly)",
       "file": "workflow-action-pin-guard-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'action-pin-guard' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "ab1daa36"
     },
     {
       "name": "Workflow action pin guard",
       "file": "workflow-action-pin-guard.yml",
-      "score": 87,
+      "score": 85,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'reject-floating-action-tags' missing timeout-minutes",
         "Uses pull_request_target (security consideration)"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "141d3be3"
     },
     {
       "name": "Workflow action pin smoke (weekly)",
       "file": "workflow-action-pin-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'pin' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "8cd0ee5c"
     },
     {
       "name": "docs/agent quickstart smoke (weekly)",
       "file": "workflow-agent-quickstart-md-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'agent-quickstart-doc' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "9c64beb8"
     },
     {
       "name": "AGENTS.md smoke (weekly)",
       "file": "workflow-agents-md-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'agents' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "379f4c3b"
     },
     {
       "name": "app/globals.css smoke (weekly)",
       "file": "workflow-app-globals-css-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'globals-css' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "ed967470"
     },
     {
       "name": "app/layout.tsx smoke (weekly)",
       "file": "workflow-app-layout-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'layout' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "ccc3944a"
     },
     {
       "name": "app/not-found.tsx smoke (weekly)",
       "file": "workflow-app-not-found-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'not-found' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "577cdbf4"
     },
     {
       "name": "app/page.tsx smoke (weekly)",
       "file": "workflow-app-page-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'home-page' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "ed6a0081"
     },
     {
       "name": "app/robots.ts smoke (weekly)",
       "file": "workflow-app-robots-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'robots' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "447c47ed"
     },
     {
       "name": "app/sitemap.ts smoke (weekly)",
       "file": "workflow-app-sitemap-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'sitemap' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "9df18577"
     },
     {
       "name": "automation preflight weekly smoke (weekly)",
       "file": "workflow-automation-preflight-weekly-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'preflight-weekly' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "470ebe57"
     },
     {
       "name": "Automation preflight (weekly)",
       "file": "workflow-automation-preflight-weekly.yml",
-      "score": 97,
+      "score": 93,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'preflight' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947"
-      ],
+      "improvements": [],
       "fingerprint": "8bc87d84"
     },
     {
       "name": "cursor/autonomy rule smoke (weekly)",
       "file": "workflow-autonomy-rule-mdc-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'autonomy-mdc' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "47291d5b"
     },
     {
       "name": "workflow change guard smoke (weekly)",
       "file": "workflow-change-guard-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'change-guard' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "47effaac"
     },
     {
       "name": "Workflow Change Guard",
       "file": "workflow-change-guard.yml",
-      "score": 100,
+      "score": 98,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'validate-contracts' missing timeout-minutes",
         "Job 'automation-guard' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -4659,51 +4581,48 @@
     {
       "name": "config/ CI assets smoke (weekly)",
       "file": "workflow-config-ci-assets-smoke-weekly.yml",
-      "score": 97,
+      "score": 93,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'config' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947"
-      ],
+      "improvements": [],
       "fingerprint": "734f60f8"
     },
     {
       "name": "contact forms audit doc smoke (weekly)",
       "file": "workflow-contact-forms-audit-md-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'contact-forms-audit-doc' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "562b534c"
     },
     {
       "name": "workflow contracts weekly smoke (weekly)",
       "file": "workflow-contracts-weekly-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'contracts-weekly' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "a57e7c62"
     },
     {
       "name": "Workflow contracts weekly",
       "file": "workflow-contracts-weekly.yml",
-      "score": 100,
+      "score": 98,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'contracts' missing timeout-minutes",
         "Job 'cron-report' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -4713,13 +4632,12 @@
     {
       "name": "workflow cron collision PR smoke (weekly)",
       "file": "workflow-cron-collision-pr-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'cron-collision-pr' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "82651e2b"
     },
     {
@@ -4727,11 +4645,11 @@
       "file": "workflow-cron-collision-pr.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'collision-report' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -4741,13 +4659,12 @@
     {
       "name": "workflow cron collision weekly smoke (weekly)",
       "file": "workflow-cron-collision-weekly-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'cron-weekly' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "7d153854"
     },
     {
@@ -4755,11 +4672,11 @@
       "file": "workflow-cron-collision-weekly.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'collision-report' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -4769,111 +4686,102 @@
     {
       "name": "cursor/CTO directive rule smoke (weekly)",
       "file": "workflow-cto-directive-rule-mdc-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'cto-directive-mdc' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "4966ca69"
     },
     {
       "name": "docs/CTO philosophy smoke (weekly)",
       "file": "workflow-cto-philosophy-md-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'cto-doc' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "34b1c008"
     },
     {
       "name": "dependabot.yml smoke (weekly)",
       "file": "workflow-dependabot-yml-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'dependabot-config' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "e5b44a13"
     },
     {
       "name": "eslint.config.mjs smoke (weekly)",
       "file": "workflow-eslint-config-smoke-weekly.yml",
-      "score": 97,
+      "score": 93,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'eslint-config' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947"
-      ],
+      "improvements": [],
       "fingerprint": "e1ea4eee"
     },
     {
       "name": "workflow grep guards fast smoke (weekly)",
       "file": "workflow-grep-guards-fast-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'fast-guards' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "9293fc2a"
     },
     {
       "name": "Workflow grep guards (script file)",
       "file": "workflow-grep-guards-fast.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'guards' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "812b38b9"
     },
     {
       "name": "workflow grep guards weekly workflow smoke (weekly)",
       "file": "workflow-grep-guards-weekly-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'weekly-guards' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "02a31ade"
     },
     {
       "name": "Workflow grep guards (weekly)",
       "file": "workflow-grep-guards-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'guards' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "30129b6d"
     },
     {
       "name": "workflow grep subset dispatch smoke (weekly)",
       "file": "workflow-grep-subset-dispatch-smoke-weekly.yml",
-      "score": 97,
+      "score": 93,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'subset-dispatch' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947"
-      ],
+      "improvements": [],
       "fingerprint": "30235f8e"
     },
     {
@@ -4881,11 +4789,11 @@
       "file": "workflow-grep-subset-dispatch.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'tooling' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -4895,25 +4803,23 @@
     {
       "name": "HEARTBEAT.md smoke (weekly)",
       "file": "workflow-heartbeat-md-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'heartbeat' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "458d4c2b"
     },
     {
       "name": "workflow integrity audit dispatch smoke (weekly)",
       "file": "workflow-integrity-audit-dispatch-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'integrity-audit-dispatch' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "bec043ef"
     },
     {
@@ -4921,11 +4827,11 @@
       "file": "workflow-integrity-audit-dispatch.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'audit' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
@@ -4935,37 +4841,34 @@
     {
       "name": "labeler config smoke (weekly)",
       "file": "workflow-labeler-config-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'labeler-config' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "7f905e46"
     },
     {
       "name": "MEMORY.md smoke (weekly)",
       "file": "workflow-memory-md-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'memory' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "0f2b3bef"
     },
     {
       "name": "merge conflict markers fast smoke (weekly)",
       "file": "workflow-merge-conflict-markers-fast-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'merge-markers-fast' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "64a85811"
     },
     {
@@ -4973,11 +4876,11 @@
       "file": "workflow-merge-conflict-markers-fast.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'scan' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -4986,13 +4889,12 @@
     {
       "name": "merge conflict markers weekly smoke (weekly)",
       "file": "workflow-merge-conflict-markers-weekly-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'merge-weekly' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "0d5a3fa2"
     },
     {
@@ -5000,11 +4902,11 @@
       "file": "workflow-merge-conflict-markers-weekly.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'scan' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -5013,138 +4915,127 @@
     {
       "name": "netlify.toml smoke (weekly)",
       "file": "workflow-netlify-toml-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'netlify-config' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "de26719b"
     },
     {
       "name": "docs/next autonomous ideas smoke (weekly)",
       "file": "workflow-next-autonomous-ideas-md-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'next-ideas-doc' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "b1a35642"
     },
     {
       "name": "next.config.mjs + jest.config.cjs smoke (weekly)",
       "file": "workflow-next-jest-config-smoke-weekly.yml",
-      "score": 97,
+      "score": 93,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'configs' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947"
-      ],
+      "improvements": [],
       "fingerprint": "27e9f900"
     },
     {
       "name": "workflow node contracts dispatch smoke (weekly)",
       "file": "workflow-node-contracts-dispatch-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'node-contracts-dispatch' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "16890f07"
     },
     {
       "name": "Workflow Node contracts only (manual)",
       "file": "workflow-node-contracts-dispatch.yml",
-      "score": 97,
+      "score": 93,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'contracts' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947"
-      ],
+      "improvements": [],
       "fingerprint": "b5a8600d"
     },
     {
       "name": "Workflow npm ci policy smoke (weekly)",
       "file": "workflow-npm-ci-policy-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'npm-ci-policy' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "759c9806"
     },
     {
       "name": "Node .nvmrc smoke (weekly)",
       "file": "workflow-nvmrc-smoke-weekly.yml",
-      "score": 97,
+      "score": 93,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'nvmrc' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947"
-      ],
+      "improvements": [],
       "fingerprint": "9731e831"
     },
     {
       "name": "observability EMA webhook workflow smoke (weekly)",
       "file": "workflow-observability-ema-webhook-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'observability-workflow' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "07398fad"
     },
     {
       "name": "package.json smoke (weekly)",
       "file": "workflow-package-json-smoke-weekly.yml",
-      "score": 97,
+      "score": 93,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'manifest' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947"
-      ],
+      "improvements": [],
       "fingerprint": "59dc226c"
     },
     {
       "name": "package-lock.json smoke (weekly)",
       "file": "workflow-package-lock-smoke-weekly.yml",
-      "score": 97,
+      "score": 93,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'lockfile' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947"
-      ],
+      "improvements": [],
       "fingerprint": "0bcdbeb9"
     },
     {
       "name": "package script dedup fast smoke (weekly)",
       "file": "workflow-package-script-dedup-fast-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'dedup-fast' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "768f5f9e"
     },
     {
@@ -5152,11 +5043,11 @@
       "file": "workflow-package-script-dedup-fast.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'dedup' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -5165,13 +5056,12 @@
     {
       "name": "package script dedup weekly smoke (weekly)",
       "file": "workflow-package-script-dedup-weekly-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'dedup-weekly' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "907e1399"
     },
     {
@@ -5179,11 +5069,11 @@
       "file": "workflow-package-script-dedup-weekly.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'dedup' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -5192,280 +5082,257 @@
     {
       "name": "workflow parse ruby fast smoke (weekly)",
       "file": "workflow-parse-ruby-fast-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'parse-ruby-fast' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "1e511e1a"
     },
     {
       "name": "Workflow Ruby parse (parser file)",
       "file": "workflow-parse-ruby-fast.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'parse' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "3db7dfad"
     },
     {
       "name": "workflow parse-ruby-only dispatch smoke (weekly)",
       "file": "workflow-parse-ruby-only-dispatch-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'parse-ruby-only-dispatch' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "49668733"
     },
     {
       "name": "Workflow Ruby parse only (manual)",
       "file": "workflow-parse-ruby-only-dispatch.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'parse' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "1794ac1a"
     },
     {
       "name": "workflow permissions guard smoke (weekly)",
       "file": "workflow-permissions-guard-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'permissions-guard' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "a17c9ca3"
     },
     {
       "name": "Workflow permissions guard",
       "file": "workflow-permissions-guard.yml",
-      "score": 87,
+      "score": 85,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'validate-permissions' missing timeout-minutes",
         "Uses pull_request_target (security consideration)"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "1feddf6c"
     },
     {
       "name": "Workflow permissions smoke (weekly)",
       "file": "workflow-permissions-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'permissions' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "d7a83413"
     },
     {
       "name": "Workflow policy fast smoke (weekly)",
       "file": "workflow-policy-fast-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'policy-fast' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "06024f0e"
     },
     {
       "name": "postcss.config.mjs + ecosystem.config.cjs smoke (weekly)",
       "file": "workflow-postcss-ecosystem-smoke-weekly.yml",
-      "score": 97,
+      "score": 93,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'configs' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947"
-      ],
+      "improvements": [],
       "fingerprint": "35bd6f05"
     },
     {
       "name": "public/icon.svg smoke (weekly)",
       "file": "workflow-public-icon-svg-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'icon' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "b76a689d"
     },
     {
       "name": "public/manifest.json smoke (weekly)",
       "file": "workflow-public-manifest-smoke-weekly.yml",
-      "score": 97,
+      "score": 93,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'manifest' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947"
-      ],
+      "improvements": [],
       "fingerprint": "fde0ea54"
     },
     {
       "name": "public/robots.txt smoke (weekly)",
       "file": "workflow-public-robots-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'robots' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "f7048248"
     },
     {
       "name": "push helpers bash fast smoke (weekly)",
       "file": "workflow-push-helpers-bash-fast-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'bash-fast' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "d0f1278c"
     },
     {
       "name": "Workflow push helpers bash syntax (script files)",
       "file": "workflow-push-helpers-bash-fast.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'syntax' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "bed683d5"
     },
     {
       "name": "push helpers bash weekly smoke (weekly)",
       "file": "workflow-push-helpers-bash-weekly-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'bash-weekly' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "8a39b033"
     },
     {
       "name": "Workflow push helpers bash syntax (weekly)",
       "file": "workflow-push-helpers-bash-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'syntax' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "1fae115d"
     },
     {
       "name": "push helpers behavior smoke (weekly)",
       "file": "workflow-push-helpers-behavior-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'push-helpers' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "3fe48863"
     },
     {
       "name": "Workflow push policy smoke (weekly)",
       "file": "workflow-push-policy-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'push-policy' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "b76ade01"
     },
     {
       "name": "Workflow push-token policy smoke (weekly)",
       "file": "workflow-push-token-policy-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'push-token' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "4751eaf2"
     },
     {
       "name": "README.md smoke (weekly)",
       "file": "workflow-readme-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'readme' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "3009c565"
     },
     {
       "name": "workflow report push guard smoke (weekly)",
       "file": "workflow-report-push-guard-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'report-push-guard' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "7b21b268"
     },
     {
       "name": "Workflow report push guard",
       "file": "workflow-report-push-guard.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'check-push-guards' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "972faa8f"
     },
     {
       "name": "workflow reusable CI dispatch smoke (weekly)",
       "file": "workflow-reusable-ci-dispatch-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'reusable-ci-dispatch' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "60605c07"
     },
     {
@@ -5481,158 +5348,145 @@
     {
       "name": "reusable workflow CI smoke (weekly)",
       "file": "workflow-reusable-ci-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'reusable-ci' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "9e5a5790"
     },
     {
       "name": "workflow ruby bash validate dispatch smoke (weekly)",
       "file": "workflow-ruby-bash-validate-dispatch-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'ruby-bash-dispatch' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "273019e3"
     },
     {
       "name": "Workflow Ruby parse + bash grep (manual, no npm)",
       "file": "workflow-ruby-bash-validate-dispatch.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'validate' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "1c4102a8"
     },
     {
       "name": "Workflow Ruby parse smoke (weekly)",
       "file": "workflow-ruby-parse-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'parse' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "d46980da"
     },
     {
       "name": "Workflow runs-on policy smoke (weekly)",
       "file": "workflow-runs-on-policy-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'runs-on-policy' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "220256f9"
     },
     {
       "name": "app/seoConstants smoke (weekly)",
       "file": "workflow-seo-constants-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'seo-constants' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "1b3777f2"
     },
     {
       "name": "Workflow setup-node policy smoke (weekly)",
       "file": "workflow-setup-node-policy-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'setup-node-policy' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "939b9112"
     },
     {
       "name": "SOUL.md smoke (weekly)",
       "file": "workflow-soul-md-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'soul' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "047c8522"
     },
     {
       "name": "tailwind.config.ts smoke (weekly)",
       "file": "workflow-tailwind-config-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'tailwind' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "8ed3191e"
     },
     {
       "name": "TOOLS.md smoke (weekly)",
       "file": "workflow-tools-md-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'tools-md' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "84eb6228"
     },
     {
       "name": "tsconfig.json smoke (weekly)",
       "file": "workflow-tsconfig-smoke-weekly.yml",
-      "score": 97,
+      "score": 93,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'tsconfig' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947"
-      ],
+      "improvements": [],
       "fingerprint": "e6e3cd5d"
     },
     {
       "name": "USER.md smoke (weekly)",
       "file": "workflow-user-md-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'user' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "b99e130c"
     },
     {
       "name": "workflow validate light weekly smoke (weekly)",
       "file": "workflow-validate-light-weekly-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'validate-light-weekly' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "6a7517ff"
     },
     {
@@ -5648,13 +5502,12 @@
     {
       "name": "workflow YAML sanity smoke (weekly)",
       "file": "workflow-yaml-sanity-smoke-weekly.yml",
-      "score": 97,
+      "score": 95,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
         "Job 'yaml-sanity' missing timeout-minutes"
       ],
-      "improvements": [
-        "Pinned action: actions/checkout@de0fac2e"
-      ],
+      "improvements": [],
       "fingerprint": "a9581723"
     },
     {
@@ -5670,64 +5523,64 @@
   ],
   "top_issues": [
     {
-      "issue": "Partially pinned action: actions/checkout@v6.0.2",
+      "issue": "Partially pinned action: actions/checkout@v4",
       "workflow": "Deploy on Push",
-      "score": 79
+      "score": 82
     },
     {
-      "issue": "Partially pinned action: actions/setup-node@v6.3.0",
+      "issue": "Partially pinned action: actions/setup-node@v4",
       "workflow": "Deploy on Push",
-      "score": 79
+      "score": 82
     },
     {
-      "issue": "Unpinned or old action: actions/upload-pages-artifact@v3.0.1",
+      "issue": "Partially pinned action: actions/upload-pages-artifact@v4",
       "workflow": "Deploy on Push",
-      "score": 79
-    },
-    {
-      "issue": "Partially pinned action: actions/upload-artifact@v4.4.0",
-      "workflow": "Deploy on Push",
-      "score": 79
-    },
-    {
-      "issue": "Partially pinned action: actions/deploy-pages@v4.0.5",
-      "workflow": "Deploy on Push",
-      "score": 79
-    },
-    {
-      "issue": "Partially pinned action: actions/checkout@v6.0.2",
-      "workflow": "Deploy on Push",
-      "score": 79
-    },
-    {
-      "issue": "Partially pinned action: actions/setup-node@v6.3.0",
-      "workflow": "Deploy on Push",
-      "score": 79
+      "score": 82
     },
     {
       "issue": "Partially pinned action: actions/upload-artifact@v4.4.0",
       "workflow": "Deploy on Push",
-      "score": 79
+      "score": 82
+    },
+    {
+      "issue": "Partially pinned action: actions/deploy-pages@v4",
+      "workflow": "Deploy on Push",
+      "score": 82
+    },
+    {
+      "issue": "Partially pinned action: actions/checkout@v4",
+      "workflow": "Deploy on Push",
+      "score": 82
+    },
+    {
+      "issue": "Partially pinned action: actions/setup-node@v4",
+      "workflow": "Deploy on Push",
+      "score": 82
+    },
+    {
+      "issue": "Partially pinned action: actions/upload-artifact@v4.4.0",
+      "workflow": "Deploy on Push",
+      "score": 82
     },
     {
       "issue": "Job 'build' missing timeout-minutes",
       "workflow": "Deploy on Push",
-      "score": 79
+      "score": 82
     },
     {
       "issue": "Job 'deploy' missing timeout-minutes",
       "workflow": "Deploy on Push",
-      "score": 79
+      "score": 82
     },
     {
       "issue": "Job 'smoke-tests' missing timeout-minutes",
       "workflow": "Deploy on Push",
-      "score": 79
+      "score": 82
     },
     {
       "issue": "Uses continue-on-error (may mask failures)",
       "workflow": "Deploy on Push",
-      "score": 79
+      "score": 82
     },
     {
       "issue": "Partially pinned action: actions/checkout@v6.0.2",
@@ -5750,25 +5603,25 @@
       "score": 83
     },
     {
-      "issue": "Partially pinned action: actions/checkout@v5",
-      "workflow": "Continuous Pages Deploy",
-      "score": 84
+      "issue": "Partially pinned action: actions/checkout@v4",
+      "workflow": "Workflow action pin guard",
+      "score": 85
     },
     {
-      "issue": "Partially pinned action: actions/setup-node@v5",
-      "workflow": "Continuous Pages Deploy",
-      "score": 84
+      "issue": "Job 'reject-floating-action-tags' missing timeout-minutes",
+      "workflow": "Workflow action pin guard",
+      "score": 85
     },
     {
-      "issue": "Partially pinned action: actions/upload-artifact@v4",
-      "workflow": "Continuous Pages Deploy",
-      "score": 84
+      "issue": "Uses pull_request_target (security consideration)",
+      "workflow": "Workflow action pin guard",
+      "score": 85
     },
     {
-      "issue": "Partially pinned action: actions/upload-pages-artifact@v4",
-      "workflow": "Continuous Pages Deploy",
-      "score": 84
+      "issue": "Partially pinned action: actions/checkout@v4",
+      "workflow": "Workflow permissions guard",
+      "score": 85
     }
   ],
-  "generated_at": "2026-08-10T19:32:06.494Z"
+  "generated_at": "2026-08-10T21:57:55.496Z"
 }
