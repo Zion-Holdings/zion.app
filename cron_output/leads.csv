@@ -44,3 +44,8 @@ timestamp,name,company,role,email,lead_magnet,value,status
 2026-08-10T10:00:13.551165,Emily,SecureIT,Engineering Manager,james366@digitalsolutions.com,Cloud Security Scan,1800,new
 2026-08-10T10:00:13.551165,Mary,TechCorp,Data Scientist,lisa450@digitalsolutions.com,DevOps Readiness Evaluation,2000,new
 2026-08-10T10:00:13.551165,Michael,DataFlow,CTO,john587@secureit.com,AI Cost Assessment,2500,new
+2026-08-10T16:00:51.256667,James,DataFlow,Engineering Manager,john2@secureit.com,DevOps Readiness Evaluation,2000,new
+2026-08-10T16:00:51.256667,David,DigitalSolutions,CTO,michael129@secureit.com,DevOps Readiness Evaluation,2000,new
+2026-08-10T16:00:51.256667,Lisa,TechCorp,CTO,james477@secureit.com,AI Cost Assessment,2500,new
+2026-08-10T16:00:51.256667,Sarah,TechCorp,CTO,james268@innovateco.com,DevOps Readiness Evaluation,2000,new
+2026-08-10T16:00:51.256667,Sarah,InnovateCo,DevOps Lead,emily491@techcorp.com,Cloud Security Scan,1800,new
