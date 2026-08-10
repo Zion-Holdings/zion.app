@@ -61,3 +61,6 @@
 /ai-fitness-coach
 /ai-form-builder
 /ai-fraud-detection
+/free-resources
+/services/ai-customer-support-pro
+/case-studies
