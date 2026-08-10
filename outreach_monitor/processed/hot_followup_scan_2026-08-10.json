@@ -1,15 +1,22 @@
 {
-  "timestamp": "2026-08-10T14:00:06.833891+00:00",
+  "timestamp": "2026-08-10T17:09:03.072557+00:00",
   "label_id": "!!!!HOT FOLLOW-UP",
   "threads_api_returned": 100,
-  "threads_checked": 1,
+  "threads_checked": 2,
   "safe_threads": [
     {
-      "thread_id": "19feb6ef9bc9ab53",
-      "message_id": "19feb6ef9bc9ab53",
-      "subject": "Quick \u2013 get up to 60% off your first order on your first 2 orders.",
-      "sender": "Uber <uber@uber.com>",
-      "date": "Mon, 10 Aug 2026 11:28:42 +0000"
+      "thread_id": "19fec5c21efa0b8f",
+      "message_id": "19fec5c21efa0b8f",
+      "subject": "Confira o Extrato de agosto de 2026 do seu lote.",
+      "sender": "\"Santa B\u00e1rbara Resort Residence\" <sac@relacionamento.santabarbararesidence.com.br>",
+      "date": "Mon, 10 Aug 2026 12:47:04 -0300"
+    },
+    {
+      "thread_id": "19fec2d7318a318c",
+      "message_id": "19fec2d7318a318c",
+      "subject": "9 anos de uma hist\u00f3ria que \u00e9 nossa \ud83d\udc9c",
+      "sender": "\"Ana Fontes, RME\" <contato@rme.net.br>",
+      "date": "Mon, 10 Aug 2026 10:57:06 -0400"
     }
   ],
   "threads_sent": 0,
