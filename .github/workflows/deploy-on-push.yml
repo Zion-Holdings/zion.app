@@ -38,7 +38,7 @@ jobs:
         cache: npm
         cache-dependency-path: package-lock.json
     - name: Install dependencies
-      run: npm ci --prefer-offline --no-audit --fund=false
+      run: npm ci --no-audit --fund=false
     - name: Static site build
       run: npm run build
     - name: Upload Pages artifact
@@ -117,7 +117,7 @@ jobs:
       with:
         node-version-file: .nvmrc
     - name: Install dependencies
-      run: npm ci --prefer-offline --no-audit --fund=false
+      run: npm ci --no-audit --fund=false
     - name: Wait for Pages propagation
       run: "echo \"Waiting 30s for GitHub Pages to propagate...\"\nsleep 30\n# Quick\
         \ sanity check\nset +e\nstatus=$(curl --silent --show-error --max-time 10\

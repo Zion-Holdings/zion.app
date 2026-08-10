@@ -23,37 +23,26 @@ jobs:
       NODE_OPTIONS: "--max-old-space-size=4096"
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       
       - name: Setup Node.js
-        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        uses: actions/setup-node@v4
         with:
           node-version: "20"
           cache: npm
           cache-dependency-path: package-lock.json
       
-      - name: Configure npm PATH
-        run: |
-          echo "/root/.npm-global/bin" >> $GITHUB_PATH
-          echo "/usr/local/bin" >> $GITHUB_PATH
-          echo "npm config set cache /tmp/.npm-cache"
-          echo "npm config set progress false"
-      
-      - name: Install Next.js globally
-        run: npm install -g next@16.2.0
-        continue-on-error: false
-      - name: Restore Next.js cache
-        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
+      - name: Restore npm cache
+        uses: actions/cache@v4
         with:
-          path: .next/cache
-          key: ${{ runner.os }}-next-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.ts', '**/*.tsx') }}
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-next-${{ hashFiles('**/package-lock.json') }}-
-            ${{ runner.os }}-next-
+            ${{ runner.os }}-npm-
       - name: Install dependencies
-        run: npm ci --prefer-offline --no-audit --fund=false
+        run: npm ci --no-audit --fund=false
       - name: Automation preflight
         id: automation_preflight
         run: npm run automation:preflight

@@ -15,7 +15,7 @@ jobs:
     timeout-minutes: 2
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@v4
       - name: deploy-preflight.yml anchors
         run: |
           set -euo pipefail
@@ -26,7 +26,7 @@ jobs:
           grep -Fq 'workflow_dispatch:' "$f"
           grep -Fq 'trigger_deploy:' "$f"
           grep -Fq 'github.event.inputs.trigger_deploy' "$f"
-          grep -Fq 'npm ci --prefer-offline --no-audit --fund=false' "$f"
+          grep -Fq 'npm ci --no-audit --fund=false' "$f"
           grep -Fq 'npm run lint:check' "$f"
           grep -Fq 'npm run type-check' "$f"
           grep -Fq 'npm run build' "$f"
