@@ -21,10 +21,10 @@ jobs:
       NEXT_TELEMETRY_DISABLED: "1"
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version-file: '.nvmrc'
           cache: npm
@@ -68,7 +68,7 @@ jobs:
 
       - name: Upload deploy smoke artifact
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: deploy-smoke-${{ github.run_id }}
           path: automation/reports/deploy-smoke-latest.json
@@ -109,7 +109,7 @@ jobs:
 
       - name: Upload route drift diagnostics
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: netlify-preview-route-drift-${{ github.run_id }}
           path: automation/reports/app-route-sitemap-drift-latest.json
