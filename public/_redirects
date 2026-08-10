@@ -43,20 +43,26 @@
 /proposal/ /proposal/ 301
 /ai /ai/ 301
 /ai/ /ai/ 301
-/industries/insurance /industries/insurance/ 301
-/industries/insurance/ /industries/insurance/ 301
-/industries/healthcare /industries/healthcare/ 301
-/industries/healthcare/ /industries/healthcare/ 301
-/industries/legal /industries/legal/ 301
-/industries/legal/ /industries/legal/ 301
-/press /press/ 301
-/press/ /press/ 301
-/privacy /privacy/ 301
-/privacy/ /privacy/ 301
-/terms /terms/ 301
-/terms/ /terms/ 301
-/cookies /cookies/ 301
-/cookies/ /cookies/ 301
+
+# Route cleanup: remove self-looping redirects and serve actual fallbacks
+/industries/insurance /industries/insurance/index.html 200
+/industries/insurance/ /industries/insurance/index.html 200
+/industries/healthcare /industries/healthcare/index.html 200
+/industries/healthcare/ /industries/healthcare/index.html 200
+/industries/legal /industries/legal/index.html 200
+/industries/legal/ /industries/legal/index.html 200
+/press /press/index.html 200
+/press/ /press/index.html 200
+/privacy /privacy/index.html 200
+/privacy/ /privacy/index.html 200
+/terms /terms/index.html 200
+/terms/ /terms/index.html 200
+/cookies /cookies/index.html 200
+/cookies/ /cookies/index.html 200
+/status-page /status-page/index.html 200
+/status-page/ /status-page/index.html 200
+/public-roadmap /public-roadmap/index.html 200
+/public-roadmap/ /public-roadmap/index.html 200
 
 # Key route fallbacks
 /solutions/healthcare/ /docs/solutions/healthcare/index.html 200
@@ -65,11 +71,5 @@
 /tools/phishing-analyzer /docs/tools/phishing-analyzer/index.html 200
 /industries/financial-services/ /docs/industries/financial-services/index.html 200
 /industries/financial-services /docs/industries/financial-services/index.html 200
-
-# Status / Roadmap fallbacks
-/status-page /status-page/ 301
-/status-page/ /status-page/index.html 200
-/public-roadmap /public-roadmap/ 301
-/public-roadmap/ /public-roadmap/index.html 200
 
 # cache-bust: 2026-08-10T17:15:00Z
