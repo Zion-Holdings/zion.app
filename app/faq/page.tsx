@@ -1,30 +1,61 @@
-'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 
-const FAQS = [
-  { q: 'What services do you offer?', a: 'Managed IT, AI automation, cybersecurity, cloud, networking, and consulting.' },
-  { q: 'Do you support remote teams?', a: 'Yes, we support hybrid and remote IT environments globally.' },
-  { q: 'How fast is onboarding?', a: 'Most clients are onboarded within 48–72 hours.' },
+export const metadata: Metadata = {
+  title: 'FAQ',
+  description: 'Answers to common questions about services, engagement models, pricing, and support at Zion Tech Group.',
+  alternates: { canonical: '/faq/' },
+};
+
+const ITEMS = [
+  {
+    q: 'What industries do you support?',
+    a: 'We work across technology, healthcare, manufacturing, finance, and SaaS. Our playbooks are adaptable, but many engagements start with regulated or cloud-heavy environments.',
+  },
+  {
+    q: 'How fast can we start a pilot?',
+    a: 'Most pilots begin within 5–10 business days after the discovery call. We use standardized scoping, automated environment setup, and reusable service modules to reduce lead time.',
+  },
+  {
+    q: 'Do you offer project-based or retainer models?',
+    a: 'Both. Choose project-based for defined milestones, or a managed retainer for ongoing support, monitoring, and continuous improvement.',
+  },
+  {
+    q: 'Is the team US-based?',
+    a: 'Yes. Our engineers, architects, and support staff are based in the US. We prioritize direct communication and clear escalation paths.',
+  },
+  {
+    q: 'Do you support compliance requirements?',
+    a: 'Yes. We implement controls and evidence packages aligned to SOC 2, HIPAA, and NIST frameworks. Compliance readiness is built into our standard delivery lifecycle.',
+  },
+  {
+    q: 'What does pricing look like?',
+    a: 'Pilot engagements typically start at $5,000–$15,000, with managed services priced by scope and SLA tier. Custom proposals include transparent line items and no hidden fees.',
+  },
 ];
 
 export default function FAQPage() {
-  const [open, setOpen] = useState<string | null>(null);
   return (
     <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
-        <h1 className="text-4xl font-bold text-white mb-8">Frequently Asked Questions</h1>
-        <div className="space-y-4">
-          {FAQS.map((item) => (
-            <div key={item.q} className="glass-card p-6">
-              <button className="w-full text-left flex justify-between items-center" onClick={() => setOpen(open === item.q ? null : item.q)}>
-                <h3 className="text-white font-semibold">{item.q}</h3>
-                <span className="text-purple-400">{open === item.q ? '−' : '+'}</span>
-              </button>
-              {open === item.q && <p className="text-slate-400 mt-3 text-sm">{item.a}</p>}
+        <div className="mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Frequently Asked Questions</h1>
+          <p className="text-slate-400 text-lg max-w-2xl">
+            Quick answers about working with Zion Tech Group. If you need more detail, contact us directly.
+          </p>
+        </div>
+        <div className="max-w-3xl space-y-6">
+          {ITEMS.map((item) => (
+            <div key={item.q} className="glass-card">
+              <h2 className="text-lg font-semibold text-white mb-2">{item.q}</h2>
+              <p className="text-slate-300 leading-relaxed">{item.a}</p>
             </div>
           ))}
+        </div>
+        <div className="mt-12">
+          <Link href="/contact/" className="btn-primary">
+            Contact Us
+          </Link>
         </div>
       </div>
     </main>
