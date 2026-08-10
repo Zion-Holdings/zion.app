@@ -311,30 +311,23 @@
     "note": "Pre-run JSON context processed"
   },
   {
-    "timestamp": "2026-08-09T22:00:01.366600",
+    "timestamp": "2026-08-10T02:12:44.689201",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11500,
+    "expected_revenue": 2875.0,
+    "conversion_rate_target": "25%",
+    "send_blocked": true,
+    "note": "Pre-run JSON context processed"
+  },
+  {
+    "timestamp": "2026-08-10T06:01:40.804251",
     "event": "lead_generation_tick",
     "leads_generated": 5,
     "new_unique_leads_added": 5,
     "total_potential_value": 10100,
     "expected_revenue": 2525.0,
-    "conversion_rate_target": "25%"
-  },
-  {
-    "timestamp": "2026-08-09T22:01:13.556691",
-    "event": "lead_generation_tick",
-    "leads_generated": 5,
-    "new_unique_leads_added": 5,
-    "total_potential_value": 9400,
-    "expected_revenue": 2350.0,
-    "conversion_rate_target": "25%"
-  },
-  {
-    "timestamp": "2026-08-10T00:00:01.605947",
-    "event": "lead_generation_tick",
-    "leads_generated": 5,
-    "new_unique_leads_added": 5,
-    "total_potential_value": 11300,
-    "expected_revenue": 2825.0,
     "conversion_rate_target": "25%"
   }
 ]

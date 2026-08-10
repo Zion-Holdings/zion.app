@@ -1,8 +1,10 @@
 {
-  "total_ticks": 31,
+  "total_ticks": 40,
   "leads_processed": 15,
-  "total_potential_value": 31900,
-  "expected_revenue": 7975.0,
+  "total_potential_value": 22400,
+  "expected_revenue": 5600.0,
   "conversion_rate_target": "25%",
-  "generated_at": "2026-08-09T08:00:23.729848"
+  "generated_at": "2026-08-10T02:12:44.689201",
+  "last_run": "2026-08-10T02:12:44.689201",
+  "total_leads": 10
 }

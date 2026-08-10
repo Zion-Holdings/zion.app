@@ -309,5 +309,25 @@
     "conversion_rate_target": "25%",
     "send_blocked": true,
     "note": "Pre-run JSON context processed"
+  },
+  {
+    "timestamp": "2026-08-10T02:12:44.689201",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11500,
+    "expected_revenue": 2875.0,
+    "conversion_rate_target": "25%",
+    "send_blocked": true,
+    "note": "Pre-run JSON context processed"
+  },
+  {
+    "timestamp": "2026-08-10T06:01:40.804251",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10100,
+    "expected_revenue": 2525.0,
+    "conversion_rate_target": "25%"
   }
 ]
