@@ -1,0 +1,17 @@
+{
+  "timestamp": "2026-08-10T14:00:06.833891+00:00",
+  "label_id": "!!!!HOT FOLLOW-UP",
+  "threads_api_returned": 100,
+  "threads_checked": 1,
+  "safe_threads": [
+    {
+      "thread_id": "19feb6ef9bc9ab53",
+      "message_id": "19feb6ef9bc9ab53",
+      "subject": "Quick \u2013 get up to 60% off your first order on your first 2 orders.",
+      "sender": "Uber <uber@uber.com>",
+      "date": "Mon, 10 Aug 2026 11:28:42 +0000"
+    }
+  ],
+  "threads_sent": 0,
+  "blockers": []
+}
