@@ -298,5 +298,16 @@
     "total_potential_value": 10100,
     "expected_revenue": 2525.0,
     "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-09T20:00:34.292379",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 9400,
+    "expected_revenue": 2350.0,
+    "conversion_rate_target": "25%",
+    "send_blocked": true,
+    "note": "Pre-run JSON context processed"
   }
 ]

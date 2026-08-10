@@ -14,3 +14,8 @@ timestamp,to,name,company,role,subject,day,status,lead_magnet
 2026-08-09T08:00:23.729848,sarah580@dataflow.com,Mary,DigitalSolutions,CTO,Your Free AI Cost Assessment is Ready!,1,new,AI Cost Assessment
 2026-08-09T08:00:23.729848,sarah776@dataflow.com,Michael,TechCorp,CTO,Your Free Cloud Security Scan is Ready!,1,new,Cloud Security Scan
 2026-08-09T08:00:23.729848,lisa382@secureit.com,Emily,SecureIT,Engineering Manager,Your Free AI Cost Assessment is Ready!,1,new,AI Cost Assessment
+2026-08-09T20:00:34.292379,Emily,TechCorp,CTO,john860@secureit.com,Cloud Security Scan,1800,new
+2026-08-09T20:00:34.292379,John,InnovateCo,DevOps Lead,david244@innovateco.com,Cloud Security Scan,1800,new
+2026-08-09T20:00:34.292379,Sarah,DigitalSolutions,Data Scientist,john649@techcorp.com,DevOps Readiness Evaluation,2000,new
+2026-08-09T20:00:34.292379,David,TechCorp,CTO,michael422@digitalsolutions.com,DevOps Readiness Evaluation,2000,new
+2026-08-09T20:00:34.292379,Michael,SecureIT,DevOps Lead,john244@digitalsolutions.com,Cloud Security Scan,1800,new
