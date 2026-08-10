@@ -910,8 +910,8 @@ let list = services;
       <section className="py-8 border-t border-slate-800">
         <div className="container-page">
           <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-500">
-            <Link href="/faq/" className="hover:text-purple-400 transition">❓ FAQ</Link>
-            <Link href="/industry-solutions/" className="hover:text-purple-400 transition">🏭 Industry Solutions</Link>
+            <Link href="/contact/" className="hover:text-purple-400 transition">❓ FAQ</Link>
+            <Link href="/solutions/" className="hover:text-purple-400 transition">🏭 Industry Solutions</Link>
             <Link href="/services/" className="hover:text-purple-400 transition">🛠️ All Services</Link>
             <Link href="/configurator/" className="hover:text-purple-400 transition">⚙️ Configurator</Link>
             <Link href="/proposals/" className="hover:text-purple-400 transition">📄 Proposals</Link>
