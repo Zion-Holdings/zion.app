@@ -21,7 +21,7 @@
 # AI resources fallback
 /ai-resources /docs/ai-resources/index.html 200
 /ai-resources/ /docs/ai-resources/index.html 200
-2026-08-04T16:45:49Z
+# 2026-08-04T16:45:49Z
 
 # Orphaned route fallbacks
 /ai-services-index /services/ 301
@@ -32,3 +32,11 @@
 /new-ai-services/ /services/ 301
 /faq /contact 301
 /industry-solutions /solutions 301
+
+# Tools child-page fallbacks (preserve catalog)
+/tools/ai-service-router /docs/tools/ai-service-router/index.html 200
+/tools/analytics /docs/tools/analytics/index.html 200
+/tools/health-check /docs/tools/health-check/index.html 200
+/tools/port-scanner /docs/tools/port-scanner/index.html 200
+/tools/roi-calculator /docs/tools/roi-calculator/index.html 200
+/tools/ssl-checker /docs/tools/ssl-checker/index.html 200
