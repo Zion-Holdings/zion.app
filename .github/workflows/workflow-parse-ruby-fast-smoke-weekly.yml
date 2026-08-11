@@ -1,4 +1,4 @@
-# Ensures workflow-parse-ruby-fast.yml keeps parser-file path triggers + Ruby parse step (grep-only).
+# Ensures workflow-parse-ruby-fast.yml keeps parser-file path triggers + Node parse step (grep-only).
 name: workflow parse ruby fast smoke (weekly)
 permissions:
   contents: read
@@ -23,8 +23,8 @@ jobs:
           test -f "$f"
           test -s "$f"
           grep -Fq 'name: Workflow Ruby parse (parser file)' "$f"
-          grep -Fq 'parse-github-workflows-yaml.rb' "$f"
+          grep -Fq 'parse-github-workflows-yaml.cjs' "$f"
           grep -Fq 'group: workflow-parse-ruby-fast-' "$f"
           grep -Fq 'github.ref' "$f"
-          grep -Fq 'ruby scripts/automation/parse-github-workflows-yaml.rb' "$f"
+          grep -Fq 'node scripts/automation/parse-github-workflows-yaml.cjs' "$f"
           echo "ok: $f"
