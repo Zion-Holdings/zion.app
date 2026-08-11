@@ -48,3 +48,13 @@
 /search/ /search/ 301
 /products /products/ 301
 /products/ /products/ 301
+/portal /portal/ 301
+/portal/ /portal/ 301
+/portal/tickets /portal/tickets/ 301
+/portal/tickets/ /portal/tickets/ 301
+/portal/projects /portal/projects/ 301
+/portal/projects/ /portal/projects/ 301
+/portal/kb /portal/kb/ 301
+/portal/kb/ /portal/kb/ 301
+/portal/billing /portal/billing/ 301
+/portal/billing/ /portal/billing/ 301
