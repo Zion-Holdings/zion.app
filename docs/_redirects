@@ -34,7 +34,6 @@
 
 # Common missing paths
 /automation /automation/ 301
-/automation/ /automation/ 301
 /case-studies /case-studies/ 301
 /case-studies/ /case-studies/index.html 200
 /free-consultation /free-consultation/ 301
@@ -42,23 +41,15 @@
 /free-audit /free-audit/ 301
 /free-audit/ /free-audit/index.html 200
 /proposal /proposal/ 301
-/proposal/ /proposal/ 301
 /ai /ai-services/ 301
 /ai/ /ai-services/ 301
 /industries/insurance /industries/insurance/ 301
-/industries/insurance/ /industries/insurance/ 301
 /industries/healthcare /industries/healthcare/ 301
-/industries/healthcare/ /industries/healthcare/ 301
 /industries/legal /industries/legal/ 301
-/industries/legal/ /industries/legal/ 301
 /press /press/ 301
-/press/ /press/ 301
 /privacy /privacy/ 301
-/privacy/ /privacy/ 301
 /terms /terms/ 301
-/terms/ /terms/ 301
 /cookies /cookies/ 301
-/cookies/ /cookies/ 301
 
 # Key route fallbacks
 /solutions/healthcare/ /docs/solutions/healthcare/index.html 200
