@@ -1,44 +1,42 @@
 # Workflow failure triage
 
-- generatedAt: 2026-08-10T19:59:14.490Z
+- generatedAt: 2026-08-11T11:02:59.789Z
 - recentRuns: 80
-- failedRuns: 23
+- failedRuns: 17
 
 ## Top failing workflows
-- Continuous Pages Deploy: 2
-- Emergency Recovery - Minimal Build: 2
-- Minimal Build Test: 2
-- .github/workflows/ai-actions-pin-strict-guard.yml: 2
-- .github/workflows/workflow-yaml-sanity.yml: 2
-- .github/workflows/workflow-validate-light-weekly.yml: 2
-- .github/workflows/workflow-reusable-ci-dispatch.yml: 2
-- .github/workflows/workflow-contracts-weekly.yml: 2
-- AI Content Burst High Frequency: 1
-- Autonomous Quality Drift Sentinel: 1
-- AI PM2 SLO Agent: 1
-- Autonomous Writer Queue Guard: 1
-- AI Autonomous Idea Guarded Cycle: 1
-- .github/workflows/route-slicer.yml: 1
+- AI PM2 static checks: 2
+- AI Content Rapid: 1
+- AI Automation fingerprint digest PR label: 1
+- Autonomous Performance Budget Enforcer with CI Gate: 1
+- Autonomous Lazy-Loading Route Slicer: 1
+- .github/workflows/ai-actions-pin-strict-guard.yml: 1
+- .github/workflows/workflow-yaml-sanity.yml: 1
+- .github/workflows/workflow-validate-light-weekly.yml: 1
+- .github/workflows/workflow-contracts-weekly.yml: 1
 - .github/workflows/workflow-change-guard.yml: 1
+- Autonomous Content Freshness & Stale Content Archiver: 1
+- pages-build-deployment: 1
+- Autonomous Writer Queue Guard: 1
+- AI lead form routing guard (daily): 1
+- Minimal Build Test: 1
+- CI/CD Pipeline: 1
 
 ## Latest failed runs
-- AI Content Burst High Frequency | 2026-08-10T19:45:09Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31425638691
-- Autonomous Quality Drift Sentinel | 2026-08-10T19:42:52Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31425449312
-- AI PM2 SLO Agent | 2026-08-10T19:42:50Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31425446316
-- Autonomous Writer Queue Guard | 2026-08-10T19:39:50Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31425199867
-- AI Autonomous Idea Guarded Cycle | 2026-08-10T19:36:59Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424970077
-- Continuous Pages Deploy | 2026-08-10T19:36:52Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424959836
-- Emergency Recovery - Minimal Build | 2026-08-10T19:36:52Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424959789
-- Minimal Build Test | 2026-08-10T19:36:52Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424959728
-- .github/workflows/route-slicer.yml | 2026-08-10T19:36:51Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424958691
-- .github/workflows/ai-actions-pin-strict-guard.yml | 2026-08-10T19:36:50Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424957995
-- .github/workflows/workflow-yaml-sanity.yml | 2026-08-10T19:36:50Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424957257
-- .github/workflows/workflow-validate-light-weekly.yml | 2026-08-10T19:36:49Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424956567
-- .github/workflows/workflow-reusable-ci-dispatch.yml | 2026-08-10T19:36:49Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424955763
-- .github/workflows/workflow-contracts-weekly.yml | 2026-08-10T19:36:48Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424954956
-- .github/workflows/workflow-change-guard.yml | 2026-08-10T19:36:48Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424954194
-- Minimal Build Test | 2026-08-10T19:35:53Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424877581
-- Continuous Pages Deploy | 2026-08-10T19:35:53Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424877490
-- Emergency Recovery - Minimal Build | 2026-08-10T19:35:53Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424877470
-- .github/workflows/workflow-yaml-sanity.yml | 2026-08-10T19:35:51Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424874502
-- .github/workflows/workflow-validate-light-weekly.yml | 2026-08-10T19:35:50Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424873126
+- AI Content Rapid | 2026-08-11T10:56:40Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31484424295
+- AI PM2 static checks | 2026-08-11T10:55:54Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31484368577
+- AI Automation fingerprint digest PR label | 2026-08-11T10:55:53Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31484368183
+- Autonomous Performance Budget Enforcer with CI Gate | 2026-08-11T10:55:53Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31484368181
+- Autonomous Lazy-Loading Route Slicer | 2026-08-11T10:55:53Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31484368068
+- .github/workflows/ai-actions-pin-strict-guard.yml | 2026-08-11T10:55:53Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31484367507
+- .github/workflows/workflow-yaml-sanity.yml | 2026-08-11T10:55:52Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31484366968
+- .github/workflows/workflow-validate-light-weekly.yml | 2026-08-11T10:55:52Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31484366401
+- .github/workflows/workflow-contracts-weekly.yml | 2026-08-11T10:55:51Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31484365798
+- .github/workflows/workflow-change-guard.yml | 2026-08-11T10:55:51Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31484365125
+- Autonomous Content Freshness & Stale Content Archiver | 2026-08-11T10:41:01Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31483290535
+- pages-build-deployment | 2026-08-11T10:39:24Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31483171586
+- Autonomous Writer Queue Guard | 2026-08-11T10:35:00Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31482846282
+- AI lead form routing guard (daily) | 2026-08-11T10:34:28Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31482807505
+- Minimal Build Test | 2026-08-11T10:27:40Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31482296753
+- AI PM2 static checks | 2026-08-11T10:27:40Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31482296706
+- CI/CD Pipeline | 2026-08-11T10:27:40Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31482296702
