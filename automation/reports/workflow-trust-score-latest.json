@@ -3969,15 +3969,15 @@
     {
       "name": "Deploy on Push",
       "file": "deploy-on-push.yml",
-      "score": 79,
+      "score": 82,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
-        "Unpinned or old action: actions/upload-pages-artifact@v3.0.1",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
+        "Partially pinned action: actions/upload-pages-artifact@v4",
         "Partially pinned action: actions/upload-artifact@v4.4.0",
-        "Partially pinned action: actions/deploy-pages@v4.0.5",
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/deploy-pages@v4",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/upload-artifact@v4.4.0",
         "Job 'build' missing timeout-minutes",
         "Job 'deploy' missing timeout-minutes",
@@ -4033,17 +4033,20 @@
     {
       "name": "Continuous Pages Deploy",
       "file": "gh-pages.yml",
-      "score": 84,
+      "score": 96,
       "issues": [
-        "Partially pinned action: actions/checkout@v5",
-        "Partially pinned action: actions/setup-node@v5",
         "Partially pinned action: actions/upload-artifact@v4",
         "Partially pinned action: actions/upload-pages-artifact@v4",
         "Partially pinned action: actions/deploy-pages@v4.0.5",
         "Job 'build' missing timeout-minutes",
         "Job 'deploy' missing timeout-minutes"
       ],
-      "improvements": [],
+      "improvements": [
+        "Pinned action: actions/checkout@b4ffde65",
+        "Pinned action: actions/setup-node@60edb5dd",
+        "Uses caching",
+        "Node.js dependency caching"
+      ],
       "fingerprint": "93ebb833"
     },
     {
@@ -4318,16 +4321,16 @@
     {
       "name": "Autonomous Lazy-Loading Route Slicer",
       "file": "route-slicer.yml",
-      "score": 96,
+      "score": 100,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
-        "Partially pinned action: actions/upload-artifact@v4",
-        "Partially pinned action: peter-evans/create-pull-request@v5",
         "Job 'route-slicer' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
       "improvements": [
+        "Pinned action: actions/checkout@de0fac2e",
+        "Pinned action: actions/setup-node@53b83947",
+        "Pinned action: actions/upload-artifact@bbbca2dd",
+        "Pinned action: peter-evans/create-pull-request@de0fac2e",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -5670,64 +5673,64 @@
   ],
   "top_issues": [
     {
-      "issue": "Partially pinned action: actions/checkout@v6.0.2",
+      "issue": "Partially pinned action: actions/checkout@v4",
       "workflow": "Deploy on Push",
-      "score": 79
+      "score": 82
     },
     {
-      "issue": "Partially pinned action: actions/setup-node@v6.3.0",
+      "issue": "Partially pinned action: actions/setup-node@v4",
       "workflow": "Deploy on Push",
-      "score": 79
+      "score": 82
     },
     {
-      "issue": "Unpinned or old action: actions/upload-pages-artifact@v3.0.1",
+      "issue": "Partially pinned action: actions/upload-pages-artifact@v4",
       "workflow": "Deploy on Push",
-      "score": 79
-    },
-    {
-      "issue": "Partially pinned action: actions/upload-artifact@v4.4.0",
-      "workflow": "Deploy on Push",
-      "score": 79
-    },
-    {
-      "issue": "Partially pinned action: actions/deploy-pages@v4.0.5",
-      "workflow": "Deploy on Push",
-      "score": 79
-    },
-    {
-      "issue": "Partially pinned action: actions/checkout@v6.0.2",
-      "workflow": "Deploy on Push",
-      "score": 79
-    },
-    {
-      "issue": "Partially pinned action: actions/setup-node@v6.3.0",
-      "workflow": "Deploy on Push",
-      "score": 79
+      "score": 82
     },
     {
       "issue": "Partially pinned action: actions/upload-artifact@v4.4.0",
       "workflow": "Deploy on Push",
-      "score": 79
+      "score": 82
+    },
+    {
+      "issue": "Partially pinned action: actions/deploy-pages@v4",
+      "workflow": "Deploy on Push",
+      "score": 82
+    },
+    {
+      "issue": "Partially pinned action: actions/checkout@v4",
+      "workflow": "Deploy on Push",
+      "score": 82
+    },
+    {
+      "issue": "Partially pinned action: actions/setup-node@v4",
+      "workflow": "Deploy on Push",
+      "score": 82
+    },
+    {
+      "issue": "Partially pinned action: actions/upload-artifact@v4.4.0",
+      "workflow": "Deploy on Push",
+      "score": 82
     },
     {
       "issue": "Job 'build' missing timeout-minutes",
       "workflow": "Deploy on Push",
-      "score": 79
+      "score": 82
     },
     {
       "issue": "Job 'deploy' missing timeout-minutes",
       "workflow": "Deploy on Push",
-      "score": 79
+      "score": 82
     },
     {
       "issue": "Job 'smoke-tests' missing timeout-minutes",
       "workflow": "Deploy on Push",
-      "score": 79
+      "score": 82
     },
     {
       "issue": "Uses continue-on-error (may mask failures)",
       "workflow": "Deploy on Push",
-      "score": 79
+      "score": 82
     },
     {
       "issue": "Partially pinned action: actions/checkout@v6.0.2",
@@ -5750,25 +5753,25 @@
       "score": 83
     },
     {
-      "issue": "Partially pinned action: actions/checkout@v5",
-      "workflow": "Continuous Pages Deploy",
-      "score": 84
+      "issue": "Job 'reject-floating-action-tags' missing timeout-minutes",
+      "workflow": "Workflow action pin guard",
+      "score": 87
     },
     {
-      "issue": "Partially pinned action: actions/setup-node@v5",
-      "workflow": "Continuous Pages Deploy",
-      "score": 84
+      "issue": "Uses pull_request_target (security consideration)",
+      "workflow": "Workflow action pin guard",
+      "score": 87
     },
     {
-      "issue": "Partially pinned action: actions/upload-artifact@v4",
-      "workflow": "Continuous Pages Deploy",
-      "score": 84
+      "issue": "Job 'validate-permissions' missing timeout-minutes",
+      "workflow": "Workflow permissions guard",
+      "score": 87
     },
     {
-      "issue": "Partially pinned action: actions/upload-pages-artifact@v4",
-      "workflow": "Continuous Pages Deploy",
-      "score": 84
+      "issue": "Uses pull_request_target (security consideration)",
+      "workflow": "Workflow permissions guard",
+      "score": 87
     }
   ],
-  "generated_at": "2026-08-10T19:32:06.494Z"
+  "generated_at": "2026-08-10T23:10:54.305Z"
 }

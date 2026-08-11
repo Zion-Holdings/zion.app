@@ -1,51 +1,6 @@
 timestamp,name,company,role,email,lead_magnet,value,status
-2026-08-09T06:00:01.028003,christopher.cybe@devopspro.io,Christopher,CyberSecure,CIO,Your Free DevOps Readiness Evaluation is Ready!,1,pending,DevOps Readiness Evaluation
-2026-08-09T06:00:01.028003,james.next@techcorp.io,James,NextGen,IT Manager,Your Free AI Cost Assessment is Ready!,1,pending,AI Cost Assessment
-2026-08-09T06:00:01.028003,christopher.clou@devopspro.io,Christopher,CloudFirst,IT Manager,Your Free AI Cost Assessment is Ready!,1,pending,AI Cost Assessment
-2026-08-09T06:00:01.028003,amanda.cybe@devopspro.io,Amanda,CyberSecure,CTO,Your Free DevOps Readiness Evaluation is Ready!,1,pending,DevOps Readiness Evaluation
-2026-08-09T06:00:01.028003,christopher.digi@digitalsolutions.com,Christopher,DigitalSolutions,CIO,Your Free IT Infrastructure Audit is Ready!,1,pending,IT Infrastructure Audit
-2026-08-09T06:00:26.362500,david380@secureit.com,Sarah,DigitalSolutions,Engineering Manager,Your Free Cloud Security Scan is Ready!,1,pending,Cloud Security Scan
-2026-08-09T06:00:26.362500,emily22@innovateco.com,John,DigitalSolutions,Engineering Manager,Your Free DevOps Readiness Evaluation is Ready!,1,pending,DevOps Readiness Evaluation
-2026-08-09T06:00:26.362500,emily425@techcorp.com,John,TechCorp,Security Engineer,Your Free AI Cost Assessment is Ready!,1,pending,AI Cost Assessment
-2026-08-09T06:00:26.362500,john548@cloudfirst.com,Lisa,SecureIT,Engineering Manager,Your Free Cloud Security Scan is Ready!,1,pending,Cloud Security Scan
-2026-08-09T06:00:26.362500,emily426@secureit.com,John,CloudFirst,Data Scientist,Your Free AI Cost Assessment is Ready!,1,pending,AI Cost Assessment
-2026-08-09T08:00:23.729848,james947@cloudfirst.com,Emily,DigitalSolutions,Engineering Manager,Your Free DevOps Readiness Evaluation is Ready!,1,new,DevOps Readiness Evaluation
-2026-08-09T08:00:23.729848,james458@innovateco.com,Emily,InnovateCo,Engineering Manager,Your Free DevOps Readiness Evaluation is Ready!,1,new,DevOps Readiness Evaluation
-2026-08-09T08:00:23.729848,sarah580@dataflow.com,Mary,DigitalSolutions,CTO,Your Free AI Cost Assessment is Ready!,1,new,AI Cost Assessment
-2026-08-09T08:00:23.729848,sarah776@dataflow.com,Michael,TechCorp,CTO,Your Free Cloud Security Scan is Ready!,1,new,Cloud Security Scan
-2026-08-09T08:00:23.729848,lisa382@secureit.com,Emily,SecureIT,Engineering Manager,Your Free AI Cost Assessment is Ready!,1,new,AI Cost Assessment
-2026-08-09T20:00:34.292379,Emily,TechCorp,CTO,john860@secureit.com,Cloud Security Scan,1800,new
-2026-08-09T20:00:34.292379,John,InnovateCo,DevOps Lead,david244@innovateco.com,Cloud Security Scan,1800,new
-2026-08-09T20:00:34.292379,Sarah,DigitalSolutions,Data Scientist,john649@techcorp.com,DevOps Readiness Evaluation,2000,new
-2026-08-09T20:00:34.292379,David,TechCorp,CTO,michael422@digitalsolutions.com,DevOps Readiness Evaluation,2000,new
-2026-08-09T20:00:34.292379,Michael,SecureIT,DevOps Lead,john244@digitalsolutions.com,Cloud Security Scan,1800,new
-2026-08-10T02:12:44.689201,mary164@secureit.com,John,InnovateCo,Data Scientist,Your Free DevOps Readiness Evaluation is Ready!,1,pending,DevOps Readiness Evaluation
-2026-08-10T02:12:44.689201,mary164@secureit.com,John,InnovateCo,Data Scientist,Quick Question About Your DevOps Readiness Evaluation,2,pending,DevOps Readiness Evaluation
-2026-08-10T02:12:44.689201,mary164@secureit.com,John,InnovateCo,Data Scientist,Exclusive Offer for Zion Tech Group Clients,3,pending,DevOps Readiness Evaluation
-2026-08-10T02:12:44.689201,sarah12@cloudfirst.com,Lisa,SecureIT,Data Scientist,Your Free AI Cost Assessment is Ready!,1,pending,AI Cost Assessment
-2026-08-10T02:12:44.689201,sarah12@cloudfirst.com,Lisa,SecureIT,Data Scientist,Quick Question About Your AI Cost Assessment,2,pending,AI Cost Assessment
-2026-08-10T02:12:44.689201,sarah12@cloudfirst.com,Lisa,SecureIT,Data Scientist,Exclusive Offer for Zion Tech Group Clients,3,pending,AI Cost Assessment
-2026-08-10T02:12:44.689201,sarah427@techcorp.com,Emily,TechCorp,DevOps Lead,Your Free DevOps Readiness Evaluation is Ready!,1,pending,DevOps Readiness Evaluation
-2026-08-10T02:12:44.689201,sarah427@techcorp.com,Emily,TechCorp,DevOps Lead,Quick Question About Your DevOps Readiness Evaluation,2,pending,DevOps Readiness Evaluation
-2026-08-10T02:12:44.689201,sarah427@techcorp.com,Emily,TechCorp,DevOps Lead,Exclusive Offer for Zion Tech Group Clients,3,pending,DevOps Readiness Evaluation
-2026-08-10T02:12:44.689201,lisa922@innovateco.com,Lisa,DigitalSolutions,Data Scientist,Your Free AI Cost Assessment is Ready!,1,pending,AI Cost Assessment
-2026-08-10T02:12:44.689201,lisa922@innovateco.com,Lisa,DigitalSolutions,Data Scientist,Quick Question About Your AI Cost Assessment,2,pending,AI Cost Assessment
-2026-08-10T02:12:44.689201,lisa922@innovateco.com,Lisa,DigitalSolutions,Data Scientist,Exclusive Offer for Zion Tech Group Clients,3,pending,AI Cost Assessment
-2026-08-10T02:12:44.689201,david627@cloudfirst.com,James,CloudFirst,Data Scientist,Your Free AI Cost Assessment is Ready!,1,pending,AI Cost Assessment
-2026-08-10T02:12:44.689201,david627@cloudfirst.com,James,CloudFirst,Data Scientist,Quick Question About Your AI Cost Assessment,2,pending,AI Cost Assessment
-2026-08-10T02:12:44.689201,david627@cloudfirst.com,James,CloudFirst,Data Scientist,Exclusive Offer for Zion Tech Group Clients,3,pending,AI Cost Assessment
-2026-08-10T08:01:03.238045,Mary,DigitalSolutions,Security Engineer,john112@dataflow.com,AI Cost Assessment,2500,new
-2026-08-10T08:01:03.238045,Mary,SecureIT,Data Scientist,lisa499@cloudfirst.com,AI Cost Assessment,2500,new
-2026-08-10T08:01:03.238045,John,DataFlow,Security Engineer,james973@digitalsolutions.com,Cloud Security Scan,1800,new
-2026-08-10T08:01:03.238045,Mary,DigitalSolutions,Engineering Manager,mary512@techcorp.com,AI Cost Assessment,2500,new
-2026-08-10T08:01:03.238045,Sarah,TechCorp,Data Scientist,mary983@cloudfirst.com,DevOps Readiness Evaluation,2000,new
-2026-08-10T10:00:13.551165,Emily,SecureIT,Data Scientist,sarah461@innovateco.com,Cloud Security Scan,1800,new
-2026-08-10T10:00:13.551165,Lisa,InnovateCo,Data Scientist,mary578@secureit.com,AI Cost Assessment,2500,new
-2026-08-10T10:00:13.551165,Emily,SecureIT,Engineering Manager,james366@digitalsolutions.com,Cloud Security Scan,1800,new
-2026-08-10T10:00:13.551165,Mary,TechCorp,Data Scientist,lisa450@digitalsolutions.com,DevOps Readiness Evaluation,2000,new
-2026-08-10T10:00:13.551165,Michael,DataFlow,CTO,john587@secureit.com,AI Cost Assessment,2500,new
-2026-08-10T16:00:51.256667,James,DataFlow,Engineering Manager,john2@secureit.com,DevOps Readiness Evaluation,2000,new
-2026-08-10T16:00:51.256667,David,DigitalSolutions,CTO,michael129@secureit.com,DevOps Readiness Evaluation,2000,new
-2026-08-10T16:00:51.256667,Lisa,TechCorp,CTO,james477@secureit.com,AI Cost Assessment,2500,new
-2026-08-10T16:00:51.256667,Sarah,TechCorp,CTO,james268@innovateco.com,DevOps Readiness Evaluation,2000,new
-2026-08-10T16:00:51.256667,Sarah,InnovateCo,DevOps Lead,emily491@techcorp.com,Cloud Security Scan,1800,new
+2026-08-10T20:00:57.289434,David,InnovateCo,Engineering Manager,michael13@secureit.com,DevOps Readiness Evaluation,2000,new
+2026-08-10T20:00:57.289434,Mary,InnovateCo,Engineering Manager,david449@techcorp.com,DevOps Readiness Evaluation,2000,new
+2026-08-10T20:00:57.289434,Mary,CloudFirst,Data Scientist,david837@digitalsolutions.com,Cloud Security Scan,1800,new
+2026-08-10T20:00:57.289434,Sarah,CloudFirst,Data Scientist,emily639@digitalsolutions.com,AI Cost Assessment,2500,new
+2026-08-10T20:00:57.289434,Mary,DataFlow,CTO,john493@techcorp.com,AI Cost Assessment,2500,new
