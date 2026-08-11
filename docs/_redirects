@@ -61,8 +61,6 @@
 /free-audit/ /free-audit/index.html 200
 /proposal /proposal/ 301
 /proposal/ /proposal/ 301
-/ai /ai/ 301
-/ai/ /ai/ 301
 /industries/insurance /industries/insurance/ 301
 /industries/insurance/ /industries/insurance/ 301
 /industries/healthcare /industries/healthcare/ 301
@@ -90,3 +88,7 @@
 /public-roadmap/ /public-roadmap/index.html 200
 
 # cache-bust: 2026-08-10T17:15:00Z
+/industries/manufacturing /services 301
+/industries/manufacturing/ /services 301
+/pricing-calculator /pricing 301
+/pricing-calculator/ /pricing 301
