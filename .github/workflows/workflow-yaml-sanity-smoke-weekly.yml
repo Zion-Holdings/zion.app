@@ -30,7 +30,7 @@ jobs:
           test -s "$f"
           grep -Fq 'name: Workflow YAML sanity' "$f"
           grep -Fq 'reusable-workflow-ci.yml' "$f"
-          grep -Fq 'scripts/automation/parse-github-workflows-yaml.rb' "$f"
+          grep -Fq 'scripts/automation/parse-github-workflows-yaml.cjs' "$f"
           grep -Fq 'scripts/automation/run-workflow-grep-guards.sh' "$f"
           grep -Fq 'automation/audit-push-helper-adoption.cjs' "$f"
           grep -Fq 'package.json' "$f"

@@ -8,11 +8,11 @@ permissions:
 on:
   pull_request:
     paths:
-      - 'scripts/automation/parse-github-workflows-yaml.rb'
+      - 'scripts/automation/parse-github-workflows-yaml.cjs'
   push:
     branches: [main]
     paths:
-      - 'scripts/automation/parse-github-workflows-yaml.rb'
+      - 'scripts/automation/parse-github-workflows-yaml.cjs'
   workflow_dispatch:
 
 concurrency:

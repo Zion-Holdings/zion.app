@@ -25,7 +25,7 @@ jobs:
           grep -Fq 'name: Workflow Ruby parse + bash grep (manual, no npm)' "$f"
           grep -Fq 'workflow_dispatch:' "$f"
           grep -Fq 'group: workflow-ruby-bash-validate-dispatch' "$f"
-          grep -Fq 'parse-github-workflows-yaml.rb' "$f"
+          grep -Fq 'parse-github-workflows-yaml.cjs' "$f"
           grep -Fq 'bash scripts/automation/run-workflow-grep-guards.sh' "$f"
           grep -Fq 'bash -n scripts/automation/commit-and-push-main.sh' "$f"
           echo "ok: $f"
