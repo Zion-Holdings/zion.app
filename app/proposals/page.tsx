@@ -12,6 +12,13 @@ interface Proposal {
   status: 'pending' | 'sent' | 'accepted' | 'declined';
 }
 
+
+export const metadata = {
+  title: 'Proposals | Zion Tech Group',
+  description: 'Explore Proposals at Zion Tech Group. Enterprise AI, IT, cloud, security, automation, data, DevOps, blockchain, IoT, and Micro-SaaS services.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/proposals' },
+};
 export default function ProposalsPage() {
   const [proposals, setProposals] = useState<Proposal[]>([]);
   const [loading, setLoading] = useState(true);

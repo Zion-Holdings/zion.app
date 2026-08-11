@@ -16,6 +16,13 @@ import FloatingActionDock from '@/components/FloatingActionDock';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
 
 
+
+export const metadata = {
+  title: 'Page.Tsx | Zion Tech Group',
+  description: 'Explore Page.Tsx at Zion Tech Group. Enterprise AI, IT, cloud, security, automation, data, DevOps, blockchain, IoT, and Micro-SaaS services.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/page.tsx' },
+};
 // Category accent color for showcase cards (maps category key → gradient)
 // Category accent color for showcase card styles (static RGBA + hex)
 const catAccent: Record<string, string> = {

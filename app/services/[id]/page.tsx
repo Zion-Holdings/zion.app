@@ -5,6 +5,13 @@ import Link from 'next/link';
 import ROICalculator from '@/components/ROICalculator';
 import SmartServiceCard from '@/components/SmartServiceCard';
 
+
+export const metadata = {
+  title: 'Services Service | Zion Tech Group',
+  description: 'Explore Services Service at Zion Tech Group. Enterprise AI, IT, cloud, security, automation, data, DevOps, blockchain, IoT, and Micro-SaaS services.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/services/[id]' },
+};
 const CAT_LABELS: Record<string,string> = {
   ai: 'AI Services', it: 'IT', cloud: 'Cloud', security: 'Security',
   data: 'Data & AI', automation: 'Automation', consulting: 'Consulting',

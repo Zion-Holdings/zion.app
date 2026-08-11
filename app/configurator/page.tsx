@@ -7,6 +7,13 @@ import { useState, useMemo } from 'react';
 import { allServices } from '@/data/servicesData';
 import StepsIndicator from '@/components/StepsIndicator';
 
+
+export const metadata = {
+  title: 'Configurator | Zion Tech Group',
+  description: 'Explore Configurator at Zion Tech Group. Enterprise AI, IT, cloud, security, automation, data, DevOps, blockchain, IoT, and Micro-SaaS services.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/configurator' },
+};
 type Step = 'budget' | 'needs' | 'services' | 'timeline' | 'review';
 
 const COMPANY = {

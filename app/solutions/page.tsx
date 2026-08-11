@@ -2,6 +2,13 @@
 
 import Link from 'next/link';
 
+
+export const metadata = {
+  title: 'Solutions | Zion Tech Group',
+  description: 'Explore Solutions at Zion Tech Group. Enterprise AI, IT, cloud, security, automation, data, DevOps, blockchain, IoT, and Micro-SaaS services.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/solutions' },
+};
 const INDUSTRIES = [
   { name: 'Healthcare', slug: 'healthcare', desc: 'HIPAA-ready AI, patient data automation, and secure cloud infrastructure.' },
   { name: 'Finance', slug: 'finance', desc: 'Fraud detection, compliance automation, and low-latency trading infrastructure.' },

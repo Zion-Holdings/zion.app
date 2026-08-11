@@ -3,6 +3,13 @@
 import Link from 'next/link';
 import { allServices } from '@/data/servicesData';
 
+
+export const metadata = {
+  title: 'Products | Zion Tech Group',
+  description: 'Explore Products at Zion Tech Group. Enterprise AI, IT, cloud, security, automation, data, DevOps, blockchain, IoT, and Micro-SaaS services.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/products' },
+};
 const PRODUCTS: readonly {
   key: string;
   title: string;

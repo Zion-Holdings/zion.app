@@ -5,6 +5,13 @@ import { pingTool } from '@/data/tools_ping_client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
+
+export const metadata = {
+  title: 'Tools Ssl Checker | Zion Tech Group',
+  description: 'Explore Tools Ssl Checker at Zion Tech Group. Enterprise AI, IT, cloud, security, automation, data, DevOps, blockchain, IoT, and Micro-SaaS services.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/tools/ssl-checker' },
+};
 export default function SSLCheckerPage() {
   useEffect(() => { pingTool('ssl-checker'); }, []);
 

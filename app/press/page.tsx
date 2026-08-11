@@ -4,6 +4,13 @@ import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
+
+export const metadata = {
+  title: 'Press | Zion Tech Group',
+  description: 'Explore Press at Zion Tech Group. Enterprise AI, IT, cloud, security, automation, data, DevOps, blockchain, IoT, and Micro-SaaS services.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/press' },
+};
 const ARTICLES = [
   { date: '2025-05-20', title: 'Zion Tech Group Launches Enterprise AI Compliance Platform', outlet: 'TechCrunch' },
   { date: '2025-04-15', title: 'AI Copilot Framework Open-Sourced Under MIT License', outlet: 'GitHub Blog' },

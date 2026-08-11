@@ -6,6 +6,13 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { allServices, type Service } from '../../data/servicesData';
 
+
+export const metadata = {
+  title: 'Tools Service Recommender | Zion Tech Group',
+  description: 'Explore Tools Service Recommender at Zion Tech Group. Enterprise AI, IT, cloud, security, automation, data, DevOps, blockchain, IoT, and Micro-SaaS services.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/tools/service-recommender' },
+};
 const questions = [
   { id: 'category', label: 'What area do you need help with?', options: ['AI & Automation', 'IT Infrastructure', 'Cloud & DevOps', 'Data & Analytics', 'Cybersecurity'] },
   { id: 'budget',  label: 'What is your monthly budget?', options: ['Under $5,000', '$5,000 – $20,000', '$20,000 – $100,000', '$100,000+'] },

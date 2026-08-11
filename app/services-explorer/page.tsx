@@ -6,6 +6,13 @@ import { useState, useEffect, useMemo } from 'react';
 import { allServices } from '@/data/servicesData';
 import type { Service } from '@/data/servicesData';
 
+
+export const metadata = {
+  title: 'Services Explorer | Zion Tech Group',
+  description: 'Explore Services Explorer at Zion Tech Group. Enterprise AI, IT, cloud, security, automation, data, DevOps, blockchain, IoT, and Micro-SaaS services.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/services-explorer' },
+};
 const CAT_COLORS: Record<string, string> = {
   ai:        'bg-purple-900/50 text-purple-200 border-purple-500/30',
   it:        'bg-blue-900/50 text-blue-200 border-blue-500/30',

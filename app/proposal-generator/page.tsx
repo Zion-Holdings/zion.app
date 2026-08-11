@@ -5,6 +5,13 @@ import { useState } from 'react';
 
 import Link from 'next/link';
 
+
+export const metadata = {
+  title: 'Proposal Generator | Zion Tech Group',
+  description: 'Explore Proposal Generator at Zion Tech Group. Enterprise AI, IT, cloud, security, automation, data, DevOps, blockchain, IoT, and Micro-SaaS services.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/proposal-generator' },
+};
 export default function ProposalGeneratorPage() {
   const [generated, setGenerated] = useState(false);
   return (

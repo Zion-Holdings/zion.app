@@ -4,6 +4,13 @@ import { useState, useEffect, useCallback } from 'react';
 
 import Link from 'next/link';
 
+
+export const metadata = {
+  title: 'Tools Health Check | Zion Tech Group',
+  description: 'Explore Tools Health Check at Zion Tech Group. Enterprise AI, IT, cloud, security, automation, data, DevOps, blockchain, IoT, and Micro-SaaS services.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/tools/health-check' },
+};
 type Status = 'ok' | 'warn' | 'fail';
 interface Check { name: string; status: Status; detail: string; ms: number; }
 

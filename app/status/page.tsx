@@ -2,6 +2,13 @@
 
 import { useEffect, useState } from 'react';
 
+
+export const metadata = {
+  title: 'Status | Zion Tech Group',
+  description: 'Explore Status at Zion Tech Group. Enterprise AI, IT, cloud, security, automation, data, DevOps, blockchain, IoT, and Micro-SaaS services.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/status' },
+};
 export default function StatusPage() {
   const [up, setUp] = useState<boolean | null>(null);
   useEffect(() => {

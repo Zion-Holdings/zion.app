@@ -5,6 +5,13 @@ import { pingTool } from '@/data/tools_ping_client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
+
+export const metadata = {
+  title: 'Tools Port Scanner | Zion Tech Group',
+  description: 'Explore Tools Port Scanner at Zion Tech Group. Enterprise AI, IT, cloud, security, automation, data, DevOps, blockchain, IoT, and Micro-SaaS services.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/tools/port-scanner' },
+};
 export default function PortScannerPage() {
   useEffect(() => { pingTool('port-scanner'); }, []);
 

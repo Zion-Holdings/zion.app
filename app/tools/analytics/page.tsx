@@ -4,6 +4,13 @@ import { useMemo } from 'react';
 
 import { getToolVisits } from '@/data/tools_tracker';
 
+
+export const metadata = {
+  title: 'Tools Analytics | Zion Tech Group',
+  description: 'Explore Tools Analytics at Zion Tech Group. Enterprise AI, IT, cloud, security, automation, data, DevOps, blockchain, IoT, and Micro-SaaS services.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/tools/analytics' },
+};
 const TOOL_META: Record<string, {emoji:string;name:string;href:string}> = {
   'ai-service-router':   {emoji:'🤖',name:'AI Service Router',   href:'/tools/ai-service-router'},
   'roi-calculator':      {emoji:'📈',name:'ROI Calculator',      href:'/tools/roi-calculator'},

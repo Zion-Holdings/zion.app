@@ -3,6 +3,13 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
+
+export const metadata = {
+  title: 'Ai Services | Zion Tech Group',
+  description: 'Explore Ai Services at Zion Tech Group. Enterprise AI, IT, cloud, security, automation, data, DevOps, blockchain, IoT, and Micro-SaaS services.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/ai-services' },
+};
 const SERVICES = [
   {
     id: 'ai-analytics',

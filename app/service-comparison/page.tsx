@@ -1,4 +1,11 @@
 // app/service-comparison/page.tsx — Interactive service comparison matrix
+
+export const metadata = {
+  title: 'Service Comparison | Zion Tech Group',
+  description: 'Compare Zion Tech Group services side-by-side across features, category, industry fit, and pricing.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/service-comparison' },
+};
 'use client';
 
 import { useState, useMemo } from 'react';

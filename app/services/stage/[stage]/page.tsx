@@ -3,6 +3,13 @@ import { allServices } from '@/data/servicesData';
 import type { Service } from '@/data/servicesData';
 import Link from 'next/link';
 
+
+export const metadata = {
+  title: 'Services Stage Stage | Zion Tech Group',
+  description: 'Explore Services Stage Stage at Zion Tech Group. Enterprise AI, IT, cloud, security, automation, data, DevOps, blockchain, IoT, and Micro-SaaS services.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/services/stage/[stage]' },
+};
 const STAGE_META: Record<string, { label: string; emoji: string; desc: string; color: string }> = {
   published: { label: 'Published', emoji: '✅', desc: 'Live production services available now', color: 'from-emerald-500/20 to-green-500/10 border-emerald-500/30' },
   beta:      { label: 'Beta',      emoji: '🧪', desc: 'Early access — refined based on user feedback', color: 'from-purple-500/20 to-indigo-500/10 border-purple-500/30' },

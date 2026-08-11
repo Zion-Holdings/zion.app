@@ -15,6 +15,13 @@ interface ToolCard {
   tagColor: string;
 }
 
+
+export const metadata = {
+  title: 'Ai Lab | Zion Tech Group',
+  description: 'Explore Ai Lab at Zion Tech Group. Enterprise AI, IT, cloud, security, automation, data, DevOps, blockchain, IoT, and Micro-SaaS services.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/ai-lab' },
+};
 const PLAYGROUND_CARDS: ToolCard[] = [
   {
     emoji: '🧩',

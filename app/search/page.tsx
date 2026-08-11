@@ -3,6 +3,13 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
+
+export const metadata = {
+  title: 'Search | Zion Tech Group',
+  description: 'Explore Search at Zion Tech Group. Enterprise AI, IT, cloud, security, automation, data, DevOps, blockchain, IoT, and Micro-SaaS services.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/search' },
+};
 const SERVICES = [
   { title: 'Managed IT', slug: 'managed-it', category: 'Infrastructure' },
   { title: 'Cybersecurity', slug: 'cybersecurity', category: 'Security' },
