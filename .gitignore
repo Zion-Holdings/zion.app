@@ -25,3 +25,4 @@ automation/data/
 
 # Stub marker directory
 missing-pm2-stubs/
+__pycache__
