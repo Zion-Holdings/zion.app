@@ -73,10 +73,6 @@ Leading indicators for ai performance monitoring: executive guide: workflow comp
           </div>
         </section>
 
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
-        />
       </article>
     </div>
   );

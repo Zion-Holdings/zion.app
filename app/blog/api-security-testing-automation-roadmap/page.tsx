@@ -73,10 +73,6 @@ For api security testing: automation roadmap: pick one workflow, assign ownershi
           </div>
         </section>
 
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
-        />
       </article>
     </div>
   );

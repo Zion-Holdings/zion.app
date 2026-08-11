@@ -73,10 +73,6 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           </div>
         </section>
 
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
-        />
       </article>
     </div>
   );

@@ -73,10 +73,6 @@ Leading indicators for smart contract audit: common mistakes: workflow completio
           </div>
         </section>
 
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
-        />
       </article>
     </div>
   );
