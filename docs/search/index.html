@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Search | Zion Tech Group</title>
   <meta name="robots" content="index,follow" />
-  <meta name="description" content="Search Zion Tech Group services and resources." />
+  <meta name="description" content="Search Zion Tech Group services, insights, and resources." />
   <link rel="canonical" href="https://ziontechgroup.com/search/" />
   <link rel="stylesheet" href="/styles.css"/>
   <style>
@@ -14,11 +14,7 @@
     .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
     .hero { padding: 96px 0 64px; }
     h1 { font-size: 44px; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; }
-    .search-box { width: 100%; padding: 14px 18px; border-radius: 10px; border: 1px solid #334155; background:#0b1220; color:#e5e7eb; font-size: 16px; margin-top: 24px; }
-    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:16px; margin-top: 36px; }
-    .card { border:1px solid #334155; border-radius:12px; padding:18px; background:#0b1220; }
-    .card a { color:#93c5fd; text-decoration:none; }
-    .card a:hover { text-decoration: underline; }
+    .cta { display:inline-flex; align-items:center; gap:8px; margin-top:24px; padding:14px 18px; border-radius:8px; background:#2563eb; color:#fff; text-decoration:none; font-weight:600; }
     .footer { margin-top: 64px; padding: 24px 0; color:#64748b; font-size:13px; }
   </style>
 </head>
@@ -26,16 +22,10 @@
   <main class="container">
     <section class="hero">
       <h1>Search</h1>
-      <p class="lead">Search across Zion Tech Group services, insights, and resources.</p>
-      <input class="search-box" type="search" placeholder="Search services, blog posts, and tools…" />
-      <div class="grid">
-        <div class="card"><a href="/services/">Services</a></div>
-        <div class="card"><a href="/blog/">Blog</a></div>
-        <div class="card"><a href="/free-ai-tools/">Free AI Tools</a></div>
-        <div class="card"><a href="/contact/">Contact</a></div>
-      </div>
+      <p class="lead">Search across services, blog, and resources.</p>
+      <a class="cta" href="/services/">Browse services</a>
     </section>
-    <footer class="footer">© <span id="y"></span> Zion Tech Group. <a href="/services/">Services</a> · <a href="/contact/">Contact</a></footer>
+    <footer class="footer">© <span id="y"></span> Zion Tech Group. <a href="/contact/">Contact</a></footer>
   </main>
   <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
