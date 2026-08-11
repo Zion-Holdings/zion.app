@@ -63,8 +63,7 @@ If this guide matches your ai 3d asset generator initiative, the next step is a 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}></script>
       </article>
     </div>
   );

@@ -63,8 +63,7 @@ Leading indicators for ai accessibility auditor: vendor evaluation: workflow com
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}></script>
       </article>
     </div>
   );

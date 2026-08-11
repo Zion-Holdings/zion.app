@@ -63,8 +63,7 @@ If this guide matches your api security testing: checklist for it leaders initia
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}></script>
       </article>
     </div>
   );
