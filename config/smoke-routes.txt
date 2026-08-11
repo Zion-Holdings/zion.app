@@ -61,3 +61,10 @@
 /ai-fitness-coach
 /ai-form-builder
 /ai-fraud-detection
+/healthcare/
+/insurance/
+/financial-services/
+/free-ai-tools
+/free-ai-tools/
+/tools/roi-calculator/
+/tools/ai-service-router/
