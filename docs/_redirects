@@ -65,6 +65,8 @@
 /industries/healthcare/ /industries/healthcare/index.html 200
 /industries/legal /industries/legal/ 301
 /industries/legal/ /industries/legal/index.html 200
+/industries/manufacturing /solutions 301
+/industries/manufacturing/ /solutions 301
 /press /press/index.html 200
 /press/ /press/index.html 200
 /privacy /privacy/index.html 200
