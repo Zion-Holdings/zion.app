@@ -1213,11 +1213,11 @@
       "file": "ai-content-burst.yml",
       "score": 100,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'burst' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -5773,5 +5773,5 @@
       "score": 87
     }
   ],
-  "generated_at": "2026-08-11T19:31:37.502Z"
+  "generated_at": "2026-08-11T20:26:37.438Z"
 }
