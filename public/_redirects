@@ -14,9 +14,29 @@
 /free-tools /free-tools.html 200
 /free-tools/ /free-tools.html 200
 
-# Free AI tools redirect
+# Free AI tools fallback
 /free-ai-tools /free-tools.html 200
 /free-ai-tools/ /free-tools.html 200
+
+# AI lab fallback
+/ai /tools 301
+/ai/ /tools 301
+
+# Proposal fallback
+/proposal /contact 301
+/proposal/ /contact 301
+
+# Dashboard fallback
+/dashboard /services 301
+/dashboard/ /services 301
+
+# Blog post fallback
+/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization /blog/ai-automation-best-practices-2026/ 301
+/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/ /blog/ai-automation-best-practices-2026/ 301
+
+# Index.html fallback
+/index.html / 301
+/index.html/ / 301
 
 # AI resources fallback
 /ai-resources /docs/ai-resources/index.html 200
