@@ -25,7 +25,6 @@ jobs:
     uses: ./.github/workflows/reusable-workflow-ci.yml
     with:
       run_contracts: true
-    timeout-minutes: 15
 
   strict-pin-hint:
     if: ${{ always() && needs.strict-pin-audit.result == 'failure' }}
