@@ -345,12 +345,21 @@
     "conversion_rate_target": "25%"
   },
   {
-    "timestamp": "2026-08-10T22:00:06.821054",
+    "timestamp": "2026-08-10T22:01:02.234378",
     "event": "lead_generation_tick",
     "leads_generated": 5,
     "new_unique_leads_added": 5,
-    "total_potential_value": 10000,
-    "expected_revenue": 2500.0,
+    "total_potential_value": 10300,
+    "expected_revenue": 2575.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-11T00:00:01.178160",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
     "conversion_rate_target": "25%"
   }
 ]
