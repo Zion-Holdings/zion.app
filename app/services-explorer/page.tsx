@@ -1,6 +1,4 @@
 // app/services-explorer/page.tsx — Interactive Service Explorer
-'use client';
-
 import { useState, useEffect, useMemo } from 'react';
 
 import { allServices } from '@/data/servicesData';

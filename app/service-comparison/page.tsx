@@ -6,8 +6,6 @@ export const metadata = {
   robots: { index: true, follow: true },
   alternates: { canonical: '/service-comparison' },
 };
-'use client';
-
 import { useState, useMemo } from 'react';
 
 import Link from 'next/link';
