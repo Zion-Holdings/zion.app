@@ -383,6 +383,31 @@ let list = services;
         </div>
       </section>
 
+      {/* ── AI Agent Dashboard CTA Banner ── */}
+      <section className="mt-6 mb-12 rounded-2xl border-2 border-purple-500/40 bg-gradient-to-r from-purple-900/80 via-slate-900 to-pink-900/80 p-6 shadow-xl flex flex-wrap items-center justify-between gap-4">
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
+            </span>
+            <p className="text-xs font-bold uppercase tracking-wider text-green-400">Live Now — This Website is Built by AI Agents</p>
+          </div>
+          <h3 className="text-xl font-bold text-white mb-1">🤖 AI Agent Operations Dashboard</h3>
+          <p className="text-sm text-slate-300 max-w-xl">
+            Watch our AI agent fleet work in real time — {serviceCount} services cataloged, 210 waves integrated, fleet health at 86% active.
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-3 shrink-0">
+          <Link href="/agents-monitoring/" className="text-sm px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:opacity-90 transition flex items-center gap-2">
+            👤 Monitor Agents
+          </Link>
+          <Link href="/dashboard/" className="text-sm px-4 py-2 border border-slate-700 rounded-lg text-slate-300 hover:border-purple-500 hover:text-white transition">
+            🖥️ Open Dashboard
+          </Link>
+        </div>
+      </section>
+
       {/* ── Service Match Quiz — Interactive AI Tool ── */}
       <ServiceMatchQuiz />
 
