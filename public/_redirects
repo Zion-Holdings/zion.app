@@ -80,6 +80,9 @@
 /solutions/healthcare/ /docs/solutions/healthcare/index.html 200
 /tools/phishing-analyzer/ /docs/tools/phishing-analyzer/index.html 200
 /industries/financial-services/ /docs/industries/financial-services/index.html 200
+/healthcare/ /docs/industries/healthcare/index.html 200
+/insurance/ /docs/industries/insurance/index.html 200
+/financial-services/ /docs/industries/financial-services/index.html 200
 
 # Status / Roadmap fallbacks
 /status-page /status-page/ 301
