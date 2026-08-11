@@ -31,4 +31,4 @@ jobs:
 
       - name: Parse dependabot.yml
         run: |
-          ruby -r yaml -e 'YAML.load_file(".github/dependabot.yml"); puts "ok dependabot config"'
+          node scripts/automation/validate-dependabot.cjs

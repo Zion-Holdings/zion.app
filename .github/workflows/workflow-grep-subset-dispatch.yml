@@ -57,7 +57,7 @@ jobs:
 
       - name: Parse workflow YAML (names, concurrency, job ids, local uses, cron, timeouts)
         if: ${{ inputs.subset == 'ruby' }}
-        run: ruby scripts/automation/parse-github-workflows-yaml.rb
+        run: node scripts/automation/parse-github-workflows-yaml.cjs
 
       - name: Workflow integrity audit
         if: ${{ inputs.subset == 'integrity' }}
@@ -79,7 +79,7 @@ jobs:
       - name: Parse dependabot.yml (Ruby)
         if: ${{ inputs.subset == 'dependabot' }}
         run: |
-          ruby -r yaml -e 'YAML.load_file(".github/dependabot.yml"); puts "ok dependabot config"'
+          node scripts/automation/validate-dependabot.cjs
 
       - name: Check merge conflict markers (tracked files)
         if: ${{ inputs.subset == 'merge-conflicts' }}

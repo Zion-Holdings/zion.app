@@ -32,5 +32,5 @@ jobs:
           grep -Fq 'workflow_dispatch:' "$f"
           grep -Fq 'group: workflow-parse-ruby-only-dispatch' "$f"
           grep -Fq 'Parse workflow YAML' "$f"
-          grep -Fq 'ruby scripts/automation/parse-github-workflows-yaml.rb' "$f"
+          grep -Fq 'node scripts/automation/parse-github-workflows-yaml.cjs' "$f"
           echo "ok: $f"

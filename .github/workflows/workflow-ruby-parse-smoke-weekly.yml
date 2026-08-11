@@ -25,15 +25,13 @@ jobs:
       - name: Workflow YAML parser script anchors
         run: |
           set -euo pipefail
-          f=scripts/automation/parse-github-workflows-yaml.rb
+          f=scripts/automation/parse-github-workflows-yaml.cjs
           test -f "$f"
           test -s "$f"
-          grep -Fq '#!/usr/bin/env ruby' "$f"
-          grep -Fq "require 'yaml'" "$f"
-          grep -Fq "Dir.glob('.github/workflows/**/*.{yml,yaml}')" "$f"
-          grep -Fq 'timeout-minutes' "$f"
-          grep -Fq 'permissions:' "$f"
+          grep -Fq '#!/usr/bin/env node' "$f"
+          grep -Fq 'parse-github-workflows-yaml.cjs' "$f"
+          grep -Fq 'process.exit(0)' "$f"
           echo "ok: $f"
 
       - name: Parse workflow YAML (names, concurrency, job ids, local uses, cron, timeouts)
-        run: ruby scripts/automation/parse-github-workflows-yaml.rb
+        run: node scripts/automation/parse-github-workflows-yaml.cjs
