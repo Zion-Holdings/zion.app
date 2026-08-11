@@ -1,9 +1,17 @@
 {
-  "timestamp": "2026-08-11T04:55:19.233808+00:00",
+  "timestamp": "2026-08-11T14:15:22.927761+00:00",
   "label_id": "!!!!HOT FOLLOW-UP",
   "threads_api_returned": 100,
-  "threads_checked": 0,
-  "safe_threads": [],
+  "threads_checked": 1,
+  "safe_threads": [
+    {
+      "thread_id": "19ff0eb993d428da",
+      "message_id": "19ff0eb993d428da",
+      "subject": "Convite: Revis\u00e3o Prudential: KLEBER GARCIA ALCATRAO\t - ter. 11 ago. 2026 18:00 - 19:00 (BRT) (kleber@ztg.com.br)",
+      "sender": "Luciano Kishi <lucianokleader@gmail.com>",
+      "date": "Tue, 11 Aug 2026 13:01:39 +0000"
+    }
+  ],
   "threads_sent": 0,
   "blockers": []
 }
