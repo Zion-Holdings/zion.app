@@ -2,10 +2,7 @@
 import Link from 'next/link';
 import { LocalBusinessJsonLd } from '@/components/LocalBusinessStructuredData';
 
-export const metadata = {
-  title: 'Contact Us',
-  description: 'Get in touch with Zion Tech Group. Call, email, or visit us in Middletown, DE.',
-};
+export const metadata = { title: 'Contact — Zion Tech Group', alternates: { canonical: '/contact/' } description: 'Explore Zion Tech Group services, tools, and insights.', }
 
 export default function ContactPage() {
   return (
@@ -79,4 +76,4 @@ export default function ContactPage() {
       </div>
     </main>
   );
-}
+}

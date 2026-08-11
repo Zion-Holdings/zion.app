@@ -1,10 +1,7 @@
 // app/portal/billing/page.tsx
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Billing & Invoices — Client Portal',
-  description: 'View your invoices, payment methods, and billing history. Secure client portal access.',
-};
+export const metadata = { title: 'Portal — Zion Tech Group', alternates: { canonical: '/portal/billing/' } description: 'Explore Zion Tech Group services, tools, and insights.', }
 
 export default function BillingPage() {
   return (

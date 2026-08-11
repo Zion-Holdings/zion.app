@@ -1,3 +1,4 @@
+export const metadata = { title: 'Proposals — Zion Tech Group', description: 'Explore Zion Tech Group services, tools, and insights.', alternates: { canonical: '/proposals/' } };
 // app/proposals/page.tsx — Saved Proposals Viewer
 'use client';
 

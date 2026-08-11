@@ -1,3 +1,4 @@
+export const metadata = { title: 'Tools — Zion Tech Group', description: 'Explore Zion Tech Group services, tools, and insights.', alternates: { canonical: '/tools/port-scanner/' } };
 // app/tools/port-scanner/page.tsx — Free Port Scanner (client-side via public API)
 'use client';
 import { pingTool } from '@/data/tools_ping_client';

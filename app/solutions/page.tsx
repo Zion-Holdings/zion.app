@@ -1,3 +1,4 @@
+export const metadata = { title: 'Solutions — Zion Tech Group', description: 'Explore Zion Tech Group services, tools, and insights.', alternates: { canonical: '/solutions/' } };
 'use client';
 
 import Link from 'next/link';

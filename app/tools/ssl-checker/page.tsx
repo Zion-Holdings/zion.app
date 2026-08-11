@@ -1,3 +1,4 @@
+export const metadata = { title: 'Tools — Zion Tech Group', description: 'Explore Zion Tech Group services, tools, and insights.', alternates: { canonical: '/tools/ssl-checker/' } };
 // app/tools/ssl-checker/page.tsx — Free SSL/TLS Certificate Checker
 'use client';
 import { pingTool } from '@/data/tools_ping_client';

@@ -1,3 +1,4 @@
+export const metadata = { title: 'Service Comparison — Zion Tech Group', description: 'Explore Zion Tech Group services, tools, and insights.', alternates: { canonical: '/service-comparison/' } };
 // app/service-comparison/page.tsx — Interactive service comparison matrix
 'use client';
 

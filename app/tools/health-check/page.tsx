@@ -1,3 +1,4 @@
+export const metadata = { title: 'Tools — Zion Tech Group', description: 'Explore Zion Tech Group services, tools, and insights.', alternates: { canonical: '/tools/health-check/' } };
 // Health Check Tool — Free autonomous platform status
 'use client';
 import { useState, useEffect, useCallback } from 'react';

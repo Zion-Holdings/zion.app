@@ -1,10 +1,7 @@
 // app/portal/tickets/page.tsx
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Support Tickets — Client Portal',
-  description: 'Track and manage your support requests.',
-};
+export const metadata = { title: 'Portal — Zion Tech Group', alternates: { canonical: '/portal/tickets/' } description: 'Explore Zion Tech Group services, tools, and insights.', }
 
 export default function TicketsPage() {
   const tickets = [

@@ -1,3 +1,4 @@
+export const metadata = { title: 'Zion Tech Group — AI & IT Solutions', description: 'Explore Zion Tech Group services, tools, and insights.', alternates: { canonical: '/page.tsx/' } };
 // app/page.tsx — Home / Landing Page
 'use client';
 

@@ -1,3 +1,4 @@
+export const metadata = { title: 'Proposal Generator — Zion Tech Group', description: 'Explore Zion Tech Group services, tools, and insights.', alternates: { canonical: '/proposal-generator/' } };
 // app/proposal-generator/page.tsx
 'use client';
 

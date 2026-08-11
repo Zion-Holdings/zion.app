@@ -1,3 +1,4 @@
+export const metadata = { title: 'Search — Zion Tech Group', description: 'Explore Zion Tech Group services, tools, and insights.', alternates: { canonical: '/search/' } };
 'use client';
 
 import { useState } from 'react';

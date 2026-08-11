@@ -1,3 +1,4 @@
+export const metadata = { title: 'Configurator — Zion Tech Group', description: 'Explore Zion Tech Group services, tools, and insights.', alternates: { canonical: '/configurator/' } };
 // Service Configurator Wizard — multi-step proposal builder
 // Fully client-side: generates proposal HTML in-browser, no server needed
 'use client';

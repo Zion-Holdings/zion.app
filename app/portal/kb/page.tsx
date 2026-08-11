@@ -1,10 +1,7 @@
 // app/portal/kb/page.tsx
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Knowledge Base — Client Portal',
-  description: 'Documentation, guides, how-tos, and technical resources.',
-};
+export const metadata = { title: 'Portal — Zion Tech Group', alternates: { canonical: '/portal/kb/' } description: 'Explore Zion Tech Group services, tools, and insights.', }
 
 export default function KnowledgeBasePage() {
   const articles = [

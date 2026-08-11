@@ -1,3 +1,4 @@
+export const metadata = { title: 'Products — Zion Tech Group', description: 'Explore Zion Tech Group services, tools, and insights.', alternates: { canonical: '/products/' } };
 // app/products/page.tsx — Products & Platforms
 'use client';
 import Link from 'next/link';

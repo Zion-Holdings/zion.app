@@ -1,3 +1,4 @@
+export const metadata = { title: 'Tools — Zion Tech Group', description: 'Explore Zion Tech Group services, tools, and insights.', alternates: { canonical: '/tools/service-comparison/' } };
 // app/tools/service-comparison/page.tsx — Full Service Comparison
 'use client';
 import { pingTool } from '@/data/tools_ping_client';

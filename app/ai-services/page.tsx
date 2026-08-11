@@ -1,3 +1,4 @@
+export const metadata = { title: 'Ai Services — Zion Tech Group', description: 'Explore Zion Tech Group services, tools, and insights.', alternates: { canonical: '/ai-services/' } };
 'use client';
 
 import Link from 'next/link';

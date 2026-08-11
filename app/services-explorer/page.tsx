@@ -1,3 +1,4 @@
+export const metadata = { title: 'Services Explorer — Zion Tech Group', description: 'Explore Zion Tech Group services, tools, and insights.', alternates: { canonical: '/services-explorer/' } };
 // app/services-explorer/page.tsx — Interactive Service Explorer
 'use client';
 

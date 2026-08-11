@@ -1,3 +1,4 @@
+export const metadata = { title: 'Tools — Zion Tech Group', description: 'Explore Zion Tech Group services, tools, and insights.', alternates: { canonical: '/tools/analytics/' } };
 // app/tools/analytics/page.tsx
 'use client';
 import { useMemo } from 'react';

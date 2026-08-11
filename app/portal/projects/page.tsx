@@ -1,10 +1,7 @@
 // app/portal/projects/page.tsx
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Project Dashboard — Client Portal',
-  description: 'Active project dashboards, milestones, and status updates.',
-};
+export const metadata = { title: 'Portal — Zion Tech Group', alternates: { canonical: '/portal/projects/' } description: 'Explore Zion Tech Group services, tools, and insights.', }
 
 export default function ProjectsPage() {
   const projects = [

@@ -1,3 +1,4 @@
+export const metadata = { title: 'Ai Lab — Zion Tech Group', description: 'Explore Zion Tech Group services, tools, and insights.', alternates: { canonical: '/ai-lab/' } };
 // app/ai-lab/page.tsx — AI Lab: Interactive Playgrounds & Demos
 'use client';
 

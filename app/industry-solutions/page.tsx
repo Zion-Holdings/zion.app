@@ -1,3 +1,4 @@
+export const metadata = { title: 'Industry Solutions — Zion Tech Group', description: 'Explore Zion Tech Group services, tools, and insights.', alternates: { canonical: '/industry-solutions/' } };
 // app/industry-solutions/page.tsx — Industry Solutions Landing (dynamic)
 'use client';
 import { useState, useMemo } from 'react';

@@ -1,3 +1,4 @@
+export const metadata = { title: 'Press — Zion Tech Group', description: 'Explore Zion Tech Group services, tools, and insights.', alternates: { canonical: '/press/' } };
 'use client';
 
 import Link from 'next/link';
