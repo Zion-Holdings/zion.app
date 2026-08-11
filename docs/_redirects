@@ -33,6 +33,8 @@
 /industry-solutions /solutions 301
 
 # Common missing paths
+/automation /automation/ 301
+/automation/ /automation/ 301
 /case-studies /case-studies/ 301
 /case-studies/ /case-studies/index.html 200
 /free-consultation /free-consultation/ 301
@@ -41,8 +43,8 @@
 /free-audit/ /free-audit/index.html 200
 /proposal /proposal/ 301
 /proposal/ /proposal/ 301
-/ai /ai/ 301
-/ai/ /ai/ 301
+/ai /ai-services/ 301
+/ai/ /ai-services/ 301
 /industries/insurance /industries/insurance/ 301
 /industries/insurance/ /industries/insurance/ 301
 /industries/healthcare /industries/healthcare/ 301
