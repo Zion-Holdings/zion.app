@@ -343,5 +343,14 @@
     "total_potential_value": 10800,
     "expected_revenue": 2700.0,
     "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-10T22:00:06.821054",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10000,
+    "expected_revenue": 2500.0,
+    "conversion_rate_target": "25%"
   }
 ]
