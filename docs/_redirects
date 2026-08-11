@@ -80,7 +80,7 @@
 
 # Key route fallbacks
 /solutions/healthcare/ /docs/solutions/healthcare/index.html 200
-/tools/phishing-analyzer/ /docs/tools/phishing-analyzer/index.html 200
+/tools/phishing-analyzer/ /tools/ 301
 /industries/financial-services/ /docs/industries/financial-services/index.html 200
 
 # Status / Roadmap fallbacks
