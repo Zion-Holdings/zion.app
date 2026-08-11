@@ -1,2 +1,12 @@
 /industries/manufacturing /services/ 301
 /industries/manufacturing/ /services/ 301
+
+# Missing routes
+/free-ai-consultation /free-consultation/ 301
+/free-ai-consultation/ /free-consultation/ 301
+/partners /services/ 301
+/partners/ /services/ 301
+/proposal /proposal/ 301
+/proposal/ /proposal/index.html 200
+/dashboard /services/ 301
+/dashboard/ /services/ 301
