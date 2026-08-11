@@ -4,9 +4,17 @@
 # Missing routes
 /free-ai-consultation /free-consultation/ 301
 /free-ai-consultation/ /free-consultation/ 301
+/configurator /contact 301
+/configurator/ /contact 301
 /partners /services/ 301
 /partners/ /services/ 301
 /proposal /proposal/ 301
 /proposal/ /proposal/index.html 200
 /dashboard /services/ 301
 /dashboard/ /services/ 301
+/new-ai-services /services/ 301
+/new-ai-services/ /services/ 301
+/ai-services-index /services/ 301
+/ai-services-index/ /services/ 301
+/tools/service-comparison /service-comparison/ 301
+/tools/service-comparison/ /service-comparison/ 301
