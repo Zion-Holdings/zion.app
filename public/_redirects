@@ -40,3 +40,11 @@
 /tools/port-scanner /docs/tools/port-scanner/index.html 200
 /tools/roi-calculator /docs/tools/roi-calculator/index.html 200
 /tools/ssl-checker /docs/tools/ssl-checker/index.html 200
+
+# Broken-link fallbacks (2026-08-11)
+/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/ /docs/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/index.html 200
+/free-ai-tools/ /docs/free-ai-tools/index.html 200
+/ai/ /docs/ai/index.html 200
+/dashboard/ /docs/dashboard/index.html 200
+/index.html/ /docs/index.html/index.html 200
+/proposal/ /docs/proposal/index.html 200
