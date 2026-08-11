@@ -1,6 +1,6 @@
 {
   "state": "send_blocked_analysis",
-  "send_blocked": true,
+  "send_blocked": false,
   "generated_at": "2026-08-10T14:00:01.046522",
   "leads_processed": 5,
   "total_potential_value": 9800,

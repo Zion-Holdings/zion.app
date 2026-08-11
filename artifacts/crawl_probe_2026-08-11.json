@@ -1,0 +1,38 @@
+{
+  "ts": "2026-08-11T08:16:15.087157+00:00",
+  "base": "https://ziontechgroup.com",
+  "results": {
+    "/": {
+      "http_code": 200,
+      "ok": true
+    },
+    "/services/": {
+      "http_code": 200,
+      "ok": true
+    },
+    "/tools/": {
+      "http_code": 200,
+      "ok": true
+    },
+    "/contact/": {
+      "http_code": 200,
+      "ok": true
+    },
+    "/pricing/": {
+      "http_code": 200,
+      "ok": true
+    },
+    "/solutions/": {
+      "http_code": 200,
+      "ok": true
+    },
+    "/blog/": {
+      "http_code": 200,
+      "ok": true
+    },
+    "/about/": {
+      "http_code": 200,
+      "ok": true
+    }
+  }
+}
