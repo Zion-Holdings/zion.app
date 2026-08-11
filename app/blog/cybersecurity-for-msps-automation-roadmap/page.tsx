@@ -75,8 +75,9 @@ For cybersecurity for msps: automation roadmap: pick one workflow, assign owners
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
-        />
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        >
+        </script>
       </article>
     </div>
   );
