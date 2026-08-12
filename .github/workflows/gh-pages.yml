@@ -159,7 +159,7 @@ jobs:
           find "$ARTIFACT_DIR" -maxdepth 2 -type f | sed -n '1,120p'
 
       - name: Pages artifact
-        uses: actions/upload-pages-artifact@b0f4c53504dfa48513f499d8cff5c1c6a6c89609 # v4
+        uses: actions/upload-pages-artifact@v4
         with:
           path: artifacts/pages
 
