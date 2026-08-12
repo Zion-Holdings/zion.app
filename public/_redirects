@@ -1,108 +1,44 @@
-/managed-it /services/it-managed-it-ops 301
-/services/managed-it /services/it-managed-it-ops 301
-/consultation /contact 301
-/services/cloud-migration-services-2026-1121/ /services/cloud-migration-services-2026-500/ 301
-/blog/cloud-migration-services-2026-1121/ /blog/cloud-migration-services-2026-500/ 301
-/services/enterprise-ai-intelligence-hub-2026-1143/ /services/enterprise-ai-intelligence-hub-2026-507/ 301
-/blog/enterprise-ai-intelligence-hub-2026-1143/ /blog/ai-automation-best-practices-2026/ 301
-
-# Search
-/search /docs/search/index.html 200
-/search/ /docs/search/index.html 200
-
-# Free tools fallbacks
+# Generated redirects
+/ /index.html 200
+/services /services/ 301
+/services/ /services/index.html 200
+/pricing /pricing/ 301
+/pricing/ /pricing/index.html 200
+/about /about/ 301
+/about/ /about/index.html 200
+/contact /contact/ 301
+/contact/ /contact/index.html 200
+/blog /blog/ 301
+/blog/ /blog/index.html 200
+/careers /careers/ 301
+/careers/ /careers/index.html 200
+/partners /partners/ 301
+/partners/ /partners/index.html 200
 /free-tools /free-tools.html 200
 /free-tools/ /free-tools.html 200
-
-# Free AI tools fallback
-/free-ai-tools /free-tools.html 200
-/free-ai-tools/ /free-tools.html 200
-
-# AI lab fallback
-/ai /tools 301
-/ai/ /tools 301
-
-# Proposal fallback
-/proposal /contact 301
-/proposal/ /contact 301
-
-# Dashboard fallback
-/dashboard /services 301
-/dashboard/ /services 301
-
-# Blog post fallback
+/free-ai-tools /free-tools.html 301
+/free-ai-tools/ /free-tools.html 301
+/tools/service-comparison /tools/service-comparison/ 301
+/tools/service-comparison/ /tools/service-comparison/index.html 200
+/services/cloud /services/cloud/ 301
+/services/cloud/ /services/cloud/index.html 200
+/services/consulting /services/consulting/ 301
+/services/consulting/ /services/consulting/index.html 200
+/services/networking /services/networking/ 301
+/services/networking/ /services/networking/index.html 200
+/how-it-works /how-it-works/ 301
+/how-it-works/ /how-it-works/index.html 200
+/industries /industries/ 301
+/industries/ /industries/index.html 200
+/services-explorer /services-explorer/ 301
+/services-explorer/ /services-explorer/index.html 200
+/success-stories /success-stories/ 301
+/success-stories/ /success-stories/index.html 200
 /blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization /blog/ai-automation-best-practices-2026/ 301
 /blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/ /blog/ai-automation-best-practices-2026/ 301
-
-# Index.html fallback
-/index.html / 301
-/index.html/ / 301
-
-# AI resources fallback
-/ai-resources /docs/ai-resources/index.html 200
-/ai-resources/ /docs/ai-resources/index.html 200
-
-# Orphaned route fallbacks
-/ai-services-index /services/ 301
-/ai-services-index/ /services/ 301
-/free-ai-it-tools /tools 301
-/free-ai-it-tools/ /tools 301
-/new-ai-services /services/ 301
-/new-ai-services/ /services/ 301
-/faq /faq/ 301
-/industry-solutions /solutions 301
-
-# Common missing paths
-/case-studies /case-studies/ 301
-/case-studies/ /case-studies/index.html 200
-/free-consultation /free-consultation/ 301
-/free-consultation/ /free-consultation/index.html 200
-/free-audit /free-audit/ 301
-/free-audit/ /free-audit/index.html 200
-/proposal /proposal/ 301
-/proposal/ /proposal/ 301
-/ai /ai/ 301
-/ai/ /ai/ 301
-/industries/insurance /industries/insurance/ 301
-/industries/insurance/ /industries/insurance/ 301
-/industries/healthcare /industries/healthcare/ 301
-/industries/healthcare/ /industries/healthcare/ 301
-/industries/legal /industries/legal/ 301
-/industries/legal/ /industries/legal/ 301
-/press /press/ 301
-/press/ /press/ 301
-/privacy /privacy/ 301
-/privacy/ /privacy/ 301
-/terms /terms/ 301
-/terms/ /terms/ 301
-/cookies /cookies/ 301
-/cookies/ /cookies/ 301
-
-# Key route fallbacks
-/solutions/healthcare/ /docs/solutions/healthcare/index.html 200
-/tools/phishing-analyzer/ /docs/tools/phishing-analyzer/index.html 200
-/industries/financial-services/ /docs/industries/financial-services/index.html 200
-
-# Status / Roadmap fallbacks
-/status-page /status-page/ 301
-/status-page/ /status-page/index.html 200
-/public-roadmap /public-roadmap/ 301
-/public-roadmap/ /public-roadmap/index.html 200
-
-# New fallbacks
-/services-explorer /services-explorer/index.html 200
-/services-explorer/ /services-explorer/index.html 200
-/free-ai-tools /free-ai-tools/index.html 200
-/free-ai-tools/ /free-ai-tools/index.html 200
-/how-it-works /how-it-works/index.html 200
-/how-it-works/ /how-it-works/index.html 200
-/success-stories /success-stories/index.html 200
-/success-stories/ /success-stories/index.html 200
-/industries /industries/index.html 200
-/industries/ /industries/index.html 200
-
-# cache-bust: 2026-08-12T04:12:00Z
-/dashboard /services/ 301
-/dashboard/ /services/ 301
-/index.html / 301
-/index.html/ / 301
+/blog/ai-agent-frameworks-for-business-automation /blog/ai-agent-frameworks-for-business-automation/ 301
+/blog/ai-agent-frameworks-for-business-automation/ /blog/ai-agent-frameworks-for-business-automation/index.html 200
+/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning /blog/ai-finops-and-cloud-cost-optimization-with-machine-learning/ 301
+/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning/ /blog/ai-finops-and-cloud-cost-optimization-with-machine-learning/index.html 200
+/blog/ai-for-cybersecurity-operations-and-threat-hunting /blog/ai-for-cybersecurity-operations-and-threat-hunting/ 301
+/blog/ai-for-cybersecurity-operations-and-threat-hunting/ /blog/ai-for-cybersecurity-operations-and-threat-hunting/index.html 200
