@@ -2,7 +2,6 @@
 // generate-sitemap-feed.cjs — dynamic sitemap.xml + feed.xml from build artifacts
 // Reads: out/service-index.json, out/blog/*/index.html, out/index.html
 // Writes: out/sitemap.xml, out/feed.xml
-
 const fs = require('fs');
 const path = require('path');
 
@@ -10,7 +9,6 @@ const SITE_URL = process.env.SITE_URL || 'https://ziontechgroup.com';
 const outDir = path.join(process.cwd(), 'out');
 
 // ---- helpers ----
-
 function rfc822(date) {
   return date.toUTCString().replace('GMT', '+0000');
 }
@@ -26,13 +24,13 @@ function collectLeafPages() {
 
   // 2) Known top-level pages (dirs with index.html)
   const topDirs = ['about', 'ai', 'ai-services', 'ai-automation', 'api', 'agents-monitoring',
-                 'configurator', 'contact', 'careers', 'case-studies', 'faq', 'help',
-                 'industries', 'industry-solutions', 'portal', 'pricing', 'pricing-calculator',
-                 'privacy', 'products', 'proposal-generator', 'proposals',
-                 'search', 'service-comparison', 'services', 'services-explorer', 'solutions',
-                 'status', 'terms', 'testimonials', 'tools', 'press',
-                 'zion-ai-compliance-checker', 'zion-ai-vendor-manager', 'zion-cloud-vault',
-                 'zion-ai-social-media-manager', 'cookies', 'sla', 'site-map'];
+                   'configurator', 'contact', 'careers', 'case-studies', 'faq', 'help',
+                   'industries', 'industry-solutions', 'portal', 'pricing', 'pricing-calculator',
+                   'privacy', 'products', 'proposal-generator', 'proposals',
+                   'search', 'service-comparison', 'services', 'services-explorer', 'solutions',
+                   'status', 'terms', 'testimonials', 'tools', 'press',
+                   'zion-ai-compliance-checker', 'zion-ai-vendor-manager', 'zion-cloud-vault',
+                   'zion-ai-social-media-manager', 'cookies', 'sla', 'site-map'];
 
   for (const d of topDirs) {
     const f = path.join(outDir, d, 'index.html');
@@ -89,7 +87,6 @@ function collectLeafPages() {
     }
   }
 
-
   // 3) Service pages: out/services/<id>/index.html
   const svcDir = path.join(outDir, 'services');
   if (fs.existsSync(svcDir)) {
@@ -137,6 +134,20 @@ function collectLeafPages() {
     }
   }
 
+  // 5) Always include essential key pages in sitemap (even if out/ is partial)
+  const keyPages = ['/', '/about/', '/about/team/', '/contact/', '/services/', '/tools/',
+    '/tools/roi-calculator/', '/tools/port-scanner/', '/tools/ssl-checker/',
+    '/tools/service-recommender/', '/tools/service-comparison/', '/tools/health-check/',
+    '/tools/ai-service-router/', '/tools/analytics/', '/industries/', '/industries/retail/',
+    '/industries/healthcare/', '/industries/finance/', '/blog/', '/case-studies/',
+    '/careers/', '/pricing/', '/partners/', '/status/', '/help/', '/proposals/',
+    '/configurator/', '/site-map/', '/privacy/', '/terms/', '/cookies/', '/sla/',
+    '/faq/', '/press/', '/agents-monitoring/', '/products/', '/solutions/',
+    '/ai-lab/', '/testimonials/', '/free-tools/'];
+  for (const p of keyPages) {
+    pages.push({ url: `${SITE_URL}${p}`, lastmod: new Date() });
+  }
+
   return pages;
 }
 
@@ -155,7 +166,6 @@ function pageInfo(url, lastmod) {
 }
 
 function buildSitemap(pages) {
-  const today = new Date().toISOString().split('T')[0];
   const rows = pages.map(p => pageInfo(p.url, p.lastmod));
   return [
     '<?xml version="1.0" encoding="UTF-8"?>',
@@ -236,7 +246,6 @@ function extractBlogInfo(html) {
 }
 
 // ---- main ----
-
 function main() {
   // Load service index
   const idxFile = path.join(outDir, 'service-index.json');
@@ -273,6 +282,9 @@ function main() {
   // Write sitemap
   const sitemap = buildSitemap(pages);
   const smPath = path.join(outDir, 'sitemap.xml');
+  if (!fs.existsSync(outDir)) {
+    fs.mkdirSync(outDir, { recursive: true });
+  }
   fs.writeFileSync(smPath, sitemap);
   console.log(`sitemap.xml: ${pages.length} urls`);
   // Also update public/sitemap.xml for direct GitHub Pages serving

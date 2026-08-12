@@ -5,31 +5,39 @@ import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'AI Solutions for Financial Services | Zion Tech Group',
-  description: 'AI for fraud detection, algorithmic trading, risk modeling, and regulatory compliance (KYC/AML) for banks, fintechs, and asset managers.',
+  description: 'AI-powered financial services: fraud detection, algorithmic trading, risk modeling, regulatory compliance automation, and customer intelligence.',
   alternates: { canonical: '/industries/finance/' },
 };
 
 const solutions = [
   {
-    title: 'Fraud Detection (Streaming)',
-    desc: 'Real-time anomaly detection on transaction streams to catch fraud before it settles, with sub-second latency.',
-    features: ['Sub-sec inference', 'Graph-based link analysis', 'Behavioral profiling', 'False-positive optimization'],
-  },
-  {
-    title: 'Risk & Credit Modeling',
-    desc: 'ML-powered credit-scoring and market-risk engines that update continuously as new data arrives.',
-    features: ['Real-time features pipeline', 'SHAP explainability', 'Regulatory audit trails', 'Model drift monitoring'],
-  },
-  {
-    title: 'Regulatory Compliance (GRC)',
-    desc: 'Automated KYC/AML screening, transaction monitoring, and regulatory-reporting pipelines.',
-    features: ['KYC/AML automation', 'Sanctions screening', 'Real-time alerts', 'Compliance dashboards'],
+    title: 'Fraud Detection & AML',
+    desc: 'Real-time anomaly detection for transaction monitoring, money laundering patterns, and identity fraud across digital channels.',
+    features: ['Graph neural networks', 'Behavioral biometrics', 'Real-time scoring', 'Regulatory reporting (BSA, FATF)'],
   },
   {
     title: 'Algorithmic Trading',
-    desc: 'Low-latency trading signals generated from news sentiment, order-book dynamics, and macro feeds.',
-    features: ['News sentiment NLP', 'Order-book analytics', 'Backtesting engine', 'Latency < 5ms'],
+    desc: 'ML-driven trading signals, market regime detection, and portfolio optimization for hedge funds and proprietary trading desks.',
+    features: ['Reinforcement learning agents', 'Multi-asset signals', 'Risk-adjusted execution', 'Backtesting framework'],
   },
+  {
+    title: 'Risk Modeling & Analytics',
+    desc: 'Predictive credit risk, market risk VaR, and stress-testing models that adapt to changing economic conditions.',
+    features: ['Dynamic PD/LGD models', 'Macroeconomic scenarios', 'Real-time dashboards', 'Regulatory submission ready'],
+  },
+  {
+    title: 'Regulatory Compliance Automation',
+    desc: 'Automate KYC onboarding, regulatory reporting (CCAR, MiFID II), and compliance monitoring with explainable AI.',
+    features: ['NLP for regulatory documents', 'Audit trail generation', 'Continuous monitoring', 'Explainable AI for regulators'],
+  },
+];
+
+const complianceBadges = [
+  'SOX Compliant',
+  'PCI DSS',
+  'Basel III',
+  'MiFID II',
+  'GDPR Ready',
 ];
 
 export default function FinanceIndustryPage() {
@@ -39,17 +47,28 @@ export default function FinanceIndustryPage() {
       <main className="min-h-screen bg-slate-950 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="mb-12">
-            <span className="text-sm font-semibold text-blue-400 uppercase tracking-wider">
+            <span className="text-sm font-semibold text-emerald-400 uppercase tracking-wider">
               Industry • Financial Services
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 mt-3">
-              AI for Finance — Fraud, Risk, and Alpha
+              AI for Finance — Trust, Speed, and Compliance at Scale
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl leading-relaxed">
-              Zion Tech Group brings battle-tested AI to banks, fintechs, and asset managers —
-              delivering real-time fraud detection, explainable risk models, and automated
-              compliance that stands up to the strictest regulators.
+              From real-time fraud prevention to algorithmic trading signals, Zion Tech Group
+              helps banks, fintech startups, and asset managers deploy AI that delivers alpha
+              while meeting the strictest regulatory and security requirements.
             </p>
+          </div>
+
+          <div className="mb-12">
+            <p className="text-sm text-slate-400 mb-3">Compliance & Certifications:</p>
+            <div className="flex flex-wrap gap-3">
+              {complianceBadges.map((b) => (
+                <span key={b} className="px-4 py-2 bg-emerald-900/20 border border-emerald-500/30 rounded-full text-xs text-emerald-300">
+                  {b}
+                </span>
+              ))}
+            </div>
           </div>
 
           <div className="space-y-12">
@@ -60,7 +79,7 @@ export default function FinanceIndustryPage() {
                 <ul className="grid sm:grid-cols-2 gap-2 text-sm text-slate-400">
                   {sol.features.map((f) => (
                     <li key={f} className="flex items-center gap-2">
-                      <span className="text-blue-400">✓</span>
+                      <span className="text-emerald-400">✓</span>
                       <span>{f}</span>
                     </li>
                   ))}
@@ -71,10 +90,10 @@ export default function FinanceIndustryPage() {
 
           <div className="mt-16 text-center">
             <Link
-              href="/tools/service-recommender/"
+              href="/configurator/"
               className="inline-block btn-primary text-lg px-10 py-4"
             >
-              ⚡ Find Your Finance AI Solution →
+              ⚡ AI Readiness Assessment for Finance
             </Link>
           </div>
         </div>
