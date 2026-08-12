@@ -3,6 +3,7 @@ import { allServices } from '@/data/servicesData';
 import type { Service } from '@/data/servicesData';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Service Stage Filter — Zion Tech Group',
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: ['/og-default.png'],
   },
-};
+  twitter: { card: 'summary_large_image', title: 'Service Stage Filter — Zion Tech Group', description: 'Filter Zion Tech Group services by stage: published, beta, and planned.' }};
 
 const STAGE_META: Record<string, { label: string; emoji: string; desc: string; color: string }> = {
   published: { label: 'Published', emoji: '✅', desc: 'Live production services available now', color: 'from-emerald-500/20 to-green-500/10 border-emerald-500/30' },
@@ -43,6 +44,8 @@ export default async function StagePage({ params }: { params: Promise<{ stage: s
 
   return (
     <main className="min-h-screen bg-slate-950 py-20">
+
+    <JsonLd data={@context: "https://schema.org", @type: "Service", name: "Service Stage Filter — Zion Tech Group", description: "Filter Zion Tech Group services by stage: published, beta, and planned.", url: "https://ziontechgroup.com/services/stage/[stage]/"} />
       <div className="container-page">
         {/* Header */}
         <div className="text-center mb-12">

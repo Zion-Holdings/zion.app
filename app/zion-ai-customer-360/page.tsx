@@ -1,5 +1,6 @@
 import ProductPageLayout from '../components/ProductPageLayout';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Zion AI Customer 360',
@@ -21,6 +22,9 @@ export default function Page() {
   return (
 
     <>
+
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Customer 360", description: "Unify customer data from all touchpoints into a single view with AI-powered insights and next-best-action recommendations.", url: "https://ziontechgroup.com/zion-ai-customer-360/"} />
 
       <h1>Zion AI Customer 360</h1>
 

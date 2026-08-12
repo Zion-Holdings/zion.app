@@ -5,6 +5,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import RouterPing from './pingClient';
 import ROICalculatorClient from './ROICalculatorClient';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'ROI Calculator — Zion Tech Group',
@@ -24,6 +25,8 @@ export const metadata: Metadata = {
 export default function ROICalculatorPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebApplication", name: "ROI Calculator — Zion Tech Group", description: "Calculate the return on investment for AI and IT services with our free ROI calculator.", url: "https://ziontechgroup.com/tools/roi-calculator/"} />
       <RouterPing />
 
       {/* ── JSON-LD Structured Data ── */}

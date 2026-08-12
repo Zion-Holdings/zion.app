@@ -3,6 +3,7 @@
 import RouterPing from './pingClient';
 
 import AIServiceRouterClient from './AIServiceRouterClient';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata = {
   title: 'AI Service Router',

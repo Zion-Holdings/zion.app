@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Free Consultation | Zion Tech Group',
@@ -21,6 +22,8 @@ export const metadata: Metadata = {
 export default function FreeConsultationPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Free Consultation | Zion Tech Group", description: "Book a free AI strategy consultation with Zion Tech Group experts.", url: "https://ziontechgroup.com/free-consultation/"} />
       <Navigation />
       <main className="py-20">
         <div className="container-page">

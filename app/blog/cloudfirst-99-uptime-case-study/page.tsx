@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
   title: 'How CloudFirst Saved $100K annually with Vision System | Zion Tech Group',
@@ -30,6 +31,8 @@ const jsonLd = {
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">
+
+    <BlogPostStructuredData title="How CloudFirst Saved $100K annually with Vision System | Zion Tech Group" description="CloudFirst case study: 99.9% uptime and $100K annually with Zion Tech Group." datePublished="2026-08-07" url="https://ziontechgroup.com/blog/cloudfirst-99-uptime-case-study/" />
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <SiteBreadcrumbs items={[
           { label: 'Home', href: '/' },

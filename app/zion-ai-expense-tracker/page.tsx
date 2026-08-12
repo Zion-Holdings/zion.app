@@ -1,5 +1,6 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Zion AI Expense Tracker',
@@ -21,6 +22,9 @@ export default function Page() {
   return (
 
     <>
+
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Expense Tracker", description: "Automate expense capture, categorization, and policy compliance with receipt OCR and smart routing.", url: "https://ziontechgroup.com/zion-ai-expense-tracker/"} />
 
       <h1>Zion AI Expense Tracker</h1>
 

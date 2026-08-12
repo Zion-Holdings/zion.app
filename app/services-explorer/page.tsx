@@ -6,6 +6,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { allServices } from '@/data/servicesData';
 import type { Service } from '@/data/servicesData';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Services Explorer',

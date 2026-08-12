@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
   title: 'AI Agentic Workflows: evaluation framework | Zion Tech Group',
@@ -22,6 +23,8 @@ const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headl
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">
+
+    <BlogPostStructuredData title="AI Agentic Workflows: evaluation framework | Zion Tech Group" description="AI Agentic Workflows: evaluation framework" datePublished="2026-08-07" url="https://ziontechgroup.com/blog/ai-agentic-workflows-evaluation-framework/" />
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'AI Agentic Workflows: evaluation framework' }]} className="mb-8" />
         <header className="mb-10">

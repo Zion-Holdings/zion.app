@@ -1,5 +1,6 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Zion AI Approval Workflow',
@@ -21,6 +22,9 @@ export default function Page() {
   return (
 
     <>
+
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Approval Workflow", description: "Automate approval routing, escalation, and audit trails for purchase orders, expenses, and contracts.", url: "https://ziontechgroup.com/zion-ai-approval-workflow/"} />
 
       <h1>Zion AI Approval Workflow</h1>
 

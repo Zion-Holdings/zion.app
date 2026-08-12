@@ -26,7 +26,7 @@ export default function Page() {
         title="AI Agent Frameworks for Business Automation"
         description="Agentic workflows, tool use, planning and execution, multi-step reasoning. Building autonomous AI agents that complete complex business tasks end-to-end."
         datePublished="2026-05-20"
-        url="https://ziontechgroup.com/blog/ai-agent-frameworks-for-business-automation"
+        url="https://ziontechgroup.com/blog/ai-agent-frameworks-for-business-automation/"
         author="Zion Tech Group"
       />
       <div

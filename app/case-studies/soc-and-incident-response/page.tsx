@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'SOC and Incident Response — Case Study',
@@ -19,6 +20,8 @@ export const metadata: Metadata = {
 export default function CaseStudySOC() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "SOC and Incident Response — Case Study", description: "How Zion Tech Group improved uptime and incident response maturity to achieve 99.99% availability.", url: "https://ziontechgroup.com/case-studies/soc-and-incident-response/"} />
       <div className="container-page">
         <div className="mb-8 text-sm text-slate-400">
           <Link href="/" className="hover:text-purple-400 transition">Home</Link>

@@ -1,5 +1,6 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Zion AI Employee Experience',
@@ -21,6 +22,9 @@ export default function Page() {
   return (
 
     <>
+
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Employee Experience", description: "Measure and improve employee engagement with pulse surveys, sentiment analysis, and action insights.", url: "https://ziontechgroup.com/zion-ai-employee-experience/"} />
 
       <h1>Zion AI Employee Experience</h1>
 

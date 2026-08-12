@@ -26,7 +26,7 @@ export default function Page() {
         title="AI for Agriculture and Agritech"
         description="Precision agriculture, crop yield prediction, pest detection, and supply chain optimization. Data-driven farming with AI."
         datePublished="2026-05-21"
-        url="https://ziontechgroup.com/blog/ai-for-agriculture-and-agritech"
+        url="https://ziontechgroup.com/blog/ai-for-agriculture-and-agritech/"
         author="Zion Tech Group"
       />
       <div

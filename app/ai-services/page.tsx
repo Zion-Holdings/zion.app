@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'AI Services',
@@ -75,6 +76,8 @@ export default function AIServicesPage() {
 
   return (
     <main className="min-h-screen bg-slate-950 py-20">
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "AI Services", description: "AI-powered services and solutions from Zion Tech Group.", url: "https://ziontechgroup.com/ai-services/"} />
       <div className="container-page">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-6xl mb-4 block">🤖</span>

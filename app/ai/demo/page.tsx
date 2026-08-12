@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import DemoSandboxClient from './DemoSandboxClient';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'AI Service Demo Sandbox',
@@ -20,6 +21,9 @@ export default function AIDemoPage() {
   return (
 
     <>
+
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "AI Service Demo Sandbox", description: "Try Zion\", url: "https://ziontechgroup.com/ai/demo/"} />
 
       <h1>AI Service Demo Sandbox</h1>
 

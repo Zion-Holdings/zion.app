@@ -1,5 +1,6 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Zion AI Brand Monitor',
@@ -21,6 +22,9 @@ export default function Page() {
   return (
 
     <>
+
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Brand Monitor", description: "Track brand mentions, sentiment, and competitive positioning across channels in real time.", url: "https://ziontechgroup.com/zion-ai-brand-monitor/"} />
 
       <h1>Zion AI Brand Monitor</h1>
 

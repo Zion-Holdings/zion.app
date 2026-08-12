@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'FAQ',
@@ -46,6 +47,8 @@ const ITEMS = [
 export default function FAQPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "FAQ", description: "Answers to common questions about services, engagement models, pricing, and support at Zion Tech Group.", url: "https://ziontechgroup.com/faq/"} />
       <div className="container-page">
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Frequently Asked Questions</h1>

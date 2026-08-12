@@ -1,5 +1,6 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Zion AI Talent Acquisition | Zion Tech Group',
@@ -21,6 +22,9 @@ export default function Page() {
   return (
 
     <>
+
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Talent Acquisition | Zion Tech Group", description: "Source, screen, and qualify candidates with AI-powered matching and automated outreach workflows.", url: "https://ziontechgroup.com/zion-ai-talent-acquisition/"} />
 
       <h1>Zion AI Talent Acquisition | Zion Tech Group</h1>
 

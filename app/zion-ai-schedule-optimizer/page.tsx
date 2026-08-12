@@ -1,5 +1,6 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Zion AI Schedule Optimizer',
@@ -21,6 +22,9 @@ export default function Page() {
   return (
 
     <>
+
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Schedule Optimizer", description: "Optimize shift scheduling, resource allocation, and capacity planning with constraint-aware AI.", url: "https://ziontechgroup.com/zion-ai-schedule-optimizer/"} />
 
       <h1>Zion AI Schedule Optimizer</h1>
 

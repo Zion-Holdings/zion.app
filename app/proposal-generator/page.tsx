@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Proposal Generator',
@@ -25,6 +26,8 @@ export default function ProposalGeneratorPage() {
   const [generated, setGenerated] = useState(false);
   return (
     <div className="container-page py-16">
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Proposal Generator", description: "Generate a custom service proposal in minutes. Select services, budget, and timeline — get a ready-to-send PDF.", url: "https://ziontechgroup.com/proposal-generator/"} />
       <h1 className="text-4xl font-bold text-white mb-4">Proposal Generator</h1>
       <p className="text-slate-400 mb-8 max-w-2xl">
         Generate a custom service proposal in minutes. Select services, budget, and timeline — get a ready-to-send PDF.

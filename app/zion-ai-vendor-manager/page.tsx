@@ -1,5 +1,6 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Zion AI Vendor Manager',
@@ -21,6 +22,9 @@ export default function Page() {
   return (
 
     <>
+
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Vendor Manager", description: "Manage vendor relationships and procurement workflows with AI-powered scoring and risk assessment.", url: "https://ziontechgroup.com/zion-ai-vendor-manager/"} />
 
       <h1>Zion AI Vendor Manager</h1>
 

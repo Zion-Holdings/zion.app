@@ -1,5 +1,6 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Zion AI Document Classifier',
@@ -21,6 +22,9 @@ export default function Page() {
   return (
 
     <>
+
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Document Classifier", description: "Automatically classify and route documents with ML models that learn from your taxonomy.", url: "https://ziontechgroup.com/zion-ai-document-classifier/"} />
 
       <h1>Zion AI Document Classifier</h1>
 

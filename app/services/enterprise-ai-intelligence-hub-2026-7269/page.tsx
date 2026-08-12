@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata = {
   title: 'Enterprise AI Intelligence Hub | Zion Tech Group',
@@ -13,11 +14,13 @@ export const metadata = {
     type: 'website',
     images: ['/og-default.png'],
   },
-};
+  twitter: { card: 'summary_large_image', title: 'Enterprise AI Intelligence Hub | Zion Tech Group', description: 'End-to-end enterprise ai intelligence hub services: assessment, deployment, and managed operations.' }};
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
+
+    <JsonLd data={@context: "https://schema.org", @type: "Service", name: "Enterprise AI Intelligence Hub | Zion Tech Group", description: "End-to-end enterprise ai intelligence hub services: assessment, deployment, and managed operations.", url: "https://ziontechgroup.com/services/enterprise-ai-intelligence-hub-2026-7269/"} />
       <div className="container-page">
         <h1 className="text-4xl font-bold text-white mb-4">Enterprise AI Intelligence Hub</h1>
         <p className="text-slate-300 text-lg leading-relaxed max-w-3xl mb-10">

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import ROICalculator from '@/components/ROICalculator';
 import SmartServiceCard from '@/components/SmartServiceCard';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Service Details — Zion Tech Group',
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: ['/og-default.png'],
   },
-};
+  twitter: { card: 'summary_large_image', title: 'Service Details — Zion Tech Group', description: 'Detailed information about this service offering from Zion Tech Group.' }};
 
 const CAT_LABELS: Record<string,string> = {
   ai: 'AI Services', it: 'IT', cloud: 'Cloud', security: 'Security',
@@ -134,6 +135,8 @@ export default async function ServicePage({ params }: PageProps) {
 
   return (
     <main className="min-h-screen bg-slate-950 py-20">
+
+    <JsonLd data={@context: "https://schema.org", @type: "Service", name: "Service Details — Zion Tech Group", description: "Detailed information about this service offering from Zion Tech Group.", url: "https://ziontechgroup.com/services/[id]/"} />
       <script
         type="application/ld+json"
         suppressHydrationWarning

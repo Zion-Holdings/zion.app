@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
   title: 'API Orchestration Layer: implementation playbook | Zion Tech Group',
@@ -22,6 +23,8 @@ const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headl
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">
+
+    <BlogPostStructuredData title="API Orchestration Layer: implementation playbook | Zion Tech Group" description="API Orchestration Layer: implementation playbook" datePublished="2026-08-07" url="https://ziontechgroup.com/blog/api-orchestration-layer-implementation-playbook/" />
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'API Orchestration Layer: implementation playbook' }]} className="mb-8" />
         <header className="mb-10">

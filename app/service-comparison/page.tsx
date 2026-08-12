@@ -6,6 +6,7 @@ import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { allServices, type Service } from '@/data/servicesData';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Service Comparison',
@@ -76,6 +77,8 @@ export default function ServiceComparisonPage() {
 
   return (
     <div className="container-page py-16">
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Service Comparison", description: "Compare Zion Tech Group services side-by-side to find the right solution for your business.", url: "https://ziontechgroup.com/service-comparison/"} />
       {/* ── Header ── */}
       <div className="text-center mb-10">
         <h1 className="text-4xl font-bold text-white mb-3">Service Comparison</h1>

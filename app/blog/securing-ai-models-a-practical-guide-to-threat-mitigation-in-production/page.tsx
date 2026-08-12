@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import ArticleStructuredData from '@/components/ArticleStructuredData';
+import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
@@ -22,18 +22,18 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">
-      <ArticleStructuredData
-        headline="Securing AI Models: A Practical Guide to Threat Mitigation in Production"
+      <BlogPostStructuredData
+        title="Securing AI Models: A Practical Guide to Threat Mitigation in Production"
         description="Adversarial attacks, data poisoning, model extraction, secure deployment patterns, and monitoring for AI systems. NIST and OWASP references for production security."
         datePublished="2026-05-19"
-        slug="securing-ai-models-a-practical-guide-to-threat-mitigation-in-production"
-      />
+        url="https://ziontechgroup.com/blog/securing-ai-models-a-practical-guide-to-threat-mitigation-in-production/"
+       />
       <div
         className="pointer-events-none absolute inset-0 overflow-hidden"
         aria-hidden="true"
       >
-        <div className="absolute -top-16 left-[-9rem] h-[26rem] w-[26rem] rounded-full bg-purple-500/20 blur-3xl" />
-        <div className="absolute right-[-10rem] top-24 h-[28rem] w-[28rem] rounded-full bg-fuchsia-500/15 blur-3xl" />
+        <div className="absolute -top-16 left-[-9rem] h-[26rem] w-[26rem] rounded-full bg-purple-500/20 blur-3xl"  />
+        <div className="absolute right-[-10rem] top-24 h-[28rem] w-[28rem] rounded-full bg-fuchsia-500/15 blur-3xl"  />
       </div>
 
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
@@ -44,7 +44,7 @@ export default function Page() {
             { label: 'Securing AI Models: A Practical Guide to Threat Mitigation in Production' },
           ]}
           className="mb-8"
-        />
+         />
         <header className="mb-12">
           <div className="mb-4 flex-wrap items-center gap-3 text-sm flex">
             <time dateTime="2026-05-19" className="text-slate-400">

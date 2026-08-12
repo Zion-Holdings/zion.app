@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Phishing Analyzer | Zion Tech Group',
@@ -18,6 +19,8 @@ export const metadata: Metadata = {
 export default function PhishingAnalyzerPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebApplication", name: "Phishing Analyzer | Zion Tech Group", description: "Review suspicious emails and links with Zion Tech Group phishing analysis guidance.", url: "https://ziontechgroup.com/tools/phishing-analyzer/"} />
       <div className="container-page">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Phishing Analyzer</h1>
         <p className="text-slate-400 text-lg max-w-2xl mb-10">

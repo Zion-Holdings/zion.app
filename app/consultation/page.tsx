@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Free Consultation',

@@ -1,5 +1,6 @@
 // app/portal/page.tsx
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata = {
   title: 'Client Portal — Zion Tech Group',
@@ -19,6 +20,8 @@ export const metadata = {
 export default function PortalPage() {
   return (
     <div className="container-page py-16">
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Client Portal — Zion Tech Group", description: "Access your dashboards, support tickets, billing, and knowledge base.", url: "https://ziontechgroup.com/portal/"} />
       <h1 className="text-4xl font-bold text-white mb-4">Client Portal</h1>
       <p className="text-slate-400 mb-8 max-w-2xl">
         Access your dashboards, support tickets, billing, and knowledge base.

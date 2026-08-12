@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -19,6 +20,8 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Privacy Policy", description: "How Zion Tech Group collects, uses, and protects your personal information.", url: "https://ziontechgroup.com/privacy/"} />
       <div className="container-page">
         <h1 className="text-4xl font-bold text-white mb-4">Privacy Policy</h1>
         <p className="text-slate-300 mb-8">Last updated: 2025</p>

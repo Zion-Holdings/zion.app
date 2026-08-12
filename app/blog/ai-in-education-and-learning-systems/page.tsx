@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import ArticleStructuredData from '@/components/ArticleStructuredData';
+import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
@@ -22,18 +22,18 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">
-      <ArticleStructuredData
-        headline="AI in Education and Learning Systems"
+      <BlogPostStructuredData
+        title="AI in Education and Learning Systems"
         description="Adaptive learning, personalized curricula, assessment automation, and administrative efficiency. Transforming education with intelligent systems."
         datePublished="2026-05-20"
-        slug="ai-in-education-and-learning-systems"
-      />
+        url="https://ziontechgroup.com/blog/ai-in-education-and-learning-systems/"
+       />
       <div
         className="pointer-events-none absolute inset-0 overflow-hidden"
         aria-hidden="true"
       >
-        <div className="absolute -top-16 left-[-9rem] h-[26rem] w-[26rem] rounded-full bg-purple-500/20 blur-3xl" />
-        <div className="absolute right-[-10rem] top-24 h-[28rem] w-[28rem] rounded-full bg-fuchsia-500/15 blur-3xl" />
+        <div className="absolute -top-16 left-[-9rem] h-[26rem] w-[26rem] rounded-full bg-purple-500/20 blur-3xl"  />
+        <div className="absolute right-[-10rem] top-24 h-[28rem] w-[28rem] rounded-full bg-fuchsia-500/15 blur-3xl"  />
       </div>
 
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
@@ -44,7 +44,7 @@ export default function Page() {
             { label: 'AI in Education and Learning Systems' },
           ]}
           className="mb-8"
-        />
+         />
         <header className="mb-12">
           <div className="mb-4 flex-wrap items-center gap-3 text-sm flex">
             <time dateTime="2026-05-20" className="text-slate-400">

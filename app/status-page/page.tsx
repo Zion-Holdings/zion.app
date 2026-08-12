@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Status Page',
@@ -27,6 +28,8 @@ export default function StatusPage() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Status Page", description: "Operational status for Zion Tech Group services and monitoring dashboards.", url: "https://ziontechgroup.com/status-page/"} />
       <Navigation />
       <main className="py-20">
         <div className="container-page">

@@ -1,5 +1,6 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Zion AI Contract Lifecycle',
@@ -21,6 +22,9 @@ export default function Page() {
   return (
 
     <>
+
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Contract Lifecycle", description: "Manage contract creation, negotiation, renewal, and compliance through the full lifecycle with AI-powered insights.", url: "https://ziontechgroup.com/zion-ai-contract-lifecycle/"} />
 
       <h1>Zion AI Contract Lifecycle</h1>
 

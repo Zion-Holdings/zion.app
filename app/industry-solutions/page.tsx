@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { allServices, type Service } from '@/data/servicesData';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Industry Solutions',
@@ -88,6 +89,8 @@ export default function IndustrySolutionsPage() {
 
   return (
     <main className="min-h-screen bg-slate-950">
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Industry Solutions", description: "Tailored AI and IT solutions for industries including technology, healthcare, finance, retail, and more.", url: "https://ziontechgroup.com/industry-solutions/"} />
       {/* ── Hero ── */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_30%,rgba(120,50,200,0.18),rgba(20,10,40,0.92))]" />

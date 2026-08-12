@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata = {
   title: 'MicroSaaS Social Media Manager | Zion Tech Group',
@@ -13,11 +14,13 @@ export const metadata = {
     type: 'website',
     images: ['/og-default.png'],
   },
-};
+  twitter: { card: 'summary_large_image', title: 'MicroSaaS Social Media Manager | Zion Tech Group', description: 'End-to-end microsaas social media manager services: assessment, deployment, and managed operations.' }};
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
+
+    <JsonLd data={@context: "https://schema.org", @type: "Service", name: "MicroSaaS Social Media Manager | Zion Tech Group", description: "End-to-end microsaas social media manager services: assessment, deployment, and managed operations.", url: "https://ziontechgroup.com/services/micro-saas-ai-social-media-manager-2026-7682/"} />
       <div className="container-page">
         <h1 className="text-4xl font-bold text-white mb-4">MicroSaaS Social Media Manager</h1>
         <p className="text-slate-300 text-lg leading-relaxed max-w-3xl mb-10">

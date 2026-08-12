@@ -2,6 +2,7 @@
 'use client';
 import Link from 'next/link';
 import { allServices } from '@/data/servicesData';
+import JsonLd from '@/components/JsonLd';
 
 const PRODUCTS: readonly {
   key: string;
@@ -113,6 +114,8 @@ const PRODUCTS: readonly {
 export default function ProductsPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "AI & Machine Learning", description: "", url: "https://ziontechgroup.com/products/"} />
       <div className="container-page">
         <nav className="mb-6 text-sm text-slate-400">
           <Link href="/" className="hover:text-purple-400 transition">Home</Link>

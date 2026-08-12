@@ -1,5 +1,6 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Zion AI Supply Visibility',
@@ -21,6 +22,9 @@ export default function Page() {
   return (
 
     <>
+
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Supply Visibility", description: "Gain real-time visibility into supply chain status, risks, and alternative sourcing options.", url: "https://ziontechgroup.com/zion-ai-supply-visibility/"} />
 
       <h1>Zion AI Supply Visibility</h1>
 
