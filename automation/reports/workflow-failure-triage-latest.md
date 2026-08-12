@@ -1,44 +1,38 @@
 # Workflow failure triage
 
-- generatedAt: 2026-08-10T19:59:14.490Z
+- generatedAt: 2026-08-12T22:58:37.234Z
 - recentRuns: 80
-- failedRuns: 23
+- failedRuns: 33
 
 ## Top failing workflows
-- Continuous Pages Deploy: 2
-- Emergency Recovery - Minimal Build: 2
-- Minimal Build Test: 2
-- .github/workflows/ai-actions-pin-strict-guard.yml: 2
-- .github/workflows/workflow-yaml-sanity.yml: 2
-- .github/workflows/workflow-validate-light-weekly.yml: 2
-- .github/workflows/workflow-reusable-ci-dispatch.yml: 2
-- .github/workflows/workflow-contracts-weekly.yml: 2
-- AI Content Burst High Frequency: 1
-- Autonomous Quality Drift Sentinel: 1
-- AI PM2 SLO Agent: 1
-- Autonomous Writer Queue Guard: 1
-- AI Autonomous Idea Guarded Cycle: 1
-- .github/workflows/route-slicer.yml: 1
-- .github/workflows/workflow-change-guard.yml: 1
+- Workflow validate light (weekly): 5
+- Workflow YAML sanity: 5
+- Autonomous Lazy-Loading Route Slicer: 5
+- Workflow contracts weekly: 5
+- Workflow Change Guard: 5
+- AI Actions pin strict guard: 5
+- Minimal Build Test: 1
+- Autonomous Performance Budget Enforcer with CI Gate: 1
+- AI Automation fingerprint digest PR label: 1
 
 ## Latest failed runs
-- AI Content Burst High Frequency | 2026-08-10T19:45:09Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31425638691
-- Autonomous Quality Drift Sentinel | 2026-08-10T19:42:52Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31425449312
-- AI PM2 SLO Agent | 2026-08-10T19:42:50Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31425446316
-- Autonomous Writer Queue Guard | 2026-08-10T19:39:50Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31425199867
-- AI Autonomous Idea Guarded Cycle | 2026-08-10T19:36:59Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424970077
-- Continuous Pages Deploy | 2026-08-10T19:36:52Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424959836
-- Emergency Recovery - Minimal Build | 2026-08-10T19:36:52Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424959789
-- Minimal Build Test | 2026-08-10T19:36:52Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424959728
-- .github/workflows/route-slicer.yml | 2026-08-10T19:36:51Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424958691
-- .github/workflows/ai-actions-pin-strict-guard.yml | 2026-08-10T19:36:50Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424957995
-- .github/workflows/workflow-yaml-sanity.yml | 2026-08-10T19:36:50Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424957257
-- .github/workflows/workflow-validate-light-weekly.yml | 2026-08-10T19:36:49Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424956567
-- .github/workflows/workflow-reusable-ci-dispatch.yml | 2026-08-10T19:36:49Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424955763
-- .github/workflows/workflow-contracts-weekly.yml | 2026-08-10T19:36:48Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424954956
-- .github/workflows/workflow-change-guard.yml | 2026-08-10T19:36:48Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424954194
-- Minimal Build Test | 2026-08-10T19:35:53Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424877581
-- Continuous Pages Deploy | 2026-08-10T19:35:53Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424877490
-- Emergency Recovery - Minimal Build | 2026-08-10T19:35:53Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424877470
-- .github/workflows/workflow-yaml-sanity.yml | 2026-08-10T19:35:51Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424874502
-- .github/workflows/workflow-validate-light-weekly.yml | 2026-08-10T19:35:50Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424873126
+- Workflow validate light (weekly) | 2026-08-12T22:52:36Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31648729241
+- Workflow YAML sanity | 2026-08-12T22:52:36Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31648728744
+- Autonomous Lazy-Loading Route Slicer | 2026-08-12T22:52:35Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31648728253
+- Workflow contracts weekly | 2026-08-12T22:52:35Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31648727813
+- Workflow Change Guard | 2026-08-12T22:52:34Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31648727349
+- AI Actions pin strict guard | 2026-08-12T22:52:34Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31648726903
+- AI Actions pin strict guard | 2026-08-12T22:49:52Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31648550743
+- Workflow YAML sanity | 2026-08-12T22:49:51Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31648550253
+- Workflow validate light (weekly) | 2026-08-12T22:49:51Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31648549690
+- Workflow contracts weekly | 2026-08-12T22:49:50Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31648549110
+- Workflow Change Guard | 2026-08-12T22:49:50Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31648548562
+- Autonomous Lazy-Loading Route Slicer | 2026-08-12T22:49:49Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31648548062
+- Minimal Build Test | 2026-08-12T22:47:01Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31648366566
+- Workflow YAML sanity | 2026-08-12T22:47:01Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31648365639
+- Workflow validate light (weekly) | 2026-08-12T22:47:00Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31648365122
+- Autonomous Lazy-Loading Route Slicer | 2026-08-12T22:47:00Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31648364592
+- Workflow contracts weekly | 2026-08-12T22:46:59Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31648363998
+- Workflow Change Guard | 2026-08-12T22:46:58Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31648363323
+- AI Actions pin strict guard | 2026-08-12T22:46:58Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31648362708
+- AI Actions pin strict guard | 2026-08-12T22:45:58Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31648295867
