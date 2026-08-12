@@ -4,7 +4,7 @@ name: Autonomous Visual Regression Detector
 on:
   schedule:
   - cron: 30 2 * * *
-  workflow_dispatch: null
+  workflow_dispatch
 jobs:
   visual-regression:
     name: UI Visual Regression

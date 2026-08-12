@@ -25,17 +25,26 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error', 'warn'] } : false,
   },
-  // Optimize build performance for 70K+ pages
+  // Optimize build performance for 75K+ pages
   experimental: {
-    dynamicParams: false,
     optimizePackageImports: ['lucide-react'],
   },
-  // V40: /consultation → /contact permanent redirect (static export)
+  // Redirects: consolidate from .mjs + .js versions
   async redirects() {
     return [
       {
         source: '/consultation',
         destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/managed-it',
+        destination: '/services/it-managed-it-ops',
+        permanent: true,
+      },
+      {
+        source: '/services/managed-it',
+        destination: '/services/it-managed-it-ops',
         permanent: true,
       },
     ];

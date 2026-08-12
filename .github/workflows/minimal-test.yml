@@ -20,6 +20,6 @@ jobs:
         node-version: '20'
         cache: npm
     - run: rm -rf node_modules .next out
-    - run: npm install
+    - run: npm ci --no-audit --fund=false
     - run: npm run build
     timeout-minutes: 10

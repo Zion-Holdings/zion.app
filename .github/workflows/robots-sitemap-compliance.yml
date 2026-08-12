@@ -2,7 +2,7 @@ name: robots-sitemap-compliance
 on:
   schedule:
   - cron: 0 3 * * 1
-  workflow_dispatch: null
+  workflow_dispatch
 permissions:
   contents: read
   issues: write

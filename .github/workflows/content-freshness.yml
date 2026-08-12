@@ -4,7 +4,7 @@ name: Autonomous Content Freshness & Stale Content Archiver
 on:
   schedule:
   - cron: 0 10 * * 2
-  workflow_dispatch: null
+  workflow_dispatch
 jobs:
   freshness-check:
     name: Content Freshness Scan

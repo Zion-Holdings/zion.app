@@ -10,7 +10,7 @@ on:
     - main
   schedule:
   - cron: 0 16 * * 1
-  workflow_dispatch: null
+  workflow_dispatch
 jobs:
   custom-eslint:
     name: Custom ESLint Rules

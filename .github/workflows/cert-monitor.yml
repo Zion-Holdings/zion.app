@@ -4,7 +4,7 @@ name: Autonomous SSL/TLS Certificate Expiration Monitor
 on:
   schedule:
   - cron: 0 7 * * 0
-  workflow_dispatch: null
+  workflow_dispatch
 jobs:
   cert-monitor:
     name: Certificate Monitor

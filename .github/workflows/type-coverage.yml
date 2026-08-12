@@ -10,7 +10,7 @@ on:
     - main
   schedule:
   - cron: 0 15 * * 1
-  workflow_dispatch: null
+  workflow_dispatch
 jobs:
   type-coverage:
     name: Type Coverage & Dead Code
