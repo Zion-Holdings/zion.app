@@ -8,8 +8,8 @@
 /careers /careers/ 301
 /partners /partners/ 301
 /partners/ /partners/index.html 200
-/free-ai-tools /free-tools.html 301
-/free-ai-tools/ /free-tools.html 301
+/free-ai-tools /free-ai-it-tools/ 301
+/free-ai-tools/ /free-ai-it-tools/index.html 200
 /tools/service-comparison /tools/service-comparison/ 301
 /tools/service-comparison/ /tools/service-comparison/index.html 200
 /services/cloud/ /services/cloud/index.html 200
@@ -43,3 +43,11 @@
 /pricing-calculator /pricing-calculator/index.html 200
 /proposal-generator /proposal-generator/index.html 200
 /proposals /proposals/index.html 200
+/portal /portal/index.html 200
+/portal/ /portal/index.html 200
+/ai-services-index /ai-services-index/index.html 200
+/ai-services-index/ /ai-services-index/index.html 200
+/free-ai-it-tools /free-ai-it-tools/index.html 200
+/free-ai-it-tools/ /free-ai-it-tools/index.html 200
+/agents-monitoring /agents-monitoring/index.html 200
+/agents-monitoring/ /agents-monitoring/index.html 200
