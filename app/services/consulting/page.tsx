@@ -2,7 +2,7 @@ export const metadata = {
   title: "IT Consulting & Digital Transformation - Zion Tech Group",
   description: "Architecture, roadmap, and digital transformation consulting. Strategic technology advisory for enterprise growth.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/consulting/
+    canonical: `https://ziontechgroup.com/services/consulting/`
   }
 };
 

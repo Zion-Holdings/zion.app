@@ -2,7 +2,7 @@ export const metadata = {
   title: "Networking & Infrastructure - Zion Tech Group",
   description: "SD-WAN, VPN, structured cabling, and Wi-Fi optimization. Enterprise networking solutions designed for performance and reliability.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/networking/
+    canonical: `https://ziontechgroup.com/services/networking/`
   }
 };
 

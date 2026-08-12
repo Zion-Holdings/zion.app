@@ -4,7 +4,7 @@ export const metadata = {
   title: "Managed IT Services - Zion Tech Group",
   description: "24/7 monitoring, helpdesk, and endpoint management. Proactive IT support with SLA guarantees and cybersecurity integration.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/managed-it/
+    canonical: `https://ziontechgroup.com/services/managed-it/`
   }
 };
 

@@ -2,7 +2,7 @@ export const metadata = {
   title: "Cloud Infrastructure & Migration - Zion Tech Group",
   description: "AWS/GCP/Azure migration, FinOps, and managed cloud services. Optimize costs, improve reliability, and scale seamlessly.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/cloud/
+    canonical: `https://ziontechgroup.com/services/cloud/`
   }
 };
 
