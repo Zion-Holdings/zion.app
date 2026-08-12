@@ -22,6 +22,7 @@ export default function Page() {
       mainEntityOfPage: 'https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026-7593/'
     }}>
       <article className="max-w-3xl mx-auto space-y-6 text-slate-300">
+          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl mb-8">Cybersecurity for MSPs | Zion Tech Group</h1>
         <p>Cybersecurity for MSPs is moving from experiment to operating layer. Most programs fail because they optimize for demos instead of outcomes.</p>
         <h2>What works</h2>
         <ul>

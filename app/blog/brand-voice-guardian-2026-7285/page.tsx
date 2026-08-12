@@ -22,6 +22,7 @@ export default function Page() {
       mainEntityOfPage: 'https://ziontechgroup.com/blog/brand-voice-guardian-2026-7285/'
     }}>
       <article className="max-w-3xl mx-auto space-y-6 text-slate-300">
+          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl mb-8">Brand Voice Guardian | Zion Tech Group</h1>
         <p>Brand Voice Guardian is moving from experiment to operating layer. Most programs fail because they optimize for demos instead of outcomes.</p>
         <h2>What works</h2>
         <ul>
