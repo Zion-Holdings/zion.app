@@ -124,7 +124,7 @@ function generateServicePage(service) {
           <div class="grid md:grid-cols-2 gap-4">
             ${relatedServices.map(s => `
               <div>
-                <a href="/services/${s.id}" class="text-purple-300 hover:text-purple-200 font-medium">${s.title || s.name || s.id}</a>
+                <a href="/services/${s.id}/" class="text-purple-300 hover:text-purple-200 font-medium">${s.title || s.name || s.id}</a>
                 <p class="text-slate-400 text-sm mt-1">${(s.description || '').substring(0, 120)}...</p>
               </div>
             `).join('\n            ')}
@@ -166,7 +166,7 @@ export const metadata: Metadata = {
   description: \`${escapeJsString(description)}\`,
   keywords: '${escapeJsString(features.join(', '))}, ${escapeJsString(category)}, ${escapeJsString(industry)}, Zion Tech Group',
   alternates: {
-    canonical: \`https://ziontechgroup.com/services/${slug}\`,
+    canonical: \`https://ziontechgroup.com/services/${slug}/\`,
   },
 };
 

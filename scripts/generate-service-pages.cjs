@@ -25,7 +25,6 @@ function main() {
   <title>${escape(svc.title)} | Zion Tech Group</title>
   <meta name="description" content="${escape(svc.description || '')}" />
   <meta name="robots" content="index,follow" />
-  <link rel="stylesheet" href="/styles.css" />
   <style>
     :root { color-scheme: dark; }
     body { background:#020617; color:#e5e7eb; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
