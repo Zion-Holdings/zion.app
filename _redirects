@@ -1,0 +1,10 @@
+# Hub fallbacks for missing static exports
+/blog/    /docs/blog/index.html    200
+/blog     /docs/blog/index.html    200
+/services    /services/    301
+/services/   /services/index.html    200
+/ai/    /docs/ai-services/index.html    200
+/faq/   /docs/faq/index.html    200
+/industry-solutions/    /docs/industry-solutions/index.html    200
+/status-page/   /docs/status-page/index.html    200
+/public-roadmap/    /docs/public-roadmap/index.html    200
