@@ -89,7 +89,10 @@
 /public-roadmap /public-roadmap/ 301
 /public-roadmap/ /public-roadmap/index.html 200
 
-# cache-bust: 2026-08-11T05:30:00Z
+# cache-bust: 2026-08-10T17:15:00Z
+/sitemap.xml /sitemap-0.xml 301
+/page_sitemap.xml /sitemap.xml 301
+/post_sitemap.xml /sitemap.xml 301
 /dashboard /services/ 301
 /dashboard/ /services/ 301
 /index.html / 301

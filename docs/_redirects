@@ -90,3 +90,6 @@
 /public-roadmap/ /public-roadmap/index.html 200
 
 # cache-bust: 2026-08-10T17:15:00Z
+/sitemap.xml /sitemap-0.xml 301
+/page_sitemap.xml /sitemap.xml 301
+/post_sitemap.xml /sitemap.xml 301
