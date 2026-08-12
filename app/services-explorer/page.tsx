@@ -2,6 +2,8 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 import { allServices } from '@/data/servicesData';
 import type { Service } from '@/data/servicesData';
@@ -60,7 +62,9 @@ export default function ServicesExplorerPage() {
   }, [services, cat, sort, q]);
 
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Navigation />
+      <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
         <a href="/" className="text-purple-400 text-sm hover:text-purple-300 transition">← Home</a>
 
@@ -168,6 +172,7 @@ export default function ServicesExplorerPage() {
           </div>
         )}
       </div>
-    </main>
+      <Footer />
+    </div>
   );
 }
