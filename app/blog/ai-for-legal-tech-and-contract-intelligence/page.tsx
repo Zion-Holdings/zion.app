@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Contract analysis, due diligence automation, legal research, and matter management. AI augments legal workflows.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-legal-tech-and-contract-intelligence',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

@@ -12,7 +12,8 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/brand-voice-guardian-executive-guide/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
+  
+    images: ['/og-default.png'],},
   alternates: { canonical: '/blog/brand-voice-guardian-executive-guide/' },
 };
 

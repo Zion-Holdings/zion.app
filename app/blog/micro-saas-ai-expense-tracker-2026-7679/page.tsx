@@ -6,7 +6,9 @@ export const metadata = {
   title: 'MicroSaaS Expense Tracker | Zion Tech Group',
   description: 'Practical guide to microsaas expense tracker: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/micro-saas-ai-expense-tracker-2026-7679/' },
-  openGraph: { title: 'MicroSaaS Expense Tracker', description: 'Practical guide to microsaas expense tracker.', url: 'https://ziontechgroup.com/blog/micro-saas-ai-expense-tracker-2026-7679/', type: 'article' },
+  openGraph: { title: 'MicroSaaS Expense Tracker', description: 'Practical guide to microsaas expense tracker.', url: 'https://ziontechgroup.com/blog/micro-saas-ai-expense-tracker-2026-7679/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'MicroSaaS Expense Tracker', description: 'Practical guide to microsaas expense tracker.' }
 };
 

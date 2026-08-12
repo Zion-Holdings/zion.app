@@ -6,7 +6,9 @@ export const metadata = {
   title: 'AI IT Operations | Zion Tech Group',
   description: 'Practical guide to ai it operations: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/ai-it-operations-automation-2026-6832/' },
-  openGraph: { title: 'AI IT Operations', description: 'Practical guide to ai it operations.', url: 'https://ziontechgroup.com/blog/ai-it-operations-automation-2026-6832/', type: 'article' },
+  openGraph: { title: 'AI IT Operations', description: 'Practical guide to ai it operations.', url: 'https://ziontechgroup.com/blog/ai-it-operations-automation-2026-6832/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'AI IT Operations', description: 'Practical guide to ai it operations.' }
 };
 

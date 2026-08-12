@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Clinical documentation, diagnosis assistance, population health, and operational analytics. Responsible AI in healthcare delivery.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-healthcare-analytics-and-clinical-decision-support',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

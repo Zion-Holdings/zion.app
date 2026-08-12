@@ -6,7 +6,9 @@ export const metadata = {
   title: 'MicroSaaS Translation Engine | Zion Tech Group',
   description: 'Practical guide to microsaas translation engine: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/micro-saas-ai-translation-engine-2026-7678/' },
-  openGraph: { title: 'MicroSaaS Translation Engine', description: 'Practical guide to microsaas translation engine.', url: 'https://ziontechgroup.com/blog/micro-saas-ai-translation-engine-2026-7678/', type: 'article' },
+  openGraph: { title: 'MicroSaaS Translation Engine', description: 'Practical guide to microsaas translation engine.', url: 'https://ziontechgroup.com/blog/micro-saas-ai-translation-engine-2026-7678/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'MicroSaaS Translation Engine', description: 'Practical guide to microsaas translation engine.' }
 };
 

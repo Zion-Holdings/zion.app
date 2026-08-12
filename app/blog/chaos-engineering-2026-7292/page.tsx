@@ -6,7 +6,9 @@ export const metadata = {
   title: 'Chaos Engineering | Zion Tech Group',
   description: 'Practical guide to chaos engineering: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/chaos-engineering-2026-7292/' },
-  openGraph: { title: 'Chaos Engineering', description: 'Practical guide to chaos engineering.', url: 'https://ziontechgroup.com/blog/chaos-engineering-2026-7292/', type: 'article' },
+  openGraph: { title: 'Chaos Engineering', description: 'Practical guide to chaos engineering.', url: 'https://ziontechgroup.com/blog/chaos-engineering-2026-7292/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'Chaos Engineering', description: 'Practical guide to chaos engineering.' }
 };
 

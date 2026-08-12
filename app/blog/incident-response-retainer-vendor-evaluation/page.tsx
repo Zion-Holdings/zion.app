@@ -12,7 +12,8 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/incident-response-retainer-vendor-evaluation/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
+  
+    images: ['/og-default.png'],},
   alternates: { canonical: '/blog/incident-response-retainer-vendor-evaluation/' },
 };
 

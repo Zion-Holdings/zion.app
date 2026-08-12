@@ -12,7 +12,8 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/api-integration-checklist-for-it-leaders/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
+  
+    images: ['/og-default.png'],},
   alternates: { canonical: '/blog/api-integration-checklist-for-it-leaders/' },
 };
 

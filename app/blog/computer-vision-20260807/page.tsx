@@ -6,7 +6,9 @@ export const metadata = {
   title: 'How AI is Transforming Energy in 2024 | Zion Tech Group',
   description: 'Learn how to implement computer vision for energy. Best practices, case studies, and expert insights.',
   alternates: { canonical: '/blog/computer-vision-20260807/' },
-  openGraph: { title: 'How AI is Transforming Energy in 2024', description: 'Learn how to implement computer vision for energy. Best practices, case studies, and expert insights.', url: 'https://ziontechgroup.com/blog/computer-vision-20260807/', type: 'article' },
+  openGraph: { title: 'How AI is Transforming Energy in 2024', description: 'Learn how to implement computer vision for energy. Best practices, case studies, and expert insights.', url: 'https://ziontechgroup.com/blog/computer-vision-20260807/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'How AI is Transforming Energy in 2024', description: 'Learn how to implement computer vision for energy. Best practices, case studies, and expert insights.' }
 };
 

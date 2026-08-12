@@ -6,7 +6,9 @@ export const metadata = {
   title: 'Data Analytics Platform | Zion Tech Group',
   description: 'Practical guide to data analytics platform: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/data-analytics-platform-modern-enterprise-2026-6767/' },
-  openGraph: { title: 'Data Analytics Platform', description: 'Practical guide to data analytics platform.', url: 'https://ziontechgroup.com/blog/data-analytics-platform-modern-enterprise-2026-6767/', type: 'article' },
+  openGraph: { title: 'Data Analytics Platform', description: 'Practical guide to data analytics platform.', url: 'https://ziontechgroup.com/blog/data-analytics-platform-modern-enterprise-2026-6767/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'Data Analytics Platform', description: 'Practical guide to data analytics platform.' }
 };
 

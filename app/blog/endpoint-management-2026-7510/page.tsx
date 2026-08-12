@@ -6,7 +6,9 @@ export const metadata = {
   title: 'Endpoint Management | Zion Tech Group',
   description: 'Practical guide to endpoint management: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/endpoint-management-2026-7510/' },
-  openGraph: { title: 'Endpoint Management', description: 'Practical guide to endpoint management.', url: 'https://ziontechgroup.com/blog/endpoint-management-2026-7510/', type: 'article' },
+  openGraph: { title: 'Endpoint Management', description: 'Practical guide to endpoint management.', url: 'https://ziontechgroup.com/blog/endpoint-management-2026-7510/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'Endpoint Management', description: 'Practical guide to endpoint management.' }
 };
 

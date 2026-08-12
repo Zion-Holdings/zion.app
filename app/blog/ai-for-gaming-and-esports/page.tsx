@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Player analytics, anti-cheat, content moderation, and personalized experiences. AI powers the gaming industry.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-gaming-and-esports',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

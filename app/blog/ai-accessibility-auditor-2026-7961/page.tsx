@@ -6,7 +6,9 @@ export const metadata = {
   title: 'AI Accessibility Auditor | Zion Tech Group',
   description: 'Practical guide to ai accessibility auditor: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/ai-accessibility-auditor-2026-7961/' },
-  openGraph: { title: 'AI Accessibility Auditor', description: 'Practical guide to ai accessibility auditor.', url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-2026-7961/', type: 'article' },
+  openGraph: { title: 'AI Accessibility Auditor', description: 'Practical guide to ai accessibility auditor.', url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-2026-7961/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'AI Accessibility Auditor', description: 'Practical guide to ai accessibility auditor.' }
 };
 

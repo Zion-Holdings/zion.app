@@ -12,7 +12,8 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/cybersecurity-for-msps-evaluation-framework/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
+  
+    images: ['/og-default.png'],},
   alternates: { canonical: '/blog/cybersecurity-for-msps-evaluation-framework/' },
 };
 

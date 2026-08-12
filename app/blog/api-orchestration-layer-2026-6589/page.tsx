@@ -6,7 +6,9 @@ export const metadata = {
   title: 'API Orchestration Layer | Zion Tech Group',
   description: 'Practical guide to api orchestration layer: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/api-orchestration-layer-2026-6589/' },
-  openGraph: { title: 'API Orchestration Layer', description: 'Practical guide to api orchestration layer.', url: 'https://ziontechgroup.com/blog/api-orchestration-layer-2026-6589/', type: 'article' },
+  openGraph: { title: 'API Orchestration Layer', description: 'Practical guide to api orchestration layer.', url: 'https://ziontechgroup.com/blog/api-orchestration-layer-2026-6589/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'API Orchestration Layer', description: 'Practical guide to api orchestration layer.' }
 };
 

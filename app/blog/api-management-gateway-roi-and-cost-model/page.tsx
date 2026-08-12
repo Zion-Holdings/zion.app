@@ -12,7 +12,8 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/api-management-gateway-roi-and-cost-model/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
+  
+    images: ['/og-default.png'],},
   alternates: { canonical: '/blog/api-management-gateway-roi-and-cost-model/' },
 };
 

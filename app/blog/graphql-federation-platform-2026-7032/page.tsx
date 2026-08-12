@@ -6,7 +6,9 @@ export const metadata = {
   title: 'GraphQL Federation Platform | Zion Tech Group',
   description: 'Practical guide to graphql federation platform: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/graphql-federation-platform-2026-7032/' },
-  openGraph: { title: 'GraphQL Federation Platform', description: 'Practical guide to graphql federation platform.', url: 'https://ziontechgroup.com/blog/graphql-federation-platform-2026-7032/', type: 'article' },
+  openGraph: { title: 'GraphQL Federation Platform', description: 'Practical guide to graphql federation platform.', url: 'https://ziontechgroup.com/blog/graphql-federation-platform-2026-7032/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'GraphQL Federation Platform', description: 'Practical guide to graphql federation platform.' }
 };
 

@@ -6,7 +6,9 @@ export const metadata = {
   title: 'Database Migration Service | Zion Tech Group',
   description: 'Practical guide to database migration service: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/database-migration-service-2026-7161/' },
-  openGraph: { title: 'Database Migration Service', description: 'Practical guide to database migration service.', url: 'https://ziontechgroup.com/blog/database-migration-service-2026-7161/', type: 'article' },
+  openGraph: { title: 'Database Migration Service', description: 'Practical guide to database migration service.', url: 'https://ziontechgroup.com/blog/database-migration-service-2026-7161/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'Database Migration Service', description: 'Practical guide to database migration service.' }
 };
 

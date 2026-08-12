@@ -6,7 +6,9 @@ export const metadata = {
   title: 'Autonomous QA Engineering | Zion Tech Group',
   description: 'Practical guide to autonomous qa engineering: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/autonomous-qa-engineering-2026-7972/' },
-  openGraph: { title: 'Autonomous QA Engineering', description: 'Practical guide to autonomous qa engineering.', url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-2026-7972/', type: 'article' },
+  openGraph: { title: 'Autonomous QA Engineering', description: 'Practical guide to autonomous qa engineering.', url: 'https://ziontechgroup.com/blog/autonomous-qa-engineering-2026-7972/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'Autonomous QA Engineering', description: 'Practical guide to autonomous qa engineering.' }
 };
 

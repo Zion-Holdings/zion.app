@@ -6,7 +6,9 @@ export const metadata = {
   title: 'Enterprise Backup DR | Zion Tech Group',
   description: 'Practical guide to enterprise backup dr: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/enterprise-backup-dr-2026-7787/' },
-  openGraph: { title: 'Enterprise Backup DR', description: 'Practical guide to enterprise backup dr.', url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-2026-7787/', type: 'article' },
+  openGraph: { title: 'Enterprise Backup DR', description: 'Practical guide to enterprise backup dr.', url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-2026-7787/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'Enterprise Backup DR', description: 'Practical guide to enterprise backup dr.' }
 };
 

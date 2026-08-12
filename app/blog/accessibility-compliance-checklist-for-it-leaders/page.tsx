@@ -12,7 +12,8 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/accessibility-compliance-checklist-for-it-leaders/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
+  
+    images: ['/og-default.png'],},
   alternates: { canonical: '/blog/accessibility-compliance-checklist-for-it-leaders/' },
 };
 

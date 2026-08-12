@@ -6,7 +6,9 @@ export const metadata = {
   title: 'GenAI DevOps CI/CD | Zion Tech Group',
   description: 'Practical guide to genai devops ci/cd: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/devops-gen-ai-cicd-2026-7507/' },
-  openGraph: { title: 'GenAI DevOps CI/CD', description: 'Practical guide to genai devops ci/cd.', url: 'https://ziontechgroup.com/blog/devops-gen-ai-cicd-2026-7507/', type: 'article' },
+  openGraph: { title: 'GenAI DevOps CI/CD', description: 'Practical guide to genai devops ci/cd.', url: 'https://ziontechgroup.com/blog/devops-gen-ai-cicd-2026-7507/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'GenAI DevOps CI/CD', description: 'Practical guide to genai devops ci/cd.' }
 };
 

@@ -6,7 +6,9 @@ export const metadata = {
   title: 'MicroSaaS Social Media Manager | Zion Tech Group',
   description: 'Practical guide to microsaas social media manager: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/micro-saas-ai-social-media-manager-2026-7682/' },
-  openGraph: { title: 'MicroSaaS Social Media Manager', description: 'Practical guide to microsaas social media manager.', url: 'https://ziontechgroup.com/blog/micro-saas-ai-social-media-manager-2026-7682/', type: 'article' },
+  openGraph: { title: 'MicroSaaS Social Media Manager', description: 'Practical guide to microsaas social media manager.', url: 'https://ziontechgroup.com/blog/micro-saas-ai-social-media-manager-2026-7682/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'MicroSaaS Social Media Manager', description: 'Practical guide to microsaas social media manager.' }
 };
 

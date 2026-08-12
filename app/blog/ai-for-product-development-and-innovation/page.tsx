@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Ideation assistance, market research automation, competitive analysis, and rapid prototyping. Accelerating the product lifecycle with AI.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-product-development-and-innovation',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

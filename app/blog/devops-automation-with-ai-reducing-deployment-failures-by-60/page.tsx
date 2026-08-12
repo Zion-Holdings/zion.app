@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'AI-powered code review, intelligent test generation, automated incident detection, predictive deployment risk scoring, and self-healing infrastructure.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/devops-automation-with-ai-reducing-deployment-failures-by-60',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

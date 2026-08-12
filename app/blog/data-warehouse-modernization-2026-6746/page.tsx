@@ -6,7 +6,9 @@ export const metadata = {
   title: 'Data Warehouse Modernization | Zion Tech Group',
   description: 'Practical guide to data warehouse modernization: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/data-warehouse-modernization-2026-6746/' },
-  openGraph: { title: 'Data Warehouse Modernization', description: 'Practical guide to data warehouse modernization.', url: 'https://ziontechgroup.com/blog/data-warehouse-modernization-2026-6746/', type: 'article' },
+  openGraph: { title: 'Data Warehouse Modernization', description: 'Practical guide to data warehouse modernization.', url: 'https://ziontechgroup.com/blog/data-warehouse-modernization-2026-6746/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'Data Warehouse Modernization', description: 'Practical guide to data warehouse modernization.' }
 };
 

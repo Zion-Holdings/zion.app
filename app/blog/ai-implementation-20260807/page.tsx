@@ -6,7 +6,9 @@ export const metadata = {
   title: 'AI Implementation: Best Practices for 2024 | Zion Tech Group',
   description: 'Learn how to implement ai implementation for manufacturing. Best practices, case studies, and expert insights.',
   alternates: { canonical: '/blog/ai-implementation-20260807/' },
-  openGraph: { title: 'AI Implementation: Best Practices for 2024', description: 'Learn how to implement ai implementation for manufacturing. Best practices, case studies, and expert insights.', url: 'https://ziontechgroup.com/blog/ai-implementation-20260807/', type: 'article' },
+  openGraph: { title: 'AI Implementation: Best Practices for 2024', description: 'Learn how to implement ai implementation for manufacturing. Best practices, case studies, and expert insights.', url: 'https://ziontechgroup.com/blog/ai-implementation-20260807/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'AI Implementation: Best Practices for 2024', description: 'Learn how to implement ai implementation for manufacturing. Best practices, case studies, and expert insights.' }
 };
 

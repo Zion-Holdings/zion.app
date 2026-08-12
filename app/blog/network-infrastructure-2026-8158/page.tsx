@@ -6,7 +6,9 @@ export const metadata = {
   title: 'Network Infrastructure | Zion Tech Group',
   description: 'Practical guide to network infrastructure: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/network-infrastructure-2026-8158/' },
-  openGraph: { title: 'Network Infrastructure', description: 'Practical guide to network infrastructure.', url: 'https://ziontechgroup.com/blog/network-infrastructure-2026-8158/', type: 'article' },
+  openGraph: { title: 'Network Infrastructure', description: 'Practical guide to network infrastructure.', url: 'https://ziontechgroup.com/blog/network-infrastructure-2026-8158/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'Network Infrastructure', description: 'Practical guide to network infrastructure.' }
 };
 

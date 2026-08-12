@@ -6,7 +6,9 @@ export const metadata = {
   title: 'DevSecOps Pipeline | Zion Tech Group',
   description: 'Practical guide to devsecops pipeline: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/devsecops-pipeline-2026-8129/' },
-  openGraph: { title: 'DevSecOps Pipeline', description: 'Practical guide to devsecops pipeline.', url: 'https://ziontechgroup.com/blog/devsecops-pipeline-2026-8129/', type: 'article' },
+  openGraph: { title: 'DevSecOps Pipeline', description: 'Practical guide to devsecops pipeline.', url: 'https://ziontechgroup.com/blog/devsecops-pipeline-2026-8129/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'DevSecOps Pipeline', description: 'Practical guide to devsecops pipeline.' }
 };
 

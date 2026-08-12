@@ -6,7 +6,9 @@ export const metadata = {
   title: 'Cloud FinOps | Zion Tech Group',
   description: 'Practical guide to cloud finops: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/cloud-finops-2026-8053/' },
-  openGraph: { title: 'Cloud FinOps', description: 'Practical guide to cloud finops.', url: 'https://ziontechgroup.com/blog/cloud-finops-2026-8053/', type: 'article' },
+  openGraph: { title: 'Cloud FinOps', description: 'Practical guide to cloud finops.', url: 'https://ziontechgroup.com/blog/cloud-finops-2026-8053/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'Cloud FinOps', description: 'Practical guide to cloud finops.' }
 };
 

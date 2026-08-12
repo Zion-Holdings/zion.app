@@ -6,7 +6,9 @@ export const metadata = {
   title: 'Cloud Cost AI Optimizer | Zion Tech Group',
   description: 'Practical guide to cloud cost ai optimizer: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/cloud-cost-ai-optimizer-2026-7086/' },
-  openGraph: { title: 'Cloud Cost AI Optimizer', description: 'Practical guide to cloud cost ai optimizer.', url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026-7086/', type: 'article' },
+  openGraph: { title: 'Cloud Cost AI Optimizer', description: 'Practical guide to cloud cost ai optimizer.', url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026-7086/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'Cloud Cost AI Optimizer', description: 'Practical guide to cloud cost ai optimizer.' }
 };
 

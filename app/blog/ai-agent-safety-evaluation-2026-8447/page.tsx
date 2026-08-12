@@ -6,7 +6,9 @@ export const metadata = {
   title: 'AI Agent Safety Evaluation | Zion Tech Group',
   description: 'Practical guide to ai agent safety evaluation: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/ai-agent-safety-evaluation-2026-8447/' },
-  openGraph: { title: 'AI Agent Safety Evaluation', description: 'Practical guide to ai agent safety evaluation.', url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-2026-8447/', type: 'article' },
+  openGraph: { title: 'AI Agent Safety Evaluation', description: 'Practical guide to ai agent safety evaluation.', url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-2026-8447/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'AI Agent Safety Evaluation', description: 'Practical guide to ai agent safety evaluation.' }
 };
 

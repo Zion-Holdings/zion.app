@@ -6,7 +6,9 @@ export const metadata = {
   title: 'AI Customer Support | Zion Tech Group',
   description: 'Practical guide to ai customer support: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/ai-customer-support-pro-2026-6978/' },
-  openGraph: { title: 'AI Customer Support', description: 'Practical guide to ai customer support.', url: 'https://ziontechgroup.com/blog/ai-customer-support-pro-2026-6978/', type: 'article' },
+  openGraph: { title: 'AI Customer Support', description: 'Practical guide to ai customer support.', url: 'https://ziontechgroup.com/blog/ai-customer-support-pro-2026-6978/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'AI Customer Support', description: 'Practical guide to ai customer support.' }
 };
 

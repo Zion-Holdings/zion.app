@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Citizen services, permit processing, fraud detection, and operational efficiency. Responsible AI in government with transparency and accountability.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-government-services-and-public-sector-automation',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

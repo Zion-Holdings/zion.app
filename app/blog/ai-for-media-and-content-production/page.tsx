@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Content generation, editing automation, rights management, and audience analytics. How media companies leverage AI for scale and efficiency.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-media-and-content-production',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

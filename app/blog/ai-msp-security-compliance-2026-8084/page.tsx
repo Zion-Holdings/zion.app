@@ -6,7 +6,9 @@ export const metadata = {
   title: 'AI MSP Security Compliance | Zion Tech Group',
   description: 'Practical guide to ai msp security compliance: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/ai-msp-security-compliance-2026-8084/' },
-  openGraph: { title: 'AI MSP Security Compliance', description: 'Practical guide to ai msp security compliance.', url: 'https://ziontechgroup.com/blog/ai-msp-security-compliance-2026-8084/', type: 'article' },
+  openGraph: { title: 'AI MSP Security Compliance', description: 'Practical guide to ai msp security compliance.', url: 'https://ziontechgroup.com/blog/ai-msp-security-compliance-2026-8084/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'AI MSP Security Compliance', description: 'Practical guide to ai msp security compliance.' }
 };
 

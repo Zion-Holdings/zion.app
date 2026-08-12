@@ -6,7 +6,9 @@ export const metadata = {
   title: 'AI Data Lakehouse Pipelines | Zion Tech Group',
   description: 'Practical guide to ai data lakehouse pipelines: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-2026-7947/' },
-  openGraph: { title: 'AI Data Lakehouse Pipelines', description: 'Practical guide to ai data lakehouse pipelines.', url: 'https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-2026-7947/', type: 'article' },
+  openGraph: { title: 'AI Data Lakehouse Pipelines', description: 'Practical guide to ai data lakehouse pipelines.', url: 'https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-2026-7947/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'AI Data Lakehouse Pipelines', description: 'Practical guide to ai data lakehouse pipelines.' }
 };
 

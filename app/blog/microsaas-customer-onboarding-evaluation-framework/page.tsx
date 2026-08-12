@@ -12,7 +12,8 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/microsaas-customer-onboarding-evaluation-framework/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
+  
+    images: ['/og-default.png'],},
   alternates: { canonical: '/blog/microsaas-customer-onboarding-evaluation-framework/' },
 };
 

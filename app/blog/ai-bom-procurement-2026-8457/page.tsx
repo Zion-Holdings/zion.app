@@ -6,7 +6,9 @@ export const metadata = {
   title: 'AI BOM Procurement | Zion Tech Group',
   description: 'Practical guide to ai bom procurement: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/ai-bom-procurement-2026-8457/' },
-  openGraph: { title: 'AI BOM Procurement', description: 'Practical guide to ai bom procurement.', url: 'https://ziontechgroup.com/blog/ai-bom-procurement-2026-8457/', type: 'article' },
+  openGraph: { title: 'AI BOM Procurement', description: 'Practical guide to ai bom procurement.', url: 'https://ziontechgroup.com/blog/ai-bom-procurement-2026-8457/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'AI BOM Procurement', description: 'Practical guide to ai bom procurement.' }
 };
 

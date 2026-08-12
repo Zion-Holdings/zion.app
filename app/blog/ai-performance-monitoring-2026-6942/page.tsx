@@ -6,7 +6,9 @@ export const metadata = {
   title: 'AI Performance Monitoring | Zion Tech Group',
   description: 'Practical guide to ai performance monitoring: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/ai-performance-monitoring-2026-6942/' },
-  openGraph: { title: 'AI Performance Monitoring', description: 'Practical guide to ai performance monitoring.', url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-2026-6942/', type: 'article' },
+  openGraph: { title: 'AI Performance Monitoring', description: 'Practical guide to ai performance monitoring.', url: 'https://ziontechgroup.com/blog/ai-performance-monitoring-2026-6942/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'AI Performance Monitoring', description: 'Practical guide to ai performance monitoring.' }
 };
 

@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Predictive maintenance, ore grade estimation, safety monitoring, and supply chain optimization. AI in extractive industries.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-mining-and-natural-resources-operations',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

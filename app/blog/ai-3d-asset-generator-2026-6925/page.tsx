@@ -6,7 +6,9 @@ export const metadata = {
   title: 'AI 3D Asset Generator | Zion Tech Group',
   description: 'Practical guide to ai 3d asset generator: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/ai-3d-asset-generator-2026-6925/' },
-  openGraph: { title: 'AI 3D Asset Generator', description: 'Practical guide to ai 3d asset generator.', url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-2026-6925/', type: 'article' },
+  openGraph: { title: 'AI 3D Asset Generator', description: 'Practical guide to ai 3d asset generator.', url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-2026-6925/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'AI 3D Asset Generator', description: 'Practical guide to ai 3d asset generator.' }
 };
 

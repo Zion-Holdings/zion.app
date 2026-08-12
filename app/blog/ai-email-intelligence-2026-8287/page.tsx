@@ -6,7 +6,9 @@ export const metadata = {
   title: 'AI Email Intelligence | Zion Tech Group',
   description: 'Practical guide to ai email intelligence: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/ai-email-intelligence-2026-8287/' },
-  openGraph: { title: 'AI Email Intelligence', description: 'Practical guide to ai email intelligence.', url: 'https://ziontechgroup.com/blog/ai-email-intelligence-2026-8287/', type: 'article' },
+  openGraph: { title: 'AI Email Intelligence', description: 'Practical guide to ai email intelligence.', url: 'https://ziontechgroup.com/blog/ai-email-intelligence-2026-8287/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'AI Email Intelligence', description: 'Practical guide to ai email intelligence.' }
 };
 

@@ -6,7 +6,9 @@ export const metadata = {
   title: 'Cloud Native App Development | Zion Tech Group',
   description: 'Practical guide to cloud native app development: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/cloud-native-app-development-2026-7985/' },
-  openGraph: { title: 'Cloud Native App Development', description: 'Practical guide to cloud native app development.', url: 'https://ziontechgroup.com/blog/cloud-native-app-development-2026-7985/', type: 'article' },
+  openGraph: { title: 'Cloud Native App Development', description: 'Practical guide to cloud native app development.', url: 'https://ziontechgroup.com/blog/cloud-native-app-development-2026-7985/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'Cloud Native App Development', description: 'Practical guide to cloud native app development.' }
 };
 

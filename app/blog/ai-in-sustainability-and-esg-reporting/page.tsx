@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Carbon footprint calculation, supply chain emissions, regulatory compliance, and automated ESG disclosure. Meeting reporting requirements with AI-powered data aggregation.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-in-sustainability-and-esg-reporting',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

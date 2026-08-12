@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Bias detection, explainability, human oversight, and governance frameworks. Aligning AI systems with organizational values and regulatory expectations.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/responsible-ai-practices-for-enterprise-deployment',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

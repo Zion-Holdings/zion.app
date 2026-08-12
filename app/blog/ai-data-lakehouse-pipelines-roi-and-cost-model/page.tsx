@@ -12,7 +12,8 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-roi-and-cost-model/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
+  
+    images: ['/og-default.png'],},
   alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-roi-and-cost-model/' },
 };
 

@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Agentic workflows, tool use, planning and execution, multi-step reasoning. Building autonomous AI agents that complete complex business tasks end-to-end.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-agent-frameworks-for-business-automation',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

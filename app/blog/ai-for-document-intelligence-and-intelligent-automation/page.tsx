@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'IDP, contract analysis, form processing, and knowledge extraction. End-to-end document workflows with AI.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-document-intelligence-and-intelligent-automation',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

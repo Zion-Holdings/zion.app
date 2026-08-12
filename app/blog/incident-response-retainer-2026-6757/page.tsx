@@ -6,7 +6,9 @@ export const metadata = {
   title: 'Incident Response Retainer | Zion Tech Group',
   description: 'Practical guide to incident response retainer: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/incident-response-retainer-2026-6757/' },
-  openGraph: { title: 'Incident Response Retainer', description: 'Practical guide to incident response retainer.', url: 'https://ziontechgroup.com/blog/incident-response-retainer-2026-6757/', type: 'article' },
+  openGraph: { title: 'Incident Response Retainer', description: 'Practical guide to incident response retainer.', url: 'https://ziontechgroup.com/blog/incident-response-retainer-2026-6757/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'Incident Response Retainer', description: 'Practical guide to incident response retainer.' }
 };
 

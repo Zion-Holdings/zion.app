@@ -6,7 +6,9 @@ export const metadata = {
   title: 'AI Accessibility Optimizer | Zion Tech Group',
   description: 'Practical guide to ai accessibility optimizer: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/ai-accessibility-optimizer-2026-8031/' },
-  openGraph: { title: 'AI Accessibility Optimizer', description: 'Practical guide to ai accessibility optimizer.', url: 'https://ziontechgroup.com/blog/ai-accessibility-optimizer-2026-8031/', type: 'article' },
+  openGraph: { title: 'AI Accessibility Optimizer', description: 'Practical guide to ai accessibility optimizer.', url: 'https://ziontechgroup.com/blog/ai-accessibility-optimizer-2026-8031/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'AI Accessibility Optimizer', description: 'Practical guide to ai accessibility optimizer.' }
 };
 

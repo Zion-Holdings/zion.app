@@ -6,7 +6,9 @@ export const metadata = {
   title: 'AI Data Backup | Zion Tech Group',
   description: 'Practical guide to ai data backup: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/ai-data-backup-2026-8487/' },
-  openGraph: { title: 'AI Data Backup', description: 'Practical guide to ai data backup.', url: 'https://ziontechgroup.com/blog/ai-data-backup-2026-8487/', type: 'article' },
+  openGraph: { title: 'AI Data Backup', description: 'Practical guide to ai data backup.', url: 'https://ziontechgroup.com/blog/ai-data-backup-2026-8487/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'AI Data Backup', description: 'Practical guide to ai data backup.' }
 };
 

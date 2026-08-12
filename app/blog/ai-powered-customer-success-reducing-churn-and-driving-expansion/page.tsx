@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Churn prediction, health scoring, next-best-action, and expansion opportunity identification. Turning customer data into retention and growth.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-powered-customer-success-reducing-churn-and-driving-expansion',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

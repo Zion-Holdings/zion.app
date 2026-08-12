@@ -6,7 +6,9 @@ export const metadata = {
   title: 'Automation Orchestration | Zion Tech Group',
   description: 'Practical guide to automation orchestration: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/automation-orchestration-enterprise-2026-8079/' },
-  openGraph: { title: 'Automation Orchestration', description: 'Practical guide to automation orchestration.', url: 'https://ziontechgroup.com/blog/automation-orchestration-enterprise-2026-8079/', type: 'article' },
+  openGraph: { title: 'Automation Orchestration', description: 'Practical guide to automation orchestration.', url: 'https://ziontechgroup.com/blog/automation-orchestration-enterprise-2026-8079/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'Automation Orchestration', description: 'Practical guide to automation orchestration.' }
 };
 

@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Citizen development, workflow automation, and AI builders. Empowering business users to deploy AI without engineering.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/low-code-and-no-code-ai-for-rapid-deployment',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

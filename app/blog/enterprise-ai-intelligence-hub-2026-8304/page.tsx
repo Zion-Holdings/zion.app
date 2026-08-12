@@ -6,7 +6,9 @@ export const metadata = {
   title: 'Enterprise AI Intelligence Hub | Zion Tech Group',
   description: 'Practical guide to enterprise ai intelligence hub: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-2026-8304/' },
-  openGraph: { title: 'Enterprise AI Intelligence Hub', description: 'Practical guide to enterprise ai intelligence hub.', url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-2026-8304/', type: 'article' },
+  openGraph: { title: 'Enterprise AI Intelligence Hub', description: 'Practical guide to enterprise ai intelligence hub.', url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-2026-8304/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'Enterprise AI Intelligence Hub', description: 'Practical guide to enterprise ai intelligence hub.' }
 };
 

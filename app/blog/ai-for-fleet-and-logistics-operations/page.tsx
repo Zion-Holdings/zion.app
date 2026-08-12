@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Route optimization, predictive maintenance, driver compliance, and last-mile delivery automation. Real-world ROI metrics from fleet operators.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-fleet-and-logistics-operations',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

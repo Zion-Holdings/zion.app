@@ -6,7 +6,9 @@ export const metadata = {
   title: 'MicroSaaS HR Recruitment | Zion Tech Group',
   description: 'Practical guide to microsaas hr recruitment: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/micro-saas-ai-hr-recruitment-2026-6783/' },
-  openGraph: { title: 'MicroSaaS HR Recruitment', description: 'Practical guide to microsaas hr recruitment.', url: 'https://ziontechgroup.com/blog/micro-saas-ai-hr-recruitment-2026-6783/', type: 'article' },
+  openGraph: { title: 'MicroSaaS HR Recruitment', description: 'Practical guide to microsaas hr recruitment.', url: 'https://ziontechgroup.com/blog/micro-saas-ai-hr-recruitment-2026-6783/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'MicroSaaS HR Recruitment', description: 'Practical guide to microsaas hr recruitment.' }
 };
 

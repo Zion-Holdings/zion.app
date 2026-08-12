@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Claims triage, fraud detection, risk assessment, and automated underwriting. Improving accuracy and speed in insurance operations.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-insurance-claims-and-underwriting',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

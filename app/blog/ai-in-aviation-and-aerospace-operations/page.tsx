@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Predictive maintenance, crew scheduling, cargo optimization, and safety analytics. How airlines and aerospace companies use AI for operational excellence.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-in-aviation-and-aerospace-operations',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

@@ -6,7 +6,9 @@ export const metadata = {
   title: 'AI Development Acceleration | Zion Tech Group',
   description: 'Practical guide to ai development acceleration: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/ai-development-acceleration-2026-7184/' },
-  openGraph: { title: 'AI Development Acceleration', description: 'Practical guide to ai development acceleration.', url: 'https://ziontechgroup.com/blog/ai-development-acceleration-2026-7184/', type: 'article' },
+  openGraph: { title: 'AI Development Acceleration', description: 'Practical guide to ai development acceleration.', url: 'https://ziontechgroup.com/blog/ai-development-acceleration-2026-7184/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'AI Development Acceleration', description: 'Practical guide to ai development acceleration.' }
 };
 

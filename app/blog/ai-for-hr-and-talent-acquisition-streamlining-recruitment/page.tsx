@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Resume screening, candidate matching, interview scheduling, and diversity in hiring. Reducing time-to-hire while improving quality of hire.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-hr-and-talent-acquisition-streamlining-recruitment',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

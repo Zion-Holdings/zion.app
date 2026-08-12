@@ -6,7 +6,9 @@ export const metadata = {
   title: 'Cybersecurity for MSPs | Zion Tech Group',
   description: 'Practical guide to cybersecurity for msps: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/cybersecurity-platform-msp-2026-7524/' },
-  openGraph: { title: 'Cybersecurity for MSPs', description: 'Practical guide to cybersecurity for msps.', url: 'https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026-7524/', type: 'article' },
+  openGraph: { title: 'Cybersecurity for MSPs', description: 'Practical guide to cybersecurity for msps.', url: 'https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026-7524/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'Cybersecurity for MSPs', description: 'Practical guide to cybersecurity for msps.' }
 };
 

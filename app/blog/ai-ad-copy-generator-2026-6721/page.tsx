@@ -6,7 +6,9 @@ export const metadata = {
   title: 'AI Ad Copy Generator | Zion Tech Group',
   description: 'Practical guide to ai ad copy generator: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/ai-ad-copy-generator-2026-6721/' },
-  openGraph: { title: 'AI Ad Copy Generator', description: 'Practical guide to ai ad copy generator.', url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-2026-6721/', type: 'article' },
+  openGraph: { title: 'AI Ad Copy Generator', description: 'Practical guide to ai ad copy generator.', url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-2026-6721/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'AI Ad Copy Generator', description: 'Practical guide to ai ad copy generator.' }
 };
 

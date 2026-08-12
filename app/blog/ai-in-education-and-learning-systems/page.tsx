@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Adaptive learning, personalized curricula, assessment automation, and administrative efficiency. Transforming education with intelligent systems.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-in-education-and-learning-systems',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

@@ -6,7 +6,9 @@ export const metadata = {
   title: 'API Security Testing | Zion Tech Group',
   description: 'Practical guide to api security testing: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/api-security-testing-2026-8486/' },
-  openGraph: { title: 'API Security Testing', description: 'Practical guide to api security testing.', url: 'https://ziontechgroup.com/blog/api-security-testing-2026-8486/', type: 'article' },
+  openGraph: { title: 'API Security Testing', description: 'Practical guide to api security testing.', url: 'https://ziontechgroup.com/blog/api-security-testing-2026-8486/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'API Security Testing', description: 'Practical guide to api security testing.' }
 };
 

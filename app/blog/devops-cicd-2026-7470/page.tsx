@@ -6,7 +6,9 @@ export const metadata = {
   title: 'DevOps CI/CD | Zion Tech Group',
   description: 'Practical guide to devops ci/cd: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/devops-cicd-2026-7470/' },
-  openGraph: { title: 'DevOps CI/CD', description: 'Practical guide to devops ci/cd.', url: 'https://ziontechgroup.com/blog/devops-cicd-2026-7470/', type: 'article' },
+  openGraph: { title: 'DevOps CI/CD', description: 'Practical guide to devops ci/cd.', url: 'https://ziontechgroup.com/blog/devops-cicd-2026-7470/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'DevOps CI/CD', description: 'Practical guide to devops ci/cd.' }
 };
 

@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Right-sizing recommendations, spot instance optimization, reserved capacity planning, and anomaly detection for cloud spend. Reducing waste without sacrificing performance.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

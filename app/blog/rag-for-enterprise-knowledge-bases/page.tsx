@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Retrieval-augmented generation, chunking strategies, embedding models, and evaluation. Building AI systems that answer questions from your internal documents.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/rag-for-enterprise-knowledge-bases',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

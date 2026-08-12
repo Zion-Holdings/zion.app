@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Risk assessment, document extraction, fraud detection, and claims triage. How insurers use AI to improve accuracy and reduce processing time.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-insurance-underwriting-and-claims-automation',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

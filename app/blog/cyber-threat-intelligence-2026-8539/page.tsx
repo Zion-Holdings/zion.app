@@ -6,7 +6,9 @@ export const metadata = {
   title: 'Cyber Threat Intelligence | Zion Tech Group',
   description: 'Practical guide to cyber threat intelligence: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/cyber-threat-intelligence-2026-8539/' },
-  openGraph: { title: 'Cyber Threat Intelligence', description: 'Practical guide to cyber threat intelligence.', url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-2026-8539/', type: 'article' },
+  openGraph: { title: 'Cyber Threat Intelligence', description: 'Practical guide to cyber threat intelligence.', url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-2026-8539/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'Cyber Threat Intelligence', description: 'Practical guide to cyber threat intelligence.' }
 };
 

@@ -6,7 +6,9 @@ export const metadata = {
   title: 'Container Security Lifecycle | Zion Tech Group',
   description: 'Practical guide to container security lifecycle: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/container-security-lifecycle-2026-8193/' },
-  openGraph: { title: 'Container Security Lifecycle', description: 'Practical guide to container security lifecycle.', url: 'https://ziontechgroup.com/blog/container-security-lifecycle-2026-8193/', type: 'article' },
+  openGraph: { title: 'Container Security Lifecycle', description: 'Practical guide to container security lifecycle.', url: 'https://ziontechgroup.com/blog/container-security-lifecycle-2026-8193/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'Container Security Lifecycle', description: 'Practical guide to container security lifecycle.' }
 };
 

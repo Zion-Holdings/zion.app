@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Combining vision and language for document understanding, quality inspection, and customer experience. When and how to deploy multimodal models.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/multimodal-ai-vision-and-language-models-in-enterprise',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

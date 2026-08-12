@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'AI-powered lead scoring, predictive customer analytics, automated outreach, personalization at scale, and CRM integration with marketing and support.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/crm-automation-trends-2026-ai-driven-customer-journey-personalization',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

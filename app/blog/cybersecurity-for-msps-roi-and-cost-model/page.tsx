@@ -12,7 +12,8 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/cybersecurity-for-msps-roi-and-cost-model/',
     type: 'article',
     siteName: 'Zion Tech Group',
-  },
+  
+    images: ['/og-default.png'],},
   alternates: { canonical: '/blog/cybersecurity-for-msps-roi-and-cost-model/' },
 };
 

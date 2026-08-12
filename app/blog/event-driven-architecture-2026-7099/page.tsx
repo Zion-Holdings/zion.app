@@ -6,7 +6,9 @@ export const metadata = {
   title: 'Event Driven Architecture | Zion Tech Group',
   description: 'Practical guide to event driven architecture: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/event-driven-architecture-2026-7099/' },
-  openGraph: { title: 'Event Driven Architecture', description: 'Practical guide to event driven architecture.', url: 'https://ziontechgroup.com/blog/event-driven-architecture-2026-7099/', type: 'article' },
+  openGraph: { title: 'Event Driven Architecture', description: 'Practical guide to event driven architecture.', url: 'https://ziontechgroup.com/blog/event-driven-architecture-2026-7099/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'Event Driven Architecture', description: 'Practical guide to event driven architecture.' }
 };
 

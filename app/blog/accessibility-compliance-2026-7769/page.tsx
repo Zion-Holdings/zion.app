@@ -6,7 +6,9 @@ export const metadata = {
   title: 'Accessibility Compliance | Zion Tech Group',
   description: 'Practical guide to accessibility compliance: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/accessibility-compliance-2026-7769/' },
-  openGraph: { title: 'Accessibility Compliance', description: 'Practical guide to accessibility compliance.', url: 'https://ziontechgroup.com/blog/accessibility-compliance-2026-7769/', type: 'article' },
+  openGraph: { title: 'Accessibility Compliance', description: 'Practical guide to accessibility compliance.', url: 'https://ziontechgroup.com/blog/accessibility-compliance-2026-7769/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'Accessibility Compliance', description: 'Practical guide to accessibility compliance.' }
 };
 

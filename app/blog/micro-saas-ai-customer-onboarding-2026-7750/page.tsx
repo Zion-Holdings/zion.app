@@ -6,7 +6,9 @@ export const metadata = {
   title: 'MicroSaaS Customer Onboarding | Zion Tech Group',
   description: 'Practical guide to microsaas customer onboarding: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/micro-saas-ai-customer-onboarding-2026-7750/' },
-  openGraph: { title: 'MicroSaaS Customer Onboarding', description: 'Practical guide to microsaas customer onboarding.', url: 'https://ziontechgroup.com/blog/micro-saas-ai-customer-onboarding-2026-7750/', type: 'article' },
+  openGraph: { title: 'MicroSaaS Customer Onboarding', description: 'Practical guide to microsaas customer onboarding.', url: 'https://ziontechgroup.com/blog/micro-saas-ai-customer-onboarding-2026-7750/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'MicroSaaS Customer Onboarding', description: 'Practical guide to microsaas customer onboarding.' }
 };
 

@@ -14,7 +14,9 @@ export const metadata: Metadata = {
       'Demand forecasting, quality control, supply chain traceability, and waste reduction. AI across the food value chain.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-food-and-beverage-operations',
-  },
+  
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
 };
 
 export default function Page() {

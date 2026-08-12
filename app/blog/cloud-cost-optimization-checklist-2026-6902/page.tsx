@@ -6,7 +6,9 @@ export const metadata = {
   title: 'Cloud Cost Optimization | Zion Tech Group',
   description: 'Practical guide to cloud cost optimization: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/cloud-cost-optimization-checklist-2026-6902/' },
-  openGraph: { title: 'Cloud Cost Optimization', description: 'Practical guide to cloud cost optimization.', url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-checklist-2026-6902/', type: 'article' },
+  openGraph: { title: 'Cloud Cost Optimization', description: 'Practical guide to cloud cost optimization.', url: 'https://ziontechgroup.com/blog/cloud-cost-optimization-checklist-2026-6902/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'Cloud Cost Optimization', description: 'Practical guide to cloud cost optimization.' }
 };
 

@@ -6,7 +6,9 @@ export const metadata = {
   title: 'IT Consulting | Zion Tech Group',
   description: 'Practical guide to it consulting: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/it-consulting-2026-6984/' },
-  openGraph: { title: 'IT Consulting', description: 'Practical guide to it consulting.', url: 'https://ziontechgroup.com/blog/it-consulting-2026-6984/', type: 'article' },
+  openGraph: { title: 'IT Consulting', description: 'Practical guide to it consulting.', url: 'https://ziontechgroup.com/blog/it-consulting-2026-6984/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'IT Consulting', description: 'Practical guide to it consulting.' }
 };
 

@@ -6,7 +6,9 @@ export const metadata = {
   title: 'AI Observability | Zion Tech Group',
   description: 'Practical guide to ai observability: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/ai-observability-2026-6910/' },
-  openGraph: { title: 'AI Observability', description: 'Practical guide to ai observability.', url: 'https://ziontechgroup.com/blog/ai-observability-2026-6910/', type: 'article' },
+  openGraph: { title: 'AI Observability', description: 'Practical guide to ai observability.', url: 'https://ziontechgroup.com/blog/ai-observability-2026-6910/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'AI Observability', description: 'Practical guide to ai observability.' }
 };
 

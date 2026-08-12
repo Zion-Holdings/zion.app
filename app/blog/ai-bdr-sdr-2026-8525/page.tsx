@@ -6,7 +6,9 @@ export const metadata = {
   title: 'AI BDR SDR | Zion Tech Group',
   description: 'Practical guide to ai bdr sdr: frameworks, metrics, and rollout playbook.',
   alternates: { canonical: '/blog/ai-bdr-sdr-2026-8525/' },
-  openGraph: { title: 'AI BDR SDR', description: 'Practical guide to ai bdr sdr.', url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-2026-8525/', type: 'article' },
+  openGraph: { title: 'AI BDR SDR', description: 'Practical guide to ai bdr sdr.', url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-2026-8525/', type: 'article' 
+    siteName: 'Zion Tech Group',
+    images: ['/og-default.png'],},
   twitter: { card: 'summary_large_image', title: 'AI BDR SDR', description: 'Practical guide to ai bdr sdr.' }
 };
 
