@@ -3,7 +3,7 @@ name: AI Autonomy Quick Cycle
 permissions:
   contents: read
 
-on:
+'on':
   workflow_dispatch:
   schedule:
     - cron: '30 5 * * *' # Daily at 05:30 UTC

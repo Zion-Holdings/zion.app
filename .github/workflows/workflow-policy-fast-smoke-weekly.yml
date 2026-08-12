@@ -5,7 +5,7 @@ name: Workflow policy fast smoke (weekly)
 permissions:
   contents: read
 
-on:
+'on':
   schedule:
     - cron: '12 7 * * 4' # Thursdays 07:12 UTC
   workflow_dispatch:

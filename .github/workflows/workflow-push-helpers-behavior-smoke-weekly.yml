@@ -5,7 +5,7 @@ name: push helpers behavior smoke (weekly)
 permissions:
   contents: read
 
-on:
+'on':
   schedule:
     - cron: '5 7 * * 2' # Tuesdays 07:05 UTC
   workflow_dispatch:

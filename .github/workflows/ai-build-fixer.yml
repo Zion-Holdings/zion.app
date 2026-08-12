@@ -9,7 +9,7 @@ concurrency:
   group: ai-build-fixer
   cancel-in-progress: false
 
-on:
+'on':
   workflow_run:
     workflows: ["CI/CD Pipeline"]
     types: [completed]

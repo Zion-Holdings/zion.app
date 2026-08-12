@@ -3,7 +3,7 @@ name: Workflow integrity audit (manual)
 permissions:
   contents: read
 
-on:
+'on':
   workflow_dispatch:
 
 concurrency:

@@ -1,10 +1,10 @@
 permissions:
   contents: read
 name: Autonomous Memory Leak Detector
-on:
+'on':
   schedule:
   - cron: 0 * * * *
-  workflow_dispatch
+  workflow_dispatch:
 jobs:
   heap-diff:
     name: Memory Leak Detector
@@ -14,11 +14,11 @@ jobs:
       issues: write
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       with:
         fetch-depth: 0
     - name: Setup Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
       with:
         node-version: '20'
         cache: npm
@@ -29,62 +29,78 @@ jobs:
     - name: Start test app if not running
       id: start-app
       continue-on-error: true
-      run: "# Check if any PM2 processes exist; if not, start a long-running Node\
-        \ app to simulate\nif ! pm2 jlist --format json | grep -q '\"name\"'; then\n\
-        \  echo \"No PM2 processes found. Starting sample long-lived app for demo...\"\
-        \n  cat > /tmp/heap-test-app.js << 'EOF'\n    setInterval(() => { const arr\
-        \ = new Array(1000000).fill('x'); }, 1000);\n  EOF\n  pm2 start /tmp/heap-test-app.js\
-        \ --name heap-test || true\n  sleep 2\nelse\n  echo \"PM2 processes already\
-        \ running.\"\nfi\n"
+      run: |
+        # Check if any PM2 processes exist; if not, start a long-running Node app to simulate
+        if ! pm2 jlist --format json | grep -q '"name"'; then
+          echo "No PM2 processes found. Starting sample long-lived app for demo..."
+          cat > /tmp/heap-test-app.js << 'EOF'
+            setInterval(() => { const arr = new Array(1000000).fill('x'); }, 1000);
+          EOF
+          pm2 start /tmp/heap-test-app.js --name heap-test || true
+          sleep 2
+        else
+          echo "PM2 processes already running."
+        fi
     - name: Run Heap Diff Detector
       id: detector
       continue-on-error: true
-      run: 'node automation/heap-diff-detector.cjs > /tmp/heap-diff-output.txt ||
-        true
-
+      run: |
+        node automation/heap-diff-detector.cjs > /tmp/heap-diff-output.txt || true
         echo "exit_code=$?" >> $GITHUB_OUTPUT
-
-        '
     - name: Upload snapshot artifact
       if: always()
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
       with:
         name: heap-diff-snapshot
         path: .hermes/memory/heap-diff/snapshots/*.json
         retention-days: 7
     - name: Check for alerts
-      run: "if [ \"${{ steps.detector.outputs.exit_code }}\" -ne 0 ]; then\n  echo\
-        \ \"Memory leak alerts detected\"\n  exit 1\nfi\n"
+      run: |
+        if [ "${{ steps.detector.outputs.exit_code }}" -ne 0 ]; then
+          echo "Memory leak alerts detected"
+          exit 1
+        fi
     - name: Open GitHub issue on sustained alerts
       if: failure()
-      uses: actions/github-script@v7
+      uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
       with:
-        script: "const fs = require('fs');\nconst snapshotDir = '.hermes/memory/heap-diff/snapshots';\n\
-          const files = fs.readdirSync(snapshotDir).sort().slice(-3); // last 3 snapshots\n\
-          let body = '\U0001F6A8 **Potential Memory Leak Detected**\\n\\n';\nbody\
-          \ += 'Heap retention growth exceeded threshold across one or more processes.\\\
-          n\\n';\nbody += '**Recent snapshots:**\\n';\nfor (const f of files) {\n\
-          \  const data = JSON.parse(fs.readFileSync(path.join(snapshotDir, f), 'utf8'));\n\
-          \  body += `- ${f} (${data.timestamp}): ${data.processes.map((p: any) =>\
-          \ `${p.name} ${p.heapUsedMB}MB${p.alert ? ' \U0001F534' : ''}`).join(',\
-          \ ')}\\n`;\n}\nbody += '\\nReview the attached artifacts and process metrics.\
-          \ Consider heap profile analysis and code review for leak sources.';\nbody\
-          \ += `\\n\\n*Committed by: ${context.payload.committer?.name || 'scheduler'}*\\\
-          n`;\n\nconst title = `\U0001F6A8 Memory Leak Alert \u2014 ${new Date().toISOString().slice(0,10)}`;\n\
-          const existing = await github.rest.issues.listForRepo({\n  owner: context.repo.owner,\n\
-          \  repo: context.repo.repo,\n  labels: ['memory-leak', 'autonomous', 'performance'],\n\
-          \  state: 'open'\n});\nconst already = existing.data.find((i: any) => i.title.startsWith('\U0001F6A8\
-          \ Memory Leak Alert'));\nif (!already) {\n  await github.rest.issues.create({\n\
-          \    owner: context.repo.owner,\n    repo: context.repo.repo,\n    title,\n\
-          \    body,\n    labels: ['memory-leak', 'autonomous', 'performance', 'blocker']\n\
-          \  });\n}\n"
+        script: |
+          const fs = require('fs');
+          const snapshotDir = '.hermes/memory/heap-diff/snapshots';
+          const files = fs.readdirSync(snapshotDir).sort().slice(-3);
+          let body = '🚨 **Potential Memory Leak Detected**\n\n';
+          body += 'Heap retention growth exceeded threshold across one or more processes.\n\n';
+          body += '**Recent snapshots:**\n';
+          for (const f of files) {
+            const data = JSON.parse(fs.readFileSync(path.join(snapshotDir, f), 'utf8'));
+            body += `- ${f} (${data.timestamp}): ${data.processes.map((p) => `${p.name} ${p.heapUsedMB}MB${p.alert ? ' 🔴' : ''}`).join(', ')}\n`;
+          }
+          body += '\nReview the attached artifacts and process metrics. Consider heap profile analysis and code review for leak sources.';
+          body += `\n\n*Committed by: ${context.payload.committer?.name || 'scheduler'}*\n`;
+
+          const title = `🚨 Memory Leak Alert — ${new Date().toISOString().slice(0,10)}`;
+          const existing = await github.rest.issues.listForRepo({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            labels: ['memory-leak', 'autonomous', 'performance'],
+            state: 'open'
+          });
+          const already = existing.data.find((i) => i.title.startsWith('🚨 Memory Leak Alert'));
+          if (!already) {
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body,
+              labels: ['memory-leak', 'autonomous', 'performance', 'blocker']
+            });
+          }
     - name: Notify Telegram on alerts
       if: failure()
-      run: "node automation/notify-telegram.js \"\U0001F6A8 Memory leak detected.\
-        \ Check GitHub issues for heap diff details.\"\n"
+      run: |
+        node automation/notify-telegram.js "🚨 Memory leak detected. Check GitHub issues for heap diff details."
     - name: Weekly memory health digest
-      if: success() && github.event_name == 'schedule' && github.event.schedule ==
-        '0 0 * * 0'
-      run: "node automation/notify-telegram.js \"\u2705 Weekly memory leak scan complete\
-        \ \u2014 no abnormal heap growth.\"\n"
+      if: success() && github.event_name == 'schedule' && github.event.schedule == '0 0 * * 0'
+      run: |
+        node automation/notify-telegram.js "✅ Weekly memory leak scan complete — no abnormal heap growth."
     timeout-minutes: 10

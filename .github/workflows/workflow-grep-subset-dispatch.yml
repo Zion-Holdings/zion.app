@@ -3,7 +3,7 @@ name: Workflow grep subset (manual)
 permissions:
   contents: read
 
-on:
+'on':
   workflow_dispatch:
     inputs:
       subset:

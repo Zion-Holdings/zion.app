@@ -6,7 +6,7 @@ name: Workflow setup-node policy smoke (weekly)
 permissions:
   contents: read
 
-on:
+'on':
   schedule:
     - cron: '50 6 * * 1' # Mondays 06:50 UTC
   workflow_dispatch:

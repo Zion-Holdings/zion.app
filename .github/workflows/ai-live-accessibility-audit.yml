@@ -11,7 +11,7 @@ concurrency:
   group: ai-live-accessibility-audit
   cancel-in-progress: false
 
-on:
+'on':
   schedule:
     - cron: '0 7 * * 4'
   workflow_dispatch:

@@ -7,7 +7,7 @@ name: AI App Visit Intelligence
 permissions:
   contents: write
 
-on:
+'on':
   schedule:
     - cron: '0 14 * * 1'
   workflow_dispatch:

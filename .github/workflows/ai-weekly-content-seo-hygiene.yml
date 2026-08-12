@@ -11,7 +11,7 @@ concurrency:
   group: ai-weekly-content-seo-hygiene
   cancel-in-progress: false
 
-on:
+'on':
   schedule:
     - cron: '0 6 * * 1'
   workflow_dispatch:

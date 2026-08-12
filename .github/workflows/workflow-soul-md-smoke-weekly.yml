@@ -5,7 +5,7 @@ name: SOUL.md smoke (weekly)
 permissions:
   contents: read
 
-on:
+'on':
   schedule:
     - cron: '9 8 * * 4' # Thursdays 08:09 UTC
   workflow_dispatch:

@@ -7,7 +7,7 @@ concurrency:
   group: ai-pm2-ops-digest
   cancel-in-progress: false
 
-on:
+'on':
   schedule:
     - cron: '15 7 * * *'
   workflow_dispatch:

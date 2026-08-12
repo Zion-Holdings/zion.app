@@ -8,7 +8,7 @@ concurrency:
   group: ai-autonomous-improvements
   cancel-in-progress: false
 
-on:
+'on':
   schedule:
     - cron: '0 11 * * 1'
   workflow_dispatch:

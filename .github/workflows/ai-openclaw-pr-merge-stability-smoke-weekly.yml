@@ -2,7 +2,7 @@
 name: ai openclaw PR merge stability workflow smoke (weekly)
 permissions:
   contents: read
-on:
+'on':
   schedule:
     - cron: '54 11 * * 3' # Wednesdays 11:54 UTC
   workflow_dispatch:

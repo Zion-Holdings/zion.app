@@ -6,7 +6,7 @@ name: Workflow action pin smoke (weekly)
 permissions:
   contents: read
 
-on:
+'on':
   schedule:
     - cron: '20 6 * * 0' # Sundays 06:20 UTC
   workflow_dispatch:

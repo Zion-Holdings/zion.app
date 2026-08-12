@@ -1,6 +1,6 @@
 name: AI Experiences Health
 
-on:
+'on':
   schedule:
     - cron: '15 * * * *' # Hourly at minute 15, away from the top-of-hour crowd
   workflow_dispatch: {}

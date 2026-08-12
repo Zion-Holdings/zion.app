@@ -9,7 +9,7 @@ concurrency:
   group: ai-pm2-static-checks
   cancel-in-progress: false
 
-on:
+'on':
   pull_request:
     paths:
       - 'automation/**'

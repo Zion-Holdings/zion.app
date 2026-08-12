@@ -3,7 +3,7 @@ name: AI dependency upgrade train
 permissions:
   contents: read
 
-on:
+'on':
   schedule:
     - cron: '0 16 3 * *'
   workflow_dispatch:

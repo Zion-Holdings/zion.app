@@ -8,7 +8,7 @@ concurrency:
   group: ai-performance-optimizer
   cancel-in-progress: false
 
-on:
+'on':
   schedule:
     - cron: '0 10 * * 3'
   workflow_dispatch:

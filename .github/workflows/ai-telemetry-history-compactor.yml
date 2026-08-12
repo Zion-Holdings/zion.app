@@ -3,7 +3,7 @@ name: AI Telemetry History Compactor
 permissions:
   contents: write
 
-on:
+'on':
   schedule:
     - cron: '48 */8 * * *'
   workflow_dispatch:

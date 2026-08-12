@@ -9,7 +9,7 @@ concurrency:
   group: autonomous-writer-queue-guard
   cancel-in-progress: false
 
-on:
+'on':
   schedule:
     - cron: '*/20 * * * *'
   workflow_dispatch:

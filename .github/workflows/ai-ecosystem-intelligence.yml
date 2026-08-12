@@ -7,7 +7,7 @@ concurrency:
   group: ai-ecosystem-intelligence
   cancel-in-progress: false
 
-on:
+'on':
   schedule:
     - cron: '0 10 * * 1'
   workflow_dispatch:

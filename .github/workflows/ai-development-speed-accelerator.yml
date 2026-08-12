@@ -7,7 +7,7 @@ concurrency:
   group: ai-development-speed-accelerator
   cancel-in-progress: false
 
-on:
+'on':
   schedule:
     - cron: '0 11 * * 2'
   workflow_dispatch:

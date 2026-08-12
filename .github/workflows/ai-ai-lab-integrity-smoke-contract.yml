@@ -7,7 +7,7 @@ concurrency:
   group: ai-ai-lab-integrity-smoke-contract
   cancel-in-progress: false
 
-on:
+'on':
   workflow_dispatch:
   push:
     branches: [main]

@@ -8,7 +8,7 @@ name: AI App Quality Audit
 permissions:
   contents: read
 
-on:
+'on':
   schedule:
     - cron: '0 5 * * 0'
   workflow_dispatch:

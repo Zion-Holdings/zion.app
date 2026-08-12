@@ -2,7 +2,7 @@
 name: workflow reusable CI dispatch smoke (weekly)
 permissions:
   contents: read
-on:
+'on':
   schedule:
     - cron: '2 9 * * 4' # Thursdays 09:02 UTC
   workflow_dispatch:

@@ -11,7 +11,7 @@ concurrency:
   group: ai-layout-design-automation-weekly
   cancel-in-progress: false
 
-on:
+'on':
   schedule:
     - cron: '0 11 * * 5'
   workflow_dispatch:

@@ -6,7 +6,7 @@ name: Workflow permissions smoke (weekly)
 permissions:
   contents: read
 
-on:
+'on':
   schedule:
     - cron: '40 6 * * 4' # Thursdays 06:40 UTC
   workflow_dispatch:

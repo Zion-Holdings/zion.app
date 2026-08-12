@@ -7,7 +7,7 @@ concurrency:
   group: ai-midweek-auto-impl
   cancel-in-progress: false
 
-on:
+'on':
   schedule:
     - cron: '0 14 * * 3'
   workflow_dispatch:

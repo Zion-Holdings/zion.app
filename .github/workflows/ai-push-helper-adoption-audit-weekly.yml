@@ -3,7 +3,7 @@ name: AI Push helper adoption audit (weekly)
 permissions:
   contents: read
 
-on:
+'on':
   schedule:
     - cron: '34 15 * * 1'
   pull_request:

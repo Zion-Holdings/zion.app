@@ -8,7 +8,7 @@ concurrency:
   group: ai-content-quality
   cancel-in-progress: false
 
-on:
+'on':
   schedule:
     - cron: '0 7 * * 1'
   workflow_dispatch:

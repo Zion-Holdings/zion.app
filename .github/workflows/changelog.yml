@@ -1,11 +1,11 @@
 permissions:
   contents: read
 name: Autonomous Changelog Generator
-on:
+'on':
   push:
     branches:
     - main
-  workflow_dispatch
+  workflow_dispatch:
 jobs:
   changelog:
     name: Generate Changelog
@@ -14,11 +14,11 @@ jobs:
       contents: write
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       with:
         fetch-depth: 0
     - name: Setup Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
       with:
         node-version: '20'
         cache: npm
@@ -27,39 +27,30 @@ jobs:
     - name: Run Changelog Generator
       id: changelog
       continue-on-error: true
-      run: 'node automation/changelog-generator.cjs > /tmp/changelog-output.txt ||
-        true
-
+      run: |
+        node automation/changelog-generator.cjs > /tmp/changelog-output.txt || true
         echo "exit_code=$?" >> $GITHUB_OUTPUT
-
-        '
     - name: Upload changelog artifact
       if: always()
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
       with:
         name: changelog-md
         path: CHANGELOG.md
         retention-days: 7
     - name: Commit updated CHANGELOG.md
       if: steps.changelog.outputs.exit_code == '0'
-      run: 'git config user.name "openclaw-automation"
-
+      run: |
+        git config user.name "openclaw-automation"
         git config user.email "openclaw@ziontechgroup.com"
-
         git add CHANGELOG.md
-
-        git diff --cached --quiet || git commit -m "docs(auto): update changelog with
-        recent changes"
-
+        git diff --cached --quiet || git commit -m "docs(auto): update changelog with recent changes"
         git push origin HEAD:${{ github.ref }}
-
-        '
     - name: Notify Telegram on update
       if: steps.changelog.outputs.exit_code == '0' && success()
-      run: "# Count new entries added (rough check)\nnode automation/notify-telegram.js\
-        \ \"\U0001F4CB Changelog updated with latest commits.\"\n"
+      run: |
+        node automation/notify-telegram.js "📋 Changelog updated with latest commits."
     - name: Notify Telegram on errors
       if: failure()
-      run: "node automation/notify-telegram.js \"\u26A0\uFE0F Changelog generator\
-        \ encountered errors. Check workflow logs.\"\n"
+      run: |
+        node automation/notify-telegram.js "⚠️ Changelog generator encountered errors. Check workflow logs."
     timeout-minutes: 10

@@ -5,7 +5,7 @@ name: Workflow Ruby parse (parser file)
 permissions:
   contents: read
 
-on:
+'on':
   pull_request:
     paths:
       - 'scripts/automation/parse-github-workflows-yaml.rb'

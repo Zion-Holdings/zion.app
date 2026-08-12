@@ -8,7 +8,7 @@ concurrency:
   group: ai-pm2-restart-guardian
   cancel-in-progress: false
 
-on:
+'on':
   schedule:
     - cron: '20 */6 * * *'
   workflow_dispatch:

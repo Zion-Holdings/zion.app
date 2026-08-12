@@ -5,7 +5,7 @@ name: Workflow npm ci policy smoke (weekly)
 permissions:
   contents: read
 
-on:
+'on':
   schedule:
     - cron: '55 6 * * 2' # Tuesdays 06:55 UTC
   workflow_dispatch:

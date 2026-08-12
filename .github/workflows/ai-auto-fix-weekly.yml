@@ -1,7 +1,7 @@
 permissions:
   contents: read
 name: AI Auto Fix Weekly
-on:
+'on':
   schedule:
   - cron: 0 2 * * 0
 jobs:
@@ -11,9 +11,9 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
     - name: Setup Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
       with:
         node-version-file: .nvmrc
     - name: Install dependencies
@@ -25,11 +25,14 @@ jobs:
     - name: Run type check
       run: npm run type-check
     - name: Commit changes
-      run: "git config --local user.email \"action@github.com\"\ngit config --local\
-        \ user.name \"GitHub Action\"\ngit checkout -b auto-fix/$(date +%Y-%m-%d)\n\
-        if ! git diff --quiet; then\n  git add -a\n  git commit -m \"chore: auto-fix\
-        \ dependencies and lint\"\n  git push origin HEAD\n  gh pr create --title\
-        \ \"Auto-fix: dependencies and lint\" --body \"Automated fixes from the AI\
-        \ Auto Fix Weekly workflow.\" --base main --head $(git rev-parse --abbrev-ref\
-        \ HEAD)\nfi\n"
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git checkout -b auto-fix/$(date +%Y-%m-%d)
+        if ! git diff --quiet; then
+          git add -a
+          git commit -m "chore: auto-fix dependencies and lint"
+          git push origin HEAD
+          gh pr create --title "Auto-fix: dependencies and lint" --body "Automated fixes from the AI Auto Fix Weekly workflow." --base main --head $(git rev-parse --abbrev-ref HEAD)
+        fi
     timeout-minutes: 10

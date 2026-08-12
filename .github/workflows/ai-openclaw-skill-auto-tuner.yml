@@ -8,7 +8,7 @@ concurrency:
   group: ai-openclaw-skill-auto-tuner
   cancel-in-progress: false
 
-on:
+'on':
   schedule:
     - cron: '10 */6 * * *'
   workflow_dispatch:

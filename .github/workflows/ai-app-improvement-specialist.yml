@@ -8,7 +8,7 @@ concurrency:
   group: ai-app-improvement-specialist
   cancel-in-progress: false
 
-on:
+'on':
   schedule:
     - cron: '0 12 * * 5'
   workflow_dispatch:

@@ -1,6 +1,6 @@
 name: AI Autonomous Opportunity Radar Refresh
 
-on:
+'on':
   schedule:
     - cron: '17 5 * * *'
   workflow_dispatch: {}

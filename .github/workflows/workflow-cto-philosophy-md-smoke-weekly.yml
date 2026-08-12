@@ -5,7 +5,7 @@ name: docs/CTO philosophy smoke (weekly)
 permissions:
   contents: read
 
-on:
+'on':
   schedule:
     - cron: '15 8 * * 0' # Sundays 08:15 UTC
   workflow_dispatch:

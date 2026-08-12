@@ -3,7 +3,7 @@ name: AI Agents Docs Updater
 permissions:
   contents: read
 
-on:
+'on':
   schedule:
     - cron: '0 6 * * 1'
   workflow_dispatch:

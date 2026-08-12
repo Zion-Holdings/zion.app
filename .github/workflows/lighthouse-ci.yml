@@ -8,7 +8,7 @@ concurrency:
   group: lighthouse-${{ github.ref }}
   cancel-in-progress: true
 
-on:
+'on':
   pull_request:
     branches: [main]
     paths:

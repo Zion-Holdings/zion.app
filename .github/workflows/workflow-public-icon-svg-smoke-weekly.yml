@@ -5,7 +5,7 @@ name: public/icon.svg smoke (weekly)
 permissions:
   contents: read
 
-on:
+'on':
   schedule:
     - cron: '1 8 * * 0' # Sundays 08:01 UTC
   workflow_dispatch:

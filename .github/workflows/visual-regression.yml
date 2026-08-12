@@ -1,10 +1,10 @@
 permissions:
   contents: read
 name: Autonomous Visual Regression Detector
-on:
+'on':
   schedule:
   - cron: 30 2 * * *
-  workflow_dispatch
+  workflow_dispatch:
 jobs:
   visual-regression:
     name: UI Visual Regression
@@ -14,65 +14,83 @@ jobs:
       issues: write
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
     - name: Setup Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
       with:
         node-version: '20'
         cache: npm
     - name: Install dependencies
       run: npm ci --include=dev
     - name: Start app (needed for screenshots)
-      run: "npm run build\nnohup npm start &\nfor i in 1 2 3 4 5; do\n  if curl -sf\
-        \ http://localhost:3000 > /dev/null; then\n    echo \"App started\"\n    break\n\
-        \  fi\n  echo \"Waiting for app...\"\n  sleep 5\ndone\n"
+      run: |
+        npm run build
+        nohup npm start &
+        for i in 1 2 3 4 5; do
+          if curl -sf http://localhost:3000 > /dev/null; then
+            echo "App started"
+            break
+          fi
+          echo "Waiting for app..."
+          sleep 5
+        done
     - name: Run Visual Regression Detector
       id: detector
       continue-on-error: true
-      run: 'APP_URL=http://localhost:3000 node automation/visual-regression.cjs >
-        /tmp/vr-output.txt || true
-
+      run: |
+        APP_URL=http://localhost:3000 node automation/visual-regression.cjs > /tmp/vr-output.txt || true
         echo "exit_code=$?" >> $GITHUB_OUTPUT
-
-        '
     - name: Upload artifacts
       if: always()
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
       with:
         name: visual-regression-artifacts
-        path: '.hermes/memory/visual-regression/current/*.png
-
+        path: |
+          .hermes/memory/visual-regression/current/*.png
           .hermes/memory/visual-regression/baseline/*.png
-
           .hermes/memory/visual-regression/diffs/*.png
-
-          '
         retention-days: 7
     - name: Check for alerts
-      run: "if [ \"${{ steps.detector.outputs.exit_code }}\" -ne 0 ]; then\n  echo\
-        \ \"Visual regressions detected\"\n  exit 1\nfi\n"
+      run: |
+        if [ "${{ steps.detector.outputs.exit_code }}" -ne 0 ]; then
+          echo "Visual regressions detected"
+          exit 1
+        fi
     - name: Open GitHub issue on visual regression
       if: failure()
-      uses: actions/github-script@v7
+      uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
       with:
-        script: "const fs = require('fs');\nconst diffDir = '.hermes/memory/visual-regression/diffs';\n\
-          const files = fs.readdirSync(diffDir).filter(f => f.endsWith('-diff.png'));\n\
-          const pages = files.map(f => f.replace('-diff.png', '')).join(', ');\n\n\
-          const body = `\U0001F6A8 **Visual Regression Detected**\\n\\n`;\nbody +=\
-          \ `The following page/viewport combinations have visual changes exceeding\
-          \ threshold:\\n\\n`;\nbody += `**Pages:** ${pages}\\n\\n`;\nbody += `Review\
-          \ the attached diff images (red pixels show changes). If changes are intentional,\
-          \ update the baseline.\\n\\n`;\nbody += `*Committed by: ${context.payload.committer?.name\
-          \ || 'scheduler'}*\\n`;\n\nconst title = `\U0001F6A8 Visual Regression \u2014\
-          \ ${new Date().toISOString().slice(0,10)}`;\nconst existing = await github.rest.issues.listForRepo({\n\
-          \  owner: context.repo.owner,\n  repo: context.repo.repo,\n  labels: ['visual-regression',\
-          \ 'ui', 'autonomous'],\n  state: 'open'\n});\nconst already = existing.data.find((i:\
-          \ any) => i.title.startsWith('\U0001F6A8 Visual Regression'));\nif (!already)\
-          \ {\n  await github.rest.issues.create({\n    owner: context.repo.owner,\n\
-          \    repo: context.repo.repo,\n    title,\n    body,\n    labels: ['visual-regression',\
-          \ 'ui', 'autonomous', 'blocker']\n  });\n}\n"
+        script: |
+          const fs = require('fs');
+          const diffDir = '.hermes/memory/visual-regression/diffs';
+          const files = fs.readdirSync(diffDir).filter(f => f.endsWith('-diff.png'));
+          const pages = files.map(f => f.replace('-diff.png', '')).join(', ');
+
+          const body = `🚨 **Visual Regression Detected**\n\n` +
+            `The following page/viewport combinations have visual changes exceeding threshold:\n\n` +
+            `**Pages:** ${pages}\n\n` +
+            `Review the attached diff images (red pixels show changes). If changes are intentional, update the baseline.\n\n` +
+            `*Committed by: ${context.payload.committer?.name || 'scheduler'}*\n`;
+
+          const title = `🚨 Visual Regression — ${new Date().toISOString().slice(0,10)}`;
+          const existing = await github.rest.issues.listForRepo({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            labels: ['visual-regression', 'ui', 'autonomous'],
+            state: 'open'
+          });
+          const already = existing.data.find((i) => i.title.startsWith('🚨 Visual Regression'));
+          if (!already) {
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body,
+              labels: ['visual-regression', 'ui', 'autonomous', 'blocker']
+            });
+          }
     - name: Notify Telegram on alerts
       if: failure()
-      run: "node automation/notify-telegram.js \"\U0001F6A8 Visual regression detected.\
-        \ Check GitHub issues for before/after/diff images.\"\n"
+      run: |
+        node automation/notify-telegram.js "🚨 Visual regression detected. Check GitHub issues for before/after/diff images."
     timeout-minutes: 10

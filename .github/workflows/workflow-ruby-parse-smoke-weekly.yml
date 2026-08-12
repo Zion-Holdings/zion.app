@@ -5,7 +5,7 @@ name: Workflow Ruby parse smoke (weekly)
 permissions:
   contents: read
 
-on:
+'on':
   schedule:
     - cron: '22 8 * * 1' # Mondays 08:22 UTC
   workflow_dispatch:

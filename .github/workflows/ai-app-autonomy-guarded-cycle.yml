@@ -1,6 +1,6 @@
 name: AI App Autonomy Guarded Cycle
 
-on:
+'on':
   workflow_dispatch:
     inputs:
       cycle:

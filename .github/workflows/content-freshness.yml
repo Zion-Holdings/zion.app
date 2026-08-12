@@ -1,10 +1,10 @@
 permissions:
   contents: read
 name: Autonomous Content Freshness & Stale Content Archiver
-on:
+'on':
   schedule:
   - cron: 0 10 * * 2
-  workflow_dispatch
+  workflow_dispatch:
 jobs:
   freshness-check:
     name: Content Freshness Scan
@@ -14,9 +14,9 @@ jobs:
       issues: write
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
     - name: Setup Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
       with:
         node-version: '20'
         cache: npm
@@ -25,14 +25,12 @@ jobs:
     - name: Run Content Freshness Scanner
       id: scanner
       continue-on-error: true
-      run: 'node automation/content-freshness.cjs > /tmp/freshness-output.txt || true
-
+      run: |
+        node automation/content-freshness.cjs > /tmp/freshness-output.txt || true
         echo "exit_code=$?" >> $GITHUB_OUTPUT
-
-        '
     - name: Upload freshness artifacts
       if: always()
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
       with:
         name: content-freshness-state
         path: '.hermes/memory/content-freshness/
@@ -43,10 +41,12 @@ jobs:
         retention-days: 30
     - name: Notify Telegram on completion
       if: success()
-      run: "node automation/notify-telegram.js \"\U0001F552 Content freshness scan\
-        \ complete. Check artifacts for stale content count.\"\n"
+      run: |
+        node automation/notify-telegram.js "\U0001F552 Content freshness scan
+        \ complete. Check artifacts for stale content count."\n
     - name: Notify Telegram on errors
       if: failure()
-      run: "node automation/notify-telegram.js \"\u26A0\uFE0F Content freshness scan\
-        \ failed. Check workflow logs.\"\n"
+      run: |
+        node automation/notify-telegram.js "\u26A0\uFE0F Content freshness scan
+        \ failed. Check workflow logs."\n
     timeout-minutes: 10

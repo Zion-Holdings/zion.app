@@ -5,7 +5,7 @@ permissions:
   issues: write
   actions: read
 
-on:
+'on':
   workflow_dispatch:
   schedule:
     - cron: '25 16 * * 4'

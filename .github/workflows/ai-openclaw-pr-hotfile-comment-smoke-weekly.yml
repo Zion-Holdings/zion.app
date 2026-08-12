@@ -2,7 +2,7 @@
 name: ai openclaw PR hot-file advisory workflow smoke (weekly)
 permissions:
   contents: read
-on:
+'on':
   schedule:
     - cron: '53 11 * * 3' # Wednesdays 11:53 UTC
   workflow_dispatch:

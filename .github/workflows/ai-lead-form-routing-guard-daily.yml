@@ -8,7 +8,7 @@ concurrency:
   group: ai-lead-form-routing-guard-daily
   cancel-in-progress: false
 
-on:
+'on':
   schedule:
     - cron: '*/10 * * * *'
   workflow_dispatch:

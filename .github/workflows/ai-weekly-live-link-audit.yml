@@ -13,7 +13,7 @@ concurrency:
   group: ai-weekly-live-link-audit
   cancel-in-progress: false
 
-on:
+'on':
   schedule:
     - cron: '0 9 * * 4'
   workflow_dispatch:

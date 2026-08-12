@@ -3,7 +3,7 @@ name: AI Site Improvement Agent
 permissions:
   contents: read
 
-on:
+'on':
   schedule:
     - cron: '0 7 * * *'
   workflow_dispatch:

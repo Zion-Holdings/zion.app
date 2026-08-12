@@ -4,7 +4,7 @@ name: ai autonomous improvements workflow smoke (weekly)
 permissions:
   contents: read
 
-on:
+'on':
   schedule:
     - cron: '10 12 * * 3' # Wednesdays 12:10 UTC
   workflow_dispatch:

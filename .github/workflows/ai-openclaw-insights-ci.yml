@@ -3,7 +3,7 @@ name: AI Openclaw insights bundle
 permissions:
   contents: read
 
-on:
+'on':
   workflow_dispatch:
   schedule:
     - cron: '0 17 * * 0'

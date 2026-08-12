@@ -5,7 +5,7 @@ name: dependabot.yml smoke (weekly)
 permissions:
   contents: read
 
-on:
+'on':
   schedule:
     - cron: '15 7 * * 2' # Tuesdays 07:15 UTC
   workflow_dispatch:

@@ -5,7 +5,7 @@ name: public/robots.txt smoke (weekly)
 permissions:
   contents: read
 
-on:
+'on':
   schedule:
     - cron: '41 7 * * 5' # Fridays 07:41 UTC
   workflow_dispatch:

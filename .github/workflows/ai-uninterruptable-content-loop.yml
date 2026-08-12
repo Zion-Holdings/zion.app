@@ -12,7 +12,7 @@ permissions:
   contents: write
   actions: read
 
-on:
+'on':
   schedule:
     - cron: '15 * * * *' # hourly, staggered
   workflow_dispatch:

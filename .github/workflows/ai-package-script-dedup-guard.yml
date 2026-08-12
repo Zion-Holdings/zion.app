@@ -8,7 +8,7 @@ concurrency:
   group: ai-package-script-dedup-guard
   cancel-in-progress: false
 
-on:
+'on':
   schedule:
     - cron: '25 14 * * 1-5'
   workflow_dispatch:

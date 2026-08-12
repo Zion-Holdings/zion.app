@@ -2,7 +2,7 @@
 name: production smoke test workflow smoke (weekly)
 permissions:
   contents: read
-on:
+'on':
   schedule:
     - cron: '20 11 * * 4' # Thursdays 11:20 UTC
   workflow_dispatch:

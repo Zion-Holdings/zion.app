@@ -8,7 +8,7 @@ concurrency:
   group: ai-ai-lab-safe-scaffold-migrate-pr
   cancel-in-progress: false
 
-on:
+'on':
   workflow_dispatch:
   schedule:
     - cron: '35 11 * * 3'

@@ -2,7 +2,7 @@
 name: ai production deploy validation workflow smoke (weekly)
 permissions:
   contents: read
-on:
+'on':
   schedule:
     - cron: '37 11 * * 3' # Wednesdays 11:37 UTC
   workflow_dispatch:

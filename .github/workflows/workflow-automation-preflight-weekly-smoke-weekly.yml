@@ -2,7 +2,7 @@
 name: automation preflight weekly smoke (weekly)
 permissions:
   contents: read
-on:
+'on':
   schedule:
     - cron: '44 10 * * 4' # Thursdays 10:44 UTC
   workflow_dispatch:

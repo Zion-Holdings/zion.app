@@ -2,7 +2,7 @@
 name: ai automation audit workflow smoke (weekly)
 permissions:
   contents: read
-on:
+'on':
   schedule:
     - cron: '3 12 * * 3' # Wednesdays 12:03 UTC
   workflow_dispatch:

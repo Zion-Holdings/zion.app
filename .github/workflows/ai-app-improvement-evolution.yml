@@ -8,7 +8,7 @@ name: AI App Improvement Evolution
 permissions:
   contents: write
 
-on:
+'on':
   schedule:
     - cron: '0 6 * * 2'
     - cron: '0 6 * * 3'

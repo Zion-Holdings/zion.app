@@ -9,7 +9,7 @@ name: AI Advanced-AI Content
 permissions:
   contents: write
 
-on:
+'on':
   schedule:
     # Three times per day to keep advanced AI content fresh
     - cron: '0 3 * * *'

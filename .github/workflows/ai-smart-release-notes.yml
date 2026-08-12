@@ -8,7 +8,7 @@ concurrency:
   group: ai-release-notes
   cancel-in-progress: false
 
-on:
+'on':
   push:
     branches: [main]
     paths-ignore:

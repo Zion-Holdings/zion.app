@@ -7,7 +7,7 @@ concurrency:
   group: ai-friday-automation
   cancel-in-progress: false
 
-on:
+'on':
   schedule:
     - cron: '0 12 * * 5'
   workflow_dispatch:

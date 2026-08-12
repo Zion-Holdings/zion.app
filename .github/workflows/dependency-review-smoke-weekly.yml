@@ -2,7 +2,7 @@
 name: dependency review smoke (weekly)
 permissions:
   contents: read
-on:
+'on':
   schedule:
     - cron: '8 11 * * 4' # Thursdays 11:08 UTC
   workflow_dispatch:

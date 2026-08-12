@@ -1,10 +1,10 @@
 permissions:
   contents: read
 name: Autonomous SQLite Retention Policy Manager
-on:
+'on':
   schedule:
   - cron: 0 3 * * 0
-  workflow_dispatch
+  workflow_dispatch:
 jobs:
   retention:
     name: DB Retention Manager
@@ -13,9 +13,9 @@ jobs:
       contents: read
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
     - name: Setup Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
       with:
         node-version: '20'
         cache: npm
@@ -24,25 +24,22 @@ jobs:
     - name: Run Retention Manager
       id: retention
       continue-on-error: true
-      run: 'node automation/db-retention-manager.cjs > /tmp/retention-output.txt ||
-        true
-
+      run: |
+        node automation/db-retention-manager.cjs > /tmp/retention-output.txt || true
         echo "exit_code=$?" >> $GITHUB_OUTPUT
-
-        '
     - name: Upload report artifact
       if: always()
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
       with:
         name: db-retention-report
         path: .hermes/memory/db-retention/*.json
         retention-days: 30
     - name: Notify Telegram on changes or errors
       if: failure()
-      run: "node automation/notify-telegram.js \"\U0001F5C4\uFE0F DB retention manager\
-        \ encountered errors. Check workflow logs.\"\n"
+      run: |
+        node automation/notify-telegram.js "🗄️ DB retention manager encountered errors. Check workflow logs."
     - name: Weekly retention digest
       if: success() && github.event_name == 'schedule'
-      run: "node automation/notify-telegram.js \"\u2705 Weekly DB retention scan complete\
-        \ \u2014 old records purged, storage optimized.\"\n"
+      run: |
+        node automation/notify-telegram.js "✅ Weekly DB retention scan complete — old records purged, storage optimized."
     timeout-minutes: 10

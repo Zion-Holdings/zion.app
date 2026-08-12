@@ -5,7 +5,7 @@ permissions:
   security-events: write
   actions: read
 
-on:
+'on':
   push:
     branches: [main]
   pull_request:

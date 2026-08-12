@@ -9,7 +9,7 @@ concurrency:
   group: ai-stale-promotion-remediator
   cancel-in-progress: false
 
-on:
+'on':
   workflow_run:
     workflows: [AI Stale Promotion Guard]
     types:

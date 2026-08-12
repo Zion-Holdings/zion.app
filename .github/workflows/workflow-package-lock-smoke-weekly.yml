@@ -5,7 +5,7 @@ name: package-lock.json smoke (weekly)
 permissions:
   contents: read
 
-on:
+'on':
   schedule:
     - cron: '19 7 * * 2' # Tuesdays 07:19 UTC
   workflow_dispatch:
