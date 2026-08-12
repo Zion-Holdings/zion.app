@@ -21,7 +21,7 @@ export default function BillingPage() {
   return (
     <div className="container-page py-16">
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Billing & Invoices — Client Portal", description: "View your invoices, payment methods, and billing history. Secure client portal access.", url: "https://ziontechgroup.com/portal/billing/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Billing & Invoices — Client Portal", description: "View your invoices, payment methods, and billing history. Secure client portal access.", url: "https://ziontechgroup.com/portal/billing/}} />
       <Link href="/portal/" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">&larr; Back to Client Portal</Link>
       <div className="glass-card max-w-2xl">
         <div className="text-5xl mb-4">&#x1F4B3;</div>

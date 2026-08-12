@@ -21,7 +21,7 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "5G & Private Network Solutions", description: "Private 5G networks, edge IoT, network slicing, and spectrum advisory for enterprise connectivity.", url: "https://ziontechgroup.com/5g-solutions/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "5G & Private Network Solutions", description: "Private 5G networks, edge IoT, network slicing, and spectrum advisory for enterprise connectivity.", url: "https://ziontechgroup.com/5g-solutions/}} />
       <div className="container-page">
         <nav className="mb-8 text-sm text-slate-400">
           <Link href="/" className="hover:text-purple-400 transition">Home</Link>

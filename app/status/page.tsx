@@ -1,6 +1,14 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import JsonLd from '@/components/JsonLd';
+
+export const metadata = {
+  title: 'Site Status',
+  description: 'Site Status from Zion Tech Group.',
+  alternates: { canonical: '/app/status/' },
+};
+
 
 export default function StatusPage() {
   const [up, setUp] = useState<boolean | null>(null);
@@ -11,6 +19,8 @@ export default function StatusPage() {
   }, []);
   return (
     <main className="min-h-screen bg-slate-950 py-20">
+
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Site Status", description: "Site Status from Zion Tech Group.", url: "https://ziontechgroup.com/app/status/}} />
       <div className="container-page">
         <h1 className="text-4xl font-bold text-white mb-4">Site Status</h1>
         <p className="text-slate-300 mb-6">

@@ -92,7 +92,7 @@ ${needsList ? `<h2>Stated Needs</h2><ul>${needsList}</ul>` : ''}
   return (
     <div className="min-h-screen bg-slate-950 py-8">
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Proposal Detail | Zion Tech Group", description: "View and download your custom Zion Tech Group service proposal.", url: "https://ziontechgroup.com/proposals/view/[id]/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Proposal Detail | Zion Tech Group", description: "View and download your custom Zion Tech Group service proposal.", url: "https://ziontechgroup.com/proposals/view/[id]/}} />
       <div className="container-page">
         <div className="flex justify-between items-center mb-6">
           <Link href="/proposals/" className="text-slate-400 hover:text-white text-sm">&larr; Back to Proposals</Link>

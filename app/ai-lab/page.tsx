@@ -162,7 +162,7 @@ function TagBadge({ label, color }: { label: string; color: string }) {
       className={`inline-block rounded-full border px-3 py-0.5 text-[11px] font-semibold uppercase tracking-wider ${TAG_COLORS[color] || TAG_COLORS.purple}`}
     >
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "AI Lab", description: "Interactive AI playgrounds and demos from Zion Tech Group.", url: "https://ziontechgroup.com/ai-lab/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "AI Lab", description: "Interactive AI playgrounds and demos from Zion Tech Group.", url: "https://ziontechgroup.com/ai-lab/}} />
       {label}
     </span>
   );

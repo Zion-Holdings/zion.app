@@ -6,6 +6,14 @@ import { useState, useMemo } from 'react';
 
 import { allServices } from '@/data/servicesData';
 import StepsIndicator from '@/components/StepsIndicator';
+import JsonLd from '@/components/JsonLd';
+
+export const metadata = {
+  title: 'Custom Proposal Builder',
+  description: 'Build a custom IT and AI service proposal with Zion Tech Group.',
+  alternates: { canonical: '/configurator/' },
+};
+
 
 type Step = 'budget' | 'needs' | 'services' | 'timeline' | 'review';
 
@@ -187,6 +195,8 @@ ${services.length > 0 ? `<p style="margin-top:12px;color:#666;font-size:14px">
   // ── Render ────────────────────────────────────────────────────────
   return (
     <div className="min-h-screen bg-slate-950 py-12">
+
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "$ — Custom Proposal", description: "$ — Custom Proposal from Zion Tech Group.", url: "https://ziontechgroup.com/app/configurator/}} />
       <div className="container-page max-w-4xl">
         <h1 className="text-4xl font-bold text-white mb-2 text-center">
           Build Your Custom Solution

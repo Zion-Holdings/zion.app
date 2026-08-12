@@ -3,6 +3,14 @@
 import { useState, useEffect, useCallback } from 'react';
 
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
+
+export const metadata = {
+  title: 'Platform Health Check 🩺',
+  description: 'Platform Health Check 🩺 from Zion Tech Group.',
+  alternates: { canonical: '/app/tools/health-check/' },
+};
+
 
 type Status = 'ok' | 'warn' | 'fail';
 interface Check { name: string; status: Status; detail: string; ms: number; }
@@ -27,6 +35,8 @@ interface StatusCardProps {
 function StatusCard({ name, icon, className, children }: StatusCardProps) {
   return (
     <div className={`border rounded-xl p-5 transition ${className}`}>
+
+    <JsonLd data={{@context: "https://schema.org", @type: "WebApplication", name: "Platform Health Check 🩺", description: "Platform Health Check 🩺 from Zion Tech Group.", url: "https://ziontechgroup.com/app/tools/health-check/}} />
       <div className="flex items-center gap-3">
         <span className="text-xl">{icon}</span>
         <div>

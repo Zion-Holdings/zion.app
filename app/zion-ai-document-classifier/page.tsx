@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Document Classifier", description: "Automatically classify and route documents with ML models that learn from your taxonomy.", url: "https://ziontechgroup.com/zion-ai-document-classifier/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Document Classifier", description: "Automatically classify and route documents with ML models that learn from your taxonomy.", url: "https://ziontechgroup.com/zion-ai-document-classifier/}} />
 
       <h1>Zion AI Document Classifier</h1>
 

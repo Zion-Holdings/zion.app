@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Cyber Threat Intel", description: "Aggregate and prioritize threat intelligence with automated correlation and actionable alerts.", url: "https://ziontechgroup.com/zion-ai-cyber-threat-intel/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Cyber Threat Intel", description: "Aggregate and prioritize threat intelligence with automated correlation and actionable alerts.", url: "https://ziontechgroup.com/zion-ai-cyber-threat-intel/}} />
 
       <h1>Zion AI Cyber Threat Intel</h1>
 

@@ -28,7 +28,7 @@ export default function PublicRoadmapPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Public Roadmap", description: "Public product and service roadmap from Zion Tech Group.", url: "https://ziontechgroup.com/public-roadmap/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Public Roadmap", description: "Public product and service roadmap from Zion Tech Group.", url: "https://ziontechgroup.com/public-roadmap/}} />
       <Navigation />
       <main className="py-20">
         <div className="container-page">

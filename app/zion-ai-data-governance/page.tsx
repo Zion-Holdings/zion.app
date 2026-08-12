@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Data Governance", description: "Govern data quality, lineage, and access policies with AI-powered cataloging and policy enforcement.", url: "https://ziontechgroup.com/zion-ai-data-governance/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Data Governance", description: "Govern data quality, lineage, and access policies with AI-powered cataloging and policy enforcement.", url: "https://ziontechgroup.com/zion-ai-data-governance/}} />
 
       <h1>Zion AI Data Governance</h1>
 

@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Workforce Analytics | Zion Tech Group", description: "Analyze workforce productivity, attrition risk, and headcount planning with predictive insights.", url: "https://ziontechgroup.com/zion-ai-workforce-analytics/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Workforce Analytics | Zion Tech Group", description: "Analyze workforce productivity, attrition risk, and headcount planning with predictive insights.", url: "https://ziontechgroup.com/zion-ai-workforce-analytics/}} />
 
       <h1>Zion AI Workforce Analytics | Zion Tech Group</h1>
 

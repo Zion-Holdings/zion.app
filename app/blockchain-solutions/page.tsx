@@ -21,7 +21,7 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Blockchain Solutions", description: "Enterprise blockchain, smart contracts, Web3 operations, and tokenized infrastructure.", url: "https://ziontechgroup.com/blockchain-solutions/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Blockchain Solutions", description: "Enterprise blockchain, smart contracts, Web3 operations, and tokenized infrastructure.", url: "https://ziontechgroup.com/blockchain-solutions/}} />
       <div className="container-page">
         <nav className="mb-8 text-sm text-slate-400">
           <Link href="/" className="hover:text-purple-400 transition">Home</Link>

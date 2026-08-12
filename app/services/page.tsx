@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { LocalBusinessJsonLd } from '@/components/LocalBusinessStructuredData';
-import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Services',
@@ -31,7 +30,7 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
 
-    <JsonLd data={@context: "https://schema.org", @type: "Service", name: "Services", description: "Managed IT, AI automation, cybersecurity, cloud, and consulting services from Zion Tech Group.", url: "https://ziontechgroup.com/services/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "Service", name: "Services", description: "Managed IT, AI automation, cybersecurity, cloud, and consulting services from Zion Tech Group.", url: "https://ziontechgroup.com/services/}} />
       <LocalBusinessJsonLd />
       <div className="container-page">
         <div className="mb-12">

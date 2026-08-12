@@ -27,7 +27,7 @@ export default function ProposalGeneratorPage() {
   return (
     <div className="container-page py-16">
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Proposal Generator", description: "Generate a custom service proposal in minutes. Select services, budget, and timeline — get a ready-to-send PDF.", url: "https://ziontechgroup.com/proposal-generator/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Proposal Generator", description: "Generate a custom service proposal in minutes. Select services, budget, and timeline — get a ready-to-send PDF.", url: "https://ziontechgroup.com/proposal-generator/}} />
       <h1 className="text-4xl font-bold text-white mb-4">Proposal Generator</h1>
       <p className="text-slate-400 mb-8 max-w-2xl">
         Generate a custom service proposal in minutes. Select services, budget, and timeline — get a ready-to-send PDF.

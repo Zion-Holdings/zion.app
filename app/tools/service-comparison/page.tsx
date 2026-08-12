@@ -6,6 +6,14 @@ import { useState, useMemo, useEffect } from 'react';
 import { allServices, type Service } from '../../data/servicesData';
 import Link from 'next/link';
 import SmartServiceCard from '@/components/SmartServiceCard';
+import JsonLd from '@/components/JsonLd';
+
+export const metadata = {
+  title: 'Service Comparison',
+  description: 'Service Comparison from Zion Tech Group.',
+  alternates: { canonical: '/app/tools/service-comparison/' },
+};
+
 
 const CAT_LABELS: Record<string,string> = {
   ai:'AI Services', it:'IT', cloud:'Cloud', security:'Security',
@@ -76,6 +84,8 @@ export default function ServiceComparisonPage() {
 
   return (
     <div className="container-page py-16">
+
+    <JsonLd data={{@context: "https://schema.org", @type: "WebApplication", name: "Service Comparison", description: "Service Comparison from Zion Tech Group.", url: "https://ziontechgroup.com/app/tools/service-comparison/}} />
       {/* ── Header ─────────────────────────────────────────────── */}
       <div className="mb-10">
         <h1 className="text-4xl font-bold text-white mb-3">Service Comparison</h1>

@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Incident Predictor", description: "Predict incidents and outages before they occur using anomaly detection and pattern analysis.", url: "https://ziontechgroup.com/zion-ai-incident-predictor/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Incident Predictor", description: "Predict incidents and outages before they occur using anomaly detection and pattern analysis.", url: "https://ziontechgroup.com/zion-ai-incident-predictor/}} />
 
       <h1>Zion AI Incident Predictor</h1>
 

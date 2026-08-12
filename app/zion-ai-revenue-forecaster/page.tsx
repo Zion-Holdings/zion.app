@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Revenue Forecaster", description: "Forecast revenue with multi-signal models that factor in pipeline, seasonality, and market trends.", url: "https://ziontechgroup.com/zion-ai-revenue-forecaster/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Revenue Forecaster", description: "Forecast revenue with multi-signal models that factor in pipeline, seasonality, and market trends.", url: "https://ziontechgroup.com/zion-ai-revenue-forecaster/}} />
 
       <h1>Zion AI Revenue Forecaster</h1>
 

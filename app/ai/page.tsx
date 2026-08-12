@@ -39,7 +39,7 @@ export default function AILabPage() {
   return (
     <div className="relative min-h-screen overflow-hidden bg-slate-950">
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "AI Lab", description: "Explore Zion\", url: "https://ziontechgroup.com/ai/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "AI Lab", description: "Explore Zion\", url: "https://ziontechgroup.com/ai/}} />
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
         <div className="absolute -top-20 left-1/4 h-[28rem] w-[28rem] rounded-full bg-purple-500/15 blur-3xl" />
         <div className="absolute bottom-[-12rem] right-[-8rem] h-[24rem] w-[24rem] rounded-full bg-blue-500/10 blur-3xl" />

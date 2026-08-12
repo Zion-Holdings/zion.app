@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Employee Experience", description: "Measure and improve employee engagement with pulse surveys, sentiment analysis, and action insights.", url: "https://ziontechgroup.com/zion-ai-employee-experience/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Employee Experience", description: "Measure and improve employee engagement with pulse surveys, sentiment analysis, and action insights.", url: "https://ziontechgroup.com/zion-ai-employee-experience/}} />
 
       <h1>Zion AI Employee Experience</h1>
 

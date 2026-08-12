@@ -5,6 +5,14 @@ import { pingTool } from '@/data/tools_ping_client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { allServices, type Service } from '../../data/servicesData';
+import JsonLd from '@/components/JsonLd';
+
+export const metadata = {
+  title: 'Service Recommender',
+  description: 'Service Recommender from Zion Tech Group.',
+  alternates: { canonical: '/app/tools/service-recommender/' },
+};
+
 
 const questions = [
   { id: 'category', label: 'What area do you need help with?', options: ['AI & Automation', 'IT Infrastructure', 'Cloud & DevOps', 'Data & Analytics', 'Cybersecurity'] },
@@ -40,6 +48,8 @@ export default function ServiceRecommenderPage() {
 
   return (
     <div className="container-page py-16">
+
+    <JsonLd data={{@context: "https://schema.org", @type: "WebApplication", name: "Service Recommender", description: "Service Recommender from Zion Tech Group.", url: "https://ziontechgroup.com/app/tools/service-recommender/}} />
       <h1 className="text-4xl font-bold text-white mb-4">Service Recommender</h1>
       <p className="text-slate-400 mb-12 max-w-2xl">
         Answer a few questions and we&apos;ll match you with the right AI, IT, or Cloud solution from our catalog of 416+ services.

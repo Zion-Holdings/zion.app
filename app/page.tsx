@@ -240,7 +240,7 @@ let list = services;
   return (
     <main className="min-h-screen bg-slate-950">
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion Tech Group — AI & IT Solutions", description: "AI strategy, IT services, automation, cloud infrastructure, and machine learning solutions from Zion Tech Group.", url: "https://ziontechgroup.com/page.tsx"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion Tech Group — AI & IT Solutions", description: "AI strategy, IT services, automation, cloud infrastructure, and machine learning solutions from Zion Tech Group.", url: "https://ziontechgroup.com/page.tsx}} />
       {/* ── JSON-LD: Organization + WebSite ── */}
       <script
         type="application/ld+json"

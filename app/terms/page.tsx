@@ -21,7 +21,7 @@ export default function TermsPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Terms of Service", description: "Terms of service for Zion Tech Group.", url: "https://ziontechgroup.com/terms/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Terms of Service", description: "Terms of service for Zion Tech Group.", url: "https://ziontechgroup.com/terms/}} />
       <div className="container-page">
         <h1 className="text-4xl font-bold text-white mb-8">Terms of Service</h1>
         <section className="mb-10">

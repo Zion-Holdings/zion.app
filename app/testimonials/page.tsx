@@ -98,7 +98,7 @@ export default function TestimonialsPage() {
   return (
     <main className="min-h-screen bg-slate-950">
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Testimonials & Case Studies", description: "See what our clients say about our AI services, IT solutions, and consulting engagements. Real results from real businesses.", url: "https://ziontechgroup.com/testimonials/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Testimonials & Case Studies", description: "See what our clients say about our AI services, IT solutions, and consulting engagements. Real results from real businesses.", url: "https://ziontechgroup.com/testimonials/}} />
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(56,189,248,0.15),transparent_60%)]" />

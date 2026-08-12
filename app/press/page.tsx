@@ -3,6 +3,14 @@
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
+
+export const metadata = {
+  title: 'Press & Media',
+  description: 'Press & Media from Zion Tech Group.',
+  alternates: { canonical: '/app/press/' },
+};
+
 
 const ARTICLES = [
   { date: '2025-05-20', title: 'Zion Tech Group Launches Enterprise AI Compliance Platform', outlet: 'TechCrunch' },
@@ -13,6 +21,8 @@ const ARTICLES = [
 export default function PressPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
+
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Press & Media", description: "Press & Media from Zion Tech Group.", url: "https://ziontechgroup.com/app/press/}} />
       <Navigation />
       <main className="py-20">
         <div className="container-page">

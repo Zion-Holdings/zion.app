@@ -67,7 +67,7 @@ export default function ToolsIndexPage() {
   return (
     <div className="relative min-h-screen bg-slate-950">
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebApplication", name: "Free Tools & Calculators", description: "Free online tools: ROI Calculator, Port Scanner, SSL Checker, Service Comparison, AI Service Router, and Service Recommender — no sign-up required.", url: "https://ziontechgroup.com/tools/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebApplication", name: "Free Tools & Calculators", description: "Free online tools: ROI Calculator, Port Scanner, SSL Checker, Service Comparison, AI Service Router, and Service Recommender — no sign-up required.", url: "https://ziontechgroup.com/tools/}} />
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
         <div className="absolute -top-16 left-[-10rem] h-[30rem] w-[30rem] rounded-full bg-purple-500/15 blur-3xl" />
         <div className="absolute right-[-10rem] top-32 h-[26rem] w-[26rem] rounded-full bg-blue-500/10 blur-3xl" />

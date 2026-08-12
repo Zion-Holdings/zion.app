@@ -136,7 +136,7 @@ export default async function ServicePage({ params }: PageProps) {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
 
-    <JsonLd data={@context: "https://schema.org", @type: "Service", name: "Service Details — Zion Tech Group", description: "Detailed information about this service offering from Zion Tech Group.", url: "https://ziontechgroup.com/services/[id]/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "Service", name: "Service Details — Zion Tech Group", description: "Detailed information about this service offering from Zion Tech Group.", url: "https://ziontechgroup.com/services/[id]/}} />
       <script
         type="application/ld+json"
         suppressHydrationWarning

@@ -42,7 +42,7 @@ export default function PricingPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Pricing", description: "Flexible pricing for managed IT, AI, cloud, and cybersecurity services.", url: "https://ziontechgroup.com/pricing/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Pricing", description: "Flexible pricing for managed IT, AI, cloud, and cybersecurity services.", url: "https://ziontechgroup.com/pricing/}} />
       <section className="py-20 px-4 text-center bg-gradient-to-b from-purple-900/20 to-transparent">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">

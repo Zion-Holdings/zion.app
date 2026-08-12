@@ -3,6 +3,14 @@
 import { useMemo } from 'react';
 
 import { getToolVisits } from '@/data/tools_tracker';
+import JsonLd from '@/components/JsonLd';
+
+export const metadata = {
+  title: 'Free Tools — Usage Analytics',
+  description: 'Free Tools — Usage Analytics from Zion Tech Group.',
+  alternates: { canonical: '/app/tools/analytics/' },
+};
+
 
 const TOOL_META: Record<string, {emoji:string;name:string;href:string}> = {
   'ai-service-router':   {emoji:'🤖',name:'AI Service Router',   href:'/tools/ai-service-router'},

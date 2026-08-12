@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Inventory Planner", description: "Optimize inventory levels across SKUs and locations with demand-driven replenishment and safety stock AI.", url: "https://ziontechgroup.com/zion-ai-inventory-planner/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Inventory Planner", description: "Optimize inventory levels across SKUs and locations with demand-driven replenishment and safety stock AI.", url: "https://ziontechgroup.com/zion-ai-inventory-planner/}} />
 
       <h1>Zion AI Inventory Planner</h1>
 

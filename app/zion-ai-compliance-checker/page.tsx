@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Compliance Checker", description: "Automate compliance checks with policy-aware AI that tracks regulatory updates and flags gaps.", url: "https://ziontechgroup.com/zion-ai-compliance-checker/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Compliance Checker", description: "Automate compliance checks with policy-aware AI that tracks regulatory updates and flags gaps.", url: "https://ziontechgroup.com/zion-ai-compliance-checker/}} />
 
       <h1>Zion AI Compliance Checker</h1>
 

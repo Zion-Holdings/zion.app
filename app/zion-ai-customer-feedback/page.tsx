@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Customer Feedback", description: "Aggregate and analyze feedback from surveys, reviews, and support channels with sentiment and theme detection.", url: "https://ziontechgroup.com/zion-ai-customer-feedback/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Customer Feedback", description: "Aggregate and analyze feedback from surveys, reviews, and support channels with sentiment and theme detection.", url: "https://ziontechgroup.com/zion-ai-customer-feedback/}} />
 
       <h1>Zion AI Customer Feedback</h1>
 

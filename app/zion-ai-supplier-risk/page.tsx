@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Zion AI Supplier Risk | Zion Tech Group", description: "Monitor supplier health, geopolitical risk, and supply chain disruptions with predictive alerts.", url: "https://ziontechgroup.com/zion-ai-supplier-risk/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Supplier Risk | Zion Tech Group", description: "Monitor supplier health, geopolitical risk, and supply chain disruptions with predictive alerts.", url: "https://ziontechgroup.com/zion-ai-supplier-risk/}} />
 
       <h1>Zion AI Supplier Risk | Zion Tech Group</h1>
 

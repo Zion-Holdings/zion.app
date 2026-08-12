@@ -45,7 +45,7 @@ export default async function StagePage({ params }: { params: Promise<{ stage: s
   return (
     <main className="min-h-screen bg-slate-950 py-20">
 
-    <JsonLd data={@context: "https://schema.org", @type: "Service", name: "Service Stage Filter — Zion Tech Group", description: "Filter Zion Tech Group services by stage: published, beta, and planned.", url: "https://ziontechgroup.com/services/stage/[stage]/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "Service", name: "Service Stage Filter — Zion Tech Group", description: "Filter Zion Tech Group services by stage: published, beta, and planned.", url: "https://ziontechgroup.com/services/stage/[stage]/}} />
       <div className="container-page">
         {/* Header */}
         <div className="text-center mb-12">

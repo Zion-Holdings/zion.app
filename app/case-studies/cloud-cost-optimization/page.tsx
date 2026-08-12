@@ -21,7 +21,7 @@ export default function CaseStudyCloudCost() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Cloud Cost Optimization — Case Study", description: "How Zion Tech Group reduced cloud spend by 40% in 90 days with rightsizing, reserved planning, and FinOps guardrails.", url: "https://ziontechgroup.com/case-studies/cloud-cost-optimization/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Cloud Cost Optimization — Case Study", description: "How Zion Tech Group reduced cloud spend by 40% in 90 days with rightsizing, reserved planning, and FinOps guardrails.", url: "https://ziontechgroup.com/case-studies/cloud-cost-optimization/}} />
       <div className="container-page">
         <div className="mb-8 text-sm text-slate-400">
           <Link href="/" className="hover:text-purple-400 transition">Home</Link>

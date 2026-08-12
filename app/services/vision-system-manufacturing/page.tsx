@@ -20,7 +20,7 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
 
-    <JsonLd data={@context: "https://schema.org", @type: "Service", name: "Professional Vision System Solutions | Zion Tech Group", description: "Professional vision system solutions for manufacturing. Get expert implementation, support, and results.", url: "https://ziontechgroup.com/services/vision-system-manufacturing/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "Service", name: "Professional Vision System Solutions | Zion Tech Group", description: "Professional vision system solutions for manufacturing. Get expert implementation, support, and results.", url: "https://ziontechgroup.com/services/vision-system-manufacturing/}} />
       <div className="container-page">
         <h1 className="text-4xl font-bold text-white mb-4">Professional Vision System Solutions</h1>
         <p className="text-slate-300 text-lg leading-relaxed max-w-3xl mb-10">Professional vision system solutions for manufacturing. Get expert implementation, support, and results.</p>

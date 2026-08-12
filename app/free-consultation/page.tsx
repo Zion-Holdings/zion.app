@@ -23,7 +23,7 @@ export default function FreeConsultationPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
 
-    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Free Consultation | Zion Tech Group", description: "Book a free AI strategy consultation with Zion Tech Group experts.", url: "https://ziontechgroup.com/free-consultation/"} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Free Consultation | Zion Tech Group", description: "Book a free AI strategy consultation with Zion Tech Group experts.", url: "https://ziontechgroup.com/free-consultation/}} />
       <Navigation />
       <main className="py-20">
         <div className="container-page">
