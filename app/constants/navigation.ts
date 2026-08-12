@@ -98,7 +98,7 @@ export const AI_SERVICE_LINKS: readonly NavigationLink[] = [
   { name: 'AI Competitive Intel Engine', href: '/services/ai-competitive-intel-engine/' },
   { name: 'Ai Competitive Price Tracker', href: '/services/ai-competitive-price-tracker/' },
   { name: 'Competitor Intelligence Engine', href: '/services/ai-competitor-intelligence/' },
-  { name: 'AI Compliance & Regulatory', href: '/services/ai-compliance/' },
+  { name: 'AI Compliance & Regulatory', href: '/services/ai-msp-security-compliance-2026-6566/' },
   { name: 'AI Privacy Policy & Compliance Generator', href: '/services/ai-compliance-generator/' },
   { name: 'AI Computer Vision', href: '/services/ai-computer-vision/' },
   { name: 'Computer Vision Shelf Monitoring', href: '/services/ai-computer-vision-shelf-monitoring/' },
