@@ -3,6 +3,14 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { allServices, type Service } from '@/data/servicesData';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Industry Solutions — AI & IT by Sector',
+  description: 'AI and IT solutions tailored to your industry: healthcare, finance, manufacturing, retail, marketing, cybersecurity, and more at Zion Tech Group.',
+  alternates: { canonical: '/industry-solutions/' },
+};
+
 
 const IND_COLORS: Record<string, string> = {
   Technology:         'from-blue-500 to-indigo-500',

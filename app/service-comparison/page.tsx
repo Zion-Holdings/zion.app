@@ -5,6 +5,14 @@ import { useState, useMemo } from 'react';
 
 import Link from 'next/link';
 import { allServices, type Service } from '@/data/servicesData';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Service Comparison — Compare AI & IT Solutions',
+  description: 'Compare AI and IT services side by side. Evaluate features, pricing, and capabilities across our catalog of 600+ enterprise solutions.',
+  alternates: { canonical: '/service-comparison/' },
+};
+
 
 const MAX_COMPARE = 4;
 

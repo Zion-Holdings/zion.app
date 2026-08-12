@@ -2,6 +2,14 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Search Services — Find AI & IT Solutions',
+  description: 'Search across 600+ AI and IT services from Zion Tech Group. Find the right solution for your business needs with our intelligent service finder.',
+  alternates: { canonical: '/search/' },
+};
+
 
 const SERVICES = [
   { title: 'Managed IT', slug: 'managed-it', category: 'Infrastructure' },

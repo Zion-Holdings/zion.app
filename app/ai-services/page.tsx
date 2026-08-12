@@ -2,6 +2,14 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Services — Enterprise AI Solutions',
+  description: 'Enterprise AI services including machine learning, natural language processing, computer vision, predictive analytics, and AI-powered automation solutions.',
+  alternates: { canonical: '/ai-services/' },
+};
+
 
 const SERVICES = [
   {

@@ -3,6 +3,14 @@
 import { useMemo } from 'react';
 
 import { getToolVisits } from '@/data/tools_tracker';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Analytics Tools — AI-Powered Analytics Dashboard',
+  description: 'Analytics and monitoring tools for your AI services and IT infrastructure. Track performance, usage, and business metrics in real-time.',
+  alternates: { canonical: '/tools/analytics/' },
+};
+
 
 const TOOL_META: Record<string, {emoji:string;name:string;href:string}> = {
   'ai-service-router':   {emoji:'🤖',name:'AI Service Router',   href:'/tools/ai-service-router'},

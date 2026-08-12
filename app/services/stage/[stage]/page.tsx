@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ stage: string }> }) {
   const { stage } = await params;
   const meta = STAGE_META[stage] || STAGE_META.published;
-  return { title: `${meta.label} Services | Zion Tech Group`, description: meta.desc };
+  return { title: `${meta.label} Services | Zion Tech Group`, description: meta.desc, alternates: { canonical: `https://ziontechgroup.com/services/stage/${stage}/` } };
 }
 
 export default async function StagePage({ params }: { params: Promise<{ stage: string }> }) {

@@ -14,6 +14,14 @@ import ContactFunnel from '@/components/ContactFunnel';
 import ServiceCounter from '@/components/ServiceCounter';
 import FloatingActionDock from '@/components/FloatingActionDock';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Zion Tech Group — AI, IT & Automation Solutions',
+  description: 'Zion Tech Group delivers enterprise AI services, IT solutions, and automation platforms. Machine learning, cybersecurity, cloud infrastructure, and Micro SAAS from prototype to production.',
+  alternates: { canonical: '/' },
+};
+
 
 
 // Category accent color for showcase cards (maps category key → gradient)

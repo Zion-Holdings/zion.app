@@ -7,6 +7,14 @@ import Footer from '@/components/Footer';
 
 import { allServices } from '@/data/servicesData';
 import type { Service } from '@/data/servicesData';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Service Explorer — Browse 600+ AI & IT Services',
+  description: 'Explore our complete catalog of 600+ AI and IT services. Filter by category, technology, industry, and more to find the perfect solution for your business.',
+  alternates: { canonical: '/services-explorer/' },
+};
+
 
 const CAT_COLORS: Record<string, string> = {
   ai:        'bg-purple-900/50 text-purple-200 border-purple-500/30',

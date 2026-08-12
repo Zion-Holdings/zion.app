@@ -1,6 +1,14 @@
 'use client';
 
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI & IT Solutions — Zion Tech Group',
+  description: 'Discover AI and IT solutions that automate your business processes, optimize operations, and drive innovation. From AI chatbots to cybersecurity, we build what you need.',
+  alternates: { canonical: '/solutions/' },
+};
+
 
 const INDUSTRIES = [
   { name: 'Healthcare', slug: 'healthcare', desc: 'HIPAA-ready AI, patient data automation, and secure cloud infrastructure.', icon: '🏥', more: 'AI-powered diagnostics, patient data management, secure telemedicine platforms, and compliance automation.' },
