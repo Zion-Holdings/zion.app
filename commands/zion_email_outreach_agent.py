@@ -193,4 +193,4 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Outreach leads via Google Workspace')
     parser.add_argument('--limit', type=int, default=50, help='Maximum number of leads to process')
     args = parser.parse_args()
-    main(args.limit)"}
+    main(args.limit)

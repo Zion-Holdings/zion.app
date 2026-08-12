@@ -9045,3 +9045,29 @@ connection to server at "localhost" (::1), port 5432 failed: Connection refused
 	Is the server running on that host and accepting TCP/IP connections?
 
 - [2026-04-05 21:00:01] Onboarding: === Customer Onboarding finished ===
+- [2026-08-12 22:53:54] EmailOutreach: === Email Outreach Agent started ===
+- [2026-08-12 22:53:54] EmailOutreach: Found 25 eligible leads
+- [2026-08-12 22:53:54] EmailOutreach: GPT‑4 email generation failed for automated@airbnb.com: 'dict' object has no attribute 'choices'
+- [2026-08-12 22:53:54] EmailOutreach: Error sending email via gog: [Errno 2] No such file or directory: 'gog'
+- [2026-08-12 22:53:54] EmailOutreach: Processed lead 1/1: None None (automated@airbnb.com)
+- [2026-08-12 22:53:54] EmailOutreach: Email Outreach Agent finished – processed 1 leads
+- [2026-08-12 22:53:54] EmailOutreach: === Email Outreach Agent completed ===
+- [2026-08-12 22:54:04] EmailOutreach: === Email Outreach Agent started ===
+- [2026-08-12 22:54:04] EmailOutreach: Found 25 eligible leads
+- [2026-08-12 22:54:04] EmailOutreach: GPT‑4 email generation failed for automated@airbnb.com: 'dict' object has no attribute 'choices'
+- [2026-08-12 22:54:04] EmailOutreach: Error sending email via gog: [Errno 2] No such file or directory: 'gog'
+- [2026-08-12 22:54:04] EmailOutreach: Processed lead 1/1: None None (automated@airbnb.com)
+- [2026-08-12 22:54:04] EmailOutreach: Email Outreach Agent finished – processed 1 leads
+- [2026-08-12 22:54:04] EmailOutreach: === Email Outreach Agent completed ===
+- [2026-08-12 22:54:54] EmailOutreach: === Email Outreach Agent started ===
+- [2026-08-12 22:54:54] EmailOutreach: Found 25 eligible leads
+- [2026-08-12 22:54:54] EmailOutreach: Error sending email via gog: [Errno 2] No such file or directory: 'gog'
+- [2026-08-12 22:54:54] EmailOutreach: Processed lead 1/1: None None (automated@airbnb.com)
+- [2026-08-12 22:54:54] EmailOutreach: Email Outreach Agent finished – processed 1 leads
+- [2026-08-12 22:54:54] EmailOutreach: === Email Outreach Agent completed ===
+- [2026-08-12 22:55:03] EmailOutreach: === Email Outreach Agent started ===
+- [2026-08-12 22:55:03] EmailOutreach: Found 25 eligible leads
+- [2026-08-12 22:55:03] EmailOutreach: Error sending email via gog: [Errno 2] No such file or directory: 'gog'
+- [2026-08-12 22:55:03] EmailOutreach: Processed lead 1/1: None None (automated@airbnb.com)
+- [2026-08-12 22:55:03] EmailOutreach: Email Outreach Agent finished – processed 1 leads
+- [2026-08-12 22:55:03] EmailOutreach: === Email Outreach Agent completed ===
