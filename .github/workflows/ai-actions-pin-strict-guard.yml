@@ -21,7 +21,7 @@ concurrency:
 
 jobs:
   strict-pin-audit:
-    if: false
+    if: github.event_name == 'workflow_dispatch' || (vars.ACTIONS_PIN_STRICT == 'true' && (github.event_name == 'pull_request' || (github.event_name == 'push' && vars.ACTIONS_PIN_STRICT_MAIN_PUSH == 'true')))
     uses: ./.github/workflows/reusable-workflow-ci.yml
     with:
       run_contracts: true
