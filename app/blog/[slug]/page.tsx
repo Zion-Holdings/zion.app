@@ -11,7 +11,7 @@ export async function generateStaticParams() {
   const blogDir = path.join(process.cwd(), 'app', 'blog');
   const entries = fs.readdirSync(blogDir, { withFileTypes: true });
   const slugs = entries.filter((e) => e.isDirectory() && e.name !== '[slug]').map((e) => ({ slug: e.name }));
-  return slugs.slice(0, 50);
+  return slugs.slice(0, 20);
 }
 
 export async function generateMetadata({ params }: PageProps) {
