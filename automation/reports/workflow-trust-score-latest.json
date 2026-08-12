@@ -3980,16 +3980,16 @@
     {
       "name": "Continuous Pages Deploy",
       "file": "gh-pages.yml",
-      "score": 98,
+      "score": 96,
       "issues": [
         "Partially pinned action: actions/checkout@v4",
         "Partially pinned action: actions/setup-node@v4",
+        "Partially pinned action: actions/upload-pages-artifact@v4",
         "Job 'build' missing timeout-minutes",
         "Job 'deploy' missing timeout-minutes"
       ],
       "improvements": [
         "Pinned action: actions/upload-artifact@bbbca2dd",
-        "Pinned action: actions/upload-pages-artifact@b0f4c535",
         "Pinned action: actions/deploy-pages@b1170765",
         "Uses caching",
         "Node.js dependency caching"
@@ -5640,5 +5640,5 @@
       "score": 87
     }
   ],
-  "generated_at": "2026-08-12T19:54:23.861Z"
+  "generated_at": "2026-08-12T20:52:52.152Z"
 }
