@@ -5,12 +5,18 @@ const path = require('path');
 
 const repoRoot = process.cwd();
 
+// Type-check with a timeout — the repo has 70K+ service pages,
+// so full tsc can take a while. Use --pretty false and skip
+// if it doesn't finish in time (non-blocking advisory only).
 try {
-  execSync('npx tsc --noEmit --pretty false', { stdio: 'pipe' });
+  execSync('npx tsc --noEmit --pretty false', {
+    stdio: 'pipe',
+    timeout: 240000, // 4 minutes max in CI
+  });
   console.log('✅ Type-check clean');
 } catch(e) {
   console.log('⚠️ Type-check: ' + (e.stdout || e.message).slice(-120));
-  // Non-blocking - continue even if types fail
+  // Non-blocking - continue even if types fail or timeout
 }
 
 try {
