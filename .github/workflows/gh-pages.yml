@@ -25,12 +25,12 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4 # v4.1.2
+        uses: actions/checkout@v7 # v4.1.2
         with:
           fetch-depth: 1
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4 # v4.0.3
+        uses: actions/setup-node@v7 # v4.0.3
         with:
           node-version-file: '.nvmrc'
           cache: npm
@@ -60,7 +60,7 @@ jobs:
 
       - name: Upload build diagnostics on failure
         if: failure()
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
           name: build-diagnostics-${{ github.run_number }}
           path: |
@@ -154,13 +154,13 @@ jobs:
           find "$ARTIFACT_DIR" -maxdepth 2 -type f | sed -n '1,120p'
 
       - name: Pages artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: artifacts/pages
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 # v4.0.5
+        uses: actions/deploy-pages@v5 # v4.0.5
 
       - name: Verify deployment
         run: |

@@ -25,7 +25,7 @@ jobs:
     timeout-minutes: 45
     if: github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Download quality reports
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8
@@ -54,7 +54,7 @@ jobs:
             echo "run_evolution=false" >> $GITHUB_OUTPUT
           fi
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         if: steps.evolve.outputs.run_evolution == 'true'
         with:
           node-version-file: '.nvmrc'
