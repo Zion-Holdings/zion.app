@@ -469,5 +469,59 @@
     "total_potential_value": 11800,
     "expected_revenue": 2950.0,
     "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-12T02:01:35.103023",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 9100,
+    "expected_revenue": 2275.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-12T04:00:48.896269",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 9600,
+    "expected_revenue": 2400.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-12T06:01:07.781826",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 14500,
+    "expected_revenue": 3625.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-12T08:00:02.420465",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11500,
+    "expected_revenue": 2875.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-12T10:00:01.915386",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10800,
+    "expected_revenue": 2700.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-12T12:00:01.472308",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 10600,
+    "expected_revenue": 2650.0,
+    "conversion_rate_target": "25%"
   }
 ]
