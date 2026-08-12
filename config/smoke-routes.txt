@@ -61,3 +61,9 @@
 /ai-fitness-coach
 /ai-form-builder
 /ai-fraud-detection
+
+/services-explorer
+/free-ai-tools
+/how-it-works
+/success-stories
+/industries
