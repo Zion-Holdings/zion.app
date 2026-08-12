@@ -4,6 +4,7 @@ import { pingTool } from '@/data/tools_ping_client';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import ToolPageShell from '@/components/ToolPageShell';
 
 export default function SSLCheckerPage() {
   useEffect(() => { pingTool('ssl-checker'); }, []);
@@ -71,62 +72,67 @@ export default function SSLCheckerPage() {
               {loading ? 'Checking…' : 'Check SSL'}
             </button>
           </div>
-          {error && <p className="text-red-400 text-sm mt-3">{error}</p>}
         </div>
 
-        {result && (
-          <div className="space-y-4">
-            {/* Overall Grade */}
-            {result.endpoints && result.endpoints.length > 0 && (
-              <div className="glass-card p-6 text-center">
-                <p className="text-slate-400 text-sm mb-2">Overall SSL Grade</p>
-                <div className={`text-7xl font-bold ${gradeColor[result.grade] || 'text-white'}`}>
-                  {result.grade || '—'}
+        <ToolPageShell
+          loading={loading}
+          error={error}
+          onRetry={checkSSL}
+        >
+          {result && (
+            <div className="space-y-4">
+              {/* Overall Grade */}
+              {result.endpoints && result.endpoints.length > 0 && (
+                <div className="glass-card p-6 text-center">
+                  <p className="text-slate-400 text-sm mb-2">Overall SSL Grade</p>
+                  <div className={`text-7xl font-bold ${gradeColor[result.grade] || 'text-white'}`}>
+                    {result.grade || '—'}
+                  </div>
+                  <p className="text-slate-500 text-sm mt-2">{result.host}</p>
                 </div>
-                <p className="text-slate-500 text-sm mt-2">{result.host}</p>
-              </div>
-            )}
+              )}
 
-            {/* Endpoint details */}
-            {result.endpoints?.map((ep: any, i: number) => (
-              <div key={i} className="glass-card p-6">
-                <h3 className="text-white font-semibold mb-4">Server: {ep.ipAddress} ({ep.serverName})</h3>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div>
-                    <p className="text-slate-400 text-xs uppercase tracking-wide mb-1">Grade</p>
-                    <p className={`text-2xl font-bold ${gradeColor[ep.grade] || 'text-white'}`}>
-                      {ep.grade || '—'}
-                    </p>
+              {/* Endpoint details */}
+              {result.endpoints?.map((ep: any, i: number) => (
+                <div key={i} className="glass-card p-6">
+                  <h3 className="text-white font-semibold mb-4">Server: {ep.ipAddress} ({ep.serverName})</h3>
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase tracking-wide mb-1">Grade</p>
+                      <p className={`text-2xl font-bold ${gradeColor[ep.grade] || 'text-white'}`}>
+                        {ep.grade || '—'}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase tracking-wide mb-1">Protocols</p>
+                      <p className="text-slate-300 text-sm">{ep.protocols?.map((p:any)=>p.name+' '+p.version).join(', ') || 'N/A'}</p>
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase tracking-wide mb-1">Cipher Suite</p>
+                      <p className="text-slate-300 text-sm">{ep.cipherSuite?.name || 'N/A'}</p>
+                    </div>
+                    <div>
+                      <p className="text-slate-400 text-xs uppercase tracking-wide mb-1">TLS 1.3</p>
+                      <p className={ep.tlsProtocols?.some((p:any)=>p.name==='TLS 1.3') ? 'text-green-400' : 'text-red-400'}>
+                        {ep.tlsProtocols?.some((p:any)=>p.name==='TLS 1.3') ? '✓ Supported' : '✗ Not supported'}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-slate-400 text-xs uppercase tracking-wide mb-1">Protocols</p>
-                    <p className="text-slate-300 text-sm">{ep.protocols?.map((p:any)=>p.name+' '+p.version).join(', ') || 'N/A'}</p>
-                  </div>
-                  <div>
-                    <p className="text-slate-400 text-xs uppercase tracking-wide mb-1">Cipher Suite</p>
-                    <p className="text-slate-300 text-sm">{ep.cipherSuite?.name || 'N/A'}</p>
-                  </div>
-                  <div>
-                    <p className="text-slate-400 text-xs uppercase tracking-wide mb-1">TLS 1.3</p>
-                    <p className={ep.tlsProtocols?.some((p:any)=>p.name==='TLS 1.3') ? 'text-green-400' : 'text-red-400'}>
-                      {ep.tlsProtocols?.some((p:any)=>p.name==='TLS 1.3') ? '✓ Supported' : '✗ Not supported'}
-                    </p>
-                  </div>
+                  {ep.issues && ep.issues.length > 0 && (
+                    <div className="mt-4 p-3 rounded bg-red-900/20 border border-red-700/30">
+                      <p className="text-red-300 text-sm font-medium mb-1">⚠ Issues Found:</p>
+                      <ul className="text-red-200 text-sm space-y-1">
+                        {ep.issues.map((issue: string, j: number) => (
+                          <li key={j}>• {issue}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
-                {ep.issues && ep.issues.length > 0 && (
-                  <div className="mt-4 p-3 rounded bg-red-900/20 border border-red-700/30">
-                    <p className="text-red-300 text-sm font-medium mb-1">⚠ Issues Found:</p>
-                    <ul className="text-red-200 text-sm space-y-1">
-                      {ep.issues.map((issue: string, j: number) => (
-                        <li key={j}>• {issue}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        )}
+              ))}
+            </div>
+          )}
+        </ToolPageShell>
 
         <div className="mt-12 glass-card p-6">
           <h2 className="text-xl font-bold text-white mb-3">What this checker tells you</h2>

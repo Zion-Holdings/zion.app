@@ -19,6 +19,11 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Zion Tech Group — AI & IT Solutions',
   description: 'AI strategy, IT services, automation, cloud infrastructure, and machine learning solutions from Zion Tech Group.',
+  keywords: 'AI services, IT consulting, machine learning, cybersecurity, cloud migration, automation, NLP, computer vision, Micro SaaS',
+  authors: [{ name: 'Kleber Garcia Alcatrão', url: 'https://ziontechgroup.com' }],
+  creator: 'Zion Tech Group',
+  publisher: 'Zion Tech Group',
+  robots: 'index, follow',
   alternates: { canonical: '/' },
 
   openGraph: {
@@ -26,8 +31,22 @@ export const metadata: Metadata = {
     description: 'AI strategy, IT services, automation, cloud infrastructure, and machine learning solutions from Zion Tech Group.',
     url: 'https://ziontechgroup.com/',
     siteName: 'Zion Tech Group',
+    locale: 'en_US',
     type: 'website',
-    images: ['/og-default.png'],
+    images: [
+      {
+        url: 'https://ziontechgroup.com/og-home.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Zion Tech Group — AI, IT & Micro SAAS Solutions',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Zion Tech Group — AI & IT Solutions',
+    description: 'AI strategy, IT services, automation, cloud infrastructure, and machine learning solutions from Zion Tech Group.',
+    images: ['https://ziontechgroup.com/og-home.svg'],
   },
 };
 
@@ -230,7 +249,10 @@ let list = services;
             name: 'Zion Tech Group',
             url: 'https://ziontechgroup.com',
             logo: 'https://ziontechgroup.com/icon.svg',
+            image: 'https://ziontechgroup.com/icon.svg',
             description: 'AI services, IT solutions, micro-SaaS products, and strategic consulting for businesses of all sizes.',
+            telephone: '+1-302-464-0950',
+            email: 'kleber@ziontechgroup.com',
             address: {
               '@type': 'PostalAddress',
               streetAddress: '364 E Main St STE 1008',
@@ -239,14 +261,38 @@ let list = services;
               postalCode: '19709',
               addressCountry: 'US'
             },
-            contactPoint: {
-              '@type': 'ContactPoint',
-              telephone: '+1-302-464-0950',
-              contactType: 'sales',
-              email: 'kleber@ziontechgroup.com'
+            geo: {
+              '@type': 'GeoCoordinates',
+              latitude: '39.4498',
+              longitude: '-75.7140'
             },
+            openingHoursSpecification: [
+              {
+                '@type': 'OpeningHoursSpecification',
+                dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+                opens: '08:00',
+                closes: '18:00'
+              }
+            ],
+            contactPoint: [
+              {
+                '@type': 'ContactPoint',
+                telephone: '+1-302-464-0950',
+                contactType: 'sales',
+                email: 'kleber@ziontechgroup.com'
+              },
+              {
+                '@type': 'ContactPoint',
+                telephone: '+1-302-464-0950',
+                contactType: 'customer service',
+                email: 'kleber@ziontechgroup.com',
+                availableLanguage: ['English', 'Portuguese']
+              }
+            ],
             sameAs: [
-              'https://www.linkedin.com/company/ziontechgroup'
+              'https://www.linkedin.com/company/ziontechgroup',
+              'https://twitter.com/ziontechgroup',
+              'https://github.com/ziontechgroup'
             ]
           })
         }}

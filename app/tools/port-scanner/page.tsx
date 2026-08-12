@@ -4,6 +4,7 @@ import { pingTool } from '@/data/tools_ping_client';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import ToolPageShell from '@/components/ToolPageShell';
 
 export default function PortScannerPage() {
   useEffect(() => { pingTool('port-scanner'); }, []);
@@ -113,55 +114,59 @@ export default function PortScannerPage() {
               {loading ? 'Scanning…' : 'Scan Ports'}
             </button>
           </div>
-          {error && <p className="text-red-400 text-sm mt-3">{error}</p>}
-          {results.length > 0 && (
-            <p className="text-slate-400 text-sm mt-3">
-              {openCount} of {COMMON_PORTS.length} ports open
-            </p>
-          )}
         </div>
 
-        {results.length > 0 && (
-          <div className="glass-card overflow-hidden">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-slate-700">
-                  <th className="text-left p-4 text-slate-400">Port</th>
-                  <th className="text-left p-4 text-slate-400">Service</th>
-                  <th className="text-left p-4 text-slate-400">Description</th>
-                  <th className="text-right p-4 text-slate-400">Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                {results.map((r, i) => (
-                  <tr key={i} className="border-b border-slate-800/50 hover:bg-slate-800/30">
-                    <td className="p-4 font-mono text-slate-300">{r.port}</td>
-                    <td className="p-4 text-white font-medium">{r.name}</td>
-                    <td className="p-4 text-slate-400 text-xs">{r.desc}</td>
-                    <td className="p-4 text-right">
-                      <span className={`inline-flex items-center gap-1 px-2 py-1 rounded text-xs font-semibold ${
-                        r.open ? 'bg-green-900/30 text-green-400' : 'bg-red-900/20 text-red-400'
-                      }`}>
-                        {r.open ? '● OPEN' : '○ CLOSED'}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        )}
-
-        {!results.length && !loading && (
-          <div className="grid gap-4 grid-cols-2 sm:grid-cols-4">
-            {COMMON_PORTS.map(({port, name}) => (
-              <div key={port} className="glass-card p-4 text-center">
-                <div className="text-xl font-mono text-slate-500">{port}</div>
-                <div className="text-xs text-slate-400">{name}</div>
+        <ToolPageShell
+          loading={loading}
+          error={error}
+          onRetry={scanPorts}
+          emptyState={
+            <div className="grid gap-4 grid-cols-2 sm:grid-cols-4">
+              {COMMON_PORTS.map(({port, name}) => (
+                <div key={port} className="glass-card p-4 text-center">
+                  <div className="text-xl font-mono text-slate-500">{port}</div>
+                  <div className="text-xs text-slate-400">{name}</div>
+                </div>
+              ))}
+            </div>
+          }
+        >
+          {results.length > 0 && (
+            <>
+              <p className="text-slate-400 text-sm mb-3">
+                {openCount} of {COMMON_PORTS.length} ports open
+              </p>
+              <div className="glass-card overflow-hidden">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-slate-700">
+                      <th className="text-left p-4 text-slate-400">Port</th>
+                      <th className="text-left p-4 text-slate-400">Service</th>
+                      <th className="text-left p-4 text-slate-400">Description</th>
+                      <th className="text-right p-4 text-slate-400">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {results.map((r, i) => (
+                      <tr key={i} className="border-b border-slate-800/50 hover:bg-slate-800/30">
+                        <td className="p-4 font-mono text-slate-300">{r.port}</td>
+                        <td className="p-4 text-white font-medium">{r.name}</td>
+                        <td className="p-4 text-slate-400 text-xs">{r.desc}</td>
+                        <td className="p-4 text-right">
+                          <span className={`inline-flex items-center gap-1 px-2 py-1 rounded text-xs font-semibold ${
+                            r.open ? 'bg-green-900/30 text-green-400' : 'bg-red-900/20 text-red-400'
+                          }`}>
+                            {r.open ? '● OPEN' : '○ CLOSED'}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
-            ))}
-          </div>
-        )}
+            </>
+          )}
+        </ToolPageShell>
 
         <div className="mt-8 glass-card p-6">
           <h2 className="text-lg font-bold text-white mb-3">Common Port Reference</h2>
