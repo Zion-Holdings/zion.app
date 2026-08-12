@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+    :root { color-scheme: dark; }
+    body { background:#020617; color:#e5e7eb; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin:0; }
+    header { display:flex; justify-content:space-between; align-items:center; padding: 16px 24px; border-bottom: 1px solid #334155; }
+    header a { color:#34d399; text-decoration:none; font-weight:700; }
+    nav a { margin-left:16px; color:#cbd5e1; text-decoration:none; }
+    nav a:hover { color:#34d399; }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 2.25rem; font-weight: 700; color:#fff; margin: 0 0 8px; }
+    h2 { font-size: 1.25rem; font-weight: 600; color:#fff; margin: 24px 0 8px; }
+    .lead { color:#94a3b8; font-size: 1.125rem; }
+    p { color:#cbd5e1; line-height: 1.6; }
+    .grid { display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); margin-top:24px; }
+    .card { background:#0f172a; border:1px solid #334155; border-radius:12px; padding:16px; }
+    .card a { color:#c4b5fd; text-decoration:none; font-weight:600; }
+    footer { border-top:1px solid #334155; padding:24px; text-align:center; color:#94a3b8; }
+    footer a { color:#34d399; margin: 0 8px; text-decoration:none; }
+  </style>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cloud FinOps: evaluation framework | Zion Tech Group</title>
@@ -20,6 +38,17 @@
   </style>
 </head>
 <body>
+  <header>
+    <a href="/">Zion Tech Group</a>
+    <nav>
+      <a href="/services/">Services</a>
+      <a href="/solutions/">Solutions</a>
+      <a href="/about/">About</a>
+      <a href="/blog/">Blog</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </header>
   <div class="wrap">
     <h1>Cloud FinOps: evaluation framework</h1>
     <p class="meta">By Zion Tech Group • IT and AI insights • 2026</p>
@@ -50,5 +79,13 @@ Leading indicators for cloud finops: evaluation framework: workflow completion r
     <a class="secondary" href="/services">Services</a>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud FinOps: evaluation framework", "description": "Cloud FinOps: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:45Z", "dateModified": "2026-08-07T07:56:45Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-finops-evaluation-framework/"}</script>
   </div>
+  <footer>
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
+    <a href="/cookies/">Cookies</a>
+    <a href="/contact/">Contact</a>
+    <div>© <span id="y"></span> Zion Tech Group</div>
+  </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
