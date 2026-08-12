@@ -26,14 +26,14 @@ jobs:
       sha: ${{ steps.resolve-sha.outputs.sha }}
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
       with:
         token: ${{ github.token }}
         ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha
           || github.sha }}
         fetch-depth: 0
     - name: Setup Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v7
       with:
         node-version-file: .nvmrc
         cache: npm
@@ -114,7 +114,7 @@ jobs:
         echo 'manifest:'
         find "$ARTIFACT_DIR" -maxdepth 2 -type f | sed -n '1,120p'
     - name: Pages artifact
-      uses: actions/upload-pages-artifact@v4
+      uses: actions/upload-pages-artifact@v5
       with:
         path: artifacts/pages
     - name: Write deploy status (triggered)
@@ -128,7 +128,7 @@ jobs:
         echo "sha=$sha" >> "$GITHUB_OUTPUT"
         DEPLOY_STATUS=triggered DEPLOY_STATUS_SOURCE=deploy-on-push npm run deploy:status:generate
     - name: Upload deploy status artifact
-      uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
       with:
         name: deploy-status
         path: automation/reports/deploy-status-latest.json
@@ -164,7 +164,7 @@ jobs:
     steps:
     - name: Deploy to GitHub Pages
       id: deployment
-      uses: actions/deploy-pages@v4
+      uses: actions/deploy-pages@v5
   smoke-tests:
     needs:
     - build
@@ -176,12 +176,12 @@ jobs:
       BASE_URL: https://ziontechgroup.com
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
       with:
         ref: ${{ needs.build.outputs.sha }}
         fetch-depth: 0
     - name: Setup Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v7
       with:
         node-version-file: .nvmrc
     - name: Install dependencies
@@ -217,7 +217,7 @@ jobs:
       continue-on-error: true
     - name: Upload deploy watchdog report
       if: always()
-      uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
       with:
         name: deploy-watchdog-report
         path: automation/reports/deploy-watchdog-latest.json

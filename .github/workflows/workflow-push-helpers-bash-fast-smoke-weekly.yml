@@ -15,7 +15,7 @@ jobs:
     timeout-minutes: 2
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: workflow-push-helpers-bash-fast.yml anchors
         run: |
           set -euo pipefail
