@@ -4,6 +4,15 @@ export const metadata = {
   title: 'AI Data Backup | Zion Tech Group',
   description: 'End-to-end ai data backup services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/ai-data-backup-2026-7452/' },
+
+  openGraph: {
+    title: 'AI Data Backup | Zion Tech Group',
+    description: 'End-to-end ai data backup services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/ai-data-backup-2026-7452/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

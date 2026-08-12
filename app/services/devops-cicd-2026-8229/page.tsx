@@ -4,6 +4,15 @@ export const metadata = {
   title: 'DevOps CI/CD | Zion Tech Group',
   description: 'End-to-end devops ci/cd services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/devops-cicd-2026-8229/' },
+
+  openGraph: {
+    title: 'DevOps CI/CD | Zion Tech Group',
+    description: 'End-to-end devops ci/cd services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/devops-cicd-2026-8229/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

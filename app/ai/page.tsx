@@ -6,7 +6,16 @@ export const metadata: Metadata = {
   title: 'AI Lab',
   description:
     'Explore Zion\'s AI Lab — interactive tools and configurators for autonomous AI solutions and architecture planning.',
-  alternates: { canonical: '/ai' },};
+  alternates: { canonical: '/ai' },
+  openGraph: {
+    title: 'AI Lab',
+    description: 'Explore Zion\',
+    url: 'https://ziontechgroup.com/ai',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
+};
 
 const tools = [
   {

@@ -4,6 +4,15 @@ export const metadata = {
   title: 'APM Application Performance | Zion Tech Group',
   description: 'End-to-end apm application performance services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/apm-application-performance-2026-7981/' },
+
+  openGraph: {
+    title: 'APM Application Performance | Zion Tech Group',
+    description: 'End-to-end apm application performance services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/apm-application-performance-2026-7981/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

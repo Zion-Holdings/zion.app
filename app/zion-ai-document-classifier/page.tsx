@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Automatically classify and route documents with ML models that learn from your taxonomy.',
   alternates: { canonical: '/zion-ai-document-classifier' },
+
+  openGraph: {
+    title: 'Zion AI Document Classifier',
+    description: 'Automatically classify and route documents with ML models that learn from your taxonomy.',
+    url: 'https://ziontechgroup.com/zion-ai-document-classifier',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

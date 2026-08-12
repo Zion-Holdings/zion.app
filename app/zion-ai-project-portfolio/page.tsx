@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Prioritize and balance project portfolios with resource capacity, risk, and strategic alignment insights.',
   alternates: { canonical: '/zion-ai-project-portfolio' },
+
+  openGraph: {
+    title: 'Zion AI Project Portfolio',
+    description: 'Prioritize and balance project portfolios with resource capacity, risk, and strategic alignment insights.',
+    url: 'https://ziontechgroup.com/zion-ai-project-portfolio',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

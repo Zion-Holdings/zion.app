@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Network Infrastructure | Zion Tech Group',
   description: 'End-to-end network infrastructure services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/network-infrastructure-2026-7054/' },
+
+  openGraph: {
+    title: 'Network Infrastructure | Zion Tech Group',
+    description: 'End-to-end network infrastructure services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/network-infrastructure-2026-7054/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

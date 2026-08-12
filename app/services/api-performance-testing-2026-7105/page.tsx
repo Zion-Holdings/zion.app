@@ -4,6 +4,15 @@ export const metadata = {
   title: 'API Performance Testing | Zion Tech Group',
   description: 'End-to-end api performance testing services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/api-performance-testing-2026-7105/' },
+
+  openGraph: {
+    title: 'API Performance Testing | Zion Tech Group',
+    description: 'End-to-end api performance testing services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/api-performance-testing-2026-7105/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

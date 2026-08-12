@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: 'SOC and Incident Response — Case Study',
   description: 'How Zion Tech Group improved uptime and incident response maturity to achieve 99.99% availability.',
   alternates: { canonical: '/case-studies/soc-and-incident-response/' },
+
+  openGraph: {
+    title: 'SOC and Incident Response — Case Study',
+    description: 'How Zion Tech Group improved uptime and incident response maturity to achieve 99.99% availability.',
+    url: 'https://ziontechgroup.com/case-studies/soc-and-incident-response/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function CaseStudySOC() {

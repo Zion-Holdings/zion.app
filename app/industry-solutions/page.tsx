@@ -9,6 +9,15 @@ export const metadata: Metadata = {
   title: 'Industry Solutions',
   description: 'Tailored AI and IT solutions for industries including technology, healthcare, finance, retail, and more.',
   alternates: { canonical: '/industry-solutions/' },
+
+  openGraph: {
+    title: 'Industry Solutions',
+    description: 'Tailored AI and IT solutions for industries including technology, healthcare, finance, retail, and more.',
+    url: 'https://ziontechgroup.com/industry-solutions/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 const IND_COLORS: Record<string, string> = {

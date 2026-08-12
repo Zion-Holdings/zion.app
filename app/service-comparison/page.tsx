@@ -11,6 +11,15 @@ export const metadata: Metadata = {
   title: 'Service Comparison',
   description: 'Compare Zion Tech Group services side-by-side to find the right solution for your business.',
   alternates: { canonical: '/service-comparison/' },
+
+  openGraph: {
+    title: 'Service Comparison',
+    description: 'Compare Zion Tech Group services side-by-side to find the right solution for your business.',
+    url: 'https://ziontechgroup.com/service-comparison/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 const MAX_COMPARE = 4;

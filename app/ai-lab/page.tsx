@@ -9,6 +9,15 @@ export const metadata: Metadata = {
   title: 'AI Lab',
   description: 'Interactive AI playgrounds and demos from Zion Tech Group.',
   alternates: { canonical: '/ai-lab/' },
+
+  openGraph: {
+    title: 'AI Lab',
+    description: 'Interactive AI playgrounds and demos from Zion Tech Group.',
+    url: 'https://ziontechgroup.com/ai-lab/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 // ─── Tool/Playground card data ─────────────────────────────────────────────

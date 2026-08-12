@@ -4,6 +4,15 @@ export const metadata = {
   title: 'DevSecOps Pipeline | Zion Tech Group',
   description: 'End-to-end devsecops pipeline services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/devsecops-pipeline-2026-6887/' },
+
+  openGraph: {
+    title: 'DevSecOps Pipeline | Zion Tech Group',
+    description: 'End-to-end devsecops pipeline services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/devsecops-pipeline-2026-6887/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

@@ -4,6 +4,15 @@ export const metadata = {
   title: 'AI Observability | Zion Tech Group',
   description: 'End-to-end ai observability services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/ai-observability-2026-7255/' },
+
+  openGraph: {
+    title: 'AI Observability | Zion Tech Group',
+    description: 'End-to-end ai observability services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/ai-observability-2026-7255/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

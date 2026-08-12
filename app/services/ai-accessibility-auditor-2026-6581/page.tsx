@@ -4,6 +4,15 @@ export const metadata = {
   title: 'AI Accessibility Auditor | Zion Tech Group',
   description: 'End-to-end ai accessibility auditor services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/ai-accessibility-auditor-2026-6581/' },
+
+  openGraph: {
+    title: 'AI Accessibility Auditor | Zion Tech Group',
+    description: 'End-to-end ai accessibility auditor services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/ai-accessibility-auditor-2026-6581/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

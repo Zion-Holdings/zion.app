@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Centralize and surface organizational knowledge with AI-powered search, tagging, and recommendations.',
   alternates: { canonical: '/zion-ai-knowledge-management' },
+
+  openGraph: {
+    title: 'Zion AI Knowledge Management',
+    description: 'Centralize and surface organizational knowledge with AI-powered search, tagging, and recommendations.',
+    url: 'https://ziontechgroup.com/zion-ai-knowledge-management',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

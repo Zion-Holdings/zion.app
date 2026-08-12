@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Professional Data Pipeline Solutions | Zion Tech Group',
   description: 'Professional data pipeline solutions for government. Get expert implementation, support, and results.',
   alternates: { canonical: '/services/data-pipeline/government/' },
+
+  openGraph: {
+    title: 'Professional Data Pipeline Solutions | Zion Tech Group',
+    description: 'Professional data pipeline solutions for government. Get expert implementation, support, and results.',
+    url: 'https://ziontechgroup.com/services/data-pipeline/government/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

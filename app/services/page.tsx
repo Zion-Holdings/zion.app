@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: 'Services',
   description: 'Managed IT, AI automation, cybersecurity, cloud, and consulting services from Zion Tech Group.',
   alternates: { canonical: '/services/' },
+
+  openGraph: {
+    title: 'Services',
+    description: 'Managed IT, AI automation, cybersecurity, cloud, and consulting services from Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 const SERVICES = [

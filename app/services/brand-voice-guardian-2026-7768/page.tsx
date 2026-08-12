@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Brand Voice Guardian | Zion Tech Group',
   description: 'End-to-end brand voice guardian services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/brand-voice-guardian-2026-7768/' },
+
+  openGraph: {
+    title: 'Brand Voice Guardian | Zion Tech Group',
+    description: 'End-to-end brand voice guardian services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/brand-voice-guardian-2026-7768/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

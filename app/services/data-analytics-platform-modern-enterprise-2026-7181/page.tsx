@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Data Analytics Platform | Zion Tech Group',
   description: 'End-to-end data analytics platform services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/data-analytics-platform-modern-enterprise-2026-7181/' },
+
+  openGraph: {
+    title: 'Data Analytics Platform | Zion Tech Group',
+    description: 'End-to-end data analytics platform services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/data-analytics-platform-modern-enterprise-2026-7181/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'How Zion Tech Group collects, uses, and protects your personal information.',
   alternates: { canonical: '/privacy/' },
+
+  openGraph: {
+    title: 'Privacy Policy',
+    description: 'How Zion Tech Group collects, uses, and protects your personal information.',
+    url: 'https://ziontechgroup.com/privacy/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function PrivacyPage() {

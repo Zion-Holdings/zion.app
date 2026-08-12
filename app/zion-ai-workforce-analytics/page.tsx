@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Analyze workforce productivity, attrition risk, and headcount planning with predictive insights.',
   alternates: { canonical: '/zion-ai-workforce-analytics' },
+
+  openGraph: {
+    title: 'Zion AI Workforce Analytics | Zion Tech Group',
+    description: 'Analyze workforce productivity, attrition risk, and headcount planning with predictive insights.',
+    url: 'https://ziontechgroup.com/zion-ai-workforce-analytics',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

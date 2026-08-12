@@ -4,6 +4,15 @@ export const metadata = {
   title: 'AI API Gateway | Zion Tech Group',
   description: 'End-to-end ai api gateway services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/ai-api-gateway-2026-7517/' },
+
+  openGraph: {
+    title: 'AI API Gateway | Zion Tech Group',
+    description: 'End-to-end ai api gateway services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/ai-api-gateway-2026-7517/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

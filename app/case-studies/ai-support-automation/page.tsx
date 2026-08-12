@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: 'AI Support Automation — Case Study',
   description: 'How Zion Tech Group reduced ticket volume by 32% with an AI triage and deflection pilot.',
   alternates: { canonical: '/case-studies/ai-support-automation/' },
+
+  openGraph: {
+    title: 'AI Support Automation — Case Study',
+    description: 'How Zion Tech Group reduced ticket volume by 32% with an AI triage and deflection pilot.',
+    url: 'https://ziontechgroup.com/case-studies/ai-support-automation/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function CaseStudyAISupport() {

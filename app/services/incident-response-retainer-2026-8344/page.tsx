@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Incident Response Retainer | Zion Tech Group',
   description: 'End-to-end incident response retainer services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/incident-response-retainer-2026-8344/' },
+
+  openGraph: {
+    title: 'Incident Response Retainer | Zion Tech Group',
+    description: 'End-to-end incident response retainer services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/incident-response-retainer-2026-8344/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

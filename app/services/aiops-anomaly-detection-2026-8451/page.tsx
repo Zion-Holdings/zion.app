@@ -4,6 +4,15 @@ export const metadata = {
   title: 'AIOps Anomaly Detection | Zion Tech Group',
   description: 'End-to-end aiops anomaly detection services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/aiops-anomaly-detection-2026-8451/' },
+
+  openGraph: {
+    title: 'AIOps Anomaly Detection | Zion Tech Group',
+    description: 'End-to-end aiops anomaly detection services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/aiops-anomaly-detection-2026-8451/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

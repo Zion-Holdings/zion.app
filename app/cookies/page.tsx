@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: 'Cookie Policy',
   description: 'How Zion Tech Group uses cookies and similar technologies on our website.',
   alternates: { canonical: '/cookies/' },
+
+  openGraph: {
+    title: 'Cookie Policy',
+    description: 'How Zion Tech Group uses cookies and similar technologies on our website.',
+    url: 'https://ziontechgroup.com/cookies/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function CookiesPage() {

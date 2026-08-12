@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Enterprise AI Intelligence Hub | Zion Tech Group',
   description: 'End-to-end enterprise ai intelligence hub services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/enterprise-ai-intelligence-hub-2026-8373/' },
+
+  openGraph: {
+    title: 'Enterprise AI Intelligence Hub | Zion Tech Group',
+    description: 'End-to-end enterprise ai intelligence hub services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/enterprise-ai-intelligence-hub-2026-8373/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

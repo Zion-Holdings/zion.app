@@ -4,6 +4,15 @@ export const metadata = {
   title: 'AI Agentic Workflows | Zion Tech Group',
   description: 'End-to-end ai agentic workflows services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/ai-agentic-workflows-2026-6517/' },
+
+  openGraph: {
+    title: 'AI Agentic Workflows | Zion Tech Group',
+    description: 'End-to-end ai agentic workflows services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/ai-agentic-workflows-2026-6517/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

@@ -10,6 +10,15 @@ export const metadata: Metadata = {
   title: 'Service Details — Zion Tech Group',
   description: 'Detailed information about this service offering from Zion Tech Group.',
   alternates: { canonical: '/services/' },
+
+  openGraph: {
+    title: 'Service Details — Zion Tech Group',
+    description: 'Detailed information about this service offering from Zion Tech Group.',
+    url: 'https://ziontechgroup.com/services/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 const CAT_LABELS: Record<string,string> = {

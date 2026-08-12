@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Manage contract creation, negotiation, renewal, and compliance through the full lifecycle with AI-powered insights.',
   alternates: { canonical: '/zion-ai-contract-lifecycle' },
+
+  openGraph: {
+    title: 'Zion AI Contract Lifecycle',
+    description: 'Manage contract creation, negotiation, renewal, and compliance through the full lifecycle with AI-powered insights.',
+    url: 'https://ziontechgroup.com/zion-ai-contract-lifecycle',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

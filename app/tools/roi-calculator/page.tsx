@@ -10,6 +10,15 @@ export const metadata: Metadata = {
   title: 'ROI Calculator — Zion Tech Group',
   description: 'Calculate the return on investment for AI and IT services with our free ROI calculator.',
   alternates: { canonical: '/tools/roi-calculator' },
+
+  openGraph: {
+    title: 'ROI Calculator — Zion Tech Group',
+    description: 'Calculate the return on investment for AI and IT services with our free ROI calculator.',
+    url: 'https://ziontechgroup.com/tools/roi-calculator',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ROICalculatorPage() {

@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: 'Cloud Cost Optimization — Case Study',
   description: 'How Zion Tech Group reduced cloud spend by 40% in 90 days with rightsizing, reserved planning, and FinOps guardrails.',
   alternates: { canonical: '/case-studies/cloud-cost-optimization/' },
+
+  openGraph: {
+    title: 'Cloud Cost Optimization — Case Study',
+    description: 'How Zion Tech Group reduced cloud spend by 40% in 90 days with rightsizing, reserved planning, and FinOps guardrails.',
+    url: 'https://ziontechgroup.com/case-studies/cloud-cost-optimization/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function CaseStudyCloudCost() {

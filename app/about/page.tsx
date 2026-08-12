@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Learn about Zion Tech Group: mission, leadership, delivery model, and US-based team.',
   alternates: { canonical: '/about/' },
+
+  openGraph: {
+    title: 'About Us',
+    description: 'Learn about Zion Tech Group: mission, leadership, delivery model, and US-based team.',
+    url: 'https://ziontechgroup.com/about/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function About() {

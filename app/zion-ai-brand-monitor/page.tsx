@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Track brand mentions, sentiment, and competitive positioning across channels in real time.',
   alternates: { canonical: '/zion-ai-brand-monitor' },
+
+  openGraph: {
+    title: 'Zion AI Brand Monitor',
+    description: 'Track brand mentions, sentiment, and competitive positioning across channels in real time.',
+    url: 'https://ziontechgroup.com/zion-ai-brand-monitor',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

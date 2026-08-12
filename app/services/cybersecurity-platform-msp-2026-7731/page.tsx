@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Cybersecurity for MSPs | Zion Tech Group',
   description: 'End-to-end cybersecurity for msps services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/cybersecurity-platform-msp-2026-7731/' },
+
+  openGraph: {
+    title: 'Cybersecurity for MSPs | Zion Tech Group',
+    description: 'End-to-end cybersecurity for msps services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/cybersecurity-platform-msp-2026-7731/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

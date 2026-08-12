@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Endpoint Management | Zion Tech Group',
   description: 'End-to-end endpoint management services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/endpoint-management-2026-7027/' },
+
+  openGraph: {
+    title: 'Endpoint Management | Zion Tech Group',
+    description: 'End-to-end endpoint management services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/endpoint-management-2026-7027/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

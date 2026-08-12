@@ -5,6 +5,15 @@ export const metadata = {
   title: 'Support Tickets — Client Portal',
   description: 'Track and manage your support requests.',
   alternates: { canonical: '/portal/tickets/' },
+
+  openGraph: {
+    title: 'Support Tickets — Client Portal',
+    description: 'Track and manage your support requests.',
+    url: 'https://ziontechgroup.com/portal/tickets/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function TicketsPage() {

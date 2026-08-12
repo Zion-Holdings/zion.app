@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   title: 'Status Page',
   description: 'Operational status for Zion Tech Group services and monitoring dashboards.',
   alternates: { canonical: '/status-page/' },
+
+  openGraph: {
+    title: 'Status Page',
+    description: 'Operational status for Zion Tech Group services and monitoring dashboards.',
+    url: 'https://ziontechgroup.com/status-page/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function StatusPage() {

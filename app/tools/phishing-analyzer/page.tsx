@@ -4,6 +4,15 @@ export const metadata: Metadata = {
   title: 'Phishing Analyzer | Zion Tech Group',
   description: 'Review suspicious emails and links with Zion Tech Group phishing analysis guidance.',
   alternates: { canonical: '/tools/phishing-analyzer/' },
+
+  openGraph: {
+    title: 'Phishing Analyzer | Zion Tech Group',
+    description: 'Review suspicious emails and links with Zion Tech Group phishing analysis guidance.',
+    url: 'https://ziontechgroup.com/tools/phishing-analyzer/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function PhishingAnalyzerPage() {

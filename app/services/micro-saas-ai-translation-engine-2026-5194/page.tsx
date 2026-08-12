@@ -4,6 +4,15 @@ export const metadata = {
   title: 'MicroSaaS Translation Engine | Zion Tech Group',
   description: 'End-to-end microsaas translation engine services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/micro-saas-ai-translation-engine-2026-5194/' },
+
+  openGraph: {
+    title: 'MicroSaaS Translation Engine | Zion Tech Group',
+    description: 'End-to-end microsaas translation engine services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/micro-saas-ai-translation-engine-2026-5194/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

@@ -11,6 +11,15 @@ export const metadata: Metadata = {
   title: 'Services Explorer',
   description: "Explore Zion Tech Group's full catalog of AI, IT, cloud, security, and automation services.",
   alternates: { canonical: '/services-explorer/' },
+
+  openGraph: {
+    title: 'Services Explorer',
+    description: 'Explore Zion Tech Group',
+    url: 'https://ziontechgroup.com/services-explorer/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 const CAT_COLORS: Record<string, string> = {

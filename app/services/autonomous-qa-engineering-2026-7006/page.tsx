@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Autonomous QA Engineering | Zion Tech Group',
   description: 'End-to-end autonomous qa engineering services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/autonomous-qa-engineering-2026-7006/' },
+
+  openGraph: {
+    title: 'Autonomous QA Engineering | Zion Tech Group',
+    description: 'End-to-end autonomous qa engineering services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/autonomous-qa-engineering-2026-7006/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

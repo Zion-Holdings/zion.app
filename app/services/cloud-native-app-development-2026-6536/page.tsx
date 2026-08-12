@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Cloud Native App Development | Zion Tech Group',
   description: 'End-to-end cloud native app development services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/cloud-native-app-development-2026-6536/' },
+
+  openGraph: {
+    title: 'Cloud Native App Development | Zion Tech Group',
+    description: 'End-to-end cloud native app development services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/cloud-native-app-development-2026-6536/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

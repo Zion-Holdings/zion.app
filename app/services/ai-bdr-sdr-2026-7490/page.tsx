@@ -4,6 +4,15 @@ export const metadata = {
   title: 'AI BDR SDR | Zion Tech Group',
   description: 'End-to-end ai bdr sdr services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/ai-bdr-sdr-2026-7490/' },
+
+  openGraph: {
+    title: 'AI BDR SDR | Zion Tech Group',
+    description: 'End-to-end ai bdr sdr services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/ai-bdr-sdr-2026-7490/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

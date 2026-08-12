@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Smart Contract Audit | Zion Tech Group',
   description: 'End-to-end smart contract audit services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/smart-contract-audit-2026-2684/' },
+
+  openGraph: {
+    title: 'Smart Contract Audit | Zion Tech Group',
+    description: 'End-to-end smart contract audit services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/smart-contract-audit-2026-2684/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

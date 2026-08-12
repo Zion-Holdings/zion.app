@@ -4,6 +4,15 @@ export const metadata = {
   title: 'AI IT Operations | Zion Tech Group',
   description: 'End-to-end ai it operations services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/ai-it-operations-automation-2026-7039/' },
+
+  openGraph: {
+    title: 'AI IT Operations | Zion Tech Group',
+    description: 'End-to-end ai it operations services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/ai-it-operations-automation-2026-7039/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

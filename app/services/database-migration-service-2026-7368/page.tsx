@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Database Migration Service | Zion Tech Group',
   description: 'End-to-end database migration service services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/database-migration-service-2026-7368/' },
+
+  openGraph: {
+    title: 'Database Migration Service | Zion Tech Group',
+    description: 'End-to-end database migration service services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/database-migration-service-2026-7368/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

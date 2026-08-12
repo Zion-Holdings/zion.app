@@ -4,6 +4,15 @@ export const metadata = {
   title: 'AI 3D Asset Generator | Zion Tech Group',
   description: 'End-to-end ai 3d asset generator services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/ai-3d-asset-generator-2026-7132/' },
+
+  openGraph: {
+    title: 'AI 3D Asset Generator | Zion Tech Group',
+    description: 'End-to-end ai 3d asset generator services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/ai-3d-asset-generator-2026-7132/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

@@ -3,7 +3,16 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Solutions Configurator',
   description: 'Configure your custom AI & IT solutions',
-  alternates: { canonical: '/ai/solutions-configurator' },};
+  alternates: { canonical: '/ai/solutions-configurator' },
+  openGraph: {
+    title: 'Solutions Configurator',
+    description: 'Configure your custom AI & IT solutions',
+    url: 'https://ziontechgroup.com/ai/solutions-configurator',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
+};
 
 export default function SolutionsConfiguratorPage() {
   return (

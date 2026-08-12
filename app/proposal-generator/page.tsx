@@ -10,6 +10,15 @@ export const metadata: Metadata = {
   title: 'Proposal Generator',
   description: 'Generate a custom service proposal in minutes. Select services, budget, and timeline — get a ready-to-send PDF.',
   alternates: { canonical: '/proposal-generator/' },
+
+  openGraph: {
+    title: 'Proposal Generator',
+    description: 'Generate a custom service proposal in minutes. Select services, budget, and timeline — get a ready-to-send PDF.',
+    url: 'https://ziontechgroup.com/proposal-generator/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ProposalGeneratorPage() {

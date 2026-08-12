@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Automate compliance checks with policy-aware AI that tracks regulatory updates and flags gaps.',
   alternates: { canonical: '/zion-ai-compliance-checker' },
+
+  openGraph: {
+    title: 'Zion AI Compliance Checker',
+    description: 'Automate compliance checks with policy-aware AI that tracks regulatory updates and flags gaps.',
+    url: 'https://ziontechgroup.com/zion-ai-compliance-checker',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

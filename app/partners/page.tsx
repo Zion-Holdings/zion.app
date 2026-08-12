@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Partner with Zion Tech Group. Technology alliances, resellers, and referral partnerships.',
   alternates: { canonical: '/partners/' },
+
+  openGraph: {
+    title: 'Partners',
+    description: 'Partner with Zion Tech Group. Technology alliances, resellers, and referral partnerships.',
+    url: 'https://ziontechgroup.com/partners/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function PartnersPage() {

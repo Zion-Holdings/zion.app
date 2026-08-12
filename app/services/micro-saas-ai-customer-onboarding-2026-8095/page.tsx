@@ -4,6 +4,15 @@ export const metadata = {
   title: 'MicroSaaS Customer Onboarding | Zion Tech Group',
   description: 'End-to-end microsaas customer onboarding services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/micro-saas-ai-customer-onboarding-2026-8095/' },
+
+  openGraph: {
+    title: 'MicroSaaS Customer Onboarding | Zion Tech Group',
+    description: 'End-to-end microsaas customer onboarding services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/micro-saas-ai-customer-onboarding-2026-8095/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

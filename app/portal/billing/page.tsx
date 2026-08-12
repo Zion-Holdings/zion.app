@@ -5,6 +5,15 @@ export const metadata = {
   title: 'Billing & Invoices — Client Portal',
   description: 'View your invoices, payment methods, and billing history. Secure client portal access.',
   alternates: { canonical: '/portal/billing/' },
+
+  openGraph: {
+    title: 'Billing & Invoices — Client Portal',
+    description: 'View your invoices, payment methods, and billing history. Secure client portal access.',
+    url: 'https://ziontechgroup.com/portal/billing/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function BillingPage() {

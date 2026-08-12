@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Cloud Migration Services | Zion Tech Group',
   description: 'End-to-end cloud migration services services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/cloud-migration-services-2026-8159/' },
+
+  openGraph: {
+    title: 'Cloud Migration Services | Zion Tech Group',
+    description: 'End-to-end cloud migration services services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/cloud-migration-services-2026-8159/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

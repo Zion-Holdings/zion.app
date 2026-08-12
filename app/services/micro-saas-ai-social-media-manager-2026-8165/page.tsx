@@ -4,6 +4,15 @@ export const metadata = {
   title: 'MicroSaaS Social Media Manager | Zion Tech Group',
   description: 'End-to-end microsaas social media manager services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/micro-saas-ai-social-media-manager-2026-8165/' },
+
+  openGraph: {
+    title: 'MicroSaaS Social Media Manager | Zion Tech Group',
+    description: 'End-to-end microsaas social media manager services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/micro-saas-ai-social-media-manager-2026-8165/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

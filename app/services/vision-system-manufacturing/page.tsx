@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Professional Vision System Solutions | Zion Tech Group',
   description: 'Professional vision system solutions for manufacturing. Get expert implementation, support, and results.',
   alternates: { canonical: '/services/vision-system/manufacturing/' },
+
+  openGraph: {
+    title: 'Professional Vision System Solutions | Zion Tech Group',
+    description: 'Professional vision system solutions for manufacturing. Get expert implementation, support, and results.',
+    url: 'https://ziontechgroup.com/services/vision-system/manufacturing/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

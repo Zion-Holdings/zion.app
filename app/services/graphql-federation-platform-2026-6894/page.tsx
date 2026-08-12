@@ -4,6 +4,15 @@ export const metadata = {
   title: 'GraphQL Federation Platform | Zion Tech Group',
   description: 'End-to-end graphql federation platform services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/graphql-federation-platform-2026-6894/' },
+
+  openGraph: {
+    title: 'GraphQL Federation Platform | Zion Tech Group',
+    description: 'End-to-end graphql federation platform services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/graphql-federation-platform-2026-6894/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

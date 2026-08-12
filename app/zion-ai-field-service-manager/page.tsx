@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Optimize field technician scheduling, routing, and job completion with AI-driven dispatch and real-time updates.',
   alternates: { canonical: '/zion-ai-field-service-manager' },
+
+  openGraph: {
+    title: 'Zion AI Field Service Manager',
+    description: 'Optimize field technician scheduling, routing, and job completion with AI-driven dispatch and real-time updates.',
+    url: 'https://ziontechgroup.com/zion-ai-field-service-manager',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

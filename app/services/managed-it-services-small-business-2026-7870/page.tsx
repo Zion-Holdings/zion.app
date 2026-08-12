@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Managed IT Services | Zion Tech Group',
   description: 'End-to-end managed it services services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/managed-it-services-small-business-2026-7870/' },
+
+  openGraph: {
+    title: 'Managed IT Services | Zion Tech Group',
+    description: 'End-to-end managed it services services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/managed-it-services-small-business-2026-7870/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

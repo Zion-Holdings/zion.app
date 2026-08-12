@@ -5,7 +5,16 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Service Health',
   description: 'Live health status for individual Zion Tech Group services — response time, uptime, and incident history.',
-  alternates: { canonical: '/status/service-health' },};
+  alternates: { canonical: '/status/service-health' },
+  openGraph: {
+    title: 'Service Health',
+    description: 'Live health status for individual Zion Tech Group services — response time, uptime, and incident history.',
+    url: 'https://ziontechgroup.com/status/service-health',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
+};
 
 
 import { readFileSync } from 'fs';

@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Cloud FinOps | Zion Tech Group',
   description: 'End-to-end cloud finops services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/cloud-finops-2026-7018/' },
+
+  openGraph: {
+    title: 'Cloud FinOps | Zion Tech Group',
+    description: 'End-to-end cloud finops services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/cloud-finops-2026-7018/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

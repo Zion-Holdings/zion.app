@@ -5,6 +5,15 @@ export const metadata = {
   title: 'Knowledge Base — Client Portal',
   description: 'Documentation, guides, how-tos, and technical resources.',
   alternates: { canonical: '/portal/kb/' },
+
+  openGraph: {
+    title: 'Knowledge Base — Client Portal',
+    description: 'Documentation, guides, how-tos, and technical resources.',
+    url: 'https://ziontechgroup.com/portal/kb/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function KnowledgeBasePage() {

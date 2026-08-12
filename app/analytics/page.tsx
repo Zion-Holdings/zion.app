@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: 'Data Analytics & BI',
   description: 'Executive BI dashboards, predictive forecasting, embedded analytics, and self-serve analytics platforms.',
   alternates: { canonical: '/analytics' },
+
+  openGraph: {
+    title: 'Data Analytics & BI',
+    description: 'Executive BI dashboards, predictive forecasting, embedded analytics, and self-serve analytics platforms.',
+    url: 'https://ziontechgroup.com/analytics',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Edge Computing Deployment | Zion Tech Group',
   description: 'End-to-end edge computing deployment services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/edge-computing-deployment-2026-6957/' },
+
+  openGraph: {
+    title: 'Edge Computing Deployment | Zion Tech Group',
+    description: 'End-to-end edge computing deployment services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/edge-computing-deployment-2026-6957/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

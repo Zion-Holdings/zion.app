@@ -4,6 +4,15 @@ export const metadata = {
   title: 'AI Agent Safety Evaluation | Zion Tech Group',
   description: 'End-to-end ai agent safety evaluation services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/ai-agent-safety-evaluation-2026-7895/' },
+
+  openGraph: {
+    title: 'AI Agent Safety Evaluation | Zion Tech Group',
+    description: 'End-to-end ai agent safety evaluation services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/ai-agent-safety-evaluation-2026-7895/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Orchestrate cross-system workflows with intelligent routing, retries, and dependency management.',
   alternates: { canonical: '/zion-ai-workflow-orchestrator' },
+
+  openGraph: {
+    title: 'Zion AI Workflow Orchestrator',
+    description: 'Orchestrate cross-system workflows with intelligent routing, retries, and dependency management.',
+    url: 'https://ziontechgroup.com/zion-ai-workflow-orchestrator',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

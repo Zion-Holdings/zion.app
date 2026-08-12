@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Chaos Engineering | Zion Tech Group',
   description: 'End-to-end chaos engineering services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/chaos-engineering-2026-7361/' },
+
+  openGraph: {
+    title: 'Chaos Engineering | Zion Tech Group',
+    description: 'End-to-end chaos engineering services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/chaos-engineering-2026-7361/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

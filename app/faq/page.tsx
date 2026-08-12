@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: 'FAQ',
   description: 'Answers to common questions about services, engagement models, pricing, and support at Zion Tech Group.',
   alternates: { canonical: '/faq/' },
+
+  openGraph: {
+    title: 'FAQ',
+    description: 'Answers to common questions about services, engagement models, pricing, and support at Zion Tech Group.',
+    url: 'https://ziontechgroup.com/faq/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 const ITEMS = [

@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Enrich leads with firmographic and technographic data to prioritize high-value opportunities.',
   alternates: { canonical: '/zion-ai-lead-enrichment' },
+
+  openGraph: {
+    title: 'Zion AI Lead Enrichment',
+    description: 'Enrich leads with firmographic and technographic data to prioritize high-value opportunities.',
+    url: 'https://ziontechgroup.com/zion-ai-lead-enrichment',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

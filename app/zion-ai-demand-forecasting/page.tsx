@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Forecast demand with ML models that factor in seasonality, promotions, and external signals.',
   alternates: { canonical: '/zion-ai-demand-forecasting' },
+
+  openGraph: {
+    title: 'Zion AI Demand Forecasting',
+    description: 'Forecast demand with ML models that factor in seasonality, promotions, and external signals.',
+    url: 'https://ziontechgroup.com/zion-ai-demand-forecasting',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

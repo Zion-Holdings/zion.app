@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Source, screen, and qualify candidates with AI-powered matching and automated outreach workflows.',
   alternates: { canonical: '/zion-ai-talent-acquisition' },
+
+  openGraph: {
+    title: 'Zion AI Talent Acquisition | Zion Tech Group',
+    description: 'Source, screen, and qualify candidates with AI-powered matching and automated outreach workflows.',
+    url: 'https://ziontechgroup.com/zion-ai-talent-acquisition',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

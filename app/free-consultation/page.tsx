@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   title: 'Free Consultation | Zion Tech Group',
   description: 'Book a free AI strategy consultation with Zion Tech Group experts.',
   alternates: { canonical: '/free-consultation/' },
+
+  openGraph: {
+    title: 'Free Consultation | Zion Tech Group',
+    description: 'Book a free AI strategy consultation with Zion Tech Group experts.',
+    url: 'https://ziontechgroup.com/free-consultation/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function FreeConsultationPage() {

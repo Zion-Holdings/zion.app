@@ -5,6 +5,15 @@ export const metadata = {
   title: 'Client Portal — Zion Tech Group',
   description: 'Access your dashboards, support tickets, billing, and knowledge base.',
   alternates: { canonical: '/portal/' },
+
+  openGraph: {
+    title: 'Client Portal — Zion Tech Group',
+    description: 'Access your dashboards, support tickets, billing, and knowledge base.',
+    url: 'https://ziontechgroup.com/portal/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function PortalPage() {

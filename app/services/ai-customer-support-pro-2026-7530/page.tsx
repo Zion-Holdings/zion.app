@@ -4,6 +4,15 @@ export const metadata = {
   title: 'AI Customer Support | Zion Tech Group',
   description: 'End-to-end ai customer support services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/ai-customer-support-pro-2026-7530/' },
+
+  openGraph: {
+    title: 'AI Customer Support | Zion Tech Group',
+    description: 'End-to-end ai customer support services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/ai-customer-support-pro-2026-7530/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

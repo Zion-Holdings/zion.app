@@ -3,7 +3,16 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'URL Audit Assistant',
   description: 'Audit your website URLs for broken links and issues',
-  alternates: { canonical: '/ai/url-audit-assistant' },};
+  alternates: { canonical: '/ai/url-audit-assistant' },
+  openGraph: {
+    title: 'URL Audit Assistant',
+    description: 'Audit your website URLs for broken links and issues',
+    url: 'https://ziontechgroup.com/ai/url-audit-assistant',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
+};
 
 export default function UrlAuditAssistantPage() {
   return (

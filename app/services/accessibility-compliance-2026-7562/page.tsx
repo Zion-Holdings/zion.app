@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Accessibility Compliance | Zion Tech Group',
   description: 'End-to-end accessibility compliance services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/accessibility-compliance-2026-7562/' },
+
+  openGraph: {
+    title: 'Accessibility Compliance | Zion Tech Group',
+    description: 'End-to-end accessibility compliance services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/accessibility-compliance-2026-7562/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

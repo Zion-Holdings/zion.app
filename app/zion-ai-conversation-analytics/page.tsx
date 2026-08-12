@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Analyze customer conversations across channels to surface insights, trends, and improvement opportunities.',
   alternates: { canonical: '/zion-ai-conversation-analytics' },
+
+  openGraph: {
+    title: 'Zion AI Conversation Analytics',
+    description: 'Analyze customer conversations across channels to surface insights, trends, and improvement opportunities.',
+    url: 'https://ziontechgroup.com/zion-ai-conversation-analytics',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

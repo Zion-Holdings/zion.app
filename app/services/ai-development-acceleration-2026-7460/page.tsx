@@ -4,6 +4,15 @@ export const metadata = {
   title: 'AI Development Acceleration | Zion Tech Group',
   description: 'End-to-end ai development acceleration services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/ai-development-acceleration-2026-7460/' },
+
+  openGraph: {
+    title: 'AI Development Acceleration | Zion Tech Group',
+    description: 'End-to-end ai development acceleration services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/ai-development-acceleration-2026-7460/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

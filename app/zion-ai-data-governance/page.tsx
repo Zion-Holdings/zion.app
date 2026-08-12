@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Govern data quality, lineage, and access policies with AI-powered cataloging and policy enforcement.',
   alternates: { canonical: '/zion-ai-data-governance' },
+
+  openGraph: {
+    title: 'Zion AI Data Governance',
+    description: 'Govern data quality, lineage, and access policies with AI-powered cataloging and policy enforcement.',
+    url: 'https://ziontechgroup.com/zion-ai-data-governance',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

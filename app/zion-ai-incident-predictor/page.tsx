@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Predict incidents and outages before they occur using anomaly detection and pattern analysis.',
   alternates: { canonical: '/zion-ai-incident-predictor' },
+
+  openGraph: {
+    title: 'Zion AI Incident Predictor',
+    description: 'Predict incidents and outages before they occur using anomaly detection and pattern analysis.',
+    url: 'https://ziontechgroup.com/zion-ai-incident-predictor',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

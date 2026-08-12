@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: 'Terms of Service',
   description: 'Terms of service for Zion Tech Group.',
   alternates: { canonical: '/terms/' },
+
+  openGraph: {
+    title: 'Terms of Service',
+    description: 'Terms of service for Zion Tech Group.',
+    url: 'https://ziontechgroup.com/terms/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function TermsPage() {

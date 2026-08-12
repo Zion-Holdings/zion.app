@@ -4,6 +4,15 @@ export const metadata = {
   title: 'GenAI DevOps CI/CD | Zion Tech Group',
   description: 'End-to-end genai devops ci/cd services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/devops-gen-ai-cicd-2026-6610/' },
+
+  openGraph: {
+    title: 'GenAI DevOps CI/CD | Zion Tech Group',
+    description: 'End-to-end genai devops ci/cd services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/devops-gen-ai-cicd-2026-6610/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

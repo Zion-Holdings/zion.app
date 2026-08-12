@@ -4,6 +4,15 @@ export const metadata = {
   title: 'AI Data Lakehouse Pipelines | Zion Tech Group',
   description: 'End-to-end ai data lakehouse pipelines services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/ai-data-lakehouse-pipelines-2026-6705/' },
+
+  openGraph: {
+    title: 'AI Data Lakehouse Pipelines | Zion Tech Group',
+    description: 'End-to-end ai data lakehouse pipelines services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/ai-data-lakehouse-pipelines-2026-6705/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

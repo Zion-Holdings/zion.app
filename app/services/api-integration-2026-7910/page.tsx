@@ -4,6 +4,15 @@ export const metadata = {
   title: 'API Integration | Zion Tech Group',
   description: 'End-to-end api integration services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/api-integration-2026-7910/' },
+
+  openGraph: {
+    title: 'API Integration | Zion Tech Group',
+    description: 'End-to-end api integration services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/api-integration-2026-7910/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

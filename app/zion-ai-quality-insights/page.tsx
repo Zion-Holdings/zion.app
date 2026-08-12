@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Surface quality trends, root causes, and improvement opportunities from production data.',
   alternates: { canonical: '/zion-ai-quality-insights' },
+
+  openGraph: {
+    title: 'Zion AI Quality Insights',
+    description: 'Surface quality trends, root causes, and improvement opportunities from production data.',
+    url: 'https://ziontechgroup.com/zion-ai-quality-insights',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

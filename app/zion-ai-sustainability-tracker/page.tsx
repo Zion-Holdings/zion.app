@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Track ESG metrics, carbon footprint, and sustainability goals with automated data collection and reporting.',
   alternates: { canonical: '/zion-ai-sustainability-tracker' },
+
+  openGraph: {
+    title: 'Zion AI Sustainability Tracker',
+    description: 'Track ESG metrics, carbon footprint, and sustainability goals with automated data collection and reporting.',
+    url: 'https://ziontechgroup.com/zion-ai-sustainability-tracker',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

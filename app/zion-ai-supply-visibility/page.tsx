@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Gain real-time visibility into supply chain status, risks, and alternative sourcing options.',
   alternates: { canonical: '/zion-ai-supply-visibility' },
+
+  openGraph: {
+    title: 'Zion AI Supply Visibility',
+    description: 'Gain real-time visibility into supply chain status, risks, and alternative sourcing options.',
+    url: 'https://ziontechgroup.com/zion-ai-supply-visibility',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

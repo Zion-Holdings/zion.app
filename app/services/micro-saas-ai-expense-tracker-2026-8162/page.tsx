@@ -4,6 +4,15 @@ export const metadata = {
   title: 'MicroSaaS Expense Tracker | Zion Tech Group',
   description: 'End-to-end microsaas expense tracker services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/micro-saas-ai-expense-tracker-2026-8162/' },
+
+  openGraph: {
+    title: 'MicroSaaS Expense Tracker | Zion Tech Group',
+    description: 'End-to-end microsaas expense tracker services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/micro-saas-ai-expense-tracker-2026-8162/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

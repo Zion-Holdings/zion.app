@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Measure and improve employee engagement with pulse surveys, sentiment analysis, and action insights.',
   alternates: { canonical: '/zion-ai-employee-experience' },
+
+  openGraph: {
+    title: 'Zion AI Employee Experience',
+    description: 'Measure and improve employee engagement with pulse surveys, sentiment analysis, and action insights.',
+    url: 'https://ziontechgroup.com/zion-ai-employee-experience',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

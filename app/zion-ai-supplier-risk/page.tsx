@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Monitor supplier health, geopolitical risk, and supply chain disruptions with predictive alerts.',
   alternates: { canonical: '/zion-ai-supplier-risk' },
+
+  openGraph: {
+    title: 'Zion AI Supplier Risk | Zion Tech Group',
+    description: 'Monitor supplier health, geopolitical risk, and supply chain disruptions with predictive alerts.',
+    url: 'https://ziontechgroup.com/zion-ai-supplier-risk',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

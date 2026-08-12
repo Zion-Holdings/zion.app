@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Proactively identify at-risk accounts and drive expansion with AI-powered health scoring and playbooks.',
   alternates: { canonical: '/zion-ai-customer-success' },
+
+  openGraph: {
+    title: 'Zion AI Customer Success',
+    description: 'Proactively identify at-risk accounts and drive expansion with AI-powered health scoring and playbooks.',
+    url: 'https://ziontechgroup.com/zion-ai-customer-success',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

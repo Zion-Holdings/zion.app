@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Forecast resource and capacity needs with ML models that factor in demand, seasonality, and growth trends.',
   alternates: { canonical: '/zion-ai-capacity-planner' },
+
+  openGraph: {
+    title: 'Zion AI Capacity Planner',
+    description: 'Forecast resource and capacity needs with ML models that factor in demand, seasonality, and growth trends.',
+    url: 'https://ziontechgroup.com/zion-ai-capacity-planner',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

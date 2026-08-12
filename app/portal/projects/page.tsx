@@ -5,6 +5,15 @@ export const metadata = {
   title: 'Project Dashboard — Client Portal',
   description: 'Active project dashboards, milestones, and status updates.',
   alternates: { canonical: '/portal/projects/' },
+
+  openGraph: {
+    title: 'Project Dashboard — Client Portal',
+    description: 'Active project dashboards, milestones, and status updates.',
+    url: 'https://ziontechgroup.com/portal/projects/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ProjectsPage() {

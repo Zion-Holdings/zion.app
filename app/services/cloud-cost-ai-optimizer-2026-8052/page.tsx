@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Cloud Cost AI Optimizer | Zion Tech Group',
   description: 'End-to-end cloud cost ai optimizer services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/cloud-cost-ai-optimizer-2026-8052/' },
+
+  openGraph: {
+    title: 'Cloud Cost AI Optimizer | Zion Tech Group',
+    description: 'End-to-end cloud cost ai optimizer services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/cloud-cost-ai-optimizer-2026-8052/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

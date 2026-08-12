@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Forecast revenue with multi-signal models that factor in pipeline, seasonality, and market trends.',
   alternates: { canonical: '/zion-ai-revenue-forecaster' },
+
+  openGraph: {
+    title: 'Zion AI Revenue Forecaster',
+    description: 'Forecast revenue with multi-signal models that factor in pipeline, seasonality, and market trends.',
+    url: 'https://ziontechgroup.com/zion-ai-revenue-forecaster',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

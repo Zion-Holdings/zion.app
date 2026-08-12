@@ -4,6 +4,15 @@ export const metadata = {
   title: 'ETL Pipeline Optimization | Zion Tech Group',
   description: 'End-to-end etl pipeline optimization services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/etl-pipeline-optimization-2026-7236/' },
+
+  openGraph: {
+    title: 'ETL Pipeline Optimization | Zion Tech Group',
+    description: 'End-to-end etl pipeline optimization services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/etl-pipeline-optimization-2026-7236/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

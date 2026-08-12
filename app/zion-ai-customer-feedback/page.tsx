@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Aggregate and analyze feedback from surveys, reviews, and support channels with sentiment and theme detection.',
   alternates: { canonical: '/zion-ai-customer-feedback' },
+
+  openGraph: {
+    title: 'Zion AI Customer Feedback',
+    description: 'Aggregate and analyze feedback from surveys, reviews, and support channels with sentiment and theme detection.',
+    url: 'https://ziontechgroup.com/zion-ai-customer-feedback',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

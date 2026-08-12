@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Data Warehouse Modernization | Zion Tech Group',
   description: 'End-to-end data warehouse modernization services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/data-warehouse-modernization-2026-7091/' },
+
+  openGraph: {
+    title: 'Data Warehouse Modernization | Zion Tech Group',
+    description: 'End-to-end data warehouse modernization services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/data-warehouse-modernization-2026-7091/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

@@ -25,3 +25,17 @@ automation/data/
 
 # Stub marker directory
 missing-pm2-stubs/
+
+# Outreach/runtime artifacts
+lead-crm/
+outreach_monitor/
+scripts/outreach/logs/
+
+# Artifacts that should not be committed
+core/
+__pycache__/
+*.pyc
+*.log
+tsconfig.tsbuildinfo
+.hermes/
+tmp/

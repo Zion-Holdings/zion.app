@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: 'Blockchain Solutions',
   description: 'Enterprise blockchain, smart contracts, Web3 operations, and tokenized infrastructure.',
   alternates: { canonical: '/blockchain-solutions' },
+
+  openGraph: {
+    title: 'Blockchain Solutions',
+    description: 'Enterprise blockchain, smart contracts, Web3 operations, and tokenized infrastructure.',
+    url: 'https://ziontechgroup.com/blockchain-solutions',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

@@ -4,6 +4,15 @@ export const metadata = {
   title: '5G Solutions | Zion Tech Group',
   description: 'End-to-end 5g solutions services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/5g-solutions-2026-7535/' },
+
+  openGraph: {
+    title: '5G Solutions | Zion Tech Group',
+    description: 'End-to-end 5g solutions services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/5g-solutions-2026-7535/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

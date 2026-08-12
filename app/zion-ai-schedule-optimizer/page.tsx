@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Optimize shift scheduling, resource allocation, and capacity planning with constraint-aware AI.',
   alternates: { canonical: '/zion-ai-schedule-optimizer' },
+
+  openGraph: {
+    title: 'Zion AI Schedule Optimizer',
+    description: 'Optimize shift scheduling, resource allocation, and capacity planning with constraint-aware AI.',
+    url: 'https://ziontechgroup.com/zion-ai-schedule-optimizer',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   title: 'Public Roadmap',
   description: 'Public product and service roadmap from Zion Tech Group.',
   alternates: { canonical: '/public-roadmap/' },
+
+  openGraph: {
+    title: 'Public Roadmap',
+    description: 'Public product and service roadmap from Zion Tech Group.',
+    url: 'https://ziontechgroup.com/public-roadmap/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function PublicRoadmapPage() {

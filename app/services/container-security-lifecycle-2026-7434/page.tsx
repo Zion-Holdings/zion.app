@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Container Security Lifecycle | Zion Tech Group',
   description: 'End-to-end container security lifecycle services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/container-security-lifecycle-2026-7434/' },
+
+  openGraph: {
+    title: 'Container Security Lifecycle | Zion Tech Group',
+    description: 'End-to-end container security lifecycle services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/container-security-lifecycle-2026-7434/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

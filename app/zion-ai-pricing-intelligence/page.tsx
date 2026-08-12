@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Monitor competitor pricing and market signals to optimize pricing strategies and promotions.',
   alternates: { canonical: '/zion-ai-pricing-intelligence' },
+
+  openGraph: {
+    title: 'Zion AI Pricing Intelligence',
+    description: 'Monitor competitor pricing and market signals to optimize pricing strategies and promotions.',
+    url: 'https://ziontechgroup.com/zion-ai-pricing-intelligence',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

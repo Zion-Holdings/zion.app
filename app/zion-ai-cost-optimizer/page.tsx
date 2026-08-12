@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Identify cost-saving opportunities across cloud, SaaS, and operational spend with AI-driven insights.',
   alternates: { canonical: '/zion-ai-cost-optimizer' },
+
+  openGraph: {
+    title: 'Zion AI Cost Optimizer',
+    description: 'Identify cost-saving opportunities across cloud, SaaS, and operational spend with AI-driven insights.',
+    url: 'https://ziontechgroup.com/zion-ai-cost-optimizer',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

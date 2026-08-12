@@ -4,6 +4,15 @@ export const metadata: Metadata = {
   title: 'Automation | Zion Tech Group',
   description: 'Workflow automation, AI agents, and operational automation from Zion Tech Group.',
   alternates: { canonical: '/automation/' },
+
+  openGraph: {
+    title: 'Automation | Zion Tech Group',
+    description: 'Workflow automation, AI agents, and operational automation from Zion Tech Group.',
+    url: 'https://ziontechgroup.com/automation/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function AutomationPage() {

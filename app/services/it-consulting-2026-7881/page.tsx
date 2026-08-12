@@ -4,6 +4,15 @@ export const metadata = {
   title: 'IT Consulting | Zion Tech Group',
   description: 'End-to-end it consulting services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/it-consulting-2026-7881/' },
+
+  openGraph: {
+    title: 'IT Consulting | Zion Tech Group',
+    description: 'End-to-end it consulting services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/it-consulting-2026-7881/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

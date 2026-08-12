@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: 'API Development & Integration',
   description: 'REST, GraphQL, and gRPC API development with OpenAPI docs, SDKs, event-driven architecture, API gateway.',
   alternates: { canonical: '/api-development' },
+
+  openGraph: {
+    title: 'API Development & Integration',
+    description: 'REST, GraphQL, and gRPC API development with OpenAPI docs, SDKs, event-driven architecture, API gateway.',
+    url: 'https://ziontechgroup.com/api-development',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

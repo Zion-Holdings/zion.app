@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Automation Orchestration | Zion Tech Group',
   description: 'End-to-end automation orchestration services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/automation-orchestration-enterprise-2026-7251/' },
+
+  openGraph: {
+    title: 'Automation Orchestration | Zion Tech Group',
+    description: 'End-to-end automation orchestration services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/automation-orchestration-enterprise-2026-7251/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

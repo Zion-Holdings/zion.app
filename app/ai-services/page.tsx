@@ -8,6 +8,15 @@ export const metadata: Metadata = {
   title: 'AI Services',
   description: 'AI-powered services and solutions from Zion Tech Group.',
   alternates: { canonical: '/ai-services/' },
+
+  openGraph: {
+    title: 'AI Services',
+    description: 'AI-powered services and solutions from Zion Tech Group.',
+    url: 'https://ziontechgroup.com/ai-services/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 const SERVICES = [

@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Automated AI Reporting | Zion Tech Group',
   description: 'End-to-end automated ai reporting services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/automated-ai-reporting-2026-7004/' },
+
+  openGraph: {
+    title: 'Automated AI Reporting | Zion Tech Group',
+    description: 'End-to-end automated ai reporting services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/automated-ai-reporting-2026-7004/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

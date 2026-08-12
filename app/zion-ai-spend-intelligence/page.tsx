@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Gain visibility into spend across categories, vendors, and departments with AI-powered anomaly detection.',
   alternates: { canonical: '/zion-ai-spend-intelligence' },
+
+  openGraph: {
+    title: 'Zion AI Spend Intelligence',
+    description: 'Gain visibility into spend across categories, vendors, and departments with AI-powered anomaly detection.',
+    url: 'https://ziontechgroup.com/zion-ai-spend-intelligence',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

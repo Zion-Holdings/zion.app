@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Optimize inventory levels across SKUs and locations with demand-driven replenishment and safety stock AI.',
   alternates: { canonical: '/zion-ai-inventory-planner' },
+
+  openGraph: {
+    title: 'Zion AI Inventory Planner',
+    description: 'Optimize inventory levels across SKUs and locations with demand-driven replenishment and safety stock AI.',
+    url: 'https://ziontechgroup.com/zion-ai-inventory-planner',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

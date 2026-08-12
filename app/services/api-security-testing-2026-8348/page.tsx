@@ -4,6 +4,15 @@ export const metadata = {
   title: 'API Security Testing | Zion Tech Group',
   description: 'End-to-end api security testing services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/api-security-testing-2026-8348/' },
+
+  openGraph: {
+    title: 'API Security Testing | Zion Tech Group',
+    description: 'End-to-end api security testing services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/api-security-testing-2026-8348/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

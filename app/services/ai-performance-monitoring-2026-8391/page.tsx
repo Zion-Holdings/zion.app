@@ -4,6 +4,15 @@ export const metadata = {
   title: 'AI Performance Monitoring | Zion Tech Group',
   description: 'End-to-end ai performance monitoring services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/ai-performance-monitoring-2026-8391/' },
+
+  openGraph: {
+    title: 'AI Performance Monitoring | Zion Tech Group',
+    description: 'End-to-end ai performance monitoring services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/ai-performance-monitoring-2026-8391/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

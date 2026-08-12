@@ -5,7 +5,16 @@ export const metadata: Metadata = {
   title: 'AI Service Demo Sandbox',
   description:
     'Try Zion\'s AI service matching tool live — no sign-up, no API key, 100% browser-side. Type a use case and get ranked service recommendations instantly.',
-  alternates: { canonical: '/ai/demo' },};
+  alternates: { canonical: '/ai/demo' },
+  openGraph: {
+    title: 'AI Service Demo Sandbox',
+    description: 'Try Zion\',
+    url: 'https://ziontechgroup.com/ai/demo',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
+};
 
 export default function AIDemoPage() {
   return (

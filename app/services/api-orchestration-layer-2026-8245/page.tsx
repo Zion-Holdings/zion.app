@@ -4,6 +4,15 @@ export const metadata = {
   title: 'API Orchestration Layer | Zion Tech Group',
   description: 'End-to-end api orchestration layer services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/api-orchestration-layer-2026-8245/' },
+
+  openGraph: {
+    title: 'API Orchestration Layer | Zion Tech Group',
+    description: 'End-to-end api orchestration layer services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/api-orchestration-layer-2026-8245/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

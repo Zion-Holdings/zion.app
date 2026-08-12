@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Autonomous Code Deployment | Zion Tech Group',
   description: 'End-to-end autonomous code deployment services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/autonomous-code-deployment-2026-7971/' },
+
+  openGraph: {
+    title: 'Autonomous Code Deployment | Zion Tech Group',
+    description: 'End-to-end autonomous code deployment services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/autonomous-code-deployment-2026-7971/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

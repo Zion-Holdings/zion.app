@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Aggregate and prioritize threat intelligence with automated correlation and actionable alerts.',
   alternates: { canonical: '/zion-ai-cyber-threat-intel' },
+
+  openGraph: {
+    title: 'Zion AI Cyber Threat Intel',
+    description: 'Aggregate and prioritize threat intelligence with automated correlation and actionable alerts.',
+    url: 'https://ziontechgroup.com/zion-ai-cyber-threat-intel',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

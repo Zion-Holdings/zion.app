@@ -4,6 +4,15 @@ export const metadata = {
   title: 'AI Email Intelligence | Zion Tech Group',
   description: 'End-to-end ai email intelligence services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/ai-email-intelligence-2026-7666/' },
+
+  openGraph: {
+    title: 'AI Email Intelligence | Zion Tech Group',
+    description: 'End-to-end ai email intelligence services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/ai-email-intelligence-2026-7666/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

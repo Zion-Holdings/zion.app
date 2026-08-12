@@ -5,6 +5,15 @@ export const metadata = {
   title: 'How CloudFirst Saved $100K annually with Vision System | Zion Tech Group',
   description: 'CloudFirst case study: 99.9% uptime and $100K annually with Zion Tech Group.',
   alternates: { canonical: '/case-studies/cloudfirst-99-uptime-case-study/' },
+
+  openGraph: {
+    title: 'How CloudFirst Saved $100K annually with Vision System | Zion Tech Group',
+    description: 'CloudFirst case study: 99.9% uptime and $100K annually with Zion Tech Group.',
+    url: 'https://ziontechgroup.com/case-studies/cloudfirst-99-uptime-case-study/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 const jsonLd = {

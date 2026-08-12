@@ -4,6 +4,15 @@ export const metadata = {
   title: 'AI BOM Procurement | Zion Tech Group',
   description: 'End-to-end ai bom procurement services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/ai-bom-procurement-2026-7629/' },
+
+  openGraph: {
+    title: 'AI BOM Procurement | Zion Tech Group',
+    description: 'End-to-end ai bom procurement services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/ai-bom-procurement-2026-7629/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Accelerate incident triage and resolution with automated playbooks and real-time collaboration.',
   alternates: { canonical: '/zion-ai-incident-response' },
+
+  openGraph: {
+    title: 'Zion AI Incident Response',
+    description: 'Accelerate incident triage and resolution with automated playbooks and real-time collaboration.',
+    url: 'https://ziontechgroup.com/zion-ai-incident-response',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

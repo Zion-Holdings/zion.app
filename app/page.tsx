@@ -20,6 +20,15 @@ export const metadata: Metadata = {
   title: 'Zion Tech Group — AI & IT Solutions',
   description: 'AI strategy, IT services, automation, cloud infrastructure, and machine learning solutions from Zion Tech Group.',
   alternates: { canonical: '/' },
+
+  openGraph: {
+    title: 'Zion Tech Group — AI & IT Solutions',
+    description: 'AI strategy, IT services, automation, cloud infrastructure, and machine learning solutions from Zion Tech Group.',
+    url: 'https://ziontechgroup.com/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 // Category accent color for showcase cards (maps category key → gradient)

@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Automate sourcing, vendor selection, and purchase workflows with intelligent spend analysis and approval routing.',
   alternates: { canonical: '/zion-ai-procurement-automation' },
+
+  openGraph: {
+    title: 'Zion AI Procurement Automation',
+    description: 'Automate sourcing, vendor selection, and purchase workflows with intelligent spend analysis and approval routing.',
+    url: 'https://ziontechgroup.com/zion-ai-procurement-automation',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

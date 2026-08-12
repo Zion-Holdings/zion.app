@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Track chatbot performance, conversation flows, and improvement opportunities with AI-driven insights.',
   alternates: { canonical: '/zion-ai-chatbot-analytics' },
+
+  openGraph: {
+    title: 'Zion AI Chatbot Analytics',
+    description: 'Track chatbot performance, conversation flows, and improvement opportunities with AI-driven insights.',
+    url: 'https://ziontechgroup.com/zion-ai-chatbot-analytics',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

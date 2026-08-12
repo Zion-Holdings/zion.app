@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Manage vendor relationships and procurement workflows with AI-powered scoring and risk assessment.',
   alternates: { canonical: '/zion-ai-vendor-manager' },
+
+  openGraph: {
+    title: 'Zion AI Vendor Manager',
+    description: 'Manage vendor relationships and procurement workflows with AI-powered scoring and risk assessment.',
+    url: 'https://ziontechgroup.com/zion-ai-vendor-manager',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

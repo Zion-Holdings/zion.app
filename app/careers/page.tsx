@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Join Zion Tech Group. View open positions and apply for careers in AI, IT, and engineering.',
   alternates: { canonical: '/careers/' },
+
+  openGraph: {
+    title: 'Careers',
+    description: 'Join Zion Tech Group. View open positions and apply for careers in AI, IT, and engineering.',
+    url: 'https://ziontechgroup.com/careers/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 const JOBS = [

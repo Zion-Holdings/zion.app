@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Automate approval routing, escalation, and audit trails for purchase orders, expenses, and contracts.',
   alternates: { canonical: '/zion-ai-approval-workflow' },
+
+  openGraph: {
+    title: 'Zion AI Approval Workflow',
+    description: 'Automate approval routing, escalation, and audit trails for purchase orders, expenses, and contracts.',
+    url: 'https://ziontechgroup.com/zion-ai-approval-workflow',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

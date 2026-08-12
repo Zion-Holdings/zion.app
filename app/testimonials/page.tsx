@@ -4,7 +4,16 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Testimonials & Case Studies',
   description: 'See what our clients say about our AI services, IT solutions, and consulting engagements. Real results from real businesses.',
-  alternates: { canonical: '/testimonials' },};
+  alternates: { canonical: '/testimonials' },
+  openGraph: {
+    title: 'Testimonials & Case Studies',
+    description: 'See what our clients say about our AI services, IT solutions, and consulting engagements. Real results from real businesses.',
+    url: 'https://ziontechgroup.com/testimonials',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
+};
 
 const testimonials = [
   {

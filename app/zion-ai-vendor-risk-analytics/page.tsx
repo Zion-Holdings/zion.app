@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Assess and monitor vendor risk with automated scoring, compliance checks, and early warning signals.',
   alternates: { canonical: '/zion-ai-vendor-risk-analytics' },
+
+  openGraph: {
+    title: 'Zion AI Vendor Risk Analytics',
+    description: 'Assess and monitor vendor risk with automated scoring, compliance checks, and early warning signals.',
+    url: 'https://ziontechgroup.com/zion-ai-vendor-risk-analytics',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

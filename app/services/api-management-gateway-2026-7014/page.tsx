@@ -4,6 +4,15 @@ export const metadata = {
   title: 'API Management Gateway | Zion Tech Group',
   description: 'End-to-end api management gateway services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/api-management-gateway-2026-7014/' },
+
+  openGraph: {
+    title: 'API Management Gateway | Zion Tech Group',
+    description: 'End-to-end api management gateway services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/api-management-gateway-2026-7014/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

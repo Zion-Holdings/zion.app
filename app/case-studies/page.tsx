@@ -5,6 +5,15 @@ export const metadata: Metadata = {
   title: 'Case Studies',
   description: 'Customer success stories, implementation outcomes, and measurable ROI from Zion Tech Group engagements.',
   alternates: { canonical: '/case-studies/' },
+
+  openGraph: {
+    title: 'Case Studies',
+    description: 'Customer success stories, implementation outcomes, and measurable ROI from Zion Tech Group engagements.',
+    url: 'https://ziontechgroup.com/case-studies/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 const CASES = [

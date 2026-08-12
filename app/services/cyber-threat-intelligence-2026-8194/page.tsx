@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Cyber Threat Intelligence | Zion Tech Group',
   description: 'End-to-end cyber threat intelligence services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/cyber-threat-intelligence-2026-8194/' },
+
+  openGraph: {
+    title: 'Cyber Threat Intelligence | Zion Tech Group',
+    description: 'End-to-end cyber threat intelligence services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/cyber-threat-intelligence-2026-8194/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

@@ -4,6 +4,15 @@ export const metadata = {
   title: 'AI Ad Copy Generator | Zion Tech Group',
   description: 'End-to-end ai ad copy generator services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/ai-ad-copy-generator-2026-8446/' },
+
+  openGraph: {
+    title: 'AI Ad Copy Generator | Zion Tech Group',
+    description: 'End-to-end ai ad copy generator services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/ai-ad-copy-generator-2026-8446/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Cloud Cost Optimization | Zion Tech Group',
   description: 'End-to-end cloud cost optimization services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/cloud-cost-optimization-checklist-2026-6833/' },
+
+  openGraph: {
+    title: 'Cloud Cost Optimization | Zion Tech Group',
+    description: 'End-to-end cloud cost optimization services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/cloud-cost-optimization-checklist-2026-6833/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

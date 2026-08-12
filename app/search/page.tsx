@@ -8,6 +8,15 @@ export const metadata: Metadata = {
   title: 'Search',
   description: 'Search Zion Tech Group services and solutions.',
   alternates: { canonical: '/search/' },
+
+  openGraph: {
+    title: 'Search',
+    description: 'Search Zion Tech Group services and solutions.',
+    url: 'https://ziontechgroup.com/search/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 const SERVICES = [

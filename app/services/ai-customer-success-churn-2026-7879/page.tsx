@@ -4,6 +4,15 @@ export const metadata = {
   title: 'AI Customer Success Churn Prevention | Zion Tech Group',
   description: 'End-to-end ai customer success churn prevention services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/ai-customer-success-churn-2026-7879/' },
+
+  openGraph: {
+    title: 'AI Customer Success Churn Prevention | Zion Tech Group',
+    description: 'End-to-end ai customer success churn prevention services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/ai-customer-success-churn-2026-7879/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

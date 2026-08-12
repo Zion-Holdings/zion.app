@@ -5,7 +5,16 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: '5G & Private Network Solutions',
   description: 'Private 5G networks, edge IoT, network slicing, and spectrum advisory for enterprise connectivity.',
-  alternates: { canonical: '/5g-solutions' },};
+  alternates: { canonical: '/5g-solutions' },
+  openGraph: {
+    title: '5G & Private Network Solutions',
+    description: 'Private 5G networks, edge IoT, network slicing, and spectrum advisory for enterprise connectivity.',
+    url: 'https://ziontechgroup.com/5g-solutions',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
+};
 
 export default function Page() {
   return (

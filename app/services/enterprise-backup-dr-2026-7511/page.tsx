@@ -4,6 +4,15 @@ export const metadata = {
   title: 'Enterprise Backup DR | Zion Tech Group',
   description: 'End-to-end enterprise backup dr services: assessment, deployment, and managed operations.',
   alternates: { canonical: '/services/enterprise-backup-dr-2026-7511/' },
+
+  openGraph: {
+    title: 'Enterprise Backup DR | Zion Tech Group',
+    description: 'End-to-end enterprise backup dr services: assessment, deployment, and managed operations.',
+    url: 'https://ziontechgroup.com/services/enterprise-backup-dr-2026-7511/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ServicePage() {

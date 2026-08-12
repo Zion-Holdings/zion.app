@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   description:
     'Track market trends, competitor moves, and industry signals with AI-powered aggregation and alerts.',
   alternates: { canonical: '/zion-ai-market-intelligence' },
+
+  openGraph: {
+    title: 'Zion AI Market Intelligence',
+    description: 'Track market trends, competitor moves, and industry signals with AI-powered aggregation and alerts.',
+    url: 'https://ziontechgroup.com/zion-ai-market-intelligence',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function Page() {

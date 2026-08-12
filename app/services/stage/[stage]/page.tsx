@@ -8,6 +8,15 @@ export const metadata: Metadata = {
   title: 'Service Stage Filter — Zion Tech Group',
   description: 'Filter Zion Tech Group services by stage: published, beta, and planned.',
   alternates: { canonical: '/services/stage/' },
+
+  openGraph: {
+    title: 'Service Stage Filter — Zion Tech Group',
+    description: 'Filter Zion Tech Group services by stage: published, beta, and planned.',
+    url: 'https://ziontechgroup.com/services/stage/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    images: ['/og-default.png'],
+  },
 };
 
 const STAGE_META: Record<string, { label: string; emoji: string; desc: string; color: string }> = {
