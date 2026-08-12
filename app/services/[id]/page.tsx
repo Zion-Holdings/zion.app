@@ -1,4 +1,6 @@
 // app/services/[id]/page.tsx — Dynamic Service Detail Page
+import fs from "fs";
+import path from "path";
 import { notFound } from 'next/navigation';
 import { allServices } from '@/data/servicesData';
 import Link from 'next/link';
@@ -16,21 +18,24 @@ interface PageProps { params: Promise<{ id: string }>; }
 // Only the top 20 services are included to keep build time reasonable
 
 export async function generateStaticParams() {
-  // Only statically generate the top 20 most important/popular services
-  const sorted = [...allServices].sort((a, b) => {
-    const scoreA = (a.features?.length || 0) * 3 + (a.benefits?.length || 0) * 2 + (a.popular ? 50 : 0);
-    const scoreB = (b.features?.length || 0) * 3 + (b.benefits?.length || 0) * 2 + (b.popular ? 50 : 0);
-    return scoreB - scoreA;
-  });
-  const top = sorted.slice(0, 20);
-  const params: { id: string }[] = [];
-  for (const service of top) {
-    params.push({ id: service.id });
-    if (service.id.includes('_')) {
-      params.push({ id: service.id.replace(/_/g, '-') });
+  const serviceDir = path.join(process.cwd(), 'app', 'services');
+  const ids = new Set<string>();
+  const add = (v: string) => { if (v) ids.add(v); };
+
+  // Include dataset-backed services
+  for (const s of allServices) {
+    add(s.id);
+    if (s.id.includes('_')) add(s.id.replace(/_/g, '-'));
+  }
+
+  // Include generated service directories on disk
+  if (fs.existsSync(serviceDir)) {
+    for (const entry of fs.readdirSync(serviceDir, { withFileTypes: true })) {
+      if (entry.isDirectory() && entry.name !== '[id]') add(entry.name);
     }
   }
-  return params;
+
+  return Array.from(ids).map((id) => ({ id }));
 }
 
 export async function generateMetadata({ params }: PageProps) {
