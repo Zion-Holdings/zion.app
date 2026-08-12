@@ -16,7 +16,9 @@
     .wrap { max-width: 920px; margin: 0 auto; padding: 40px 24px; }
     h1 { font-size: 2.25rem; font-weight: 700; color:#fff; margin: 0 0 8px; }
     .lead { color:#94a3b8; font-size: 1.125rem; }
-    .cta { display:inline-block; margin-top:18px; padding:10px 14px; border-radius:8px; background:#7c3aed; color:#fff; text-decoration:none; font-weight:600; }
+    .grid { display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); margin-top:24px; }
+    .card { background:#0f172a; border:1px solid #334155; border-radius:12px; padding:16px; }
+    .card a { color:#c4b5fd; text-decoration:none; font-weight:600; }
     footer { border-top:1px solid #334155; padding:24px; text-align:center; color:#94a3b8; }
     footer a { color:#34d399; margin: 0 8px; text-decoration:none; }
   </style>
@@ -34,8 +36,12 @@
   <div class="wrap">
     <h1>About Zion Tech Group</h1>
     <p class="lead">We build practical AI and IT solutions with measurable outcomes.</p>
-    <p>Founded to close the gap between AI potential and production reality, Zion Tech Group works as an embedded partner for startups and enterprise teams.</p>
-    <a class="cta" href="/contact/">Talk to our team</a>
+    <p>Founded to close the gap between AI potential and production reality, Zion Tech Group works as an embedded partner for startups and enterprise teams. Our US-based team delivers AI implementation, cloud optimization, cybersecurity, and managed IT services with transparent pricing and 30-day pilot KPIs.</p>
+    <div class="grid" style="margin-top:24px;">
+      <div class="card"><a href="/services/">Services</a><p>Explore AI, IT, cloud, security, and automation.</p></div>
+      <div class="card"><a href="/careers/">Careers</a><p>Join the team shaping AI-driven operations.</p></div>
+      <div class="card"><a href="/contact/">Contact</a><p>Talk to our team about your next project.</p></div>
+    </div>
   </div>
   <footer>
     <a href="/privacy/">Privacy</a>
