@@ -3,6 +3,13 @@
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Press — Zion Tech Group',
+  description: 'Latest press releases and media coverage for Zion Tech Group. Enterprise AI, IT, and automation news.',
+  alternates: { canonical: '/press/' },
+};
 
 const ARTICLES = [
   { date: '2025-05-20', title: 'Zion Tech Group Launches Enterprise AI Compliance Platform', outlet: 'TechCrunch' },
