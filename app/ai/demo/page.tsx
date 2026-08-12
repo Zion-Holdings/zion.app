@@ -9,12 +9,21 @@ export const metadata: Metadata = {
 
 export default function AIDemoPage() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-slate-950">
-      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute top-[-6rem] right-[-8rem] h-[28rem] w-[28rem] rounded-full bg-purple-600/10 blur-3xl" />
-        <div className="absolute bottom-[-6rem] left-[-6rem] h-[24rem] w-[24rem] rounded-full bg-blue-600/08 blur-3xl" />
-      </div>
-      <DemoSandboxClient />
-    </div>
+
+    <>
+
+      <h1>AI Service Demo Sandbox</h1>
+
+<div className="relative min-h-screen overflow-hidden bg-slate-950">
+  <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+    <div className="absolute top-[-6rem] right-[-8rem] h-[28rem] w-[28rem] rounded-full bg-purple-600/10 blur-3xl" />
+    <div className="absolute bottom-[-6rem] left-[-6rem] h-[24rem] w-[24rem] rounded-full bg-blue-600/08 blur-3xl" />
+  </div>
+  <DemoSandboxClient />
+</div>
+  
+
+    </>
+
   );
 }

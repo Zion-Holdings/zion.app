@@ -2,6 +2,13 @@
 import { allServices } from '@/data/servicesData';
 import type { Service } from '@/data/servicesData';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Service Stage Filter — Zion Tech Group',
+  description: 'Filter Zion Tech Group services by stage: published, beta, and planned.',
+  alternates: { canonical: '/services/stage/' },
+};
 
 const STAGE_META: Record<string, { label: string; emoji: string; desc: string; color: string }> = {
   published: { label: 'Published', emoji: '✅', desc: 'Live production services available now', color: 'from-emerald-500/20 to-green-500/10 border-emerald-500/30' },

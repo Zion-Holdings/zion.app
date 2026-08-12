@@ -4,6 +4,13 @@
 import { useState } from 'react';
 
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Proposal Generator',
+  description: 'Generate a custom service proposal in minutes. Select services, budget, and timeline — get a ready-to-send PDF.',
+  alternates: { canonical: '/proposal-generator/' },
+};
 
 export default function ProposalGeneratorPage() {
   const [generated, setGenerated] = useState(false);

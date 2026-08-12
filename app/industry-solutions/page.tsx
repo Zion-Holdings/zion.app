@@ -3,6 +3,13 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { allServices, type Service } from '@/data/servicesData';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Industry Solutions',
+  description: 'Tailored AI and IT solutions for industries including technology, healthcare, finance, retail, and more.',
+  alternates: { canonical: '/industry-solutions/' },
+};
 
 const IND_COLORS: Record<string, string> = {
   Technology:         'from-blue-500 to-indigo-500',

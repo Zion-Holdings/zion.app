@@ -2,6 +2,13 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Services',
+  description: 'AI-powered services and solutions from Zion Tech Group.',
+  alternates: { canonical: '/ai-services/' },
+};
 
 const SERVICES = [
   {

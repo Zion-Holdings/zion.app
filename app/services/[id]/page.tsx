@@ -4,6 +4,13 @@ import { allServices } from '@/data/servicesData';
 import Link from 'next/link';
 import ROICalculator from '@/components/ROICalculator';
 import SmartServiceCard from '@/components/SmartServiceCard';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Service Details — Zion Tech Group',
+  description: 'Detailed information about this service offering from Zion Tech Group.',
+  alternates: { canonical: '/services/' },
+};
 
 const CAT_LABELS: Record<string,string> = {
   ai: 'AI Services', it: 'IT', cloud: 'Cloud', security: 'Security',

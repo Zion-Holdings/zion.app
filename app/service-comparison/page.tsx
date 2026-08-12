@@ -5,6 +5,13 @@ import { useState, useMemo } from 'react';
 
 import Link from 'next/link';
 import { allServices, type Service } from '@/data/servicesData';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Service Comparison',
+  description: 'Compare Zion Tech Group services side-by-side to find the right solution for your business.',
+  alternates: { canonical: '/service-comparison/' },
+};
 
 const MAX_COMPARE = 4;
 

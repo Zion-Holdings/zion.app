@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Knowledge Base — Client Portal',
   description: 'Documentation, guides, how-tos, and technical resources.',
+  alternates: { canonical: '/portal/kb/' },
 };
 
 export default function KnowledgeBasePage() {

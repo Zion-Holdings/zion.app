@@ -4,6 +4,7 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Billing & Invoices — Client Portal',
   description: 'View your invoices, payment methods, and billing history. Secure client portal access.',
+  alternates: { canonical: '/portal/billing/' },
 };
 
 export default function BillingPage() {
