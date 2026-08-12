@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'MicroSaaS Customer Onboarding: implementation playbook | Zion Tech Group',
+  title: 'MicroSaaS Customer Onboarding: implementation playbook',
   description: 'MicroSaaS Customer Onboarding: implementation playbook',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

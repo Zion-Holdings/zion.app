@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Managed IT Services: implementation playbook | Zion Tech Group',
+  title: 'Managed IT Services: implementation playbook',
   description: 'Managed IT Services: implementation playbook',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Incident Response Retainer: common mistakes | Zion Tech Group',
+  title: 'Incident Response Retainer: common mistakes',
   description: 'Incident Response Retainer: common mistakes',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

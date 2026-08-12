@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'AI Customer Support: security and governance | Zion Tech Group',
+  title: 'AI Customer Support: security and governance',
   description: 'AI Customer Support: security and governance',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

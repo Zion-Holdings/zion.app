@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Automation Orchestration: checklist for IT leaders | Zion Tech Group',
+  title: 'Automation Orchestration: checklist for IT leaders',
   description: 'Automation Orchestration: checklist for IT leaders',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

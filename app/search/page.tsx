@@ -37,7 +37,7 @@ export default function SearchPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Search", description: "Search Zion Tech Group services and solutions.", url: "https://ziontechgroup.com/search/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Search", description: "Search Zion Tech Group services and solutions.", url: "https://ziontechgroup.com/search/"}} />
       <div className="container-page">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Search Services</h1>
         <p className="text-slate-400 mb-8">Find the right service for your business.</p>

@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Data Analytics Platform: policy and compliance | Zion Tech Group',
+  title: 'Data Analytics Platform: policy and compliance',
   description: 'Data Analytics Platform: policy and compliance',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'API Security Testing: checklist for IT leaders | Zion Tech Group',
+  title: 'API Security Testing: checklist for IT leaders',
   description: 'API Security Testing: checklist for IT leaders',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

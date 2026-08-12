@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Data Warehouse Modernization: common mistakes | Zion Tech Group',
+  title: 'Data Warehouse Modernization: common mistakes',
   description: 'Data Warehouse Modernization: common mistakes',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

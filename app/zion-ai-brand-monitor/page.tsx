@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Brand Monitor", description: "Track brand mentions, sentiment, and competitive positioning across channels in real time.", url: "https://ziontechgroup.com/zion-ai-brand-monitor/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Brand Monitor", description: "Track brand mentions, sentiment, and competitive positioning across channels in real time.", url: "https://ziontechgroup.com/zion-ai-brand-monitor/"}} />
 
       <h1>Zion AI Brand Monitor</h1>
 

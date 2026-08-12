@@ -97,7 +97,7 @@ export default function PortScannerPage() {
   return (
     <div className="container-page py-16">
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebApplication", name: "🔍 Port Scanner", description: "🔍 Port Scanner from Zion Tech Group.", url: "https://ziontechgroup.com/app/tools/port-scanner/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebApplication", name: "🔍 Port Scanner", description: "🔍 Port Scanner from Zion Tech Group.", url: "https://ziontechgroup.com/app/tools/port-scanner/"}} />
       <div className="max-w-3xl mx-auto">
         <Link href="/tools/" className="text-purple-400 text-sm hover:underline mb-6 inline-block">← All Tools</Link>
         <h1 className="text-4xl font-bold text-white mb-4">🔍 Port Scanner</h1>

@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Data Analytics Platform: checklist for IT leaders | Zion Tech Group',
+  title: 'Data Analytics Platform: checklist for IT leaders',
   description: 'Data Analytics Platform: checklist for IT leaders',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

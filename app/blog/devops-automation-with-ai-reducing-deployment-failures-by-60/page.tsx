@@ -4,12 +4,12 @@ import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'DevOps Automation with AI: Reducing Deployment Failures by 60%',
+  title: 'DevOps Automation with AI',
   description:
     'AI-powered code review, intelligent test generation, automated incident detection, predictive deployment risk scoring, and self-healing infrastructure.',
   alternates: { canonical: '/blog/devops-automation-with-ai-reducing-deployment-failures-by-60/' },
   openGraph: {
-    title: 'DevOps Automation with AI: Reducing Deployment Failures by 60%',
+    title: 'DevOps Automation with AI',
     description:
       'AI-powered code review, intelligent test generation, automated incident detection, predictive deployment risk scoring, and self-healing infrastructure.',
     type: 'article',

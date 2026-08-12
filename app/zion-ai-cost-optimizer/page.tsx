@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Cost Optimizer", description: "Identify cost-saving opportunities across cloud, SaaS, and operational spend with AI-driven insights.", url: "https://ziontechgroup.com/zion-ai-cost-optimizer/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Cost Optimizer", description: "Identify cost-saving opportunities across cloud, SaaS, and operational spend with AI-driven insights.", url: "https://ziontechgroup.com/zion-ai-cost-optimizer/"}} />
 
       <h1>Zion AI Cost Optimizer</h1>
 

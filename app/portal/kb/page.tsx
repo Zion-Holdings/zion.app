@@ -29,7 +29,7 @@ export default function KnowledgeBasePage() {
   return (
     <div className="container-page py-16">
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Knowledge Base — Client Portal", description: "Documentation, guides, how-tos, and technical resources.", url: "https://ziontechgroup.com/portal/kb/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Knowledge Base — Client Portal", description: "Documentation, guides, how-tos, and technical resources.", url: "https://ziontechgroup.com/portal/kb/"}} />
       <Link href="/portal/" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">&larr; Back to Client Portal</Link>
       <div className="glass-card max-w-2xl">
         <div className="text-5xl mb-4">&#x1F4DA;</div>

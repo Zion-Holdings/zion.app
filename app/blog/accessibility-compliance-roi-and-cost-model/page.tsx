@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Accessibility Compliance: ROI and cost model | Zion Tech Group',
+  title: 'Accessibility Compliance: ROI and cost model',
   description: 'Accessibility Compliance: ROI and cost model',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

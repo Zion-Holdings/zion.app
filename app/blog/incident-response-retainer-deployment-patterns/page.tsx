@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Incident Response Retainer: deployment patterns | Zion Tech Group',
+  title: 'Incident Response Retainer: deployment patterns',
   description: 'Incident Response Retainer: deployment patterns',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

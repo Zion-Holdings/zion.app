@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'AI Data Lakehouse Pipelines: operations handbook | Zion Tech Group',
+  title: 'AI Data Lakehouse Pipelines: operations handbook',
   description: 'AI Data Lakehouse Pipelines: operations handbook',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

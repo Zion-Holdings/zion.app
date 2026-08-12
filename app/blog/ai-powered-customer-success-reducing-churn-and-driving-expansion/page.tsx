@@ -4,12 +4,12 @@ import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'AI-Powered Customer Success: Reducing Churn and Driving Expansion',
+  title: 'AI-Powered Customer Success',
   description:
     'Churn prediction, health scoring, next-best-action, and expansion opportunity identification. Turning customer data into retention and growth.',
   alternates: { canonical: '/blog/ai-powered-customer-success-reducing-churn-and-driving-expansion/' },
   openGraph: {
-    title: 'AI-Powered Customer Success: Reducing Churn and Driving Expansion',
+    title: 'AI-Powered Customer Success',
     description:
       'Churn prediction, health scoring, next-best-action, and expansion opportunity identification. Turning customer data into retention and growth.',
     type: 'article',

@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Autonomous QA Engineering: automation roadmap | Zion Tech Group',
+  title: 'Autonomous QA Engineering: automation roadmap',
   description: 'Autonomous QA Engineering: automation roadmap',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

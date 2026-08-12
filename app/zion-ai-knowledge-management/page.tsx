@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Knowledge Management", description: "Centralize and surface organizational knowledge with AI-powered search, tagging, and recommendations.", url: "https://ziontechgroup.com/zion-ai-knowledge-management/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Knowledge Management", description: "Centralize and surface organizational knowledge with AI-powered search, tagging, and recommendations.", url: "https://ziontechgroup.com/zion-ai-knowledge-management/"}} />
 
       <h1>Zion AI Knowledge Management</h1>
 

@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'ETL Pipeline Optimization: evaluation framework | Zion Tech Group',
+  title: 'ETL Pipeline Optimization: evaluation framework',
   description: 'ETL Pipeline Optimization: evaluation framework',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

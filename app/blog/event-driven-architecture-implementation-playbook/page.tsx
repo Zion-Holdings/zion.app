@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Event Driven Architecture: implementation playbook | Zion Tech Group',
+  title: 'Event Driven Architecture: implementation playbook',
   description: 'Event Driven Architecture: implementation playbook',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

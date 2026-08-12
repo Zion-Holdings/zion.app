@@ -22,7 +22,7 @@ export default function PressPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Press & Media", description: "Press & Media from Zion Tech Group.", url: "https://ziontechgroup.com/app/press/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Press & Media", description: "Press & Media from Zion Tech Group.", url: "https://ziontechgroup.com/app/press/"}} />
       <Navigation />
       <main className="py-20">
         <div className="container-page">

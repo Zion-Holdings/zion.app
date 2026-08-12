@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Incident Response Retainer: automation roadmap | Zion Tech Group',
+  title: 'Incident Response Retainer: automation roadmap',
   description: 'Incident Response Retainer: automation roadmap',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

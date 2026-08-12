@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Enterprise AI Intelligence Hub: evaluation framework | Zion Tech Group',
+  title: 'Enterprise AI Intelligence Hub: evaluation framework',
   description: 'Enterprise AI Intelligence Hub: evaluation framework',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

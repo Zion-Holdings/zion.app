@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Cloud Native App Development: ROI and cost model | Zion Tech Group',
+  title: 'Cloud Native App Development: ROI and cost model',
   description: 'Cloud Native App Development: ROI and cost model',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

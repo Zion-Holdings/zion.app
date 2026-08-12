@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Spend Intelligence", description: "Gain visibility into spend across categories, vendors, and departments with AI-powered anomaly detection.", url: "https://ziontechgroup.com/zion-ai-spend-intelligence/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Spend Intelligence", description: "Gain visibility into spend across categories, vendors, and departments with AI-powered anomaly detection.", url: "https://ziontechgroup.com/zion-ai-spend-intelligence/"}} />
 
       <h1>Zion AI Spend Intelligence</h1>
 

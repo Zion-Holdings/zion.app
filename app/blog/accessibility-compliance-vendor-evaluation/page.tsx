@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Accessibility Compliance: vendor evaluation | Zion Tech Group',
+  title: 'Accessibility Compliance: vendor evaluation',
   description: 'Accessibility Compliance: vendor evaluation',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

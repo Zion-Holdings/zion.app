@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'AI 3D Asset Generator: implementation playbook | Zion Tech Group',
+  title: 'AI 3D Asset Generator: implementation playbook',
   description: 'AI 3D Asset Generator: implementation playbook',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

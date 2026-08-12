@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Edge Computing Deployment: implementation playbook | Zion Tech Group',
+  title: 'Edge Computing Deployment: implementation playbook',
   description: 'Edge Computing Deployment: implementation playbook',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

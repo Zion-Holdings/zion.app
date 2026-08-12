@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'MicroSaaS Social Media Manager: common mistakes | Zion Tech Group',
+  title: 'MicroSaaS Social Media Manager: common mistakes',
   description: 'MicroSaaS Social Media Manager: common mistakes',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

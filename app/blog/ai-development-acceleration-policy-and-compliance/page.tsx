@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'AI Development Acceleration: policy and compliance | Zion Tech Group',
+  title: 'AI Development Acceleration: policy and compliance',
   description: 'AI Development Acceleration: policy and compliance',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

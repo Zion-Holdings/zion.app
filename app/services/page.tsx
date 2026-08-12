@@ -30,7 +30,6 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
 
-    <JsonLd data={{@context: "https://schema.org", @type: "Service", name: "Services", description: "Managed IT, AI automation, cybersecurity, cloud, and consulting services from Zion Tech Group.", url: "https://ziontechgroup.com/services/}} />
       <LocalBusinessJsonLd />
       <div className="container-page">
         <div className="mb-12">

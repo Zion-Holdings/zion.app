@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'AI Agent Tool Builder: implementation playbook | Zion Tech Group',
+  title: 'AI Agent Tool Builder: implementation playbook',
   description: 'AI Agent Tool Builder: implementation playbook',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

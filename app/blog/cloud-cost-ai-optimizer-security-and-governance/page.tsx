@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Cloud Cost AI Optimizer: security and governance | Zion Tech Group',
+  title: 'Cloud Cost AI Optimizer: security and governance',
   description: 'Cloud Cost AI Optimizer: security and governance',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

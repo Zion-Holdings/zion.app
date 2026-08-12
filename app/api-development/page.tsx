@@ -21,7 +21,7 @@ export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "API Development & Integration", description: "REST, GraphQL, and gRPC API development with OpenAPI docs, SDKs, event-driven architecture, API gateway.", url: "https://ziontechgroup.com/api-development/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "API Development & Integration", description: "REST, GraphQL, and gRPC API development with OpenAPI docs, SDKs, event-driven architecture, API gateway.", url: "https://ziontechgroup.com/api-development/"}} />
       <div className="container-page">
         <nav className="mb-8 text-sm text-slate-400">
           <Link href="/" className="hover:text-purple-400 transition">Home</Link>

@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'MicroSaaS HR Recruitment: operations handbook | Zion Tech Group',
+  title: 'MicroSaaS HR Recruitment: operations handbook',
   description: 'MicroSaaS HR Recruitment: operations handbook',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

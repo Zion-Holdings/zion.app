@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Cybersecurity for MSPs: implementation playbook | Zion Tech Group',
+  title: 'Cybersecurity for MSPs: implementation playbook',
   description: 'Cybersecurity for MSPs: implementation playbook',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

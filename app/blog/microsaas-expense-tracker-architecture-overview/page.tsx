@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'MicroSaaS Expense Tracker: architecture overview | Zion Tech Group',
+  title: 'MicroSaaS Expense Tracker: architecture overview',
   description: 'MicroSaaS Expense Tracker: architecture overview',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

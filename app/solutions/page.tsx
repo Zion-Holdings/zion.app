@@ -21,7 +21,7 @@ export default function SolutionsPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Solutions", description: "Solutions from Zion Tech Group.", url: "https://ziontechgroup.com/app/solutions/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Solutions", description: "Solutions from Zion Tech Group.", url: "https://ziontechgroup.com/app/solutions/"}} />
       <div className="container-page">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Solutions</h1>

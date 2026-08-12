@@ -76,7 +76,7 @@ export default function ServiceHealthPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20 px-4">
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Service Health", description: "Live health status for individual Zion Tech Group services — response time, uptime, and incident history.", url: "https://ziontechgroup.com/status/service-health/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Service Health", description: "Live health status for individual Zion Tech Group services — response time, uptime, and incident history.", url: "https://ziontechgroup.com/status/service-health/"}} />
       <div className="container-page max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-3">Service Health Monitor</h1>

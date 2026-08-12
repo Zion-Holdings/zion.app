@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Container Security Lifecycle: operations handbook | Zion Tech Group',
+  title: 'Container Security Lifecycle: operations handbook',
   description: 'Container Security Lifecycle: operations handbook',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

@@ -51,7 +51,6 @@ export default function BlogIndexPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
 
-    <JsonLd data={{@context: "https://schema.org", @type: "CollectionPage", name: "Blog", description: "Insights on AI, automation, enterprise IT, and digital transformation from the Zion Tech Group team.", url: "https://ziontechgroup.com/blog/}} />
       <LocalBusinessJsonLd />
       <div className="container-page">
         <div className="mb-12">

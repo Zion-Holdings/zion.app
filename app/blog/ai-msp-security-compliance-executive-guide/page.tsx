@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'AI MSP Security Compliance: executive guide | Zion Tech Group',
+  title: 'AI MSP Security Compliance: executive guide',
   description: 'AI MSP Security Compliance: executive guide',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

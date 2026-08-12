@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'AI Performance Monitoring: vendor evaluation | Zion Tech Group',
+  title: 'AI Performance Monitoring: vendor evaluation',
   description: 'AI Performance Monitoring: vendor evaluation',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Cloud Cost Optimization: evaluation framework | Zion Tech Group',
+  title: 'Cloud Cost Optimization: evaluation framework',
   description: 'Cloud Cost Optimization: evaluation framework',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

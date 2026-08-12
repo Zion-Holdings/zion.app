@@ -4,12 +4,12 @@ import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'Securing AI Models: A Practical Guide to Threat Mitigation in Production',
+  title: 'Securing AI Models: A Practical Guide to Threat Mitigation...',
   description:
-    'Adversarial attacks, data poisoning, model extraction, secure deployment patterns, and monitoring for AI systems. NIST and OWASP references for production security.',
+    'Adversarial attacks, data poisoning, model extraction, secure deployment patterns, and monitoring for AI systems.',
   alternates: { canonical: '/blog/securing-ai-models-a-practical-guide-to-threat-mitigation-in-production/' },
   openGraph: {
-    title: 'Securing AI Models: A Practical Guide to Threat Mitigation in Production',
+    title: 'Securing AI Models: A Practical Guide to Threat Mitigation...',
     description:
       'Adversarial attacks, data poisoning, model extraction, secure deployment patterns, and monitoring for AI systems. NIST and OWASP references for production security.',
     type: 'article',

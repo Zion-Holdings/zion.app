@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'AI Accessibility Optimizer: deployment patterns | Zion Tech Group',
+  title: 'AI Accessibility Optimizer: deployment patterns',
   description: 'AI Accessibility Optimizer: deployment patterns',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

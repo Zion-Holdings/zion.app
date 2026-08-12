@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Talent Acquisition | Zion Tech Group", description: "Source, screen, and qualify candidates with AI-powered matching and automated outreach workflows.", url: "https://ziontechgroup.com/zion-ai-talent-acquisition/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Talent Acquisition | Zion Tech Group", description: "Source, screen, and qualify candidates with AI-powered matching and automated outreach workflows.", url: "https://ziontechgroup.com/zion-ai-talent-acquisition/"}} />
 
       <h1>Zion AI Talent Acquisition | Zion Tech Group</h1>
 

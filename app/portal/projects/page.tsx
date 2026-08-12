@@ -27,7 +27,7 @@ export default function ProjectsPage() {
   return (
     <div className="container-page py-16">
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Project Dashboard — Client Portal", description: "Active project dashboards, milestones, and status updates.", url: "https://ziontechgroup.com/portal/projects/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Project Dashboard — Client Portal", description: "Active project dashboards, milestones, and status updates.", url: "https://ziontechgroup.com/portal/projects/"}} />
       <Link href="/portal/" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">&larr; Back to Client Portal</Link>
       <div className="glass-card max-w-2xl">
         <div className="text-5xl mb-4">&#x1F4CA;</div>

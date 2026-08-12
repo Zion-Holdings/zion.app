@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Data Warehouse Modernization: automation roadmap | Zion Tech Group',
+  title: 'Data Warehouse Modernization: automation roadmap',
   description: 'Data Warehouse Modernization: automation roadmap',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

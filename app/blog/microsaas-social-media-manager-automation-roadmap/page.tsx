@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'MicroSaaS Social Media Manager: automation roadmap | Zion Tech Group',
+  title: 'MicroSaaS Social Media Manager: automation roadmap',
   description: 'MicroSaaS Social Media Manager: automation roadmap',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

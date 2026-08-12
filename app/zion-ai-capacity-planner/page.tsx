@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Capacity Planner", description: "Forecast resource and capacity needs with ML models that factor in demand, seasonality, and growth trends.", url: "https://ziontechgroup.com/zion-ai-capacity-planner/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Capacity Planner", description: "Forecast resource and capacity needs with ML models that factor in demand, seasonality, and growth trends.", url: "https://ziontechgroup.com/zion-ai-capacity-planner/"}} />
 
       <h1>Zion AI Capacity Planner</h1>
 

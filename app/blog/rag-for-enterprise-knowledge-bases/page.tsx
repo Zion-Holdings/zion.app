@@ -4,12 +4,12 @@ import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'RAG for Enterprise Knowledge Bases: From Documents to Answers',
+  title: 'RAG for Enterprise Knowledge Bases',
   description:
     'Retrieval-augmented generation, chunking strategies, embedding models, and evaluation. Building AI systems that answer questions from your internal documents.',
   alternates: { canonical: '/blog/rag-for-enterprise-knowledge-bases/' },
   openGraph: {
-    title: 'RAG for Enterprise Knowledge Bases: From Documents to Answers',
+    title: 'RAG for Enterprise Knowledge Bases',
     description:
       'Retrieval-augmented generation, chunking strategies, embedding models, and evaluation. Building AI systems that answer questions from your internal documents.',
     type: 'article',

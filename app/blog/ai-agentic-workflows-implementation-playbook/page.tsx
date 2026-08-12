@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'AI Agentic Workflows: implementation playbook | Zion Tech Group',
+  title: 'AI Agentic Workflows: implementation playbook',
   description: 'AI Agentic Workflows: implementation playbook',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

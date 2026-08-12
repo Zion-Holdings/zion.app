@@ -27,7 +27,7 @@ export default function AutomationPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Automation | Zion Tech Group", description: "Workflow automation, AI agents, and operational automation from Zion Tech Group.", url: "https://ziontechgroup.com/automation/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Automation | Zion Tech Group", description: "Workflow automation, AI agents, and operational automation from Zion Tech Group.", url: "https://ziontechgroup.com/automation/"}} />
       <div className="container-page">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Automation</h1>
         <p className="text-slate-400 text-lg max-w-2xl mb-10">

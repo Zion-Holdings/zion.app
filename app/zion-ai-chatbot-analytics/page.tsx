@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Chatbot Analytics", description: "Track chatbot performance, conversation flows, and improvement opportunities with AI-driven insights.", url: "https://ziontechgroup.com/zion-ai-chatbot-analytics/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Chatbot Analytics", description: "Track chatbot performance, conversation flows, and improvement opportunities with AI-driven insights.", url: "https://ziontechgroup.com/zion-ai-chatbot-analytics/"}} />
 
       <h1>Zion AI Chatbot Analytics</h1>
 

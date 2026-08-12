@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Vendor Manager", description: "Manage vendor relationships and procurement workflows with AI-powered scoring and risk assessment.", url: "https://ziontechgroup.com/zion-ai-vendor-manager/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Vendor Manager", description: "Manage vendor relationships and procurement workflows with AI-powered scoring and risk assessment.", url: "https://ziontechgroup.com/zion-ai-vendor-manager/"}} />
 
       <h1>Zion AI Vendor Manager</h1>
 

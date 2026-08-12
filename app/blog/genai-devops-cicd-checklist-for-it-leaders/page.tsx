@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'GenAI DevOps CI/CD: checklist for IT leaders | Zion Tech Group',
+  title: 'GenAI DevOps CI/CD: checklist for IT leaders',
   description: 'GenAI DevOps CI/CD: checklist for IT leaders',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

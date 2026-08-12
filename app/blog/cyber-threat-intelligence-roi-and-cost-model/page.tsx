@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Cyber Threat Intelligence: ROI and cost model | Zion Tech Group',
+  title: 'Cyber Threat Intelligence: ROI and cost model',
   description: 'Cyber Threat Intelligence: ROI and cost model',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'AI Ad Copy Generator: security and governance | Zion Tech Group',
+  title: 'AI Ad Copy Generator: security and governance',
   description: 'AI Ad Copy Generator: security and governance',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

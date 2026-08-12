@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'AI Customer Success Churn Prevention: vendor evaluation | Zion Tech Group',
+  title: 'AI Customer Success Churn Prevention: vendor evaluation',
   description: 'AI Customer Success Churn Prevention: vendor evaluation',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

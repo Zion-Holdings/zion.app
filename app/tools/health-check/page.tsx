@@ -36,7 +36,7 @@ function StatusCard({ name, icon, className, children }: StatusCardProps) {
   return (
     <div className={`border rounded-xl p-5 transition ${className}`}>
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebApplication", name: "Platform Health Check 🩺", description: "Platform Health Check 🩺 from Zion Tech Group.", url: "https://ziontechgroup.com/app/tools/health-check/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebApplication", name: "Platform Health Check 🩺", description: "Platform Health Check 🩺 from Zion Tech Group.", url: "https://ziontechgroup.com/app/tools/health-check/"}} />
       <div className="flex items-center gap-3">
         <span className="text-xl">{icon}</span>
         <div>

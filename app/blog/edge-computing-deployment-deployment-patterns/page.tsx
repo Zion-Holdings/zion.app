@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Edge Computing Deployment: deployment patterns | Zion Tech Group',
+  title: 'Edge Computing Deployment: deployment patterns',
   description: 'Edge Computing Deployment: deployment patterns',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

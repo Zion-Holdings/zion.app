@@ -22,7 +22,7 @@ export default function PartnersPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Partners", description: "Partner with Zion Tech Group. Technology alliances, resellers, and referral partnerships.", url: "https://ziontechgroup.com/partners/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Partners", description: "Partner with Zion Tech Group. Technology alliances, resellers, and referral partnerships.", url: "https://ziontechgroup.com/partners/"}} />
       <section className="py-20 px-4 text-center bg-gradient-to-b from-purple-900/20 to-transparent">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">

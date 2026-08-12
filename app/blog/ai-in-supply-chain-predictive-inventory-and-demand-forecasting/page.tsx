@@ -4,12 +4,12 @@ import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'AI in Supply Chain: Predictive Inventory and Demand Forecasting',
+  title: 'AI in Supply Chain: Predictive Inventory and Demand...',
   description:
     'Demand sensing, safety stock optimization, multi-echelon inventory, and supplier risk prediction. Real-world metrics from retail and manufacturing.',
   alternates: { canonical: '/blog/ai-in-supply-chain-predictive-inventory-and-demand-forecasting/' },
   openGraph: {
-    title: 'AI in Supply Chain: Predictive Inventory and Demand Forecasting',
+    title: 'AI in Supply Chain: Predictive Inventory and Demand...',
     description:
       'Demand sensing, safety stock optimization, multi-echelon inventory, and supplier risk prediction. Real-world metrics from retail and manufacturing.',
     type: 'article',

@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'MicroSaaS Translation Engine: architecture overview | Zion Tech Group',
+  title: 'MicroSaaS Translation Engine: architecture overview',
   description: 'MicroSaaS Translation Engine: architecture overview',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'DevSecOps Pipeline: implementation playbook | Zion Tech Group',
+  title: 'DevSecOps Pipeline: implementation playbook',
   description: 'DevSecOps Pipeline: implementation playbook',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

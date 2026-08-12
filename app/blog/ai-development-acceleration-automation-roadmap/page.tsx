@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'AI Development Acceleration: automation roadmap | Zion Tech Group',
+  title: 'AI Development Acceleration: automation roadmap',
   description: 'AI Development Acceleration: automation roadmap',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Vendor Risk Analytics", description: "Assess and monitor vendor risk with automated scoring, compliance checks, and early warning signals.", url: "https://ziontechgroup.com/zion-ai-vendor-risk-analytics/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Vendor Risk Analytics", description: "Assess and monitor vendor risk with automated scoring, compliance checks, and early warning signals.", url: "https://ziontechgroup.com/zion-ai-vendor-risk-analytics/"}} />
 
       <h1>Zion AI Vendor Risk Analytics</h1>
 

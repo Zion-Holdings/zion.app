@@ -196,7 +196,7 @@ ${services.length > 0 ? `<p style="margin-top:12px;color:#666;font-size:14px">
   return (
     <div className="min-h-screen bg-slate-950 py-12">
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "$ — Custom Proposal", description: "$ — Custom Proposal from Zion Tech Group.", url: "https://ziontechgroup.com/app/configurator/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "$ — Custom Proposal", description: "$ — Custom Proposal from Zion Tech Group.", url: "https://ziontechgroup.com/app/configurator/"}} />
       <div className="container-page max-w-4xl">
         <h1 className="text-4xl font-bold text-white mb-2 text-center">
           Build Your Custom Solution

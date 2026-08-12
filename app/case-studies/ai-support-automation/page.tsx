@@ -21,7 +21,7 @@ export default function CaseStudyAISupport() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "AI Support Automation — Case Study", description: "How Zion Tech Group reduced ticket volume by 32% with an AI triage and deflection pilot.", url: "https://ziontechgroup.com/case-studies/ai-support-automation/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "AI Support Automation — Case Study", description: "How Zion Tech Group reduced ticket volume by 32% with an AI triage and deflection pilot.", url: "https://ziontechgroup.com/case-studies/ai-support-automation/"}} />
       <div className="container-page">
         <div className="mb-8 text-sm text-slate-400">
           <Link href="/" className="hover:text-purple-400 transition">Home</Link>

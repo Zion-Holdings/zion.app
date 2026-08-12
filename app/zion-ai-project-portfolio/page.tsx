@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Project Portfolio", description: "Prioritize and balance project portfolios with resource capacity, risk, and strategic alignment insights.", url: "https://ziontechgroup.com/zion-ai-project-portfolio/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Project Portfolio", description: "Prioritize and balance project portfolios with resource capacity, risk, and strategic alignment insights.", url: "https://ziontechgroup.com/zion-ai-project-portfolio/"}} />
 
       <h1>Zion AI Project Portfolio</h1>
 

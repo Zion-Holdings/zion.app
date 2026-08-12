@@ -23,7 +23,7 @@ export default function AIDemoPage() {
     <>
 
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "AI Service Demo Sandbox", description: "Try Zion\", url: "https://ziontechgroup.com/ai/demo/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "AI Service Demo Sandbox", description: "Try Zion\", url: "https://ziontechgroup.com/ai/demo/"}} />
 
       <h1>AI Service Demo Sandbox</h1>
 

@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'AI Autonomous Agents: architecture overview | Zion Tech Group',
+  title: 'AI Autonomous Agents: architecture overview',
   description: 'AI Autonomous Agents: architecture overview',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

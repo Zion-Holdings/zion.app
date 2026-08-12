@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'AI Customer Success Churn Prevention: ROI and cost model | Zion Tech Group',
+  title: 'AI Customer Success Churn Prevention: ROI and cost model',
   description: 'AI Customer Success Churn Prevention: ROI and cost model',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

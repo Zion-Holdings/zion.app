@@ -3,7 +3,7 @@ import JsonLd from '@/components/JsonLd';
 import PageShell from '@/components/PageShell';
 
 export const metadata = {
-  title: 'How AI is Transforming Financial Services in 2024 | Zion Tech Group',
+  title: 'How AI is Transforming Financial Services in 2024',
   description: 'Learn how to implement cybersecurity for financial services. Best practices, case studies, and expert insights.',
   alternates: { canonical: '/blog/cybersecurity-20260807/' },
   openGraph: { title: 'How AI is Transforming Financial Services in 2024', description: 'Learn how to implement cybersecurity for financial services. Best practices, case studies, and expert insights.', url: 'https://ziontechgroup.com/blog/cybersecurity-20260807/', type: 'article' 

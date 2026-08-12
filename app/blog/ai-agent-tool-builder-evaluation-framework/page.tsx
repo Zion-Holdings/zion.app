@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'AI Agent Tool Builder: evaluation framework | Zion Tech Group',
+  title: 'AI Agent Tool Builder: evaluation framework',
   description: 'AI Agent Tool Builder: evaluation framework',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

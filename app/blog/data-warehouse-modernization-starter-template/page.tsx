@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Data Warehouse Modernization: starter template | Zion Tech Group',
+  title: 'Data Warehouse Modernization: starter template',
   description: 'Data Warehouse Modernization: starter template',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

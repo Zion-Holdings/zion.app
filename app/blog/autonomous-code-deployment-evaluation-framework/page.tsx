@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Autonomous Code Deployment: evaluation framework | Zion Tech Group',
+  title: 'Autonomous Code Deployment: evaluation framework',
   description: 'Autonomous Code Deployment: evaluation framework',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

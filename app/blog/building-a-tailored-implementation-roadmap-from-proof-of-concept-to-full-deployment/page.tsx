@@ -4,12 +4,12 @@ import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
-  title: 'Building a Tailored Implementation Roadmap: From Proof of Concept to Full Deployment',
+  title: 'Building a Tailored Implementation Roadmap',
   description:
-    'Define success criteria, proof of concept best practices, pilot scaling, full deployment planning, and change management. Milestone templates and common pitfalls.',
+    'Define success criteria, proof of concept best practices, pilot scaling, full deployment planning, and change management.',
   alternates: { canonical: '/blog/building-a-tailored-implementation-roadmap-from-proof-of-concept-to-full-deployment/' },
   openGraph: {
-    title: 'Building a Tailored Implementation Roadmap: From Proof of Concept to Full Deployment',
+    title: 'Building a Tailored Implementation Roadmap',
     description:
       'Define success criteria, proof of concept best practices, pilot scaling, full deployment planning, and change management. Milestone templates and common pitfalls.',
     type: 'article',

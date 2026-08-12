@@ -39,7 +39,7 @@ export default function CaseStudiesPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Case Studies", description: "Customer success stories, implementation outcomes, and measurable ROI from Zion Tech Group engagements.", url: "https://ziontechgroup.com/case-studies/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Case Studies", description: "Customer success stories, implementation outcomes, and measurable ROI from Zion Tech Group engagements.", url: "https://ziontechgroup.com/case-studies/"}} />
       <div className="container-page">
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Case Studies</h1>

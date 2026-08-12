@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'GraphQL Federation Platform: common mistakes | Zion Tech Group',
+  title: 'GraphQL Federation Platform: common mistakes',
   description: 'GraphQL Federation Platform: common mistakes',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

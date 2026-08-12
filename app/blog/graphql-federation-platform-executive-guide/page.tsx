@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'GraphQL Federation Platform: executive guide | Zion Tech Group',
+  title: 'GraphQL Federation Platform: executive guide',
   description: 'GraphQL Federation Platform: executive guide',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

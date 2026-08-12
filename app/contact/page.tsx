@@ -28,7 +28,6 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Contact Us", description: "Get in touch with Zion Tech Group. Call, email, or visit us in Middletown, DE.", url: "https://ziontechgroup.com/contact/}} />
       <LocalBusinessJsonLd />
       <div className="container-page">
         <div className="text-center mb-16">

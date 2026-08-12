@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Cloud Native App Development: vendor evaluation | Zion Tech Group',
+  title: 'Cloud Native App Development: vendor evaluation',
   description: 'Cloud Native App Development: vendor evaluation',
   keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

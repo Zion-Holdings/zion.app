@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'APM Application Performance: ROI and cost model | Zion Tech Group',
+  title: 'APM Application Performance: ROI and cost model',
   description: 'APM Application Performance: ROI and cost model',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

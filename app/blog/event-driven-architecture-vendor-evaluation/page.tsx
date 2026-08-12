@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Event Driven Architecture: vendor evaluation | Zion Tech Group',
+  title: 'Event Driven Architecture: vendor evaluation',
   description: 'Event Driven Architecture: vendor evaluation',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

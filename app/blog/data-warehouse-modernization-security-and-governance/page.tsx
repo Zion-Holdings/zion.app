@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Data Warehouse Modernization: security and governance | Zion Tech Group',
+  title: 'Data Warehouse Modernization: security and governance',
   description: 'Data Warehouse Modernization: security and governance',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

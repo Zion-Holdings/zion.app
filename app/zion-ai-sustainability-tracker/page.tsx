@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Sustainability Tracker", description: "Track ESG metrics, carbon footprint, and sustainability goals with automated data collection and reporting.", url: "https://ziontechgroup.com/zion-ai-sustainability-tracker/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Sustainability Tracker", description: "Track ESG metrics, carbon footprint, and sustainability goals with automated data collection and reporting.", url: "https://ziontechgroup.com/zion-ai-sustainability-tracker/"}} />
 
       <h1>Zion AI Sustainability Tracker</h1>
 

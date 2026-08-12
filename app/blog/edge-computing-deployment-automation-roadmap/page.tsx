@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Edge Computing Deployment: automation roadmap | Zion Tech Group',
+  title: 'Edge Computing Deployment: automation roadmap',
   description: 'Edge Computing Deployment: automation roadmap',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

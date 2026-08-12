@@ -42,7 +42,7 @@ export default function ProposalsPage() {
     return (
       <main className="min-h-screen bg-slate-950 py-20">
 
-      <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Your Proposals", description: "Your Proposals from Zion Tech Group.", url: "https://ziontechgroup.com/app/proposals/}} />
+      <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Your Proposals", description: "Your Proposals from Zion Tech Group.", url: "https://ziontechgroup.com/app/proposals/"}} />
         <div className="container-page text-center text-slate-400">Loading proposals...</div>
       </main>
     );

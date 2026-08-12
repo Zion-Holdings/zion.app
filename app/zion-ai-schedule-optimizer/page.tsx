@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Schedule Optimizer", description: "Optimize shift scheduling, resource allocation, and capacity planning with constraint-aware AI.", url: "https://ziontechgroup.com/zion-ai-schedule-optimizer/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Schedule Optimizer", description: "Optimize shift scheduling, resource allocation, and capacity planning with constraint-aware AI.", url: "https://ziontechgroup.com/zion-ai-schedule-optimizer/"}} />
 
       <h1>Zion AI Schedule Optimizer</h1>
 

@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'API Orchestration Layer: policy and compliance | Zion Tech Group',
+  title: 'API Orchestration Layer: policy and compliance',
   description: 'API Orchestration Layer: policy and compliance',
   keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

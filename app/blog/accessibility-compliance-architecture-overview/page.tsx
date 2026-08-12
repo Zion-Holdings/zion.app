@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Accessibility Compliance: architecture overview | Zion Tech Group',
+  title: 'Accessibility Compliance: architecture overview',
   description: 'Accessibility Compliance: architecture overview',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

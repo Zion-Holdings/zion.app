@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'AIOps Anomaly Detection: evaluation framework | Zion Tech Group',
+  title: 'AIOps Anomaly Detection: evaluation framework',
   description: 'AIOps Anomaly Detection: evaluation framework',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

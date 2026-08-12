@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Workflow Orchestrator", description: "Orchestrate cross-system workflows with intelligent routing, retries, and dependency management.", url: "https://ziontechgroup.com/zion-ai-workflow-orchestrator/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Workflow Orchestrator", description: "Orchestrate cross-system workflows with intelligent routing, retries, and dependency management.", url: "https://ziontechgroup.com/zion-ai-workflow-orchestrator/"}} />
 
       <h1>Zion AI Workflow Orchestrator</h1>
 

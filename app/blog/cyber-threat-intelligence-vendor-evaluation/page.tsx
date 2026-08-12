@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Cyber Threat Intelligence: vendor evaluation | Zion Tech Group',
+  title: 'Cyber Threat Intelligence: vendor evaluation',
   description: 'Cyber Threat Intelligence: vendor evaluation',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

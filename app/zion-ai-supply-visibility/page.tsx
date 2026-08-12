@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Supply Visibility", description: "Gain real-time visibility into supply chain status, risks, and alternative sourcing options.", url: "https://ziontechgroup.com/zion-ai-supply-visibility/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Supply Visibility", description: "Gain real-time visibility into supply chain status, risks, and alternative sourcing options.", url: "https://ziontechgroup.com/zion-ai-supply-visibility/"}} />
 
       <h1>Zion AI Supply Visibility</h1>
 

@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Autonomous Code Deployment: checklist for IT leaders | Zion Tech Group',
+  title: 'Autonomous Code Deployment: checklist for IT leaders',
   description: 'Autonomous Code Deployment: checklist for IT leaders',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

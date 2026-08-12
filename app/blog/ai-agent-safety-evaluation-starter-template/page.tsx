@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'AI Agent Safety Evaluation: starter template | Zion Tech Group',
+  title: 'AI Agent Safety Evaluation: starter template',
   description: 'AI Agent Safety Evaluation: starter template',
   keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

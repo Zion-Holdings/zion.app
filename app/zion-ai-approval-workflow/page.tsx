@@ -24,7 +24,7 @@ export default function Page() {
     <>
 
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Approval Workflow", description: "Automate approval routing, escalation, and audit trails for purchase orders, expenses, and contracts.", url: "https://ziontechgroup.com/zion-ai-approval-workflow/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebPage", name: "Zion AI Approval Workflow", description: "Automate approval routing, escalation, and audit trails for purchase orders, expenses, and contracts.", url: "https://ziontechgroup.com/zion-ai-approval-workflow/"}} />
 
       <h1>Zion AI Approval Workflow</h1>
 

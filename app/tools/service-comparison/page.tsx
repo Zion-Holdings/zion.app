@@ -85,7 +85,7 @@ export default function ServiceComparisonPage() {
   return (
     <div className="container-page py-16">
 
-    <JsonLd data={{@context: "https://schema.org", @type: "WebApplication", name: "Service Comparison", description: "Service Comparison from Zion Tech Group.", url: "https://ziontechgroup.com/app/tools/service-comparison/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "WebApplication", name: "Service Comparison", description: "Service Comparison from Zion Tech Group.", url: "https://ziontechgroup.com/app/tools/service-comparison/"}} />
       {/* ── Header ─────────────────────────────────────────────── */}
       <div className="mb-10">
         <h1 className="text-4xl font-bold text-white mb-3">Service Comparison</h1>

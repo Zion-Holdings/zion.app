@@ -3,12 +3,12 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'How CloudFirst Saved $100K annually with Vision System | Zion Tech Group',
+  title: 'How CloudFirst Saved $100K annually with Vision System',
   description: 'CloudFirst case study: 99.9% uptime and $100K annually with Zion Tech Group.',
   alternates: { canonical: '/case-studies/cloudfirst-99-uptime-case-study/' },
 
   openGraph: {
-    title: 'How CloudFirst Saved $100K annually with Vision System | Zion Tech Group',
+    title: 'How CloudFirst Saved $100K annually with Vision System',
     description: 'CloudFirst case study: 99.9% uptime and $100K annually with Zion Tech Group.',
     url: 'https://ziontechgroup.com/case-studies/cloudfirst-99-uptime-case-study/',
     siteName: 'Zion Tech Group',

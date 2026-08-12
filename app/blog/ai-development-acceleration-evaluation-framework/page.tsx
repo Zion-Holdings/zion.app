@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'AI Development Acceleration: evaluation framework | Zion Tech Group',
+  title: 'AI Development Acceleration: evaluation framework',
   description: 'AI Development Acceleration: evaluation framework',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

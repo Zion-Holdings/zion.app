@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'MicroSaaS Social Media Manager: vendor evaluation | Zion Tech Group',
+  title: 'MicroSaaS Social Media Manager: vendor evaluation',
   description: 'MicroSaaS Social Media Manager: vendor evaluation',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

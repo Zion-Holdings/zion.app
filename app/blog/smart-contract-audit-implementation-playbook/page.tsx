@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Smart Contract Audit: implementation playbook | Zion Tech Group',
+  title: 'Smart Contract Audit: implementation playbook',
   description: 'Smart Contract Audit: implementation playbook',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

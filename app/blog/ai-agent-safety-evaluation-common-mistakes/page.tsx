@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'AI Agent Safety Evaluation: common mistakes | Zion Tech Group',
+  title: 'AI Agent Safety Evaluation: common mistakes',
   description: 'AI Agent Safety Evaluation: common mistakes',
   keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

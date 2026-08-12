@@ -6,7 +6,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata: Metadata = {
   title: 'AI in Sustainability and ESG Reporting',
   description:
-    'Carbon footprint calculation, supply chain emissions, regulatory compliance, and automated ESG disclosure. Meeting reporting requirements with AI-powered data aggregation.',
+    'Carbon footprint calculation, supply chain emissions, regulatory compliance, and automated ESG disclosure.',
   alternates: { canonical: '/blog/ai-in-sustainability-and-esg-reporting/' },
   openGraph: {
     title: 'AI in Sustainability and ESG Reporting',

@@ -20,7 +20,7 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
 
-    <JsonLd data={{@context: "https://schema.org", @type: "Service", name: "Database Migration Service | Zion Tech Group", description: "End-to-end database migration service services: assessment, deployment, and managed operations.", url: "https://ziontechgroup.com/services/database-migration-service-2026-7161/}} />
+    <JsonLd data={{@context: "https://schema.org", @type: "Service", name: "Database Migration Service | Zion Tech Group", description: "End-to-end database migration service services: assessment, deployment, and managed operations.", url: "https://ziontechgroup.com/services/database-migration-service-2026-7161/"}} />
       <div className="container-page">
         <h1 className="text-4xl font-bold text-white mb-4">Database Migration Service</h1>
         <p className="text-slate-300 text-lg leading-relaxed max-w-3xl mb-10">

@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Network Infrastructure: deployment patterns | Zion Tech Group',
+  title: 'Network Infrastructure: deployment patterns',
   description: 'Network Infrastructure: deployment patterns',
   keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },

@@ -3,7 +3,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 
 export const metadata = {
-  title: 'Smart Contract Audit: architecture overview | Zion Tech Group',
+  title: 'Smart Contract Audit: architecture overview',
   description: 'Smart Contract Audit: architecture overview',
   keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
