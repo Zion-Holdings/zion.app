@@ -8,6 +8,12 @@
 /industry-solutions/    /docs/industry-solutions/index.html    200
 /status-page/   /docs/status-page/index.html    200
 /public-roadmap/    /docs/public-roadmap/index.html    200
+/portal/    /portal/index.html    200
+/portal     /portal/    301
+/ai-services-index/    /ai-services-index/index.html    200
+/ai-services-index     /ai-services-index/    301
+/free-ai-it-tools/    /free-ai-it-tools/index.html    200
+/free-ai-it-tools     /free-ai-it-tools/    301
 
 # Blog post redirects to blog index (old posts that were removed)
 /blog/ai-agentic-workflow-automation-reduce-manual-work-hours/    /blog/    301
@@ -31,6 +37,7 @@
 # General redirects for missing routes
 /sla    /sla/    301
 /agents-monitoring    /agents-monitoring/    301
+/agents-monitoring/    /agents-monitoring/index.html    200
 /proposals    /proposals/    301
 
 # Footer link redirects (old → new canonical URLs)
