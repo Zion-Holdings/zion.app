@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { LocalBusinessJsonLd } from '@/components/LocalBusinessStructuredData';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -13,6 +15,12 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/blog/',
     siteName: 'Zion Tech Group',
     type: 'website',
+    images: ['/og-default.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog',
+    description: 'Insights on AI, automation, enterprise IT, and digital transformation from the Zion Tech Group team.',
     images: ['/og-default.png'],
   },
 };
@@ -43,6 +51,9 @@ export default function BlogIndexPage() {
 
   return (
     <main className="min-h-screen bg-slate-950 py-20">
+
+    <JsonLd data={@context: "https://schema.org", @type: "CollectionPage", name: "Blog", description: "Insights on AI, automation, enterprise IT, and digital transformation from the Zion Tech Group team.", url: "https://ziontechgroup.com/blog/"} />
+      <LocalBusinessJsonLd />
       <div className="container-page">
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Blog</h1>

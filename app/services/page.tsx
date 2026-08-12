@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { LocalBusinessJsonLd } from '@/components/LocalBusinessStructuredData';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Services',
@@ -14,7 +16,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: ['/og-default.png'],
   },
-};
+  twitter: { card: 'summary_large_image', title: 'Services', description: 'Managed IT, AI automation, cybersecurity, cloud, and consulting services from Zion Tech Group.', images: ['/og-default.png'] }};
 
 const SERVICES = [
   { title: 'Managed IT', slug: 'managed-it', desc: '24/7 monitoring, helpdesk, and endpoint management.' },
@@ -28,6 +30,9 @@ const SERVICES = [
 export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
+
+    <JsonLd data={@context: "https://schema.org", @type: "Service", name: "Services", description: "Managed IT, AI automation, cybersecurity, cloud, and consulting services from Zion Tech Group.", url: "https://ziontechgroup.com/services/"} />
+      <LocalBusinessJsonLd />
       <div className="container-page">
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Services</h1>

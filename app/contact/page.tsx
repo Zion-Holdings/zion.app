@@ -1,6 +1,8 @@
 // app/contact/page.tsx
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { LocalBusinessJsonLd } from '@/components/LocalBusinessStructuredData';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata = {
   title: 'Contact Us',
@@ -15,11 +17,19 @@ export const metadata = {
     type: 'website',
     images: ['/og-default.png'],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Us',
+    description: 'Get in touch with Zion Tech Group. Call, email, or visit us in Middletown, DE.',
+    images: ['/og-default.png'],
+  },
 };
 
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">
+
+    <JsonLd data={@context: "https://schema.org", @type: "WebPage", name: "Contact Us", description: "Get in touch with Zion Tech Group. Call, email, or visit us in Middletown, DE.", url: "https://ziontechgroup.com/contact/"} />
       <LocalBusinessJsonLd />
       <div className="container-page">
         <div className="text-center mb-16">
@@ -35,7 +45,7 @@ export default function ContactPage() {
             <div className="space-y-6">
               <div>
                 <h3 className="text-purple-400 font-semibold mb-1">Phone</h3>
-                <a href="tel:+13024640950" className="text-slate-300 text-lg hover:text-purple-400 transition">
+                <a href="tel:+130****0950" className="text-slate-300 text-lg hover:text-purple-400 transition">
                   +1 302 464 0950
                 </a>
               </div>
@@ -64,7 +74,7 @@ export default function ContactPage() {
               <Link href="/services/" className="btn-secondary w-full text-center block">
                 Browse All Services
               </Link>
-              <a href="tel:+13024640950" className="btn-secondary w-full text-center block">
+              <a href="tel:+130****0950" className="btn-secondary w-full text-center block">
                 ☎ Call Now
               </a>
             </div>
@@ -78,7 +88,7 @@ export default function ContactPage() {
             we&apos;re here to help you succeed.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+13024640950" className="btn-primary text-lg">
+            <a href="tel:+130****0950" className="btn-primary text-lg">
               ☎ +1 302 464 0950
             </a>
             <a href="mailto:kleber@ziontechgroup.com" className="btn-secondary text-lg">
