@@ -3,7 +3,7 @@ name: Workflow report push guard
 permissions:
   contents: read
 
-'on':
+on:
   pull_request:
     paths:
       - ".github/workflows/**/*.yml"
@@ -29,7 +29,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@v4
 
       - name: Push policy (no raw push, concurrency) + grep tail
         run: bash scripts/automation/run-workflow-grep-guards.sh --push

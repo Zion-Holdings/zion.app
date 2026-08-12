@@ -2,7 +2,7 @@
 name: workflow integrity audit dispatch smoke (weekly)
 permissions:
   contents: read
-'on':
+on:
   schedule:
     - cron: '14 9 * * 4' # Thursdays 09:14 UTC
   workflow_dispatch:
@@ -15,7 +15,7 @@ jobs:
     timeout-minutes: 2
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@v4
       - name: workflow-integrity-audit-dispatch.yml anchors
         run: |
           set -euo pipefail

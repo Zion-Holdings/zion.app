@@ -3,7 +3,7 @@ name: Reusable workflow CI (manual)
 permissions:
   contents: read
 
-'on':
+on:
   workflow_dispatch:
     inputs:
       run_contracts:

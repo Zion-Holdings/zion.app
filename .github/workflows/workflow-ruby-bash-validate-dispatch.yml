@@ -3,7 +3,7 @@ name: Workflow Ruby parse + bash grep (manual, no npm)
 permissions:
   contents: read
 
-'on':
+on:
   workflow_dispatch:
 
 concurrency:
@@ -16,7 +16,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Checkout
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@v4
 
       - name: Parse workflow YAML (names, concurrency, job ids, local uses, cron, timeouts)
         run: ruby scripts/automation/parse-github-workflows-yaml.rb
