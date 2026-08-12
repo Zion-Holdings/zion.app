@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-10T20:14:27.622Z",
+  "generatedAt": "2026-08-12T00:09:21.024Z",
   "base": "https://ziontechgroup.com",
   "checked": 12,
-  "healthy": 7,
-  "failed": 5,
+  "healthy": 10,
+  "failed": 2,
   "results": [
     {
       "url": "https://ziontechgroup.com/",
@@ -22,8 +22,8 @@
     },
     {
       "url": "https://ziontechgroup.com/case-studies/",
-      "code": "404",
-      "ok": false
+      "code": "200",
+      "ok": true
     },
     {
       "url": "https://ziontechgroup.com/about/",
@@ -42,13 +42,13 @@
     },
     {
       "url": "https://ziontechgroup.com/services/ai-customer-support-pro/",
-      "code": "404",
-      "ok": false
+      "code": "200",
+      "ok": true
     },
     {
       "url": "https://ziontechgroup.com/services/cloud-cost-optimization-platform/",
-      "code": "404",
-      "ok": false
+      "code": "200",
+      "ok": true
     },
     {
       "url": "https://ziontechgroup.com/services/siem-security-platform/",
