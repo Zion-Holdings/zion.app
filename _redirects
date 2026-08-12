@@ -92,3 +92,11 @@
 /tools/roi-calculator/ /tools/roi-calculator/index.html 200
 /tools/ai-service-router /tools/ai-service-router/index.html 200
 /tools/ai-service-router/ /tools/ai-service-router/index.html 200
+
+# Dynamic slug fallbacks
+/blog/ai-observability-2026-* /blog/ 301
+/services/ai-observability-2026-* /services/ 301
+/blog/5g-solutions-2026-* /blog/ 301
+/services/5g-solutions-2026-* /services/ 301
+/blog/accessibility-compliance-2026-* /blog/ 301
+/services/accessibility-compliance-2026-* /services/ 301
