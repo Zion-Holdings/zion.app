@@ -1,0 +1,11 @@
+{
+  "status": "healthy",
+  "targetEmail": "kleber@ziontechgroup.com",
+  "findings": [],
+  "checkedAt": "2026-08-12T21:32:27.442Z",
+  "summary": {
+    "total": 0,
+    "critical": 0,
+    "warning": 0
+  }
+}
