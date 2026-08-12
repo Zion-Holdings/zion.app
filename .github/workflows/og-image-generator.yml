@@ -9,21 +9,19 @@ jobs:
   og-generate:
     name: Generate OG Images
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v6.0.2
-    with:
-      fetch-depth: 1
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 1
     - name: Setup Node.js
-      uses: actions/setup-node@v6.3.0
+      uses: actions/setup-node@v4
       with:
         node-version: '20'
         cache: npm
     - name: Install dependencies (including Playwright)
       run: |
-        npm ci --include=dev
+        npm ci
         npx playwright install chromium
     - name: Run OG Image Generator
       id: generator
