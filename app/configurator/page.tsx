@@ -3,6 +3,13 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Custom Solution Configurator — Free AI/IT Proposal | Zion Tech Group',
+  description: 'Build a custom solution in 5 minutes. Select your budget, business needs, and services. Get a detailed proposal PDF via email.',
+  alternates: { canonical: '/configurator/' },
+};
 
 import { allServices } from '@/data/servicesData';
 import StepsIndicator from '@/components/StepsIndicator';

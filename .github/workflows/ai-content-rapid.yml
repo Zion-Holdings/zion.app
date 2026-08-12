@@ -98,7 +98,7 @@ jobs:
           if ! git diff --staged --quiet; then
             git commit -m "chore(content): content rapid - template blog + case studies + industry pages"
             git push
-            if false # Netlify build hook removed (migrated to GitHub Pages) && [ "$TRIGGER_DEPLOY" = "1" ]; then
+            if [ "$TRIGGER_DEPLOY" = "1" ]; then
               echo "# NO-OP: Netlify deploy removed (migrated to GitHub Pages)"
             fi
           fi

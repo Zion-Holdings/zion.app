@@ -4,6 +4,13 @@ import { pingTool } from '@/data/tools_ping_client';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Free Port Scanner — Check Open Ports Online | Zion Tech Group',
+  description: 'Free online port scanner for 21 common service ports. No download required — runs entirely in your browser. Check which ports are open on any host.',
+  alternates: { canonical: '/tools/port-scanner/' },
+};
 
 export default function PortScannerPage() {
   useEffect(() => { pingTool('port-scanner'); }, []);

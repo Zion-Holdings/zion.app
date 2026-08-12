@@ -121,7 +121,7 @@ jobs:
           git add -A
           if ! git diff --staged --quiet; then
             bash scripts/automation/commit-and-push-main.sh "chore(content): ideas to deploy - ideation + front page + template burst"
-            if false # Netlify build hook removed (migrated to GitHub Pages) && [ "$TRIGGER_DEPLOY" = "1" ]; then
+            if [ "$TRIGGER_DEPLOY" = "1" ]; then
               echo "# NO-OP: Netlify deploy removed (migrated to GitHub Pages)"
             fi
           fi

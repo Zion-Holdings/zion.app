@@ -4,6 +4,13 @@ import { pingTool } from '@/data/tools_ping_client';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Free SSL Checker — SSL Certificate Test | Zion Tech Group',
+  description: 'Free SSL certificate checker powered by SSL Labs. Check certificate validity, expiry, grade, TLS protocols, cipher suites, and vulnerabilities.',
+  alternates: { canonical: '/tools/ssl-checker/' },
+};
 
 export default function SSLCheckerPage() {
   useEffect(() => { pingTool('ssl-checker'); }, []);

@@ -1,3 +1,12 @@
+// app/status/page.tsx — Metadata + client component
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Platform Status — Uptime & Service Status | Zion Tech Group',
+  description: 'Real-time status of Zion Tech Group services. Check if all systems are operational.',
+  alternates: { canonical: '/status/' },
+};
+
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -17,7 +26,7 @@ export default function StatusPage() {
           {up === null ? 'Checking...' : up ? 'All systems operational.' : 'Service interruption detected.'}
         </p>
         <p className="text-slate-400 text-sm">
-          For immediate assistance contact <a href="mailto:kleber@ziontechgroup.com" className="text-purple-400 hover:text-purple-300">kleber@ziontechgroup.com</a> or call <a href="tel:+13044640950" className="text-purple-400 hover:text-purple-300">+1 302 464 0950</a>.
+          For immediate assistance contact <a href="mailto:kleber@ziontechgroup.com" className="text-purple-400 hover:text-purple-300">kleber@ziontechgroup.com</a> or call <a href="tel:+13024640950" className="text-purple-400 hover:text-purple-300">+1 302 464 0950</a>.
         </p>
       </div>
     </main>

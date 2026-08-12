@@ -18,10 +18,11 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  // Ignore ESLint errors to allow build to proceed
+  // Ignore ESLint errors during build — critical for 100K+ page static export
   eslint: {
     ignoreDuringBuilds: true,
   },
+  // Remove console.error/warn in production for cleaner client bundle
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error', 'warn'] } : false,
   },

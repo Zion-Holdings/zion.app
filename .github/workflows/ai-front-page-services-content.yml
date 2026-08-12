@@ -75,7 +75,7 @@ jobs:
             npm run build
             git commit -m "chore(content): front page services and content - promote apps, sync core services"
             git push
-            if false # Netlify build hook removed (migrated to GitHub Pages) && [ "$TRIGGER_DEPLOY" = "1" ]; then
+            if [ "$TRIGGER_DEPLOY" = "1" ]; then
               echo "# NO-OP: Netlify deploy removed (migrated to GitHub Pages)"
             fi
           fi

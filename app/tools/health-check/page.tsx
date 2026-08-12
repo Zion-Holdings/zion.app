@@ -3,6 +3,13 @@
 import { useState, useEffect, useCallback } from 'react';
 
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Platform Health Check — Free Website Diagnostics | Zion Tech Group',
+  description: 'Free autonomous health check: website availability, SSL/TLS, DNS, network, and Next.js runtime diagnostics. No API key or login required.',
+  alternates: { canonical: '/tools/health-check/' },
+};
 
 type Status = 'ok' | 'warn' | 'fail';
 interface Check { name: string; status: Status; detail: string; ms: number; }

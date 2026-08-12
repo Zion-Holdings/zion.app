@@ -6,6 +6,13 @@ import { useState, useMemo, useEffect } from 'react';
 import { allServices, type Service } from '../../data/servicesData';
 import Link from 'next/link';
 import SmartServiceCard from '@/components/SmartServiceCard';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Service Comparison — Compare AI & IT Services Side by Side | Zion Tech Group',
+  description: 'Compare features, pricing, benefits, and implementation timelines across 600+ AI and IT services. Pick up to 3 services for a deep side-by-side analysis.',
+  alternates: { canonical: '/tools/service-comparison/' },
+};
 
 const CAT_LABELS: Record<string,string> = {
   ai:'AI Services', it:'IT', cloud:'Cloud', security:'Security',

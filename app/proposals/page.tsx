@@ -1,8 +1,14 @@
 // app/proposals/page.tsx — Saved Proposals Viewer
 'use client';
-
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Your Proposals — Zion Tech Group',
+  description: 'View and manage your saved service proposals. Track status, review services, and create new custom proposals.',
+  alternates: { canonical: '/proposals/' },
+};
 
 interface Proposal {
   id: string;

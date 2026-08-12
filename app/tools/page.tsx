@@ -5,48 +5,48 @@ export const metadata: Metadata = {
   title: 'Free Tools & Calculators',
   description:
     'Free online tools: ROI Calculator, Port Scanner, SSL Checker, Service Comparison, AI Service Router, and Service Recommender — no sign-up required.',
-  alternates: { canonical: '/tools' },
+  alternates: { canonical: '/tools/' },
 };
 
 const TOOLS = [
   {
-    href: '/tools/roi-calculator',
+    href: '/tools/roi-calculator/',
     emoji: '📈',
     title: 'ROI Calculator',
     desc: 'Estimate the return on your AI, cloud, or automation investment. Set your budget, pick a category, get a 3-year projection.',
   },
   {
-    href: '/tools/port-scanner',
+    href: '/tools/port-scanner/',
     emoji: '🔍',
     title: 'Port Scanner',
     desc: 'Scan 21 common ports on any host in seconds. Check which services are exposed without installing anything.',
   },
   {
-    href: '/tools/ssl-checker',
+    href: '/tools/ssl-checker/',
     emoji: '🔒',
     title: 'SSL Checker',
     desc: 'Verify SSL certificate expiry, issuer, and chain trust for any domain. Catch expiring certs before your users do.',
   },
   {
-    href: '/service-comparison',
+    href: '/tools/service-comparison/',
     emoji: '⚖️',
     title: 'Service Comparison',
     desc: 'Compare Zion Tech Group AI, IT, cloud, and automation services side by side. Add to shortlist, deep-compare features, pricing, and timelines.',
   },
   {
-    href: '/tools/ai-service-router',
+    href: '/tools/ai-service-router/',
     emoji: '🧭',
     title: 'AI Service Router',
     desc: 'Answer a few questions and instantly find the right AI service for your use case — from chatbots to fraud detection.',
   },
   {
-    href: '/tools/service-recommender',
+    href: '/tools/service-recommender/',
     emoji: '🎯',
     title: 'Service Recommender',
     desc: 'Describe your business challenge and get a ranked list of recommended services across all six categories.',
   },
   {
-    href: '/tools/health-check',
+    href: '/tools/health-check/',
     emoji: '🏥',
     title: 'Platform Status',
     desc: 'Run a free autonomous health check on Zion Tech Group infrastructure. No API key, no sign-up — just click and see.',
