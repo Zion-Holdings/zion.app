@@ -36,7 +36,7 @@ export async function generateStaticParams() {
   }
 
   const arr = Array.from(ids).map((id) => ({ id }));
-return arr.slice(0, 40);
+return arr.slice(0, 20);
 }
 
 export async function generateMetadata({ params }: PageProps) {
