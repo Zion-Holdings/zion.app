@@ -1,11 +1,11 @@
 {
-  "status": "warning",
+  "status": "degraded",
   "workflowCount": 393,
   "counts": {
-    "totalFindings": 403,
-    "error": 0,
+    "totalFindings": 401,
+    "error": 272,
     "warning": 2,
-    "info": 401
+    "info": 127
   },
   "findings": [
     {
@@ -15,16 +15,16 @@
       "detail": "Job 'scorecard' has no timeout-minutes set"
     },
     {
-      "file": ".github/workflows/ai-accessibility-audit-smoke-weekly.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'a11y-audit-anchors' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-accessibility-audit-smoke-weekly.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (19:7)\n\n 16 |     steps:\n 17 |       - name: Checkout\n 18 |         uses: actions/checkout@v4\n 19 |       with:\n------------^\n 20 |         fetch-depth: 1\n 21 | "
     },
     {
-      "file": ".github/workflows/ai-accessibility-audit.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'accessibility-audit' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-accessibility-audit.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (33:7)\n\n 30 |       - name: Checkout\n 31 |         uses: actions/checkout@v4\n 32 | \n 33 |       with:\n------------^\n 34 | \n 35 |         fetch-depth: 1"
     },
     {
       "file": ".github/workflows/ai-actions-pin-strict-guard.yml",
@@ -39,10 +39,10 @@
       "detail": "Job 'strict-pin-hint' has no timeout-minutes set"
     },
     {
-      "file": ".github/workflows/ai-advanced-ai-content-smoke-weekly.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'advanced-ai-content-anchors' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-advanced-ai-content-smoke-weekly.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (24:7)\n\n 21 |       - name: Checkout\n 22 |         uses: actions/checkout@v4\n 23 | \n 24 |       with:\n------------^\n 25 | \n 26 |         fetch-depth: 1"
     },
     {
       "file": ".github/workflows/ai-advanced-ai-content.yml",
@@ -51,46 +51,46 @@
       "detail": "Job 'advanced-ai-content' has no timeout-minutes set"
     },
     {
-      "file": ".github/workflows/ai-agents-docs-updater.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'update-docs' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-agents-docs-updater.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (21:7)\n\n 18 |       - name: Checkout\n 19 |         uses: actions/checkout@v4\n 20 | \n 21 |       with:\n------------^\n 22 | \n 23 |         fetch-depth: 1"
     },
     {
-      "file": ".github/workflows/ai-aggregate-dashboard-refresh-smoke-weekly.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'aggregate-refresh-anchors' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-aggregate-dashboard-refresh-smoke-weekly.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (24:7)\n\n 21 |       - name: Checkout\n 22 |         uses: actions/checkout@v4\n 23 | \n 24 |       with:\n------------^\n 25 | \n 26 |         fetch-depth: 1"
     },
     {
-      "file": ".github/workflows/ai-aggregate-dashboard-refresh.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'refresh' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-aggregate-dashboard-refresh.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (25:7)\n\n 22 |       - name: Checkout\n 23 |         uses: actions/checkout@v4\n 24 | \n 25 |       with:\n------------^\n 26 | \n 27 |         fetch-depth: 1"
     },
     {
-      "file": ".github/workflows/ai-aggregate-regression-alert-smoke-weekly.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'aggregate-regression-alert-anchors' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-aggregate-regression-alert-smoke-weekly.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (24:7)\n\n 21 |       - name: Checkout\n 22 |         uses: actions/checkout@v4\n 23 | \n 24 |       with:\n------------^\n 25 | \n 26 |         fetch-depth: 1"
     },
     {
-      "file": ".github/workflows/ai-aggregate-regression-alert.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'alert' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-aggregate-regression-alert.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (26:7)\n\n 23 |       - name: Checkout\n 24 |         uses: actions/checkout@v4\n 25 | \n 26 |       with:\n------------^\n 27 | \n 28 |         fetch-depth: 1"
     },
     {
-      "file": ".github/workflows/ai-aggregate-regression-diff-alert-smoke-weekly.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'diff-anchors' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-aggregate-regression-diff-alert-smoke-weekly.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (24:7)\n\n 21 |       - name: Checkout\n 22 |         uses: actions/checkout@v4\n 23 | \n 24 |       with:\n------------^\n 25 | \n 26 |         fetch-depth: 1"
     },
     {
-      "file": ".github/workflows/ai-aggregate-regression-diff-alert.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'diff' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-aggregate-regression-diff-alert.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (26:7)\n\n 23 |       - name: Checkout\n 24 |         uses: actions/checkout@v4\n 25 | \n 26 |       with:\n------------^\n 27 | \n 28 |         fetch-depth: 1"
     },
     {
       "file": ".github/workflows/ai-aggregate-regression-diff-pr-comment.yml",
@@ -99,10 +99,10 @@
       "detail": "Job 'comment' has no timeout-minutes set"
     },
     {
-      "file": ".github/workflows/ai-ai-experiences-health-smoke-weekly.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'experiences-health-anchors' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-ai-experiences-health-smoke-weekly.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (24:7)\n\n 21 |       - name: Checkout\n 22 |         uses: actions/checkout@v4\n 23 | \n 24 |       with:\n------------^\n 25 | \n 26 |         fetch-depth: 1"
     },
     {
       "file": ".github/workflows/ai-ai-experiences-health.yml",
@@ -111,22 +111,22 @@
       "detail": "Job 'experiences-health' has no timeout-minutes set"
     },
     {
-      "file": ".github/workflows/ai-ai-lab-hub-links-smoke-weekly.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'playwright' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-ai-lab-hub-links-smoke-weekly.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (24:7)\n\n 21 |       - name: Checkout\n 22 |         uses: actions/checkout@v4\n 23 | \n 24 |       with:\n------------^\n 25 | \n 26 |         fetch-depth: 1"
     },
     {
-      "file": ".github/workflows/ai-ai-lab-integrity-smoke-contract.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'contract' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-ai-lab-integrity-smoke-contract.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (37:7)\n\n 34 |       - name: Checkout\n 35 |         uses: actions/checkout@v4\n 36 | \n 37 |       with:\n------------^\n 38 | \n 39 |         fetch-depth: 1"
     },
     {
-      "file": ".github/workflows/ai-ai-lab-legacy-scaffold-weekly.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'legacy-scan' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-ai-lab-legacy-scaffold-weekly.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (24:7)\n\n 21 |       - name: Checkout\n 22 |         uses: actions/checkout@v4\n 23 | \n 24 |       with:\n------------^\n 25 | \n 26 |         fetch-depth: 1"
     },
     {
       "file": ".github/workflows/ai-ai-lab-route-contract-autofix-pr.yml",
@@ -135,10 +135,10 @@
       "detail": "Job 'autofix-pr' has no timeout-minutes set"
     },
     {
-      "file": ".github/workflows/ai-ai-lab-route-contract-pr-comment.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'contract-comment' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-ai-lab-route-contract-pr-comment.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (29:7)\n\n 26 |       - name: Checkout\n 27 |         uses: actions/checkout@v4\n 28 | \n 29 |       with:\n------------^\n 30 | \n 31 |         fetch-depth: 1"
     },
     {
       "file": ".github/workflows/ai-ai-lab-safe-scaffold-migrate-pr.yml",
@@ -171,10 +171,10 @@
       "detail": "Job 'evolution' has no timeout-minutes set"
     },
     {
-      "file": ".github/workflows/ai-app-evolution-trigger-on-regression.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'check-and-trigger' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-app-evolution-trigger-on-regression.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (30:7)\n\n 27 |     steps:\n 28 |       - uses: actions/checkout@v4\n 29 | \n 30 |       with:\n------------^\n 31 | \n 32 |         fetch-depth: 1"
     },
     {
       "file": ".github/workflows/ai-app-improvement-daily-quick.yml",
@@ -219,10 +219,10 @@
       "detail": "Job 'app-quality-audit' has no timeout-minutes set"
     },
     {
-      "file": ".github/workflows/ai-app-visit-audit-implement-deploy-smoke-weekly.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'app-visit-anchors' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-app-visit-audit-implement-deploy-smoke-weekly.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (24:7)\n\n 21 |       - name: Checkout\n 22 |         uses: actions/checkout@v4\n 23 | \n 24 |       with:\n------------^\n 25 | \n 26 |         fetch-depth: 1"
     },
     {
       "file": ".github/workflows/ai-app-visit-audit-implement-deploy.yml",
@@ -237,22 +237,22 @@
       "detail": "Job 'app-visit-intelligence' has no timeout-minutes set"
     },
     {
-      "file": ".github/workflows/ai-artifact-freshness-mesh.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'freshness-mesh' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-artifact-freshness-mesh.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (25:7)\n\n 22 |       - name: Checkout\n 23 |         uses: actions/checkout@v4\n 24 | \n 25 |       with:\n------------^\n 26 | \n 27 |         fetch-depth: 1"
     },
     {
-      "file": ".github/workflows/ai-auto-fix-weekly.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'fix' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-auto-fix-weekly.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (17:5)\n\n 14 |     - uses: actions/checkout@v4\n 15 |     with:\n 16 |       fetch-depth: 1\n 17 |     - name: Setup Node.js\n----------^\n 18 |       uses: actions/setup-"
     },
     {
-      "file": ".github/workflows/ai-automation-audit-smoke-weekly.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'automation-audit-anchors' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-automation-audit-smoke-weekly.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (19:7)\n\n 16 |     steps:\n 17 |       - name: Checkout\n 18 |         uses: actions/checkout@v4\n 19 |       with:\n------------^\n 20 |         fetch-depth: 1\n 21 | "
     },
     {
       "file": ".github/workflows/ai-automation-audit.yml",
@@ -267,10 +267,10 @@
       "detail": "Job 'comment' has no timeout-minutes set"
     },
     {
-      "file": ".github/workflows/ai-automation-fingerprint-digest-freshness.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'check' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-automation-fingerprint-digest-freshness.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (27:7)\n\n 24 |       - name: Checkout\n 25 |         uses: actions/checkout@v4\n 26 | \n 27 |       with:\n------------^\n 28 | \n 29 |         fetch-depth: 1"
     },
     {
       "file": ".github/workflows/ai-automation-fingerprint-digest-pr-label.yml",
@@ -279,34 +279,34 @@
       "detail": "Job 'label' has no timeout-minutes set"
     },
     {
-      "file": ".github/workflows/ai-automation-fingerprint-digest-preflight.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'preflight' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-automation-fingerprint-digest-preflight.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (25:7)\n\n 22 |       - name: Checkout\n 23 |         uses: actions/checkout@v4\n 24 | \n 25 |       with:\n------------^\n 26 | \n 27 |         fetch-depth: 1"
     },
     {
-      "file": ".github/workflows/ai-automation-fingerprint-digest-weekly.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'digest' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-automation-fingerprint-digest-weekly.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (28:7)\n\n 25 |       - name: Checkout\n 26 |         uses: actions/checkout@v4\n 27 | \n 28 |       with:\n------------^\n 29 | \n 30 |         fetch-depth: 1"
     },
     {
-      "file": ".github/workflows/ai-automation-fingerprint-stale-nudge-weekly.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'stale-nudge' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-automation-fingerprint-stale-nudge-weekly.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (25:7)\n\n 22 |       - name: Checkout\n 23 |         uses: actions/checkout@v4\n 24 | \n 25 |       with:\n------------^\n 26 | \n 27 |         fetch-depth: 1"
     },
     {
-      "file": ".github/workflows/ai-automation-health-monitor-smoke-weekly.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'automation-health-monitor-anchors' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-automation-health-monitor-smoke-weekly.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (19:7)\n\n 16 |     steps:\n 17 |       - name: Checkout\n 18 |         uses: actions/checkout@v4\n 19 |       with:\n------------^\n 20 |         fetch-depth: 1\n 21 | "
     },
     {
-      "file": ".github/workflows/ai-automation-health-monitor.yml",
-      "severity": "info",
-      "type": "missing-timeout",
-      "detail": "Job 'health' has no timeout-minutes set"
+      "file": "/home/runner/work/zion-support.github.io/zion-support.github.io/.github/workflows/ai-automation-health-monitor.yml",
+      "severity": "error",
+      "type": "yaml-parse-error",
+      "detail": "YAML parse error: bad indentation of a mapping entry (25:7)\n\n 22 |       - name: Checkout\n 23 |         uses: actions/checkout@v4\n 24 | \n 25 |       with:\n------------^\n 26 | \n 27 |         fetch-depth: 1"
     }
   ],
   "checked_files": [
@@ -704,5 +704,5 @@
     "workflow-yaml-sanity-smoke-weekly.yml",
     "workflow-yaml-sanity.yml"
   ],
-  "generated_at": "2026-08-11T05:21:46.262Z"
+  "generated_at": "2026-08-12T16:44:24.120Z"
 }
