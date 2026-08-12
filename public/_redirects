@@ -8,8 +8,6 @@
 /careers /careers/ 301
 /partners /partners/ 301
 /partners/ /partners/index.html 200
-/free-tools /free-tools.html 200
-/free-tools/ /free-tools.html 200
 /free-ai-tools /free-tools.html 301
 /free-ai-tools/ /free-tools.html 301
 /tools/service-comparison /tools/service-comparison/ 301
@@ -36,6 +34,8 @@
 /products/ /products/index.html 200
 /ai-services /ai-services/index.html 200
 /ai-services/ /ai-services/index.html 200
+/service-comparison /service-comparison/index.html 200
+/service-comparison/ /service-comparison/index.html 200
 /configurator /configurator/index.html 200
 /configurator/ /configurator/index.html 200
 /service-comparison /service-comparison/index.html 200
