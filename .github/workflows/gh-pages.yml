@@ -17,12 +17,12 @@ concurrency:
   group: continuous-pages-deploy-${{ github.ref }}
   cancel-in-progress: false
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 45
-    outputs:
-      artifacts_uploaded: ${{ steps.build.outputs.artifacts_uploaded }}
-      production_out_exists: ${{ steps.build.outputs.production_out_exists }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4 # v4.1.2
@@ -44,7 +44,6 @@ jobs:
           NODE_OPTIONS: --max-old-space-size=4096
 
       - name: Build Next export
-        id: build
         env:
           PAGES_CACHE_BUST: ${{ github.event.inputs.cache_bust }}
         run: |
@@ -52,26 +51,9 @@ jobs:
           if [ -n "${PAGES_CACHE_BUST:-}" ]; then echo "cache-bust=${PAGES_CACHE_BUST}" >> "$GITHUB_OUTPUT"; fi
           if [ ! -f package.json ]; then
             echo "No package.json present; skipping npm build."
-            echo "npm_run_build_failed=" >> "$GITHUB_OUTPUT"
-            echo "pages=0" >> "$GITHUB_OUTPUT"
-            echo "size=none" >> "$GITHUB_OUTPUT"
-            echo "artifacts_uploaded=1" >> "$GITHUB_OUTPUT"
-            echo "production_out_exists=0" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          npm run build > build.log 2>&1 || echo "npm_run_build_failed=1" >> "$GITHUB_OUTPUT"
-          if [ -d out ]; then
-            PAGES=$(find out -name 'index.html' | wc -l)
-            echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
-            echo "artifacts_uploaded=1" >> "$GITHUB_OUTPUT"
-            echo "size=$(du -sh out | awk '{print $1}')" >> "$GITHUB_OUTPUT"
-            echo "production_out_exists=1" >> "$GITHUB_OUTPUT"
-          else
-            echo "pages=0" >> "$GITHUB_OUTPUT"
-            echo "size=none" >> "$GITHUB_OUTPUT"
-            echo "artifacts_uploaded=1" >> "$GITHUB_OUTPUT"
-            echo "production_out_exists=0" >> "$GITHUB_OUTPUT"
-          fi
+          npm run build > build.log 2>&1 || true
           if [ ! -d out ]; then
             echo "Build did not produce out/, continuing with docs/public fallback."
           fi
@@ -100,9 +82,23 @@ jobs:
           if [ ! -f "$ARTIFACT_DIR/index.html" ] && [ -f "$docs_index" ]; then
             cp -a "$docs_index" "$ARTIFACT_DIR/index.html"
           fi
-          # If Next export succeeded, overlay generated files.
+          # If Next export succeeded, overlay generated files with collision handling.
           if [ -d out ]; then
-            cp -a out/. "$ARTIFACT_DIR"/ || true
+            cd out
+            find . -mindepth 1 -maxdepth 1 | while read -r f; do
+              target="../$ARTIFACT_DIR/$f"
+              if [ -e "$target" ]; then
+                if [ -d "$f" ] && [ ! -d "$target" ]; then
+                  rm -f "$target"
+                elif [ -f "$f" ] && [ ! -d "$target" ]; then
+                  rm -rf "$target"
+                else
+                  continue
+                fi
+              fi
+              cp -a "$f" "../$ARTIFACT_DIR/$f"
+            done
+            cd ..
           fi
           if [ -d public ]; then
             cp -a public/. "$ARTIFACT_DIR"/
@@ -153,8 +149,7 @@ jobs:
           if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f public/robots.txt ]; then cp -f public/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
           if [ ! -f "$ARTIFACT_DIR/sitemap.xml" ] && [ -f docs/sitemap.xml ]; then cp -f docs/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
           PAGES=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)
-          echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
-          echo "artifacts_uploaded=1" >> "$GITHUB_OUTPUT"
+          echo "pages=$PAGES"
           echo 'manifest:'
           find "$ARTIFACT_DIR" -maxdepth 2 -type f | sed -n '1,120p'
 
@@ -163,15 +158,6 @@ jobs:
         with:
           path: artifacts/pages
 
-  deploy:
-    needs: build
-    if: success() && (needs.build.outputs.production_out_exists == '1' || needs.build.outputs.artifacts_uploaded == '1')
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4 # v4.0.5
