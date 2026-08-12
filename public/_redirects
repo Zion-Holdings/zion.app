@@ -29,3 +29,14 @@
 /blog/ai-finops-and-cloud-cost-optimization-with-machine-learning/ /blog/ai-finops-and-cloud-cost-optimization-with-machine-learning/index.html 200
 /blog/ai-for-cybersecurity-operations-and-threat-hunting /blog/ai-for-cybersecurity-operations-and-threat-hunting/ 301
 /blog/ai-for-cybersecurity-operations-and-threat-hunting/ /blog/ai-for-cybersecurity-operations-and-threat-hunting/index.html 200
+# New content fallbacks
+/tools /tools/index.html 200
+/tools/ /tools/index.html 200
+/products /products/index.html 200
+/products/ /products/index.html 200
+/ai-services /ai-services/index.html 200
+/ai-services/ /ai-services/index.html 200
+/configurator /configurator/index.html 200
+/configurator/ /configurator/index.html 200
+/service-comparison /service-comparison/index.html 200
+/service-comparison/ /service-comparison/index.html 200
