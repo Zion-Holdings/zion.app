@@ -2,6 +2,7 @@ import './globals.css';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import AccessibilityEnhancer from '@/components/AccessibilityEnhancer';
+import FloatingAgentStatus from '@/components/FloatingAgentStatus';
 import type { Metadata } from 'next';
 import { SITE_URL, STRUCTURED_DATA } from './utils/seoConstants';
 
@@ -41,7 +42,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Navigation />
           <div id="main-content">{children}</div>
           <Footer />
-        </AccessibilityEnhancer>
+          <FloatingAgentStatus />
+          </AccessibilityEnhancer>
       </body>
     </html>
   );
