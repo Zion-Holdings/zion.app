@@ -25,12 +25,14 @@ function collectLeafPages() {
   }
 
   // 2) Known top-level pages (dirs with index.html)
-  const topDirs = ['ai', 'ai-services', 'api', 'configurator', 'contact', 'faq',
-                   'industry-solutions', 'portal', 'pricing', 'pricing-calculator',
-                   'privacy', 'products', 'proposal-generator', 'proposals',
-                   'search', 'service-comparison', 'services-explorer', 'solutions',
-                   'status', 'terms', 'testimonials', 'tools',
-                   'zion-ai-compliance-checker', 'zion-ai-vendor-manager'];
+  const topDirs = ['about', 'ai', 'ai-services', 'ai-automation', 'api', 'agents-monitoring',
+                 'configurator', 'contact', 'careers', 'case-studies', 'faq', 'help',
+                 'industries', 'industry-solutions', 'portal', 'pricing', 'pricing-calculator',
+                 'privacy', 'products', 'proposal-generator', 'proposals',
+                 'search', 'service-comparison', 'services', 'services-explorer', 'solutions',
+                 'status', 'terms', 'testimonials', 'tools', 'press',
+                 'zion-ai-compliance-checker', 'zion-ai-vendor-manager', 'zion-cloud-vault',
+                 'zion-ai-social-media-manager', 'cookies', 'sla', 'site-map'];
 
   for (const d of topDirs) {
     const f = path.join(outDir, d, 'index.html');
@@ -62,6 +64,31 @@ function collectLeafPages() {
       }
     }
   }
+
+  // 2b) Dynamic industries/* sub-pages (app/industries/* → out/industries/*/index.html)
+  const industriesDir = path.join(outDir, 'industries');
+  if (fs.existsSync(industriesDir)) {
+    for (const entry of fs.readdirSync(industriesDir, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue;
+      const f = path.join(industriesDir, entry.name, 'index.html');
+      if (fs.existsSync(f)) {
+        pages.push({ url: `${SITE_URL}/industries/${entry.name}/`, lastmod: fs.statSync(f).mtime });
+      }
+    }
+  }
+
+  // 2c) Dynamic blog/* sub-pages (app/blog/* → out/blog/*/index.html)
+  const blogPagesDir = path.join(outDir, 'blog');
+  if (fs.existsSync(blogPagesDir)) {
+    for (const entry of fs.readdirSync(blogPagesDir, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue;
+      const f = path.join(blogPagesDir, entry.name, 'index.html');
+      if (fs.existsSync(f)) {
+        pages.push({ url: `${SITE_URL}/blog/${entry.name}/`, lastmod: fs.statSync(f).mtime });
+      }
+    }
+  }
+
 
   // 3) Service pages: out/services/<id>/index.html
   const svcDir = path.join(outDir, 'services');
@@ -119,7 +146,7 @@ function pageInfo(url, lastmod) {
   else if (url.startsWith(`${SITE_URL}/services/stage/`)) { freq = 'weekly'; prio = '0.7'; }
   else if (url.startsWith(`${SITE_URL}/services/`)) { freq = 'weekly'; prio = '0.6'; }
   else if (url.startsWith(`${SITE_URL}/blog/`)) { freq = 'weekly'; prio = '0.5'; }
-  else if (['/ai', '/ai-services', '/industry-solutions', '/solutions', '/products', '/tools'].some(x => url.startsWith(SITE_URL + x))) { freq = 'weekly'; prio = '0.5'; }
+  else if (['/ai/', '/ai-services', '/ai-automation', '/industry-solutions', '/industries', '/solutions', '/products', '/tools', '/configurator', '/agents-monitoring'].some(x => url.startsWith(SITE_URL + x))) { freq = 'weekly'; prio = '0.5'; }
   else { freq = 'monthly'; prio = '0.4'; }
 
   const loc = url.replace(/"/g, '&quot;');

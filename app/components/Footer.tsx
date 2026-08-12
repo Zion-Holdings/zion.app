@@ -38,13 +38,13 @@ const Footer: React.FC = () => {
             <h4 className="text-sm font-semibold text-white uppercase tracking-wider">Services</h4>
             <ul className="space-y-2.5">
               {[
-                { name: 'AI Services', href: '/ai-services/' },
+                { name: 'AI Services', href: '/ai-automation/' },
                 { name: 'All Services', href: '/services/' },
-                { name: 'Industry Solutions', href: '/industry-solutions/' },
+                { name: 'Industry Solutions', href: '/industries/' },
                 { name: 'Pricing', href: '/pricing/' },
-                { name: 'Tools & Resources', href: '/tools/' },
-                { name: 'Service Comparison', href: '/service-comparison/' },
-                { name: 'Free Consultation', href: '/free-consultation/' },
+                { name: 'Free Tools', href: '/tools/' },
+                { name: 'Service Comparison', href: '/tools/service-comparison/' },
+                { name: 'Free Consultation', href: '/contact/' },
                 { name: 'Case Studies', href: '/case-studies/' },
               ].map(l => (
                 <li key={l.href}>
@@ -64,7 +64,7 @@ const Footer: React.FC = () => {
                 { name: 'Careers', href: '/careers/' },
                 { name: 'Partners', href: '/partners/' },
                 { name: 'Case Studies', href: '/case-studies/' },
-                { name: 'Status Page', href: '/status-page/' },
+                { name: 'Status Page', href: '/status/' },
                 { name: 'Roadmap', href: '/public-roadmap/' },
                 { name: 'Client Portal', href: '/portal/' },
                 { name: 'Press', href: '/press/' },

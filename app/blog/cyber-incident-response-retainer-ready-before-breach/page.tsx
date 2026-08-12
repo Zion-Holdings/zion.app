@@ -99,7 +99,7 @@ export default function BlogPost() {
           </p>
 
           <div className="text-center mt-12">
-            <Link href="/services/cyber-incident-response-retainer/" className="btn-primary inline-block">
+            <Link href="/services/" className="btn-primary inline-block">
               Learn About Our Retainer Service →
             </Link>
           </div>

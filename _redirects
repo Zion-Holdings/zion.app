@@ -33,6 +33,19 @@
 /agents-monitoring    /agents-monitoring/    301
 /proposals    /proposals/    301
 
+# Footer link redirects (old → new canonical URLs)
+/service-comparison/    /tools/service-comparison/    301
+/service-comparison     /tools/service-comparison/    301
+/free-consultation/    /contact/    301
+/free-consultation     /contact/    301
+/status-page    /status/    301
+/status-page/    /status/    301
+/industry-solutions/    /industries/    301
+/industry-solutions     /industries/    301
+/ai-services    /ai-automation/    301
+/ai-services/    /ai-automation/    301
+/tools    /tools/    301
+
 # === Old service slug redirects (legacy catalog — redirect to services index) ===
 /services/affectiva-emotion-ai-platform/  /services/  301
 /services/ai-approval-workflow-engine/  /services/  301
