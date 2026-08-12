@@ -23,7 +23,6 @@ jobs:
   cron-report:
     needs: contracts
     runs-on: ubuntu-latest
-    timeout-minutes: 10
     env:
       NEXT_TELEMETRY_DISABLED: "1"
     steps:

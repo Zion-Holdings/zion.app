@@ -4,7 +4,7 @@
 /services/cloud-migration-services-2026-1121/ /services/cloud-migration-services-2026-500/ 301
 /blog/cloud-migration-services-2026-1121/ /blog/cloud-migration-services-2026-500/ 301
 /services/enterprise-ai-intelligence-hub-2026-1143/ /services/enterprise-ai-intelligence-hub-2026-507/ 301
-/blog/enterprise-ai-intelligence-hub-2026-1143/ /blog/enterprise-ai-intelligence-hub-2026-507/ 301
+/blog/enterprise-ai-intelligence-hub-2026-1143/ /blog/ai-automation-best-practices-2026/ 301
 
 # Search
 /search /docs/search/index.html 200
@@ -89,7 +89,19 @@
 /public-roadmap /public-roadmap/ 301
 /public-roadmap/ /public-roadmap/index.html 200
 
-# cache-bust: 2026-08-11T05:30:00Z
+# New fallbacks
+/services-explorer /services-explorer/index.html 200
+/services-explorer/ /services-explorer/index.html 200
+/free-ai-tools /free-ai-tools/index.html 200
+/free-ai-tools/ /free-ai-tools/index.html 200
+/how-it-works /how-it-works/index.html 200
+/how-it-works/ /how-it-works/index.html 200
+/success-stories /success-stories/index.html 200
+/success-stories/ /success-stories/index.html 200
+/industries /industries/index.html 200
+/industries/ /industries/index.html 200
+
+# cache-bust: 2026-08-12T04:12:00Z
 /dashboard /services/ 301
 /dashboard/ /services/ 301
 /index.html / 301

@@ -30,7 +30,6 @@ jobs:
     if: ${{ always() && needs.strict-pin-audit.result == 'failure' }}
     needs: strict-pin-audit
     runs-on: ubuntu-latest
-    timeout-minutes: 2
     steps:
       - name: Hint on strict pin failure
         run: |
