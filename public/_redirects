@@ -92,3 +92,7 @@
 /tools/roi-calculator/ /tools/roi-calculator/index.html 200
 /tools/ai-service-router /tools/ai-service-router/index.html 200
 /tools/ai-service-router/ /tools/ai-service-router/index.html 200
+
+# Tools fallbacks
+/tools/service-comparison /tools/service-comparison/ 301
+/tools/service-comparison/ /tools/service-comparison/index.html 200
