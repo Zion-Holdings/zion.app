@@ -65,7 +65,7 @@ export default function ServicesExplorerPage() {
     <div className="min-h-screen bg-slate-950 text-white">
       <Navigation />
       <main className="min-h-screen bg-slate-950 py-20">
-      <div className="container-page">
+        <div className="container-page">
         <a href="/" className="text-purple-400 text-sm hover:text-purple-300 transition">← Home</a>
 
         <div className="mt-8 mb-2">
@@ -172,6 +172,7 @@ export default function ServicesExplorerPage() {
           </div>
         )}
       </div>
+      </main>
       <Footer />
     </div>
   );
