@@ -1,10 +1,11 @@
 /monitoring /monitoring/index.html 200
 /monitoring/ /monitoring/index.html 200
-/ai /tools 301
-/ai/ /tools 301
-/managed-it /services/it-managed-it-ops 301
-/services/managed-it /services/it-managed-it-ops 301
-/consultation /contact 301
+/ai /ai/ 301
+/ai/ /ai/ 301
+/consultation /consultation/ 301
+/consultation/ /consultation/ 301
+/managed-it /services/ 301
+/services/managed-it /services/ 301
 /services/cloud-migration-services-2026-500 /services/ 301
 /services/cloud-migration-services-2026-500/ /services/ 301
 /services/cloud-migration-services-2026-1121/ /services/ 301
@@ -17,24 +18,6 @@
 # Search
 /search /docs/search/index.html 200
 /search/ /docs/search/index.html 200
-
-# Free tools fallbacks
-/free-ai-tools /tools 301
-/free-ai-tools/ /tools/ 301
-/tools/roi-calculator /tools/ 301
-/tools/roi-calculator/ /tools/ 301
-/tools/port-scanner /tools/ 301
-/tools/port-scanner/ /tools/ 301
-/tools/ssl-checker /tools/ 301
-/tools/ssl-checker/ /tools/ 301
-/tools/ai-service-router /tools/ 301
-/tools/ai-service-router/ /tools/ 301
-/tools/service-recommender /tools/ 301
-/tools/service-recommender/ /tools/ 301
-/tools/health-check /tools/ 301
-/tools/health-check/ /tools/ 301
-/tools/analytics /tools/ 301
-/tools/analytics/ /tools/ 301
 
 # Proposal fallback
 /proposal /contact 301
