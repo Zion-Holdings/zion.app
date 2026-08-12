@@ -4,21 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Request a Custom IT Proposal | Zion Tech Group</title>
-  <meta name="description" content="Request a custom AI or IT proposal from Zion Tech Group. Fast turnaround, clear scope, and pricing options for AI, cloud, automation, and managed services.">
-  <meta name="theme-color" content="#0b1221">
-  <link rel="canonical" href="https://ziontechgroup.com/proposal/">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="preconnect" href="https://www.googletagmanager.com">
-  <link rel="dns-prefetch" href="https://www.google-analytics.com">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Custom AI & IT Proposal",
-    "provider": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"},
-    "description": "Fast custom proposal for AI implementation, cloud, automation, cybersecurity, and managed IT delivery."
-  }
-  </script>
+  <meta name="description" content="Request a custom AI or IT proposal from Zion Tech Group. Fast turnaround, clear scope, and pricing options for AI, cloud, automation, and managed services." />
+  <link rel="canonical" href="https://ziontechgroup.com/proposal/" />
   <style>
     :root { color-scheme: dark; }
     * { box-sizing: border-box; }
@@ -29,7 +16,7 @@
       color: #e5e7eb;
     }
     .wrap { max-width: 80rem; margin: 0 auto; padding: 1rem; }
-    header { text-align: center; padding: 3rem 1rem 2rem; }
+    .hero-header { text-align: center; padding: 3rem 1rem 2rem; }
     h1 { font-size: 2.5rem; font-weight: 700; color: #fff; margin: 0 0 0.75rem; }
     .sub { color: #cbd5e1; font-size: 1.125rem; max-width: 640px; margin: 0 auto 1.25rem; }
     .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: 1.25rem; }
@@ -53,19 +40,38 @@
     .cta-section p { color: #cbd5e1; }
     .brand { font-weight: 700; background: linear-gradient(90deg, #a78bfa, #ec4899); -webkit-background-clip: text; background-clip: text; color: transparent; }
     a { color: #a855f7; }
+    /* Unified site nav */
+    header { display:flex; justify-content:space-between; align-items:center; padding: 16px 24px; border-bottom: 1px solid #334155; }
+    header a { color:#34d399; text-decoration:none; font-weight:700; }
+    nav a { margin-left:16px; color:#cbd5e1; text-decoration:none; }
+    nav a:hover { color:#34d399; }
+    footer { border-top:1px solid #334155; padding:24px; text-align:center; color:#94a3b8; }
+    footer a { color:#34d399; margin: 0 8px; text-decoration:none; }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom AI & IT Proposal",
+    "provider": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"},
+    "description": "Fast custom proposal for AI implementation, cloud, automation, cybersecurity, and managed IT delivery."
+  }
+  </script>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1>Request a <span class="brand">Custom Proposal</span></h1>
-      <p class="sub">Tell us your goal and constraints. We’ll return a scoped proposal with delivery phases, pricing options, and an execution timeline.</p>
-      <div class="actions">
-        <a class="btn btn-primary" href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer">📅 Start Proposal</a>
-        <a class="btn btn-secondary" href="mailto:kleber@ziontechgroup.com?subject=Proposal%20Request%20-%20Zion%20Tech%20Group">✉️ Email Request</a>
-        <a class="btn btn-secondary" href="tel:+13024640950">📞 +1 302 464 0950</a>
-      </div>
-    </header>
+  <header>
+    <a href="/">Zion Tech Group</a>
+    <nav>
+      <a href="/services/">Services</a>
+      <a href="/solutions/">Solutions</a>
+      <a href="/about/">About</a>
+      <a href="/blog/">Blog</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </header>
+<div class="wrap">
+    
 
     <div class="grid">
       <div class="card">
@@ -100,5 +106,13 @@
       <p style="margin-top:1rem; color:#94a3b8; font-size:0.9rem;">Website: <a href="https://ziontechgroup.com">https://ziontechgroup.com</a></p>
     </div>
   </div>
+  <footer>
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
+    <a href="/cookies/">Cookies</a>
+    <a href="/contact/">Contact</a>
+    <div>© <span id="y"></span> Zion Tech Group</div>
+  </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
