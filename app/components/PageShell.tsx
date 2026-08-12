@@ -5,7 +5,10 @@ export default function PageShell({ title, description, canonical, jsonLd, child
   return (
     <div className="min-h-screen bg-slate-950 text-white flex flex-col">
       <Navigation />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1">
+        {title ? <h1 className="sr-only">{title}</h1> : null}
+        {children}
+      </main>
       <Footer />
       {jsonLd && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}></script>
