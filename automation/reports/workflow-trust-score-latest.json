@@ -8,8 +8,8 @@
       "file": "accessibility-scorecard.yml",
       "score": 96,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/upload-artifact@v4",
         "Partially pinned action: actions/github-script@v7",
         "Job 'scorecard' missing timeout-minutes",
@@ -579,8 +579,8 @@
       "file": "ai-auto-fix-weekly.yml",
       "score": 93,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'fix' missing timeout-minutes"
       ],
       "improvements": [],
@@ -3526,8 +3526,8 @@
       "file": "api-schema-validation.yml",
       "score": 99,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/github-script@v7",
         "Job 'schema-check' missing timeout-minutes"
       ],
@@ -3675,8 +3675,8 @@
       "file": "bundle-split-analyzer.yml",
       "score": 94,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/upload-artifact@v4",
         "Partially pinned action: actions/github-script@v7",
         "Partially pinned action: actions/github-script@v7",
@@ -3694,8 +3694,8 @@
       "file": "cert-monitor.yml",
       "score": 96,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/upload-artifact@v4",
         "Partially pinned action: actions/github-script@v7",
         "Job 'cert-monitor' missing timeout-minutes",
@@ -3712,8 +3712,8 @@
       "file": "changelog.yml",
       "score": 98,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/upload-artifact@v4",
         "Job 'changelog' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
@@ -3797,8 +3797,8 @@
       "file": "content-freshness.yml",
       "score": 98,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/upload-artifact@v4",
         "Job 'freshness-check' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
@@ -3814,8 +3814,8 @@
       "file": "content-summarizer.yml",
       "score": 98,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/upload-artifact@v4",
         "Job 'summarizer' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
@@ -3858,8 +3858,8 @@
       "file": "custom-eslint.yml",
       "score": 94,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/upload-artifact@v4",
         "Partially pinned action: actions/github-script@v7",
         "Partially pinned action: actions/github-script@v7",
@@ -3877,8 +3877,8 @@
       "file": "db-retention.yml",
       "score": 98,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/upload-artifact@v4",
         "Job 'retention' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
@@ -3943,8 +3943,8 @@
       "file": "dependency-update-bot.yml",
       "score": 100,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'dependency-update' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
       ],
@@ -4020,11 +4020,10 @@
     {
       "name": "Emergency Recovery - Minimal Build",
       "file": "emergency-recovery.yml",
-      "score": 83,
+      "score": 93,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
-        "Missing explicit permissions block",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'recovery' missing timeout-minutes"
       ],
       "improvements": [],
@@ -4033,8 +4032,9 @@
     {
       "name": "Continuous Pages Deploy",
       "file": "gh-pages.yml",
-      "score": 96,
+      "score": 94,
       "issues": [
+        "Partially pinned action: actions/setup-node@v4.0.3",
         "Partially pinned action: actions/upload-artifact@v4",
         "Partially pinned action: actions/upload-pages-artifact@v4",
         "Partially pinned action: actions/deploy-pages@v4.0.5",
@@ -4043,7 +4043,6 @@
       ],
       "improvements": [
         "Pinned action: actions/checkout@b4ffde65",
-        "Pinned action: actions/setup-node@60edb5dd",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -4054,8 +4053,8 @@
       "file": "heap-diff.yml",
       "score": 96,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/upload-artifact@v4",
         "Partially pinned action: actions/github-script@v7",
         "Job 'heap-diff' missing timeout-minutes",
@@ -4129,8 +4128,8 @@
       "file": "meta-tags-scanner.yml",
       "score": 98,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/upload-artifact@v4",
         "Job 'meta-tags-check' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
@@ -4144,11 +4143,10 @@
     {
       "name": "Minimal Build Test",
       "file": "minimal-test.yml",
-      "score": 91,
+      "score": 100,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
-        "Missing explicit permissions block",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'minimal' missing timeout-minutes"
       ],
       "improvements": [
@@ -4162,8 +4160,8 @@
       "file": "og-image-generator.yml",
       "score": 96,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/upload-artifact@v4",
         "Partially pinned action: actions/upload-artifact@v4",
         "Job 'og-generate' missing timeout-minutes",
@@ -4180,8 +4178,8 @@
       "file": "openapi-drift-detector.yml",
       "score": 95,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/upload-artifact@v4",
         "Partially pinned action: actions/github-script@v7",
         "Partially pinned action: actions/github-script@v7",
@@ -4198,8 +4196,8 @@
       "file": "performance-budget.yml",
       "score": 98,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/upload-artifact@v4",
         "Job 'performance-budget' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
@@ -4311,8 +4309,8 @@
       "file": "robots-sitemap-compliance.yml",
       "score": 93,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'check' missing timeout-minutes"
       ],
       "improvements": [],
@@ -4330,7 +4328,6 @@
         "Pinned action: actions/checkout@de0fac2e",
         "Pinned action: actions/setup-node@53b83947",
         "Pinned action: actions/upload-artifact@bbbca2dd",
-        "Pinned action: peter-evans/create-pull-request@de0fac2e",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -4341,8 +4338,8 @@
       "file": "schema-validator.yml",
       "score": 98,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/upload-artifact@v4",
         "Job 'schema-validate' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
@@ -4374,8 +4371,8 @@
       "file": "sitemap-optimizer.yml",
       "score": 98,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/upload-artifact@v4",
         "Job 'sitemap' missing timeout-minutes",
         "Uses continue-on-error (may mask failures)"
@@ -4431,8 +4428,8 @@
       "file": "type-coverage.yml",
       "score": 97,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/github-script@v7",
         "Partially pinned action: actions/github-script@v7",
         "Job 'type-coverage' missing timeout-minutes"
@@ -4448,8 +4445,8 @@
       "file": "visual-regression.yml",
       "score": 96,
       "issues": [
-        "Partially pinned action: actions/checkout@v6.0.2",
-        "Partially pinned action: actions/setup-node@v6.3.0",
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Partially pinned action: actions/upload-artifact@v4",
         "Partially pinned action: actions/github-script@v7",
         "Job 'visual-regression' missing timeout-minutes",
@@ -4646,14 +4643,14 @@
     {
       "name": "Workflow Change Guard",
       "file": "workflow-change-guard.yml",
-      "score": 100,
+      "score": 98,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
         "Job 'validate-contracts' missing timeout-minutes",
         "Job 'automation-guard' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -4699,15 +4696,15 @@
     {
       "name": "Workflow contracts weekly",
       "file": "workflow-contracts-weekly.yml",
-      "score": 100,
+      "score": 96,
       "issues": [
+        "Partially pinned action: actions/checkout@v4",
+        "Partially pinned action: actions/setup-node@v4",
+        "Partially pinned action: actions/upload-artifact@v4",
         "Job 'contracts' missing timeout-minutes",
         "Job 'cron-report' missing timeout-minutes"
       ],
       "improvements": [
-        "Pinned action: actions/checkout@de0fac2e",
-        "Pinned action: actions/setup-node@53b83947",
-        "Pinned action: actions/upload-artifact@bbbca2dd",
         "Uses caching",
         "Node.js dependency caching"
       ],
@@ -5733,26 +5730,6 @@
       "score": 82
     },
     {
-      "issue": "Partially pinned action: actions/checkout@v6.0.2",
-      "workflow": "Emergency Recovery - Minimal Build",
-      "score": 83
-    },
-    {
-      "issue": "Partially pinned action: actions/setup-node@v6.3.0",
-      "workflow": "Emergency Recovery - Minimal Build",
-      "score": 83
-    },
-    {
-      "issue": "Missing explicit permissions block",
-      "workflow": "Emergency Recovery - Minimal Build",
-      "score": 83
-    },
-    {
-      "issue": "Job 'recovery' missing timeout-minutes",
-      "workflow": "Emergency Recovery - Minimal Build",
-      "score": 83
-    },
-    {
       "issue": "Job 'reject-floating-action-tags' missing timeout-minutes",
       "workflow": "Workflow action pin guard",
       "score": 87
@@ -5771,7 +5748,27 @@
       "issue": "Uses pull_request_target (security consideration)",
       "workflow": "Workflow permissions guard",
       "score": 87
+    },
+    {
+      "issue": "Partially pinned action: actions/checkout@v4",
+      "workflow": "AI Auto Fix Weekly",
+      "score": 93
+    },
+    {
+      "issue": "Partially pinned action: actions/setup-node@v4",
+      "workflow": "AI Auto Fix Weekly",
+      "score": 93
+    },
+    {
+      "issue": "Job 'fix' missing timeout-minutes",
+      "workflow": "AI Auto Fix Weekly",
+      "score": 93
+    },
+    {
+      "issue": "Partially pinned action: actions/checkout@v4",
+      "workflow": "Emergency Recovery - Minimal Build",
+      "score": 93
     }
   ],
-  "generated_at": "2026-08-11T05:21:46.477Z"
+  "generated_at": "2026-08-12T04:26:10.578Z"
 }
