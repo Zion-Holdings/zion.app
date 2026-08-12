@@ -1,10 +1,20 @@
+/monitoring /monitoring/index.html 200
+/monitoring/ /monitoring/index.html 200
+/ai /tools 301
+/ai/ /tools 301
+/free-ai-tools /free-tools.html 200
+/free-ai-tools/ /free-tools.html 200
 /managed-it /services/it-managed-it-ops 301
 /services/managed-it /services/it-managed-it-ops 301
 /consultation /contact 301
-/services/cloud-migration-services-2026-1121/ /services/cloud-migration-services-2026-500/ 301
-/blog/cloud-migration-services-2026-1121/ /blog/cloud-migration-services-2026-500/ 301
-/services/enterprise-ai-intelligence-hub-2026-1143/ /services/enterprise-ai-intelligence-hub-2026-507/ 301
-/blog/enterprise-ai-intelligence-hub-2026-1143/ /blog/enterprise-ai-intelligence-hub-2026-507/ 301
+/services/cloud-migration-services-2026-500 /services/ 301
+/services/cloud-migration-services-2026-500/ /services/ 301
+/services/cloud-migration-services-2026-1121/ /services/ 301
+/blog/cloud-migration-services-2026-1121/ /blog/ 301
+/services/enterprise-ai-intelligence-hub-2026-1143/ /services/ai-automation/ 301
+/blog/enterprise-ai-intelligence-hub-2026-1143/ /blog/ 301
+/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization /blog/ 301
+/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/ /blog/ 301
 
 # Search
 /search /docs/search/index.html 200
@@ -14,14 +24,6 @@
 /free-tools /free-tools.html 200
 /free-tools/ /free-tools.html 200
 
-# Free AI tools fallback
-/free-ai-tools /free-tools.html 200
-/free-ai-tools/ /free-tools.html 200
-
-# AI lab fallback
-/ai /tools 301
-/ai/ /tools 301
-
 # Proposal fallback
 /proposal /contact 301
 /proposal/ /contact 301
@@ -29,10 +31,6 @@
 # Dashboard fallback
 /dashboard /services 301
 /dashboard/ /services 301
-
-# Blog post fallback
-/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization /blog/ai-automation-best-practices-2026/ 301
-/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/ /blog/ai-automation-best-practices-2026/ 301
 
 # Index.html fallback
 /index.html / 301
@@ -50,7 +48,7 @@
 /new-ai-services /services/ 301
 /new-ai-services/ /services/ 301
 /faq /faq/ 301
-/industry-solutions /solutions 301
+/industry-solutions /services 301
 
 # Common missing paths
 /case-studies /case-studies/ 301
@@ -59,16 +57,16 @@
 /free-consultation/ /free-consultation/index.html 200
 /free-audit /free-audit/ 301
 /free-audit/ /free-audit/index.html 200
-/proposal /proposal/ 301
-/proposal/ /proposal/ 301
-/ai /ai/ 301
-/ai/ /ai/ 301
+
+# Industries
 /industries/insurance /industries/insurance/ 301
 /industries/insurance/ /industries/insurance/ 301
 /industries/healthcare /industries/healthcare/ 301
 /industries/healthcare/ /industries/healthcare/ 301
 /industries/legal /industries/legal/ 301
 /industries/legal/ /industries/legal/ 301
+
+# Content pages
 /press /press/ 301
 /press/ /press/ 301
 /privacy /privacy/ 301
@@ -80,7 +78,7 @@
 
 # Key route fallbacks
 /solutions/healthcare/ /docs/solutions/healthcare/index.html 200
-/tools/phishing-analyzer/ /docs/tools/phishing-analyzer/index.html 200
+/tools/phishing-analyzer/ /tools/ 301
 /industries/financial-services/ /docs/industries/financial-services/index.html 200
 
 # Status / Roadmap fallbacks
@@ -89,8 +87,8 @@
 /public-roadmap /public-roadmap/ 301
 /public-roadmap/ /public-roadmap/index.html 200
 
-# cache-bust: 2026-08-11T05:30:00Z
-/dashboard /services/ 301
-/dashboard/ /services/ 301
-/index.html / 301
-/index.html/ / 301
+# cache-bust: 2026-08-11T06:00:00Z
+/tools/roi-calculator /tools/roi-calculator/index.html 200
+/tools/roi-calculator/ /tools/roi-calculator/index.html 200
+/tools/ai-service-router /tools/ai-service-router/index.html 200
+/tools/ai-service-router/ /tools/ai-service-router/index.html 200
