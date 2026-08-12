@@ -25,3 +25,9 @@ automation/data/
 
 # Stub marker directory
 missing-pm2-stubs/
+
+# Temp and backup data files (large, not needed in repo)
+app/data/servicesData.tmp
+app/data/servicesData*.bak
+app/data/*.tmp
+app/data/*.bak
