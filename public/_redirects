@@ -11,12 +11,12 @@
 /search/ /search/index.html 200
 
 # Free tools fallbacks
-/free-tools /free-tools.html 200
-/free-tools/ /free-tools.html 200
+/free-tools /free-tools/ 301
+/free-tools/ /free-tools/index.html 200
 
 # Free AI tools fallback
-/free-ai-tools /free-tools.html 200
-/free-ai-tools/ /free-tools.html 200
+/free-ai-tools /free-tools/ 301
+/free-ai-tools/ /free-tools/index.html 200
 
 # AI lab fallback
 /ai /tools 301
