@@ -77,9 +77,9 @@
 /cookies/ /cookies/ 301
 
 # Key route fallbacks
-/solutions/healthcare/ /docs/solutions/healthcare/index.html 200
-/tools/phishing-analyzer/ /tools/ 301
-/industries/financial-services/ /docs/industries/financial-services/index.html 200
+/solutions/healthcare/ /solutions/healthcare/index.html 200
+/tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200
+/industries/financial-services/ /industries/financial-services/index.html 200
 
 # Status / Roadmap fallbacks
 /status-page /status-page/ 301
