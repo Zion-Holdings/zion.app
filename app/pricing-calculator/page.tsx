@@ -6,5 +6,11 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <PricingCalculatorClient />;
+  return (
+    <main className="min-h-screen bg-slate-950">
+      <div className="container-page py-12">
+        <PricingCalculatorClient />
+      </div>
+    </main>
+  );
 }

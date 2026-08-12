@@ -1,7 +1,4 @@
-
-// app/tools/ai-service-router/page.tsx — AI Service Router (server wrapper)
 import RouterPing from './pingClient';
-
 import AIServiceRouterClient from './AIServiceRouterClient';
 
 export const metadata = {
@@ -11,10 +8,10 @@ export const metadata = {
 };
 
 export default function AIServiceRouterPage() {
-
-
-  return <>
-    <RouterPing />
-    <AIServiceRouterClient />
-  </>;
+  return (
+    <main className="min-h-screen bg-slate-950">
+      <RouterPing />
+      <AIServiceRouterClient />
+    </main>
+  );
 }
