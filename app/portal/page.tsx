@@ -3,6 +3,8 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Client Portal — Zion Tech Group',
+  description: 'Access your dashboards, support tickets, billing, and knowledge base.',
+  alternates: { canonical: '/portal/' },
 };
 
 export default function PortalPage() {

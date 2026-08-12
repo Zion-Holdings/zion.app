@@ -8,6 +8,7 @@ export const metadata = {
   title: 'AI Service Router',
   description: 'Describe what you need and our AI instantly routes you to the best-matching service from our comprehensive AI-powered service catalog.',
   robots: { index: true, follow: true },
+  alternates: { canonical: '/tools/ai-service-router/' },
 };
 
 export default function AIServiceRouterPage() {

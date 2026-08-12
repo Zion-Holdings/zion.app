@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Service Recommender | Zion Tech Group',
   description: 'Answer 3 quick questions — our AI finds the best-matched services.',
+  alternates: { canonical: '/tools/service-recommender/' },
 };
 
 export default function PageLayout({ children }: { children: React.ReactNode }) {
