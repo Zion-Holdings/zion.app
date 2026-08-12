@@ -22,8 +22,7 @@ export default function Page() {
       mainEntityOfPage: 'https://ziontechgroup.com/blog/cloud-cost-optimization-checklist-2026-7454/'
     }}>
       <article className="max-w-3xl mx-auto space-y-6 text-slate-300">
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl mb-8">Cloud Cost Optimization | Zion Tech Group</h1>
-        <p>Cloud Cost Optimization is moving from experiment to operating layer. Most programs fail because they optimize for demos instead of outcomes.</p>
+                  <p>Cloud Cost Optimization is moving from experiment to operating layer. Most programs fail because they optimize for demos instead of outcomes.</p>
         <h2>What works</h2>
         <ul>
           <li>Start with low-risk, high-value workflows</li>

@@ -22,8 +22,7 @@ export default function Page() {
       mainEntityOfPage: 'https://ziontechgroup.com/blog/network-infrastructure-2026-8503/'
     }}>
       <article className="max-w-3xl mx-auto space-y-6 text-slate-300">
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl mb-8">Network Infrastructure | Zion Tech Group</h1>
-        <p>Network Infrastructure is moving from experiment to operating layer. Most programs fail because they optimize for demos instead of outcomes.</p>
+                  <p>Network Infrastructure is moving from experiment to operating layer. Most programs fail because they optimize for demos instead of outcomes.</p>
         <h2>What works</h2>
         <ul>
           <li>Start with low-risk, high-value workflows</li>
