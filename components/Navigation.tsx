@@ -96,7 +96,7 @@ const Navigation: React.FC = () => {
                     <span className="text-xs text-slate-500">→</span>
                   </Link>
                   <Link
-                    href="/service-comparison"
+                    href="/tools/service-comparison"
                     className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-300 hover:text-emerald-400 hover:bg-slate-700/80 transition-colors"
                     onClick={() => setIsServicesOpen(false)}
                   >
@@ -176,7 +176,7 @@ const Navigation: React.FC = () => {
                 🔍 Service Explorer
               </Link>
               <Link
-                href="/service-comparison"
+                href="/tools/service-comparison"
                 className="text-gray-300 hover:text-emerald-400 block px-3 py-2 rounded-md text-base font-medium"
                 onClick={toggleMenu}
               >
