@@ -25,3 +25,11 @@ automation/data/
 
 # Stub marker directory
 missing-pm2-stubs/
+
+# Python/runtime artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.page_tsx.txt
+scripts/outreach/logs/
