@@ -50,6 +50,8 @@ jobs:
         run: node automation/ai-content-generator-automation.cjs bulk "$BULK_COUNT"
 
       - name: Validate build
+        env:
+          NODE_OPTIONS: --max-old-space-size=6144m
         run: |
           set -euo pipefail
           npm run rsc:guard
