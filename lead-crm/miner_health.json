@@ -1,23 +1,18 @@
 {
-  "ts": "2026-08-13T02:23:06.837754+00:00",
-  "status": "not_run",
+  "ts": "2026-08-13T02:46:31.177976+00:00",
+  "status": "send_run",
   "mode": "high_frequency",
-  "error": "Missing script: lead-crm/historical_email_miner.py",
-  "note": "Cron run aborted; no mining, no send.",
-  "last_analysis_status": "analyzed_no_send",
-  "last_analysis_summary": {
+  "last_analysis_status": "send_completed",
+  "note": "Outreach batch sent via gmail_api.",
+  "last_send_summary": {
+    "send_allowed": true,
+    "batch_file": "lead-crm/outreach_ready_canonical.json",
     "contacts": 15,
-    "contacts_with_personalized_body": 0,
-    "contacts_missing_fields": 15,
-    "ready_count": 15,
+    "sent_count": 10,
+    "duplicate_count": 5,
     "excluded_count": 0,
-    "subject_counts": {},
-    "status_counts": {
-      "pending": 15
-    },
-    "improvement_notes": [
-      "Bodies gerados heurísticos para contatos sem thread_body personalizado."
-    ]
+    "error_count": 0,
+    "llm_status": "no_llm_available_used_template"
   },
   "contacts_found": 15,
   "contacts_with_personalized_body": 0,
