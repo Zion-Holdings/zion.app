@@ -5,16 +5,30 @@ import { pingTool } from '@/data/tools_ping_client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
+interface PortItem {
+  port: number;
+  name: string;
+  desc: string;
+}
+
+interface ScanResult {
+  port: number;
+  name: string;
+  desc: string;
+  open: boolean;
+  dnsResolves: boolean;
+  error?: string;
+}
+
 export default function PortScannerPage() {
   useEffect(() => { pingTool('port-scanner'); }, []);
 
   const [host, setHost] = useState('');
-  const [results, setResults] = useState<any[]>([]);
+  const [results, setResults] = useState<ScanResult[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  // Common ports to check
-  const COMMON_PORTS = [
+  const COMMON_PORTS: PortItem[] = [
     { port: 21,   name: 'FTP',         desc: 'File Transfer' },
     { port: 22,   name: 'SSH',         desc: 'Secure Shell' },
     { port: 25,   name: 'SMTP',        desc: 'Email' },
@@ -42,42 +56,38 @@ export default function PortScannerPage() {
     setLoading(true); setError(''); setResults([]);
     const target = host.replace(/^https?:\/\//,'').replace(/\/.*$/,'').trim();
 
-    // Client-side port scan simulation using DNS resolution + common service mapping
-    // NOTE: True port scanning requires server-side execution (CORS/security restrictions).
-    // This tool demonstrates which ports/names exist and how port scanning works.
     try {
       const checks = await Promise.all(COMMON_PORTS.map(async ({port, name, desc}) => {
         try {
-          // Try DNS resolution first as a connectivity check
           const dnsResp = await fetch(
             `https://dns.google/resolve?name=${encodeURIComponent(target)}&type=A`,
             { signal: AbortSignal.timeout(4000) }
           );
           const dnsData = await dnsResp.json();
-          const reachable = dnsData?.Answer?.some((a: any) => a.type === 1) ?? false;
-          
-          // If DNS resolves, try a lightweight HTTP check to common web ports
+          const reachable = (dnsData?.Answer ?? []).some((a: { type: number }) => a.type === 1);
+
           let portOpen = false;
           if (reachable && (port === 80 || port === 443 || port === 8080 || port === 8443)) {
             try {
               const protocol = port === 443 || port === 8443 ? 'https' : 'http';
-              const httpResp = await fetch(`${protocol}://${target}:${port}`, {
+              const _httpResp = await fetch(`${protocol}://${target}:${port}`, {
                 method: 'HEAD',
                 signal: AbortSignal.timeout(3000),
                 mode: 'no-cors',
               });
-              portOpen = true; // no-cors means we got a response
-            } catch {}
+              portOpen = true;
+            } catch { /* noop */ }
           }
-          
+
           return { port, name, desc, open: portOpen, dnsResolves: reachable };
         } catch {
           return { port, name, desc, open: false, error: 'unreachable' };
         }
       }));
       setResults(checks);
-    } catch (e: any) {
-      setError(e.message || 'Scan failed. Try a different hostname.');
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : 'Scan failed. Try a different hostname.';
+      setError(message);
     } finally {
       setLoading(false);
     }
@@ -178,7 +188,7 @@ export default function PortScannerPage() {
         </div>
 
         <div className="mt-8 text-center">
-          <Link href="/services/ai-compliance/" className="text-purple-400 hover:underline text-sm">
+          <Link href="/services/" className="text-purple-400 hover:underline text-sm">
             Need full infrastructure security monitoring? → IT Endpoint Security Compliance
           </Link>
         </div>
