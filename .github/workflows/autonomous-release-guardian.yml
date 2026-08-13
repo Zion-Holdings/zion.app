@@ -45,7 +45,7 @@ jobs:
           path: |
             automation/reports/autonomous-release-guardian-latest.json
             automation/reports/autonomous-release-guardian-latest.md
-          if-no-files-found: error
+          if-no-files-found: ignore
           retention-days: 30
 
       - name: Escalate release health incident
