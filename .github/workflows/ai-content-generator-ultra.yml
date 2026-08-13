@@ -51,7 +51,7 @@ jobs:
 
       - name: Validate build
         env:
-          NODE_OPTIONS: --max-old-space-size=6144m
+          NODE_OPTIONS: --max-old-space-size=6144
         run: |
           set -euo pipefail
           npm run rsc:guard
