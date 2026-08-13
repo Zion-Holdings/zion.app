@@ -33,3 +33,7 @@ __pycache__/
 *.pyd
 .page_tsx.txt
 scripts/outreach/logs/
+scripts/outreach/minimal_high_frequency_monitor.py
+
+# Outreach monitor runtime artifacts
+outreach_monitor/processed/

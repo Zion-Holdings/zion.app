@@ -1,6 +1,6 @@
 {
-  "ts": "2026-08-13T02:03:42.148032+00:00",
-  "status": "analyzed",
+  "ts": "2026-08-13T02:23:06.837754+00:00",
+  "status": "not_run",
   "mode": "high_frequency",
   "error": "Missing script: lead-crm/historical_email_miner.py",
   "note": "Cron run aborted; no mining, no send.",

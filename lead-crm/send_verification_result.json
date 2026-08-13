@@ -6,15 +6,6 @@
   "message_id": null,
   "thread_id": null,
   "liveSentCheck": false,
-  "note": "config_and_env_verified",
-  "error": null,
-  "batch_file": "lead-crm/outreach_ready_canonical.json",
-  "verifiedAt": "2026-08-13T02:06:25.854938+00:00",
-  "config": {
-    "opt_in": true,
-    "send_allowed": true,
-    "env_allow": true,
-    "contact_count": 15,
-    "ready_count": 15
-  }
+  "note": null,
+  "error": null
 }
