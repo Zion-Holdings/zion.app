@@ -33176,5 +33176,45 @@
     "cluster": "it",
     "intent": "guide",
     "cta": "services"
+  },
+  {
+    "title": "Edge Computing Deployment: security and governance",
+    "slug": "edge-computing-deployment-security-and-governance",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AIOps Anomaly Detection: executive guide",
+    "slug": "aiops-anomaly-detection-executive-guide",
+    "cluster": "data",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "APM Application Performance: policy and compliance",
+    "slug": "apm-application-performance-policy-and-compliance",
+    "cluster": "it",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "AI Autonomous Agents: deployment patterns",
+    "slug": "ai-autonomous-agents-deployment-patterns",
+    "cluster": "security",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Database Migration Service: operations handbook",
+    "slug": "database-migration-service-operations-handbook",
+    "cluster": "ai",
+    "intent": "guide",
+    "cta": "services"
+  },
+  {
+    "title": "Brand Voice Guardian",
+    "slug": "brand-voice-guardian-2026",
+    "cluster": "security"
   }
 ]
