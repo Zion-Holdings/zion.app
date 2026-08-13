@@ -1,34 +1,39 @@
 # Workflow failure triage
 
-- generatedAt: 2026-08-13T08:42:07.812Z
+- generatedAt: 2026-08-13T10:20:07.633Z
 - recentRuns: 80
-- failedRuns: 13
+- failedRuns: 15
 
 ## Top failing workflows
-- Autonomous Release Guardian: 2
-- AI Content Burst: 1
-- AI Content Burst High Frequency: 1
-- AI PM2 SLO Agent: 1
-- Autonomous Quality Drift Sentinel: 1
-- AI Autonomous Idea Guarded Cycle: 1
-- AI PM2 Config Drift Guard: 1
-- AI Incident Suppression Registry: 1
 - AI lead form routing guard (daily): 1
-- AI Live Content Ideas Daily: 1
-- AI Content Rapid: 1
 - Autonomous Writer Queue Guard: 1
+- AI Content Burst: 1
+- workflow grep guards fast smoke (weekly): 1
+- Autonomous Release Guardian: 1
+- Autonomous Growth Signal Monitor: 1
+- AI Content Rapid: 1
+- CI/CD Pipeline: 1
+- .github/workflows/workflow-change-guard.yml: 1
+- .github/workflows/route-slicer.yml: 1
+- .github/workflows/ai-actions-pin-strict-guard.yml: 1
+- .github/workflows/workflow-yaml-sanity.yml: 1
+- .github/workflows/workflow-validate-light-weekly.yml: 1
+- .github/workflows/workflow-contracts-weekly.yml: 1
+- AI Content Ideas and Evolution Deploy: 1
 
 ## Latest failed runs
-- AI Content Burst | 2026-08-13T08:20:57Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31681657615
-- Autonomous Release Guardian | 2026-08-13T08:14:36Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31681199468
-- AI Content Burst High Frequency | 2026-08-13T08:09:11Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31680800070
-- AI PM2 SLO Agent | 2026-08-13T08:07:08Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31680648570
-- Autonomous Quality Drift Sentinel | 2026-08-13T08:05:35Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31680535851
-- AI Autonomous Idea Guarded Cycle | 2026-08-13T08:03:08Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31680359835
-- AI PM2 Config Drift Guard | 2026-08-13T08:02:19Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31680302675
-- AI Incident Suppression Registry | 2026-08-13T07:51:40Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31679533108
-- AI lead form routing guard (daily) | 2026-08-13T07:49:28Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31679377130
-- AI Live Content Ideas Daily | 2026-08-13T07:37:47Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31678553682
-- AI Content Rapid | 2026-08-13T07:22:07Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31677471423
-- Autonomous Writer Queue Guard | 2026-08-13T07:01:52Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31676106119
-- Autonomous Release Guardian | 2026-08-13T06:56:06Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31675726624
+- AI lead form routing guard (daily) | 2026-08-13T10:17:13Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31690411653
+- Autonomous Writer Queue Guard | 2026-08-13T10:01:03Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31689211911
+- AI Content Burst | 2026-08-13T09:58:37Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31689023535
+- workflow grep guards fast smoke (weekly) | 2026-08-13T09:45:01Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31688000179
+- Autonomous Release Guardian | 2026-08-13T09:38:01Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31687481899
+- Autonomous Growth Signal Monitor | 2026-08-13T09:34:27Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31687211547
+- AI Content Rapid | 2026-08-13T09:12:41Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31685548794
+- CI/CD Pipeline | 2026-08-13T09:09:11Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31685283831
+- .github/workflows/workflow-change-guard.yml | 2026-08-13T09:09:10Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31685281848
+- .github/workflows/route-slicer.yml | 2026-08-13T09:09:09Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31685281119
+- .github/workflows/ai-actions-pin-strict-guard.yml | 2026-08-13T09:09:09Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31685280435
+- .github/workflows/workflow-yaml-sanity.yml | 2026-08-13T09:09:08Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31685279737
+- .github/workflows/workflow-validate-light-weekly.yml | 2026-08-13T09:09:07Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31685279021
+- .github/workflows/workflow-contracts-weekly.yml | 2026-08-13T09:09:07Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31685278064
+- AI Content Ideas and Evolution Deploy | 2026-08-13T09:01:45Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31684718566
