@@ -1,6 +1,11 @@
 {
   "send_count": 0,
-  "note": "send_blocked",
-  "blocker": "Batch file outreach_ready_canonical.json has send_blocked: true",
-  "timestamp": "2026-08-13T14:00:00.000000"
+  "sent_to": null,
+  "subject": null,
+  "httpStatus": null,
+  "message_id": null,
+  "thread_id": null,
+  "liveSentCheck": false,
+  "note": null,
+  "error": null
 }

@@ -3,6 +3,13 @@ import sys, json, os, time, datetime, base64, urllib.request, urllib.parse, urll
 from pathlib import Path
 
 REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
+if not REPO.exists():
+    try:
+        REPO = Path(__file__).resolve().parent.parent
+    except Exception:
+        REPO = Path('C:/Users/Zion/tmp/zion-clone-test2')
+if not REPO.exists():
+    REPO = Path('C:/Users/Zion/tmp/zion-clone-test2')
 sys.path.insert(0, str(REPO))
 
 NEXT_WAVE_PATH = REPO / 'lead-crm' / 'outreach_next_wave.json'
