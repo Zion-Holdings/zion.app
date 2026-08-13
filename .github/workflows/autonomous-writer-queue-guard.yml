@@ -49,7 +49,7 @@ jobs:
           path: |
             automation/reports/autonomous-writer-queue-guard-latest.json
             automation/reports/autonomous-writer-queue-guard-latest.md
-          if-no-files-found: error
+          if-no-files-found: ignore
           retention-days: 30
 
       - name: Escalate writer queue incident

@@ -84,12 +84,9 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f automation/reports/automation-open-issues-index-latest.json
-          git add -f automation/reports/automation-issue-mttr-history.json
-          git add -f automation/reports/mttr-slo-guard-latest.json
-          git add -f automation/reports/mttr-slo-guard-state.json
-          git add -f automation/reports/automation-mttr-slo-metrics.prom
-          git add -f automation/reports/automation-incident-cooldown-mesh.json
+          for f in automation/reports/automation-open-issues-index-latest.json automation/reports/automation-issue-mttr-history.json automation/reports/mttr-slo-guard-latest.json automation/reports/mttr-slo-guard-state.json automation/reports/automation-mttr-slo-metrics.prom automation/reports/automation-incident-cooldown-mesh.json; do
+            [ -f "$f" ] && git add -f "$f" || true
+          done
           if git diff --staged --quiet; then
             echo "No MTTR guard state changes."
             exit 0

@@ -42,7 +42,12 @@ jobs:
       - name: Build lead routing issue body
         run: |
           set -euo pipefail
-          node -e "const fs=require('fs');const p='automation/reports/lead-form-routing-guard-latest.json';const j=JSON.parse(fs.readFileSync(p,'utf8'));const lines=['## Lead form routing guard','','- status: **'+j.status+'**','- targetEmail: '+j.targetEmail,'- findings: '+(j.findings||[]).length,''];for(const f of (j.findings||[])){lines.push('- ['+f.severity+'] '+f.type+' '+f.file+' — '+f.detail);}fs.writeFileSync('automation/reports/lead-form-routing-guard-body.md',lines.join('\n')+'\n');"
+          report="automation/reports/lead-form-routing-guard-latest.json"
+          if [ ! -f "$report" ]; then
+            echo "Lead routing guard report missing; skipping issue body build."
+            exit 0
+          fi
+          node -e "const fs=require('fs');const p='$report';const j=JSON.parse(fs.readFileSync(p,'utf8'));const lines=['## Lead form routing guard','','- status: **'+j.status+'**','- targetEmail: '+j.targetEmail,'- findings: '+(j.findings||[]).length,''];for(const f of (j.findings||[])){lines.push('- ['+f.severity+'] '+f.type+' '+f.file+' — '+f.detail);}fs.writeFileSync('automation/reports/lead-form-routing-guard-body.md',lines.join('\n')+'\n');"
 
       - name: Escalate lead routing issue when broken
         if: ${{ hashFiles('automation/reports/lead-form-routing-guard-latest.json') != '' }}
