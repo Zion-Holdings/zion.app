@@ -1,48 +1,37 @@
 {
-  "ts": "2026-08-11T04:59:37.671482+00:00",
-  "queries_run": 5,
-  "contacts_found": 15,
-  "new_leads_added": 0,
-  "elapsed_s": 228.401,
-  "queries_per_second": 0.0219,
-  "avg_query_s": 45.676,
-  "max_query_s": 129.6687,
-  "status": "analyzed",
-  "high_signal_leads": 0,
-  "lead_quality_ratio": null,
-  "rolling": {
-    "last_5_queries": [
-      9.242162877999363,
-      69.74618291200022,
-      9.827604877002159,
-      9.895183954002277,
-      129.66868467699896
-    ],
-    "last_5_qps": [
-      0.1082,
-      0.0143,
-      0.1018,
-      0.1011,
-      0.0077
-    ]
-  },
-  "last_analysis_status": "analyzed_no_send",
+  "status": "sent",
+  "error": "historical_email_miner.py not found",
+  "cwd": "/data/data/com.termux/files/home/zion-support.github.io",
+  "timestamp": "2026-08-13",
+  "ts": "2026-08-13T16:53:10.534870+00:00",
+  "run_count": 2,
+  "last_analysis_status": "error_missing_script",
   "last_analysis_summary": {
-    "contacts": 15,
+    "contacts": 0,
     "contacts_with_personalized_body": 0,
-    "contacts_missing_fields": 15,
-    "ready_count": 15,
+    "contacts_missing_fields": 0,
+    "ready_count": 0,
     "excluded_count": 0,
     "subject_counts": {},
-    "status_counts": {
-      "pending": 15
-    },
+    "status_counts": {},
     "improvement_notes": [
-      "Bodies gerados heurísticos para contatos sem thread_body personalizado."
+      "Script lead-crm/historical_email_miner.py is missing; mining aborted."
     ]
   },
+  "contacts_found": 0,
   "contacts_with_personalized_body": 0,
-  "contacts_missing_fields": 15,
-  "ready_count": 15,
-  "excluded_count": 0
+  "contacts_missing_fields": 0,
+  "ready_count": 0,
+  "excluded_count": 0,
+  "last_send_status": "completed",
+  "send_count": 15,
+  "send_success": 10,
+  "send_failed": 5,
+  "unique_recipients": 5,
+  "status_counts": {
+    "sent": 10,
+    "duplicate": 5
+  },
+  "llm_mode": "template",
+  "llm_note": "No API keys configured; fell back to deterministic-template-v1"
 }
