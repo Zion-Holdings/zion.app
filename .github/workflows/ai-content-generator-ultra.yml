@@ -50,12 +50,10 @@ jobs:
         run: node automation/ai-content-generator-automation.cjs bulk "$BULK_COUNT"
 
       - name: Validate build
-        env:
-          NODE_OPTIONS: --max-old-space-size=6144
         run: |
           set -euo pipefail
           npm run rsc:guard
-          npm run build
+          NODE_OPTIONS='' npm run build
 
       - name: Commit, push, and deploy
         env:
