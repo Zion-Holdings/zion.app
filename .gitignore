@@ -31,3 +31,7 @@ app/data/servicesData.tmp
 app/data/servicesData*.bak
 app/data/*.tmp
 app/data/*.bak
+
+# Auto-generated route pages (build artifacts, not source)
+app/routes/
+app/zion-ai-*/**

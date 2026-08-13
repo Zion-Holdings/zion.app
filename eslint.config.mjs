@@ -19,12 +19,16 @@ export default [
       '!jest.config.*',
       '!jest.setup.*',
       '!**/*.test.*',
-      '!**/*.spec.*'
+      '!**/*.spec.*',
+      'app/routes/**',
+      'app/zion-ai-*/**'
     ],
   },
   {
     files: ['**/*.ts', '**/*.tsx'],
     ignores: [
+      'app/routes/**',
+      'app/zion-ai-*/**',
       '.next/**/*',
       'out/**/*',
       'dist/**/*',
@@ -67,6 +71,8 @@ export default [
   {
     files: ['**/*.test.*', '**/*.spec.*', 'jest.setup.*', 'jest.config.*'],
     ignores: [
+      'app/routes/**',
+      'app/zion-ai-*/**',
       '.next/**/*',
       'out/**/*',
       'dist/**/*',
