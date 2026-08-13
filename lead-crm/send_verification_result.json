@@ -1,11 +1,1 @@
-{
-  "send_count": 0,
-  "sent_to": null,
-  "subject": null,
-  "httpStatus": null,
-  "message_id": null,
-  "thread_id": null,
-  "liveSentCheck": false,
-  "note": "blocked_by_config_or_env",
-  "error": null
-}
+{"send_count":0,"note":"send_blocked","timestamp":"2026-08-13T00:59:36Z"}
