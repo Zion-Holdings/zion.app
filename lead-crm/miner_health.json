@@ -1,17 +1,26 @@
 {
-  "ts": "2026-08-14T16:12:46.568919+00:00",
-  "last_send_run": "2026-08-14T16:12:46.568919+00:00",
-  "status": "sent_batch",
-  "send_count": 15,
-  "sent_recipients": [
-    "emily.data@dataflow.com",
-    "david.inno@digitalsolutions.com",
-    "michael.data@secureit.com",
-    "lisa.next@innovateco.com",
-    "michael.cybe@devopspro.io"
-  ],
-  "skipped_templates": 0,
-  "llm_provider": "template",
-  "llm_model": "deterministic-template-v1",
-  "provider": "gmail_api"
+  "ts": "2026-08-14T16:38:08.025595+00:00",
+  "status": "analyzed",
+  "error": "Missing script: lead-crm/historical_email_miner.py",
+  "action": "cron_run_attempt",
+  "last_analysis_status": "analyzed_no_send",
+  "last_analysis_summary": {
+    "contacts": 15,
+    "contacts_with_personalized_body": 0,
+    "contacts_missing_fields": 15,
+    "ready_count": 15,
+    "excluded_count": 0,
+    "subject_counts": {},
+    "status_counts": {
+      "pending": 15
+    },
+    "improvement_notes": [
+      "Bodies gerados heurísticos para contatos sem thread_body personalizado."
+    ]
+  },
+  "contacts_found": 15,
+  "contacts_with_personalized_body": 0,
+  "contacts_missing_fields": 15,
+  "ready_count": 15,
+  "excluded_count": 0
 }

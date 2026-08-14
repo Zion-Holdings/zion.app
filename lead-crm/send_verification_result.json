@@ -7,5 +7,7 @@
   "thread_id": null,
   "liveSentCheck": false,
   "note": "send_blocked",
-  "error": null
+  "error": null,
+  "blocker": "Gmail OAuth disconnected / send_blocked in outreach_ready_canonical.json",
+  "checkedAt": "2026-08-14T16:32:37.238142+00:00"
 }

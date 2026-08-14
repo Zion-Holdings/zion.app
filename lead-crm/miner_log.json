@@ -40,5 +40,12 @@
     "level": "error",
     "message": "Missing script: lead-crm/historical_email_miner.py",
     "status": "not_run"
+  },
+  {
+    "ts": "2026-08-14T13:40:00.000000+00:00",
+    "level": "error",
+    "message": "Missing script: lead-crm/historical_email_miner.py",
+    "status": "not_run",
+    "action": "cron_run_attempt"
   }
 ]
