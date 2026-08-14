@@ -1,6 +1,4 @@
 import { Metadata } from 'next';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Status Page',
@@ -18,7 +16,6 @@ export default function StatusPage() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
-      <Navigation />
       <main className="py-20">
         <div className="container-page">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Status Page</h1>
@@ -37,7 +34,6 @@ export default function StatusPage() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

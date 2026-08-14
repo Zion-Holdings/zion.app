@@ -1,7 +1,5 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Free Consultation | Zion Tech Group',
@@ -12,7 +10,6 @@ export const metadata: Metadata = {
 export default function FreeConsultationPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
-      <Navigation />
       <main className="py-20">
         <div className="container-page">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Free Consultation</h1>
@@ -34,7 +31,6 @@ export default function FreeConsultationPage() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

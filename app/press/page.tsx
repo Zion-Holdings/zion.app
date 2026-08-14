@@ -1,8 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 
 const ARTICLES = [
   { date: '2025-05-20', title: 'Zion Tech Group Launches Enterprise AI Compliance Platform', outlet: 'TechCrunch' },
@@ -13,7 +11,6 @@ const ARTICLES = [
 export default function PressPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
-      <Navigation />
       <main className="py-20">
         <div className="container-page">
           <div className="mb-10">
@@ -31,7 +28,6 @@ export default function PressPage() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }
