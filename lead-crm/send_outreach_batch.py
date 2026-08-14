@@ -153,6 +153,8 @@ def send_mail(to_addr, subject, body, html=None, thread_id=None, message_id=None
     key = (to_key, (subject or '').strip(), thread_id or '', message_id or '')
     if key in _SENT_ROWS:
         return None, 'duplicate'
+    if (to_key, (subject or '').strip()) in _SENT_ROWS:
+        return None, 'duplicate'
     # 72h auto-suppress via Gmail Sent history (was 24h; adjusted for real send latency)
     try:
         from commands.google_workspace import gmail_sent
