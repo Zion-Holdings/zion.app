@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
             <h4 className="text-sm font-semibold text-white uppercase tracking-wider">Services</h4>
             <ul className="space-y-2.5">
               {[
-                { name: 'AI Services', href: '/ai-services/' },
+                { name: 'AI Services', href: '/ai/' },
                 { name: 'All Services', href: '/services/' },
                 { name: 'Industry Solutions', href: '/industry-solutions/' },
                 { name: 'Pricing', href: '/pricing/' },
