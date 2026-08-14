@@ -1,44 +1,42 @@
 # Workflow failure triage
 
-- generatedAt: 2026-08-10T19:59:14.490Z
+- generatedAt: 2026-08-14T04:58:27.152Z
 - recentRuns: 80
-- failedRuns: 23
+- failedRuns: 18
 
 ## Top failing workflows
-- Continuous Pages Deploy: 2
-- Emergency Recovery - Minimal Build: 2
-- Minimal Build Test: 2
-- .github/workflows/ai-actions-pin-strict-guard.yml: 2
-- .github/workflows/workflow-yaml-sanity.yml: 2
-- .github/workflows/workflow-validate-light-weekly.yml: 2
-- .github/workflows/workflow-reusable-ci-dispatch.yml: 2
-- .github/workflows/workflow-contracts-weekly.yml: 2
-- AI Content Burst High Frequency: 1
-- Autonomous Quality Drift Sentinel: 1
-- AI PM2 SLO Agent: 1
+- Deploy on Push: 3
+- AI Content Velocity: 2
 - Autonomous Writer Queue Guard: 1
-- AI Autonomous Idea Guarded Cycle: 1
-- .github/workflows/route-slicer.yml: 1
-- .github/workflows/workflow-change-guard.yml: 1
+- AI Content Burst: 1
+- Autonomous Performance Budget Enforcer with CI Gate: 1
+- AI Content Max Velocity Deploy: 1
+- Autonomous Visual Regression Detector: 1
+- AI lead form routing guard (daily): 1
+- Autonomous Release Guardian: 1
+- AI Content Burst High Frequency: 1
+- AI Content Accelerator: 1
+- AI PM2 SLO Agent: 1
+- Minimal Build Test: 1
+- Emergency Recovery - Minimal Build: 1
+- CI/CD Pipeline: 1
 
 ## Latest failed runs
-- AI Content Burst High Frequency | 2026-08-10T19:45:09Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31425638691
-- Autonomous Quality Drift Sentinel | 2026-08-10T19:42:52Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31425449312
-- AI PM2 SLO Agent | 2026-08-10T19:42:50Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31425446316
-- Autonomous Writer Queue Guard | 2026-08-10T19:39:50Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31425199867
-- AI Autonomous Idea Guarded Cycle | 2026-08-10T19:36:59Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424970077
-- Continuous Pages Deploy | 2026-08-10T19:36:52Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424959836
-- Emergency Recovery - Minimal Build | 2026-08-10T19:36:52Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424959789
-- Minimal Build Test | 2026-08-10T19:36:52Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424959728
-- .github/workflows/route-slicer.yml | 2026-08-10T19:36:51Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424958691
-- .github/workflows/ai-actions-pin-strict-guard.yml | 2026-08-10T19:36:50Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424957995
-- .github/workflows/workflow-yaml-sanity.yml | 2026-08-10T19:36:50Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424957257
-- .github/workflows/workflow-validate-light-weekly.yml | 2026-08-10T19:36:49Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424956567
-- .github/workflows/workflow-reusable-ci-dispatch.yml | 2026-08-10T19:36:49Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424955763
-- .github/workflows/workflow-contracts-weekly.yml | 2026-08-10T19:36:48Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424954956
-- .github/workflows/workflow-change-guard.yml | 2026-08-10T19:36:48Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424954194
-- Minimal Build Test | 2026-08-10T19:35:53Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424877581
-- Continuous Pages Deploy | 2026-08-10T19:35:53Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424877490
-- Emergency Recovery - Minimal Build | 2026-08-10T19:35:53Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424877470
-- .github/workflows/workflow-yaml-sanity.yml | 2026-08-10T19:35:51Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424874502
-- .github/workflows/workflow-validate-light-weekly.yml | 2026-08-10T19:35:50Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31424873126
+- Autonomous Writer Queue Guard | 2026-08-14T04:46:26Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31770904703
+- AI Content Burst | 2026-08-14T04:46:25Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31770903556
+- Autonomous Performance Budget Enforcer with CI Gate | 2026-08-14T04:44:36Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31770806931
+- AI Content Max Velocity Deploy | 2026-08-14T04:41:16Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31770634361
+- Deploy on Push | 2026-08-14T04:22:56Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31769688039
+- Autonomous Visual Regression Detector | 2026-08-14T04:22:49Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31769682152
+- AI lead form routing guard (daily) | 2026-08-14T04:20:18Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31769552956
+- AI Content Velocity | 2026-08-14T04:05:16Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31768768153
+- Deploy on Push | 2026-08-14T03:36:03Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31767296736
+- Autonomous Release Guardian | 2026-08-14T03:33:43Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31767179500
+- Deploy on Push | 2026-08-14T03:29:31Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31766959204
+- AI Content Burst High Frequency | 2026-08-14T03:27:04Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31766838166
+- AI Content Velocity | 2026-08-14T03:19:49Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31766475561
+- AI Content Accelerator | 2026-08-14T03:18:23Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31766404441
+- AI PM2 SLO Agent | 2026-08-14T03:14:37Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31766209844
+- Minimal Build Test | 2026-08-14T03:14:02Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31766179102
+- Emergency Recovery - Minimal Build | 2026-08-14T03:14:02Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31766179095
+- CI/CD Pipeline | 2026-08-14T03:14:02Z | https://github.com/Zion-support/zion-support.github.io/actions/runs/31766179076
