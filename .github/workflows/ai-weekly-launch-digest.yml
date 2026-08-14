@@ -3,7 +3,7 @@ name: AI Weekly Launch Digest
 permissions:
   contents: read
 
-on:
+"on":
   schedule:
     - cron: '30 13 * * 1'
   workflow_dispatch:

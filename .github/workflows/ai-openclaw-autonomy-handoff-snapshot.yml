@@ -3,7 +3,7 @@ name: OpenClaw autonomy handoff snapshot
 permissions:
   contents: read
 
-on:
+"on":
   schedule:
     - cron: '23 * * * *'
   workflow_dispatch:

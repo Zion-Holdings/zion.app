@@ -8,7 +8,7 @@ name: AI App Improvement On Push
 permissions:
   contents: write
 
-on:
+"on":
   push:
     branches:
       - main

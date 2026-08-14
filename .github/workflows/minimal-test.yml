@@ -1,7 +1,7 @@
 name: Minimal Build Test
 permissions:
   contents: read
-on:
+"on":
   workflow_dispatch:
   push:
     branches:

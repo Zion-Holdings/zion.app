@@ -2,7 +2,7 @@
 name: deploy on push smoke (weekly)
 permissions:
   contents: read
-on:
+"on":
   schedule:
     - cron: '2 11 * * 4' # Thursdays 11:02 UTC
   workflow_dispatch:

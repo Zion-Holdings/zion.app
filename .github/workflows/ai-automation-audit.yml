@@ -13,7 +13,7 @@ concurrency:
   group: ai-automation-audit
   cancel-in-progress: false
 
-on:
+"on":
   schedule:
     - cron: '0 11 * * 6'
   workflow_dispatch:

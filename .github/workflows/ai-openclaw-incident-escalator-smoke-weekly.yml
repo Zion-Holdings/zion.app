@@ -2,7 +2,7 @@
 name: ai openclaw incident escalator workflow smoke (weekly)
 permissions:
   contents: read
-on:
+"on":
   schedule:
     - cron: '51 11 * * 3' # Wednesdays 11:51 UTC
   workflow_dispatch:

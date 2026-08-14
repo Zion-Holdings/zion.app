@@ -2,7 +2,7 @@
 name: workflow integrity audit dispatch smoke (weekly)
 permissions:
   contents: read
-on:
+"on":
   schedule:
     - cron: '14 9 * * 4' # Thursdays 09:14 UTC
   workflow_dispatch:

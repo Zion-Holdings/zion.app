@@ -8,7 +8,7 @@ concurrency:
   group: ai-deploy-smoke-scheduled
   cancel-in-progress: false
 
-on:
+"on":
   workflow_dispatch:
   schedule:
     - cron: '15 */2 * * *'

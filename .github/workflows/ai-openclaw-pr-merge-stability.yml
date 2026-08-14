@@ -8,7 +8,7 @@ concurrency:
   group: openclaw-pr-merge-stability-${{ github.ref }}
   cancel-in-progress: true
 
-on:
+"on":
   pull_request:
     paths:
       - 'automation/**'

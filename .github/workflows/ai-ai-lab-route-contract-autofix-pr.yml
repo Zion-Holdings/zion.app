@@ -8,7 +8,7 @@ concurrency:
   group: ai-ai-lab-route-contract-autofix-pr
   cancel-in-progress: false
 
-on:
+"on":
   workflow_dispatch:
   schedule:
     - cron: '20 11 * * 2'

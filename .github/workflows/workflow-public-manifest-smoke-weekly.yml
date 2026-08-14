@@ -5,7 +5,7 @@ name: public/manifest.json smoke (weekly)
 permissions:
   contents: read
 
-on:
+"on":
   schedule:
     - cron: '39 7 * * 4' # Thursdays 07:39 UTC
   workflow_dispatch:

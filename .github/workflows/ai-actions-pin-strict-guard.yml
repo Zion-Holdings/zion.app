@@ -3,7 +3,7 @@ name: AI Actions pin strict guard
 permissions:
   contents: read
 
-on:
+"on":
   workflow_dispatch:
   pull_request:
     types: [opened, synchronize, reopened]

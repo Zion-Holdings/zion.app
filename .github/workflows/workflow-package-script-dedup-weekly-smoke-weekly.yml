@@ -2,7 +2,7 @@
 name: package script dedup weekly smoke (weekly)
 permissions:
   contents: read
-on:
+"on":
   schedule:
     - cron: '32 10 * * 4' # Thursdays 10:32 UTC
   workflow_dispatch:

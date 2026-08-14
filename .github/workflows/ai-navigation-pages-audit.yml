@@ -10,7 +10,7 @@ name: AI Navigation & Pages Audit
 permissions:
   contents: write
 
-on:
+"on":
   schedule:
     - cron: '30 9 * * 4'
   workflow_dispatch:

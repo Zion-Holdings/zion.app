@@ -3,7 +3,7 @@ name: Workflow Node contracts only (manual)
 permissions:
   contents: read
 
-on:
+"on":
   workflow_dispatch:
 
 concurrency:

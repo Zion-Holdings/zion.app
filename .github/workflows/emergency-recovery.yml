@@ -1,7 +1,7 @@
 name: Emergency Recovery - Minimal Build
 permissions:
   contents: read
-on:
+"on":
   workflow_dispatch:
   push:
     branches:

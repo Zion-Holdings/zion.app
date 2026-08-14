@@ -1,6 +1,6 @@
 name: Continuous Pages Deploy
 # cache-bust: 2026-08-04T11:10Z
-on:
+"on":
   push:
     branches: [ main ]
   workflow_dispatch:

@@ -6,7 +6,7 @@ permissions:
   pull-requests: write
   repository-projects: write
 
-on:
+"on":
   schedule:
     - cron: '35 14 * * 1'
   workflow_dispatch:

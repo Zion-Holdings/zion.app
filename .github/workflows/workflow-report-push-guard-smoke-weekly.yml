@@ -2,7 +2,7 @@
 name: workflow report push guard smoke (weekly)
 permissions:
   contents: read
-on:
+"on":
   schedule:
     - cron: '26 9 * * 4' # Thursdays 09:26 UTC
   workflow_dispatch:

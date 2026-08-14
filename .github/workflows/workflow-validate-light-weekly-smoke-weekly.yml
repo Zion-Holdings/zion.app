@@ -2,7 +2,7 @@
 name: workflow validate light weekly smoke (weekly)
 permissions:
   contents: read
-on:
+"on":
   schedule:
     - cron: '52 8 * * 4' # Thursdays 08:52 UTC
   workflow_dispatch:

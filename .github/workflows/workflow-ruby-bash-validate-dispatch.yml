@@ -3,7 +3,7 @@ name: Workflow Ruby parse + bash grep (manual, no npm)
 permissions:
   contents: read
 
-on:
+"on":
   workflow_dispatch:
 
 concurrency:

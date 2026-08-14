@@ -5,7 +5,7 @@ name: postcss.config.mjs + ecosystem.config.cjs smoke (weekly)
 permissions:
   contents: read
 
-on:
+"on":
   schedule:
     - cron: '31 7 * * 0' # Sundays 07:31 UTC
   workflow_dispatch:

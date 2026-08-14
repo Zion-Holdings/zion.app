@@ -8,7 +8,7 @@ concurrency:
   group: autonomous-release-guardian
   cancel-in-progress: false
 
-on:
+"on":
   schedule:
     - cron: '*/30 * * * *'
   workflow_dispatch:

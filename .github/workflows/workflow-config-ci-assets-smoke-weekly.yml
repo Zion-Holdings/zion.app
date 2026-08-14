@@ -5,7 +5,7 @@ name: config/ CI assets smoke (weekly)
 permissions:
   contents: read
 
-on:
+"on":
   schedule:
     - cron: '35 7 * * 2' # Tuesdays 07:35 UTC
   workflow_dispatch:

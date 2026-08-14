@@ -3,7 +3,7 @@ name: Workflow action pin guard
 permissions:
   contents: read
 
-on:
+"on":
   pull_request:
     paths:
       - ".github/workflows/**/*.yml"

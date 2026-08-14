@@ -2,7 +2,7 @@
 name: bundle size workflow smoke (weekly)
 permissions:
   contents: read
-on:
+"on":
   schedule:
     - cron: '32 11 * * 4' # Thursdays 11:32 UTC
   workflow_dispatch:

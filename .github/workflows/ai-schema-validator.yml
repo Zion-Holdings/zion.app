@@ -8,7 +8,7 @@ concurrency:
   group: ai-schema-validator-${{ github.event_name }}
   cancel-in-progress: true
 
-on:
+"on":
   schedule:
     - cron: '0 8 * * 2'
   pull_request:

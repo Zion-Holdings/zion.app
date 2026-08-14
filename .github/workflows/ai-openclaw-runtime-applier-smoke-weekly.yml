@@ -2,7 +2,7 @@
 name: ai openclaw runtime applier workflow smoke (weekly)
 permissions:
   contents: read
-on:
+"on":
   schedule:
     - cron: '45 11 * * 3' # Wednesdays 11:45 UTC
   workflow_dispatch:

@@ -12,7 +12,7 @@ concurrency:
   group: ai-production-deploy-validation
   cancel-in-progress: true
 
-on:
+"on":
   workflow_run:
     workflows: [Deploy on Push]
     types:

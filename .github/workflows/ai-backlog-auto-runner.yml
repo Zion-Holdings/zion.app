@@ -3,7 +3,7 @@ name: AI Evolution Backlog Auto-Runner
 permissions:
   contents: read
 
-on:
+"on":
   workflow_dispatch:
   schedule:
     - cron: '0 6 * * *' # Daily at 06:00 UTC
