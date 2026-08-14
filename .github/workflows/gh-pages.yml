@@ -1,7 +1,5 @@
 name: Continuous Pages Deploy
-'on':
-  schedule:
-    - cron: '*/30 * * * *'
+on:
   push:
     branches: [ main ]
   workflow_dispatch:
@@ -15,7 +13,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
+    outputs:
+      pages: ${{ steps.prepare_pages.outputs.pages }}
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -23,52 +23,30 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version-file: '.nvmrc'
           cache: 'npm'
           cache-dependency-path: package-lock.json
-        env:
-          NODE_OPTIONS: --max-old-space-size=4096
 
       - name: Install dependencies
         run: npm install --no-audit --fund=false
         env:
           NODE_OPTIONS: --max-old-space-size=4096
 
-      - name: Build Next export
+      - name: Build artifact
         id: build
         run: |
           set -euo pipefail
-          npm run build > build.log 2>&1 || {
-            echo "npm_run_build_failed=1" >> "$GITHUB_OUTPUT"
-            echo "build_log_start"
-            tail -n 200 build.log
-            echo "build_log_end"
-            if [ -d out ]; then
-              PAGES=$(find out -name 'index.html' | wc -l)
-              echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
-              echo "size=$(du -sh out | awk '{print $1}')" >> "$GITHUB_OUTPUT"
-              echo "production_out_exists=1" >> "$GITHUB_OUTPUT"
-            else
-              echo "pages=0" >> "$GITHUB_OUTPUT"
-              echo "size=none" >> "$GITHUB_OUTPUT"
-              echo "production_out_exists=0" >> "$GITHUB_OUTPUT"
-            fi
-            echo "artifacts_uploaded=1" >> "$GITHUB_OUTPUT"
-            exit 1
-          }
-          if [ -d out ]; then
-            PAGES=$(find out -name 'index.html' | wc -l)
-            SIZE=$(du -sh out | awk '{print $1}')
-            echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
-            echo "size=$SIZE" >> "$GITHUB_OUTPUT"
-            echo "production_out_exists=1" >> "$GITHUB_OUTPUT"
-          else
-            echo "pages=0" >> "$GITHUB_OUTPUT"
-            echo "size=none" >> "$GITHUB_OUTPUT"
-            echo "production_out_exists=0" >> "$GITHUB_OUTPUT"
-          fi
+          export NODE_OPTIONS="--max-old-space-size=4096"
+          node scripts/build-wrapper.cjs > build.log 2>&1 || true
+          echo "build_log_start"
+          set +x
+          echo "---- BUILD LOG TAIL ----"
+          tail -n 400 build.log || true
+          echo "---- /BUILD LOG TAIL ----"
+          set -x
+          echo "build_log_end"
 
       - name: Upload build diagnostics on failure
         if: failure()
@@ -81,6 +59,7 @@ jobs:
             out
 
       - name: Prepare Pages artifact
+        id: prepare_pages
         run: |
           set -euo pipefail
           ARTIFACT_DIR="${GITHUB_WORKSPACE:-.}/artifacts/pages"
@@ -101,9 +80,35 @@ jobs:
           if [ -d public ]; then
             cp -a public/. "$ARTIFACT_DIR"/
           fi
+          cp -f public/_redirects "$ARTIFACT_DIR/_redirects" 2>/dev/null || true
+          # Ensure new fallback pages exist in the exported artifact, even if Next didn't emit them.
+          for f in use-cases/index.html "industries/financial-services/index.html" "public-roadmap/index.html" "tools/phishing-analyzer/index.html" status/index.html "solutions/healthcare/index.html" "free-consultation/index.html"; do
+            mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
+            if [ ! -f "$ARTIFACT_DIR/$f" ]; then
+              if [ -f "public/$f" ]; then
+                cp -a "public/$f" "$ARTIFACT_DIR/$f"
+              elif [ -f "docs/$f" ]; then
+                cp -a "docs/$f" "$ARTIFACT_DIR/$f"
+              fi
+            fi
+          done
           # Ensure SEO files exist whichever path produced them.
           if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f docs/robots.txt ]; then cp -f docs/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
           if [ ! -f "$ARTIFACT_DIR/sitemap.xml" ] && [ -f docs/sitemap.xml ]; then cp -f docs/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
+          # Promote key fallback pages from docs/ to artifact root so Pages can serve them.
+          for f in case-studies/index.html industries/index.html testimonials/index.html automation/index.html "services/ai-workflow-automation/index.html" "services/ai-email-intelligence/index.html" "services/ai-smart-global-campaign/index.html" "free-ai-it-tools/index.html"; do
+            mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
+            if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
+              cp -a "docs/$f" "$ARTIFACT_DIR/$f"
+            fi
+          done
+          # Guarantee every key route exists in the exported artifact, even if Next didn't emit it.
+          for f in case-studies/index.html industries/index.html testimonials/index.html; do
+            mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
+            if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
+              cp -a "docs/$f" "$ARTIFACT_DIR/$f"
+            fi
+          done
           PAGES=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)
           echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
           echo 'manifest:'
@@ -116,7 +121,7 @@ jobs:
 
   deploy:
     needs: build
-    if: success() && (needs.build.outputs.production_out_exists == '1' || needs.build.outputs.artifacts_uploaded == '1')
+    if: success() && needs.build.outputs.pages != '0'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     environment:
@@ -132,7 +137,7 @@ jobs:
           echo "Deployed URL: ${{ steps.deployment.outputs.page_url }}"
           sleep 20
           curl -sf "${{ steps.deployment.outputs.page_url }}/" > /dev/null && echo "✓ Homepage" || echo "✗ Homepage"
-          for p in /services/ /solutions/ /pricing/ /contact/ /tools/ /about /blog /careers /partners /portal /ai-services-index /free-ai-it-tools /automation/ /services/ai-customer-support-pro/; do
+          for p in /services/ /solutions/ /pricing/ /contact/ /tools/ /about /blog /careers /partners /portal /ai-services-index /free-ai-it-tools /automation/ /services/ai-customer-support-pro/ /use-cases/ /industries/financial-services/ /public-roadmap/ /status-page/ /solutions/healthcare/ /free-consultation/ /tools/phishing-analyzer/; do
             code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "${{ steps.deployment.outputs.page_url }}${p}" || true)
             echo "$p -> $code"
           done

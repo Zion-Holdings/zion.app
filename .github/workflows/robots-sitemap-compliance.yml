@@ -1,5 +1,5 @@
 name: robots-sitemap-compliance
-'on':
+on:
   schedule:
   - cron: 0 3 * * 1
   workflow_dispatch: null
@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v6.0.2
+      uses: actions/checkout@v4.0.2
     - name: Setup Node
-      uses: actions/setup-node@v6.3.0
+      uses: actions/setup-node@v4.3.0
       with:
-        node-version: '20'
+        node-version-file: '.nvmrc'
     - name: Install deps
       run: npm ci
     - name: Run robots/sitemap compliance check
