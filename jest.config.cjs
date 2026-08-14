@@ -42,6 +42,10 @@ const customJestConfig = {
     'components/**/*.{js,jsx,ts,tsx}',
     '!**/*.d.ts',
     '!**/node_modules/**',
+    '!app/data/**',
+    '!app/services/*/**',
+    '!app/routes/**',
+    '!app/zion-ai-*/**',
   ],
 }
 
