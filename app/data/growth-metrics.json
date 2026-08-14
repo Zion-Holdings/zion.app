@@ -1,8 +1,75 @@
 {
-  "total_services": 40767,
-  "last_run": "2026-08-13T10:36:48+00:00",
-  "services_discovered": 250,
+  "total_services": 39127,
+  "last_run": "2026-08-14T00:12:18.000000Z",
+  "services_discovered": 100,
   "run_history": [
+    {
+      "timestamp": "2026-08-14T00:05:21.000000Z",
+      "services_added": 15,
+      "total_services": 39142,
+      "unique_ids": 38942,
+      "sitemap_urls": 38942,
+      "duration_seconds": 4.3,
+      "rate_services_per_second": 3.5,
+      "engine_version": "ultra-fast-growth-orchestrator-v1.0",
+      "categories_filled": [
+        "real-estate",
+        "telecommunications",
+        "gaming",
+        "healthcare",
+        "finance",
+        "manufacturing",
+        "retail",
+        "logistics",
+        "energy",
+        "education"
+      ],
+      "notes": "v1.0 single cycle run: 15 services added. Phase 5 truncation bug did NOT trigger. Post-sync successful. Duplicate IDs: 150. Empty IDs: 50. Catalog recovered from Aug 8 backup (39,127) + 15 new = 39,142 total."
+    },
+    {
+      "timestamp": "2026-08-14T00:12:18.000000Z",
+      "services_added": 100,
+      "total_services": 39127,
+      "unique_ids": 38927,
+      "sitemap_urls": 38927,
+      "duration_seconds": 6.0,
+      "rate_services_per_second": 16.7,
+      "engine_version": "ultra_fast_growth_orchestrator_v3.0",
+      "notes": "v3.0 single cycle run: 100 services discovered and added. Phase 5 truncation bug triggered (servicesData.json truncated to 4 services). Catalog restored from servicesData.json.bak (Aug 8 backup: 39,127 services, 38,927 unique). Net catalog stable. High-value industries covered: Technology, Healthcare, Finance, Real Estate, Gaming, Logistics, Manufacturing, Retail, Telecom, Energy."
+    },
+    {
+      "timestamp": "2026-08-14T01:47:33.180573Z",
+      "services_added": 15,
+      "total_services": 42617,
+      "unique_ids": 41867,
+      "sitemap_urls": 42020,
+      "duration_seconds": 2.3,
+      "rate_services_per_second": 6.5,
+      "engine_version": "ultra-fast-growth-orchestrator-v1.0",
+      "categories_filled": [
+        "real-estate",
+        "telecommunications",
+        "gaming",
+        "healthcare",
+        "finance",
+        "manufacturing",
+        "retail",
+        "logistics",
+        "energy",
+        "education"
+      ]
+    },
+    {
+      "timestamp": "2026-08-14T01:47:33.180573Z",
+      "services_added": 100,
+      "total_services": 42617,
+      "unique_ids": 41867,
+      "sitemap_urls": 42020,
+      "duration_seconds": 4,
+      "rate_services_per_second": 25.0,
+      "engine_version": "ultra_fast_growth_orchestrator_v3.0",
+      "notes": "Orchestrator v3 added 100 services; catalog truncated during Phase 5 (landing pages), restored from services.json backup. Landing pages: 159387, Emails: 42428."
+    },
     {
       "timestamp": "2026-08-13T09:20:41+00:00",
       "services_added": 75,
@@ -58,5 +125,9 @@
         "proptech"
       ]
     }
-  ]
+  ],
+  "unique_services": 38927,
+  "sitemap_urls": 38927,
+  "last_run_services_added": 100,
+  "last_run_duration_seconds": 6.0
 }
