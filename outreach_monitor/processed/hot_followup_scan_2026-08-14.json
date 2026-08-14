@@ -1,0 +1,682 @@
+{
+  "timestamp": "2026-08-14T17:36:33.964477+00:00",
+  "label_id": "Label_4207916705207178948",
+  "label_name": "!!!!HOT FOLLOW-UP",
+  "threads_api_returned": 100,
+  "threads_checked": 95,
+  "safe_threads": [
+    {
+      "thread_id": "19ffb7a6819b02ab",
+      "message_id": "19ffb7a6819b02ab",
+      "subject": "Quick Question About Your AI Cost Assessment",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 07:15:31 -0700"
+    },
+    {
+      "thread_id": "19ffc0d43e2885db",
+      "message_id": "19ffc0d43e2885db",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 09:55:55 -0700"
+    },
+    {
+      "thread_id": "19ff6c916b6172a6",
+      "message_id": "19ff6c916b6172a6",
+      "subject": "Quick Question About Your Cloud Security Scan",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Wed, 12 Aug 2026 09:23:21 -0700"
+    },
+    {
+      "thread_id": "19ffb7a3303efba2",
+      "message_id": "19ffb7a3303efba2",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 07:15:17 -0700"
+    },
+    {
+      "thread_id": "19ff6c92aa6c358c",
+      "message_id": "19ff6c92aa6c358c",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Wed, 12 Aug 2026 09:23:26 -0700"
+    },
+    {
+      "thread_id": "19ffbdf6f69c9a9e",
+      "message_id": "19ffbdf6f69c9a9e",
+      "subject": "Your Free Cloud Security Scan is Ready!",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 09:05:52 -0700"
+    },
+    {
+      "thread_id": "19ff69d827babd72",
+      "message_id": "19ff69d827babd72",
+      "subject": "Quick Question About Your Cloud Security Scan",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Wed, 12 Aug 2026 08:35:45 -0700"
+    },
+    {
+      "thread_id": "19ffbb0a82b34453",
+      "message_id": "19ffbb0a82b34453",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 08:14:46 -0700"
+    },
+    {
+      "thread_id": "19ff69afb0903907",
+      "message_id": "19ff69afb0903907",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Wed, 12 Aug 2026 08:32:59 -0700"
+    },
+    {
+      "thread_id": "19ffbac148b4b7b4",
+      "message_id": "19ffbac148b4b7b4",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 08:09:46 -0700"
+    },
+    {
+      "thread_id": "19ff6ca2b909fdac",
+      "message_id": "19ff6ca2b909fdac",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Wed, 12 Aug 2026 09:24:32 -0700"
+    },
+    {
+      "thread_id": "19ff0e949e4f5f1d",
+      "message_id": "19ff0e949e4f5f1d",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Tue, 11 Aug 2026 06:00:48 -0700"
+    },
+    {
+      "thread_id": "19ffbac08b800b16",
+      "message_id": "19ffbac08b800b16",
+      "subject": "Quick Question About Your AI Cost Assessment",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 08:09:43 -0700"
+    },
+    {
+      "thread_id": "19ffbc2949102fda",
+      "message_id": "19ffbc2949102fda",
+      "subject": "Quick Question About Your AI Cost Assessment",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 08:34:21 -0700"
+    },
+    {
+      "thread_id": "19ff183bb15c17db",
+      "message_id": "19ff183bb15c17db",
+      "subject": "Your Free DevOps Readiness Evaluation is Ready!",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Tue, 11 Aug 2026 08:49:29 -0700"
+    },
+    {
+      "thread_id": "19ff0cbbde6373b5",
+      "message_id": "19ff0cbbde6373b5",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Tue, 11 Aug 2026 05:28:31 -0700"
+    },
+    {
+      "thread_id": "19ffbd40145495c7",
+      "message_id": "19ffbd40145495c7",
+      "subject": "Your Free Cloud Security Scan is Ready!",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 08:53:23 -0700"
+    },
+    {
+      "thread_id": "1a0014ce27fd5069",
+      "message_id": "1a0014ce27fd5069",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:23:31 -0700"
+    },
+    {
+      "thread_id": "1a0014cdc0b0bbb9",
+      "message_id": "1a0014cdc0b0bbb9",
+      "subject": "Quick Question About Your Digital Transformation Roadmap",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:23:29 -0700"
+    },
+    {
+      "thread_id": "1a0014cd699c583e",
+      "message_id": "1a0014cd699c583e",
+      "subject": "Your Free Digital Transformation Roadmap is Ready!",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:23:28 -0700"
+    },
+    {
+      "thread_id": "1a0014cbb60a52d0",
+      "message_id": "1a0014cbb60a52d0",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:23:20 -0700"
+    },
+    {
+      "thread_id": "1a0014cce1dbf203",
+      "message_id": "1a0014cce1dbf203",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:23:26 -0700"
+    },
+    {
+      "thread_id": "1a0014cc8dedfc65",
+      "message_id": "1a0014cc8dedfc65",
+      "subject": "Quick Question About Your Cloud Security Scan",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:23:24 -0700"
+    },
+    {
+      "thread_id": "1a0014cb5d25f99d",
+      "message_id": "1a0014cb5d25f99d",
+      "subject": "Quick Question About Your DevOps Readiness Evaluation",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:23:19 -0700"
+    },
+    {
+      "thread_id": "1a0014cc0dd784b5",
+      "message_id": "1a0014cc0dd784b5",
+      "subject": "Your Free Cloud Security Scan is Ready!",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:23:22 -0700"
+    },
+    {
+      "thread_id": "1a0014caf92d46f4",
+      "message_id": "1a0014caf92d46f4",
+      "subject": "Your Free DevOps Readiness Evaluation is Ready!",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:23:17 -0700"
+    },
+    {
+      "thread_id": "1a0014ca8911f1cd",
+      "message_id": "1a0014ca8911f1cd",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:23:16 -0700"
+    },
+    {
+      "thread_id": "1a0014ca09019219",
+      "message_id": "1a0014ca09019219",
+      "subject": "Quick Question About Your AI Cost Assessment",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:23:14 -0700"
+    },
+    {
+      "thread_id": "1a0014c9a7fb92b5",
+      "message_id": "1a0014c9a7fb92b5",
+      "subject": "Your Free AI Cost Assessment is Ready!",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:23:12 -0700"
+    },
+    {
+      "thread_id": "19ffbcd6d5409f66",
+      "message_id": "19ffbcd6d5409f66",
+      "subject": "Quick Question About Your Cloud Security Scan",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 08:46:11 -0700"
+    },
+    {
+      "thread_id": "19ffc0a8de32ee61",
+      "message_id": "19ffc0a8de32ee61",
+      "subject": "Quick Question About Your Cloud Security Scan",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 09:52:57 -0700"
+    },
+    {
+      "thread_id": "19ffbefb1ab62e98",
+      "message_id": "19ffbefb1ab62e98",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 09:23:37 -0700"
+    },
+    {
+      "thread_id": "19ff1ceac3c9fbf2",
+      "message_id": "19ff1ceac3c9fbf2",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Tue, 11 Aug 2026 10:11:21 -0700"
+    },
+    {
+      "thread_id": "19ff69c007fa0151",
+      "message_id": "19ff69c007fa0151",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Wed, 12 Aug 2026 08:34:06 -0700"
+    },
+    {
+      "thread_id": "19ff183df9ff14f9",
+      "message_id": "19ff183df9ff14f9",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Tue, 11 Aug 2026 08:49:39 -0700"
+    },
+    {
+      "thread_id": "19ffb7a62c8b292a",
+      "message_id": "19ffb7a62c8b292a",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 07:15:29 -0700"
+    },
+    {
+      "thread_id": "19ff10baa6a56575",
+      "message_id": "19ff10baa6a56575",
+      "subject": "Quick Question About Your Cloud Security Scan",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Tue, 11 Aug 2026 06:38:21 -0700"
+    },
+    {
+      "thread_id": "19ffba8d0b651622",
+      "message_id": "19ffba8d0b651622",
+      "subject": "Quick Question About Your AI Cost Assessment",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 08:06:12 -0700"
+    },
+    {
+      "thread_id": "19fc80814e96f688",
+      "message_id": "19fc80814e96f688",
+      "subject": "RE: Reserva para Mans\u00e3o espa\u00e7osa no melhor bairro de Bertioga., 14\u2009\u2013\u200916 de ago.",
+      "sender": "Airbnb <express@airbnb.com>",
+      "date": "Mon, 03 Aug 2026 14:29:58 +0000 (UTC)"
+    },
+    {
+      "thread_id": "19ff18384ad95036",
+      "message_id": "19ff18384ad95036",
+      "subject": "Your Free AI Cost Assessment is Ready!",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Tue, 11 Aug 2026 08:49:16 -0700"
+    },
+    {
+      "thread_id": "19ffc067d390d2e5",
+      "message_id": "19ffc067d390d2e5",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 09:48:31 -0700"
+    },
+    {
+      "thread_id": "19ffbba59a460eb3",
+      "message_id": "19ffbba59a460eb3",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 08:25:21 -0700"
+    },
+    {
+      "thread_id": "19ffbdb25a7f3f70",
+      "message_id": "19ffbdb25a7f3f70",
+      "subject": "Quick Question About Your Cloud Security Scan",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 09:01:10 -0700"
+    },
+    {
+      "thread_id": "19ffbcd025d63a40",
+      "message_id": "19ffbcd025d63a40",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 08:45:44 -0700"
+    },
+    {
+      "thread_id": "19ff0b79f4832155",
+      "message_id": "19ff0b79f4832155",
+      "subject": "Quick Question About Your Cloud Security Scan",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Tue, 11 Aug 2026 05:06:33 -0700"
+    },
+    {
+      "thread_id": "19ffba88e5cb9325",
+      "message_id": "19ffba88e5cb9325",
+      "subject": "Quick Question About Your Digital Transformation Roadmap",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 08:05:55 -0700"
+    },
+    {
+      "thread_id": "1a00141e2b83b2fb",
+      "message_id": "1a00141e2b83b2fb",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:11:30 -0700"
+    },
+    {
+      "thread_id": "1a00141a38555519",
+      "message_id": "1a00141a38555519",
+      "subject": "Quick Question About Your AI Cost Assessment",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:11:13 -0700"
+    },
+    {
+      "thread_id": "1a001419dd6f58e3",
+      "message_id": "1a001419dd6f58e3",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:11:12 -0700"
+    },
+    {
+      "thread_id": "1a001418f6fb09c0",
+      "message_id": "1a001418f6fb09c0",
+      "subject": "Quick Question About Your AI Cost Assessment",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:11:08 -0700"
+    },
+    {
+      "thread_id": "1a001418a4b66af3",
+      "message_id": "1a001418a4b66af3",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:11:07 -0700"
+    },
+    {
+      "thread_id": "1a0014180f74ffef",
+      "message_id": "1a0014180f74ffef",
+      "subject": "Quick Question About Your Cloud Security Scan",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:11:05 -0700"
+    },
+    {
+      "thread_id": "1a001417acf38a72",
+      "message_id": "1a001417acf38a72",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:11:03 -0700"
+    },
+    {
+      "thread_id": "1a00141718ba72c5",
+      "message_id": "1a00141718ba72c5",
+      "subject": "Quick Question About Your DevOps Readiness Evaluation",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:11:01 -0700"
+    },
+    {
+      "thread_id": "1a001416a1651ba9",
+      "message_id": "1a001416a1651ba9",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:10:59 -0700"
+    },
+    {
+      "thread_id": "1a001416218ec074",
+      "message_id": "1a001416218ec074",
+      "subject": "Quick Question About Your Digital Transformation Roadmap",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:10:57 -0700"
+    },
+    {
+      "thread_id": "1a001415db286193",
+      "message_id": "1a001415db286193",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:10:55 -0700"
+    },
+    {
+      "thread_id": "19ffb4ff9da3fcea",
+      "message_id": "19ffb4ff9da3fcea",
+      "subject": "Quick Question About Your Digital Transformation Roadmap",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 06:29:10 -0700"
+    },
+    {
+      "thread_id": "1a0013bd9444e3f6",
+      "message_id": "1a0013bd9444e3f6",
+      "subject": "Quick Question About Your AI Cost Assessment",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:04:54 -0700"
+    },
+    {
+      "thread_id": "1a0013bd053de3db",
+      "message_id": "1a0013bd053de3db",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:04:52 -0700"
+    },
+    {
+      "thread_id": "1a0013bc7b357c2d",
+      "message_id": "1a0013bc7b357c2d",
+      "subject": "Quick Question About Your AI Cost Assessment",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:04:49 -0700"
+    },
+    {
+      "thread_id": "1a0013bc10d95bf1",
+      "message_id": "1a0013bc10d95bf1",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:04:48 -0700"
+    },
+    {
+      "thread_id": "1a0013bb94b296eb",
+      "message_id": "1a0013bb94b296eb",
+      "subject": "Quick Question About Your Cloud Security Scan",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:04:46 -0700"
+    },
+    {
+      "thread_id": "1a0013bb143694b6",
+      "message_id": "1a0013bb143694b6",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:04:44 -0700"
+    },
+    {
+      "thread_id": "1a0013bc37b89d1e",
+      "message_id": "1a0013bc37b89d1e",
+      "subject": "3 upgrades to AI All-Access",
+      "sender": "Bluehost Product Announcements <no-reply@e.bluehost.com>",
+      "date": "Fri, 14 Aug 2026 11:04:47 -0600"
+    },
+    {
+      "thread_id": "1a0013ba94a0162a",
+      "message_id": "1a0013ba94a0162a",
+      "subject": "Quick Question About Your DevOps Readiness Evaluation",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:04:42 -0700"
+    },
+    {
+      "thread_id": "1a0013ba02d90c6d",
+      "message_id": "1a0013ba02d90c6d",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:04:40 -0700"
+    },
+    {
+      "thread_id": "1a0013b99018829b",
+      "message_id": "1a0013b99018829b",
+      "subject": "Quick Question About Your Digital Transformation Roadmap",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:04:38 -0700"
+    },
+    {
+      "thread_id": "1a0013b9294c2190",
+      "message_id": "1a0013b9294c2190",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 10:04:36 -0700"
+    },
+    {
+      "thread_id": "19ffc0d2cbe1ad91",
+      "message_id": "19ffc0d2cbe1ad91",
+      "subject": "Quick Question About Your Cloud Security Scan",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 09:55:49 -0700"
+    },
+    {
+      "thread_id": "1a001395416bec80",
+      "message_id": "1a001395416bec80",
+      "subject": "Avalia\u00e7\u00e3o do seu atendimento no 2359998",
+      "sender": "Agilize Unique <support@uniquewpp.zendesk.com>",
+      "date": "Fri, 14 Aug 2026 17:02:05 +0000"
+    },
+    {
+      "thread_id": "19ffb505a005d3fa",
+      "message_id": "19ffb505a005d3fa",
+      "subject": "Your Free AI Cost Assessment is Ready!",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 06:29:35 -0700"
+    },
+    {
+      "thread_id": "19ffb3847e0833a0",
+      "message_id": "19ffb3847e0833a0",
+      "subject": "Quick Question About Your Digital Transformation Roadmap",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 06:03:17 -0700"
+    },
+    {
+      "thread_id": "19ffbcf4c70ade53",
+      "message_id": "19ffbcf4c70ade53",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 08:48:14 -0700"
+    },
+    {
+      "thread_id": "19ffbb5e8758ed7b",
+      "message_id": "19ffbb5e8758ed7b",
+      "subject": "Quick Question About Your Digital Transformation Roadmap",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 08:20:30 -0700"
+    },
+    {
+      "thread_id": "1a00135962f0c5e8",
+      "message_id": "1a00135962f0c5e8",
+      "subject": "Quick Question About Your AI Cost Assessment",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 09:58:04 -0700"
+    },
+    {
+      "thread_id": "1a001358e9a64ac5",
+      "message_id": "1a001358e9a64ac5",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 09:58:02 -0700"
+    },
+    {
+      "thread_id": "1a00135867d7f146",
+      "message_id": "1a00135867d7f146",
+      "subject": "Quick Question About Your AI Cost Assessment",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 09:58:00 -0700"
+    },
+    {
+      "thread_id": "1a001357951edca5",
+      "message_id": "1a001357951edca5",
+      "subject": "Quick Question About Your Cloud Security Scan",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 09:57:56 -0700"
+    },
+    {
+      "thread_id": "1a00135801a361eb",
+      "message_id": "1a00135801a361eb",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 09:57:58 -0700"
+    },
+    {
+      "thread_id": "1a0013575d02d847",
+      "message_id": "1a0013575d02d847",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 09:57:55 -0700"
+    },
+    {
+      "thread_id": "1a001356b9456c81",
+      "message_id": "1a001356b9456c81",
+      "subject": "Quick Question About Your DevOps Readiness Evaluation",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 09:57:53 -0700"
+    },
+    {
+      "thread_id": "1a00135651f36d03",
+      "message_id": "1a00135651f36d03",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 09:57:51 -0700"
+    },
+    {
+      "thread_id": "1a001355ce211a30",
+      "message_id": "1a001355ce211a30",
+      "subject": "Quick Question About Your Digital Transformation Roadmap",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 09:57:49 -0700"
+    },
+    {
+      "thread_id": "1a0013557bd0ab14",
+      "message_id": "1a0013557bd0ab14",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Fri, 14 Aug 2026 09:57:48 -0700"
+    },
+    {
+      "thread_id": "19ffbb615691df7c",
+      "message_id": "19ffbb615691df7c",
+      "subject": "Quick Question About Your AI Cost Assessment",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 08:20:42 -0700"
+    },
+    {
+      "thread_id": "19ff69ae458c2677",
+      "message_id": "19ff69ae458c2677",
+      "subject": "Quick Question About Your Cloud Security Scan",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Wed, 12 Aug 2026 08:32:54 -0700"
+    },
+    {
+      "thread_id": "19ffbfe52ab094c4",
+      "message_id": "19ffbfe52ab094c4",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 09:39:36 -0700"
+    },
+    {
+      "thread_id": "19ffc0a45e298ab7",
+      "message_id": "19ffc0a45e298ab7",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 09:52:39 -0700"
+    },
+    {
+      "thread_id": "19ffb986c14a851f",
+      "message_id": "19ffb986c14a851f",
+      "subject": "Quick Question About Your AI Cost Assessment",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 07:48:18 -0700"
+    },
+    {
+      "thread_id": "19ffbc25afddb17c",
+      "message_id": "19ffbc25afddb17c",
+      "subject": "Quick Question About Your Digital Transformation Roadmap",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 08:34:06 -0700"
+    },
+    {
+      "thread_id": "19ff1760b6c8e588",
+      "message_id": "19ff1760b6c8e588",
+      "subject": "Quick Question About Your IT Infrastructure Audit",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Tue, 11 Aug 2026 08:34:32 -0700"
+    },
+    {
+      "thread_id": "19ffbd42eb49730b",
+      "message_id": "19ffbd42eb49730b",
+      "subject": "Quick Question About Your Cloud Security Scan",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 08:53:34 -0700"
+    },
+    {
+      "thread_id": "19ffbe7af51ffab5",
+      "message_id": "19ffbe7af51ffab5",
+      "subject": "Exclusive Offer for Zion Tech Group Clients",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 09:14:52 -0700"
+    },
+    {
+      "thread_id": "19ffb5befd4c81f2",
+      "message_id": "19ffb5befd4c81f2",
+      "subject": "Quick Question About Your Digital Transformation Roadmap",
+      "sender": "kleber@ziontechgroup.com",
+      "date": "Thu, 13 Aug 2026 06:42:14 -0700"
+    }
+  ],
+  "threads_sent": 0,
+  "blockers": [
+    "excluded_thread:1a00155a46285208",
+    "excluded_thread:1a0014e2a12a648e",
+    "excluded_thread:1a00145910044eaf",
+    "excluded_thread:1a00144018c0aed4",
+    "excluded_thread:1a0013ea64291061"
+  ]
+}

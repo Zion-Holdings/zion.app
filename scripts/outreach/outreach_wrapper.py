@@ -18,7 +18,7 @@ from pathlib import Path
 from typing import Optional, Dict, Any, List
 
 # ── Config ──────────────────────────────────────────────────────────────────
-SOCKET_TIMEOUT_SECONDS = 12
+SOCKET_TIMEOUT_SECONDS = 60
 CIRCUIT_BREAKER_THRESHOLD = 3          # failures before opening circuit
 CIRCUIT_BREAKER_RESET_SECONDS = 300    # 5 min cooldown
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -128,7 +128,7 @@ def discover_worker_scripts() -> List[Path]:
             continue
         for p in root.glob("*.py"):
             name = p.name.lower()
-            if any(kw in name for kw in ("outreach", "worker", "lead", "contact", "email_responder")):
+            if any(kw in name for kw in ("outreach", "worker", "lead", "contact", "email_responder", "followup", "scanner", "hot", "monitor")):
                 if p.name != Path(__file__).name:
                     candidates.append(p)
     # Also look for shell scripts
@@ -137,7 +137,7 @@ def discover_worker_scripts() -> List[Path]:
             continue
         for p in root.glob("*.sh"):
             name = p.name.lower()
-            if any(kw in name for kw in ("outreach", "worker", "lead", "contact")):
+            if any(kw in name for kw in ("outreach", "worker", "lead", "contact", "followup", "scanner", "hot", "monitor")):
                 candidates.append(p)
 
     # Deduplicate, preserve order by mtime (newest first)

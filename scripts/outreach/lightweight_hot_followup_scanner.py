@@ -35,7 +35,10 @@ def is_excluded(msg):
     from_hdr = extract_header(msg, 'From').lower()
     to_hdr = extract_header(msg, 'To').lower()
     subj = extract_header(msg, 'Subject').lower()
-    if any(d in from_hdr for d in EXCLUDE_DOMAINS) or any(d in to_hdr for d in EXCLUDE_DOMAINS):
+    from_internal = any(d in from_hdr for d in EXCLUDE_DOMAINS)
+    to_internal = any(d in to_hdr for d in EXCLUDE_DOMAINS)
+    # Exclude only internal threads where both sides are our domain
+    if from_internal and to_internal:
         return True
     if any(k in subj for k in NEWSLETTER_KEYWORDS):
         return True
@@ -47,10 +50,11 @@ def is_excluded(msg):
         return True
     return False
 
-def scan():
+def scan() -> dict:
     out = {
         'timestamp': datetime.now(timezone.utc).isoformat(),
         'label_id': LABEL_ID,
+        'label_name': LABEL_NAME,
         'threads_api_returned': 0,
         'threads_checked': 0,
         'safe_threads': [],
@@ -68,7 +72,8 @@ def scan():
         labels = gmail_list_labels()
         for lab in labels:
             if LABEL_ID in lab.get('id', ''):
-                out['label_id'] = lab.get('name', LABEL_ID)
+                out['label_id'] = lab.get('id', LABEL_ID)
+                out['label_name'] = lab.get('name', LABEL_NAME)
                 break
     except Exception as e:
         out['blockers'].append(f'gmail_list_labels error: {e}')
@@ -84,7 +89,8 @@ def scan():
     except Exception as e:
         out['blockers'].append(f'Threads API error: {e}')
         try:
-            messages = gmail_search('!!!hot-follow-up', limit=100)
+            query = f'"{LABEL_NAME}"'
+            messages = gmail_search(query, limit=100, all_folders=True)
             out['blockers'].append(f'Threads API failed, fell back to search: {len(messages)} messages')
         except Exception as e2:
             out['blockers'].append(f'gmail_search fallback error: {e2}')
@@ -97,7 +103,7 @@ def scan():
                 continue
             seen.add(tid)
             thread_map[tid] = m.get('id')
-        threads = [{'id': mid, 'threadId': tid} for tid, mid in thread_map.items()]
+        threads = [{'threadId': tid, 'id': mid} for tid, mid in thread_map.items()]
         out['threads_api_returned'] = len(threads)
 
     for t in threads:
@@ -112,6 +118,7 @@ def scan():
             continue
         first = msgs[0]
         if is_excluded(first):
+            out['blockers'].append(f'excluded_thread:{tid}')
             continue
         out['threads_checked'] += 1
         out['safe_threads'].append({
