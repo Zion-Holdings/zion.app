@@ -14,6 +14,7 @@ permissions:
   push:
     branches:
     - main
+    - hero-carousel
   workflow_dispatch:
 jobs:
   build:
