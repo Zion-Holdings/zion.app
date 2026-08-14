@@ -1,5 +1,5 @@
 name: Continuous Pages Deploy
-# cache-bust: 2026-08-04T11:10Z
+# cache-bust: 2026-08-13T00:00Z
 "on":
   push:
     branches: [ main ]
@@ -19,7 +19,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     outputs:
       artifacts_uploaded: ${{ steps.build.outputs.artifacts_uploaded }}
       production_out_exists: ${{ steps.build.outputs.production_out_exists }}
@@ -36,17 +36,19 @@ jobs:
           cache: npm
           cache-dependency-path: package-lock.json
         env:
-          NODE_OPTIONS: --max-old-space-size=4096
+          NODE_OPTIONS: --max-old-space-size=8192
 
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit --fund=false
         env:
-          NODE_OPTIONS: --max-old-space-size=4096
+          NODE_OPTIONS: --max-old-space-size=8192
 
       - name: Build Next export
         id: build
         env:
           PAGES_CACHE_BUST: ${{ github.event.inputs.cache_bust }}
+          NEXT_BUILD_WORKER_COUNT: 4
+          NODE_OPTIONS: --max-old-space-size=8192
         run: |
           set -euo pipefail
           if [ -n "${PAGES_CACHE_BUST:-}" ]; then echo "cache-bust=${PAGES_CACHE_BUST}" >> "$GITHUB_OUTPUT"; fi

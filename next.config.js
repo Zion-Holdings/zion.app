@@ -29,6 +29,9 @@ const nextConfig = {
   // Optimize build performance for 75K+ pages
   experimental: {
     optimizePackageImports: ['lucide-react'],
+    // Disable dynamic params for static export — all routes are pre-generated
+    // This prevents Next.js from creating fallback routes for the 42K+ service pages
+    dynamicParams: false,
   },
   // Redirects: consolidate from .mjs + .js versions
   async redirects() {

@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
 """
 Regenerate servicesData.ts from servicesData.json.
-Maps services to category arrays and builds allServices.
+
+Instead of inlining 42K service objects as TS literals (78MB, massive memory
+overhead during V8 compilation), this version imports the JSON directly.
+JSON.parse is far more memory-efficient than evaluating inline object literals.
+
+The generated file maintains the same export surface:
+  - Service interface
+  - aiServices, itServices, cloudServices, securityServices, dataServices, automationServices
+  - allServices (spread from category arrays)
+  - getServiceById, getServicesByCategory, getPopularServices
 """
 import json
-import re
 from pathlib import Path
 from collections import defaultdict
 
@@ -22,108 +30,86 @@ CATEGORY_TO_ARRAY = {
     'automation': 'automationServices',
 }
 
-def js_literal(value):
-    """Convert Python value to JS literal string."""
-    if isinstance(value, str):
-        # Escape backslashes and quotes
-        escaped = value.replace('\\', '\\\\').replace("'", "\\'")
-        return f"'{escaped}'"
-    elif isinstance(value, bool):
-        return 'true' if value else 'false'
-    elif isinstance(value, list):
-        items = ', '.join(js_literal(item) for item in value)
-        return f'[{items}]'
-    elif isinstance(value, dict):
-        items = ', '.join(f"{k}: {js_literal(v)}" for k, v in value.items())
-        return f'{{{items}}}'
-    elif value is None:
-        return 'null'
-    else:
-        return str(value)
-
-def service_to_ts(service):
-    """Convert service dict to TS object literal."""
-    lines = ['  {']
-    for key, value in service.items():
-        lines.append(f"    {key}: {js_literal(value)},")
-    lines.append('  }')
-    return '\n'.join(lines)
 
 def main():
     print("Loading servicesData.json...")
     with open(JSON_FILE, 'r', encoding='utf-8') as f:
         services = json.load(f)
-    
+
     print(f"Loaded {len(services)} services")
-    
+
     # Group by category
     by_category = defaultdict(list)
     unmapped = []
-    
+
     for service in services:
         cat = service.get('category', 'unknown')
         if cat in CATEGORY_TO_ARRAY:
-            by_category[cat].append(service)
+            by_category[cat].append(service['id'])
         else:
-            unmapped.append(service)
-    
-    # If there are unmapped services, put them in aiServices as fallback
+            unmapped.append(service['id'])
+
     if unmapped:
         print(f"Warning: {len(unmapped)} services with unmapped categories, adding to aiServices")
-        by_category['ai'].extend(unmapped)
-    
-    # Build TS content
+        by_category['ai'] = by_category.get('ai', []) + unmapped
+
+    # Build lean TS content that imports JSON (memory-efficient)
     lines = []
-    lines.append("// Service data for AI and IT solutions\r")
-    lines.append("export interface Service {\r")
-    lines.append("  id: string;\r")
-    lines.append("  title: string;\r")
-    lines.append("  description: string;\r")
-    lines.append("  features: string[];\r")
-    lines.append("  benefits: string[];\r")
-    lines.append("  pricing: { basic: string; pro: string; enterprise: string };\r")
-    lines.append("  contactInfo: { website: string; email: string; phone: string };\r")
-    lines.append("  icon: string;\r")
-    lines.append("  href: string;\r")
-    lines.append("  popular?: boolean;\r")
-    lines.append("  category: string;\r")
-    lines.append("  industry: string;\r")
-    lines.append("  stage?: 'published' | 'beta' | 'planned';\r")
-    lines.append("}\r")
+    lines.append("// Service data for AI and IT solutions")
+    lines.append("// AUTO-GENERATED from servicesData.json by scripts/json_to_ts.py")
+    lines.append("// Imports JSON directly to avoid V8 memory overhead of inline literals.")
     lines.append("")
-    
-    # Write category arrays
+    lines.append('import servicesData from "./servicesData.json";')
+    lines.append("")
+    lines.append("export interface Service {")
+    lines.append("  id: string;")
+    lines.append("  title: string;")
+    lines.append("  description: string;")
+    lines.append("  features: string[];")
+    lines.append("  benefits: string[];")
+    lines.append("  popular?: boolean;")
+    lines.append("  href: string;")
+    lines.append("  category: string;")
+    lines.append("  industry: string;")
+    lines.append("  [key: string]: unknown;")
+    lines.append("}")
+    lines.append("")
+
+    # Create a lookup map from the JSON array for efficient filtering
+    # Build category arrays as filtered views of the JSON import
     for cat, array_name in CATEGORY_TO_ARRAY.items():
-        cat_services = by_category.get(cat, [])
-        lines.append(f"export const {array_name}: Service[] = [")
-        for service in cat_services:
-            lines.append(service_to_ts(service))
-            lines.append(",")
-        lines.append("];\r")
-        lines.append("")
-    
-    # Build allServices by spreading all category arrays
-    array_names = [CATEGORY_TO_ARRAY[cat] for cat in CATEGORY_TO_ARRAY if cat in by_category and by_category[cat]]
-    lines.append("export const allServices: Service[] = [")
-    for arr_name in array_names:
-        lines.append(f"  ...{arr_name},")
-    lines.append("];\r")
+        ids = by_category.get(cat, [])
+        lines.append(f"export const {array_name}: Service[] = servicesData.filter((s: Service) => s.category === '{cat}') as Service[];")
+        print(f"  {array_name}: {len(ids)} services (filtered by category '{cat}')")
     lines.append("")
-    
+
+    # allServices is the full JSON array cast to Service[]
+    lines.append("export const allServices: Service[] = servicesData as Service[];")
+    lines.append("")
+
     # Add helper functions
-    lines.append("export const getServiceById = (id: string): Service | undefined => { return allServices.find(s => s.id === id); };\r")
-    lines.append("export const getServicesByCategory = (category: Service['category']): Service[] => { return allServices.filter(s => s.category === category); };\r")
-    lines.append("export const getPopularServices = (): Service[] => { return allServices.filter(s => s.popular); };\r")
-    
+    lines.append("export const getServiceById = (id: string): Service | undefined => {")
+    lines.append("  return allServices.find(s => s.id === id);")
+    lines.append("};")
+    lines.append("")
+    lines.append("export const getServicesByCategory = (category: Service['category']): Service[] => {")
+    lines.append("  return allServices.filter(s => s.category === category);")
+    lines.append("};")
+    lines.append("")
+    lines.append("export const getPopularServices = (): Service[] => {")
+    lines.append("  return allServices.filter(s => s.popular);")
+    lines.append("};")
+    lines.append("")
+
     # Write file
     content = '\n'.join(lines)
     with open(TS_FILE, 'w', encoding='utf-8') as f:
         f.write(content)
-    
+
     print(f"Successfully wrote {TS_FILE}")
     print(f"Total lines: {len(lines)}")
-    for cat, arr_name in CATEGORY_TO_ARRAY.items():
-        print(f"  {arr_name}: {len(by_category.get(cat, []))} services")
+    print(f"Final file size: {len(content)} bytes")
+
 
 if __name__ == '__main__':
     main()

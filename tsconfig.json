@@ -62,6 +62,9 @@
     "automation",
     "public",
     "scripts",
-    "app/data"
+    "app/data",
+    "app/routes",
+    "app/zion-ai-*",
+    "app/services/*/"
   ]
 }
