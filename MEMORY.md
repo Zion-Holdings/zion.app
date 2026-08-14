@@ -284,4 +284,11 @@
 - FloatingActionDock: live in `app/components/FloatingActionDock.tsx` — right-side expandable dock on desktop, hidden on mobile, anchor-only on homepage
 
 ### Broken Links: Final Word
-- 62 “broken” service links = internal Next.js chunk paths `/_next/static/chunks/webpack-3383486f79a89402.js` — all present in `out/_next/static/chunks/` (12 files). Auditor false positives. 0 real broken links.
+|- 62 "broken" service links = internal Next.js chunk paths `/_next/static/chunks/webpack-3383486f79a89402.js` — all present in `out/_next/static/chunks/` (12 files). Auditor false positives. 0 real broken links.
+
+### 2026-08-13 | Key Updates
+- **Workflow fix**: Quoted `on:` → `"on":` across all 393 GitHub Actions workflow files on `hero-carousel` branch (commit `f324897c5d2`). Root cause: commit `a6fe35a00b7` reverted the `9ea291ff7f1` quoting fix, leaving all workflows with unquoted `on:` which YAML parses as boolean True, causing GHA trigger parsing failures.
+- **Git repo**: Project repo at `/Users/klebergarciaalcatrao/zion-support.github.io` has its own `.git` directory. Always use `git -C /Users/klebergarciaalcatrao/zion-support.github.io` for git operations — the home dir also has a `.git` that can be confused with the project repo.
+- **Integration branch**: `hero-carousel` is the single integration branch. Local tracks `origin/hero-carousel`.
+- **GH auth**: `gh` CLI is authenticated for Zion-support account (keyring). Use `gh api repos/Zion-support/zion-support.github.io/actions/runs?branch=hero-carousel` to check GHA failures.
+- **Disk management**: `.hermes/` cache can grow to 50GB+. Clean `cache/terminal-output/` and `audio_cache/` when disk runs low.
