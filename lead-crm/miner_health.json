@@ -1,48 +1,17 @@
 {
-  "ts": "2026-08-11T04:59:37.671482+00:00",
-  "queries_run": 5,
-  "contacts_found": 15,
-  "new_leads_added": 0,
-  "elapsed_s": 228.401,
-  "queries_per_second": 0.0219,
-  "avg_query_s": 45.676,
-  "max_query_s": 129.6687,
-  "status": "analyzed",
-  "high_signal_leads": 0,
-  "lead_quality_ratio": null,
-  "rolling": {
-    "last_5_queries": [
-      9.242162877999363,
-      69.74618291200022,
-      9.827604877002159,
-      9.895183954002277,
-      129.66868467699896
-    ],
-    "last_5_qps": [
-      0.1082,
-      0.0143,
-      0.1018,
-      0.1011,
-      0.0077
-    ]
-  },
-  "last_analysis_status": "analyzed_no_send",
-  "last_analysis_summary": {
-    "contacts": 15,
-    "contacts_with_personalized_body": 0,
-    "contacts_missing_fields": 15,
-    "ready_count": 15,
-    "excluded_count": 0,
-    "subject_counts": {},
-    "status_counts": {
-      "pending": 15
-    },
-    "improvement_notes": [
-      "Bodies gerados heurísticos para contatos sem thread_body personalizado."
-    ]
-  },
-  "contacts_with_personalized_body": 0,
-  "contacts_missing_fields": 15,
-  "ready_count": 15,
-  "excluded_count": 0
+  "ts": "2026-08-14T16:12:46.568919+00:00",
+  "last_send_run": "2026-08-14T16:12:46.568919+00:00",
+  "status": "sent_batch",
+  "send_count": 15,
+  "sent_recipients": [
+    "emily.data@dataflow.com",
+    "david.inno@digitalsolutions.com",
+    "michael.data@secureit.com",
+    "lisa.next@innovateco.com",
+    "michael.cybe@devopspro.io"
+  ],
+  "skipped_templates": 0,
+  "llm_provider": "template",
+  "llm_model": "deterministic-template-v1",
+  "provider": "gmail_api"
 }
