@@ -33,10 +33,9 @@
     "event": "miner_timeout",
     "query": "\"Zion Tech Group\"",
     "note": "soft timeout reached; stopping query loop early"
-  }
-,
+  },
   {
-    "ts": "2026-08-11T04:59:37.671482+00:00",
+    "ts": "2026-08-14T04:31:00+00:00",
     "level": "error",
     "message": "Missing script: lead-crm/historical_email_miner.py",
     "status": "not_run"

@@ -1,12 +1,35 @@
 {
-  "last_run": "2026-08-11T05:09:12.152423+00:00",
+  "last_run": "2026-08-14T08:00:03.186148+00:00",
   "circuit_breaker": {
     "state": "CLOSED",
-    "failures": 0,
-    "last_failure_ts": null
+    "failures": 1,
+    "last_failure_ts": 1786694403.1858344
   },
   "result": {
-    "success": false,
-    "message": "no_scripts_found"
+    "success": true,
+    "scripts_run": 2,
+    "scripts_succeeded": 1,
+    "scripts_failed": 1,
+    "scripts_skipped": 0,
+    "details": [
+      {
+        "success": true,
+        "exit_code": 0,
+        "stdout": "METRIC search scanned_queries=2 hits=0 last_err=None\nMETRIC search scanned_queries=2 hits=20 last_err=None\nMETRIC search scanned_queries=2 hits=0 last_err=None\n{\n  \"event\": \"high_frequency_monitor_tick\",\n  \"labels_checked\": [\n    \"!!!hot-follow-up\"\n  ],\n  \"hot_followup_threads\": 0,\n  \"hot_followup_sent_count\": 0,\n  \"new_inbox_interest_count\": 19,\n  \"new_inbox_examples\": [\n    {\n      \"id\": \"19fff42a862f8eb2\",\n      \"threadId\": \"19fff42a862f8eb2\",\n      \"from\": \"kleber@ziontechgroup.com\",\n      \"subject\": \"Exclusive Offer for Zion Tech Group Clients\",\n      \"date\": \"Fri, 14 Aug 2026 00:53:06 -0700\",\n      \"snippet\": \"Thank you for your interest in our services. I&#39;d be happy to prepare a customized proposal based on your requirements. Could you please provide more details about your project scope and timeline?\"\n    },\n    {\n      \"id\": \"19fff3f893118d38\",\n      \"threadId\": \"19fff3f893118d38\",\n      \"from\": \"kleber@ziontechgroup.com\",\n      \"subject\": \"Exclusive Offer for Zion Tech Group Clients\",\n      \"date\": \"Fri, 14 Aug 2026 00:49:41 -0700\",\n      \"snippet\": \"Thank you for your interest in our services. I&#39;d be happy to prepare a customized proposal based on your requirements. Could you please provide more details about your project scope and timeline?\"\n    },\n    {\n      \"id\": \"19fff33058617ddd\",\n      \"threadId\": \"19fff33058617ddd\",\n      \"from\": \"kleber@ziontechgroup.com\",\n      \"subject\": \"Exclusive Offer for Zion Tech Group Clients\",\n      \"date\": \"Fri, 14 Aug 2026 00:36:01 -0700\",\n      \"snippet\": \"Thank you for your interest in our services. I&#39;d be happy to prepare a customized proposal based on your requirements. Could you please provide more details about your project scope and timeline?\"\n    },\n    {\n      \"id\": \"19fff26a169c9a6a\",\n      \"threadId\": \"19fff26a169c9a6a\",\n      \"from\": \"kleber@ziontechgroup.com\",\n      \"subject\": \"Exclusive Offer for Zion Tech Group Clients\",\n      \"date\": \"Fri, 14 Aug 2026 00:22:29 -0700\",\n      \"snippet\": \"Thank you for your interest in our services. I&#39;d be happy to prepare a customized proposal based on your requirements. Could you please provide more details about your project scope and timeline?\"\n    },\n    {\n      \"id\": \"19fff017a92f9496\",\n      \"threadId\": \"19fff017a92f9496\",\n      \"from\": \"Kleber Garcia Alcatrao <notifications@github.com>\",\n      \"subject\": \"[Zion-support/zion-support.github.io] Run failed: AI Autonomous Opportunity Radar Refresh - main (4076f09)\",\n      \"date\": \"Thu, 13 Aug 2026 23:41:54 -0700\",\n      \"snippet\": \"[Zion-support/zion-support.github.io] AI Autonomous Opportunity Radar Refresh workflow run AI Autonomous Opportunity Radar Refresh: All jobs have failed View workflow run Status Job Annotations AI\"\n    }\n  ],\n  \"llm_tailoring_coverage\": {\n    \"enabled\": true,\n    \"contact_tailor_count\": 0,\n    \"coverage_ratio\": 0.0,\n    \"blocker\": null\n  },\n  \"errors\": [],\n  \"pending_outreach_count\": 0,\n  \"hot_followup_drafts_count\": 0,\n  \"historical_miner\": {\n    \"run_now\": true,\n    \"window_start\": 1786694305,\n    \"hits\": 0,\n    \"errors\": \"no_hits_or_disabled\"\n  },\n  \"hot_followup_drafts\": [],\n  \"metrics\": {\n    \"tailored_drafts\": 0,\n    \"tailor_fallback_count\": 0,\n    \"tailor_ok_count\": 0\n  },\n  \"new_inbox_interest_filtered_count\": 1,\n  \"new_inbox_interest_filter_breakdown\": {\n    \"bracketed_or_replay_subject\": 1\n  },\n  \"new_inbox_interest_dedup_count\": 20,\n  \"interest_drafts_count\": 0,\n  \"interest_drafts\": [],\n  \"dedup_entries\": 0,\n  \"hot_followup_ledger_entries\": 0,\n  \"ts\": 1786694381\n}\n",
+        "stderr": "",
+        "duration_s": 12.12,
+        "error": null,
+        "script": "minimal_high_frequency_monitor.py"
+      },
+      {
+        "success": false,
+        "exit_code": -1,
+        "stdout": "",
+        "stderr": "TIMEOUT after 12s",
+        "duration_s": 22.03,
+        "error": "timeout",
+        "script": "lightweight_hot_followup_scanner.py"
+      }
+    ]
   }
 }
