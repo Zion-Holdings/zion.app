@@ -135,5 +135,13 @@ function processRange(srcDir, docsDir, template, min, max) {
   console.log(`Synced ${count} pages to ${docsDir}`);
 }
 
-processRange(BLOG_SRC, BLOG_DOCS, BLOG_TEMPLATE, 9361, 9410);
-processRange(SVC_SRC, SVC_DOCS, SVC_TEMPLATE, 9361, 9410);
+const queuePath = path.join(process.cwd(), 'content', 'queue.md');
+let lastCycle = 0;
+try {
+  const txt = fs.readFileSync(queuePath, 'utf8');
+  const m = txt.match(/Last cycle:\s*(\d+)/i);
+  if (m) lastCycle = parseInt(m[1], 10);
+} catch {}
+// Sync only pages that are not yet in docs (full history sync)
+processRange(BLOG_SRC, BLOG_DOCS, BLOG_TEMPLATE, 1, lastCycle);
+processRange(SVC_SRC, SVC_DOCS, SVC_TEMPLATE, 1, lastCycle);
