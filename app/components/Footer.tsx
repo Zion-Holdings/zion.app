@@ -14,7 +14,8 @@ const FOOTER_LINKS: { title: string; links: FooterLink[] }[] = [
   {
     title: 'Services',
     links: [
-      { name: 'AI Services', href: '/ai-services' },
+      { name: 'AI Services', href: '/ai' },
+      { name: 'AI Lab', href: '/ai' },
       { name: 'All Services', href: '/services' },
       { name: 'Providers', href: '/providers' },
       { name: 'Integrators', href: '/integrators' },
