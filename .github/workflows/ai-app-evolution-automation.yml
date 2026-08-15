@@ -12,7 +12,7 @@ concurrency:
 permissions:
   contents: read
 
-on:
+"on":
   schedule:
     - cron: '0 11 * * 0'
   workflow_dispatch:

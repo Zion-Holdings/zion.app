@@ -4,7 +4,7 @@ name: ai weekly content seo hygiene workflow smoke (weekly)
 permissions:
   contents: read
 
-on:
+"on":
   schedule:
     - cron: '50 12 * * 3' # Wednesdays 12:50 UTC
   workflow_dispatch:

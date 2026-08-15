@@ -8,7 +8,7 @@ concurrency:
   group: ai-cron-collision-tuner
   cancel-in-progress: false
 
-on:
+"on":
   schedule:
     - cron: '50 13 * * 1'
   workflow_dispatch:

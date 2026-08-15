@@ -4,7 +4,7 @@ name: ai aggregate regression diff alert workflow smoke (weekly)
 permissions:
   contents: read
 
-on:
+"on":
   schedule:
     - cron: '45 12 * * 2' # Tuesdays 12:45 UTC
   workflow_dispatch:

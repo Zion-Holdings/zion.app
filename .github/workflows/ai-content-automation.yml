@@ -8,7 +8,7 @@ name: AI Content Automation
 permissions:
   contents: write
 
-on:
+"on":
   schedule:
     - cron: '0 4 * * *'
   workflow_dispatch:

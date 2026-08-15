@@ -3,7 +3,7 @@ name: AI Telemetry Snapshot Scheduler
 permissions:
   contents: write
 
-on:
+"on":
   schedule:
     - cron: '12 * * * *'
   workflow_dispatch:

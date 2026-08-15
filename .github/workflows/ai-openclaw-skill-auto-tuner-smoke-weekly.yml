@@ -2,7 +2,7 @@
 name: ai openclaw skill auto tuner workflow smoke (weekly)
 permissions:
   contents: read
-on:
+"on":
   schedule:
     - cron: '43 11 * * 3' # Wednesdays 11:43 UTC
   workflow_dispatch:

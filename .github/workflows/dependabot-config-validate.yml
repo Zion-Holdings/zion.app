@@ -5,7 +5,7 @@ name: Dependabot config validate
 permissions:
   contents: read
 
-on:
+"on":
   pull_request:
     paths:
       - '.github/dependabot.yml'

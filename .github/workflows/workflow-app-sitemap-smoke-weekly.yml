@@ -5,7 +5,7 @@ name: app/sitemap.ts smoke (weekly)
 permissions:
   contents: read
 
-on:
+"on":
   schedule:
     - cron: '53 7 * * 2' # Tuesdays 07:53 UTC
   workflow_dispatch:

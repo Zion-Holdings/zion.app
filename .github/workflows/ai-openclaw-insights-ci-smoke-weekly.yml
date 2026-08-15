@@ -2,7 +2,7 @@
 name: ai openclaw insights CI workflow smoke (weekly)
 permissions:
   contents: read
-on:
+"on":
   schedule:
     - cron: '52 11 * * 3' # Wednesdays 11:52 UTC
   workflow_dispatch:

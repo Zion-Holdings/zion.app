@@ -5,7 +5,7 @@ name: cursor/autonomy rule smoke (weekly)
 permissions:
   contents: read
 
-on:
+"on":
   schedule:
     - cron: '35 6 * * 1' # Mondays 06:35 UTC
   workflow_dispatch:

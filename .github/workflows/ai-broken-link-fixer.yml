@@ -8,7 +8,7 @@ concurrency:
   group: ai-broken-link-fixer
   cancel-in-progress: false
 
-on:
+"on":
   schedule:
     - cron: '30 6 * * 1,4'
   workflow_dispatch:

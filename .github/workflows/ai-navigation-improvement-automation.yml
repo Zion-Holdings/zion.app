@@ -9,7 +9,7 @@ name: AI Navigation Improvement Automation
 permissions:
   contents: read
 
-on:
+"on":
   schedule:
     - cron: '0 9 * * 4'
   workflow_dispatch:

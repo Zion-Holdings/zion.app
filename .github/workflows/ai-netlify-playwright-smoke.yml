@@ -3,7 +3,7 @@ name: AI Netlify Playwright smoke
 permissions:
   contents: read
 
-on:
+"on":
   workflow_dispatch:
   schedule:
     - cron: '45 */3 * * *'

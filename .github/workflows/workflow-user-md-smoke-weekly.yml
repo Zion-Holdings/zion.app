@@ -5,7 +5,7 @@ name: USER.md smoke (weekly)
 permissions:
   contents: read
 
-on:
+"on":
   schedule:
     - cron: '7 8 * * 3' # Wednesdays 08:07 UTC
   workflow_dispatch:

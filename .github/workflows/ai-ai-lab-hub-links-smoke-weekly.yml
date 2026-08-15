@@ -8,7 +8,7 @@ concurrency:
   group: ai-ai-lab-hub-links-smoke-weekly
   cancel-in-progress: false
 
-on:
+"on":
   workflow_dispatch:
   schedule:
     - cron: '45 12 * * 4'

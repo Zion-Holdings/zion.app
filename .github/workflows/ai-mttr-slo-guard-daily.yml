@@ -8,7 +8,7 @@ concurrency:
   group: ai-mttr-slo-guard-daily
   cancel-in-progress: false
 
-on:
+"on":
   schedule:
     - cron: '45 10 * * *'
   workflow_dispatch:
