@@ -27,7 +27,7 @@ function run(cmd, opts = {}) {
 async function waitForRun(createdAt) {
   const token = fs.readFileSync(TOKEN_PATH, 'utf8').trim();
   const repo = 'Zion-support/zion-support.github.io';
-  const auth = `Authorization: token ${token}`;
+  const auth = `Authorization: token ${token}`
   const started = Date.now();
   const timeoutMs = 20 * 60 * 1000;
   while (Date.now() - started < timeoutMs) {
