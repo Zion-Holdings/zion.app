@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Machine Learning Model Operations Platform - Zion Tech Group",
-  description: "MLOps solution that automates model deployment, monitoring, and retraining. Ensures AI models remain accurate and performant throughout their lifecycle.",
+  description: "MLOps solution that automates model deployment, monitoring, and retraining for production AI systems.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/machine-learning-model-operations-platform-9b2e5c01`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Machine Learning Model Operations Platform</h1>
-        <p className="text-lg text-gray-300 mb-8">MLOps solution that automates model deployment, monitoring, and retraining. Ensures AI models remain accurate and performant throughout their lifecycle.</p>
+        <p className="text-lg text-gray-300 mb-8">MLOps solution that automates model deployment, monitoring, and retraining for production AI systems.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

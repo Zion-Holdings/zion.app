@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent CI/CD Pipeline Automation - Zion Tech Group",
-  description: "Machine learning-driven continuous integration and deployment system that automates build processes, testing, and release management with intelligent rollback c",
+  description: "Machine learning-driven continuous integration and deployment system with intelligent rollback capabilities.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-cicd-pipeline-automation-1ea0be32`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent CI/CD Pipeline Automation</h1>
-        <p className="text-lg text-gray-300 mb-8">Machine learning-driven continuous integration and deployment system that automates build processes, testing, and release management with intelligent rollback capabilities.</p>
+        <p className="text-lg text-gray-300 mb-8">Machine learning-driven continuous integration and deployment system with intelligent rollback capabilities.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

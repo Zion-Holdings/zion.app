@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Autonomous Customer Experience Suite - Zion Tech Group",
-  description: "Next-generation customer experience platform that delivers autonomous service delivery across all touchpoints. Integrates sentiment analysis, personalization, a",
+  description: "Next-generation customer experience platform that delivers autonomous service delivery across all touchpoints.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-autonomous-customer-experience-suite-2f3f2578`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI-Powered Autonomous Customer Experience Suite</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation customer experience platform that delivers autonomous service delivery across all touchpoints. Integrates sentiment analysis, personalization, and omnichannel support.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation customer experience platform that delivers autonomous service delivery across all touchpoints.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

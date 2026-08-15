@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Compliance Automation - Zion Tech Group",
-  description: "Automated compliance platform that monitors, audits, and enforces regulatory requirements across systems and processes. Provides real-time compliance insights a",
+  description: "Automated compliance platform that monitors, audits, and enforces regulatory requirements.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-compliance-automation-daf2ffd7`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Compliance Automation</h1>
-        <p className="text-lg text-gray-300 mb-8">Automated compliance platform that monitors, audits, and enforces regulatory requirements across systems and processes. Provides real-time compliance insights and remediation recommendations.</p>
+        <p className="text-lg text-gray-300 mb-8">Automated compliance platform that monitors, audits, and enforces regulatory requirements.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
