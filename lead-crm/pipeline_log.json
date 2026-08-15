@@ -820,5 +820,23 @@
     "total_potential_value": 8600,
     "expected_revenue": 2150.0,
     "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-15T10:00:06.335872",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 9800,
+    "expected_revenue": 2450.0,
+    "conversion_rate_target": "25%"
+  },
+  {
+    "timestamp": "2026-08-15T12:00:06.076352",
+    "event": "lead_generation_tick",
+    "leads_generated": 5,
+    "new_unique_leads_added": 5,
+    "total_potential_value": 11800,
+    "expected_revenue": 2950.0,
+    "conversion_rate_target": "25%"
   }
 ]
