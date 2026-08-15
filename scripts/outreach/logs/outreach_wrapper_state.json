@@ -1,12 +1,26 @@
 {
-  "last_run": "2026-08-11T05:09:12.152423+00:00",
+  "last_run": "2026-08-15T11:57:24.956698+00:00",
   "circuit_breaker": {
     "state": "CLOSED",
     "failures": 0,
     "last_failure_ts": null
   },
   "result": {
-    "success": false,
-    "message": "no_scripts_found"
+    "success": true,
+    "scripts_run": 1,
+    "scripts_succeeded": 1,
+    "scripts_failed": 0,
+    "scripts_skipped": 0,
+    "details": [
+      {
+        "success": true,
+        "exit_code": 0,
+        "stdout": "{\n  \"timestamp\": \"2026-08-15T11:56:33.475853+00:00\",\n  \"label_id\": \"Label_4207916705207178948\",\n  \"label_name\": \"!!!!HOT FOLLOW-UP\",\n  \"threads_api_returned\": 100,\n  \"threads_checked\": 71,\n  \"safe_threads\": [\n    {\n      \"thread_id\": \"19ffff039f7c12cf\",\n      \"message_id\": \"19ffff039f7c12cf\",\n      \"subject\": \"Quick Question About Your IT Infrastructure Audit\",\n      \"sender\": \"kleber@ziontechgroup.com\",\n      \"date\": \"Fri, 14 Aug 2026 04:02:41 -0700\"\n    },\n    {\n      \"thread_id\": \"1a0000bc3d90361d\",\n      \"message_id\": \"1a0000bc3d90361d\",\n      \"subject\": \"Exclusive Offer for Zion Tech Group Clients\",\n      \"sender\": \"kleber@ziontechgroup.com\",\n      \"date\": \"Fri, 14 Aug 2026 04:32:46 -0700\"\n    },\n    {\n      \"thread_id\": \"19fffddc1dab14b0\",\n      \"message_id\": \"19fffddc1dab14b0\",\n      \"subject\": \"Exclusive Offer for Zion Tech Group Clients\",\n      \"sender\": \"kleber@ziontechgroup.com\",\n      \"date\": \"Fri, 14 Aug 2026 03:42:30 -0700\"\n    },\n    {\n      \"thread_id\": \"19fffdb7f2e4de6d\",\n      \"message_id\": \"19fffdb7f2e4de6d\",\n      \"subject\": \"Exclusive Offer for Zion Tech Group Clients\",\n      \"sender\": \"kleber@ziontechgroup.com\",\n      \"date\": \"Fri, 14 Aug 2026 03:40:02 -0700\"\n    },\n    {\n      \"thread_id\": \"1a00545e64ec308f\",\n      \"message_id\": \"1a00545e64ec308f\",\n      \"subject\": \"Digital transformation insights\",\n      \"sender\": \"kleber@ziontechgroup.com\",\n      \"date\": \"Sat, 15 Aug 2026 04:54:22 -0700\"\n    },\n    {\n      \"thread_id\": \"1a00545d9b1071f2\",\n      \"message_id\": \"1a00545d9b1071f2\",\n      \"subject\": \"Cloud security automation\",\n      \"sender\": \"kleber@ziontechgroup.com\",\n      \"date\": \"Sat, 15 Aug 2026 04:54:18 -0700\"\n    },\n    {\n      \"thread_id\": \"1a00545e1054f3a4\",\n      \"message_id\": \"1a00545e1054f3a4\",\n      \"subject\": \"Security operations acceleration\",\n      \"sender\": \"kleber@ziontechgroup.com\",\n      \"date\": \"Sat, 15 Aug 2026 04:54:20 -0700\"\n    },\n    {\n      \"thread_id\": \"1a00545ec941b1ce\",\n      \"message_id\": \"1a00545ec941b1ce\",\n      \"subject\": \"Data pipeline optimization\",\n      \"sender\": \"kleber@ziontechgroup.com\",\n      \"date\": \"Sat, 15 Aug 2026 06:54:23 -0500\"\n    },\n    {\n      \"thread_id\": \"1a00545d288e262e\",\n      \"message_id\": \"1a00545d288e262e\",\n      \"subject\": \"Innovation acceleration\",\n      \"sender\": \"kleber@ziontechgroup.com\",\n      \"date\": \"Sat, 15 Aug 2026 04:54:17 -0700\"\n    },\n    {\n      \"thread_id\": \"1a00545cd044ad89\",\n      \"message_id\": \"1a00545cd044ad89\",\n      \"subject\": \"AI automation ROI\",\n      \"sender\": \"kleber@ziontechgroup.com\",\n      \"date\": \"Sat, 15 Aug 2026 04:54:15 -0700\"\n    },\n    {\n      \"thread_id\": \"19fffa5ac7b149fb\",\n      \"message_id\": \"19fffa5ac7b149fb\",\n      \"subject\": \"Exclusive Offer for Zion Tech Group Clients\",\n      \"sender\": \"kleber@ziontechgroup.com\",\n      \"date\": \"Fri, 14 Aug 2026 02:41:15 -0700\"\n    },\n    {\n      \"thread_id\": \"19ffffa658c449d7\",\n      \"message_id\": \"19ffffa658c449d7\",\n      \"subject\": \"Exclusive Offer for Zion Tech Group Clients\",\n      \"sender\": \"kleber@ziontechgroup.com\",\n      \"date\": \"Fri, 14 Aug 2026 04:13:47 -0700\"\n    },\n    {\n      \"thread_id\": \"19ffff77fe401636\",\n      \"message_id\": \"19ffff77fe401636\",\n      \"subject\": \"Exclusive Offer for Zion Tech Group Clients\",\n      \"sender\": \"kleber@ziontechgroup.com\",\n      \"date\": \"Fri, 14 Aug 2026 04:10:37 -0700\"\n    },\n    {\n      \"thread_id\": \"19fff77c0f678422\",\n      \"message_id\": \"19fff77c0f678422\",\n      \"subject\": \"Quick Question About Your IT Infrastructure Audit\",\n      \"sender\": \"kleber@ziontechgroup.com\",\n      \"date\": \"Fri, 14 Aug 2026 01:51:06 -0700\"\n    },\n    {\n      \"thread_id\": \"19fff7351e5fb665\",\n      \"message_id\": \"19fff7351e5fb665\",\n      \"subject\": \"Exclusive Offer for Zion Tech Group Clients\",\n      \"sender\": \"kleber@ziontechgroup.com\",\n      \"date\": \"Fri, 14 Aug 2026 01:46:15 -0700\"\n    },\n    {\n      \"thread_id\": \"19fffe94aefcdbc1\",\n      \"message_id\": \"19fffe94aefcdbc1\",\n      \"subject\": \"Quick Question About Your IT Infrastructure Audit\",\n      \"s",
+        "stderr": "",
+        "duration_s": 51.68,
+        "error": null,
+        "script": "lightweight_hot_followup_scanner.py"
+      }
+    ]
   }
 }

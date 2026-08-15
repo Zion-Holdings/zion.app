@@ -1,6 +1,6 @@
 {
-  "opt_in": true,
   "send_allowed": true,
+  "opt_in": true,
   "wave_cap": 1,
-  "note": "auto-recovered for cron run"
+  "updated_at": "2026-08-15T08:00:00Z"
 }

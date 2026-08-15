@@ -75,8 +75,10 @@ Leading indicators for ai performance monitoring: executive guide: workflow comp
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
-        />
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        >
+        </script>
       </article>
     </div>
   );

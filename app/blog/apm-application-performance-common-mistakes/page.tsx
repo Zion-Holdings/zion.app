@@ -75,8 +75,10 @@ Leading indicators for apm application performance: common mistakes: workflow co
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
-        />
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        >
+        </script>
       </article>
     </div>
   );

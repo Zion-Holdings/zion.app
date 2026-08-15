@@ -9,6 +9,7 @@ export interface PageShellProps {
   canonical?: string;
   breadcrumbs?: { label: string; href?: string }[];
   className?: string;
+  jsonLd?: Record<string, unknown>;
   children: ReactNode;
 }
 
@@ -18,6 +19,7 @@ export default function PageShell({
   canonical,
   breadcrumbs,
   className = '',
+  jsonLd,
   children,
 }: PageShellProps) {
   const effectiveBreadcrumbs = breadcrumbs && breadcrumbs.length > 0
@@ -80,6 +82,13 @@ export default function PageShell({
       </main>
       {canonical && (
         <link rel="canonical" href={canonical} />
+      )}
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       )}
     </div>
   );
