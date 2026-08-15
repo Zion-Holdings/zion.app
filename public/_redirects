@@ -7,8 +7,8 @@
 /blog/enterprise-ai-intelligence-hub-2026-1143/ /blog/enterprise-ai-intelligence-hub-2026-507/ 301
 
 # Search
-/search /docs/search/index.html 200
-/search/ /docs/search/index.html 200
+/search /search/index.html 200
+/search/ /search/index.html 200
 
 # Free tools fallbacks
 /free-tools /free-tools.html 200
@@ -18,17 +18,25 @@
 /free-ai-tools /free-tools.html 200
 /free-ai-tools/ /free-tools.html 200
 
+# Tools fallback
+/tools /tools/index.html 200
+/tools/ /tools/index.html 200
+
 # AI lab fallback
 /ai /tools 301
 /ai/ /tools 301
+
+# AI fallback
+/ai /ai/ 301
+/ai/ /ai/ 301
 
 # Proposal fallback
 /proposal /contact 301
 /proposal/ /contact 301
 
 # Dashboard fallback
-/dashboard /services 301
-/dashboard/ /services 301
+/dashboard /services/ 301
+/dashboard/ /services/ 301
 
 # Blog post fallback
 /blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization /blog/ai-automation-best-practices-2026/ 301
