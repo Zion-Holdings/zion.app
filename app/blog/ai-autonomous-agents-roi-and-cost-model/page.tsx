@@ -64,7 +64,7 @@ Leading indicators for ai autonomous agents: roi and cost model: workflow comple
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

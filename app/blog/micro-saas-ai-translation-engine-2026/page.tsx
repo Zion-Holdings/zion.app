@@ -64,7 +64,7 @@ If this guide matches your microsaas translation engine initiative, the next ste
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -64,7 +64,7 @@ If this guide matches your endpoint management: case study initiative, the next 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

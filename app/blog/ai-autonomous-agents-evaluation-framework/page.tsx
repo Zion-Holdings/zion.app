@@ -64,7 +64,7 @@ If this guide matches your ai autonomous agents: evaluation framework initiative
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

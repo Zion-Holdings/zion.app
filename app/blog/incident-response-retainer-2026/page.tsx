@@ -64,7 +64,7 @@ If this guide matches your incident response retainer initiative, the next step 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

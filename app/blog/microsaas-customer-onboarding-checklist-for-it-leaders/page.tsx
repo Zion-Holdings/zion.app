@@ -64,7 +64,7 @@ Leading indicators for microsaas customer onboarding: checklist for it leaders: 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

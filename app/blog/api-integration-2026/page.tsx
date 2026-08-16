@@ -64,7 +64,7 @@ Leading indicators for api integration: workflow completion rate, escalation rat
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

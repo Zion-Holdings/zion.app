@@ -64,7 +64,7 @@ For ai agent tool builder: automation roadmap: pick one workflow, assign ownersh
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

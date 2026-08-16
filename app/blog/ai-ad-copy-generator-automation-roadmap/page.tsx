@@ -64,7 +64,7 @@ For ai ad copy generator: automation roadmap: pick one workflow, assign ownershi
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

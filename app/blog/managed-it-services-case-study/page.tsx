@@ -64,7 +64,7 @@ If this guide matches your managed it services: case study initiative, the next 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

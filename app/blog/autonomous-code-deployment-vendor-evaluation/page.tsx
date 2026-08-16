@@ -64,7 +64,7 @@ If this guide matches your autonomous code deployment: vendor evaluation initiat
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

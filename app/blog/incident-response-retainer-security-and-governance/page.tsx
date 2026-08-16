@@ -64,7 +64,7 @@ Leading indicators for incident response retainer: security and governance: work
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

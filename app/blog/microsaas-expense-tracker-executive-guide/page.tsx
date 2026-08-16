@@ -64,7 +64,7 @@ For microsaas expense tracker: executive guide: pick one workflow, assign owners
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

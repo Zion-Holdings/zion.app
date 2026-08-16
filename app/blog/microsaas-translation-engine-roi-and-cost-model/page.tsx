@@ -64,7 +64,7 @@ If this guide matches your microsaas translation engine: roi and cost model init
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

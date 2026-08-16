@@ -64,7 +64,7 @@ If this guide matches your ai bom procurement: case study initiative, the next s
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

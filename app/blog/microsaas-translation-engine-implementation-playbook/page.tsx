@@ -64,7 +64,7 @@ For microsaas translation engine: implementation playbook: pick one workflow, as
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -64,7 +64,7 @@ For ai bdr sdr: architecture overview: pick one workflow, assign ownership, defi
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

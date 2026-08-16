@@ -64,7 +64,7 @@ Leading indicators for graphql federation platform: architecture overview: workf
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -64,7 +64,7 @@ For ai accessibility optimizer: pick one workflow, assign ownership, define succ
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

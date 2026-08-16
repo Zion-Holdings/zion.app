@@ -64,7 +64,7 @@ Leading indicators for ai customer success churn prevention: architecture overvi
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

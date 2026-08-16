@@ -64,7 +64,7 @@ For microsaas hr recruitment: evaluation framework: pick one workflow, assign ow
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

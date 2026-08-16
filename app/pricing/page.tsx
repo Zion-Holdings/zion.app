@@ -5,6 +5,17 @@ export const metadata: Metadata = {
   title: 'Pricing',
   description: 'Flexible pricing for managed IT, AI, cloud, and cybersecurity services.',
   alternates: { canonical: '/pricing/' },
+  openGraph: {
+    title: 'Pricing — Zion Tech Group',
+    description: 'Transparent plans for every stage of growth.',
+    url: 'https://ziontechgroup.com/pricing/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pricing — Zion Tech Group',
+    description: 'Transparent plans for every stage of growth.',
+  },
 };
 
 const PLANS = [

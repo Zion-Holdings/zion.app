@@ -64,7 +64,7 @@ For ai agent tool builder: security and governance: pick one workflow, assign ow
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

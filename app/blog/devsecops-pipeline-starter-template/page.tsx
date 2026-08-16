@@ -64,7 +64,7 @@ Leading indicators for devsecops pipeline: starter template: workflow completion
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -64,7 +64,7 @@ If this guide matches your cloud native app development: operations handbook ini
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

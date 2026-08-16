@@ -64,7 +64,7 @@ If this guide matches your data analytics platform: case study initiative, the n
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -64,7 +64,7 @@ If this guide matches your it consulting: automation roadmap initiative, the nex
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

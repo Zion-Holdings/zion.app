@@ -64,7 +64,7 @@ For 5g solutions: pick one workflow, assign ownership, define success metrics, i
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

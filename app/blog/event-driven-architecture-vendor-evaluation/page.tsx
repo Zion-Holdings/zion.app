@@ -64,7 +64,7 @@ For event driven architecture: vendor evaluation: pick one workflow, assign owne
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

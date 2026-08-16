@@ -64,7 +64,7 @@ If this guide matches your microsaas social media manager: deployment patterns i
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

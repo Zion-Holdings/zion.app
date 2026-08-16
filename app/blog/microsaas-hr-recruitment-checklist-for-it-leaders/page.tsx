@@ -64,7 +64,7 @@ For microsaas hr recruitment: checklist for it leaders: pick one workflow, assig
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

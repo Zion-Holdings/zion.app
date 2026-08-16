@@ -64,7 +64,7 @@ For etl pipeline optimization: evaluation framework: pick one workflow, assign o
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

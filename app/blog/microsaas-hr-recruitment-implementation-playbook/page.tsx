@@ -64,7 +64,7 @@ Leading indicators for microsaas hr recruitment: implementation playbook: workfl
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

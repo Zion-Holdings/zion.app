@@ -64,7 +64,7 @@ Leading indicators for cloud finops: executive guide: workflow completion rate, 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -64,7 +64,7 @@ For cybersecurity for msps: pick one workflow, assign ownership, define success 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

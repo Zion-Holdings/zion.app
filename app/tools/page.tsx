@@ -5,7 +5,18 @@ export const metadata: Metadata = {
   title: 'Free Tools & Calculators',
   description:
     'Free online tools: ROI Calculator, Port Scanner, SSL Checker, Service Comparison, AI Service Router, and Service Recommender — no sign-up required.',
-  alternates: { canonical: '/tools' },
+  alternates: { canonical: '/tools/' },
+  openGraph: {
+    title: 'Free Tools & Calculators — Zion Tech Group',
+    description: 'Free online tools for network diagnostics, SSL checks, service comparison, AI recommendations, and ROI planning.',
+    url: 'https://ziontechgroup.com/tools/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free Tools & Calculators — Zion Tech Group',
+    description: 'Free online tools for network diagnostics, SSL checks, service comparison, AI recommendations, and ROI planning.',
+  },
 };
 
 const TOOLS = [

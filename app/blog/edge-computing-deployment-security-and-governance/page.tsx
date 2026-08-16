@@ -64,7 +64,7 @@ Leading indicators for edge computing deployment: security and governance: workf
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

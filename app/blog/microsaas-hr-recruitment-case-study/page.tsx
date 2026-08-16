@@ -64,7 +64,7 @@ If this guide matches your microsaas hr recruitment: case study initiative, the 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

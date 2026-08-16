@@ -64,7 +64,7 @@ If this guide matches your cloud migration services: implementation playbook ini
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

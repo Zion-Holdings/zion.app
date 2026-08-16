@@ -64,7 +64,7 @@ Leading indicators for genai devops ci/cd: deployment patterns: workflow complet
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

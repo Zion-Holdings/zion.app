@@ -64,7 +64,7 @@ If this guide matches your automation orchestration: deployment patterns initiat
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

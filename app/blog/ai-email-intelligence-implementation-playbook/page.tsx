@@ -64,7 +64,7 @@ Leading indicators for ai email intelligence: implementation playbook: workflow 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

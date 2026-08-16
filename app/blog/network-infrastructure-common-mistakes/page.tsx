@@ -64,7 +64,7 @@ For network infrastructure: common mistakes: pick one workflow, assign ownership
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

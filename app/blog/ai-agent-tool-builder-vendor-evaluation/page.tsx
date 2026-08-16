@@ -64,7 +64,7 @@ If this guide matches your ai agent tool builder: vendor evaluation initiative, 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

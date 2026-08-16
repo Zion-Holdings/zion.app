@@ -64,7 +64,7 @@ Leading indicators for edge computing deployment: automation roadmap: workflow c
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

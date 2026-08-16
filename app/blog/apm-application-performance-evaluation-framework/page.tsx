@@ -64,7 +64,7 @@ Leading indicators for apm application performance: evaluation framework: workfl
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -64,7 +64,7 @@ For enterprise ai intelligence hub: evaluation framework: pick one workflow, ass
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

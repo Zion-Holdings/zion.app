@@ -64,7 +64,7 @@ For autonomous qa engineering: policy and compliance: pick one workflow, assign 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

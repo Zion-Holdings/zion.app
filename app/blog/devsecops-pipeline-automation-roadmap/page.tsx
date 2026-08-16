@@ -64,7 +64,7 @@ Leading indicators for devsecops pipeline: automation roadmap: workflow completi
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

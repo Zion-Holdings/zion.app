@@ -64,7 +64,7 @@ If this guide matches your ai data lakehouse pipelines: roi and cost model initi
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

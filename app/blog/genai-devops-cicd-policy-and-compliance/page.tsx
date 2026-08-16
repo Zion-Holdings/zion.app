@@ -64,7 +64,7 @@ If this guide matches your genai devops ci/cd: policy and compliance initiative,
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

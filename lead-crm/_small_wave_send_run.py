@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 import sys, json, os, time, datetime, base64, urllib.request, urllib.parse, urllib.error
+import re
 from pathlib import Path
 
 REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
 sys.path.insert(0, str(REPO))
+
+EMAIL_RE = re.compile(r'^[^@\s]+@[^@\s]+\.[^@\s]+$')
 
 NEXT_WAVE_PATH = REPO / 'lead-crm' / 'outreach_next_wave.json'
 BATCH_PATH = NEXT_WAVE_PATH if NEXT_WAVE_PATH.exists() else REPO / 'lead-crm' / 'outreach_ready_canonical.json'
@@ -11,6 +14,8 @@ EXCLUSION_PATH = REPO / 'lead-crm' / 'exclusion-list.json'
 SEND_LOG = REPO / 'lead-crm' / 'outreach_sent_history.jsonl'
 VERIFICATION_PATH = REPO / 'lead-crm' / 'send_verification_result.json'
 SENDER_EMAIL = 'kleber@ziontechgroup.com'
+
+EMAIL_RE = re.compile(r'^[^@\s]+@[^@\s]+\.[^@\s]+$')
 
 # Auth / Gmail helpers
 from commands.google_workspace import gog_headers, gmail_sent, gmail_search, gmail_get
@@ -92,7 +97,9 @@ def recent_outbound(to_addr, within_seconds=72*3600):
     return False
 
 def send_mail(to_addr, subject, body, html=None, thread_id=None, message_id=None):
-    to_key = (to_addr or '').lower()
+    to_key = (to_addr or '').lower().strip()
+    if not EMAIL_RE.match(to_key):
+        raise ValueError(f"Invalid To header: {to_addr}")
     excluded = load_excluded()
     if to_key in excluded:
         return None, 'excluded'
@@ -110,9 +117,9 @@ def send_mail(to_addr, subject, body, html=None, thread_id=None, message_id=None
     ]
     if message_id:
         raw_email_lines.extend(['References: %s' % message_id, 'In-Reply-To: %s' % message_id])
-    raw_email_lines.extend(['', html or body])
-    raw_email = '\r\n'.join(raw_email_lines)
-    encoded = base64.urlsafe_b64encode(raw_email.encode('utf-8')).decode('utf-8')
+    raw_email_lines.extend(['', html or body or ''])
+    raw = '\r\n'.join(raw_email_lines)
+    encoded = base64.urlsafe_b64encode(raw.encode('utf-8')).decode('utf-8')
     payload = json.dumps({'raw': encoded, 'threadId': thread_id} if thread_id else {'raw': encoded}).encode('utf-8')
     url = 'https://gmail.googleapis.com/gmail/v1/users/me/messages/send'
     headers = gog_headers() or {}
@@ -129,8 +136,7 @@ def send_mail(to_addr, subject, body, html=None, thread_id=None, message_id=None
         except urllib.error.HTTPError as e:
             last_err = e
             if e.code in (429, 500, 502, 503, 504):
-                wait = 2 * attempt
-                time.sleep(wait)
+                time.sleep(2 * attempt)
                 continue
             raise
         except Exception as e:
@@ -193,15 +199,14 @@ def main():
         result['error'] = 'SEND_DISABLED: ZTG_SEND_ALLOWED != 1'
         result['note'] = 'send_disabled'
         print(json.dumps(result, ensure_ascii=False))
-        # Still write verification artifact
         try:
             VERIFICATION_PATH.write_text(json.dumps(result, ensure_ascii=False, indent=2))
         except Exception:
             pass
         return
     for r in rows:
-        to = (r.get('email') or r.get('recipient') or r.get('to') or '').lower()
-        if not to:
+        to = (r.get('email') or r.get('recipient') or r.get('to') or '').strip().lower()
+        if not to or not EMAIL_RE.match(to):
             continue
         if to in excluded:
             continue
@@ -227,9 +232,8 @@ def main():
             continue
         # send
         try:
-            mid, tid = send_mail(to, subject, body, thread_id=thread_id, message_id=message_id)
+            mid, tid = send_mail(to, subject, body or '', thread_id=thread_id, message_id=message_id)
             if mid is None:
-                # blocked by excluded/duplicate/recent_sent
                 continue
             send_count = 1
             result['send_count'] = 1

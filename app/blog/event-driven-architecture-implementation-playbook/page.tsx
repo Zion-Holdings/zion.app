@@ -64,7 +64,7 @@ Leading indicators for event driven architecture: implementation playbook: workf
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

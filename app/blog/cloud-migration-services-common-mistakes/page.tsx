@@ -64,7 +64,7 @@ For cloud migration services: common mistakes: pick one workflow, assign ownersh
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

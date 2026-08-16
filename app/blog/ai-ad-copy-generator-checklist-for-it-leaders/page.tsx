@@ -64,7 +64,7 @@ If this guide matches your ai ad copy generator: checklist for it leaders initia
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -64,7 +64,7 @@ For api integration: executive guide: pick one workflow, assign ownership, defin
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

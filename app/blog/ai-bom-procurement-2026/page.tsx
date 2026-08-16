@@ -64,7 +64,7 @@ If this guide matches your ai bom procurement initiative, the next step is a sco
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

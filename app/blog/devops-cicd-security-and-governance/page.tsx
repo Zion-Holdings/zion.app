@@ -64,7 +64,7 @@ If this guide matches your devops ci/cd: security and governance initiative, the
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

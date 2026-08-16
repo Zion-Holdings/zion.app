@@ -64,7 +64,7 @@ If this guide matches your api gateway management: roi and cost model initiative
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

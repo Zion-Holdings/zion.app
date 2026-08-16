@@ -64,7 +64,7 @@ Leading indicators for cloud migration services: checklist for it leaders: workf
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

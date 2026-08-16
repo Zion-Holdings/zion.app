@@ -5,6 +5,18 @@ import { LocalBusinessJsonLd } from '@/components/LocalBusinessStructuredData';
 export const metadata = {
   title: 'Contact Us',
   description: 'Get in touch with Zion Tech Group. Call, email, or visit us in Middletown, DE.',
+  alternates: { canonical: '/contact/' },
+  openGraph: {
+    title: 'Contact Us — Zion Tech Group',
+    description: 'From AI strategy to cloud infrastructure and automation — free discovery call, same-day proposal.',
+    url: 'https://ziontechgroup.com/contact/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Us — Zion Tech Group',
+    description: 'From AI strategy to cloud infrastructure and automation — free discovery call, same-day proposal.',
+  },
 };
 
 export default function ContactPage() {
@@ -79,4 +91,4 @@ export default function ContactPage() {
       </div>
     </main>
   );
-}
+}

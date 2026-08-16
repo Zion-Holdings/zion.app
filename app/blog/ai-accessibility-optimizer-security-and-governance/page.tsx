@@ -64,7 +64,7 @@ For ai accessibility optimizer: security and governance: pick one workflow, assi
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -64,7 +64,7 @@ If this guide matches your event driven architecture: executive guide initiative
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

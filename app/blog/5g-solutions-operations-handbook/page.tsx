@@ -64,7 +64,7 @@ Leading indicators for 5g solutions: operations handbook: workflow completion ra
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -64,7 +64,7 @@ Leading indicators for aiops anomaly detection: deployment patterns: workflow co
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -64,7 +64,7 @@ If this guide matches your cyber threat intelligence: checklist for it leaders i
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -64,7 +64,7 @@ Leading indicators for ai agent safety evaluation: operations handbook: workflow
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

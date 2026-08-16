@@ -64,7 +64,7 @@ Leading indicators for chaos engineering: automation roadmap: workflow completio
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

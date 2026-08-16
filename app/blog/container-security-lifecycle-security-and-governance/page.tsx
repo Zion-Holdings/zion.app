@@ -64,7 +64,7 @@ If this guide matches your container security lifecycle: security and governance
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

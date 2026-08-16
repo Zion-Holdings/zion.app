@@ -64,7 +64,7 @@ Leading indicators for apm application performance: roi and cost model: workflow
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

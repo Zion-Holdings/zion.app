@@ -1,0 +1,9 @@
+{"ts": "2026-08-16T11:29:55.415711+00:00", "email": "lisa.clou@techcorp.io", "msg_id": "1a00a5154dcf235c", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-16T11:29:56.924470+00:00", "email": "emily.inno@innovateco.com", "msg_id": "1a00a51413b7a118", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-16T11:29:58.210774+00:00", "email": "sarah.inno@innovateco.com", "msg_id": "1a00a512af881d47", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-16T11:29:59.451323+00:00", "email": "ashley.aite@dataflow.com", "msg_id": "1a00a5110e083a45", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-16T11:30:00.767849+00:00", "email": "matthew.data@dataflow.com", "msg_id": "1a00a50fc76464bf", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-16T11:30:38.085035+00:00", "email": "michael.data@secureit.com", "msg_id": "1a008624e2b8df7e", "query": "subject:devops", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-16T11:30:44.108317+00:00", "email": "lisa.aite@innovateco.com", "msg_id": "1a0054ce14b174bb", "query": "subject:devops", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-16T12:21:47.572019+00:00", "email": "postmaster@5f.com.br", "msg_id": "1a00a8510bdf9a72", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-08-16T12:32:07.294480+00:00", "email": "community@photobucket.com", "msg_id": "1a00a8c30ea4adc1", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}

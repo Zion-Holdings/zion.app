@@ -64,7 +64,7 @@ If this guide matches your ai bdr sdr initiative, the next step is a scoping cal
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

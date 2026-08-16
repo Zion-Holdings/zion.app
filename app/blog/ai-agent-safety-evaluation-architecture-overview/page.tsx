@@ -64,7 +64,7 @@ For ai agent safety evaluation: architecture overview: pick one workflow, assign
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

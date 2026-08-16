@@ -64,7 +64,7 @@ For devsecops pipeline: security and governance: pick one workflow, assign owner
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

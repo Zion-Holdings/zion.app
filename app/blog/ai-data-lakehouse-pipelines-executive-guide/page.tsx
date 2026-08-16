@@ -64,7 +64,7 @@ If this guide matches your ai data lakehouse pipelines: executive guide initiati
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

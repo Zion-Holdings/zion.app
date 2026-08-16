@@ -64,7 +64,7 @@ For ai accessibility optimizer: starter template: pick one workflow, assign owne
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

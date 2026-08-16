@@ -64,7 +64,7 @@ If this guide matches your etl pipeline optimization: vendor evaluation initiati
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

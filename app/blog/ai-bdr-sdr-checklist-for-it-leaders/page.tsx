@@ -64,7 +64,7 @@ Leading indicators for ai bdr sdr: checklist for it leaders: workflow completion
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

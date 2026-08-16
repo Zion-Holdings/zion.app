@@ -64,7 +64,7 @@ If this guide matches your managed it services: automation roadmap initiative, t
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -64,7 +64,7 @@ If this guide matches your automated ai reporting: architecture overview initiat
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

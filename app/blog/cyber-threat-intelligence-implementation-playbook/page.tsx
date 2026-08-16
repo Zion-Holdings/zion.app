@@ -64,7 +64,7 @@ For cyber threat intelligence: implementation playbook: pick one workflow, assig
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

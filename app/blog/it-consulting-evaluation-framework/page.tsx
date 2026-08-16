@@ -64,7 +64,7 @@ Leading indicators for it consulting: evaluation framework: workflow completion 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

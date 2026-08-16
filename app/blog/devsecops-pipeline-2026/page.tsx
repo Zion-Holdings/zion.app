@@ -64,7 +64,7 @@ Leading indicators for devsecops pipeline: workflow completion rate, escalation 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

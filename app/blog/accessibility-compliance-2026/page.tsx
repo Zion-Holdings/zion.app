@@ -64,7 +64,7 @@ For accessibility compliance: pick one workflow, assign ownership, define succes
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

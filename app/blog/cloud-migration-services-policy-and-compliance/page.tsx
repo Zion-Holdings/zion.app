@@ -64,7 +64,7 @@ Leading indicators for cloud migration services: policy and compliance: workflow
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

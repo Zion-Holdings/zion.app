@@ -64,7 +64,7 @@ If this guide matches your aiops anomaly detection: policy and compliance initia
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

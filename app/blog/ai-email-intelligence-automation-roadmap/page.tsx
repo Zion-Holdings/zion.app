@@ -64,7 +64,7 @@ If this guide matches your ai email intelligence: automation roadmap initiative,
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

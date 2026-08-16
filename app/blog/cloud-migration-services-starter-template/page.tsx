@@ -64,7 +64,7 @@ Leading indicators for cloud migration services: starter template: workflow comp
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

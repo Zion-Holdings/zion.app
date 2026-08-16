@@ -6,6 +6,17 @@ export const metadata: Metadata = {
   description:
     'Learn about Zion Tech Group: mission, leadership, delivery model, and US-based team.',
   alternates: { canonical: '/about/' },
+  openGraph: {
+    title: 'About Us — Zion Tech Group',
+    description: 'We build intelligent systems that transform enterprise operations — from AI-powered automation to cloud infrastructure and beyond.',
+    url: 'https://ziontechgroup.com/about/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Us — Zion Tech Group',
+    description: 'We build intelligent systems that transform enterprise operations — from AI-powered automation to cloud infrastructure and beyond.',
+  },
 };
 
 export default function About() {

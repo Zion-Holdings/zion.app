@@ -64,7 +64,7 @@ Leading indicators for ai customer success churn prevention: executive guide: wo
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -64,7 +64,7 @@ If this guide matches your ai msp security compliance: security and governance i
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

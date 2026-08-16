@@ -64,7 +64,7 @@ If this guide matches your ai bom procurement: operations handbook initiative, t
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

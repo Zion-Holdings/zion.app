@@ -64,7 +64,7 @@ If this guide matches your devsecops pipeline: vendor evaluation initiative, the
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

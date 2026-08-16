@@ -64,7 +64,7 @@ For container security lifecycle: evaluation framework: pick one workflow, assig
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -64,7 +64,7 @@ If this guide matches your accessibility compliance: checklist for it leaders in
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

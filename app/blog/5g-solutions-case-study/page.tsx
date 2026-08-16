@@ -64,7 +64,7 @@ If this guide matches your 5g solutions: case study initiative, the next step is
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

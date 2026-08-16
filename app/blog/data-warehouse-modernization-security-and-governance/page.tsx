@@ -64,7 +64,7 @@ Leading indicators for data warehouse modernization: security and governance: wo
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -64,7 +64,7 @@ Leading indicators for api management gateway: policy and compliance: workflow c
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

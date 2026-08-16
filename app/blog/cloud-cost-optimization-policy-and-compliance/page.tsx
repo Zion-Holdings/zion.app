@@ -64,7 +64,7 @@ For cloud cost optimization: policy and compliance: pick one workflow, assign ow
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -64,7 +64,7 @@ If this guide matches your graphql federation platform: common mistakes initiati
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

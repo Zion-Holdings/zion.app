@@ -64,7 +64,7 @@ Leading indicators for microsaas expense tracker: vendor evaluation: workflow co
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

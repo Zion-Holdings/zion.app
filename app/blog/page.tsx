@@ -6,6 +6,17 @@ export const metadata: Metadata = {
   description:
     'Insights on AI, automation, enterprise IT, and digital transformation from the Zion Tech Group team.',
   alternates: { canonical: '/blog/' },
+  openGraph: {
+    title: 'Blog — Zion Tech Group',
+    description: 'Latest insights on AI, automation, enterprise IT, and digital transformation.',
+    url: 'https://ziontechgroup.com/blog/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog — Zion Tech Group',
+    description: 'Latest insights on AI, automation, enterprise IT, and digital transformation.',
+  },
 };
 
 export default function BlogIndexPage() {

@@ -64,7 +64,7 @@ If this guide matches your microsaas expense tracker: security and governance in
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

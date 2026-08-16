@@ -64,7 +64,7 @@ Leading indicators for automated ai reporting: executive guide: workflow complet
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

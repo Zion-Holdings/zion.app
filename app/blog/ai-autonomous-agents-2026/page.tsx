@@ -64,7 +64,7 @@ If this guide matches your ai autonomous agents initiative, the next step is a s
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

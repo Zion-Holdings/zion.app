@@ -64,7 +64,7 @@ Leading indicators for network infrastructure: deployment patterns: workflow com
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

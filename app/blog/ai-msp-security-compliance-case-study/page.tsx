@@ -64,7 +64,7 @@ Leading indicators for ai msp security compliance: case study: workflow completi
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

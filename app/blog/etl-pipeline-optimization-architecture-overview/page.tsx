@@ -64,7 +64,7 @@ If this guide matches your etl pipeline optimization: architecture overview init
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

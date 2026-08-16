@@ -1,6 +1,24 @@
 'use client';
 
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Solutions',
+  description: 'Industry-specific AI and IT solutions tailored to your business.',
+  alternates: { canonical: '/solutions/' },
+  openGraph: {
+    title: 'Solutions — Zion Tech Group',
+    description: 'Industry-specific AI and IT solutions tailored to your business.',
+    url: 'https://ziontechgroup.com/solutions/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Solutions — Zion Tech Group',
+    description: 'Industry-specific AI and IT solutions tailored to your business.',
+  },
+};
 
 const INDUSTRIES = [
   { name: 'Healthcare', slug: 'healthcare', desc: 'HIPAA-ready AI, patient data automation, and secure cloud infrastructure.' },

@@ -64,7 +64,7 @@ Leading indicators for cybersecurity for msps: vendor evaluation: workflow compl
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

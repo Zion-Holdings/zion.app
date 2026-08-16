@@ -64,7 +64,7 @@ Leading indicators for managed it services: implementation playbook: workflow co
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

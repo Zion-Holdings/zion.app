@@ -64,7 +64,7 @@ If this guide matches your enterprise backup dr: vendor evaluation initiative, t
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

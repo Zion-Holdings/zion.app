@@ -64,7 +64,7 @@ For ai agent tool builder: pick one workflow, assign ownership, define success m
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

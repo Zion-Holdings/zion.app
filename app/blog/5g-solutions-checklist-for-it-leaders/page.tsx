@@ -64,7 +64,7 @@ If this guide matches your 5g solutions: checklist for it leaders initiative, th
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -64,7 +64,7 @@ For endpoint management: roi and cost model: pick one workflow, assign ownership
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

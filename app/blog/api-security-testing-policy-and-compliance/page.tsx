@@ -64,7 +64,7 @@ For api security testing: policy and compliance: pick one workflow, assign owner
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

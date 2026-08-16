@@ -64,7 +64,7 @@ If this guide matches your chaos engineering: policy and compliance initiative, 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

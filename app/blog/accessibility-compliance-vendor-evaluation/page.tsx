@@ -64,7 +64,7 @@ Leading indicators for accessibility compliance: vendor evaluation: workflow com
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

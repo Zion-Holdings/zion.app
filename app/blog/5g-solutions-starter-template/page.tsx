@@ -64,7 +64,7 @@ Leading indicators for 5g solutions: starter template: workflow completion rate,
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

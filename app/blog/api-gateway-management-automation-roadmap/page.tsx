@@ -64,7 +64,7 @@ For api gateway management: automation roadmap: pick one workflow, assign owners
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

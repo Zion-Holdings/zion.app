@@ -64,7 +64,7 @@ Leading indicators for enterprise ai intelligence hub: operations handbook: work
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

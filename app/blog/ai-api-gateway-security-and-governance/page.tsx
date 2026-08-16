@@ -64,7 +64,7 @@ If this guide matches your ai api gateway: security and governance initiative, t
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

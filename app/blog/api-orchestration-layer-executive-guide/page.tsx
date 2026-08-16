@@ -64,7 +64,7 @@ Leading indicators for api orchestration layer: executive guide: workflow comple
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

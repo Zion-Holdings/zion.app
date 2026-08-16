@@ -64,7 +64,7 @@ Leading indicators for ai autonomous agents: policy and compliance: workflow com
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

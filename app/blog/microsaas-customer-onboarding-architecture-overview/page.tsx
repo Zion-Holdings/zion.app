@@ -64,7 +64,7 @@ If this guide matches your microsaas customer onboarding: architecture overview 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

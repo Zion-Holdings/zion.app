@@ -1,6 +1,39 @@
 {
-  "status": "error",
-  "error": "MissingScript",
-  "message": "lead-crm/historical_email_miner.py not found",
-  "timestamp": "2026-08-15T23:59:00Z"
+  "ts": "2026-08-16T12:55:44.443634+00:00",
+  "queries_run": 12,
+  "contacts_found": 0,
+  "new_leads_added": 0,
+  "elapsed_s": 113.213,
+  "queries_per_second": 0.106,
+  "avg_query_s": 9.4343,
+  "max_query_s": 10.5513,
+  "status": "send_complete",
+  "high_signal_leads": 0,
+  "lead_quality_ratio": null,
+  "rolling": {
+    "last_5_queries": [
+      10.199501146038529,
+      3.6410802280297503,
+      10.049308762012515,
+      10.025243301002774,
+      10.436691839015111
+    ],
+    "last_5_qps": [
+      0.098,
+      0.2746,
+      0.0995,
+      0.0997,
+      0.0958
+    ]
+  },
+  "send": {
+    "ts": "2026-08-16T12:55:11.815999+00:00",
+    "send_count": 15,
+    "skipped_templates": 0,
+    "successes": 15,
+    "failures": 0,
+    "llm_provider": "template",
+    "llm_model": "deterministic-template-v1",
+    "note": "All emails sent via Gmail API using deterministic-template fallback (no LLM API keys configured). miner_health.json updated manually post-send because send_outreach_batch.py does not."
+  }
 }

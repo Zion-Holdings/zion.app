@@ -64,7 +64,7 @@ For ai observability: pick one workflow, assign ownership, define success metric
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -64,7 +64,7 @@ Leading indicators for cloud cost ai optimizer: operations handbook: workflow co
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

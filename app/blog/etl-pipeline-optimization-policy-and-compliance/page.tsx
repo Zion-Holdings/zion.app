@@ -64,7 +64,7 @@ Leading indicators for etl pipeline optimization: policy and compliance: workflo
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -64,7 +64,7 @@ Leading indicators for ai api gateway: implementation playbook: workflow complet
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

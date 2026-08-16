@@ -1,0 +1,642 @@
+[
+  {
+    "id": "19fc9d2e9172cbc2",
+    "email": "thiago@germanbusiness.com.br",
+    "query": "subject:parceria"
+  },
+  {
+    "id": "19fc9d2e9172cbc2",
+    "email": "kleber@ziontechgroup.com",
+    "query": "subject:parceria"
+  },
+  {
+    "id": "19fc98444a7556bb",
+    "email": "postmaster@hcl.com",
+    "query": "subject:parceria"
+  },
+  {
+    "id": "19fc983394a1d014",
+    "email": "jason.guidry@hcl.com",
+    "query": "subject:parceria"
+  },
+  {
+    "id": "19fc952765141b04",
+    "email": "ishukohli@hcl.com",
+    "query": "subject:parceria"
+  },
+  {
+    "id": "19fc939b9c61bb67",
+    "email": "avinash.r@hcl.com",
+    "query": "subject:parceria"
+  },
+  {
+    "id": "19fc9200db0d0ddb",
+    "email": "postmaster@procurri.com",
+    "query": "subject:parceria"
+  },
+  {
+    "id": "19fc91fddb71bc00",
+    "email": "mweiss@procurri.com",
+    "query": "subject:parceria"
+  },
+  {
+    "id": "19fc8d05eacf564b",
+    "email": "djean.axt@ztg.com.br",
+    "query": "subject:parceria"
+  },
+  {
+    "id": "19fc881356bc5c6e",
+    "email": "thomas@gakenholz.de",
+    "query": "subject:parceria"
+  },
+  {
+    "id": "19fc4ce6bb6200c1",
+    "email": "valmy.gonzalez@shervacom.com",
+    "query": "subject:parceria"
+  },
+  {
+    "id": "19fb7952a63fe73f",
+    "email": "santosdenovais@xwf.google.com",
+    "query": "subject:parceria"
+  },
+  {
+    "id": "19fb79526781fb12",
+    "email": "naoresponda@rdstation.com",
+    "query": "subject:parceria"
+  },
+  {
+    "id": "19fb7952268201de",
+    "email": "timedemarketing@resultadosdigitais-mkt.com.br",
+    "query": "subject:parceria"
+  },
+  {
+    "id": "19fb79511270b216",
+    "email": "timedemarketing@resultadosdigitaismail.com.br",
+    "query": "subject:parceria"
+  },
+  {
+    "id": "19fa9d1ec43523d5",
+    "email": "administracao@drm.rj.gov.br",
+    "query": "subject:proposta"
+  },
+  {
+    "id": "19fa9d1ec43523d5",
+    "email": "commercial@ziontechgroup.com",
+    "query": "subject:proposta"
+  },
+  {
+    "id": "19fa201f8d2e3bf2",
+    "email": "carlos@ziontechgroup.com",
+    "query": "subject:proposta"
+  },
+  {
+    "id": "19f3e4f6fde49de5",
+    "email": "jsegatto@saopaulo.sp.leg.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f3dff5313ce9bc",
+    "email": "joao.aguiar@seguranca.mg.gov.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f1b228d60a7300",
+    "email": "renan.amorim@cavalera.com.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f1b228d60a7300",
+    "email": "sdm@ziontechgroup.com",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f1b228d60a7300",
+    "email": "ti@cavalera.com.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f1b15f1d516d9c",
+    "email": "saude@rioparanaiba.mg.gov.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f1b0b5b8ded3f5",
+    "email": "marcio.coutrin@school360.com.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f1b03e8a5af420",
+    "email": "marcos.maciel@novaengevix.com.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f1ab9a621169d1",
+    "email": "celi.vasconcelos@wyntech.inf.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f1a32d6ee161a3",
+    "email": "fabio.mesquita@vspsolution.com.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f1a2d4c5f0048a",
+    "email": "wagner.dias@logicnet.com.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f1a278068e3275",
+    "email": "herbert.azevedo@la.logicalis.com",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f1a13a6cc5d556",
+    "email": "almir.nascimento@grupomassa.com.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f1a13a6cc5d556",
+    "email": "rosana.padilha@grupomassa.com.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f1a13a6cc5d556",
+    "email": "jonny.soares@redemassa.com.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f1a13a6cc5d556",
+    "email": "bruno.garcia@grupomassa.com.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f1a13a6cc5d556",
+    "email": "alia.bianco@grupomassa.com.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f1a125c239eabe",
+    "email": "patricia.rodrigues@vivara.com.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f18f325bfb0acb",
+    "email": "pedro.cavalcanti@gvs.com",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f18ef046a54266",
+    "email": "eduardo.ornelas@social.mg.gov.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f18eb2fe8de031",
+    "email": "julia.andrade@seguranca.mg.gov.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f18e13ddee8464",
+    "email": "mariana.pimentel@ziontechgroup.com",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f18e13ddee8464",
+    "email": "salete@ziontechgroup.com",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f18e13ddee8464",
+    "email": "sandra.laschet@ima.sp.gov.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f18a1f10f1cfb0",
+    "email": "mauricio.sunamoto@vesuvius.com",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f184b019d89ce1",
+    "email": "luciana.onha@atento.com",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f184b019d89ce1",
+    "email": "administracaocasa@atento.com.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19ebb3f2b7245800",
+    "email": "contato@sieg.com",
+    "query": "subject:reunião"
+  },
+  {
+    "id": "19ebb3f20924ea51",
+    "email": "contato@comunicacao.serasaexperian.com.br",
+    "query": "subject:reunião"
+  },
+  {
+    "id": "19ebb3f13d0fd387",
+    "email": "mkt@knl.digital",
+    "query": "subject:reunião"
+  },
+  {
+    "id": "19d40214c8cff7a1",
+    "email": "will.cesar@dealwise.com.br",
+    "query": "subject:reunião"
+  },
+  {
+    "id": "19c2d759a1228741",
+    "email": "notifications@youcanbook.me",
+    "query": "subject:reunião"
+  },
+  {
+    "id": "19c28864131426a7",
+    "email": "infra@ingaia.com.br",
+    "query": "subject:reunião"
+  },
+  {
+    "id": "19c1e3060581ea5c",
+    "email": "calendar-notification@google.com",
+    "query": "subject:reunião"
+  },
+  {
+    "id": "19c10746d3190776",
+    "email": "cassia.barbosa@kenlo.com",
+    "query": "subject:reunião"
+  },
+  {
+    "id": "19c10746d3190776",
+    "email": "veronica.oliveira@i-value.com.br",
+    "query": "subject:reunião"
+  },
+  {
+    "id": "19b0d6b1be79d282",
+    "email": "natalia.diniz@dealwise.com.br",
+    "query": "subject:reunião"
+  },
+  {
+    "id": "199f2593371a4d79",
+    "email": "felipe.palmeiro@mkt.placehub.io",
+    "query": "subject:reunião"
+  },
+  {
+    "id": "197673734834f729",
+    "email": "cmsilveira@suzano.com.br",
+    "query": "subject:reunião"
+  },
+  {
+    "id": "197673734834f729",
+    "email": "ofini.fernandes@ziontechgroup.com",
+    "query": "subject:reunião"
+  },
+  {
+    "id": "19df2a74f3fb2ea1",
+    "email": "rogerio.rocha@vbr2.com.br",
+    "query": "subject:diagnóstico"
+  },
+  {
+    "id": "19cddd81dbf4a732",
+    "email": "luiz.campagner@ziontechgroup.com",
+    "query": "subject:diagnóstico"
+  },
+  {
+    "id": "19cddd81dbf4a732",
+    "email": "marketing@addee.com.br",
+    "query": "subject:diagnóstico"
+  },
+  {
+    "id": "19cdae98eb41096e",
+    "email": "tcharles.godoi@ziontechgroup.com",
+    "query": "subject:diagnóstico"
+  },
+  {
+    "id": "19976735b7afab8d",
+    "email": "coface.latinamerica@go.coface.com",
+    "query": "subject:diagnóstico"
+  },
+  {
+    "id": "1995cc95c85bdf10",
+    "email": "alexandre.souza@outmarketing.com.br",
+    "query": "subject:diagnóstico"
+  },
+  {
+    "id": "1980b902c27d6c7c",
+    "email": "tatiana.sciencio@bcrcx.com",
+    "query": "subject:diagnóstico"
+  },
+  {
+    "id": "1958590645153fd3",
+    "email": "paulo.volpis@vetorzero.com.br",
+    "query": "subject:diagnóstico"
+  },
+  {
+    "id": "1778bec0f410df34",
+    "email": "kleber@ztg.com.br",
+    "query": "subject:diagnóstico"
+  },
+  {
+    "id": "1778bec0f410df34",
+    "email": "assespro@assespropr.org.br",
+    "query": "subject:diagnóstico"
+  },
+  {
+    "id": "175282bac66c38ed",
+    "email": "contato@granatum.com.br",
+    "query": "subject:diagnóstico"
+  },
+  {
+    "id": "19fc9290c3a514d4",
+    "email": "george@georgegarza.com",
+    "query": "\"Zion Tech Group\""
+  },
+  {
+    "id": "19fc91da7492bf2b",
+    "email": "zion-support.github.io@noreply.github.com",
+    "query": "\"Zion Tech Group\""
+  },
+  {
+    "id": "19fc91da7492bf2b",
+    "email": "state_change@noreply.github.com",
+    "query": "\"Zion Tech Group\""
+  },
+  {
+    "id": "19fc8eaea82c336b",
+    "email": "rohit.singh@cockroachlabs.com",
+    "query": "\"Zion Tech Group\""
+  },
+  {
+    "id": "19fc8e9b16543971",
+    "email": "editors@channelpronetwork.com",
+    "query": "\"Zion Tech Group\""
+  },
+  {
+    "id": "19fc87ab886631c3",
+    "email": "messages-noreply@linkedin.com",
+    "query": "\"Zion Tech Group\""
+  },
+  {
+    "id": "19fc7e786edc2c57",
+    "email": "mauro.faria@fgv.br",
+    "query": "\"Zion Tech Group\""
+  },
+  {
+    "id": "19fc64b6a65e9d13",
+    "email": "reinhart.hermanus@finnix.id",
+    "query": "\"Zion Tech Group\""
+  },
+  {
+    "id": "19fc64b615923d9a",
+    "email": "nirmit.arora@ritivel.com",
+    "query": "\"Zion Tech Group\""
+  },
+  {
+    "id": "19fc64b56002ab31",
+    "email": "everett.ivy@xtraffic.com",
+    "query": "\"Zion Tech Group\""
+  },
+  {
+    "id": "19fc64b4cf150a37",
+    "email": "aurelia.song@nectome.com",
+    "query": "\"Zion Tech Group\""
+  },
+  {
+    "id": "19fc64b44e0f8792",
+    "email": "karthik.raman@persist-ai.com",
+    "query": "\"Zion Tech Group\""
+  },
+  {
+    "id": "19fca0309ac27544",
+    "email": "express@airbnb.com",
+    "query": "\"ziontechgroup.com\""
+  },
+  {
+    "id": "19fc9f3c2121c87f",
+    "email": "author@noreply.github.com",
+    "query": "\"ziontechgroup.com\""
+  },
+  {
+    "id": "19f1dea345552448",
+    "email": "contatordp@phicube.com.br",
+    "query": "subject:automação"
+  },
+  {
+    "id": "19f1dea2c1d6365e",
+    "email": "alvaro@sigapregao.com.br",
+    "query": "subject:automação"
+  },
+  {
+    "id": "19f1de9f1b483c25",
+    "email": "hi@pricelabs.co",
+    "query": "subject:automação"
+  },
+  {
+    "id": "19f1de9ba56530cd",
+    "email": "leticiam.sdr@econodata.com.br",
+    "query": "subject:automação"
+  },
+  {
+    "id": "19f1de994beebed2",
+    "email": "juliana.geglio@lastro.co",
+    "query": "subject:automação"
+  },
+  {
+    "id": "19f8a5ad7433964b",
+    "email": "paulina.xu@agenticfabriq.com",
+    "query": "subject:\"incident response\""
+  },
+  {
+    "id": "1986b72a04b0dc09",
+    "email": "zion.app@noreply.github.com",
+    "query": "subject:\"incident response\""
+  },
+  {
+    "id": "1986b72a04b0dc09",
+    "email": "ci_activity@noreply.github.com",
+    "query": "subject:\"incident response\""
+  },
+  {
+    "id": "179ec11fcc05c404",
+    "email": "list@wordfence.com",
+    "query": "subject:\"incident response\""
+  },
+  {
+    "id": "164857920454cea6",
+    "email": "marketing@ziontechgroup.com",
+    "query": "subject:\"incident response\""
+  },
+  {
+    "id": "15af1d297812cfa7",
+    "email": "computerworld_resources@cwresources.computerworld.com",
+    "query": "subject:\"incident response\""
+  },
+  {
+    "id": "19fc71ccfeee23b3",
+    "email": "newsletters@nl.technologyadvice.com",
+    "query": "subject:managed services"
+  },
+  {
+    "id": "19f91a9aa3ed723a",
+    "email": "info@manag.com",
+    "query": "subject:managed services"
+  },
+  {
+    "id": "19f147388cd43cdd",
+    "email": "sales@omc.cloud",
+    "query": "subject:managed services"
+  },
+  {
+    "id": "19f14731f5ae1bfa",
+    "email": "jason.l@quali.com",
+    "query": "subject:managed services"
+  },
+  {
+    "id": "19ce780d92fa73e7",
+    "email": "learnmore@visualedgeit.com",
+    "query": "subject:managed services"
+  },
+  {
+    "id": "19653443d65e14f4",
+    "email": "donotreply@wordpress.com",
+    "query": "subject:managed services"
+  },
+  {
+    "id": "19fb70f27bb8d10f",
+    "email": "sophia@dataprotect.com",
+    "query": "subject:devops"
+  },
+  {
+    "id": "19fb5feabe398e12",
+    "email": "marcus@cybershield.com",
+    "query": "subject:devops"
+  },
+  {
+    "id": "19fb33411c9ff7b6",
+    "email": "michael@healthnet.com",
+    "query": "subject:devops"
+  },
+  {
+    "id": "19fb2216205c5f7a",
+    "email": "sarah@techstart.com",
+    "query": "subject:devops"
+  },
+  {
+    "id": "19f2a042f4944556",
+    "email": "carlos.feliciano@tryterracotta.com",
+    "query": "subject:devops"
+  },
+  {
+    "id": "19f13c448c590d2a",
+    "email": "support@rundoo.ai",
+    "query": "subject:sase"
+  },
+  {
+    "id": "18c630e02a9e74e2",
+    "email": "info@connect.arubanetworks.com",
+    "query": "subject:sase"
+  },
+  {
+    "id": "19f2a04222d3b465",
+    "email": "fabian.lindfors@specific.dev",
+    "query": "subject:\"platform engineering\""
+  },
+  {
+    "id": "19f2a0410adb4d44",
+    "email": "tomas.barreto@okayhq.com",
+    "query": "subject:\"platform engineering\""
+  },
+  {
+    "id": "19f2a0407206f327",
+    "email": "andrios.robert@hoop.dev",
+    "query": "subject:\"platform engineering\""
+  },
+  {
+    "id": "19f2a03fedd45b35",
+    "email": "david.ruescas@sequentech.io",
+    "query": "subject:\"platform engineering\""
+  },
+  {
+    "id": "19f2a03f65f7903c",
+    "email": "eduardo.robles@sequentech.io",
+    "query": "subject:\"platform engineering\""
+  },
+  {
+    "id": "19f2a03ed9cd48e7",
+    "email": "shai.bargil@sequentech.io",
+    "query": "subject:\"platform engineering\""
+  },
+  {
+    "id": "19f2a03e837f6ab5",
+    "email": "alex.polvi@coreos.com",
+    "query": "subject:\"platform engineering\""
+  },
+  {
+    "id": "19f2a03d0e220372",
+    "email": "sam.alba@mendral.com",
+    "query": "subject:\"platform engineering\""
+  },
+  {
+    "id": "19f2a03cbc8e636a",
+    "email": "sascha.kuzins@ninite.com",
+    "query": "subject:\"platform engineering\""
+  },
+  {
+    "id": "19f2a03c60308e41",
+    "email": "robin.prothmann@egg-ai.com",
+    "query": "subject:\"platform engineering\""
+  },
+  {
+    "id": "19f2a03bd67e9874",
+    "email": "marcus.purzer@egg-ai.com",
+    "query": "subject:\"platform engineering\""
+  },
+  {
+    "id": "19f2a03b5cd869b8",
+    "email": "yuva.kumar@getdockup.com",
+    "query": "subject:\"platform engineering\""
+  },
+  {
+    "id": "1a00a5154dcf235c",
+    "email": "lisa.clou@techcorp.io",
+    "query": "\"Zion Tech Group\""
+  },
+  {
+    "id": "1a00a51413b7a118",
+    "email": "emily.inno@innovateco.com",
+    "query": "\"Zion Tech Group\""
+  },
+  {
+    "id": "1a00a512af881d47",
+    "email": "sarah.inno@innovateco.com",
+    "query": "\"Zion Tech Group\""
+  },
+  {
+    "id": "1a00a5110e083a45",
+    "email": "ashley.aite@dataflow.com",
+    "query": "\"Zion Tech Group\""
+  },
+  {
+    "id": "1a00a50fc76464bf",
+    "email": "matthew.data@dataflow.com",
+    "query": "\"Zion Tech Group\""
+  },
+  {
+    "id": "1a008624e2b8df7e",
+    "email": "michael.data@secureit.com",
+    "query": "subject:devops"
+  },
+  {
+    "id": "1a0054ce14b174bb",
+    "email": "lisa.aite@innovateco.com",
+    "query": "subject:devops"
+  },
+  {
+    "id": "1a00a8510bdf9a72",
+    "email": "postmaster@5f.com.br",
+    "query": "\"Zion Tech Group\""
+  },
+  {
+    "id": "1a00a8c30ea4adc1",
+    "email": "community@photobucket.com",
+    "query": "\"ziontechgroup.com\""
+  }
+]

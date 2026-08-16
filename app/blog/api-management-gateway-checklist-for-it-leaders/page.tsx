@@ -64,7 +64,7 @@ Leading indicators for api management gateway: checklist for it leaders: workflo
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

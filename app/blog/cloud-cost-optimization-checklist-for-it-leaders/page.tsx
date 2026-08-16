@@ -64,7 +64,7 @@ If this guide matches your cloud cost optimization: checklist for it leaders ini
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

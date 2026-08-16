@@ -64,7 +64,7 @@ If this guide matches your event driven architecture: policy and compliance init
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

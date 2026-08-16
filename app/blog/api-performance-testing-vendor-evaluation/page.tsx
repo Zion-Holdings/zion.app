@@ -64,7 +64,7 @@ Leading indicators for api performance testing: vendor evaluation: workflow comp
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

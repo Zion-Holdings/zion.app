@@ -64,7 +64,7 @@ For cloud cost ai optimizer: implementation playbook: pick one workflow, assign 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

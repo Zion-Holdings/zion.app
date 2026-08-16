@@ -64,7 +64,7 @@ Leading indicators for devops ci/cd: common mistakes: workflow completion rate, 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

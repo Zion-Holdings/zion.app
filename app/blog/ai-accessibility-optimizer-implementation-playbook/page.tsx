@@ -64,7 +64,7 @@ Leading indicators for ai accessibility optimizer: implementation playbook: work
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

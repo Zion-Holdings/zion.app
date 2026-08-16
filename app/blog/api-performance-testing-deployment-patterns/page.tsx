@@ -64,7 +64,7 @@ Leading indicators for api performance testing: deployment patterns: workflow co
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -1,9 +1,52 @@
 [
   {
-    "run": "2026-08-15T23:59:00Z",
-    "mode": "historical",
-    "result": "error",
-    "error": "MissingScript",
-    "details": "python3 lead-crm/historical_email_miner.py failed: [Errno 2] No such file or directory"
+    "run_count": 1,
+    "entries": [
+      {
+        "timestamp": null,
+        "queries_run": 12,
+        "contacts_found": 0,
+        "new_leads_added": 0,
+        "llm_used": false,
+        "email_sent": false,
+        "error_summary": "No LLM provider available: all cloud API keys unset and local Ollama at http://localhost:11434 unreachable."
+      }
+    ]
+  },
+  {
+    "ts": "2026-08-16T12:02:48.819146+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-08-16T12:16:34.288228+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached after search; breaking before metadata extraction"
+  },
+  {
+    "ts": "2026-08-16T12:22:45.485894+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-08-16T12:32:56.020855+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-08-16T12:47:21.015382+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-08-16T12:53:08.918005+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
   }
 ]

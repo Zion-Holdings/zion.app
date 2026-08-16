@@ -64,7 +64,7 @@ Leading indicators for network infrastructure: workflow completion rate, escalat
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

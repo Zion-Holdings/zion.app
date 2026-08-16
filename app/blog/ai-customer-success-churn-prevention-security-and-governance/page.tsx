@@ -64,7 +64,7 @@ If this guide matches your ai customer success churn prevention: security and go
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

@@ -64,7 +64,7 @@ Leading indicators for ai bdr sdr: common mistakes: workflow completion rate, es
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );

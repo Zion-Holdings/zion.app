@@ -64,7 +64,7 @@ If this guide matches your cloud cost ai optimizer: checklist for it leaders ini
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        ></script>
       </article>
     </div>
   );
