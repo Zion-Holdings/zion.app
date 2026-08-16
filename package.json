@@ -6,7 +6,7 @@
   "packageManager": "npm@10.9.8",
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack",
+    "build": "next build",
     "build:ci": "node scripts/build-wrapper.cjs",
     "build:check": "npm run type-check && node scripts/build-wrapper.cjs",
     "start": "next start",
