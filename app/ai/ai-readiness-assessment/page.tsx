@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 
 export const metadata = {
   title: 'AI Readiness Assessment | Zion Tech Group',
@@ -10,9 +8,7 @@ export const metadata = {
 
 export default function AIReadinessAssessmentPage() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
-      <Navigation />
-      <main className="py-20">
+    <main className="min-h-screen bg-slate-950 text-white py-20">
         <div className="container-page">
           <div className="mb-10">
             <Link href="/ai/" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">← AI Solutions</Link>
@@ -85,7 +81,6 @@ export default function AIReadinessAssessmentPage() {
           </div>
         </div>
       </main>
-      <Footer />
-    </div>
+    </main>
   );
 }

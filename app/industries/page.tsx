@@ -1,7 +1,5 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Industries | Zion Tech Group',
@@ -11,9 +9,7 @@ export const metadata: Metadata = {
 
 export default function Industries() {
   return (
-    <>
-      <Navigation />
-      <main className="min-h-screen bg-slate-950 text-white py-20 px-4">
+    <main className="min-h-screen bg-slate-950 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Industries We Serve</h1>
           <p className="text-xl text-slate-300 mb-12">
@@ -57,7 +53,6 @@ export default function Industries() {
           </Link>
         </div>
       </main>
-      <Footer />
-    </>
+    </main>
   );
 }

@@ -1,46 +1,47 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { PRIMARY_NAV_LINKS } from '@/constants/navigation';
 
 const EMAIL = 'kleber@ziontechgroup.com';
 
-const NAV_LINKS = [
-  { href: '/services/', label: 'Services' },
-  { href: '/ai/', label: 'AI Solutions' },
-  { href: '/products/', label: 'AI Products' },
-  { href: '/tools/', label: 'Free Tools' },
-  { href: '/solutions/', label: 'Solutions' },
-  { href: '/about/', label: 'About' },
-  { href: '/case-studies/', label: 'Case Studies' },
-  { href: '/blog/', label: 'Blog' },
-  { href: '/pricing/', label: 'Pricing' },
-  { href: '/contact/', label: 'Contact' },
-];
-
 export default function Navigation() {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const isActive = (href: string) => {
+    if (href === '/') return pathname === '/';
+    return pathname.startsWith(href);
+  };
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
       <div className="container-page flex items-center justify-between h-16">
-        <Link href="/" className="text-white font-bold text-xl">Zion Tech Group</Link>
+        <Link href="/" className="text-white font-bold text-xl">
+          Zion Tech Group
+        </Link>
         <button
           className="md:hidden text-white"
           onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Menu"
+          aria-label="Toggle menu"
           aria-expanded={mobileOpen}
         >
           Menu
         </button>
         <nav className="hidden md:flex gap-6 text-sm text-slate-300">
-          {NAV_LINKS.map((link) => (
+          {PRIMARY_NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="hover:text-purple-400 transition"
+              className={`transition ${
+                isActive(link.href)
+                  ? 'text-purple-400 font-medium'
+                  : 'hover:text-purple-400'
+              }`}
             >
-              {link.label}
+              {link.name}
             </Link>
           ))}
           <a
@@ -58,14 +59,18 @@ export default function Navigation() {
         }`}
       >
         <nav className="flex flex-col gap-2 px-4 text-sm text-slate-300">
-          {NAV_LINKS.map((link) => (
+          {PRIMARY_NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="py-3 hover:text-purple-400 transition"
+              className={`py-3 transition ${
+                isActive(link.href)
+                  ? 'text-purple-400 font-medium'
+                  : 'hover:text-purple-400'
+              }`}
               onClick={() => setMobileOpen(false)}
             >
-              {link.label}
+              {link.name}
             </Link>
           ))}
           <a

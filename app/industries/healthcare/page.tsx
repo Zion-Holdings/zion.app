@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'AI Solutions for Healthcare & Life Sciences | Zion Tech Group',
@@ -42,9 +40,7 @@ const complianceBadges = [
 
 export default function HealthcareIndustryPage() {
   return (
-    <>
-      <Navigation />
-      <main className="min-h-screen bg-slate-950 text-white py-20 px-4">
+    <main className="min-h-screen bg-slate-950 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="mb-12">
             <span className="text-sm font-semibold text-emerald-400 uppercase tracking-wider">
@@ -98,7 +94,6 @@ export default function HealthcareIndustryPage() {
           </div>
         </div>
       </main>
-      <Footer />
-    </>
+    </main>
   );
 }

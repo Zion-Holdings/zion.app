@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Our Leadership Team | Zion Tech Group',
@@ -44,9 +42,7 @@ const teamMembers = [
 
 export default function TeamPage() {
   return (
-    <>
-      <Navigation />
-      <main className="min-h-screen bg-slate-950 text-white py-20 px-4">
+    <main className="min-h-screen bg-slate-950 text-white py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="mb-12">
             <span className="text-sm font-semibold text-purple-400 uppercase tracking-wider">
@@ -95,7 +91,6 @@ export default function TeamPage() {
           </div>
         </div>
       </main>
-      <Footer />
-    </>
+    </main>
   );
 }
