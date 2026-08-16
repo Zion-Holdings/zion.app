@@ -1,69 +1,115 @@
-import { } from 'next/navigation';
+import type { Metadata } from 'next';
+import Link from 'next/link';
 
-export const metadata = {
-  title: "AI Director - Media Edition #2 - Zion Tech Group",
-  description: "Next-generation media solution: AI Director - Media Edition #2. Combines workflow management with adaptive intelligence for optimal results.",
+export const metadata: Metadata = {
+  title: `AI Director - Media Edition #2 | Zion Tech Group`,
+  description: `Next-generation media solution: AI Director - Media Edition #2. Combines workflow management with adaptive intelligence for optimal results.`,
+  keywords: 'Microservices deployment, Performance dashboards, Real-time processing, Role-based access control, Audit trails, Mobile-responsive interface, suite, media, Zion Tech Group',
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-director---media-edition-2-62532ec5`
-  }
+    canonical: `https://ziontechgroup.com/services/ai-director---media-edition-2-62532ec5/`,
+  },
 };
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">AI Director - Media Edition #2</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation media solution: AI Director - Media Edition #2. Combines workflow management with adaptive intelligence for optimal results.</p>
         
-        <div className="bg-slate-900 rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
-          <ul className="list-disc list-inside space-y-2">
-            <li>Microservices deployment</li>
-            <li>Performance dashboards</li>
-            <li>Real-time processing</li>
-            <li>Role-based access control</li>
-            <li>Audit trails</li>
-          </ul>
+        <div class="mb-6">
+          <a href="/services/" class="text-purple-400 hover:text-purple-300 text-sm flex items-center gap-2">
+            ← Back to All Services
+          </a>
         </div>
         
-        <div className="bg-slate-900 rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
-          <ul className="list-disc list-inside space-y-2">
-            <li>Predictive maintenance scheduling</li>
-            <li>Self-healing infrastructure</li>
-            <li>Zero manual intervention required</li>
-            <li>Dynamic resource allocation</li>
-            <li>Intelligent load balancing</li>
-          </ul>
+        <h1 className="text-4xl font-bold mb-6 text-white">AI Director - Media Edition #2</h1>
+        <p className="text-lg text-slate-300 mb-8">Next-generation media solution: AI Director - Media Edition #2. Combines workflow management with adaptive intelligence for optimal results.</p>
+        
+        <div class="bg-slate-900 rounded-xl p-6 mb-8">
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs px-3 py-1 bg-purple-900/30 rounded-full text-purple-300">suite</span>
+            <span class="text-xs px-3 py-1 bg-blue-900/30 rounded-full text-blue-300">media</span>
+          </div>
+          <h2 class="text-2xl font-semibold mb-4 text-white">Key Features</h2>
+          <ul class="list-disc list-inside space-y-2">
+        <li class="text-slate-300">Microservices deployment</li>
+        <li class="text-slate-300">Performance dashboards</li>
+        <li class="text-slate-300">Real-time processing</li>
+        <li class="text-slate-300">Role-based access control</li>
+        <li class="text-slate-300">Audit trails</li>
+        <li class="text-slate-300">Mobile-responsive interface</li>
+      </ul>
         </div>
         
-        <div className="border border-purple-500 rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
-          <div className="grid grid-cols-3 gap-4">
-            <div className="bg-slate-800 p-4 rounded-lg">
-              <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$199/month</p>
+        <div class="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 class="text-2xl font-semibold mb-4 text-white">Benefits</h2>
+          <ul class="list-disc list-inside space-y-2">
+        <li class="text-slate-300">Predictive maintenance scheduling</li>
+        <li class="text-slate-300">Self-healing infrastructure</li>
+        <li class="text-slate-300">Zero manual intervention required</li>
+        <li class="text-slate-300">Dynamic resource allocation</li>
+        <li class="text-slate-300">Intelligent load balancing</li>
+      </ul>
+        </div>
+        
+        
+        <div class="border border-purple-500/30 rounded-xl p-6 mb-8">
+          <h2 class="text-2xl font-semibold text-white mb-4">Pricing</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-slate-800 rounded-lg p-4 text-center">
+              <h3 class="font-semibold text-white mb-2">Basic</h3>
+              <p class="text-2xl font-bold text-purple-400 mb-2">199</p>
+              <p class="text-sm text-slate-400">Getting started plan</p>
             </div>
-            <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
-              <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$499/month</p>
+            <div class="bg-slate-800 rounded-lg p-4 text-center border-2 border-purple-500">
+              <h3 class="font-semibold text-white mb-2">Pro</h3>
+              <p class="text-2xl font-bold text-purple-400 mb-2">499</p>
+              <p class="text-sm text-slate-400">Most popular</p>
             </div>
-            <div className="bg-slate-800 p-4 rounded-lg">
-              <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$1499/month</p>
+            <div class="bg-slate-800 rounded-lg p-4 text-center">
+              <h3 class="font-semibold text-white mb-2">Enterprise</h3>
+              <p class="text-2xl font-bold text-purple-400 mb-2">1499</p>
+              <p class="text-sm text-slate-400">Full-featured solution</p>
             </div>
           </div>
         </div>
         
-        <div className="text-center">
-          <a 
-            href="https://calendly.com/kleber-ziontechgroup/consultation" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
+        <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl p-6 mb-8">
+          <h2 class="text-2xl font-semibold text-white mb-4">Related Services</h2>
+          <div class="grid md:grid-cols-2 gap-4">
+            
+              <div>
+                <a href="/services/adaptive-analyzer-media-6418ae54/" class="text-purple-300 hover:text-purple-200 font-medium">Adaptive analyzer-media</a>
+                <p class="text-slate-400 text-sm mt-1">Unlock unprecedented growth with Adaptive analyzer-media. This autonomous system provides user experience with zero manu...</p>
+              </div>
+            
+            
+              <div>
+                <a href="/services/adaptive-automation-media-6b73f3c1/" class="text-purple-300 hover:text-purple-200 font-medium">Adaptive automation-media</a>
+                <p class="text-slate-400 text-sm mt-1">Transform your media operations with our Adaptive automation-media. This AI-driven solution automates inventory manageme...</p>
+              </div>
+            
+            
+              <div>
+                <a href="/services/adaptive-data-intelligence-464bea7c/" class="text-purple-300 hover:text-purple-200 font-medium">Adaptive Data Intelligence</a>
+                <p class="text-slate-400 text-sm mt-1">Unlock unprecedented growth with Adaptive Data Intelligence. This autonomous system provides supply chain with zero manu...</p>
+              </div>
+            
+            
+              <div>
+                <a href="/services/adaptive-director-media-d7843949/" class="text-purple-300 hover:text-purple-200 font-medium">Adaptive director-media</a>
+                <p class="text-slate-400 text-sm mt-1">Next-generation media solution: Adaptive director-media. Combines decision support with adaptive intelligence for optima...</p>
+              </div>
+            
+          </div>
+        </div>
+        
+        <div class="text-center">
+          <Link
+            href="/contact/"
+            class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
           >
             Book a Consultation
-          </a>
+          </Link>
         </div>
       </div>
     </main>

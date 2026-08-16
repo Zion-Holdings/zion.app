@@ -208288,7 +208288,7 @@
       "pro": "648",
       "enterprise": "1948"
     },
-    "timestamp": "2026-08-16T01:57:07.304650+00:00",
+    "timestamp": "2026-08-16T03:07:04.014133+00:00",
     "contactInfo": {
       "website": "/services/intelligent-compliance-automation-daf2ffd7",
       "email": "hello@ziontechgroup.com",
@@ -208321,7 +208321,7 @@
       "pro": "598",
       "enterprise": "1798"
     },
-    "timestamp": "2026-08-16T01:57:07.304660+00:00",
+    "timestamp": "2026-08-16T03:07:04.014156+00:00",
     "contactInfo": {
       "website": "/services/ai-driven-customer-optimization-suite-ef99b5ac",
       "email": "hello@ziontechgroup.com",
@@ -208354,7 +208354,7 @@
       "pro": "499",
       "enterprise": "1499"
     },
-    "timestamp": "2026-08-16T01:57:07.304666+00:00",
+    "timestamp": "2026-08-16T03:07:04.014171+00:00",
     "contactInfo": {
       "website": "/services/smart-supply-chain-workflow-automation-29a90208",
       "email": "hello@ziontechgroup.com",
@@ -208387,7 +208387,7 @@
       "pro": "648",
       "enterprise": "1948"
     },
-    "timestamp": "2026-08-16T01:57:07.304671+00:00",
+    "timestamp": "2026-08-16T03:07:04.014184+00:00",
     "contactInfo": {
       "website": "/services/ai-powered-proactive-iot-intelligence-64f38668",
       "email": "hello@ziontechgroup.com",
@@ -208420,7 +208420,7 @@
       "pro": "698",
       "enterprise": "2098"
     },
-    "timestamp": "2026-08-16T01:57:07.304675+00:00",
+    "timestamp": "2026-08-16T03:07:04.014197+00:00",
     "contactInfo": {
       "website": "/services/machine-learning-model-operations-platform-9b2e5c01",
       "email": "hello@ziontechgroup.com",
@@ -208453,7 +208453,7 @@
       "pro": "499",
       "enterprise": "1499"
     },
-    "timestamp": "2026-08-16T01:57:07.304681+00:00",
+    "timestamp": "2026-08-16T03:07:04.014216+00:00",
     "contactInfo": {
       "website": "/services/ai-powered-advanced-legal-analytics-1b153672",
       "email": "hello@ziontechgroup.com",
@@ -208486,7 +208486,7 @@
       "pro": "598",
       "enterprise": "1798"
     },
-    "timestamp": "2026-08-16T01:57:07.304687+00:00",
+    "timestamp": "2026-08-16T03:07:04.014229+00:00",
     "contactInfo": {
       "website": "/services/intelligent-transportation-forecasting-engine-d5ba262c",
       "email": "hello@ziontechgroup.com",
@@ -208519,7 +208519,7 @@
       "pro": "548",
       "enterprise": "1648"
     },
-    "timestamp": "2026-08-16T01:57:07.304693+00:00",
+    "timestamp": "2026-08-16T03:07:04.014240+00:00",
     "contactInfo": {
       "website": "/services/ai-powered-smart-customer-experience-suite-44d2655d",
       "email": "hello@ziontechgroup.com",
@@ -208552,7 +208552,7 @@
       "pro": "449",
       "enterprise": "1349"
     },
-    "timestamp": "2026-08-16T01:57:07.304698+00:00",
+    "timestamp": "2026-08-16T03:07:04.014256+00:00",
     "contactInfo": {
       "website": "/services/conversational-ai-for-marketing-409418af",
       "email": "hello@ziontechgroup.com",
@@ -208585,7 +208585,7 @@
       "pro": "499",
       "enterprise": "1499"
     },
-    "timestamp": "2026-08-16T01:57:07.304703+00:00",
+    "timestamp": "2026-08-16T03:07:04.014267+00:00",
     "contactInfo": {
       "website": "/services/ai-driven-autonomous-marketing-automation-aafffdec",
       "email": "hello@ziontechgroup.com",
@@ -208593,6 +208593,666 @@
     },
     "icon": "\ud83d\udca1",
     "href": "/services/ai-driven-autonomous-marketing-automation-aafffdec",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-real-time-code-generation-bdb23e37",
+    "name": "AI-Powered Real-Time Code Generation",
+    "description": "Advanced code generation system that produces real-time software solutions from natural language descriptions.",
+    "category": "development",
+    "industry": "technology",
+    "features": [
+      "Multi-language support",
+      "Code optimization",
+      "Security scanning",
+      "Documentation generation"
+    ],
+    "benefits": [
+      "10x faster development",
+      "Reduced bugs",
+      "Improved quality",
+      "Enhanced security"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-16T03:24:47.350836+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-real-time-code-generation-bdb23e37",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-real-time-code-generation-bdb23e37",
+    "popular": false
+  },
+  {
+    "id": "cloud-native-education-optimization-ad1b2e9c",
+    "name": "Cloud-Native Education Optimization",
+    "description": "AI-driven cloud optimization platform that automatically manages resource allocation and cost optimization.",
+    "category": "cloud",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Cost optimization",
+      "Performance tuning",
+      "Resource monitoring"
+    ],
+    "benefits": [
+      "Reduced cloud costs",
+      "Better performance",
+      "Automatic scaling",
+      "Optimized resources"
+    ],
+    "pricing": {
+      "basic": "218",
+      "pro": "548",
+      "enterprise": "1648"
+    },
+    "timestamp": "2026-08-16T03:24:47.350868+00:00",
+    "contactInfo": {
+      "website": "/services/cloud-native-education-optimization-ad1b2e9c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/cloud-native-education-optimization-ad1b2e9c",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-enterprise-grade-threat-detection-8bef865e",
+    "name": "AI-Powered Enterprise-Grade Threat Detection",
+    "description": "Advanced cybersecurity platform that identifies and mitigates enterprise-grade threats in real-time.",
+    "category": "security",
+    "industry": "technology",
+    "features": [
+      "Behavioral analysis",
+      "Automated response",
+      "Threat intelligence",
+      "Incident management"
+    ],
+    "benefits": [
+      "Proactive protection",
+      "Reduced breaches",
+      "Faster response",
+      "Compliance assurance"
+    ],
+    "pricing": {
+      "basic": "278",
+      "pro": "698",
+      "enterprise": "2098"
+    },
+    "timestamp": "2026-08-16T03:24:47.350881+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-enterprise-grade-threat-detection-8bef865e",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-enterprise-grade-threat-detection-8bef865e",
+    "popular": false
+  },
+  {
+    "id": "ai-driven-agriculture-optimization-suite-accd857e",
+    "name": "AI-Driven Agriculture Optimization Suite",
+    "description": "Industry-specific AI solution that optimizes agriculture operations and decision-making processes.",
+    "category": "industry solutions",
+    "industry": "technology",
+    "features": [
+      "Process optimization",
+      "Decision support",
+      "Performance analytics",
+      "ROI tracking"
+    ],
+    "benefits": [
+      "20%+ efficiency gains",
+      "Cost reduction",
+      "Better decisions",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "238",
+      "pro": "598",
+      "enterprise": "1798"
+    },
+    "timestamp": "2026-08-16T03:24:47.350897+00:00",
+    "contactInfo": {
+      "website": "/services/ai-driven-agriculture-optimization-suite-accd857e",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-driven-agriculture-optimization-suite-accd857e",
+    "popular": false
+  },
+  {
+    "id": "smart-financial-workflow-automation-5e7a3c6a",
+    "name": "Smart Financial Workflow Automation",
+    "description": "Intelligent workflow automation platform that streamlines financial processes and eliminates manual tasks.",
+    "category": "automation",
+    "industry": "technology",
+    "features": [
+      "Process mapping",
+      "Task automation",
+      "Workflow optimization",
+      "Exception handling"
+    ],
+    "benefits": [
+      "Faster operations",
+      "Reduced errors",
+      "Improved productivity",
+      "Better resource utilization"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-16T03:24:47.350907+00:00",
+    "contactInfo": {
+      "website": "/services/smart-financial-workflow-automation-5e7a3c6a",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/smart-financial-workflow-automation-5e7a3c6a",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-automated-telecommunications-analytics-33723956",
+    "name": "AI-Powered Automated Telecommunications Analytics",
+    "description": "AI-driven analytics platform that delivers automated insights into telecommunications operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time monitoring",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-16T03:24:47.350930+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-automated-telecommunications-analytics-33723956",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-automated-telecommunications-analytics-33723956",
+    "popular": false
+  },
+  {
+    "id": "intelligent-education-forecasting-engine-8bd46ff0",
+    "name": "Intelligent Education Forecasting Engine",
+    "description": "Machine learning-powered forecasting system that predicts education trends, demands, and outcomes with high accuracy.",
+    "category": "forecasting",
+    "industry": "technology",
+    "features": [
+      "Time-series analysis",
+      "Scenario modeling",
+      "Confidence intervals",
+      "Automated alerts"
+    ],
+    "benefits": [
+      "Accurate demand planning",
+      "Reduced forecast errors",
+      "Opportunity identification",
+      "Risk mitigation"
+    ],
+    "pricing": {
+      "basic": "238",
+      "pro": "598",
+      "enterprise": "1798"
+    },
+    "timestamp": "2026-08-16T03:24:47.350940+00:00",
+    "contactInfo": {
+      "website": "/services/intelligent-education-forecasting-engine-8bd46ff0",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/intelligent-education-forecasting-engine-8bd46ff0",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-predictive-customer-experience-suite-23601445",
+    "name": "AI-Powered Predictive Customer Experience Suite",
+    "description": "Next-generation customer experience platform that delivers predictive service delivery across all touchpoints.",
+    "category": "customer experience",
+    "industry": "technology",
+    "features": [
+      "Omnichannel support",
+      "Personalization engine",
+      "Sentiment analysis",
+      "Journey mapping"
+    ],
+    "benefits": [
+      "Higher customer satisfaction",
+      "Increased loyalty",
+      "Reduced churn",
+      "Improved CSAT scores"
+    ],
+    "pricing": {
+      "basic": "218",
+      "pro": "548",
+      "enterprise": "1648"
+    },
+    "timestamp": "2026-08-16T03:24:47.350952+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-predictive-customer-experience-suite-23601445",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-predictive-customer-experience-suite-23601445",
+    "popular": false
+  },
+  {
+    "id": "ai-driven-next-generation-marketing-automation-27064053",
+    "name": "AI-Driven Next-Generation Marketing Automation",
+    "description": "Intelligent marketing platform that creates next-generation campaigns across channels, optimizing content and targeting.",
+    "category": "marketing",
+    "industry": "technology",
+    "features": [
+      "Dynamic content creation",
+      "Audience segmentation",
+      "A/B testing",
+      "Performance analytics"
+    ],
+    "benefits": [
+      "Higher conversion rates",
+      "Improved ROI",
+      "Personalized messaging",
+      "Automated workflows"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-16T03:24:47.350968+00:00",
+    "contactInfo": {
+      "website": "/services/ai-driven-next-generation-marketing-automation-27064053",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-driven-next-generation-marketing-automation-27064053",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-adaptive-code-generation-30ac094a",
+    "name": "AI-Powered Adaptive Code Generation",
+    "description": "Advanced code generation system that produces adaptive software solutions from natural language descriptions.",
+    "category": "development",
+    "industry": "technology",
+    "features": [
+      "Multi-language support",
+      "Code optimization",
+      "Security scanning",
+      "Documentation generation"
+    ],
+    "benefits": [
+      "10x faster development",
+      "Reduced bugs",
+      "Improved quality",
+      "Enhanced security"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-16T03:24:47.350983+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-adaptive-code-generation-30ac094a",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-adaptive-code-generation-30ac094a",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-cloud-native-data-processing-f1a72a6e",
+    "name": "AI-Powered Cloud-Native Data Processing",
+    "description": "Intelligent data processing platform that automates extraction, transformation, and loading of data at scale.",
+    "category": "data engineering",
+    "industry": "technology",
+    "features": [
+      "Automated ETL",
+      "Data validation",
+      "Error recovery",
+      "Schema evolution"
+    ],
+    "benefits": [
+      "Reduced manual work",
+      "Higher data quality",
+      "Faster processing",
+      "Self-healing pipelines"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-16T03:52:06.839235+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-cloud-native-data-processing-f1a72a6e",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-cloud-native-data-processing-f1a72a6e",
+    "popular": false
+  },
+  {
+    "id": "cloud-native-retail-optimization-60e8776c",
+    "name": "Cloud-Native Retail Optimization",
+    "description": "AI-driven cloud optimization platform that automatically manages resource allocation and cost optimization.",
+    "category": "cloud",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Cost optimization",
+      "Performance tuning",
+      "Resource monitoring"
+    ],
+    "benefits": [
+      "Reduced cloud costs",
+      "Better performance",
+      "Automatic scaling",
+      "Optimized resources"
+    ],
+    "pricing": {
+      "basic": "218",
+      "pro": "548",
+      "enterprise": "1648"
+    },
+    "timestamp": "2026-08-16T03:52:06.839255+00:00",
+    "contactInfo": {
+      "website": "/services/cloud-native-retail-optimization-60e8776c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/cloud-native-retail-optimization-60e8776c",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-data-driven-threat-detection-88295cab",
+    "name": "AI-Powered Data-Driven Threat Detection",
+    "description": "Advanced cybersecurity platform that identifies and mitigates data-driven threats in real-time.",
+    "category": "security",
+    "industry": "technology",
+    "features": [
+      "Behavioral analysis",
+      "Automated response",
+      "Threat intelligence",
+      "Incident management"
+    ],
+    "benefits": [
+      "Proactive protection",
+      "Reduced breaches",
+      "Faster response",
+      "Compliance assurance"
+    ],
+    "pricing": {
+      "basic": "278",
+      "pro": "698",
+      "enterprise": "2098"
+    },
+    "timestamp": "2026-08-16T03:52:06.839267+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-data-driven-threat-detection-88295cab",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-data-driven-threat-detection-88295cab",
+    "popular": false
+  },
+  {
+    "id": "ai-driven-real-estate-optimization-suite-78ecfdda",
+    "name": "AI-Driven Real Estate Optimization Suite",
+    "description": "Industry-specific AI solution that optimizes real estate operations and decision-making processes.",
+    "category": "industry solutions",
+    "industry": "technology",
+    "features": [
+      "Process optimization",
+      "Decision support",
+      "Performance analytics",
+      "ROI tracking"
+    ],
+    "benefits": [
+      "20%+ efficiency gains",
+      "Cost reduction",
+      "Better decisions",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "238",
+      "pro": "598",
+      "enterprise": "1798"
+    },
+    "timestamp": "2026-08-16T03:52:06.839284+00:00",
+    "contactInfo": {
+      "website": "/services/ai-driven-real-estate-optimization-suite-78ecfdda",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-driven-real-estate-optimization-suite-78ecfdda",
+    "popular": false
+  },
+  {
+    "id": "smart-legal-workflow-automation-5b123f8c",
+    "name": "Smart Legal Workflow Automation",
+    "description": "Intelligent workflow automation platform that streamlines legal processes and eliminates manual tasks.",
+    "category": "automation",
+    "industry": "technology",
+    "features": [
+      "Process mapping",
+      "Task automation",
+      "Workflow optimization",
+      "Exception handling"
+    ],
+    "benefits": [
+      "Faster operations",
+      "Reduced errors",
+      "Improved productivity",
+      "Better resource utilization"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-16T03:52:06.839295+00:00",
+    "contactInfo": {
+      "website": "/services/smart-legal-workflow-automation-5b123f8c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/smart-legal-workflow-automation-5b123f8c",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-advanced-iot-intelligence-2a2c7eff",
+    "name": "AI-Powered Advanced IoT Intelligence",
+    "description": "Edge AI platform that processes IoT sensor data in real-time with advanced insights.",
+    "category": "iot",
+    "industry": "technology",
+    "features": [
+      "Edge processing",
+      "Real-time analytics",
+      "Automated responses",
+      "Energy efficiency"
+    ],
+    "benefits": [
+      "Reduced latency",
+      "Better insights",
+      "Automated responses",
+      "Energy efficiency"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-16T03:52:06.839307+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-advanced-iot-intelligence-2a2c7eff",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-advanced-iot-intelligence-2a2c7eff",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-smart-manufacturing-analytics-afdbfc3c",
+    "name": "AI-Powered Smart Manufacturing Analytics",
+    "description": "AI-driven analytics platform that delivers smart insights into manufacturing operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time monitoring",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-16T03:52:06.839323+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-smart-manufacturing-analytics-afdbfc3c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-smart-manufacturing-analytics-afdbfc3c",
+    "popular": false
+  },
+  {
+    "id": "intelligent-retail-forecasting-engine-78460235",
+    "name": "Intelligent Retail Forecasting Engine",
+    "description": "Machine learning-powered forecasting system that predicts retail trends, demands, and outcomes with high accuracy.",
+    "category": "forecasting",
+    "industry": "technology",
+    "features": [
+      "Time-series analysis",
+      "Scenario modeling",
+      "Confidence intervals",
+      "Automated alerts"
+    ],
+    "benefits": [
+      "Accurate demand planning",
+      "Reduced forecast errors",
+      "Opportunity identification",
+      "Risk mitigation"
+    ],
+    "pricing": {
+      "basic": "238",
+      "pro": "598",
+      "enterprise": "1798"
+    },
+    "timestamp": "2026-08-16T03:52:06.839334+00:00",
+    "contactInfo": {
+      "website": "/services/intelligent-retail-forecasting-engine-78460235",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/intelligent-retail-forecasting-engine-78460235",
+    "popular": false
+  },
+  {
+    "id": "ai-powered-autonomous-customer-experience-suite-2f3f2578",
+    "name": "AI-Powered Autonomous Customer Experience Suite",
+    "description": "Next-generation customer experience platform that delivers autonomous service delivery across all touchpoints.",
+    "category": "customer experience",
+    "industry": "technology",
+    "features": [
+      "Omnichannel support",
+      "Personalization engine",
+      "Sentiment analysis",
+      "Journey mapping"
+    ],
+    "benefits": [
+      "Higher customer satisfaction",
+      "Increased loyalty",
+      "Reduced churn",
+      "Improved CSAT scores"
+    ],
+    "pricing": {
+      "basic": "218",
+      "pro": "548",
+      "enterprise": "1648"
+    },
+    "timestamp": "2026-08-16T03:52:06.839344+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-autonomous-customer-experience-suite-2f3f2578",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-autonomous-customer-experience-suite-2f3f2578",
+    "popular": false
+  },
+  {
+    "id": "conversational-ai-for-media-296f61d2",
+    "name": "Conversational AI for Media",
+    "description": "Natural language processing system that handles media inquiries through intelligent chatbots.",
+    "category": "automation",
+    "industry": "technology",
+    "features": [
+      "Natural language understanding",
+      "Multi-language support",
+      "Context awareness",
+      "Seamless handoff"
+    ],
+    "benefits": [
+      "24/7 availability",
+      "Instant response times",
+      "Consistent service quality",
+      "Reduced support costs"
+    ],
+    "pricing": {
+      "basic": "179",
+      "pro": "449",
+      "enterprise": "1349"
+    },
+    "timestamp": "2026-08-16T03:52:06.839355+00:00",
+    "contactInfo": {
+      "website": "/services/conversational-ai-for-media-296f61d2",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/conversational-ai-for-media-296f61d2",
     "popular": false
   }
 ]

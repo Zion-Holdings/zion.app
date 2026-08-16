@@ -1,67 +1,112 @@
-import { } from 'next/navigation';
+import type { Metadata } from 'next';
+import Link from 'next/link';
 
-export const metadata = {
-  title: "Automation Cognitive - Logistics - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Automation Cognitive - Logistics leverages advanced machine learning to deliver data processing at s",
+export const metadata: Metadata = {
+  title: `Automation Cognitive - Logistics | Zion Tech Group`,
+  description: `Revolutionize logistics through intelligent automation. Our Automation Cognitive - Logistics leverages advanced machine learning to deliver data processing at scale.`,
+  keywords: 'SOC 2 certified, Machine learning integration, Serverless functions, Real-time processing, Data encryption, analytics, logistics, Zion Tech Group',
   alternates: {
-    canonical: `https://ziontechgroup.com/services/automation-cognitive---logistics-b89907bc`
-  }
+    canonical: `https://ziontechgroup.com/services/automation-cognitive---logistics-b89907bc/`,
+  },
 };
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Automation Cognitive - Logistics</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize logistics through intelligent automation. Our Automation Cognitive - Logistics leverages advanced machine learning to deliver data processing at scale.</p>
         
-        <div className="bg-slate-900 rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
-          <ul className="list-disc list-inside space-y-2">
-            <li>SOC 2 certified</li>
-            <li>Machine learning integration</li>
-            <li>Serverless functions</li>
-            <li>Real-time processing</li>
-            <li>Data encryption</li>
-          </ul>
+        <div class="mb-6">
+          <a href="/services/" class="text-purple-400 hover:text-purple-300 text-sm flex items-center gap-2">
+            ← Back to All Services
+          </a>
         </div>
         
-        <div className="bg-slate-900 rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
-          <ul className="list-disc list-inside space-y-2">
-            <li>Enterprise-grade security</li>
-            <li>Automated compliance reporting</li>
-            <li>Scalable to millions of transactions</li>
-          </ul>
+        <h1 className="text-4xl font-bold mb-6 text-white">Automation Cognitive - Logistics</h1>
+        <p className="text-lg text-slate-300 mb-8">Revolutionize logistics through intelligent automation. Our Automation Cognitive - Logistics leverages advanced machine learning to deliver data processing at scale.</p>
+        
+        <div class="bg-slate-900 rounded-xl p-6 mb-8">
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="text-xs px-3 py-1 bg-purple-900/30 rounded-full text-purple-300">analytics</span>
+            <span class="text-xs px-3 py-1 bg-blue-900/30 rounded-full text-blue-300">logistics</span>
+          </div>
+          <h2 class="text-2xl font-semibold mb-4 text-white">Key Features</h2>
+          <ul class="list-disc list-inside space-y-2">
+        <li class="text-slate-300">SOC 2 certified</li>
+        <li class="text-slate-300">Machine learning integration</li>
+        <li class="text-slate-300">Serverless functions</li>
+        <li class="text-slate-300">Real-time processing</li>
+        <li class="text-slate-300">Data encryption</li>
+      </ul>
         </div>
         
-        <div className="border border-purple-500 rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
-          <div className="grid grid-cols-3 gap-4">
-            <div className="bg-slate-800 p-4 rounded-lg">
-              <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$199/month</p>
+        <div class="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 class="text-2xl font-semibold mb-4 text-white">Benefits</h2>
+          <ul class="list-disc list-inside space-y-2">
+        <li class="text-slate-300">Enterprise-grade security</li>
+        <li class="text-slate-300">Automated compliance reporting</li>
+        <li class="text-slate-300">Scalable to millions of transactions</li>
+      </ul>
+        </div>
+        
+        
+        <div class="border border-purple-500/30 rounded-xl p-6 mb-8">
+          <h2 class="text-2xl font-semibold text-white mb-4">Pricing</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-slate-800 rounded-lg p-4 text-center">
+              <h3 class="font-semibold text-white mb-2">Basic</h3>
+              <p class="text-2xl font-bold text-purple-400 mb-2">199</p>
+              <p class="text-sm text-slate-400">Getting started plan</p>
             </div>
-            <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
-              <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$499/month</p>
+            <div class="bg-slate-800 rounded-lg p-4 text-center border-2 border-purple-500">
+              <h3 class="font-semibold text-white mb-2">Pro</h3>
+              <p class="text-2xl font-bold text-purple-400 mb-2">499</p>
+              <p class="text-sm text-slate-400">Most popular</p>
             </div>
-            <div className="bg-slate-800 p-4 rounded-lg">
-              <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$1499/month</p>
+            <div class="bg-slate-800 rounded-lg p-4 text-center">
+              <h3 class="font-semibold text-white mb-2">Enterprise</h3>
+              <p class="text-2xl font-bold text-purple-400 mb-2">1499</p>
+              <p class="text-sm text-slate-400">Full-featured solution</p>
             </div>
           </div>
         </div>
         
-        <div className="text-center">
-          <a 
-            href="https://calendly.com/kleber-ziontechgroup/consultation" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
+        <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl p-6 mb-8">
+          <h2 class="text-2xl font-semibold text-white mb-4">Related Services</h2>
+          <div class="grid md:grid-cols-2 gap-4">
+            
+              <div>
+                <a href="/services/adaptive-advisor-for-logistics-bbb5a349/" class="text-purple-300 hover:text-purple-200 font-medium">Adaptive Advisor for Logistics</a>
+                <p class="text-slate-400 text-sm mt-1">The future of logistics is here with Adaptive Advisor for Logistics. Powered by cutting-edge AI, this platform delivers ...</p>
+              </div>
+            
+            
+              <div>
+                <a href="/services/adaptive-analyzer-for-construction-43c8a544/" class="text-purple-300 hover:text-purple-200 font-medium">Adaptive Analyzer for Construction</a>
+                <p class="text-slate-400 text-sm mt-1">Unlock unprecedented growth with Adaptive Analyzer for Construction. This autonomous system provides workflow management...</p>
+              </div>
+            
+            
+              <div>
+                <a href="/services/adaptive-coordinator-finance-c8072d9d/" class="text-purple-300 hover:text-purple-200 font-medium">Adaptive coordinator-finance</a>
+                <p class="text-slate-400 text-sm mt-1">Transform your finance operations with our Adaptive coordinator-finance. This AI-driven solution automates sales forecas...</p>
+              </div>
+            
+            
+              <div>
+                <a href="/services/adaptive-data-intelligence-464bea7c/" class="text-purple-300 hover:text-purple-200 font-medium">Adaptive Data Intelligence</a>
+                <p class="text-slate-400 text-sm mt-1">Unlock unprecedented growth with Adaptive Data Intelligence. This autonomous system provides supply chain with zero manu...</p>
+              </div>
+            
+          </div>
+        </div>
+        
+        <div class="text-center">
+          <Link
+            href="/contact/"
+            class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
           >
             Book a Consultation
-          </a>
+          </Link>
         </div>
       </div>
     </main>

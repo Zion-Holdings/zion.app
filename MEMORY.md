@@ -7289,3 +7289,5 @@ Workspace service account (domain-wide delegation):
 - [EmailInteraction] 2026-07-08 05:47:28 | === Email Interaction Agent Started ===
 - [EmailInteraction] 2026-07-08 05:47:58 | fetch_unread exception: Command '['gog', 'mail', 'search', 'is:unread', '--account', 'kleber@ziontechgroup.com', '--no-input', '--max', '20']' timed out after 30 seconds
 - [EmailInteraction] 2026-07-08 05:47:58 | === Email Interaction Agent Completed ===
+
+- [System] 2026-08-16 | Service page restoration: fixed 921 pages with proper dark theme styling + canonical metadata; restored build-wrapper.cjs (147-line multi-candidate build); corrected build script for Next.js 15 (no --webpack flag); removed 6841 stale out/ artifacts from git; fixed sitemap.xml conflict markers. Committed + pushed to hero-carousel (2 commits).
