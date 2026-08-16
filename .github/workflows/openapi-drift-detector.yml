@@ -10,7 +10,7 @@ name: OpenAPI Contract Drift Detector
     - main
   schedule:
   - cron: 0 12 * * *
-  workflow_dispatch: null
+  workflow_dispatch:
 jobs:
   openapi-drift:
     name: Detect OpenAPI Drift

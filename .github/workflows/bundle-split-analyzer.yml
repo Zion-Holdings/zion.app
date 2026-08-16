@@ -10,7 +10,7 @@ name: Autonomous Bundle Split Analyzer
     - main
   schedule:
   - cron: 0 17 * * 2
-  workflow_dispatch: null
+  workflow_dispatch:
 jobs:
   bundle-split:
     name: Bundle Split Analyzer

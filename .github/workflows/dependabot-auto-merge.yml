@@ -5,7 +5,7 @@ name: Dependabot Auto-Merge
     - opened
     - synchronize
     - reopened
-  workflow_dispatch: null
+  workflow_dispatch:
 permissions:
   contents: write
   pull-requests: write

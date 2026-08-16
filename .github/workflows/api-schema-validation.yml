@@ -14,7 +14,7 @@ name: API Schema Validation
     paths:
     - app/api/**
     - openapi/**
-  workflow_dispatch: null
+  workflow_dispatch:
 permissions:
   contents: read
   pull-requests: write

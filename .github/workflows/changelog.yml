@@ -5,7 +5,7 @@ name: Autonomous Changelog Generator
   push:
     branches:
     - main
-  workflow_dispatch: null
+  workflow_dispatch:
 jobs:
   changelog:
     name: Generate Changelog

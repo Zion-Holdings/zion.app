@@ -4,7 +4,7 @@ name: Autonomous Structured Data (Schema.org) Validator
 "on":
   schedule:
   - cron: 0 9 * * 1
-  workflow_dispatch: null
+  workflow_dispatch:
 jobs:
   schema-validate:
     name: Validate Structured Data

@@ -4,7 +4,7 @@ name: Autonomous Accessibility Scorecard Dashboard
 "on":
   schedule:
   - cron: 0 8 * * *
-  workflow_dispatch: null
+  workflow_dispatch:
 jobs:
   scorecard:
     name: Accessibility Scorecard
