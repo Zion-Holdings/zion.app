@@ -91,6 +91,24 @@ function main() {
   const pages = collectHtmlPages();
   console.log(`Collected ${pages.length} HTML pages from public/`);
 
+  // Guard: if we collected very few pages (< 1000), this is likely a source/dev
+  // environment where public/ hasn't been populated with a full Next.js build.
+  // Overwriting the committed sitemap with a truncated version would cause SEO
+  // harm (missing 30K+ service URLs). Preserve the existing committed sitemaps
+  // in that case.
+  if (pages.length < 5000) {
+    const existing = fs.existsSync(path.join(PUBLIC_DIR, 'sitemap.xml'))
+      ? fs.readFileSync(path.join(PUBLIC_DIR, 'sitemap.xml'), 'utf8').split('\n').length
+      : 0;
+    const existingRoot = fs.existsSync(path.join(ROOT, 'sitemap.xml'))
+      ? fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8').split('\n').length
+      : 0;
+    console.log(`Skipping sitemap regeneration: only ${pages.length} pages in public/`);
+    console.log(`Existing public/sitemap.xml has ~${existing} lines, sitemap.xml has ~${existingRoot} lines — preserving committed sitemaps.`);
+    console.log(`Hint: run this script after \`next build\` (builds to out/, then sync to public/) for an accurate sitemap.`);
+    return;
+  }
+
   // Sort pages by path for deterministic output
   pages.sort((a, b) => a.url.localeCompare(b.url));
 

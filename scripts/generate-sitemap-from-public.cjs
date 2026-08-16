@@ -87,6 +87,21 @@ function main() {
 
     // Deduplicate
     const uniquePages = [...new Set(pages)];
+
+    // Guard: if we collected very few pages (< 5000), this is likely a source/dev
+    // environment where public/ hasn't been populated with a full Next.js build.
+    // Overwriting the committed sitemap with a truncated version would cause SEO
+    // harm (missing 30K+ service URLs). Preserve the existing committed sitemap.
+    if (uniquePages.length < 5000) {
+        const existing = fs.existsSync(SITEMAP_FILE)
+            ? fs.readFileSync(SITEMAP_FILE, 'utf8').split('\n').length
+            : 0;
+        console.log(`Skipping sitemap regeneration: only ${pages.length} pages in public/`);
+        console.log(`Existing sitemap.xml has ~${existing} lines — preserving committed sitemap.`);
+        console.log(`Hint: run this script after \`next build\` for an accurate sitemap.`);
+        return;
+    }
+
     console.log(`Collected ${uniquePages.length} unique pages from public/`);
 
     // Build sitemap
