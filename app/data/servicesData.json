@@ -25660,6 +25660,74 @@
     "name": "AI-Driven API Design Assistant"
   },
   {
+    "id": "ai-driven-autonomous-marketing-automation-aafffdec",
+    "name": "AI-Driven Autonomous Marketing Automation",
+    "description": "Intelligent marketing platform that creates autonomous campaigns across channels, optimizing content and targeting.",
+    "category": "marketing",
+    "industry": "technology",
+    "features": [
+      "Dynamic content creation",
+      "Audience segmentation",
+      "A/B testing",
+      "Performance analytics"
+    ],
+    "benefits": [
+      "Higher conversion rates",
+      "Improved ROI",
+      "Personalized messaging",
+      "Automated workflows"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-16T01:57:07.304703+00:00",
+    "contactInfo": {
+      "website": "/services/ai-driven-autonomous-marketing-automation-aafffdec",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/ai-driven-autonomous-marketing-automation-aafffdec",
+    "popular": false,
+    "title": "AI-Driven Autonomous Marketing Automation"
+  },
+  {
+    "id": "ai-driven-customer-optimization-suite-ef99b5ac",
+    "name": "AI-Driven Customer Optimization Suite",
+    "description": "Industry-specific AI solution that optimizes customer operations and decision-making processes.",
+    "category": "industry solutions",
+    "industry": "technology",
+    "features": [
+      "Process optimization",
+      "Decision support",
+      "Performance analytics",
+      "ROI tracking"
+    ],
+    "benefits": [
+      "20%+ efficiency gains",
+      "Cost reduction",
+      "Better decisions",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "238",
+      "pro": "598",
+      "enterprise": "1798"
+    },
+    "timestamp": "2026-08-16T01:57:07.304660+00:00",
+    "contactInfo": {
+      "website": "/services/ai-driven-customer-optimization-suite-ef99b5ac",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/ai-driven-customer-optimization-suite-ef99b5ac",
+    "popular": false,
+    "title": "AI-Driven Customer Optimization Suite"
+  },
+  {
     "id": "ai-driven-customer-segmentation",
     "title": "AI-Driven Customer Segmentation & Persona Engine",
     "description": "Cluster your customer base into meaningful personas using behavioral data, purchase history, and engagement patterns; deliver personalized marketing automatically.",
@@ -25694,6 +25762,74 @@
     "name": "AI-Driven Customer Segmentation & Persona Engine"
   },
   {
+    "id": "ai-driven-enterprise-grade-network-optimization-ae3f9e52",
+    "name": "AI-Driven Enterprise-Grade Network Optimization",
+    "description": "Intelligent network management platform that uses enterprise-grade algorithms to optimize traffic routing, capacity planning, and quality of service across telecom infrastructure.",
+    "category": "analytics",
+    "industry": "telecommunications",
+    "features": [
+      "Traffic optimization",
+      "Capacity forecasting",
+      "QoS monitoring",
+      "Automated healing"
+    ],
+    "benefits": [
+      "Improved network performance",
+      "Reduced congestion",
+      "Lower operational costs",
+      "Better customer experience"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-16T00:58:27.216240+00:00",
+    "contactInfo": {
+      "website": "/services/ai-driven-enterprise-grade-network-optimization-ae3f9e52",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/ai-driven-enterprise-grade-network-optimization-ae3f9e52",
+    "popular": false,
+    "title": "AI-Driven Enterprise-Grade Network Optimization"
+  },
+  {
+    "id": "ai-driven-predictive-marketing-automation-d30afd30",
+    "name": "AI-Driven Predictive Marketing Automation",
+    "description": "Intelligent marketing platform that creates predictive campaigns across channels, optimizing content and targeting.",
+    "category": "marketing",
+    "industry": "technology",
+    "features": [
+      "Dynamic content creation",
+      "Audience segmentation",
+      "A/B testing",
+      "Performance analytics"
+    ],
+    "benefits": [
+      "Higher conversion rates",
+      "Improved ROI",
+      "Personalized messaging",
+      "Automated workflows"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-16T00:50:22.667747+00:00",
+    "contactInfo": {
+      "website": "/services/ai-driven-predictive-marketing-automation-d30afd30",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/ai-driven-predictive-marketing-automation-d30afd30",
+    "popular": false,
+    "title": "AI-Driven Predictive Marketing Automation"
+  },
+  {
     "id": "ai-driven-proactive-supply-chain-optimization-8572c0d6",
     "name": "AI-Driven Proactive Supply Chain Optimization",
     "description": "End-to-end supply chain platform that uses proactive optimization algorithms for demand planning, inventory management, and logistics coordination.",
@@ -25726,6 +25862,40 @@
     "href": "/services/ai-driven-proactive-supply-chain-optimization-8572c0d6",
     "popular": false,
     "title": "AI-Driven Proactive Supply Chain Optimization"
+  },
+  {
+    "id": "ai-driven-real-time-supply-chain-optimization-c49208e4",
+    "name": "AI-Driven Real-Time Supply Chain Optimization",
+    "description": "End-to-end supply chain platform that uses real-time optimization algorithms for demand planning, inventory management, and logistics coordination.",
+    "category": "analytics",
+    "industry": "manufacturing",
+    "features": [
+      "Demand forecasting",
+      "Inventory optimization",
+      "Supplier risk",
+      "Logistics planning"
+    ],
+    "benefits": [
+      "Reduced inventory costs",
+      "Improved service levels",
+      "Resilient supply chain",
+      "Faster response"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-16T00:58:27.216217+00:00",
+    "contactInfo": {
+      "website": "/services/ai-driven-real-time-supply-chain-optimization-c49208e4",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/ai-driven-real-time-supply-chain-optimization-c49208e4",
+    "popular": false,
+    "title": "AI-Driven Real-Time Supply Chain Optimization"
   },
   {
     "id": "ai-drug-discovery",
@@ -47676,6 +47846,108 @@
     "name": "AI Post-Purchase Customer Care Agent"
   },
   {
+    "id": "ai-powered-adaptive-data-processing-9bf65932",
+    "name": "AI-Powered Adaptive Data Processing",
+    "description": "Intelligent data processing platform that automates extraction, transformation, and loading of data at scale.",
+    "category": "data engineering",
+    "industry": "technology",
+    "features": [
+      "Automated ETL",
+      "Data validation",
+      "Error recovery",
+      "Schema evolution"
+    ],
+    "benefits": [
+      "Reduced manual work",
+      "Higher data quality",
+      "Faster processing",
+      "Self-healing pipelines"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-16T00:50:22.667775+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-adaptive-data-processing-9bf65932",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/ai-powered-adaptive-data-processing-9bf65932",
+    "popular": false,
+    "title": "AI-Powered Adaptive Data Processing"
+  },
+  {
+    "id": "ai-powered-advanced-clinical-decision-support-b68ffd77",
+    "name": "AI-Powered Advanced Clinical Decision Support",
+    "description": "Clinical AI system that provides advanced diagnostic assistance, treatment recommendations, and care pathway optimization for healthcare providers.",
+    "category": "analytics",
+    "industry": "healthcare",
+    "features": [
+      "Diagnostic assistance",
+      "Treatment planning",
+      "Drug interaction checking",
+      "Outcome prediction"
+    ],
+    "benefits": [
+      "Improved accuracy",
+      "Personalized care",
+      "Reduced errors",
+      "Cost optimization"
+    ],
+    "pricing": {
+      "basic": "298",
+      "pro": "748",
+      "enterprise": "2248"
+    },
+    "timestamp": "2026-08-16T00:58:27.216200+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-advanced-clinical-decision-support-b68ffd77",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/ai-powered-advanced-clinical-decision-support-b68ffd77",
+    "popular": false,
+    "title": "AI-Powered Advanced Clinical Decision Support"
+  },
+  {
+    "id": "ai-powered-advanced-legal-analytics-1b153672",
+    "name": "AI-Powered Advanced Legal Analytics",
+    "description": "AI-driven analytics platform that delivers advanced insights into legal operations, providing real-time monitoring, predictive modeling, and automated reporting capabilities.",
+    "category": "analytics",
+    "industry": "technology",
+    "features": [
+      "Real-time monitoring",
+      "Predictive modeling",
+      "Automated reporting",
+      "Custom dashboards"
+    ],
+    "benefits": [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Proactive issue detection",
+      "Enhanced KPI tracking"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-16T01:57:07.304681+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-advanced-legal-analytics-1b153672",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/ai-powered-advanced-legal-analytics-1b153672",
+    "popular": false,
+    "title": "AI-Powered Advanced Legal Analytics"
+  },
+  {
     "id": "ai-powered-advisor-agriculture-22e28fc6",
     "name": "AI-Powered advisor-agriculture",
     "description": "Next-generation agriculture solution: AI-Powered advisor-agriculture. Combines process automation with adaptive intelligence for optimal results.",
@@ -48902,6 +49174,40 @@
     "title": "AI-Powered analyzer-telecom"
   },
   {
+    "id": "ai-powered-automated-customer-experience-suite-6a0ac704",
+    "name": "AI-Powered Automated Customer Experience Suite",
+    "description": "Next-generation customer experience platform that delivers automated service delivery across all touchpoints.",
+    "category": "customer experience",
+    "industry": "technology",
+    "features": [
+      "Omnichannel support",
+      "Personalization engine",
+      "Sentiment analysis",
+      "Journey mapping"
+    ],
+    "benefits": [
+      "Higher customer satisfaction",
+      "Increased loyalty",
+      "Reduced churn",
+      "Improved CSAT scores"
+    ],
+    "pricing": {
+      "basic": "218",
+      "pro": "548",
+      "enterprise": "1648"
+    },
+    "timestamp": "2026-08-16T00:50:22.667727+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-automated-customer-experience-suite-6a0ac704",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/ai-powered-automated-customer-experience-suite-6a0ac704",
+    "popular": false,
+    "title": "AI-Powered Automated Customer Experience Suite"
+  },
+  {
     "id": "ai-powered-automation-construction-60f81564",
     "name": "AI-Powered automation-construction",
     "description": "Next-generation construction solution: AI-Powered automation-construction. Combines market intelligence with adaptive intelligence for optimal results.",
@@ -49181,6 +49487,40 @@
     "href": "/services/ai-powered-cloud-native-retail-personalization-e783b1ca",
     "popular": false,
     "title": "AI-Powered Cloud-Native Retail Personalization"
+  },
+  {
+    "id": "ai-powered-cloud-native-threat-detection-b7310e5d",
+    "name": "AI-Powered Cloud-Native Threat Detection",
+    "description": "Advanced cybersecurity platform that identifies and mitigates cloud-native threats in real-time.",
+    "category": "security",
+    "industry": "technology",
+    "features": [
+      "Behavioral analysis",
+      "Automated response",
+      "Threat intelligence",
+      "Incident management"
+    ],
+    "benefits": [
+      "Proactive protection",
+      "Reduced breaches",
+      "Faster response",
+      "Compliance assurance"
+    ],
+    "pricing": {
+      "basic": "278",
+      "pro": "698",
+      "enterprise": "2098"
+    },
+    "timestamp": "2026-08-16T00:50:22.667788+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-cloud-native-threat-detection-b7310e5d",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/ai-powered-cloud-native-threat-detection-b7310e5d",
+    "popular": false,
+    "title": "AI-Powered Cloud-Native Threat Detection"
   },
   {
     "id": "ai-powered-code-director-51eb2bce",
@@ -52271,6 +52611,40 @@
     "title": "AI-Powered intelligence-hospitality"
   },
   {
+    "id": "ai-powered-intelligent-data-processing-4957c458",
+    "name": "AI-Powered Intelligent Data Processing",
+    "description": "Intelligent data processing platform that automates extraction, transformation, and loading of data at scale. Handles complex data workflows with minimal human intervention.",
+    "category": "data engineering",
+    "industry": "technology",
+    "features": [
+      "Automated ETL",
+      "Data validation",
+      "Error recovery",
+      "Schema evolution"
+    ],
+    "benefits": [
+      "Reduced manual work",
+      "Higher data quality",
+      "Faster processing",
+      "Self-healing pipelines"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-16T00:58:27.216261+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-intelligent-data-processing-4957c458",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/ai-powered-intelligent-data-processing-4957c458",
+    "popular": false,
+    "title": "AI-Powered Intelligent Data Processing"
+  },
+  {
     "id": "ai-powered-intelligent-iot-intelligence-b8f2fbb6",
     "name": "AI-Powered Intelligent IoT Intelligence",
     "description": "Edge AI platform that processes IoT sensor data in real-time, providing intelligent insights and automated control for smart devices and industrial systems.",
@@ -53398,6 +53772,40 @@
     "href": "/services/ai-powered-network-optimization-06d285cd",
     "popular": false,
     "title": "AI-Powered Network Optimization"
+  },
+  {
+    "id": "ai-powered-next-generation-code-generation-6b75cb74",
+    "name": "AI-Powered Next-Generation Code Generation",
+    "description": "Advanced code generation system that produces next-generation software solutions from natural language descriptions.",
+    "category": "development",
+    "industry": "technology",
+    "features": [
+      "Multi-language support",
+      "Code optimization",
+      "Security scanning",
+      "Documentation generation"
+    ],
+    "benefits": [
+      "10x faster development",
+      "Reduced bugs",
+      "Improved quality",
+      "Enhanced security"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-16T00:50:22.667762+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-next-generation-code-generation-6b75cb74",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/ai-powered-next-generation-code-generation-6b75cb74",
+    "popular": false,
+    "title": "AI-Powered Next-Generation Code Generation"
   },
   {
     "id": "ai-powered-optimization-for-automotive-1d01466a",
@@ -55348,6 +55756,40 @@
     "title": "AI-Powered predictor-telecom"
   },
   {
+    "id": "ai-powered-proactive-iot-intelligence-64f38668",
+    "name": "AI-Powered Proactive IoT Intelligence",
+    "description": "Edge AI platform that processes IoT sensor data in real-time with proactive insights.",
+    "category": "iot",
+    "industry": "technology",
+    "features": [
+      "Edge processing",
+      "Real-time analytics",
+      "Automated responses",
+      "Energy efficiency"
+    ],
+    "benefits": [
+      "Reduced latency",
+      "Better insights",
+      "Automated responses",
+      "Energy efficiency"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-16T01:57:07.304671+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-proactive-iot-intelligence-64f38668",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/ai-powered-proactive-iot-intelligence-64f38668",
+    "popular": false,
+    "title": "AI-Powered Proactive IoT Intelligence"
+  },
+  {
     "id": "ai-powered-process-advisor-1-8c5fdeb9",
     "name": "AI-Powered Process Advisor #1",
     "description": "The future of manufacturing is here with AI-Powered Process Advisor #1. Powered by cutting-edge AI, this platform delivers data processing like never before.",
@@ -56539,6 +56981,40 @@
     "title": "AI-Powered Sales Predictor"
   },
   {
+    "id": "ai-powered-scalable-data-processing-4918ef78",
+    "name": "AI-Powered Scalable Data Processing",
+    "description": "Intelligent data processing platform that automates extraction, transformation, and loading of data at scale. Handles complex data workflows with minimal human intervention.",
+    "category": "data engineering",
+    "industry": "technology",
+    "features": [
+      "Automated ETL",
+      "Data validation",
+      "Error recovery",
+      "Schema evolution"
+    ],
+    "benefits": [
+      "Reduced manual work",
+      "Higher data quality",
+      "Faster processing",
+      "Self-healing pipelines"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-16T00:58:27.216185+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-scalable-data-processing-4918ef78",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/ai-powered-scalable-data-processing-4918ef78",
+    "popular": false,
+    "title": "AI-Powered Scalable Data Processing"
+  },
+  {
     "id": "ai-powered-security-advisor-0c548e2e",
     "name": "AI-Powered Security Advisor",
     "description": "The future of legal is here with AI-Powered Security Advisor. Powered by cutting-edge AI, this platform delivers language processing like never before.",
@@ -56743,6 +57219,40 @@
     "category": "ai",
     "industry": "Marketing",
     "name": "AI-Powered SEO Content Optimizer"
+  },
+  {
+    "id": "ai-powered-smart-customer-experience-suite-44d2655d",
+    "name": "AI-Powered Smart Customer Experience Suite",
+    "description": "Next-generation customer experience platform that delivers smart service delivery across all touchpoints.",
+    "category": "customer experience",
+    "industry": "technology",
+    "features": [
+      "Omnichannel support",
+      "Personalization engine",
+      "Sentiment analysis",
+      "Journey mapping"
+    ],
+    "benefits": [
+      "Higher customer satisfaction",
+      "Increased loyalty",
+      "Reduced churn",
+      "Improved CSAT scores"
+    ],
+    "pricing": {
+      "basic": "218",
+      "pro": "548",
+      "enterprise": "1648"
+    },
+    "timestamp": "2026-08-16T01:57:07.304693+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-smart-customer-experience-suite-44d2655d",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/ai-powered-smart-customer-experience-suite-44d2655d",
+    "popular": false,
+    "title": "AI-Powered Smart Customer Experience Suite"
   },
   {
     "id": "ai-powered-suite-education-2ea05867",
@@ -99009,6 +99519,40 @@
     "title": "Cloud-Native Media Optimization"
   },
   {
+    "id": "cloud-native-transportation-optimization-a533644d",
+    "name": "Cloud-Native Transportation Optimization",
+    "description": "AI-driven cloud optimization platform that automatically manages resource allocation and cost optimization.",
+    "category": "cloud",
+    "industry": "technology",
+    "features": [
+      "Auto-scaling",
+      "Cost optimization",
+      "Performance tuning",
+      "Resource monitoring"
+    ],
+    "benefits": [
+      "Reduced cloud costs",
+      "Better performance",
+      "Automatic scaling",
+      "Optimized resources"
+    ],
+    "pricing": {
+      "basic": "218",
+      "pro": "548",
+      "enterprise": "1648"
+    },
+    "timestamp": "2026-08-16T00:50:22.667781+00:00",
+    "contactInfo": {
+      "website": "/services/cloud-native-transportation-optimization-a533644d",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/cloud-native-transportation-optimization-a533644d",
+    "popular": false,
+    "title": "Cloud-Native Transportation Optimization"
+  },
+  {
     "id": "cloud-observability-stack",
     "title": "Observability Stack as a Service",
     "description": "Pre-integrated Prometheus+Grafana+Loki+Tempo stack with 400+ dashboards, alert rules pre-built, and PagerDuty/OpsGenie on-call.",
@@ -109378,6 +109922,108 @@
     "category": "ai",
     "industry": "Finance",
     "name": "Content Generation"
+  },
+  {
+    "id": "conversational-ai-for-insurance-63332618",
+    "name": "Conversational AI for Insurance",
+    "description": "Natural language processing system that handles insurance inquiries through intelligent chatbots and virtual assistants. Provides 24/7 support with human-like conversation capabilities.",
+    "category": "automation",
+    "industry": "technology",
+    "features": [
+      "Natural language understanding",
+      "Multi-language support",
+      "Context awareness",
+      "Seamless handoff"
+    ],
+    "benefits": [
+      "24/7 availability",
+      "Instant response times",
+      "Consistent service quality",
+      "Reduced support costs"
+    ],
+    "pricing": {
+      "basic": "179",
+      "pro": "449",
+      "enterprise": "1349"
+    },
+    "timestamp": "2026-08-16T00:58:27.216247+00:00",
+    "contactInfo": {
+      "website": "/services/conversational-ai-for-insurance-63332618",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/conversational-ai-for-insurance-63332618",
+    "popular": false,
+    "title": "Conversational AI for Insurance"
+  },
+  {
+    "id": "conversational-ai-for-manufacturing-2faaf0fb",
+    "name": "Conversational AI for Manufacturing",
+    "description": "Natural language processing system that handles manufacturing inquiries through intelligent chatbots.",
+    "category": "automation",
+    "industry": "technology",
+    "features": [
+      "Natural language understanding",
+      "Multi-language support",
+      "Context awareness",
+      "Seamless handoff"
+    ],
+    "benefits": [
+      "24/7 availability",
+      "Instant response times",
+      "Consistent service quality",
+      "Reduced support costs"
+    ],
+    "pricing": {
+      "basic": "179",
+      "pro": "449",
+      "enterprise": "1349"
+    },
+    "timestamp": "2026-08-16T00:50:22.667735+00:00",
+    "contactInfo": {
+      "website": "/services/conversational-ai-for-manufacturing-2faaf0fb",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/conversational-ai-for-manufacturing-2faaf0fb",
+    "popular": false,
+    "title": "Conversational AI for Manufacturing"
+  },
+  {
+    "id": "conversational-ai-for-marketing-409418af",
+    "name": "Conversational AI for Marketing",
+    "description": "Natural language processing system that handles marketing inquiries through intelligent chatbots.",
+    "category": "automation",
+    "industry": "technology",
+    "features": [
+      "Natural language understanding",
+      "Multi-language support",
+      "Context awareness",
+      "Seamless handoff"
+    ],
+    "benefits": [
+      "24/7 availability",
+      "Instant response times",
+      "Consistent service quality",
+      "Reduced support costs"
+    ],
+    "pricing": {
+      "basic": "179",
+      "pro": "449",
+      "enterprise": "1349"
+    },
+    "timestamp": "2026-08-16T01:57:07.304698+00:00",
+    "contactInfo": {
+      "website": "/services/conversational-ai-for-marketing-409418af",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/conversational-ai-for-marketing-409418af",
+    "popular": false,
+    "title": "Conversational AI for Marketing"
   },
   {
     "id": "coordinator-adaptive---education-1edc57d7",
@@ -123926,6 +124572,40 @@
     "title": "Intelligent Code Processor"
   },
   {
+    "id": "intelligent-compliance-automation-daf2ffd7",
+    "name": "Intelligent Compliance Automation",
+    "description": "Automated compliance platform that monitors, audits, and enforces regulatory requirements.",
+    "category": "compliance",
+    "industry": "technology",
+    "features": [
+      "Regulatory monitoring",
+      "Audit automation",
+      "Violation detection",
+      "Remediation guidance"
+    ],
+    "benefits": [
+      "Full compliance coverage",
+      "Reduced audit burden",
+      "Automated reporting",
+      "Risk mitigation"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-16T01:57:07.304650+00:00",
+    "contactInfo": {
+      "website": "/services/intelligent-compliance-automation-daf2ffd7",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/intelligent-compliance-automation-daf2ffd7",
+    "popular": false,
+    "title": "Intelligent Compliance Automation"
+  },
+  {
     "id": "intelligent-compliance-insights-5b043a51",
     "name": "Intelligent Compliance Insights",
     "description": "The future of agriculture is here with Intelligent Compliance Insights. Powered by cutting-edge AI, this platform delivers workflow management like never before.",
@@ -125859,6 +126539,40 @@
     "href": "/services/intelligent-financial-intelligence-1d55439a",
     "popular": false,
     "title": "Intelligent Financial Intelligence"
+  },
+  {
+    "id": "intelligent-financial-patient-engagement-156788ea",
+    "name": "Intelligent Financial Patient Engagement",
+    "description": "AI-driven patient engagement platform that delivers next-generation personalized care journeys, remote monitoring, and adherence support through intelligent automation.",
+    "category": "customer experience",
+    "industry": "healthcare",
+    "features": [
+      "Personalized care plans",
+      "Remote monitoring",
+      "Medication adherence",
+      "Virtual consultations"
+    ],
+    "benefits": [
+      "Better outcomes",
+      "Higher satisfaction",
+      "Reduced readmissions",
+      "Lower costs"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-16T00:58:27.216209+00:00",
+    "contactInfo": {
+      "website": "/services/intelligent-financial-patient-engagement-156788ea",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/intelligent-financial-patient-engagement-156788ea",
+    "popular": false,
+    "title": "Intelligent Financial Patient Engagement"
   },
   {
     "id": "intelligent-fraud-optimizer-a7de5112",
@@ -128056,6 +128770,40 @@
     "href": "/services/intelligent-market-predictor-7a127712",
     "popular": false,
     "title": "Intelligent Market Predictor"
+  },
+  {
+    "id": "intelligent-media-patient-engagement-bdc5dc23",
+    "name": "Intelligent Media Patient Engagement",
+    "description": "AI-driven patient engagement platform that delivers intelligent personalized care journeys, remote monitoring, and adherence support through intelligent automation.",
+    "category": "customer experience",
+    "industry": "healthcare",
+    "features": [
+      "Personalized care plans",
+      "Remote monitoring",
+      "Medication adherence",
+      "Virtual consultations"
+    ],
+    "benefits": [
+      "Better outcomes",
+      "Higher satisfaction",
+      "Reduced readmissions",
+      "Lower costs"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-16T00:58:27.216254+00:00",
+    "contactInfo": {
+      "website": "/services/intelligent-media-patient-engagement-bdc5dc23",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/intelligent-media-patient-engagement-bdc5dc23",
+    "popular": false,
+    "title": "Intelligent Media Patient Engagement"
   },
   {
     "id": "intelligent-network-analytics-f4ec9bb0",
@@ -130785,6 +131533,74 @@
     "title": "Intelligent Sales Engine"
   },
   {
+    "id": "intelligent-sales-forecasting-engine-7009a69b",
+    "name": "Intelligent Sales Forecasting Engine",
+    "description": "Machine learning-powered forecasting system that predicts sales trends, demands, and outcomes with high accuracy.",
+    "category": "forecasting",
+    "industry": "technology",
+    "features": [
+      "Time-series analysis",
+      "Scenario modeling",
+      "Confidence intervals",
+      "Automated alerts"
+    ],
+    "benefits": [
+      "Accurate demand planning",
+      "Reduced forecast errors",
+      "Opportunity identification",
+      "Risk mitigation"
+    ],
+    "pricing": {
+      "basic": "238",
+      "pro": "598",
+      "enterprise": "1798"
+    },
+    "timestamp": "2026-08-16T00:50:22.667713+00:00",
+    "contactInfo": {
+      "website": "/services/intelligent-sales-forecasting-engine-7009a69b",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/intelligent-sales-forecasting-engine-7009a69b",
+    "popular": false,
+    "title": "Intelligent Sales Forecasting Engine"
+  },
+  {
+    "id": "intelligent-sales-inventory-management-3253f162",
+    "name": "Intelligent Sales Inventory Management",
+    "description": "AI-driven inventory optimization platform that provides intelligent demand forecasting, automated replenishment, and assortment planning for retail operations.",
+    "category": "analytics",
+    "industry": "retail",
+    "features": [
+      "Demand forecasting",
+      "Auto-replenishment",
+      "Assortment optimization",
+      "Markdown optimization"
+    ],
+    "benefits": [
+      "Reduced stockouts",
+      "Lower inventory costs",
+      "Optimized assortments",
+      "Improved margins"
+    ],
+    "pricing": {
+      "basic": "258",
+      "pro": "648",
+      "enterprise": "1948"
+    },
+    "timestamp": "2026-08-16T00:58:27.216225+00:00",
+    "contactInfo": {
+      "website": "/services/intelligent-sales-inventory-management-3253f162",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/intelligent-sales-inventory-management-3253f162",
+    "popular": false,
+    "title": "Intelligent Sales Inventory Management"
+  },
+  {
     "id": "intelligent-sales-management-d76987cc",
     "name": "Intelligent Sales Management",
     "description": "Transform your insurance operations with our Intelligent Sales Management. This AI-driven solution automates financial planning with unprecedented accuracy and efficiency.",
@@ -131736,6 +132552,40 @@
     "href": "/services/intelligent-threat-platform-2f0ded65",
     "popular": false,
     "title": "Intelligent Threat Platform"
+  },
+  {
+    "id": "intelligent-transportation-forecasting-engine-d5ba262c",
+    "name": "Intelligent Transportation Forecasting Engine",
+    "description": "Machine learning-powered forecasting system that predicts transportation trends, demands, and outcomes with high accuracy.",
+    "category": "forecasting",
+    "industry": "technology",
+    "features": [
+      "Time-series analysis",
+      "Scenario modeling",
+      "Confidence intervals",
+      "Automated alerts"
+    ],
+    "benefits": [
+      "Accurate demand planning",
+      "Reduced forecast errors",
+      "Opportunity identification",
+      "Risk mitigation"
+    ],
+    "pricing": {
+      "basic": "238",
+      "pro": "598",
+      "enterprise": "1798"
+    },
+    "timestamp": "2026-08-16T01:57:07.304687+00:00",
+    "contactInfo": {
+      "website": "/services/intelligent-transportation-forecasting-engine-d5ba262c",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/intelligent-transportation-forecasting-engine-d5ba262c",
+    "popular": false,
+    "title": "Intelligent Transportation Forecasting Engine"
   },
   {
     "id": "intelligent-user-generator-69ed627c",
@@ -139298,6 +140148,40 @@
     "category": "automation",
     "industry": "SaaS",
     "name": "Low-Code Workflow Builder"
+  },
+  {
+    "id": "machine-learning-model-operations-platform-9b2e5c01",
+    "name": "Machine Learning Model Operations Platform",
+    "description": "MLOps solution that automates model deployment, monitoring, and retraining for production AI systems.",
+    "category": "mlops",
+    "industry": "technology",
+    "features": [
+      "Model deployment",
+      "Performance monitoring",
+      "Automated retraining",
+      "Version control"
+    ],
+    "benefits": [
+      "Production-ready models",
+      "Continuous improvement",
+      "Reduced downtime",
+      "Better accuracy"
+    ],
+    "pricing": {
+      "basic": "278",
+      "pro": "698",
+      "enterprise": "2098"
+    },
+    "timestamp": "2026-08-16T01:57:07.304675+00:00",
+    "contactInfo": {
+      "website": "/services/machine-learning-model-operations-platform-9b2e5c01",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/machine-learning-model-operations-platform-9b2e5c01",
+    "popular": false,
+    "title": "Machine Learning Model Operations Platform"
   },
   {
     "id": "mainframe-modernization",
@@ -169824,6 +170708,40 @@
     "title": "Predictive Predictive Coordinator"
   },
   {
+    "id": "predictive-predictive-freight-analytics-e7fdc712",
+    "name": "Predictive Predictive Freight Analytics",
+    "description": "Freight intelligence platform that provides predictive rate forecasting, capacity planning, and carrier performance analytics for logistics optimization.",
+    "category": "forecasting",
+    "industry": "logistics",
+    "features": [
+      "Rate forecasting",
+      "Capacity planning",
+      "Carrier scorecards",
+      "Lane optimization"
+    ],
+    "benefits": [
+      "Cost reduction",
+      "Better capacity",
+      "Improved reliability",
+      "Strategic sourcing"
+    ],
+    "pricing": {
+      "basic": "238",
+      "pro": "598",
+      "enterprise": "1798"
+    },
+    "timestamp": "2026-08-16T00:58:27.216233+00:00",
+    "contactInfo": {
+      "website": "/services/predictive-predictive-freight-analytics-e7fdc712",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/predictive-predictive-freight-analytics-e7fdc712",
+    "popular": false,
+    "title": "Predictive Predictive Freight Analytics"
+  },
+  {
     "id": "predictive-predictive-generator-ffa35c4c",
     "name": "Predictive Predictive Generator",
     "description": "Unlock unprecedented growth with Predictive Predictive Generator. This autonomous system provides inventory management with zero manual intervention needed.",
@@ -195900,6 +196818,40 @@
     "href": "/services/smart-suite-tech-63704a20",
     "popular": false,
     "title": "Smart suite-tech"
+  },
+  {
+    "id": "smart-supply-chain-workflow-automation-29a90208",
+    "name": "Smart Supply Chain Workflow Automation",
+    "description": "Intelligent workflow automation platform that streamlines supply chain processes and eliminates manual tasks.",
+    "category": "automation",
+    "industry": "technology",
+    "features": [
+      "Process mapping",
+      "Task automation",
+      "Workflow optimization",
+      "Exception handling"
+    ],
+    "benefits": [
+      "Faster operations",
+      "Reduced errors",
+      "Improved productivity",
+      "Better resource utilization"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "timestamp": "2026-08-16T01:57:07.304666+00:00",
+    "contactInfo": {
+      "website": "/services/smart-supply-chain-workflow-automation-29a90208",
+      "email": "hello@ziontechgroup.com",
+      "phone": "+1 (302) 464-0950"
+    },
+    "icon": "💡",
+    "href": "/services/smart-supply-chain-workflow-automation-29a90208",
+    "popular": false,
+    "title": "Smart Supply Chain Workflow Automation"
   },
   {
     "id": "smart-supply-coordinator-03e7e397",

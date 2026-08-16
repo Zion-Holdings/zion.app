@@ -1,95 +1,77 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Self-Optimizing Intelligence for Telecom',
-  description: 'Unlock unprecedented growth with Self-Optimizing Intelligence for Telecom. This autonomous system provides process automation with zero manual intervention need',
+  title: "Self-Optimizing Intelligence for Telecom - Zion Tech Group",
+  description: "The future of telecom is here with Self-Optimizing Intelligence for Telecom. Powered by cutting-edge AI, this platform delivers threat detection like never befo",
   alternates: {
-    canonical: 'https://ziontechgroup.com/services/self-optimizing-intelligence-for-telecom-2ca29b58',
+    canonical: "https://ziontechgroup.com/services/self-optimizing-intelligence-for-telecom-2ca29b58",
   },
 };
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
-      <div className="max-w-4xl mx-auto px-6 py-16">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Self-Optimizing Intelligence for Telecom
-          </h1>
-          <p className="text-xl text-gray-400 mb-8">
-            Unlock unprecedented growth with Self-Optimizing Intelligence for Telecom. This autonomous system provides process automation with zero manual intervention needed.
-          </p>
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-900/30 text-purple-300 text-sm">
-            <span className="mr-2">💡</span>
-            <span>telecom</span>
+      <div className="max-w-4xl mx-auto py-16 px-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-purple-400 mb-6">
+          Self-Optimizing Intelligence for Telecom
+        </h1>
+        <p className="text-xl text-slate-300 mb-8">
+          The future of telecom is here with Self-Optimizing Intelligence for Telecom. Powered by cutting-edge AI, this platform delivers threat detection like never befo
+        </p>
+
+        <div className="bg-slate-900 rounded-xl p-8 mb-8">
+          <h2 className="text-2xl font-semibold text-purple-400 mb-4">
+            Key Features
+          </h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li className="text-purple-300">✓ AI-powered automation</li>
+            <li className="text-purple-300">✓ Real-time analytics</li>
+            <li className="text-purple-300">✓ Enterprise security</li>
+            <li className="text-purple-300">✓ API-first design</li>
+            <li className="text-purple-300">✓ Scalable architecture</li>
+          </ul>
+        </div>
+
+        <div className="bg-slate-900 rounded-xl p-8 mb-8">
+          <h2 className="text-2xl font-semibold text-purple-400 mb-4">
+            Business Benefits
+          </h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li className="text-purple-300">✓ Reduce costs with AI automation</li>
+            <li className="text-purple-300">✓ Improve operational efficiency</li>
+            <li className="text-purple-300">✓ Scale without complexity</li>
+            <li className="text-purple-300">✓ Enterprise-grade reliability</li>
+          </ul>
+        </div>
+
+        <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl p-8 text-center mb-8">
+          <h3 className="text-2xl font-bold mb-4 text-white">Pricing</h3>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="bg-white/10 rounded-lg p-4">
+              <div className="text-3xl font-bold text-white mb-2">$$299/mo</div>
+              <div className="text-white">Basic</div>
+            </div>
+            <div className="bg-white/20 rounded-lg p-4 border-2 border-purple-500">
+              <div className="text-3xl font-bold text-white mb-2">$$799/mo</div>
+              <div className="text-white">Pro</div>
+            </div>
+            <div className="bg-white/10 rounded-lg p-4">
+              <div className="text-3xl font-bold text-white mb-2">$$2,499/mo</div>
+              <div className="text-white">Enterprise</div>
+            </div>
           </div>
         </div>
 
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Key Features</h2>
-          <ul className="grid md:grid-cols-2 gap-4">
-                      <li className="text-gray-300">Healthcare data analytics with patient insights</li>
-          <li className="text-gray-300">Manufacturing quality control with defect detection</li>
-          <li className="text-gray-300">Cloud-native architecture with multi-region deployment</li>
-          <li className="text-gray-300">Energy optimization with consumption tracking</li>
-          </ul>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold mb-6">Benefits</h2>
-          <ul className="space-y-3">
-                      <li className="text-purple-300">24/7 automated operations without human intervention</li>
-          <li className="text-purple-300">Better risk management with predictive analytics</li>
-          <li className="text-purple-300">Enterprise-grade security with end-to-end encryption</li>
-          </ul>
-        </section>
-
-        
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-slate-800 rounded-xl p-6 border border-purple-500/20">
-          <h3 className="text-xl font-bold mb-4">Basic</h3>
-          <p className="text-3xl font-bold text-purple-400 mb-4">${}</p>
-          <ul className="space-y-2 mb-4">
-            <li className="text-gray-400 text-sm">Core features</li>
-          </ul>
-          <button className="w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg">
-            Get Started
-          </button>
+        <div className="text-center">
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-full transition-colors"
+          >
+            Book a Demo
+          </a>
         </div>
-        <div className="bg-slate-800 rounded-xl p-6 border border-purple-400">
-          <h3 className="text-xl font-bold mb-4">Pro</h3>
-          <p className="text-3xl font-bold text-purple-300 mb-4">$499</p>
-          <ul className="space-y-2 mb-4">
-            <li className="text-gray-400 text-sm">Advanced features</li>
-          </ul>
-          <button className="w-full bg-purple-500 hover:bg-purple-600 text-white py-2 rounded-lg">
-            Upgrade
-          </button>
-        </div>
-        <div className="bg-slate-800 rounded-xl p-6 border border-purple-400">
-          <h3 className="text-xl font-bold mb-4">Enterprise</h3>
-          <p className="text-3xl font-bold text-purple-300 mb-4">$1499</p>
-          <ul className="space-y-2 mb-4">
-            <li className="text-gray-400 text-sm">Custom solutions</li>
-          </ul>
-          <button className="w-full bg-purple-500 hover:bg-purple-600 text-white py-2 rounded-lg">
-            Contact Sales
-          </button>
-        </div>
-      </div>
-
-        <section className="mt-16 bg-slate-900 rounded-2xl p-8">
-          <h2 className="text-2xl font-bold mb-6">Get Started</h2>
-          <p className="text-gray-400 mb-6">Ready to transform your telecom operations?</p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a href="mailto:kleber@ziontechgroup.com" className="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg font-semibold transition-colors">
-              Contact Us
-            </a>
-            <a href="/contact" className="px-6 py-3 border border-purple-500 hover:bg-purple-900/20 rounded-lg transition-colors">
-              Book a Demo
-            </a>
-          </div>
-        </section>
       </div>
     </main>
   );

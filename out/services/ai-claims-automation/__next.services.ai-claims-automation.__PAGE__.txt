@@ -1,5 +1,0 @@
-1:"$Sreact.fragment"
-2:I[484,[],"OutletBoundary"]
-3:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","html",null,{"lang":"en","children":[["$","head",null,{"children":[["$","meta",null,{"httpEquiv":"refresh","content":"0; url=/services/ai-insurance-claims-automation/"}],["$","link",null,{"rel":"canonical","href":"https://ziontechgroup.com/services/ai-insurance-claims-automation/"}]]}],["$","body",null,{"children":["$","p",null,{"children":["Redirecting to ",["$","a",null,{"href":"/services/ai-insurance-claims-automation/","children":"AI Insurance Claims Automation"}],"..."]}]}]]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zion-tech-group-v1"}
-4:null
