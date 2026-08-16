@@ -6,7 +6,7 @@ const statePaths = [
   path.join(repoRoot, 'automation', 'reports', 'build-deploy-runner-latest.json'),
   path.join(repoRoot, 'automation', 'reports', 'continuous-build-deploy-latest.json'),
 ];
-const outDir = path.join(repoRoot, 'out');
+const outDir = path.join(repoRoot, 'docs');
 const statePath = path.join(repoRoot, 'automation', 'reports', 'build-deploy-health-latest.json');
 
 function readJson(p) {
