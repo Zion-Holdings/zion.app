@@ -1,67 +1,75 @@
-import { } from 'next/navigation';
+import { Metadata } from 'next';
 
-export const metadata = {
-  title: "AI Video Analytics - Zion Tech Group",
-  description: "Real-time video content analysis for security, retail insights, and operational intelligence using computer vision.",
+export const metadata: Metadata = {
+  title: "AI Video Analytics Platform - Zion Tech Group",
+  description: "Real-time video analysis for security, retail, and manufacturing with object detection and behavior analysis.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-video-analytics`
-  }
+    canonical: "https://ziontechgroup.com/services/ai-video-analytics",
+  },
 };
 
 export default function ServicePage() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">AI Video Analytics</h1>
-        <p className="text-lg text-gray-300 mb-8">Real-time video content analysis for security, retail insights, and operational intelligence using computer vision.</p>
-        
-        <div className="bg-slate-900 rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+    <main className="min-h-screen bg-slate-950 text-white">
+      <div className="max-w-4xl mx-auto py-16 px-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-purple-400 mb-6">
+          AI Video Analytics Platform
+        </h1>
+        <p className="text-xl text-slate-300 mb-8">
+          Real-time video analysis for security, retail, and manufacturing with object detection and behavior analysis.
+        </p>
+
+        <div className="bg-slate-900 rounded-xl p-8 mb-8">
+          <h2 className="text-2xl font-semibold text-purple-400 mb-4">
+            Key Features
+          </h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time object detection &amp; tracking</li>
-            <li>People counting &amp; heatmaps</li>
-            <li>License plate recognition (ANPR)</li>
-            <li>Behavioral anomaly detection</li>
-            <li>Privacy-blur compliance mode</li>
+            <li className="text-purple-300">✓ AI-powered automation</li>
+            <li className="text-purple-300">✓ Real-time analytics</li>
+            <li className="text-purple-300">✓ Enterprise security</li>
+            <li className="text-purple-300">✓ API-first design</li>
+            <li className="text-purple-300">✓ Scalable architecture</li>
           </ul>
         </div>
-        
-        <div className="bg-slate-900 rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+
+        <div className="bg-slate-900 rounded-xl p-8 mb-8">
+          <h2 className="text-2xl font-semibold text-purple-400 mb-4">
+            Business Benefits
+          </h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduce costs with ai video analytics</li>
-            <li>Improve operational efficiency</li>
-            <li>Scale without complexity</li>
-            <li>Enterprise-grade reliability</li>
+            <li className="text-purple-300">✓ Reduce costs with AI automation</li>
+            <li className="text-purple-300">✓ Improve operational efficiency</li>
+            <li className="text-purple-300">✓ Scale without complexity</li>
+            <li className="text-purple-300">✓ Enterprise-grade reliability</li>
           </ul>
         </div>
-        
-        <div className="border border-purple-500 rounded-xl p-6 mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
-          <div className="grid grid-cols-3 gap-4">
-            <div className="bg-slate-800 p-4 rounded-lg">
-              <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$199/mo/month</p>
+
+        <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl p-8 text-center mb-8">
+          <h3 className="text-2xl font-bold mb-4 text-white">Pricing</h3>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="bg-white/10 rounded-lg p-4">
+              <div className="text-3xl font-bold text-white mb-2">$$299/mo</div>
+              <div className="text-white">Basic</div>
             </div>
-            <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
-              <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$599/mo/month</p>
+            <div className="bg-white/20 rounded-lg p-4 border-2 border-purple-500">
+              <div className="text-3xl font-bold text-white mb-2">$$799/mo</div>
+              <div className="text-white">Pro</div>
             </div>
-            <div className="bg-slate-800 p-4 rounded-lg">
-              <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$1,999/mo/month</p>
+            <div className="bg-white/10 rounded-lg p-4">
+              <div className="text-3xl font-bold text-white mb-2">$$2,499/mo</div>
+              <div className="text-white">Enterprise</div>
             </div>
           </div>
         </div>
-        
+
         <div className="text-center">
           <a 
-            href="https://calendly.com/kleber-ziontechgroup/consultation" 
+            href="https://calendly.com/kleber-ziontechgroup/consultation"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
+            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-full transition-colors"
           >
-            Book a Consultation
+            Book a Demo
           </a>
         </div>
       </div>

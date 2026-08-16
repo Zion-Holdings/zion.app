@@ -8,7 +8,7 @@ concurrency:
   group: ai-pm2-slo-agent
   cancel-in-progress: false
 
-on:
+"on":
   schedule:
     - cron: '50 */6 * * *'
   workflow_dispatch:

@@ -29,6 +29,7 @@ export default function Navigation() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
+  const [aiLabOpen, setAiLabOpen] = useState(false);
   const mobilePanelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -36,6 +37,7 @@ export default function Navigation() {
     setServicesOpen(false);
     setSolutionsOpen(false);
     setResourcesOpen(false);
+    setAiLabOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -121,8 +123,35 @@ export default function Navigation() {
           <div className="relative">
             <button
               className="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors flex items-center gap-1"
-              onClick={() => { setSolutionsOpen(!solutionsOpen); setServicesOpen(false); setResourcesOpen(false); }}
-              aria-expanded={solutionsOpen}
+              onClick={() => { setAiLabOpen(!aiLabOpen); setServicesOpen(false); setSolutionsOpen(false); setResourcesOpen(false); }}
+              aria-expanded={aiLabOpen}
+              aria-haspopup="true"
+            >
+              AI Lab ▾
+            </button>
+            {aiLabOpen && (
+              <div className="absolute top-full left-0 mt-2 w-72 rounded-2xl bg-slate-900 border border-slate-700 shadow-2xl p-4 z-50" role="menu">
+                <div className="space-y-1">
+                  {AI_LAB_LINKS.map((link, i) => (
+                    <Link
+                      key={i}
+                      href={link.href}
+                      className="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-slate-800"
+                      onClick={() => setAiLabOpen(false)}
+                      role="menuitem"
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className="relative">
+            <button
+              className="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors flex items-center gap-1"
+              onClick={() => { setSolutionsOpen(!solutionsOpen); setServicesOpen(false); setResourcesOpen(false); setAiLabOpen(false); }}
               aria-haspopup="true"
             >
               Solutions ▾
@@ -177,7 +206,7 @@ export default function Navigation() {
             )}
           </div>
 
-          {PRIMARY_NAV_LINKS.filter(l => !['/', '/services', '/solutions', '/agents-monitoring'].includes(l.href)).map((link, i) => (
+          {PRIMARY_NAV_LINKS.filter(l => !['/', '/services', '/solutions', '/agents-monitoring', '/ai'].includes(l.href)).map((link, i) => (
             <NavLink key={i} link={link} />
           ))}
 
@@ -223,6 +252,12 @@ export default function Navigation() {
           <div className="border-t border-slate-800 pt-2 mt-2">
             <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold mb-1 px-3">Featured AI</div>
             {FEATURED_AI_SERVICE_LINKS.slice(0, 5).map((link, i) => (
+              <NavLink key={i} link={link} onClick={() => setMobileOpen(false)} />
+            ))}
+          </div>
+          <div className="border-t border-slate-800 pt-2 mt-2">
+            <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold mb-1 px-3">AI Lab</div>
+            {AI_LAB_LINKS.map((link, i) => (
               <NavLink key={i} link={link} onClick={() => setMobileOpen(false)} />
             ))}
           </div>

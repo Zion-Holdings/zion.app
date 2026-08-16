@@ -1,7 +1,7 @@
 permissions:
   contents: read
 name: Autonomous SSL/TLS Certificate Expiration Monitor
-on:
+"on":
   schedule:
   - cron: 0 7 * * 0
   workflow_dispatch: null

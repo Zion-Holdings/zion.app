@@ -8,7 +8,7 @@ name: AI App Evolution Trigger on Regression
 permissions:
   contents: write
 
-on:
+"on":
   workflow_run:
     workflows: ['AI App Quality Audit']
     types:

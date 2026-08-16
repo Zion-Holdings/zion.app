@@ -3,7 +3,7 @@ name: AI Automations (Weekly)
 permissions:
   contents: read
 
-on:
+"on":
   schedule:
     - cron: '0 8 * * 1' # Mondays at 8:00 UTC
   workflow_dispatch:

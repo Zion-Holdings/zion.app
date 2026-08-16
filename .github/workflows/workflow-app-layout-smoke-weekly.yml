@@ -5,7 +5,7 @@ name: app/layout.tsx smoke (weekly)
 permissions:
   contents: read
 
-on:
+"on":
   schedule:
     - cron: '51 7 * * 1' # Mondays 07:51 UTC
   workflow_dispatch:

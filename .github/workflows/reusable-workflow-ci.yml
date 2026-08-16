@@ -3,7 +3,7 @@ name: Reusable workflow CI (validate + optional contracts)
 permissions:
   contents: read
 
-on:
+"on":
   workflow_call:
     inputs:
       run_contracts:

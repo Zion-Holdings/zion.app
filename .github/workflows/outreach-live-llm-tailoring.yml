@@ -1,6 +1,6 @@
 name: outreach-live-llm-tailoring
 
-on:
+"on":
   workflow_dispatch:
   schedule:
     - cron: "*/5 * * * *"

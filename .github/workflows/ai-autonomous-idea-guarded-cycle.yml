@@ -3,7 +3,7 @@ name: AI Autonomous Idea Guarded Cycle
 permissions:
   contents: write
 
-on:
+"on":
   workflow_dispatch:
     inputs:
       auto_commit:

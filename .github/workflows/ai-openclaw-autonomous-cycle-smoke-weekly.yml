@@ -2,7 +2,7 @@
 name: ai openclaw autonomous cycle workflow smoke (weekly)
 permissions:
   contents: read
-on:
+"on":
   schedule:
     - cron: '48 11 * * 3' # Wednesdays 11:48 UTC
   workflow_dispatch:

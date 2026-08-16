@@ -2,7 +2,7 @@
 name: workflow node contracts dispatch smoke (weekly)
 permissions:
   contents: read
-on:
+"on":
   schedule:
     - cron: '8 9 * * 4' # Thursdays 09:08 UTC
   workflow_dispatch:

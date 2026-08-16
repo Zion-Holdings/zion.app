@@ -4,7 +4,7 @@ name: AI conservative autofix audit
 permissions:
   contents: read
 
-on:
+"on":
   workflow_dispatch:
 
 concurrency:

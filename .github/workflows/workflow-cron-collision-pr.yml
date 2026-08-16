@@ -3,7 +3,7 @@ name: Workflow cron collision report (PR / main)
 permissions:
   contents: read
 
-on:
+"on":
   pull_request:
     paths:
       - '.github/workflows/**'

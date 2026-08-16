@@ -5,7 +5,7 @@ name: Automation preflight (weekly)
 permissions:
   contents: read
 
-on:
+"on":
   schedule:
     - cron: '44 6 * * 4' # Thursdays 06:44 UTC
   workflow_dispatch:

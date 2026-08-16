@@ -2,7 +2,7 @@
 name: push helpers bash weekly smoke (weekly)
 permissions:
   contents: read
-on:
+"on":
   schedule:
     - cron: '38 10 * * 4' # Thursdays 10:38 UTC
   workflow_dispatch:

@@ -11,7 +11,7 @@ concurrency:
 permissions:
   contents: write
 
-on:
+"on":
   schedule:
     - cron: '0 6 * * *'
   workflow_dispatch:

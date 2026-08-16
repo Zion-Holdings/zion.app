@@ -8,7 +8,7 @@ concurrency:
   group: ai-mttr-fingerprint-regression-daily
   cancel-in-progress: false
 
-on:
+"on":
   schedule:
     - cron: '15 11 * * *'
   workflow_dispatch:

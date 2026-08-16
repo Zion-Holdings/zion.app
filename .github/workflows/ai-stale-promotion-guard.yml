@@ -8,7 +8,7 @@ concurrency:
   group: ai-stale-promotion-guard
   cancel-in-progress: false
 
-on:
+"on":
   schedule:
     - cron: '35 14 * * *'
   workflow_run:
