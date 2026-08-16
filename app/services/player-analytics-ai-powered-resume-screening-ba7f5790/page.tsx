@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Player Analytics AI-Powered Resume Screening - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Agriculture Ai Platform 118 - Zion Tech Group",

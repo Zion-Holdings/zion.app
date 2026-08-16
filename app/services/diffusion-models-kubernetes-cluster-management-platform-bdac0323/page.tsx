@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Diffusion Models Kubernetes Cluster Management Platform - Zion Tech Group",

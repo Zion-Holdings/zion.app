@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Neural Engine - Construction - Zion Tech Group",

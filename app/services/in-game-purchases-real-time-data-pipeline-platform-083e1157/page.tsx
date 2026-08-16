@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "In-game Purchases Real-Time Data Pipeline Platform - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Wi-Fi Access Control Verifier - Zion Tech Group",

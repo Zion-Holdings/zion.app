@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Security Platform for Retail - Batch 23 - Zion Tech Group",

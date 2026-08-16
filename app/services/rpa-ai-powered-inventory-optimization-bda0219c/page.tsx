@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "RPA AI-Powered Inventory Optimization - Zion Tech Group",

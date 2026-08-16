@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Supply Chain AI-Powered Recommendation Engine - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Gaming Workflow Automation - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "TimescaleDB AI-Powered Data Quality Rules - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Drug Discovery Accelerator - Zion Tech Group",

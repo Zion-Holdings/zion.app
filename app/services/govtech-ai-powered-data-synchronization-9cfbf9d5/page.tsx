@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "GovTech AI-Powered Data Synchronization - Zion Tech Group",

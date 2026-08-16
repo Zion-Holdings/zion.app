@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Insurtech Iot Platform #47 - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Ethical AI Governance Platform - Zion Tech Group",

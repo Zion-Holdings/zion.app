@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Anti-Cheat Systems Intelligence Engine - Zion Tech Group",

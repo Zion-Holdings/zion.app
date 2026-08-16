@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Transportation Blockchain Platform #12 - Zion Tech Group",

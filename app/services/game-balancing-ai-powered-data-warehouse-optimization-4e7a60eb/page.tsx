@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Game Balancing AI-Powered Data Warehouse Optimization - Zion Tech Group",

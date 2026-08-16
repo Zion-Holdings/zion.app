@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Micro-SaaS AI Invoice Gap Detector - Zion Tech Group",

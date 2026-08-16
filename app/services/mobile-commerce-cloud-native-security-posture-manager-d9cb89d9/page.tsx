@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Mobile Commerce Cloud-Native Security Posture Manager - Zion Tech Group",

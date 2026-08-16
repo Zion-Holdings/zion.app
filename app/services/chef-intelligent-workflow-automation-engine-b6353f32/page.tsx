@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Chef Intelligent Workflow Automation Engine - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Pen Testing AI-Powered ETL Pipeline Optimization - Zion Tech Group",

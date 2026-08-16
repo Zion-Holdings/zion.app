@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Maritime Security Platform #20 - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Product Lifecycle AI-Powered Data Lake Management - Zion Tech Group",

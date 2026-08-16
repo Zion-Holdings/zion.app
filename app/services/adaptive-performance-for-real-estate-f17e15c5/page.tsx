@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Performance for Real-Estate - Zion Tech Group",

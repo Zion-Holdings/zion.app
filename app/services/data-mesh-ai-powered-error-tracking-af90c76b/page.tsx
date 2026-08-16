@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Data Mesh AI-Powered Error Tracking - Zion Tech Group",

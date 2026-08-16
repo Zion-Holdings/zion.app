@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Hybrid Cloud Orchestration Platform - Zion Tech Group",

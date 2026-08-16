@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "GraphQL AI-Powered SEO Content Engine - Zion Tech Group",

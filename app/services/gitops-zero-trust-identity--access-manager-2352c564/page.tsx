@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "GitOps Zero-Trust Identity & Access Manager - Zion Tech Group",

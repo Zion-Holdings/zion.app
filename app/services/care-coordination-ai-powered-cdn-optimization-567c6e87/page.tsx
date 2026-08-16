@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Care Coordination AI-Powered CDN Optimization - Zion Tech Group",

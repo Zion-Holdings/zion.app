@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Jenkins AI-Powered Lead Scoring & Routing - Zion Tech Group",

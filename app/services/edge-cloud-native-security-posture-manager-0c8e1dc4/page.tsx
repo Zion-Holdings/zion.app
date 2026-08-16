@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Edge Cloud-Native Security Posture Manager - Zion Tech Group",

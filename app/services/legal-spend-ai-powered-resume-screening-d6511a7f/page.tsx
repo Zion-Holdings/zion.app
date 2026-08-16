@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Legal Spend AI-Powered Resume Screening - Zion Tech Group",

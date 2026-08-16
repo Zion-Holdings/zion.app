@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing manager-logistics - Zion Tech Group",

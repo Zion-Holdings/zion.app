@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Medical Coding AI-Powered Email Marketing Automation - Zion Tech Group",

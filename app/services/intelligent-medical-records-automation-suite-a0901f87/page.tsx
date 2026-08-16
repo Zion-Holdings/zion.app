@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Medical Records Automation Suite - Zion Tech Group",

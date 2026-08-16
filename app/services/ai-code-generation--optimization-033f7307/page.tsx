@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -8,10 +6,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://ziontechgroup.com/services/ai-code-generation--optimization-033f7307',
   },
-=======
-=======
->>>>>>> 39bf07ce6891d15dc926f13878391bb6137ef7f2
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Code Generation & Optimization - Zion Tech Group",
@@ -19,16 +13,10 @@ export const metadata = {
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-code-generation--optimization-033f7307`
   }
-<<<<<<< HEAD
->>>>>>> d2b89cec39a2d0e2724bc7e817985633189a41c1
-=======
->>>>>>> 39bf07ce6891d15dc926f13878391bb6137ef7f2
 };
 
 export default function ServicePage() {
   return (
-<<<<<<< HEAD
-<<<<<<< HEAD
     <main className="min-h-screen bg-slate-950 text-white">
       <div className="max-w-4xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
@@ -106,9 +94,6 @@ export default function ServicePage() {
             </a>
           </div>
         </section>
-=======
-=======
->>>>>>> 39bf07ce6891d15dc926f13878391bb6137ef7f2
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Code Generation &amp; Optimization</h1>
@@ -158,10 +143,6 @@ export default function ServicePage() {
             Book a Consultation
           </a>
         </div>
-<<<<<<< HEAD
->>>>>>> d2b89cec39a2d0e2724bc7e817985633189a41c1
-=======
->>>>>>> 39bf07ce6891d15dc926f13878391bb6137ef7f2
       </div>
     </main>
   );

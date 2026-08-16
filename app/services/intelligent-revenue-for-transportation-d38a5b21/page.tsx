@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Revenue for Transportation - Zion Tech Group",

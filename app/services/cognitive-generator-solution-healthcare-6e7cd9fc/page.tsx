@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Generator Solution - Healthcare - Zion Tech Group",

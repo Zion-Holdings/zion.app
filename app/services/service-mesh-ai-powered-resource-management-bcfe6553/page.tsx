@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Service Mesh AI-Powered Resource Management - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Resilience Simulation Platform - Zion Tech Group",

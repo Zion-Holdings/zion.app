@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Healthtech Edge Platform #48 - Zion Tech Group",

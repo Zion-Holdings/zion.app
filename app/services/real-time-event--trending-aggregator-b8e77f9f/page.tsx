@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Real-time Event & Trending Aggregator - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Data Dictionary Auto Harmonizer - Zion Tech Group",

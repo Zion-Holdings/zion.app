@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Microgrids AI-Powered Incident Response - Zion Tech Group",

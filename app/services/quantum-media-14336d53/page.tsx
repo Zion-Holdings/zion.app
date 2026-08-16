@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Media Quantum Platform #15 - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Audience Analytics Analytics Suite - Zion Tech Group",

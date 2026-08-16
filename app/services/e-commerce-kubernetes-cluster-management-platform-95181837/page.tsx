@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "E-commerce Kubernetes Cluster Management Platform - Zion Tech Group",

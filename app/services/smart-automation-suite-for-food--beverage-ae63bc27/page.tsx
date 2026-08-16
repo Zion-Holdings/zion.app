@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Automation Suite for Food & Beverage - Zion Tech Group",

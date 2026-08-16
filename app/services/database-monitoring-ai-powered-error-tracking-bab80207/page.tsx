@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Database Monitoring AI-Powered Error Tracking - Zion Tech Group",

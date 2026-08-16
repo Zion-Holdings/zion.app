@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Freight Matching Zero-Trust Identity & Access Manager - Zion Tech Group",

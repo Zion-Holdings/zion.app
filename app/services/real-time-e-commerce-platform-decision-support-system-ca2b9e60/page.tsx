@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Real-Time E-commerce Platform Decision Support System - Zion Tech Group",

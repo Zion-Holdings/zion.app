@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "NLP AI-Powered Error Tracking - Zion Tech Group",

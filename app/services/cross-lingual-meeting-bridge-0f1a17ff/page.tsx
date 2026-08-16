@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cross-Lingual Meeting Bridge - Zion Tech Group",

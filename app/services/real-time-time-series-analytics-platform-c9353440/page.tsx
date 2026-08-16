@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Real-Time Time-Series Analytics Platform - Zion Tech Group",

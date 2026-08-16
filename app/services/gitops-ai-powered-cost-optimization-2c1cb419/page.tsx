@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "GitOps AI-Powered Cost Optimization - Zion Tech Group",

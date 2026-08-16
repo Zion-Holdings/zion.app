@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Legal Churn Prevention - Zion Tech Group",

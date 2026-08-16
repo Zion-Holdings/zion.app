@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "5G Networks AI-Powered Cloud Migration - Zion Tech Group",

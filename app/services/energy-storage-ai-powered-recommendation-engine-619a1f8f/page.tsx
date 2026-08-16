@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Energy Storage AI-Powered Recommendation Engine - Zion Tech Group",

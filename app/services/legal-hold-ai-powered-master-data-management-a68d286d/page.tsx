@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Legal Hold AI-Powered Master Data Management - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Digital Banking Smart Automation Platform - Zion Tech Group",

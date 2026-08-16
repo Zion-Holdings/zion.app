@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Hospitality Analytics Platform #6 - Zion Tech Group",

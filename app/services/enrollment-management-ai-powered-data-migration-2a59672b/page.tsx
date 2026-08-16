@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Enrollment Management AI-Powered Data Migration - Zion Tech Group",

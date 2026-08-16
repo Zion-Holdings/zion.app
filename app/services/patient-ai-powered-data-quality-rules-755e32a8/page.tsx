@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Patient AI-Powered Data Quality Rules - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered DeFi Yield Optimizer - Zion Tech Group",

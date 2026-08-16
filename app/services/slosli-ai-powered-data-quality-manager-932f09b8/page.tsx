@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "SLO/SLI AI-Powered Data Quality Manager - Zion Tech Group",

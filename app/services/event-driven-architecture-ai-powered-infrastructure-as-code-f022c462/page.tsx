@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Event-driven Architecture AI-Powered Infrastructure as Code - Zion Tech Group",

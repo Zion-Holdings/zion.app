@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Digital Twin Simulation Platform - Zion Tech Group",

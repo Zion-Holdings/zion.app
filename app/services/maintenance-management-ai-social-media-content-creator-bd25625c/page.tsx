@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Maintenance Management AI Social Media Content Creator - Zion Tech Group",

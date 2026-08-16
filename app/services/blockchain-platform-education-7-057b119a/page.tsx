@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Blockchain Platform for Education - Batch 7 - Zion Tech Group",

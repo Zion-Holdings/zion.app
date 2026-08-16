@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "SOAR AI-Powered ETL Pipeline Optimization - Zion Tech Group",

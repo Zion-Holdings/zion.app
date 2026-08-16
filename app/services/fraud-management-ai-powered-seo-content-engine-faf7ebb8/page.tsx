@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Fraud Management AI-Powered SEO Content Engine - Zion Tech Group",

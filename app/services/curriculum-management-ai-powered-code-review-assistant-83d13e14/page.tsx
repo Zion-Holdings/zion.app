@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Curriculum Management AI-Powered Code Review Assistant - Zion Tech Group",

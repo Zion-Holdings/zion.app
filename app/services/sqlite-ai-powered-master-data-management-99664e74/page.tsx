@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "SQLite AI-Powered Master Data Management - Zion Tech Group",

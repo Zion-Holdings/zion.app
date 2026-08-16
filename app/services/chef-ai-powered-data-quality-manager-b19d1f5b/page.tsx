@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Chef AI-Powered Data Quality Manager - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Urban Planning AI-Powered Impact Analysis - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "MySQL AI-Powered Quantum Computing Simulator - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Yield Prediction Smart Automation Platform - Zion Tech Group",

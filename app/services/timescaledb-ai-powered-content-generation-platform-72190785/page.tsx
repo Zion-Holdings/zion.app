@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "TimescaleDB AI-Powered Content Generation Platform - Zion Tech Group",

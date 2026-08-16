@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "BNPL AI-Powered Data Governance - Zion Tech Group",

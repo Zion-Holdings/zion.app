@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Business Process Zero-Trust Identity & Access Manager - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Smart Health Analytics - Zion Tech Group",

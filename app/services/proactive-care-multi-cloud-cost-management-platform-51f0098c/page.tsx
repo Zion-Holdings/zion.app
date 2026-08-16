@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Proactive Care Multi-Cloud Cost Management Platform - Zion Tech Group",

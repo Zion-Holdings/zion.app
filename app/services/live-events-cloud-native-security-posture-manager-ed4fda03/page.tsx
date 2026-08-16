@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Live Events Cloud-Native Security Posture Manager - Zion Tech Group",

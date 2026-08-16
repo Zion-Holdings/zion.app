@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Code Quality & Governance Platform - Zion Tech Group",

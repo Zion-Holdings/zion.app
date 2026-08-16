@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Legal Operations AI-Powered Data Privacy - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cross-docking AI-Powered Data Security - Zion Tech Group",

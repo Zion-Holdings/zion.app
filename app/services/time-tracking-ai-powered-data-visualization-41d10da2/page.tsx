@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Time Tracking AI-Powered Data Visualization - Zion Tech Group",

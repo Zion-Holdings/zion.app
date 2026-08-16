@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Micro-SaaS AI Cart Abandonment Analyzer - Zion Tech Group",

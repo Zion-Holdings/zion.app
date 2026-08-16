@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "MariaDB AI-Powered Customer Journey Mapping - Zion Tech Group",

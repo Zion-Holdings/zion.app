@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cloud Migration AI-Powered Quantum Computing Simulator - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Power Systems AI-Powered Demand Forecasting - Zion Tech Group",

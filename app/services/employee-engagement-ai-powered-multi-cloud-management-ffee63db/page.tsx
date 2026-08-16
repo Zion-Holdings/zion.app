@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Employee Engagement AI-Powered Multi-Cloud Management - Zion Tech Group",

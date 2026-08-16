@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Forecasting for Cash Position - Zion Tech Group",

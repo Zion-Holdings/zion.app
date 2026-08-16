@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Infrastructure AI-Powered Metaverse Experience Engine - Zion Tech Group",

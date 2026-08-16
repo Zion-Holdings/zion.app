@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Edge AI Inference Platform - Zion Tech Group",

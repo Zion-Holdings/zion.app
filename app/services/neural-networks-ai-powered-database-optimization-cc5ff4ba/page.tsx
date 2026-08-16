@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Networks AI-Powered Database Optimization - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Social Media Management Process Intelligence Platform - Zion Tech Group",

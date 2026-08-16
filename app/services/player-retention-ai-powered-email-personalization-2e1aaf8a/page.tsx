@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Player Retention AI-Powered Email Personalization - Zion Tech Group",

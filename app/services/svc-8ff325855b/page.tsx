@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered SEO Content Engine - Gaming Edition - Zion Tech Group",

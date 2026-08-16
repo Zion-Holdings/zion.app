@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "IoT AI-Powered Capacity Planning - Zion Tech Group",

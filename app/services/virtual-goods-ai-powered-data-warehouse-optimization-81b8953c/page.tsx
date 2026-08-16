@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Virtual Goods AI-Powered Data Warehouse Optimization - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Platform Platform - Real-Estate - Zion Tech Group",

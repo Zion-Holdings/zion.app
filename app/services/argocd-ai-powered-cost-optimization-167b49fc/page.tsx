@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "ArgoCD AI-Powered Cost Optimization - Zion Tech Group",

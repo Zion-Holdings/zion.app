@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Jenkins Customer Data Platform AI - Zion Tech Group",

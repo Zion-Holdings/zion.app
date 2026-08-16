@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Public Administration AI-Powered Email Marketing Automation - Zion Tech Group",

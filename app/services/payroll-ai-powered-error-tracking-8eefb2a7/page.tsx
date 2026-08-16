@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Payroll AI-Powered Error Tracking - Zion Tech Group",

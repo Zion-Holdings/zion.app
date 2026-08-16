@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Finance Metaverse Platform #50 - Zion Tech Group",

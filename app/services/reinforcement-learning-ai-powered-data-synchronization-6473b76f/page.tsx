@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Reinforcement Learning AI-Powered Data Synchronization - Zion Tech Group",

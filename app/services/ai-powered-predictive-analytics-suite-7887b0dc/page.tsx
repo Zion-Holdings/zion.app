@@ -46,15 +46,7 @@ export default function ServicePage() {
       <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-slate-800 rounded-xl p-6 border border-purple-500/20">
           <h3 className="text-xl font-bold mb-4">Basic</h3>
-<<<<<<< HEAD
-<<<<<<< HEAD
           <p className="text-3xl font-bold text-purple-400 mb-4">$299</p>
-=======
-          <p className="text-3xl font-bold text-purple-400 mb-4">${}</p>
->>>>>>> d2b89cec39a2d0e2724bc7e817985633189a41c1
-=======
-          <p className="text-3xl font-bold text-purple-400 mb-4">${}</p>
->>>>>>> 39bf07ce6891d15dc926f13878391bb6137ef7f2
           <ul className="space-y-2 mb-4">
             <li className="text-gray-400 text-sm">Core features</li>
           </ul>

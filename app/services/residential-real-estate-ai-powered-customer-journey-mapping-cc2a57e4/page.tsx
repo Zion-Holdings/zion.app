@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Residential Real Estate AI-Powered Customer Journey Mapping - Zion Tech Group",

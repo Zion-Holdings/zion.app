@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Quality Assurance Process Intelligence Platform - Zion Tech Group",

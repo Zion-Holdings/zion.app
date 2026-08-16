@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Human Resources Workflow Automation - Zion Tech Group",

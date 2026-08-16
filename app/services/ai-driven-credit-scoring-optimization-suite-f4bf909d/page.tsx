@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Driven Credit Scoring Optimization Suite - Zion Tech Group",

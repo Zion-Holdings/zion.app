@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Patch Management AI-Powered Business Intelligence - Zion Tech Group",

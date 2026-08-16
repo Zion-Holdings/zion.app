@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "EHR AI-Powered Data Warehouse Optimization - Zion Tech Group",

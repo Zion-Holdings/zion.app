@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Virtual Event & Webinar Platform - Zion Tech Group",

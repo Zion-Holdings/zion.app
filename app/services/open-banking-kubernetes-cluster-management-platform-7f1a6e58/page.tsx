@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Open Banking Kubernetes Cluster Management Platform - Zion Tech Group",

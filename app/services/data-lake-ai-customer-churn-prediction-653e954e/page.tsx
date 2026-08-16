@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Data Lake AI Customer Churn Prediction - Zion Tech Group",

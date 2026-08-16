@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Quota AI-Powered Market Intelligence - Zion Tech Group",

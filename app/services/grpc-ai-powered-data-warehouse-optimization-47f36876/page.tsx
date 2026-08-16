@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "gRPC AI-Powered Data Warehouse Optimization - Zion Tech Group",

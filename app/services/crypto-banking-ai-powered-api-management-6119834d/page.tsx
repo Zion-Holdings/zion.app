@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Crypto Banking AI-Powered API Management - Zion Tech Group",

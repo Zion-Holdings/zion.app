@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Distance Learning AI-Powered Backup Management - Zion Tech Group",

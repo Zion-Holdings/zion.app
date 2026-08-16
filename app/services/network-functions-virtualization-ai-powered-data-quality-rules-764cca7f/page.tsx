@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Network Functions Virtualization AI-Powered Data Quality Rules - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Energy Retail Intelligent Workflow Automation Engine - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Discrete Manufacturing AI-Powered Cloud Security Posture - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated IoT Integration Intelligence Engine - Zion Tech Group",

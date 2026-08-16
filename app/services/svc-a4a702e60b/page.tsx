@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Sales Lead Scoring Engine - Fintech Edition - Zion Tech Group",

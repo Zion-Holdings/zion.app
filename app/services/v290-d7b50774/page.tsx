@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Financial Planning & Analysis v290 - Advanced Ai Solution - Zion Tech Group",

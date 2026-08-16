@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Fleet Tracking AI-Powered Data Lake Management - Zion Tech Group",

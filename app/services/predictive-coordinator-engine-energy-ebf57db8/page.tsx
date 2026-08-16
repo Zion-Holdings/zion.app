@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Coordinator Engine - Energy - Zion Tech Group",

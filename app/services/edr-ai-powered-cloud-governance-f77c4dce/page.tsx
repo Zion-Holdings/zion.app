@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "EDR AI-Powered Cloud Governance - Zion Tech Group",

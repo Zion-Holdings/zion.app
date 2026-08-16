@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "SEO Tools AI-Powered Network Monitoring - Zion Tech Group",

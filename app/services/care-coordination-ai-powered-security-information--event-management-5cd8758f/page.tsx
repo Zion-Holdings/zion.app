@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Care Coordination AI-Powered Security Information & Event Management - Zion Tech Group",

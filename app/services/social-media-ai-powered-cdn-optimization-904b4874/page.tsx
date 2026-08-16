@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Social Media AI-Powered CDN Optimization - Zion Tech Group",

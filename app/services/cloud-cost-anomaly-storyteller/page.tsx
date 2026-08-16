@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cloud Cost Anomaly Storyteller - Zion Tech Group",

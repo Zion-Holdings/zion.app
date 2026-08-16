@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Energy Management AI-Powered Customer Journey Mapping - Zion Tech Group",

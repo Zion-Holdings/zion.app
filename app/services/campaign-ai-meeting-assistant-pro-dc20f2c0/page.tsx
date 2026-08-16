@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Campaign AI Meeting Assistant Pro - Zion Tech Group",

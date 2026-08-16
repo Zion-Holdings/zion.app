@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Construction Cloud Platform #19 - Zion Tech Group",

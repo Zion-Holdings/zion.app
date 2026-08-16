@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Virtual Goods AI-Powered Disaster Recovery - Zion Tech Group",

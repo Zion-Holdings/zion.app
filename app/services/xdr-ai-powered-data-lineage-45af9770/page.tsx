@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "XDR AI-Powered Data Lineage - Zion Tech Group",

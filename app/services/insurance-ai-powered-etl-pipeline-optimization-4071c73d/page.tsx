@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Insurance AI-Powered ETL Pipeline Optimization - Zion Tech Group",

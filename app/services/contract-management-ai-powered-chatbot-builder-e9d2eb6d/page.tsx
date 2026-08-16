@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Contract Management AI-Powered Chatbot Builder - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Influencer Zero-Trust Identity & Access Manager - Zion Tech Group",

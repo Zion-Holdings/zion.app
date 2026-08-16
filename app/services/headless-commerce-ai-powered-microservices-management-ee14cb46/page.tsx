@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Headless Commerce AI-Powered Microservices Management - Zion Tech Group",

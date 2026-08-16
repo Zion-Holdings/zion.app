@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cloud Gaming AI-Powered Data Integration - Zion Tech Group",

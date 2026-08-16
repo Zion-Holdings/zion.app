@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Blockchain Platform for Gaming - Batch 16 - Zion Tech Group",

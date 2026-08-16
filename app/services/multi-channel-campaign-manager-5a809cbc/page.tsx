@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Multi-Channel Campaign Manager - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "WMS AI-Powered Predictive Analytics Suite - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Endpoint Security & Compliance Monitor - Zion Tech Group",

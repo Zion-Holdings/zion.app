@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cash Flow AI-Powered Lead Scoring & Routing - Zion Tech Group",

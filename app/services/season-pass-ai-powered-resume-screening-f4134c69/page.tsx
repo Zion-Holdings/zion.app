@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Season Pass AI-Powered Resume Screening - Zion Tech Group",

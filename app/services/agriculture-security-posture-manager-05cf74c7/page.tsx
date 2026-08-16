@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Agriculture Security Posture Manager - Zion Tech Group",

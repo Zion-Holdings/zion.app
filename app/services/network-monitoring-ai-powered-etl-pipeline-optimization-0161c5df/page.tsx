@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Network Monitoring AI-Powered ETL Pipeline Optimization - Zion Tech Group",

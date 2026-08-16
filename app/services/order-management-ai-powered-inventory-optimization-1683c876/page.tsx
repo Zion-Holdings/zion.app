@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Order Management AI-Powered Inventory Optimization - Zion Tech Group",

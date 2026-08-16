@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart City AI Customer Churn Prediction - Zion Tech Group",

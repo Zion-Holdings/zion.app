@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Content Marketing Real-Time Data Pipeline Platform - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Redis AI-Powered Error Tracking - Zion Tech Group",

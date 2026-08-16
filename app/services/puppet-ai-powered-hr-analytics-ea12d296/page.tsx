@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Puppet AI-Powered HR Analytics - Zion Tech Group",

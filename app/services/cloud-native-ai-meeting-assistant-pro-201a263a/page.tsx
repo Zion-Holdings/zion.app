@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cloud Native AI Meeting Assistant Pro - Zion Tech Group",

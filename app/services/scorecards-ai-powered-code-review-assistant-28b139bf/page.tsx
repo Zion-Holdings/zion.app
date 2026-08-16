@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Scorecards AI-Powered Code Review Assistant - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Freight Management AI-Powered Data Security - Zion Tech Group",

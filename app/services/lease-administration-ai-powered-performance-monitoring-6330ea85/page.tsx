@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Lease Administration AI-Powered Performance Monitoring - Zion Tech Group",

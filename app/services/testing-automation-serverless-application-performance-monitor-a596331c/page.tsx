@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Testing Automation Serverless Application Performance Monitor - Zion Tech Group",

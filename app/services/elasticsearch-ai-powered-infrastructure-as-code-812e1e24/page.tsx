@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Elasticsearch AI-Powered Infrastructure as Code - Zion Tech Group",

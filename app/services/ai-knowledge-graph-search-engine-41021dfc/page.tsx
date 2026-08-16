@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Knowledge Graph Search Engine - Zion Tech Group",

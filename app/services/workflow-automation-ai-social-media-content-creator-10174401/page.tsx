@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Workflow Automation AI Social Media Content Creator - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Prescriptive Analytics AI-Powered SEO Content Engine - Zion Tech Group",

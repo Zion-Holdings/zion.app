@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Rent Collection Multi-Cloud Cost Management Platform - Zion Tech Group",

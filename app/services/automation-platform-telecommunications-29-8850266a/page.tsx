@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automation Platform for Telecommunications - Batch 29 - Zion Tech Group",

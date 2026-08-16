@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "LLM AI-Powered Data Synchronization - Zion Tech Group",

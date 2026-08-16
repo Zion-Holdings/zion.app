@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "GCP AI-Powered Market Intelligence - Zion Tech Group",

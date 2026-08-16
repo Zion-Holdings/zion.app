@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Real Estate Workflow Automation - Zion Tech Group",

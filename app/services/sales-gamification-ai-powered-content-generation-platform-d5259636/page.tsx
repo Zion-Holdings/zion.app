@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Sales Gamification AI-Powered Content Generation Platform - Zion Tech Group",

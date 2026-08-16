@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Event-driven Architecture AI Customer Churn Prediction - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Rate Limiting AI-Powered CDN Optimization - Zion Tech Group",

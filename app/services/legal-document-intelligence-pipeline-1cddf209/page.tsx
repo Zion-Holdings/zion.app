@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Legal Document Intelligence Pipeline - Zion Tech Group",

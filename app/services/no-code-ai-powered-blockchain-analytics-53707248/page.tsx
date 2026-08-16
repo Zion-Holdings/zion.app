@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "No-code AI-Powered Blockchain Analytics - Zion Tech Group",

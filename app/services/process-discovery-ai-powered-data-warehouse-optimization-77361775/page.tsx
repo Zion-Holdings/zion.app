@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Process Discovery AI-Powered Data Warehouse Optimization - Zion Tech Group",

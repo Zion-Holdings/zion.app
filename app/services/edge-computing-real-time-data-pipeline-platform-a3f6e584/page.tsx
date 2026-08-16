@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Edge Computing Real-Time Data Pipeline Platform - Zion Tech Group",

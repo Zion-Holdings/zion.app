@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "SIEM AI Business Process Automation Suite - Zion Tech Group",

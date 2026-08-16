@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Learning Platforms AI-Powered Resource Management - Zion Tech Group",

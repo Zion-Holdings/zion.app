@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "CRM Multi-Cloud Cost Management Platform - Zion Tech Group",

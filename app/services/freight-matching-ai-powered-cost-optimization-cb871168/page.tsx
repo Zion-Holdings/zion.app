@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Freight Matching AI-Powered Cost Optimization - Zion Tech Group",

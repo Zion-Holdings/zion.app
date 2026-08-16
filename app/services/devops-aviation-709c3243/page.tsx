@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Aviation Devops Platform #45 - Zion Tech Group",

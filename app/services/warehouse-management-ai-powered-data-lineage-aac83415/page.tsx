@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Warehouse Management AI-Powered Data Lineage - Zion Tech Group",

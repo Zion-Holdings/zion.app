@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Sports Edge Platform #31 - Zion Tech Group",

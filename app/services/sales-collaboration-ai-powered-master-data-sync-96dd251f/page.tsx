@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Sales Collaboration AI-Powered Master Data Sync - Zion Tech Group",

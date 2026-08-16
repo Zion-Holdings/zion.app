@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Entertainment Data Platform #38 - Zion Tech Group",

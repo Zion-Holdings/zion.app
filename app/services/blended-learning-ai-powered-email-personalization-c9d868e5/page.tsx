@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Blended Learning AI-Powered Email Personalization - Zion Tech Group",

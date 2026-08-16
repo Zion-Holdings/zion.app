@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Gaming Micro-Saas Platform #34 - Zion Tech Group",

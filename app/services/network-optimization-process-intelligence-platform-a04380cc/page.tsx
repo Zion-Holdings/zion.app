@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Network Optimization Process Intelligence Platform - Zion Tech Group",

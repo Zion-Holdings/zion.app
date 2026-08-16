@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Pen Testing AI Financial Planning & Analysis - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Sustainable Supply Chain Radar - Zion Tech Group",

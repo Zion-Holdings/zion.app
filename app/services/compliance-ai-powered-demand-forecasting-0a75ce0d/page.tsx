@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Compliance AI-Powered Demand Forecasting - Zion Tech Group",

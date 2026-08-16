@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Adaptive Freight Analytics - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Telehealth AI-Powered Quality Assurance - Zion Tech Group",

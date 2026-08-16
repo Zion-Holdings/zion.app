@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Payroll AI-Powered Customer Churn Prevention - Zion Tech Group",

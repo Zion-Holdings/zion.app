@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Open Banking AI Social Media Content Creator - Zion Tech Group",

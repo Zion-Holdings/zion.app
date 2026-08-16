@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "API Gateway AI-Powered Data Synchronization - Zion Tech Group",

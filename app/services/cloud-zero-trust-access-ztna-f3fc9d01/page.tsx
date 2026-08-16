@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cloud Zero Trust Access (ZTNA) - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "CI/CD Security Gate-as-a-Service - Zion Tech Group",

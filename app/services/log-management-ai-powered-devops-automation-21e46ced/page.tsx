@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Log Management AI-Powered DevOps Automation - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Warehouse Robotics AI-Powered Stream Processing - Zion Tech Group",

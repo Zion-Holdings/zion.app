@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Planning AI-Powered HR Analytics - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Supply Chain Management Intelligent Workflow Automation Engine - Zion Tech Group",

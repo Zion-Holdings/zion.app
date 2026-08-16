@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automation Anywhere AI-Powered Customer Churn Prevention - Zion Tech Group",

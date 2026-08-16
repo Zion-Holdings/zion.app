@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Data Lake Kubernetes Cluster Management Platform - Zion Tech Group",

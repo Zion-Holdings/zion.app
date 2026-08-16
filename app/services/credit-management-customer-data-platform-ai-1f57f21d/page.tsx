@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Credit Management Customer Data Platform AI - Zion Tech Group",

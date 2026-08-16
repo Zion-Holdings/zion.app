@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Student AI-Powered Code Review Assistant - Zion Tech Group",

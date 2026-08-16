@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Maintenance Scheduling Process Intelligence Platform - Zion Tech Group",

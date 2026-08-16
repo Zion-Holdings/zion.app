@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Agriculture Financial Risk Management AI - Zion Tech Group",

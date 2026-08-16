@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Diffusion Models AI-Powered Log Analysis - Zion Tech Group",

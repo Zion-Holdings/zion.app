@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "In-game Purchases AI-Powered Content Generation Platform - Zion Tech Group",

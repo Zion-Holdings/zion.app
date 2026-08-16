@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Affiliate Management SEO Content Engine for Automotive - Zion Tech Group",

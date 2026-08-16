@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Real Estate Investments AI-Powered Contract Analysis - Zion Tech Group",

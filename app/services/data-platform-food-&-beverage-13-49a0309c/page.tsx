@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Data Platform for Food & Beverage - Batch 13 - Zion Tech Group",

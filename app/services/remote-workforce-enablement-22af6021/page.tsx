@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Remote Workforce Enablement - Zion Tech Group",

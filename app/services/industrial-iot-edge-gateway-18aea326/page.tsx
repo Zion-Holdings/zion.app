@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Industrial IoT Edge Gateway - Zion Tech Group",

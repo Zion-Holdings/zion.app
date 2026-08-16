@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Data Science AI-Powered Container Orchestration - Zion Tech Group",

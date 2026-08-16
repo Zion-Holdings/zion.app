@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Accounts Receivable AI Financial Planning & Analysis - Zion Tech Group",

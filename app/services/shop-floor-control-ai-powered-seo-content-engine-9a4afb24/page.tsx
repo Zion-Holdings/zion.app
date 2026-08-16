@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Shop Floor Control AI-Powered SEO Content Engine - Zion Tech Group",

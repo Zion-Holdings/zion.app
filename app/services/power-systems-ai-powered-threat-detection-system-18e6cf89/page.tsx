@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Power Systems AI-Powered Threat Detection System - Zion Tech Group",

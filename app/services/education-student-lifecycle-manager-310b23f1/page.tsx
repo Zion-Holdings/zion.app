@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Education Student Lifecycle Manager - Zion Tech Group",

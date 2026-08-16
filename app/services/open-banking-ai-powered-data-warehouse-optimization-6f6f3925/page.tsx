@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Open Banking AI-Powered Data Warehouse Optimization - Zion Tech Group",

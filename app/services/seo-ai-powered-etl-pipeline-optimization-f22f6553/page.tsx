@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "SEO AI-Powered ETL Pipeline Optimization - Zion Tech Group",

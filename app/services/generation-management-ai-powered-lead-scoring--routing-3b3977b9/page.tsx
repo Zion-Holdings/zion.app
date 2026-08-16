@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Generation Management AI-Powered Lead Scoring & Routing - Zion Tech Group",

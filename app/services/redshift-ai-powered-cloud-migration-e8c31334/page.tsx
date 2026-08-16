@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Redshift AI-Powered Cloud Migration - Zion Tech Group",

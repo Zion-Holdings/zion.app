@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Observability AI Customer Churn Prediction - Zion Tech Group",

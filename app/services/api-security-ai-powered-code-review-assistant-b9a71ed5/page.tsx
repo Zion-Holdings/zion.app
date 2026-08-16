@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "API Security AI-Powered Code Review Assistant - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Audio Production AI-Powered Pricing Optimization - Zion Tech Group",

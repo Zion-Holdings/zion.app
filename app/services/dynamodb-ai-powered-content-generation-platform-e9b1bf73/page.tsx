@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "DynamoDB AI-Powered Content Generation Platform - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Business Process Cloud-Native Security Posture Manager - Zion Tech Group",

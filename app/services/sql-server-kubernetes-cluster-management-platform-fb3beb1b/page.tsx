@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "SQL Server Kubernetes Cluster Management Platform - Zion Tech Group",

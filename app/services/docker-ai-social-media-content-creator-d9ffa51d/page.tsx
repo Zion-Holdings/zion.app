@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Docker AI Social Media Content Creator - Zion Tech Group",

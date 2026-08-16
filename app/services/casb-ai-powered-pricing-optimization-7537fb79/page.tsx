@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "CASB AI-Powered Pricing Optimization - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Digital Services AI-Powered Data Privacy - Zion Tech Group",

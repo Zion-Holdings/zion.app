@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cloud Platform for Transportation - Batch 30 - Zion Tech Group",

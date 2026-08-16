@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Embedded Analytics AI-Powered CDN Optimization - Zion Tech Group",

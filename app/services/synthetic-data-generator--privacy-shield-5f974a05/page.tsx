@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Synthetic Data Generator & Privacy Shield - Zion Tech Group",

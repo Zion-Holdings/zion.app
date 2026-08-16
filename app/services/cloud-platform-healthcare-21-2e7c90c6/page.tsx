@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cloud Platform for Healthcare - Batch 21 - Zion Tech Group",

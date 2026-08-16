@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Distance Learning Kubernetes Cluster Management Platform - Zion Tech Group",

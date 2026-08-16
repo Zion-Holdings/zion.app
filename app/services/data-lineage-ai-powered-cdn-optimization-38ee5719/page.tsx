@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Data Lineage AI-Powered CDN Optimization - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Supply Chain Optimization v197 - Advanced Ai Solution - Zion Tech Group",

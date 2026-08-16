@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "MES AI Meeting Assistant Pro - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Supply Chain Visibility AI-Powered Quantum Computing Simulator - Zion Tech Group",

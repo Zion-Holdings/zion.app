@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "SOAR AI-Powered Performance Monitoring - Zion Tech Group",

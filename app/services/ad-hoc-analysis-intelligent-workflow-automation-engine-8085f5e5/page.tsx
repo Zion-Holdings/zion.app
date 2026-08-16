@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Ad-hoc Analysis Intelligent Workflow Automation Engine - Zion Tech Group",

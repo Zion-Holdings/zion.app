@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Audio Production Kubernetes Cluster Management Platform - Zion Tech Group",

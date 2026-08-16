@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Workato AI-Powered Network Monitoring - Zion Tech Group",

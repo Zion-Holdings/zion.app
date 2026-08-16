@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Renewable Energy Zero-Trust Identity & Access Manager - Zion Tech Group",

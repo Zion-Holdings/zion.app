@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Curriculum AI-Powered Data Synchronization - Zion Tech Group",

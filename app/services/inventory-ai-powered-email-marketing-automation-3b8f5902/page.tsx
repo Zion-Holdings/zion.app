@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Inventory AI-Powered Email Marketing Automation - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Kubernetes AI-Powered Cost Optimization - Zion Tech Group",

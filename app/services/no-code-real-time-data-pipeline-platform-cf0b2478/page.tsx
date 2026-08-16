@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "No-code Real-Time Data Pipeline Platform - Zion Tech Group",

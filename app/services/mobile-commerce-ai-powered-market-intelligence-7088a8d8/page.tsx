@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Mobile Commerce AI-Powered Market Intelligence - Zion Tech Group",

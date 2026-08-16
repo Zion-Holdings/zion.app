@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Grid AI-Powered Performance Monitoring - Zion Tech Group",

@@ -1,4 +1,3 @@
-import { } from 'next/navigation';
 
 export const metadata = {
   title: "Freight Management AI-Powered SEO Content Engine - Zion Tech Group",
