@@ -1,17 +1,23 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next';
+import StandardPageLayout from '@/components/StandardPageLayout';
+
 export const metadata: Metadata = {
   title: 'IT Consulting Services | Zion Tech Group',
-  description: 'Enterprise IT consulting for architecture, delivery, governance, and measurable outcomes.'
-}
+  description: 'Enterprise IT consulting for architecture, delivery, governance, and measurable outcomes.',
+  alternates: { canonical: '/it-consulting-services/' },
+};
+
 export default function Page() {
   return (
-    <main className="container-page py-20">
-      <h1 className="text-4xl font-bold text-white mb-4">IT Consulting Services</h1>
-      <p className="text-xl text-slate-300 mb-10">Enterprise IT consulting for architecture, delivery, governance, and measurable outcomes.</p>
-      <div className="text-center">
-        <a className="btn-primary" href="/contact/">Contact us</a>
-        <a className="btn-secondary" href="/services/">Services</a>
-      </div>
-    </main>
-  )
+    <StandardPageLayout data={{
+      title: "IT Consulting Services",
+      description: "Enterprise IT consulting for architecture, delivery, governance, and measurable outcomes.",
+      category: 'AI Service',
+      categoryColor: "from-purple-500 to-indigo-500",
+      ctaLabel: 'Contact us',
+      ctaHref: '/contact/',
+      secondaryCtaLabel: 'Services',
+      secondaryCtaHref: '/services/',
+    }} />
+  );
 }
