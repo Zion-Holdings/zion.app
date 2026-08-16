@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import PageWrapper from '@/components/PageWrapper';
 
 export const metadata: Metadata = {
   title: 'Use Cases | Zion Tech Group',
@@ -77,79 +78,77 @@ const INDUSTRIES = [
 
 export default function UseCasesPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
-      <div className="mx-auto max-w-6xl px-4 py-20">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Use Cases That <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-violet-400 bg-clip-text text-transparent">Move the Needle</span>
-          </h1>
-          <p className="text-slate-300 text-lg max-w-2xl mx-auto">
-            From customer experience to infrastructure reliability, these are the patterns where Zion clients see fast, measurable results.
-          </p>
-        </div>
+    <PageWrapper breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Use Cases' }]}>
+      <div className="text-center mb-12">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          Use Cases That <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-violet-400 bg-clip-text text-transparent">Move the Needle</span>
+        </h1>
+        <p className="text-slate-300 text-lg max-w-2xl mx-auto">
+          From customer experience to infrastructure reliability, these are the patterns where Zion clients see fast, measurable results.
+        </p>
+      </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {USE_CASES.map((item) => (
-            <Link
-              key={item.title}
-              href={item.path}
-              className="group relative rounded-2xl border border-slate-800 bg-slate-900/60 p-5 transition-all hover:border-purple-500/40"
-            >
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">{item.emoji}</span>
-                <span className="text-[10px] font-semibold text-purple-300 bg-purple-500/10 border border-purple-500/20 px-2 py-0.5 rounded-full">
-                  {item.category}
-                </span>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {USE_CASES.map((item) => (
+          <Link
+            key={item.title}
+            href={item.path}
+            className="group relative rounded-2xl border border-slate-800 bg-slate-900/60 p-5 transition-all hover:border-purple-500/40"
+          >
+            <div className="flex items-center gap-3">
+              <span className="text-2xl">{item.emoji}</span>
+              <span className="text-[10px] font-semibold text-purple-300 bg-purple-500/10 border border-purple-500/20 px-2 py-0.5 rounded-full">
+                {item.category}
+              </span>
+            </div>
+            <h3 className="text-white font-semibold mt-3 group-hover:text-purple-300 transition-colors">{item.title}</h3>
+            <p className="text-slate-400 text-sm mt-2 leading-relaxed">{item.desc}</p>
+            <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
+          </Link>
+        ))}
+      </div>
+
+      <section className="mt-20 border-t border-slate-800/60 pt-16">
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold text-white mb-3">By industry</h2>
+          <p className="text-slate-300 max-w-2xl mx-auto">Pick your context and we’ll map the highest-signal first engagement.</p>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {INDUSTRIES.map((ind) => (
+            <div key={ind.key} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 hover:border-purple-500/40 transition-all">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-2xl">{ind.emoji}</span>
+                <div>
+                  <div className="text-white font-semibold">{ind.label}</div>
+                  <div className="text-slate-400 text-xs">{ind.focus}</div>
+                </div>
               </div>
-              <h3 className="text-white font-semibold mt-3 group-hover:text-purple-300 transition-colors">{item.title}</h3>
-              <p className="text-slate-400 text-sm mt-2 leading-relaxed">{item.desc}</p>
-              <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
-            </Link>
+              <div className="flex flex-wrap gap-2 mt-3">
+                <Link href="/services?category=ai" className="text-xs text-purple-300 hover:text-purple-200">AI services →</Link>
+                <Link href="/use-cases" className="text-xs text-slate-300 hover:text-white">Use cases →</Link>
+                <Link href="/contact" className="text-xs text-slate-300 hover:text-white">Talk to us →</Link>
+              </div>
+            </div>
           ))}
         </div>
+      </section>
 
-        <section className="mt-20 border-t border-slate-800/60 pt-16">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-white mb-3">By industry</h2>
-            <p className="text-slate-300 max-w-2xl mx-auto">Pick your context and we’ll map the highest-signal first engagement.</p>
+      <section className="mt-16 border-t border-slate-800/60 pt-10">
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="max-w-2xl">
+            <h3 className="text-white font-semibold text-lg mb-2">Want a recommendation based on your business?</h3>
+            <p className="text-slate-300 text-sm">Tell us your goal, timeline, and budget. We’ll return a short list of the best-fit services—no generic pitch.</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {INDUSTRIES.map((ind) => (
-              <div key={ind.key} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 hover:border-purple-500/40 transition-all">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="text-2xl">{ind.emoji}</span>
-                  <div>
-                    <div className="text-white font-semibold">{ind.label}</div>
-                    <div className="text-slate-400 text-xs">{ind.focus}</div>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-2 mt-3">
-                  <Link href="/services?category=ai" className="text-xs text-purple-300 hover:text-purple-200">AI services →</Link>
-                  <Link href="/use-cases" className="text-xs text-slate-300 hover:text-white">Use cases →</Link>
-                  <Link href="/contact" className="text-xs text-slate-300 hover:text-white">Talk to us →</Link>
-                </div>
-              </div>
-            ))}
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Link href="/contact" className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/20">
+              Free Consultation →
+            </Link>
+            <Link href="/contact" className="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-slate-700 text-slate-200 font-semibold hover:border-purple-500/60 hover:text-white transition-all">
+              Build a proposal
+            </Link>
           </div>
-        </section>
-
-        <section className="mt-16 border-t border-slate-800/60 pt-10">
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div className="max-w-2xl">
-              <h3 className="text-white font-semibold text-lg mb-2">Want a recommendation based on your business?</h3>
-              <p className="text-slate-300 text-sm">Tell us your goal, timeline, and budget. We’ll return a short list of the best-fit services—no generic pitch.</p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link href="/contact" className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/20">
-                Free Consultation →
-              </Link>
-              <Link href="/contact" className="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-slate-700 text-slate-200 font-semibold hover:border-purple-500/60 hover:text-white transition-all">
-                Build a proposal
-              </Link>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
+        </div>
+      </section>
+    </PageWrapper>
   );
 }
