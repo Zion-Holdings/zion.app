@@ -1,1 +1,14 @@
 {"ts": "2026-07-15T14:48:34.438628+00:00", "event": "analysis_only", "send_allowed": false, "total_records": 25, "internal_hits": 2, "status": "send_blocked_analysis"}
+{"timestamp": "2026-08-16T13:49:41.706933+00:00", "email": "andrew.aite@aitech.co", "message_id": "msg_1786888181_andrew.aite", "error": null, "status": "sent"}
+{"timestamp": "2026-08-16T13:49:43.788078+00:00", "email": "andrew.aite@aitech.co", "message_id": "msg_1786888183_andrew.aite", "error": null, "status": "sent"}
+{"timestamp": "2026-08-16T13:49:45.992530+00:00", "email": "andrew.aite@aitech.co", "message_id": "msg_1786888185_andrew.aite", "error": null, "status": "sent"}
+{"timestamp": "2026-08-16T13:49:48.181849+00:00", "email": "daniel.devo@innovateco.com", "message_id": "msg_1786888188_daniel.devo", "error": null, "status": "sent"}
+{"timestamp": "2026-08-16T13:49:50.491176+00:00", "email": "daniel.devo@innovateco.com", "message_id": "msg_1786888190_daniel.devo", "error": null, "status": "sent"}
+{"timestamp": "2026-08-16T13:49:55.331577+00:00", "email": "michael.secu@cloudfirst.com", "message_id": "msg_1786888195_michael.secu", "error": null, "status": "sent"}
+{"timestamp": "2026-08-16T13:49:57.640265+00:00", "email": "michael.secu@cloudfirst.com", "message_id": "msg_1786888197_michael.secu", "error": null, "status": "sent"}
+{"timestamp": "2026-08-16T13:49:59.855142+00:00", "email": "michael.secu@cloudfirst.com", "message_id": "msg_1786888199_michael.secu", "error": null, "status": "sent"}
+{"timestamp": "2026-08-16T13:50:02.117704+00:00", "email": "daniel.cybe@secureit.com", "message_id": "msg_1786888202_daniel.cybe", "error": null, "status": "sent"}
+{"timestamp": "2026-08-16T13:50:04.374060+00:00", "email": "daniel.cybe@secureit.com", "message_id": "msg_1786888204_daniel.cybe", "error": null, "status": "sent"}
+{"timestamp": "2026-08-16T13:50:25.918300+00:00", "email": "daniel.digi@secureit.com", "message_id": "msg_1786888225_daniel.digi", "error": null, "status": "sent"}
+{"timestamp": "2026-08-16T13:50:28.212286+00:00", "email": "daniel.digi@secureit.com", "message_id": "msg_1786888228_daniel.digi", "error": null, "status": "sent"}
+{"timestamp": "2026-08-16T13:50:30.462324+00:00", "email": "daniel.digi@secureit.com", "message_id": "msg_1786888230_daniel.digi", "error": null, "status": "sent"}

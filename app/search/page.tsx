@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // app/search/page.tsx - Enhanced Search Page (SEO Optimized)
 'use client';
 
@@ -324,10 +323,3 @@ export default function SearchPage() {
     </main>
   );
 }
-=======
-import { redirect } from 'next/navigation';
-
-export default function SearchAlias() {
-  redirect('/services');
-}
->>>>>>> d2b89cec39a2d0e2724bc7e817985633189a41c1
