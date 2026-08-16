@@ -1,0 +1,13 @@
+Subject: Quick question about Neural Energy Advisor
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Neural Energy Advisor specifically for real-estate challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Neural Energy Advisor
+Industry: real-estate
+URL: https://ziontechgroup.com/services/neural-energy-advisor-55225d87
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: AI solution for AI - Sentiment Analysis Microservice
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+Most AI companies waste 30% of their time on manual processes. Sentiment Analysis Microservice automates this with zero human intervention. Can I show you how?
+
+---
+Service: Sentiment Analysis Microservice
+Industry: AI
+URL: https://ziontechgroup.com/services/sentiment-analysis-microservice
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Case study: Autonomous DevOps Pipeline GCP (Micro-Saas) in Saas
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A SaaS client achieved $22M savings in 18 months using Autonomous DevOps Pipeline GCP (Micro-Saas). The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Autonomous DevOps Pipeline GCP (Micro-Saas)
+Industry: SaaS
+URL: https://ziontechgroup.com/services/autonomous-devops-pipeline-gcp-f3f5e
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Quick question about Autonomous Customer Analyzer
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Autonomous Customer Analyzer specifically for education challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Autonomous Customer Analyzer
+Industry: education
+URL: https://ziontechgroup.com/services/autonomous-customer-analyzer-b4e202cf
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Quick question about Smart Content Orchestrator
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Smart Content Orchestrator specifically for gaming challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Smart Content Orchestrator
+Industry: gaming
+URL: https://ziontechgroup.com/services/smart-content-orchestrator-fd55af5e
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

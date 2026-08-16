@@ -1,0 +1,13 @@
+Subject: Case study: Autonomous Code Optimizer in Iot
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A iot client achieved $22M savings in 18 months using Autonomous Code Optimizer. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Autonomous Code Optimizer
+Industry: iot
+URL: https://ziontechgroup.com/services/autonomous-code-optimizer-4141032f
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

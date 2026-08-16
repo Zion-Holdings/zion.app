@@ -1,0 +1,13 @@
+Subject: Quick question about Neural Sales Generator
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Neural Sales Generator specifically for sports challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Neural Sales Generator
+Industry: sports
+URL: https://ziontechgroup.com/services/neural-sales-generator-0c57b6cc
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

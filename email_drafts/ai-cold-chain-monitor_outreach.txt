@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking AI Cold Chain Monitoring for Pharmaceuticals.
 
-IoT + AI for pharma cold chain: real-time temperature monitoring, excursion prediction, compliance reporting (GDP/FDA), and automated corrective actions. Prevents $35B in annual spoilage.
+IoT + AI for pharma cold chain: real-time temperature monitoring, excursion prediction, FDA/GDP compliance reporting, automated corrective actions.
 
 **Key Benefits:**
 - Prevent spoilage 30 min early

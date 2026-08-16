@@ -1,0 +1,13 @@
+Subject: Quick question about Machine Learning Scheduler
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Machine Learning Scheduler specifically for finance challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Machine Learning Scheduler
+Industry: finance
+URL: https://ziontechgroup.com/services/machine-learning-scheduler-8c2b97
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

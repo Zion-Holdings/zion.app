@@ -1,0 +1,13 @@
+Subject: Quick question about CI/CD Security Gate-as-a-Service
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built CI/CD Security Gate-as-a-Service specifically for CI/CD challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: CI/CD Security Gate-as-a-Service
+Industry: CI/CD
+URL: https://ziontechgroup.com/services/cicd-security-gate-as-a-service-ccaefcd3
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

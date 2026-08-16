@@ -1,0 +1,121 @@
+{
+  "timestamp": "2026-07-30T08:37:00Z",
+  "total_sequences": 2851,
+  "hot_leads_count": 1466,
+  "industries_distribution": {
+    "agriculture": 144,
+    "education": 132,
+    "media": 132,
+    "transportation": 132,
+    "construction": 131,
+    "finance": 130,
+    "manufacturing": 130,
+    "sports": 128,
+    "hospitality": 127,
+    "gaming": 126,
+    "legal": 126,
+    "healthcare": 125,
+    "automotive": 122,
+    "technology": 120,
+    "logistics": 120
+  },
+  "lead_magnets_distribution": {
+    "Precision Farming ROI Analysis": 144,
+    "Student Success Automation Framework": 132,
+    "Content Performance Optimization Guide": 132,
+    "Fleet Efficiency Optimization Report": 132,
+    "Project Delivery Acceleration Guide": 131,
+    "Regulatory Compliance Automation Guide": 130,
+    "Predictive Maintenance ROI Calculator": 130,
+    "Fan Engagement Growth Framework": 128,
+    "Guest Experience Automation Blueprint": 127,
+    "Player Retention Strategy Playbook": 126,
+    "Document Review Automation Checklist": 126,
+    "HIPAA-Compliant Automation Checklist": 125,
+    "Supply Chain Efficiency Audit": 122,
+    "AI Cost Calculator - See Your Potential Savings": 120,
+    "Route Optimization Savings Estimator": 120
+  },
+  "top_hot_leads": [
+    {
+      "service_name": "AI DevOps - Agriculture Edition",
+      "service_id": "ai-devops-agriculture-edition-16b75f51",
+      "industry": "agriculture",
+      "hot_lead_score": 95,
+      "conversion_likelihood": "42%",
+      "lead_magnet": "Precision Farming ROI Analysis"
+    },
+    {
+      "service_name": null,
+      "service_id": "automated-marketing-for-gaming-2d2320b3",
+      "industry": "gaming",
+      "hot_lead_score": 95,
+      "conversion_likelihood": "72%",
+      "lead_magnet": "Player Retention Strategy Playbook"
+    },
+    {
+      "service_name": "Customer Service Self-Optimizing - Logistics #2",
+      "service_id": "customer-service-self-optimizing-logistics-2-982971eb",
+      "industry": "logistics",
+      "hot_lead_score": 95,
+      "conversion_likelihood": "50%",
+      "lead_magnet": "Route Optimization Savings Estimator"
+    },
+    {
+      "service_name": null,
+      "service_id": "automated-manufacturing-generator-65c2c743",
+      "industry": "manufacturing",
+      "hot_lead_score": 95,
+      "conversion_likelihood": "70%",
+      "lead_magnet": "Predictive Maintenance ROI Calculator"
+    },
+    {
+      "service_name": "Cognitive Director Solution - Education",
+      "service_id": "cognitive-director-solution-education-6c7b3945",
+      "industry": "education",
+      "hot_lead_score": 95,
+      "conversion_likelihood": "40%",
+      "lead_magnet": "Student Success Automation Framework"
+    },
+    {
+      "service_name": "Intelligent Deep Learning for Gaming",
+      "service_id": "intelligent-deep-learning-for-gaming-189984b0",
+      "industry": "gaming",
+      "hot_lead_score": 95,
+      "conversion_likelihood": "61%",
+      "lead_magnet": "Player Retention Strategy Playbook"
+    },
+    {
+      "service_name": null,
+      "service_id": "ai-analytics---manufacturing-edition-2-f510a7ad",
+      "industry": "manufacturing",
+      "hot_lead_score": 95,
+      "conversion_likelihood": "59%",
+      "lead_magnet": "Predictive Maintenance ROI Calculator"
+    },
+    {
+      "service_name": "AI/IT Cognitive Suite - ALTHEALTH",
+      "service_id": "aiit-cognitive-suite-althealth-779e434b",
+      "industry": "althealth",
+      "hot_lead_score": 95,
+      "conversion_likelihood": "50%",
+      "lead_magnet": "Patient Care Automation Blueprint"
+    },
+    {
+      "service_name": "Automated Experience for Logistics",
+      "service_id": "automated-experience-for-logistics-3de53c73",
+      "industry": "logistics",
+      "hot_lead_score": 95,
+      "conversion_likelihood": "47%",
+      "lead_magnet": "Route Optimization Savings Estimator"
+    },
+    {
+      "service_name": "Self-Optimizing Analyzer for Construction",
+      "service_id": "self-optimizing-analyzer-for-construction-f1c40d91",
+      "industry": "construction",
+      "hot_lead_score": 95,
+      "conversion_likelihood": "57%",
+      "lead_magnet": "Project Delivery Acceleration Guide"
+    }
+  ]
+}

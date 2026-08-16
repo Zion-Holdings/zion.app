@@ -1,0 +1,13 @@
+Subject: Quick question about Ansible AI-Powered API Gateway
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Ansible AI-Powered API Gateway specifically for Ansible challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Ansible AI-Powered API Gateway
+Industry: Ansible
+URL: https://ziontechgroup.com/services/ansible-ai-powered-api-gateway-1d5f48c0
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

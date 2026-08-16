@@ -1,0 +1,13 @@
+Subject: Quick question about Data Lineage and Impact Analysis
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Data Lineage and Impact Analysis specifically for Data Governance challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Data Lineage and Impact Analysis
+Industry: Data Governance
+URL: https://ziontechgroup.com/services/w177-data-lineage
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Case study: Machine Learning Scheduler in finance
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A finance client achieved $22M savings in 18 months using Machine Learning Scheduler. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Machine Learning Scheduler
+Industry: finance
+URL: https://ziontechgroup.com/services/machine-learning-scheduler-8c2b97
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

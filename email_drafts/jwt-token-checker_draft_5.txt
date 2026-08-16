@@ -1,0 +1,13 @@
+Subject: Case study: JWT Token Checker in Security
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Security client achieved $22M savings in 18 months using JWT Token Checker. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: JWT Token Checker
+Industry: Security
+URL: https://ziontechgroup.com/services/jwt-token-checker
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

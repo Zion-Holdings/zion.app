@@ -1,0 +1,13 @@
+Subject: Quick question about Edge AI Deployment Manager
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Edge AI Deployment Manager specifically for Edge Computing challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Edge AI Deployment Manager
+Industry: Edge Computing
+URL: https://ziontechgroup.com/services/edge-ai-deployment-manager-b36b474f
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

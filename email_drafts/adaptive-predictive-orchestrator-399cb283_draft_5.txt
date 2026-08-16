@@ -1,0 +1,13 @@
+Subject: Case study: Adaptive Predictive Orchestrator in Marketplace
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A marketplace client achieved $22M savings in 18 months using Adaptive Predictive Orchestrator. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Adaptive Predictive Orchestrator
+Industry: marketplace
+URL: https://ziontechgroup.com/services/adaptive-predictive-orchestrator-399cb283
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

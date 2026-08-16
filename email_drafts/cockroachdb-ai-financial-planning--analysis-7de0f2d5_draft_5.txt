@@ -1,0 +1,13 @@
+Subject: Case study: CockroachDB AI Financial Planning & Analysis in Cockroachdb
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A CockroachDB client achieved $22M savings in 18 months using CockroachDB AI Financial Planning & Analysis. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: CockroachDB AI Financial Planning & Analysis
+Industry: CockroachDB
+URL: https://ziontechgroup.com/services/cockroachdb-ai-financial-planning--analysis-7de0f2d5
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

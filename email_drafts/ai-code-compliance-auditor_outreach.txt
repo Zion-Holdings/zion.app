@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking AI Code Compliance & License Auditor.
 
-Scan codebases for license compliance, security vulnerabilities, and quality issues. Supports 50+ languages, 200+ license types. Integrates with GitHub, GitLab, Bitbucket.
+Scan codebases for license compliance, security vulnerabilities, quality issues. 50+ languages, 200+ license types. Integrates with GitHub, GitLab, Bitbucket.
 
 **Key Benefits:**
 - Avoid license lawsuits

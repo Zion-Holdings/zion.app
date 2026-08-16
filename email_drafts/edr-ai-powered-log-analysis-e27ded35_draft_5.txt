@@ -1,0 +1,13 @@
+Subject: Case study: EDR AI-Powered Log Analysis in Edr
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A EDR client achieved $22M savings in 18 months using EDR AI-Powered Log Analysis. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: EDR AI-Powered Log Analysis
+Industry: EDR
+URL: https://ziontechgroup.com/services/edr-ai-powered-log-analysis-e27ded35
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

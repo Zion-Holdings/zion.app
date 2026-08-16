@@ -1,0 +1,13 @@
+Subject: Automated Churn Data Science - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for automotive teams. Automated Churn Data Science typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Automated Churn Data Science
+Industry: automotive
+URL: https://ziontechgroup.com/services/automated-churn-data-science-d32a0523
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

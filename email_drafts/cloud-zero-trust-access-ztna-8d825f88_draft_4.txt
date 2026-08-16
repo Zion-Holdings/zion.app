@@ -1,0 +1,13 @@
+Subject: Cloud Zero Trust Access (ZTNA) - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Cloud teams. Cloud Zero Trust Access (ZTNA) typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Cloud Zero Trust Access (ZTNA)
+Industry: Cloud
+URL: https://ziontechgroup.com/services/cloud-zero-trust-access-ztna-8d825f88
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

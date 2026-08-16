@@ -1,0 +1,13 @@
+Subject: Quick question about Synthetic Check Data Generator
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Synthetic Check Data Generator specifically for RegTech challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Synthetic Check Data Generator
+Industry: RegTech
+URL: https://ziontechgroup.com/services/synthetic-check-data-generator-b7e6b48f
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

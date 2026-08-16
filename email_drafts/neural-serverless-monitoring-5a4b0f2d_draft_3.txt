@@ -1,0 +1,13 @@
+Subject: Quick question about Neural Serverless Monitoring
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Neural Serverless Monitoring specifically for cleantech challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Neural Serverless Monitoring
+Industry: cleantech
+URL: https://ziontechgroup.com/services/neural-serverless-monitoring-5a4b0f2d
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

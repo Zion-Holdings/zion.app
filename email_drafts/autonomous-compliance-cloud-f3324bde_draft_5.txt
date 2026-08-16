@@ -1,0 +1,13 @@
+Subject: Case study: Autonomous Compliance Cloud in Quantum
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A quantum client achieved $22M savings in 18 months using Autonomous Compliance Cloud. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Autonomous Compliance Cloud
+Industry: quantum
+URL: https://ziontechgroup.com/services/autonomous-compliance-cloud-f3324bde
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

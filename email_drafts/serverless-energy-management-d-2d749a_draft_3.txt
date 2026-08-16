@@ -1,0 +1,13 @@
+Subject: Quick question about Serverless Energy Management DigitalOcean (Cloud)
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Serverless Energy Management DigitalOcean (Cloud) specifically for Cloud challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Serverless Energy Management DigitalOcean (Cloud)
+Industry: Cloud
+URL: https://ziontechgroup.com/services/serverless-energy-management-d-2d749a
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

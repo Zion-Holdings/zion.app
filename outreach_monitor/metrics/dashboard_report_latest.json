@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-08-11T17:35:47.624076",
+  "service_catalog": {
+    "total_services": 0,
+    "new_services_added": 0,
+    "categories": 0,
+    "top_categories": {}
+  },
+  "lead_generation": {
+    "hot_followups": 0,
+    "new_interest_emails": 8,
+    "conversion_rate": 0
+  },
+  "system_health": {
+    "status": "healthy",
+    "details": {
+      "email_monitoring": "healthy",
+      "outreach_pipeline": "healthy",
+      "sitemap_generation": "healthy",
+      "service_catalog": "healthy"
+    },
+    "service_count": 1615
+  }
+}

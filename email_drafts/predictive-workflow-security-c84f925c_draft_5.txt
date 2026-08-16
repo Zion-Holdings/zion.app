@@ -1,0 +1,13 @@
+Subject: Case study: Predictive Workflow Security in Healthcare
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A healthcare client achieved $22M savings in 18 months using Predictive Workflow Security. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Predictive Workflow Security
+Industry: healthcare
+URL: https://ziontechgroup.com/services/predictive-workflow-security-c84f925c
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

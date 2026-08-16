@@ -1,0 +1,13 @@
+Subject: Quick question about Automated Decision Advisor
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Automated Decision Advisor specifically for construction challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Automated Decision Advisor
+Industry: construction
+URL: https://ziontechgroup.com/services/automated-decision-advisor-5024f9c0
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

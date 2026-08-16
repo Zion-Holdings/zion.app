@@ -1,0 +1,13 @@
+Subject: Quick question about Ansible AI-Powered Email Marketing Automation
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Ansible AI-Powered Email Marketing Automation specifically for Ansible challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Ansible AI-Powered Email Marketing Automation
+Industry: Ansible
+URL: https://ziontechgroup.com/services/ansible-ai-powered-email-marketing-automation-ac03e8aa
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

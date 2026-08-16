@@ -1,0 +1,13 @@
+Subject: Case study: GraphQL AI Supply Chain Optimization in Graphql
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A GraphQL client achieved $22M savings in 18 months using GraphQL AI Supply Chain Optimization. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: GraphQL AI Supply Chain Optimization
+Industry: GraphQL
+URL: https://ziontechgroup.com/services/graphql-ai-supply-chain-optimization-0f6df2cb
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

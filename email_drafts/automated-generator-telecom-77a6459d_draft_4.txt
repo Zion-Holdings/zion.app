@@ -1,0 +1,13 @@
+Subject: Automated generator-telecom - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for telecom teams. Automated generator-telecom typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Automated generator-telecom
+Industry: telecom
+URL: https://ziontechgroup.com/services/automated-generator-telecom-77a6459d
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

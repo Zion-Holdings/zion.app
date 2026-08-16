@@ -1,0 +1,13 @@
+Subject: Quick question about Automated Content Moderation Serverless (Data)
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Automated Content Moderation Serverless (Data) specifically for Data Engineering challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Automated Content Moderation Serverless (Data)
+Industry: Data Engineering
+URL: https://ziontechgroup.com/services/automated-content-moderation-s-8d5d
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Case study: Zero Trust Network Architecture in Cybersecurity
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Cybersecurity client achieved $22M savings in 18 months using Zero Trust Network Architecture. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Zero Trust Network Architecture
+Industry: Cybersecurity
+URL: https://ziontechgroup.com/services/wave126-zero-trust-architecture
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

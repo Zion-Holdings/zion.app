@@ -1,0 +1,13 @@
+Subject: Transform your SQL Server with SQL Server Cloud-Native Security Posture Manager
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+Hi, I noticed you\'re in SQL Server. SQL Server Cloud-Native Security Posture Manager has helped companies achieve 45% faster processing and $18M+ annual savings. Would you be open to a 15-min demo?
+
+---
+Service: SQL Server Cloud-Native Security Posture Manager
+Industry: SQL Server
+URL: https://ziontechgroup.com/services/sql-server-cloud-native-security-posture-manager-5bd862a7
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

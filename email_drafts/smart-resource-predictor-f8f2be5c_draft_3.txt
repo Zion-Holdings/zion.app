@@ -1,0 +1,13 @@
+Subject: Quick question about Smart Resource Predictor
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Smart Resource Predictor specifically for energy challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Smart Resource Predictor
+Industry: energy
+URL: https://ziontechgroup.com/services/smart-resource-predictor-f8f2be5c
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

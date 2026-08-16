@@ -4,11 +4,12 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Cloud Serverless Application Platform.
 
-Build serverless apps with auto-scrolling, event-driven architecture, API management, edge computing.
+Build and deploy serverless applications with auto-scrolling, event-driven architecture, API management, and edge computing capabilities.
 
 **Key Benefits:**
-- Zero infra management
-- Pay-per-execution
+- Zero infrastructure management
+- Pay-per-execution pricing
+- Auto-scrolling to millions of requests
 
 **Pricing:**
 - Basic: $49/month

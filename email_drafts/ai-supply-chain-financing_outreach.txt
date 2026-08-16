@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking AI Supply Chain Financing & Risk Platform.
 
-Automated supply chain finance: invoice verification, buyer risk scoring, dynamic discounting, and fraud detection. Processes $1B+ in receivables with 99.5% accuracy.
+Automated supply chain finance: invoice verification, buyer risk scoring, dynamic discounting, fraud detection. Processes $1B+ in receivables with 99.5% accuracy.
 
 **Key Benefits:**
 - Process $1B+ in receivables

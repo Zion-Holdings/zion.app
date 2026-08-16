@@ -1,0 +1,13 @@
+Subject: Case study: Cloud Zero Trust Access (ZTNA) in Cloud
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Cloud client achieved $22M savings in 18 months using Cloud Zero Trust Access (ZTNA). The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Cloud Zero Trust Access (ZTNA)
+Industry: Cloud
+URL: https://ziontechgroup.com/services/cloud-zero-trust-access-ztna-8d825f88
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

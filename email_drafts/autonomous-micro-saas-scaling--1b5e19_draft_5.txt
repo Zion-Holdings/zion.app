@@ -1,0 +1,13 @@
+Subject: Case study: Autonomous Micro-SaaS Scaling Ansible (Security) in Security
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Security client achieved $22M savings in 18 months using Autonomous Micro-SaaS Scaling Ansible (Security). The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Autonomous Micro-SaaS Scaling Ansible (Security)
+Industry: Security
+URL: https://ziontechgroup.com/services/autonomous-micro-saas-scaling--1b5e19
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

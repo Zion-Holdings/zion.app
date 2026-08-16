@@ -1,0 +1,13 @@
+Subject: Case study: Autonomous Process Orchestrator in Legal
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A legal client achieved $22M savings in 18 months using Autonomous Process Orchestrator. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Autonomous Process Orchestrator
+Industry: legal
+URL: https://ziontechgroup.com/services/autonomous-process-orchestrator-a8facc0a
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

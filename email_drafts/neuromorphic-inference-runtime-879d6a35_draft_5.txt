@@ -1,0 +1,13 @@
+Subject: Case study: Neuromorphic Inference Runtime in Neuromorphic
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Neuromorphic client achieved $22M savings in 18 months using Neuromorphic Inference Runtime. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Neuromorphic Inference Runtime
+Industry: Neuromorphic
+URL: https://ziontechgroup.com/services/neuromorphic-inference-runtime-879d6a35
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

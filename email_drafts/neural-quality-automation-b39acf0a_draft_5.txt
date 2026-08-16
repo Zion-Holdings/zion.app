@@ -1,0 +1,13 @@
+Subject: Case study: Neural Quality Automation in Insurance
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A insurance client achieved $22M savings in 18 months using Neural Quality Automation. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Neural Quality Automation
+Industry: insurance
+URL: https://ziontechgroup.com/services/neural-quality-automation-b39acf0a
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

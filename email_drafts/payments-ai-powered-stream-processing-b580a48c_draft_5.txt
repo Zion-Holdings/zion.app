@@ -1,0 +1,13 @@
+Subject: Case study: Payments AI-Powered Stream Processing in Payments
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Payments client achieved $22M savings in 18 months using Payments AI-Powered Stream Processing. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Payments AI-Powered Stream Processing
+Industry: Payments
+URL: https://ziontechgroup.com/services/payments-ai-powered-stream-processing-b580a48c
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Schema Migration Helper - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Data Engineering teams. Schema Migration Helper typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Schema Migration Helper
+Industry: Data Engineering
+URL: https://ziontechgroup.com/services/schema-migration-helper
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

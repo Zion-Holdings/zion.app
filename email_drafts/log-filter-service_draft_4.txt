@@ -1,0 +1,13 @@
+Subject: Log Filter Service - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Cloud teams. Log Filter Service typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Log Filter Service
+Industry: Cloud
+URL: https://ziontechgroup.com/services/log-filter-service
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

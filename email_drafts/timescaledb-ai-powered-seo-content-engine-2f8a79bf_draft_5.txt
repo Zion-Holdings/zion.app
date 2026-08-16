@@ -1,0 +1,13 @@
+Subject: Case study: TimescaleDB AI-Powered SEO Content Engine in Timescaledb
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A TimescaleDB client achieved $22M savings in 18 months using TimescaleDB AI-Powered SEO Content Engine. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: TimescaleDB AI-Powered SEO Content Engine
+Industry: TimescaleDB
+URL: https://ziontechgroup.com/services/timescaledb-ai-powered-seo-content-engine-2f8a79bf
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

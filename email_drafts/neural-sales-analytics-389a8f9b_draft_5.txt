@@ -1,0 +1,13 @@
+Subject: Case study: Neural Sales Analytics in Media
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A media client achieved $22M savings in 18 months using Neural Sales Analytics. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Neural Sales Analytics
+Industry: media
+URL: https://ziontechgroup.com/services/neural-sales-analytics-389a8f9b
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

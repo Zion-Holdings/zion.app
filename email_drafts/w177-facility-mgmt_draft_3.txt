@@ -1,0 +1,13 @@
+Subject: Quick question about Facility Management System
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Facility Management System specifically for Facilities challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Facility Management System
+Industry: Facilities
+URL: https://ziontechgroup.com/services/w177-facility-mgmt
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

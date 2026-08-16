@@ -1,0 +1,13 @@
+Subject: Machine Learning Generator - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for finance teams. Machine Learning Generator typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Machine Learning Generator
+Industry: finance
+URL: https://ziontechgroup.com/services/machine-learning-generator-2a773c
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

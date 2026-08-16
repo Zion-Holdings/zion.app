@@ -1,0 +1,13 @@
+Subject: Case study: Neural Fraud Analyzer in Hospitality
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A hospitality client achieved $22M savings in 18 months using Neural Fraud Analyzer. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Neural Fraud Analyzer
+Industry: hospitality
+URL: https://ziontechgroup.com/services/neural-fraud-analyzer-fb97d7fc
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

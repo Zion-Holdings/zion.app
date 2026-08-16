@@ -1,0 +1,13 @@
+Subject: Case study: Azure AI-Powered Threat Detection System in Azure
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Azure client achieved $22M savings in 18 months using Azure AI-Powered Threat Detection System. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Azure AI-Powered Threat Detection System
+Industry: Azure
+URL: https://ziontechgroup.com/services/azure-ai-powered-threat-detection-system-8eeca2ba
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

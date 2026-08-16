@@ -1,0 +1,13 @@
+Subject: Quick question about Predictive Director Service
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Predictive Director Service specifically for real-estate challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Predictive Director Service
+Industry: real-estate
+URL: https://ziontechgroup.com/services/predictive-director-service-919a2e
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

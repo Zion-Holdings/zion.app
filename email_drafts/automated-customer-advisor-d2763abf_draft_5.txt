@@ -1,0 +1,13 @@
+Subject: Case study: Automated Customer Advisor in Media
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A media client achieved $22M savings in 18 months using Automated Customer Advisor. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Automated Customer Advisor
+Industry: media
+URL: https://ziontechgroup.com/services/automated-customer-advisor-d2763abf
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

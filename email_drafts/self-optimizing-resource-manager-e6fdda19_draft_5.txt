@@ -1,0 +1,13 @@
+Subject: Case study: Self-Optimizing Resource Manager in Insurance
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A insurance client achieved $22M savings in 18 months using Self-Optimizing Resource Manager. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Self-Optimizing Resource Manager
+Industry: insurance
+URL: https://ziontechgroup.com/services/self-optimizing-resource-manager-e6fdda19
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

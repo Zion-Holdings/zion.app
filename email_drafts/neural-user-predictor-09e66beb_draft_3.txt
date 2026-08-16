@@ -1,0 +1,13 @@
+Subject: Quick question about Neural User Predictor
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Neural User Predictor specifically for legal challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Neural User Predictor
+Industry: legal
+URL: https://ziontechgroup.com/services/neural-user-predictor-09e66beb
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

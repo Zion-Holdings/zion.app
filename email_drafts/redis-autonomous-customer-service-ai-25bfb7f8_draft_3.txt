@@ -1,0 +1,13 @@
+Subject: Quick question about Redis Autonomous Customer Service AI
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Redis Autonomous Customer Service AI specifically for Redis challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Redis Autonomous Customer Service AI
+Industry: Redis
+URL: https://ziontechgroup.com/services/redis-autonomous-customer-service-ai-25bfb7f8
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

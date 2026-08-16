@@ -1,0 +1,13 @@
+Subject: Quick question about Network Traffic Anomaly Detection
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Network Traffic Anomaly Detection specifically for telecom challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Network Traffic Anomaly Detection
+Industry: telecom
+URL: https://ziontechgroup.com/services/network-traffic-anomaly-detection-9cab2aa9
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Case study: Security Training for Developers in Software Development
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Software Development client achieved $22M savings in 18 months using Security Training for Developers. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Security Training for Developers
+Industry: Software Development
+URL: https://ziontechgroup.com/services/w176-security-training-dev
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

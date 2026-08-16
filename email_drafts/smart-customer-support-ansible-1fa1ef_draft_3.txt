@@ -1,0 +1,13 @@
+Subject: Quick question about Smart Customer Support Ansible (Analytics)
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Smart Customer Support Ansible (Analytics) specifically for General challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Smart Customer Support Ansible (Analytics)
+Industry: General
+URL: https://ziontechgroup.com/services/smart-customer-support-ansible-1fa1ef
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

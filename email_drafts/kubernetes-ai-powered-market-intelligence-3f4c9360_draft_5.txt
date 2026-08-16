@@ -1,0 +1,13 @@
+Subject: Case study: Kubernetes AI-Powered Market Intelligence in Kubernetes
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Kubernetes client achieved $22M savings in 18 months using Kubernetes AI-Powered Market Intelligence. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Kubernetes AI-Powered Market Intelligence
+Industry: Kubernetes
+URL: https://ziontechgroup.com/services/kubernetes-ai-powered-market-intelligence-3f4c9360
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

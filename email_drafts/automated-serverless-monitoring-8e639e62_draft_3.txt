@@ -1,0 +1,13 @@
+Subject: Quick question about Automated Serverless Monitoring
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Automated Serverless Monitoring specifically for healthtech challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Automated Serverless Monitoring
+Industry: healthtech
+URL: https://ziontechgroup.com/services/automated-serverless-monitoring-8e639e62
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

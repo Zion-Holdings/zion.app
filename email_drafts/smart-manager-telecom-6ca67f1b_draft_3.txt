@@ -1,0 +1,13 @@
+Subject: Quick question about Smart manager-telecom
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Smart manager-telecom specifically for telecom challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Smart manager-telecom
+Industry: telecom
+URL: https://ziontechgroup.com/services/smart-manager-telecom-6ca67f1b
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Transform your CockroachDB with CockroachDB AI Sales Lead Scoring Engine
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+Hi, I noticed you\'re in CockroachDB. CockroachDB AI Sales Lead Scoring Engine has helped companies achieve 45% faster processing and $18M+ annual savings. Would you be open to a 15-min demo?
+
+---
+Service: CockroachDB AI Sales Lead Scoring Engine
+Industry: CockroachDB
+URL: https://ziontechgroup.com/services/cockroachdb-ai-sales-lead-scoring-engine-05bb9838
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

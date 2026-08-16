@@ -1,0 +1,13 @@
+Subject: Automated Security Orchestrator #1 - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for automotive teams. Automated Security Orchestrator #1 typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Automated Security Orchestrator #1
+Industry: automotive
+URL: https://ziontechgroup.com/services/automated-security-orchestrator-1-3ab9bf6c
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

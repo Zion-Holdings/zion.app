@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Conversational AI for Insurance.
 
-Natural language processing system that handles insurance inquiries through intelligent chatbots.
+Natural language processing system that handles insurance inquiries through intelligent chatbots and virtual assistants. Provides 24/7 support with human-like conversation capabilities.
 
 **Key Benefits:**
 - 24/7 availability

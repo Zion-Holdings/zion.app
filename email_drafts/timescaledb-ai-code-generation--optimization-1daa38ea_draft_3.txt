@@ -1,0 +1,13 @@
+Subject: Quick question about TimescaleDB AI Code Generation & Optimization
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built TimescaleDB AI Code Generation & Optimization specifically for TimescaleDB challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: TimescaleDB AI Code Generation & Optimization
+Industry: TimescaleDB
+URL: https://ziontechgroup.com/services/timescaledb-ai-code-generation--optimization-1daa38ea
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

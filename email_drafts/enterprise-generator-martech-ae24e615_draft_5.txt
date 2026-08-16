@@ -1,0 +1,13 @@
+Subject: Case study: Enterprise generator-martech in Martech
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A martech client achieved $22M savings in 18 months using Enterprise generator-martech. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Enterprise generator-martech
+Industry: martech
+URL: https://ziontechgroup.com/services/enterprise-generator-martech-ae24e615
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

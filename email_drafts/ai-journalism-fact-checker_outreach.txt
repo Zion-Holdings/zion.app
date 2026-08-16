@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking AI Real-Time Fact-Checking for Journalism.
 
-Verify claims in real-time against 100M+ sources: statement verification, source credibility scoring, bias detection, and citation suggestions. Used by 50+ newsrooms.
+Verify claims in real-time against 100M+ sources: statement verification, source credibility scoring, bias detection, citation suggestions. Used by 50+ newsrooms.
 
 **Key Benefits:**
 - Verify in seconds not hours

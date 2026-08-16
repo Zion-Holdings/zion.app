@@ -1,0 +1,13 @@
+Subject: Case study: Cloud-Native Inventory for Ecommerce in Ecommerce
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A ecommerce client achieved $22M savings in 18 months using Cloud-Native Inventory for Ecommerce. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Cloud-Native Inventory for Ecommerce
+Industry: ecommerce
+URL: https://ziontechgroup.com/services/cloud-native-inventory-for-ecommerce-fb248782
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

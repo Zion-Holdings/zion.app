@@ -1,0 +1,13 @@
+Subject: Case study: Backup / DR/BCaaS in Backup
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Backup client achieved $22M savings in 18 months using Backup / DR/BCaaS. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Backup / DR/BCaaS
+Industry: Backup
+URL: https://ziontechgroup.com/services/backup--drbcaas-9ba973b2
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

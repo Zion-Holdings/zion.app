@@ -1,0 +1,13 @@
+Subject: Case study: Smart Market Data in Quantum
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A quantum client achieved $22M savings in 18 months using Smart Market Data. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Smart Market Data
+Industry: quantum
+URL: https://ziontechgroup.com/services/smart-market-data-5184e032
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

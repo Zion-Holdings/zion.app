@@ -1,0 +1,13 @@
+Subject: Case study: Serverless Master Scheduling in Media
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A media client achieved $22M savings in 18 months using Serverless Master Scheduling. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Serverless Master Scheduling
+Industry: media
+URL: https://ziontechgroup.com/services/serverless-master-scheduling-2f2acebb
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

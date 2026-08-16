@@ -1,0 +1,13 @@
+Subject: Quick question about AI-Powered Code Review Platform
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built AI-Powered Code Review Platform specifically for Software Development challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: AI-Powered Code Review Platform
+Industry: Software Development
+URL: https://ziontechgroup.com/services/wave126-ai-code-review
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

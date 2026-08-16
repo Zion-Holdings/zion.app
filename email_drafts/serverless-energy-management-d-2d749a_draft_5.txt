@@ -1,0 +1,13 @@
+Subject: Case study: Serverless Energy Management DigitalOcean (Cloud) in Cloud
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Cloud client achieved $22M savings in 18 months using Serverless Energy Management DigitalOcean (Cloud). The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Serverless Energy Management DigitalOcean (Cloud)
+Industry: Cloud
+URL: https://ziontechgroup.com/services/serverless-energy-management-d-2d749a
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

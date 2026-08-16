@@ -1,0 +1,13 @@
+Subject: Case study: AI Code Generator in Development
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Development client achieved $22M savings in 18 months using AI Code Generator. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: AI Code Generator
+Industry: Development
+URL: https://ziontechgroup.com/services/ai-code-generator-7bad6f3e
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

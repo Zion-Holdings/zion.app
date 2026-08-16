@@ -1,0 +1,13 @@
+Subject: Case study: CockroachDB AI-Powered Quality Assurance in Cockroachdb
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A CockroachDB client achieved $22M savings in 18 months using CockroachDB AI-Powered Quality Assurance. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: CockroachDB AI-Powered Quality Assurance
+Industry: CockroachDB
+URL: https://ziontechgroup.com/services/cockroachdb-ai-powered-quality-assurance-0cc40331
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Data Lineage and Impact Analysis - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Data Governance teams. Data Lineage and Impact Analysis typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Data Lineage and Impact Analysis
+Industry: Data Governance
+URL: https://ziontechgroup.com/services/w177-data-lineage
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

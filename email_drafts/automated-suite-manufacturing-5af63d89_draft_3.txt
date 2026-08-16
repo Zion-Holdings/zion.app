@@ -1,0 +1,13 @@
+Subject: Quick question about Automated suite-manufacturing
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Automated suite-manufacturing specifically for manufacturing challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Automated suite-manufacturing
+Industry: manufacturing
+URL: https://ziontechgroup.com/services/automated-suite-manufacturing-5af63d89
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

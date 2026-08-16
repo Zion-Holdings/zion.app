@@ -1,0 +1,13 @@
+Subject: Case study: Zero Trust Network Access (ZTNA) in Zero
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Zero client achieved $22M savings in 18 months using Zero Trust Network Access (ZTNA). The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Zero Trust Network Access (ZTNA)
+Industry: Zero
+URL: https://ziontechgroup.com/services/zero-trust-network-access-ztna-12f12440
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

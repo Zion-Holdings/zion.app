@@ -1,0 +1,13 @@
+Subject: Case study: Enterprise IoT Device Management Ansible (Healthcare) in General
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A General client achieved $22M savings in 18 months using Enterprise IoT Device Management Ansible (Healthcare). The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Enterprise IoT Device Management Ansible (Healthcare)
+Industry: General
+URL: https://ziontechgroup.com/services/enterprise-iot-device-manageme-8daadf
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

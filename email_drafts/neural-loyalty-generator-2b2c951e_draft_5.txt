@@ -1,0 +1,13 @@
+Subject: Case study: Neural Loyalty Generator in Insurance
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A insurance client achieved $22M savings in 18 months using Neural Loyalty Generator. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Neural Loyalty Generator
+Industry: insurance
+URL: https://ziontechgroup.com/services/neural-loyalty-generator-2b2c951e
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

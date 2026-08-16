@@ -1,0 +1,13 @@
+Subject: Case study: Automated Market Data in Edge
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A edge client achieved $22M savings in 18 months using Automated Market Data. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Automated Market Data
+Industry: edge
+URL: https://ziontechgroup.com/services/automated-market-data-1a9417c7
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

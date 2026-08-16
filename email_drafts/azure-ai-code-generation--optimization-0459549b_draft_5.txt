@@ -1,0 +1,13 @@
+Subject: Case study: Azure AI Code Generation & Optimization in Azure
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Azure client achieved $22M savings in 18 months using Azure AI Code Generation & Optimization. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Azure AI Code Generation & Optimization
+Industry: Azure
+URL: https://ziontechgroup.com/services/azure-ai-code-generation--optimization-0459549b
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

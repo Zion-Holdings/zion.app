@@ -1,0 +1,13 @@
+Subject: Quick question about Neural Workflow Cloud
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Neural Workflow Cloud specifically for edge challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Neural Workflow Cloud
+Industry: edge
+URL: https://ziontechgroup.com/services/neural-workflow-cloud-f87f38f2
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

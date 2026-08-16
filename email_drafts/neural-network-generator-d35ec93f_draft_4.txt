@@ -1,0 +1,13 @@
+Subject: Neural Network Generator - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for healthcare teams. Neural Network Generator typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Neural Network Generator
+Industry: healthcare
+URL: https://ziontechgroup.com/services/neural-network-generator-d35ec93f
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

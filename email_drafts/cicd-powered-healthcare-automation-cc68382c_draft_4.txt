@@ -1,0 +1,13 @@
+Subject: CI/CD-Powered Healthcare Automation - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for healthcare teams. CI/CD-Powered Healthcare Automation typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: CI/CD-Powered Healthcare Automation
+Industry: healthcare
+URL: https://ziontechgroup.com/services/cicd-powered-healthcare-automation-cc68382c
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

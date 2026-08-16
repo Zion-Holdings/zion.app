@@ -1,0 +1,13 @@
+Subject: Quick question about TimescaleDB Intelligent Document Processing AI
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built TimescaleDB Intelligent Document Processing AI specifically for TimescaleDB challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: TimescaleDB Intelligent Document Processing AI
+Industry: TimescaleDB
+URL: https://ziontechgroup.com/services/timescaledb-intelligent-document-processing-ai-200e4271
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

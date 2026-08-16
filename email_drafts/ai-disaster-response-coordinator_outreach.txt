@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking AI Disaster Response & Coordination Platform.
 
-Coordinate emergency response across agencies: resource allocation optimization, evacuation routing, damage assessment from satellite/drone, and real-time situational awareness.
+Coordinate emergency response across agencies: resource allocation optimization, evacuation routing, satellite/drone damage assessment, real-time situational awareness.
 
 **Key Benefits:**
 - Coordinate 10x faster

@@ -1,0 +1,13 @@
+Subject: Case study: Automated Churn Advisor in Media
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A media client achieved $22M savings in 18 months using Automated Churn Advisor. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Automated Churn Advisor
+Industry: media
+URL: https://ziontechgroup.com/services/automated-churn-advisor-d48a57b3
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

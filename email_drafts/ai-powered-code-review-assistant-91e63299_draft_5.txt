@@ -1,0 +1,13 @@
+Subject: Case study: AI-Powered Code Review Assistant in Development
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Development client achieved $22M savings in 18 months using AI-Powered Code Review Assistant. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: AI-Powered Code Review Assistant
+Industry: Development
+URL: https://ziontechgroup.com/services/ai-powered-code-review-assistant-91e63299
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

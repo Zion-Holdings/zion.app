@@ -1,0 +1,13 @@
+Subject: Quick question about Neural Sales Advisor
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Neural Sales Advisor specifically for retail challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Neural Sales Advisor
+Industry: retail
+URL: https://ziontechgroup.com/services/neural-sales-advisor-47ecadaf
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

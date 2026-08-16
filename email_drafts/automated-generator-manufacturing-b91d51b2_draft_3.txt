@@ -1,0 +1,13 @@
+Subject: Quick question about Automated generator-manufacturing
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Automated generator-manufacturing specifically for manufacturing challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Automated generator-manufacturing
+Industry: manufacturing
+URL: https://ziontechgroup.com/services/automated-generator-manufacturing-b91d51b2
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

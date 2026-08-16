@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking AI ESG Reporting & Sustainability Platform.
 
-Automated ESG data collection, scoring, and reporting: GHG emissions tracking, social impact measurement, governance scoring, and GRI/SASB/TCFD compliant reports.
+Automated ESG data collection, scoring, and reporting: GHG emissions tracking, social impact measurement, governance scoring, GRI/SASB/TCFD compliant reports.
 
 **Key Benefits:**
 - Automate ESG reporting

@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking AI Wind Farm Performance Optimizer.
 
-Maximize wind turbine output: yaw optimization, pitch control, wake effect modeling, and predictive maintenance. Increases energy output by 12% and reduces maintenance by 40%.
+Maximize wind turbine output: yaw optimization, pitch control, wake effect modeling, predictive maintenance. Increases energy output by 12%.
 
 **Key Benefits:**
 - Increase output by 12%

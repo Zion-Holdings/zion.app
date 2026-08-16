@@ -1,0 +1,13 @@
+Subject: Case study: Neural Network Platform in Finance
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A finance client achieved $22M savings in 18 months using Neural Network Platform. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Neural Network Platform
+Industry: finance
+URL: https://ziontechgroup.com/services/neural-network-platform-c40a70c0
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

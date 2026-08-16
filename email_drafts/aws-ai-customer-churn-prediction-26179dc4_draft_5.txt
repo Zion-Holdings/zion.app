@@ -1,0 +1,13 @@
+Subject: Case study: AWS AI Customer Churn Prediction in Aws
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A AWS client achieved $22M savings in 18 months using AWS AI Customer Churn Prediction. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: AWS AI Customer Churn Prediction
+Industry: AWS
+URL: https://ziontechgroup.com/services/aws-ai-customer-churn-prediction-26179dc4
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

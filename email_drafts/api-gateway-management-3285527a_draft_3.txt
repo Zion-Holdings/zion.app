@@ -1,0 +1,13 @@
+Subject: Quick question about API Gateway Management
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built API Gateway Management specifically for API challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: API Gateway Management
+Industry: API
+URL: https://ziontechgroup.com/services/api-gateway-management-3285527a
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

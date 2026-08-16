@@ -1,0 +1,13 @@
+Subject: Autonomous Document Generator - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for transportation teams. Autonomous Document Generator typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Autonomous Document Generator
+Industry: transportation
+URL: https://ziontechgroup.com/services/autonomous-document-generator-83722490
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Quick question about Neural director-telecom
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Neural director-telecom specifically for telecom challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Neural director-telecom
+Industry: telecom
+URL: https://ziontechgroup.com/services/neural-director-telecom-afb0ca2e
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

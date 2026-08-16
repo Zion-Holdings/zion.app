@@ -1,0 +1,13 @@
+Subject: Case study: Azure AI-Powered Market Intelligence in Azure
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Azure client achieved $22M savings in 18 months using Azure AI-Powered Market Intelligence. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Azure AI-Powered Market Intelligence
+Industry: Azure
+URL: https://ziontechgroup.com/services/azure-ai-powered-market-intelligence-2b1dce3a
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

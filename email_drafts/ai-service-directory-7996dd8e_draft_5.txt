@@ -1,0 +1,13 @@
+Subject: Case study: AI Service Directory in Marketplace
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Marketplace client achieved $22M savings in 18 months using AI Service Directory. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: AI Service Directory
+Industry: Marketplace
+URL: https://ziontechgroup.com/services/ai-service-directory-7996dd8e
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

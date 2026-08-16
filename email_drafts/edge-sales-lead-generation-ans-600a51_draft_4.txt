@@ -1,0 +1,13 @@
+Subject: Edge Sales Lead Generation Ansible (Cloud) - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Cloud teams. Edge Sales Lead Generation Ansible (Cloud) typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Edge Sales Lead Generation Ansible (Cloud)
+Industry: Cloud
+URL: https://ziontechgroup.com/services/edge-sales-lead-generation-ans-600a51
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

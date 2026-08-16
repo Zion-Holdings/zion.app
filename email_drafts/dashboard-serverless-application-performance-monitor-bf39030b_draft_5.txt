@@ -1,0 +1,13 @@
+Subject: Case study: Dashboard Serverless Application Performance Monitor in Dashboard
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Dashboard client achieved $22M savings in 18 months using Dashboard Serverless Application Performance Monitor. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Dashboard Serverless Application Performance Monitor
+Industry: Dashboard
+URL: https://ziontechgroup.com/services/dashboard-serverless-application-performance-monitor-bf39030b
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

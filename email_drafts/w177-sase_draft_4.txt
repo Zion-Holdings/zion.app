@@ -1,0 +1,13 @@
+Subject: Secure Access Service Edge (SASE) - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Cybersecurity teams. Secure Access Service Edge (SASE) typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Secure Access Service Edge (SASE)
+Industry: Cybersecurity
+URL: https://ziontechgroup.com/services/w177-sase
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

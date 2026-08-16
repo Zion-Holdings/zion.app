@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking AI Port Congestion & Shipping Delay Predictor.
 
-Predict port congestion 14 days ahead: vessel tracking, berth availability, customs delay prediction, and optimal routing recommendations. Used by 200+ shipping companies.
+Predict port congestion 14 days ahead: vessel tracking, berth availability, customs delay prediction, optimal routing. Used by 200+ shipping companies.
 
 **Key Benefits:**
 - 14-day advance warning

@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking AI Ransomware Detection & Response Platform.
 
-Real-time ransomware detection across endpoints, network, and cloud. AI identifies encryption behavior patterns, auto-isolates infected systems, and triggers incident response playbooks. Stops ransomware in under 30 seconds.
+Real-time ransomware detection across endpoints and network. AI identifies encryption behavior, auto-isolates infected systems, triggers incident response playbooks. Stops ransomware in under 30 seconds.
 
 **Key Benefits:**
 - Detect ransomware in 30 seconds

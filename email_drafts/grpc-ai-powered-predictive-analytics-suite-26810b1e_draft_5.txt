@@ -1,0 +1,13 @@
+Subject: Case study: gRPC AI-Powered Predictive Analytics Suite in Grpc
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A gRPC client achieved $22M savings in 18 months using gRPC AI-Powered Predictive Analytics Suite. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: gRPC AI-Powered Predictive Analytics Suite
+Industry: gRPC
+URL: https://ziontechgroup.com/services/grpc-ai-powered-predictive-analytics-suite-26810b1e
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

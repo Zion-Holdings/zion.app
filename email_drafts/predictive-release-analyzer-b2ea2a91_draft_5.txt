@@ -1,0 +1,13 @@
+Subject: Case study: Predictive Release Analyzer in Media
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A media client achieved $22M savings in 18 months using Predictive Release Analyzer. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Predictive Release Analyzer
+Industry: media
+URL: https://ziontechgroup.com/services/predictive-release-analyzer-b2ea2a91
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

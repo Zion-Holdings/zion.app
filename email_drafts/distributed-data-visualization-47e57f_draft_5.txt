@@ -1,0 +1,13 @@
+Subject: Case study: Distributed Data Visualization Ansible (Manufacturing) in General
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A General client achieved $22M savings in 18 months using Distributed Data Visualization Ansible (Manufacturing). The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Distributed Data Visualization Ansible (Manufacturing)
+Industry: General
+URL: https://ziontechgroup.com/services/distributed-data-visualization-47e57f
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

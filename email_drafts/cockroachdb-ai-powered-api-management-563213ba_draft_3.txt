@@ -1,0 +1,13 @@
+Subject: Quick question about CockroachDB AI-Powered API Management
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built CockroachDB AI-Powered API Management specifically for CockroachDB challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: CockroachDB AI-Powered API Management
+Industry: CockroachDB
+URL: https://ziontechgroup.com/services/cockroachdb-ai-powered-api-management-563213ba
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

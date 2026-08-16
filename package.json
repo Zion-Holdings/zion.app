@@ -6,7 +6,7 @@
   "packageManager": "npm@10.9.8",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "build:ci": "node scripts/build-wrapper.cjs",
     "build:check": "npm run type-check && node scripts/build-wrapper.cjs",
     "start": "next start",
@@ -29,10 +29,16 @@
     "test": "jest --passWithNoTests",
     "test:ci": "jest --ci --coverage --watchAll=false --passWithNoTests",
     "build-storybook": "storybook build",
-    "build:win": "node scripts/windows-build-guard.cjs && next build",
+    "build:win": "node scripts/windows-build-guard.cjs && next build --webpack",
     "deploy:verify": "node scripts/verify-deploy.cjs",
     "rsc:guard": "echo 'rsc:guard ok'",
-    "lighthouse:production": "npx lighthouse https://ziontechgroup.com --chrome-flags='--headless --no-sandbox --disable-gpu' --output=json --output-path=automation/reports/lighthouse-production-latest.json"
+    "lighthouse:production": "npx lighthouse https://ziontechgroup.com --chrome-flags='--headless --no-sandbox --disable-gpu' --output=json --output-path=automation/reports/lighthouse-production-latest.json",
+    "pin-actions": "node scripts/automation/validate-pin-actions.cjs",
+    "workflows:contracts:node": "node scripts/automation/workflow-contracts.cjs",
+    "lint:fix": "next lint --fix",
+    "deploy:readiness": "node scripts/checks/deploy-readiness.cjs",
+    "automation:health": "node scripts/checks/automation-health.cjs",
+    "cron:health": "node scripts/checks/cron-health.cjs"
   },
   "dependencies": {
     "@sendgrid/mail": "^8.1.6",

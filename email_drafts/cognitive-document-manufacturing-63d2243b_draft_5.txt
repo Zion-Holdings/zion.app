@@ -1,0 +1,13 @@
+Subject: Case study: Cognitive Document Manufacturing in Energy
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A energy client achieved $22M savings in 18 months using Cognitive Document Manufacturing. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Cognitive Document Manufacturing
+Industry: energy
+URL: https://ziontechgroup.com/services/cognitive-document-manufacturing-63d2243b
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

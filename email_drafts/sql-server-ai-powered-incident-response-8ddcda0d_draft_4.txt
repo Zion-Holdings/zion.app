@@ -1,0 +1,13 @@
+Subject: SQL Server AI-Powered Incident Response - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for SQL Server teams. SQL Server AI-Powered Incident Response typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: SQL Server AI-Powered Incident Response
+Industry: SQL Server
+URL: https://ziontechgroup.com/services/sql-server-ai-powered-incident-response-8ddcda0d
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

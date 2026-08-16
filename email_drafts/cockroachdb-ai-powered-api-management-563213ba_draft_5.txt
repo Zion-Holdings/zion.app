@@ -1,0 +1,13 @@
+Subject: Case study: CockroachDB AI-Powered API Management in Cockroachdb
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A CockroachDB client achieved $22M savings in 18 months using CockroachDB AI-Powered API Management. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: CockroachDB AI-Powered API Management
+Industry: CockroachDB
+URL: https://ziontechgroup.com/services/cockroachdb-ai-powered-api-management-563213ba
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Case study: Microservices AI Financial Planning & Analysis in Microservices
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Microservices client achieved $22M savings in 18 months using Microservices AI Financial Planning & Analysis. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Microservices AI Financial Planning & Analysis
+Industry: Microservices
+URL: https://ziontechgroup.com/services/microservices-ai-financial-planning--analysis-4a4b01bd
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

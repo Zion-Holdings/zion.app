@@ -1,0 +1,13 @@
+Subject: Case study: Neural Project Generator in Gaming
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A gaming client achieved $22M savings in 18 months using Neural Project Generator. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Neural Project Generator
+Industry: gaming
+URL: https://ziontechgroup.com/services/neural-project-generator-b5ea57b6
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

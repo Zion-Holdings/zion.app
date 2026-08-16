@@ -1,0 +1,13 @@
+Subject: Case study: Cloud-Native Energy Management TensorFlow (Data) in Data Engineering
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Data Engineering client achieved $22M savings in 18 months using Cloud-Native Energy Management TensorFlow (Data). The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Cloud-Native Energy Management TensorFlow (Data)
+Industry: Data Engineering
+URL: https://ziontechgroup.com/services/cloud-native-energy-management-7e4dec
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Case study: TimescaleDB AI Supply Chain Optimization in Timescaledb
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A TimescaleDB client achieved $22M savings in 18 months using TimescaleDB AI Supply Chain Optimization. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: TimescaleDB AI Supply Chain Optimization
+Industry: TimescaleDB
+URL: https://ziontechgroup.com/services/timescaledb-ai-supply-chain-optimization-9008704b
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

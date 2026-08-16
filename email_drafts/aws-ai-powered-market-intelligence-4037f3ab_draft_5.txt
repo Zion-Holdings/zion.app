@@ -1,0 +1,13 @@
+Subject: Case study: AWS AI-Powered Market Intelligence in Aws
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A AWS client achieved $22M savings in 18 months using AWS AI-Powered Market Intelligence. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: AWS AI-Powered Market Intelligence
+Industry: AWS
+URL: https://ziontechgroup.com/services/aws-ai-powered-market-intelligence-4037f3ab
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

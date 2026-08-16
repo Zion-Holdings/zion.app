@@ -1,0 +1,13 @@
+Subject: Quick question about Autonomous Sales Orchestrator
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Autonomous Sales Orchestrator specifically for automotive challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Autonomous Sales Orchestrator
+Industry: automotive
+URL: https://ziontechgroup.com/services/autonomous-sales-orchestrator-2f6c9a96
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

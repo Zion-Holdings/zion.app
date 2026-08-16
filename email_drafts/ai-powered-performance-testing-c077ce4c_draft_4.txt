@@ -1,0 +1,13 @@
+Subject: AI-Powered Performance Testing - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for QA teams. AI-Powered Performance Testing typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: AI-Powered Performance Testing
+Industry: QA
+URL: https://ziontechgroup.com/services/ai-powered-performance-testing-c077ce4c
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

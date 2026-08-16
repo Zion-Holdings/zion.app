@@ -1,0 +1,13 @@
+Subject: Case study: Predictive Sales Advisor in Insurance
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A insurance client achieved $22M savings in 18 months using Predictive Sales Advisor. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Predictive Sales Advisor
+Industry: insurance
+URL: https://ziontechgroup.com/services/predictive-sales-advisor-593597b5
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,20 +1,20 @@
-Subject: Transform Your Finance Operations with Observability Platform & SRE Consulting
+Subject: Transform Your Technology Operations with Full-Stack Observability Platform
 
 Hi there,
 
-I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Observability Platform & SRE Consulting.
+I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Full-Stack Observability Platform.
 
-End-to-end observability implementation with distributed tracing, log aggregation, metrics collection, and Site Reliability Engineering best practices.
+Unified observability across applications, infrastructure, and business metrics. APM, distributed tracing, log analytics, real user monitoring, and AI-powered anomaly detection.
 
 **Key Benefits:**
-- Reduce costs with observability platform & sre consulting
-- Improve operational efficiency
-- Scale without complexity
+- MTTR reduced by 70%
+- Proactive issue detection
+- Full-stack visibility
 
 **Pricing:**
-- Basic: $99/month
-- Pro: $349/month
-- Enterprise: $1,299/month
+- Basic: $499/month
+- Pro: $1,799/month
+- Enterprise: $Custom/month
 
 **Book a free consultation:** https://calendly.com/kleber-ziontechgroup/consultation
 

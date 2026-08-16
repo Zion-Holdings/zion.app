@@ -1,0 +1,13 @@
+Subject: Quick question about Managed Detection & Response (MDR)
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Managed Detection & Response (MDR) specifically for Cybersecurity challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Managed Detection & Response (MDR)
+Industry: Cybersecurity
+URL: https://ziontechgroup.com/services/wave126-managed-detection-response
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

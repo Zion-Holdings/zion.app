@@ -1,0 +1,13 @@
+Subject: Automated Financial Generator - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for retail teams. Automated Financial Generator typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Automated Financial Generator
+Industry: retail
+URL: https://ziontechgroup.com/services/automated-financial-generator-6cdf6d2e
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

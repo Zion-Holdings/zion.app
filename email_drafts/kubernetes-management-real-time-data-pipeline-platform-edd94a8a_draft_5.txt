@@ -1,0 +1,13 @@
+Subject: Case study: Kubernetes Management Real-Time Data Pipeline Platform in Security Services
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Security Services client achieved $22M savings in 18 months using Kubernetes Management Real-Time Data Pipeline Platform. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Kubernetes Management Real-Time Data Pipeline Platform
+Industry: Security Services
+URL: https://ziontechgroup.com/services/kubernetes-management-real-time-data-pipeline-platform-edd94a8a
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Quick question about Automated Decision Security
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Automated Decision Security specifically for iot challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Automated Decision Security
+Industry: iot
+URL: https://ziontechgroup.com/services/automated-decision-security-2122934e
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

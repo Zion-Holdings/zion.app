@@ -1,0 +1,13 @@
+Subject: Quick question about Adaptive Data Processor
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Adaptive Data Processor specifically for telecom challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Adaptive Data Processor
+Industry: telecom
+URL: https://ziontechgroup.com/services/adaptive-data-processor-6ab21ae3
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

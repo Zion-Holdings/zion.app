@@ -1,0 +1,13 @@
+Subject: Quick question about Self-Optimizing Resource Orchestrator
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Self-Optimizing Resource Orchestrator specifically for automotive challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Self-Optimizing Resource Orchestrator
+Industry: automotive
+URL: https://ziontechgroup.com/services/self-optimizing-resource-orchestrator-b7e1827d
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Transform your DevOps with Error Alert Manager
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+Hi, I noticed you\'re in DevOps. Error Alert Manager has helped companies achieve 45% faster processing and $18M+ annual savings. Would you be open to a 15-min demo?
+
+---
+Service: Error Alert Manager
+Industry: DevOps
+URL: https://ziontechgroup.com/services/error-alert-manager
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

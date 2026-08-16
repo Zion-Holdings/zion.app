@@ -1,0 +1,13 @@
+Subject: Quick question about Neural advisor-automotive
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Neural advisor-automotive specifically for automotive challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Neural advisor-automotive
+Industry: automotive
+URL: https://ziontechgroup.com/services/neural-advisor-automotive-6fba5acf
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

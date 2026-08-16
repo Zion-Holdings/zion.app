@@ -1,0 +1,13 @@
+Subject: Quick question about Azure AI Supply Chain Optimization
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Azure AI Supply Chain Optimization specifically for Azure challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Azure AI Supply Chain Optimization
+Industry: Azure
+URL: https://ziontechgroup.com/services/azure-ai-supply-chain-optimization-05f6813a
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Quick question about Redis AI Sales Lead Scoring Engine
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Redis AI Sales Lead Scoring Engine specifically for Redis challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Redis AI Sales Lead Scoring Engine
+Industry: Redis
+URL: https://ziontechgroup.com/services/redis-ai-sales-lead-scoring-engine-2b4b570c
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

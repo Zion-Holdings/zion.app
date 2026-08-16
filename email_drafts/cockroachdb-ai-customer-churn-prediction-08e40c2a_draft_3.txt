@@ -1,0 +1,13 @@
+Subject: Quick question about CockroachDB AI Customer Churn Prediction
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built CockroachDB AI Customer Churn Prediction specifically for CockroachDB challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: CockroachDB AI Customer Churn Prediction
+Industry: CockroachDB
+URL: https://ziontechgroup.com/services/cockroachdb-ai-customer-churn-prediction-08e40c2a
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

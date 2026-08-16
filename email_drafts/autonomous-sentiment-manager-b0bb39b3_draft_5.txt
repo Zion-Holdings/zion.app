@@ -1,0 +1,13 @@
+Subject: Case study: Autonomous Sentiment Manager in Construction
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A construction client achieved $22M savings in 18 months using Autonomous Sentiment Manager. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Autonomous Sentiment Manager
+Industry: construction
+URL: https://ziontechgroup.com/services/autonomous-sentiment-manager-b0bb39b3
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

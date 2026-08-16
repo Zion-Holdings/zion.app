@@ -1,0 +1,13 @@
+Subject: Case study: Neural Network Predictor in Manufacturing
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A manufacturing client achieved $22M savings in 18 months using Neural Network Predictor. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Neural Network Predictor
+Industry: manufacturing
+URL: https://ziontechgroup.com/services/neural-network-predictor-5ffc871f
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

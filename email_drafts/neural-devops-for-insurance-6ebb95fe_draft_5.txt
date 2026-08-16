@@ -1,0 +1,13 @@
+Subject: Case study: Neural DevOps for Insurance in Insurance
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A insurance client achieved $22M savings in 18 months using Neural DevOps for Insurance. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Neural DevOps for Insurance
+Industry: insurance
+URL: https://ziontechgroup.com/services/neural-devops-for-insurance-6ebb95fe
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Quick question about Predictive Workflow Generator
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Predictive Workflow Generator specifically for hospitality challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Predictive Workflow Generator
+Industry: hospitality
+URL: https://ziontechgroup.com/services/predictive-workflow-generator-b980b2cf
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

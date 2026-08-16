@@ -1,0 +1,13 @@
+Subject: Case study: Smart Decision Orchestrator in Retail
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A retail client achieved $22M savings in 18 months using Smart Decision Orchestrator. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Smart Decision Orchestrator
+Industry: retail
+URL: https://ziontechgroup.com/services/smart-decision-orchestrator-aa95ca24
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

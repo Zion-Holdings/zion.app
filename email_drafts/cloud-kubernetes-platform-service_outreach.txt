@@ -4,11 +4,12 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Cloud Kubernetes Platform as a Service.
 
-Managed Kubernetes with auto-scrolling, service mesh, GitOps, multi-cluster management.
+Managed Kubernetes platform with auto-scrolling, service mesh, GitOps deployments, and multi-cluster management across AWS, Azure, and GCP.
 
 **Key Benefits:**
-- 80% less complexity
-- Multi-cloud portable
+- Reduce Kubernetes complexity by 80%
+- Deploy in minutes not days
+- Multi-cloud portability
 
 **Pricing:**
 - Basic: $299/month

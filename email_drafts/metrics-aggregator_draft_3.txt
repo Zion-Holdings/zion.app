@@ -1,0 +1,13 @@
+Subject: Quick question about Metrics Aggregator
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Metrics Aggregator specifically for Cloud challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Metrics Aggregator
+Industry: Cloud
+URL: https://ziontechgroup.com/services/metrics-aggregator
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

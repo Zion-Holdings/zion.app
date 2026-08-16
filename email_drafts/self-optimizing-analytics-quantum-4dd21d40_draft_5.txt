@@ -1,0 +1,13 @@
+Subject: Case study: Self-Optimizing analytics-quantum in Quantum
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A quantum client achieved $22M savings in 18 months using Self-Optimizing analytics-quantum. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Self-Optimizing analytics-quantum
+Industry: quantum
+URL: https://ziontechgroup.com/services/self-optimizing-analytics-quantum-4dd21d40
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

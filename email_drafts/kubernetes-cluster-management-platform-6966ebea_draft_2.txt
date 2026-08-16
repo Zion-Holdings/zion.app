@@ -1,0 +1,13 @@
+Subject: AI solution for DevOps - Kubernetes Cluster Management Platform
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+Most DevOps companies waste 30% of their time on manual processes. Kubernetes Cluster Management Platform automates this with zero human intervention. Can I show you how?
+
+---
+Service: Kubernetes Cluster Management Platform
+Industry: DevOps
+URL: https://ziontechgroup.com/services/kubernetes-cluster-management-platform-6966ebea
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

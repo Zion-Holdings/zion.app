@@ -1,0 +1,13 @@
+Subject: Quick question about Autonomous Vendor Data Science
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Autonomous Vendor Data Science specifically for manufacturing challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Autonomous Vendor Data Science
+Industry: manufacturing
+URL: https://ziontechgroup.com/services/autonomous-vendor-data-science-0020f1eb
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

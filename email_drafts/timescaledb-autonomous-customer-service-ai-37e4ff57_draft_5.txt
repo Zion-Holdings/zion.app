@@ -1,0 +1,13 @@
+Subject: Case study: TimescaleDB Autonomous Customer Service AI in Timescaledb
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A TimescaleDB client achieved $22M savings in 18 months using TimescaleDB Autonomous Customer Service AI. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: TimescaleDB Autonomous Customer Service AI
+Industry: TimescaleDB
+URL: https://ziontechgroup.com/services/timescaledb-autonomous-customer-service-ai-37e4ff57
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

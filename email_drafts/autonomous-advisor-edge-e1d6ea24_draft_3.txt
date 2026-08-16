@@ -1,0 +1,13 @@
+Subject: Quick question about Autonomous advisor-edge
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Autonomous advisor-edge specifically for edge challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Autonomous advisor-edge
+Industry: edge
+URL: https://ziontechgroup.com/services/autonomous-advisor-edge-e1d6ea24
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

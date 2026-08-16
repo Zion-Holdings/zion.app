@@ -1,0 +1,13 @@
+Subject: Case study: Adaptive Risk Manager in Insurance
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A insurance client achieved $22M savings in 18 months using Adaptive Risk Manager. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Adaptive Risk Manager
+Industry: insurance
+URL: https://ziontechgroup.com/services/adaptive-risk-manager-6d710a4c
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

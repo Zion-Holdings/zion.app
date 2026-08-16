@@ -1,0 +1,13 @@
+Subject: Quick question about Deep Learning Generator
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Deep Learning Generator specifically for legal challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Deep Learning Generator
+Industry: legal
+URL: https://ziontechgroup.com/services/deep-learning-generator-472bda
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

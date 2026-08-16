@@ -1,0 +1,13 @@
+Subject: DevSecOps Platform - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for DevSecOps teams. DevSecOps Platform typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: DevSecOps Platform
+Industry: DevSecOps
+URL: https://ziontechgroup.com/services/devsecops-platform-4c224466
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Case study: Automated Data Catalog in Data Governance
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Data Governance client achieved $22M savings in 18 months using Automated Data Catalog. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Automated Data Catalog
+Industry: Data Governance
+URL: https://ziontechgroup.com/services/w177-data-catalog
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

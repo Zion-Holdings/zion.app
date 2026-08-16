@@ -1,0 +1,13 @@
+Subject: Quick question about Backup / DR/BCaaS
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Backup / DR/BCaaS specifically for Backup challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Backup / DR/BCaaS
+Industry: Backup
+URL: https://ziontechgroup.com/services/backup--drbcaas-9ba973b2
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

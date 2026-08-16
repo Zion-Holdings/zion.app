@@ -1,0 +1,13 @@
+Subject: Quick question about Quantum-Safe Cryptography Gateway
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Quantum-Safe Cryptography Gateway specifically for Post-Quantum challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Quantum-Safe Cryptography Gateway
+Industry: Post-Quantum
+URL: https://ziontechgroup.com/services/quantum-safe-cryptography-gateway-eaf4cf7b
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

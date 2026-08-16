@@ -1,0 +1,13 @@
+Subject: Quick question about Neural Document Generator
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Neural Document Generator specifically for hospitality challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Neural Document Generator
+Industry: hospitality
+URL: https://ziontechgroup.com/services/neural-document-generator-b5b20064
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Case study: MongoDB AI-Powered Predictive Analytics Suite in Mongodb
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A MongoDB client achieved $22M savings in 18 months using MongoDB AI-Powered Predictive Analytics Suite. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: MongoDB AI-Powered Predictive Analytics Suite
+Industry: MongoDB
+URL: https://ziontechgroup.com/services/mongodb-ai-powered-predictive-analytics-suite-090d1cbe
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

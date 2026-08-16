@@ -1,0 +1,13 @@
+Subject: Quick question about Neural User Monitoring
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Neural User Monitoring specifically for edge challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Neural User Monitoring
+Industry: edge
+URL: https://ziontechgroup.com/services/neural-user-monitoring-28dc454c
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

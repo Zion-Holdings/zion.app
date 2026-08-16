@@ -1,0 +1,13 @@
+Subject: Case study: GCP AI-Powered Cloud Governance in Gcp
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A GCP client achieved $22M savings in 18 months using GCP AI-Powered Cloud Governance. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: GCP AI-Powered Cloud Governance
+Industry: GCP
+URL: https://ziontechgroup.com/services/gcp-ai-powered-cloud-governance-baaf1306
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

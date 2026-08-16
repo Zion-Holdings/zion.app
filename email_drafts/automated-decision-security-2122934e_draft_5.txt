@@ -1,0 +1,13 @@
+Subject: Case study: Automated Decision Security in Iot
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A iot client achieved $22M savings in 18 months using Automated Decision Security. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Automated Decision Security
+Industry: iot
+URL: https://ziontechgroup.com/services/automated-decision-security-2122934e
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

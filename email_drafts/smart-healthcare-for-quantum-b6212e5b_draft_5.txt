@@ -1,0 +1,13 @@
+Subject: Case study: Smart Healthcare for Quantum in Quantum
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A quantum client achieved $22M savings in 18 months using Smart Healthcare for Quantum. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Smart Healthcare for Quantum
+Industry: quantum
+URL: https://ziontechgroup.com/services/smart-healthcare-for-quantum-b6212e5b
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

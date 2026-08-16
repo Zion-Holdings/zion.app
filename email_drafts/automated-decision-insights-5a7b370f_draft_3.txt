@@ -1,0 +1,13 @@
+Subject: Quick question about Automated Decision Insights
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Automated Decision Insights specifically for retail challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Automated Decision Insights
+Industry: retail
+URL: https://ziontechgroup.com/services/automated-decision-insights-5a7b370f
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

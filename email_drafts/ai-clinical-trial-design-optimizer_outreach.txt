@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking AI Clinical Trial Design & Protocol Optimizer.
 
-Optimize clinical trial protocols: patient recruitment prediction, site selection, endpoint analysis, and regulatory submission preparation. Reduces trial timelines by 40% and costs by 30%.
+Optimize clinical trial protocols: patient recruitment prediction, site selection, endpoint analysis, regulatory submission prep. Reduces trial timelines by 40%.
 
 **Key Benefits:**
 - Reduce trial timelines by 40%

@@ -1,0 +1,13 @@
+Subject: CockroachDB Autonomous Customer Service AI - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for CockroachDB teams. CockroachDB Autonomous Customer Service AI typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: CockroachDB Autonomous Customer Service AI
+Industry: CockroachDB
+URL: https://ziontechgroup.com/services/cockroachdb-autonomous-customer-service-ai-1b5d36b4
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

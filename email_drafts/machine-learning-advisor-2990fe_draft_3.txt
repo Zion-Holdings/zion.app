@@ -1,0 +1,13 @@
+Subject: Quick question about Machine Learning Advisor
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Machine Learning Advisor specifically for energy challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Machine Learning Advisor
+Industry: energy
+URL: https://ziontechgroup.com/services/machine-learning-advisor-2990fe
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

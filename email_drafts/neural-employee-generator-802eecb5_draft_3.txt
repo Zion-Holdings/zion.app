@@ -1,0 +1,13 @@
+Subject: Quick question about Neural Employee Generator
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Neural Employee Generator specifically for automotive challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Neural Employee Generator
+Industry: automotive
+URL: https://ziontechgroup.com/services/neural-employee-generator-802eecb5
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

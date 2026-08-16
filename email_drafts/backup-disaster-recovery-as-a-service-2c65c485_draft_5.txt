@@ -1,0 +1,13 @@
+Subject: Case study: Backup Disaster Recovery as a Service in Backup
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Backup client achieved $22M savings in 18 months using Backup Disaster Recovery as a Service. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Backup Disaster Recovery as a Service
+Industry: Backup
+URL: https://ziontechgroup.com/services/backup-disaster-recovery-as-a-service-2c65c485
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

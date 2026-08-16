@@ -1,0 +1,13 @@
+Subject: Quick question about Autonomous manager-edge
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Autonomous manager-edge specifically for edge challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Autonomous manager-edge
+Industry: edge
+URL: https://ziontechgroup.com/services/autonomous-manager-edge-ff4f0775
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

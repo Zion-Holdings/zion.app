@@ -1,0 +1,13 @@
+Subject: Quick question about Smart Workflow DevOps
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Smart Workflow DevOps specifically for iot challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Smart Workflow DevOps
+Industry: iot
+URL: https://ziontechgroup.com/services/smart-workflow-devops-0bfe2335
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

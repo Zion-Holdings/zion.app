@@ -1,0 +1,13 @@
+Subject: Case study: Predictive User Management in Insurance
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A insurance client achieved $22M savings in 18 months using Predictive User Management. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Predictive User Management
+Industry: insurance
+URL: https://ziontechgroup.com/services/predictive-user-management-0ca8261e
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

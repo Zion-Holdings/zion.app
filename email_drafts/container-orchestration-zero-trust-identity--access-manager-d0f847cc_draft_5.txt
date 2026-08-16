@@ -1,0 +1,13 @@
+Subject: Case study: Container Orchestration Zero-Trust Identity & Access Manager in E-Commerce
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A E-commerce client achieved $22M savings in 18 months using Container Orchestration Zero-Trust Identity & Access Manager. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Container Orchestration Zero-Trust Identity & Access Manager
+Industry: E-commerce
+URL: https://ziontechgroup.com/services/container-orchestration-zero-trust-identity--access-manager-d0f847cc
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

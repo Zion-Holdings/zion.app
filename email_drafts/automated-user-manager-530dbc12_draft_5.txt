@@ -1,0 +1,13 @@
+Subject: Case study: Automated User Manager in Insurance
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A insurance client achieved $22M savings in 18 months using Automated User Manager. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Automated User Manager
+Industry: insurance
+URL: https://ziontechgroup.com/services/automated-user-manager-530dbc12
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

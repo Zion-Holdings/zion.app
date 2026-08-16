@@ -1,0 +1,13 @@
+Subject: Case study: Smart Financial Generator in Iot
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A iot client achieved $22M savings in 18 months using Smart Financial Generator. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Smart Financial Generator
+Industry: iot
+URL: https://ziontechgroup.com/services/smart-financial-generator-b64ed8ed
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

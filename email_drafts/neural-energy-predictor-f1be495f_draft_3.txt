@@ -1,0 +1,13 @@
+Subject: Quick question about Neural Energy Predictor
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Neural Energy Predictor specifically for education challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Neural Energy Predictor
+Industry: education
+URL: https://ziontechgroup.com/services/neural-energy-predictor-f1be495f
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

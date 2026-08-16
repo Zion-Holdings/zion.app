@@ -1,0 +1,13 @@
+Subject: AI solution for Security - Input Sanitizer
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+Most Security companies waste 30% of their time on manual processes. Input Sanitizer automates this with zero human intervention. Can I show you how?
+
+---
+Service: Input Sanitizer
+Industry: Security
+URL: https://ziontechgroup.com/services/input-sanitizer
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

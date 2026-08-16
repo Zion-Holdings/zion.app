@@ -1,0 +1,13 @@
+Subject: CockroachDB AI Sales Lead Scoring Engine - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for CockroachDB teams. CockroachDB AI Sales Lead Scoring Engine typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: CockroachDB AI Sales Lead Scoring Engine
+Industry: CockroachDB
+URL: https://ziontechgroup.com/services/cockroachdb-ai-sales-lead-scoring-engine-05bb9838
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

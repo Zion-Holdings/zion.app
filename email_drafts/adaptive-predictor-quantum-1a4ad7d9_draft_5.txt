@@ -1,0 +1,13 @@
+Subject: Case study: Adaptive predictor-quantum in Quantum
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A quantum client achieved $22M savings in 18 months using Adaptive predictor-quantum. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Adaptive predictor-quantum
+Industry: quantum
+URL: https://ziontechgroup.com/services/adaptive-predictor-quantum-1a4ad7d9
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

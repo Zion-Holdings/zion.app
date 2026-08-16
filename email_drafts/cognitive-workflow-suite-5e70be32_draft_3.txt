@@ -1,0 +1,13 @@
+Subject: Quick question about Cognitive Workflow Suite
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Cognitive Workflow Suite specifically for manufacturing challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Cognitive Workflow Suite
+Industry: manufacturing
+URL: https://ziontechgroup.com/services/cognitive-workflow-suite-5e70be32
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

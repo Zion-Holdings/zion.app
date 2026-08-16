@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking AI Genomics Analysis & Precision Medicine Platform.
 
-Process genomic data at scale: variant calling, pharmacogenomics, disease risk scoring, and treatment recommendations. HIPAA-compliant, FDA guidance-aligned pipeline.
+Process genomic data at scale: variant calling, pharmacogenomics, disease risk scoring, treatment recommendations. HIPAA-compliant, FDA guidance-aligned pipeline.
 
 **Key Benefits:**
 - Process genomes in hours

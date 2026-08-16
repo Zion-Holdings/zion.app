@@ -1,0 +1,13 @@
+Subject: Case study: Observability Platform in Observability
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Observability client achieved $22M savings in 18 months using Observability Platform. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Observability Platform
+Industry: Observability
+URL: https://ziontechgroup.com/services/observability-platform-048c7ff7
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

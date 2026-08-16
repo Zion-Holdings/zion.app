@@ -1,0 +1,13 @@
+Subject: Quick question about Automated Churn Advisor
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Automated Churn Advisor specifically for media challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Automated Churn Advisor
+Industry: media
+URL: https://ziontechgroup.com/services/automated-churn-advisor-d48a57b3
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

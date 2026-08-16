@@ -1,0 +1,13 @@
+Subject: Edge AI Deployment Manager - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Edge Computing teams. Edge AI Deployment Manager typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Edge AI Deployment Manager
+Industry: Edge Computing
+URL: https://ziontechgroup.com/services/edge-ai-deployment-manager-b36b474f
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

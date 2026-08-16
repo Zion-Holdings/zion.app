@@ -1,0 +1,13 @@
+Subject: Quick question about Automated Code Generator #1
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Automated Code Generator #1 specifically for hospitality challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Automated Code Generator #1
+Industry: hospitality
+URL: https://ziontechgroup.com/services/automated-code-generator-1-33ef44ef
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

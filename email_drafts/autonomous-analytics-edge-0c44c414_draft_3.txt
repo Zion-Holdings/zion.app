@@ -1,0 +1,13 @@
+Subject: Quick question about Autonomous analytics-edge
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Autonomous analytics-edge specifically for edge challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Autonomous analytics-edge
+Industry: edge
+URL: https://ziontechgroup.com/services/autonomous-analytics-edge-0c44c414
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

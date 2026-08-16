@@ -1,0 +1,13 @@
+Subject: Automated Decision Management - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for automotive teams. Automated Decision Management typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Automated Decision Management
+Industry: automotive
+URL: https://ziontechgroup.com/services/automated-decision-management-0c6e1f36
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

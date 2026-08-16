@@ -1,0 +1,13 @@
+Subject: Quick question about Intelligent Data Generator
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Intelligent Data Generator specifically for transportation challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Intelligent Data Generator
+Industry: transportation
+URL: https://ziontechgroup.com/services/intelligent-data-generator-582d8a5c
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

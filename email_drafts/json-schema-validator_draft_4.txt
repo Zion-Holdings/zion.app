@@ -1,0 +1,13 @@
+Subject: JSON Schema Validator - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Data Engineering teams. JSON Schema Validator typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: JSON Schema Validator
+Industry: Data Engineering
+URL: https://ziontechgroup.com/services/json-schema-validator
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Case study: Kubernetes AI-Powered Blockchain Analytics in Kubernetes
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Kubernetes client achieved $22M savings in 18 months using Kubernetes AI-Powered Blockchain Analytics. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Kubernetes AI-Powered Blockchain Analytics
+Industry: Kubernetes
+URL: https://ziontechgroup.com/services/kubernetes-ai-powered-blockchain-analytics-be10d91d
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

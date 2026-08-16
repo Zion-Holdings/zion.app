@@ -1,0 +1,13 @@
+Subject: Case study: Azure AI Financial Planning & Analysis in Azure
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Azure client achieved $22M savings in 18 months using Azure AI Financial Planning & Analysis. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Azure AI Financial Planning & Analysis
+Industry: Azure
+URL: https://ziontechgroup.com/services/azure-ai-financial-planning--analysis-8c8a37c7
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Case study: Autonomous ML Generator in Sports
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A sports client achieved $22M savings in 18 months using Autonomous ML Generator. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Autonomous ML Generator
+Industry: sports
+URL: https://ziontechgroup.com/services/autonomous-ml-generator-47951f33
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

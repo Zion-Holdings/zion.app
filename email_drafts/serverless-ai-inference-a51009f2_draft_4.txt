@@ -1,0 +1,13 @@
+Subject: Serverless AI Inference - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for AI Inference teams. Serverless AI Inference typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Serverless AI Inference
+Industry: AI Inference
+URL: https://ziontechgroup.com/services/serverless-ai-inference-a51009f2
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

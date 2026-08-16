@@ -1,0 +1,13 @@
+Subject: Quick question about Automated Anomaly Orchestrator
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Automated Anomaly Orchestrator specifically for healthcare challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Automated Anomaly Orchestrator
+Industry: healthcare
+URL: https://ziontechgroup.com/services/automated-anomaly-orchestrator-c3bcbc86
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

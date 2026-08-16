@@ -1,0 +1,13 @@
+Subject: Quick question about Smart Resource Processor
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Smart Resource Processor specifically for real-estate challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Smart Resource Processor
+Industry: real-estate
+URL: https://ziontechgroup.com/services/smart-resource-processor-e8ea161c
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

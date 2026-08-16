@@ -1,0 +1,13 @@
+Subject: Case study: Kubernetes Cluster Management Platform in Devops
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A DevOps client achieved $22M savings in 18 months using Kubernetes Cluster Management Platform. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Kubernetes Cluster Management Platform
+Industry: DevOps
+URL: https://ziontechgroup.com/services/kubernetes-cluster-management-platform-051a9416
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Case study: Adaptive Code Analyzer in Finance
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A finance client achieved $22M savings in 18 months using Adaptive Code Analyzer. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Adaptive Code Analyzer
+Industry: finance
+URL: https://ziontechgroup.com/services/adaptive-code-analyzer-cb1eec39
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

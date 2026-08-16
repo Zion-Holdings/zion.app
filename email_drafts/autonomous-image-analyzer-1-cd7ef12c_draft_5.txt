@@ -1,0 +1,13 @@
+Subject: Case study: Autonomous Image Analyzer #1 in Quantum
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A quantum client achieved $22M savings in 18 months using Autonomous Image Analyzer #1. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Autonomous Image Analyzer #1
+Industry: quantum
+URL: https://ziontechgroup.com/services/autonomous-image-analyzer-1-cd7ef12c
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

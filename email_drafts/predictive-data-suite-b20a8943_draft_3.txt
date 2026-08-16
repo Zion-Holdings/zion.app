@@ -1,0 +1,13 @@
+Subject: Quick question about Predictive Data Suite
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Predictive Data Suite specifically for telecom challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Predictive Data Suite
+Industry: telecom
+URL: https://ziontechgroup.com/services/predictive-data-suite-b20a8943
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

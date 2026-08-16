@@ -1,0 +1,13 @@
+Subject: Case study: Adaptive Security for Quantum in Quantum
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A quantum client achieved $22M savings in 18 months using Adaptive Security for Quantum. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Adaptive Security for Quantum
+Industry: quantum
+URL: https://ziontechgroup.com/services/adaptive-security-for-quantum-fec03b1f
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

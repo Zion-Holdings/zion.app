@@ -1,0 +1,13 @@
+Subject: Quick question about Scalable Security Monitoring Ansible (Enterprise)
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Scalable Security Monitoring Ansible (Enterprise) specifically for General challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Scalable Security Monitoring Ansible (Enterprise)
+Industry: General
+URL: https://ziontechgroup.com/services/scalable-security-monitoring-a-7d11ec
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

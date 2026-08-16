@@ -1,0 +1,13 @@
+Subject: Automated Decision Coordinator - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for edge teams. Automated Decision Coordinator typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Automated Decision Coordinator
+Industry: edge
+URL: https://ziontechgroup.com/services/automated-decision-coordinator-0216ac71
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

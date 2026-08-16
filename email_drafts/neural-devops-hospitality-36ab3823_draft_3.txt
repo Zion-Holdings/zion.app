@@ -1,0 +1,13 @@
+Subject: Quick question about Neural devops-hospitality
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Neural devops-hospitality specifically for hospitality challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Neural devops-hospitality
+Industry: hospitality
+URL: https://ziontechgroup.com/services/neural-devops-hospitality-36ab3823
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

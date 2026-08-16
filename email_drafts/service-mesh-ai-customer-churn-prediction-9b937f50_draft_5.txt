@@ -1,0 +1,13 @@
+Subject: Case study: Service Mesh AI Customer Churn Prediction in Service Mesh
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Service Mesh client achieved $22M savings in 18 months using Service Mesh AI Customer Churn Prediction. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Service Mesh AI Customer Churn Prediction
+Industry: Service Mesh
+URL: https://ziontechgroup.com/services/service-mesh-ai-customer-churn-prediction-9b937f50
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Quick question about Task Distributor
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Task Distributor specifically for Automation challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Task Distributor
+Industry: Automation
+URL: https://ziontechgroup.com/services/task-distributor
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Case study: Chef AI-Powered Quality Assurance in Chef
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Chef client achieved $22M savings in 18 months using Chef AI-Powered Quality Assurance. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Chef AI-Powered Quality Assurance
+Industry: Chef
+URL: https://ziontechgroup.com/services/chef-ai-powered-quality-assurance-22a43c0b
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

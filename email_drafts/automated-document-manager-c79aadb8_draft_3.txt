@@ -1,0 +1,13 @@
+Subject: Quick question about Automated Document Manager
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Automated Document Manager specifically for energy challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Automated Document Manager
+Industry: energy
+URL: https://ziontechgroup.com/services/automated-document-manager-c79aadb8
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

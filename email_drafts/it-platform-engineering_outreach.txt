@@ -1,20 +1,20 @@
-Subject: Transform Your SaaS Operations with Platform Engineering & Internal Developer Portal
+Subject: Transform Your Technology Operations with Platform Engineering as a Service
 
 Hi there,
 
-I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Platform Engineering & Internal Developer Portal.
+I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Platform Engineering as a Service.
 
-Build internal developer platforms with self-service infrastructure provisioning, golden paths, and developer experience optimization to accelerate team productivity.
+Build internal developer platforms with self-service infrastructure, golden paths, and CI/CD templates.
 
 **Key Benefits:**
-- Reduce costs with platform engineering & internal developer portal
-- Improve operational efficiency
-- Scale without complexity
+- 10x faster onboarding
+- Developer productivity
+- Reduced toil
 
 **Pricing:**
-- Basic: $99/month
-- Pro: $349/month
-- Enterprise: $1,299/month
+- Basic: $8,000/month
+- Pro: $15,000/month
+- Enterprise: $Custom/month
 
 **Book a free consultation:** https://calendly.com/kleber-ziontechgroup/consultation
 

@@ -1,0 +1,13 @@
+Subject: Quick question about Intelligent Document Generator
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Intelligent Document Generator specifically for energy challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Intelligent Document Generator
+Industry: energy
+URL: https://ziontechgroup.com/services/intelligent-document-generator-bb0ffde3
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Quick question about Automated Content Advisor
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Automated Content Advisor specifically for real-estate challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Automated Content Advisor
+Industry: real-estate
+URL: https://ziontechgroup.com/services/automated-content-advisor-af4d373e
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

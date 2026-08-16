@@ -1,0 +1,13 @@
+Subject: Case study: GraphQL Autonomous Customer Service AI in Graphql
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A GraphQL client achieved $22M savings in 18 months using GraphQL Autonomous Customer Service AI. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: GraphQL Autonomous Customer Service AI
+Industry: GraphQL
+URL: https://ziontechgroup.com/services/graphql-autonomous-customer-service-ai-2653ff9f
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

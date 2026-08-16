@@ -1,0 +1,13 @@
+Subject: Automated suite-manufacturing - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for manufacturing teams. Automated suite-manufacturing typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Automated suite-manufacturing
+Industry: manufacturing
+URL: https://ziontechgroup.com/services/automated-suite-manufacturing-5af63d89
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

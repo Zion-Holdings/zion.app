@@ -1,0 +1,13 @@
+Subject: Case study: GitOps AI Supply Chain Optimization in Gitops
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A GitOps client achieved $22M savings in 18 months using GitOps AI Supply Chain Optimization. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: GitOps AI Supply Chain Optimization
+Industry: GitOps
+URL: https://ziontechgroup.com/services/gitops-ai-supply-chain-optimization-0f54fdb6
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

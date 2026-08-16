@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking AI Hurricane & Storm Damage Assessment.
 
-Post-storm damage assessment from satellite/droone imagery: roof damage detection, flood extent mapping, insurance claim validation, and repair cost estimation. Processes 10,000+ properties per hour.
+Post-storm damage assessment from satellite/drone imagery: roof damage detection, flood extent mapping, insurance claim validation, repair cost estimation. 10,000+ properties/hour.
 
 **Key Benefits:**
 - Assess 10K properties/hour

@@ -1,0 +1,13 @@
+Subject: Quick question about Autonomous Sales Generator
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Autonomous Sales Generator specifically for finance challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Autonomous Sales Generator
+Industry: finance
+URL: https://ziontechgroup.com/services/autonomous-sales-generator-2db81ead
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

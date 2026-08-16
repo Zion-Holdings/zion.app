@@ -1,0 +1,13 @@
+Subject: Case study: CockroachDB AI-Powered Predictive Analytics Suite in Cockroachdb
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A CockroachDB client achieved $22M savings in 18 months using CockroachDB AI-Powered Predictive Analytics Suite. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: CockroachDB AI-Powered Predictive Analytics Suite
+Industry: CockroachDB
+URL: https://ziontechgroup.com/services/cockroachdb-ai-powered-predictive-analytics-suite-013badaa
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

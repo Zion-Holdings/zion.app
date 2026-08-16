@@ -1,0 +1,13 @@
+Subject: Quick question about Neural User Management
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Neural User Management specifically for telecom challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Neural User Management
+Industry: telecom
+URL: https://ziontechgroup.com/services/neural-user-management-254de547
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

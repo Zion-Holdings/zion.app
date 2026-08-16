@@ -1,0 +1,14 @@
+{
+  "targetEmail": "kleber@ziontechgroup.com",
+  "targetPhone": "+13024640950",
+  "routes": {
+    "/contact/": { "type": "page", "targetEmail": "kleber@ziontechgroup.com", "requiresForm": true },
+    "/free-consultation/": { "type": "page", "targetEmail": "kleber@ziontechgroup.com", "requiresForm": false },
+    "/configurator/": { "type": "page", "targetEmail": "kleber@ziontechgroup.com", "requiresForm": false },
+    "/quote/": { "type": "page", "targetEmail": "kleber@ziontechgroup.com", "requiresForm": false }
+  },
+  "formFields": {
+    "required": ["name", "email", "company", "message"],
+    "optional": ["phone", "service", "budget", "timeline"]
+  }
+}

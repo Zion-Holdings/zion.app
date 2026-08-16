@@ -1,0 +1,13 @@
+Subject: CockroachDB AI-Powered Predictive Analytics Suite - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for CockroachDB teams. CockroachDB AI-Powered Predictive Analytics Suite typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: CockroachDB AI-Powered Predictive Analytics Suite
+Industry: CockroachDB
+URL: https://ziontechgroup.com/services/cockroachdb-ai-powered-predictive-analytics-suite-013badaa
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Case study: Automated Sales Platform in Edge
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A edge client achieved $22M savings in 18 months using Automated Sales Platform. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Automated Sales Platform
+Industry: edge
+URL: https://ziontechgroup.com/services/automated-sales-platform-5d71c03b
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

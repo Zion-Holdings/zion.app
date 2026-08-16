@@ -1,0 +1,13 @@
+Subject: Transform your API Management with Data API Platform
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+Hi, I noticed you\'re in API Management. Data API Platform has helped companies achieve 45% faster processing and $18M+ annual savings. Would you be open to a 15-min demo?
+
+---
+Service: Data API Platform
+Industry: API Management
+URL: https://ziontechgroup.com/services/w177-data-api
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

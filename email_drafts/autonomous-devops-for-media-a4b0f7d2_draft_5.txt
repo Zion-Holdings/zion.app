@@ -1,0 +1,13 @@
+Subject: Case study: Autonomous DevOps for Media in Media
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A media client achieved $22M savings in 18 months using Autonomous DevOps for Media. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Autonomous DevOps for Media
+Industry: media
+URL: https://ziontechgroup.com/services/autonomous-devops-for-media-a4b0f7d2
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

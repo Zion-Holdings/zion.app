@@ -1,0 +1,13 @@
+Subject: Quick question about Invoice AI Customer Churn Prediction
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Invoice AI Customer Churn Prediction specifically for Invoice challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Invoice AI Customer Churn Prediction
+Industry: Invoice
+URL: https://ziontechgroup.com/services/invoice-ai-customer-churn-prediction-04da0ffe
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

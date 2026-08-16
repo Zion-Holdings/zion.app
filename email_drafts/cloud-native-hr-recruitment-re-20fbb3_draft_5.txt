@@ -1,0 +1,13 @@
+Subject: Case study: Cloud-Native HR Recruitment Redis (Finance) in General
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A General client achieved $22M savings in 18 months using Cloud-Native HR Recruitment Redis (Finance). The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Cloud-Native HR Recruitment Redis (Finance)
+Industry: General
+URL: https://ziontechgroup.com/services/cloud-native-hr-recruitment-re-20fbb3
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

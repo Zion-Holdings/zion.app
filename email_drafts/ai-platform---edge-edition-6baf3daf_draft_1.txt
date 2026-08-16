@@ -1,0 +1,13 @@
+Subject: Transform your edge with AI Platform - Edge Edition
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+Hi, I noticed you\'re in edge. AI Platform - Edge Edition has helped companies achieve 45% faster processing and $18M+ annual savings. Would you be open to a 15-min demo?
+
+---
+Service: AI Platform - Edge Edition
+Industry: edge
+URL: https://ziontechgroup.com/services/ai-platform---edge-edition-6baf3daf
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

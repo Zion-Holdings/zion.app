@@ -1,0 +1,13 @@
+Subject: Automated Decision Generator - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for insurance teams. Automated Decision Generator typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Automated Decision Generator
+Industry: insurance
+URL: https://ziontechgroup.com/services/automated-decision-generator-e50d99ce
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

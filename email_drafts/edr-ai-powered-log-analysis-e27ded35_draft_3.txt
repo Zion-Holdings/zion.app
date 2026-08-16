@@ -1,0 +1,13 @@
+Subject: Quick question about EDR AI-Powered Log Analysis
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built EDR AI-Powered Log Analysis specifically for EDR challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: EDR AI-Powered Log Analysis
+Industry: EDR
+URL: https://ziontechgroup.com/services/edr-ai-powered-log-analysis-e27ded35
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

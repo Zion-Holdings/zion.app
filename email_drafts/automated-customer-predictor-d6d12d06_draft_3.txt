@@ -1,0 +1,13 @@
+Subject: Quick question about Automated Customer Predictor
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Automated Customer Predictor specifically for telecom challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Automated Customer Predictor
+Industry: telecom
+URL: https://ziontechgroup.com/services/automated-customer-predictor-d6d12d06
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

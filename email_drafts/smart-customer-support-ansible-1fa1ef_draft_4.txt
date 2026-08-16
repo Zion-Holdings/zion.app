@@ -1,0 +1,13 @@
+Subject: Smart Customer Support Ansible (Analytics) - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for General teams. Smart Customer Support Ansible (Analytics) typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Smart Customer Support Ansible (Analytics)
+Industry: General
+URL: https://ziontechgroup.com/services/smart-customer-support-ansible-1fa1ef
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

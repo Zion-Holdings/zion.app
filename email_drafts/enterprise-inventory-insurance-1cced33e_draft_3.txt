@@ -1,0 +1,13 @@
+Subject: Quick question about Enterprise inventory-insurance
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Enterprise inventory-insurance specifically for insurance challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Enterprise inventory-insurance
+Industry: insurance
+URL: https://ziontechgroup.com/services/enterprise-inventory-insurance-1cced33e
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

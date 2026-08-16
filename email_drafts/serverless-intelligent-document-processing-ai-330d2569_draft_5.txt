@@ -1,0 +1,13 @@
+Subject: Case study: Serverless Intelligent Document Processing AI in Serverless
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Serverless client achieved $22M savings in 18 months using Serverless Intelligent Document Processing AI. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Serverless Intelligent Document Processing AI
+Industry: Serverless
+URL: https://ziontechgroup.com/services/serverless-intelligent-document-processing-ai-330d2569
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

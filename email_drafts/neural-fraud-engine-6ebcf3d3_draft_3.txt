@@ -1,0 +1,13 @@
+Subject: Quick question about Neural Fraud Engine
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Neural Fraud Engine specifically for manufacturing challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Neural Fraud Engine
+Industry: manufacturing
+URL: https://ziontechgroup.com/services/neural-fraud-engine-6ebcf3d3
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

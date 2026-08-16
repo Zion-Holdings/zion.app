@@ -1,0 +1,13 @@
+Subject: Case study: Azure AI-Powered Recommendation Engine in Azure
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Azure client achieved $22M savings in 18 months using Azure AI-Powered Recommendation Engine. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Azure AI-Powered Recommendation Engine
+Industry: Azure
+URL: https://ziontechgroup.com/services/azure-ai-powered-recommendation-engine-8cb55355
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

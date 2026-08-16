@@ -1,0 +1,13 @@
+Subject: API Gateway + OpenAPI Management - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for API teams. API Gateway + OpenAPI Management typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: API Gateway + OpenAPI Management
+Industry: API
+URL: https://ziontechgroup.com/services/api-gateway--openapi-management-586d189e
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

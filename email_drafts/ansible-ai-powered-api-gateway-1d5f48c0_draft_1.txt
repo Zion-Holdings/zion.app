@@ -1,0 +1,13 @@
+Subject: Transform your Ansible with Ansible AI-Powered API Gateway
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+Hi, I noticed you\'re in Ansible. Ansible AI-Powered API Gateway has helped companies achieve 45% faster processing and $18M+ annual savings. Would you be open to a 15-min demo?
+
+---
+Service: Ansible AI-Powered API Gateway
+Industry: Ansible
+URL: https://ziontechgroup.com/services/ansible-ai-powered-api-gateway-1d5f48c0
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking AI Bank Fraud Investigation Platform.
 
-Automate fraud investigation workstreams: transaction link analysis, entity resolution, SAR filing automation, and regulatory reporting. Reduces investigation time by 75%.
+Automate fraud investigation workstreams: transaction link analysis, entity resolution, SAR filing automation, regulatory reporting. Reduces investigation time by 75%.
 
 **Key Benefits:**
 - Reduce investigation time by 75%

@@ -1,0 +1,13 @@
+Subject: Case study: Intelligent devops-healthcare in Healthcare
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A healthcare client achieved $22M savings in 18 months using Intelligent devops-healthcare. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Intelligent devops-healthcare
+Industry: healthcare
+URL: https://ziontechgroup.com/services/intelligent-devops-healthcare-cc53a78a
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Quick question about Quantum Circuit optimizer
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Quantum Circuit optimizer specifically for Quantum challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Quantum Circuit optimizer
+Industry: Quantum
+URL: https://ziontechgroup.com/services/quantum-circuit-optimizer-9e7a065d
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

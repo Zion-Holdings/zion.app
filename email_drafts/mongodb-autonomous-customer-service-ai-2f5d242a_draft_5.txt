@@ -1,0 +1,13 @@
+Subject: Case study: MongoDB Autonomous Customer Service AI in Mongodb
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A MongoDB client achieved $22M savings in 18 months using MongoDB Autonomous Customer Service AI. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: MongoDB Autonomous Customer Service AI
+Industry: MongoDB
+URL: https://ziontechgroup.com/services/mongodb-autonomous-customer-service-ai-2f5d242a
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

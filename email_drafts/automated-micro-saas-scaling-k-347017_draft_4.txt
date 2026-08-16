@@ -1,0 +1,13 @@
+Subject: Automated Micro-SaaS Scaling Kubernetes (Data) - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Data Engineering teams. Automated Micro-SaaS Scaling Kubernetes (Data) typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Automated Micro-SaaS Scaling Kubernetes (Data)
+Industry: Data Engineering
+URL: https://ziontechgroup.com/services/automated-micro-saas-scaling-k-347017
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Quick question about Neural Inventory Predictor
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Neural Inventory Predictor specifically for logistics challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Neural Inventory Predictor
+Industry: logistics
+URL: https://ziontechgroup.com/services/neural-inventory-predictor-ac8229a7
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

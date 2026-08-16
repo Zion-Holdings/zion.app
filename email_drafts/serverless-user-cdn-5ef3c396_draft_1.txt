@@ -1,0 +1,13 @@
+Subject: Transform your startup with Serverless User CDN
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+Hi, I noticed you\'re in startup. Serverless User CDN has helped companies achieve 45% faster processing and $18M+ annual savings. Would you be open to a 15-min demo?
+
+---
+Service: Serverless User CDN
+Industry: startup
+URL: https://ziontechgroup.com/services/serverless-user-cdn-5ef3c396
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

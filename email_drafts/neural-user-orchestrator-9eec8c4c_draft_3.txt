@@ -1,0 +1,13 @@
+Subject: Quick question about Neural User Orchestrator
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Neural User Orchestrator specifically for logistics challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Neural User Orchestrator
+Industry: logistics
+URL: https://ziontechgroup.com/services/neural-user-orchestrator-9eec8c4c
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

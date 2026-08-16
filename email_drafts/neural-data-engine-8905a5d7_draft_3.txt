@@ -1,0 +1,13 @@
+Subject: Quick question about Neural Data Engine
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Neural Data Engine specifically for insurance challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Neural Data Engine
+Industry: insurance
+URL: https://ziontechgroup.com/services/neural-data-engine-8905a5d7
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

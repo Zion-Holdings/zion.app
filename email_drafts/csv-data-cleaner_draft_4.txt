@@ -1,0 +1,13 @@
+Subject: CSV Data Cleaner - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Data Engineering teams. CSV Data Cleaner typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: CSV Data Cleaner
+Industry: Data Engineering
+URL: https://ziontechgroup.com/services/csv-data-cleaner
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

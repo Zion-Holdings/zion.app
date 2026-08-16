@@ -1,0 +1,13 @@
+Subject: Case study: Elasticsearch Autonomous Customer Service AI in Elasticsearch
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Elasticsearch client achieved $22M savings in 18 months using Elasticsearch Autonomous Customer Service AI. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Elasticsearch Autonomous Customer Service AI
+Industry: Elasticsearch
+URL: https://ziontechgroup.com/services/elasticsearch-autonomous-customer-service-ai-1400fb0d
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

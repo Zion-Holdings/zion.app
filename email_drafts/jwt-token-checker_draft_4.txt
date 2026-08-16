@@ -1,0 +1,13 @@
+Subject: JWT Token Checker - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Security teams. JWT Token Checker typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: JWT Token Checker
+Industry: Security
+URL: https://ziontechgroup.com/services/jwt-token-checker
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

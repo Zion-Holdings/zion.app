@@ -1,0 +1,13 @@
+Subject: AI Synthetic Data Generator - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Data Science teams. AI Synthetic Data Generator typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: AI Synthetic Data Generator
+Industry: Data Science
+URL: https://ziontechgroup.com/services/wave127-ai-synthetic-data-generator
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

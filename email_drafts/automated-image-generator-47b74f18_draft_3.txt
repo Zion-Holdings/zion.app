@@ -1,0 +1,13 @@
+Subject: Quick question about Automated Image Generator
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Automated Image Generator specifically for logistics challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Automated Image Generator
+Industry: logistics
+URL: https://ziontechgroup.com/services/automated-image-generator-47b74f18
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

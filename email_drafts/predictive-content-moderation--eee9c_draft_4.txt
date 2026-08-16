@@ -1,0 +1,13 @@
+Subject: Predictive Content Moderation PostgreSQL (Data) - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Data Engineering teams. Predictive Content Moderation PostgreSQL (Data) typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Predictive Content Moderation PostgreSQL (Data)
+Industry: Data Engineering
+URL: https://ziontechgroup.com/services/predictive-content-moderation--eee9c
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

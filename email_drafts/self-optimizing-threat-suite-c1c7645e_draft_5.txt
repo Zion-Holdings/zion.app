@@ -1,0 +1,13 @@
+Subject: Case study: Self-Optimizing Threat Suite in Iot
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A iot client achieved $22M savings in 18 months using Self-Optimizing Threat Suite. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Self-Optimizing Threat Suite
+Industry: iot
+URL: https://ziontechgroup.com/services/self-optimizing-threat-suite-c1c7645e
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

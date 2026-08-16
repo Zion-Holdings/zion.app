@@ -1,0 +1,13 @@
+Subject: AI-Powered Infrastructure as Code - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Infrastructure teams. AI-Powered Infrastructure as Code typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: AI-Powered Infrastructure as Code
+Industry: Infrastructure
+URL: https://ziontechgroup.com/services/ai-powered-infrastructure-as-code-02abfcfb
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Case study: MySQL AI-Powered Security Auditing in Mysql
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A MySQL client achieved $22M savings in 18 months using MySQL AI-Powered Security Auditing. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: MySQL AI-Powered Security Auditing
+Industry: MySQL
+URL: https://ziontechgroup.com/services/mysql-ai-powered-security-auditing-62feef4e
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

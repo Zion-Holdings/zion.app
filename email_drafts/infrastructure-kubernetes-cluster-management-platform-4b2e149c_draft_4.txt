@@ -1,0 +1,13 @@
+Subject: Infrastructure Kubernetes Cluster Management Platform - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Infrastructure teams. Infrastructure Kubernetes Cluster Management Platform typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Infrastructure Kubernetes Cluster Management Platform
+Industry: Infrastructure
+URL: https://ziontechgroup.com/services/infrastructure-kubernetes-cluster-management-platform-4b2e149c
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

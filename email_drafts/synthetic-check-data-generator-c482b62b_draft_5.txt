@@ -1,0 +1,13 @@
+Subject: Case study: Synthetic Check Data Generator in Regtech
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A RegTech client achieved $22M savings in 18 months using Synthetic Check Data Generator. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Synthetic Check Data Generator
+Industry: RegTech
+URL: https://ziontechgroup.com/services/synthetic-check-data-generator-c482b62b
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

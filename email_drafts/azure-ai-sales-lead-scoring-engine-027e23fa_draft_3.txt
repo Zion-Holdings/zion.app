@@ -1,0 +1,13 @@
+Subject: Quick question about Azure AI Sales Lead Scoring Engine
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Azure AI Sales Lead Scoring Engine specifically for Azure challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Azure AI Sales Lead Scoring Engine
+Industry: Azure
+URL: https://ziontechgroup.com/services/azure-ai-sales-lead-scoring-engine-027e23fa
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

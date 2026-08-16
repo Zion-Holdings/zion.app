@@ -1,0 +1,13 @@
+Subject: Case study: Intelligent Data Generator #3 in Manufacturing
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A manufacturing client achieved $22M savings in 18 months using Intelligent Data Generator #3. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Intelligent Data Generator #3
+Industry: manufacturing
+URL: https://ziontechgroup.com/services/intelligent-data-generator-3-cf3ea00d
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

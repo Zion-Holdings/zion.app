@@ -1,0 +1,13 @@
+Subject: CockroachDB AI Financial Planning & Analysis - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for CockroachDB teams. CockroachDB AI Financial Planning & Analysis typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: CockroachDB AI Financial Planning & Analysis
+Industry: CockroachDB
+URL: https://ziontechgroup.com/services/cockroachdb-ai-financial-planning--analysis-7de0f2d5
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

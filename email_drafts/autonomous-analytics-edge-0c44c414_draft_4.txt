@@ -1,0 +1,13 @@
+Subject: Autonomous analytics-edge - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for edge teams. Autonomous analytics-edge typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Autonomous analytics-edge
+Industry: edge
+URL: https://ziontechgroup.com/services/autonomous-analytics-edge-0c44c414
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

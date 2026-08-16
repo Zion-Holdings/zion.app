@@ -1,0 +1,13 @@
+Subject: Case study: Elasticsearch AI-Powered Market Intelligence in Elasticsearch
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Elasticsearch client achieved $22M savings in 18 months using Elasticsearch AI-Powered Market Intelligence. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Elasticsearch AI-Powered Market Intelligence
+Industry: Elasticsearch
+URL: https://ziontechgroup.com/services/elasticsearch-ai-powered-market-intelligence-1d7fd566
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

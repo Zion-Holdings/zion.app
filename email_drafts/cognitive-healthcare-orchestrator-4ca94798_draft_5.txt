@@ -1,0 +1,13 @@
+Subject: Case study: Cognitive Healthcare Orchestrator in Edge
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A edge client achieved $22M savings in 18 months using Cognitive Healthcare Orchestrator. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Cognitive Healthcare Orchestrator
+Industry: edge
+URL: https://ziontechgroup.com/services/cognitive-healthcare-orchestrator-4ca94798
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

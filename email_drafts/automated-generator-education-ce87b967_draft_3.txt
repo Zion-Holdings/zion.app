@@ -1,0 +1,13 @@
+Subject: Quick question about Automated generator-education
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Automated generator-education specifically for education challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Automated generator-education
+Industry: education
+URL: https://ziontechgroup.com/services/automated-generator-education-ce87b967
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

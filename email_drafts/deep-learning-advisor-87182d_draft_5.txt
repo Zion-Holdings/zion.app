@@ -1,0 +1,13 @@
+Subject: Case study: Deep Learning Advisor in construction
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A construction client achieved $22M savings in 18 months using Deep Learning Advisor. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Deep Learning Advisor
+Industry: construction
+URL: https://ziontechgroup.com/services/deep-learning-advisor-87182d
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

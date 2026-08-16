@@ -1,0 +1,13 @@
+Subject: Transform your Data Science with AI Synthetic Data Generator
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+Hi, I noticed you\'re in Data Science. AI Synthetic Data Generator has helped companies achieve 45% faster processing and $18M+ annual savings. Would you be open to a 15-min demo?
+
+---
+Service: AI Synthetic Data Generator
+Industry: Data Science
+URL: https://ziontechgroup.com/services/wave127-ai-synthetic-data-generator
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

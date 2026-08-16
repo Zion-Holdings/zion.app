@@ -1,0 +1,13 @@
+Subject: Quick question about Neural generator-healthcare
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Neural generator-healthcare specifically for healthcare challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Neural generator-healthcare
+Industry: healthcare
+URL: https://ziontechgroup.com/services/neural-generator-healthcare-75bf9607
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Case study: Quantum-Safe Cryptography Gateway in Post-Quantum
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Post-Quantum client achieved $22M savings in 18 months using Quantum-Safe Cryptography Gateway. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Quantum-Safe Cryptography Gateway
+Industry: Post-Quantum
+URL: https://ziontechgroup.com/services/quantum-safe-cryptography-gateway-eaf4cf7b
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

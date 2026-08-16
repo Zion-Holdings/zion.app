@@ -1,0 +1,13 @@
+Subject: AI solution for healthcare - CI/CD-Powered Healthcare Automation
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+Most healthcare companies waste 30% of their time on manual processes. CI/CD-Powered Healthcare Automation automates this with zero human intervention. Can I show you how?
+
+---
+Service: CI/CD-Powered Healthcare Automation
+Industry: healthcare
+URL: https://ziontechgroup.com/services/cicd-powered-healthcare-automation-cc68382c
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

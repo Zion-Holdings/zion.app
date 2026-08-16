@@ -1,0 +1,13 @@
+Subject: Quick question about Azure AI-Powered Threat Detection System
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Azure AI-Powered Threat Detection System specifically for Azure challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Azure AI-Powered Threat Detection System
+Industry: Azure
+URL: https://ziontechgroup.com/services/azure-ai-powered-threat-detection-system-8eeca2ba
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

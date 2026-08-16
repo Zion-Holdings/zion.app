@@ -1,0 +1,13 @@
+Subject: Case study: Data Mesh Implementation in Data
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Data client achieved $22M savings in 18 months using Data Mesh Implementation. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Data Mesh Implementation
+Industry: Data
+URL: https://ziontechgroup.com/services/data-mesh-implementation-151253cf
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

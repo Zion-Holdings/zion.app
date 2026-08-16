@@ -1,0 +1,13 @@
+Subject: Intelligent Manufacturing Quality Ansible (Iot) - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for General teams. Intelligent Manufacturing Quality Ansible (Iot) typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Intelligent Manufacturing Quality Ansible (Iot)
+Industry: General
+URL: https://ziontechgroup.com/services/intelligent-manufacturing-qual-667f0
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

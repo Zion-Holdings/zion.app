@@ -1,0 +1,13 @@
+Subject: Quick question about Predictive User Advisor
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Predictive User Advisor specifically for retail challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Predictive User Advisor
+Industry: retail
+URL: https://ziontechgroup.com/services/predictive-user-advisor-f7336b89
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

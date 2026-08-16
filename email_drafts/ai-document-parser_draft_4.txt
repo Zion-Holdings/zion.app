@@ -1,0 +1,13 @@
+Subject: AI Document Parser - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for AI teams. AI Document Parser typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: AI Document Parser
+Industry: AI
+URL: https://ziontechgroup.com/services/ai-document-parser
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

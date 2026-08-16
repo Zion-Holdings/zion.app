@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking AI Mining Safety & Operations Optimizer.
 
-Computer vision + IoT for mining: equipment health monitoring, ventilation optimization, worker safety enforcement, and ore grade prediction. Reduces accidents by 50%.
+Computer vision + IoT for mining: equipment health monitoring, ventilation optimization, worker safety enforcement, ore grade prediction. Reduces accidents by 50%.
 
 **Key Benefits:**
 - Reduce accidents by 50%

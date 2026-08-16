@@ -1,0 +1,13 @@
+Subject: Case study: Neural Content Generator in Telecom
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A telecom client achieved $22M savings in 18 months using Neural Content Generator. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Neural Content Generator
+Industry: telecom
+URL: https://ziontechgroup.com/services/neural-content-generator-074048ee
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

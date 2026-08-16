@@ -1,0 +1,13 @@
+Subject: Transform your Automation with Job Scheduler
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+Hi, I noticed you\'re in Automation. Job Scheduler has helped companies achieve 45% faster processing and $18M+ annual savings. Would you be open to a 15-min demo?
+
+---
+Service: Job Scheduler
+Industry: Automation
+URL: https://ziontechgroup.com/services/job-scheduler
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

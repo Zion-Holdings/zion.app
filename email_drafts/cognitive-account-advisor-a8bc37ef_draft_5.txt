@@ -1,0 +1,13 @@
+Subject: Case study: Cognitive Account Advisor in Healthcare
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A healthcare client achieved $22M savings in 18 months using Cognitive Account Advisor. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Cognitive Account Advisor
+Industry: healthcare
+URL: https://ziontechgroup.com/services/cognitive-account-advisor-a8bc37ef
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

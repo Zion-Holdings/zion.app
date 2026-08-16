@@ -1,0 +1,13 @@
+Subject: Quick question about Intelligent User Advisor
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Intelligent User Advisor specifically for insurance challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Intelligent User Advisor
+Industry: insurance
+URL: https://ziontechgroup.com/services/intelligent-user-advisor-7d250184
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: CockroachDB AI-Powered Data Lineage - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for CockroachDB teams. CockroachDB AI-Powered Data Lineage typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: CockroachDB AI-Powered Data Lineage
+Industry: CockroachDB
+URL: https://ziontechgroup.com/services/cockroachdb-ai-powered-data-lineage-e8b97098
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

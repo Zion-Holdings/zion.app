@@ -1,0 +1,13 @@
+Subject: Case study: Autonomous Code Predictor #1 in Healthcare
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A healthcare client achieved $22M savings in 18 months using Autonomous Code Predictor #1. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Autonomous Code Predictor #1
+Industry: healthcare
+URL: https://ziontechgroup.com/services/autonomous-code-predictor-1-e3f1f62a
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Case study: Autonomous Data Science for Insurance in Insurance
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A insurance client achieved $22M savings in 18 months using Autonomous Data Science for Insurance. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Autonomous Data Science for Insurance
+Industry: insurance
+URL: https://ziontechgroup.com/services/autonomous-data-science-for-insurance-1b0434ad
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

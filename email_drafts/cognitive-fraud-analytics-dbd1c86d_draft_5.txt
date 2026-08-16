@@ -1,0 +1,13 @@
+Subject: Case study: Cognitive Fraud Analytics in Telecom
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A telecom client achieved $22M savings in 18 months using Cognitive Fraud Analytics. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Cognitive Fraud Analytics
+Industry: telecom
+URL: https://ziontechgroup.com/services/cognitive-fraud-analytics-dbd1c86d
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

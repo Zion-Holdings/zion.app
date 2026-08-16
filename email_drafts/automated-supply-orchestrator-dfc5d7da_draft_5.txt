@@ -1,0 +1,13 @@
+Subject: Case study: Automated Supply Orchestrator in Energy
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A energy client achieved $22M savings in 18 months using Automated Supply Orchestrator. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Automated Supply Orchestrator
+Industry: energy
+URL: https://ziontechgroup.com/services/automated-supply-orchestrator-dfc5d7da
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

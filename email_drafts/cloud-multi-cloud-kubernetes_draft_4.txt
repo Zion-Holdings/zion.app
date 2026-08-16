@@ -1,0 +1,13 @@
+Subject: Multi-Cloud Kubernetes Platform - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Technology teams. Multi-Cloud Kubernetes Platform typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Multi-Cloud Kubernetes Platform
+Industry: Technology
+URL: https://ziontechgroup.com/services/cloud-multi-cloud-kubernetes
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

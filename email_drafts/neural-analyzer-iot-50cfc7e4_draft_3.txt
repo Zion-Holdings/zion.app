@@ -1,0 +1,13 @@
+Subject: Quick question about Neural analyzer-iot
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Neural analyzer-iot specifically for iot challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Neural analyzer-iot
+Industry: iot
+URL: https://ziontechgroup.com/services/neural-analyzer-iot-50cfc7e4
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Case study: BigQuery AI-Powered Network Monitoring in Bigquery
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A BigQuery client achieved $22M savings in 18 months using BigQuery AI-Powered Network Monitoring. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: BigQuery AI-Powered Network Monitoring
+Industry: BigQuery
+URL: https://ziontechgroup.com/services/bigquery-ai-powered-network-monitoring-2e2f488d
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

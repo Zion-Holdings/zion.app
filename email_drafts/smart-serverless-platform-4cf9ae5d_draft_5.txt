@@ -1,0 +1,13 @@
+Subject: Case study: Smart Serverless Platform in Hospitality
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A hospitality client achieved $22M savings in 18 months using Smart Serverless Platform. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Smart Serverless Platform
+Industry: hospitality
+URL: https://ziontechgroup.com/services/smart-serverless-platform-4cf9ae5d
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

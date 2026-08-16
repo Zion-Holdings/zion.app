@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking AI Judicial Analytics & Case Prediction.
 
-Analyze case law, predict litigation outcomes, and optimize legal strategy. NLP across 50M+ cases, judge behavior analysis, and settlement range prediction. Used by 100+ law firms.
+Analyze case law, predict litigation outcomes, optimize legal strategy. NLP across 50M+ cases, judge behavior analysis, settlement range prediction. Used by 100+ law firms.
 
 **Key Benefits:**
 - 85% litigation outcome accuracy

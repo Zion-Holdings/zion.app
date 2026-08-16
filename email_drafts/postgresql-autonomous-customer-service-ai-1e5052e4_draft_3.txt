@@ -1,0 +1,13 @@
+Subject: Quick question about PostgreSQL Autonomous Customer Service AI
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built PostgreSQL Autonomous Customer Service AI specifically for PostgreSQL challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: PostgreSQL Autonomous Customer Service AI
+Industry: PostgreSQL
+URL: https://ziontechgroup.com/services/postgresql-autonomous-customer-service-ai-1e5052e4
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

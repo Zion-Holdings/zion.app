@@ -1,0 +1,13 @@
+Subject: API Key Validator - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Security teams. API Key Validator typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: API Key Validator
+Industry: Security
+URL: https://ziontechgroup.com/services/api-key-validator
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

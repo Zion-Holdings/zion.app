@@ -1,0 +1,13 @@
+Subject: Automated Customer Generator - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for construction teams. Automated Customer Generator typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Automated Customer Generator
+Industry: construction
+URL: https://ziontechgroup.com/services/automated-customer-generator-c3a6d13c
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

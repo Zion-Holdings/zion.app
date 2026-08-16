@@ -1,0 +1,13 @@
+Subject: Case study: Neural advisor-iot in Iot
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A iot client achieved $22M savings in 18 months using Neural advisor-iot. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Neural advisor-iot
+Industry: iot
+URL: https://ziontechgroup.com/services/neural-advisor-iot-e4f7f87a
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

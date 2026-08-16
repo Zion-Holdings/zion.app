@@ -1,0 +1,13 @@
+Subject: Case study: GCP AI Sales Lead Scoring Engine in Gcp
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A GCP client achieved $22M savings in 18 months using GCP AI Sales Lead Scoring Engine. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: GCP AI Sales Lead Scoring Engine
+Industry: GCP
+URL: https://ziontechgroup.com/services/gcp-ai-sales-lead-scoring-engine-5910cc43
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

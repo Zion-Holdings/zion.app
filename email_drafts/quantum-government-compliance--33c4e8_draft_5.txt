@@ -1,0 +1,13 @@
+Subject: Case study: Quantum Government Compliance PostgreSQL (Data) in Data Engineering
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Data Engineering client achieved $22M savings in 18 months using Quantum Government Compliance PostgreSQL (Data). The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Quantum Government Compliance PostgreSQL (Data)
+Industry: Data Engineering
+URL: https://ziontechgroup.com/services/quantum-government-compliance--33c4e8
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Quick question about Cognitive generator-insurance
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Cognitive generator-insurance specifically for insurance challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Cognitive generator-insurance
+Industry: insurance
+URL: https://ziontechgroup.com/services/cognitive-generator-insurance-5cb3f799
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

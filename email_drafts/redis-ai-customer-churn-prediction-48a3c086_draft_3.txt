@@ -1,0 +1,13 @@
+Subject: Quick question about Redis AI Customer Churn Prediction
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Redis AI Customer Churn Prediction specifically for Redis challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Redis AI Customer Churn Prediction
+Industry: Redis
+URL: https://ziontechgroup.com/services/redis-ai-customer-churn-prediction-48a3c086
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

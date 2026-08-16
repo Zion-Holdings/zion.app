@@ -1,0 +1,13 @@
+Subject: Predictive Advisor Service - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for finance teams. Predictive Advisor Service typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Predictive Advisor Service
+Industry: finance
+URL: https://ziontechgroup.com/services/predictive-advisor-service-1a3cca
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

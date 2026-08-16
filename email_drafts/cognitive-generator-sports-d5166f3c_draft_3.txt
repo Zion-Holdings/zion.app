@@ -1,0 +1,13 @@
+Subject: Quick question about Cognitive generator-sports
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Cognitive generator-sports specifically for sports challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Cognitive generator-sports
+Industry: sports
+URL: https://ziontechgroup.com/services/cognitive-generator-sports-d5166f3c
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

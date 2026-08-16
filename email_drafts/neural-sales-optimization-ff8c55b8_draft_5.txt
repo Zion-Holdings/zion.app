@@ -1,0 +1,13 @@
+Subject: Case study: Neural Sales Optimization in Iot
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A iot client achieved $22M savings in 18 months using Neural Sales Optimization. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Neural Sales Optimization
+Industry: iot
+URL: https://ziontechgroup.com/services/neural-sales-optimization-ff8c55b8
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

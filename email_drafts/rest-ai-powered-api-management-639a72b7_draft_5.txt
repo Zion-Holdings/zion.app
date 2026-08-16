@@ -1,0 +1,13 @@
+Subject: Case study: REST AI-Powered API Management in Rest
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A REST client achieved $22M savings in 18 months using REST AI-Powered API Management. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: REST AI-Powered API Management
+Industry: REST
+URL: https://ziontechgroup.com/services/rest-ai-powered-api-management-639a72b7
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

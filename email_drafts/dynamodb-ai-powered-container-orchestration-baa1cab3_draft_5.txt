@@ -1,0 +1,13 @@
+Subject: Case study: DynamoDB AI-Powered Container Orchestration in Dynamodb
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A DynamoDB client achieved $22M savings in 18 months using DynamoDB AI-Powered Container Orchestration. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: DynamoDB AI-Powered Container Orchestration
+Industry: DynamoDB
+URL: https://ziontechgroup.com/services/dynamodb-ai-powered-container-orchestration-baa1cab3
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

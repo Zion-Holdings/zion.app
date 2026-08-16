@@ -4,11 +4,12 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Data Real-Time Streaming Analytics Platform.
 
-Process and analyze millions of events per second with sub-second latency.
+Process and analyze millions of events per second with sub-second latency. Supports Kafka, Kinesis, Pub/Sub with built-in windowing, joins, and anomaly detection.
 
 **Key Benefits:**
-- Real-time decisions
-- Instant anomaly detection
+- Real-time business decisions
+- Detect anomalies instantly
+- Unify batch and streaming
 
 **Pricing:**
 - Basic: $499/month

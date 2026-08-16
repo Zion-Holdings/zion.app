@@ -1,0 +1,13 @@
+Subject: Case study: Deep Learning Analyzer in healthcare
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A healthcare client achieved $22M savings in 18 months using Deep Learning Analyzer. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Deep Learning Analyzer
+Industry: healthcare
+URL: https://ziontechgroup.com/services/deep-learning-analyzer-79fa05
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

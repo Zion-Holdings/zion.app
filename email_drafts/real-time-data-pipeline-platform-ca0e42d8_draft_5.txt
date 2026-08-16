@@ -1,0 +1,13 @@
+Subject: Case study: Real-Time Data Pipeline Platform in Data Engineering
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Data Engineering client achieved $22M savings in 18 months using Real-Time Data Pipeline Platform. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Real-Time Data Pipeline Platform
+Industry: Data Engineering
+URL: https://ziontechgroup.com/services/real-time-data-pipeline-platform-ca0e42d8
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

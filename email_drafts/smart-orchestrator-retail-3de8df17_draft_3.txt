@@ -1,0 +1,13 @@
+Subject: Quick question about Smart orchestrator-retail
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Smart orchestrator-retail specifically for retail challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Smart orchestrator-retail
+Industry: retail
+URL: https://ziontechgroup.com/services/smart-orchestrator-retail-3de8df17
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

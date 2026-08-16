@@ -1,0 +1,13 @@
+Subject: Transform your gRPC with gRPC AI-Powered Error Tracking
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+Hi, I noticed you\'re in gRPC. gRPC AI-Powered Error Tracking has helped companies achieve 45% faster processing and $18M+ annual savings. Would you be open to a 15-min demo?
+
+---
+Service: gRPC AI-Powered Error Tracking
+Industry: gRPC
+URL: https://ziontechgroup.com/services/grpc-ai-powered-error-tracking-ec05ee68
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

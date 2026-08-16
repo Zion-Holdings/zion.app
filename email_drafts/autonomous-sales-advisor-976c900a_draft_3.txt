@@ -1,0 +1,13 @@
+Subject: Quick question about Autonomous Sales Advisor
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Autonomous Sales Advisor specifically for automotive challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Autonomous Sales Advisor
+Industry: automotive
+URL: https://ziontechgroup.com/services/autonomous-sales-advisor-976c900a
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

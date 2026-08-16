@@ -1,0 +1,13 @@
+Subject: AI solution for Cloud - Config Sync
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+Most Cloud companies waste 30% of their time on manual processes. Config Sync automates this with zero human intervention. Can I show you how?
+
+---
+Service: Config Sync
+Industry: Cloud
+URL: https://ziontechgroup.com/services/config-sync
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

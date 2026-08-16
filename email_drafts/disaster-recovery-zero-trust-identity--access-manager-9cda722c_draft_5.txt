@@ -1,0 +1,13 @@
+Subject: Case study: Disaster Recovery Zero-Trust Identity & Access Manager in Forestry
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Forestry client achieved $22M savings in 18 months using Disaster Recovery Zero-Trust Identity & Access Manager. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Disaster Recovery Zero-Trust Identity & Access Manager
+Industry: Forestry
+URL: https://ziontechgroup.com/services/disaster-recovery-zero-trust-identity--access-manager-9cda722c
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

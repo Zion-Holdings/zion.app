@@ -1,0 +1,13 @@
+Subject: Case study: Machine Learning Generator in finance
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A finance client achieved $22M savings in 18 months using Machine Learning Generator. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Machine Learning Generator
+Industry: finance
+URL: https://ziontechgroup.com/services/machine-learning-generator-2a773c
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

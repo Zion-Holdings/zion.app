@@ -1,0 +1,13 @@
+Subject: Case study: AI Model Monitor in Ml Ops
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A ML Ops client achieved $22M savings in 18 months using AI Model Monitor. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: AI Model Monitor
+Industry: ML Ops
+URL: https://ziontechgroup.com/services/ai-model-monitor-3c90ce77
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

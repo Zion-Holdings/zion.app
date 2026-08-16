@@ -1,0 +1,13 @@
+Subject: API Response Normalizer - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Data Engineering teams. API Response Normalizer typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: API Response Normalizer
+Industry: Data Engineering
+URL: https://ziontechgroup.com/services/api-response-normalizer
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---
