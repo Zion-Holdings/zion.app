@@ -30,7 +30,8 @@
     "types": [
       "node"
     ],
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "dynamicParams": false
   },
   "include": [
     "**/*.ts",
@@ -41,6 +42,7 @@
   ],
   "exclude": [
     "node_modules",
+    "out",
     "src",
     "zion.app",
     "apps",
@@ -51,6 +53,7 @@
     "**/*.spec.*",
     "tools",
     "utils",
-    "llama.cpp/**"
+    "llama.cpp/**",
+    "app/services/*/"
   ]
 }

@@ -100,3 +100,4 @@ app/data/*.bak
 # Auto-generated route pages (build artifacts, not source)
 app/routes/
 app/zion-ai-*/**
+*.tsbuildinfo
