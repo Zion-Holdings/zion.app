@@ -2,6 +2,7 @@
 import path from 'node:path';
 
 const nextConfig = {
+  turbopack: {},
   output: 'export',
   outputFileTracingRoot: process.cwd(),
   basePath: '',

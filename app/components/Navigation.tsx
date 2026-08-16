@@ -8,6 +8,7 @@ import {
   SOLUTION_LINKS,
   RESOURCE_LINKS,
   FEATURED_AI_SERVICE_LINKS,
+  AI_LAB_LINKS,
   type NavigationLink,
 } from '../constants/navigation';
 import { CATEGORIES } from '../constants/categories';
