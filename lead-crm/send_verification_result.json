@@ -1,12 +1,12 @@
 {
   "send_count": 1,
-  "sent_to": "info@cloudi.ai",
+  "sent_to": "support@cloudi.ai",
   "subject": "Parceria em Cloud Finops — Zion Tech Group",
   "httpStatus": 200,
-  "message_id": "1a00aaf36e3bb2c6",
-  "thread_id": "1a00aaf36e3bb2c6",
+  "message_id": "1a00ab0099d590a5",
+  "thread_id": "1a00ab0099d590a5",
   "liveSentCheck": true,
   "note": "verified_via_fallback_probe",
   "error": null,
-  "fallbackProbeMessageId": "1a00aaf36e3bb2c6"
+  "fallbackProbeMessageId": "1a00ab0099d590a5"
 }
