@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Driven Human Resources Optimization Suite - Zion Tech Group",
-  description: "Industry-specific AI solution that optimizes human resources operations and decision-making processes.",
+  description: "Industry-specific AI solution that optimizes human resources operations, supply chains, and decision-making processes. Delivers measurable improvements in effic",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-driven-human-resources-optimization-suite-e68433c1`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI-Driven Human Resources Optimization Suite</h1>
-        <p className="text-lg text-gray-300 mb-8">Industry-specific AI solution that optimizes human resources operations and decision-making processes.</p>
+        <p className="text-lg text-gray-300 mb-8">Industry-specific AI solution that optimizes human resources operations, supply chains, and decision-making processes. Delivers measurable improvements in efficiency and profitability.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
