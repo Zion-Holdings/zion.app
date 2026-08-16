@@ -708,3 +708,4 @@
 {"ts": "2026-08-16T13:07:37.987526+00:00", "to": "hello@cloudi.co", "subject": "Parceria em Cloud Finops — Zion Tech Group", "message_id": "1a00aaf54cd1019b", "thread_id": "1a00aaf54cd1019b", "provider": "gmail_api", "status": "sent"}
 {"ts": "2026-08-16T13:07:45.615174+00:00", "to": "press@cloudi.co", "subject": "Parceria em Cloud Finops — Zion Tech Group", "message_id": "1a00aaf72017809c", "thread_id": "1a00aaf72017809c", "provider": "gmail_api", "status": "sent"}
 {"ts": "2026-08-16T13:08:23.559879+00:00", "to": "support@cloudi.ai", "subject": "Parceria em Cloud Finops — Zion Tech Group", "message_id": "1a00ab0099d590a5", "thread_id": "1a00ab0099d590a5", "provider": "gmail_api", "status": "sent"}
+{"event": "run", "status": "no_send_rate_limited", "timestamp": "2026-08-16T20:53:22.762064Z", "send_count": 0, "note": "HTTP 429 rate limit", "batch_file": "outreach_next_wave.json", "batch_ready_count": 379, "to": null, "subject": null}

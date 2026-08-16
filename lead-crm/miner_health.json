@@ -1,39 +1,29 @@
 {
-  "ts": "2026-08-16T12:55:44.443634+00:00",
-  "queries_run": 12,
+  "ts": "2026-08-16T20:58:01.147071+00:00",
+  "queries_run": 13,
   "contacts_found": 0,
   "new_leads_added": 0,
-  "elapsed_s": 113.213,
-  "queries_per_second": 0.106,
-  "avg_query_s": 9.4343,
-  "max_query_s": 10.5513,
-  "status": "send_complete",
+  "elapsed_s": 110.451,
+  "queries_per_second": 0.1177,
+  "avg_query_s": 9.1619,
+  "max_query_s": 10.2414,
+  "status": "ok",
   "high_signal_leads": 0,
   "lead_quality_ratio": null,
   "rolling": {
     "last_5_queries": [
-      10.199501146038529,
-      3.6410802280297503,
-      10.049308762012515,
-      10.025243301002774,
-      10.436691839015111
+      9.449590031988919,
+      3.7072879589977674,
+      9.832038493012078,
+      9.373821571003646,
+      8.860447685990948
     ],
     "last_5_qps": [
-      0.098,
-      0.2746,
-      0.0995,
-      0.0997,
-      0.0958
+      0.1058,
+      0.2697,
+      0.1017,
+      0.1067,
+      0.1129
     ]
-  },
-  "send": {
-    "ts": "2026-08-16T12:55:11.815999+00:00",
-    "send_count": 15,
-    "skipped_templates": 0,
-    "successes": 15,
-    "failures": 0,
-    "llm_provider": "template",
-    "llm_model": "deterministic-template-v1",
-    "note": "All emails sent via Gmail API using deterministic-template fallback (no LLM API keys configured). miner_health.json updated manually post-send because send_outreach_batch.py does not."
   }
 }
