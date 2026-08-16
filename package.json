@@ -6,7 +6,7 @@
   "packageManager": "npm@10.9.8",
   "scripts": {
     "dev": "next dev",
-    "build": "next build --webpack",
+    "build": "next build",
     "build:ci": "node scripts/build-wrapper.cjs",
     "build:check": "npm run type-check && node scripts/build-wrapper.cjs",
     "start": "next start",
@@ -29,7 +29,7 @@
     "test": "jest --passWithNoTests",
     "test:ci": "jest --ci --coverage --watchAll=false --passWithNoTests",
     "build-storybook": "storybook build",
-    "build:win": "node scripts/windows-build-guard.cjs && next build --webpack",
+    "build:win": "node scripts/windows-build-guard.cjs && next build",
     "deploy:verify": "node scripts/verify-deploy.cjs",
     "rsc:guard": "echo 'rsc:guard ok'",
     "lighthouse:production": "npx lighthouse https://ziontechgroup.com --chrome-flags='--headless --no-sandbox --disable-gpu' --output=json --output-path=automation/reports/lighthouse-production-latest.json",
