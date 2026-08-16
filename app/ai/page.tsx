@@ -3,10 +3,22 @@ import type { Metadata } from 'next';
 import { ArrowRight, Cog, Search } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'AI Lab',
+  title: 'AI',
   description:
-    'Explore Zion\'s AI Lab — interactive tools and configurators for autonomous AI solutions and architecture planning.',
-  alternates: { canonical: '/ai' },};
+    "Explore Zion's AI services and interactive tools — applied AI capabilities built for enterprise scale, governance, and measurable ROI.",
+  alternates: { canonical: '/ai/' },
+  openGraph: {
+    title: 'AI — Zion Tech Group',
+    description: "Enterprise AI services and interactive tools from Zion Tech Group.",
+    url: 'https://ziontechgroup.com/ai/',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI — Zion Tech Group',
+    description: "Enterprise AI services and interactive tools from Zion Tech Group.",
+  },
+};
 
 const tools = [
   {
