@@ -1,10 +1,9 @@
 // app/services-explorer/page.tsx — Interactive Service Explorer
 'use client';
 
+import PageWrapper from '@/components/PageWrapper';
 import { useState, useEffect, useMemo } from 'react';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
-
+import Link from 'next/link';
 import { allServices } from '@/data/servicesData';
 import type { Service } from '@/data/servicesData';
 import type { Metadata } from 'next';
@@ -70,10 +69,8 @@ export default function ServicesExplorerPage() {
   }, [services, cat, sort, q]);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
-      <Navigation />
-      <main className="min-h-screen bg-slate-950 py-20">
-        <div className="container-page">
+    <PageWrapper>
+      <div className="container-page">
         <a href="/" className="text-purple-400 text-sm hover:text-purple-300 transition">← Home</a>
 
         <div className="mt-8 mb-2">
@@ -180,8 +177,6 @@ export default function ServicesExplorerPage() {
           </div>
         )}
       </div>
-      </main>
-      <Footer />
-    </div>
+    </PageWrapper>
   );
 }

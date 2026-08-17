@@ -1,5 +1,4 @@
-// app/proposals/page.tsx — Saved Proposals Viewer
-'use client';
+import PageWrapper from '@/components/PageWrapper';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -38,14 +37,14 @@ export default function ProposalsPage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen bg-slate-950 py-20">
+      <PageWrapper>
         <div className="container-page text-center text-slate-400">Loading proposals...</div>
-      </main>
+      </PageWrapper>
     );
   }
 
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <PageWrapper>
       <div className="container-page">
         <h1 className="text-4xl font-bold text-white mb-2">Your Proposals</h1>
         <p className="section-subheading">View and manage your service proposals</p>
@@ -117,6 +116,6 @@ export default function ProposalsPage() {
           </p>
         </section>
       </div>
-    </main>
+    </PageWrapper>
   );
 }

@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 
 'use client';
 
+import PageWrapper from '@/components/PageWrapper';
 import { useEffect, useState } from 'react';
 
 export default function StatusPage() {
@@ -19,7 +20,7 @@ export default function StatusPage() {
       .catch(() => setUp(false));
   }, []);
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <PageWrapper>
       <div className="container-page">
         <h1 className="text-4xl font-bold text-white mb-4">Site Status</h1>
         <p className="text-slate-300 mb-6">
@@ -29,6 +30,6 @@ export default function StatusPage() {
           For immediate assistance contact <a href="mailto:kleber@ziontechgroup.com" className="text-purple-400 hover:text-purple-300">kleber@ziontechgroup.com</a> or call <a href="tel:+13024640950" className="text-purple-400 hover:text-purple-300">+1 302 464 0950</a>.
         </p>
       </div>
-    </main>
+    </PageWrapper>
   );
 }

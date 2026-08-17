@@ -35,7 +35,6 @@ export default function PressPage() {
             ))}
           </div>
         </div>
-      </main>
-    </PageWrapper>
+      </PageWrapper>
   );
 }

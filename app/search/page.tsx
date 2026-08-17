@@ -1,5 +1,6 @@
 'use client';
 
+import PageWrapper from '@/components/PageWrapper';
 import { useState } from 'react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -26,7 +27,7 @@ export default function SearchPage() {
   const filtered = SERVICES.filter((s) => s.title.toLowerCase().includes(query.toLowerCase()) || s.category.toLowerCase().includes(query.toLowerCase()));
 
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <PageWrapper>
       <div className="container-page">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Search Services</h1>
         <p className="text-slate-400 mb-8">Find the right service for your business.</p>
@@ -45,7 +46,6 @@ export default function SearchPage() {
             </Link>
           ))}
         </div>
-      </div>
-    </main>
+      </PageWrapper>
   );
 }

@@ -1,3 +1,4 @@
+import PageWrapper from '@/components/PageWrapper';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -37,7 +38,7 @@ const roadmapItems = [
 
 export default function PublicRoadmapPage() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white py-20">
+    <PageWrapper>
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-purple-400">
@@ -79,7 +80,6 @@ export default function PublicRoadmapPage() {
             We read every request. Email us at kleber@ziontechgroup.com with your suggestion.
           </p>
         </div>
-      </div>
-    </main>
+      </PageWrapper>
   );
 }
