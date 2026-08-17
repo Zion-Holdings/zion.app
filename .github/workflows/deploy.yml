@@ -40,6 +40,9 @@ jobs:
           if [ -d docs ]; then
             cp -R docs/. out/_support/
           fi
+          if [ -d public ]; then
+            cp -R public/. out/
+          fi
 
   deploy:
     environment:
