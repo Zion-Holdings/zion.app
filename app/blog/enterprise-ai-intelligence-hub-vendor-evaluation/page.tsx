@@ -23,7 +23,7 @@ export default function Page() {
   
 
 return (
-    <PageTemplate
+    <StandardPage
       title="Enterprise AI Intelligence Hub: vendor evaluation | Zion Tech Group"
       description="Enterprise AI Intelligence Hub: vendor evaluation"
       canonical="/blog/enterprise-ai-intelligence-hub-vendor-evaluation/"
@@ -87,6 +87,6 @@ For enterprise ai intelligence hub: vendor evaluation: pick one workflow, assign
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
-    </PageTemplate>
+    </StandardPage>
   );
 }

@@ -23,7 +23,7 @@ export default function Page() {
   
 
 return (
-    <PageTemplate
+    <StandardPage
       title="Automated AI Reporting: operations handbook | Zion Tech Group"
       description="Automated AI Reporting: operations handbook"
       canonical="/blog/automated-ai-reporting-operations-handbook/"
@@ -87,6 +87,6 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
-    </PageTemplate>
+    </StandardPage>
   );
 }

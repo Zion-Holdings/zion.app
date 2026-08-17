@@ -23,7 +23,7 @@ export default function Page() {
   
 
 return (
-    <PageTemplate
+    <StandardPage
       title="Enterprise Backup DR: common mistakes | Zion Tech Group"
       description="Enterprise Backup DR: common mistakes"
       canonical="/blog/enterprise-backup-dr-common-mistakes/"
@@ -84,6 +84,6 @@ If this guide matches your enterprise backup dr: common mistakes initiative, the
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
-    </PageTemplate>
+    </StandardPage>
   );
 }

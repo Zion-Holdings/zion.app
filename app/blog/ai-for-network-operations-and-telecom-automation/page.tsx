@@ -21,7 +21,7 @@ export default function BlogPost() {
   
 
 return (
-    <PageTemplate
+    <StandardPage
       title="AI for Network Operations and Telecom Automation"
       description=""
       canonical="/blog/ai-for-network-operations-and-telecom-automation/"
@@ -117,6 +117,6 @@ return (
           </footer>
         </article>
       </div>
-    </PageTemplate>
+    </StandardPage>
   );
 }

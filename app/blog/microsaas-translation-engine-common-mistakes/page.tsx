@@ -23,7 +23,7 @@ export default function Page() {
   
 
 return (
-    <PageTemplate
+    <StandardPage
       title="MicroSaaS Translation Engine: common mistakes | Zion Tech Group"
       description="MicroSaaS Translation Engine: common mistakes"
       canonical="/blog/microsaas-translation-engine-common-mistakes/"
@@ -87,6 +87,6 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
-    </PageTemplate>
+    </StandardPage>
   );
 }

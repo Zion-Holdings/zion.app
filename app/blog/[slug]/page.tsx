@@ -29,7 +29,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <PageTemplate
+    <StandardPage
       title={params.slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
       description="Read the full article."
       canonical={`https://ziontechgroup.com/blog/${params.slug}/`}
@@ -52,6 +52,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           ← Back to Blog
         </Link>
       </div>
-    </PageTemplate>
+    </StandardPage>
   );
 }

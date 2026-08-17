@@ -21,7 +21,7 @@ export default function BlogPost() {
   
 
 return (
-    <PageTemplate
+    <StandardPage
       title="AI for Data Engineering and Pipeline Automation"
       description=""
       canonical="/blog/ai-for-data-engineering-and-pipeline-automation/"
@@ -117,6 +117,6 @@ return (
           </footer>
         </article>
       </div>
-    </PageTemplate>
+    </StandardPage>
   );
 }

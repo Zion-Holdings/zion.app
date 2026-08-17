@@ -23,7 +23,7 @@ export default function Page() {
   
 
 return (
-    <PageTemplate
+    <StandardPage
       title="Autonomous Code Deployment: automation roadmap | Zion Tech Group"
       description="Autonomous Code Deployment: automation roadmap"
       canonical="/blog/autonomous-code-deployment-automation-roadmap/"
@@ -87,6 +87,6 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
-    </PageTemplate>
+    </StandardPage>
   );
 }

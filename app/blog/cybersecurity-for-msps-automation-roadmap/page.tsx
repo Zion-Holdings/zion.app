@@ -23,7 +23,7 @@ export default function Page() {
   
 
 return (
-    <PageTemplate
+    <StandardPage
       title="Cybersecurity for MSPs: automation roadmap | Zion Tech Group"
       description="Cybersecurity for MSPs: automation roadmap"
       canonical="/blog/cybersecurity-for-msps-automation-roadmap/"
@@ -87,6 +87,6 @@ For cybersecurity for msps: automation roadmap: pick one workflow, assign owners
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
-    </PageTemplate>
+    </StandardPage>
   );
 }

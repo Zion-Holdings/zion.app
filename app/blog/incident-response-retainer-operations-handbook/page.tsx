@@ -23,7 +23,7 @@ export default function Page() {
   
 
 return (
-    <PageTemplate
+    <StandardPage
       title="Incident Response Retainer: operations handbook | Zion Tech Group"
       description="Incident Response Retainer: operations handbook"
       canonical="/blog/incident-response-retainer-operations-handbook/"
@@ -87,6 +87,6 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
-    </PageTemplate>
+    </StandardPage>
   );
 }

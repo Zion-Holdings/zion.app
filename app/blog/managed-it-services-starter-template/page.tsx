@@ -23,7 +23,7 @@ export default function Page() {
   
 
 return (
-    <PageTemplate
+    <StandardPage
       title="Managed IT Services: starter template | Zion Tech Group"
       description="Managed IT Services: starter template"
       canonical="/blog/managed-it-services-starter-template/"
@@ -84,6 +84,6 @@ If this guide matches your managed it services: starter template initiative, the
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
-    </PageTemplate>
+    </StandardPage>
   );
 }
