@@ -1,36 +1,50 @@
-import Breadcrumb from '@/components/Breadcrumb';
+import type { Metadata } from 'next';
 import Link from 'next/link';
+import StandardPage from '@/components/StandardPage';
 
-export const metadata = {
-  title: 'Agents Monitoring | Zion Tech Group',
-  description: 'Monitor AI agents, automations, and operational telemetry in one place.'
+export const metadata: Metadata = {
+  title: 'AI Agents Monitoring | Zion Tech Group',
+  description: 'Monitoring, observability, and reliability dashboard for AI agents.',
+  openGraph: {
+    title: 'AI Agents Monitoring | Zion Tech Group',
+    description: 'Operational visibility for AI agents and automated workflows.',
+    url: 'https://ziontechgroup.com/agents-monitoring/',
+    type: 'website',
+  },
+  alternates: { canonical: '/agents-monitoring/' },
 };
 
-export default function AgentsMonitoring() {
+export default function AgentsMonitoringPage() {
   return (
-    <div>
-      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Agents Monitoring' }]} />
-      <div className="container">
-        <h1>Agents Monitoring</h1>
-        <p className="lead">Unified visibility into automation agents, workflows, and system health.</p>
-        <div className="grid">
-          <div className="card">
-            <h3>AI Agents</h3>
-            <p>Track active automations, failures, and throughput.</p>
-            <Link href="/services/ai-chatbot-builder/">Explore AI Chatbot Builder</Link>
-          </div>
-          <div className="card">
-            <h3>Ops Telemetry</h3>
-            <p>Monitor alerts, incidents, and remediation status.</p>
-            <Link href="/services/ai-observability/">Explore Observability</Link>
-          </div>
-          <div className="card">
-            <h3>Security Signals</h3>
-            <p>Review detections, triage queues, and response metrics.</p>
-            <Link href="/services/it-managed-soc/">Explore SOC Automation</Link>
-          </div>
-        </div>
+    <StandardPage
+      title="AI Agents Monitoring"
+      subtitle="Track agent health, task throughput, latency, and failure modes in one place."
+      breadcrumbItems={[
+        { label: 'Home', href: '/' },
+        { label: 'AI Agents Monitoring' },
+      ]}
+      actions={[
+        { label: 'Start a project', href: '/contact/', style: 'primary' },
+        { label: 'Browse AI services', href: '/services?category=ai', style: 'secondary' },
+      ]}
+    >
+      <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto">
+        <Link href="/services?category=ai" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Observability</h3>
+          <p className="text-slate-400 text-sm">Traces, metrics, and logs for agentic systems.</p>
+          <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
+        </Link>
+        <Link href="/services?category=automation" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Automation</h3>
+          <p className="text-slate-400 text-sm">Runbooks, auto-remediation, and alert routing.</p>
+          <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
+        </Link>
+        <Link href="/services?category=security" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+          <h3 className="text-white font-semibold mb-2">Security</h3>
+          <p className="text-slate-400 text-sm">Identity, policy, and incident-response controls.</p>
+          <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
+        </Link>
       </div>
-    </div>
+    </StandardPage>
   );
 }

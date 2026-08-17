@@ -1,39 +1,18 @@
+// app/components/AccessibilityEnhancer.tsx
 'use client';
 
-import { ReactNode, useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
-export default function AccessibilityEnhancer({ children }: { children: ReactNode }) {
-  const [mounted, setMounted] = useState(false);
-
+export default function AccessibilityEnhancer({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    setMounted(true);
+    const main = document.getElementById('main-content');
+    if (main) {
+      const prev = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+      main.setAttribute('tabIndex', '-1');
+      main.focus();
+      if (prev instanceof HTMLElement) prev.focus();
+    }
   }, []);
 
-  return (
-    <>
-      {mounted && (
-        <a
-          href="#main-content"
-          className="skip-link"
-          aria-label="Skip to main content"
-        >
-          Skip to main content
-        </a>
-      )}
-      {children}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            // Keyboard navigation helpers
-            document.addEventListener('keydown', function(e) {
-              if (e.key === 'Tab') document.body.classList.add('keyboard-nav');
-            });
-            document.addEventListener('mousedown', function() {
-              document.body.classList.remove('keyboard-nav');
-            });
-          `,
-        }}
-      />
-    </>
-  );
+  return <>{children}</>;
 }

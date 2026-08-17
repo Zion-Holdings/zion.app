@@ -1,121 +1,69 @@
-import React, { ReactNode } from 'react';
-import type { Metadata, Viewport } from 'next';
-import PageShell from './components/PageShell';
-import EnhancedSkipLink from './components/EnhancedSkipLink';
-import StickyMobileCTA from './components/StickyMobileCTA';
-import Analytics from './components/Analytics';
-import CtaTracking from './components/CtaTracking';
-import BackToTop from './components/BackToTop';
-import ReadingProgressBar from './components/ReadingProgressBar';
-import AIChatWidget from './components/AIChatWidget';
-import ServiceWorkerRegistration from './components/ServiceWorkerRegistration';
-import StickyDonateBanner from './components/StickyDonateBanner';
-import ChatWidget from './components/ChatWidget';
-import CookieConsentBanner from './components/CookieConsentBanner';
-import AiSolutionsArchitectWidget from './components/ai/AiSolutionsArchitectWidget';
-import AIExperienceLoader from './components/AIExperienceLoader';
-import ErrorTracker from './components/ErrorTracker';
-import FieldPerformanceCollector from './components/FieldPerformanceCollector';
-import FloatingAgentStatus from './components/FloatingAgentStatus';
-import { AutoJsonLd } from './hooks/useAutoJsonLdPage';
-import GlobalErrorBoundary from './GlobalErrorBoundary';
-import { siteConfig } from './lib/siteConfig';
 import './globals.css';
-
-export const siteUrl = 'https://ziontechgroup.com';
+import Navigation from './components/Navigation';
+import Footer from './components/Footer';
+import AccessibilityEnhancer from './components/AccessibilityEnhancer';
 
 export const metadata = {
-  metadataBase: new URL(siteConfig.url),
-  title: { default: siteConfig.name, template: `%s | ${siteConfig.name}` },
-  description: siteConfig.description,
-  keywords: [...siteConfig.keywords],
-  authors: [{ name: siteConfig.name, url: siteConfig.url }],
-  creator: siteConfig.name,
-  publisher: siteConfig.name,
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
-  icons: { icon: '/favicon.ico', apple: '/icon.svg' },
-  manifest: '/manifest.json',
-  viewport: { width: 'device-width', initialScale: 1, maximumScale: 5, userScalable: true },
-  formatDetection: { telephone: false, address: false, email: false },
-  appleWebApp: { capable: true, title: siteConfig.name },
-  alternates: { canonical: '/' },
-  openGraph: { type: 'website', locale: 'en_US', url: siteConfig.url, title: siteConfig.name, description: siteConfig.description, siteName: siteConfig.name },
-  twitter: { card: 'summary_large_image', title: siteConfig.name, description: siteConfig.description },
-};
-
-export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 5,
-  userScalable: true,
-  colorScheme: 'dark light',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#3b82f6' },
-    { media: '(prefers-color-scheme: dark)', color: '#0b1221' },
-  ],
+  title: 'Zion Tech Group',
+  description: 'AI-Powered Technology Solutions',
 };
 
 export default function RootLayout({
   children,
 }: {
-  children: ReactNode;
+  children: React.ReactNode;
 }) {
   return (
-    <>
-      {/* JSON-LD: Organization + aggregate rating + social profiles */}
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Organization',
-            name: 'Zion Tech Group',
-            url: 'https://ziontechgroup.com',
-            email: 'kleber@ziontechgroup.com',
-            telephone: '+1 302 464 0950',
-            address: '364 E Main St STE 1008, Middletown, DE 19709',
-            sameAs: [
-              'https://github.com/zion-support',
-              'https://www.linkedin.com/company/ziontechgroup',
-              'https://x.com/ziontechgroup',
-            ],
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ratingValue: '4.8',
-              bestRating: '5',
-              worstRating: '1',
-              reviewCount: '200',
-            },
-          }),
-        }}
-      />
-      <AutoJsonLd />
-      <html lang="en" dir="ltr">
-        <head>
-          <link rel="preconnect" href="https://www.googletagmanager.com" />
-          <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        </head>
-        <body className="antialiased font-sans">
-          <Analytics />
-          <CtaTracking />
-          <PageShell>
-            <EnhancedSkipLink />
-            <ReadingProgressBar />
-            <GlobalErrorBoundary>
+    <html lang="en">
+      <body className="bg-slate-950 text-white min-h-screen">
+        <AccessibilityEnhancer>
+          <a
+            href="#main-content"
+            className="skip-to-content"
+            style={{
+              position: 'absolute',
+              left: '-9999px',
+              top: 'auto',
+              width: '1px',
+              height: '1px',
+              overflow: 'hidden',
+            }}
+            onFocus={(event) => {
+              const target = event.currentTarget;
+              target.style.left = '0';
+              target.style.top = '0';
+              target.style.width = 'auto';
+              target.style.height = 'auto';
+              target.style.overflow = 'visible';
+              target.style.zIndex = '9999';
+              target.style.padding = '0.5rem 1rem';
+              target.style.background = '#7c3aed';
+              target.style.color = '#fff';
+              target.style.borderRadius = '0 0 0.5rem 0';
+              target.style.textDecoration = 'none';
+              target.style.fontWeight = '600';
+            }}
+            onBlur={(event) => {
+              const target = event.currentTarget;
+              target.style.left = '-9999px';
+              target.style.top = 'auto';
+              target.style.width = '1px';
+              target.style.height = '1px';
+              target.style.overflow = 'hidden';
+              target.style.zIndex = '';
+            }}
+          >
+            Skip to content
+          </a>
+          <div className="min-h-screen flex flex-col">
+            <Navigation />
+            <main id="main-content" className="flex-1 relative z-10">
               {children}
-            </GlobalErrorBoundary>
-          </PageShell>
-          <BackToTop />
-          <AIChatWidget />
-          <AIExperienceLoader />
-          <StickyMobileCTA />
-          <CookieConsentBanner />
-          <ErrorTracker />
-          <FieldPerformanceCollector />
-          <FloatingAgentStatus />
-        </body>
-      </html>
-    </>
+            </main>
+            <Footer />
+          </div>
+        </AccessibilityEnhancer>
+      </body>
+    </html>
   );
 }

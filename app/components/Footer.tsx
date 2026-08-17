@@ -1,184 +1,35 @@
+// app/components/Footer.tsx
 'use client';
 
-import React from 'react';
 import Link from 'next/link';
-import { CONTACT_INFO, SOCIAL_LINKS } from '../utils/seoConstants';
 
-interface FooterLink {
-  name: string;
-  href: string;
-  external?: boolean;
-}
-
-const FOOTER_LINKS: { title: string; links: FooterLink[] }[] = [
-  {
-    title: 'Services',
-    links: [
-      { name: 'AI Services', href: '/ai' },
-      { name: 'AI Lab', href: '/ai-lab' },
-      { name: 'All Services', href: '/services' },
-      { name: 'IT Services', href: '/it-consulting-services' },
-      { name: 'AI Consulting', href: '/ai-consulting-services' },
-      { name: 'Micro-SaaS Products', href: '/micro-saas' },
-      { name: 'Cloud & DevOps', href: '/services/?category=cloud' },
-      { name: 'Security', href: '/services/?category=security' },
-      { name: 'Data & Analytics', href: '/services/?category=data' },
-      { name: 'Blockchain & Web3', href: '/services/?category=blockchain' },
-      { name: 'IoT & Edge', href: '/services/?category=iot' },
-      { name: 'Pricing', href: '/pricing' },
-      { name: 'AI Agent Dashboard', href: '/dashboard' },
-      { name: 'Agent Monitoring', href: '/agents-monitoring' },
-    ],
-  },
-  {
-    title: 'Industries',
-    links: [
-      { name: 'Healthcare', href: '/industries/healthcare' },
-      { name: 'Finance', href: '/industries/finance' },
-      { name: 'Retail', href: '/industries/retail' },
-      { name: 'Manufacturing', href: '/industries/manufacturing' },
-      { name: 'Telecom', href: '/industries/telecommunications' },
-      { name: 'Energy', href: '/industries/energy-utilities' },
-      { name: 'Logistics', href: '/industries/logistics' },
-      { name: 'Gaming', href: '/industries/gaming-interactive' },
-      { name: 'Real Estate', href: '/industries/real-estate' },
-      { name: 'Legal Tech', href: '/industries/legal-compliance' },
-    ],
-  },
-  {
-    title: 'Company',
-    links: [
-      { name: 'About Us', href: '/about' },
-      { name: 'Blog', href: '/blog' },
-      { name: 'Case Studies', href: '/case-studies' },
-      { name: 'Testimonials', href: '/testimonials' },
-      { name: 'Careers', href: '/careers' },
-      { name: 'Partners', href: '/partners' },
-      { name: 'Client Portal', href: '/portal' },
-      { name: 'Press', href: '/press' },
-      { name: 'Industry Solutions', href: '/industries' },
-    ],
-  },
-  {
-    title: 'Resources',
-    links: [
-      { name: 'Agent Monitoring', href: '/agents-monitoring' },
-      { name: 'Academy', href: '/academy' },
-      { name: 'AI Blog', href: '/blog' },
-      { name: 'FAQ', href: '/faq' },
-      { name: 'Help Center', href: '/help' },
-      { name: 'Status Page', href: '/status' },
-      { name: 'System Status', href: '/status/service-health' },
-    ],
-  },
-  {
-    title: 'Legal',
-    links: [
-      { name: 'Privacy Policy', href: '/privacy' },
-      { name: 'Terms of Service', href: '/terms' },
-      { name: 'Cookie Policy', href: '/cookies' },
-      { name: 'SLA', href: '/sla' },
-    ],
-  },
+const FOOTER_LINKS = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services/' },
+  { label: 'Products', href: '/products/' },
+  { label: 'Solutions', href: '/solutions/' },
+  { label: 'Use Cases', href: '/use-cases/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'FAQ', href: '/faq/' },
+  { label: 'About', href: '/about/' },
+  { label: 'Testimonials', href: '/testimonials/' },
 ];
 
-const Footer: React.FC = () => {
-  const currentYear = new Date().getFullYear();
-
+export default function Footer() {
   return (
-    <footer id="site-footer" className="bg-slate-950 border-t border-slate-800/60">
-      <div className="container-page py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
-          {/* Company Info */}
-          <div className="lg:col-span-2 space-y-4">
-            <Link href="/" className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Zion Tech Group
+    <footer className="border-t border-slate-800 bg-slate-950">
+      <div className="container-page py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p className="text-sm text-slate-400">
+          &copy; {new Date().getFullYear()} Zion Tech Group. All rights reserved.
+        </p>
+        <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-slate-300">
+          {FOOTER_LINKS.map((link) => (
+            <Link key={link.href} href={link.href} className="hover:text-purple-400 transition">
+              {link.label}
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed">
-              Enterprise AI services, IT solutions, and Micro SAAS platforms — from machine learning
-              and cybersecurity to cloud infrastructure and automation.
-            </p>
-            <div className="flex space-x-4 pt-2">
-              <a href={SOCIAL_LINKS.linkedin} className="text-slate-400 hover:text-purple-400 transition-colors" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-12 5.373-12 12v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-              </a>
-              <a href={SOCIAL_LINKS.twitter} className="text-slate-400 hover:text-purple-400 transition-colors" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-              </a>
-              <a href={SOCIAL_LINKS.github} className="text-slate-400 hover:text-purple-400 transition-colors" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.407 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-              </a>
-            </div>
-          </div>
-
-          {/* Link Columns */}
-          {FOOTER_LINKS.map((column) => (
-            <div key={column.title} className="space-y-4">
-              <h4 className="text-sm font-semibold text-white uppercase tracking-wider">{column.title}</h4>
-              <ul className="space-y-2.5">
-                {column.links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-slate-400 hover:text-purple-400 text-sm transition-colors hover:translate-x-1 inline-block"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
           ))}
-
-          {/* Contact */}
-          <div className="space-y-4">
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider">Contact</h4>
-            <div className="space-y-3">
-              <a href={`mailto:${CONTACT_INFO.email}`} className="flex items-center gap-2 text-slate-400 hover:text-purple-400 text-sm transition-colors">
-                <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                {CONTACT_INFO.email}
-              </a>
-              <a href={`tel:${CONTACT_INFO.phone.replace(/\D/g, '')}`} className="flex items-center gap-2 text-slate-400 hover:text-purple-400 text-sm transition-colors">
-                <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                {CONTACT_INFO.phone}
-              </a>
-              <div className="flex items-start gap-2 text-slate-400 text-sm">
-                <svg className="w-4 h-4 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                <span>
-                  {CONTACT_INFO.address.street}<br />
-                  {CONTACT_INFO.address.city}, {CONTACT_INFO.address.state} {CONTACT_INFO.address.zipCode}
-                </span>
-              </div>
-              <a
-                href="https://calendly.com/kleber-ziontechgroup"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-600 text-white text-xs font-semibold hover:bg-blue-500 transition-colors mt-1"
-              >
-                📅 Book a Consultation
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="border-t border-slate-800/60 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-slate-500 text-sm">
-            © {currentYear} Zion Tech Group. All rights reserved.
-          </p>
-          <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-medium">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
-              </span>
-              Powered by AI Agents
-            </span>
-          </div>
-        </div>
+        </nav>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

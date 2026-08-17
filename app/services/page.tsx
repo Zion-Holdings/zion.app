@@ -1,37 +1,47 @@
 import type { Metadata } from 'next';
-import PageTemplate from '@/components/PageTemplate';
+import Link from 'next/link';
+import StandardPage from '@/components/StandardPage';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Services | Zion Tech Group',
-  description: 'End-to-end AI, cloud, and growth operations services: help desk automation, development acceleration, outreach, cost optimization, DevOps, fleet, observability, data, and more.',
-  alternates: { canonical: '/services' },
+  description: 'AI, IT, and Micro-SaaS services for enterprise automation, managed AI, cloud, security, data, and DevOps.',
+  openGraph: {
+    title: 'Services | Zion Tech Group',
+    description: 'Explore Zion Tech Group services across AI, IT, cloud, security, data, and automation.',
+    url: 'https://ziontechgroup.com/services/',
+    type: 'website',
+  },
+  alternates: { canonical: '/services/' },
 };
+
+const CATEGORIES = [
+  { key: 'ai', label: 'AI & Machine Learning', desc: 'Managed AI, LLM platforms, predictive systems, and autonomous workflows.' },
+  { key: 'it', label: 'IT & Infrastructure', desc: 'Cloud, DevOps, endpoint management, observability, and enterprise operations.' },
+  { key: 'security', label: 'Security & Compliance', desc: 'Threat detection, governance, identity, incident response, and compliance automation.' },
+  { key: 'data', label: 'Data & Analytics', desc: 'Pipelines, governance, forecasting, dashboards, and warehouse modernization.' },
+  { key: 'automation', label: 'Automation', desc: 'Workflow automation, RPA, support automation, and integration orchestration.' },
+  { key: 'micro-saas', label: 'Micro-SaaS', desc: 'Repeatable monetizable tools built on proven infrastructure and delivery patterns.' },
+];
 
 export default function ServicesPage() {
   return (
-    <PageTemplate
-      title="AI & IT Services"
-      description="Browse our catalog of 14,000+ AI and IT services across 30+ categories — from machine learning and cybersecurity to cloud infrastructure, automation, DevOps, micro-SaaS, and IoT."
-      category="Service Catalog"
-      heroIcon="🧩"
-      actions={[
-        { label: 'Browse All Categories', href: '/services', style: 'primary' },
-        { label: 'Get a Free Proposal', href: '/contact', style: 'secondary' },
-      ]}
+    <StandardPage
+      title="Services"
+      subtitle="Enterprise-grade services across AI, IT, security, data, and automation. Choose a category to see use cases and delivery patterns."
       breadcrumbItems={[
         { label: 'Home', href: '/' },
-        { label: 'Services', href: '/services' },
+        { label: 'Services' },
       ]}
-      layout="hero"
     >
-      <div className="max-w-4xl mx-auto">
-        <p className="text-slate-300 text-lg leading-relaxed mb-8">
-          Zion Tech Group offers transparent, real-time AI and IT services that scale — from machine learning and cybersecurity to cloud infrastructure and automation.
-        </p>
-        <p className="text-slate-300 text-lg leading-relaxed">
-          Browse our complete service catalog by category below, or use the search tools to find the right solution for your business.
-        </p>
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {CATEGORIES.map((category) => (
+          <Link key={category.key} href={`/services?category=${category.key}`} className="glass-card">
+            <h3 className="font-semibold text-white mb-2">{category.label}</h3>
+            <p className="text-slate-400 text-sm">{category.desc}</p>
+            <span className="text-purple-400 text-xs mt-3 inline-block">Browse services →</span>
+          </Link>
+        ))}
       </div>
-    </PageTemplate>
+    </StandardPage>
   );
 }

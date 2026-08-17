@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import PageTemplate from '@/components/PageTemplate';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'AI for Sales Automation and CRM Intelligence',
@@ -21,11 +21,8 @@ export default function BlogPost() {
   
 
 return (
-    <PageTemplate
+    <StandardPage
       title="AI for Sales Automation and CRM Intelligence"
-      description=""
-      canonical="/blog/ai-for-sales-automation-and-crm-intelligence/"
-      hero={{ variant: 'none' }}
       breadcrumbItems={[{ label: 'Home', href: '/' }, { label: "AI for Sales Automation and CRM Intelligence" }]}
     >
       <div className="max-w-3xl mx-auto px-4">
@@ -106,8 +103,8 @@ return (
             </p>
 
             <div className="text-center mt-12">
-              <Link href="/configurator/" className="inline-block btn-primary text-lg px-8 py-3">
-                Get Your Custom AI Strategy →
+              <Link href="/services" className="inline-block btn-primary text-lg px-8 py-3">
+                Explore Services →
               </Link>
             </div>
           </div>
@@ -117,6 +114,6 @@ return (
           </footer>
         </article>
       </div>
-    </PageTemplate>
+    </StandardPage>
   );
 }

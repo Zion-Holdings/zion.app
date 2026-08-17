@@ -29,8 +29,8 @@ def _gog_headers():
 
 
 def _send_request(req, timeout=30):
-    max_attempts = 5
-    base_wait = 6
+    max_attempts = 4
+    base_wait = 2
     last_err = None
     for attempt in range(1, max_attempts + 1):
         try:
@@ -483,7 +483,7 @@ def main():
                             'llm_provider': tailored.get('llm_provider'), 'llm_model': tailored.get('llm_model')})
         except Exception as e:
             outputs.append({'to': to, 'success': False, 'error': str(e)})
-        time.sleep(3.0)
+        time.sleep(0.25)
     print(json.dumps({'generatedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(),
                       'send_count': len(outputs), 'skipped_templates': skipped_templates,
                       'results': outputs}))

@@ -1,19 +1,16 @@
 // app/blog/[slug]/page.tsx — Dynamic blog post layout (fallback)
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import PageTemplate from '@/components/PageTemplate';
+import StandardPage from '@/components/StandardPage';
 import fs from 'fs';
 import path from 'path';
-import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Article Not Found | Zion Tech Group',
-  description: 'This blog post may have been moved or is no longer available.',
-  alternates: { canonical: '/blog/[slug]/' },
+export const metadata = {
+  title: 'Blog Post',
+  description: 'Read AI, IT, and automation insights from Zion Tech Group.',
+  alternates: { canonical: '/blog/' },
 };
 
-
-// Generate static params from actual blog post directories
 export async function generateStaticParams() {
   const blogDir = path.join(process.cwd(), 'app', 'blog');
   const entries = fs.readdirSync(blogDir, { withFileTypes: true });
@@ -37,11 +34,8 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <PageTemplate
+    <StandardPage
       title={params.slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-      description="Read the full article."
-      canonical={`https://ziontechgroup.com/blog/${params.slug}/`}
-      hero={{ variant: 'none' }}
       breadcrumbItems={[
         { label: 'Home', href: '/' },
         { label: 'Blog', href: '/blog/' },
@@ -60,6 +54,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           ← Back to Blog
         </Link>
       </div>
-    </PageTemplate>
+    </StandardPage>
   );
 }

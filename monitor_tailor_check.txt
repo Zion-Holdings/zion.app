@@ -1,7 +1,0 @@
-Traceback (most recent call last):
-  File "/data/data/com.termux/files/home/zion-support.github.io/scripts/outreach/minimal_high_frequency_monitor.py", line 11, in <module>
-    from commands.google_workspace import gog_headers, gmail_search, gmail_get, gmail_thread_get, gmail_get_or_create_label_id, gmail_batch_modify
-  File "/data/data/com.termux/files/home/zion-support.github.io/commands/google_workspace.py", line 1
-    <<<<<<< HEAD
-    ^^
-SyntaxError: invalid syntax

@@ -1,31 +1,27 @@
-import PageTemplate from '@/components/PageTemplate';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
-  title: 'Service Level Agreements | Zion Tech Group',
-  description: 'Our commitment to uptime, performance, and support response times.',
+  title: 'Service Level Agreement | Zion Tech Group',
+  description: 'Service level commitments for support, uptime, and incident response.',
+  openGraph: { title: 'SLA | Zion Tech Group', description: 'Service level commitments.', url: 'https://ziontechgroup.com/sla/', type: 'website' },
+  alternates: { canonical: '/sla/' },
 };
 
-export default function Page() {
+export default function SlaPage() {
   return (
-    <PageTemplate
-      title="Service Level Agreements"
-      description="Our commitment to uptime, performance, and support response times."
-      actions={[
-        { label: 'Pricing Plans', href: '/pricing', style: 'secondary' },
-        { label: 'Contact Sales', href: '/contact', style: 'secondary' },
-      ]}
-    >
-      <div className="mt-12">
-        <div className="p-6 rounded-xl bg-slate-800/50 border border-slate-700/50">
-          <h2 className="text-xl font-semibold text-white mb-3">Get Started Today</h2>
-          <p className="text-slate-400 mb-4">Contact our team for a free consultation.</p>
-          <div className="flex flex-wrap gap-4 text-sm">
-            <a href="tel:+130****0950" className="text-emerald-400">📞 +1 302 464 0950</a>
-            <a href="mailto:kleber@ziontechgroup.com" className="text-emerald-400">✉️ kleber@ziontechgroup.com</a>
-          </div>
+    <StandardPage title="Service Level Agreement" subtitle="Support, uptime, and incident-response commitments." breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'SLA' }]} actions={[{ label: 'Contact us', href: '/contact/', style: 'primary' }]}>
+      <div className="max-w-4xl mx-auto grid gap-6 md:grid-cols-2">
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 className="text-white font-semibold mb-2">Support hours</h3>
+          <p className="text-slate-400 text-sm">Business-hours and after-hours coverage by plan tier.</p>
+        </div>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 className="text-white font-semibold mb-2">Incident response</h3>
+          <p className="text-slate-400 text-sm">Severity-based response targets and escalation paths.</p>
         </div>
       </div>
-    </PageTemplate>
+    </StandardPage>
   );
 }

@@ -1,24 +1,40 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
-export const metadata = {
-  title: 'Micro-SaaS Services | Zion Tech Group',
-  description: 'Micro-SaaS solutions — appointment schedulers, CRMs, invoice tools, analytics dashboards, and more.',
-
+export const metadata: Metadata = {
+  title: 'Micro SaaS | Zion Tech Group',
+  description: 'Repeatable tools, automation products, and Micro SaaS offerings from Zion Tech Group.',
+  alternates: { canonical: '/micro-saas/' },
 };
 
-export default function MicroSaasPage() {
+export default function MicroSaaSPage() {
   return (
-    <main style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#020617' }}>
-      <div style={{ textAlign: 'center', padding: '2rem' }}>
-        <p style={{ color: '#94a3b8', fontSize: '1.1rem' }}>Redirecting to Micro-SaaS Services...</p>
-        <meta httpEquiv="refresh" content="0;url=/services/?category=micro-saas" />
-        <script dangerouslySetInnerHTML={{ __html: `window.location.replace('/services/?category=micro-saas');` }} />
-        <p style={{ marginTop: '1rem' }}>
-          <a href="/services/?category=micro-saas" style={{ color: '#a78bfa', textDecoration: 'underline' }}>
-            Click here if not redirected
-          </a>
-        </p>
+    <div className="max-w-5xl mx-auto px-6 py-16">
+      <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">Micro SaaS</h1>
+      <p className="text-slate-300 text-lg leading-relaxed mb-8">
+        Repeatable, monetizable tools built on proven infrastructure and real customer feedback.
+      </p>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 className="text-white font-semibold mb-2">Developer tools</h3>
+          <p className="text-slate-400 text-sm">Utilities, validators, and helpers that save time in daily workflows.</p>
+          <Link href="/tools" className="text-purple-300 text-xs font-semibold mt-3 inline-block">Tools →</Link>
+        </div>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 className="text-white font-semibold mb-2">Automation products</h3>
+          <p className="text-slate-400 text-sm">Self-service automations that reduce manual work without custom builds.</p>
+          <Link href="/services" className="text-purple-300 text-xs font-semibold mt-3 inline-block">Services →</Link>
+        </div>
+        <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+          <h3 className="text-white font-semibold mb-2">Go-to-market</h3>
+          <p className="text-slate-400 text-sm">Pricing, onboarding, and support patterns for repeatable SaaS delivery.</p>
+          <Link href="/contact" className="text-purple-300 text-xs font-semibold mt-3 inline-block">Talk to us →</Link>
+        </div>
       </div>
-    </main>
+      <div className="flex flex-col sm:flex-row gap-3 mt-10">
+        <Link href="/contact" className="btn-primary text-center">Talk to an Engineer</Link>
+        <Link href="/ai-services" className="btn-secondary text-center">AI Services</Link>
+      </div>
+    </div>
   );
 }

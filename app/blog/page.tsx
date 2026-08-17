@@ -1,308 +1,435 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
-import PageTemplate from '@/components/PageTemplate';
+import StandardPage from '@/components/StandardPage';
 
-const posts = [
-  {
-    slug: '5-proven-ai-automation-strategies-for-enterprise-workflow-optimization',
-    title: '5 Proven AI Automation Strategies for Enterprise Workflow Optimization',
-    topics: ['AI', 'Automation', 'Enterprise'],
-    intent: 'optimize enterprise workflows with AI automation',
-  },
-  {
-    slug: 'ai-agentic-workflow-automation-reduce-manual-work-hours',
-    title: 'Agentic Workflow Automation to Reduce Manual Work Hours',
-    topics: ['AI', 'Automation', 'Productivity'],
-    intent: 'reduce manual work with agentic workflow automation',
-  },
-  {
-    slug: 'ai-aiops-instant-response-and-remediation-workflows-for-it-leaders',
-    title: 'AIOps: Instant Response and Remediation Workflows for IT Leaders',
-    topics: ['AIOps', 'IT', 'Operations'],
-    intent: 'instant incident response and remediation for IT teams',
-  },
-  {
-    slug: 'ai-anti-fraud-and-payment-intelligence-for-fintech-in-2026',
-    title: 'Anti-Fraud and Payment Intelligence for Fintech in 2026',
-    topics: ['Security', 'Fraud', 'Fintech'],
-    intent: 'anti-fraud and payment intelligence for fintech',
-  },
-  {
-    slug: 'ai-automation-and-low-code-for-brazilian-enterprises-in-2026',
-    title: 'AI Automation and Low-Code for Brazilian Enterprises in 2026',
-    topics: ['Automation', 'Low-Code', 'Enterprise'],
-    intent: 'AI automation and low-code for enterprise Brazil',
-  },
-  {
-    slug: 'ai-chatbot-builder',
-    title: 'AI Chatbot Builder for Support and Sales',
-    topics: ['AI', 'Chatbots', 'Automation'],
-    intent: 'build AI chatbots for support and sales',
-  },
-  {
-    slug: 'ai-chatops-and-agentic-support-automation-in-2026',
-    title: 'ChatOps and Agentic Support Automation in 2026',
-    topics: ['Support', 'Automation', 'AI'],
-    intent: 'ChatOps and agentic support automation',
-  },
-  {
-    slug: 'ai-client-retention-tactics-for-it-and-ai-services-companies-in-2026',
-    title: 'Client Retention Tactics for IT and AI Services Companies',
-    topics: ['Growth', 'Sales', 'AI'],
-    intent: 'client retention tactics for IT and AI services companies',
-  },
-  {
-    slug: 'ai-computer-vision-quality-inspection',
-    title: 'Computer Vision for Quality Inspection',
-    topics: ['Computer Vision', 'AI', 'Manufacturing'],
-    intent: 'computer vision quality inspection for manufacturing',
-  },
-  {
-    slug: 'ai-consulting-services-for-enterprise-it-in-2026',
-    title: 'AI Consulting Services for Enterprise IT in 2026',
-    topics: ['Consulting', 'AI', 'Enterprise'],
-    intent: 'AI consulting services for enterprise IT',
-  },
-  {
-    slug: 'ai-contract-review-and-legal-operations-automation-2026',
-    title: 'Contract Review and Legal Operations Automation',
-    topics: ['Legal', 'Automation', 'AI'],
-    intent: 'contract review and legal operations automation',
-  },
-  {
-    slug: 'ai-cost-optimization-for-it-operations-2026',
-    title: 'AI Cost Optimization for IT Operations in 2026',
-    topics: ['Cloud', 'FinOps', 'IT'],
-    intent: 'AI cost optimization for IT operations',
-  },
-  {
-    slug: 'ai-customer-success-churn-prevention-guide-saas',
-    title: 'Customer Success and Churn Prevention Guide for SaaS',
-    topics: ['SaaS', 'Retention', 'AI'],
-    intent: 'customer success and churn prevention guidance for SaaS',
-  },
-  {
-    slug: 'ai-cybersecurity-operations-for-msp',
-    title: 'Cybersecurity Operations for MSPs',
-    topics: ['Security', 'MSP', 'AI'],
-    intent: 'cybersecurity operations for MSPs',
-  },
-  {
-    slug: 'ai-data-pipeline-lakehouse-platform-engineering-in-2026',
-    title: 'Data Pipeline and Lakehouse Platform Engineering in 2026',
-    topics: ['Data', 'Platform', 'AI'],
-    intent: 'data pipeline and lakehouse platform engineering',
-  },
-  {
-    slug: 'ai-document-processing',
-    title: 'AI Document Processing for Operations',
-    topics: ['AI', 'Documents', 'Automation'],
-    intent: 'AI document processing for operations teams',
-  },
-  {
-    slug: 'ai-email-outreach-automation-for-msps-2026',
-    title: 'Email Outreach Automation for MSPs in 2026',
-    topics: ['Outreach', 'Email', 'Automation'],
-    intent: 'email outreach automation for MSPs',
-  },
-  {
-    slug: 'ai-financial-engineering-and-portfolio-automation-in-2026',
-    title: 'Financial Engineering and Portfolio Automation in 2026',
-    topics: ['Finance', 'Automation', 'AI'],
-    intent: 'financial engineering and portfolio automation',
-  },
-  {
-    slug: 'ai-first-customer-success-and-renewal-intelligence-in-2026',
-    title: 'Customer Success and Renewal Intelligence in 2026',
-    topics: ['SaaS', 'Renewal', 'AI'],
-    intent: 'customer success and renewal intelligence',
-  },
-  {
-    slug: 'ai-first-security-operations-and-soc-automation-in-2026',
-    title: 'Security Operations and SOC Automation in 2026',
-    topics: ['SOC', 'Security', 'AI'],
-    intent: 'security operations and SOC automation',
-  },
-  {
-    slug: 'ai-insurance-claims',
-    title: 'AI Insurance Claims and Damage Intelligence',
-    topics: ['Insurance', 'AI', 'Claims'],
-    intent: 'AI insurance claims and damage intelligence',
-  },
-  {
-    slug: 'ai-knowledge-base-rag-platform',
-    title: 'AI Knowledge Base and RAG Platform',
-    topics: ['AI', 'RAG', 'Enterprise'],
-    intent: 'AI knowledge base and RAG platform for enterprise',
-  },
-  {
-    slug: 'ai-meeting-intelligence-minutes-and-actions',
-    title: 'AI Meeting Intelligence: Minutes and Action Items',
-    topics: ['AI', 'Productivity', 'Meetings'],
-    intent: 'AI meeting intelligence and auto action items',
-  },
-  {
-    slug: 'ai-observability',
-    title: 'AI Observability for Engineering Teams',
-    topics: ['Observability', 'AI', 'IT'],
-    intent: 'AI observability for engineering teams',
-  },
-  {
-    slug: 'ai-observability-aiops',
-    title: 'AI Observability and AIOps Platform',
-    topics: ['AIOps', 'Observability', 'AI'],
-    intent: 'AI observability and AIops platform',
-  },
-  {
-    slug: 'ai-predictive-analytics',
-    title: 'Predictive Analytics for Revenue and Risk',
-    topics: ['Analytics', 'AI', 'Predictive'],
-    intent: 'predictive analytics for revenue and risk',
-  },
-  {
-    slug: 'ai-supply-chain-optimization',
-    title: 'AI Supply Chain Optimization',
-    topics: ['Supply Chain', 'AI', 'Logistics'],
-    intent: 'AI supply chain optimization and logistics intelligence',
-  },
-  {
-    slug: 'managed-ai-services',
-    title: 'Managed AI Services for Operations',
-    topics: ['Managed Services', 'AI', 'Operations'],
-    intent: 'managed AI services for operations teams',
-  },
-  {
-    slug: 'managed-it-services',
-    title: 'Managed IT Services and Support',
-    topics: ['Managed Services', 'IT', 'Support'],
-    intent: 'managed IT services and support',
-  },
-  {
-    slug: 'ai-anti-fraud-and-payment-intelligence',
-    title: 'Anti-Fraud and Payment Intelligence Services',
-    topics: ['Security', 'Fraud', 'Fintech'],
-    intent: 'anti-fraud and payment intelligence services',
-  },
-];
-
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Blog | Zion Tech Group',
-  description: 'Guides on AI, automation, IT operations, cloud, security, growth, and enterprise implementation from Zion Tech Group.',
-  alternates: { canonical: '/blog' },
+  description: 'AI, IT, and automation insights, guides, and industry trends from Zion Tech Group.',
+  alternates: { canonical: '/blog/' },
 };
 
-export default function BlogIndex() {
-  const featured = [posts[0], posts[4], posts[9]];
-  const latest = [
-    posts[1],
-    posts[5],
-    posts[12],
-    posts[19],
-    posts[16],
-    posts[11],
-  ];
+interface BlogPost {
+  slug: string;
+  title: string;
+}
 
+const posts: BlogPost[] = [
+  {slug: '5g-solutions-2026', title: '5G Solutions 2026'},
+  {slug: '5g-solutions-automation-roadmap', title: '5G Solutions Automation Roadmap'},
+  {slug: '5g-solutions-case-study', title: '5G Solutions Case Study'},
+  {slug: '5g-solutions-checklist-for-it-leaders', title: '5G Solutions Checklist For It Leaders'},
+  {slug: '5g-solutions-policy-and-compliance', title: '5G Solutions Policy And Compliance'},
+  {slug: '5g-solutions-security-and-governance', title: '5G Solutions Security And Governance'},
+  {slug: 'accessibility-compliance-2026', title: 'Accessibility Compliance 2026'},
+  {slug: 'accessibility-compliance-case-study', title: 'Accessibility Compliance Case Study'},
+  {slug: 'accessibility-compliance-implementation-playbook', title: 'Accessibility Compliance Implementation Playbook'},
+  {slug: 'accessibility-compliance-operations-handbook', title: 'Accessibility Compliance Operations Handbook'},
+  {slug: 'ai-3d-asset-generator-2026', title: 'Ai 3D Asset Generator 2026'},
+  {slug: 'ai-3d-asset-generator-case-study', title: 'Ai 3D Asset Generator Case Study'},
+  {slug: 'ai-3d-asset-generator-executive-guide', title: 'Ai 3D Asset Generator Executive Guide'},
+  {slug: 'ai-3d-asset-generator-implementation-playbook', title: 'Ai 3D Asset Generator Implementation Playbook'},
+  {slug: 'ai-3d-asset-generator-policy-and-compliance', title: 'Ai 3D Asset Generator Policy And Compliance'},
+  {slug: 'ai-3d-asset-generator-starter-template', title: 'Ai 3D Asset Generator Starter Template'},
+  {slug: 'ai-accessibility-auditor-2026', title: 'Ai Accessibility Auditor 2026'},
+  {slug: 'ai-accessibility-auditor-architecture-overview', title: 'Ai Accessibility Auditor Architecture Overview'},
+  {slug: 'ai-accessibility-auditor-automation-roadmap', title: 'Ai Accessibility Auditor Automation Roadmap'},
+  {slug: 'ai-accessibility-auditor-checklist-for-it-leaders', title: 'Ai Accessibility Auditor Checklist For It Leaders'},
+  {slug: 'ai-accessibility-auditor-common-mistakes', title: 'Ai Accessibility Auditor Common Mistakes'},
+  {slug: 'ai-accessibility-auditor-security-and-governance', title: 'Ai Accessibility Auditor Security And Governance'},
+  {slug: 'ai-accessibility-auditor-vendor-evaluation', title: 'Ai Accessibility Auditor Vendor Evaluation'},
+  {slug: 'ai-accessibility-optimizer-2026', title: 'Ai Accessibility Optimizer 2026'},
+  {slug: 'ai-accessibility-optimizer-automation-roadmap', title: 'Ai Accessibility Optimizer Automation Roadmap'},
+  {slug: 'ai-accessibility-optimizer-deployment-patterns', title: 'Ai Accessibility Optimizer Deployment Patterns'},
+  {slug: 'ai-accessibility-optimizer-executive-guide', title: 'Ai Accessibility Optimizer Executive Guide'},
+  {slug: 'ai-ad-copy-generator-2026', title: 'Ai Ad Copy Generator 2026'},
+  {slug: 'ai-ad-copy-generator-case-study', title: 'Ai Ad Copy Generator Case Study'},
+  {slug: 'ai-ad-copy-generator-common-mistakes', title: 'Ai Ad Copy Generator Common Mistakes'},
+  {slug: 'ai-ad-copy-generator-implementation-playbook', title: 'Ai Ad Copy Generator Implementation Playbook'},
+  {slug: 'ai-ad-copy-generator-security-and-governance', title: 'Ai Ad Copy Generator Security And Governance'},
+  {slug: 'ai-ad-copy-generator-starter-template', title: 'Ai Ad Copy Generator Starter Template'},
+  {slug: 'ai-agent-safety-evaluation-2026', title: 'Ai Agent Safety Evaluation 2026'},
+  {slug: 'ai-agent-safety-evaluation-architecture-overview', title: 'Ai Agent Safety Evaluation Architecture Overview'},
+  {slug: 'ai-agent-safety-evaluation-automation-roadmap', title: 'Ai Agent Safety Evaluation Automation Roadmap'},
+  {slug: 'ai-agent-safety-evaluation-checklist-for-it-leaders', title: 'Ai Agent Safety Evaluation Checklist For It Leaders'},
+  {slug: 'ai-agent-safety-evaluation-deployment-patterns', title: 'Ai Agent Safety Evaluation Deployment Patterns'},
+  {slug: 'ai-agent-safety-evaluation-implementation-playbook', title: 'Ai Agent Safety Evaluation Implementation Playbook'},
+  {slug: 'ai-agent-safety-evaluation-vendor-evaluation', title: 'Ai Agent Safety Evaluation Vendor Evaluation'},
+  {slug: 'ai-agent-tool-builder-2026', title: 'Ai Agent Tool Builder 2026'},
+  {slug: 'ai-agent-tool-builder-architecture-overview', title: 'Ai Agent Tool Builder Architecture Overview'},
+  {slug: 'ai-agent-tool-builder-checklist-for-it-leaders', title: 'Ai Agent Tool Builder Checklist For It Leaders'},
+  {slug: 'ai-agent-tool-builder-policy-and-compliance', title: 'Ai Agent Tool Builder Policy And Compliance'},
+  {slug: 'ai-agentic-workflows-2026', title: 'Ai Agentic Workflows 2026'},
+  {slug: 'ai-agentic-workflows-common-mistakes', title: 'Ai Agentic Workflows Common Mistakes'},
+  {slug: 'ai-agentic-workflows-implementation-playbook', title: 'Ai Agentic Workflows Implementation Playbook'},
+  {slug: 'ai-agentic-workflows-policy-and-compliance', title: 'Ai Agentic Workflows Policy And Compliance'},
+  {slug: 'ai-api-gateway-2026', title: 'Ai Api Gateway 2026'},
+  {slug: 'ai-api-gateway-deployment-patterns', title: 'Ai Api Gateway Deployment Patterns'},
+  {slug: 'ai-api-gateway-roi-and-cost-model', title: 'Ai Api Gateway Roi And Cost Model'},
+  {slug: 'ai-api-gateway-security-and-governance', title: 'Ai Api Gateway Security And Governance'},
+  {slug: 'ai-api-gateway-vendor-evaluation', title: 'Ai Api Gateway Vendor Evaluation'},
+  {slug: 'ai-autonomous-agents-2026', title: 'Ai Autonomous Agents 2026'},
+  {slug: 'ai-autonomous-agents-deployment-patterns', title: 'Ai Autonomous Agents Deployment Patterns'},
+  {slug: 'ai-autonomous-agents-policy-and-compliance', title: 'Ai Autonomous Agents Policy And Compliance'},
+  {slug: 'ai-autonomous-agents-starter-template', title: 'Ai Autonomous Agents Starter Template'},
+  {slug: 'ai-autonomous-agents-vendor-evaluation', title: 'Ai Autonomous Agents Vendor Evaluation'},
+  {slug: 'ai-bdr-sdr-2026', title: 'Ai Bdr Sdr 2026'},
+  {slug: 'ai-bdr-sdr-deployment-patterns', title: 'Ai Bdr Sdr Deployment Patterns'},
+  {slug: 'ai-bdr-sdr-evaluation-framework', title: 'Ai Bdr Sdr Evaluation Framework'},
+  {slug: 'ai-bdr-sdr-executive-guide', title: 'Ai Bdr Sdr Executive Guide'},
+  {slug: 'ai-bdr-sdr-implementation-playbook', title: 'Ai Bdr Sdr Implementation Playbook'},
+  {slug: 'ai-bdr-sdr-operations-handbook', title: 'Ai Bdr Sdr Operations Handbook'},
+  {slug: 'ai-bdr-sdr-policy-and-compliance', title: 'Ai Bdr Sdr Policy And Compliance'},
+  {slug: 'ai-bom-procurement-2026', title: 'Ai Bom Procurement 2026'},
+  {slug: 'ai-bom-procurement-case-study', title: 'Ai Bom Procurement Case Study'},
+  {slug: 'ai-bom-procurement-evaluation-framework', title: 'Ai Bom Procurement Evaluation Framework'},
+  {slug: 'ai-bom-procurement-policy-and-compliance', title: 'Ai Bom Procurement Policy And Compliance'},
+  {slug: 'ai-bom-procurement-security-and-governance', title: 'Ai Bom Procurement Security And Governance'},
+  {slug: 'ai-customer-success-churn-2026', title: 'Ai Customer Success Churn 2026'},
+  {slug: 'ai-customer-success-churn-prevention-automation-roadmap', title: 'Ai Customer Success Churn Prevention Automation Roadmap'},
+  {slug: 'ai-customer-success-churn-prevention-case-study', title: 'Ai Customer Success Churn Prevention Case Study'},
+  {slug: 'ai-customer-success-churn-prevention-checklist-for-it-leaders', title: 'Ai Customer Success Churn Prevention Checklist For It Leaders'},
+  {slug: 'ai-customer-support-deployment-patterns', title: 'Ai Customer Support Deployment Patterns'},
+  {slug: 'ai-customer-support-evaluation-framework', title: 'Ai Customer Support Evaluation Framework'},
+  {slug: 'ai-customer-support-executive-guide', title: 'Ai Customer Support Executive Guide'},
+  {slug: 'ai-customer-support-implementation-playbook', title: 'Ai Customer Support Implementation Playbook'},
+  {slug: 'ai-customer-support-pro-2026', title: 'Ai Customer Support Pro 2026'},
+  {slug: 'ai-data-backup-2026', title: 'Ai Data Backup 2026'},
+  {slug: 'ai-data-backup-architecture-overview', title: 'Ai Data Backup Architecture Overview'},
+  {slug: 'ai-data-backup-deployment-patterns', title: 'Ai Data Backup Deployment Patterns'},
+  {slug: 'ai-data-backup-starter-template', title: 'Ai Data Backup Starter Template'},
+  {slug: 'ai-data-backup-vendor-evaluation', title: 'Ai Data Backup Vendor Evaluation'},
+  {slug: 'ai-data-lakehouse-pipelines-2026', title: 'Ai Data Lakehouse Pipelines 2026'},
+  {slug: 'ai-data-lakehouse-pipelines-policy-and-compliance', title: 'Ai Data Lakehouse Pipelines Policy And Compliance'},
+  {slug: 'ai-data-lakehouse-pipelines-roi-and-cost-model', title: 'Ai Data Lakehouse Pipelines Roi And Cost Model'},
+  {slug: 'ai-data-lakehouse-pipelines-security-and-governance', title: 'Ai Data Lakehouse Pipelines Security And Governance'},
+  {slug: 'ai-data-lakehouse-pipelines-starter-template', title: 'Ai Data Lakehouse Pipelines Starter Template'},
+  {slug: 'ai-development-acceleration-2026', title: 'Ai Development Acceleration 2026'},
+  {slug: 'ai-development-acceleration-checklist-for-it-leaders', title: 'Ai Development Acceleration Checklist For It Leaders'},
+  {slug: 'ai-development-acceleration-deployment-patterns', title: 'Ai Development Acceleration Deployment Patterns'},
+  {slug: 'ai-development-acceleration-operations-handbook', title: 'Ai Development Acceleration Operations Handbook'},
+  {slug: 'ai-development-acceleration-policy-and-compliance', title: 'Ai Development Acceleration Policy And Compliance'},
+  {slug: 'ai-development-acceleration-starter-template', title: 'Ai Development Acceleration Starter Template'},
+  {slug: 'ai-development-acceleration-vendor-evaluation', title: 'Ai Development Acceleration Vendor Evaluation'},
+  {slug: 'ai-email-intelligence-2026', title: 'Ai Email Intelligence 2026'},
+  {slug: 'ai-email-intelligence-architecture-overview', title: 'Ai Email Intelligence Architecture Overview'},
+  {slug: 'ai-email-intelligence-case-study', title: 'Ai Email Intelligence Case Study'},
+  {slug: 'ai-email-intelligence-deployment-patterns', title: 'Ai Email Intelligence Deployment Patterns'},
+  {slug: 'ai-email-intelligence-operations-handbook', title: 'Ai Email Intelligence Operations Handbook'},
+  {slug: 'ai-email-intelligence-security-and-governance', title: 'Ai Email Intelligence Security And Governance'},
+  {slug: 'ai-for-data-engineering-and-pipeline-automation', title: 'Ai For Data Engineering And Pipeline Automation'},
+  {slug: 'ai-for-devops-and-incident-response', title: 'Ai For Devops And Incident Response'},
+  {slug: 'ai-for-it-operations-and-observability', title: 'Ai For It Operations And Observability'},
+  {slug: 'ai-for-managed-it-and-enterprise-support', title: 'Ai For Managed It And Enterprise Support'},
+  {slug: 'ai-for-network-operations-and-telecom-automation', title: 'Ai For Network Operations And Telecom Automation'},
+  {slug: 'ai-for-project-management-and-delivery', title: 'Ai For Project Management And Delivery'},
+  {slug: 'ai-for-quality-assurance-and-testing', title: 'Ai For Quality Assurance And Testing'},
+  {slug: 'ai-for-revenue-operations-and-business-intelligence', title: 'Ai For Revenue Operations And Business Intelligence'},
+  {slug: 'ai-for-sales-automation-and-crm-intelligence', title: 'Ai For Sales Automation And Crm Intelligence'},
+  {slug: 'ai-for-security-operations-and-compliance', title: 'Ai For Security Operations And Compliance'},
+  {slug: 'ai-for-service-desk-and-support-automation', title: 'Ai For Service Desk And Support Automation'},
+  {slug: 'ai-it-operations-automation-2026', title: 'Ai It Operations Automation 2026'},
+  {slug: 'ai-it-operations-case-study', title: 'Ai It Operations Case Study'},
+  {slug: 'ai-it-operations-executive-guide', title: 'Ai It Operations Executive Guide'},
+  {slug: 'ai-it-operations-implementation-playbook', title: 'Ai It Operations Implementation Playbook'},
+  {slug: 'ai-it-operations-operations-handbook', title: 'Ai It Operations Operations Handbook'},
+  {slug: 'ai-it-operations-roi-and-cost-model', title: 'Ai It Operations Roi And Cost Model'},
+  {slug: 'ai-msp-security-compliance-2026', title: 'Ai Msp Security Compliance 2026'},
+  {slug: 'ai-msp-security-compliance-case-study', title: 'Ai Msp Security Compliance Case Study'},
+  {slug: 'ai-msp-security-compliance-deployment-patterns', title: 'Ai Msp Security Compliance Deployment Patterns'},
+  {slug: 'ai-msp-security-compliance-evaluation-framework', title: 'Ai Msp Security Compliance Evaluation Framework'},
+  {slug: 'ai-msp-security-compliance-executive-guide', title: 'Ai Msp Security Compliance Executive Guide'},
+  {slug: 'ai-msp-security-compliance-operations-handbook', title: 'Ai Msp Security Compliance Operations Handbook'},
+  {slug: 'ai-msp-security-compliance-policy-and-compliance', title: 'Ai Msp Security Compliance Policy And Compliance'},
+  {slug: 'ai-observability-2026', title: 'Ai Observability 2026'},
+  {slug: 'ai-observability-architecture-overview', title: 'Ai Observability Architecture Overview'},
+  {slug: 'ai-observability-common-mistakes', title: 'Ai Observability Common Mistakes'},
+  {slug: 'ai-observability-executive-guide', title: 'Ai Observability Executive Guide'},
+  {slug: 'ai-observability-implementation-playbook', title: 'Ai Observability Implementation Playbook'},
+  {slug: 'ai-performance-monitoring-2026', title: 'Ai Performance Monitoring 2026'},
+  {slug: 'ai-performance-monitoring-automation-roadmap', title: 'Ai Performance Monitoring Automation Roadmap'},
+  {slug: 'ai-performance-monitoring-checklist-for-it-leaders', title: 'Ai Performance Monitoring Checklist For It Leaders'},
+  {slug: 'ai-performance-monitoring-common-mistakes', title: 'Ai Performance Monitoring Common Mistakes'},
+  {slug: 'ai-performance-monitoring-deployment-patterns', title: 'Ai Performance Monitoring Deployment Patterns'},
+  {slug: 'ai-performance-monitoring-vendor-evaluation', title: 'Ai Performance Monitoring Vendor Evaluation'},
+  {slug: 'ai-predictive-maintenance-for-infrastructure', title: 'Ai Predictive Maintenance For Infrastructure'},
+  {slug: 'aiops-anomaly-detection-2026', title: 'Aiops Anomaly Detection 2026'},
+  {slug: 'aiops-anomaly-detection-architecture-overview', title: 'Aiops Anomaly Detection Architecture Overview'},
+  {slug: 'aiops-anomaly-detection-policy-and-compliance', title: 'Aiops Anomaly Detection Policy And Compliance'},
+  {slug: 'aiops-anomaly-detection-roi-and-cost-model', title: 'Aiops Anomaly Detection Roi And Cost Model'},
+  {slug: 'api-gateway-management-2026', title: 'Api Gateway Management 2026'},
+  {slug: 'api-gateway-management-automation-roadmap', title: 'Api Gateway Management Automation Roadmap'},
+  {slug: 'api-gateway-management-evaluation-framework', title: 'Api Gateway Management Evaluation Framework'},
+  {slug: 'api-gateway-management-security-and-governance', title: 'Api Gateway Management Security And Governance'},
+  {slug: 'api-integration-2026', title: 'Api Integration 2026'},
+  {slug: 'api-integration-architecture-overview', title: 'Api Integration Architecture Overview'},
+  {slug: 'api-integration-deployment-patterns', title: 'Api Integration Deployment Patterns'},
+  {slug: 'api-integration-implementation-playbook', title: 'Api Integration Implementation Playbook'},
+  {slug: 'api-integration-operations-handbook', title: 'Api Integration Operations Handbook'},
+  {slug: 'api-integration-policy-and-compliance', title: 'Api Integration Policy And Compliance'},
+  {slug: 'api-integration-vendor-evaluation', title: 'Api Integration Vendor Evaluation'},
+  {slug: 'api-management-gateway-2026', title: 'Api Management Gateway 2026'},
+  {slug: 'api-management-gateway-architecture-overview', title: 'Api Management Gateway Architecture Overview'},
+  {slug: 'api-management-gateway-operations-handbook', title: 'Api Management Gateway Operations Handbook'},
+  {slug: 'api-management-gateway-policy-and-compliance', title: 'Api Management Gateway Policy And Compliance'},
+  {slug: 'api-management-gateway-roi-and-cost-model', title: 'Api Management Gateway Roi And Cost Model'},
+  {slug: 'api-management-gateway-security-and-governance', title: 'Api Management Gateway Security And Governance'},
+  {slug: 'api-orchestration-layer-2026', title: 'Api Orchestration Layer 2026'},
+  {slug: 'api-orchestration-layer-architecture-overview', title: 'Api Orchestration Layer Architecture Overview'},
+  {slug: 'api-orchestration-layer-checklist-for-it-leaders', title: 'Api Orchestration Layer Checklist For It Leaders'},
+  {slug: 'api-orchestration-layer-executive-guide', title: 'Api Orchestration Layer Executive Guide'},
+  {slug: 'api-orchestration-layer-operations-handbook', title: 'Api Orchestration Layer Operations Handbook'},
+  {slug: 'api-orchestration-layer-policy-and-compliance', title: 'Api Orchestration Layer Policy And Compliance'},
+  {slug: 'api-orchestration-layer-starter-template', title: 'Api Orchestration Layer Starter Template'},
+  {slug: 'api-performance-testing-2026', title: 'Api Performance Testing 2026'},
+  {slug: 'api-performance-testing-architecture-overview', title: 'Api Performance Testing Architecture Overview'},
+  {slug: 'api-performance-testing-implementation-playbook', title: 'Api Performance Testing Implementation Playbook'},
+  {slug: 'api-performance-testing-operations-handbook', title: 'Api Performance Testing Operations Handbook'},
+  {slug: 'api-performance-testing-policy-and-compliance', title: 'Api Performance Testing Policy And Compliance'},
+  {slug: 'api-performance-testing-roi-and-cost-model', title: 'Api Performance Testing Roi And Cost Model'},
+  {slug: 'api-security-testing-2026', title: 'Api Security Testing 2026'},
+  {slug: 'api-security-testing-checklist-for-it-leaders', title: 'Api Security Testing Checklist For It Leaders'},
+  {slug: 'api-security-testing-evaluation-framework', title: 'Api Security Testing Evaluation Framework'},
+  {slug: 'api-security-testing-executive-guide', title: 'Api Security Testing Executive Guide'},
+  {slug: 'api-security-testing-starter-template', title: 'Api Security Testing Starter Template'},
+  {slug: 'apm-application-performance-2026', title: 'Apm Application Performance 2026'},
+  {slug: 'apm-application-performance-automation-roadmap', title: 'Apm Application Performance Automation Roadmap'},
+  {slug: 'apm-application-performance-executive-guide', title: 'Apm Application Performance Executive Guide'},
+  {slug: 'apm-application-performance-operations-handbook', title: 'Apm Application Performance Operations Handbook'},
+  {slug: 'apm-application-performance-roi-and-cost-model', title: 'Apm Application Performance Roi And Cost Model'},
+  {slug: 'apm-application-performance-starter-template', title: 'Apm Application Performance Starter Template'},
+  {slug: 'automated-ai-reporting-2026', title: 'Automated Ai Reporting 2026'},
+  {slug: 'automated-ai-reporting-automation-roadmap', title: 'Automated Ai Reporting Automation Roadmap'},
+  {slug: 'automated-ai-reporting-checklist-for-it-leaders', title: 'Automated Ai Reporting Checklist For It Leaders'},
+  {slug: 'automated-ai-reporting-common-mistakes', title: 'Automated Ai Reporting Common Mistakes'},
+  {slug: 'automated-ai-reporting-operations-handbook', title: 'Automated Ai Reporting Operations Handbook'},
+  {slug: 'automated-ai-reporting-policy-and-compliance', title: 'Automated Ai Reporting Policy And Compliance'},
+  {slug: 'automated-ai-reporting-roi-and-cost-model', title: 'Automated Ai Reporting Roi And Cost Model'},
+  {slug: 'automated-ai-reporting-security-and-governance', title: 'Automated Ai Reporting Security And Governance'},
+  {slug: 'automation-orchestration-checklist-for-it-leaders', title: 'Automation Orchestration Checklist For It Leaders'},
+  {slug: 'automation-orchestration-deployment-patterns', title: 'Automation Orchestration Deployment Patterns'},
+  {slug: 'automation-orchestration-enterprise-2026', title: 'Automation Orchestration Enterprise 2026'},
+  {slug: 'automation-orchestration-operations-handbook', title: 'Automation Orchestration Operations Handbook'},
+  {slug: 'autonomous-code-deployment-2026', title: 'Autonomous Code Deployment 2026'},
+  {slug: 'autonomous-code-deployment-architecture-overview', title: 'Autonomous Code Deployment Architecture Overview'},
+  {slug: 'autonomous-code-deployment-automation-roadmap', title: 'Autonomous Code Deployment Automation Roadmap'},
+  {slug: 'autonomous-code-deployment-case-study', title: 'Autonomous Code Deployment Case Study'},
+  {slug: 'autonomous-code-deployment-checklist-for-it-leaders', title: 'Autonomous Code Deployment Checklist For It Leaders'},
+  {slug: 'autonomous-code-deployment-starter-template', title: 'Autonomous Code Deployment Starter Template'},
+  {slug: 'autonomous-qa-engineering-2026', title: 'Autonomous Qa Engineering 2026'},
+  {slug: 'autonomous-qa-engineering-case-study', title: 'Autonomous Qa Engineering Case Study'},
+  {slug: 'autonomous-qa-engineering-common-mistakes', title: 'Autonomous Qa Engineering Common Mistakes'},
+  {slug: 'autonomous-qa-engineering-deployment-patterns', title: 'Autonomous Qa Engineering Deployment Patterns'},
+  {slug: 'autonomous-qa-engineering-policy-and-compliance', title: 'Autonomous Qa Engineering Policy And Compliance'},
+  {slug: 'autonomous-qa-engineering-starter-template', title: 'Autonomous Qa Engineering Starter Template'},
+  {slug: 'autonomous-qa-engineering-vendor-evaluation', title: 'Autonomous Qa Engineering Vendor Evaluation'},
+  {slug: 'brand-voice-guardian-2026', title: 'Brand Voice Guardian 2026'},
+  {slug: 'brand-voice-guardian-architecture-overview', title: 'Brand Voice Guardian Architecture Overview'},
+  {slug: 'brand-voice-guardian-automation-roadmap', title: 'Brand Voice Guardian Automation Roadmap'},
+  {slug: 'brand-voice-guardian-case-study', title: 'Brand Voice Guardian Case Study'},
+  {slug: 'brand-voice-guardian-evaluation-framework', title: 'Brand Voice Guardian Evaluation Framework'},
+  {slug: 'brand-voice-guardian-starter-template', title: 'Brand Voice Guardian Starter Template'},
+  {slug: 'brand-voice-guardian-vendor-evaluation', title: 'Brand Voice Guardian Vendor Evaluation'},
+  {slug: 'chaos-engineering-2026', title: 'Chaos Engineering 2026'},
+  {slug: 'chaos-engineering-architecture-overview', title: 'Chaos Engineering Architecture Overview'},
+  {slug: 'chaos-engineering-automation-roadmap', title: 'Chaos Engineering Automation Roadmap'},
+  {slug: 'chaos-engineering-case-study', title: 'Chaos Engineering Case Study'},
+  {slug: 'chaos-engineering-executive-guide', title: 'Chaos Engineering Executive Guide'},
+  {slug: 'chaos-engineering-implementation-playbook', title: 'Chaos Engineering Implementation Playbook'},
+  {slug: 'chaos-engineering-starter-template', title: 'Chaos Engineering Starter Template'},
+  {slug: 'cloud-cost-ai-optimizer-2026', title: 'Cloud Cost Ai Optimizer 2026'},
+  {slug: 'cloud-cost-ai-optimizer-automation-roadmap', title: 'Cloud Cost Ai Optimizer Automation Roadmap'},
+  {slug: 'cloud-cost-ai-optimizer-checklist-for-it-leaders', title: 'Cloud Cost Ai Optimizer Checklist For It Leaders'},
+  {slug: 'cloud-cost-ai-optimizer-evaluation-framework', title: 'Cloud Cost Ai Optimizer Evaluation Framework'},
+  {slug: 'cloud-cost-ai-optimizer-implementation-playbook', title: 'Cloud Cost Ai Optimizer Implementation Playbook'},
+  {slug: 'cloud-cost-ai-optimizer-policy-and-compliance', title: 'Cloud Cost Ai Optimizer Policy And Compliance'},
+  {slug: 'cloud-cost-ai-optimizer-security-and-governance', title: 'Cloud Cost Ai Optimizer Security And Governance'},
+  {slug: 'cloud-cost-optimization-case-study', title: 'Cloud Cost Optimization Case Study'},
+  {slug: 'cloud-cost-optimization-checklist-2026', title: 'Cloud Cost Optimization Checklist 2026'},
+  {slug: 'cloud-cost-optimization-deployment-patterns', title: 'Cloud Cost Optimization Deployment Patterns'},
+  {slug: 'cloud-cost-optimization-policy-and-compliance', title: 'Cloud Cost Optimization Policy And Compliance'},
+  {slug: 'cloud-cost-optimization-roi-and-cost-model', title: 'Cloud Cost Optimization Roi And Cost Model'},
+  {slug: 'cloud-cost-optimization-security-and-governance', title: 'Cloud Cost Optimization Security And Governance'},
+  {slug: 'cloud-cost-optimization-vendor-evaluation', title: 'Cloud Cost Optimization Vendor Evaluation'},
+  {slug: 'cloud-finops-2026', title: 'Cloud Finops 2026'},
+  {slug: 'cloud-finops-automation-roadmap', title: 'Cloud Finops Automation Roadmap'},
+  {slug: 'cloud-finops-common-mistakes', title: 'Cloud Finops Common Mistakes'},
+  {slug: 'cloud-finops-deployment-patterns', title: 'Cloud Finops Deployment Patterns'},
+  {slug: 'cloud-finops-executive-guide', title: 'Cloud Finops Executive Guide'},
+  {slug: 'cloud-finops-operations-handbook', title: 'Cloud Finops Operations Handbook'},
+  {slug: 'cloud-finops-roi-and-cost-model', title: 'Cloud Finops Roi And Cost Model'},
+  {slug: 'cloud-migration-services-2026', title: 'Cloud Migration Services 2026'},
+  {slug: 'cloud-migration-services-checklist-for-it-leaders', title: 'Cloud Migration Services Checklist For It Leaders'},
+  {slug: 'cloud-migration-services-common-mistakes', title: 'Cloud Migration Services Common Mistakes'},
+  {slug: 'cloud-migration-services-deployment-patterns', title: 'Cloud Migration Services Deployment Patterns'},
+  {slug: 'cloud-migration-services-executive-guide', title: 'Cloud Migration Services Executive Guide'},
+  {slug: 'cloud-migration-services-starter-template', title: 'Cloud Migration Services Starter Template'},
+  {slug: 'cloud-migration-services-vendor-evaluation', title: 'Cloud Migration Services Vendor Evaluation'},
+  {slug: 'cloud-native-app-development-2026', title: 'Cloud Native App Development 2026'},
+  {slug: 'cloud-native-app-development-automation-roadmap', title: 'Cloud Native App Development Automation Roadmap'},
+  {slug: 'cloud-native-app-development-case-study', title: 'Cloud Native App Development Case Study'},
+  {slug: 'cloud-native-app-development-common-mistakes', title: 'Cloud Native App Development Common Mistakes'},
+  {slug: 'cloud-native-app-development-implementation-playbook', title: 'Cloud Native App Development Implementation Playbook'},
+  {slug: 'cloud-native-app-development-roi-and-cost-model', title: 'Cloud Native App Development Roi And Cost Model'},
+  {slug: 'container-security-lifecycle-2026', title: 'Container Security Lifecycle 2026'},
+  {slug: 'container-security-lifecycle-evaluation-framework', title: 'Container Security Lifecycle Evaluation Framework'},
+  {slug: 'container-security-lifecycle-operations-handbook', title: 'Container Security Lifecycle Operations Handbook'},
+  {slug: 'container-security-lifecycle-roi-and-cost-model', title: 'Container Security Lifecycle Roi And Cost Model'},
+  {slug: 'container-security-lifecycle-security-and-governance', title: 'Container Security Lifecycle Security And Governance'},
+  {slug: 'cyber-threat-intelligence-2026', title: 'Cyber Threat Intelligence 2026'},
+  {slug: 'cyber-threat-intelligence-common-mistakes', title: 'Cyber Threat Intelligence Common Mistakes'},
+  {slug: 'cyber-threat-intelligence-deployment-patterns', title: 'Cyber Threat Intelligence Deployment Patterns'},
+  {slug: 'cyber-threat-intelligence-evaluation-framework', title: 'Cyber Threat Intelligence Evaluation Framework'},
+  {slug: 'cyber-threat-intelligence-executive-guide', title: 'Cyber Threat Intelligence Executive Guide'},
+  {slug: 'cyber-threat-intelligence-roi-and-cost-model', title: 'Cyber Threat Intelligence Roi And Cost Model'},
+  {slug: 'cyber-threat-intelligence-starter-template', title: 'Cyber Threat Intelligence Starter Template'},
+  {slug: 'cybersecurity-for-msps-automation-roadmap', title: 'Cybersecurity For Msps Automation Roadmap'},
+  {slug: 'cybersecurity-for-msps-case-study', title: 'Cybersecurity For Msps Case Study'},
+  {slug: 'cybersecurity-for-msps-checklist-for-it-leaders', title: 'Cybersecurity For Msps Checklist For It Leaders'},
+  {slug: 'cybersecurity-for-msps-implementation-playbook', title: 'Cybersecurity For Msps Implementation Playbook'},
+  {slug: 'cybersecurity-platform-msp-2026', title: 'Cybersecurity Platform Msp 2026'},
+  {slug: 'data-analytics-platform-architecture-overview', title: 'Data Analytics Platform Architecture Overview'},
+  {slug: 'data-analytics-platform-deployment-patterns', title: 'Data Analytics Platform Deployment Patterns'},
+  {slug: 'data-analytics-platform-implementation-playbook', title: 'Data Analytics Platform Implementation Playbook'},
+  {slug: 'data-analytics-platform-modern-enterprise-2026', title: 'Data Analytics Platform Modern Enterprise 2026'},
+  {slug: 'data-analytics-platform-policy-and-compliance', title: 'Data Analytics Platform Policy And Compliance'},
+  {slug: 'data-analytics-platform-security-and-governance', title: 'Data Analytics Platform Security And Governance'},
+  {slug: 'data-warehouse-modernization-2026', title: 'Data Warehouse Modernization 2026'},
+  {slug: 'data-warehouse-modernization-automation-roadmap', title: 'Data Warehouse Modernization Automation Roadmap'},
+  {slug: 'data-warehouse-modernization-checklist-for-it-leaders', title: 'Data Warehouse Modernization Checklist For It Leaders'},
+  {slug: 'data-warehouse-modernization-executive-guide', title: 'Data Warehouse Modernization Executive Guide'},
+  {slug: 'data-warehouse-modernization-implementation-playbook', title: 'Data Warehouse Modernization Implementation Playbook'},
+  {slug: 'data-warehouse-modernization-policy-and-compliance', title: 'Data Warehouse Modernization Policy And Compliance'},
+  {slug: 'data-warehouse-modernization-vendor-evaluation', title: 'Data Warehouse Modernization Vendor Evaluation'},
+  {slug: 'database-migration-service-2026', title: 'Database Migration Service 2026'},
+  {slug: 'database-migration-service-checklist-for-it-leaders', title: 'Database Migration Service Checklist For It Leaders'},
+  {slug: 'database-migration-service-executive-guide', title: 'Database Migration Service Executive Guide'},
+  {slug: 'database-migration-service-security-and-governance', title: 'Database Migration Service Security And Governance'},
+  {slug: 'devops-cicd-2026', title: 'Devops Cicd 2026'},
+  {slug: 'devops-cicd-architecture-overview', title: 'Devops Cicd Architecture Overview'},
+  {slug: 'devops-cicd-evaluation-framework', title: 'Devops Cicd Evaluation Framework'},
+  {slug: 'devops-cicd-operations-handbook', title: 'Devops Cicd Operations Handbook'},
+  {slug: 'devops-cicd-starter-template', title: 'Devops Cicd Starter Template'},
+  {slug: 'devops-gen-ai-cicd-2026', title: 'Devops Gen Ai Cicd 2026'},
+  {slug: 'devsecops-pipeline-2026', title: 'Devsecops Pipeline 2026'},
+  {slug: 'devsecops-pipeline-common-mistakes', title: 'Devsecops Pipeline Common Mistakes'},
+  {slug: 'devsecops-pipeline-implementation-playbook', title: 'Devsecops Pipeline Implementation Playbook'},
+  {slug: 'devsecops-pipeline-policy-and-compliance', title: 'Devsecops Pipeline Policy And Compliance'},
+  {slug: 'devsecops-pipeline-roi-and-cost-model', title: 'Devsecops Pipeline Roi And Cost Model'},
+  {slug: 'devsecops-pipeline-vendor-evaluation', title: 'Devsecops Pipeline Vendor Evaluation'},
+  {slug: 'edge-computing-deployment-2026', title: 'Edge Computing Deployment 2026'},
+  {slug: 'edge-computing-deployment-case-study', title: 'Edge Computing Deployment Case Study'},
+  {slug: 'edge-computing-deployment-checklist-for-it-leaders', title: 'Edge Computing Deployment Checklist For It Leaders'},
+  {slug: 'edge-computing-deployment-deployment-patterns', title: 'Edge Computing Deployment Deployment Patterns'},
+  {slug: 'edge-computing-deployment-implementation-playbook', title: 'Edge Computing Deployment Implementation Playbook'},
+  {slug: 'edge-computing-deployment-operations-handbook', title: 'Edge Computing Deployment Operations Handbook'},
+  {slug: 'edge-computing-deployment-roi-and-cost-model', title: 'Edge Computing Deployment Roi And Cost Model'},
+  {slug: 'endpoint-management-2026', title: 'Endpoint Management 2026'},
+  {slug: 'endpoint-management-case-study', title: 'Endpoint Management Case Study'},
+  {slug: 'endpoint-management-executive-guide', title: 'Endpoint Management Executive Guide'},
+  {slug: 'endpoint-management-implementation-playbook', title: 'Endpoint Management Implementation Playbook'},
+  {slug: 'endpoint-management-roi-and-cost-model', title: 'Endpoint Management Roi And Cost Model'},
+  {slug: 'endpoint-management-security-and-governance', title: 'Endpoint Management Security And Governance'},
+  {slug: 'endpoint-management-vendor-evaluation', title: 'Endpoint Management Vendor Evaluation'},
+  {slug: 'enterprise-ai-intelligence-hub-2026', title: 'Enterprise Ai Intelligence Hub 2026'},
+  {slug: 'enterprise-ai-intelligence-hub-checklist-for-it-leaders', title: 'Enterprise Ai Intelligence Hub Checklist For It Leaders'},
+  {slug: 'enterprise-ai-intelligence-hub-common-mistakes', title: 'Enterprise Ai Intelligence Hub Common Mistakes'},
+  {slug: 'enterprise-ai-intelligence-hub-operations-handbook', title: 'Enterprise Ai Intelligence Hub Operations Handbook'},
+  {slug: 'enterprise-ai-intelligence-hub-vendor-evaluation', title: 'Enterprise Ai Intelligence Hub Vendor Evaluation'},
+  {slug: 'enterprise-backup-dr-2026', title: 'Enterprise Backup Dr 2026'},
+  {slug: 'enterprise-backup-dr-checklist-for-it-leaders', title: 'Enterprise Backup Dr Checklist For It Leaders'},
+  {slug: 'enterprise-backup-dr-common-mistakes', title: 'Enterprise Backup Dr Common Mistakes'},
+  {slug: 'enterprise-backup-dr-deployment-patterns', title: 'Enterprise Backup Dr Deployment Patterns'},
+  {slug: 'enterprise-backup-dr-policy-and-compliance', title: 'Enterprise Backup Dr Policy And Compliance'},
+  {slug: 'etl-pipeline-optimization-2026', title: 'Etl Pipeline Optimization 2026'},
+  {slug: 'etl-pipeline-optimization-evaluation-framework', title: 'Etl Pipeline Optimization Evaluation Framework'},
+  {slug: 'etl-pipeline-optimization-roi-and-cost-model', title: 'Etl Pipeline Optimization Roi And Cost Model'},
+  {slug: 'etl-pipeline-optimization-vendor-evaluation', title: 'Etl Pipeline Optimization Vendor Evaluation'},
+  {slug: 'event-driven-architecture-2026', title: 'Event Driven Architecture 2026'},
+  {slug: 'event-driven-architecture-case-study', title: 'Event Driven Architecture Case Study'},
+  {slug: 'event-driven-architecture-executive-guide', title: 'Event Driven Architecture Executive Guide'},
+  {slug: 'event-driven-architecture-implementation-playbook', title: 'Event Driven Architecture Implementation Playbook'},
+  {slug: 'event-driven-architecture-policy-and-compliance', title: 'Event Driven Architecture Policy And Compliance'},
+  {slug: 'event-driven-architecture-vendor-evaluation', title: 'Event Driven Architecture Vendor Evaluation'},
+  {slug: 'genai-devops-cicd-case-study', title: 'Genai Devops Cicd Case Study'},
+  {slug: 'genai-devops-cicd-evaluation-framework', title: 'Genai Devops Cicd Evaluation Framework'},
+  {slug: 'genai-devops-cicd-vendor-evaluation', title: 'Genai Devops Cicd Vendor Evaluation'},
+  {slug: 'graphql-federation-platform-2026', title: 'Graphql Federation Platform 2026'},
+  {slug: 'graphql-federation-platform-case-study', title: 'Graphql Federation Platform Case Study'},
+  {slug: 'graphql-federation-platform-executive-guide', title: 'Graphql Federation Platform Executive Guide'},
+  {slug: 'graphql-federation-platform-implementation-playbook', title: 'Graphql Federation Platform Implementation Playbook'},
+  {slug: 'incident-response-retainer-2026', title: 'Incident Response Retainer 2026'},
+  {slug: 'incident-response-retainer-checklist-for-it-leaders', title: 'Incident Response Retainer Checklist For It Leaders'},
+  {slug: 'incident-response-retainer-common-mistakes', title: 'Incident Response Retainer Common Mistakes'},
+  {slug: 'incident-response-retainer-operations-handbook', title: 'Incident Response Retainer Operations Handbook'},
+  {slug: 'incident-response-retainer-policy-and-compliance', title: 'Incident Response Retainer Policy And Compliance'},
+  {slug: 'incident-response-retainer-vendor-evaluation', title: 'Incident Response Retainer Vendor Evaluation'},
+  {slug: 'it-consulting-2026', title: 'It Consulting 2026'},
+  {slug: 'it-consulting-architecture-overview', title: 'It Consulting Architecture Overview'},
+  {slug: 'it-consulting-security-and-governance', title: 'It Consulting Security And Governance'},
+  {slug: 'it-consulting-vendor-evaluation', title: 'It Consulting Vendor Evaluation'},
+  {slug: 'managed-it-services-architecture-overview', title: 'Managed It Services Architecture Overview'},
+  {slug: 'managed-it-services-automation-roadmap', title: 'Managed It Services Automation Roadmap'},
+  {slug: 'managed-it-services-roi-and-cost-model', title: 'Managed It Services Roi And Cost Model'},
+  {slug: 'managed-it-services-small-business-2026', title: 'Managed It Services Small Business 2026'},
+  {slug: 'managed-it-services-starter-template', title: 'Managed It Services Starter Template'},
+  {slug: 'micro-saas-ai-customer-onboarding-2026', title: 'Micro Saas Ai Customer Onboarding 2026'},
+  {slug: 'micro-saas-ai-expense-tracker-2026', title: 'Micro Saas Ai Expense Tracker 2026'},
+  {slug: 'micro-saas-ai-hr-recruitment-2026', title: 'Micro Saas Ai Hr Recruitment 2026'},
+  {slug: 'micro-saas-ai-social-media-manager-2026', title: 'Micro Saas Ai Social Media Manager 2026'},
+  {slug: 'micro-saas-ai-translation-engine-2026', title: 'Micro Saas Ai Translation Engine 2026'},
+  {slug: 'microsaas-customer-onboarding-architecture-overview', title: 'Microsaas Customer Onboarding Architecture Overview'},
+  {slug: 'microsaas-customer-onboarding-deployment-patterns', title: 'Microsaas Customer Onboarding Deployment Patterns'},
+  {slug: 'microsaas-customer-onboarding-implementation-playbook', title: 'Microsaas Customer Onboarding Implementation Playbook'},
+  {slug: 'microsaas-customer-onboarding-policy-and-compliance', title: 'Microsaas Customer Onboarding Policy And Compliance'},
+  {slug: 'microsaas-expense-tracker-deployment-patterns', title: 'Microsaas Expense Tracker Deployment Patterns'},
+  {slug: 'microsaas-expense-tracker-evaluation-framework', title: 'Microsaas Expense Tracker Evaluation Framework'},
+  {slug: 'microsaas-expense-tracker-executive-guide', title: 'Microsaas Expense Tracker Executive Guide'},
+  {slug: 'microsaas-expense-tracker-policy-and-compliance', title: 'Microsaas Expense Tracker Policy And Compliance'},
+  {slug: 'microsaas-hr-recruitment-evaluation-framework', title: 'Microsaas Hr Recruitment Evaluation Framework'},
+  {slug: 'microsaas-hr-recruitment-executive-guide', title: 'Microsaas Hr Recruitment Executive Guide'},
+  {slug: 'microsaas-hr-recruitment-policy-and-compliance', title: 'Microsaas Hr Recruitment Policy And Compliance'},
+  {slug: 'microsaas-hr-recruitment-roi-and-cost-model', title: 'Microsaas Hr Recruitment Roi And Cost Model'},
+  {slug: 'microsaas-hr-recruitment-vendor-evaluation', title: 'Microsaas Hr Recruitment Vendor Evaluation'},
+  {slug: 'microsaas-social-media-manager-case-study', title: 'Microsaas Social Media Manager Case Study'},
+  {slug: 'microsaas-social-media-manager-executive-guide', title: 'Microsaas Social Media Manager Executive Guide'},
+  {slug: 'microsaas-social-media-manager-implementation-playbook', title: 'Microsaas Social Media Manager Implementation Playbook'},
+  {slug: 'microsaas-social-media-manager-operations-handbook', title: 'Microsaas Social Media Manager Operations Handbook'},
+  {slug: 'microsaas-social-media-manager-starter-template', title: 'Microsaas Social Media Manager Starter Template'},
+  {slug: 'microsaas-translation-engine-architecture-overview', title: 'Microsaas Translation Engine Architecture Overview'},
+  {slug: 'microsaas-translation-engine-automation-roadmap', title: 'Microsaas Translation Engine Automation Roadmap'},
+  {slug: 'microsaas-translation-engine-case-study', title: 'Microsaas Translation Engine Case Study'},
+  {slug: 'microsaas-translation-engine-common-mistakes', title: 'Microsaas Translation Engine Common Mistakes'},
+  {slug: 'microsaas-translation-engine-policy-and-compliance', title: 'Microsaas Translation Engine Policy And Compliance'},
+  {slug: 'microsaas-translation-engine-roi-and-cost-model', title: 'Microsaas Translation Engine Roi And Cost Model'},
+  {slug: 'microsaas-translation-engine-security-and-governance', title: 'Microsaas Translation Engine Security And Governance'},
+  {slug: 'network-infrastructure-2026', title: 'Network Infrastructure 2026'},
+  {slug: 'network-infrastructure-evaluation-framework', title: 'Network Infrastructure Evaluation Framework'},
+  {slug: 'network-infrastructure-implementation-playbook', title: 'Network Infrastructure Implementation Playbook'},
+  {slug: 'network-infrastructure-operations-handbook', title: 'Network Infrastructure Operations Handbook'},
+  {slug: 'smart-contract-audit-2026', title: 'Smart Contract Audit 2026'},
+  {slug: 'smart-contract-audit-architecture-overview', title: 'Smart Contract Audit Architecture Overview'},
+  {slug: 'smart-contract-audit-checklist-for-it-leaders', title: 'Smart Contract Audit Checklist For It Leaders'},
+  {slug: 'smart-contract-audit-executive-guide', title: 'Smart Contract Audit Executive Guide'},
+  {slug: 'smart-contract-audit-implementation-playbook', title: 'Smart Contract Audit Implementation Playbook'},
+];
+
+export default function BlogPage() {
   return (
-    <PageTemplate
+    <StandardPage
       title="Blog"
-      description="Practical guides on AI, IT operations, cloud, security, and growth—written for decision-makers who want implementation, not slides."
+      subtitle="Guides, roadmap notes, and implementation playbooks from the Zion platform."
       breadcrumbItems={[
         { label: 'Home', href: '/' },
-        { label: 'Blog', href: '/blog' },
+        { label: 'Blog' },
       ]}
-      layout="hero"
-      heroIcon="📝"
-      actions={[
-        { label: 'Browse All Posts', href: '/blog', style: 'primary' },
-      ]}
-      showBottomCta={false}
     >
-      <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-5 mb-14">
-          {featured.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/blog/${post.slug}/`}
-              className="glass-card group hover:border-purple-500/50 transition-all"
-            >
-              <div className="text-xs font-semibold text-purple-300 mb-2">
-                Featured
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-purple-200">
-                {post.title}
-              </h3>
-              <p className="text-slate-400 text-sm mb-4">
-                {post.intent}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {post.topics.map((topic) => (
-                  <span
-                    key={topic}
-                    className="text-[11px] font-semibold uppercase tracking-wider bg-slate-800 text-slate-300 border border-slate-700 px-2 py-1 rounded-full"
-                  >
-                    {topic}
-                  </span>
-                ))}
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-white">Latest Posts</h2>
-          <span className="text-xs text-slate-500">
-            {posts.length} topics
-          </span>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {latest.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/blog/${post.slug}/`}
-              className="glass-card group hover:border-purple-500/40 transition-all"
-            >
-              <div className="flex flex-wrap gap-2 mb-3">
-                {post.topics.slice(0, 2).map((topic) => (
-                  <span
-                    key={topic}
-                    className="text-[10px] font-semibold uppercase tracking-wider bg-purple-500/10 text-purple-300 border border-purple-500/20 px-2 py-1 rounded-full"
-                  >
-                    {topic}
-                  </span>
-                ))}
-              </div>
-              <h3 className="text-base font-semibold text-white mb-2 group-hover:text-purple-200">
-                {post.title}
-              </h3>
-              <p className="text-slate-400 text-sm mb-3 line-clamp-2">
-                {post.intent}
-              </p>
-              <span className="text-xs text-purple-400 font-medium">
-                Read article →
-              </span>
-            </Link>
-          ))}
-        </div>
-
-        <div className="mt-14">
-          <div className="glass-card p-6 md:p-8">
-            <h2 className="text-2xl font-bold text-white mb-2">
-              Want a custom post based on your environment?
-            </h2>
-            <p className="text-slate-400 mb-4 max-w-2xl">
-              Tell us your stack, goals, and constraints. We can generate a tailored implementation playbook from this catalog as a starting point.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/contact/" className="btn-primary">
-                Request a custom playbook
-              </Link>
-              <Link href="/services/" className="btn-secondary">
-                Browse services instead
-              </Link>
-            </div>
-          </div>
-        </div>
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {posts.map((post) => (
+          <Link key={post.slug} href={`/blog/${post.slug}`} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 hover:border-purple-500/40 transition-all">
+            <h3 className="text-white font-semibold mb-2">{post.title}</h3>
+            <span className="text-purple-300 text-xs">Read post →</span>
+          </Link>
+        ))}
       </div>
-    </PageTemplate>
+    </StandardPage>
   );
 }
