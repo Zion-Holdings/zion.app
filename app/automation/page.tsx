@@ -16,8 +16,8 @@ export default function AutomationPage() {
         { label: 'Automation', href: '/automation/' },
       ]}
       actions={[
-        { label: 'Start a project', href: '/start-project/', variant: 'primary' },
-        { label: 'Contact us', href: '/contact/', variant: 'secondary' },
+        { label: 'Start a project', href: '/start-project/', style: 'primary' },
+        { label: 'Contact us', href: '/contact/', style: 'secondary' },
       ]}
     >
       <p>

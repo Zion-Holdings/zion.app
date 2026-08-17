@@ -16,8 +16,8 @@ export default function StartProjectPage() {
         { label: 'Start a Project', href: '/start-project/' },
       ]}
       actions={[
-        { label: 'Contact us', href: '/contact/', variant: 'primary' },
-        { label: 'See services', href: '/services/', variant: 'secondary' },
+        { label: 'Contact us', href: '/contact/', style: 'primary' },
+        { label: 'See services', href: '/services/', style: 'secondary' },
       ]}
     >
       <p>

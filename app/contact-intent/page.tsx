@@ -16,8 +16,8 @@ export default function ContactIntentPage() {
         { label: 'Contact Intent', href: '/contact-intent/' },
       ]}
       actions={[
-        { label: 'Go to contact', href: '/contact/', variant: 'primary' },
-        { label: 'Partnerships', href: '/partners/', variant: 'secondary' },
+        { label: 'Go to contact', href: '/contact/', style: 'primary' },
+        { label: 'Partnerships', href: '/partners/', style: 'secondary' },
       ]}
     >
       <p>

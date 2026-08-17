@@ -16,8 +16,8 @@ export default function PartnershipProgramPage() {
         { label: 'Partnership Program', href: '/partnership-program/' },
       ]}
       actions={[
-        { label: 'Partners overview', href: '/partners/', variant: 'primary' },
-        { label: 'Contact us', href: '/contact/', variant: 'secondary' },
+        { label: 'Partners overview', href: '/partners/', style: 'primary' },
+        { label: 'Contact us', href: '/contact/', style: 'secondary' },
       ]}
     >
       <p>
