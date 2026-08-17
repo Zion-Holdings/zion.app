@@ -46,6 +46,11 @@ export const RESOURCE_LINKS = [
   { name: 'Contact', href: '/contact' },
   { name: 'FAQ', href: '/faq' },
   { name: 'About', href: '/about' },
+  { name: 'Providers', href: '/providers' },
+  { name: 'Integrators', href: '/integrators' },
+  { name: 'IT Vendors', href: '/it-vendors' },
+  { name: 'Enterprise Clients', href: '/business-customers' },
+  { name: 'Government', href: '/governments' },
 ];
 
 export const FEATURED_AI_SERVICE_LINKS = [
