@@ -3,13 +3,13 @@
 import Link from 'next/link';
 import { allServices } from '@/data/servicesData';
 import type { Metadata } from 'next';
+import PageTemplate from '@/components/PageTemplate';
 
 export const metadata: Metadata = {
-  title: 'Products &amp; Platforms | Zion Tech Group',
-  description: '{p.desc}',
-  alternates: { canonical: '/produc/' },
+  title: 'Products & Platforms | Zion Tech Group',
+  description: 'Six product families, 307+ AI services, 110+ IT infrastructure services — structured into AI, IT, Cloud, Security, Data, and Automation.',
+  alternates: { canonical: '/products/' },
 };
-
 
 const PRODUCTS: readonly {
   key: string;
@@ -120,33 +120,27 @@ const PRODUCTS: readonly {
 
 export default function ProductsPage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
-      <div className="container-page">
-        <nav className="mb-6 text-sm text-slate-400">
-          <Link href="/" className="hover:text-purple-400 transition">Home</Link>
-          <span className="mx-2">/</span>
-          <span className="text-slate-300">Products</span>
-        </nav>
-
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Products &amp; Platforms
-          </h1>
-          <p className="text-xl text-slate-300 leading-relaxed">
-            Six product families, <strong className="text-white">{PRODUCTS.reduce((s, p) => s + p.count, 0).toLocaleString()}</strong> services — structured
-            into AI, IT, Cloud, Security, Data, and Automation. Pick a family to drill into the
-            full service catalog.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-16">
+    <PageTemplate
+      title="Products & Platforms"
+      description={`Six product families, ${PRODUCTS.reduce((s, p) => s + p.count, 0).toLocaleString()} services — structured into AI, IT, Cloud, Security, Data, and Automation. Pick a family to drill into the full service catalog.`}
+      category="Product Catalog"
+      heroIcon="📦"
+      actions={[
+        { label: 'Browse All Services', href: '/services', style: 'secondary' },
+      ]}
+      breadcrumbItems={[
+        { label: 'Home', href: '/' },
+        { label: 'Products', href: '/products' },
+      ]}
+      layout="hero"
+      showBottomCta={true}
+    >
+      <div className="max-w-6xl mx-auto">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {PRODUCTS.map((p) => (
-            <div
-              key={p.key}
-              className="bg-slate-900/80 border border-slate-700 rounded-2xl p-6 hover:border-purple-500/50 transition flex flex-col"
-            >
+            <Link key={p.key} href={p.cta} className="glass-card group">
               <div className="text-4xl mb-3">{p.emoji}</div>
-              <h2 className="text-xl font-bold text-white mb-1">{p.title}</h2>
+              <h2 className="text-xl font-bold text-white mb-1 group-hover:text-purple-300 transition">{p.title}</h2>
               <p className="text-slate-400 text-sm mb-4 leading-relaxed">{p.desc}</p>
               <ul className="space-y-1.5 mb-6 flex-1">
                 {p.bullets.map((b, i) => (
@@ -159,33 +153,14 @@ export default function ProductsPage() {
                 <span className="text-slate-400 text-sm">
                   {p.count.toLocaleString()} service{p.count > 1 ? 's' : ''}
                 </span>
-                <Link
-                  href={p.cta}
-                  className="text-purple-400 hover:text-purple-300 text-sm font-semibold"
-                >
+                <span className="text-purple-400 text-xs font-semibold group-hover:translate-x-1 transition-transform">
                   Browse →
-                </Link>
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
-
-        <section className="cta-section text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Can't Find What You Need?</h2>
-          <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
-            We build custom systems on top of any of these platforms — or stitch several together
-            into a single AI-first solution. Tell us what you need.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/configurator/" className="btn-primary text-lg px-10 py-4">
-              ⚙️ Build a Custom Solution
-            </Link>
-            <Link href="/contact/" className="btn-secondary text-lg px-10 py-4">
-              Talk to an Expert
-            </Link>
-          </div>
-        </section>
       </div>
-    </main>
+    </PageTemplate>
   );
 }

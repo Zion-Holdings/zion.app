@@ -1,21 +1,36 @@
 import type { Metadata } from 'next';
+import PageTemplate from '@/components/PageTemplate';
 
 export const metadata: Metadata = {
   title: 'System Status | Zion Tech Group',
   description: 'Real-time status of Zion Tech Group services.',
-  alternates: {
-    canonical: '/status/',
-  },
+  alternates: { canonical: '/status/' },
 };
 
-export default function StatusAlias() {
+export default function StatusPage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
-      <div className="container-page">
-        <h1 className="text-3xl font-bold text-white mb-4">System Status</h1>
-        <p className="text-slate-300 mb-6">Live platform health is available on the dedicated status page.</p>
-        <a href="/status/" className="text-purple-400 hover:text-purple-300">Open Status →</a>
+    <PageTemplate
+      title="System Status"
+      description="Live platform health is available on the dedicated service health page."
+      category="System Status"
+      heroIcon="📡"
+      actions={[
+        { label: 'View Service Health', href: '/status/service-health', style: 'primary' },
+        { label: 'Back to Dashboard', href: '/dashboard', style: 'secondary' },
+      ]}
+      breadcrumbItems={[
+        { label: 'Home', href: '/' },
+        { label: 'Status', href: '/status' },
+      ]}
+      layout="hero"
+      showBottomCta={false}
+    >
+      <div className="text-center max-w-2xl mx-auto">
+        <p className="text-slate-400">
+          Our infrastructure is monitored 24/7 by autonomous agents. Visit the service health
+          page for live uptime, response time, and incident history across all 42,000+ services.
+        </p>
       </div>
-    </main>
+    </PageTemplate>
   );
 }
