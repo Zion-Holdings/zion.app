@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation';
+import { notFound, redirect } from 'next/navigation';
 import StandardPage from '@/components/StandardPage';
 
 type Params = { slug: string[] };
@@ -21,7 +21,7 @@ export default function ServiceSlugPage({ params }: { params: Params }) {
   const mapping = SERVICE_CATEGORY_MAP[slug];
 
   if (!mapping) {
-    notFound();
+    redirect('/services/');
   }
 
   return (
