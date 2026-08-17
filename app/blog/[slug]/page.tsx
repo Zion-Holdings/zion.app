@@ -65,31 +65,19 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         </header>
 
         <section className="prose prose-invert max-w-none">
-          <h2 className="text-2xl font-bold text-white mb-3">Overview</h2>
-          <p className="text-slate-300 mb-6">
+           className="text-2xl font-bold text-white mb-3"Overview</h2></h2><p><p className="text-slate-300 mb-6">
             This guide covers the core concepts, practical requirements, and common pitfalls for this topic.
-          </p>
-
-          <h2 className="text-2xl font-bold text-white mb-3">Key considerations</h2>
-          <p className="text-slate-300 mb-6">
+          </p></p> className="text-2xl font-bold text-white mb-3"Key considerations</h2></h2><p><p className="text-slate-300 mb-6">
             Evaluate options against operational reality, compliance requirements, and measurable outcomes.
-          </p>
-
-          <h2 className="text-2xl font-bold text-white mb-3">Implementation</h2>
-          <p className="text-slate-300 mb-6">
+          </p></p> className="text-2xl font-bold text-white mb-3"Implementation</h2></h2><p><p className="text-slate-300 mb-6">
             Start with a focused pilot, instrument metrics, and scale after proving the model.
-          </p>
-
-          <h2 className="text-2xl font-bold text-white mb-3">Next steps</h2>
-          <p className="text-slate-300 mb-6">
+          </p></p> className="text-2xl font-bold text-white mb-3"Next steps</h2></h2><p><p className="text-slate-300 mb-6">
             Contact Zion Tech Group to define a measurable outcome and pilot plan.
-          </p>
-        </section>
+          </p></p></section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
-            <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
-            <ul className="list-disc pl-6 text-slate-300 space-y-2">
+             className="mb-2 text-xl font-bold text-white"Related articles</h2></h2><p><ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li>
               <Link href="/blog/ai-it-operations-roi-and-cost-model/">Ai It Operations Roi And Cost Model</Link></li>
               <li>
@@ -100,15 +88,12 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               <Link href="/blog/smart-contract-audit-architecture-overview/">Smart Contract Audit Architecture Overview</Link></li>
             </ul>
           </div>
-          <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
-            <h2 className="mb-2 text-xl font-bold text-white">Next steps</h2>
-            <p className="text-slate-300">Talk with Zion Tech Group about your environment and goals.</p>
+          <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6"></p> className="mb-2 text-xl font-bold text-white"Next steps</h2></h2><p><p className="text-slate-300">Talk with Zion Tech Group about your environment and goals.</p>
             <div className="mt-4 flex flex-col gap-3 sm:flex-row">
               <Link href="/services" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
               <Link href="/contact" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Contact us</Link>
             </div>
-          </div>
-        </section>
+          </div></p></section>
       </article>
     </StandardPage>
   );

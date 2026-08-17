@@ -37,38 +37,23 @@ export default function Page() {
         </header>
 
         <section className="prose prose-invert max-w-none">
-<h2 className="text-2xl font-bold text-white mb-3">Overview</h2>
-          <p className="text-slate-300 mb-6">DevSecOps Pipeline: security and governance. Organizations benefit from clearer requirements, tighter governance, and repeatable delivery models.</p>
-
-          <h2 className="text-2xl font-bold text-white mb-3">Key considerations</h2>
-          <p className="text-slate-300 mb-6">Evaluate options against operational reality, compliance requirements, and measurable outcomes. Prioritize patterns that reduce rework and handoffs.</p>
-
-          <h2 className="text-2xl font-bold text-white mb-3">Implementation</h2>
-          <p className="text-slate-300 mb-6">Start with a focused pilot, instrument metrics, and scale after proving the model. Document decisions, owners, and review cycles.</p>
-
-          <h2 className="text-2xl font-bold text-white mb-3">Next steps</h2>
-          <p className="text-slate-300 mb-6">If this guide matches your priorities, the next step is a scoping call with Zion Tech Group. Contact us to define a measurable outcome and pilot plan.</p>
-        </section>
+ className="text-2xl font-bold text-white mb-3"Overview</h2></h2><p><p className="text-slate-300 mb-6">DevSecOps Pipeline: security and governance. Organizations benefit from clearer requirements, tighter governance, and repeatable delivery models.</p></p> className="text-2xl font-bold text-white mb-3"Key considerations</h2></h2><p><p className="text-slate-300 mb-6">Evaluate options against operational reality, compliance requirements, and measurable outcomes. Prioritize patterns that reduce rework and handoffs.</p></p> className="text-2xl font-bold text-white mb-3"Implementation</h2></h2><p><p className="text-slate-300 mb-6">Start with a focused pilot, instrument metrics, and scale after proving the model. Document decisions, owners, and review cycles.</p></p> className="text-2xl font-bold text-white mb-3"Next steps</h2></h2><p><p className="text-slate-300 mb-6">If this guide matches your priorities, the next step is a scoping call with Zion Tech Group. Contact us to define a measurable outcome and pilot plan.</p></p></section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
-            <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
-            <ul className="list-disc pl-6 text-slate-300 space-y-2">
+             className="mb-2 text-xl font-bold text-white"Related articles</h2></h2><p><ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li>
               <Link href="/blog/ai-for-it-operations-and-observability/">AI for IT Operations and Observability</Link></li>
 <li>
               <Link href="/blog/ai-for-devops-and-incident-response/">AI for DevOps and Incident Response</Link></li>
             </ul>
           </div>
-          <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
-            <h2 className="mb-2 text-xl font-bold text-white">Next steps</h2>
-            <p className="text-slate-300">Talk with Zion Tech Group about your environment and goals.</p>
+          <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6"></p> className="mb-2 text-xl font-bold text-white"Next steps</h2></h2><p><p className="text-slate-300">Talk with Zion Tech Group about your environment and goals.</p>
             <div className="mt-4 flex flex-col gap-3 sm:flex-row">
               <Link href="/services" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
               <Link href="/contact" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Contact us</Link>
             </div>
-          </div>
-        </section>
+          </div></p></section>
 
         <script
           type="application/ld+json"
