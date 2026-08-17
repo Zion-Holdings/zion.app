@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     url: 'https://ziontechgroup.com/service-comparison/',
     type: 'website',
   },
-  alternates: { canonical: '/service-comparison/' },
+  alternates: { canonical: '/tools/service-comparison/' },
 };
 
 const FACTORS = [
