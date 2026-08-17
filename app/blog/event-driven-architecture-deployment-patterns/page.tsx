@@ -1,31 +1,45 @@
 import Link from 'next/link';
-import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
   title: 'Event Driven Architecture: deployment patterns | Zion Tech Group',
-  description: 'Event Driven Architecture: deployment patterns',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
+  description: 'Event Driven Architecture: deployment patterns.',
   openGraph: {
-    title: 'Event Driven Architecture: deployment patterns',
-    description: 'Event Driven Architecture: deployment patterns',
-    url: 'https://ziontechgroup.com/blog/event-driven-architecture-deployment-patterns/',
+    title: 'Event Driven Architecture: deployment patterns | Zion Tech Group',
+    description: 'Event Driven Architecture: deployment patterns.',
+    url: 'https://ziontechgroup.comapp/blog/event-driven-architecture-deployment-patterns/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/event-driven-architecture-deployment-patterns/' },
+  alternates: { canonical: 'app/blog/event-driven-architecture-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Event Driven Architecture: deployment patterns", "description": "Event Driven Architecture: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T14:10:08Z", "dateModified": "2026-08-17T14:10:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/event-driven-architecture-deployment-patterns/"};
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  headline: 'Event Driven Architecture: deployment patterns',
+  description: 'Event Driven Architecture: deployment patterns.',
+  author: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
+  publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
+  datePublished: '2026-08-17T11:00:00Z',
+  dateModified: '2026-08-17T11:00:00Z',
+  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/event-driven-architecture-deployment-patterns/'
+};
 
 export default function Page() {
   return (
-    <div className="relative min-h-screen bg-slate-950">
+    <StandardPage
+      title="Event Driven Architecture: deployment patterns"
+      breadcrumbItems={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'Event Driven Architecture: deployment patterns' },
+      ]}
+    >
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'Event Driven Architecture: deployment patterns' }]} className="mb-8" />
         <header className="mb-10">
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Event Driven Architecture: deployment patterns</h1>
-          <p className="mt-4 text-lg text-slate-300">Event Driven Architecture: deployment patterns</p>
+          <p className="mt-4 text-lg text-slate-300">Event Driven Architecture: deployment patterns.</p>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-slate-400">
             <span>By Zion Tech Group</span>
             <span aria-hidden="true">•</span>
@@ -36,31 +50,27 @@ export default function Page() {
         </header>
 
         <section className="prose prose-invert max-w-none">
-## Current state
-Most organizations already have data, tools, and manual workflows for event driven architecture: deployment patterns. The missing piece is usually orchestration, clear ownership, and a repeatable operating model that can scale beyond a pilot. Understanding the current state is essential: map workflows, measure cycle times, and identify bottlenecks before proposing automation. A realistic baseline prevents unrealistic promises and helps leadership see the real gap between current state and target outcomes. Spend time in discovery before committing to a roadmap; the best automation plans come from deep operational knowledge.
+          <h2 className="text-2xl font-bold text-white mb-3">Overview</h2>
+          <p className="text-slate-300 mb-6">Event Driven Architecture: deployment patterns. Organizations benefit from clearer requirements, tighter governance, and repeatable delivery models.</p>
 
-## Opportunities
-High-impact opportunities for event driven architecture: deployment patterns usually cluster around onboarding, quality assurance, cost visibility, and escalation handling. Focus on workflows with high volume, high error rates, or slow handoffs; these produce the clearest ROI and fastest adoption. Map each opportunity to a business outcome so stakeholders understand the why behind the investment. Choose one opportunity, measure the current state, then design an automation or augmentation that reduces rework. Track opportunity value over time so you can prioritize the next wave after the first success.
+          <h2 className="text-2xl font-bold text-white mb-3">Key considerations</h2>
+          <p className="text-slate-300 mb-6">Evaluate options against operational reality, compliance requirements, and measurable outcomes. Prioritize patterns that reduce rework and handoffs.</p>
 
-## Implementation roadmap
-Phase one should deliver a single measurable win in 30 days for event driven architecture: deployment patterns. Phase two adds reliability controls: monitoring, access management, runbooks, and escalation criteria. Phase three expands scope only after validated adoption, stable operations, and clear ownership across teams. Each phase should include a retrospective so lessons learned feed the next phase rather than repeating the same mistakes. Keep the roadmap visible to stakeholders and update it as the program matures; transparency builds trust and funding continuity.
+          <h2 className="text-2xl font-bold text-white mb-3">Implementation</h2>
+          <p className="text-slate-300 mb-6">Start with a focused pilot, instrument metrics, and scale after proving the model. Document decisions, owners, and review cycles.</p>
 
-## Risks and mitigations
-Main risks for event driven architecture: deployment patterns include data quality gaps, over-automation, brittle integrations, missing rollback criteria, and unclear ownership. Data quality gaps can be reduced with lightweight validation and clearly defined data contracts before automation begins. Over-automation is best avoided with guardrails, approval flows, and human escalation paths for exceptions. Weak rollback plans can be fixed with staged rollout criteria and synthetic monitors that trigger alerts before customers are affected. Ownership gaps are solved by naming a primary owner, a backup owner, and an escalation path before launch.
-
-## Outcomes to measure
-Leading indicators for event driven architecture: deployment patterns: workflow completion rate, escalation rate, time-to-resolution, and user satisfaction. Lagging indicators: revenue trend, cost trend, customer retention, and operational efficiency. Track both leading and lagging indicators so you can explain progress to leadership before financial results appear. Use a rolling 90-day window and re-baseline monthly; this keeps the program accountable without demanding perfection on day one. Publish metrics in a shared dashboard so the whole team sees progress, not just the program sponsor.
-
+          <h2 className="text-2xl font-bold text-white mb-3">Next steps</h2>
+          <p className="text-slate-300 mb-6">If this guide matches your priorities, the next step is a scoping call with Zion Tech Group. Contact us to define a measurable outcome and pilot plan.</p>
         </section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-optimizer-2026">Ai Accessibility Optimizer 2026</Link></li>
-<li><Link href="/blog/network-infrastructure-vendor-evaluation">Network Infrastructure Vendor Evaluation</Link></li>
-<li><Link href="/blog/api-gateway-management-evaluation-framework">Api Gateway Management Evaluation Framework</Link></li>
-<li><Link href="/blog/endpoint-management-deployment-patterns">Endpoint Management Deployment Patterns</Link></li>
+              <li><Link href="/blog/ai-it-operations-roi-and-cost-model/">Ai It Operations Roi And Cost Model</Link></li>
+              <li><Link href="/blog/microsaas-customer-onboarding-deployment-patterns/">Microsaas Customer Onboarding Deployment Patterns</Link></li>
+              <li><Link href="/blog/ai-accessibility-auditor-vendor-evaluation/">Ai Accessibility Auditor Vendor Evaluation</Link></li>
+              <li><Link href="/blog/smart-contract-audit-architecture-overview/">Smart Contract Audit Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,9 +85,9 @@ Leading indicators for event driven architecture: deployment patterns: workflow 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
-    </div>
+    </StandardPage>
   );
 }

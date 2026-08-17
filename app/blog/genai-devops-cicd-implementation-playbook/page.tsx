@@ -1,31 +1,45 @@
 import Link from 'next/link';
-import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
   title: 'GenAI DevOps CI/CD: implementation playbook | Zion Tech Group',
-  description: 'GenAI DevOps CI/CD: implementation playbook',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
+  description: 'GenAI DevOps CI/CD: implementation playbook.',
   openGraph: {
-    title: 'GenAI DevOps CI/CD: implementation playbook',
-    description: 'GenAI DevOps CI/CD: implementation playbook',
-    url: 'https://ziontechgroup.com/blog/genai-devops-cicd-implementation-playbook/',
+    title: 'GenAI DevOps CI/CD: implementation playbook | Zion Tech Group',
+    description: 'GenAI DevOps CI/CD: implementation playbook.',
+    url: 'https://ziontechgroup.comapp/blog/genai-devops-cicd-implementation-playbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/genai-devops-cicd-implementation-playbook/' },
+  alternates: { canonical: 'app/blog/genai-devops-cicd-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GenAI DevOps CI/CD: implementation playbook", "description": "GenAI DevOps CI/CD: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T11:01:18Z", "dateModified": "2026-08-17T11:01:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/genai-devops-cicd-implementation-playbook/"};
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  headline: 'GenAI DevOps CI/CD: implementation playbook',
+  description: 'GenAI DevOps CI/CD: implementation playbook.',
+  author: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
+  publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
+  datePublished: '2026-08-17T11:00:00Z',
+  dateModified: '2026-08-17T11:00:00Z',
+  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/genai-devops-cicd-implementation-playbook/'
+};
 
 export default function Page() {
   return (
-    <div className="relative min-h-screen bg-slate-950">
+    <StandardPage
+      title="GenAI DevOps CI/CD: implementation playbook"
+      breadcrumbItems={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'GenAI DevOps CI/CD: implementation playbook' },
+      ]}
+    >
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'GenAI DevOps CI/CD: implementation playbook' }]} className="mb-8" />
         <header className="mb-10">
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">GenAI DevOps CI/CD: implementation playbook</h1>
-          <p className="mt-4 text-lg text-slate-300">GenAI DevOps CI/CD: implementation playbook</p>
+          <p className="mt-4 text-lg text-slate-300">GenAI DevOps CI/CD: implementation playbook.</p>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-slate-400">
             <span>By Zion Tech Group</span>
             <span aria-hidden="true">•</span>
@@ -36,28 +50,27 @@ export default function Page() {
         </header>
 
         <section className="prose prose-invert max-w-none">
-## Market signal
-Demand is rising for durable genai devops ci/cd: implementation playbook capabilities rather than one-off automations. Buyers want measurable outcomes, stable operations, and vendor partnerships that grow with their environment. The strongest programs differentiate themselves with operational maturity, not feature breadth. Focus on outcomes, roadmap clarity, and evidence-based improvements rather than generic AI marketing. Use market signal analysis to prioritize investments that align with buyer expectations and competitive positioning.
+          <h2 className="text-2xl font-bold text-white mb-3">Overview</h2>
+          <p className="text-slate-300 mb-6">GenAI DevOps CI/CD: implementation playbook. Organizations benefit from clearer requirements, tighter governance, and repeatable delivery models.</p>
 
-## Capability map
-Map capabilities against current workflow friction for genai devops ci/cd: implementation playbook. Highest-ROI automations reduce handoffs and rework rather than simply digitizing existing handoffs. A capability map makes priorities visible to leadership and creates a shared view of where automation should start. Revisit the map quarterly; new opportunities emerge as teams mature and data quality improves. Share the map with operators and validate assumptions before investing in automation.
+          <h2 className="text-2xl font-bold text-white mb-3">Key considerations</h2>
+          <p className="text-slate-300 mb-6">Evaluate options against operational reality, compliance requirements, and measurable outcomes. Prioritize patterns that reduce rework and handoffs.</p>
 
-## Execution playbook
-1) Define success metrics. 2) Choose one primary workflow. 3) Automate the lowest-risk step first. 4) Add observability. 5) Expand only after stable operation. Document decisions, owners, dates, and metrics in a shared workspace so progress remains visible to all stakeholders. Review the playbook after each phase and update it with lessons learned; the playbook becomes organizational memory. Repeatable execution separates successful teams from teams that rely on heroics and undocumented workarounds. Keep the playbook short and actionable; long strategy documents rarely change behavior on the ground.
+          <h2 className="text-2xl font-bold text-white mb-3">Implementation</h2>
+          <p className="text-slate-300 mb-6">Start with a focused pilot, instrument metrics, and scale after proving the model. Document decisions, owners, and review cycles.</p>
 
-## Conversion path
-If this guide matches your genai devops ci/cd: implementation playbook initiative, the next step is a scoping call with Zion Tech Group. We will define one measurable outcome, identify dependencies, and outline a pilot plan you can start in days. Contact us to move from assessment to execution with a timeline and success criteria already in place.
-
+          <h2 className="text-2xl font-bold text-white mb-3">Next steps</h2>
+          <p className="text-slate-300 mb-6">If this guide matches your priorities, the next step is a scoping call with Zion Tech Group. Contact us to define a measurable outcome and pilot plan.</p>
         </section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automated-ai-reporting-operations-handbook">Automated Ai Reporting Operations Handbook</Link></li>
-<li><Link href="/blog/brand-voice-guardian-case-study">Brand Voice Guardian Case Study</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-architecture-overview">Ai Agent Tool Builder Architecture Overview</Link></li>
-<li><Link href="/blog/cloud-native-app-development-case-study">Cloud Native App Development Case Study</Link></li>
+              <li><Link href="/blog/ai-it-operations-roi-and-cost-model/">Ai It Operations Roi And Cost Model</Link></li>
+              <li><Link href="/blog/microsaas-customer-onboarding-deployment-patterns/">Microsaas Customer Onboarding Deployment Patterns</Link></li>
+              <li><Link href="/blog/ai-accessibility-auditor-vendor-evaluation/">Ai Accessibility Auditor Vendor Evaluation</Link></li>
+              <li><Link href="/blog/smart-contract-audit-architecture-overview/">Smart Contract Audit Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,9 +85,9 @@ If this guide matches your genai devops ci/cd: implementation playbook initiativ
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
-    </div>
+    </StandardPage>
   );
 }

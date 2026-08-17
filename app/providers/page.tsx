@@ -1,14 +1,14 @@
-import StandardPage from '@/components/StandardPage';
+export const metadata: Metadata = {
+  title: 'Providers | Zion Tech Group',
+  description: 'Managed service providers, platforms, and tooling partnerships for AI and IT delivery.',
+  openGraph: {
+    title: 'Providers | Zion Tech Group',
+    description: 'Managed service providers, platforms, and tooling partnerships for AI and IT delivery.',
+    url: 'https://ziontechgroup.com/providers/',
+    type: 'website',
+    siteName: 'Zion Tech Group',
+  },
+  alternates: { canonical: '/providers/' },
+};
 
 export default function ProvidersPage() {
-  return (
-    <StandardPage
-      title="Technology Providers"
-      subtitle="Connect with validated technology providers across AI, cloud, security, data, and automation."
-      breadcrumbItems={[
-        { label: 'Home', href: '/' },
-        { label: 'Providers' },
-      ]}
-    />
-  );
-}

@@ -1,14 +1,14 @@
-import StandardPage from '@/components/StandardPage';
+export const metadata: Metadata = {
+  title: 'Governments | Zion Tech Group',
+  description: 'Secure AI, IT, and automation programs for government organizations.',
+  openGraph: {
+    title: 'Governments | Zion Tech Group',
+    description: 'Secure AI, IT, and automation programs for government organizations.',
+    url: 'https://ziontechgroup.com/governments/',
+    type: 'website',
+    siteName: 'Zion Tech Group',
+  },
+  alternates: { canonical: '/governments/' },
+};
 
 export default function GovernmentsPage() {
-  return (
-    <StandardPage
-      title="Government"
-      subtitle="Secure, compliant, and scalable digital transformation for public sector organizations."
-      breadcrumbItems={[
-        { label: 'Home', href: '/' },
-        { label: 'Government' },
-      ]}
-    />
-  );
-}

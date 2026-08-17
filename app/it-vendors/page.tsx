@@ -1,14 +1,14 @@
-import StandardPage from '@/components/StandardPage';
+export const metadata: Metadata = {
+  title: 'IT Vendors | Zion Tech Group',
+  description: 'Vendor qualification, governance, and lifecycle management for IT environments.',
+  openGraph: {
+    title: 'IT Vendors | Zion Tech Group',
+    description: 'Vendor qualification, governance, and lifecycle management for IT environments.',
+    url: 'https://ziontechgroup.com/it-vendors/',
+    type: 'website',
+    siteName: 'Zion Tech Group',
+  },
+  alternates: { canonical: '/it-vendors/' },
+};
 
-export default function ITVendorsPage() {
-  return (
-    <StandardPage
-      title="IT Vendors"
-      subtitle="Explore IT vendor partners for procurement, support, and managed delivery."
-      breadcrumbItems={[
-        { label: 'Home', href: '/' },
-        { label: 'IT Vendors' },
-      ]}
-    />
-  );
-}
+export default function ItVendorsPage() {

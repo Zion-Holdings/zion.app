@@ -1,31 +1,45 @@
 import Link from 'next/link';
-import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
   title: 'MicroSaaS Expense Tracker: case study | Zion Tech Group',
-  description: 'MicroSaaS Expense Tracker: case study',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
+  description: 'MicroSaaS Expense Tracker: case study.',
   openGraph: {
-    title: 'MicroSaaS Expense Tracker: case study',
-    description: 'MicroSaaS Expense Tracker: case study',
-    url: 'https://ziontechgroup.com/blog/microsaas-expense-tracker-case-study/',
+    title: 'MicroSaaS Expense Tracker: case study | Zion Tech Group',
+    description: 'MicroSaaS Expense Tracker: case study.',
+    url: 'https://ziontechgroup.comapp/blog/microsaas-expense-tracker-case-study/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/microsaas-expense-tracker-case-study/' },
+  alternates: { canonical: 'app/blog/microsaas-expense-tracker-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Expense Tracker: case study", "description": "MicroSaaS Expense Tracker: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T11:01:14Z", "dateModified": "2026-08-17T11:01:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-expense-tracker-case-study/"};
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  headline: 'MicroSaaS Expense Tracker: case study',
+  description: 'MicroSaaS Expense Tracker: case study.',
+  author: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
+  publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
+  datePublished: '2026-08-17T11:00:00Z',
+  dateModified: '2026-08-17T11:00:00Z',
+  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/microsaas-expense-tracker-case-study/'
+};
 
 export default function Page() {
   return (
-    <div className="relative min-h-screen bg-slate-950">
+    <StandardPage
+      title="MicroSaaS Expense Tracker: case study"
+      breadcrumbItems={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog/' },
+        { label: 'MicroSaaS Expense Tracker: case study' },
+      ]}
+    >
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'MicroSaaS Expense Tracker: case study' }]} className="mb-8" />
         <header className="mb-10">
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">MicroSaaS Expense Tracker: case study</h1>
-          <p className="mt-4 text-lg text-slate-300">MicroSaaS Expense Tracker: case study</p>
+          <p className="mt-4 text-lg text-slate-300">MicroSaaS Expense Tracker: case study.</p>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-slate-400">
             <span>By Zion Tech Group</span>
             <span aria-hidden="true">•</span>
@@ -36,31 +50,27 @@ export default function Page() {
         </header>
 
         <section className="prose prose-invert max-w-none">
-## Problem definition
-Teams frequently over-index on proofs of concept without production guardrails for microsaas expense tracker: case study: monitoring, access control, incident response, and change management. Without these guardrails, promising pilots become operational liabilities that consume more time than they save. A clear problem definition separates experiments from production-ready programs by stating the exact outcome, constraints, and success criteria. Invest time in problem definition before automation; it pays back in faster delivery and fewer rework cycles. Write the problem statement in one paragraph and share it with stakeholders to align expectations before work begins.
+          <h2 className="text-2xl font-bold text-white mb-3">Overview</h2>
+          <p className="text-slate-300 mb-6">MicroSaaS Expense Tracker: case study. Organizations benefit from clearer requirements, tighter governance, and repeatable delivery models.</p>
 
-## Architecture overview
-For microsaas expense tracker: case study, start with lightweight integration points, centralize data contracts, and expose only the actions required for human approval or escalation. Composable architectures outperform monolith replacements because they let teams evolve individual capabilities without disrupting the whole system. Keep the architecture observable: logs, metrics, and traces should answer why an action occurred, not just that it occurred. Avoid hidden coupling between services; explicit interfaces and clear ownership reduce coordination costs as the system scales. Revisit architecture after each phase and refactor coupling points before they become hard dependencies.
+          <h2 className="text-2xl font-bold text-white mb-3">Key considerations</h2>
+          <p className="text-slate-300 mb-6">Evaluate options against operational reality, compliance requirements, and measurable outcomes. Prioritize patterns that reduce rework and handoffs.</p>
 
-## Deployment patterns
-Use staged rollout for microsaas expense tracker: case study with explicit rollback criteria, synthetic monitors for critical paths, and defined ownership for alerts and incidents. Small, reversible changes reduce blast radius and make incidents easier to diagnose and recover from. Deployments should be boring by design: predictable, automated, and reversible with one command or control plane action. Pair deployment automation with canary or blue-green strategies when user-facing behavior changes. Track deployment frequency, failure rate, and recovery time; these metrics predict long-term operational health.
+          <h2 className="text-2xl font-bold text-white mb-3">Implementation</h2>
+          <p className="text-slate-300 mb-6">Start with a focused pilot, instrument metrics, and scale after proving the model. Document decisions, owners, and review cycles.</p>
 
-## Cost and ROI
-Calculate ROI for microsaas expense tracker: case study using saved hours, avoided incidents, faster throughput, or improved conversion. Use a rolling 90-day window and re-baseline monthly so stakeholders see real trend data rather than one-time estimates. Include operational costs: monitoring, on-call coverage, training, and exception handling. Ignoring these creates unrealistic ROI models. ROI should be owned by the program sponsor and reviewed publicly; transparency keeps teams accountable and funding intact. Update the ROI model after each phase so it reflects actual performance, not optimistic assumptions.
-
-## Action checklist
-For microsaas expense tracker: case study: pick one workflow, assign ownership, define success metrics, instrument execution, and set a 30-day review date. Write the checklist down and share it with stakeholders so expectations are explicit. Before launch, verify access controls, monitoring, rollback criteria, and on-call coverage. After launch, review metrics weekly and escalate deviations immediately; small drifts become large incidents when ignored. Use the checklist as a living document and update it as the program learns from real operation.
-
+          <h2 className="text-2xl font-bold text-white mb-3">Next steps</h2>
+          <p className="text-slate-300 mb-6">If this guide matches your priorities, the next step is a scoping call with Zion Tech Group. Contact us to define a measurable outcome and pilot plan.</p>
         </section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-optimizer-executive-guide">Ai Accessibility Optimizer Executive Guide</Link></li>
-<li><Link href="/blog/ai-data-backup-starter-template">Ai Data Backup Starter Template</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-evaluation-framework">Microsaas Hr Recruitment Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-architecture-overview">Ai Agent Tool Builder Architecture Overview</Link></li>
+              <li><Link href="/blog/ai-it-operations-roi-and-cost-model/">Ai It Operations Roi And Cost Model</Link></li>
+              <li><Link href="/blog/microsaas-customer-onboarding-deployment-patterns/">Microsaas Customer Onboarding Deployment Patterns</Link></li>
+              <li><Link href="/blog/ai-accessibility-auditor-vendor-evaluation/">Ai Accessibility Auditor Vendor Evaluation</Link></li>
+              <li><Link href="/blog/smart-contract-audit-architecture-overview/">Smart Contract Audit Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,9 +85,9 @@ For microsaas expense tracker: case study: pick one workflow, assign ownership, 
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </article>
-    </div>
+    </StandardPage>
   );
 }
