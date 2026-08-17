@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Bank Fraud Investigation Platform - Zion Tech Group",
-  description: "Automate fraud investigation workstreams: transaction link analysis, entity resolution, SAR filing automation, regulatory reporting. Reduces investigation time ",
+  description: "Automate fraud investigation workstreams: transaction link analysis, entity resolution, SAR filing automation, and regulatory reporting. Reduces investigation t",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-bank-fraud-investigator`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Bank Fraud Investigation Platform</h1>
-        <p className="text-lg text-gray-300 mb-8">Automate fraud investigation workstreams: transaction link analysis, entity resolution, SAR filing automation, regulatory reporting. Reduces investigation time by 75%.</p>
+        <p className="text-lg text-gray-300 mb-8">Automate fraud investigation workstreams: transaction link analysis, entity resolution, SAR filing automation, and regulatory reporting. Reduces investigation time by 75%.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

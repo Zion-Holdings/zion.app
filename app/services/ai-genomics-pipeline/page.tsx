@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Genomics Analysis & Precision Medicine Platform - Zion Tech Group",
-  description: "Process genomic data at scale: variant calling, pharmacogenomics, disease risk scoring, treatment recommendations. HIPAA-compliant, FDA guidance-aligned pipelin",
+  description: "Process genomic data at scale: variant calling, pharmacogenomics, disease risk scoring, and treatment recommendations. HIPAA-compliant, FDA guidance-aligned pip",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-genomics-pipeline`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Genomics Analysis &amp; Precision Medicine Platform</h1>
-        <p className="text-lg text-gray-300 mb-8">Process genomic data at scale: variant calling, pharmacogenomics, disease risk scoring, treatment recommendations. HIPAA-compliant, FDA guidance-aligned pipeline.</p>
+        <p className="text-lg text-gray-300 mb-8">Process genomic data at scale: variant calling, pharmacogenomics, disease risk scoring, and treatment recommendations. HIPAA-compliant, FDA guidance-aligned pipeline.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

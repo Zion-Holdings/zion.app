@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Wind Farm Performance Optimizer - Zion Tech Group",
-  description: "Maximize wind turbine output: yaw optimization, pitch control, wake effect modeling, predictive maintenance. Increases energy output by 12%.",
+  description: "Maximize wind turbine output: yaw optimization, pitch control, wake effect modeling, and predictive maintenance. Increases energy output by 12% and reduces main",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-wind-farm-optimizer`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Wind Farm Performance Optimizer</h1>
-        <p className="text-lg text-gray-300 mb-8">Maximize wind turbine output: yaw optimization, pitch control, wake effect modeling, predictive maintenance. Increases energy output by 12%.</p>
+        <p className="text-lg text-gray-300 mb-8">Maximize wind turbine output: yaw optimization, pitch control, wake effect modeling, and predictive maintenance. Increases energy output by 12% and reduces maintenance by 40%.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

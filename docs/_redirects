@@ -210,4 +210,16 @@
 /compliance-audit-security/    /compliance-audit-security/index.html    200
 /compliance-audit-security  /compliance-audit-security/index.html    200
 /data-analytics-business-intelligence/    /data-analytics-business-intelligence/index.html    200
-/data-analytics-business-intelligence  /data-analytics-business-intelligence/index.html    200
+/data-analytics-business-intelligence  /data-analytics-business-intelligence/index.html  200
+
+# New content page fallbacks
+/ai-roi-calculator/ /ai-roi-calculator/index.html 200
+/ai-roi-calculator /ai-roi-calculator/index.html 200
+/business-impact/ /business-impact/index.html 200
+/business-impact /business-impact/index.html 200
+/service-areas/ /service-areas/index.html 200
+/service-areas /service-areas/index.html 200
+/sla/ /sla/index.html 200
+/sla /sla/index.html 200
+/free-ai-readiness-audit/ /free-ai-readiness-audit/index.html 200
+/free-ai-readiness-audit /free-ai-readiness-audit/index.html 200

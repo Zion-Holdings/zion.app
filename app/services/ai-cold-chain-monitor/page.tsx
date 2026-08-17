@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Cold Chain Monitoring for Pharmaceuticals - Zion Tech Group",
-  description: "IoT + AI for pharma cold chain: real-time temperature monitoring, excursion prediction, FDA/GDP compliance reporting, automated corrective actions.",
+  description: "IoT + AI for pharma cold chain: real-time temperature monitoring, excursion prediction, compliance reporting (GDP/FDA), and automated corrective actions. Preven",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-cold-chain-monitor`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Cold Chain Monitoring for Pharmaceuticals</h1>
-        <p className="text-lg text-gray-300 mb-8">IoT + AI for pharma cold chain: real-time temperature monitoring, excursion prediction, FDA/GDP compliance reporting, automated corrective actions.</p>
+        <p className="text-lg text-gray-300 mb-8">IoT + AI for pharma cold chain: real-time temperature monitoring, excursion prediction, compliance reporting (GDP/FDA), and automated corrective actions. Prevents $35B in annual spoilage.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

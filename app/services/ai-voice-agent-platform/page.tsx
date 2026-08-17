@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Voice Agent Platform - Zion Tech Group",
-  description: "Build and deploy AI voice agents for inbound and outbound calls. Natural conversations, intent recognition, CRM integration, and real-time call analytics.",
+  description: "Deploy conversational AI voice agents for customer service, outbound calls, appointment scheduling, and lead qualification with natural speech.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-voice-agent-platform`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Voice Agent Platform</h1>
-        <p className="text-lg text-gray-300 mb-8">Build and deploy AI voice agents for inbound and outbound calls. Natural conversations, intent recognition, CRM integration, and real-time call analytics.</p>
+        <p className="text-lg text-gray-300 mb-8">Deploy conversational AI voice agents for customer service, outbound calls, appointment scheduling, and lead qualification with natural speech.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Outbound calling</li>
-            <li>Inbound answering</li>
-            <li>Intent recognition</li>
+            <li>Natural voice synthesis</li>
+            <li>Real-time speech recognition</li>
+            <li>Multi-language support</li>
             <li>CRM integration</li>
-            <li>Call analytics</li>
+            <li>Call analytics and scoring</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>80% call automation</li>
-            <li>Natural conversations</li>
-            <li>24/7 availability</li>
-            <li>Multi-language</li>
+            <li>Reduce costs with ai voice agent platform</li>
+            <li>Improve operational efficiency</li>
+            <li>Scale without complexity</li>
+            <li>Enterprise-grade reliability</li>
           </ul>
         </div>
         
@@ -41,11 +41,11 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$N/A/month</p>
+              <p className="text-2xl font-bold mb-2">$2,499/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$N/A/month</p>
+              <p className="text-2xl font-bold mb-2">$4,999/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>

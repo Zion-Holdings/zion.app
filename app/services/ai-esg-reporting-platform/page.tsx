@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI ESG Reporting & Sustainability Platform - Zion Tech Group",
-  description: "Automated ESG data collection, scoring, and reporting: GHG emissions tracking, social impact measurement, governance scoring, GRI/SASB/TCFD compliant reports.",
+  description: "Automated ESG data collection, scoring, and reporting: GHG emissions tracking, social impact measurement, governance scoring, and GRI/SASB/TCFD compliant report",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-esg-reporting-platform`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI ESG Reporting &amp; Sustainability Platform</h1>
-        <p className="text-lg text-gray-300 mb-8">Automated ESG data collection, scoring, and reporting: GHG emissions tracking, social impact measurement, governance scoring, GRI/SASB/TCFD compliant reports.</p>
+        <p className="text-lg text-gray-300 mb-8">Automated ESG data collection, scoring, and reporting: GHG emissions tracking, social impact measurement, governance scoring, and GRI/SASB/TCFD compliant reports.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

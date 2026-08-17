@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Code Compliance & License Auditor - Zion Tech Group",
-  description: "Scan codebases for license compliance, security vulnerabilities, quality issues. 50+ languages, 200+ license types. Integrates with GitHub, GitLab, Bitbucket.",
+  description: "Scan codebases for license compliance, security vulnerabilities, and quality issues. Supports 50+ languages, 200+ license types. Integrates with GitHub, GitLab,",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-code-compliance-auditor`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Code Compliance &amp; License Auditor</h1>
-        <p className="text-lg text-gray-300 mb-8">Scan codebases for license compliance, security vulnerabilities, quality issues. 50+ languages, 200+ license types. Integrates with GitHub, GitLab, Bitbucket.</p>
+        <p className="text-lg text-gray-300 mb-8">Scan codebases for license compliance, security vulnerabilities, and quality issues. Supports 50+ languages, 200+ license types. Integrates with GitHub, GitLab, Bitbucket.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

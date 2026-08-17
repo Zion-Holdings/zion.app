@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Port Congestion & Shipping Delay Predictor - Zion Tech Group",
-  description: "Predict port congestion 14 days ahead: vessel tracking, berth availability, customs delay prediction, optimal routing. Used by 200+ shipping companies.",
+  description: "Predict port congestion 14 days ahead: vessel tracking, berth availability, customs delay prediction, and optimal routing recommendations. Used by 200+ shipping",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-port-congestion-predictor`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Port Congestion &amp; Shipping Delay Predictor</h1>
-        <p className="text-lg text-gray-300 mb-8">Predict port congestion 14 days ahead: vessel tracking, berth availability, customs delay prediction, optimal routing. Used by 200+ shipping companies.</p>
+        <p className="text-lg text-gray-300 mb-8">Predict port congestion 14 days ahead: vessel tracking, berth availability, customs delay prediction, and optimal routing recommendations. Used by 200+ shipping companies.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

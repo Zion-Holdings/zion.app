@@ -1,8 +1,8 @@
 import { } from 'next/navigation';
 
 export const metadata = {
-  title: "Full-Stack Observability Platform - Zion Tech Group",
-  description: "Unified observability across applications, infrastructure, and business metrics. APM, distributed tracing, log analytics, real user monitoring, and AI-powered a",
+  title: "Observability Platform & SRE Consulting - Zion Tech Group",
+  description: "End-to-end observability implementation with distributed tracing, log aggregation, metrics collection, and Site Reliability Engineering best practices.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-observability-platform`
   }
@@ -12,28 +12,27 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Full-Stack Observability Platform</h1>
-        <p className="text-lg text-gray-300 mb-8">Unified observability across applications, infrastructure, and business metrics. APM, distributed tracing, log analytics, real user monitoring, and AI-powered anomaly detection.</p>
+        <h1 className="text-4xl font-bold mb-6">Observability Platform &amp; SRE Consulting</h1>
+        <p className="text-lg text-gray-300 mb-8">End-to-end observability implementation with distributed tracing, log aggregation, metrics collection, and Site Reliability Engineering best practices.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Application performance monitoring</li>
-            <li>Distributed tracing</li>
-            <li>Log analytics</li>
-            <li>Real user monitoring</li>
-            <li>Synthetic monitoring</li>
+            <li>Unified observability stack (Prometheus, Grafana, Jaeger)</li>
+            <li>Custom SLO/SLI definition and dashboard creation</li>
+            <li>Incident management with automated runbooks</li>
+            <li>Chaos engineering and resilience testing</li>
+            <li>SRE consulting and reliability maturity assessment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>MTTR reduced by 70%</li>
-            <li>Proactive issue detection</li>
-            <li>Full-stack visibility</li>
-            <li>Business impact analysis</li>
-            <li>SLO compliance</li>
+            <li>Reduce costs with observability platform &amp; sre consulting</li>
+            <li>Improve operational efficiency</li>
+            <li>Scale without complexity</li>
+            <li>Enterprise-grade reliability</li>
           </ul>
         </div>
         
@@ -42,15 +41,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$499/mo/month</p>
+              <p className="text-2xl font-bold mb-2">$99/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$1,799/mo/month</p>
+              <p className="text-2xl font-bold mb-2">$349/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$Custom/month</p>
+              <p className="text-2xl font-bold mb-2">$1,299/mo/month</p>
             </div>
           </div>
         </div>

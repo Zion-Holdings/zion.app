@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Ransomware Detection & Response Platform - Zion Tech Group",
-  description: "Real-time ransomware detection across endpoints and network. AI identifies encryption behavior, auto-isolates infected systems, triggers incident response playb",
+  description: "Real-time ransomware detection across endpoints, network, and cloud. AI identifies encryption behavior patterns, auto-isolates infected systems, and triggers in",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-ransomware-detection-system`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Ransomware Detection &amp; Response Platform</h1>
-        <p className="text-lg text-gray-300 mb-8">Real-time ransomware detection across endpoints and network. AI identifies encryption behavior, auto-isolates infected systems, triggers incident response playbooks. Stops ransomware in under 30 seconds.</p>
+        <p className="text-lg text-gray-300 mb-8">Real-time ransomware detection across endpoints, network, and cloud. AI identifies encryption behavior patterns, auto-isolates infected systems, and triggers incident response playbooks. Stops ransomware in under 30 seconds.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
@@ -22,7 +22,7 @@ export default function ServicePage() {
             <li>Auto-isolation of infected endpoints</li>
             <li>Ransom note analysis &amp; decryption keys</li>
             <li>Forensic timeline reconstruction</li>
-            <li>SIEM/SOAR integration</li>
+            <li>Integration with SIEM/SOAR</li>
           </ul>
         </div>
         

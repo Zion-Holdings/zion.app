@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Real-Time Fact-Checking for Journalism - Zion Tech Group",
-  description: "Verify claims in real-time against 100M+ sources: statement verification, source credibility scoring, bias detection, citation suggestions. Used by 50+ newsroom",
+  description: "Verify claims in real-time against 100M+ sources: statement verification, source credibility scoring, bias detection, and citation suggestions. Used by 50+ news",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-journalism-fact-checker`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Real-Time Fact-Checking for Journalism</h1>
-        <p className="text-lg text-gray-300 mb-8">Verify claims in real-time against 100M+ sources: statement verification, source credibility scoring, bias detection, citation suggestions. Used by 50+ newsrooms.</p>
+        <p className="text-lg text-gray-300 mb-8">Verify claims in real-time against 100M+ sources: statement verification, source credibility scoring, bias detection, and citation suggestions. Used by 50+ newsrooms.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

@@ -1,8 +1,8 @@
 import { } from 'next/navigation';
 
 export const metadata = {
-  title: "Managed Database Service - Zion Tech Group",
-  description: "Fully managed databases — PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch. Automated backups, scaling, patching, monitoring, and query optimization.",
+  title: "Database-as-a-Service & Managed Data Platforms - Zion Tech Group",
+  description: "Fully managed databases - PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch with automated backups, scaling, and AI-powered optimization.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-database-as-a-service`
   }
@@ -12,27 +12,27 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Managed Database Service</h1>
-        <p className="text-lg text-gray-300 mb-8">Fully managed databases — PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch. Automated backups, scaling, patching, monitoring, and query optimization.</p>
+        <h1 className="text-4xl font-bold mb-6">Database-as-a-Service &amp; Managed Data Platforms</h1>
+        <p className="text-lg text-gray-300 mb-8">Fully managed databases - PostgreSQL, MySQL, MongoDB, Redis, Elasticsearch with automated backups, scaling, and AI-powered optimization.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Multi-engine support</li>
-            <li>Auto-scaling</li>
-            <li>Automated backups</li>
-            <li>Query optimization</li>
-            <li>Monitoring/alerts</li>
+            <li>Multi-engine provisioning</li>
+            <li>Automated backups and PITR</li>
+            <li>AI query optimization</li>
+            <li>Auto-scaling and HA</li>
+            <li>Encryption and compliance</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Zero-downtime scaling</li>
-            <li>Automated management</li>
-            <li>Expert optimization</li>
-            <li>Cost optimization</li>
+            <li>Reduce costs with database-as-a-service &amp; managed data platforms</li>
+            <li>Improve operational efficiency</li>
+            <li>Scale without complexity</li>
+            <li>Enterprise-grade reliability</li>
           </ul>
         </div>
         
@@ -41,15 +41,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$N/A/month</p>
+              <p className="text-2xl font-bold mb-2">$99/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$N/A/month</p>
+              <p className="text-2xl font-bold mb-2">$349/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$Custom/month</p>
+              <p className="text-2xl font-bold mb-2">$1,299/mo/month</p>
             </div>
           </div>
         </div>

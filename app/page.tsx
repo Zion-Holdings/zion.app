@@ -20,7 +20,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'AI & IT Services for Your Business | Zion Tech Group',
   description: 'Transparent, real-time visibility into our AI workforce. Track every agent action, monitor fleet health, and see exactly how our autonomous team builds and maintains this website — 24/7.',
-  alternates: { canonical: '//' },
+  alternates: { canonical: 'https://ziontechgroup.com/' },
 };
 
 

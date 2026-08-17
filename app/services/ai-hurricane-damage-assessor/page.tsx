@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Hurricane & Storm Damage Assessment - Zion Tech Group",
-  description: "Post-storm damage assessment from satellite/drone imagery: roof damage detection, flood extent mapping, insurance claim validation, repair cost estimation. 10,0",
+  description: "Post-storm damage assessment from satellite/droone imagery: roof damage detection, flood extent mapping, insurance claim validation, and repair cost estimation.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-hurricane-damage-assessor`
   }
@@ -13,7 +13,7 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Hurricane &amp; Storm Damage Assessment</h1>
-        <p className="text-lg text-gray-300 mb-8">Post-storm damage assessment from satellite/drone imagery: roof damage detection, flood extent mapping, insurance claim validation, repair cost estimation. 10,000+ properties/hour.</p>
+        <p className="text-lg text-gray-300 mb-8">Post-storm damage assessment from satellite/droone imagery: roof damage detection, flood extent mapping, insurance claim validation, and repair cost estimation. Processes 10,000+ properties per hour.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>

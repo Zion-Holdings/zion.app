@@ -1,8 +1,8 @@
 import { } from 'next/navigation';
 
 export const metadata = {
-  title: "AI Real Estate Valuation Engine - Zion Tech Group",
-  description: "Automated property valuation: comparable sales analysis, neighborhood trend prediction, renovation ROI estimation, rental income forecasting. Residential + comm",
+  title: "AI Real Estate Valuation & Analytics - Zion Tech Group",
+  description: "Automated AVM: comps zoning property features market trends confidence interval risk score comparable sales report for residential and commercial real estate.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-real-estate-valuation`
   }
@@ -12,26 +12,26 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">AI Real Estate Valuation Engine</h1>
-        <p className="text-lg text-gray-300 mb-8">Automated property valuation: comparable sales analysis, neighborhood trend prediction, renovation ROI estimation, rental income forecasting. Residential + commercial.</p>
+        <h1 className="text-4xl font-bold mb-6">AI Real Estate Valuation &amp; Analytics</h1>
+        <p className="text-lg text-gray-300 mb-8">Automated AVM: comps zoning property features market trends confidence interval risk score comparable sales report for residential and commercial real estate.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Instant property valuations</li>
-            <li>Comps analysis with ML matching</li>
-            <li>Neighborhood trend prediction</li>
-            <li>Renovation ROI calculator</li>
-            <li>Rental income forecasting</li>
+            <li>Automated AVM ML model</li>
+            <li>Confidence interval + risk score</li>
+            <li>Comparable sales per property</li>
+            <li>Commercial lease + cap rate valuation</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Value properties in seconds</li>
-            <li>92% accuracy vs appraisals</li>
-            <li>Identify undervalued opportunities</li>
+            <li>Reduce costs with ai real estate valuation &amp; analytics</li>
+            <li>Improve operational efficiency</li>
+            <li>Scale without complexity</li>
+            <li>Enterprise-grade reliability</li>
           </ul>
         </div>
         
@@ -40,15 +40,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$49/month</p>
+              <p className="text-2xl font-bold mb-2">$149/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$149/month</p>
+              <p className="text-2xl font-bold mb-2">$449/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$499/month</p>
+              <p className="text-2xl font-bold mb-2">$1,499/mo/month</p>
             </div>
           </div>
         </div>
