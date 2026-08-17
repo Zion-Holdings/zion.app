@@ -4,6 +4,12 @@ import StandardPage from '@/components/StandardPage';
 export const metadata = {
   title: 'Page Not Found | Zion Tech Group',
   description: 'The page you are looking for does not exist or has been moved.',
+  openGraph: {
+    title: 'Page Not Found | Zion Tech Group',
+    description: 'The page you are looking for does not exist or has been moved.',
+    url: 'https://ziontechgroup.com/404',
+    type: 'website',
+  },
   alternates: { canonical: '/404' },
 };
 
@@ -38,6 +44,11 @@ export default function NotFoundPage() {
           </Link>
         </div>
       </div>
+    
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com", "description": "AI-native IT services company.", "contactPoint": { "@type": "ContactPoint", "contactType": "sales", "url": "https://ziontechgroup.com/contact/" } }) }}
+      />
     </StandardPage>
   );
 }
