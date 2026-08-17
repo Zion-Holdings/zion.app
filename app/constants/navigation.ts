@@ -27,8 +27,6 @@ export const SOLUTION_LINKS: readonly NavigationLink[] = [
 export const RESOURCE_LINKS: readonly NavigationLink[] = [
   { name: 'Partners', href: '/partners/' },
   { name: 'Blog', href: '/blog/' },
-  { name: 'Search', href: '/search/' },
-  { name: 'Proposal Generator', href: '/proposal/' },
   { name: 'ROI Calculator', href: '/tools/roi-calculator/' },
   { name: 'Service Comparison', href: '/tools/service-comparison/' },
   { name: 'Service Recommender', href: '/tools/service-recommender/' },
