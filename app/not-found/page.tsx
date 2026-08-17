@@ -36,7 +36,7 @@ export default function NotFoundPage() {
           The page you are looking for does not exist or has been moved. Try going back to the homepage or contact our team for assistance.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <Link href="//" className="btn-primary inline-block">
+          <Link href="/" className="btn-primary inline-block">
             ← Back to Home
           </Link>
           <Link href="/contact/" className="btn-secondary inline-block">
