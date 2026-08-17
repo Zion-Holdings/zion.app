@@ -37,10 +37,8 @@ export default function Page() {
         </header>
 
         <section className="prose prose-invert max-w-none">
-<h2 className="text-2xl font-bold text-white mb-3">Why this matters now
-Buyers evaluating ai agentic workflows: automation roadmap in 2026 are prioritizing measurable outcomes over feature checklists. This guide focuses on practical adoption, risk reduction, and ROI because generic ai marketing no longer converts informed buyers. Teams that invest in ai agentic workflows: automation roadmap with clear success metrics and phased delivery consistently outperform teams that chase experimental AI hype. The organizations that win in 2026 will treat ai agentic workflows: automation roadmap as a durable capability, not a one-off project, and they will instrument execution from day one. If your team is still debating whether ai agentic workflows: automation roadmap is worth investing in, use this guide to build the business case with evidence rather than vendor claims.
-
-<h2 className="text-2xl font-bold text-white mb-3">Executive summary</h2>
+<h2 className="text-2xl font-bold text-white mb-3"><p>Why this matters now
+Buyers evaluating ai agentic workflows: automation roadmap in 2026 are prioritizing measurable outcomes over feature checklists. This guide focuses on practical adoption, risk reduction, and ROI because generic ai marketing no longer converts informed buyers. Teams that invest in ai agentic workflows: automation roadmap with clear success metrics and phased delivery consistently outperform teams that chase experimental AI hype. The organizations that win in 2026 will treat ai agentic workflows: automation roadmap as a durable capability, not a one-off project, and they will instrument execution from day one. If your team is still debating whether ai agentic workflows: automation roadmap is worth investing in, use this guide to build the business case with evidence rather than vendor claims.</p><h2 className="text-2xl font-bold text-white mb-3">Executive summary</h2>
 This post gives executives a concise view of ai agentic workflows: automation roadmap: value drivers, adoption blockers, realistic timelines, and the ownership model required for success. The bottom line: ai agentic workflows: automation roadmap can shorten delivery cycles, reduce manual exceptions, and improve customer outcomes when scoped correctly and operated responsibly. Recommendation: start with one workflow, assign ownership, define success metrics, and review after 30 days before broader rollout. Use this guide to align leadership, set expectations, and avoid the common mistake of piloting without service ownership or alerting.
 
 <h2 className="text-2xl font-bold text-white mb-3">Recommended approach</h2>
@@ -57,8 +55,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-it-operations-and-observability/">AI for IT Operations and Observability</Link></li>
-<li><Link href="/blog/ai-for-devops-and-incident-response/">AI for DevOps and Incident Response</Link></li>
+              <li>
+              <Link href="/blog/ai-for-it-operations-and-observability/">AI for IT Operations and Observability</Link></li>
+<li>
+              <Link href="/blog/ai-for-devops-and-incident-response/">AI for DevOps and Incident Response</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

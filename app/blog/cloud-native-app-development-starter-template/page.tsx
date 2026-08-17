@@ -37,10 +37,8 @@ export default function Page() {
         </header>
 
         <section className="prose prose-invert max-w-none">
-<h2 className="text-2xl font-bold text-white mb-3">Current state
-Most organizations already have data, tools, and manual workflows for cloud native app development: starter template. The missing piece is usually orchestration, clear ownership, and a repeatable operating model that can scale beyond a pilot. Understanding the current state is essential: map workflows, measure cycle times, and identify bottlenecks before proposing automation. A realistic baseline prevents unrealistic promises and helps leadership see the real gap between current state and target outcomes. Spend time in discovery before committing to a roadmap; the best automation plans come from deep operational knowledge.
-
-<h2 className="text-2xl font-bold text-white mb-3">Opportunities</h2>
+<h2 className="text-2xl font-bold text-white mb-3"><p>Current state
+Most organizations already have data, tools, and manual workflows for cloud native app development: starter template. The missing piece is usually orchestration, clear ownership, and a repeatable operating model that can scale beyond a pilot. Understanding the current state is essential: map workflows, measure cycle times, and identify bottlenecks before proposing automation. A realistic baseline prevents unrealistic promises and helps leadership see the real gap between current state and target outcomes. Spend time in discovery before committing to a roadmap; the best automation plans come from deep operational knowledge.</p><h2 className="text-2xl font-bold text-white mb-3">Opportunities</h2>
 High-impact opportunities for cloud native app development: starter template usually cluster around onboarding, quality assurance, cost visibility, and escalation handling. Focus on workflows with high volume, high error rates, or slow handoffs; these produce the clearest ROI and fastest adoption. Map each opportunity to a business outcome so stakeholders understand the why behind the investment. Choose one opportunity, measure the current state, then design an automation or augmentation that reduces rework. Track opportunity value over time so you can prioritize the next wave after the first success.
 
 <h2 className="text-2xl font-bold text-white mb-3">Implementation roadmap</h2>
@@ -57,8 +55,10 @@ Leading indicators for cloud native app development: starter template: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-it-operations-and-observability/">AI for IT Operations and Observability</Link></li>
-<li><Link href="/blog/ai-for-devops-and-incident-response/">AI for DevOps and Incident Response</Link></li>
+              <li>
+              <Link href="/blog/ai-for-it-operations-and-observability/">AI for IT Operations and Observability</Link></li>
+<li>
+              <Link href="/blog/ai-for-devops-and-incident-response/">AI for DevOps and Incident Response</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

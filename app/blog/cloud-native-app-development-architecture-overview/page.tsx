@@ -37,10 +37,8 @@ export default function Page() {
         </header>
 
         <section className="prose prose-invert max-w-none">
-<h2 className="text-2xl font-bold text-white mb-3">Market signal
-Demand is rising for durable cloud native app development: architecture overview capabilities rather than one-off automations. Buyers want measurable outcomes, stable operations, and vendor partnerships that grow with their environment. The strongest programs differentiate themselves with operational maturity, not feature breadth. Focus on outcomes, roadmap clarity, and evidence-based improvements rather than generic AI marketing. Use market signal analysis to prioritize investments that align with buyer expectations and competitive positioning.
-
-<h2 className="text-2xl font-bold text-white mb-3">Capability map</h2>
+<h2 className="text-2xl font-bold text-white mb-3"><p>Market signal
+Demand is rising for durable cloud native app development: architecture overview capabilities rather than one-off automations. Buyers want measurable outcomes, stable operations, and vendor partnerships that grow with their environment. The strongest programs differentiate themselves with operational maturity, not feature breadth. Focus on outcomes, roadmap clarity, and evidence-based improvements rather than generic AI marketing. Use market signal analysis to prioritize investments that align with buyer expectations and competitive positioning.</p><h2 className="text-2xl font-bold text-white mb-3">Capability map</h2>
 Map capabilities against current workflow friction for cloud native app development: architecture overview. Highest-ROI automations reduce handoffs and rework rather than simply digitizing existing handoffs. A capability map makes priorities visible to leadership and creates a shared view of where automation should start. Revisit the map quarterly; new opportunities emerge as teams mature and data quality improves. Share the map with operators and validate assumptions before investing in automation.
 
 <h2 className="text-2xl font-bold text-white mb-3">Execution playbook</h2>
@@ -54,8 +52,10 @@ If this guide matches your cloud native app development: architecture overview i
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-it-operations-and-observability/">AI for IT Operations and Observability</Link></li>
-<li><Link href="/blog/ai-for-devops-and-incident-response/">AI for DevOps and Incident Response</Link></li>
+              <li>
+              <Link href="/blog/ai-for-it-operations-and-observability/">AI for IT Operations and Observability</Link></li>
+<li>
+              <Link href="/blog/ai-for-devops-and-incident-response/">AI for DevOps and Incident Response</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

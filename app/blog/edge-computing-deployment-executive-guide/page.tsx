@@ -37,10 +37,8 @@ export default function Page() {
         </header>
 
         <section className="prose prose-invert max-w-none">
-<h2 className="text-2xl font-bold text-white mb-3">Problem definition
-Teams frequently over-index on proofs of concept without production guardrails for edge computing deployment: executive guide: monitoring, access control, incident response, and change management. Without these guardrails, promising pilots become operational liabilities that consume more time than they save. A clear problem definition separates experiments from production-ready programs by stating the exact outcome, constraints, and success criteria. Invest time in problem definition before automation; it pays back in faster delivery and fewer rework cycles. Write the problem statement in one paragraph and share it with stakeholders to align expectations before work begins.
-
-<h2 className="text-2xl font-bold text-white mb-3">Architecture overview</h2>
+<h2 className="text-2xl font-bold text-white mb-3"><p>Problem definition
+Teams frequently over-index on proofs of concept without production guardrails for edge computing deployment: executive guide: monitoring, access control, incident response, and change management. Without these guardrails, promising pilots become operational liabilities that consume more time than they save. A clear problem definition separates experiments from production-ready programs by stating the exact outcome, constraints, and success criteria. Invest time in problem definition before automation; it pays back in faster delivery and fewer rework cycles. Write the problem statement in one paragraph and share it with stakeholders to align expectations before work begins.</p><h2 className="text-2xl font-bold text-white mb-3">Architecture overview</h2>
 For edge computing deployment: executive guide, start with lightweight integration points, centralize data contracts, and expose only the actions required for human approval or escalation. Composable architectures outperform monolith replacements because they let teams evolve individual capabilities without disrupting the whole system. Keep the architecture observable: logs, metrics, and traces should answer why an action occurred, not just that it occurred. Avoid hidden coupling between services; explicit interfaces and clear ownership reduce coordination costs as the system scales. Revisit architecture after each phase and refactor coupling points before they become hard dependencies.
 
 <h2 className="text-2xl font-bold text-white mb-3">Deployment patterns</h2>
@@ -57,8 +55,10 @@ For edge computing deployment: executive guide: pick one workflow, assign owners
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-for-it-operations-and-observability/">AI for IT Operations and Observability</Link></li>
-<li><Link href="/blog/ai-for-devops-and-incident-response/">AI for DevOps and Incident Response</Link></li>
+              <li>
+              <Link href="/blog/ai-for-it-operations-and-observability/">AI for IT Operations and Observability</Link></li>
+<li>
+              <Link href="/blog/ai-for-devops-and-incident-response/">AI for DevOps and Incident Response</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
