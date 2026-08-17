@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Mobile Development | Zion Tech Group',
+  description: 'Mobile Development — Zion Tech Group enterprise solutions.',
+  alternates: { canonical: '/it-services/mobile-developmen/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

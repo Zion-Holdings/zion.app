@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI RAG & Knowledge Systems | Zion Tech Group',
+  description: 'AI RAG & Knowledge Systems solutions for enterprise.',
+  alternates: { canonical: '/ai-services/ai-rag-knowledge-system/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

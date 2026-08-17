@@ -2,6 +2,14 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Autonomous Funnel Orchestrator | Zion Tech Group',
+  description: 'Design smarter CTAs, social proof placement, and funnel actions with weighted impact and confidence scoring.',
+  alternates: { canonical: '/ai-lab/autonomous-funnel-orchestrator/' },
+};
+
 
 export default function AutonomousFunnelOrchestratorPage() {
   const [ctaCount, setCtaCount] = useState(3);

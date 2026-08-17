@@ -4,6 +4,14 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: 'Zion Tech Group — Custom Proposal | Zion Tech Group',
+  description: '364 E Main St STE 1008, Middletown, DE 19709',
+  alternates: { canonical: '/proposals/view/[id]/' },
+};
+
+import type { Metadata } from 'next';
+
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
   const base: Metadata = {

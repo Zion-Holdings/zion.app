@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI for Regulated Industries | Zion Tech Group',
+  description: 'Deploy AI with confidence in regulated environments. Built-in compliance, audit trails, and governance for healthcare, finance, insurance, and government.',
+  alternates: { canonical: '/ai-services/ai-regulated-industri/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

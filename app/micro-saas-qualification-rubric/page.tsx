@@ -1,5 +1,13 @@
 'use client';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Micro-SaaS qualification rubric | Zion Tech Group',
+  description: 'Evaluate buildability, demand, monetization, retention, and operational cost before launch.',
+  alternates: { canonical: '/micro-saas-qualification-rubric/' },
+};
+
 export default function Page() {
   return (
     <div className="min-h-screen bg-slate-950 text-white p-8">

@@ -1,6 +1,14 @@
 'use client';
 
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Partner Portal | Zion Tech Group',
+  description: 'Exclusive partner resources, co-selling materials, and enablement.',
+  alternates: { canonical: '/partner-portal/' },
+};
+
 
 export default function PartnerPortalPage() {
   return (

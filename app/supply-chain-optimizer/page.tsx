@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Supply Chain Optimizer | Zion Tech Group',
+  description: 'Supply Chain Optimizer — Zion Tech Group enterprise solutions.',
+  alternates: { canonical: '/supply-chain-optimizer/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

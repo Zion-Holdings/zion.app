@@ -1,5 +1,13 @@
 'use client';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI data contract governance in 2026 | Zion Tech Group',
+  description: 'Schema enforcement, lineage tracking, and policy-as-code for trustworthy AI pipelines.',
+  alternates: { canonical: '/ai-data-contract-governance-2026/' },
+};
+
 export default function Page() {
   return (
     <div className="min-h-screen bg-slate-950 text-white p-8">

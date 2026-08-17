@@ -2,6 +2,14 @@
 
 import { useEffect } from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Interactive Demos | Zion Tech Group',
+  description: 'Preview lightweight versions of Zion capabilities.',
+  alternates: { canonical: '/demo/' },
+};
+
 
 export default function DemoHub() {
   useEffect(() => {

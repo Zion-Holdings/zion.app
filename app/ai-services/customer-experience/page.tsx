@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Customer Experience | Zion Tech Group',
+  description: 'AI Customer Experience solutions for enterprise.',
+  alternates: { canonical: '/ai-services/customer-experienc/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

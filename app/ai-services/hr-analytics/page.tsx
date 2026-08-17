@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI HR Analytics | Zion Tech Group',
+  description: 'AI HR Analytics solutions for enterprise.',
+  alternates: { canonical: '/ai-services/hr-analytic/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

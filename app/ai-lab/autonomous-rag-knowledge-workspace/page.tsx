@@ -2,6 +2,14 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Autonomous RAG Knowledge Workspace | Zion Tech Group',
+  description: 'Model document retrieval quality with deterministic citation confidence, source diversity, and answer safety scoring.',
+  alternates: { canonical: '/ai-lab/autonomous-rag-knowledge-workspac/' },
+};
+
 
 interface Document {
   id: string;

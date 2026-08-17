@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Content Generation | Zion Tech Group',
+  description: 'AI Content Generation solutions for enterprise.',
+  alternates: { canonical: '/ai-services/content-generation/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

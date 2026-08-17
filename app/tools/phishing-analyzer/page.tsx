@@ -2,6 +2,14 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Phishing Email Analyzer | Zion Tech Group',
+  description: 'Paste email content or headers to detect urgency tactics, credential harvesting, impersonation, suspicious URLs, and more.',
+  alternates: { canonical: '/tools/phishing-analyzer/' },
+};
+
 
 const SEVERITY_STYLES: Record<string, string> = {
   high: 'bg-red-500/10 border-red-500/20',

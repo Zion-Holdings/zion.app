@@ -1,5 +1,13 @@
 'use client';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Low-Latency Observability & Edge Monitoring | Zion Tech Group',
+  description: 'Monitoring patterns for distributed IT teams that require fast signal-to-noise and edge-aware alerts.',
+  alternates: { canonical: '/ai-first-low-latency-observability-and-edge-monitoring-for-it-in-2026/' },
+};
+
 export default function Page() {
   return (
     <div className="min-h-screen bg-slate-950 text-white p-8">

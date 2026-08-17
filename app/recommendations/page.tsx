@@ -2,6 +2,14 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { allServices, type Service } from '@/data/servicesData';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Find Your Perfect Solution | Zion Tech Group',
+  description: 'Tell us what you need, and our AI agents will recommend the best services for your business.',
+  alternates: { canonical: '/recommendation/' },
+};
+
 
 // Recommendation engine based on business needs
 const RECOMMENDATION_SETS = [

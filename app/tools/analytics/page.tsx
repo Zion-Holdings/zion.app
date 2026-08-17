@@ -3,6 +3,14 @@
 import { useMemo } from 'react';
 
 import { getToolVisits } from '@/data/tools_tracker';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Free Tools — Usage Analytics | Zion Tech Group',
+  description: 'Client-side page view counter. No tracking, no cookies, no external calls. Data lives in your browser only.',
+  alternates: { canonical: '/tools/analytic/' },
+};
+
 
 const TOOL_META: Record<string, {emoji:string;name:string;href:string}> = {
   'ai-service-router':   {emoji:'🤖',name:'AI Service Router',   href:'/tools/ai-service-router'},

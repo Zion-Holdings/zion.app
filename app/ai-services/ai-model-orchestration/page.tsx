@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Model Orchestration | Zion Tech Group',
+  description: 'AI Model Orchestration solutions for enterprise.',
+  alternates: { canonical: '/ai-services/ai-model-orchestration/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

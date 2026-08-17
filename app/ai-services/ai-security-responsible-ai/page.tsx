@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Security & Responsible AI | Zion Tech Group',
+  description: 'AI Security & Responsible AI solutions for enterprise.',
+  alternates: { canonical: '/ai-services/ai-security-responsible-ai/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

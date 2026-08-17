@@ -1,6 +1,14 @@
 // app/solutions/page.tsx
 import Link from 'next/link';
-import PageWrapper from '@/components/PageWrapper';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Industry Solutions | Zion Tech Group',
+  description: 'Tailored AI, IT, and Micro-SaaS solutions purpose-built for your industry&apos;s unique challenges and compliance requirements.
+        Click any industry to see challenges we solve, our specific solutions, and how we can help.',
+  alternates: { canonical: '/solution/' },
+};
+
 
 const industries = [
   { name: 'Healthcare',                    desc: 'HIPAA-compliant AI diagnostics, patient engagement, and clinical automation.', path: '/services?category=ai' },
@@ -15,10 +23,10 @@ const industries = [
 
 export default function SolutionsPage() {
   return (
-    <PageWrapper breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Solutions' }]}>
+    <div className="container-page py-16">
       <h1 className="text-4xl font-bold text-white mb-4">Industry Solutions</h1>
       <p className="text-slate-400 mb-12 max-w-2xl">
-        Tailored AI, IT, and Micro-SaaS solutions purpose-built for your industry's unique challenges and compliance requirements.
+        Tailored AI, IT, and Micro-SaaS solutions purpose-built for your industry&apos;s unique challenges and compliance requirements.
         Click any industry to see challenges we solve, our specific solutions, and how we can help.
       </p>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -30,6 +38,6 @@ export default function SolutionsPage() {
           </Link>
         ))}
       </div>
-    </PageWrapper>
+    </div>
   );
 }

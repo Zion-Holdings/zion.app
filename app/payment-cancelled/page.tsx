@@ -1,4 +1,12 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Payment Cancelled | Zion Tech Group',
+  description: 'No payment was processed. You can try again or explore other options.',
+  alternates: { canonical: '/payment-cancelled/' },
+};
+
 
 export default function PaymentCancelled() {
   return (

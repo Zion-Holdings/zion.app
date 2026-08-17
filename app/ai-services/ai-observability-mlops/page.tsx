@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Observability & MLOps | Zion Tech Group',
+  description: 'AI Observability & MLOps solutions for enterprise.',
+  alternates: { canonical: '/ai-services/ai-observability-mlo/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

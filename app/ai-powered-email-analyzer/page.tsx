@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Email Analyzer | Zion Tech Group',
+  description: 'AI Email Analyzer — Zion Tech Group enterprise solutions.',
+  alternates: { canonical: '/ai-powered-email-analyzer/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

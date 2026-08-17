@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Enterprise Context Engineering | Zion Tech Group',
+  description: 'Enterprise Context Engineering solutions for enterprise.',
+  alternates: { canonical: '/ai-services/ai-context-engineering-enterpri/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

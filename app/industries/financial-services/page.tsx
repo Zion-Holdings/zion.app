@@ -1,5 +1,15 @@
 // app/industries/financial-services/page.tsx - Financial Services AI Solutions (SEO Optimized)
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI for Financial Services {' '} & FinTech | Zion Tech Group',
+  description: 'Deploy AI solutions that protect revenue, optimize operations, and accelerate growth. 
+              From fraud detection to wealth management — we build compliant AI solutions for 
+              financial institutions of all sizes.',
+  alternates: { canonical: '/industries/financial-servic/' },
+};
+
 
 const FINANCIAL_SERVICES = [
   {

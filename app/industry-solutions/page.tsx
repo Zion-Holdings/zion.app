@@ -5,6 +5,15 @@ import Link from 'next/link';
 import { INDUSTRY_SERVICES } from '@/components/SmartRecommendationEngine';
 import SmartRecommendationEngine from '@/components/SmartRecommendationEngine';
 import { allServices } from '@/data/servicesData';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Industry-Specific AI Solutions For Your Business | Zion Tech Group',
+  description: 'Pre-built AI solutions for {industryCount} industries. From fraud detection to supply chain optimization, 
+              discover how we've helped businesses achieve {totalServices}+ real-world results.',
+  alternates: { canonical: '/industry-solution/' },
+};
+
 
 const INDUSTRY_CONFIG = [
   {

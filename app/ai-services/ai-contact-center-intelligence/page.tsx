@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Contact Center Intelligence | Zion Tech Group',
+  description: 'AI-driven contact center analytics, QA automation, and workforce optimization for support and sales teams.',
+  alternates: { canonical: '/ai-services/ai-contact-center-intelligenc/' },
+};
+
 export default function Page() {
   const serviceSlug = "ai-contact-center-intelligence";
   const title = "AI Contact Center Intelligence";

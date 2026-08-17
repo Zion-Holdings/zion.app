@@ -1,6 +1,14 @@
 
 'use client';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'CEO Partnership Negotiation Templates | Zion Tech Group',
+  description: 'Use these email templates to start and advance partnership conversations with other companies.',
+  alternates: { canonical: '/ceo-partnership-negotiation-email-templ/' },
+};
+
 export default function Page() {
   return (
     <div className="min-h-screen bg-slate-950 text-white p-8">

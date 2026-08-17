@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Document Processing | Zion Tech Group',
+  description: 'AI Document Processing solutions for enterprise.',
+  alternates: { canonical: '/ai-services/document-processin/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

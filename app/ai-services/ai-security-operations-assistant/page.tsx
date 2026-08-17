@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Security Operations Assistant | Zion Tech Group',
+  description: 'AI-assisted alert triage, incident summarization, and playbook recommendation for security teams.',
+  alternates: { canonical: '/ai-services/ai-security-operations-assistan/' },
+};
+
 export default function Page() {
   const serviceSlug = "ai-security-operations-assistant";
   const title = "AI Security Operations Assistant";

@@ -1,6 +1,14 @@
 
 'use client';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Low-Code Workflow Automation for Brazilian IT in 2026 | Zion Tech Group',
+  description: 'A practical guide for Brazilian IT teams adopting low-code automation while keeping governance and compliance.',
+  alternates: { canonical: '/ai-first-low-code-workflow-automation-for-brazilian-it-in-2026/' },
+};
+
 export default function Page() {
   return (
     <div className="min-h-screen bg-slate-950 text-white p-8">

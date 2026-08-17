@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Cybersecurity Audit | Zion Tech Group',
+  description: 'Cybersecurity Audit — Zion Tech Group enterprise solutions.',
+  alternates: { canonical: '/it-services/cybersecurity-audi/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

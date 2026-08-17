@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Multimodal Intelligence | Zion Tech Group',
+  description: 'AI Multimodal Intelligence solutions for enterprise.',
+  alternates: { canonical: '/ai-services/ai-multimodal-intelligenc/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

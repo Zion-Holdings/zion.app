@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Foundation Models & Custom Training | Zion Tech Group',
+  description: 'AI Foundation Models & Custom Training solutions for enterprise.',
+  alternates: { canonical: '/ai-services/ai-foundation-models-custom-trainin/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

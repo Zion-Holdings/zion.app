@@ -5,6 +5,14 @@ import Link from 'next/link';
 
 import { useState, useMemo } from 'react';
 import { allServices } from '../data/servicesData';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Services | Zion Tech Group',
+  description: '{aiServices.length}+ AI-powered services — from chatbots to computer vision, predictive analytics to autonomous agents.',
+  alternates: { canonical: '/ai-servic/' },
+};
+
 import type { Service } from '../data/servicesData';
 
 const aiServices = allServices.filter((s: Service) => s.category === 'ai');

@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Online Learning Platform | Zion Tech Group',
+  description: 'Online Learning Platform — Zion Tech Group enterprise solutions.',
+  alternates: { canonical: '/online-learning-platform/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

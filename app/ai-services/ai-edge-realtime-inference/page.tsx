@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Edge & Real-Time Inference | Zion Tech Group',
+  description: 'AI Edge & Real-Time Inference solutions for enterprise.',
+  alternates: { canonical: '/ai-services/ai-edge-realtime-inferenc/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

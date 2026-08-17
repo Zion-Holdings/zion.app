@@ -2,6 +2,15 @@
 
 import React from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Email Intelligence Suite | Zion Tech Group',
+  description: 'The world&apos;s most advanced email processing system. 1,000 AI engines analyze every email
+            case-by-case, enforce reply-all, and take the most appropriate action automatically.',
+  alternates: { canonical: '/email-intelligenc/' },
+};
+
 
 const engines = [
   { version: 'V996', icon: '🔮', name: 'Predictive Analytics', desc: 'Predict reply probability, response time, and engagement scores.' },

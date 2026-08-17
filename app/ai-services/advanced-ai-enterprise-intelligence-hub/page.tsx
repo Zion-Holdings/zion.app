@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Advanced AI & Enterprise Intelligence Hub | Zion Tech Group',
+  description: 'Advanced AI & Enterprise Intelligence Hub solutions for enterprise.',
+  alternates: { canonical: '/ai-services/advanced-ai-enterprise-intelligence-hub/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

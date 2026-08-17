@@ -1,23 +1,31 @@
-import type { Metadata } from 'next';
-import StandardPageLayout from '@/components/StandardPageLayout';
+import PageTemplate from '@/components/PageTemplate';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Enterprise Security | Zion Tech Group',
   description: 'Enterprise-grade security solutions for large organizations.',
-  alternates: { canonical: '/enterprise-security/' },
 };
 
 export default function Page() {
   return (
-    <StandardPageLayout data={{
-      title: "Enterprise Security",
-      description: "Enterprise-grade security solutions for large organizations.",
-      category: 'AI Service',
-      categoryColor: "from-red-500 to-orange-500",
-      ctaLabel: 'Contact us',
-      ctaHref: '/contact/',
-      secondaryCtaLabel: 'Services',
-      secondaryCtaHref: '/services/',
-    }} />
+    <PageTemplate
+      title="Enterprise Security"
+      description="Enterprise-grade security solutions for large organizations."
+      actions={[
+        { label: 'Security Services', href: '/services', style: 'secondary' },
+        { label: 'Get Protected', href: '/contact', style: 'secondary' },
+      ]}
+    >
+      <div className="mt-12">
+        <div className="p-6 rounded-xl bg-slate-800/50 border border-slate-700/50">
+          <h2 className="text-xl font-semibold text-white mb-3">Get Started Today</h2>
+          <p className="text-slate-400 mb-4">Contact our team for a free consultation.</p>
+          <div className="flex flex-wrap gap-4 text-sm">
+            <a href="tel:+130****0950" className="text-emerald-400">📞 +1 302 464 0950</a>
+            <a href="mailto:kleber@ziontechgroup.com" className="text-emerald-400">✉️ kleber@ziontechgroup.com</a>
+          </div>
+        </div>
+      </div>
+    </PageTemplate>
   );
 }

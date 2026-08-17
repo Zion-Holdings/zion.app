@@ -2,6 +2,14 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Autonomous Media Prompt Studio | Zion Tech Group',
+  description: 'Design image and video prompt systems with style coherence, safety guardrails, and launch-readiness scoring.',
+  alternates: { canonical: '/ai-lab/autonomous-media-prompt-studio/' },
+};
+
 
 type Style = 'photorealistic' | 'illustration' | '3d-render' | 'anime' | 'watercolor';
 type AspectRatio = '1:1' | '16:9' | '9:16' | '4:3';

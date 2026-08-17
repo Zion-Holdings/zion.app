@@ -1,6 +1,14 @@
 'use client';
 
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Admin Dashboard | Zion Tech Group',
+  description: 'Operational overview for Zion Tech Group internal services.',
+  alternates: { canonical: '/admin-dashboard/' },
+};
+
 
 export default function AdminDashboardPage() {
   return (

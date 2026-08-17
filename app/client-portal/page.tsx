@@ -2,6 +2,14 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Client Portal | Zion Tech Group',
+  description: 'Access your projects, documents, and support tickets',
+  alternates: { canonical: '/client-portal/' },
+};
+
 
 interface Project {
   id: string;

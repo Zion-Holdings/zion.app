@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Supply Chain | Zion Tech Group',
+  description: 'AI Supply Chain solutions for enterprise.',
+  alternates: { canonical: '/ai-services/supply-chain/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

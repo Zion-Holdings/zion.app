@@ -1,5 +1,13 @@
 'use client';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI-first incident response in 2026 | Zion Tech Group',
+  description: 'Automated alert triage, runbook execution, and postmortem generation for faster MTTR.',
+  alternates: { canonical: '/ai-first-incident-response-2026/' },
+};
+
 export default function Page() {
   return (
     <div className="min-h-screen bg-slate-950 text-white p-8">

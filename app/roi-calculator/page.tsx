@@ -1,6 +1,14 @@
 'use client';
 
 import { useState, useMemo } from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '💰 AI ROI Calculator & Business Case Generator | Zion Tech Group',
+  description: 'Calculate your potential ROI with Zion's AI-powered solutions in 2 minutes',
+  alternates: { canonical: '/roi-calculator/' },
+};
+
 
 interface CompanyData {
   employees: number;

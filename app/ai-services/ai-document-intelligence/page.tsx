@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Document Intelligence | Zion Tech Group',
+  description: 'Extract insights from contracts, invoices, and operational documents with AI parsing and validation.',
+  alternates: { canonical: '/ai-services/ai-document-intelligenc/' },
+};
+
 export default function Page() {
   const serviceSlug = "ai-document-intelligence";
   const title = "AI Document Intelligence";

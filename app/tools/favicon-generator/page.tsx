@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Favicon Generator | Zion Tech Group',
+  description: 'Discover Zion Tech Group's favicon generator solutions for enterprise AI and IT transformation.',
+  alternates: { canonical: '/tools/favicon-generator/' },
+};
+
 export default function FaviconGeneratorPlaceholder() {
   return (
     <div className="min-h-screen bg-slate-950 text-white flex items-center justify-center px-4">

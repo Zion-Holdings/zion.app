@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Fraud Detection | Zion Tech Group',
+  description: 'AI Fraud Detection solutions for enterprise.',
+  alternates: { canonical: '/ai-services/fraud-detection/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

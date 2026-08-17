@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Email Reply Intelligence | Zion Tech Group',
+  description: 'Automated email response drafting, triage, and intent detection for revenue and support teams.',
+  alternates: { canonical: '/ai-services/ai-email-reply-intelligenc/' },
+};
+
 export default function Page() {
   const serviceSlug = "ai-email-reply-intelligence";
   const title = "AI Email Reply Intelligence";

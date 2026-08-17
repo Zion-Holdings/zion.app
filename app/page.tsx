@@ -15,6 +15,14 @@ import FloatingActionDock from '@/components/FloatingActionDock';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
 import AgentsMonitoring from '@/components/AgentsMonitoring';
 import NavigationQuickLinks from '@/components/NavigationQuickLinks';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI & IT Services for Your Business | Zion Tech Group',
+  description: 'Transparent, real-time visibility into our AI workforce. Track every agent action, monitor fleet health, and see exactly how our autonomous team builds and maintains this website — 24/7.',
+  alternates: { canonical: '//' },
+};
+
 
 // Category accent color for showcase cards (maps category key → gradient)
 // Category accent color for showcase card styles (static RGBA + hex)

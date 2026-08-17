@@ -1,5 +1,13 @@
 'use client';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI-first cloud migration in 2026 | Zion Tech Group',
+  description: 'Accelerate legacy modernization with AI-driven workload mapping, cutover planning, and validation.',
+  alternates: { canonical: '/ai-first-cloud-migration-2026/' },
+};
+
 export default function Page() {
   return (
     <div className="min-h-screen bg-slate-950 text-white p-8">

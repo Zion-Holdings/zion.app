@@ -2,6 +2,14 @@
 'use client';
 import Link from 'next/link';
 import { allServices } from '@/data/servicesData';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Products &amp; Platforms | Zion Tech Group',
+  description: '{p.desc}',
+  alternates: { canonical: '/produc/' },
+};
+
 
 const PRODUCTS: readonly {
   key: string;

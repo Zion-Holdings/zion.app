@@ -1,51 +1,26 @@
-import ProductPageLayout from '@/components/ProductPageLayout';
+import PageTemplate from '@/components/PageTemplate';
 import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Zion AI Supplier Risk | Zion Tech Group',
-  description:
-    'Monitor supplier health, geopolitical risk, and supply chain disruptions with predictive alerts.',
-
+  description: 'Monitor supplier health, geopolitical risk, and supply chain disruptions with predictive alerts.',
+  alternates: { canonical: '/zion-ai-supplier-risk/' },
 };
 
 export default function Page() {
   return (
-    <ProductPageLayout
-      data={{
-        title: 'Zion AI Supplier Risk',
-        category: 'Operations',
-        description:
-          'Monitor supplier health, geopolitical risk, and supply chain disruptions with predictive alerts.',
-        iconEmoji: '⚠️',
-        features: [
-          {
-            "title": "Production-Ready",
-            "description": "Enterprise-grade infrastructure with high availability and monitoring."
-          },
-          {
-            "title": "Intelligent Automation",
-            "description": "AI-powered workflows that learn from patterns and adapt over time."
-          },
-          {
-            "title": "Seamless Integration",
-            "description": "Connect with existing tools via pre-built connectors and webhooks."
-          }
-        ],
-        useCases: [
-          {
-            "title": "Operational Efficiency",
-            "description": "Deploy Zion AI Supplier Risk to automate routine tasks and reduce manual errors.",
-            "icon": "⚡"
-          },
-          {
-            "title": "Scalable Growth",
-            "description": "Use Zion AI Supplier Risk to handle increasing complexity without proportional headcount.",
-            "icon": "📈"
-          }
-        ],
-        benefits: ["Reduced operational costs", "Faster time to value", "Enterprise-grade security"],
-        ctaLabel: 'Get Started with Zion AI Supplier Risk',
-      }}
-    />
+    <PageTemplate
+      title="Zion AI Supplier Risk | Zion Tech Group"
+      description="Monitor supplier health, geopolitical risk, and supply chain disruptions with predictive alerts."
+      actions={[
+        { label: 'Get Started', href: '/contact', style: 'primary' },
+        { label: 'View Pricing', href: '/pricing', style: 'secondary' },
+      ]}
+    >
+      <div className="text-center py-16">
+        <p className="text-slate-400">+1 302 464 0950 | kleber@ziontechgroup.com | 364 E Main St STE 1008, Middletown, DE 19709</p>
+        <a href="/contact" className="inline-flex items-center px-8 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold text-lg">Free Consultation</a>
+      </div>
+    </PageTemplate>
   );
 }

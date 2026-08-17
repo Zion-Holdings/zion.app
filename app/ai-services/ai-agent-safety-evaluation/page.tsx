@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Agent Safety & Evaluation | Zion Tech Group',
+  description: 'AI Agent Safety & Evaluation solutions for enterprise.',
+  alternates: { canonical: '/ai-services/ai-agent-safety-evaluation/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

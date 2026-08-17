@@ -3,6 +3,16 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Lab | Zion Tech Group',
+  description: 'Interactive playgrounds, autonomous demos, and architecture planning
+            tools — all running in your browser. No API keys, no sign-up, no data
+            ever leaves your machine.',
+  alternates: { canonical: '/ai-lab/' },
+};
+
 
 // ─── Tool/Playground card data ─────────────────────────────────────────────
 

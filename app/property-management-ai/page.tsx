@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Property Management AI | Zion Tech Group',
+  description: 'Property Management AI — Zion Tech Group enterprise solutions.',
+  alternates: { canonical: '/property-management-ai/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

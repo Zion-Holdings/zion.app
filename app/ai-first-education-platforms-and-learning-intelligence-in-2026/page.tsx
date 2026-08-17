@@ -1,6 +1,14 @@
 
 'use client';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Education Platforms & Learning Intelligence | Zion Tech Group',
+  description: 'How AI-powered learning platforms adapt to employee and student needs while improving completion rates.',
+  alternates: { canonical: '/ai-first-education-platforms-and-learning-intelligence-in-2026/' },
+};
+
 export default function Page() {
   return (
     <div className="min-h-screen bg-slate-950 text-white p-8">

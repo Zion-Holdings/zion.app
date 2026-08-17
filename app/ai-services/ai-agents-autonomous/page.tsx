@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Agents & Autonomous Workflows | Zion Tech Group',
+  description: 'AI Agents & Autonomous Workflows solutions for enterprise.',
+  alternates: { canonical: '/ai-services/ai-agents-autonomou/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

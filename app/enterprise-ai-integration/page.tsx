@@ -1,23 +1,17 @@
-import type { Metadata } from 'next';
-import StandardPageLayout from '@/components/StandardPageLayout';
-
+import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Enterprise AI Integration | Zion Tech Group',
-  description: 'Enterprise AI integration for APIs, pipelines, identity, and adoption governance.',
-  alternates: { canonical: '/enterprise-ai-integration/' },
-};
-
+  description: 'Enterprise AI integration for APIs, pipelines, identity, and adoption governance.'
+}
 export default function Page() {
   return (
-    <StandardPageLayout data={{
-      title: "Enterprise AI Integration",
-      description: "Enterprise AI integration for APIs, pipelines, identity, and adoption governance.",
-      category: 'AI Service',
-      categoryColor: "from-purple-500 to-indigo-500",
-      ctaLabel: 'Contact us',
-      ctaHref: '/contact/',
-      secondaryCtaLabel: 'Services',
-      secondaryCtaHref: '/services/',
-    }} />
-  );
+    <main className="container-page py-20">
+      <h1 className="text-4xl font-bold text-white mb-4">Enterprise AI Integration</h1>
+      <p className="text-xl text-slate-300 mb-10">Enterprise AI integration for APIs, pipelines, identity, and adoption governance.</p>
+      <div className="text-center">
+        <a className="btn-primary" href="/contact/">Contact us</a>
+        <a className="btn-secondary" href="/services/">Services</a>
+      </div>
+    </main>
+  )
 }

@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Quality Assurance | Zion Tech Group',
+  description: 'AI Quality Assurance solutions for enterprise.',
+  alternates: { canonical: '/ai-services/quality-assuranc/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

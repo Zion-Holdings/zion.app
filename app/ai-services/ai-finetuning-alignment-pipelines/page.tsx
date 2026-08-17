@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Fine-Tuning & Alignment Pipelines | Zion Tech Group',
+  description: 'Fine-Tuning & Alignment Pipelines solutions for enterprise.',
+  alternates: { canonical: '/ai-services/ai-finetuning-alignment-pipelin/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

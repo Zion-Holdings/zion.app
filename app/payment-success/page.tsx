@@ -1,6 +1,14 @@
 'use client';
 import Link from 'next/link';
 import { useEffect } from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Payment Successful! | Zion Tech Group',
+  description: 'Thank you for your payment. Your transaction was processed successfully.',
+  alternates: { canonical: '/payment-succ/' },
+};
+
 
 export default function PaymentSuccess() {
   useEffect(() => {

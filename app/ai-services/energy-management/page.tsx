@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Energy Management | Zion Tech Group',
+  description: 'AI Energy Management solutions for enterprise.',
+  alternates: { canonical: '/ai-services/energy-managemen/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

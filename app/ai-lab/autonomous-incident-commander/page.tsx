@@ -2,6 +2,14 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Autonomous Incident Commander | Zion Tech Group',
+  description: 'Run incident triage simulations with AI-suggested owner assignment, communication timelines, and rollback readiness.',
+  alternates: { canonical: '/ai-lab/autonomous-incident-commander/' },
+};
+
 
 type Severity = 'critical' | 'high' | 'medium' | 'low';
 type Status = 'active' | 'investigating' | 'mitigating' | 'resolved';

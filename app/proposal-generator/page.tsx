@@ -2,6 +2,14 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '🤖 AI Proposal Generator | Zion Tech Group',
+  description: 'Generate customized, professional proposals in minutes with AI-powered intelligence',
+  alternates: { canonical: '/proposal-generator/' },
+};
+
 
 interface ProposalData {
   clientName: string;

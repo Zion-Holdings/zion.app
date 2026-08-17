@@ -3,6 +3,15 @@
 
 import Link from 'next/link';
 import { ArrowLeftIcon, CheckCircleIcon, StarIcon } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Finance Industry AI Solutions | Zion Tech Group',
+  description: 'AI-powered automation for invoice processing, fraud detection, compliance, and financial operations. 
+            Reduce costs, improve accuracy, and accelerate your finance workflows.',
+  alternates: { canonical: '/industries/financ/' },
+};
+
 
 const FINANCE_SERVICES = [
   {

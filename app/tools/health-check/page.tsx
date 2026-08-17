@@ -3,6 +3,14 @@
 import { useState, useEffect, useCallback } from 'react';
 
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Platform Health Check 🩺 | Zion Tech Group',
+  description: 'Autonomous diagnostic — runs every check without any API key or external tool.',
+  alternates: { canonical: '/tools/health-check/' },
+};
+
 
 type Status = 'ok' | 'warn' | 'fail';
 interface Check { name: string; status: Status; detail: string; ms: number; }

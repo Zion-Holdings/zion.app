@@ -1,5 +1,13 @@
 'use client';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Partnership Growth Playbook 2026 | Zion Tech Group',
+  description: 'A practical playbook for building, scaling, and managing AI partnerships that create joint revenue.',
+  alternates: { canonical: '/ai-partnership-growth-playbook-2026/' },
+};
+
 export default function Page() {
   return (
     <div className="min-h-screen bg-slate-950 text-white p-8">

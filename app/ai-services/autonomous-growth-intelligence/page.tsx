@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Autonomous Growth Intelligence | Zion Tech Group',
+  description: 'Autonomous Growth Intelligence solutions for enterprise.',
+  alternates: { canonical: '/ai-services/autonomous-growth-intelligenc/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

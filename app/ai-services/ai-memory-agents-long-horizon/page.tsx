@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Long-Horizon AI Memory & Agents | Zion Tech Group',
+  description: 'Long-Horizon AI Memory & Agents solutions for enterprise.',
+  alternates: { canonical: '/ai-services/ai-memory-agents-long-horizon/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

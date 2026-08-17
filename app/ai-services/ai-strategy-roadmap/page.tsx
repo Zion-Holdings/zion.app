@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Strategy & Roadmap | Zion Tech Group',
+  description: 'AI Strategy & Roadmap solutions for enterprise.',
+  alternates: { canonical: '/ai-services/ai-strategy-roadm/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

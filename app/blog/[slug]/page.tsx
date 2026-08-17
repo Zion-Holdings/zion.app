@@ -4,6 +4,14 @@ import Link from 'next/link';
 import PageTemplate from '@/components/PageTemplate';
 import fs from 'fs';
 import path from 'path';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Article Not Found | Zion Tech Group',
+  description: 'This blog post may have been moved or is no longer available.',
+  alternates: { canonical: '/blog/[slug]/' },
+};
+
 
 // Generate static params from actual blog post directories
 export async function generateStaticParams() {

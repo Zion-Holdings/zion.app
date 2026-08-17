@@ -4,6 +4,15 @@ import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { allServices, type Service } from '../data/servicesData';
 import { CATEGORIES } from '../constants/categories';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Industry-Specific AI Solutions Built for Real Business Impact | Zion Tech Group',
+  description: 'AI and IT services tailored to your industry's unique challenges and opportunities. 
+              From healthcare to finance, we deliver measurable outcomes with transparent pricing.',
+  alternates: { canonical: '/industri/' },
+};
+
 
 // Industry definitions with icons, colors, and descriptions
 const INDUSTRIES = [

@@ -1,51 +1,26 @@
-import ProductPageLayout from '@/components/ProductPageLayout';
+import PageTemplate from '@/components/PageTemplate';
 import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Zion AI Field Service Manager',
-  description:
-    'Optimize field technician scheduling, routing, and job completion with AI-driven dispatch and real-time updates.',
-
+  description: 'Optimize field technician scheduling, routing, and job completion with AI-driven dispatch and real-time updates.',
+  alternates: { canonical: '/zion-ai-field-service-manager/' },
 };
 
 export default function Page() {
   return (
-    <ProductPageLayout
-      data={{
-        title: 'Zion AI Field Service Manager',
-        category: 'Operations',
-        description:
-          'Optimize field technician scheduling, routing, and job completion with AI-driven dispatch and real-time updates.',
-        iconEmoji: '📍',
-        features: [
-          {
-            "title": "Production-Ready",
-            "description": "Enterprise-grade infrastructure with high availability and monitoring."
-          },
-          {
-            "title": "Intelligent Automation",
-            "description": "AI-powered workflows that learn from patterns and adapt over time."
-          },
-          {
-            "title": "Seamless Integration",
-            "description": "Connect with existing tools via pre-built connectors and webhooks."
-          }
-        ],
-        useCases: [
-          {
-            "title": "Operational Efficiency",
-            "description": "Deploy Zion AI Field Service Manager to automate routine tasks and reduce manual errors.",
-            "icon": "⚡"
-          },
-          {
-            "title": "Scalable Growth",
-            "description": "Use Zion AI Field Service Manager to handle increasing complexity without proportional headcount.",
-            "icon": "📈"
-          }
-        ],
-        benefits: ["Reduced operational costs", "Faster time to value", "Enterprise-grade security"],
-        ctaLabel: 'Get Started with Zion AI Field Service Manager',
-      }}
-    />
+    <PageTemplate
+      title="Zion AI Field Service Manager"
+      description="Optimize field technician scheduling, routing, and job completion with AI-driven dispatch and real-time updates."
+      actions={[
+        { label: 'Get Started', href: '/contact', style: 'primary' },
+        { label: 'View Pricing', href: '/pricing', style: 'secondary' },
+      ]}
+    >
+      <div className="text-center py-16">
+        <p className="text-slate-400">+1 302 464 0950 | kleber@ziontechgroup.com | 364 E Main St STE 1008, Middletown, DE 19709</p>
+        <a href="/contact" className="inline-flex items-center px-8 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold text-lg">Free Consultation</a>
+      </div>
+    </PageTemplate>
   );
 }

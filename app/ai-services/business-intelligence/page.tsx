@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Business Intelligence | Zion Tech Group',
+  description: 'Business Intelligence solutions for enterprise.',
+  alternates: { canonical: '/ai-services/business-intelligenc/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

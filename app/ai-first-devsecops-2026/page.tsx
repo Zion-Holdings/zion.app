@@ -1,5 +1,13 @@
 'use client';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI-first DevSecOps in 2026 | Zion Tech Group',
+  description: 'Shift-left security, automated compliance, and AI-driven remediation for modern engineering orgs.',
+  alternates: { canonical: '/ai-first-devsecops-2026/' },
+};
+
 export default function Page() {
   return (
     <div className="min-h-screen bg-slate-950 text-white p-8">

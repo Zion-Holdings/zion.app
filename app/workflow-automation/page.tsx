@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Workflow Automation | Zion Tech Group',
+  description: 'Workflow Automation — Zion Tech Group enterprise solutions.',
+  alternates: { canonical: '/workflow-automation/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

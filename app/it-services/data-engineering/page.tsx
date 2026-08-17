@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Data Engineering | Zion Tech Group',
+  description: 'Data Engineering — Zion Tech Group enterprise solutions.',
+  alternates: { canonical: '/it-services/data-engineerin/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

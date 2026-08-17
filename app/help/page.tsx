@@ -2,6 +2,14 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Help Center | Zion Tech Group',
+  description: '{item.a}',
+  alternates: { canonical: '/hel/' },
+};
+
 
 const FAQ_ITEMS = [
   {

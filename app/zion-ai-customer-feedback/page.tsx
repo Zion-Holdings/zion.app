@@ -1,51 +1,26 @@
-import ProductPageLayout from '@/components/ProductPageLayout';
+import PageTemplate from '@/components/PageTemplate';
 import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Zion AI Customer Feedback',
-  description:
-    'Aggregate and analyze feedback from surveys, reviews, and support channels with sentiment and theme detection.',
-
+  description: 'Aggregate and analyze feedback from surveys, reviews, and support channels with sentiment and theme detection.',
+  alternates: { canonical: '/zion-ai-customer-feedback/' },
 };
 
 export default function Page() {
   return (
-    <ProductPageLayout
-      data={{
-        title: 'Zion AI Customer Feedback',
-        category: 'Customer Experience',
-        description:
-          'Aggregate and analyze feedback from surveys, reviews, and support channels with sentiment and theme detection.',
-        iconEmoji: '💬',
-        features: [
-          {
-            "title": "Production-Ready",
-            "description": "Enterprise-grade infrastructure with high availability and monitoring."
-          },
-          {
-            "title": "Intelligent Automation",
-            "description": "AI-powered workflows that learn from patterns and adapt over time."
-          },
-          {
-            "title": "Seamless Integration",
-            "description": "Connect with existing tools via pre-built connectors and webhooks."
-          }
-        ],
-        useCases: [
-          {
-            "title": "Operational Efficiency",
-            "description": "Deploy Zion AI Customer Feedback to automate routine tasks and reduce manual errors.",
-            "icon": "⚡"
-          },
-          {
-            "title": "Scalable Growth",
-            "description": "Use Zion AI Customer Feedback to handle increasing complexity without proportional headcount.",
-            "icon": "📈"
-          }
-        ],
-        benefits: ["Reduced operational costs", "Faster time to value", "Enterprise-grade security"],
-        ctaLabel: 'Get Started with Zion AI Customer Feedback',
-      }}
-    />
+    <PageTemplate
+      title="Zion AI Customer Feedback"
+      description="Aggregate and analyze feedback from surveys, reviews, and support channels with sentiment and theme detection."
+      actions={[
+        { label: 'Get Started', href: '/contact', style: 'primary' },
+        { label: 'View Pricing', href: '/pricing', style: 'secondary' },
+      ]}
+    >
+      <div className="text-center py-16">
+        <p className="text-slate-400">+1 302 464 0950 | kleber@ziontechgroup.com | 364 E Main St STE 1008, Middletown, DE 19709</p>
+        <a href="/contact" className="inline-flex items-center px-8 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold text-lg">Free Consultation</a>
+      </div>
+    </PageTemplate>
   );
 }

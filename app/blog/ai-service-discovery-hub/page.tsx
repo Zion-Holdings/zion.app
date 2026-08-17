@@ -1,4 +1,13 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'How Our AI Agent Fleet Powers Intelligent Service Discovery | Zion Tech Group',
+  description: 'At Zion Tech Group, we've built something unprecedented: an autonomous AI agent fleet that not only creates and maintains our service catalog but also powers the discovery experience for our clients. 
+              This article explores how our AI agents work together to deliver intelligent, personalized service recommendations in real-time.',
+  alternates: { canonical: '/blog/ai-service-discovery-hub/' },
+};
+
 
 export default function AIDiscoveryBlogPost() {
   return (

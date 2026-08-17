@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI Predictive Maintenance | Zion Tech Group',
+  description: 'AI Predictive Maintenance solutions for enterprise.',
+  alternates: { canonical: '/ai-services/predictive-maintenanc/' },
+};
+
 export default function Page() {
   return (<>
     <main className="min-h-screen">

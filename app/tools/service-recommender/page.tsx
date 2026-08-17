@@ -5,6 +5,14 @@ import { pingTool } from '@/data/tools_ping_client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { allServices, type Service } from '../../data/servicesData';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Service Recommender | Zion Tech Group',
+  description: 'Answer a few questions and we&apos;ll match you with the right AI, IT, or Cloud solution from our catalog of 416+ services.',
+  alternates: { canonical: '/tools/service-recommender/' },
+};
+
 
 const questions = [
   { id: 'category', label: 'What area do you need help with?', options: ['AI & Automation', 'IT Infrastructure', 'Cloud & DevOps', 'Data & Analytics', 'Cybersecurity'] },

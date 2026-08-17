@@ -1,6 +1,14 @@
 
 'use client';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Occupational Health & Safety Intelligence | Zion Tech Group',
+  description: 'AI-assisted safety monitoring, incident reduction, and compliance automation for modern workplaces.',
+  alternates: { canonical: '/ai-first-occupational-health-and-safety-intelligence-in-2026/' },
+};
+
 export default function Page() {
   return (
     <div className="min-h-screen bg-slate-950 text-white p-8">

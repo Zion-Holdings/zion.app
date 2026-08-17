@@ -1,5 +1,13 @@
 'use client';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AI-first cloud cost optimization | Zion Tech Group',
+  description: 'Automated spend analysis, waste detection, and rightsizing recommendations for multi-cloud estates.',
+  alternates: { canonical: '/ai-first-cloud-cost-optimization/' },
+};
+
 export default function Page() {
   return (
     <div className="min-h-screen bg-slate-950 text-white p-8">
