@@ -1,8 +1,7 @@
 'use client';
 
+import PageWrapper from '@/components/PageWrapper';
 import Link from 'next/link';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -19,8 +18,7 @@ const ARTICLES = [
 
 export default function PressPage() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
-      <Navigation />
+    <PageWrapper>
       <main className="py-20">
         <div className="container-page">
           <div className="mb-10">
@@ -38,7 +36,6 @@ export default function PressPage() {
           </div>
         </div>
       </main>
-      <Footer />
-    </div>
+    </PageWrapper>
   );
 }

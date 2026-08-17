@@ -1,5 +1,6 @@
 'use client';
 
+import PageWrapper from '@/components/PageWrapper';
 import Link from 'next/link';
 import { useState } from 'react';
 import type { Metadata } from 'next';
@@ -62,7 +63,7 @@ export default function HelpPage() {
   });
 
   return (
-    <main className="min-h-screen">
+    <PageWrapper>
       <div className="bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-16 md:py-20">
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">Help Center</h1>
@@ -146,6 +147,6 @@ export default function HelpPage() {
           </section>
         </div>
       </div>
-    </main>
+    </PageWrapper>
   );
 }

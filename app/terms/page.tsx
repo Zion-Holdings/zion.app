@@ -1,3 +1,4 @@
+import PageWrapper from '@/components/PageWrapper';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <PageWrapper>
       <div className="container-page">
         <h1 className="text-4xl font-bold text-white mb-8">Terms of Service</h1>
         <section className="mb-10">
