@@ -7,10 +7,10 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Migration Services: common mistakes',
     description: 'Cloud Migration Services: common mistakes - AI and IT insights from Zion Tech Group.',
-    url: 'https://ziontechgroup.com/blog/cloud-migration-services-common-mistakes/',
+    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/common-mistakes/',
     type: 'article',
   },
-  alternates: { canonical: '/blog/cloud-migration-services-common-mistakes/' },
+  alternates: { canonical: '/blog/cloud-migration-services-2026/common-mistakes/' },
 };
 
 export default function BlogPost() {

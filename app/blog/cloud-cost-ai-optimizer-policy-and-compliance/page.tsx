@@ -7,10 +7,10 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Cost AI Optimizer: policy and compliance',
     description: 'Cloud Cost AI Optimizer: policy and compliance - AI and IT insights from Zion Tech Group.',
-    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-policy-and-compliance/',
+    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/policy-and-compliance/',
     type: 'article',
   },
-  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-policy-and-compliance/' },
+  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-2026/policy-and-compliance/' },
 };
 
 export default function BlogPost() {

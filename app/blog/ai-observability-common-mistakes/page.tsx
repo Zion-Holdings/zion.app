@@ -7,10 +7,10 @@ export const metadata = {
   openGraph: {
     title: 'AI Observability: common mistakes',
     description: 'AI Observability: common mistakes - AI and IT insights from Zion Tech Group.',
-    url: 'https://ziontechgroup.com/blog/ai-observability-common-mistakes/',
+    url: 'https://ziontechgroup.com/blog/ai-observability-2026/common-mistakes/',
     type: 'article',
   },
-  alternates: { canonical: '/blog/ai-observability-common-mistakes/' },
+  alternates: { canonical: '/blog/ai-observability-2026/common-mistakes/' },
 };
 
 export default function BlogPost() {

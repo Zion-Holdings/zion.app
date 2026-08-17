@@ -7,10 +7,10 @@ export const metadata = {
   openGraph: {
     title: 'AI Observability: implementation playbook',
     description: 'AI Observability: implementation playbook - AI and IT insights from Zion Tech Group.',
-    url: 'https://ziontechgroup.com/blog/ai-observability-implementation-playbook/',
+    url: 'https://ziontechgroup.com/blog/ai-observability-2026/implementation-playbook/',
     type: 'article',
   },
-  alternates: { canonical: '/blog/ai-observability-implementation-playbook/' },
+  alternates: { canonical: '/blog/ai-observability-2026/implementation-playbook/' },
 };
 
 export default function BlogPost() {

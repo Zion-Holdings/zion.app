@@ -7,10 +7,10 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Migration Services',
     description: 'Cloud Migration Services - AI and IT insights from Zion Tech Group.',
-    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/',
+    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/2026/',
     type: 'article',
   },
-  alternates: { canonical: '/blog/cloud-migration-services-2026/' },
+  alternates: { canonical: '/blog/cloud-migration-services-2026/2026/' },
 };
 
 export default function BlogPost() {

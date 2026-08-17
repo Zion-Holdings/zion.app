@@ -7,10 +7,10 @@ export const metadata = {
   openGraph: {
     title: 'IT Consulting: security and governance',
     description: 'IT Consulting: security and governance - AI and IT insights from Zion Tech Group.',
-    url: 'https://ziontechgroup.com/blog/it-consulting-security-and-governance/',
+    url: 'https://ziontechgroup.com/blog/it-consulting-2026/security-and-governance/',
     type: 'article',
   },
-  alternates: { canonical: '/blog/it-consulting-security-and-governance/' },
+  alternates: { canonical: '/blog/it-consulting-2026/security-and-governance/' },
 };
 
 export default function BlogPost() {
