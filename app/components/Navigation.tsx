@@ -3,24 +3,77 @@
 import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
-import {
-  PRIMARY_NAV_LINKS,
-  SOLUTION_LINKS,
-  RESOURCE_LINKS,
-  FEATURED_AI_SERVICE_LINKS,
-  AI_LAB_LINKS,
-  type NavigationLink,
-} from '../constants/navigation';
-import { CATEGORIES } from '../constants/categories';
 
 const SITE_TITLE = 'Zion Tech Group';
+
+const CATEGORIES = [
+  { key: 'automation', label: 'Automation', emoji: '⚙️' },
+  { key: 'cloud', label: 'Cloud', emoji: '☁️' },
+  { key: 'security', label: 'Security', emoji: '🔐' },
+  { key: 'data', label: 'Data', emoji: '📊' },
+  { key: 'ai', label: 'AI', emoji: '🧠' },
+  { key: 'micro-saas', label: 'Micro-SaaS', emoji: '🚀' },
+  { key: 'iot', label: 'IoT', emoji: '📡' },
+  { key: 'database', label: 'Database', emoji: '💾' },
+  { key: 'devops', label: 'DevOps', emoji: '🛠️' },
+  { key: 'observability', label: 'Observability', emoji: '📈' },
+];
+
+const PRIMARY_NAV_LINKS = [
+  { name: 'Home', href: '/' },
+  { name: 'Services', href: '/services' },
+  { name: 'Solutions', href: '/solutions' },
+  { name: 'Use Cases', href: '/use-cases' },
+  { name: 'Products', href: '/products' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'FAQ', href: '/faq' },
+  { name: 'Testimonials', href: '/testimonials' },
+  { name: 'About', href: '/about' },
+];
+
+const SOLUTION_LINKS = [
+  { name: 'AI & Automation', href: '/solutions/ai-automation' },
+  { name: 'Cloud & DevOps', href: '/solutions/cloud-devops' },
+  { name: 'Security & Compliance', href: '/solutions/security-compliance' },
+  { name: 'Data & Analytics', href: '/solutions/data-analytics' },
+  { name: 'Managed IT', href: '/solutions/managed-it' },
+  { name: 'Micro-SaaS', href: '/solutions/micro-saas' },
+];
+
+const AI_LAB_LINKS = [
+  { name: 'Agents Monitoring', href: '/agents-monitoring' },
+  { name: 'AI Labs', href: '/ai' },
+  { name: 'Evaluation', href: '/blog/enterprise-ai-intelligence-hub-vendor-evaluation' },
+];
+
+const RESOURCE_LINKS = [
+  { name: 'Agent Monitoring', href: '/agents-monitoring' },
+  { name: 'System Status', href: '#' },
+  { name: 'Leads Control', href: '/leads' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Case Studies', href: '/case-studies' },
+  { name: 'Contact', href: '/contact' },
+  { name: 'FAQ', href: '/faq' },
+  { name: 'About Us', href: '/about' },
+];
+
+const FEATURED_AI_SERVICE_LINKS = [
+  { name: 'AI Strategy', href: '/services?category=ai' },
+  { name: 'Automation', href: '/services?category=automation' },
+  { name: 'Security', href: '/services?category=security' },
+  { name: 'Data', href: '/services?category=data' },
+  { name: 'Cloud', href: '/services?category=cloud' },
+  { name: 'IoT', href: '/services?category=iot' },
+];
+
+type NavigationLink = { name: string; href: string };
 
 const SERVICE_GRID = CATEGORIES.slice(0, 10);
 
 const RESOURCE_GROUPS = [
   { title: 'Platform', items: RESOURCE_LINKS.filter((l) => ['Agent Monitoring', 'System Status'].includes(l.name)) },
   { title: 'Growth', items: [{ name: '🎯 Leads Control', href: '/leads', badge: 'New' }, { name: '📖 Blog', href: '/blog' }] },
-  { title: 'Company', items: [{ name: '🤝 Partners', href: '/partners' }, { name: '❓ FAQ', href: '/faq' }, { name: 'ℹ️ About Us', href: '/about' }] },
+  { title: 'Company', items: [{ name: '❓ FAQ', href: '/faq' }, { name: 'ℹ️ About Us', href: '/about' }] },
 ];
 
 export default function Navigation() {
@@ -89,10 +142,10 @@ export default function Navigation() {
           className={`w-3.5 h-3.5 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
           fill="none"
           stroke="currentColor"
-          strokeWidth={2.5}
+          strokeWidth={2}
           viewBox="0 0 24 24"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M6 9l6 6 6-6" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
         </svg>
       </button>
     );
@@ -221,7 +274,7 @@ export default function Navigation() {
             )}
           </div>
 
-          {PRIMARY_NAV_LINKS.filter(l => !['/', '/services', '/solutions', '/agents-monitoring', '/ai'].includes(l.href)).map((link, i) => (
+          {PRIMARY_NAV_LINKS.filter(l => !['/', '/services', '/solutions', '/agents-monitoring'].includes(l.href)).map((link, i) => (
             <NavLink key={i} link={link} />
           ))}
 
