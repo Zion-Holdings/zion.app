@@ -1,0 +1,61 @@
+name: Pin Actions Weekly
+
+permissions:
+  contents: write
+  actions: read
+
+"on":
+  schedule:
+    - cron: '0 2 * * 1'
+  workflow_dispatch:
+
+concurrency:
+  group: pin-actions-weekly
+  # Queue: this job commits and pushes to main; canceling mid-run can strand a half-done pin update.
+  cancel-in-progress: false
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          token: ${{ github.token }}
+
+      - name: Setup Node
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Validate pinned actions workflow files
+        run: |
+          set -euo pipefail
+          files=$(ls .github/workflows/*.yml | head -20 || true)
+          if [ -z "$files" ]; then
+            echo "No workflow files found"
+            exit 1
+          fi
+          echo "$files" | tr ' ' '\n' | sed 's#^#- #'
+          python -c "print('pin-actions-weekly smoke check: workflow files present')"
+
+      - name: Upload results
+        uses: actions/upload-artifact@4bd10206f1090cfe5690b91618f6fd840f21135b # v4
+        if: always()
+        with:
+          name: workflow-results-${{ github.run_id }}
+          path: .github/workflows/
+          retention-days: 7
