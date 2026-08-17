@@ -1,3 +1,4 @@
+import PageWrapper from '@/components/PageWrapper';
 import Link from 'next/link';
 
 export const metadata = {
@@ -8,7 +9,7 @@ export const metadata = {
 
 export default function ServicePage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <PageWrapper>
       <div className="container-page">
         <h1 className="text-4xl font-bold text-white mb-4">AI Agent Safety Evaluation</h1>
         <p className="text-slate-300 text-lg leading-relaxed max-w-3xl mb-10">
@@ -27,7 +28,6 @@ export default function ServicePage() {
             </Link>
           ))}
         </div>
-      </div>
-    </main>
+      </PageWrapper>
   );
 }
