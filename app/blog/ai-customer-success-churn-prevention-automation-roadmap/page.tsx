@@ -48,7 +48,7 @@ Leading indicators for ai customer success churn prevention: automation roadmap:
               <li><Link href="/blog/ai-development-acceleration-2026-7322">Ai Development Acceleration 2026 7322</Link></li>
 <li><Link href="/blog/cloud-native-app-development-2026-7226">Cloud Native App Development 2026 7226</Link></li>
 <li><Link href="/blog/ai-customer-support-pro-2026-6909">Ai Customer Support Pro 2026 6909</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-7331">Cloud Migration Services 2026 7331</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 7331</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

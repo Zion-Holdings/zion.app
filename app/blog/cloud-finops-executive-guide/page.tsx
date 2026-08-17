@@ -46,7 +46,7 @@ Leading indicators for cloud finops: executive guide: workflow completion rate, 
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/cloud-finops-2026-7018">Cloud Finops 2026 7018</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-6904">Managed It Services Small Business 2026 6904</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 6904</Link></li>
 <li><Link href="/blog/ai-data-backup-common-mistakes">Ai Data Backup Common Mistakes</Link></li>
 <li><Link href="/blog/autonomous-code-deployment-2026-7212">Autonomous Code Deployment 2026 7212</Link></li>
             </ul>

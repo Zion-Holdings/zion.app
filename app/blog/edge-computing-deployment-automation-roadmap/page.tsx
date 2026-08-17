@@ -45,7 +45,7 @@ Leading indicators for edge computing deployment: automation roadmap: workflow c
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-2026/vendor-evaluation">It Consulting Vendor Evaluation</Link></li>
+              <li><Link href="/blog/">It Consulting Vendor Evaluation</Link></li>
 <li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7265">Micro Saas Ai Expense Tracker 2026 7265</Link></li>
 <li><Link href="/blog/cloud-finops-2026-6535">Cloud Finops 2026 6535</Link></li>
 <li><Link href="/blog/ai-agentic-workflows-2026-7000">Ai Agentic Workflows 2026 7000</Link></li>

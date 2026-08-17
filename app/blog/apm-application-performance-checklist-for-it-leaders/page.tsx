@@ -46,7 +46,7 @@ Leading indicators for apm application performance: checklist for it leaders: wo
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6567">Ai Data Lakehouse Pipelines 2026 6567</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-7117">Ai Observability 2026 7117</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 7117</Link></li>
 <li><Link href="/blog/devops-gen-ai-cicd-2026-7231">Devops Gen Ai Cicd 2026 7231</Link></li>
 <li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7112">Data Analytics Platform Modern Enterprise 2026 7112</Link></li>
             </ul>

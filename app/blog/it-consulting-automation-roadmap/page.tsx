@@ -47,7 +47,7 @@ If this guide matches your it consulting: automation roadmap initiative, the nex
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/genai-devops-cicd-security-and-governance">Genai Devops Cicd Security And Governance</Link></li>
 <li><Link href="/blog/ai-performance-monitoring-2026-7149">Ai Performance Monitoring 2026 7149</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-7193">Cloud Migration Services 2026 7193</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 7193</Link></li>
 <li><Link href="/blog/microsaas-social-media-manager-case-study">Microsaas Social Media Manager Case Study</Link></li>
             </ul>
           </div>

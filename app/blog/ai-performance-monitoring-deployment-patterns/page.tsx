@@ -45,7 +45,7 @@ Leading indicators for ai performance monitoring: deployment patterns: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-2026/2026-6777">It Consulting 2026 6777</Link></li>
+              <li><Link href="/blog/">It Consulting 2026 6777</Link></li>
 <li><Link href="/blog/ai-agent-tool-builder-security-and-governance">Ai Agent Tool Builder Security And Governance</Link></li>
 <li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7269">Enterprise Ai Intelligence Hub 2026 7269</Link></li>
 <li><Link href="/blog/ai-for-product-development-and-innovation">Ai For Product Development And Innovation</Link></li>

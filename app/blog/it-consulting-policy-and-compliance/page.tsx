@@ -47,7 +47,7 @@ Leading indicators for it consulting: policy and compliance: workflow completion
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-agent-tool-builder-common-mistakes">Ai Agent Tool Builder Common Mistakes</Link></li>
 <li><Link href="/blog/ai-accessibility-optimizer-2026-6996">Ai Accessibility Optimizer 2026 6996</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-6710">Cloud Migration Services 2026 6710</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 6710</Link></li>
 <li><Link href="/blog/cloud-cost-optimization-checklist-for-it-leaders">Cloud Cost Optimization Checklist For It Leaders</Link></li>
             </ul>
           </div>

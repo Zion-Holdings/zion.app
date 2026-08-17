@@ -47,7 +47,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/event-driven-architecture-2026-7306">Event Driven Architecture 2026 7306</Link></li>
 <li><Link href="/blog/incident-response-retainer-2026-7309">Incident Response Retainer 2026 7309</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026/2026-6765">Cybersecurity Platform Msp 2026 6765</Link></li>
+<li><Link href="/blog/">Cybersecurity Platform Msp 2026 6765</Link></li>
 <li><Link href="/blog/accessibility-compliance-2026-6665">Accessibility Compliance 2026 6665</Link></li>
             </ul>
           </div>

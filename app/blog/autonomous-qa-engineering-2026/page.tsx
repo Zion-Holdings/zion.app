@@ -48,7 +48,7 @@ Leading indicators for autonomous qa engineering: workflow completion rate, esca
               <li><Link href="/blog/ai-autonomous-agents-2026">Ai Autonomous Agents 2026</Link></li>
 <li><Link href="/blog/cloud-native-app-development-implementation-playbook">Cloud Native App Development Implementation Playbook</Link></li>
 <li><Link href="/blog/ai-bom-procurement-automation-roadmap">Ai Bom Procurement Automation Roadmap</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-6973">Managed It Services Small Business 2026 6973</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 6973</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

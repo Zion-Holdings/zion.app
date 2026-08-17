@@ -48,7 +48,7 @@ If this guide matches your container security lifecycle: security and governance
               <li><Link href="/blog/etl-pipeline-optimization-roi-and-cost-model">Etl Pipeline Optimization Roi And Cost Model</Link></li>
 <li><Link href="/blog/ai-3d-asset-generator-2026-6580">Ai 3D Asset Generator 2026 6580</Link></li>
 <li><Link href="/blog/enterprise-backup-dr-2026-7097">Enterprise Backup Dr 2026 7097</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-6772">Ai Observability 2026 6772</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 6772</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

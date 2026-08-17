@@ -47,7 +47,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-it-operations-automation-2026-7">Ai It Operations Automation 2026 7</Link></li>
 <li><Link href="/blog/ai-customer-success-churn-prevention-policy-and-compliance">Ai Customer Success Churn Prevention Policy And Compliance</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-6628">Managed It Services Small Business 2026 6628</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 6628</Link></li>
 <li><Link href="/blog/incident-response-retainer-2026-6964">Incident Response Retainer 2026 6964</Link></li>
             </ul>
           </div>

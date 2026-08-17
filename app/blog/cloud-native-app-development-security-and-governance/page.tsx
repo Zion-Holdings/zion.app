@@ -46,7 +46,7 @@ If this guide matches your cloud native app development: security and governance
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/graphql-federation-platform-2026">Graphql Federation Platform 2026</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-6603">Cloud Cost Ai Optimizer 2026 6603</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 6603</Link></li>
 <li><Link href="/blog/ai-data-lakehouse-pipelines-policy-and-compliance">Ai Data Lakehouse Pipelines Policy And Compliance</Link></li>
 <li><Link href="/blog/database-migration-service-2026-7299">Database Migration Service 2026 7299</Link></li>
             </ul>

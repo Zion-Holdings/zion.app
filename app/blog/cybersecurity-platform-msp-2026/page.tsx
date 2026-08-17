@@ -45,8 +45,8 @@ For cybersecurity for msps: pick one workflow, assign ownership, define success 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/managed-it-services-small-business-2026/2026-6697">Managed It Services Small Business 2026 6697</Link></li>
-<li><Link href="/blog/ai-observability-2026/executive-guide">Ai Observability Executive Guide</Link></li>
+              <li><Link href="/blog/">Managed It Services Small Business 2026 6697</Link></li>
+<li><Link href="/blog/">Ai Observability Executive Guide</Link></li>
 <li><Link href="/blog/accessibility-compliance-2026-6734">Accessibility Compliance 2026 6734</Link></li>
 <li><Link href="/blog/ai-3d-asset-generator-2026-6511">Ai 3D Asset Generator 2026 6511</Link></li>
             </ul>

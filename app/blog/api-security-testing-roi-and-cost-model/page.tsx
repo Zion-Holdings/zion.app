@@ -48,7 +48,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
               <li><Link href="/blog/accessibility-compliance-vendor-evaluation">Accessibility Compliance Vendor Evaluation</Link></li>
 <li><Link href="/blog/chaos-engineering-2026-6947">Chaos Engineering 2026 6947</Link></li>
 <li><Link href="/blog/microsaas-hr-recruitment-checklist-for-it-leaders">Microsaas Hr Recruitment Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-6772">Ai Observability 2026 6772</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 6772</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

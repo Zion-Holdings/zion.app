@@ -47,8 +47,8 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/api-orchestration-layer-2026-7279">Api Orchestration Layer 2026 7279</Link></li>
 <li><Link href="/blog/graphql-federation-platform-architecture-overview">Graphql Federation Platform Architecture Overview</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026/2026-7317">Cybersecurity Platform Msp 2026 7317</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-6848">Cloud Migration Services 2026 6848</Link></li>
+<li><Link href="/blog/">Cybersecurity Platform Msp 2026 7317</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 6848</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

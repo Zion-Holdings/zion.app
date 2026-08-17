@@ -46,7 +46,7 @@ For api management gateway: pick one workflow, assign ownership, define success 
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/data-warehouse-modernization-2026-6815">Data Warehouse Modernization 2026 6815</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-7260">It Consulting 2026 7260</Link></li>
+<li><Link href="/blog/">It Consulting 2026 7260</Link></li>
 <li><Link href="/blog/smart-contract-audit-2026-6755">Smart Contract Audit 2026 6755</Link></li>
 <li><Link href="/blog/api-gateway-management-2026-6690">Api Gateway Management 2026 6690</Link></li>
             </ul>

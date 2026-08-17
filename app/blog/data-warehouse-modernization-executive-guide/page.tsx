@@ -46,7 +46,7 @@ If this guide matches your data warehouse modernization: executive guide initiat
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/enterprise-backup-dr-security-and-governance">Enterprise Backup Dr Security And Governance</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-7055">Cloud Migration Services 2026 7055</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 7055</Link></li>
 <li><Link href="/blog/microsaas-customer-onboarding-executive-guide">Microsaas Customer Onboarding Executive Guide</Link></li>
 <li><Link href="/blog/aiops-anomaly-detection-policy-and-compliance">Aiops Anomaly Detection Policy And Compliance</Link></li>
             </ul>

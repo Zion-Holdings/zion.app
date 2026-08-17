@@ -45,7 +45,7 @@ Leading indicators for it consulting: case study: workflow completion rate, esca
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-migration-services-2026/2026-7124">Cloud Migration Services 2026 7124</Link></li>
+              <li><Link href="/blog/">Cloud Migration Services 2026 7124</Link></li>
 <li><Link href="/blog/devsecops-pipeline-2026-6542">Devsecops Pipeline 2026 6542</Link></li>
 <li><Link href="/blog/cloud-native-app-development-2026-7226">Cloud Native App Development 2026 7226</Link></li>
 <li><Link href="/blog/api-security-testing-2026-6968">Api Security Testing 2026 6968</Link></li>

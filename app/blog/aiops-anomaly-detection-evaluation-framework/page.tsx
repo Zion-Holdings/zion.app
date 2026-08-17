@@ -46,7 +46,7 @@ For aiops anomaly detection: evaluation framework: pick one workflow, assign own
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/devsecops-pipeline-implementation-playbook">Devsecops Pipeline Implementation Playbook</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-7055">Cloud Migration Services 2026 7055</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 7055</Link></li>
 <li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6567">Ai Data Lakehouse Pipelines 2026 6567</Link></li>
 <li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-7060">Micro Saas Ai Customer Onboarding 2026 7060</Link></li>
             </ul>

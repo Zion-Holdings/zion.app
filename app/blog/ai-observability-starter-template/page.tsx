@@ -48,7 +48,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
               <li><Link href="/blog/cloud-native-app-development-2026-6743">Cloud Native App Development 2026 6743</Link></li>
 <li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6912">Ai Data Lakehouse Pipelines 2026 6912</Link></li>
 <li><Link href="/blog/graphql-federation-platform-2026-7170">Graphql Federation Platform 2026 7170</Link></li>
-<li><Link href="/blog/it-consulting-2026/vendor-evaluation">It Consulting Vendor Evaluation</Link></li>
+<li><Link href="/blog/">It Consulting Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

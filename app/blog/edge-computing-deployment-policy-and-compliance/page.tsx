@@ -48,7 +48,7 @@ For edge computing deployment: policy and compliance: pick one workflow, assign 
               <li><Link href="/blog/automation-orchestration-enterprise-2026-7182">Automation Orchestration Enterprise 2026 7182</Link></li>
 <li><Link href="/blog/network-infrastructure-2026-7054">Network Infrastructure 2026 7054</Link></li>
 <li><Link href="/blog/ai-data-backup-2026-7176">Ai Data Backup 2026 7176</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-7329">It Consulting 2026 7329</Link></li>
+<li><Link href="/blog/">It Consulting 2026 7329</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -47,7 +47,7 @@ If this guide matches your microsaas translation engine: security and governance
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-performance-monitoring-2026-6528">Ai Performance Monitoring 2026 6528</Link></li>
 <li><Link href="/blog/microsaas-customer-onboarding-operations-handbook">Microsaas Customer Onboarding Operations Handbook</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-7193">Cloud Migration Services 2026 7193</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 7193</Link></li>
 <li><Link href="/blog/ai-api-gateway-2026">Ai Api Gateway 2026</Link></li>
             </ul>
           </div>

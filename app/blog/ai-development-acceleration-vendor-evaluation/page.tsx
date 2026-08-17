@@ -45,9 +45,9 @@ Leading indicators for ai development acceleration: vendor evaluation: workflow 
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-2026/2026-7255">Ai Observability 2026 7255</Link></li>
+              <li><Link href="/blog/">Ai Observability 2026 7255</Link></li>
 <li><Link href="/blog/autonomous-qa-engineering-2026-6937">Autonomous Qa Engineering 2026 6937</Link></li>
-<li><Link href="/blog/it-consulting-2026/starter-template">It Consulting Starter Template</Link></li>
+<li><Link href="/blog/">It Consulting Starter Template</Link></li>
 <li><Link href="/blog/chaos-engineering-2026-6740">Chaos Engineering 2026 6740</Link></li>
             </ul>
           </div>

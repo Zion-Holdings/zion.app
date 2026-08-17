@@ -46,8 +46,8 @@ Leading indicators for brand voice guardian: automation roadmap: workflow comple
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/brand-voice-guardian-2026">Brand Voice Guardian 2026</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-7042">Managed It Services Small Business 2026 7042</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-7260">It Consulting 2026 7260</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 7042</Link></li>
+<li><Link href="/blog/">It Consulting 2026 7260</Link></li>
 <li><Link href="/blog/micro-saas-ai-social-media-manager-2026-7268">Micro Saas Ai Social Media Manager 2026 7268</Link></li>
             </ul>
           </div>

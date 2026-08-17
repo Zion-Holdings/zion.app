@@ -47,7 +47,7 @@ If this guide matches your automation orchestration: vendor evaluation initiativ
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-autonomous-agents-executive-guide">Ai Autonomous Agents Executive Guide</Link></li>
 <li><Link href="/blog/ai-performance-monitoring-2026-7011">Ai Performance Monitoring 2026 7011</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-6570">It Consulting 2026 6570</Link></li>
+<li><Link href="/blog/">It Consulting 2026 6570</Link></li>
 <li><Link href="/blog/vector-databases-and-enterprise-rag-systems">Vector Databases And Enterprise Rag Systems</Link></li>
             </ul>
           </div>

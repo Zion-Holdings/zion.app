@@ -46,7 +46,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/api-management-gateway-2026-6945">Api Management Gateway 2026 6945</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-6570">It Consulting 2026 6570</Link></li>
+<li><Link href="/blog/">It Consulting 2026 6570</Link></li>
 <li><Link href="/blog/network-infrastructure-operations-handbook">Network Infrastructure Operations Handbook</Link></li>
 <li><Link href="/blog/incident-response-retainer-2026-7171">Incident Response Retainer 2026 7171</Link></li>
             </ul>

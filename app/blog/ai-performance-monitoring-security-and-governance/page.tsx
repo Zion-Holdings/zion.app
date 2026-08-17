@@ -48,7 +48,7 @@ If this guide matches your ai performance monitoring: security and governance in
               <li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026">Cloud Cost Ai Optimizer 2026</Link></li>
 <li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7181">Data Analytics Platform Modern Enterprise 2026 7181</Link></li>
 <li><Link href="/blog/microsaas-hr-recruitment-case-study">Microsaas Hr Recruitment Case Study</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/policy-and-compliance">Cloud Migration Services Policy And Compliance</Link></li>
+<li><Link href="/blog/">Cloud Migration Services Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

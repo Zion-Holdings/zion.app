@@ -46,7 +46,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-data-backup-2026-7107">Ai Data Backup 2026 7107</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-7193">Cloud Migration Services 2026 7193</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 7193</Link></li>
 <li><Link href="/blog/ai-msp-security-compliance-2026-6980">Ai Msp Security Compliance 2026 6980</Link></li>
 <li><Link href="/blog/autonomous-qa-engineering-2026-7075">Autonomous Qa Engineering 2026 7075</Link></li>
             </ul>

@@ -45,9 +45,9 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-2026/operations-handbook">It Consulting Operations Handbook</Link></li>
+              <li><Link href="/blog/">It Consulting Operations Handbook</Link></li>
 <li><Link href="/blog/data-analytics-platform-modern-enterprise-2026">Data Analytics Platform Modern Enterprise 2026</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/architecture-overview">Cloud Cost Ai Optimizer Architecture Overview</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer Architecture Overview</Link></li>
 <li><Link href="/blog/devsecops-pipeline-2026-6818">Devsecops Pipeline 2026 6818</Link></li>
             </ul>
           </div>

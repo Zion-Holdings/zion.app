@@ -46,7 +46,7 @@ Leading indicators for ai 3d asset generator: vendor evaluation: workflow comple
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/genai-devops-cicd-executive-guide">Genai Devops Cicd Executive Guide</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-7155">Cloud Cost Ai Optimizer 2026 7155</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 7155</Link></li>
 <li><Link href="/blog/devsecops-pipeline-common-mistakes">Devsecops Pipeline Common Mistakes</Link></li>
 <li><Link href="/blog/ai-api-gateway-2026-6896">Ai Api Gateway 2026 6896</Link></li>
             </ul>

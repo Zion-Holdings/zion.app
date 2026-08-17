@@ -47,7 +47,7 @@ For microsaas hr recruitment: vendor evaluation: pick one workflow, assign owner
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/data-warehouse-modernization-2026-6884">Data Warehouse Modernization 2026 6884</Link></li>
 <li><Link href="/blog/cyber-threat-intelligence-operations-handbook">Cyber Threat Intelligence Operations Handbook</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-6846">It Consulting 2026 6846</Link></li>
+<li><Link href="/blog/">It Consulting 2026 6846</Link></li>
 <li><Link href="/blog/accessibility-compliance-implementation-playbook">Accessibility Compliance Implementation Playbook</Link></li>
             </ul>
           </div>

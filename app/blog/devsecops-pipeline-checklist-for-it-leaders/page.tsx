@@ -46,7 +46,7 @@ If this guide matches your devsecops pipeline: checklist for it leaders initiati
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/devops-cicd-2026-6849">Devops Cicd 2026 6849</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/automation-roadmap">Cloud Migration Services Automation Roadmap</Link></li>
+<li><Link href="/blog/">Cloud Migration Services Automation Roadmap</Link></li>
 <li><Link href="/blog/container-security-lifecycle-executive-guide">Container Security Lifecycle Executive Guide</Link></li>
 <li><Link href="/blog/api-security-testing-executive-guide">Api Security Testing Executive Guide</Link></li>
             </ul>

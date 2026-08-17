@@ -48,7 +48,7 @@ Leading indicators for ai customer support: operations handbook: workflow comple
               <li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7265">Micro Saas Ai Expense Tracker 2026 7265</Link></li>
 <li><Link href="/blog/graphql-federation-platform-2026-6963">Graphql Federation Platform 2026 6963</Link></li>
 <li><Link href="/blog/graphql-federation-platform-2026">Graphql Federation Platform 2026</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-7329">It Consulting 2026 7329</Link></li>
+<li><Link href="/blog/">It Consulting 2026 7329</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

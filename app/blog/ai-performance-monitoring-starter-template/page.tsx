@@ -46,7 +46,7 @@ Leading indicators for ai performance monitoring: starter template: workflow com
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-email-intelligence-2026-7114">Ai Email Intelligence 2026 7114</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-6979">Ai Observability 2026 6979</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 6979</Link></li>
 <li><Link href="/blog/ai-for-sales-enablement-and-revenue-operations">Ai For Sales Enablement And Revenue Operations</Link></li>
 <li><Link href="/blog/autonomous-code-deployment-2026-7074">Autonomous Code Deployment 2026 7074</Link></li>
             </ul>

@@ -46,7 +46,7 @@ If this guide matches your cloud cost ai optimizer: policy and compliance initia
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-3d-asset-generator-2026-6511">Ai 3D Asset Generator 2026 6511</Link></li>
-<li><Link href="/blog/it-consulting-2026/operations-handbook">It Consulting Operations Handbook</Link></li>
+<li><Link href="/blog/">It Consulting Operations Handbook</Link></li>
 <li><Link href="/blog/ai-customer-support-implementation-playbook">Ai Customer Support Implementation Playbook</Link></li>
 <li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-6560">Data Analytics Platform Modern Enterprise 2026 6560</Link></li>
             </ul>

@@ -48,7 +48,7 @@ Leading indicators for api management gateway: automation roadmap: workflow comp
               <li><Link href="/blog/ai-data-backup-2026-6900">Ai Data Backup 2026 6900</Link></li>
 <li><Link href="/blog/etl-pipeline-optimization-evaluation-framework">Etl Pipeline Optimization Evaluation Framework</Link></li>
 <li><Link href="/blog/accessibility-compliance-2026-7010">Accessibility Compliance 2026 7010</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-6634">Ai Observability 2026 6634</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 6634</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

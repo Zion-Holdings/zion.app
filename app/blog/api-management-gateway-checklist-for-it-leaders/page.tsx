@@ -45,7 +45,7 @@ Leading indicators for api management gateway: checklist for it leaders: workflo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-6948">Cloud Cost Ai Optimizer 2026 6948</Link></li>
+              <li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 6948</Link></li>
 <li><Link href="/blog/ai-accessibility-auditor-2026-6788">Ai Accessibility Auditor 2026 6788</Link></li>
 <li><Link href="/blog/autonomous-code-deployment-2026-7212">Autonomous Code Deployment 2026 7212</Link></li>
 <li><Link href="/blog/event-driven-architecture-policy-and-compliance">Event Driven Architecture Policy And Compliance</Link></li>

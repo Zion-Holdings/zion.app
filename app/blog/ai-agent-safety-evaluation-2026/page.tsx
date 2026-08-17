@@ -46,7 +46,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/cloud-cost-optimization-checklist-2026-6971">Cloud Cost Optimization Checklist 2026 6971</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-7224">Cloud Cost Ai Optimizer 2026 7224</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 7224</Link></li>
 <li><Link href="/blog/5g-solutions-security-and-governance">5G Solutions Security And Governance</Link></li>
 <li><Link href="/blog/enterprise-backup-dr-2026">Enterprise Backup Dr 2026</Link></li>
             </ul>

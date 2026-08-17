@@ -47,7 +47,7 @@ Leading indicators for edge computing deployment: security and governance: workf
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-msp-security-compliance-2026-7049">Ai Msp Security Compliance 2026 7049</Link></li>
 <li><Link href="/blog/autonomous-qa-engineering-2026-6730">Autonomous Qa Engineering 2026 6730</Link></li>
-<li><Link href="/blog/it-consulting-2026/architecture-overview">It Consulting Architecture Overview</Link></li>
+<li><Link href="/blog/">It Consulting Architecture Overview</Link></li>
 <li><Link href="/blog/ai-development-acceleration-operations-handbook">Ai Development Acceleration Operations Handbook</Link></li>
             </ul>
           </div>

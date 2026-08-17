@@ -46,7 +46,7 @@ If this guide matches your ai autonomous agents: evaluation framework initiative
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/apm-application-performance-2026-7153">Apm Application Performance 2026 7153</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-6572">Cloud Migration Services 2026 6572</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 6572</Link></li>
 <li><Link href="/blog/ai-api-gateway-implementation-playbook">Ai Api Gateway Implementation Playbook</Link></li>
 <li><Link href="/blog/ai-in-aviation-and-aerospace-operations">Ai In Aviation And Aerospace Operations</Link></li>
             </ul>

@@ -48,7 +48,7 @@ If this guide matches your chaos engineering: policy and compliance initiative, 
               <li><Link href="/blog/ai-data-lakehouse-pipelines-2026-6843">Ai Data Lakehouse Pipelines 2026 6843</Link></li>
 <li><Link href="/blog/ai-accessibility-auditor-case-study">Ai Accessibility Auditor Case Study</Link></li>
 <li><Link href="/blog/5g-solutions-2026-6983">5G Solutions 2026 6983</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-6984">It Consulting 2026 6984</Link></li>
+<li><Link href="/blog/">It Consulting 2026 6984</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

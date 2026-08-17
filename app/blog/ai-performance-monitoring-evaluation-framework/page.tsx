@@ -45,7 +45,7 @@ For ai performance monitoring: evaluation framework: pick one workflow, assign o
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-2026/architecture-overview">Cloud Cost Ai Optimizer Architecture Overview</Link></li>
+              <li><Link href="/blog/">Cloud Cost Ai Optimizer Architecture Overview</Link></li>
 <li><Link href="/blog/automated-ai-reporting-2026-6659">Automated Ai Reporting 2026 6659</Link></li>
 <li><Link href="/blog/automated-ai-reporting-2026-6797">Automated Ai Reporting 2026 6797</Link></li>
 <li><Link href="/blog/apm-application-performance-2026-6601">Apm Application Performance 2026 6601</Link></li>

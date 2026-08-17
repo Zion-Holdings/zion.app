@@ -47,7 +47,7 @@ If this guide matches your devops ci/cd: operations handbook initiative, the nex
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-data-backup-starter-template">Ai Data Backup Starter Template</Link></li>
 <li><Link href="/blog/automation-orchestration-enterprise-2026-6699">Automation Orchestration Enterprise 2026 6699</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-6915">It Consulting 2026 6915</Link></li>
+<li><Link href="/blog/">It Consulting 2026 6915</Link></li>
 <li><Link href="/blog/devops-gen-ai-cicd-2026-7093">Devops Gen Ai Cicd 2026 7093</Link></li>
             </ul>
           </div>

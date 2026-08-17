@@ -47,7 +47,7 @@ For ai bdr sdr: roi and cost model: pick one workflow, assign ownership, define 
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/enterprise-backup-dr-2026-7097">Enterprise Backup Dr 2026 7097</Link></li>
 <li><Link href="/blog/edge-computing-deployment-2026-7164">Edge Computing Deployment 2026 7164</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-7155">Cloud Cost Ai Optimizer 2026 7155</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 7155</Link></li>
 <li><Link href="/blog/accessibility-compliance-2026-6734">Accessibility Compliance 2026 6734</Link></li>
             </ul>
           </div>

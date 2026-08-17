@@ -46,9 +46,9 @@ If this guide matches your ai api gateway: architecture overview initiative, the
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7196">Micro Saas Ai Expense Tracker 2026 7196</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-6846">It Consulting 2026 6846</Link></li>
+<li><Link href="/blog/">It Consulting 2026 6846</Link></li>
 <li><Link href="/blog/cloud-cost-optimization-checklist-2026-7109">Cloud Cost Optimization Checklist 2026 7109</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-6848">Cloud Migration Services 2026 6848</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 6848</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

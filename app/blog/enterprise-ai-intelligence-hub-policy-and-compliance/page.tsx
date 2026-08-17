@@ -45,7 +45,7 @@ For enterprise ai intelligence hub: policy and compliance: pick one workflow, as
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cybersecurity-platform-msp-2026/2026-3">Cybersecurity Platform Msp 2026 3</Link></li>
+              <li><Link href="/blog/">Cybersecurity Platform Msp 2026 3</Link></li>
 <li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7334">Micro Saas Ai Expense Tracker 2026 7334</Link></li>
 <li><Link href="/blog/ai-3d-asset-generator-2026-7201">Ai 3D Asset Generator 2026 7201</Link></li>
 <li><Link href="/blog/edge-computing-deployment-2026-6819">Edge Computing Deployment 2026 6819</Link></li>

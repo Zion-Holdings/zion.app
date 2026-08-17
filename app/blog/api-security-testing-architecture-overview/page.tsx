@@ -47,7 +47,7 @@ Leading indicators for api security testing: architecture overview: workflow com
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/managed-it-services-roi-and-cost-model">Managed It Services Roi And Cost Model</Link></li>
 <li><Link href="/blog/microsaas-translation-engine-automation-roadmap">Microsaas Translation Engine Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-6979">Ai Observability 2026 6979</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 6979</Link></li>
 <li><Link href="/blog/ai-msp-security-compliance-policy-and-compliance">Ai Msp Security Compliance Policy And Compliance</Link></li>
             </ul>
           </div>

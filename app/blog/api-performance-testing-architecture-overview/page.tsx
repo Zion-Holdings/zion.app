@@ -48,7 +48,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
               <li><Link href="/blog/api-performance-testing-2026-7243">Api Performance Testing 2026 7243</Link></li>
 <li><Link href="/blog/cyber-threat-intelligence-2026-7297">Cyber Threat Intelligence 2026 7297</Link></li>
 <li><Link href="/blog/devsecops-pipeline-2026-6956">Devsecops Pipeline 2026 6956</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-6948">Cloud Cost Ai Optimizer 2026 6948</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 6948</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -59,7 +59,7 @@ Leading indicators for autonomous qa engineering: operations handbook: workflow 
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-bom-procurement-2026-7836">Ai Bom Procurement 2026 7836</Link></li>
 <li><Link href="/blog/edge-computing-deployment-2026-6750">Edge Computing Deployment 2026 6750</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-8083">Ai Observability 2026 8083</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 8083</Link></li>
 <li><Link href="/blog/container-security-lifecycle-2026-7020">Container Security Lifecycle 2026 7020</Link></li>
             </ul>
           </div>

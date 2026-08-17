@@ -48,7 +48,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
               <li><Link href="/blog/ai-for-healthcare-analytics-and-clinical-decision-support">Ai For Healthcare Analytics And Clinical Decision Support</Link></li>
 <li><Link href="/blog/microsaas-translation-engine-automation-roadmap">Microsaas Translation Engine Automation Roadmap</Link></li>
 <li><Link href="/blog/devsecops-pipeline-2026-7094">Devsecops Pipeline 2026 7094</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-7249">Managed It Services Small Business 2026 7249</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 7249</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

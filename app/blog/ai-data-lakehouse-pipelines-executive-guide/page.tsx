@@ -46,7 +46,7 @@ If this guide matches your ai data lakehouse pipelines: executive guide initiati
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/automation-orchestration-enterprise-2026-7320">Automation Orchestration Enterprise 2026 7320</Link></li>
-<li><Link href="/blog/ai-observability-2026/executive-guide">Ai Observability Executive Guide</Link></li>
+<li><Link href="/blog/">Ai Observability Executive Guide</Link></li>
 <li><Link href="/blog/autonomous-qa-engineering-case-study">Autonomous Qa Engineering Case Study</Link></li>
 <li><Link href="/blog/chaos-engineering-2026-6809">Chaos Engineering 2026 6809</Link></li>
             </ul>

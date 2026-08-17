@@ -45,9 +45,9 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-2026/vendor-evaluation">It Consulting Vendor Evaluation</Link></li>
+              <li><Link href="/blog/">It Consulting Vendor Evaluation</Link></li>
 <li><Link href="/blog/microsaas-social-media-manager-executive-guide">Microsaas Social Media Manager Executive Guide</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-6639">It Consulting 2026 6639</Link></li>
+<li><Link href="/blog/">It Consulting 2026 6639</Link></li>
 <li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-6783">Micro Saas Ai Hr Recruitment 2026 6783</Link></li>
             </ul>
           </div>

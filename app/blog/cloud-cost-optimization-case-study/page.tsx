@@ -48,7 +48,7 @@ If this guide matches your cloud cost optimization: case study initiative, the n
               <li><Link href="/blog/api-integration-2026-6806">Api Integration 2026 6806</Link></li>
 <li><Link href="/blog/5g-solutions-2026-6776">5G Solutions 2026 6776</Link></li>
 <li><Link href="/blog/ai-development-acceleration-2026-6632">Ai Development Acceleration 2026 6632</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026/2026-6627">Cybersecurity Platform Msp 2026 6627</Link></li>
+<li><Link href="/blog/">Cybersecurity Platform Msp 2026 6627</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

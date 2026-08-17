@@ -48,7 +48,7 @@ If this guide matches your cloud cost optimization: checklist for it leaders ini
               <li><Link href="/blog/endpoint-management-2026-6889">Endpoint Management 2026 6889</Link></li>
 <li><Link href="/blog/apm-application-performance-architecture-overview">Apm Application Performance Architecture Overview</Link></li>
 <li><Link href="/blog/api-orchestration-layer-case-study">Api Orchestration Layer Case Study</Link></li>
-<li><Link href="/blog/ai-observability-2026/executive-guide">Ai Observability Executive Guide</Link></li>
+<li><Link href="/blog/">Ai Observability Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -46,7 +46,7 @@ If this guide matches your cloud cost optimization: security and governance init
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-it-operations-automation-2026-7108">Ai It Operations Automation 2026 7108</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-6570">It Consulting 2026 6570</Link></li>
+<li><Link href="/blog/">It Consulting 2026 6570</Link></li>
 <li><Link href="/blog/api-performance-testing-2026-6691">Api Performance Testing 2026 6691</Link></li>
 <li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-6922">Micro Saas Ai Customer Onboarding 2026 6922</Link></li>
             </ul>

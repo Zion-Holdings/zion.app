@@ -46,7 +46,7 @@ If this guide matches your accessibility compliance: checklist for it leaders in
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-3d-asset-generator-executive-guide">Ai 3D Asset Generator Executive Guide</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026/2026-6696">Cybersecurity Platform Msp 2026 6696</Link></li>
+<li><Link href="/blog/">Cybersecurity Platform Msp 2026 6696</Link></li>
 <li><Link href="/blog/5g-solutions-operations-handbook">5G Solutions Operations Handbook</Link></li>
 <li><Link href="/blog/ai-autonomous-agents-common-mistakes">Ai Autonomous Agents Common Mistakes</Link></li>
             </ul>

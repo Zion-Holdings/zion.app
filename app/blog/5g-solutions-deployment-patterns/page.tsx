@@ -45,7 +45,7 @@ Leading indicators for 5g solutions: deployment patterns: workflow completion ra
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-2026/2026-7048">Ai Observability 2026 7048</Link></li>
+              <li><Link href="/blog/">Ai Observability 2026 7048</Link></li>
 <li><Link href="/blog/devops-gen-ai-cicd-2026-7300">Devops Gen Ai Cicd 2026 7300</Link></li>
 <li><Link href="/blog/api-security-testing-2026-6623">Api Security Testing 2026 6623</Link></li>
 <li><Link href="/blog/ai-it-operations-implementation-playbook">Ai It Operations Implementation Playbook</Link></li>

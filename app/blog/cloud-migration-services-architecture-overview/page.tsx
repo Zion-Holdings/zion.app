@@ -46,7 +46,7 @@ Leading indicators for cloud migration services: architecture overview: workflow
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/data-warehouse-modernization-vendor-evaluation">Data Warehouse Modernization Vendor Evaluation</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-6570">It Consulting 2026 6570</Link></li>
+<li><Link href="/blog/">It Consulting 2026 6570</Link></li>
 <li><Link href="/blog/network-infrastructure-2026">Network Infrastructure 2026</Link></li>
 <li><Link href="/blog/endpoint-management-case-study">Endpoint Management Case Study</Link></li>
             </ul>

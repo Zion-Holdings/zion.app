@@ -48,7 +48,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
               <li><Link href="/blog/ai-in-sustainability-and-esg-reporting">Ai In Sustainability And Esg Reporting</Link></li>
 <li><Link href="/blog/brand-voice-guardian-vendor-evaluation">Brand Voice Guardian Vendor Evaluation</Link></li>
 <li><Link href="/blog/ai-agent-safety-evaluation-2026-7274">Ai Agent Safety Evaluation 2026 7274</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-6741">Cloud Cost Ai Optimizer 2026 6741</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 6741</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

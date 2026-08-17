@@ -45,7 +45,7 @@ If this guide matches your cloud cost ai optimizer: deployment patterns initiati
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-2026/2026-6565">Ai Observability 2026 6565</Link></li>
+              <li><Link href="/blog/">Ai Observability 2026 6565</Link></li>
 <li><Link href="/blog/microsaas-expense-tracker-operations-handbook">Microsaas Expense Tracker Operations Handbook</Link></li>
 <li><Link href="/blog/accessibility-compliance-2026-7010">Accessibility Compliance 2026 7010</Link></li>
 <li><Link href="/blog/api-gateway-management-implementation-playbook">Api Gateway Management Implementation Playbook</Link></li>

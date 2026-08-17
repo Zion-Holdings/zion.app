@@ -47,8 +47,8 @@ Leading indicators for chaos engineering: evaluation framework: workflow complet
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/cloud-native-app-development-2026-6605">Cloud Native App Development 2026 6605</Link></li>
 <li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-6783">Micro Saas Ai Hr Recruitment 2026 6783</Link></li>
-<li><Link href="/blog/ai-observability-2026/common-mistakes">Ai Observability Common Mistakes</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026/2026-7110">Cybersecurity Platform Msp 2026 7110</Link></li>
+<li><Link href="/blog/">Ai Observability Common Mistakes</Link></li>
+<li><Link href="/blog/">Cybersecurity Platform Msp 2026 7110</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

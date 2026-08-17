@@ -47,7 +47,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/devops-gen-ai-cicd-2026-6955">Devops Gen Ai Cicd 2026 6955</Link></li>
 <li><Link href="/blog/endpoint-management-2026-6958">Endpoint Management 2026 6958</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-7042">Managed It Services Small Business 2026 7042</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 7042</Link></li>
 <li><Link href="/blog/data-analytics-platform-implementation-playbook">Data Analytics Platform Implementation Playbook</Link></li>
             </ul>
           </div>

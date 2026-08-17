@@ -48,7 +48,7 @@ If this guide matches your ai agentic workflows: starter template initiative, th
               <li><Link href="/blog/accessibility-compliance-2026-7217">Accessibility Compliance 2026 7217</Link></li>
 <li><Link href="/blog/api-management-gateway-implementation-playbook">Api Management Gateway Implementation Playbook</Link></li>
 <li><Link href="/blog/graphql-federation-platform-2026-7239">Graphql Federation Platform 2026 7239</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/case-study">Cloud Migration Services Case Study</Link></li>
+<li><Link href="/blog/">Cloud Migration Services Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

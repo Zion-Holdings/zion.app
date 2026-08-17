@@ -47,7 +47,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/devops-gen-ai-cicd-2026-6955">Devops Gen Ai Cicd 2026 6955</Link></li>
 <li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-6715">Micro Saas Ai Customer Onboarding 2026 6715</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-7017">Cloud Cost Ai Optimizer 2026 7017</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 7017</Link></li>
 <li><Link href="/blog/edge-computing-deployment-2026-7302">Edge Computing Deployment 2026 7302</Link></li>
             </ul>
           </div>

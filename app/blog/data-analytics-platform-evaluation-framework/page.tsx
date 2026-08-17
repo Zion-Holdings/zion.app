@@ -48,7 +48,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
               <li><Link href="/blog/api-integration-architecture-overview">Api Integration Architecture Overview</Link></li>
 <li><Link href="/blog/cyber-threat-intelligence-2026">Cyber Threat Intelligence 2026</Link></li>
 <li><Link href="/blog/ai-customer-success-churn-2026-6775">Ai Customer Success Churn 2026 6775</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/policy-and-compliance">Cloud Cost Ai Optimizer Policy And Compliance</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

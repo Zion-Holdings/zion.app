@@ -47,7 +47,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-for-fleet-and-logistics-operations">Ai For Fleet And Logistics Operations</Link></li>
 <li><Link href="/blog/etl-pipeline-optimization-2026-7305">Etl Pipeline Optimization 2026 7305</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-7086">Cloud Cost Ai Optimizer 2026 7086</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 7086</Link></li>
 <li><Link href="/blog/ai-for-mining-and-natural-resources-operations">Ai For Mining And Natural Resources Operations</Link></li>
             </ul>
           </div>

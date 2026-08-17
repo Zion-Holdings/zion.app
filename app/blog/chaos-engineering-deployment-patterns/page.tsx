@@ -47,7 +47,7 @@ Leading indicators for chaos engineering: deployment patterns: workflow completi
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/database-migration-service-2026-6609">Database Migration Service 2026 6609</Link></li>
 <li><Link href="/blog/ai-email-intelligence-2026-7183">Ai Email Intelligence 2026 7183</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-7324">Ai Observability 2026 7324</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 7324</Link></li>
 <li><Link href="/blog/ai-api-gateway-2026-7310">Ai Api Gateway 2026 7310</Link></li>
             </ul>
           </div>

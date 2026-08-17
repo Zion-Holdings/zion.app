@@ -47,7 +47,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/rag-for-enterprise-knowledge-bases">Rag For Enterprise Knowledge Bases</Link></li>
 <li><Link href="/blog/accessibility-compliance-2026-7217">Accessibility Compliance 2026 7217</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-7193">Cloud Migration Services 2026 7193</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 7193</Link></li>
 <li><Link href="/blog/network-infrastructure-2026-6916">Network Infrastructure 2026 6916</Link></li>
             </ul>
           </div>

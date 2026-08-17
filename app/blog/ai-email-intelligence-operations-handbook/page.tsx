@@ -48,7 +48,7 @@ Leading indicators for ai email intelligence: operations handbook: workflow comp
               <li><Link href="/blog/endpoint-management-2026-6958">Endpoint Management 2026 6958</Link></li>
 <li><Link href="/blog/ai-msp-security-compliance-2026-6566">Ai Msp Security Compliance 2026 6566</Link></li>
 <li><Link href="/blog/ai-performance-monitoring-2026-7356">Ai Performance Monitoring 2026 7356</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-6910">Ai Observability 2026 6910</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 6910</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

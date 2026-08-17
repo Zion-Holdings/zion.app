@@ -47,7 +47,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/endpoint-management-2026-6682">Endpoint Management 2026 6682</Link></li>
 <li><Link href="/blog/ai-accessibility-optimizer-deployment-patterns">Ai Accessibility Optimizer Deployment Patterns</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/automation-roadmap">Cloud Cost Ai Optimizer Automation Roadmap</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer Automation Roadmap</Link></li>
 <li><Link href="/blog/endpoint-management-2026-7234">Endpoint Management 2026 7234</Link></li>
             </ul>
           </div>

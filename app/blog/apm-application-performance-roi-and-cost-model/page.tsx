@@ -47,7 +47,7 @@ Leading indicators for apm application performance: roi and cost model: workflow
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-autonomous-agents-2026-7277">Ai Autonomous Agents 2026 7277</Link></li>
 <li><Link href="/blog/microsaas-social-media-manager-automation-roadmap">Microsaas Social Media Manager Automation Roadmap</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/deployment-patterns">Cloud Migration Services Deployment Patterns</Link></li>
+<li><Link href="/blog/">Cloud Migration Services Deployment Patterns</Link></li>
 <li><Link href="/blog/chaos-engineering-2026-6533">Chaos Engineering 2026 6533</Link></li>
             </ul>
           </div>

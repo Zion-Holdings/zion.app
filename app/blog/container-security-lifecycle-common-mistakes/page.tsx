@@ -47,7 +47,7 @@ For container security lifecycle: common mistakes: pick one workflow, assign own
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-development-acceleration-2026-7253">Ai Development Acceleration 2026 7253</Link></li>
 <li><Link href="/blog/ai-email-intelligence-2026-6631">Ai Email Intelligence 2026 6631</Link></li>
-<li><Link href="/blog/ai-observability-2026/executive-guide">Ai Observability Executive Guide</Link></li>
+<li><Link href="/blog/">Ai Observability Executive Guide</Link></li>
 <li><Link href="/blog/incident-response-retainer-2026-7171">Incident Response Retainer 2026 7171</Link></li>
             </ul>
           </div>

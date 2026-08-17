@@ -46,7 +46,7 @@ If this guide matches your ai api gateway initiative, the next step is a scoping
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/autonomous-qa-engineering-2026-7213">Autonomous Qa Engineering 2026 7213</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-4">Managed It Services Small Business 2026 4</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 4</Link></li>
 <li><Link href="/blog/devops-gen-ai-cicd-2026-7231">Devops Gen Ai Cicd 2026 7231</Link></li>
 <li><Link href="/blog/smart-contract-audit-2026-6617">Smart Contract Audit 2026 6617</Link></li>
             </ul>

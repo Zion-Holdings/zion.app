@@ -46,9 +46,9 @@ If this guide matches your enterprise ai intelligence hub: starter template init
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-6767">Data Analytics Platform Modern Enterprise 2026 6767</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-6979">Ai Observability 2026 6979</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 6979</Link></li>
 <li><Link href="/blog/devops-gen-ai-cicd-2026-6886">Devops Gen Ai Cicd 2026 6886</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026/2026-6765">Cybersecurity Platform Msp 2026 6765</Link></li>
+<li><Link href="/blog/">Cybersecurity Platform Msp 2026 6765</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

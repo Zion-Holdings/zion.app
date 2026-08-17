@@ -48,7 +48,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
               <li><Link href="/blog/ai-agent-safety-evaluation-2026-6998">Ai Agent Safety Evaluation 2026 6998</Link></li>
 <li><Link href="/blog/ai-development-acceleration-common-mistakes">Ai Development Acceleration Common Mistakes</Link></li>
 <li><Link href="/blog/cloud-native-app-development-2026-6881">Cloud Native App Development 2026 6881</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-6984">It Consulting 2026 6984</Link></li>
+<li><Link href="/blog/">It Consulting 2026 6984</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

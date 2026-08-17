@@ -46,7 +46,7 @@ For ai agentic workflows: deployment patterns: pick one workflow, assign ownersh
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/data-warehouse-modernization-policy-and-compliance">Data Warehouse Modernization Policy And Compliance</Link></li>
-<li><Link href="/blog/it-consulting-2026/starter-template">It Consulting Starter Template</Link></li>
+<li><Link href="/blog/">It Consulting Starter Template</Link></li>
 <li><Link href="/blog/autonomous-qa-engineering-2026-6730">Autonomous Qa Engineering 2026 6730</Link></li>
 <li><Link href="/blog/accessibility-compliance-2026">Accessibility Compliance 2026</Link></li>
             </ul>

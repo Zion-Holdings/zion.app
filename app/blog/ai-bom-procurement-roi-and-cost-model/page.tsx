@@ -45,7 +45,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-migration-services-2026/architecture-overview">Cloud Migration Services Architecture Overview</Link></li>
+              <li><Link href="/blog/">Cloud Migration Services Architecture Overview</Link></li>
 <li><Link href="/blog/autonomous-code-deployment-2026-6798">Autonomous Code Deployment 2026 6798</Link></li>
 <li><Link href="/blog/container-security-lifecycle-2026-6675">Container Security Lifecycle 2026 6675</Link></li>
 <li><Link href="/blog/ai-bdr-sdr-2026-7352">Ai Bdr Sdr 2026 7352</Link></li>

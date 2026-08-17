@@ -48,7 +48,7 @@ For ai email intelligence: architecture overview: pick one workflow, assign owne
               <li><Link href="/blog/ai-bdr-sdr-2026-7283">Ai Bdr Sdr 2026 7283</Link></li>
 <li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7181">Data Analytics Platform Modern Enterprise 2026 7181</Link></li>
 <li><Link href="/blog/ai-msp-security-compliance-2026-7049">Ai Msp Security Compliance 2026 7049</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-7017">Cloud Cost Ai Optimizer 2026 7017</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 7017</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

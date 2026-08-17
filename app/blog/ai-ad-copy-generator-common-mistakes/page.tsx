@@ -46,8 +46,8 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/cloud-native-app-development-2026-7157">Cloud Native App Development 2026 7157</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-6572">Cloud Migration Services 2026 6572</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-7117">Ai Observability 2026 7117</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 6572</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 7117</Link></li>
 <li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7334">Micro Saas Ai Expense Tracker 2026 7334</Link></li>
             </ul>
           </div>

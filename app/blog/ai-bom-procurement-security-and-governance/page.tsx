@@ -46,7 +46,7 @@ Leading indicators for ai bom procurement: security and governance: workflow com
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-for-quantum-computing-and-hybrid-workloads">Ai For Quantum Computing And Hybrid Workloads</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-6810">Cloud Cost Ai Optimizer 2026 6810</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 6810</Link></li>
 <li><Link href="/blog/autonomous-qa-engineering-2026-7213">Autonomous Qa Engineering 2026 7213</Link></li>
 <li><Link href="/blog/api-gateway-management-2026-6598">Api Gateway Management 2026 6598</Link></li>
             </ul>

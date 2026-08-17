@@ -48,7 +48,7 @@ Leading indicators for enterprise ai intelligence hub: common mistakes: workflow
               <li><Link href="/blog/incident-response-retainer-2026-7309">Incident Response Retainer 2026 7309</Link></li>
 <li><Link href="/blog/ai-api-gateway-2026-6758">Ai Api Gateway 2026 6758</Link></li>
 <li><Link href="/blog/ai-ad-copy-generator-2026-6928">Ai Ad Copy Generator 2026 6928</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-6703">Ai Observability 2026 6703</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 6703</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

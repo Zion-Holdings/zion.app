@@ -47,7 +47,7 @@ If this guide matches your microsaas expense tracker: security and governance in
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-for-cybersecurity-threat-detection">Ai For Cybersecurity Threat Detection</Link></li>
 <li><Link href="/blog/cloud-native-app-development-deployment-patterns">Cloud Native App Development Deployment Patterns</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/roi-and-cost-model">Cloud Cost Ai Optimizer Roi And Cost Model</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer Roi And Cost Model</Link></li>
 <li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7265">Micro Saas Ai Expense Tracker 2026 7265</Link></li>
             </ul>
           </div>

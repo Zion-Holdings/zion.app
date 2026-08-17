@@ -48,7 +48,7 @@ For autonomous qa engineering: common mistakes: pick one workflow, assign owners
               <li><Link href="/blog/api-security-testing-2026">Api Security Testing 2026</Link></li>
 <li><Link href="/blog/ai-customer-support-executive-guide">Ai Customer Support Executive Guide</Link></li>
 <li><Link href="/blog/microsaas-social-media-manager-implementation-playbook">Microsaas Social Media Manager Implementation Playbook</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-6672">Cloud Cost Ai Optimizer 2026 6672</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 6672</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

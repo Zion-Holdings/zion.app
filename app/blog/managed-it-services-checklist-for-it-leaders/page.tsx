@@ -46,7 +46,7 @@ Leading indicators for managed it services: checklist for it leaders: workflow c
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-for-fleet-and-logistics-operations">Ai For Fleet And Logistics Operations</Link></li>
-<li><Link href="/blog/ai-observability-2026/case-study">Ai Observability Case Study</Link></li>
+<li><Link href="/blog/">Ai Observability Case Study</Link></li>
 <li><Link href="/blog/ai-bdr-sdr-architecture-overview">Ai Bdr Sdr Architecture Overview</Link></li>
 <li><Link href="/blog/ai-for-hr-and-talent-acquisition-streamlining-recruitment">Ai For Hr And Talent Acquisition Streamlining Recruitment</Link></li>
             </ul>

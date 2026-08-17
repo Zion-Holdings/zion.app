@@ -45,10 +45,10 @@ For devops ci/cd: vendor evaluation: pick one workflow, assign ownership, define
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-7017">Cloud Cost Ai Optimizer 2026 7017</Link></li>
+              <li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 7017</Link></li>
 <li><Link href="/blog/network-infrastructure-executive-guide">Network Infrastructure Executive Guide</Link></li>
 <li><Link href="/blog/ai-3d-asset-generator-2026-7339">Ai 3D Asset Generator 2026 7339</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-7224">Cloud Cost Ai Optimizer 2026 7224</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 7224</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

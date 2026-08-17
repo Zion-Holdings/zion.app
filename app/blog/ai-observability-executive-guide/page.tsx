@@ -47,7 +47,7 @@ For ai observability: executive guide: pick one workflow, assign ownership, defi
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-agent-safety-evaluation-deployment-patterns">Ai Agent Safety Evaluation Deployment Patterns</Link></li>
 <li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-6576">Micro Saas Ai Hr Recruitment 2026 6576</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-6841">Ai Observability 2026 6841</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 6841</Link></li>
 <li><Link href="/blog/ai-agentic-workflows-2026-6655">Ai Agentic Workflows 2026 6655</Link></li>
             </ul>
           </div>

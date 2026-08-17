@@ -45,8 +45,8 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/managed-it-services-small-business-2026/2026-7318">Managed It Services Small Business 2026 7318</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-7180">Managed It Services Small Business 2026 7180</Link></li>
+              <li><Link href="/blog/">Managed It Services Small Business 2026 7318</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 7180</Link></li>
 <li><Link href="/blog/ai-autonomous-agents-2026-6656">Ai Autonomous Agents 2026 6656</Link></li>
 <li><Link href="/blog/microsaas-customer-onboarding-checklist-for-it-leaders">Microsaas Customer Onboarding Checklist For It Leaders</Link></li>
             </ul>

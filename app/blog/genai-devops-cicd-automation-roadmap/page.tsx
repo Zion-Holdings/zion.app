@@ -48,7 +48,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
               <li><Link href="/blog/api-integration-2026-7358">Api Integration 2026 7358</Link></li>
 <li><Link href="/blog/devsecops-pipeline-executive-guide">Devsecops Pipeline Executive Guide</Link></li>
 <li><Link href="/blog/cloud-cost-optimization-checklist-2026-6626">Cloud Cost Optimization Checklist 2026 6626</Link></li>
-<li><Link href="/blog/ai-observability-2026/operations-handbook">Ai Observability Operations Handbook</Link></li>
+<li><Link href="/blog/">Ai Observability Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

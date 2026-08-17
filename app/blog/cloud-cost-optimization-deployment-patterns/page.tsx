@@ -46,8 +46,8 @@ For cloud cost optimization: deployment patterns: pick one workflow, assign owne
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-customer-success-churn-prevention-checklist-for-it-leaders">Ai Customer Success Churn Prevention Checklist For It Leaders</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-6697">Managed It Services Small Business 2026 6697</Link></li>
-<li><Link href="/blog/ai-observability-2026/deployment-patterns">Ai Observability Deployment Patterns</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 6697</Link></li>
+<li><Link href="/blog/">Ai Observability Deployment Patterns</Link></li>
 <li><Link href="/blog/micro-saas-ai-customer-onboarding-2026-7129">Micro Saas Ai Customer Onboarding 2026 7129</Link></li>
             </ul>
           </div>

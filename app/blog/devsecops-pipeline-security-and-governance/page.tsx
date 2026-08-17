@@ -46,7 +46,7 @@ For devsecops pipeline: security and governance: pick one workflow, assign owner
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-3d-asset-generator-deployment-patterns">Ai 3D Asset Generator Deployment Patterns</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/implementation-playbook">Cloud Cost Ai Optimizer Implementation Playbook</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer Implementation Playbook</Link></li>
 <li><Link href="/blog/enterprise-backup-dr-implementation-playbook">Enterprise Backup Dr Implementation Playbook</Link></li>
 <li><Link href="/blog/ai-msp-security-compliance-operations-handbook">Ai Msp Security Compliance Operations Handbook</Link></li>
             </ul>

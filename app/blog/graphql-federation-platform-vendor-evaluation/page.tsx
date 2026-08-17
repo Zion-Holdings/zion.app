@@ -48,7 +48,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
               <li><Link href="/blog/api-management-gateway-2026-6876">Api Management Gateway 2026 6876</Link></li>
 <li><Link href="/blog/apm-application-performance-2026-6739">Apm Application Performance 2026 6739</Link></li>
 <li><Link href="/blog/aiops-anomaly-detection-2026-6864">Aiops Anomaly Detection 2026 6864</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-7260">It Consulting 2026 7260</Link></li>
+<li><Link href="/blog/">It Consulting 2026 7260</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

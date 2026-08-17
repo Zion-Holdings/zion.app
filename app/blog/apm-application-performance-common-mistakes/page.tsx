@@ -59,8 +59,8 @@ Leading indicators for apm application performance: common mistakes: workflow co
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7250">Data Analytics Platform Modern Enterprise 2026 7250</Link></li>
 <li><Link href="/blog/ai-bdr-sdr-2026">Ai Bdr Sdr 2026</Link></li>
-<li><Link href="/blog/ai-observability-2026/operations-handbook">Ai Observability Operations Handbook</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-6603">Cloud Cost Ai Optimizer 2026 6603</Link></li>
+<li><Link href="/blog/">Ai Observability Operations Handbook</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 6603</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -47,7 +47,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-autonomous-agents-2026-6587">Ai Autonomous Agents 2026 6587</Link></li>
 <li><Link href="/blog/devops-gen-ai-cicd-2026-6679">Devops Gen Ai Cicd 2026 6679</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-6910">Ai Observability 2026 6910</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 6910</Link></li>
 <li><Link href="/blog/network-infrastructure-2026-7054">Network Infrastructure 2026 7054</Link></li>
             </ul>
           </div>

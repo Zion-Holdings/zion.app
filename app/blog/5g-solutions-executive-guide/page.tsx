@@ -47,7 +47,7 @@ For 5g solutions: executive guide: pick one workflow, assign ownership, define s
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/enterprise-ai-intelligence-hub-security-and-governance">Enterprise Ai Intelligence Hub Security And Governance</Link></li>
 <li><Link href="/blog/cloud-cost-optimization-evaluation-framework">Cloud Cost Optimization Evaluation Framework</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-7053">It Consulting 2026 7053</Link></li>
+<li><Link href="/blog/">It Consulting 2026 7053</Link></li>
 <li><Link href="/blog/ai-for-warehousing-and-inventory-optimization">Ai For Warehousing And Inventory Optimization</Link></li>
             </ul>
           </div>

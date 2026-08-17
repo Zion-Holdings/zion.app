@@ -45,7 +45,7 @@ If this guide matches your automation orchestration: deployment patterns initiat
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-2026/2026-7122">It Consulting 2026 7122</Link></li>
+              <li><Link href="/blog/">It Consulting 2026 7122</Link></li>
 <li><Link href="/blog/api-gateway-management-2026-6690">Api Gateway Management 2026 6690</Link></li>
 <li><Link href="/blog/graphql-federation-platform-2026-6549">Graphql Federation Platform 2026 6549</Link></li>
 <li><Link href="/blog/5g-solutions-2026-6638">5G Solutions 2026 6638</Link></li>

@@ -47,7 +47,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-performance-monitoring-operations-handbook">Ai Performance Monitoring Operations Handbook</Link></li>
 <li><Link href="/blog/ai-agent-tool-builder-2026-6585">Ai Agent Tool Builder 2026 6585</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026/2026-7317">Cybersecurity Platform Msp 2026 7317</Link></li>
+<li><Link href="/blog/">Cybersecurity Platform Msp 2026 7317</Link></li>
 <li><Link href="/blog/ai-autonomous-agents-2026-7139">Ai Autonomous Agents 2026 7139</Link></li>
             </ul>
           </div>

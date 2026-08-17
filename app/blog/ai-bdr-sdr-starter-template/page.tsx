@@ -47,7 +47,7 @@ Leading indicators for ai bdr sdr: starter template: workflow completion rate, e
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-accessibility-auditor-security-and-governance">Ai Accessibility Auditor Security And Governance</Link></li>
 <li><Link href="/blog/ai-ad-copy-generator-2026-6652">Ai Ad Copy Generator 2026 6652</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026/2026-7248">Cybersecurity Platform Msp 2026 7248</Link></li>
+<li><Link href="/blog/">Cybersecurity Platform Msp 2026 7248</Link></li>
 <li><Link href="/blog/api-gateway-management-2026-6874">Api Gateway Management 2026 6874</Link></li>
             </ul>
           </div>

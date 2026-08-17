@@ -47,7 +47,7 @@ For smart contract audit: deployment patterns: pick one workflow, assign ownersh
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/incident-response-retainer-2026-6688">Incident Response Retainer 2026 6688</Link></li>
 <li><Link href="/blog/api-gateway-management-2026-7012">Api Gateway Management 2026 7012</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-6710">Cloud Migration Services 2026 6710</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 6710</Link></li>
 <li><Link href="/blog/api-security-testing-2026-7037">Api Security Testing 2026 7037</Link></li>
             </ul>
           </div>

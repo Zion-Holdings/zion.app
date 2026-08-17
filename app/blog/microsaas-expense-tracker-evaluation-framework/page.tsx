@@ -47,7 +47,7 @@ If this guide matches your microsaas expense tracker: evaluation framework initi
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/incident-response-retainer-2026-6688">Incident Response Retainer 2026 6688</Link></li>
 <li><Link href="/blog/micro-saas-ai-social-media-manager-2026-6923">Micro Saas Ai Social Media Manager 2026 6923</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-6848">Cloud Migration Services 2026 6848</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 6848</Link></li>
 <li><Link href="/blog/ai-accessibility-optimizer-2026-6720">Ai Accessibility Optimizer 2026 6720</Link></li>
             </ul>
           </div>

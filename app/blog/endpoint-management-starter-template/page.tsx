@@ -47,7 +47,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/brand-voice-guardian-2026-6940">Brand Voice Guardian 2026 6940</Link></li>
 <li><Link href="/blog/api-performance-testing-2026-7243">Api Performance Testing 2026 7243</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-7124">Cloud Migration Services 2026 7124</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 7124</Link></li>
 <li><Link href="/blog/ai-msp-security-compliance-2026-7118">Ai Msp Security Compliance 2026 7118</Link></li>
             </ul>
           </div>

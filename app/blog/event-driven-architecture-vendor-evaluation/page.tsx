@@ -48,7 +48,7 @@ For event driven architecture: vendor evaluation: pick one workflow, assign owne
               <li><Link href="/blog/responsible-ai-practices-for-enterprise-deployment">Responsible Ai Practices For Enterprise Deployment</Link></li>
 <li><Link href="/blog/data-warehouse-modernization-2026-7160">Data Warehouse Modernization 2026 7160</Link></li>
 <li><Link href="/blog/ai-accessibility-optimizer-implementation-playbook">Ai Accessibility Optimizer Implementation Playbook</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026/2026-7041">Cybersecurity Platform Msp 2026 7041</Link></li>
+<li><Link href="/blog/">Cybersecurity Platform Msp 2026 7041</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -48,7 +48,7 @@ Leading indicators for ai observability: deployment patterns: workflow completio
               <li><Link href="/blog/etl-pipeline-optimization-2026-7029">Etl Pipeline Optimization 2026 7029</Link></li>
 <li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7265">Micro Saas Ai Expense Tracker 2026 7265</Link></li>
 <li><Link href="/blog/devops-cicd-evaluation-framework">Devops Cicd Evaluation Framework</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-6917">Cloud Migration Services 2026 6917</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 6917</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

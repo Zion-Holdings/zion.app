@@ -46,7 +46,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-accessibility-optimizer-2026-6582">Ai Accessibility Optimizer 2026 6582</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-7048">Ai Observability 2026 7048</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 7048</Link></li>
 <li><Link href="/blog/5g-solutions-automation-roadmap">5G Solutions Automation Roadmap</Link></li>
 <li><Link href="/blog/api-performance-testing-2026-6553">Api Performance Testing 2026 6553</Link></li>
             </ul>

@@ -48,7 +48,7 @@ If this guide matches your incident response retainer: common mistakes initiativ
               <li><Link href="/blog/ai-api-gateway-2026-6827">Ai Api Gateway 2026 6827</Link></li>
 <li><Link href="/blog/api-gateway-management-2026-7288">Api Gateway Management 2026 7288</Link></li>
 <li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6575">Micro Saas Ai Expense Tracker 2026 6575</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/case-study">Cloud Cost Ai Optimizer Case Study</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

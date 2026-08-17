@@ -48,7 +48,7 @@ Leading indicators for devsecops pipeline: automation roadmap: workflow completi
               <li><Link href="/blog/enterprise-backup-dr-roi-and-cost-model">Enterprise Backup Dr Roi And Cost Model</Link></li>
 <li><Link href="/blog/apm-application-performance-case-study">Apm Application Performance Case Study</Link></li>
 <li><Link href="/blog/cybersecurity-for-msps-architecture-overview">Cybersecurity For Msps Architecture Overview</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-6979">Ai Observability 2026 6979</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 6979</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

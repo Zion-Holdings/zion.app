@@ -46,7 +46,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-accessibility-optimizer-2026-6927">Ai Accessibility Optimizer 2026 6927</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/starter-template">Cloud Cost Ai Optimizer Starter Template</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer Starter Template</Link></li>
 <li><Link href="/blog/ai-for-fleet-management-and-logistics-optimization">Ai For Fleet Management And Logistics Optimization</Link></li>
 <li><Link href="/blog/etl-pipeline-optimization-checklist-for-it-leaders">Etl Pipeline Optimization Checklist For It Leaders</Link></li>
             </ul>

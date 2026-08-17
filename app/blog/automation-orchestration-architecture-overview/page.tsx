@@ -45,7 +45,7 @@ For automation orchestration: architecture overview: pick one workflow, assign o
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/managed-it-services-small-business-2026/2026-6766">Managed It Services Small Business 2026 6766</Link></li>
+              <li><Link href="/blog/">Managed It Services Small Business 2026 6766</Link></li>
 <li><Link href="/blog/ai-agent-safety-evaluation-2026-7205">Ai Agent Safety Evaluation 2026 7205</Link></li>
 <li><Link href="/blog/ai-bom-procurement-2026">Ai Bom Procurement 2026</Link></li>
 <li><Link href="/blog/container-security-lifecycle-2026-7020">Container Security Lifecycle 2026 7020</Link></li>

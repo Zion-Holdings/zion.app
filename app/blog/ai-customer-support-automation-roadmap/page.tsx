@@ -48,7 +48,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
               <li><Link href="/blog/api-performance-testing-implementation-playbook">Api Performance Testing Implementation Playbook</Link></li>
 <li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-7197">Micro Saas Ai Hr Recruitment 2026 7197</Link></li>
 <li><Link href="/blog/accessibility-compliance-2026-7217">Accessibility Compliance 2026 7217</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-7329">It Consulting 2026 7329</Link></li>
+<li><Link href="/blog/">It Consulting 2026 7329</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

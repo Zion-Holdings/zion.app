@@ -48,7 +48,7 @@ For ai accessibility optimizer: executive guide: pick one workflow, assign owner
               <li><Link href="/blog/api-management-gateway-2026-7290">Api Management Gateway 2026 7290</Link></li>
 <li><Link href="/blog/microsaas-expense-tracker-vendor-evaluation">Microsaas Expense Tracker Vendor Evaluation</Link></li>
 <li><Link href="/blog/microsaas-hr-recruitment-case-study">Microsaas Hr Recruitment Case Study</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/executive-guide">Cloud Cost Ai Optimizer Executive Guide</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

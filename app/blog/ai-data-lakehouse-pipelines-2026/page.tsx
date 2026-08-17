@@ -48,7 +48,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
               <li><Link href="/blog/ai-for-customer-service-and-support-automation">Ai For Customer Service And Support Automation</Link></li>
 <li><Link href="/blog/autonomous-qa-engineering-vendor-evaluation">Autonomous Qa Engineering Vendor Evaluation</Link></li>
 <li><Link href="/blog/ai-accessibility-auditor-case-study">Ai Accessibility Auditor Case Study</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-7117">Ai Observability 2026 7117</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 7117</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

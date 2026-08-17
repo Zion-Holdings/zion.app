@@ -45,7 +45,7 @@ If this guide matches your cloud native app development: operations handbook ini
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-migration-services-2026/2026-7124">Cloud Migration Services 2026 7124</Link></li>
+              <li><Link href="/blog/">Cloud Migration Services 2026 7124</Link></li>
 <li><Link href="/blog/autonomous-code-deployment-policy-and-compliance">Autonomous Code Deployment Policy And Compliance</Link></li>
 <li><Link href="/blog/enterprise-backup-dr-2026-7166">Enterprise Backup Dr 2026 7166</Link></li>
 <li><Link href="/blog/api-gateway-management-2026-7012">Api Gateway Management 2026 7012</Link></li>

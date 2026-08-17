@@ -47,7 +47,7 @@ Leading indicators for ai bdr sdr: deployment patterns: workflow completion rate
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/autonomous-qa-engineering-2026-7282">Autonomous Qa Engineering 2026 7282</Link></li>
 <li><Link href="/blog/network-infrastructure-executive-guide">Network Infrastructure Executive Guide</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-6703">Ai Observability 2026 6703</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 6703</Link></li>
 <li><Link href="/blog/ai-for-customer-service-and-support-automation">Ai For Customer Service And Support Automation</Link></li>
             </ul>
           </div>

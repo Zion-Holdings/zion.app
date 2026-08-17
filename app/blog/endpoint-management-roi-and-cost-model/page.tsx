@@ -45,7 +45,7 @@ For endpoint management: roi and cost model: pick one workflow, assign ownership
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-2026/2026-7255">Ai Observability 2026 7255</Link></li>
+              <li><Link href="/blog/">Ai Observability 2026 7255</Link></li>
 <li><Link href="/blog/api-performance-testing-policy-and-compliance">Api Performance Testing Policy And Compliance</Link></li>
 <li><Link href="/blog/ai-bom-procurement-2026-7146">Ai Bom Procurement 2026 7146</Link></li>
 <li><Link href="/blog/managed-it-services-evaluation-framework">Managed It Services Evaluation Framework</Link></li>

@@ -45,7 +45,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cybersecurity-platform-msp-2026/2026-7248">Cybersecurity Platform Msp 2026 7248</Link></li>
+              <li><Link href="/blog/">Cybersecurity Platform Msp 2026 7248</Link></li>
 <li><Link href="/blog/aiops-anomaly-detection-2026-7347">Aiops Anomaly Detection 2026 7347</Link></li>
 <li><Link href="/blog/network-infrastructure-2026-7123">Network Infrastructure 2026 7123</Link></li>
 <li><Link href="/blog/api-security-testing-2026-6899">Api Security Testing 2026 6899</Link></li>

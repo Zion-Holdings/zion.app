@@ -47,7 +47,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-ad-copy-generator-2026-7273">Ai Ad Copy Generator 2026 7273</Link></li>
 <li><Link href="/blog/api-orchestration-layer-2026-7210">Api Orchestration Layer 2026 7210</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-6973">Managed It Services Small Business 2026 6973</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 6973</Link></li>
 <li><Link href="/blog/ai-customer-success-churn-2026-6775">Ai Customer Success Churn 2026 6775</Link></li>
             </ul>
           </div>

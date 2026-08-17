@@ -46,7 +46,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/api-management-gateway-implementation-playbook">Api Management Gateway Implementation Playbook</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/case-study">Cloud Cost Ai Optimizer Case Study</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer Case Study</Link></li>
 <li><Link href="/blog/graphql-federation-platform-starter-template">Graphql Federation Platform Starter Template</Link></li>
 <li><Link href="/blog/cybersecurity-for-msps-deployment-patterns">Cybersecurity For Msps Deployment Patterns</Link></li>
             </ul>

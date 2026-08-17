@@ -46,8 +46,8 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/apm-application-performance-2026-7084">Apm Application Performance 2026 7084</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-7111">Managed It Services Small Business 2026 7111</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-6697">Managed It Services Small Business 2026 6697</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 7111</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 6697</Link></li>
 <li><Link href="/blog/autonomous-code-deployment-executive-guide">Autonomous Code Deployment Executive Guide</Link></li>
             </ul>
           </div>

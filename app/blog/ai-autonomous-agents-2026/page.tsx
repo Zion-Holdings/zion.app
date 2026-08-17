@@ -47,7 +47,7 @@ If this guide matches your ai autonomous agents initiative, the next step is a s
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-it-operations-automation-2026-7108">Ai It Operations Automation 2026 7108</Link></li>
 <li><Link href="/blog/enterprise-backup-dr-2026-6752">Enterprise Backup Dr 2026 6752</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-6641">Cloud Migration Services 2026 6641</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 6641</Link></li>
 <li><Link href="/blog/ai-accessibility-auditor-2026">Ai Accessibility Auditor 2026</Link></li>
             </ul>
           </div>

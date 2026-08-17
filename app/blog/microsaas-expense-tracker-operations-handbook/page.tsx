@@ -46,7 +46,7 @@ Leading indicators for microsaas expense tracker: operations handbook: workflow 
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/micro-saas-ai-social-media-manager-2026-7337">Micro Saas Ai Social Media Manager 2026 7337</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-6984">It Consulting 2026 6984</Link></li>
+<li><Link href="/blog/">It Consulting 2026 6984</Link></li>
 <li><Link href="/blog/cloud-cost-optimization-checklist-2026">Cloud Cost Optimization Checklist 2026</Link></li>
 <li><Link href="/blog/automation-orchestration-enterprise-2026-6906">Automation Orchestration Enterprise 2026 6906</Link></li>
             </ul>

@@ -48,7 +48,7 @@ If this guide matches your cloud native app development: deployment patterns ini
               <li><Link href="/blog/network-infrastructure-2026-7192">Network Infrastructure 2026 7192</Link></li>
 <li><Link href="/blog/ai-data-lakehouse-pipelines-2026-7050">Ai Data Lakehouse Pipelines 2026 7050</Link></li>
 <li><Link href="/blog/data-warehouse-modernization-2026">Data Warehouse Modernization 2026</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026/2026-7110">Cybersecurity Platform Msp 2026 7110</Link></li>
+<li><Link href="/blog/">Cybersecurity Platform Msp 2026 7110</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

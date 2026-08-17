@@ -48,7 +48,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
               <li><Link href="/blog/api-gateway-management-2026-7150">Api Gateway Management 2026 7150</Link></li>
 <li><Link href="/blog/cloud-native-app-development-2026-6950">Cloud Native App Development 2026 6950</Link></li>
 <li><Link href="/blog/devops-gen-ai-cicd-2026-6679">Devops Gen Ai Cicd 2026 6679</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026/2026-7110">Cybersecurity Platform Msp 2026 7110</Link></li>
+<li><Link href="/blog/">Cybersecurity Platform Msp 2026 7110</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

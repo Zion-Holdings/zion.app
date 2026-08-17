@@ -46,7 +46,7 @@ If this guide matches your ai accessibility auditor: case study initiative, the 
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-customer-support-vendor-evaluation">Ai Customer Support Vendor Evaluation</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-4">Managed It Services Small Business 2026 4</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 4</Link></li>
 <li><Link href="/blog/api-gateway-management-2026-6690">Api Gateway Management 2026 6690</Link></li>
 <li><Link href="/blog/devops-gen-ai-cicd-2026-6748">Devops Gen Ai Cicd 2026 6748</Link></li>
             </ul>

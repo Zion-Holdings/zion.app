@@ -45,7 +45,7 @@ For ai email intelligence: case study: pick one workflow, assign ownership, defi
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-migration-services-2026/2026-6779">Cloud Migration Services 2026 6779</Link></li>
+              <li><Link href="/blog/">Cloud Migration Services 2026 6779</Link></li>
 <li><Link href="/blog/ai-customer-support-pro-2026-6978">Ai Customer Support Pro 2026 6978</Link></li>
 <li><Link href="/blog/edge-computing-deployment-2026-6612">Edge Computing Deployment 2026 6612</Link></li>
 <li><Link href="/blog/edge-computing-deployment-2026-6888">Edge Computing Deployment 2026 6888</Link></li>

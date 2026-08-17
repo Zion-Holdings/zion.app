@@ -45,10 +45,10 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-2026/2026-7255">Ai Observability 2026 7255</Link></li>
+              <li><Link href="/blog/">Ai Observability 2026 7255</Link></li>
 <li><Link href="/blog/cyber-threat-intelligence-2026-7228">Cyber Threat Intelligence 2026 7228</Link></li>
 <li><Link href="/blog/autonomous-qa-engineering-vendor-evaluation">Autonomous Qa Engineering Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-7117">Ai Observability 2026 7117</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 7117</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

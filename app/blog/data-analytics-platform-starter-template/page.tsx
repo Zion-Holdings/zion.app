@@ -59,7 +59,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/api-security-testing-2026-8831">Api Security Testing 2026 8831</Link></li>
 <li><Link href="/blog/ai-ad-copy-generator-2026-8653">Ai Ad Copy Generator 2026 8653</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-8673">Cloud Cost Ai Optimizer 2026 8673</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 8673</Link></li>
 <li><Link href="/blog/api-gateway-management-roi-and-cost-model">Api Gateway Management Roi And Cost Model</Link></li>
             </ul>
           </div>

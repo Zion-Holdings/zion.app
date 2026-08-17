@@ -47,7 +47,7 @@ Leading indicators for smart contract audit: policy and compliance: workflow com
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/chaos-engineering-2026-6809">Chaos Engineering 2026 6809</Link></li>
 <li><Link href="/blog/devops-gen-ai-cicd-2026-6679">Devops Gen Ai Cicd 2026 6679</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-7111">Managed It Services Small Business 2026 7111</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 7111</Link></li>
 <li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6851">Micro Saas Ai Expense Tracker 2026 6851</Link></li>
             </ul>
           </div>

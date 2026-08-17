@@ -48,7 +48,7 @@ If this guide matches your enterprise backup dr: policy and compliance initiativ
               <li><Link href="/blog/cloud-finops-2026-7294">Cloud Finops 2026 7294</Link></li>
 <li><Link href="/blog/smart-contract-audit-2026-6686">Smart Contract Audit 2026 6686</Link></li>
 <li><Link href="/blog/endpoint-management-implementation-playbook">Endpoint Management Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-observability-2026/common-mistakes">Ai Observability Common Mistakes</Link></li>
+<li><Link href="/blog/">Ai Observability Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

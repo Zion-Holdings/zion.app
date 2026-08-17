@@ -47,7 +47,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/enterprise-backup-dr-2026-6821">Enterprise Backup Dr 2026 6821</Link></li>
 <li><Link href="/blog/network-infrastructure-2026-7123">Network Infrastructure 2026 7123</Link></li>
-<li><Link href="/blog/ai-observability-2026/common-mistakes">Ai Observability Common Mistakes</Link></li>
+<li><Link href="/blog/">Ai Observability Common Mistakes</Link></li>
 <li><Link href="/blog/enterprise-backup-dr-checklist-for-it-leaders">Enterprise Backup Dr Checklist For It Leaders</Link></li>
             </ul>
           </div>

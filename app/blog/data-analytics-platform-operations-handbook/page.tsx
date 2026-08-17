@@ -45,7 +45,7 @@ Leading indicators for data analytics platform: operations handbook: workflow co
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cybersecurity-platform-msp-2026/2026-7317">Cybersecurity Platform Msp 2026 7317</Link></li>
+              <li><Link href="/blog/">Cybersecurity Platform Msp 2026 7317</Link></li>
 <li><Link href="/blog/ai-development-acceleration-vendor-evaluation">Ai Development Acceleration Vendor Evaluation</Link></li>
 <li><Link href="/blog/graphql-federation-platform-2026-7032">Graphql Federation Platform 2026 7032</Link></li>
 <li><Link href="/blog/ai-bom-procurement-automation-roadmap">Ai Bom Procurement Automation Roadmap</Link></li>

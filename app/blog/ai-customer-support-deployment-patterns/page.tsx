@@ -48,7 +48,7 @@ Leading indicators for ai customer support: deployment patterns: workflow comple
               <li><Link href="/blog/ai-it-operations-automation-2026-7177">Ai It Operations Automation 2026 7177</Link></li>
 <li><Link href="/blog/cloud-finops-2026-7225">Cloud Finops 2026 7225</Link></li>
 <li><Link href="/blog/ai-development-acceleration-2026-6977">Ai Development Acceleration 2026 6977</Link></li>
-<li><Link href="/blog/ai-observability-2026/architecture-overview">Ai Observability Architecture Overview</Link></li>
+<li><Link href="/blog/">Ai Observability Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

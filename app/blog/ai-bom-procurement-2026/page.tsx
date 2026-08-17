@@ -48,7 +48,7 @@ If this guide matches your ai bom procurement initiative, the next step is a sco
               <li><Link href="/blog/cloud-cost-optimization-checklist-2026-7247">Cloud Cost Optimization Checklist 2026 7247</Link></li>
 <li><Link href="/blog/ai-performance-monitoring-implementation-playbook">Ai Performance Monitoring Implementation Playbook</Link></li>
 <li><Link href="/blog/accessibility-compliance-2026-6665">Accessibility Compliance 2026 6665</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-7155">Cloud Cost Ai Optimizer 2026 7155</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 7155</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

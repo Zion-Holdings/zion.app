@@ -47,7 +47,7 @@ If this guide matches your ai observability: automation roadmap initiative, the 
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-performance-monitoring-deployment-patterns">Ai Performance Monitoring Deployment Patterns</Link></li>
 <li><Link href="/blog/devops-cicd-roi-and-cost-model">Devops Cicd Roi And Cost Model</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-6572">Cloud Migration Services 2026 6572</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 6572</Link></li>
 <li><Link href="/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning">Ai Finops And Cloud Cost Optimization With Machine Learning</Link></li>
             </ul>
           </div>

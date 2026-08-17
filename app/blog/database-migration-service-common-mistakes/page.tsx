@@ -45,8 +45,8 @@ For database migration service: common mistakes: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-2026/2026-6979">Ai Observability 2026 6979</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/checklist-for-it-leaders">Cloud Migration Services Checklist For It Leaders</Link></li>
+              <li><Link href="/blog/">Ai Observability 2026 6979</Link></li>
+<li><Link href="/blog/">Cloud Migration Services Checklist For It Leaders</Link></li>
 <li><Link href="/blog/ai-data-backup-automation-roadmap">Ai Data Backup Automation Roadmap</Link></li>
 <li><Link href="/blog/microsaas-expense-tracker-case-study">Microsaas Expense Tracker Case Study</Link></li>
             </ul>

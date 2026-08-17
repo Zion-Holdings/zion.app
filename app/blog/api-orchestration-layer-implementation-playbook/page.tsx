@@ -47,7 +47,7 @@ For api orchestration layer: implementation playbook: pick one workflow, assign 
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/cloud-finops-security-and-governance">Cloud Finops Security And Governance</Link></li>
 <li><Link href="/blog/ai-autonomous-agents-2026-7139">Ai Autonomous Agents 2026 7139</Link></li>
-<li><Link href="/blog/ai-observability-2026/common-mistakes">Ai Observability Common Mistakes</Link></li>
+<li><Link href="/blog/">Ai Observability Common Mistakes</Link></li>
 <li><Link href="/blog/incident-response-retainer-2026-7240">Incident Response Retainer 2026 7240</Link></li>
             </ul>
           </div>

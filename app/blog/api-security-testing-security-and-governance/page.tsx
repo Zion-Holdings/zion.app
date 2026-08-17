@@ -47,8 +47,8 @@ For api security testing: security and governance: pick one workflow, assign own
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/chaos-engineering-common-mistakes">Chaos Engineering Common Mistakes</Link></li>
 <li><Link href="/blog/ai-agent-safety-evaluation-architecture-overview">Ai Agent Safety Evaluation Architecture Overview</Link></li>
-<li><Link href="/blog/ai-observability-2026/common-mistakes">Ai Observability Common Mistakes</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-6708">It Consulting 2026 6708</Link></li>
+<li><Link href="/blog/">Ai Observability Common Mistakes</Link></li>
+<li><Link href="/blog/">It Consulting 2026 6708</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

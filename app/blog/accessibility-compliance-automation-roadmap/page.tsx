@@ -46,7 +46,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/cybersecurity-for-msps-case-study">Cybersecurity For Msps Case Study</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-7329">It Consulting 2026 7329</Link></li>
+<li><Link href="/blog/">It Consulting 2026 7329</Link></li>
 <li><Link href="/blog/apm-application-performance-executive-guide">Apm Application Performance Executive Guide</Link></li>
 <li><Link href="/blog/etl-pipeline-optimization-2026-6753">Etl Pipeline Optimization 2026 6753</Link></li>
             </ul>

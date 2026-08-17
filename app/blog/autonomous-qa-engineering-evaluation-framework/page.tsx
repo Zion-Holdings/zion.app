@@ -47,7 +47,7 @@ For autonomous qa engineering: evaluation framework: pick one workflow, assign o
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-msp-security-compliance-executive-guide">Ai Msp Security Compliance Executive Guide</Link></li>
 <li><Link href="/blog/api-performance-testing-2026-6622">Api Performance Testing 2026 6622</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/roi-and-cost-model">Cloud Migration Services Roi And Cost Model</Link></li>
+<li><Link href="/blog/">Cloud Migration Services Roi And Cost Model</Link></li>
 <li><Link href="/blog/database-migration-service-automation-roadmap">Database Migration Service Automation Roadmap</Link></li>
             </ul>
           </div>

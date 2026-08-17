@@ -47,7 +47,7 @@ Leading indicators for ai observability: security and governance: workflow compl
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/autonomous-qa-engineering-common-mistakes">Autonomous Qa Engineering Common Mistakes</Link></li>
 <li><Link href="/blog/apm-application-performance-checklist-for-it-leaders">Apm Application Performance Checklist For It Leaders</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-7260">It Consulting 2026 7260</Link></li>
+<li><Link href="/blog/">It Consulting 2026 7260</Link></li>
 <li><Link href="/blog/database-migration-service-2026-6678">Database Migration Service 2026 6678</Link></li>
             </ul>
           </div>

@@ -48,7 +48,7 @@ For genai devops ci/cd: executive guide: pick one workflow, assign ownership, de
               <li><Link href="/blog/micro-saas-ai-hr-recruitment-2026-6852">Micro Saas Ai Hr Recruitment 2026 6852</Link></li>
 <li><Link href="/blog/enterprise-ai-intelligence-hub-2026-7200">Enterprise Ai Intelligence Hub 2026 7200</Link></li>
 <li><Link href="/blog/data-warehouse-modernization-2026-7022">Data Warehouse Modernization 2026 7022</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-7124">Cloud Migration Services 2026 7124</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 7124</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

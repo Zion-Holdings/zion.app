@@ -47,7 +47,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/event-driven-architecture-security-and-governance">Event Driven Architecture Security And Governance</Link></li>
 <li><Link href="/blog/ai-msp-security-compliance-starter-template">Ai Msp Security Compliance Starter Template</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-6841">Ai Observability 2026 6841</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 6841</Link></li>
 <li><Link href="/blog/securing-ai-models-a-practical-guide-to-threat-mitigation-in-production">Securing Ai Models A Practical Guide To Threat Mitigation In Production</Link></li>
             </ul>
           </div>

@@ -46,7 +46,7 @@ For ai development acceleration: architecture overview: pick one workflow, assig
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-accessibility-auditor-2026-6857">Ai Accessibility Auditor 2026 6857</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-6984">It Consulting 2026 6984</Link></li>
+<li><Link href="/blog/">It Consulting 2026 6984</Link></li>
 <li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7127">Micro Saas Ai Expense Tracker 2026 7127</Link></li>
 <li><Link href="/blog/autonomous-qa-engineering-2026-6868">Autonomous Qa Engineering 2026 6868</Link></li>
             </ul>

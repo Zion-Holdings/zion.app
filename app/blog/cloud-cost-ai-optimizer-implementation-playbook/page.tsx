@@ -47,7 +47,7 @@ For cloud cost ai optimizer: implementation playbook: pick one workflow, assign 
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-bdr-sdr-2026-6731">Ai Bdr Sdr 2026 6731</Link></li>
 <li><Link href="/blog/aiops-anomaly-detection-2026">Aiops Anomaly Detection 2026</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-6846">It Consulting 2026 6846</Link></li>
+<li><Link href="/blog/">It Consulting 2026 6846</Link></li>
 <li><Link href="/blog/ai-autonomous-agents-2026-7277">Ai Autonomous Agents 2026 7277</Link></li>
             </ul>
           </div>

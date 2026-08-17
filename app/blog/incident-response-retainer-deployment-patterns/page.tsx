@@ -47,7 +47,7 @@ For incident response retainer: deployment patterns: pick one workflow, assign o
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/api-gateway-management-2026-6667">Api Gateway Management 2026 6667</Link></li>
 <li><Link href="/blog/ai-agentic-workflows-2026-6862">Ai Agentic Workflows 2026 6862</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026/2026-6834">Cybersecurity Platform Msp 2026 6834</Link></li>
+<li><Link href="/blog/">Cybersecurity Platform Msp 2026 6834</Link></li>
 <li><Link href="/blog/ai-data-lakehouse-pipelines-2026-7188">Ai Data Lakehouse Pipelines 2026 7188</Link></li>
             </ul>
           </div>

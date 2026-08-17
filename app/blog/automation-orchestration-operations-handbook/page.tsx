@@ -47,7 +47,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-3d-asset-generator-2026-7339">Ai 3D Asset Generator 2026 7339</Link></li>
 <li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-6836">Data Analytics Platform Modern Enterprise 2026 6836</Link></li>
-<li><Link href="/blog/it-consulting-2026/security-and-governance">It Consulting Security And Governance</Link></li>
+<li><Link href="/blog/">It Consulting Security And Governance</Link></li>
 <li><Link href="/blog/ai-accessibility-auditor-2026-7133">Ai Accessibility Auditor 2026 7133</Link></li>
             </ul>
           </div>

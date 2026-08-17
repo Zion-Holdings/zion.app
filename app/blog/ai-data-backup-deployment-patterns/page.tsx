@@ -47,7 +47,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/5g-solutions-policy-and-compliance">5G Solutions Policy And Compliance</Link></li>
 <li><Link href="/blog/api-orchestration-layer-2026-7072">Api Orchestration Layer 2026 7072</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-7191">It Consulting 2026 7191</Link></li>
+<li><Link href="/blog/">It Consulting 2026 7191</Link></li>
 <li><Link href="/blog/etl-pipeline-optimization-2026-7029">Etl Pipeline Optimization 2026 7029</Link></li>
             </ul>
           </div>

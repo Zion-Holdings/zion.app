@@ -48,7 +48,7 @@ Leading indicators for ai customer success churn prevention: executive guide: wo
               <li><Link href="/blog/apm-application-performance-operations-handbook">Apm Application Performance Operations Handbook</Link></li>
 <li><Link href="/blog/ai-in-sustainability-and-esg-reporting">Ai In Sustainability And Esg Reporting</Link></li>
 <li><Link href="/blog/endpoint-management-2026-6751">Endpoint Management 2026 6751</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-7224">Cloud Cost Ai Optimizer 2026 7224</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 7224</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

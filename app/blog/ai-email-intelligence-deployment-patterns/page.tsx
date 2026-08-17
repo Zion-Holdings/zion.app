@@ -46,7 +46,7 @@ For ai email intelligence: deployment patterns: pick one workflow, assign owners
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/devops-cicd-2026-7125">Devops Cicd 2026 7125</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-7262">Cloud Migration Services 2026 7262</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 7262</Link></li>
 <li><Link href="/blog/ai-data-backup-2026-6969">Ai Data Backup 2026 6969</Link></li>
 <li><Link href="/blog/autonomous-qa-engineering-2026-7351">Autonomous Qa Engineering 2026 7351</Link></li>
             </ul>

@@ -47,8 +47,8 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-it-operations-automation-2026-1">Ai It Operations Automation 2026 1</Link></li>
 <li><Link href="/blog/vector-databases-and-enterprise-rag-systems">Vector Databases And Enterprise Rag Systems</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-6634">Ai Observability 2026 6634</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026/2026-7179">Cybersecurity Platform Msp 2026 7179</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 6634</Link></li>
+<li><Link href="/blog/">Cybersecurity Platform Msp 2026 7179</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

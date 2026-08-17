@@ -46,7 +46,7 @@ For cloud migration services: common mistakes: pick one workflow, assign ownersh
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/api-management-gateway-2026-7359">Api Management Gateway 2026 7359</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-6835">Managed It Services Small Business 2026 6835</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 6835</Link></li>
 <li><Link href="/blog/ai-agentic-workflows-architecture-overview">Ai Agentic Workflows Architecture Overview</Link></li>
 <li><Link href="/blog/event-driven-architecture-2026-7030">Event Driven Architecture 2026 7030</Link></li>
             </ul>

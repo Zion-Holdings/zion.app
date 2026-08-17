@@ -45,10 +45,10 @@ If this guide matches your event driven architecture: checklist for it leaders i
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-2026/2026-7329">It Consulting 2026 7329</Link></li>
+              <li><Link href="/blog/">It Consulting 2026 7329</Link></li>
 <li><Link href="/blog/accessibility-compliance-2026-7355">Accessibility Compliance 2026 7355</Link></li>
 <li><Link href="/blog/ai-agent-tool-builder-2026-6930">Ai Agent Tool Builder 2026 6930</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-6766">Managed It Services Small Business 2026 6766</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 6766</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

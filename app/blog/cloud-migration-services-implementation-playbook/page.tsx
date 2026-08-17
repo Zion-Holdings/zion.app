@@ -47,7 +47,7 @@ If this guide matches your cloud migration services: implementation playbook ini
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/cyber-threat-intelligence-2026-7090">Cyber Threat Intelligence 2026 7090</Link></li>
 <li><Link href="/blog/ai-accessibility-auditor-2026-6788">Ai Accessibility Auditor 2026 6788</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-6766">Managed It Services Small Business 2026 6766</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 6766</Link></li>
 <li><Link href="/blog/ai-msp-security-compliance-automation-roadmap">Ai Msp Security Compliance Automation Roadmap</Link></li>
             </ul>
           </div>

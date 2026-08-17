@@ -45,7 +45,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-7293">Cloud Cost Ai Optimizer 2026 7293</Link></li>
+              <li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 7293</Link></li>
 <li><Link href="/blog/ai-data-backup-2026">Ai Data Backup 2026</Link></li>
 <li><Link href="/blog/ai-data-lakehouse-pipelines-evaluation-framework">Ai Data Lakehouse Pipelines Evaluation Framework</Link></li>
 <li><Link href="/blog/cloud-finops-2026-6604">Cloud Finops 2026 6604</Link></li>

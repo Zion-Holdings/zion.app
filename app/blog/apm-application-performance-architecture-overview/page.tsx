@@ -46,7 +46,7 @@ If this guide matches your apm application performance: architecture overview in
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/endpoint-management-2026-6751">Endpoint Management 2026 6751</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-6973">Managed It Services Small Business 2026 6973</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 6973</Link></li>
 <li><Link href="/blog/ai-agentic-workflows-operations-handbook">Ai Agentic Workflows Operations Handbook</Link></li>
 <li><Link href="/blog/micro-saas-ai-translation-engine-2026-7195">Micro Saas Ai Translation Engine 2026 7195</Link></li>
             </ul>

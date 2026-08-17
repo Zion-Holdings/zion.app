@@ -45,7 +45,7 @@ For ai ad copy generator: case study: pick one workflow, assign ownership, defin
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-2026/operations-handbook">Ai Observability Operations Handbook</Link></li>
+              <li><Link href="/blog/">Ai Observability Operations Handbook</Link></li>
 <li><Link href="/blog/event-driven-architecture-starter-template">Event Driven Architecture Starter Template</Link></li>
 <li><Link href="/blog/ai-customer-support-case-study">Ai Customer Support Case Study</Link></li>
 <li><Link href="/blog/cloud-cost-optimization-checklist-2026-6902">Cloud Cost Optimization Checklist 2026 6902</Link></li>

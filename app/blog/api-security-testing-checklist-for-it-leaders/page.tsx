@@ -48,7 +48,7 @@ If this guide matches your api security testing: checklist for it leaders initia
               <li><Link href="/blog/ai-bom-procurement-security-and-governance">Ai Bom Procurement Security And Governance</Link></li>
 <li><Link href="/blog/ai-data-backup-2026">Ai Data Backup 2026</Link></li>
 <li><Link href="/blog/microsaas-customer-onboarding-vendor-evaluation">Microsaas Customer Onboarding Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-observability-2026/operations-handbook">Ai Observability Operations Handbook</Link></li>
+<li><Link href="/blog/">Ai Observability Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

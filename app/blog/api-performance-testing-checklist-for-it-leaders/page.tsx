@@ -47,7 +47,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/autonomous-qa-engineering-2026-7351">Autonomous Qa Engineering 2026 7351</Link></li>
 <li><Link href="/blog/enterprise-backup-dr-2026-6614">Enterprise Backup Dr 2026 6614</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-6835">Managed It Services Small Business 2026 6835</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 6835</Link></li>
 <li><Link href="/blog/smart-contract-audit-2026-7031">Smart Contract Audit 2026 7031</Link></li>
             </ul>
           </div>

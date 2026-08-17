@@ -45,7 +45,7 @@ For microsaas expense tracker: starter template: pick one workflow, assign owner
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/managed-it-services-small-business-2026/2026-6559">Managed It Services Small Business 2026 6559</Link></li>
+              <li><Link href="/blog/">Managed It Services Small Business 2026 6559</Link></li>
 <li><Link href="/blog/api-gateway-management-2026-6828">Api Gateway Management 2026 6828</Link></li>
 <li><Link href="/blog/micro-saas-ai-social-media-manager-2026-6785">Micro Saas Ai Social Media Manager 2026 6785</Link></li>
 <li><Link href="/blog/apm-application-performance-policy-and-compliance">Apm Application Performance Policy And Compliance</Link></li>

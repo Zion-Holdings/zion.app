@@ -48,7 +48,7 @@ If this guide matches your cyber threat intelligence: roi and cost model initiat
               <li><Link href="/blog/api-integration-deployment-patterns">Api Integration Deployment Patterns</Link></li>
 <li><Link href="/blog/api-gateway-management-2026-6828">Api Gateway Management 2026 6828</Link></li>
 <li><Link href="/blog/edge-computing-deployment-roi-and-cost-model">Edge Computing Deployment Roi And Cost Model</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/case-study">Cloud Migration Services Case Study</Link></li>
+<li><Link href="/blog/">Cloud Migration Services Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

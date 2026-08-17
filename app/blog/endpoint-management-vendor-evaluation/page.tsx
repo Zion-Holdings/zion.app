@@ -45,7 +45,7 @@ If this guide matches your endpoint management: vendor evaluation initiative, th
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-2026/2026-6565">Ai Observability 2026 6565</Link></li>
+              <li><Link href="/blog/">Ai Observability 2026 6565</Link></li>
 <li><Link href="/blog/ai-powered-customer-success-reducing-churn-and-driving-expansion">Ai Powered Customer Success Reducing Churn And Driving Expansion</Link></li>
 <li><Link href="/blog/edge-computing-deployment-2026-6888">Edge Computing Deployment 2026 6888</Link></li>
 <li><Link href="/blog/micro-saas-ai-translation-engine-2026-7057">Micro Saas Ai Translation Engine 2026 7057</Link></li>

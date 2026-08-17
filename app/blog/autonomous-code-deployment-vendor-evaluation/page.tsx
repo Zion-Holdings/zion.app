@@ -46,7 +46,7 @@ If this guide matches your autonomous code deployment: vendor evaluation initiat
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/network-infrastructure-2026-7054">Network Infrastructure 2026 7054</Link></li>
-<li><Link href="/blog/it-consulting-2026/case-study">It Consulting Case Study</Link></li>
+<li><Link href="/blog/">It Consulting Case Study</Link></li>
 <li><Link href="/blog/ai-accessibility-optimizer-2026-6513">Ai Accessibility Optimizer 2026 6513</Link></li>
 <li><Link href="/blog/ai-accessibility-optimizer-2026-6651">Ai Accessibility Optimizer 2026 6651</Link></li>
             </ul>

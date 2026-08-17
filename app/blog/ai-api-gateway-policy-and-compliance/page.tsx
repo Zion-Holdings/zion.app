@@ -47,8 +47,8 @@ If this guide matches your ai api gateway: policy and compliance initiative, the
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/cybersecurity-platform-msp-2026/2026">Cybersecurity Platform Msp 2026</Link></li>
 <li><Link href="/blog/smart-contract-audit-2026-7307">Smart Contract Audit 2026 7307</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/checklist-for-it-leaders">Cloud Migration Services Checklist For It Leaders</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-7111">Managed It Services Small Business 2026 7111</Link></li>
+<li><Link href="/blog/">Cloud Migration Services Checklist For It Leaders</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 7111</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

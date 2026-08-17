@@ -46,7 +46,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/enterprise-backup-dr-case-study">Enterprise Backup Dr Case Study</Link></li>
-<li><Link href="/blog/it-consulting-2026/evaluation-framework">It Consulting Evaluation Framework</Link></li>
+<li><Link href="/blog/">It Consulting Evaluation Framework</Link></li>
 <li><Link href="/blog/event-driven-architecture-2026-6616">Event Driven Architecture 2026 6616</Link></li>
 <li><Link href="/blog/ai-bom-procurement-2026">Ai Bom Procurement 2026</Link></li>
             </ul>

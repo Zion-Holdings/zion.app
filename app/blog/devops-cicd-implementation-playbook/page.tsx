@@ -48,7 +48,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
               <li><Link href="/blog/api-gateway-management-2026-7012">Api Gateway Management 2026 7012</Link></li>
 <li><Link href="/blog/ai-3d-asset-generator-automation-roadmap">Ai 3D Asset Generator Automation Roadmap</Link></li>
 <li><Link href="/blog/database-migration-service-2026-6954">Database Migration Service 2026 6954</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-7293">Cloud Cost Ai Optimizer 2026 7293</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 7293</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

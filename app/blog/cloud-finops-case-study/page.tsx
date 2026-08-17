@@ -46,8 +46,8 @@ Leading indicators for cloud finops: case study: workflow completion rate, escal
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/cyber-threat-intelligence-2026-6676">Cyber Threat Intelligence 2026 6676</Link></li>
-<li><Link href="/blog/it-consulting-2026/architecture-overview">It Consulting Architecture Overview</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/automation-roadmap">Cloud Cost Ai Optimizer Automation Roadmap</Link></li>
+<li><Link href="/blog/">It Consulting Architecture Overview</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer Automation Roadmap</Link></li>
 <li><Link href="/blog/devops-cicd-2026-6849">Devops Cicd 2026 6849</Link></li>
             </ul>
           </div>

@@ -46,7 +46,7 @@ If this guide matches your incident response retainer initiative, the next step 
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/etl-pipeline-optimization-2026-7236">Etl Pipeline Optimization 2026 7236</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026/2026-6834">Cybersecurity Platform Msp 2026 6834</Link></li>
+<li><Link href="/blog/">Cybersecurity Platform Msp 2026 6834</Link></li>
 <li><Link href="/blog/micro-saas-ai-social-media-manager-2026-6992">Micro Saas Ai Social Media Manager 2026 6992</Link></li>
 <li><Link href="/blog/network-infrastructure-2026-6640">Network Infrastructure 2026 6640</Link></li>
             </ul>

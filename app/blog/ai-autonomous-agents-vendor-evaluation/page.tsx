@@ -46,7 +46,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/5g-solutions-operations-handbook">5G Solutions Operations Handbook</Link></li>
-<li><Link href="/blog/ai-observability-2026/evaluation-framework">Ai Observability Evaluation Framework</Link></li>
+<li><Link href="/blog/">Ai Observability Evaluation Framework</Link></li>
 <li><Link href="/blog/autonomous-code-deployment-2026">Autonomous Code Deployment 2026</Link></li>
 <li><Link href="/blog/enterprise-ai-intelligence-hub-2026-6717">Enterprise Ai Intelligence Hub 2026 6717</Link></li>
             </ul>

@@ -46,7 +46,7 @@ If this guide matches your etl pipeline optimization: executive guide initiative
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/micro-saas-ai-expense-tracker-2026-7127">Micro Saas Ai Expense Tracker 2026 7127</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-6910">Ai Observability 2026 6910</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 6910</Link></li>
 <li><Link href="/blog/automated-ai-reporting-2026-7073">Automated Ai Reporting 2026 7073</Link></li>
 <li><Link href="/blog/incident-response-retainer-automation-roadmap">Incident Response Retainer Automation Roadmap</Link></li>
             </ul>

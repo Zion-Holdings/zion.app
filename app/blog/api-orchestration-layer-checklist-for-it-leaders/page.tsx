@@ -47,7 +47,7 @@ Leading indicators for api orchestration layer: checklist for it leaders: workfl
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/cloud-cost-optimization-checklist-2026-2">Cloud Cost Optimization Checklist 2026 2</Link></li>
 <li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6989">Micro Saas Ai Expense Tracker 2026 6989</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/checklist-for-it-leaders">Cloud Migration Services Checklist For It Leaders</Link></li>
+<li><Link href="/blog/">Cloud Migration Services Checklist For It Leaders</Link></li>
 <li><Link href="/blog/autonomous-code-deployment-2026-7074">Autonomous Code Deployment 2026 7074</Link></li>
             </ul>
           </div>

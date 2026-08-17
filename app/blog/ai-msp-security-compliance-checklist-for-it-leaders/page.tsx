@@ -46,7 +46,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-customer-support-evaluation-framework">Ai Customer Support Evaluation Framework</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/architecture-overview">Cloud Cost Ai Optimizer Architecture Overview</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer Architecture Overview</Link></li>
 <li><Link href="/blog/api-orchestration-layer-vendor-evaluation">Api Orchestration Layer Vendor Evaluation</Link></li>
 <li><Link href="/blog/ai-customer-success-churn-2026-6982">Ai Customer Success Churn 2026 6982</Link></li>
             </ul>

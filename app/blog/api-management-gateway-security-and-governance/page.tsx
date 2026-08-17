@@ -47,7 +47,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-agentic-workflows-implementation-playbook">Ai Agentic Workflows Implementation Playbook</Link></li>
 <li><Link href="/blog/ai-email-intelligence-2026-7045">Ai Email Intelligence 2026 7045</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-7017">Cloud Cost Ai Optimizer 2026 7017</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 7017</Link></li>
 <li><Link href="/blog/cloud-native-app-development-2026-7019">Cloud Native App Development 2026 7019</Link></li>
             </ul>
           </div>

@@ -48,7 +48,7 @@ For cloud native app development: vendor evaluation: pick one workflow, assign o
               <li><Link href="/blog/ai-3d-asset-generator-common-mistakes">Ai 3D Asset Generator Common Mistakes</Link></li>
 <li><Link href="/blog/api-gateway-management-2026-7288">Api Gateway Management 2026 7288</Link></li>
 <li><Link href="/blog/api-performance-testing-implementation-playbook">Api Performance Testing Implementation Playbook</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-6639">It Consulting 2026 6639</Link></li>
+<li><Link href="/blog/">It Consulting 2026 6639</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

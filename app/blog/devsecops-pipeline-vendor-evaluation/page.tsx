@@ -48,7 +48,7 @@ If this guide matches your devsecops pipeline: vendor evaluation initiative, the
               <li><Link href="/blog/ai-agent-safety-evaluation-deployment-patterns">Ai Agent Safety Evaluation Deployment Patterns</Link></li>
 <li><Link href="/blog/smart-contract-audit-2026-6824">Smart Contract Audit 2026 6824</Link></li>
 <li><Link href="/blog/ai-agent-safety-evaluation-2026-6929">Ai Agent Safety Evaluation 2026 6929</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-7255">Ai Observability 2026 7255</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 7255</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

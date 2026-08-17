@@ -47,7 +47,7 @@ For ai ad copy generator: automation roadmap: pick one workflow, assign ownershi
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/api-gateway-management-2026-6828">Api Gateway Management 2026 6828</Link></li>
 <li><Link href="/blog/ai-agent-safety-evaluation-deployment-patterns">Ai Agent Safety Evaluation Deployment Patterns</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-7111">Managed It Services Small Business 2026 7111</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 7111</Link></li>
 <li><Link href="/blog/ai-accessibility-auditor-2026-6788">Ai Accessibility Auditor 2026 6788</Link></li>
             </ul>
           </div>

@@ -47,7 +47,7 @@ For smart contract audit: case study: pick one workflow, assign ownership, defin
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-performance-monitoring-2026-6528">Ai Performance Monitoring 2026 6528</Link></li>
 <li><Link href="/blog/ai-bom-procurement-roi-and-cost-model">Ai Bom Procurement Roi And Cost Model</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-7180">Managed It Services Small Business 2026 7180</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 7180</Link></li>
 <li><Link href="/blog/api-integration-operations-handbook">Api Integration Operations Handbook</Link></li>
             </ul>
           </div>

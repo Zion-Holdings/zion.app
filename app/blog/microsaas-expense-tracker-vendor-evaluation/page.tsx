@@ -46,7 +46,7 @@ Leading indicators for microsaas expense tracker: vendor evaluation: workflow co
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/enterprise-backup-dr-2026-6683">Enterprise Backup Dr 2026 6683</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-6534">Cloud Cost Ai Optimizer 2026 6534</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 6534</Link></li>
 <li><Link href="/blog/api-orchestration-layer-2026-7072">Api Orchestration Layer 2026 7072</Link></li>
 <li><Link href="/blog/cyber-threat-intelligence-2026-7021">Cyber Threat Intelligence 2026 7021</Link></li>
             </ul>

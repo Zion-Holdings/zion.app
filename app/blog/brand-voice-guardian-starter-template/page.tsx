@@ -48,7 +48,7 @@ For brand voice guardian: starter template: pick one workflow, assign ownership,
               <li><Link href="/blog/api-security-testing-checklist-for-it-leaders">Api Security Testing Checklist For It Leaders</Link></li>
 <li><Link href="/blog/5g-solutions-starter-template">5G Solutions Starter Template</Link></li>
 <li><Link href="/blog/ai-performance-monitoring-vendor-evaluation">Ai Performance Monitoring Vendor Evaluation</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-7260">It Consulting 2026 7260</Link></li>
+<li><Link href="/blog/">It Consulting 2026 7260</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -45,7 +45,7 @@ For accessibility compliance: deployment patterns: pick one workflow, assign own
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-2026/2026-6979">Ai Observability 2026 6979</Link></li>
+              <li><Link href="/blog/">Ai Observability 2026 6979</Link></li>
 <li><Link href="/blog/ai-bom-procurement-security-and-governance">Ai Bom Procurement Security And Governance</Link></li>
 <li><Link href="/blog/micro-saas-ai-expense-tracker-2026">Micro Saas Ai Expense Tracker 2026</Link></li>
 <li><Link href="/blog/autonomous-qa-engineering-2026-7282">Autonomous Qa Engineering 2026 7282</Link></li>

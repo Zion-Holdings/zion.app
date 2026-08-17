@@ -45,8 +45,8 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-migration-services-2026/common-mistakes">Cloud Migration Services Common Mistakes</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026/2026-6903">Cybersecurity Platform Msp 2026 6903</Link></li>
+              <li><Link href="/blog/">Cloud Migration Services Common Mistakes</Link></li>
+<li><Link href="/blog/">Cybersecurity Platform Msp 2026 6903</Link></li>
 <li><Link href="/blog/ai-agentic-workflows-2026-6931">Ai Agentic Workflows 2026 6931</Link></li>
 <li><Link href="/blog/incident-response-retainer-vendor-evaluation">Incident Response Retainer Vendor Evaluation</Link></li>
             </ul>

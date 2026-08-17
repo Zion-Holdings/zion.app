@@ -45,7 +45,7 @@ Leading indicators for microsaas translation engine: case study: workflow comple
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-2026/roi-and-cost-model">Cloud Cost Ai Optimizer Roi And Cost Model</Link></li>
+              <li><Link href="/blog/">Cloud Cost Ai Optimizer Roi And Cost Model</Link></li>
 <li><Link href="/blog/api-gateway-management-2026-7219">Api Gateway Management 2026 7219</Link></li>
 <li><Link href="/blog/micro-saas-ai-expense-tracker-2026-6644">Micro Saas Ai Expense Tracker 2026 6644</Link></li>
 <li><Link href="/blog/aiops-anomaly-detection-2026">Aiops Anomaly Detection 2026</Link></li>

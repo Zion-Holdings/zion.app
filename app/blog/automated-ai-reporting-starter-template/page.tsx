@@ -47,7 +47,7 @@ Start with one workflow, one owner, and one success metric. Expansion should fol
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-accessibility-auditor-architecture-overview">Ai Accessibility Auditor Architecture Overview</Link></li>
 <li><Link href="/blog/ai-email-intelligence-policy-and-compliance">Ai Email Intelligence Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-observability-2026/architecture-overview">Ai Observability Architecture Overview</Link></li>
+<li><Link href="/blog/">Ai Observability Architecture Overview</Link></li>
 <li><Link href="/blog/ai-data-backup-2026-6831">Ai Data Backup 2026 6831</Link></li>
             </ul>
           </div>

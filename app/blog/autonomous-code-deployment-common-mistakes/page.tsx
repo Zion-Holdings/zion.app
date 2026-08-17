@@ -46,9 +46,9 @@ For autonomous code deployment: common mistakes: pick one workflow, assign owner
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/chaos-engineering-deployment-patterns">Chaos Engineering Deployment Patterns</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026/2026-6627">Cybersecurity Platform Msp 2026 6627</Link></li>
+<li><Link href="/blog/">Cybersecurity Platform Msp 2026 6627</Link></li>
 <li><Link href="/blog/ai-customer-success-churn-prevention-executive-guide">Ai Customer Success Churn Prevention Executive Guide</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/executive-guide">Cloud Migration Services Executive Guide</Link></li>
+<li><Link href="/blog/">Cloud Migration Services Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

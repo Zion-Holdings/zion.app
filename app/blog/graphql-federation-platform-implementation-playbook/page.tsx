@@ -48,7 +48,7 @@ For graphql federation platform: implementation playbook: pick one workflow, ass
               <li><Link href="/blog/ai-accessibility-auditor-architecture-overview">Ai Accessibility Auditor Architecture Overview</Link></li>
 <li><Link href="/blog/ai-autonomous-agents-2026">Ai Autonomous Agents 2026</Link></li>
 <li><Link href="/blog/ai-agentic-workflows-security-and-governance">Ai Agentic Workflows Security And Governance</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026-6708">It Consulting 2026 6708</Link></li>
+<li><Link href="/blog/">It Consulting 2026 6708</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

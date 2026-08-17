@@ -47,7 +47,7 @@ For cloud native app development: common mistakes: pick one workflow, assign own
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-performance-monitoring-2026-6873">Ai Performance Monitoring 2026 6873</Link></li>
 <li><Link href="/blog/api-management-gateway-2026-6600">Api Management Gateway 2026 6600</Link></li>
-<li><Link href="/blog/ai-observability-2026/and-mlops-best-practices">Ai Observability And Mlops Best Practices</Link></li>
+<li><Link href="/blog/">Ai Observability And Mlops Best Practices</Link></li>
 <li><Link href="/blog/ai-api-gateway-2026-7103">Ai Api Gateway 2026 7103</Link></li>
             </ul>
           </div>

@@ -47,7 +47,7 @@ Leading indicators for 5g solutions: automation roadmap: workflow completion rat
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/api-gateway-management-2026-6736">Api Gateway Management 2026 6736</Link></li>
 <li><Link href="/blog/edge-computing-deployment-2026-6681">Edge Computing Deployment 2026 6681</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-6672">Cloud Cost Ai Optimizer 2026 6672</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 6672</Link></li>
 <li><Link href="/blog/ai-agent-tool-builder-2026-6585">Ai Agent Tool Builder 2026 6585</Link></li>
             </ul>
           </div>

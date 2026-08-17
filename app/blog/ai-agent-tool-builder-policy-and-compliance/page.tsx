@@ -48,7 +48,7 @@ Leading indicators for ai agent tool builder: policy and compliance: workflow co
               <li><Link href="/blog/incident-response-retainer-2026-7309">Incident Response Retainer 2026 7309</Link></li>
 <li><Link href="/blog/ai-api-gateway-architecture-overview">Ai Api Gateway Architecture Overview</Link></li>
 <li><Link href="/blog/smart-contract-audit-deployment-patterns">Smart Contract Audit Deployment Patterns</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/security-and-governance">Cloud Cost Ai Optimizer Security And Governance</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

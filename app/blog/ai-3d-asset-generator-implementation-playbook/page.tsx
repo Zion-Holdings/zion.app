@@ -46,9 +46,9 @@ For ai 3d asset generator: implementation playbook: pick one workflow, assign ow
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/automation-orchestration-enterprise-2026-6630">Automation Orchestration Enterprise 2026 6630</Link></li>
-<li><Link href="/blog/ai-observability-2026/deployment-patterns">Ai Observability Deployment Patterns</Link></li>
+<li><Link href="/blog/">Ai Observability Deployment Patterns</Link></li>
 <li><Link href="/blog/enterprise-ai-intelligence-hub-implementation-playbook">Enterprise Ai Intelligence Hub Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-observability-2026/2026-7117">Ai Observability 2026 7117</Link></li>
+<li><Link href="/blog/">Ai Observability 2026 7117</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

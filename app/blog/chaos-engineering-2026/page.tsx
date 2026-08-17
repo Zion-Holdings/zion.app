@@ -48,7 +48,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
               <li><Link href="/blog/api-performance-testing-2026-7036">Api Performance Testing 2026 7036</Link></li>
 <li><Link href="/blog/api-management-gateway-2026-6531">Api Management Gateway 2026 6531</Link></li>
 <li><Link href="/blog/cloud-native-app-development-2026-7226">Cloud Native App Development 2026 7226</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-7055">Cloud Migration Services 2026 7055</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 7055</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

@@ -46,9 +46,9 @@ If this guide matches your ai agent tool builder: architecture overview initiati
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/event-driven-architecture-2026-7168">Event Driven Architecture 2026 7168</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-6603">Cloud Cost Ai Optimizer 2026 6603</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-7180">Managed It Services Small Business 2026 7180</Link></li>
-<li><Link href="/blog/it-consulting-2026/starter-template">It Consulting Starter Template</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 6603</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 7180</Link></li>
+<li><Link href="/blog/">It Consulting Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

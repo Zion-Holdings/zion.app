@@ -46,7 +46,7 @@ For data analytics platform: roi and cost model: pick one workflow, assign owner
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/brand-voice-guardian-2026-7009">Brand Voice Guardian 2026 7009</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/common-mistakes">Cloud Cost Ai Optimizer Common Mistakes</Link></li>
+<li><Link href="/blog/">Cloud Cost Ai Optimizer Common Mistakes</Link></li>
 <li><Link href="/blog/automated-ai-reporting-2026-6521">Automated Ai Reporting 2026 6521</Link></li>
 <li><Link href="/blog/ai-agent-tool-builder-2026-6930">Ai Agent Tool Builder 2026 6930</Link></li>
             </ul>

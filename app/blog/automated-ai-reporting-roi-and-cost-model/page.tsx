@@ -47,7 +47,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/network-infrastructure-2026-7261">Network Infrastructure 2026 7261</Link></li>
 <li><Link href="/blog/cloud-cost-optimization-checklist-for-it-leaders">Cloud Cost Optimization Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026/2026-7055">Cloud Migration Services 2026 7055</Link></li>
+<li><Link href="/blog/">Cloud Migration Services 2026 7055</Link></li>
 <li><Link href="/blog/ai-development-acceleration-vendor-evaluation">Ai Development Acceleration Vendor Evaluation</Link></li>
             </ul>
           </div>

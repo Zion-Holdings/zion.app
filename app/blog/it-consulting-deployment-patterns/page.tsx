@@ -45,7 +45,7 @@ If this guide matches your it consulting: deployment patterns initiative, the ne
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-2026/starter-template">Cloud Cost Ai Optimizer Starter Template</Link></li>
+              <li><Link href="/blog/">Cloud Cost Ai Optimizer Starter Template</Link></li>
 <li><Link href="/blog/ai-bom-procurement-2026-6870">Ai Bom Procurement 2026 6870</Link></li>
 <li><Link href="/blog/ai-data-backup-operations-handbook">Ai Data Backup Operations Handbook</Link></li>
 <li><Link href="/blog/enterprise-ai-intelligence-hub-automation-roadmap">Enterprise Ai Intelligence Hub Automation Roadmap</Link></li>

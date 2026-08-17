@@ -45,7 +45,7 @@ Leading indicators for 5g solutions: operations handbook: workflow completion ra
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-2026/2026-7260">It Consulting 2026 7260</Link></li>
+              <li><Link href="/blog/">It Consulting 2026 7260</Link></li>
 <li><Link href="/blog/ai-agentic-workflows-executive-guide">Ai Agentic Workflows Executive Guide</Link></li>
 <li><Link href="/blog/aiops-anomaly-detection-2026-6864">Aiops Anomaly Detection 2026 6864</Link></li>
 <li><Link href="/blog/chaos-engineering-2026-6533">Chaos Engineering 2026 6533</Link></li>

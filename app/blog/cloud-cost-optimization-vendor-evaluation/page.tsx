@@ -45,7 +45,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026-7086">Cloud Cost Ai Optimizer 2026 7086</Link></li>
+              <li><Link href="/blog/">Cloud Cost Ai Optimizer 2026 7086</Link></li>
 <li><Link href="/blog/ai-data-backup-2026-6900">Ai Data Backup 2026 6900</Link></li>
 <li><Link href="/blog/api-integration-2026-7220">Api Integration 2026 7220</Link></li>
 <li><Link href="/blog/api-integration-case-study">Api Integration Case Study</Link></li>

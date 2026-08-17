@@ -45,7 +45,7 @@ Leading indicators for cloud cost ai optimizer: operations handbook: workflow co
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/managed-it-services-small-business-2026/2026-6904">Managed It Services Small Business 2026 6904</Link></li>
+              <li><Link href="/blog/">Managed It Services Small Business 2026 6904</Link></li>
 <li><Link href="/blog/ai-autonomous-agents-policy-and-compliance">Ai Autonomous Agents Policy And Compliance</Link></li>
 <li><Link href="/blog/ai-agent-safety-evaluation-2026">Ai Agent Safety Evaluation 2026</Link></li>
 <li><Link href="/blog/automation-orchestration-enterprise-2026-6561">Automation Orchestration Enterprise 2026 6561</Link></li>

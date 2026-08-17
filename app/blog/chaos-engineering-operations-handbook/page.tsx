@@ -48,7 +48,7 @@ For chaos engineering: operations handbook: pick one workflow, assign ownership,
               <li><Link href="/blog/automation-orchestration-enterprise-2026-6561">Automation Orchestration Enterprise 2026 6561</Link></li>
 <li><Link href="/blog/container-security-lifecycle-2026-7089">Container Security Lifecycle 2026 7089</Link></li>
 <li><Link href="/blog/brand-voice-guardian-2026-7354">Brand Voice Guardian 2026 7354</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026-6973">Managed It Services Small Business 2026 6973</Link></li>
+<li><Link href="/blog/">Managed It Services Small Business 2026 6973</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
