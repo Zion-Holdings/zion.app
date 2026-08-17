@@ -30,6 +30,7 @@ export default function Navigation() {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [resourcesOpen, setResourcesOpen] = useState(false);
   const [aiLabOpen, setAiLabOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const mobilePanelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -39,6 +40,15 @@ export default function Navigation() {
     setResourcesOpen(false);
     setAiLabOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -85,7 +95,7 @@ export default function Navigation() {
   }
 
   return (
-    <header id="site-navigation" className="sticky top-0 z-50 w-full border-b border-slate-800/60 bg-slate-950/80 backdrop-blur-xl">
+    <header id="site-navigation" className={`sticky top-0 z-50 w-full border-b transition-all ${scrolled ? 'border-slate-800 bg-slate-950/95 backdrop-blur-2xl shadow-lg shadow-black/20' : 'border-slate-800/60 bg-slate-950/80 backdrop-blur-xl'}`}>
       <nav className="container-page flex h-16 items-center justify-between gap-4" aria-label="Main navigation">
         <Link href="/" className="flex items-center gap-2 shrink-0" aria-label="Zion Tech Group home">
           <span className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
