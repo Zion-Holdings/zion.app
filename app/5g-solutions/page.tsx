@@ -1,4 +1,5 @@
 // app/5g-solutions/page.tsx
+import PageWrapper from '@/components/PageWrapper';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <PageWrapper>
       <div className="container-page">
         <nav className="mb-8 text-sm text-slate-400">
           <Link href="/" className="hover:text-purple-400 transition">Home</Link>
@@ -86,6 +87,6 @@ export default function Page() {
           </div>
         </section>
       </div>
-    </main>
+    </PageWrapper>
   );
 }

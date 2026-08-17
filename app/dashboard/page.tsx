@@ -1,6 +1,7 @@
 // app/dashboard/page.tsx — AI Agent Monitoring Dashboard
 'use client';
 
+import PageWrapper from '@/components/PageWrapper';
 import Link from 'next/link';
 
 export const metadata = {
@@ -10,7 +11,7 @@ export const metadata = {
 
 export default function DashboardPage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <PageWrapper>
       <div className="container-page">
         {/* Breadcrumb */}
         <nav className="mb-8 text-sm text-slate-400">
@@ -174,6 +175,6 @@ export default function DashboardPage() {
           </div>
         </div>
       </div>
-    </main>
+    </PageWrapper>
   );
 }

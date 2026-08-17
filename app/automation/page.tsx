@@ -1,7 +1,6 @@
-import { Metadata } from 'next';
+import PageWrapper from '@/components/PageWrapper';
 import Link from 'next/link';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Automation | Zion Tech Group',
@@ -18,9 +17,7 @@ export default function AutomationPage() {
   ];
 
   return (
-    <>
-      <Navigation />
-      <main className="min-h-screen bg-slate-950 text-white py-20 px-4">
+    <PageWrapper>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <div className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-purple-400">
@@ -66,8 +63,6 @@ export default function AutomationPage() {
             </div>
           </div>
         </div>
-      </main>
-      <Footer />
-    </>
+      </PageWrapper>
   );
 }
