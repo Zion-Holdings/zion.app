@@ -283,25 +283,6 @@ export default function Navigation() {
             })}
           </div>
           <div className="border-t border-slate-800 pt-2 mt-2">
-            <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold mb-1 px-3">AI Lab</div>
-            {AI_LAB_LINKS.map((link, i) => {
-              const active = isActive(link.href);
-              return (
-                <Link
-                  key={i}
-                  href={link.href}
-                  aria-current={active ? 'page' : undefined}
-                  className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
-                    active ? 'text-purple-300 bg-purple-500/10' : 'text-slate-300 hover:text-white hover:bg-slate-800'
-                  }`}
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
-          </div>
-          <div className="border-t border-slate-800 pt-2 mt-2">
             <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold mb-1 px-3">Resources</div>
             {RESOURCE_LINKS.map((link, i) => {
               const active = isActive(link.href);
