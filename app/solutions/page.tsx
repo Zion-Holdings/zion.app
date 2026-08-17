@@ -1,6 +1,18 @@
 import Link from 'next/link';
 import StandardPage from '@/components/StandardPage';
 
+export const metadata = {
+  title: 'Industry Solutions | Zion Tech Group',
+  description: 'Tailored AI, IT, and Micro-SaaS solutions purpose-built for your industry\'s unique challenges and compliance requirements.',
+  openGraph: {
+    title: 'Industry Solutions | Zion Tech Group',
+    description: 'Purpose-built AI and IT solutions by industry.',
+    url: 'https://ziontechgroup.com/solutions/',
+    type: 'website',
+  },
+  alternates: { canonical: '/solutions/' },
+};
+
 const industries = [
   { name: 'Healthcare', desc: 'HIPAA-compliant AI diagnostics, patient engagement, and clinical automation.', path: '/services?category=ai' },
   { name: 'Financial Services', desc: 'RegTech, fraud detection, trading bots, and KYC automation.', path: '/services?category=ai' },

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import StandardPage from '@/components/StandardPage';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'FAQ | Zion Tech Group',
   description:
     'Common questions about AI and IT services, engagement models, pricing, onboarding, support, security, and deployment timelines.',
