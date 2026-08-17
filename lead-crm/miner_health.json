@@ -1,29 +1,56 @@
 {
-  "ts": "2026-08-17T18:19:35.815376+00:00",
-  "queries_run": 12,
-  "contacts_found": 0,
-  "new_leads_added": 0,
-  "elapsed_s": 113.644,
-  "queries_per_second": 0.1056,
-  "avg_query_s": 9.4701,
-  "max_query_s": 10.4115,
-  "status": "ok",
+  "ts": "2026-08-17T18:45:53.275466+00:00",
+  "queries_run": 13,
+  "contacts_found": 24,
+  "new_leads_added": 13,
+  "elapsed_s": 116.455,
+  "queries_per_second": 0.1116,
+  "avg_query_s": 8.9579,
+  "max_query_s": 9.7285,
+  "status": "send_completed",
   "high_signal_leads": 0,
   "lead_quality_ratio": null,
   "rolling": {
     "last_5_queries": [
-      10.127206299977843,
-      4.2586684199632145,
-      9.770698224019725,
-      10.41154257004382,
-      8.866333917016163
+      3.448143073997926,
+      9.387769262015354,
+      9.552282685006503,
+      8.500855571008287,
+      9.627201993018389
     ],
     "last_5_qps": [
-      0.0987,
-      0.2348,
-      0.1023,
-      0.096,
-      0.1128
+      0.29,
+      0.1065,
+      0.1047,
+      0.1176,
+      0.1039
     ]
+  },
+  "last_analysis_status": "analyzed_no_send",
+  "last_analysis_summary": {
+    "contacts": 24,
+    "contacts_with_personalized_body": 0,
+    "contacts_missing_fields": 0,
+    "ready_count": 24,
+    "excluded_count": 0,
+    "subject_counts": {},
+    "status_counts": {
+      "ready": 24
+    },
+    "improvement_notes": [
+      "Bodies gerados heurísticos para contatos sem thread_body personalizado."
+    ]
+  },
+  "contacts_with_personalized_body": 0,
+  "contacts_missing_fields": 0,
+  "ready_count": 24,
+  "excluded_count": 0,
+  "last_send_status": "send_completed_all_duplicates",
+  "last_send_summary": {
+    "processed": 24,
+    "sent_new": 0,
+    "duplicates": 24,
+    "excluded": 0,
+    "errors": 0
   }
 }
