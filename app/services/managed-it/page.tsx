@@ -34,7 +34,7 @@ const PRICING = [
 
 export default function ManagedITPage() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
+    <PageWrapper>
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Managed IT Services</h1>
         <p className="text-lg text-gray-300 mb-8">24/7 monitoring, helpdesk, and endpoint management. Proactive IT support with SLA guarantees and cybersecurity integration.</p>

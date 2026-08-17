@@ -32,7 +32,7 @@ const PRICING = [
 
 export default function CloudPage() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
+    <PageWrapper>
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cloud Infrastructure &amp; Migration</h1>
         <p className="text-lg text-gray-300 mb-8">AWS/GCP/Azure migration, FinOps, and managed cloud services. Optimize costs, improve reliability, and scale seamlessly.</p>

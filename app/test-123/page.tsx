@@ -1,5 +1,6 @@
-import type { Metadata } from 'next';
+import PageWrapper from '@/components/PageWrapper';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Test Page | Zion Tech Group',
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function Test123Page() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white py-20">
+    <PageWrapper>
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold text-white mb-4">Test Page</h1>
         <p className="text-slate-300 mb-6">
@@ -24,6 +25,6 @@ export default function Test123Page() {
           ← Back to Home
         </Link>
       </div>
-    </main>
-  );
-}
+      </PageWrapper>
+      );
+      }

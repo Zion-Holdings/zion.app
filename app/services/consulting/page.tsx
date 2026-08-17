@@ -32,7 +32,7 @@ const PRICING = [
 
 export default function ConsultingPage() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
+    <PageWrapper>
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">IT Consulting &amp; Digital Transformation</h1>
         <p className="text-lg text-gray-300 mb-8">Architecture, roadmap, and digital transformation consulting. Strategic technology advisory for enterprise growth.</p>

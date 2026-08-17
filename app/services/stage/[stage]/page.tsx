@@ -26,7 +26,7 @@ export default async function StagePage({ params }: { params: Promise<{ stage: s
   const otherStages = (['published', 'beta', 'planned'] as const).filter(s => s !== stage);
 
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <PageWrapper>
       <div className="container-page">
         {/* Header */}
         <div className="text-center mb-12">
@@ -90,7 +90,6 @@ export default async function StagePage({ params }: { params: Promise<{ stage: s
         <div className="text-center mt-12">
           <Link href="/services/" className="btn-secondary">← Back to Full Catalog</Link>
         </div>
-      </div>
-    </main>
+      </PageWrapper>
   );
 }

@@ -1,4 +1,5 @@
 export default function Page() {
+import PageWrapper from '@/components/PageWrapper';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 };
 
   return (<>
-    <main className="min-h-screen">
+    <PageWrapper>
       <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 pt-20 pb-16">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-pink-500/20 via-transparent to-transparent" />
         <div className="container-page relative">
@@ -30,6 +31,6 @@ export const metadata: Metadata = {
           <a href="/contact" className="inline-flex items-center px-8 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold text-lg">Free Consultation</a>
         </div>
       </section>
-    </main>
+    </PageWrapper>
   </>);
 }

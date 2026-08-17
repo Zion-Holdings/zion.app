@@ -32,7 +32,7 @@ const PRICING = [
 
 export default function NetworkingPage() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
+    <PageWrapper>
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Networking &amp; Infrastructure</h1>
         <p className="text-lg text-gray-300 mb-8">SD-WAN, VPN, structured cabling, and Wi-Fi optimization. Enterprise networking solutions designed for performance and reliability.</p>

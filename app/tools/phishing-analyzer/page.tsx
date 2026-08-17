@@ -1,3 +1,4 @@
+import PageWrapper from '@/components/PageWrapper';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PhishingAnalyzerPage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <PageWrapper>
       <div className="container-page">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Phishing Analyzer</h1>
         <p className="text-slate-400 text-lg max-w-2xl mb-10">
@@ -24,6 +25,6 @@ export default function PhishingAnalyzerPage() {
           </ul>
         </div>
       </div>
-    </main>
+    </PageWrapper>
   );
 }

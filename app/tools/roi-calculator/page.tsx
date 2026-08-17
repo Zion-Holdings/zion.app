@@ -1,6 +1,7 @@
 // app/tools/roi-calculator/page.tsx — ROI Calculator (server wrapper + ping tracking)
 // Metadata exported by layout.tsx
 
+import PageWrapper from '@/components/PageWrapper';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import RouterPing from './pingClient';
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function ROICalculatorPage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <PageWrapper>
       <RouterPing />
 
       {/* ── JSON-LD Structured Data ── */}
@@ -228,6 +229,6 @@ export default function ROICalculatorPage() {
           </p>
         </div>
       </div>
-    </main>
+    </PageWrapper>
   );
 }
