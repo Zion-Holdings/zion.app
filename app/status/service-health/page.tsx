@@ -1,4 +1,5 @@
 // app/status/service-health/page.tsx — Live Service Health Monitor
+import PageWrapper from '@/components/PageWrapper';
 import { allServices } from '@/data/servicesData';
 import type { Metadata } from 'next';
 
@@ -64,7 +65,7 @@ export default function ServiceHealthPage() {
     });
 
   return (
-    <main className="min-h-screen bg-slate-950 py-20 px-4">
+    <PageWrapper>
       <div className="container-page max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-3">Service Health Monitor</h1>
@@ -131,6 +132,6 @@ export default function ServiceHealthPage() {
           Live results • {total.toLocaleString()} entries • Status page build: {new Date().toISOString().slice(0,10)}
         </p>
       </div>
-    </main>
+    </PageWrapper>
   );
 }

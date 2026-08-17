@@ -69,6 +69,6 @@ export default function FreeConsultationPage() {
           </p>
         </div>
       </div>
-      </PageWrapper>
-      );
-      }
+    </PageWrapper>
+  );
+}

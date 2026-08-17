@@ -1,3 +1,4 @@
+import PageWrapper from '@/components/PageWrapper';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -41,7 +42,7 @@ const stories = [
 
 export default function SuccessStoriesPage() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white py-20">
+    <PageWrapper>
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-purple-400">
@@ -83,7 +84,6 @@ export default function SuccessStoriesPage() {
             Start Your Success Story →
           </Link>
         </div>
-      </div>
-    </main>
+      </PageWrapper>
   );
 }

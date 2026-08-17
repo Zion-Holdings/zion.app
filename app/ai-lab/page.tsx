@@ -1,6 +1,7 @@
 // app/ai-lab/page.tsx — AI Lab: Interactive Playgrounds & Demos
 'use client';
 
+import PageWrapper from '@/components/PageWrapper';
 import Link from 'next/link';
 import { useState } from 'react';
 import type { Metadata } from 'next';
@@ -163,7 +164,7 @@ export default function AILabPage() {
   const [demoVisible, setDemoVisible] = useState(false);
 
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <PageWrapper>
       <div className="container-page">
         {/* ── Breadcrumb ── */}
         <nav className="mb-8 text-sm text-slate-400">
@@ -358,6 +359,6 @@ export default function AILabPage() {
           </p>
         </section>
       </div>
-    </main>
+    </PageWrapper>
   );
 }

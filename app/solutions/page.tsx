@@ -1,5 +1,6 @@
 'use client';
 
+import PageWrapper from '@/components/PageWrapper';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -19,7 +20,7 @@ const INDUSTRIES = [
 
 export default function SolutionsPage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <PageWrapper>
       <div className="container-page">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Industry Solutions</h1>
@@ -36,7 +37,6 @@ export default function SolutionsPage() {
             </Link>
           ))}
         </div>
-      </div>
-    </main>
+      </PageWrapper>
   );
 }

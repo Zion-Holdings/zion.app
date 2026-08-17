@@ -147,6 +147,7 @@ export default function HelpPage() {
           </section>
         </div>
       </div>
+    </div>
     </PageWrapper>
   );
 }

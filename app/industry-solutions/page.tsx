@@ -1,5 +1,6 @@
 // app/industry-solutions/page.tsx — Industry Solutions Landing (dynamic)
 'use client';
+import PageWrapper from '@/components/PageWrapper';
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { allServices, type Service } from '@/data/servicesData';
@@ -79,7 +80,7 @@ export default function IndustrySolutionsPage() {
   }, [services]);
 
   return (
-    <main className="min-h-screen bg-slate-950">
+    <PageWrapper>
       {/* ── Hero ── */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_30%,rgba(120,50,200,0.18),rgba(20,10,40,0.92))]" />
@@ -224,6 +225,6 @@ export default function IndustrySolutionsPage() {
           </div>
         </div>
       </section>
-    </main>
+    </PageWrapper>
   );
 }
