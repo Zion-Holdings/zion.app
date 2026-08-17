@@ -109,5 +109,11 @@
     "contacts_mined": 0,
     "classified": 0,
     "sent": 0
+  },
+  {
+    "ts": "2026-08-17T18:19:35.813082+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
   }
 ]
