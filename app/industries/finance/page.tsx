@@ -1,3 +1,4 @@
+import PageWrapper from '@/components/PageWrapper';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -40,7 +41,7 @@ const complianceBadges = [
 
 export default function FinanceIndustryPage() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white py-20 px-4">
+    <PageWrapper>
         <div className="max-w-4xl mx-auto">
           <div className="mb-12">
             <span className="text-sm font-semibold text-emerald-400 uppercase tracking-wider">
@@ -93,7 +94,6 @@ export default function FinanceIndustryPage() {
             </Link>
           </div>
         </div>
-      </main>
-    </main>
+      </PageWrapper>
   );
 }

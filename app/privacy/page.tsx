@@ -1,3 +1,4 @@
+import PageWrapper from '@/components/PageWrapper';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <PageWrapper>
       <div className="container-page">
         <h1 className="text-4xl font-bold text-white mb-4">Privacy Policy</h1>
         <p className="text-slate-300 mb-8">Last updated: 2025</p>
@@ -30,6 +31,6 @@ export default function PrivacyPage() {
           <p className="text-slate-400 text-sm">For privacy questions, contact kleber@ziontechgroup.com.</p>
         </section>
       </div>
-    </main>
+    </PageWrapper>
   );
 }

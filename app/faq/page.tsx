@@ -1,3 +1,4 @@
+import PageWrapper from '@/components/PageWrapper';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -36,7 +37,7 @@ const ITEMS = [
 
 export default function FAQPage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <PageWrapper>
       <div className="container-page">
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Frequently Asked Questions</h1>
@@ -58,6 +59,6 @@ export default function FAQPage() {
           </Link>
         </div>
       </div>
-    </main>
+    </PageWrapper>
   );
 }
