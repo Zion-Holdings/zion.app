@@ -1,6 +1,13 @@
 import Link from 'next/link';
 
-const posts = [
+interface BlogPost {
+  slug: string;
+  title: string;
+  intent?: string;
+  topics?: string[];
+}
+
+const posts: BlogPost[] = [
           {slug: '5-proven-ai-automation-strategies-for-enterprise-workflow-optimization', title: '5 Proven Ai Automation Strategies For Enterprise Workflow Optimization'},
           {slug: '5g-solutions-2026', title: '5G Solutions 2026'},
           {slug: '5g-solutions-2026-152', title: '5G Solutions 2026 152'},
@@ -4144,10 +4151,10 @@ export default function BlogIndex() {
                   {post.title}
                 </h3>
                 <p className="text-slate-400 text-sm mb-4">
-                  {post.intent}
+                  {post.intent ?? `Insights and implementation guidance for ${post.title.toLowerCase()}.`}
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {post.topics.map((topic) => (
+                  {(post.topics ?? []).map((topic) => (
                     <span
                       key={topic}
                       className="text-[11px] font-semibold uppercase tracking-wider bg-slate-800 text-slate-300 border border-slate-700 px-2 py-1 rounded-full"
@@ -4174,7 +4181,7 @@ export default function BlogIndex() {
                 className="glass-card group hover:border-purple-500/40 transition-all"
               >
                 <div className="flex flex-wrap gap-2 mb-3">
-                  {post.topics.slice(0, 2).map((topic) => (
+                  {(post.topics ?? []).slice(0, 2).map((topic) => (
                     <span
                       key={topic}
                       className="text-[10px] font-semibold uppercase tracking-wider bg-purple-500/10 text-purple-300 border border-purple-500/20 px-2 py-1 rounded-full"
@@ -4187,7 +4194,7 @@ export default function BlogIndex() {
                   {post.title}
                 </h3>
                 <p className="text-slate-400 text-sm mb-3 line-clamp-2">
-                  {post.intent}
+                  {post.intent ?? `Insights and implementation guidance for ${post.title.toLowerCase()}.`}
                 </p>
                 <span className="text-xs text-purple-400 font-medium">
                   Read article →

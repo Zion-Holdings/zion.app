@@ -30,7 +30,9 @@ export default function TestimonialsPage() {
                   <div className="text-slate-400 text-xs">{t.role} · {t.company}</div>
                 </div>
               </div>
-              <div className="text-amber-300 text-xs mb-3 font-medium">{'★'.repeat(t.rating)}{'☆'.repeat(5-t.rating)}</div>
+              <div className="text-amber-300 text-xs mb-3 font-medium">
+                {'★'.repeat(Math.max(0, Math.min(5, t.rating ?? 5)))}{'☆'.repeat(Math.max(0, 5 - Math.max(0, Math.min(5, t.rating ?? 5))))}
+              </div>
               <p className="text-slate-300 leading-relaxed text-sm">{t.review_text}</p>
               <div className="mt-5 pt-4 border-t border-slate-800">
                 <Link href="/case-studies" className="text-purple-300 text-xs font-semibold hover:text-white">View similar case studies →</Link>
