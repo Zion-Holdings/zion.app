@@ -1,3 +1,4 @@
+import PageWrapper from '@/components/PageWrapper';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function CaseStudyCloudCost() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <PageWrapper>
       <div className="container-page">
         <div className="mb-8 text-sm text-slate-400">
           <Link href="/" className="hover:text-purple-400 transition">Home</Link>
@@ -52,7 +53,6 @@ export default function CaseStudyCloudCost() {
         <div className="mt-10">
           <Link href="/case-studies/" className="btn-secondary">All Case Studies</Link>
         </div>
-      </div>
-    </main>
+      </PageWrapper>
   );
 }

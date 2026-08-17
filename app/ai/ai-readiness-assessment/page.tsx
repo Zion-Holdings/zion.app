@@ -1,3 +1,4 @@
+import PageWrapper from '@/components/PageWrapper';
 import Link from 'next/link';
 
 export const metadata = {
@@ -8,7 +9,7 @@ export const metadata = {
 
 export default function AIReadinessAssessmentPage() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white py-20">
+    <PageWrapper>
         <div className="container-page">
           <div className="mb-10">
             <Link href="/ai/" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">← AI Solutions</Link>
@@ -80,7 +81,6 @@ export default function AIReadinessAssessmentPage() {
             </Link>
           </div>
         </div>
-      </main>
-    </main>
+      </PageWrapper>
   );
 }
