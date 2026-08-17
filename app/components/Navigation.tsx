@@ -124,19 +124,6 @@ export default function Navigation() {
             <DropdownButton label="Services" open={servicesOpen} onClick={() => { setServicesOpen(!servicesOpen); setSolutionsOpen(false); setResourcesOpen(false); setAiLabOpen(false); }} active={isActive('/services')} />
             {servicesOpen && (
               <div className="absolute top-full left-0 mt-2 w-[640px] rounded-2xl bg-slate-900 border border-slate-700 shadow-2xl p-4 z-50" role="menu">
-                <div className="grid grid-cols-2 gap-3">
-                  {SERVICE_GRID.map((category) => (
-                    <Link
-                      key={category.key}
-                      href={`/services/?category=${category.key}`}
-                      className="group flex items-center gap-3 rounded-xl border border-slate-800 bg-slate-900/60 p-3 hover:border-purple-500/40 hover:bg-slate-900 transition-colors"
-                      onClick={() => setServicesOpen(false)}
-                    >
-                      <span className="text-xl">{category.emoji}</span>
-                      <span className="text-sm font-medium text-slate-200 group-hover:text-white">{category.label}</span>
-                    </Link>
-                  ))}
-                </div>
                 <div className="border-t border-slate-800 mt-3 pt-3 flex items-center justify-between">
                   <span className="text-xs text-slate-500">Explore all service categories</span>
                   <Link href="/services" className="text-sm font-semibold text-purple-300 hover:text-purple-200" onClick={() => setServicesOpen(false)}>
