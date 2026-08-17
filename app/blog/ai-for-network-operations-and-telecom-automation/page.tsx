@@ -103,8 +103,8 @@ return (
             </p>
 
             <div className="text-center mt-12">
-              <Link href="/configurator/" className="inline-block btn-primary text-lg px-8 py-3">
-                Get Your Custom AI Strategy →
+              <Link href="/services" className="inline-block btn-primary text-lg px-8 py-3">
+                Explore Services →
               </Link>
             </div>
           </div>

@@ -17,8 +17,8 @@ export default function NotFoundPage() {
         { label: 'Page Not Found' },
       ]}
       actions={[
-        { label: 'Back to Home', href: '/', variant: 'primary' },
-        { label: 'Contact Support', href: '/contact/', variant: 'secondary' },
+        { label: 'Back to Home', href: '/', style: 'primary' },
+        { label: 'Contact Support', href: '/contact/', style: 'secondary' },
       ]}
     >
       <div className="text-center max-w-2xl mx-auto">

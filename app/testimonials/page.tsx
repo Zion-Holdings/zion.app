@@ -47,7 +47,7 @@ export default function TestimonialsPage() {
             </div>
             <p className="text-slate-300 leading-relaxed text-sm">{t.review_text}</p>
             <div className="mt-5 pt-4 border-t border-slate-800">
-              <Link href="/case-studies" className="text-purple-300 text-xs font-semibold hover:text-white">View similar case studies →</Link>
+              <Link href="/services" className="text-purple-300 text-xs font-semibold hover:text-white">View similar services →</Link>
             </div>
           </div>
         ))}
@@ -60,18 +60,17 @@ export default function TestimonialsPage() {
             <p className="text-slate-300 text-sm">Tell us your goal and we’ll return a short list of best-fit services with estimated ROI and timeline.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
-            <Link href="/contact" className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/20">
+            <Link href="/services" className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/20">
               Talk to an Engineer
             </Link>
-            <Link href="/case-studies" className="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-slate-700 text-slate-200 font-semibold hover:border-purple-500/60 hover:text-white transition-all">
-              View Case Studies
+            <Link href="/services" className="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-slate-700 text-slate-200 font-semibold hover:border-purple-500/60 hover:text-white transition-all">
+              Explore Services
             </Link>
           </div>
         </div>
         <div className="flex flex-wrap justify-center gap-4 mt-4 text-sm text-slate-400">
-          <Link href="/success-stories/" className="hover:text-purple-300 transition-colors">More success stories →</Link>
-          <Link href="/pricing/" className="hover:text-purple-300 transition-colors">Pricing →</Link>
-          <Link href="/contact/" className="hover:text-purple-300 transition-colors">Request proposal →</Link>
+          <Link href="/services/" className="hover:text-purple-300 transition-colors">Our services →</Link>
+          <Link href="/contact/" className="hover:text-purple-300 transition-colors">Contact us →</Link>
         </div>
       </section>
     </StandardPage>
