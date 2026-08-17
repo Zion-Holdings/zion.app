@@ -84,8 +84,8 @@ export default function UseCasesPage() {
               </div>
               <div className="flex flex-wrap gap-2 mt-3">
                 <Link href="/services?category=ai" className="text-xs text-purple-300 hover:text-purple-200">AI services →</Link>
-                <Link href="/use-cases" className="text-xs text-slate-300 hover:text-white">Use cases →</Link>
-                <Link href="/contact" className="text-xs text-slate-300 hover:text-white">Talk to us →</Link>
+                <Link href="/use-cases/" className="text-xs text-slate-300 hover:text-white">Use cases →</Link>
+                <Link href="/contact/" className="text-xs text-slate-300 hover:text-white">Talk to us →</Link>
               </div>
             </div>
           ))}
