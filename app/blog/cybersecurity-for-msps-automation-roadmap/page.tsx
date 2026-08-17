@@ -14,7 +14,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cybersecurity-for-msps-automation-roadmap/' },
 };
 
-const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":" Cybersecurity For Msps Automation Roadmap","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/cybersecurity-for-msps-automation-roadmap/"};
+const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":"Cybersecurity For Msps Automation Roadmap","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/cybersecurity-for-msps-automation-roadmap/"};
 
 export default function Page() {
   return (

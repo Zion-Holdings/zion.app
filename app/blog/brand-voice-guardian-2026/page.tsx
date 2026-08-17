@@ -14,7 +14,7 @@ export const metadata = {
   alternates: { canonical: '/blog/brand-voice-guardian-2026/' },
 };
 
-const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":" Brand Voice Guardian 2026","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/brand-voice-guardian-2026/"};
+const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":"Brand Voice Guardian 2026","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/brand-voice-guardian-2026/"};
 
 export default function Page() {
   return (

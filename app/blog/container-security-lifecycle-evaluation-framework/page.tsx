@@ -14,7 +14,7 @@ export const metadata = {
   alternates: { canonical: '/blog/container-security-lifecycle-evaluation-framework/' },
 };
 
-const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":" Container Security Lifecycle Evaluation Framework","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/container-security-lifecycle-evaluation-framework/"};
+const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":"Container Security Lifecycle Evaluation Framework","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/container-security-lifecycle-evaluation-framework/"};
 
 export default function Page() {
   return (

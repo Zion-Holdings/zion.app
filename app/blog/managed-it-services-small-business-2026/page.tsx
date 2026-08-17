@@ -14,7 +14,7 @@ export const metadata = {
   alternates: { canonical: '/blog/managed-it-services-small-business-2026/' },
 };
 
-const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":" Managed It Services Small Business 2026","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/managed-it-services-small-business-2026/"};
+const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":"Managed It Services Small Business 2026","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/managed-it-services-small-business-2026/"};
 
 export default function Page() {
   return (

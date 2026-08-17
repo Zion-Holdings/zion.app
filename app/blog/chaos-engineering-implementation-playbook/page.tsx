@@ -14,7 +14,7 @@ export const metadata = {
   alternates: { canonical: '/blog/chaos-engineering-implementation-playbook/' },
 };
 
-const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":" Chaos Engineering Implementation Playbook","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/chaos-engineering-implementation-playbook/"};
+const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":"Chaos Engineering Implementation Playbook","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/chaos-engineering-implementation-playbook/"};
 
 export default function Page() {
   return (

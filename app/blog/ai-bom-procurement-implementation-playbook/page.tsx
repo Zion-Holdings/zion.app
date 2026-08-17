@@ -14,7 +14,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-bom-procurement-implementation-playbook/' },
 };
 
-const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":" Ai Bom Procurement Implementation Playbook","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/ai-bom-procurement-implementation-playbook/"};
+const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":"Ai Bom Procurement Implementation Playbook","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/ai-bom-procurement-implementation-playbook/"};
 
 export default function Page() {
   return (

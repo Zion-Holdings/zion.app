@@ -14,7 +14,7 @@ export const metadata = {
   alternates: { canonical: '/blog/microsaas-hr-recruitment-deployment-patterns/' },
 };
 
-const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":" Microsaas Hr Recruitment Deployment Patterns","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/microsaas-hr-recruitment-deployment-patterns/"};
+const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":"Microsaas Hr Recruitment Deployment Patterns","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/microsaas-hr-recruitment-deployment-patterns/"};
 
 export default function Page() {
   return (

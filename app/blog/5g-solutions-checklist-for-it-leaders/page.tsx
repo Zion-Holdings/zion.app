@@ -14,7 +14,7 @@ export const metadata = {
   alternates: { canonical: '/blog/5g-solutions-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":" 5G Solutions Checklist For It Leaders","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/5g-solutions-checklist-for-it-leaders/"};
+const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":"5G Solutions Checklist For It Leaders","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/5g-solutions-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (

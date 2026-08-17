@@ -14,7 +14,7 @@ export const metadata = {
   alternates: { canonical: '/blog/data-analytics-platform-implementation-playbook/' },
 };
 
-const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":" Data Analytics Platform Implementation Playbook","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/data-analytics-platform-implementation-playbook/"};
+const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":"Data Analytics Platform Implementation Playbook","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/data-analytics-platform-implementation-playbook/"};
 
 export default function Page() {
   return (

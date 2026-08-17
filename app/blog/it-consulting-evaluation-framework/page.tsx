@@ -14,7 +14,7 @@ export const metadata = {
   alternates: { canonical: '/blog/it-consulting-evaluation-framework/' },
 };
 
-const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":" It Consulting Evaluation Framework","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/it-consulting-evaluation-framework/"};
+const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":"It Consulting Evaluation Framework","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/it-consulting-evaluation-framework/"};
 
 export default function Page() {
   return (

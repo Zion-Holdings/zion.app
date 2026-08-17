@@ -14,7 +14,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-customer-support-evaluation-framework/' },
 };
 
-const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":" Ai Customer Support Evaluation Framework","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/ai-customer-support-evaluation-framework/"};
+const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":"Ai Customer Support Evaluation Framework","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/ai-customer-support-evaluation-framework/"};
 
 export default function Page() {
   return (
