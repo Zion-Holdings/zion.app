@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PageWrapper from '@/components/PageWrapper';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -18,24 +19,22 @@ const SERVICES = [
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
-      <div className="container-page">
-        <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Services</h1>
-          <p className="text-slate-400 text-lg max-w-2xl">Enterprise IT, AI, and cybersecurity services built for performance and compliance. We offer end-to-end solutions from infrastructure to artificial intelligence.</p>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {SERVICES.map((s) => (
-            <Link key={s.slug} href={`/services/${s.slug}/`} className="glass-card group hover:border-purple-500/40 transition-colors block">
-              <span className="text-3xl mb-3 block">{s.icon}</span>
-              <h3 className="text-white font-semibold mb-2 group-hover:text-purple-300 transition-colors">{s.title}</h3>
-              <p className="text-slate-400 text-sm mb-2">{s.desc}</p>
-              <p className="text-slate-500 text-xs">{s.more}</p>
-              <span className="text-purple-400 text-xs mt-3 inline-block">Learn more →</span>
-            </Link>
-          ))}
-        </div>
+    <PageWrapper>
+      <div className="mb-12">
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Services</h1>
+        <p className="text-slate-400 text-lg max-w-2xl">Enterprise IT, AI, and cybersecurity services built for performance and compliance. We offer end-to-end solutions from infrastructure to artificial intelligence.</p>
       </div>
-    </main>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {SERVICES.map((s) => (
+          <Link key={s.slug} href={`/services/${s.slug}/`} className="glass-card group hover:border-purple-500/40 transition-colors block">
+            <span className="text-3xl mb-3 block">{s.icon}</span>
+            <h3 className="text-white font-semibold mb-2 group-hover:text-purple-300 transition-colors">{s.title}</h3>
+            <p className="text-slate-400 text-sm mb-2">{s.desc}</p>
+            <p className="text-slate-500 text-xs">{s.more}</p>
+            <span className="text-purple-400 text-xs mt-3 inline-block">Learn more →</span>
+          </Link>
+        ))}
+      </div>
+    </PageWrapper>
   );
 }

@@ -211,7 +211,7 @@ let list = services;
   }, [allServices, releaseNotes]);
 
   return (
-    <main className="min-h-screen bg-slate-950">
+    <>
       {/* ── JSON-LD: Organization + WebSite ── */}
       <script
         type="application/ld+json"
@@ -1063,7 +1063,7 @@ let list = services;
         </div>
       </section>
     <FloatingActionDock />
-    </main>
+    </>
   );
 }
 
