@@ -208,23 +208,30 @@ export default function Navigation() {
             </button>
             {resourcesOpen && (
               <div className="absolute top-full left-0 mt-2 w-80 rounded-2xl bg-slate-900 border border-slate-700 shadow-2xl p-4 z-50" role="menu">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-2">Resources</div>
-                    <div className="space-y-1">
-                      {RESOURCE_GROUPS.flatMap((group) => group.items).map((link, i) => (
-                        <Link
-                          key={i}
-                          href={link.href}
-                          className="block rounded-lg px-3 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800"
-                          onClick={() => setResourcesOpen(false)}
-                          role="menuitem"
-                        >
-                          {link.name}
-                        </Link>
-                      ))}
+                <div className="grid grid-cols-2 gap-6">
+                  {RESOURCE_GROUPS.map((group) => (
+                    <div key={group.title}>
+                      <div className="text-[10px] uppercase font-bold text-slate-500 tracking-wider mb-2">{group.title}</div>
+                      <div className="space-y-1">
+                        {group.items.map((link, i) => (
+                          <Link
+                            key={i}
+                            href={link.href}
+                            className="block rounded-lg px-3 py-2 text-sm text-slate-300 hover:text-white hover:bg-slate-800"
+                            onClick={() => setResourcesOpen(false)}
+                            role="menuitem"
+                          >
+                            {link.name}
+                            {link.badge && (
+                              <span className="ml-1.5 inline-flex items-center rounded-full bg-purple-500/20 px-1.5 py-0.5 text-xs font-semibold text-purple-300">
+                                {link.badge}
+                              </span>
+                            )}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             )}

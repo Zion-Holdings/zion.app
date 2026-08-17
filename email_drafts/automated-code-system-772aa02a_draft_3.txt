@@ -3,11 +3,11 @@ Subject: Quick question about Automated Code System
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-I built Automated Code System specifically for education challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+I built Automated Code System specifically for sports challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
 
 ---
 Service: Automated Code System
-Industry: education
+Industry: sports
 URL: https://ziontechgroup.com/services/automated-code-system-772aa02a
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

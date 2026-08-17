@@ -1,13 +1,13 @@
-Subject: Case study: Self-Optimizing Fraud System in Sports
+Subject: Case study: Self-Optimizing Fraud System in Education
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-A sports client achieved $22M savings in 18 months using Self-Optimizing Fraud System. The system pays for itself in <90 days. Let\'s discuss your use case.
+A education client achieved $22M savings in 18 months using Self-Optimizing Fraud System. The system pays for itself in <90 days. Let\'s discuss your use case.
 
 ---
 Service: Self-Optimizing Fraud System
-Industry: sports
+Industry: education
 URL: https://ziontechgroup.com/services/self-optimizing-fraud-system-c5ca955f
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

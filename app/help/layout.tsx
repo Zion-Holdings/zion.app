@@ -1,5 +1,5 @@
-// app/help/layout.tsx — Server component (metadata for client page)
 import type { Metadata } from 'next';
+import PageShell from '@/components/PageShell';
 
 export const metadata: Metadata = {
   title: 'Help Center | Zion Tech Group',
@@ -7,10 +7,6 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://ziontechgroup.com/help/' },
 };
 
-export default function HelpLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <>{children}</>;
+export default function HelpLayout({ children }: { children: React.ReactNode }) {
+  return <PageShell>{children}</PageShell>;
 }

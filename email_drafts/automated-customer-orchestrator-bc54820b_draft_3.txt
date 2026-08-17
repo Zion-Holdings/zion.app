@@ -3,11 +3,11 @@ Subject: Quick question about Automated Customer Orchestrator
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-I built Automated Customer Orchestrator specifically for healthcare challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+I built Automated Customer Orchestrator specifically for telecom challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
 
 ---
 Service: Automated Customer Orchestrator
-Industry: healthcare
+Industry: telecom
 URL: https://ziontechgroup.com/services/automated-customer-orchestrator-bc54820b
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

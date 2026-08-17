@@ -1,13 +1,13 @@
-Subject: AI solution for finance - Cognitive Language Predictor
+Subject: AI solution for automotive - Cognitive Language Predictor
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-Most finance companies waste 30% of their time on manual processes. Cognitive Language Predictor automates this with zero human intervention. Can I show you how?
+Most automotive companies waste 30% of their time on manual processes. Cognitive Language Predictor automates this with zero human intervention. Can I show you how?
 
 ---
 Service: Cognitive Language Predictor
-Industry: finance
+Industry: automotive
 URL: https://ziontechgroup.com/services/cognitive-language-predictor-275ecf1f
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

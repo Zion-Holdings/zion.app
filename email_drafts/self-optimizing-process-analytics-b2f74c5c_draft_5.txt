@@ -1,13 +1,13 @@
-Subject: Case study: Self-Optimizing Process Analytics in Energy
+Subject: Case study: Self-Optimizing Process Analytics in Education
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-A energy client achieved $22M savings in 18 months using Self-Optimizing Process Analytics. The system pays for itself in <90 days. Let\'s discuss your use case.
+A education client achieved $22M savings in 18 months using Self-Optimizing Process Analytics. The system pays for itself in <90 days. Let\'s discuss your use case.
 
 ---
 Service: Self-Optimizing Process Analytics
-Industry: energy
+Industry: education
 URL: https://ziontechgroup.com/services/self-optimizing-process-analytics-b2f74c5c
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

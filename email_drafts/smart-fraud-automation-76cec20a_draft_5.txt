@@ -1,13 +1,13 @@
-Subject: Case study: Smart Fraud Automation in Media
+Subject: Case study: Smart Fraud Automation in Telecom
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-A media client achieved $22M savings in 18 months using Smart Fraud Automation. The system pays for itself in <90 days. Let\'s discuss your use case.
+A telecom client achieved $22M savings in 18 months using Smart Fraud Automation. The system pays for itself in <90 days. Let\'s discuss your use case.
 
 ---
 Service: Smart Fraud Automation
-Industry: media
+Industry: telecom
 URL: https://ziontechgroup.com/services/smart-fraud-automation-76cec20a
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

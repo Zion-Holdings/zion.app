@@ -1,13 +1,13 @@
-Subject: Case study: Self-Optimizing Quality Director in Retail
+Subject: Case study: Self-Optimizing Quality Director in Finance
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-A retail client achieved $22M savings in 18 months using Self-Optimizing Quality Director. The system pays for itself in <90 days. Let\'s discuss your use case.
+A finance client achieved $22M savings in 18 months using Self-Optimizing Quality Director. The system pays for itself in <90 days. Let\'s discuss your use case.
 
 ---
 Service: Self-Optimizing Quality Director
-Industry: retail
+Industry: finance
 URL: https://ziontechgroup.com/services/self-optimizing-quality-director-d80afa5a
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

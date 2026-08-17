@@ -71,5 +71,5 @@ export const TOOL_LINKS: NavigationLink[] = [
   { name: 'SSL Checker', href: '/tools/ssl-checker' },
   { name: 'Port Scanner', href: '/tools/port-scanner' },
   { name: 'JSON Formatter', href: '/tools/json-formatter' },
-  { name: 'CSS Gradient Generator', href: '/tools/ai-service-router' },
+  { name: 'CSS Gradient Generator', href: '/tools/css-gradient-generator' },
 ];

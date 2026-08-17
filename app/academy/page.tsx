@@ -27,7 +27,7 @@ export default function Academy() {
           <div className="card">
             <h3>Operations</h3>
             <p>Reduce cost and improve reliability with observability.</p>
-            <Link href="/services/ai-document-processing/">Document Processing</Link>
+            <Link href="/services/ai-document-understanding/">Document Processing</Link>
           </div>
         </div>
       </div>

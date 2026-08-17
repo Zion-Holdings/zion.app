@@ -1,13 +1,13 @@
-Subject: Case study: Self-Optimizing Energy Automation in Transportation
+Subject: Case study: Self-Optimizing Energy Automation in Energy
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-A transportation client achieved $22M savings in 18 months using Self-Optimizing Energy Automation. The system pays for itself in <90 days. Let\'s discuss your use case.
+A energy client achieved $22M savings in 18 months using Self-Optimizing Energy Automation. The system pays for itself in <90 days. Let\'s discuss your use case.
 
 ---
 Service: Self-Optimizing Energy Automation
-Industry: transportation
+Industry: energy
 URL: https://ziontechgroup.com/services/self-optimizing-energy-automation-a390abaf
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

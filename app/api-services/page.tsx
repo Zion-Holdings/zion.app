@@ -1,23 +1,31 @@
-import { Metadata } from "next";
+import Link from 'next/link';
+import type { Metadata } from 'next';
+import PageWrapper from '@/components/PageWrapper';
+import Section from '@/components/Section';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "API Management Services | Zion Tech Group",
   description: "API platforms — gateway management, API design, developer portals, and API monetization",
-
+  alternates: { canonical: '/api-services/' },
 };
 
+// Redirect to the canonical category page
 export default function CategoryPage() {
   return (
-    <main style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#020617" }}>
-      <div style={{ textAlign: "center", padding: "2rem" }}>
-        <p style={{ color: "#94a3b8", fontSize: "1.1rem" }}>Redirecting to API Management Services...</p>
-        <meta httpEquiv="refresh" content="0;url=/services/?category=api" />
-        <p style={{ marginTop: "1rem" }}>
-          <a href="/services/?category=api" style={{ color: "#a78bfa", textDecoration: "underline" }}>
-            Click here if not redirected
-          </a>
-        </p>
-      </div>
+    <main className="min-h-screen bg-slate-950 text-white flex items-center justify-center">
+      <PageWrapper centered>
+        <Section>
+          <div className="text-center">
+            <p className="text-slate-400 text-lg mb-4">Redirecting to API Management Services...</p>
+            <Link href="/services/?category=api" className="text-purple-400 hover:text-purple-300 underline">
+              Click here if not redirected
+            </Link>
+            <script dangerouslySetInnerHTML={{
+              __html: `if(window.location.pathname === '/api-services/') window.location.href='/services/?category=api';`
+            }} />
+          </div>
+        </Section>
+      </PageWrapper>
     </main>
   );
 }

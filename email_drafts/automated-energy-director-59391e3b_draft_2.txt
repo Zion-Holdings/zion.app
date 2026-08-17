@@ -1,13 +1,13 @@
-Subject: AI solution for automotive - Automated Energy Director
+Subject: AI solution for energy - Automated Energy Director
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-Most automotive companies waste 30% of their time on manual processes. Automated Energy Director automates this with zero human intervention. Can I show you how?
+Most energy companies waste 30% of their time on manual processes. Automated Energy Director automates this with zero human intervention. Can I show you how?
 
 ---
 Service: Automated Energy Director
-Industry: automotive
+Industry: energy
 URL: https://ziontechgroup.com/services/automated-energy-director-59391e3b
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

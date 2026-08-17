@@ -3,11 +3,11 @@ Subject: AI-Powered Customer Analyzer - Free pilot available
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-We\'re offering free pilots for healthcare teams. AI-Powered Customer Analyzer typically delivers 40-60% improvement in key metrics. Want to try it?
+We\'re offering free pilots for technology teams. AI-Powered Customer Analyzer typically delivers 40-60% improvement in key metrics. Want to try it?
 
 ---
 Service: AI-Powered Customer Analyzer
-Industry: healthcare
+Industry: technology
 URL: https://ziontechgroup.com/services/ai-powered-customer-analyzer-e27f46db
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

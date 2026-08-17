@@ -1,13 +1,13 @@
-Subject: Case study: Neural Performance Orchestrator in Telecom
+Subject: Case study: Neural Performance Orchestrator in Logistics
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-A telecom client achieved $22M savings in 18 months using Neural Performance Orchestrator. The system pays for itself in <90 days. Let\'s discuss your use case.
+A logistics client achieved $22M savings in 18 months using Neural Performance Orchestrator. The system pays for itself in <90 days. Let\'s discuss your use case.
 
 ---
 Service: Neural Performance Orchestrator
-Industry: telecom
+Industry: logistics
 URL: https://ziontechgroup.com/services/neural-performance-orchestrator-d3c76156
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

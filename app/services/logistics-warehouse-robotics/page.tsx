@@ -1,116 +1,68 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+import { } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: `AI Warehouse Robotics Platform | Zion Tech Group`,
-  description: `Orchestrate autonomous mobile robots (AMRs) for warehouse operations. Pick-and-place, inventory counting, and goods-to-person fulfillment optimization.`,
-  keywords: 'AMR fleet orchestration, Pick path optimization, Inventory counting robots, Goods-to-person fulfillment, Integration with WMS (Manhattan, Blue Yonder), Real-time inventory accuracy, Labor planning optimization, Safety zone management, logistics-tech, Logistics, Zion Tech Group',
+export const metadata = {
+  title: "AI Warehouse Robotics Platform - Zion Tech Group",
+  description: "Orchestrate autonomous mobile robots (AMRs) for warehouse operations. Pick-and-place, inventory counting, and goods-to-person fulfillment optimization.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/logistics-warehouse-robotics/`,
-  },
+    canonical: `https://ziontechgroup.com/services/logistics-warehouse-robotics`
+  }
 };
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-6">AI Warehouse Robotics Platform</h1>
+        <p className="text-lg text-gray-300 mb-8">Orchestrate autonomous mobile robots (AMRs) for warehouse operations. Pick-and-place, inventory counting, and goods-to-person fulfillment optimization.</p>
         
-        <div class="mb-6">
-          <a href="/services/" class="text-purple-400 hover:text-purple-300 text-sm flex items-center gap-2">
-            ← Back to All Services
-          </a>
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>AMR fleet orchestration</li>
+            <li>Pick path optimization</li>
+            <li>Inventory counting robots</li>
+            <li>Goods-to-person fulfillment</li>
+            <li>Integration with WMS (Manhattan, Blue Yonder)</li>
+          </ul>
         </div>
         
-        <h1 className="text-4xl font-bold mb-6 text-white">AI Warehouse Robotics Platform</h1>
-        <p className="text-lg text-slate-300 mb-8">Orchestrate autonomous mobile robots (AMRs) for warehouse operations. Pick-and-place, inventory counting, and goods-to-person fulfillment optimization.</p>
-        
-        <div class="bg-slate-900 rounded-xl p-6 mb-8">
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs px-3 py-1 bg-purple-900/30 rounded-full text-purple-300">logistics-tech</span>
-            <span class="text-xs px-3 py-1 bg-blue-900/30 rounded-full text-blue-300">Logistics</span>
-          </div>
-          <h2 class="text-2xl font-semibold mb-4 text-white">Key Features</h2>
-          <ul class="list-disc list-inside space-y-2">
-        <li class="text-slate-300">AMR fleet orchestration</li>
-        <li class="text-slate-300">Pick path optimization</li>
-        <li class="text-slate-300">Inventory counting robots</li>
-        <li class="text-slate-300">Goods-to-person fulfillment</li>
-        <li class="text-slate-300">Integration with WMS (Manhattan, Blue Yonder)</li>
-        <li class="text-slate-300">Real-time inventory accuracy</li>
-        <li class="text-slate-300">Labor planning optimization</li>
-        <li class="text-slate-300">Safety zone management</li>
-      </ul>
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Increase picking efficiency by 3x</li>
+            <li>Reduce labor costs by 40%</li>
+            <li>Improve inventory accuracy to 99.9%</li>
+            <li>Scale operations without hiring</li>
+          </ul>
         </div>
         
-        <div class="bg-slate-900 rounded-xl p-6 mb-8">
-          <h2 class="text-2xl font-semibold mb-4 text-white">Benefits</h2>
-          <ul class="list-disc list-inside space-y-2">
-        <li class="text-slate-300">Increase picking efficiency by 3x</li>
-        <li class="text-slate-300">Reduce labor costs by 40%</li>
-        <li class="text-slate-300">Improve inventory accuracy to 99.9%</li>
-        <li class="text-slate-300">Scale operations without hiring</li>
-      </ul>
-        </div>
-        
-        
-        <div class="border border-purple-500/30 rounded-xl p-6 mb-8">
-          <h2 class="text-2xl font-semibold text-white mb-4">Pricing</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div class="bg-slate-800 rounded-lg p-4 text-center">
-              <h3 class="font-semibold text-white mb-2">Basic</h3>
-              <p class="text-2xl font-bold text-purple-400 mb-2">$2,999/mo</p>
-              <p class="text-sm text-slate-400">Getting started plan</p>
+        <div className="border border-purple-500 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Basic</h3>
+              <p className="text-2xl font-bold mb-2">$2,999/mo/month</p>
             </div>
-            <div class="bg-slate-800 rounded-lg p-4 text-center border-2 border-purple-500">
-              <h3 class="font-semibold text-white mb-2">Pro</h3>
-              <p class="text-2xl font-bold text-purple-400 mb-2">$8,999/mo</p>
-              <p class="text-sm text-slate-400">Most popular</p>
+            <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
+              <h3 className="font-semibold mb-2">Pro</h3>
+              <p className="text-2xl font-bold mb-2">$8,999/mo/month</p>
             </div>
-            <div class="bg-slate-800 rounded-lg p-4 text-center">
-              <h3 class="font-semibold text-white mb-2">Enterprise</h3>
-              <p class="text-2xl font-bold text-purple-400 mb-2">Custom</p>
-              <p class="text-sm text-slate-400">Full-featured solution</p>
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Enterprise</h3>
+              <p className="text-2xl font-bold mb-2">$Custom/month</p>
             </div>
           </div>
         </div>
         
-        <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl p-6 mb-8">
-          <h2 class="text-2xl font-semibold text-white mb-4">Related Services</h2>
-          <div class="grid md:grid-cols-2 gap-4">
-            
-              <div>
-                <a href="/services/ai-warehouse-picking-optimization/" class="text-purple-300 hover:text-purple-200 font-medium">AI Warehouse Picking Optimization</a>
-                <p class="text-slate-400 text-sm mt-1">Optimize warehouse picking routes and batch assignments with AI. Reduce picker travel time, increase throughput, and imp...</p>
-              </div>
-            
-            
-              <div>
-                <a href="/services/logistics-fleet-management-ai/" class="text-purple-300 hover:text-purple-200 font-medium">AI Fleet Management Platform</a>
-                <p class="text-slate-400 text-sm mt-1">AI-powered fleet management with route optimization, fuel management, driver safety monitoring, and predictive maintenan...</p>
-              </div>
-            
-            
-              <div>
-                <a href="/services/logistics-route-optimizer/" class="text-purple-300 hover:text-purple-200 font-medium">Logistics Route Optimizer</a>
-                <p class="text-slate-400 text-sm mt-1">AI-powered route optimization for delivery fleets. Real-time traffic, driver hours, vehicle capacity, and customer prefe...</p>
-              </div>
-            
-            
-              <div>
-                <a href="/services/logistics-tech-supply-chain-visibility/" class="text-purple-300 hover:text-purple-200 font-medium">End-to-End Supply Chain Visibility</a>
-                <p class="text-slate-400 text-sm mt-1">Real-time supply chain tracking and optimization. IoT integration, predictive analytics, route optimization, and supplie...</p>
-              </div>
-            
-          </div>
-        </div>
-        
-        <div class="text-center">
-          <Link
-            href="/contact/"
-            class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
+        <div className="text-center">
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
           >
             Book a Consultation
-          </Link>
+          </a>
         </div>
       </div>
     </main>

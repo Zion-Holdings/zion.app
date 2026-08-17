@@ -17,7 +17,7 @@ export default function Page() {
                 <a className="glass-card group" href="/tools/ai-service-router/"><div className="font-semibold text-white">AI Service Router</div><div className="text-xs text-slate-400">Free recommendation engine</div></a>
                 <a className="glass-card group" href="/tools/roi-calculator/"><div className="font-semibold text-white">ROI Calculator</div><div className="text-xs text-slate-400">Estimate automation returns</div></a>
                 <a className="glass-card group" href="/tools/json-formatter/"><div className="font-semibold text-white">JSON Formatter</div><div className="text-xs text-slate-400">Validate and clean payloads</div></a>
-                <a className="glass-card group" href="/tools/base64/"><div className="font-semibold text-white">Base64 Utilities</div><div className="text-xs text-slate-400">Encode, decode, and inspect</div></a>
+                <a className="glass-card group" href="/tools/ssl-checker/"><div className="font-semibold text-white">Base64 Utilities</div><div className="text-xs text-slate-400">Encode, decode, and inspect</div></a>
                 <a className="glass-card group" href="/tools/service-recommender/"><div className="font-semibold text-white">Service Recommender</div><div className="text-xs text-slate-400">Quick matching and ranking</div></a>
                 <a className="glass-card group" href="/tools/health-check/"><div className="font-semibold text-white">Health Check</div><div className="text-xs text-slate-400">Readiness and basic diagnostics</div></a>
               </div>

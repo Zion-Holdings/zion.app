@@ -1,13 +1,13 @@
-Subject: AI solution for education - Autonomous Customer Analyzer
+Subject: AI solution for healthcare - Autonomous Customer Analyzer
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-Most education companies waste 30% of their time on manual processes. Autonomous Customer Analyzer automates this with zero human intervention. Can I show you how?
+Most healthcare companies waste 30% of their time on manual processes. Autonomous Customer Analyzer automates this with zero human intervention. Can I show you how?
 
 ---
 Service: Autonomous Customer Analyzer
-Industry: education
+Industry: healthcare
 URL: https://ziontechgroup.com/services/autonomous-customer-analyzer-b4e202cf
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

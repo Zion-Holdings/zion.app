@@ -3,11 +3,11 @@ Subject: Quick question about Intelligent Process System
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-I built Intelligent Process System specifically for education challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+I built Intelligent Process System specifically for logistics challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
 
 ---
 Service: Intelligent Process System
-Industry: education
+Industry: logistics
 URL: https://ziontechgroup.com/services/intelligent-process-system-4fb204d2
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

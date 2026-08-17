@@ -1,113 +1,68 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+import { } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: `AI Legal Document Review & Risk Analysis | Zion Tech Group`,
-  description: `Accelerate legal contract review by 80%: extract obligations, flag risks, suggest clauses, and compare against playbooks using LLMs fine-tuned on legal corpora.`,
-  keywords: 'Clause extraction & classification (liability, IP, termination), Risk scoring per clause (high/medium/low), Deviation detection from standard templates, Redline suggestions with rationale, Multi-jurisdiction compliance checks, ai, General, Zion Tech Group',
+export const metadata = {
+  title: "AI Legal Document Review & Risk Analysis - Zion Tech Group",
+  description: "Accelerate legal contract review by 80%: extract obligations, flag risks, suggest clauses, and compare against playbooks using LLMs fine-tuned on legal corpora.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/legal-doc-review-ai/`,
-  },
+    canonical: `https://ziontechgroup.com/services/legal-doc-review-ai`
+  }
 };
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-6">AI Legal Document Review &amp; Risk Analysis</h1>
+        <p className="text-lg text-gray-300 mb-8">Accelerate legal contract review by 80%: extract obligations, flag risks, suggest clauses, and compare against playbooks using LLMs fine-tuned on legal corpora.</p>
         
-        <div class="mb-6">
-          <a href="/services/" class="text-purple-400 hover:text-purple-300 text-sm flex items-center gap-2">
-            ← Back to All Services
-          </a>
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Clause extraction &amp; classification (liability, IP, termination)</li>
+            <li>Risk scoring per clause (high/medium/low)</li>
+            <li>Deviation detection from standard templates</li>
+            <li>Redline suggestions with rationale</li>
+            <li>Multi-jurisdiction compliance checks</li>
+          </ul>
         </div>
         
-        <h1 className="text-4xl font-bold mb-6 text-white">AI Legal Document Review &amp; Risk Analysis</h1>
-        <p className="text-lg text-slate-300 mb-8">Accelerate legal contract review by 80%: extract obligations, flag risks, suggest clauses, and compare against playbooks using LLMs fine-tuned on legal corpora.</p>
-        
-        <div class="bg-slate-900 rounded-xl p-6 mb-8">
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs px-3 py-1 bg-purple-900/30 rounded-full text-purple-300">ai</span>
-            <span class="text-xs px-3 py-1 bg-blue-900/30 rounded-full text-blue-300">General</span>
-          </div>
-          <h2 class="text-2xl font-semibold mb-4 text-white">Key Features</h2>
-          <ul class="list-disc list-inside space-y-2">
-        <li class="text-slate-300">Clause extraction &amp; classification (liability, IP, termination)</li>
-        <li class="text-slate-300">Risk scoring per clause (high/medium/low)</li>
-        <li class="text-slate-300">Deviation detection from standard templates</li>
-        <li class="text-slate-300">Redline suggestions with rationale</li>
-        <li class="text-slate-300">Multi-jurisdiction compliance checks</li>
-      </ul>
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Reduce costs with ai legal document review &amp; risk analysis</li>
+            <li>Improve operational efficiency</li>
+            <li>Scale without complexity</li>
+            <li>Enterprise-grade reliability</li>
+          </ul>
         </div>
         
-        <div class="bg-slate-900 rounded-xl p-6 mb-8">
-          <h2 class="text-2xl font-semibold mb-4 text-white">Benefits</h2>
-          <ul class="list-disc list-inside space-y-2">
-        <li class="text-slate-300">Reduce costs with ai legal document review &amp; risk analysis</li>
-        <li class="text-slate-300">Improve operational efficiency</li>
-        <li class="text-slate-300">Scale without complexity</li>
-        <li class="text-slate-300">Enterprise-grade reliability</li>
-      </ul>
-        </div>
-        
-        
-        <div class="border border-purple-500/30 rounded-xl p-6 mb-8">
-          <h2 class="text-2xl font-semibold text-white mb-4">Pricing</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div class="bg-slate-800 rounded-lg p-4 text-center">
-              <h3 class="font-semibold text-white mb-2">Basic</h3>
-              <p class="text-2xl font-bold text-purple-400 mb-2">$149/mo</p>
-              <p class="text-sm text-slate-400">Getting started plan</p>
+        <div className="border border-purple-500 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Basic</h3>
+              <p className="text-2xl font-bold mb-2">$149/mo/month</p>
             </div>
-            <div class="bg-slate-800 rounded-lg p-4 text-center border-2 border-purple-500">
-              <h3 class="font-semibold text-white mb-2">Pro</h3>
-              <p class="text-2xl font-bold text-purple-400 mb-2">$449/mo</p>
-              <p class="text-sm text-slate-400">Most popular</p>
+            <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
+              <h3 className="font-semibold mb-2">Pro</h3>
+              <p className="text-2xl font-bold mb-2">$449/mo/month</p>
             </div>
-            <div class="bg-slate-800 rounded-lg p-4 text-center">
-              <h3 class="font-semibold text-white mb-2">Enterprise</h3>
-              <p class="text-2xl font-bold text-purple-400 mb-2">$1,499/mo</p>
-              <p class="text-sm text-slate-400">Full-featured solution</p>
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Enterprise</h3>
+              <p className="text-2xl font-bold mb-2">$1,499/mo/month</p>
             </div>
           </div>
         </div>
         
-        <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl p-6 mb-8">
-          <h2 class="text-2xl font-semibold text-white mb-4">Related Services</h2>
-          <div class="grid md:grid-cols-2 gap-4">
-            
-              <div>
-                <a href="/services/accessibility-compliance/" class="text-purple-300 hover:text-purple-200 font-medium">Accessibility & WCAG Compliance</a>
-                <p class="text-slate-400 text-sm mt-1">Automated WCAG 2.2 auditing, AI-powered remediation suggestions, screen reader simulation, and continuous accessibility ...</p>
-              </div>
-            
-            
-              <div>
-                <a href="/services/advanced-ai-enterprise-intelligence-hub/" class="text-purple-300 hover:text-purple-200 font-medium">Advanced AI & Enterprise Intelligence Hub</a>
-                <p class="text-slate-400 text-sm mt-1">Unify generative AI, autonomous agents, multimodal intelligence, RAG, governance, observability, and enterprise copilots...</p>
-              </div>
-            
-            
-              <div>
-                <a href="/services/agentic-workflow-orchestrator/" class="text-purple-300 hover:text-purple-200 font-medium">Agentic Workflow Orchestrator</a>
-                <p class="text-slate-400 text-sm mt-1">Orchestrate multi-agent AI workflows: DAG of agents with routing, handoff, conditional branches, state persistence, retr...</p>
-              </div>
-            
-            
-              <div>
-                <a href="/services/agritech-precision-farming/" class="text-purple-300 hover:text-purple-200 font-medium">Precision Agriculture Platform</a>
-                <p class="text-slate-400 text-sm mt-1">AI-powered precision farming with satellite imagery, soil analysis, crop health monitoring, yield prediction, and automa...</p>
-              </div>
-            
-          </div>
-        </div>
-        
-        <div class="text-center">
-          <Link
-            href="/contact/"
-            class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
+        <div className="text-center">
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
           >
             Book a Consultation
-          </Link>
+          </a>
         </div>
       </div>
     </main>

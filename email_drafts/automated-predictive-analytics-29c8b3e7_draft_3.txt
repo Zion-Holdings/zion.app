@@ -3,11 +3,11 @@ Subject: Quick question about Automated Predictive Analytics
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-I built Automated Predictive Analytics specifically for automotive challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+I built Automated Predictive Analytics specifically for telecom challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
 
 ---
 Service: Automated Predictive Analytics
-Industry: automotive
+Industry: telecom
 URL: https://ziontechgroup.com/services/automated-predictive-analytics-29c8b3e7
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

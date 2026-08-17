@@ -3,11 +3,11 @@ Subject: Cognitive Language Predictor - Free pilot available
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-We\'re offering free pilots for finance teams. Cognitive Language Predictor typically delivers 40-60% improvement in key metrics. Want to try it?
+We\'re offering free pilots for automotive teams. Cognitive Language Predictor typically delivers 40-60% improvement in key metrics. Want to try it?
 
 ---
 Service: Cognitive Language Predictor
-Industry: finance
+Industry: automotive
 URL: https://ziontechgroup.com/services/cognitive-language-predictor-275ecf1f
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

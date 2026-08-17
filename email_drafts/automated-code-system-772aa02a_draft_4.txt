@@ -3,11 +3,11 @@ Subject: Automated Code System - Free pilot available
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-We\'re offering free pilots for education teams. Automated Code System typically delivers 40-60% improvement in key metrics. Want to try it?
+We\'re offering free pilots for sports teams. Automated Code System typically delivers 40-60% improvement in key metrics. Want to try it?
 
 ---
 Service: Automated Code System
-Industry: education
+Industry: sports
 URL: https://ziontechgroup.com/services/automated-code-system-772aa02a
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

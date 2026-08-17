@@ -1,116 +1,68 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+import { } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: `IT Disaster Recovery as a Service (DRaaS) | Zion Tech Group`,
-  description: `Enterprise disaster recovery solution with automated failover, continuous data replication, and sub-minute RTO/RPO. Includes runbook automation, regular DR testing, and compliance documentation.`,
-  keywords: 'Continuous data replication with sub-minute RPO, Automated failover and failback orchestration, DR runbook automation with one-click execution, Regular DR testing without production impact, Multi-region and multi-cloud DR topologies, Compliance documentation (SOC 2, HIPAA, ISO 27001), Real-time DR health monitoring and alerting, Dedicated DR environment with warm standby, it, technology, Zion Tech Group',
+export const metadata = {
+  title: "IT Disaster Recovery as a Service (DRaaS) - Zion Tech Group",
+  description: "Enterprise disaster recovery solution with automated failover, continuous data replication, and sub-minute RTO/RPO. Includes runbook automation, regular DR test",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/it-disaster-recovery-as-a-service/`,
-  },
+    canonical: `https://ziontechgroup.com/services/it-disaster-recovery-as-a-service`
+  }
 };
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-6">IT Disaster Recovery as a Service (DRaaS)</h1>
+        <p className="text-lg text-gray-300 mb-8">Enterprise disaster recovery solution with automated failover, continuous data replication, and sub-minute RTO/RPO. Includes runbook automation, regular DR testing, and compliance documentation.</p>
         
-        <div class="mb-6">
-          <a href="/services/" class="text-purple-400 hover:text-purple-300 text-sm flex items-center gap-2">
-            ← Back to All Services
-          </a>
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Continuous data replication with sub-minute RPO</li>
+            <li>Automated failover and failback orchestration</li>
+            <li>DR runbook automation with one-click execution</li>
+            <li>Regular DR testing without production impact</li>
+            <li>Multi-region and multi-cloud DR topologies</li>
+          </ul>
         </div>
         
-        <h1 className="text-4xl font-bold mb-6 text-white">IT Disaster Recovery as a Service (DRaaS)</h1>
-        <p className="text-lg text-slate-300 mb-8">Enterprise disaster recovery solution with automated failover, continuous data replication, and sub-minute RTO/RPO. Includes runbook automation, regular DR testing, and compliance documentation.</p>
-        
-        <div class="bg-slate-900 rounded-xl p-6 mb-8">
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs px-3 py-1 bg-purple-900/30 rounded-full text-purple-300">it</span>
-            <span class="text-xs px-3 py-1 bg-blue-900/30 rounded-full text-blue-300">technology</span>
-          </div>
-          <h2 class="text-2xl font-semibold mb-4 text-white">Key Features</h2>
-          <ul class="list-disc list-inside space-y-2">
-        <li class="text-slate-300">Continuous data replication with sub-minute RPO</li>
-        <li class="text-slate-300">Automated failover and failback orchestration</li>
-        <li class="text-slate-300">DR runbook automation with one-click execution</li>
-        <li class="text-slate-300">Regular DR testing without production impact</li>
-        <li class="text-slate-300">Multi-region and multi-cloud DR topologies</li>
-        <li class="text-slate-300">Compliance documentation (SOC 2, HIPAA, ISO 27001)</li>
-        <li class="text-slate-300">Real-time DR health monitoring and alerting</li>
-        <li class="text-slate-300">Dedicated DR environment with warm standby</li>
-      </ul>
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Achieve sub-minute RTO for critical applications</li>
+            <li>Eliminate manual DR testing with automated runs</li>
+            <li>Meet compliance requirements with documented DR</li>
+            <li>Reduce DR costs by 60% vs. traditional hot sites</li>
+          </ul>
         </div>
         
-        <div class="bg-slate-900 rounded-xl p-6 mb-8">
-          <h2 class="text-2xl font-semibold mb-4 text-white">Benefits</h2>
-          <ul class="list-disc list-inside space-y-2">
-        <li class="text-slate-300">Achieve sub-minute RTO for critical applications</li>
-        <li class="text-slate-300">Eliminate manual DR testing with automated runs</li>
-        <li class="text-slate-300">Meet compliance requirements with documented DR</li>
-        <li class="text-slate-300">Reduce DR costs by 60% vs. traditional hot sites</li>
-      </ul>
-        </div>
-        
-        
-        <div class="border border-purple-500/30 rounded-xl p-6 mb-8">
-          <h2 class="text-2xl font-semibold text-white mb-4">Pricing</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div class="bg-slate-800 rounded-lg p-4 text-center">
-              <h3 class="font-semibold text-white mb-2">Basic</h3>
-              <p class="text-2xl font-bold text-purple-400 mb-2">$3,000/mo</p>
-              <p class="text-sm text-slate-400">Getting started plan</p>
+        <div className="border border-purple-500 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Basic</h3>
+              <p className="text-2xl font-bold mb-2">$3,000/mo/month</p>
             </div>
-            <div class="bg-slate-800 rounded-lg p-4 text-center border-2 border-purple-500">
-              <h3 class="font-semibold text-white mb-2">Pro</h3>
-              <p class="text-2xl font-bold text-purple-400 mb-2">$8,000/mo</p>
-              <p class="text-sm text-slate-400">Most popular</p>
+            <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
+              <h3 className="font-semibold mb-2">Pro</h3>
+              <p className="text-2xl font-bold mb-2">$8,000/mo/month</p>
             </div>
-            <div class="bg-slate-800 rounded-lg p-4 text-center">
-              <h3 class="font-semibold text-white mb-2">Enterprise</h3>
-              <p class="text-2xl font-bold text-purple-400 mb-2">Custom</p>
-              <p class="text-sm text-slate-400">Full-featured solution</p>
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Enterprise</h3>
+              <p className="text-2xl font-bold mb-2">$Custom/month</p>
             </div>
           </div>
         </div>
         
-        <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl p-6 mb-8">
-          <h2 class="text-2xl font-semibold text-white mb-4">Related Services</h2>
-          <div class="grid md:grid-cols-2 gap-4">
-            
-              <div>
-                <a href="/services/accessibility-compliance/" class="text-purple-300 hover:text-purple-200 font-medium">Accessibility & WCAG Compliance</a>
-                <p class="text-slate-400 text-sm mt-1">Automated WCAG 2.2 auditing, AI-powered remediation suggestions, screen reader simulation, and continuous accessibility ...</p>
-              </div>
-            
-            
-              <div>
-                <a href="/services/adaptive-advisor-for-tech-e6a61693/" class="text-purple-300 hover:text-purple-200 font-medium">Adaptive Advisor for Tech</a>
-                <p class="text-slate-400 text-sm mt-1">Transform your technology operations with our Adaptive Advisor for Tech. This AI-driven solution automates workflow mana...</p>
-              </div>
-            
-            
-              <div>
-                <a href="/services/adaptive-insights-tech-3772eff5/" class="text-purple-300 hover:text-purple-200 font-medium">Adaptive insights-tech</a>
-                <p class="text-slate-400 text-sm mt-1">Unlock unprecedented growth with Adaptive insights-tech. This autonomous system provides risk assessment with zero manua...</p>
-              </div>
-            
-            
-              <div>
-                <a href="/services/adaptive-manager-tech-32a17ff6/" class="text-purple-300 hover:text-purple-200 font-medium">Adaptive manager-tech</a>
-                <p class="text-slate-400 text-sm mt-1">Transform your technology operations with our Adaptive manager-tech. This AI-driven solution automates code optimization...</p>
-              </div>
-            
-          </div>
-        </div>
-        
-        <div class="text-center">
-          <Link
-            href="/contact/"
-            class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
+        <div className="text-center">
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
           >
             Book a Consultation
-          </Link>
+          </a>
         </div>
       </div>
     </main>

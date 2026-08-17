@@ -3,11 +3,11 @@ Subject: Quick question about Smart Process Orchestrator
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-I built Smart Process Orchestrator specifically for healthcare challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+I built Smart Process Orchestrator specifically for real-estate challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
 
 ---
 Service: Smart Process Orchestrator
-Industry: healthcare
+Industry: real-estate
 URL: https://ziontechgroup.com/services/smart-process-orchestrator-3206549f
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

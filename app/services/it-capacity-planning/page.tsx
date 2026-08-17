@@ -1,113 +1,68 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+import { } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: `IT Capacity Planning & Resource Forecasting | Zion Tech Group`,
-  description: `AI-driven capacity planning that forecasts compute, storage, and network requirements based on growth patterns and workload trends across your infrastructure.`,
-  keywords: 'Predictive capacity forecasting with ML models, Workload trend analysis and seasonal pattern detection, Cloud vs on-prem cost comparison modeling, Automated right-sizing recommendations, Budget impact simulation for capacity decisions, cloud, General, Zion Tech Group',
+export const metadata = {
+  title: "IT Capacity Planning & Resource Forecasting - Zion Tech Group",
+  description: "AI-driven capacity planning that forecasts compute, storage, and network requirements based on growth patterns and workload trends across your infrastructure.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/it-capacity-planning/`,
-  },
+    canonical: `https://ziontechgroup.com/services/it-capacity-planning`
+  }
 };
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-6">IT Capacity Planning &amp; Resource Forecasting</h1>
+        <p className="text-lg text-gray-300 mb-8">AI-driven capacity planning that forecasts compute, storage, and network requirements based on growth patterns and workload trends across your infrastructure.</p>
         
-        <div class="mb-6">
-          <a href="/services/" class="text-purple-400 hover:text-purple-300 text-sm flex items-center gap-2">
-            ← Back to All Services
-          </a>
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Predictive capacity forecasting with ML models</li>
+            <li>Workload trend analysis and seasonal pattern detection</li>
+            <li>Cloud vs on-prem cost comparison modeling</li>
+            <li>Automated right-sizing recommendations</li>
+            <li>Budget impact simulation for capacity decisions</li>
+          </ul>
         </div>
         
-        <h1 className="text-4xl font-bold mb-6 text-white">IT Capacity Planning &amp; Resource Forecasting</h1>
-        <p className="text-lg text-slate-300 mb-8">AI-driven capacity planning that forecasts compute, storage, and network requirements based on growth patterns and workload trends across your infrastructure.</p>
-        
-        <div class="bg-slate-900 rounded-xl p-6 mb-8">
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs px-3 py-1 bg-purple-900/30 rounded-full text-purple-300">cloud</span>
-            <span class="text-xs px-3 py-1 bg-blue-900/30 rounded-full text-blue-300">General</span>
-          </div>
-          <h2 class="text-2xl font-semibold mb-4 text-white">Key Features</h2>
-          <ul class="list-disc list-inside space-y-2">
-        <li class="text-slate-300">Predictive capacity forecasting with ML models</li>
-        <li class="text-slate-300">Workload trend analysis and seasonal pattern detection</li>
-        <li class="text-slate-300">Cloud vs on-prem cost comparison modeling</li>
-        <li class="text-slate-300">Automated right-sizing recommendations</li>
-        <li class="text-slate-300">Budget impact simulation for capacity decisions</li>
-      </ul>
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Reduce costs with it capacity planning &amp; resource forecasting</li>
+            <li>Improve operational efficiency</li>
+            <li>Scale without complexity</li>
+            <li>Enterprise-grade reliability</li>
+          </ul>
         </div>
         
-        <div class="bg-slate-900 rounded-xl p-6 mb-8">
-          <h2 class="text-2xl font-semibold mb-4 text-white">Benefits</h2>
-          <ul class="list-disc list-inside space-y-2">
-        <li class="text-slate-300">Reduce costs with it capacity planning &amp; resource forecasting</li>
-        <li class="text-slate-300">Improve operational efficiency</li>
-        <li class="text-slate-300">Scale without complexity</li>
-        <li class="text-slate-300">Enterprise-grade reliability</li>
-      </ul>
-        </div>
-        
-        
-        <div class="border border-purple-500/30 rounded-xl p-6 mb-8">
-          <h2 class="text-2xl font-semibold text-white mb-4">Pricing</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div class="bg-slate-800 rounded-lg p-4 text-center">
-              <h3 class="font-semibold text-white mb-2">Basic</h3>
-              <p class="text-2xl font-bold text-purple-400 mb-2">$99/mo</p>
-              <p class="text-sm text-slate-400">Getting started plan</p>
+        <div className="border border-purple-500 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Basic</h3>
+              <p className="text-2xl font-bold mb-2">$99/mo/month</p>
             </div>
-            <div class="bg-slate-800 rounded-lg p-4 text-center border-2 border-purple-500">
-              <h3 class="font-semibold text-white mb-2">Pro</h3>
-              <p class="text-2xl font-bold text-purple-400 mb-2">$349/mo</p>
-              <p class="text-sm text-slate-400">Most popular</p>
+            <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
+              <h3 className="font-semibold mb-2">Pro</h3>
+              <p className="text-2xl font-bold mb-2">$349/mo/month</p>
             </div>
-            <div class="bg-slate-800 rounded-lg p-4 text-center">
-              <h3 class="font-semibold text-white mb-2">Enterprise</h3>
-              <p class="text-2xl font-bold text-purple-400 mb-2">$1,299/mo</p>
-              <p class="text-sm text-slate-400">Full-featured solution</p>
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Enterprise</h3>
+              <p className="text-2xl font-bold mb-2">$1,299/mo/month</p>
             </div>
           </div>
         </div>
         
-        <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl p-6 mb-8">
-          <h2 class="text-2xl font-semibold text-white mb-4">Related Services</h2>
-          <div class="grid md:grid-cols-2 gap-4">
-            
-              <div>
-                <a href="/services/accessibility-compliance/" class="text-purple-300 hover:text-purple-200 font-medium">Accessibility & WCAG Compliance</a>
-                <p class="text-slate-400 text-sm mt-1">Automated WCAG 2.2 auditing, AI-powered remediation suggestions, screen reader simulation, and continuous accessibility ...</p>
-              </div>
-            
-            
-              <div>
-                <a href="/services/agentic-workflow-orchestrator/" class="text-purple-300 hover:text-purple-200 font-medium">Agentic Workflow Orchestrator</a>
-                <p class="text-slate-400 text-sm mt-1">Orchestrate multi-agent AI workflows: DAG of agents with routing, handoff, conditional branches, state persistence, retr...</p>
-              </div>
-            
-            
-              <div>
-                <a href="/services/ai-accessibility-auditor/" class="text-purple-300 hover:text-purple-200 font-medium">AI Accessibility Auditor</a>
-                <p class="text-slate-400 text-sm mt-1">Automated WCAG 2.1 AA compliance scans for websites & apps with screen-reader simulation, color contrast testing, and ke...</p>
-              </div>
-            
-            
-              <div>
-                <a href="/services/ai-agent-safety-evaluation/" class="text-purple-300 hover:text-purple-200 font-medium">Ai Agent Safety Evaluation</a>
-                <p class="text-slate-400 text-sm mt-1">Ai Agent Safety Evaluation — comprehensive managed service with expert support and proven delivery methodology....</p>
-              </div>
-            
-          </div>
-        </div>
-        
-        <div class="text-center">
-          <Link
-            href="/contact/"
-            class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
+        <div className="text-center">
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
           >
             Book a Consultation
-          </Link>
+          </a>
         </div>
       </div>
     </main>

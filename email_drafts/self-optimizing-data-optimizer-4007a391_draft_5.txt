@@ -1,13 +1,13 @@
-Subject: Case study: Self-Optimizing Data Optimizer in Insurance
+Subject: Case study: Self-Optimizing Data Optimizer in Healthcare
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-A insurance client achieved $22M savings in 18 months using Self-Optimizing Data Optimizer. The system pays for itself in <90 days. Let\'s discuss your use case.
+A healthcare client achieved $22M savings in 18 months using Self-Optimizing Data Optimizer. The system pays for itself in <90 days. Let\'s discuss your use case.
 
 ---
 Service: Self-Optimizing Data Optimizer
-Industry: insurance
+Industry: healthcare
 URL: https://ziontechgroup.com/services/self-optimizing-data-optimizer-4007a391
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

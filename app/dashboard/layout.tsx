@@ -1,5 +1,5 @@
-// app/dashboard/layout.tsx — Server component (metadata for client page)
 import type { Metadata } from 'next';
+import PageShell from '@/components/PageShell';
 
 export const metadata: Metadata = {
   title: 'AI Agent Dashboard | Zion Tech Group',
@@ -7,10 +7,6 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://ziontechgroup.com/dashboard/' },
 };
 
-export default function DashboardLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <>{children}</>;
+export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+  return <PageShell>{children}</PageShell>;
 }

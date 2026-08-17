@@ -1,13 +1,13 @@
-Subject: AI solution for energy - Smart Network Engine
+Subject: AI solution for legal - Smart Network Engine
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-Most energy companies waste 30% of their time on manual processes. Smart Network Engine automates this with zero human intervention. Can I show you how?
+Most legal companies waste 30% of their time on manual processes. Smart Network Engine automates this with zero human intervention. Can I show you how?
 
 ---
 Service: Smart Network Engine
-Industry: energy
+Industry: legal
 URL: https://ziontechgroup.com/services/smart-network-engine-887f350c
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

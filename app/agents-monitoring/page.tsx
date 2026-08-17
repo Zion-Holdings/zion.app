@@ -22,12 +22,12 @@ export default function AgentsMonitoring() {
           <div className="card">
             <h3>Ops Telemetry</h3>
             <p>Monitor alerts, incidents, and remediation status.</p>
-            <Link href="/services/managed-observability-247/">Explore Observability</Link>
+            <Link href="/services/ai-observability/">Explore Observability</Link>
           </div>
           <div className="card">
             <h3>Security Signals</h3>
             <p>Review detections, triage queues, and response metrics.</p>
-            <Link href="/services/sec-soc-as-a-service/">Explore SOC Automation</Link>
+            <Link href="/services/it-managed-soc/">Explore SOC Automation</Link>
           </div>
         </div>
       </div>

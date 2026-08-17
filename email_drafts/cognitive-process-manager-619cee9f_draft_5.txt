@@ -1,13 +1,13 @@
-Subject: Case study: Cognitive Process Manager in Agriculture
+Subject: Case study: Cognitive Process Manager in Education
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-A agriculture client achieved $22M savings in 18 months using Cognitive Process Manager. The system pays for itself in <90 days. Let\'s discuss your use case.
+A education client achieved $22M savings in 18 months using Cognitive Process Manager. The system pays for itself in <90 days. Let\'s discuss your use case.
 
 ---
 Service: Cognitive Process Manager
-Industry: agriculture
+Industry: education
 URL: https://ziontechgroup.com/services/cognitive-process-manager-619cee9f
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

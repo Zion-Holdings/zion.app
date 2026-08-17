@@ -1,13 +1,13 @@
-Subject: Case study: Neural Fraud Insights in Technology
+Subject: Case study: Neural Fraud Insights in Sports
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-A technology client achieved $22M savings in 18 months using Neural Fraud Insights. The system pays for itself in <90 days. Let\'s discuss your use case.
+A sports client achieved $22M savings in 18 months using Neural Fraud Insights. The system pays for itself in <90 days. Let\'s discuss your use case.
 
 ---
 Service: Neural Fraud Insights
-Industry: technology
+Industry: sports
 URL: https://ziontechgroup.com/services/neural-fraud-insights-7039b931
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

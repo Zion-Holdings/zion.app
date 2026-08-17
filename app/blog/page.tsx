@@ -1,4 +1,6 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+import PageTemplate from '@/components/PageTemplate';
 
 const posts = [
   {
@@ -183,9 +185,10 @@ const posts = [
   },
 ];
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Blog | Zion Tech Group',
   description: 'Guides on AI, automation, IT operations, cloud, security, growth, and enterprise implementation from Zion Tech Group.',
+  alternates: { canonical: '/blog' },
 };
 
 export default function BlogIndex() {
@@ -200,100 +203,106 @@ export default function BlogIndex() {
   ];
 
   return (
-    <div className="min-h-screen">
-      <div className="container-page pt-24 pb-16">
-        <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Blog</h1>
-          <p className="text-slate-400 text-lg mb-10 max-w-3xl">
-            Practical guides on AI, IT operations, cloud, security, and growth—written for decision-makers who want implementation, not slides.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-5 mb-14">
-            {featured.map((post) => (
-              <Link
-                key={post.slug}
-                href={`/blog/${post.slug}/`}
-                className="glass-card group hover:border-purple-500/50 transition-all"
-              >
-                <div className="text-xs font-semibold text-purple-300 mb-2">
-                  Featured
-                </div>
-                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-purple-200">
-                  {post.title}
-                </h3>
-                <p className="text-slate-400 text-sm mb-4">
-                  {post.intent}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {post.topics.map((topic) => (
-                    <span
-                      key={topic}
-                      className="text-[11px] font-semibold uppercase tracking-wider bg-slate-800 text-slate-300 border border-slate-700 px-2 py-1 rounded-full"
-                    >
-                      {topic}
-                    </span>
-                  ))}
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-white">Latest Posts</h2>
-            <span className="text-xs text-slate-500">
-              {posts.length} topics
-            </span>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {latest.map((post) => (
-              <Link
-                key={post.slug}
-                href={`/blog/${post.slug}/`}
-                className="glass-card group hover:border-purple-500/40 transition-all"
-              >
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {post.topics.slice(0, 2).map((topic) => (
-                    <span
-                      key={topic}
-                      className="text-[10px] font-semibold uppercase tracking-wider bg-purple-500/10 text-purple-300 border border-purple-500/20 px-2 py-1 rounded-full"
-                    >
-                      {topic}
-                    </span>
-                  ))}
-                </div>
-                <h3 className="text-base font-semibold text-white mb-2 group-hover:text-purple-200">
-                  {post.title}
-                </h3>
-                <p className="text-slate-400 text-sm mb-3 line-clamp-2">
-                  {post.intent}
-                </p>
-                <span className="text-xs text-purple-400 font-medium">
-                  Read article →
-                </span>
-              </Link>
-            ))}
-          </div>
-
-          <div className="mt-14">
-            <div className="glass-card p-6 md:p-8">
-              <h2 className="text-2xl font-bold text-white mb-2">
-                Want a custom post based on your environment?
-              </h2>
-              <p className="text-slate-400 mb-4 max-w-2xl">
-                Tell us your stack, goals, and constraints. We can generate a tailored implementation playbook from this catalog as a starting point.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <Link href="/contact/" className="btn-primary">
-                  Request a custom playbook
-                </Link>
-                <Link href="/services/" className="btn-secondary">
-                  Browse services instead
-                </Link>
+    <PageTemplate
+      title="Blog"
+      description="Practical guides on AI, IT operations, cloud, security, and growth—written for decision-makers who want implementation, not slides."
+      breadcrumbItems={[
+        { label: 'Home', href: '/' },
+        { label: 'Blog', href: '/blog' },
+      ]}
+      layout="hero"
+      heroIcon="📝"
+      actions={[
+        { label: 'Browse All Posts', href: '/blog', style: 'primary' },
+      ]}
+      showBottomCta={false}
+    >
+      <div className="max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-5 mb-14">
+          {featured.map((post) => (
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}/`}
+              className="glass-card group hover:border-purple-500/50 transition-all"
+            >
+              <div className="text-xs font-semibold text-purple-300 mb-2">
+                Featured
               </div>
+              <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-purple-200">
+                {post.title}
+              </h3>
+              <p className="text-slate-400 text-sm mb-4">
+                {post.intent}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {post.topics.map((topic) => (
+                  <span
+                    key={topic}
+                    className="text-[11px] font-semibold uppercase tracking-wider bg-slate-800 text-slate-300 border border-slate-700 px-2 py-1 rounded-full"
+                  >
+                    {topic}
+                  </span>
+                ))}
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-2xl font-bold text-white">Latest Posts</h2>
+          <span className="text-xs text-slate-500">
+            {posts.length} topics
+          </span>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {latest.map((post) => (
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}/`}
+              className="glass-card group hover:border-purple-500/40 transition-all"
+            >
+              <div className="flex flex-wrap gap-2 mb-3">
+                {post.topics.slice(0, 2).map((topic) => (
+                  <span
+                    key={topic}
+                    className="text-[10px] font-semibold uppercase tracking-wider bg-purple-500/10 text-purple-300 border border-purple-500/20 px-2 py-1 rounded-full"
+                  >
+                    {topic}
+                  </span>
+                ))}
+              </div>
+              <h3 className="text-base font-semibold text-white mb-2 group-hover:text-purple-200">
+                {post.title}
+              </h3>
+              <p className="text-slate-400 text-sm mb-3 line-clamp-2">
+                {post.intent}
+              </p>
+              <span className="text-xs text-purple-400 font-medium">
+                Read article →
+              </span>
+            </Link>
+          ))}
+        </div>
+
+        <div className="mt-14">
+          <div className="glass-card p-6 md:p-8">
+            <h2 className="text-2xl font-bold text-white mb-2">
+              Want a custom post based on your environment?
+            </h2>
+            <p className="text-slate-400 mb-4 max-w-2xl">
+              Tell us your stack, goals, and constraints. We can generate a tailored implementation playbook from this catalog as a starting point.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/contact/" className="btn-primary">
+                Request a custom playbook
+              </Link>
+              <Link href="/services/" className="btn-secondary">
+                Browse services instead
+              </Link>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </PageTemplate>
   );
 }

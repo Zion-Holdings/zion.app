@@ -1,4 +1,5 @@
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
+import PageShell from '@/components/PageShell';
 
 export const metadata: Metadata = {
   title: 'Industry Solutions | Zion Tech Group',
@@ -14,10 +15,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/industries' },
 };
 
-export default function IndustriesLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <>{children}</>;
+export default function IndustriesLayout({ children }: { children: React.ReactNode }) {
+  return <PageShell>{children}</PageShell>;
 }

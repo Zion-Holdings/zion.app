@@ -1,13 +1,13 @@
-Subject: Case study: Self-Optimizing Decision Suite in Energy
+Subject: Case study: Self-Optimizing Decision Suite in Gaming
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-A energy client achieved $22M savings in 18 months using Self-Optimizing Decision Suite. The system pays for itself in <90 days. Let\'s discuss your use case.
+A gaming client achieved $22M savings in 18 months using Self-Optimizing Decision Suite. The system pays for itself in <90 days. Let\'s discuss your use case.
 
 ---
 Service: Self-Optimizing Decision Suite
-Industry: energy
+Industry: gaming
 URL: https://ziontechgroup.com/services/self-optimizing-decision-suite-952481ed
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

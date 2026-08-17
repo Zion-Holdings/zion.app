@@ -3,11 +3,11 @@ Subject: Quick question about Smart Market Management
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-I built Smart Market Management specifically for real-estate challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+I built Smart Market Management specifically for legal challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
 
 ---
 Service: Smart Market Management
-Industry: real-estate
+Industry: legal
 URL: https://ziontechgroup.com/services/smart-market-management-dbde2d8c
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

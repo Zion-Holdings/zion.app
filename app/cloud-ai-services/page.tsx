@@ -1,17 +1,28 @@
-import { Metadata } from 'next'
+import PageTemplate from '@/components/PageTemplate';
+import type { Metadata } from 'next';
+
 export const metadata: Metadata = {
   title: 'Cloud AI Services | Zion Tech Group',
-  description: 'Managed cloud AI services for inference, pipelines, and cost governance.'
-}
+  description: 'Managed cloud AI services for inference, pipelines, and cost governance.',
+  alternates: { canonical: '/cloud-ai-services/' },
+};
+
 export default function Page() {
   return (
-    <main className="container-page py-20">
-      <h1 className="text-4xl font-bold text-white mb-4">Cloud AI Services</h1>
-      <p className="text-xl text-slate-300 mb-10">Managed cloud AI services for inference, pipelines, and cost governance.</p>
-      <div className="text-center">
-        <a className="btn-primary" href="/contact/">Contact us</a>
-        <a className="btn-secondary" href="/services/">Services</a>
-      </div>
-    </main>
-  )
+    <PageTemplate
+      title="Cloud AI Services"
+      description="Managed cloud AI services for inference, pipelines, and cost governance."
+      category="Cloud & DevOps"
+      heroIcon="☁️"
+      actions={[
+        { label: 'Contact us', href: '/contact/', style: 'primary' },
+        { label: 'Services', href: '/services/', style: 'secondary' },
+      ]}
+      breadcrumbItems={[
+        { label: 'Home', href: '/' },
+        { label: 'Cloud AI Services', href: '/cloud-ai-services' },
+      ]}
+      layout="hero"
+    />
+  );
 }

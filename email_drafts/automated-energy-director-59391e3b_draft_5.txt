@@ -1,13 +1,13 @@
-Subject: Case study: Automated Energy Director in Automotive
+Subject: Case study: Automated Energy Director in Energy
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-A automotive client achieved $22M savings in 18 months using Automated Energy Director. The system pays for itself in <90 days. Let\'s discuss your use case.
+A energy client achieved $22M savings in 18 months using Automated Energy Director. The system pays for itself in <90 days. Let\'s discuss your use case.
 
 ---
 Service: Automated Energy Director
-Industry: automotive
+Industry: energy
 URL: https://ziontechgroup.com/services/automated-energy-director-59391e3b
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

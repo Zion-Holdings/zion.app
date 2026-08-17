@@ -1,5 +1,5 @@
-// Auto-generated layout for metadata (Next 16: client components can't export metadata)
 import type { Metadata } from 'next';
+import PageShell from '@/components/PageShell';
 
 export const metadata: Metadata = {
   title: 'AI & IT Solutions — Zion Tech Group',
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return <PageShell>{children}</PageShell>;
 }

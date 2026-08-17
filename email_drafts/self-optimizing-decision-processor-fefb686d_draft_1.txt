@@ -1,13 +1,13 @@
-Subject: Transform your finance with Self-Optimizing Decision Processor
+Subject: Transform your healthcare with Self-Optimizing Decision Processor
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-Hi, I noticed you\'re in finance. Self-Optimizing Decision Processor has helped companies achieve 45% faster processing and $18M+ annual savings. Would you be open to a 15-min demo?
+Hi, I noticed you\'re in healthcare. Self-Optimizing Decision Processor has helped companies achieve 45% faster processing and $18M+ annual savings. Would you be open to a 15-min demo?
 
 ---
 Service: Self-Optimizing Decision Processor
-Industry: finance
+Industry: healthcare
 URL: https://ziontechgroup.com/services/self-optimizing-decision-processor-fefb686d
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

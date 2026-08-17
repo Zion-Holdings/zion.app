@@ -3,11 +3,11 @@ Subject: Self-Optimizing Energy Automation - Free pilot available
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-We\'re offering free pilots for transportation teams. Self-Optimizing Energy Automation typically delivers 40-60% improvement in key metrics. Want to try it?
+We\'re offering free pilots for energy teams. Self-Optimizing Energy Automation typically delivers 40-60% improvement in key metrics. Want to try it?
 
 ---
 Service: Self-Optimizing Energy Automation
-Industry: transportation
+Industry: energy
 URL: https://ziontechgroup.com/services/self-optimizing-energy-automation-a390abaf
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

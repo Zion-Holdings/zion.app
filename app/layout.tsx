@@ -1,14 +1,12 @@
 import React, { ReactNode } from 'react';
 import type { Metadata, Viewport } from 'next';
-import SkipLink from './components/SkipLink';
+import PageShell from './components/PageShell';
 import EnhancedSkipLink from './components/EnhancedSkipLink';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import StickyMobileCTA from './components/StickyMobileCTA';
 import Analytics from './components/Analytics';
 import CtaTracking from './components/CtaTracking';
 import BackToTop from './components/BackToTop';
 import ReadingProgressBar from './components/ReadingProgressBar';
-import StickyMobileCTA from './components/StickyMobileCTA';
 import AIChatWidget from './components/AIChatWidget';
 import ServiceWorkerRegistration from './components/ServiceWorkerRegistration';
 import StickyDonateBanner from './components/StickyDonateBanner';
@@ -101,26 +99,21 @@ export default function RootLayout({
         <body className="antialiased font-sans">
           <Analytics />
           <CtaTracking />
-          <div className="flex min-h-screen flex-col bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">
+          <PageShell>
             <EnhancedSkipLink />
             <ReadingProgressBar />
-            <Header />
-            <main className="relative z-10 flex-1" id="main-content" tabIndex={-1} role="main">
-              <GlobalErrorBoundary>
-                {children}
-              </GlobalErrorBoundary>
-            </main>
-            <Footer />
-            <BackToTop />
-
-            <AIChatWidget />
-            <AIExperienceLoader />
-            <StickyMobileCTA />
-            <CookieConsentBanner />
-            <ErrorTracker />
-            <FieldPerformanceCollector />
-            <FloatingAgentStatus />
-          </div>
+            <GlobalErrorBoundary>
+              {children}
+            </GlobalErrorBoundary>
+          </PageShell>
+          <BackToTop />
+          <AIChatWidget />
+          <AIExperienceLoader />
+          <StickyMobileCTA />
+          <CookieConsentBanner />
+          <ErrorTracker />
+          <FieldPerformanceCollector />
+          <FloatingAgentStatus />
         </body>
       </html>
     </>

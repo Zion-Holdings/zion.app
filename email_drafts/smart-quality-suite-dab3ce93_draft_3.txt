@@ -3,11 +3,11 @@ Subject: Quick question about Smart Quality Suite
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-I built Smart Quality Suite specifically for retail challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+I built Smart Quality Suite specifically for energy challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
 
 ---
 Service: Smart Quality Suite
-Industry: retail
+Industry: energy
 URL: https://ziontechgroup.com/services/smart-quality-suite-dab3ce93
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

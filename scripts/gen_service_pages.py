@@ -6,7 +6,8 @@ base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 out_services = os.path.join(base, 'out', 'services')
 
 with open(os.path.join(base, 'app/data/servicesData.json')) as f:
-    services = json.load(f)
+    data = json.load(f)
+services = data.get('services', data) if isinstance(data, dict) else data
 
 TPL = """<!DOCTYPE html>
 <html lang="en">

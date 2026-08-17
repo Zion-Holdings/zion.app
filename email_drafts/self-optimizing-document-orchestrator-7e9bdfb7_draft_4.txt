@@ -3,11 +3,11 @@ Subject: Self-Optimizing Document Orchestrator - Free pilot available
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-We\'re offering free pilots for automotive teams. Self-Optimizing Document Orchestrator typically delivers 40-60% improvement in key metrics. Want to try it?
+We\'re offering free pilots for logistics teams. Self-Optimizing Document Orchestrator typically delivers 40-60% improvement in key metrics. Want to try it?
 
 ---
 Service: Self-Optimizing Document Orchestrator
-Industry: automotive
+Industry: logistics
 URL: https://ziontechgroup.com/services/self-optimizing-document-orchestrator-7e9bdfb7
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

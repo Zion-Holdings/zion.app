@@ -29,7 +29,7 @@ const tools = [
   { id: 'image-color-extractor', icon: '🖼️', title: 'Image Color Extractor', desc: 'Extract dominant colors from any image', category: 'Design' },
   { id: 'unit-converter', icon: '📏', title: 'Unit Converter', desc: 'Convert between length, weight, temperature, and data units', category: 'Utilities' },
   { id: 'currency-converter', icon: '💱', title: 'Currency Converter', desc: 'Real-time currency conversion for 150+ currencies', category: 'Utilities' },
-  { id: 'base64', icon: '🔐', title: 'Base64 Encoder/Decoder', desc: 'Encode and decode Base64 strings and files', category: 'Encoding' },
+  { id: 'base64', icon: '🔐', title: 'Base64 Encoder/Decoder', desc: 'Encode and decode Base64 strings and files', category: 'Encoding', href: '/tools/base64/' },
   { id: 'url-encoder-decoder', icon: '🔗', title: 'URL Encoder/Decoder', desc: 'Encode and decode URL parameters safely', category: 'Encoding' },
   { id: 'qr-code-generator', icon: '📱', title: 'QR Code Generator', desc: 'Generate customizable QR codes for URLs, text, and more', category: 'Utilities' },
   { id: 'password-generator', icon: '🔒', title: 'Password Generator', desc: 'Generate secure random passwords with custom rules', category: 'Security' },
@@ -97,7 +97,7 @@ export default function ToolsPage() {
               {tools.filter(t => t.category === cat).map(tool => (
                 <Link
                   key={tool.id}
-                  href={`/tools/${tool.id}`}
+                  href={tool.href || `/tools/${tool.id}`}
                   className="group block p-5 rounded-xl bg-slate-800/50 border border-slate-700/50 hover:border-emerald-500/50 hover:bg-slate-800 transition-all"
                 >
                   <div className="flex items-start gap-3">

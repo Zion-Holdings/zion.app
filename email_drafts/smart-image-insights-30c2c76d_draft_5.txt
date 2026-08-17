@@ -1,13 +1,13 @@
-Subject: Case study: Smart Image Insights in Gaming
+Subject: Case study: Smart Image Insights in Finance
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-A gaming client achieved $22M savings in 18 months using Smart Image Insights. The system pays for itself in <90 days. Let\'s discuss your use case.
+A finance client achieved $22M savings in 18 months using Smart Image Insights. The system pays for itself in <90 days. Let\'s discuss your use case.
 
 ---
 Service: Smart Image Insights
-Industry: gaming
+Industry: finance
 URL: https://ziontechgroup.com/services/smart-image-insights-30c2c76d
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

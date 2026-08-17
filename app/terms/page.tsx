@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import PageTemplate from '@/components/PageTemplate';
 
 export const metadata: Metadata = {
   title: 'Terms of Service | Zion Tech Group',
@@ -18,22 +19,26 @@ const sections = [
 
 export default function TermsOfServicePage() {
   return (
-    <main className="mx-auto max-w-3xl px-6 py-16">
-      <h1 className="text-3xl font-semibold tracking-tight">Terms of Service</h1>
-      <p className="mt-3 text-gray-600">Effective date: 2026-07-13</p>
-
-      <div className="mt-10 space-y-8">
-        {sections.map(s => (
-          <section key={s.title}>
-            <h2 className="text-xl font-medium">{s.title}</h2>
-            <p className="mt-2">{s.body}</p>
-          </section>
-        ))}
+    <PageTemplate
+      title="Terms of Service"
+      description="Effective date: 2026-07-13"
+      breadcrumbItems={[
+        { label: 'Home', href: '/' },
+        { label: 'Terms of Service', href: '/terms' },
+      ]}
+      layout="centered"
+      showBottomCta={false}
+    >
+      <div className="max-w-4xl">
+        <div className="mt-10 space-y-8">
+          {sections.map(s => (
+            <div key={s.title} className="space-y-3">
+              <h2 className="text-xl font-medium text-white">{s.title}</h2>
+              <p className="text-slate-300 leading-relaxed">{s.body}</p>
+            </div>
+          ))}
+        </div>
       </div>
-
-      <div className="mt-12">
-        <Link href="/" className="text-sm underline">Back to homepage</Link>
-      </div>
-    </main>
+    </PageTemplate>
   );
 }

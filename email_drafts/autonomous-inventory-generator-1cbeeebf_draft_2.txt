@@ -1,13 +1,13 @@
-Subject: AI solution for education - Autonomous Inventory Generator
+Subject: AI solution for hospitality - Autonomous Inventory Generator
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-Most education companies waste 30% of their time on manual processes. Autonomous Inventory Generator automates this with zero human intervention. Can I show you how?
+Most hospitality companies waste 30% of their time on manual processes. Autonomous Inventory Generator automates this with zero human intervention. Can I show you how?
 
 ---
 Service: Autonomous Inventory Generator
-Industry: education
+Industry: hospitality
 URL: https://ziontechgroup.com/services/autonomous-inventory-generator-1cbeeebf
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

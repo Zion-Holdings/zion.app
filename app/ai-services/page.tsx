@@ -1,19 +1,15 @@
-// app/ai-services/page.tsx — AI Services Hub (replaces placeholder)
-'use client';
-
 import Link from 'next/link';
-
 import { useState, useMemo } from 'react';
-import { allServices } from '../data/servicesData';
 import type { Metadata } from 'next';
+import PageTemplate from '@/components/PageTemplate';
+import { allServices } from '../data/servicesData';
+import type { Service } from '../data/servicesData';
 
 export const metadata: Metadata = {
   title: 'AI Services | Zion Tech Group',
-  description: '{aiServices.length}+ AI-powered services — from chatbots to computer vision, predictive analytics to autonomous agents.',
-  alternates: { canonical: '/ai-servic/' },
+  description: '300+ AI-powered services — from chatbots to computer vision, predictive analytics to autonomous agents.',
+  alternates: { canonical: 'https://ziontechgroup.com/ai-services/' },
 };
-
-import type { Service } from '../data/servicesData';
 
 const aiServices = allServices.filter((s: Service) => s.category === 'ai');
 
@@ -49,32 +45,24 @@ export default function AIServicesPage() {
   );
 
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
-      <div className="container-page">
-        {/* Breadcrumb */}
-        <nav className="mb-8 text-sm text-slate-400">
-          <Link href="/" className="hover:text-purple-400 transition">Home</Link>
-          <span className="mx-2">/</span>
-          <Link href="/services/" className="hover:text-purple-400 transition">Services</Link>
-          <span className="mx-2">/</span>
-          <span className="text-slate-300">AI Services</span>
-        </nav>
-
-        {/* Hero */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-6xl mb-4 block">🤖</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">AI Services</h1>
-          <p className="text-xl text-slate-300 leading-relaxed mb-6">
-            {aiServices.length}+ AI-powered services — from chatbots to computer vision, predictive analytics to autonomous agents.
-          </p>
-          <Link
-            href="/contact/"
-            className="btn-primary text-lg px-10 py-4 inline-block"
-          >
-            ⚡ Get AI Proposal
-          </Link>
-        </div>
-
+    <PageTemplate
+      title="AI Services"
+      description={`${aiServices.length}+ AI-powered services — from chatbots to computer vision, predictive analytics to autonomous agents.`}
+      category="AI Services"
+      heroIcon="🤖"
+      actions={[
+        { label: '⚡ Get AI Proposal', href: '/contact/', style: 'primary' },
+        { label: 'Browse All Services', href: '/services', style: 'secondary' },
+      ]}
+      breadcrumbItems={[
+        { label: 'Home', href: '/' },
+        { label: 'Services', href: '/services' },
+        { label: 'AI Services', href: '/ai-services' },
+      ]}
+      layout="hero"
+      showBottomCta={true}
+    >
+      <div className="max-w-6xl mx-auto">
         {/* Featured */}
         <div className="mb-16">
           <h2 className="text-2xl font-bold text-white mb-2 flex items-center gap-2">
@@ -101,64 +89,51 @@ export default function AIServicesPage() {
           </div>
         </div>
 
-        {/* All AI Services */}
-        <div className="mb-12">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
-            <div>
-              <h2 className="text-2xl font-bold text-white">All AI Services</h2>
-              <p className="text-slate-400 text-sm mt-1">
-                {aiServices.length} services — search and filter
-              </p>
-            </div>
-            <div className="w-full sm:w-72">
-              <input
-                type="text"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Filter AI services…"
-                className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:border-purple-500 focus:outline-none"
-              />
-            </div>
+        {/* Filter */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
+          <div>
+            <h2 className="text-2xl font-bold text-white">All AI Services</h2>
+            <p className="text-slate-400 text-sm mt-1">
+              {aiServices.length} services — search and filter
+            </p>
           </div>
-
-          {rest.length > 0 ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-              {rest.map((service: Service) => (
-                <Link
-                  key={service.id}
-                  href={`/services/${service.id}`}
-                  className="glass-card flex flex-col p-5 group hover:border-purple-500/40 transition"
-                >
-                  <span className="text-xs text-slate-500 uppercase tracking-wider mb-1">AI</span>
-                  <h3 className="text-sm font-semibold text-white group-hover:text-purple-300 transition leading-snug mb-1">
-                    {service.title}
-                  </h3>
-                  <p className="text-slate-400 text-xs line-clamp-2 flex-1 mt-1">
-                    {service.description}
-                  </p>
-                  <span className="text-purple-400 text-xs mt-2 inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    Details <span>→</span>
-                  </span>
-                </Link>
-              ))}
-            </div>
-          ) : (
-            <p className="text-slate-500 text-center py-8">No AI services match your filter.</p>
-          )}
-        </div>
-
-        {/* Bottom CTA */}
-        <div className="text-center glass-card p-10">
-          <h2 className="text-2xl font-bold text-white mb-3">Can't find what you need?</h2>
-          <p className="text-slate-400 mb-6 max-w-xl mx-auto">
-            We can build a custom AI solution tailored to your exact requirements. Let's talk.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="tel:+13024640950" className="btn-primary">📞 +1 302 464 0950</a>
-            <Link href="/contact/" className="btn-secondary">✉️ Contact Us</Link>
+          <div className="w-full sm:w-72">
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Filter AI services…"
+              className="w-full bg-slate-800 border border-slate-700 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:border-purple-500 focus:outline-none"
+            />
           </div>
         </div>
+
+        {/* All AI Services Grid */}
+        {rest.length > 0 ? (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {rest.map((service: Service) => (
+              <Link
+                key={service.id}
+                href={`/services/${service.id}`}
+                className="glass-card flex flex-col p-5 group hover:border-purple-500/40 transition"
+              >
+                <span className="text-xs text-slate-500 uppercase tracking-wider mb-1">AI</span>
+                <h3 className="text-sm font-semibold text-white group-hover:text-purple-300 transition leading-snug mb-1">
+                  {service.title}
+                </h3>
+                <p className="text-slate-400 text-xs line-clamp-2 flex-1 mt-1">
+                  {service.description}
+                </p>
+                <span className="text-purple-400 text-xs mt-2 inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                  Details <span>→</span>
+                </span>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <p className="text-slate-500 text-center py-8">No AI services match your filter.</p>
+        )}
       </div>
-    </main>
+    </PageTemplate>
   );
 }

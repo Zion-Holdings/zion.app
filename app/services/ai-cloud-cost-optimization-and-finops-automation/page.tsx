@@ -38,7 +38,7 @@ export default function ServicePage() {
           <h3 className="text-sm font-semibold text-slate-300 mb-2">Related services</h3>
           <div className="flex flex-wrap gap-2">
             <Link href="/services/cloud-cost-optimization-platform/" className="text-sm text-purple-300 hover:text-purple-200 underline">cloud-cost-optimization-platform</Link>
-<Link href="/services/devops-automation/" className="text-sm text-purple-300 hover:text-purple-200 underline">devops-automation</Link>
+<Link href="/services/" className="text-sm text-purple-300 hover:text-purple-200 underline">devops-automation</Link>
           </div>
         </div>
 </main>

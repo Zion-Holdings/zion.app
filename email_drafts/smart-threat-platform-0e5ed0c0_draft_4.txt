@@ -3,11 +3,11 @@ Subject: Smart Threat Platform - Free pilot available
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-We\'re offering free pilots for energy teams. Smart Threat Platform typically delivers 40-60% improvement in key metrics. Want to try it?
+We\'re offering free pilots for hospitality teams. Smart Threat Platform typically delivers 40-60% improvement in key metrics. Want to try it?
 
 ---
 Service: Smart Threat Platform
-Industry: energy
+Industry: hospitality
 URL: https://ziontechgroup.com/services/smart-threat-platform-0e5ed0c0
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

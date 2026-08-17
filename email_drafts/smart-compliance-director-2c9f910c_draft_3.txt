@@ -3,11 +3,11 @@ Subject: Quick question about Smart Compliance Director
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-I built Smart Compliance Director specifically for transportation challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+I built Smart Compliance Director specifically for legal challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
 
 ---
 Service: Smart Compliance Director
-Industry: transportation
+Industry: legal
 URL: https://ziontechgroup.com/services/smart-compliance-director-2c9f910c
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

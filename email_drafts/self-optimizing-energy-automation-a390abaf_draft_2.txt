@@ -1,13 +1,13 @@
-Subject: AI solution for transportation - Self-Optimizing Energy Automation
+Subject: AI solution for energy - Self-Optimizing Energy Automation
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-Most transportation companies waste 30% of their time on manual processes. Self-Optimizing Energy Automation automates this with zero human intervention. Can I show you how?
+Most energy companies waste 30% of their time on manual processes. Self-Optimizing Energy Automation automates this with zero human intervention. Can I show you how?
 
 ---
 Service: Self-Optimizing Energy Automation
-Industry: transportation
+Industry: energy
 URL: https://ziontechgroup.com/services/self-optimizing-energy-automation-a390abaf
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

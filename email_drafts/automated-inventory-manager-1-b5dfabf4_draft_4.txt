@@ -3,11 +3,11 @@ Subject: Automated Inventory Manager #1 - Free pilot available
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-We\'re offering free pilots for finance teams. Automated Inventory Manager #1 typically delivers 40-60% improvement in key metrics. Want to try it?
+We\'re offering free pilots for technology teams. Automated Inventory Manager #1 typically delivers 40-60% improvement in key metrics. Want to try it?
 
 ---
 Service: Automated Inventory Manager #1
-Industry: finance
+Industry: technology
 URL: https://ziontechgroup.com/services/automated-inventory-manager-1-b5dfabf4
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

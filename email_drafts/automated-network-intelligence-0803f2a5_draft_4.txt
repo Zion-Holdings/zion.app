@@ -3,11 +3,11 @@ Subject: Automated Network Intelligence - Free pilot available
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-We\'re offering free pilots for logistics teams. Automated Network Intelligence typically delivers 40-60% improvement in key metrics. Want to try it?
+We\'re offering free pilots for healthcare teams. Automated Network Intelligence typically delivers 40-60% improvement in key metrics. Want to try it?
 
 ---
 Service: Automated Network Intelligence
-Industry: logistics
+Industry: healthcare
 URL: https://ziontechgroup.com/services/automated-network-intelligence-0803f2a5
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

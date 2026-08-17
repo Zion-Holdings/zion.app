@@ -1,114 +1,68 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+import { } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: `AI Conversational Commerce Platform | Zion Tech Group`,
-  description: `AI shopping assistant that engages customers in natural conversations to recommend products, answer questions, and complete purchases. Increases conversion by 35%.`,
-  keywords: 'Natural language product recommendations, Visual search and similarity matching, Multi-language conversational commerce, Cart abandonment recovery via chat, Integration with Shopify, Magento, WooCommerce, Analytics dashboard with conversion tracking, ai, retail, Zion Tech Group',
+export const metadata = {
+  title: "AI Conversational Commerce Platform - Zion Tech Group",
+  description: "AI shopping assistant that engages customers in natural conversations to recommend products, answer questions, and complete purchases. Increases conversion by 3",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/ai-conversational-commerce/`,
-  },
+    canonical: `https://ziontechgroup.com/services/ai-conversational-commerce`
+  }
 };
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-6">AI Conversational Commerce Platform</h1>
+        <p className="text-lg text-gray-300 mb-8">AI shopping assistant that engages customers in natural conversations to recommend products, answer questions, and complete purchases. Increases conversion by 35%.</p>
         
-        <div class="mb-6">
-          <a href="/services/" class="text-purple-400 hover:text-purple-300 text-sm flex items-center gap-2">
-            ← Back to All Services
-          </a>
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Natural language product recommendations</li>
+            <li>Visual search and similarity matching</li>
+            <li>Multi-language conversational commerce</li>
+            <li>Cart abandonment recovery via chat</li>
+            <li>Integration with Shopify, Magento, WooCommerce</li>
+          </ul>
         </div>
         
-        <h1 className="text-4xl font-bold mb-6 text-white">AI Conversational Commerce Platform</h1>
-        <p className="text-lg text-slate-300 mb-8">AI shopping assistant that engages customers in natural conversations to recommend products, answer questions, and complete purchases. Increases conversion by 35%.</p>
-        
-        <div class="bg-slate-900 rounded-xl p-6 mb-8">
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs px-3 py-1 bg-purple-900/30 rounded-full text-purple-300">ai</span>
-            <span class="text-xs px-3 py-1 bg-blue-900/30 rounded-full text-blue-300">retail</span>
-          </div>
-          <h2 class="text-2xl font-semibold mb-4 text-white">Key Features</h2>
-          <ul class="list-disc list-inside space-y-2">
-        <li class="text-slate-300">Natural language product recommendations</li>
-        <li class="text-slate-300">Visual search and similarity matching</li>
-        <li class="text-slate-300">Multi-language conversational commerce</li>
-        <li class="text-slate-300">Cart abandonment recovery via chat</li>
-        <li class="text-slate-300">Integration with Shopify, Magento, WooCommerce</li>
-        <li class="text-slate-300">Analytics dashboard with conversion tracking</li>
-      </ul>
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Increase conversion by 35%</li>
+            <li>Reduce support tickets by 50%</li>
+            <li>Personalize every shopping experience</li>
+            <li>24/7 automated sales assistant</li>
+          </ul>
         </div>
         
-        <div class="bg-slate-900 rounded-xl p-6 mb-8">
-          <h2 class="text-2xl font-semibold mb-4 text-white">Benefits</h2>
-          <ul class="list-disc list-inside space-y-2">
-        <li class="text-slate-300">Increase conversion by 35%</li>
-        <li class="text-slate-300">Reduce support tickets by 50%</li>
-        <li class="text-slate-300">Personalize every shopping experience</li>
-        <li class="text-slate-300">24/7 automated sales assistant</li>
-      </ul>
-        </div>
-        
-        
-        <div class="border border-purple-500/30 rounded-xl p-6 mb-8">
-          <h2 class="text-2xl font-semibold text-white mb-4">Pricing</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div class="bg-slate-800 rounded-lg p-4 text-center">
-              <h3 class="font-semibold text-white mb-2">Basic</h3>
-              <p class="text-2xl font-bold text-purple-400 mb-2">$499/mo</p>
-              <p class="text-sm text-slate-400">Getting started plan</p>
+        <div className="border border-purple-500 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Basic</h3>
+              <p className="text-2xl font-bold mb-2">$499/mo/month</p>
             </div>
-            <div class="bg-slate-800 rounded-lg p-4 text-center border-2 border-purple-500">
-              <h3 class="font-semibold text-white mb-2">Pro</h3>
-              <p class="text-2xl font-bold text-purple-400 mb-2">$1,499/mo</p>
-              <p class="text-sm text-slate-400">Most popular</p>
+            <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
+              <h3 className="font-semibold mb-2">Pro</h3>
+              <p className="text-2xl font-bold mb-2">$1,499/mo/month</p>
             </div>
-            <div class="bg-slate-800 rounded-lg p-4 text-center">
-              <h3 class="font-semibold text-white mb-2">Enterprise</h3>
-              <p class="text-2xl font-bold text-purple-400 mb-2">Custom</p>
-              <p class="text-sm text-slate-400">Full-featured solution</p>
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Enterprise</h3>
+              <p className="text-2xl font-bold mb-2">$Custom/month</p>
             </div>
           </div>
         </div>
         
-        <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl p-6 mb-8">
-          <h2 class="text-2xl font-semibold text-white mb-4">Related Services</h2>
-          <div class="grid md:grid-cols-2 gap-4">
-            
-              <div>
-                <a href="/services/adaptive-advisor-retail-aba7d566/" class="text-purple-300 hover:text-purple-200 font-medium">Adaptive advisor-retail</a>
-                <p class="text-slate-400 text-sm mt-1">Unlock unprecedented growth with Adaptive advisor-retail. This autonomous system provides quality control with zero manu...</p>
-              </div>
-            
-            
-              <div>
-                <a href="/services/adaptive-automation-retail-094a5674/" class="text-purple-300 hover:text-purple-200 font-medium">Adaptive automation-retail</a>
-                <p class="text-slate-400 text-sm mt-1">Transform your retail operations with our Adaptive automation-retail. This AI-driven solution automates fraud prevention...</p>
-              </div>
-            
-            
-              <div>
-                <a href="/services/adaptive-document-generator-fbf9cea8/" class="text-purple-300 hover:text-purple-200 font-medium">Adaptive Document Generator</a>
-                <p class="text-slate-400 text-sm mt-1">Next-generation retail solution: Adaptive Document Generator. Combines resource optimization with adaptive intelligence ...</p>
-              </div>
-            
-            
-              <div>
-                <a href="/services/adaptive-engine-for-retail-06d56fbd/" class="text-purple-300 hover:text-purple-200 font-medium">Adaptive Engine for Retail</a>
-                <p class="text-slate-400 text-sm mt-1">Transform your retail operations with our Adaptive Engine for Retail. This AI-driven solution automates workflow managem...</p>
-              </div>
-            
-          </div>
-        </div>
-        
-        <div class="text-center">
-          <Link
-            href="/contact/"
-            class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
+        <div className="text-center">
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
           >
             Book a Consultation
-          </Link>
+          </a>
         </div>
       </div>
     </main>

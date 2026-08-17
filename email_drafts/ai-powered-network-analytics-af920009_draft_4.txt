@@ -3,11 +3,11 @@ Subject: AI-Powered Network Analytics - Free pilot available
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-We\'re offering free pilots for technology teams. AI-Powered Network Analytics typically delivers 40-60% improvement in key metrics. Want to try it?
+We\'re offering free pilots for automotive teams. AI-Powered Network Analytics typically delivers 40-60% improvement in key metrics. Want to try it?
 
 ---
 Service: AI-Powered Network Analytics
-Industry: technology
+Industry: automotive
 URL: https://ziontechgroup.com/services/ai-powered-network-analytics-af920009
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

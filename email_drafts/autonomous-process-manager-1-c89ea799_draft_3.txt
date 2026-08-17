@@ -3,11 +3,11 @@ Subject: Quick question about Autonomous Process Manager #1
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-I built Autonomous Process Manager #1 specifically for telecom challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+I built Autonomous Process Manager #1 specifically for transportation challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
 
 ---
 Service: Autonomous Process Manager #1
-Industry: telecom
+Industry: transportation
 URL: https://ziontechgroup.com/services/autonomous-process-manager-1-c89ea799
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

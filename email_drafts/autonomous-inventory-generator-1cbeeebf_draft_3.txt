@@ -3,11 +3,11 @@ Subject: Quick question about Autonomous Inventory Generator
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-I built Autonomous Inventory Generator specifically for education challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+I built Autonomous Inventory Generator specifically for hospitality challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
 
 ---
 Service: Autonomous Inventory Generator
-Industry: education
+Industry: hospitality
 URL: https://ziontechgroup.com/services/autonomous-inventory-generator-1cbeeebf
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

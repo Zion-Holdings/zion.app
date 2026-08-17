@@ -1,13 +1,13 @@
-Subject: Case study: Neural Inventory Platform in Technology
+Subject: Case study: Neural Inventory Platform in Transportation
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-A technology client achieved $22M savings in 18 months using Neural Inventory Platform. The system pays for itself in <90 days. Let\'s discuss your use case.
+A transportation client achieved $22M savings in 18 months using Neural Inventory Platform. The system pays for itself in <90 days. Let\'s discuss your use case.
 
 ---
 Service: Neural Inventory Platform
-Industry: technology
+Industry: transportation
 URL: https://ziontechgroup.com/services/neural-inventory-platform-015d74ef
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

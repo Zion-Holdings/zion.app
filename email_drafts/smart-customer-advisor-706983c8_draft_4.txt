@@ -3,11 +3,11 @@ Subject: Smart Customer Advisor - Free pilot available
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-We\'re offering free pilots for sports teams. Smart Customer Advisor typically delivers 40-60% improvement in key metrics. Want to try it?
+We\'re offering free pilots for retail teams. Smart Customer Advisor typically delivers 40-60% improvement in key metrics. Want to try it?
 
 ---
 Service: Smart Customer Advisor
-Industry: sports
+Industry: retail
 URL: https://ziontechgroup.com/services/smart-customer-advisor-706983c8
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

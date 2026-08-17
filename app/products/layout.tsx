@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import { allServices } from '@/data/servicesData';
+import PageShell from '@/components/PageShell';
 
 export const metadata: Metadata = {
   title: 'Products & Platforms | Zion Tech Group',
-  description: 'Six product families, ' + allServices.length + ' services — AI, IT, Cloud, Security, Data, and Automation platforms for enterprise.',
+  description: 'Six product families, AI, IT, Cloud, Security, Data, and Automation platforms for enterprise.',
 };
 
-export default function PageLayout({ children }: { children: React.ReactNode }) {
-  return children;
+export default function ProductsLayout({ children }: { children: React.ReactNode }) {
+  return <PageShell>{children}</PageShell>;
 }

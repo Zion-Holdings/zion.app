@@ -1,13 +1,13 @@
-Subject: Case study: Smart Predictive Management in Automotive
+Subject: Case study: Smart Predictive Management in Real-Estate
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-A automotive client achieved $22M savings in 18 months using Smart Predictive Management. The system pays for itself in <90 days. Let\'s discuss your use case.
+A real-estate client achieved $22M savings in 18 months using Smart Predictive Management. The system pays for itself in <90 days. Let\'s discuss your use case.
 
 ---
 Service: Smart Predictive Management
-Industry: automotive
+Industry: real-estate
 URL: https://ziontechgroup.com/services/smart-predictive-management-79a64433
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

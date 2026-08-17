@@ -1,115 +1,68 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+import { } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: `ReviewPulse — Review Management | Zion Tech Group`,
-  description: `Monitor, respond to, and analyze reviews across Google, Yelp, Trustpilot, G2, and App Stores. AI-generated responses and sentiment trend tracking.`,
-  keywords: 'Multi-platform review monitoring, AI-generated response drafts, Sentiment trend tracking and alerting, Competitor review benchmarking, Review request automation (post-purchase), Fake review detection, Google, Yelp, Trustpilot, G2, App Store support, micro-saas, Marketing, Zion Tech Group',
+export const metadata = {
+  title: "ReviewPulse — Review Management - Zion Tech Group",
+  description: "Monitor, respond to, and analyze reviews across Google, Yelp, Trustpilot, G2, and App Stores. AI-generated responses and sentiment trend tracking.",
   alternates: {
-    canonical: `https://ziontechgroup.com/services/w175-reviewpulse/`,
-  },
+    canonical: `https://ziontechgroup.com/services/w175-reviewpulse`
+  }
 };
 
 export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-6">ReviewPulse — Review Management</h1>
+        <p className="text-lg text-gray-300 mb-8">Monitor, respond to, and analyze reviews across Google, Yelp, Trustpilot, G2, and App Stores. AI-generated responses and sentiment trend tracking.</p>
         
-        <div class="mb-6">
-          <a href="/services/" class="text-purple-400 hover:text-purple-300 text-sm flex items-center gap-2">
-            ← Back to All Services
-          </a>
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Multi-platform review monitoring</li>
+            <li>AI-generated response drafts</li>
+            <li>Sentiment trend tracking and alerting</li>
+            <li>Competitor review benchmarking</li>
+            <li>Review request automation (post-purchase)</li>
+          </ul>
         </div>
         
-        <h1 className="text-4xl font-bold mb-6 text-white">ReviewPulse — Review Management</h1>
-        <p className="text-lg text-slate-300 mb-8">Monitor, respond to, and analyze reviews across Google, Yelp, Trustpilot, G2, and App Stores. AI-generated responses and sentiment trend tracking.</p>
-        
-        <div class="bg-slate-900 rounded-xl p-6 mb-8">
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs px-3 py-1 bg-purple-900/30 rounded-full text-purple-300">micro-saas</span>
-            <span class="text-xs px-3 py-1 bg-blue-900/30 rounded-full text-blue-300">Marketing</span>
-          </div>
-          <h2 class="text-2xl font-semibold mb-4 text-white">Key Features</h2>
-          <ul class="list-disc list-inside space-y-2">
-        <li class="text-slate-300">Multi-platform review monitoring</li>
-        <li class="text-slate-300">AI-generated response drafts</li>
-        <li class="text-slate-300">Sentiment trend tracking and alerting</li>
-        <li class="text-slate-300">Competitor review benchmarking</li>
-        <li class="text-slate-300">Review request automation (post-purchase)</li>
-        <li class="text-slate-300">Fake review detection</li>
-        <li class="text-slate-300">Google, Yelp, Trustpilot, G2, App Store support</li>
-      </ul>
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Respond to every review in minutes with AI</li>
+            <li>Sentiment trends detect product issues early</li>
+            <li>Review requests increase rating volume</li>
+            <li>Fake review detection protects reputation</li>
+          </ul>
         </div>
         
-        <div class="bg-slate-900 rounded-xl p-6 mb-8">
-          <h2 class="text-2xl font-semibold mb-4 text-white">Benefits</h2>
-          <ul class="list-disc list-inside space-y-2">
-        <li class="text-slate-300">Respond to every review in minutes with AI</li>
-        <li class="text-slate-300">Sentiment trends detect product issues early</li>
-        <li class="text-slate-300">Review requests increase rating volume</li>
-        <li class="text-slate-300">Fake review detection protects reputation</li>
-      </ul>
-        </div>
-        
-        
-        <div class="border border-purple-500/30 rounded-xl p-6 mb-8">
-          <h2 class="text-2xl font-semibold text-white mb-4">Pricing</h2>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div class="bg-slate-800 rounded-lg p-4 text-center">
-              <h3 class="font-semibold text-white mb-2">Basic</h3>
-              <p class="text-2xl font-bold text-purple-400 mb-2">$39/mo</p>
-              <p class="text-sm text-slate-400">Getting started plan</p>
+        <div className="border border-purple-500 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Basic</h3>
+              <p className="text-2xl font-bold mb-2">$39/mo/month</p>
             </div>
-            <div class="bg-slate-800 rounded-lg p-4 text-center border-2 border-purple-500">
-              <h3 class="font-semibold text-white mb-2">Pro</h3>
-              <p class="text-2xl font-bold text-purple-400 mb-2">$119/mo</p>
-              <p class="text-sm text-slate-400">Most popular</p>
+            <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
+              <h3 className="font-semibold mb-2">Pro</h3>
+              <p className="text-2xl font-bold mb-2">$119/mo/month</p>
             </div>
-            <div class="bg-slate-800 rounded-lg p-4 text-center">
-              <h3 class="font-semibold text-white mb-2">Enterprise</h3>
-              <p class="text-2xl font-bold text-purple-400 mb-2">$399/mo</p>
-              <p class="text-sm text-slate-400">Full-featured solution</p>
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Enterprise</h3>
+              <p className="text-2xl font-bold mb-2">$399/mo/month</p>
             </div>
           </div>
         </div>
         
-        <div class="bg-slate-900/60 border border-slate-700/50 rounded-xl p-6 mb-8">
-          <h2 class="text-2xl font-semibold text-white mb-4">Related Services</h2>
-          <div class="grid md:grid-cols-2 gap-4">
-            
-              <div>
-                <a href="/services/ai-accessibility-optimizer/" class="text-purple-300 hover:text-purple-200 font-medium">AI Accessibility Content Optimizer</a>
-                <p class="text-slate-400 text-sm mt-1">Suggests alt-text for images, transcript generation for videos, and semantic HTML improvements to boost accessibility an...</p>
-              </div>
-            
-            
-              <div>
-                <a href="/services/ai-ad-copy-generator/" class="text-purple-300 hover:text-purple-200 font-medium">Ai Ad Copy Generator</a>
-                <p class="text-slate-400 text-sm mt-1">AI Ad Copy Generator — enterprise-grade solution with AI-powered automation, real-time analytics, and seamless integrati...</p>
-              </div>
-            
-            
-              <div>
-                <a href="/services/ai-brand-voice-guardian/" class="text-purple-300 hover:text-purple-200 font-medium">AI Brand Voice Guardian</a>
-                <p class="text-slate-400 text-sm mt-1">Maintain consistent brand voice. AI audits existing content, generates tone guidelines, and rewrites copy in real time t...</p>
-              </div>
-            
-            
-              <div>
-                <a href="/services/ai-competitor-intelligence/" class="text-purple-300 hover:text-purple-200 font-medium">Competitor Intelligence Engine</a>
-                <p class="text-slate-400 text-sm mt-1">Automated competitor tracking: pricing changes, feature releases, marketing campaigns from 10K+ sources. Weekly digest +...</p>
-              </div>
-            
-          </div>
-        </div>
-        
-        <div class="text-center">
-          <Link
-            href="/contact/"
-            class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
+        <div className="text-center">
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
           >
             Book a Consultation
-          </Link>
+          </a>
         </div>
       </div>
     </main>

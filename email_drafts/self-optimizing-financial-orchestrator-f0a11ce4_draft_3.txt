@@ -3,11 +3,11 @@ Subject: Quick question about Self-Optimizing Financial Orchestrator
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-I built Self-Optimizing Financial Orchestrator specifically for real-estate challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+I built Self-Optimizing Financial Orchestrator specifically for gaming challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
 
 ---
 Service: Self-Optimizing Financial Orchestrator
-Industry: real-estate
+Industry: gaming
 URL: https://ziontechgroup.com/services/self-optimizing-financial-orchestrator-f0a11ce4
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

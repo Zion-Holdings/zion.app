@@ -3,11 +3,11 @@ Subject: Adaptive Content Analyzer - Free pilot available
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-We\'re offering free pilots for agriculture teams. Adaptive Content Analyzer typically delivers 40-60% improvement in key metrics. Want to try it?
+We\'re offering free pilots for logistics teams. Adaptive Content Analyzer typically delivers 40-60% improvement in key metrics. Want to try it?
 
 ---
 Service: Adaptive Content Analyzer
-Industry: agriculture
+Industry: logistics
 URL: https://ziontechgroup.com/services/adaptive-content-analyzer-1d2109db
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---

@@ -1,13 +1,13 @@
-Subject: Case study: Autonomous Customer Analyzer in Education
+Subject: Case study: Autonomous Customer Analyzer in Healthcare
 
 From: Kleber <hello@ziontechgroup.com>
 To: {email}
 
-A education client achieved $22M savings in 18 months using Autonomous Customer Analyzer. The system pays for itself in <90 days. Let\'s discuss your use case.
+A healthcare client achieved $22M savings in 18 months using Autonomous Customer Analyzer. The system pays for itself in <90 days. Let\'s discuss your use case.
 
 ---
 Service: Autonomous Customer Analyzer
-Industry: education
+Industry: healthcare
 URL: https://ziontechgroup.com/services/autonomous-customer-analyzer-b4e202cf
 Calendly: https://calendly.com/kleber-ziontechgroup/consultation
 ---
