@@ -1,0 +1,13 @@
+Subject: Quick question about Cloud Event-Driven Architecture
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Cloud Event-Driven Architecture specifically for Architecture challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Cloud Event-Driven Architecture
+Industry: Architecture
+URL: https://ziontechgroup.com/services/w174-cloud-events-platform
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Transform your Data Engineering with Reverse ETL & Data Activation
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+Hi, I noticed you\'re in Data Engineering. Reverse ETL & Data Activation has helped companies achieve 45% faster processing and $18M+ annual savings. Would you be open to a 15-min demo?
+
+---
+Service: Reverse ETL & Data Activation
+Industry: Data Engineering
+URL: https://ziontechgroup.com/services/w174-reverse-etl
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

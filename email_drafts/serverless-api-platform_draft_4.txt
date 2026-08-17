@@ -1,0 +1,13 @@
+Subject: Serverless API Production Platform - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Manufacturing teams. Serverless API Production Platform typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Serverless API Production Platform
+Industry: Manufacturing
+URL: https://ziontechgroup.com/services/serverless-api-platform
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

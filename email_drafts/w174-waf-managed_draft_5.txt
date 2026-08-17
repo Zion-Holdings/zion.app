@@ -1,0 +1,13 @@
+Subject: Case study: Managed Web Application Firewall (WAF) in Cybersecurity
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Cybersecurity client achieved $22M savings in 18 months using Managed Web Application Firewall (WAF). The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Managed Web Application Firewall (WAF)
+Industry: Cybersecurity
+URL: https://ziontechgroup.com/services/w174-waf-managed
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

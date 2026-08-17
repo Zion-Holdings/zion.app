@@ -1,0 +1,13 @@
+Subject: Network Detection & Response (NDR) - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Cybersecurity teams. Network Detection & Response (NDR) typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Network Detection & Response (NDR)
+Industry: Cybersecurity
+URL: https://ziontechgroup.com/services/w176-network-detection
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

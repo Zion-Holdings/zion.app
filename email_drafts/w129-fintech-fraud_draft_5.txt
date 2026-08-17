@@ -1,0 +1,13 @@
+Subject: Case study: FinTech Fraud Detection Engine in Financial-Services
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A financial-services client achieved $22M savings in 18 months using FinTech Fraud Detection Engine. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: FinTech Fraud Detection Engine
+Industry: financial-services
+URL: https://ziontechgroup.com/services/w129-fintech-fraud
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

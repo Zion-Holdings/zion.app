@@ -860,3 +860,19 @@
 /services/real-time-analytics /services/ 301
 /services/terraform/ /services/ 301
 /services/terraform /services/ 301
+/services/devops-automation/ /services/?category=automation 301
+/services/devops-automation /services/?category=automation 301
+/services/ai-voice-agent-phone/ /services/ai-voice-agent/ 301
+/services/ai-voice-agent-phone /services/ai-voice-agent/ 301
+
+# New content page fallbacks
+/ai-roi-calculator/ /docs/ai-roi-calculator/index.html 200
+/ai-roi-calculator /docs/ai-roi-calculator/index.html 200
+/business-impact/ /docs/business-impact/index.html 200
+/business-impact /docs/business-impact/index.html 200
+/service-areas/ /docs/service-areas/index.html 200
+/service-areas /docs/service-areas/index.html 200
+/sla/ /docs/sla/index.html 200
+/sla /docs/sla/index.html 200
+/free-ai-readiness-audit/ /docs/free-ai-readiness-audit/index.html 200
+/free-ai-readiness-audit /docs/free-ai-readiness-audit/index.html 200

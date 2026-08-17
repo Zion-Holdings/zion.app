@@ -1,0 +1,13 @@
+Subject: Quick question about Software Bill-of-Materials Manager
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Software Bill-of-Materials Manager specifically for General challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Software Bill-of-Materials Manager
+Industry: General
+URL: https://ziontechgroup.com/services/security-supply-chain-sbom-manager
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

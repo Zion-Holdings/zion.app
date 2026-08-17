@@ -1,0 +1,13 @@
+Subject: Quick question about Data Pipeline Orchestration
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Data Pipeline Orchestration specifically for Data Engineering challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Data Pipeline Orchestration
+Industry: Data Engineering
+URL: https://ziontechgroup.com/services/w175-data-pipeline-orch
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

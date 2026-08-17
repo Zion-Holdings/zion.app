@@ -1,0 +1,13 @@
+Subject: Quick question about DataImport Wizard — CSV/Excel Tool
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built DataImport Wizard — CSV/Excel Tool specifically for Data Operations challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: DataImport Wizard — CSV/Excel Tool
+Industry: Data Operations
+URL: https://ziontechgroup.com/services/w176-dataimport-wizard
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

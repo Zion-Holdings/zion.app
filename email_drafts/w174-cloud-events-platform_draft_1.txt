@@ -1,0 +1,13 @@
+Subject: Transform your Architecture with Cloud Event-Driven Architecture
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+Hi, I noticed you\'re in Architecture. Cloud Event-Driven Architecture has helped companies achieve 45% faster processing and $18M+ annual savings. Would you be open to a 15-min demo?
+
+---
+Service: Cloud Event-Driven Architecture
+Industry: Architecture
+URL: https://ziontechgroup.com/services/w174-cloud-events-platform
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

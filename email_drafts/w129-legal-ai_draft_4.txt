@@ -1,0 +1,13 @@
+Subject: AI Legal Document Analyzer - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for legal-and-compliance teams. AI Legal Document Analyzer typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: AI Legal Document Analyzer
+Industry: legal-and-compliance
+URL: https://ziontechgroup.com/services/w129-legal-ai
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

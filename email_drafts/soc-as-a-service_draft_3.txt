@@ -1,0 +1,13 @@
+Subject: Quick question about Security Operations Center as a Service (SOCaaS)
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Security Operations Center as a Service (SOCaaS) specifically for General challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Security Operations Center as a Service (SOCaaS)
+Industry: General
+URL: https://ziontechgroup.com/services/soc-as-a-service
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

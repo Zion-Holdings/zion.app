@@ -1,0 +1,13 @@
+Subject: Quick question about Container & K8s Security Platform
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Container & K8s Security Platform specifically for Cloud Security challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Container & K8s Security Platform
+Industry: Cloud Security
+URL: https://ziontechgroup.com/services/w175-container-security
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

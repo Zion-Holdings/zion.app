@@ -1,0 +1,13 @@
+Subject: Data Virtualization Layer - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Data Engineering teams. Data Virtualization Layer typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Data Virtualization Layer
+Industry: Data Engineering
+URL: https://ziontechgroup.com/services/w176-data-virtualization
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Quick question about SOC Analytics & Threat Hunting
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built SOC Analytics & Threat Hunting specifically for Cybersecurity challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: SOC Analytics & Threat Hunting
+Industry: Cybersecurity
+URL: https://ziontechgroup.com/services/w175-soc-analytics
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

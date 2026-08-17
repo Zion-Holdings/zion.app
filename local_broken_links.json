@@ -1,0 +1,36 @@
+{
+  "total_internal_links_checked": 65343,
+  "broken_internal_links": [
+    [
+      "app/agents-monitoring/page.tsx",
+      "/services/sec-soc-as-a-service/",
+      "no route/page"
+    ],
+    [
+      "app/agents-monitoring/page.tsx",
+      "/services/managed-observability-247/",
+      "no route/page"
+    ],
+    [
+      "app/blog/ai-first-cloud-cost-management-and-finops-in-2026/page.tsx",
+      "/services/data-lake-platform",
+      "no route/page"
+    ],
+    [
+      "app/academy/page.tsx",
+      "/services/ai-document-processing/",
+      "no route/page"
+    ],
+    [
+      "app/seo/ai-free-services-and-tools/page.tsx",
+      "/tools/base64/",
+      "no route/page"
+    ],
+    [
+      "app/services/ai-cloud-cost-optimization-and-finops-automation/page.tsx",
+      "/services/devops-automation/",
+      "no route/page"
+    ]
+  ],
+  "routes_found": 0
+}

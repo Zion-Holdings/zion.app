@@ -1,0 +1,13 @@
+Subject: Case study: APIDocs — Interactive API Documentation in Developer Tools
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Developer Tools client achieved $22M savings in 18 months using APIDocs — Interactive API Documentation. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: APIDocs — Interactive API Documentation
+Industry: Developer Tools
+URL: https://ziontechgroup.com/services/w174-apidocs
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Quick question about MLOps Platform & Model Lifecycle
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built MLOps Platform & Model Lifecycle specifically for Machine Learning challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: MLOps Platform & Model Lifecycle
+Industry: Machine Learning
+URL: https://ziontechgroup.com/services/w174-ml-ops-platform
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

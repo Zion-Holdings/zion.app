@@ -1,0 +1,13 @@
+Subject: Case study: Data Detective & Root Cause in Data Operations
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Data Operations client achieved $22M savings in 18 months using Data Detective & Root Cause. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Data Detective & Root Cause
+Industry: Data Operations
+URL: https://ziontechgroup.com/services/w176-data-detective
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

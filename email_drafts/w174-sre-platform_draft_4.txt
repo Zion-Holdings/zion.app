@@ -1,0 +1,13 @@
+Subject: SRE Platform & Reliability Engineering - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for DevOps teams. SRE Platform & Reliability Engineering typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: SRE Platform & Reliability Engineering
+Industry: DevOps
+URL: https://ziontechgroup.com/services/w174-sre-platform
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

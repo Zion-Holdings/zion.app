@@ -1,0 +1,13 @@
+Subject: Quick question about Cloud Backup & DR Orchestration
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Cloud Backup & DR Orchestration specifically for Disaster Recovery challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Cloud Backup & DR Orchestration
+Industry: Disaster Recovery
+URL: https://ziontechgroup.com/services/w176-cloud-backup-dr
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Case study: Software Supply Chain Security in Manufacturing
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Manufacturing client achieved $22M savings in 18 months using Software Supply Chain Security. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Software Supply Chain Security
+Industry: Manufacturing
+URL: https://ziontechgroup.com/services/software-supply-chain-sec
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

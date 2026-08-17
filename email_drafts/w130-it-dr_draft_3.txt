@@ -1,0 +1,13 @@
+Subject: Quick question about Disaster Recovery as a Service (DRaaS)
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Disaster Recovery as a Service (DRaaS) specifically for cloud-services challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Disaster Recovery as a Service (DRaaS)
+Industry: cloud-services
+URL: https://ziontechgroup.com/services/w130-it-dr
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

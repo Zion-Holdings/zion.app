@@ -1,0 +1,13 @@
+Subject: Quick question about Supply Chain SBOM & Vulnerability Intelligence
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Supply Chain SBOM & Vulnerability Intelligence specifically for Manufacturing challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Supply Chain SBOM & Vulnerability Intelligence
+Industry: Manufacturing
+URL: https://ziontechgroup.com/services/security-supply-chain-sbom
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

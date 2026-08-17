@@ -1,0 +1,13 @@
+Subject: Case study: Managed Detection & Response (MDR) in Cybersecurity
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A cybersecurity client achieved $22M savings in 18 months using Managed Detection & Response (MDR). The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Managed Detection & Response (MDR)
+Industry: cybersecurity
+URL: https://ziontechgroup.com/services/w128-mdr
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

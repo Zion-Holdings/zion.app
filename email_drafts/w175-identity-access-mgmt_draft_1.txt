@@ -1,0 +1,13 @@
+Subject: Transform your Identity with Identity & Access Management (IAM)
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+Hi, I noticed you\'re in Identity. Identity & Access Management (IAM) has helped companies achieve 45% faster processing and $18M+ annual savings. Would you be open to a 15-min demo?
+
+---
+Service: Identity & Access Management (IAM)
+Industry: Identity
+URL: https://ziontechgroup.com/services/w175-identity-access-mgmt
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

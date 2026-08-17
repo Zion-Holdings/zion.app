@@ -1,0 +1,13 @@
+Subject: Quick question about Serverless API Production Platform
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Serverless API Production Platform specifically for Manufacturing challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Serverless API Production Platform
+Industry: Manufacturing
+URL: https://ziontechgroup.com/services/serverless-api-platform
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

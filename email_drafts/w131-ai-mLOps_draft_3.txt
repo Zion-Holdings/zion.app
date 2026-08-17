@@ -1,0 +1,13 @@
+Subject: Quick question about MLOps & Model Management Platform
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built MLOps & Model Management Platform specifically for ai-and-ml challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: MLOps & Model Management Platform
+Industry: ai-and-ml
+URL: https://ziontechgroup.com/services/w131-ai-mLOps
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

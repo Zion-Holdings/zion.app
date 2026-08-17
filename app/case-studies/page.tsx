@@ -15,7 +15,7 @@ export const metadata = {
     type: 'website',
     locale: 'en_US',
   },
-  alternates: { canonical: '/case-studies/' },
+  alternates: { canonical: 'https://ziontechgroup.com/case-studies/' },
 };
 
 const studies = [
@@ -66,7 +66,7 @@ const studies = [
     metric: '$420K Annual Savings',
     metricSub: 'without performance loss',
     tags: ['Cloud', 'FinOps', 'Healthcare'],
-    relatedServices: ['/services/cloud-cost-optimization-platform/', '/services/devops-automation/'],
+    relatedServices: ['/services/cloud-cost-optimization-platform/', '/services/?category=devops'],
     body: 'Acme’s cloud footprint had grown unchecked across 6 AWS accounts. We implemented rightsizing, reserved-instance optimization, and idle-resource cleanup — with guardrails to prevent drift.',
     results: [
       'Monthly cloud bill dropped 35% within 60 days',
@@ -126,7 +126,7 @@ const studies = [
     metric: '80% Faster Onboarding',
     metricSub: 'new engineers productive in days',
     tags: ['AI', 'RAG', 'Enterprise'],
-    relatedServices: ['/services/ai-knowledge-base-rag-platform/', '/services/document-processing/'],
+    relatedServices: ['/services/ai-knowledge-base-rag/', '/services/document-processing/'],
     body: 'New engineers took 3–4 weeks to find answers across scattered Confluence, PDFs, and Slack threads. We deployed a RAG-powered knowledge base that answers technical questions with source citations instantly.',
     results: [
       'New hire time-to-productivity cut from 21 days to 4 days',

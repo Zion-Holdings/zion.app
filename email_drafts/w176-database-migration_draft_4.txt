@@ -1,0 +1,13 @@
+Subject: Database Migration Service - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for Data Operations teams. Database Migration Service typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Database Migration Service
+Industry: Data Operations
+URL: https://ziontechgroup.com/services/w176-database-migration
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

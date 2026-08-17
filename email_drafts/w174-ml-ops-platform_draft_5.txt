@@ -1,0 +1,13 @@
+Subject: Case study: MLOps Platform & Model Lifecycle in Machine Learning
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Machine Learning client achieved $22M savings in 18 months using MLOps Platform & Model Lifecycle. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: MLOps Platform & Model Lifecycle
+Industry: Machine Learning
+URL: https://ziontechgroup.com/services/w174-ml-ops-platform
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

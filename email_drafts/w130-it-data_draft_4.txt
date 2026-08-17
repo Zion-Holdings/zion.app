@@ -1,0 +1,13 @@
+Subject: Data Engineering & Pipeline Automation - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for data-engineering teams. Data Engineering & Pipeline Automation typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Data Engineering & Pipeline Automation
+Industry: data-engineering
+URL: https://ziontechgroup.com/services/w130-it-data
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

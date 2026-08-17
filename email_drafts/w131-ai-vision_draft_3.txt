@@ -1,0 +1,13 @@
+Subject: Quick question about Computer Vision Platform
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Computer Vision Platform specifically for ai-and-ml challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Computer Vision Platform
+Industry: ai-and-ml
+URL: https://ziontechgroup.com/services/w131-ai-vision
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Quick question about Cybersecurity Operations Center (SOC)
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Cybersecurity Operations Center (SOC) specifically for cybersecurity challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Cybersecurity Operations Center (SOC)
+Industry: cybersecurity
+URL: https://ziontechgroup.com/services/w131-ind-cyber
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

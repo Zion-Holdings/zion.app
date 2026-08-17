@@ -1,0 +1,13 @@
+Subject: Quick question about AI Meeting Minutes Generator
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built AI Meeting Minutes Generator specifically for technology-and-saas challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: AI Meeting Minutes Generator
+Industry: technology-and-saas
+URL: https://ziontechgroup.com/services/w128-meeting-minutes
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

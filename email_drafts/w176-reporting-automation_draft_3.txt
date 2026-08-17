@@ -1,0 +1,13 @@
+Subject: Quick question about Automated Reporting Platform
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Automated Reporting Platform specifically for Business Intelligence challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Automated Reporting Platform
+Industry: Business Intelligence
+URL: https://ziontechgroup.com/services/w176-reporting-automation
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

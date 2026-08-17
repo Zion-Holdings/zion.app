@@ -1,0 +1,13 @@
+Subject: Quick question about Multimodal AI Search
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Multimodal AI Search specifically for ai-and-ml challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Multimodal AI Search
+Industry: ai-and-ml
+URL: https://ziontechgroup.com/services/w129-multimodal-search
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Quick question about CronJob Manager — Scheduled Tasks
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built CronJob Manager — Scheduled Tasks specifically for Developer Tools challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: CronJob Manager — Scheduled Tasks
+Industry: Developer Tools
+URL: https://ziontechgroup.com/services/w176-cronjob-manager
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

@@ -1,0 +1,13 @@
+Subject: Case study: Semantic Search & Knowledge API in Search
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A Search client achieved $22M savings in 18 months using Semantic Search & Knowledge API. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: Semantic Search & Knowledge API
+Industry: Search
+URL: https://ziontechgroup.com/services/w175-semantic-search
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

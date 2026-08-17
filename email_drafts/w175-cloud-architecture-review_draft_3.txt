@@ -1,0 +1,13 @@
+Subject: Quick question about Cloud Architecture Review
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built Cloud Architecture Review specifically for Cloud Computing challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: Cloud Architecture Review
+Industry: Cloud Computing
+URL: https://ziontechgroup.com/services/w175-cloud-architecture-review
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

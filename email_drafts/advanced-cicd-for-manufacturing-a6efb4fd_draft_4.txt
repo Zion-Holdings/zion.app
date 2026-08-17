@@ -1,0 +1,13 @@
+Subject: Advanced CI/CD for Manufacturing - Free pilot available
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+We\'re offering free pilots for manufacturing teams. Advanced CI/CD for Manufacturing typically delivers 40-60% improvement in key metrics. Want to try it?
+
+---
+Service: Advanced CI/CD for Manufacturing
+Industry: manufacturing
+URL: https://ziontechgroup.com/services/advanced-cicd-for-manufacturing-a6efb4fd
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

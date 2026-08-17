@@ -1,0 +1,13 @@
+Subject: Case study: IncidentComms — Status & Comms in Devops
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+A DevOps client achieved $22M savings in 18 months using IncidentComms — Status & Comms. The system pays for itself in <90 days. Let\'s discuss your use case.
+
+---
+Service: IncidentComms — Status & Comms
+Industry: DevOps
+URL: https://ziontechgroup.com/services/w176-incident-comms
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---

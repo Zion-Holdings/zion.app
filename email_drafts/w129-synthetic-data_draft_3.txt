@@ -1,0 +1,13 @@
+Subject: Quick question about AI Synthetic Data Generator
+
+From: Kleber <hello@ziontechgroup.com>
+To: {email}
+
+I built AI Synthetic Data Generator specifically for ai-and-ml challenges. It\'s already saving companies 60% on operational costs. Interested in seeing if it fits your needs?
+
+---
+Service: AI Synthetic Data Generator
+Industry: ai-and-ml
+URL: https://ziontechgroup.com/services/w129-synthetic-data
+Calendly: https://calendly.com/kleber-ziontechgroup/consultation
+---
