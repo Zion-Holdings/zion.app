@@ -3,10 +3,10 @@ import type { Metadata } from 'next';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
-  title: 'Cybersecurity for MSPs Automation Roadmap | Zion Tech Group',
+  title: 'Cybersecurity for MSPs Automation Roadmap',
   description: 'Automation roadmap for MSP security operations.',
   openGraph: {
-    title: 'Cybersecurity for MSPs Automation Roadmap | Zion Tech Group',
+    title: 'Cybersecurity for MSPs Automation Roadmap',
     description: 'Automation roadmap for MSP security operations.',
     url: 'https://ziontechgroup.com/blog/cybersecurity-for-msps-automation-roadmap/',
     type: 'article',

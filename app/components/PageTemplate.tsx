@@ -1,4 +1,6 @@
 import React from 'react';
+import Link from 'next/link';
+import Breadcrumb from './Breadcrumb';
 
 interface PageTemplateProps {
   title: React.ReactNode;
@@ -9,8 +11,6 @@ interface PageTemplateProps {
   children: React.ReactNode;
 }
 
-import Breadcrumb from './Breadcrumb';
-
 export default function PageTemplate({
   title,
   subtitle,
@@ -19,6 +19,7 @@ export default function PageTemplate({
   actions = [],
   children,
 }: PageTemplateProps) {
+  const ActionComponent = Link;
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       {breadcrumbItems.length > 0 && (
@@ -34,9 +35,9 @@ export default function PageTemplate({
           {actions.length > 0 && (
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               {actions.map((action, idx) => (
-                <a key={idx} href={action.href} className={`${action.style === 'secondary' ? 'btn-secondary' : 'btn-primary'} text-lg px-10 py-4 inline-block`}>
+                <ActionComponent key={idx} href={action.href} className={`${action.style === 'secondary' ? 'btn-secondary' : 'btn-primary'} text-lg px-10 py-4 inline-block`}>
                   {action.label}
-                </a>
+                </ActionComponent>
               ))}
             </div>
           )}
@@ -50,9 +51,9 @@ export default function PageTemplate({
           {actions.length > 0 && (
             <div className="flex flex-col sm:flex-row gap-4">
               {actions.map((action, idx) => (
-                <a key={idx} href={action.href} className={`${action.style === 'secondary' ? 'btn-secondary' : 'btn-primary'} text-lg px-10 py-4 inline-block`}>
+                <ActionComponent key={idx} href={action.href} className={`${action.style === 'secondary' ? 'btn-secondary' : 'btn-primary'} text-lg px-10 py-4 inline-block`}>
                   {action.label}
-                </a>
+                </ActionComponent>
               ))}
             </div>
           )}

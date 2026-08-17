@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import StandardPage from '@/app/components/StandardPage';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
   title: 'Services | Zion Tech Group',

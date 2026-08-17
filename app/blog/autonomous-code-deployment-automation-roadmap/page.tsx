@@ -3,10 +3,10 @@ import type { Metadata } from 'next';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
-  title: 'Autonomous Code Deployment Automation Roadmap | Zion Tech Group',
+  title: 'Autonomous Code Deployment Automation Roadmap',
   description: 'Roadmap for autonomous deployment pipelines.',
   openGraph: {
-    title: 'Autonomous Code Deployment Automation Roadmap | Zion Tech Group',
+    title: 'Autonomous Code Deployment Automation Roadmap',
     description: 'Roadmap for autonomous deployment pipelines.',
     url: 'https://ziontechgroup.com/blog/autonomous-code-deployment-automation-roadmap/',
     type: 'article',

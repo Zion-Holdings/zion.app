@@ -3,10 +3,10 @@ import type { Metadata } from 'next';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
-  title: 'Managed IT Services Starter Template | Zion Tech Group',
+  title: 'Managed IT Services Starter Template',
   description: 'Starter template for managed IT service delivery.',
   openGraph: {
-    title: 'Managed IT Services Starter Template | Zion Tech Group',
+    title: 'Managed IT Services Starter Template',
     description: 'Starter template for managed IT service delivery.',
     url: 'https://ziontechgroup.com/blog/managed-it-services-starter-template/',
     type: 'article',

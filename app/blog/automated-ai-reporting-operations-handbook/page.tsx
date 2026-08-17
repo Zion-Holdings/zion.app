@@ -3,10 +3,10 @@ import type { Metadata } from 'next';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
-  title: 'Automated AI Reporting Operations Handbook | Zion Tech Group',
+  title: 'Automated AI Reporting Operations Handbook',
   description: 'Reporting automation playbook for AI operations.',
   openGraph: {
-    title: 'Automated AI Reporting Operations Handbook | Zion Tech Group',
+    title: 'Automated AI Reporting Operations Handbook',
     description: 'Reporting automation playbook for AI operations.',
     url: 'https://ziontechgroup.com/blog/automated-ai-reporting-operations-handbook/',
     type: 'article',

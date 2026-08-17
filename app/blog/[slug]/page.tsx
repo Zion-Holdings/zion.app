@@ -6,7 +6,7 @@ import fs from 'fs';
 import path from 'path';
 
 export const metadata = {
-  title: 'Blog Post | Zion Tech Group',
+  title: 'Blog Post',
   description: 'Read AI, IT, and automation insights from Zion Tech Group.',
   alternates: { canonical: '/blog/' },
 };

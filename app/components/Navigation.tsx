@@ -4,76 +4,16 @@ import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 
+import { CATEGORIES, PRIMARY_NAV_LINKS, SOLUTION_LINKS, AI_LAB_LINKS, RESOURCE_LINKS, FEATURED_AI_SERVICE_LINKS } from '@/constants/navigation';
+
 const SITE_TITLE = 'Zion Tech Group';
-
-const CATEGORIES = [
-  { key: 'automation', label: 'Automation', emoji: '⚙️' },
-  { key: 'cloud', label: 'Cloud', emoji: '☁️' },
-  { key: 'security', label: 'Security', emoji: '🔐' },
-  { key: 'data', label: 'Data', emoji: '📊' },
-  { key: 'ai', label: 'AI', emoji: '🧠' },
-  { key: 'micro-saas', label: 'Micro-SaaS', emoji: '🚀' },
-  { key: 'iot', label: 'IoT', emoji: '📡' },
-  { key: 'database', label: 'Database', emoji: '💾' },
-  { key: 'devops', label: 'DevOps', emoji: '🛠️' },
-  { key: 'observability', label: 'Observability', emoji: '📈' },
-];
-
-const PRIMARY_NAV_LINKS = [
-  { name: 'Home', href: '/' },
-  { name: 'Services', href: '/services' },
-  { name: 'Solutions', href: '/solutions' },
-  { name: 'Use Cases', href: '/use-cases' },
-  { name: 'Products', href: '/products' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'FAQ', href: '/faq' },
-  { name: 'Testimonials', href: '/testimonials' },
-  { name: 'About', href: '/about' },
-];
-
-const SOLUTION_LINKS = [
-  { name: 'AI & Automation', href: '/solutions/ai-automation' },
-  { name: 'Cloud & DevOps', href: '/solutions/cloud-devops' },
-  { name: 'Security & Compliance', href: '/solutions/security-compliance' },
-  { name: 'Data & Analytics', href: '/solutions/data-analytics' },
-  { name: 'Managed IT', href: '/solutions/managed-it' },
-  { name: 'Micro-SaaS', href: '/solutions/micro-saas' },
-];
-
-const AI_LAB_LINKS = [
-  { name: 'Agents Monitoring', href: '/agents-monitoring' },
-  { name: 'AI Labs', href: '/ai' },
-  { name: 'Evaluation', href: '/blog/enterprise-ai-intelligence-hub-vendor-evaluation' },
-];
-
-const RESOURCE_LINKS = [
-  { name: 'Agent Monitoring', href: '/agents-monitoring' },
-  { name: 'System Status', href: '#' },
-  { name: 'Leads Control', href: '/leads' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Case Studies', href: '/case-studies' },
-  { name: 'Contact', href: '/contact' },
-  { name: 'FAQ', href: '/faq' },
-  { name: 'About Us', href: '/about' },
-];
-
-const FEATURED_AI_SERVICE_LINKS = [
-  { name: 'AI Strategy', href: '/services?category=ai' },
-  { name: 'Automation', href: '/services?category=automation' },
-  { name: 'Security', href: '/services?category=security' },
-  { name: 'Data', href: '/services?category=data' },
-  { name: 'Cloud', href: '/services?category=cloud' },
-  { name: 'IoT', href: '/services?category=iot' },
-];
-
-type NavigationLink = { name: string; href: string };
 
 const SERVICE_GRID = CATEGORIES.slice(0, 10);
 
 const RESOURCE_GROUPS = [
   { title: 'Platform', items: RESOURCE_LINKS.filter((l) => ['Agent Monitoring', 'System Status'].includes(l.name)) },
-  { title: 'Growth', items: [{ name: '🎯 Leads Control', href: '/leads', badge: 'New' }, { name: '📖 Blog', href: '/blog' }] },
-  { title: 'Company', items: [{ name: '❓ FAQ', href: '/faq' }, { name: 'ℹ️ About Us', href: '/about' }] },
+  { title: 'Growth', items: [{ name: '📖 Blog', href: '/blog' }] },
+  { title: 'Company', items: [{ name: '❓ FAQ', href: '/faq' }, { name: 'ℹ️ About', href: '/about' }] },
 ];
 
 export default function Navigation() {
@@ -129,10 +69,10 @@ export default function Navigation() {
     return pathname?.startsWith(href) ?? false;
   }
 
-  function DropdownButton({ label, open, onClick, className }: { label: string; open: boolean; onClick: () => void; className?: string }) {
+  function DropdownButton({ label, open, onClick, className, active }: { label: string; open: boolean; onClick: () => void; className?: string; active?: boolean }) {
     return (
       <button
-        className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${open ? 'text-purple-400 bg-purple-500/10' : 'text-slate-300 hover:text-white'} ${className || ''}`}
+        className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${active ? 'text-purple-400' : 'text-slate-300 hover:text-white'} ${open ? 'text-purple-400 bg-purple-500/10' : ''} ${className || ''}`}
         onClick={onClick}
         aria-expanded={open}
         aria-haspopup="true"
@@ -145,7 +85,7 @@ export default function Navigation() {
           strokeWidth={2}
           viewBox="0 0 24 24"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
         </svg>
       </button>
     );
@@ -157,7 +97,7 @@ export default function Navigation() {
       <Link
         href={link.href}
         aria-current={active ? 'page' : undefined}
-        className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+        className={`relative px-3 py-2 rounded-md text-sm font-medium transition-colors ${
           active
             ? 'text-purple-400 bg-purple-500/10'
             : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
@@ -165,6 +105,9 @@ export default function Navigation() {
         onClick={onClick}
       >
         {link.name}
+        {active && (
+          <span className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 h-0.5 w-4 rounded-full bg-purple-400" aria-hidden="true" />
+        )}
       </Link>
     );
   }
@@ -180,7 +123,7 @@ export default function Navigation() {
 
         <div className="hidden lg:flex items-center gap-1">
           <div className="relative">
-            <DropdownButton label="Services" open={servicesOpen} onClick={() => { setServicesOpen(!servicesOpen); setSolutionsOpen(false); setResourcesOpen(false); setAiLabOpen(false); }} />
+            <DropdownButton label="Services" open={servicesOpen} onClick={() => { setServicesOpen(!servicesOpen); setSolutionsOpen(false); setResourcesOpen(false); setAiLabOpen(false); }} active={isActive('/services')} />
             {servicesOpen && (
               <div className="absolute top-full left-0 mt-2 w-[640px] rounded-2xl bg-slate-900 border border-slate-700 shadow-2xl p-4 z-50" role="menu">
                 <div className="grid grid-cols-2 gap-3">
@@ -207,7 +150,7 @@ export default function Navigation() {
           </div>
 
           <div className="relative">
-            <DropdownButton label="AI Lab" open={aiLabOpen} onClick={() => { setAiLabOpen(!aiLabOpen); setServicesOpen(false); setSolutionsOpen(false); setResourcesOpen(false); }} />
+            <DropdownButton label="AI Lab" open={aiLabOpen} onClick={() => { setAiLabOpen(!aiLabOpen); setServicesOpen(false); setSolutionsOpen(false); setResourcesOpen(false); }} active={isActive('/ai') || isActive('/agents-monitoring')} />
             {aiLabOpen && (
               <div className="absolute top-full left-0 mt-2 w-72 rounded-2xl bg-slate-900 border border-slate-700 shadow-2xl p-4 z-50" role="menu">
                 <div className="space-y-1">
@@ -228,7 +171,7 @@ export default function Navigation() {
           </div>
 
           <div className="relative">
-            <DropdownButton label="Solutions" open={solutionsOpen} onClick={() => { setSolutionsOpen(!solutionsOpen); setServicesOpen(false); setResourcesOpen(false); setAiLabOpen(false); }} />
+            <DropdownButton label="Solutions" open={solutionsOpen} onClick={() => { setSolutionsOpen(!solutionsOpen); setServicesOpen(false); setResourcesOpen(false); setAiLabOpen(false); }} active={isActive('/solutions')} />
             {solutionsOpen && (
               <div className="absolute top-full left-0 mt-2 w-64 rounded-xl bg-slate-900 border border-slate-700 shadow-2xl p-2 z-50" role="menu">
                 {SOLUTION_LINKS.map((link, i) => (
@@ -249,7 +192,7 @@ export default function Navigation() {
           </div>
 
           <div className="relative">
-            <DropdownButton label="Resources" open={resourcesOpen} onClick={() => { setResourcesOpen(!resourcesOpen); setServicesOpen(false); setSolutionsOpen(false); setAiLabOpen(false); }} />
+            <DropdownButton label="Resources" open={resourcesOpen} onClick={() => { setResourcesOpen(!resourcesOpen); setServicesOpen(false); setSolutionsOpen(false); setAiLabOpen(false); }} active={isActive('/agents-monitoring')} />
             {resourcesOpen && (
               <div className="absolute top-full left-0 mt-2 w-80 rounded-2xl bg-slate-900 border border-slate-700 shadow-2xl p-4 z-50" role="menu">
                 <div className="grid grid-cols-2 gap-4">

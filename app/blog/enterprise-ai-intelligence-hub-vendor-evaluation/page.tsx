@@ -3,10 +3,10 @@ import type { Metadata } from 'next';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
-  title: 'Enterprise AI Intelligence Hub Vendor Evaluation | Zion Tech Group',
+  title: 'Enterprise AI Intelligence Hub Vendor Evaluation',
   description: 'Vendor evaluation framework for enterprise AI hubs.',
   openGraph: {
-    title: 'Enterprise AI Intelligence Hub Vendor Evaluation | Zion Tech Group',
+    title: 'Enterprise AI Intelligence Hub Vendor Evaluation',
     description: 'Vendor evaluation framework for enterprise AI hubs.',
     url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-vendor-evaluation/',
     type: 'article',

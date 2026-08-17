@@ -42,12 +42,10 @@ export const AI_LAB_LINKS = [
 export const RESOURCE_LINKS = [
   { name: 'Agent Monitoring', href: '/agents-monitoring' },
   { name: 'System Status', href: '#' },
-  { name: 'Leads Control', href: '/leads' },
   { name: 'Blog', href: '/blog' },
-  { name: 'Case Studies', href: '/case-studies' },
   { name: 'Contact', href: '/contact' },
   { name: 'FAQ', href: '/faq' },
-  { name: 'About Us', href: '/about' },
+  { name: 'About', href: '/about' },
 ];
 
 export const FEATURED_AI_SERVICE_LINKS = [

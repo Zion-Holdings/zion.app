@@ -3,10 +3,10 @@ import type { Metadata } from 'next';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
-  title: 'Enterprise Backup DR Common Mistakes | Zion Tech Group',
+  title: 'Enterprise Backup DR Common Mistakes',
   description: 'Avoid common mistakes in backup and disaster recovery.',
   openGraph: {
-    title: 'Enterprise Backup DR Common Mistakes | Zion Tech Group',
+    title: 'Enterprise Backup DR Common Mistakes',
     description: 'Avoid common mistakes in backup and disaster recovery.',
     url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-common-mistakes/',
     type: 'article',

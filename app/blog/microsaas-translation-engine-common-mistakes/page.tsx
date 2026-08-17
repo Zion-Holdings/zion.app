@@ -3,10 +3,10 @@ import type { Metadata } from 'next';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
-  title: 'MicroSaaS Translation Engine Common Mistakes | Zion Tech Group',
+  title: 'MicroSaaS Translation Engine Common Mistakes',
   description: 'Common mistakes when building translation MicroSaaS products.',
   openGraph: {
-    title: 'MicroSaaS Translation Engine Common Mistakes | Zion Tech Group',
+    title: 'MicroSaaS Translation Engine Common Mistakes',
     description: 'Common mistakes when building translation MicroSaaS products.',
     url: 'https://ziontechgroup.com/blog/microsaas-translation-engine-common-mistakes/',
     type: 'article',

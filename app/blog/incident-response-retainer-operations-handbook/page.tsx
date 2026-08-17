@@ -3,10 +3,10 @@ import type { Metadata } from 'next';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
-  title: 'Incident Response Retainer Operations Handbook | Zion Tech Group',
+  title: 'Incident Response Retainer Operations Handbook',
   description: 'Operations handbook for incident response retainers.',
   openGraph: {
-    title: 'Incident Response Retainer Operations Handbook | Zion Tech Group',
+    title: 'Incident Response Retainer Operations Handbook',
     description: 'Operations handbook for incident response retainers.',
     url: 'https://ziontechgroup.com/blog/incident-response-retainer-operations-handbook/',
     type: 'article',
