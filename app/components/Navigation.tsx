@@ -76,6 +76,28 @@ export default function Navigation() {
     return pathname?.startsWith(href) ?? false;
   }
 
+  function DropdownButton({ label, open, onClick, className }: { label: string; open: boolean; onClick: () => void; className?: string }) {
+    return (
+      <button
+        className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${open ? 'text-purple-400 bg-purple-500/10' : 'text-slate-300 hover:text-white'} ${className || ''}`}
+        onClick={onClick}
+        aria-expanded={open}
+        aria-haspopup="true"
+      >
+        {label}
+        <svg
+          className={`w-3.5 h-3.5 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2.5}
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6 9l6 6 6-6" />
+        </svg>
+      </button>
+    );
+  }
+
   function NavLink({ link, onClick }: { link: NavigationLink; onClick?: () => void }) {
     const active = isActive(link.href);
     return (
@@ -105,16 +127,7 @@ export default function Navigation() {
 
         <div className="hidden lg:flex items-center gap-1">
           <div className="relative">
-            <button
-              className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${
-                isActiveInGroup('/services') || servicesOpen ? 'text-purple-400 bg-purple-500/10' : 'text-slate-300 hover:text-white'
-              }`}
-              onClick={() => { setServicesOpen(!servicesOpen); setSolutionsOpen(false); setResourcesOpen(false); setAiLabOpen(false); }}
-              aria-expanded={servicesOpen}
-              aria-haspopup="true"
-            >
-              Services ▾
-            </button>
+            <DropdownButton label="Services" open={servicesOpen} onClick={() => { setServicesOpen(!servicesOpen); setSolutionsOpen(false); setResourcesOpen(false); setAiLabOpen(false); }} />
             {servicesOpen && (
               <div className="absolute top-full left-0 mt-2 w-[640px] rounded-2xl bg-slate-900 border border-slate-700 shadow-2xl p-4 z-50" role="menu">
                 <div className="grid grid-cols-2 gap-3">
@@ -141,16 +154,7 @@ export default function Navigation() {
           </div>
 
           <div className="relative">
-            <button
-              className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${
-                isActiveInGroup('/ai-lab') || aiLabOpen ? 'text-purple-400 bg-purple-500/10' : 'text-slate-300 hover:text-white'
-              }`}
-              onClick={() => { setAiLabOpen(!aiLabOpen); setServicesOpen(false); setSolutionsOpen(false); setResourcesOpen(false); }}
-              aria-expanded={aiLabOpen}
-              aria-haspopup="true"
-            >
-              AI Lab ▾
-            </button>
+            <DropdownButton label="AI Lab" open={aiLabOpen} onClick={() => { setAiLabOpen(!aiLabOpen); setServicesOpen(false); setSolutionsOpen(false); setResourcesOpen(false); }} />
             {aiLabOpen && (
               <div className="absolute top-full left-0 mt-2 w-72 rounded-2xl bg-slate-900 border border-slate-700 shadow-2xl p-4 z-50" role="menu">
                 <div className="space-y-1">
@@ -171,15 +175,7 @@ export default function Navigation() {
           </div>
 
           <div className="relative">
-            <button
-              className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${
-                isActiveInGroup('/solutions') || solutionsOpen ? 'text-purple-400 bg-purple-500/10' : 'text-slate-300 hover:text-white'
-              }`}
-              onClick={() => { setSolutionsOpen(!solutionsOpen); setServicesOpen(false); setResourcesOpen(false); setAiLabOpen(false); }}
-              aria-haspopup="true"
-            >
-              Solutions ▾
-            </button>
+            <DropdownButton label="Solutions" open={solutionsOpen} onClick={() => { setSolutionsOpen(!solutionsOpen); setServicesOpen(false); setResourcesOpen(false); setAiLabOpen(false); }} />
             {solutionsOpen && (
               <div className="absolute top-full left-0 mt-2 w-64 rounded-xl bg-slate-900 border border-slate-700 shadow-2xl p-2 z-50" role="menu">
                 {SOLUTION_LINKS.map((link, i) => (
@@ -200,16 +196,7 @@ export default function Navigation() {
           </div>
 
           <div className="relative">
-            <button
-              className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${
-                isActiveInGroup('/resources') || resourcesOpen ? 'text-purple-400 bg-purple-500/10' : 'text-slate-300 hover:text-white'
-              }`}
-              onClick={() => { setResourcesOpen(!resourcesOpen); setServicesOpen(false); setSolutionsOpen(false); setAiLabOpen(false); }}
-              aria-expanded={resourcesOpen}
-              aria-haspopup="true"
-            >
-              Resources ▾
-            </button>
+            <DropdownButton label="Resources" open={resourcesOpen} onClick={() => { setResourcesOpen(!resourcesOpen); setServicesOpen(false); setSolutionsOpen(false); setAiLabOpen(false); }} />
             {resourcesOpen && (
               <div className="absolute top-full left-0 mt-2 w-80 rounded-2xl bg-slate-900 border border-slate-700 shadow-2xl p-4 z-50" role="menu">
                 <div className="grid grid-cols-2 gap-4">
