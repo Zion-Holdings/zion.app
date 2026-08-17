@@ -1,8 +1,8 @@
 import React from 'react';
 
 interface PageTemplateProps {
-  title: string;
-  subtitle?: string;
+  title: React.ReactNode;
+  subtitle?: React.ReactNode;
   breadcrumbItems?: Array<{ label: string; href?: string }>;
   layout?: 'hero' | 'centered' | 'product' | 'tool';
   actions?: Array<{ label: string; href: string; style?: 'primary' | 'secondary' }>;

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
   title: 'Products | Zion Tech Group',
@@ -24,11 +25,14 @@ const PRODUCTS = [
 
 export default function ProductsPage() {
   return (
-    <div className="container-page py-16">
-      <h1 className="text-4xl font-bold text-white mb-4">Products</h1>
-      <p className="text-slate-400 mb-12 max-w-2xl">
-        Purpose-built AI platforms and tools designed to run in production, with clear setup paths and measurable outcomes.
-      </p>
+    <StandardPage
+      title="Products"
+      subtitle="Purpose-built AI platforms and tools designed to run in production, with clear setup paths and measurable outcomes."
+      breadcrumbItems={[
+        { label: 'Home', href: '/' },
+        { label: 'Products' },
+      ]}
+    >
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {PRODUCTS.map((product) => (
           <Link key={product.slug} href={`/${product.slug}/`} className="glass-card">
@@ -37,6 +41,6 @@ export default function ProductsPage() {
           </Link>
         ))}
       </div>
-    </div>
+    </StandardPage>
   );
 }

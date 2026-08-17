@@ -7,7 +7,7 @@ export interface ProductPageLayoutData {
   title: string;
   category?: string;
   description?: string;
-  iconEmoji?: string;
+  iconEmoji?: React.ReactNode;
   features?: Array<{ title: string; description: string }>;
   useCases?: Array<{ title: string; description: string; icon?: string }>;
   benefits?: string[];

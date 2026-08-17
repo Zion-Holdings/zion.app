@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import StandardPage from '@/app/components/StandardPage';
 
 export const metadata = {
   title: 'Services | Zion Tech Group',
@@ -24,11 +25,14 @@ const CATEGORIES = [
 
 export default function ServicesPage() {
   return (
-    <div className="container-page py-16">
-      <h1 className="text-4xl font-bold text-white mb-4">Services</h1>
-      <p className="text-slate-400 mb-12 max-w-2xl">
-        Enterprise-grade services across AI, IT, security, data, and automation. Choose a category to see use cases and delivery patterns.
-      </p>
+    <StandardPage
+      title="Services"
+      subtitle="Enterprise-grade services across AI, IT, security, data, and automation. Choose a category to see use cases and delivery patterns."
+      breadcrumbItems={[
+        { label: 'Home', href: '/' },
+        { label: 'Services' },
+      ]}
+    >
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {CATEGORIES.map((category) => (
           <Link key={category.key} href={`/services?category=${category.key}`} className="glass-card">
@@ -38,6 +42,6 @@ export default function ServicesPage() {
           </Link>
         ))}
       </div>
-    </div>
+    </StandardPage>
   );
 }
