@@ -73,6 +73,12 @@
   .btn-secondary:hover {
     background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.04));
   }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-xl border border-white/10 bg-transparent px-6 py-3 font-semibold text-slate-300 transition-colors;
+  }
+  .btn-ghost:hover {
+    @apply border-white/20 bg-white/5 text-white;
+  }
 }
 
 /* Carousel slide animations */
