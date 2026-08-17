@@ -82,6 +82,7 @@ openclaw-agents/
 engines/
 factories/
 models/
+automation/
 leads.csv
 add_*.py
 add_*.cjs
@@ -134,3 +135,8 @@ mactex-20250308.pkg
 git-read-tree.log
 memory/
 .pnpm-store/
+commands/
+scripts/checks/
+__pycache__/
+content-loop/scripts/__pycache__/
+*.tsbuildinfo
