@@ -1,4 +1,4 @@
-export default function JsonLd({ jsonLd }) {
+export default function JsonLd({ jsonLd }: { jsonLd: unknown }) {
   return (
     <script
       type="application/ld+json"
