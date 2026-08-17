@@ -80,11 +80,6 @@ export default function BlogPost() {
             </div>
           </div>
         </section>
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
       </article>
     </StandardPage>
   );
