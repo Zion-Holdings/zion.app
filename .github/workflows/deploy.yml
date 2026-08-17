@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy
 
 on:
   push:
@@ -6,27 +6,17 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-22.04
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
-      - name: Install
-        run: npm ci --no-audit --no-fund
-      - name: Build
-        env:
-          NEXT_DISABLE_TURBOPACK: '1'
-          NODE_OPTIONS: '--max-old-space-size=8192'
-        run: npm run build
-      - name: Publish static export to gh-pages
-        run: |
+      - run: npm ci --no-audit --no-fund
+      - run: npm run build
+      - run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git checkout --orphan gh-pages
@@ -36,5 +26,5 @@ jobs:
           shopt -u dotglob
           echo 'ziontechgroup.com' > CNAME || true
           git add -A
-          git commit -m "deploy: static export from main ${GITHUB_SHA::8}"
+          git commit -m "deploy: static export ${GITHUB_SHA::8}"
           git push origin gh-pages --force
