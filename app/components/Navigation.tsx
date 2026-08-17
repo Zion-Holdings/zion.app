@@ -71,6 +71,7 @@ export default function Navigation() {
     return (
       <Link
         href={link.href}
+        aria-current={active ? 'page' : undefined}
         className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
           active
             ? 'text-purple-400 bg-purple-500/10'
