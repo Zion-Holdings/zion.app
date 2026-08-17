@@ -7,10 +7,10 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Cost AI Optimizer: evaluation framework',
     description: 'Cloud Cost AI Optimizer: evaluation framework - AI and IT insights from Zion Tech Group.',
-    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/evaluation-framework/',
+    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/2026/evaluation-framework/',
     type: 'article',
   },
-  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-2026/evaluation-framework/' },
+  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-2026/2026/evaluation-framework/' },
 };
 
 export default function BlogPost() {

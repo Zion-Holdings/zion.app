@@ -7,10 +7,10 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Cost AI Optimizer: automation roadmap',
     description: 'Cloud Cost AI Optimizer: automation roadmap - AI and IT insights from Zion Tech Group.',
-    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/automation-roadmap/',
+    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/2026/automation-roadmap/',
     type: 'article',
   },
-  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-2026/automation-roadmap/' },
+  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-2026/2026/automation-roadmap/' },
 };
 
 export default function BlogPost() {

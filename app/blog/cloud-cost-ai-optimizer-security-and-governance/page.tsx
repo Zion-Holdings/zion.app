@@ -7,10 +7,10 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Cost AI Optimizer: security and governance',
     description: 'Cloud Cost AI Optimizer: security and governance - AI and IT insights from Zion Tech Group.',
-    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/security-and-governance/',
+    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/2026/security-and-governance/',
     type: 'article',
   },
-  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-2026/security-and-governance/' },
+  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-2026/2026/security-and-governance/' },
 };
 
 export default function BlogPost() {

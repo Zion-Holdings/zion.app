@@ -7,10 +7,10 @@ export const metadata = {
   openGraph: {
     title: 'IT Consulting',
     description: 'IT Consulting - AI and IT insights from Zion Tech Group.',
-    url: 'https://ziontechgroup.com/blog/it-consulting-2026/2026/',
+    url: 'https://ziontechgroup.com/blog/it-consulting-2026/2026/2026/',
     type: 'article',
   },
-  alternates: { canonical: '/blog/it-consulting-2026/2026/' },
+  alternates: { canonical: '/blog/it-consulting-2026/2026/2026/' },
 };
 
 export default function BlogPost() {

@@ -7,10 +7,10 @@ export const metadata = {
   openGraph: {
     title: 'IT Consulting: vendor evaluation',
     description: 'IT Consulting: vendor evaluation - AI and IT insights from Zion Tech Group.',
-    url: 'https://ziontechgroup.com/blog/it-consulting-2026/vendor-evaluation/',
+    url: 'https://ziontechgroup.com/blog/it-consulting-2026/2026/vendor-evaluation/',
     type: 'article',
   },
-  alternates: { canonical: '/blog/it-consulting-2026/vendor-evaluation/' },
+  alternates: { canonical: '/blog/it-consulting-2026/2026/vendor-evaluation/' },
 };
 
 export default function BlogPost() {

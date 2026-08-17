@@ -7,10 +7,10 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Migration Services: deployment patterns',
     description: 'Cloud Migration Services: deployment patterns - AI and IT insights from Zion Tech Group.',
-    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/deployment-patterns/',
+    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/2026/deployment-patterns/',
     type: 'article',
   },
-  alternates: { canonical: '/blog/cloud-migration-services-2026/deployment-patterns/' },
+  alternates: { canonical: '/blog/cloud-migration-services-2026/2026/deployment-patterns/' },
 };
 
 export default function BlogPost() {

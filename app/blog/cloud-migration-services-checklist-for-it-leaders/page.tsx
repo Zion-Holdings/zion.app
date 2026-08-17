@@ -7,10 +7,10 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Migration Services: checklist for IT leaders',
     description: 'Cloud Migration Services: checklist for IT leaders - AI and IT insights from Zion Tech Group.',
-    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/checklist-for-it-leaders/',
+    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/2026/checklist-for-it-leaders/',
     type: 'article',
   },
-  alternates: { canonical: '/blog/cloud-migration-services-2026/checklist-for-it-leaders/' },
+  alternates: { canonical: '/blog/cloud-migration-services-2026/2026/checklist-for-it-leaders/' },
 };
 
 export default function BlogPost() {
