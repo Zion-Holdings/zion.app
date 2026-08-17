@@ -36,6 +36,7 @@ export default function Page() {
         </header>
 
         <section className="prose prose-invert max-w-none">
+<div>
 <h2>Market signal</h2>
 <p>Demand is rising for durable 5g solutions: implementation playbook capabilities rather than one-off automations. Buyers want measurable outcomes, stable operations, and vendor partnerships that grow with their environment. The strongest programs differentiate themselves with operational maturity, not feature breadth. Focus on outcomes, roadmap clarity, and evidence-based improvements rather than generic AI marketing. Use market signal analysis to prioritize investments that align with buyer expectations and competitive positioning.</p>
 
@@ -48,7 +49,8 @@ export default function Page() {
 <h2>Conversion path</h2>
 <p>If this guide matches your 5g solutions: implementation playbook initiative, the next step is a scoping call with Zion Tech Group. We will define one measurable outcome, identify dependencies, and outline a pilot plan you can start in days. Contact us to move from assessment to execution with a timeline and success criteria already in place.</p>
 
-        </section>
+        </div>
+      </section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

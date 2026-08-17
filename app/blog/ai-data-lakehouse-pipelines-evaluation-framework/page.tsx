@@ -36,6 +36,7 @@ export default function Page() {
         </header>
 
         <section className="prose prose-invert max-w-none">
+<div>
 <h2>Current state</h2>
 <p>Most organizations already have data, tools, and manual workflows for ai data lakehouse pipelines: evaluation framework. The missing piece is usually orchestration, clear ownership, and a repeatable operating model that can scale beyond a pilot. Understanding the current state is essential: map workflows, measure cycle times, and identify bottlenecks before proposing automation. A realistic baseline prevents unrealistic promises and helps leadership see the real gap between current state and target outcomes. Spend time in discovery before committing to a roadmap; the best automation plans come from deep operational knowledge.</p>
 
@@ -51,7 +52,8 @@ export default function Page() {
 <h2>Outcomes to measure</h2>
 <p>Leading indicators for ai data lakehouse pipelines: evaluation framework: workflow completion rate, escalation rate, time-to-resolution, and user satisfaction. Lagging indicators: revenue trend, cost trend, customer retention, and operational efficiency. Track both leading and lagging indicators so you can explain progress to leadership before financial results appear. Use a rolling 90-day window and re-baseline monthly; this keeps the program accountable without demanding perfection on day one. Publish metrics in a shared dashboard so the whole team sees progress, not just the program sponsor.</p>
 
-        </section>
+        </div>
+      </section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
