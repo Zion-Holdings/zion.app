@@ -59,6 +59,13 @@ export default function Navigation() {
     return pathname?.startsWith(href) ?? false;
   }
 
+  function isActiveInGroup(href: string): boolean {
+    if (href === '/') return pathname === '/';
+    const base = href.split('?category=')[0];
+    if (href !== base) return pathname?.startsWith(base) ?? false;
+    return pathname?.startsWith(href) ?? false;
+  }
+
   function NavLink({ link, onClick }: { link: NavigationLink; onClick?: () => void }) {
     const active = isActive(link.href);
     return (
@@ -88,8 +95,10 @@ export default function Navigation() {
         <div className="hidden lg:flex items-center gap-1">
           <div className="relative">
             <button
-              className="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors flex items-center gap-1"
-              onClick={() => { setServicesOpen(!servicesOpen); setSolutionsOpen(false); setResourcesOpen(false); }}
+              className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${
+                isActiveInGroup('/services') || servicesOpen ? 'text-purple-400 bg-purple-500/10' : 'text-slate-300 hover:text-white'
+              }`}
+              onClick={() => { setServicesOpen(!servicesOpen); setSolutionsOpen(false); setResourcesOpen(false); setAiLabOpen(false); }}
               aria-expanded={servicesOpen}
               aria-haspopup="true"
             >
@@ -122,7 +131,9 @@ export default function Navigation() {
 
           <div className="relative">
             <button
-              className="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors flex items-center gap-1"
+              className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${
+                isActiveInGroup('/ai-lab') || aiLabOpen ? 'text-purple-400 bg-purple-500/10' : 'text-slate-300 hover:text-white'
+              }`}
               onClick={() => { setAiLabOpen(!aiLabOpen); setServicesOpen(false); setSolutionsOpen(false); setResourcesOpen(false); }}
               aria-expanded={aiLabOpen}
               aria-haspopup="true"
@@ -150,7 +161,9 @@ export default function Navigation() {
 
           <div className="relative">
             <button
-              className="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors flex items-center gap-1"
+              className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${
+                isActiveInGroup('/solutions') || solutionsOpen ? 'text-purple-400 bg-purple-500/10' : 'text-slate-300 hover:text-white'
+              }`}
               onClick={() => { setSolutionsOpen(!solutionsOpen); setServicesOpen(false); setResourcesOpen(false); setAiLabOpen(false); }}
               aria-haspopup="true"
             >
@@ -162,7 +175,9 @@ export default function Navigation() {
                   <Link
                     key={i}
                     href={link.href}
-                    className="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-slate-800"
+                    className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
+                      isActive(link.href) ? 'text-purple-300 bg-purple-500/10' : 'text-slate-300 hover:text-white hover:bg-slate-800'
+                    }`}
                     onClick={() => setSolutionsOpen(false)}
                     role="menuitem"
                   >
@@ -175,8 +190,10 @@ export default function Navigation() {
 
           <div className="relative">
             <button
-              className="px-3 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors flex items-center gap-1"
-              onClick={() => { setResourcesOpen(!resourcesOpen); setServicesOpen(false); setSolutionsOpen(false); }}
+              className={`px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 ${
+                isActiveInGroup('/resources') || resourcesOpen ? 'text-purple-400 bg-purple-500/10' : 'text-slate-300 hover:text-white'
+              }`}
+              onClick={() => { setResourcesOpen(!resourcesOpen); setServicesOpen(false); setSolutionsOpen(false); setAiLabOpen(false); }}
               aria-expanded={resourcesOpen}
               aria-haspopup="true"
             >
