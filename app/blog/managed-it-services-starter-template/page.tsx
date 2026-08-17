@@ -25,9 +25,6 @@ export default function Page() {
 return (
     <StandardPage
       title="Managed IT Services: starter template | Zion Tech Group"
-      description="Managed IT Services: starter template"
-      canonical="/blog/managed-it-services-starter-template/"
-      hero={{ variant: 'none' }}
       breadcrumbItems={[{ label: 'Home', href: '/' }, { label: "Managed IT Services: starter template | Zion Tech Group" }]}
     >
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">

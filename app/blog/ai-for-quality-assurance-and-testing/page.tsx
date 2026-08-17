@@ -23,9 +23,6 @@ export default function BlogPost() {
 return (
     <StandardPage
       title="AI for Quality Assurance and Testing"
-      description=""
-      canonical="/blog/ai-for-quality-assurance-and-testing/"
-      hero={{ variant: 'none' }}
       breadcrumbItems={[{ label: 'Home', href: '/' }, { label: "AI for Quality Assurance and Testing" }]}
     >
       <div className="max-w-3xl mx-auto px-4">

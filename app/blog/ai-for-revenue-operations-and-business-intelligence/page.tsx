@@ -23,9 +23,6 @@ export default function BlogPost() {
 return (
     <StandardPage
       title="AI for Revenue Operations and Business Intelligence"
-      description=""
-      canonical="/blog/ai-for-revenue-operations-and-business-intelligence/"
-      hero={{ variant: 'none' }}
       breadcrumbItems={[{ label: 'Home', href: '/' }, { label: "AI for Revenue Operations and Business Intelligence" }]}
     >
       <div className="max-w-3xl mx-auto px-4">

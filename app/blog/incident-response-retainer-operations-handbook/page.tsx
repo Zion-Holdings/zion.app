@@ -25,9 +25,6 @@ export default function Page() {
 return (
     <StandardPage
       title="Incident Response Retainer: operations handbook | Zion Tech Group"
-      description="Incident Response Retainer: operations handbook"
-      canonical="/blog/incident-response-retainer-operations-handbook/"
-      hero={{ variant: 'none' }}
       breadcrumbItems={[{ label: 'Home', href: '/' }, { label: "Incident Response Retainer: operations handbook | Zion Tech Group" }]}
     >
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">

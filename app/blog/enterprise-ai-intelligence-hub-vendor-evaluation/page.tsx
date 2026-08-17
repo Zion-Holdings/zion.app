@@ -25,9 +25,6 @@ export default function Page() {
 return (
     <StandardPage
       title="Enterprise AI Intelligence Hub: vendor evaluation | Zion Tech Group"
-      description="Enterprise AI Intelligence Hub: vendor evaluation"
-      canonical="/blog/enterprise-ai-intelligence-hub-vendor-evaluation/"
-      hero={{ variant: 'none' }}
       breadcrumbItems={[{ label: 'Home', href: '/' }, { label: "Enterprise AI Intelligence Hub: vendor evaluation | Zion Tech Group" }]}
     >
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">

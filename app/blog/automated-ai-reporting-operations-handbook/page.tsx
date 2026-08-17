@@ -25,9 +25,6 @@ export default function Page() {
 return (
     <StandardPage
       title="Automated AI Reporting: operations handbook | Zion Tech Group"
-      description="Automated AI Reporting: operations handbook"
-      canonical="/blog/automated-ai-reporting-operations-handbook/"
-      hero={{ variant: 'none' }}
       breadcrumbItems={[{ label: 'Home', href: '/' }, { label: "Automated AI Reporting: operations handbook | Zion Tech Group" }]}
     >
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">

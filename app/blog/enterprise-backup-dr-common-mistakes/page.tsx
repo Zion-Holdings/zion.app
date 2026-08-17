@@ -25,9 +25,6 @@ export default function Page() {
 return (
     <StandardPage
       title="Enterprise Backup DR: common mistakes | Zion Tech Group"
-      description="Enterprise Backup DR: common mistakes"
-      canonical="/blog/enterprise-backup-dr-common-mistakes/"
-      hero={{ variant: 'none' }}
       breadcrumbItems={[{ label: 'Home', href: '/' }, { label: "Enterprise Backup DR: common mistakes | Zion Tech Group" }]}
     >
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">

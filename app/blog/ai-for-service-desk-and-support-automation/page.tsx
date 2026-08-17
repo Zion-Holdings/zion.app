@@ -23,9 +23,6 @@ export default function BlogPost() {
 return (
     <StandardPage
       title="AI for Service Desk and Support Automation"
-      description=""
-      canonical="/blog/ai-for-service-desk-and-support-automation/"
-      hero={{ variant: 'none' }}
       breadcrumbItems={[{ label: 'Home', href: '/' }, { label: "AI for Service Desk and Support Automation" }]}
     >
       <div className="max-w-3xl mx-auto px-4">

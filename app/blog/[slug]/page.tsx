@@ -11,7 +11,6 @@ export const metadata = {
   alternates: { canonical: '/blog/' },
 };
 
-// Generate static params from actual blog post directories
 export async function generateStaticParams() {
   const blogDir = path.join(process.cwd(), 'app', 'blog');
   const entries = fs.readdirSync(blogDir, { withFileTypes: true });
@@ -37,9 +36,6 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   return (
     <StandardPage
       title={params.slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-      description="Read the full article."
-      canonical={`https://ziontechgroup.com/blog/${params.slug}/`}
-      hero={{ variant: 'none' }}
       breadcrumbItems={[
         { label: 'Home', href: '/' },
         { label: 'Blog', href: '/blog/' },

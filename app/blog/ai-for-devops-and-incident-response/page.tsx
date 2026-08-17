@@ -23,9 +23,6 @@ export default function BlogPost() {
 return (
     <StandardPage
       title="AI for DevOps and Incident Response"
-      description=""
-      canonical="/blog/ai-for-devops-and-incident-response/"
-      hero={{ variant: 'none' }}
       breadcrumbItems={[{ label: 'Home', href: '/' }, { label: "AI for DevOps and Incident Response" }]}
     >
       <div className="max-w-3xl mx-auto px-4">

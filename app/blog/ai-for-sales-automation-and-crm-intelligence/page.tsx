@@ -23,9 +23,6 @@ export default function BlogPost() {
 return (
     <StandardPage
       title="AI for Sales Automation and CRM Intelligence"
-      description=""
-      canonical="/blog/ai-for-sales-automation-and-crm-intelligence/"
-      hero={{ variant: 'none' }}
       breadcrumbItems={[{ label: 'Home', href: '/' }, { label: "AI for Sales Automation and CRM Intelligence" }]}
     >
       <div className="max-w-3xl mx-auto px-4">

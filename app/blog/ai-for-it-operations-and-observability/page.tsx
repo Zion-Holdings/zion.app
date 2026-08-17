@@ -23,9 +23,6 @@ export default function BlogPost() {
 return (
     <StandardPage
       title="AI for IT Operations and Observability"
-      description=""
-      canonical="/blog/ai-for-it-operations-and-observability/"
-      hero={{ variant: 'none' }}
       breadcrumbItems={[{ label: 'Home', href: '/' }, { label: "AI for IT Operations and Observability" }]}
     >
       <div className="max-w-3xl mx-auto px-4">

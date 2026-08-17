@@ -23,9 +23,6 @@ export default function BlogPost() {
 return (
     <StandardPage
       title="AI for Security Operations and Compliance"
-      description=""
-      canonical="/blog/ai-for-security-operations-and-compliance/"
-      hero={{ variant: 'none' }}
       breadcrumbItems={[{ label: 'Home', href: '/' }, { label: "AI for Security Operations and Compliance" }]}
     >
       <div className="max-w-3xl mx-auto px-4">

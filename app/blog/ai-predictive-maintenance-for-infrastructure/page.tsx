@@ -23,9 +23,6 @@ export default function BlogPost() {
 return (
     <StandardPage
       title="AI Predictive Maintenance for Infrastructure"
-      description=""
-      canonical="/blog/ai-predictive-maintenance-for-infrastructure/"
-      hero={{ variant: 'none' }}
       breadcrumbItems={[{ label: 'Home', href: '/' }, { label: "AI Predictive Maintenance for Infrastructure" }]}
     >
       <div className="max-w-3xl mx-auto px-4">

@@ -23,9 +23,6 @@ export default function BlogPost() {
 return (
     <StandardPage
       title="AI for Network Operations and Telecom Automation"
-      description=""
-      canonical="/blog/ai-for-network-operations-and-telecom-automation/"
-      hero={{ variant: 'none' }}
       breadcrumbItems={[{ label: 'Home', href: '/' }, { label: "AI for Network Operations and Telecom Automation" }]}
     >
       <div className="max-w-3xl mx-auto px-4">

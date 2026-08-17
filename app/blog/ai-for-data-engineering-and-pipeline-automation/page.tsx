@@ -23,9 +23,6 @@ export default function BlogPost() {
 return (
     <StandardPage
       title="AI for Data Engineering and Pipeline Automation"
-      description=""
-      canonical="/blog/ai-for-data-engineering-and-pipeline-automation/"
-      hero={{ variant: 'none' }}
       breadcrumbItems={[{ label: 'Home', href: '/' }, { label: "AI for Data Engineering and Pipeline Automation" }]}
     >
       <div className="max-w-3xl mx-auto px-4">
