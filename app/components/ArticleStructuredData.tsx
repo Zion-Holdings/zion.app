@@ -1,3 +1,3 @@
-export default function ArticleStructuredData({ article }) {
+export default function ArticleStructuredData({ article }: { article: unknown }) {
   return null;
 }
