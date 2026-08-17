@@ -1,33 +1,12 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import PageWrapper from '@/components/PageWrapper';
+import type { Metadata } from 'next';
+import { pricingTiers, pricingFaq } from '@/data/pricing';
 
 export const metadata: Metadata = {
-  title: 'Pricing',
-  description: 'Flexible pricing for managed IT, AI, cloud, and cybersecurity services.',
-  alternates: { canonical: '/pricing/' },
+  title: 'Pricing | Zion Tech Group',
+  description: 'Transparent pricing for AI services, IT solutions, and enterprise automation platforms.',
 };
-
-const PLANS = [
-  {
-    name: 'Starter',
-    price: '$999/mo',
-    features: ['Monitoring', 'Helpdesk', 'Basic security'],
-    cta: '/contact/',
-  },
-  {
-    name: 'Growth',
-    price: '$2,499/mo',
-    features: ['SOC', 'Cloud management', 'Automation'],
-    cta: '/contact/',
-  },
-  {
-    name: 'Enterprise',
-    price: 'Custom',
-    features: ['Dedicated team', 'Custom AI', 'Compliance'],
-    cta: '/contact/',
-  },
-];
 
 export default function PricingPage() {
   return (
@@ -46,7 +25,7 @@ export default function PricingPage() {
       <div className="max-w-5xl mx-auto px-4 pb-20">
         <section className="mb-16">
           <div className="grid md:grid-cols-3 gap-6">
-            {PLANS.map((plan) => (
+            {pricingTiers.map((plan) => (
               <div key={plan.name} className="bg-slate-900/60 border border-slate-700/50 rounded-xl p-6">
                 <h3 className="text-white font-semibold text-xl mb-2">{plan.name}</h3>
                 <p className="text-purple-300 text-3xl font-bold mb-4">{plan.price}</p>
@@ -69,6 +48,18 @@ export default function PricingPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact/" className="btn-primary">Get Free Consultation</Link>
             <Link href="/services/" className="btn-secondary">Browse Services</Link>
+          </div>
+        </section>
+
+        <section className="mt-16">
+          <h2 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {pricingFaq.map((item) => (
+              <div key={item.question}>
+                <h3 className="font-semibold text-white mb-2">{item.question}</h3>
+                <p className="text-slate-400 text-sm">{item.answer}</p>
+              </div>
+            ))}
           </div>
         </section>
       </div>
