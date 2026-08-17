@@ -20,6 +20,16 @@ jobs:
           NEXT_DISABLE_TURBOPACK: '1'
           NODE_OPTIONS: '--max-old-space-size=8192'
         run: npm run build
+      - name: Verify export artifact
+        run: |
+          if [ ! -d out ]; then
+            echo "::error::Build did not produce out/ directory"
+            exit 1
+          fi
+          if [ -z "$(ls -A out)" ]; then
+            echo "::error::out/ directory is empty"
+            exit 1
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
