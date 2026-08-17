@@ -1,10 +1,12 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import PageWrapper from '@/components/PageWrapper';
 
 export const metadata: Metadata = {
   title: 'Testimonials & Case Studies',
   description: 'See what our clients say about our AI services, IT solutions, and consulting engagements. Real results from real businesses.',
-  alternates: { canonical: '/testimonials' },};
+  alternates: { canonical: '/testimonials' },
+};
 
 const testimonials = [
   {
@@ -86,7 +88,7 @@ const contactInfo = {
 
 export default function TestimonialsPage() {
   return (
-    <main className="min-h-screen bg-slate-950">
+    <PageWrapper>
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(56,189,248,0.15),transparent_60%)]" />
@@ -187,6 +189,6 @@ export default function TestimonialsPage() {
           </p>
         </div>
       </section>
-    </main>
+    </PageWrapper>
   );
 }

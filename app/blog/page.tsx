@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PageWrapper from '@/components/PageWrapper';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -33,7 +34,7 @@ export default function BlogIndexPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <PageWrapper>
       <div className="container-page">
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Blog</h1>
@@ -58,6 +59,6 @@ export default function BlogIndexPage() {
           ))}
         </div>
       </div>
-    </main>
+    </PageWrapper>
   );
 }

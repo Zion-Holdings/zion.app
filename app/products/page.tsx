@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import PageWrapper from '@/components/PageWrapper';
 
 export const metadata: Metadata = {
   title: 'AI Products | Zion Tech Group',
@@ -45,7 +46,7 @@ const PRODUCTS = [
 
 export default function ProductsPage() {
   return (
-    <main className="min-h-screen bg-slate-950 text-white py-20">
+    <PageWrapper>
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-purple-400">
@@ -91,6 +92,6 @@ export default function ProductsPage() {
           </Link>
         </div>
       </div>
-    </main>
+    </PageWrapper>
   );
 }

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import PageWrapper from '@/components/PageWrapper';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -27,7 +28,7 @@ const CASES = [
 
 export default function CaseStudiesPage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <PageWrapper>
       <div className="container-page">
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Case Studies</h1>
@@ -47,6 +48,6 @@ export default function CaseStudiesPage() {
           ))}
         </div>
       </div>
-    </main>
+    </PageWrapper>
   );
 }
