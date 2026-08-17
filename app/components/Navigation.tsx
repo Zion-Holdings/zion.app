@@ -4,11 +4,9 @@ import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 
-import { CATEGORIES, PRIMARY_NAV_LINKS, SOLUTION_LINKS, AI_LAB_LINKS, RESOURCE_LINKS, FEATURED_AI_SERVICE_LINKS, NavigationLink } from '@/constants/navigation';
+import { PRIMARY_NAV_LINKS, SOLUTION_LINKS, RESOURCE_LINKS, FEATURED_AI_SERVICE_LINKS, NavigationLink } from '@/constants/navigation';
 
 const SITE_TITLE = 'Zion Tech Group';
-
-const SERVICE_GRID = CATEGORIES.slice(0, 10);
 
 const RESOURCE_GROUPS = [
   { title: 'Platform', items: RESOURCE_LINKS.filter((l) => ['Agent Monitoring', 'System Status'].includes(l.name)) },
@@ -144,27 +142,6 @@ export default function Navigation() {
                   <Link href="/services" className="text-sm font-semibold text-purple-300 hover:text-purple-200" onClick={() => setServicesOpen(false)}>
                     View full catalog →
                   </Link>
-                </div>
-              </div>
-            )}
-          </div>
-
-          <div className="relative">
-            <DropdownButton label="AI Lab" open={aiLabOpen} onClick={() => { setAiLabOpen(!aiLabOpen); setServicesOpen(false); setSolutionsOpen(false); setResourcesOpen(false); }} active={isActive('/ai') || isActive('/agents-monitoring')} />
-            {aiLabOpen && (
-              <div className="absolute top-full left-0 mt-2 w-72 rounded-2xl bg-slate-900 border border-slate-700 shadow-2xl p-4 z-50" role="menu">
-                <div className="space-y-1">
-                  {AI_LAB_LINKS.map((link, i) => (
-                    <Link
-                      key={i}
-                      href={link.href}
-                      className="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-slate-800"
-                      onClick={() => setAiLabOpen(false)}
-                      role="menuitem"
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
                 </div>
               </div>
             )}
