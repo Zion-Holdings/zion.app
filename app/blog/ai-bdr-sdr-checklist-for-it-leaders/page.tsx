@@ -1,15 +1,12 @@
-import StandardPage from '@/components/StandardPage';
 import Link from 'next/link';
-import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
-  title: 'AI BDR SDR: checklist for IT leaders | Zion Tech Group',
-  description: 'AI BDR SDR: checklist for IT leaders',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
+  title: 'Ai Bdr Sdr Checklist For It Leaders | Zion Tech Group',
+  description: 'Read AI, IT, and automation insights from Zion Tech Group.',
   openGraph: {
-    title: 'AI BDR SDR: checklist for IT leaders',
-    description: 'AI BDR SDR: checklist for IT leaders',
+    title: 'Ai Bdr Sdr Checklist For It Leaders | Zion Tech Group',
+    description: 'Read AI, IT, and automation insights from Zion Tech Group.',
     url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-checklist-for-it-leaders/',
     type: 'article',
     siteName: 'Zion Tech Group',
@@ -17,20 +14,19 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-bdr-sdr-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BDR SDR: checklist for IT leaders", "description": "AI BDR SDR: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T17:20:17Z", "dateModified": "2026-08-17T17:20:17Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bdr-sdr-checklist-for-it-leaders/"};
+const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":" Ai Bdr Sdr Checklist For It Leaders","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/ai-bdr-sdr-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
     <StandardPage
       title="Ai Bdr Sdr Checklist For It Leaders"
       subtitle="Read this article to understand key requirements, patterns, and next steps."
-      breadcrumbItems={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Ai Bdr Sdr Checklist For It Leaders" }]}
+      breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog/' }, { label: 'Ai Bdr Sdr Checklist For It Leaders' }]}
     >
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'AI BDR SDR: checklist for IT leaders' }]} className="mb-8" />
         <header className="mb-10">
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">AI BDR SDR: checklist for IT leaders</h1>
-          <p className="mt-4 text-lg text-slate-300">AI BDR SDR: checklist for IT leaders</p>
+          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Ai Bdr Sdr Checklist For It Leaders</h1>
+          <p className="mt-4 text-lg text-slate-300">Read this article to understand key requirements, patterns, and next steps.</p>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-slate-400">
             <span>By Zion Tech Group</span>
             <span aria-hidden="true">•</span>
@@ -55,17 +51,14 @@ Main risks for ai bdr sdr: checklist for it leaders include data quality gaps, o
 
 <h2 className="text-2xl font-bold text-white mb-3">Outcomes to measure</h2>
 Leading indicators for ai bdr sdr: checklist for it leaders: workflow completion rate, escalation rate, time-to-resolution, and user satisfaction. Lagging indicators: revenue trend, cost trend, customer retention, and operational efficiency. Track both leading and lagging indicators so you can explain progress to leadership before financial results appear. Use a rolling 90-day window and re-baseline monthly; this keeps the program accountable without demanding perfection on day one. Publish metrics in a shared dashboard so the whole team sees progress, not just the program sponsor.
-
         </section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-policy-and-compliance">Cloud Cost Ai Optimizer Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-implementation-playbook">Ai Bdr Sdr Implementation Playbook</Link></li>
-<li><Link href="/blog/container-security-lifecycle-evaluation-framework">Container Security Lifecycle Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-data-backup-2026">Ai Data Backup 2026</Link></li>
+              <li><Link href="/blog/ai-for-it-operations-and-observability/">AI for IT Operations and Observability</Link></li>
+<li><Link href="/blog/ai-for-devops-and-incident-response/">AI for DevOps and Incident Response</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -73,16 +66,16 @@ Leading indicators for ai bdr sdr: checklist for it leaders: workflow completion
             <p className="text-slate-300">Talk with Zion Tech Group about your environment and goals.</p>
             <div className="mt-4 flex flex-col gap-3 sm:flex-row">
               <Link href="/services" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
-              <Link href="/services" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Services</Link>
+              <Link href="/contact" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Contact us</Link>
             </div>
           </div>
         </section>
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}>
-        </script>
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        ></script>
       </article>
-        </StandardPage>
+    </StandardPage>
   );
 }

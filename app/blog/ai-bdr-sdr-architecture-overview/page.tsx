@@ -1,15 +1,12 @@
-import StandardPage from '@/components/StandardPage';
 import Link from 'next/link';
-import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
-  title: 'AI BDR SDR: architecture overview | Zion Tech Group',
-  description: 'AI BDR SDR: architecture overview',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
+  title: 'Ai Bdr Sdr Architecture Overview | Zion Tech Group',
+  description: 'Read AI, IT, and automation insights from Zion Tech Group.',
   openGraph: {
-    title: 'AI BDR SDR: architecture overview',
-    description: 'AI BDR SDR: architecture overview',
+    title: 'Ai Bdr Sdr Architecture Overview | Zion Tech Group',
+    description: 'Read AI, IT, and automation insights from Zion Tech Group.',
     url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-architecture-overview/',
     type: 'article',
     siteName: 'Zion Tech Group',
@@ -17,20 +14,19 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-bdr-sdr-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BDR SDR: architecture overview", "description": "AI BDR SDR: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T17:20:22Z", "dateModified": "2026-08-17T17:20:22Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bdr-sdr-architecture-overview/"};
+const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":" Ai Bdr Sdr Architecture Overview","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/ai-bdr-sdr-architecture-overview/"};
 
 export default function Page() {
   return (
     <StandardPage
       title="Ai Bdr Sdr Architecture Overview"
       subtitle="Read this article to understand key requirements, patterns, and next steps."
-      breadcrumbItems={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Ai Bdr Sdr Architecture Overview" }]}
+      breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog/' }, { label: 'Ai Bdr Sdr Architecture Overview' }]}
     >
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'AI BDR SDR: architecture overview' }]} className="mb-8" />
         <header className="mb-10">
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">AI BDR SDR: architecture overview</h1>
-          <p className="mt-4 text-lg text-slate-300">AI BDR SDR: architecture overview</p>
+          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Ai Bdr Sdr Architecture Overview</h1>
+          <p className="mt-4 text-lg text-slate-300">Read this article to understand key requirements, patterns, and next steps.</p>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-slate-400">
             <span>By Zion Tech Group</span>
             <span aria-hidden="true">•</span>
@@ -55,17 +51,14 @@ Calculate ROI for ai bdr sdr: architecture overview using saved hours, avoided i
 
 <h2 className="text-2xl font-bold text-white mb-3">Action checklist</h2>
 For ai bdr sdr: architecture overview: pick one workflow, assign ownership, define success metrics, instrument execution, and set a 30-day review date. Write the checklist down and share it with stakeholders so expectations are explicit. Before launch, verify access controls, monitoring, rollback criteria, and on-call coverage. After launch, review metrics weekly and escalate deviations immediately; small drifts become large incidents when ignored. Use the checklist as a living document and update it as the program learns from real operation.
-
         </section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cybersecurity-for-msps-implementation-playbook">Cybersecurity For Msps Implementation Playbook</Link></li>
-<li><Link href="/blog/api-integration-security-and-governance">Api Integration Security And Governance</Link></li>
-<li><Link href="/blog/edge-computing-deployment-security-and-governance">Edge Computing Deployment Security And Governance</Link></li>
-<li><Link href="/blog/ai-for-it-operations-and-observability">Ai For It Operations And Observability</Link></li>
+              <li><Link href="/blog/ai-for-it-operations-and-observability/">AI for IT Operations and Observability</Link></li>
+<li><Link href="/blog/ai-for-devops-and-incident-response/">AI for DevOps and Incident Response</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -73,16 +66,16 @@ For ai bdr sdr: architecture overview: pick one workflow, assign ownership, defi
             <p className="text-slate-300">Talk with Zion Tech Group about your environment and goals.</p>
             <div className="mt-4 flex flex-col gap-3 sm:flex-row">
               <Link href="/services" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
-              <Link href="/services" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Services</Link>
+              <Link href="/contact" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Contact us</Link>
             </div>
           </div>
         </section>
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}>
-        </script>
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        ></script>
       </article>
-        </StandardPage>
+    </StandardPage>
   );
 }

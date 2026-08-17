@@ -1,15 +1,12 @@
-import StandardPage from '@/components/StandardPage';
 import Link from 'next/link';
-import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
-  title: 'AI 3D Asset Generator: architecture overview | Zion Tech Group',
-  description: 'AI 3D Asset Generator: architecture overview',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
+  title: 'Ai 3D Asset Generator Architecture Overview | Zion Tech Group',
+  description: 'Read AI, IT, and automation insights from Zion Tech Group.',
   openGraph: {
-    title: 'AI 3D Asset Generator: architecture overview',
-    description: 'AI 3D Asset Generator: architecture overview',
+    title: 'Ai 3D Asset Generator Architecture Overview | Zion Tech Group',
+    description: 'Read AI, IT, and automation insights from Zion Tech Group.',
     url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-architecture-overview/',
     type: 'article',
     siteName: 'Zion Tech Group',
@@ -17,20 +14,19 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-3d-asset-generator-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator: architecture overview", "description": "AI 3D Asset Generator: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T17:20:18Z", "dateModified": "2026-08-17T17:20:18Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-architecture-overview/"};
+const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":" Ai 3D Asset Generator Architecture Overview","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/ai-3d-asset-generator-architecture-overview/"};
 
 export default function Page() {
   return (
     <StandardPage
       title="Ai 3D Asset Generator Architecture Overview"
       subtitle="Read this article to understand key requirements, patterns, and next steps."
-      breadcrumbItems={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Ai 3D Asset Generator Architecture Overview" }]}
+      breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog/' }, { label: 'Ai 3D Asset Generator Architecture Overview' }]}
     >
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'AI 3D Asset Generator: architecture overview' }]} className="mb-8" />
         <header className="mb-10">
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">AI 3D Asset Generator: architecture overview</h1>
-          <p className="mt-4 text-lg text-slate-300">AI 3D Asset Generator: architecture overview</p>
+          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Ai 3D Asset Generator Architecture Overview</h1>
+          <p className="mt-4 text-lg text-slate-300">Read this article to understand key requirements, patterns, and next steps.</p>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-slate-400">
             <span>By Zion Tech Group</span>
             <span aria-hidden="true">•</span>
@@ -52,17 +48,14 @@ Map capabilities against current workflow friction for ai 3d asset generator: ar
 
 <h2 className="text-2xl font-bold text-white mb-3">Conversion path</h2>
 If this guide matches your ai 3d asset generator: architecture overview initiative, the next step is a scoping call with Zion Tech Group. We will define one measurable outcome, identify dependencies, and outline a pilot plan you can start in days. Contact us to move from assessment to execution with a timeline and success criteria already in place.
-
         </section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-case-study">Endpoint Management Case Study</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-roi-and-cost-model">Microsaas Expense Tracker Roi And Cost Model</Link></li>
-<li><Link href="/blog/network-infrastructure-evaluation-framework">Network Infrastructure Evaluation Framework</Link></li>
-<li><Link href="/blog/event-driven-architecture-roi-and-cost-model">Event Driven Architecture Roi And Cost Model</Link></li>
+              <li><Link href="/blog/ai-for-it-operations-and-observability/">AI for IT Operations and Observability</Link></li>
+<li><Link href="/blog/ai-for-devops-and-incident-response/">AI for DevOps and Incident Response</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -70,16 +63,16 @@ If this guide matches your ai 3d asset generator: architecture overview initiati
             <p className="text-slate-300">Talk with Zion Tech Group about your environment and goals.</p>
             <div className="mt-4 flex flex-col gap-3 sm:flex-row">
               <Link href="/services" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
-              <Link href="/services" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Services</Link>
+              <Link href="/contact" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Contact us</Link>
             </div>
           </div>
         </section>
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}>
-        </script>
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        ></script>
       </article>
-        </StandardPage>
+    </StandardPage>
   );
 }

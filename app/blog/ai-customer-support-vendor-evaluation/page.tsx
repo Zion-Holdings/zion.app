@@ -1,15 +1,12 @@
-import StandardPage from '@/components/StandardPage';
 import Link from 'next/link';
-import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
-  title: 'AI Customer Support: vendor evaluation | Zion Tech Group',
-  description: 'AI Customer Support: vendor evaluation',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
+  title: 'Ai Customer Support Vendor Evaluation | Zion Tech Group',
+  description: 'Read AI, IT, and automation insights from Zion Tech Group.',
   openGraph: {
-    title: 'AI Customer Support: vendor evaluation',
-    description: 'AI Customer Support: vendor evaluation',
+    title: 'Ai Customer Support Vendor Evaluation | Zion Tech Group',
+    description: 'Read AI, IT, and automation insights from Zion Tech Group.',
     url: 'https://ziontechgroup.com/blog/ai-customer-support-vendor-evaluation/',
     type: 'article',
     siteName: 'Zion Tech Group',
@@ -17,20 +14,19 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-customer-support-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Customer Support: vendor evaluation", "description": "AI Customer Support: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T17:20:28Z", "dateModified": "2026-08-17T17:20:28Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-customer-support-vendor-evaluation/"};
+const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":" Ai Customer Support Vendor Evaluation","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/ai-customer-support-vendor-evaluation/"};
 
 export default function Page() {
   return (
     <StandardPage
       title="Ai Customer Support Vendor Evaluation"
       subtitle="Read this article to understand key requirements, patterns, and next steps."
-      breadcrumbItems={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Ai Customer Support Vendor Evaluation" }]}
+      breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog/' }, { label: 'Ai Customer Support Vendor Evaluation' }]}
     >
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'AI Customer Support: vendor evaluation' }]} className="mb-8" />
         <header className="mb-10">
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">AI Customer Support: vendor evaluation</h1>
-          <p className="mt-4 text-lg text-slate-300">AI Customer Support: vendor evaluation</p>
+          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Ai Customer Support Vendor Evaluation</h1>
+          <p className="mt-4 text-lg text-slate-300">Read this article to understand key requirements, patterns, and next steps.</p>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-slate-400">
             <span>By Zion Tech Group</span>
             <span aria-hidden="true">•</span>
@@ -55,17 +51,14 @@ Common mistakes in ai customer support: vendor evaluation include weak scope, ov
 
 <h2 className="text-2xl font-bold text-white mb-3">Next actions</h2>
 Review your highest-friction workflow, contact Zion Tech Group for a scoped pilot, and start with one measurable outcome. Set a 30-day review date, define success metrics, assign an owner, and document rollback criteria before expanding. If this matches your current initiative, the next step is a short scoping call and a concrete pilot plan. The organizations that move fastest in 2026 are the ones that combine clear intent with disciplined execution.
-
         </section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-qa-engineering-executive-guide">Autonomous Qa Engineering Executive Guide</Link></li>
-<li><Link href="/blog/it-consulting-implementation-playbook">It Consulting Implementation Playbook</Link></li>
-<li><Link href="/blog/cloud-migration-services-2026">Cloud Migration Services 2026</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-policy-and-compliance">Ai Agent Safety Evaluation Policy And Compliance</Link></li>
+              <li><Link href="/blog/ai-for-it-operations-and-observability/">AI for IT Operations and Observability</Link></li>
+<li><Link href="/blog/ai-for-devops-and-incident-response/">AI for DevOps and Incident Response</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -73,16 +66,16 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <p className="text-slate-300">Talk with Zion Tech Group about your environment and goals.</p>
             <div className="mt-4 flex flex-col gap-3 sm:flex-row">
               <Link href="/services" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
-              <Link href="/services" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Services</Link>
+              <Link href="/contact" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Contact us</Link>
             </div>
           </div>
         </section>
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}>
-        </script>
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        ></script>
       </article>
-        </StandardPage>
+    </StandardPage>
   );
 }

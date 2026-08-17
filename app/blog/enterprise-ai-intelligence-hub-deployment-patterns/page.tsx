@@ -1,15 +1,12 @@
-import StandardPage from '@/components/StandardPage';
 import Link from 'next/link';
-import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
-  title: 'Enterprise AI Intelligence Hub: deployment patterns | Zion Tech Group',
-  description: 'Enterprise AI Intelligence Hub: deployment patterns',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
+  title: 'Enterprise Ai Intelligence Hub Deployment Patterns | Zion Tech Group',
+  description: 'Read AI, IT, and automation insights from Zion Tech Group.',
   openGraph: {
-    title: 'Enterprise AI Intelligence Hub: deployment patterns',
-    description: 'Enterprise AI Intelligence Hub: deployment patterns',
+    title: 'Enterprise Ai Intelligence Hub Deployment Patterns | Zion Tech Group',
+    description: 'Read AI, IT, and automation insights from Zion Tech Group.',
     url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-deployment-patterns/',
     type: 'article',
     siteName: 'Zion Tech Group',
@@ -17,20 +14,19 @@ export const metadata = {
   alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise AI Intelligence Hub: deployment patterns", "description": "Enterprise AI Intelligence Hub: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T17:20:25Z", "dateModified": "2026-08-17T17:20:25Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-deployment-patterns/"};
+const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":" Enterprise Ai Intelligence Hub Deployment Patterns","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-deployment-patterns/"};
 
 export default function Page() {
   return (
     <StandardPage
       title="Enterprise Ai Intelligence Hub Deployment Patterns"
       subtitle="Read this article to understand key requirements, patterns, and next steps."
-      breadcrumbItems={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Enterprise Ai Intelligence Hub Deployment Patterns" }]}
+      breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog/' }, { label: 'Enterprise Ai Intelligence Hub Deployment Patterns' }]}
     >
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'Enterprise AI Intelligence Hub: deployment patterns' }]} className="mb-8" />
         <header className="mb-10">
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Enterprise AI Intelligence Hub: deployment patterns</h1>
-          <p className="mt-4 text-lg text-slate-300">Enterprise AI Intelligence Hub: deployment patterns</p>
+          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Enterprise Ai Intelligence Hub Deployment Patterns</h1>
+          <p className="mt-4 text-lg text-slate-300">Read this article to understand key requirements, patterns, and next steps.</p>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-slate-400">
             <span>By Zion Tech Group</span>
             <span aria-hidden="true">•</span>
@@ -55,17 +51,14 @@ Calculate ROI for enterprise ai intelligence hub: deployment patterns using save
 
 <h2 className="text-2xl font-bold text-white mb-3">Action checklist</h2>
 For enterprise ai intelligence hub: deployment patterns: pick one workflow, assign ownership, define success metrics, instrument execution, and set a 30-day review date. Write the checklist down and share it with stakeholders so expectations are explicit. Before launch, verify access controls, monitoring, rollback criteria, and on-call coverage. After launch, review metrics weekly and escalate deviations immediately; small drifts become large incidents when ignored. Use the checklist as a living document and update it as the program learns from real operation.
-
         </section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-deployment-patterns">Event Driven Architecture Deployment Patterns</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-starter-template">Etl Pipeline Optimization Starter Template</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-roi-and-cost-model">Cyber Threat Intelligence Roi And Cost Model</Link></li>
-<li><Link href="/blog/automated-ai-reporting-deployment-patterns">Automated Ai Reporting Deployment Patterns</Link></li>
+              <li><Link href="/blog/ai-for-it-operations-and-observability/">AI for IT Operations and Observability</Link></li>
+<li><Link href="/blog/ai-for-devops-and-incident-response/">AI for DevOps and Incident Response</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -73,16 +66,16 @@ For enterprise ai intelligence hub: deployment patterns: pick one workflow, assi
             <p className="text-slate-300">Talk with Zion Tech Group about your environment and goals.</p>
             <div className="mt-4 flex flex-col gap-3 sm:flex-row">
               <Link href="/services" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
-              <Link href="/services" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Services</Link>
+              <Link href="/contact" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Contact us</Link>
             </div>
           </div>
         </section>
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}>
-        </script>
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        ></script>
       </article>
-        </StandardPage>
+    </StandardPage>
   );
 }

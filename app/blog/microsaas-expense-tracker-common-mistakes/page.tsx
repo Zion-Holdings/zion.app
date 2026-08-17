@@ -1,15 +1,12 @@
-import StandardPage from '@/components/StandardPage';
 import Link from 'next/link';
-import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
-  title: 'MicroSaaS Expense Tracker: common mistakes | Zion Tech Group',
-  description: 'MicroSaaS Expense Tracker: common mistakes',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
+  title: 'Microsaas Expense Tracker Common Mistakes | Zion Tech Group',
+  description: 'Read AI, IT, and automation insights from Zion Tech Group.',
   openGraph: {
-    title: 'MicroSaaS Expense Tracker: common mistakes',
-    description: 'MicroSaaS Expense Tracker: common mistakes',
+    title: 'Microsaas Expense Tracker Common Mistakes | Zion Tech Group',
+    description: 'Read AI, IT, and automation insights from Zion Tech Group.',
     url: 'https://ziontechgroup.com/blog/microsaas-expense-tracker-common-mistakes/',
     type: 'article',
     siteName: 'Zion Tech Group',
@@ -17,20 +14,19 @@ export const metadata = {
   alternates: { canonical: '/blog/microsaas-expense-tracker-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Expense Tracker: common mistakes", "description": "MicroSaaS Expense Tracker: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T17:20:24Z", "dateModified": "2026-08-17T17:20:24Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-expense-tracker-common-mistakes/"};
+const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":" Microsaas Expense Tracker Common Mistakes","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/microsaas-expense-tracker-common-mistakes/"};
 
 export default function Page() {
   return (
     <StandardPage
       title="Microsaas Expense Tracker Common Mistakes"
       subtitle="Read this article to understand key requirements, patterns, and next steps."
-      breadcrumbItems={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Microsaas Expense Tracker Common Mistakes" }]}
+      breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog/' }, { label: 'Microsaas Expense Tracker Common Mistakes' }]}
     >
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'MicroSaaS Expense Tracker: common mistakes' }]} className="mb-8" />
         <header className="mb-10">
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">MicroSaaS Expense Tracker: common mistakes</h1>
-          <p className="mt-4 text-lg text-slate-300">MicroSaaS Expense Tracker: common mistakes</p>
+          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Microsaas Expense Tracker Common Mistakes</h1>
+          <p className="mt-4 text-lg text-slate-300">Read this article to understand key requirements, patterns, and next steps.</p>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-slate-400">
             <span>By Zion Tech Group</span>
             <span aria-hidden="true">•</span>
@@ -52,17 +48,14 @@ Map capabilities against current workflow friction for microsaas expense tracker
 
 <h2 className="text-2xl font-bold text-white mb-3">Conversion path</h2>
 If this guide matches your microsaas expense tracker: common mistakes initiative, the next step is a scoping call with Zion Tech Group. We will define one measurable outcome, identify dependencies, and outline a pilot plan you can start in days. Contact us to move from assessment to execution with a timeline and success criteria already in place.
-
         </section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-autonomous-agents-2026">Ai Autonomous Agents 2026</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-case-study">Ai Msp Security Compliance Case Study</Link></li>
-<li><Link href="/blog/api-management-gateway-2026">Api Management Gateway 2026</Link></li>
-<li><Link href="/blog/api-gateway-management-case-study">Api Gateway Management Case Study</Link></li>
+              <li><Link href="/blog/ai-for-it-operations-and-observability/">AI for IT Operations and Observability</Link></li>
+<li><Link href="/blog/ai-for-devops-and-incident-response/">AI for DevOps and Incident Response</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -70,16 +63,16 @@ If this guide matches your microsaas expense tracker: common mistakes initiative
             <p className="text-slate-300">Talk with Zion Tech Group about your environment and goals.</p>
             <div className="mt-4 flex flex-col gap-3 sm:flex-row">
               <Link href="/services" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
-              <Link href="/services" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Services</Link>
+              <Link href="/contact" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Contact us</Link>
             </div>
           </div>
         </section>
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}>
-        </script>
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        ></script>
       </article>
-        </StandardPage>
+    </StandardPage>
   );
 }

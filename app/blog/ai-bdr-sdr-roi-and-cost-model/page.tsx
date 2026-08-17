@@ -1,15 +1,12 @@
-import StandardPage from '@/components/StandardPage';
 import Link from 'next/link';
-import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
-  title: 'AI BDR SDR: ROI and cost model | Zion Tech Group',
-  description: 'AI BDR SDR: ROI and cost model',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
+  title: 'Ai Bdr Sdr Roi And Cost Model | Zion Tech Group',
+  description: 'Read AI, IT, and automation insights from Zion Tech Group.',
   openGraph: {
-    title: 'AI BDR SDR: ROI and cost model',
-    description: 'AI BDR SDR: ROI and cost model',
+    title: 'Ai Bdr Sdr Roi And Cost Model | Zion Tech Group',
+    description: 'Read AI, IT, and automation insights from Zion Tech Group.',
     url: 'https://ziontechgroup.com/blog/ai-bdr-sdr-roi-and-cost-model/',
     type: 'article',
     siteName: 'Zion Tech Group',
@@ -17,20 +14,19 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-bdr-sdr-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BDR SDR: ROI and cost model", "description": "AI BDR SDR: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T17:20:17Z", "dateModified": "2026-08-17T17:20:17Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bdr-sdr-roi-and-cost-model/"};
+const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":" Ai Bdr Sdr Roi And Cost Model","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/ai-bdr-sdr-roi-and-cost-model/"};
 
 export default function Page() {
   return (
     <StandardPage
       title="Ai Bdr Sdr Roi And Cost Model"
       subtitle="Read this article to understand key requirements, patterns, and next steps."
-      breadcrumbItems={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Ai Bdr Sdr Roi And Cost Model" }]}
+      breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog/' }, { label: 'Ai Bdr Sdr Roi And Cost Model' }]}
     >
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'AI BDR SDR: ROI and cost model' }]} className="mb-8" />
         <header className="mb-10">
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">AI BDR SDR: ROI and cost model</h1>
-          <p className="mt-4 text-lg text-slate-300">AI BDR SDR: ROI and cost model</p>
+          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Ai Bdr Sdr Roi And Cost Model</h1>
+          <p className="mt-4 text-lg text-slate-300">Read this article to understand key requirements, patterns, and next steps.</p>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-slate-400">
             <span>By Zion Tech Group</span>
             <span aria-hidden="true">•</span>
@@ -55,17 +51,14 @@ Calculate ROI for ai bdr sdr: roi and cost model using saved hours, avoided inci
 
 <h2 className="text-2xl font-bold text-white mb-3">Action checklist</h2>
 For ai bdr sdr: roi and cost model: pick one workflow, assign ownership, define success metrics, instrument execution, and set a 30-day review date. Write the checklist down and share it with stakeholders so expectations are explicit. Before launch, verify access controls, monitoring, rollback criteria, and on-call coverage. After launch, review metrics weekly and escalate deviations immediately; small drifts become large incidents when ignored. Use the checklist as a living document and update it as the program learns from real operation.
-
         </section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-api-gateway-implementation-playbook">Ai Api Gateway Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-common-mistakes">Ai Agentic Workflows Common Mistakes</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-automation-roadmap">Microsaas Social Media Manager Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-2026">Ai Msp Security Compliance 2026</Link></li>
+              <li><Link href="/blog/ai-for-it-operations-and-observability/">AI for IT Operations and Observability</Link></li>
+<li><Link href="/blog/ai-for-devops-and-incident-response/">AI for DevOps and Incident Response</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -73,16 +66,16 @@ For ai bdr sdr: roi and cost model: pick one workflow, assign ownership, define 
             <p className="text-slate-300">Talk with Zion Tech Group about your environment and goals.</p>
             <div className="mt-4 flex flex-col gap-3 sm:flex-row">
               <Link href="/services" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
-              <Link href="/services" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Services</Link>
+              <Link href="/contact" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Contact us</Link>
             </div>
           </div>
         </section>
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}>
-        </script>
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        ></script>
       </article>
-        </StandardPage>
+    </StandardPage>
   );
 }

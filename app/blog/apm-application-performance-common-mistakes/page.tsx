@@ -1,15 +1,12 @@
-import StandardPage from '@/components/StandardPage';
 import Link from 'next/link';
-import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
-  title: 'APM Application Performance: common mistakes | Zion Tech Group',
-  description: 'APM Application Performance: common mistakes',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
+  title: 'Apm Application Performance Common Mistakes | Zion Tech Group',
+  description: 'Read AI, IT, and automation insights from Zion Tech Group.',
   openGraph: {
-    title: 'APM Application Performance: common mistakes',
-    description: 'APM Application Performance: common mistakes',
+    title: 'Apm Application Performance Common Mistakes | Zion Tech Group',
+    description: 'Read AI, IT, and automation insights from Zion Tech Group.',
     url: 'https://ziontechgroup.com/blog/apm-application-performance-common-mistakes/',
     type: 'article',
     siteName: 'Zion Tech Group',
@@ -17,20 +14,19 @@ export const metadata = {
   alternates: { canonical: '/blog/apm-application-performance-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "APM Application Performance: common mistakes", "description": "APM Application Performance: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T17:20:20Z", "dateModified": "2026-08-17T17:20:20Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/apm-application-performance-common-mistakes/"};
+const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":" Apm Application Performance Common Mistakes","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/apm-application-performance-common-mistakes/"};
 
 export default function Page() {
   return (
     <StandardPage
       title="Apm Application Performance Common Mistakes"
       subtitle="Read this article to understand key requirements, patterns, and next steps."
-      breadcrumbItems={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Apm Application Performance Common Mistakes" }]}
+      breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog/' }, { label: 'Apm Application Performance Common Mistakes' }]}
     >
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'APM Application Performance: common mistakes' }]} className="mb-8" />
         <header className="mb-10">
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">APM Application Performance: common mistakes</h1>
-          <p className="mt-4 text-lg text-slate-300">APM Application Performance: common mistakes</p>
+          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Apm Application Performance Common Mistakes</h1>
+          <p className="mt-4 text-lg text-slate-300">Read this article to understand key requirements, patterns, and next steps.</p>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-slate-400">
             <span>By Zion Tech Group</span>
             <span aria-hidden="true">•</span>
@@ -55,17 +51,14 @@ Main risks for apm application performance: common mistakes include data quality
 
 <h2 className="text-2xl font-bold text-white mb-3">Outcomes to measure</h2>
 Leading indicators for apm application performance: common mistakes: workflow completion rate, escalation rate, time-to-resolution, and user satisfaction. Lagging indicators: revenue trend, cost trend, customer retention, and operational efficiency. Track both leading and lagging indicators so you can explain progress to leadership before financial results appear. Use a rolling 90-day window and re-baseline monthly; this keeps the program accountable without demanding perfection on day one. Publish metrics in a shared dashboard so the whole team sees progress, not just the program sponsor.
-
         </section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/apm-application-performance-operations-handbook">Apm Application Performance Operations Handbook</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-implementation-playbook">Ai Agent Safety Evaluation Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-2026">Ai Accessibility Auditor 2026</Link></li>
-<li><Link href="/blog/ai-data-backup-roi-and-cost-model">Ai Data Backup Roi And Cost Model</Link></li>
+              <li><Link href="/blog/ai-for-it-operations-and-observability/">AI for IT Operations and Observability</Link></li>
+<li><Link href="/blog/ai-for-devops-and-incident-response/">AI for DevOps and Incident Response</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -73,16 +66,16 @@ Leading indicators for apm application performance: common mistakes: workflow co
             <p className="text-slate-300">Talk with Zion Tech Group about your environment and goals.</p>
             <div className="mt-4 flex flex-col gap-3 sm:flex-row">
               <Link href="/services" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
-              <Link href="/services" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Services</Link>
+              <Link href="/contact" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Contact us</Link>
             </div>
           </div>
         </section>
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}>
-        </script>
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        ></script>
       </article>
-        </StandardPage>
+    </StandardPage>
   );
 }

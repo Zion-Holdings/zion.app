@@ -1,15 +1,12 @@
-import StandardPage from '@/components/StandardPage';
 import Link from 'next/link';
-import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
-  title: 'AI Accessibility Optimizer: operations handbook | Zion Tech Group',
-  description: 'AI Accessibility Optimizer: operations handbook',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
-  authors: { name: 'Zion Tech Group' },
+  title: 'Ai Accessibility Optimizer Operations Handbook | Zion Tech Group',
+  description: 'Read AI, IT, and automation insights from Zion Tech Group.',
   openGraph: {
-    title: 'AI Accessibility Optimizer: operations handbook',
-    description: 'AI Accessibility Optimizer: operations handbook',
+    title: 'Ai Accessibility Optimizer Operations Handbook | Zion Tech Group',
+    description: 'Read AI, IT, and automation insights from Zion Tech Group.',
     url: 'https://ziontechgroup.com/blog/ai-accessibility-optimizer-operations-handbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
@@ -17,20 +14,19 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-accessibility-optimizer-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Optimizer: operations handbook", "description": "AI Accessibility Optimizer: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T17:20:17Z", "dateModified": "2026-08-17T17:20:17Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-operations-handbook/"};
+const jsonLd = {"@context":"https://schema.org","@type":"TechArticle","headline":" Ai Accessibility Optimizer Operations Handbook","description":"Read AI, IT, and automation insights from Zion Tech Group.","author":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"publisher":{"@type":"Organization","name":"Zion Tech Group","url":"https://ziontechgroup.com"},"datePublished":"2026-08-17T17:25:00Z","dateModified":"2026-08-17T17:25:00Z","mainEntityOfPage":"https://ziontechgroup.com/blog/ai-accessibility-optimizer-operations-handbook/"};
 
 export default function Page() {
   return (
     <StandardPage
       title="Ai Accessibility Optimizer Operations Handbook"
       subtitle="Read this article to understand key requirements, patterns, and next steps."
-      breadcrumbItems={[{ label: "Home", href: "/" }, { label: "Blog", href: "/blog/" }, { label: "Ai Accessibility Optimizer Operations Handbook" }]}
+      breadcrumbItems={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog/' }, { label: 'Ai Accessibility Optimizer Operations Handbook' }]}
     >
       <article className="relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog', href: '/blog' }, { label: 'AI Accessibility Optimizer: operations handbook' }]} className="mb-8" />
         <header className="mb-10">
-          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">AI Accessibility Optimizer: operations handbook</h1>
-          <p className="mt-4 text-lg text-slate-300">AI Accessibility Optimizer: operations handbook</p>
+          <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Ai Accessibility Optimizer Operations Handbook</h1>
+          <p className="mt-4 text-lg text-slate-300">Read this article to understand key requirements, patterns, and next steps.</p>
           <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-slate-400">
             <span>By Zion Tech Group</span>
             <span aria-hidden="true">•</span>
@@ -55,17 +51,14 @@ Main risks for ai accessibility optimizer: operations handbook include data qual
 
 <h2 className="text-2xl font-bold text-white mb-3">Outcomes to measure</h2>
 Leading indicators for ai accessibility optimizer: operations handbook: workflow completion rate, escalation rate, time-to-resolution, and user satisfaction. Lagging indicators: revenue trend, cost trend, customer retention, and operational efficiency. Track both leading and lagging indicators so you can explain progress to leadership before financial results appear. Use a rolling 90-day window and re-baseline monthly; this keeps the program accountable without demanding perfection on day one. Publish metrics in a shared dashboard so the whole team sees progress, not just the program sponsor.
-
         </section>
 
         <section className="mt-12 grid gap-6 sm:grid-cols-2">
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-api-gateway-common-mistakes">Ai Api Gateway Common Mistakes</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-common-mistakes">Ai Agentic Workflows Common Mistakes</Link></li>
-<li><Link href="/blog/ai-api-gateway-starter-template">Ai Api Gateway Starter Template</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026">Ai Customer Success Churn 2026</Link></li>
+              <li><Link href="/blog/ai-for-it-operations-and-observability/">AI for IT Operations and Observability</Link></li>
+<li><Link href="/blog/ai-for-devops-and-incident-response/">AI for DevOps and Incident Response</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -73,16 +66,16 @@ Leading indicators for ai accessibility optimizer: operations handbook: workflow
             <p className="text-slate-300">Talk with Zion Tech Group about your environment and goals.</p>
             <div className="mt-4 flex flex-col gap-3 sm:flex-row">
               <Link href="/services" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
-              <Link href="/services" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Services</Link>
+              <Link href="/contact" className="rounded-xl border border-white/30 px-6 py-3 text-sm font-semibold text-white">Contact us</Link>
             </div>
           </div>
         </section>
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}>
-        </script>
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        ></script>
       </article>
-        </StandardPage>
+    </StandardPage>
   );
 }
