@@ -19,8 +19,7 @@ const ARTICLES = [
 export default function PressPage() {
   return (
     <PageWrapper>
-      <main className="py-20">
-        <div className="container-page">
+      <div className="container-page">
           <div className="mb-10">
             <Link href="/about/" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">← About</Link>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Press & Media</h1>
