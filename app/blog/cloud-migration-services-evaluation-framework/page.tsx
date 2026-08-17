@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Migration Services: evaluation framework | Zion Tech Group',
     description: 'Cloud Migration Services: evaluation framework.',
-    url: 'https://ziontechgroup.com/blog/cloud-migration-services-evaluation-framework/',
+    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/evaluation-framework/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/cloud-migration-services-evaluation-framework/' },
+  alternates: { canonical: '/blog/cloud-migration-services-2026/evaluation-framework/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.com/blog/cloud-migration-services-evaluation-framework/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/evaluation-framework/'
 };
 
 export default function Page() {

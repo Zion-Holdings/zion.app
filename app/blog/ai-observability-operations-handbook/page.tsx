@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI Observability: operations handbook | Zion Tech Group',
     description: 'AI Observability: operations handbook.',
-    url: 'https://ziontechgroup.com/blog/ai-observability-operations-handbook/',
+    url: 'https://ziontechgroup.com/blog/ai-observability-2026/operations-handbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/ai-observability-operations-handbook/' },
+  alternates: { canonical: '/blog/ai-observability-2026/operations-handbook/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-observability-operations-handbook/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-observability-2026/operations-handbook/'
 };
 
 export default function Page() {

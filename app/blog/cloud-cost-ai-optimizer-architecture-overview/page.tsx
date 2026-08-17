@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Cost AI Optimizer: architecture overview | Zion Tech Group',
     description: 'Cloud Cost AI Optimizer: architecture overview.',
-    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-architecture-overview/',
+    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/architecture-overview/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-architecture-overview/' },
+  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-2026/architecture-overview/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-architecture-overview/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/architecture-overview/'
 };
 
 export default function Page() {

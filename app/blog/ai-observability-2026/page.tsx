@@ -7,10 +7,10 @@ export const metadata = {
   openGraph: {
     title: 'AI Observability',
     description: 'AI Observability - AI and IT insights from Zion Tech Group.',
-    url: 'https://ziontechgroup.com/blog/ai-observability-2026/2026/2026/',
+    url: 'https://ziontechgroup.com/blog/ai-observability-2026/2026/2026/2026/',
     type: 'article',
   },
-  alternates: { canonical: '/blog/ai-observability-2026/2026/2026/' },
+  alternates: { canonical: '/blog/ai-observability-2026/2026/2026/2026/' },
 };
 
 export default function BlogPost() {

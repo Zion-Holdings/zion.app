@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Migration Services: operations handbook | Zion Tech Group',
     description: 'Cloud Migration Services: operations handbook.',
-    url: 'https://ziontechgroup.com/blog/cloud-migration-services-operations-handbook/',
+    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/operations-handbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/cloud-migration-services-operations-handbook/' },
+  alternates: { canonical: '/blog/cloud-migration-services-2026/operations-handbook/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.com/blog/cloud-migration-services-operations-handbook/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/operations-handbook/'
 };
 
 export default function Page() {

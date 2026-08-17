@@ -7,10 +7,10 @@ export const metadata = {
   openGraph: {
     title: 'AI Observability: executive guide',
     description: 'AI Observability: executive guide - AI and IT insights from Zion Tech Group.',
-    url: 'https://ziontechgroup.com/blog/ai-observability-2026/2026/executive-guide/',
+    url: 'https://ziontechgroup.com/blog/ai-observability-2026/2026/2026/executive-guide/',
     type: 'article',
   },
-  alternates: { canonical: '/blog/ai-observability-2026/2026/executive-guide/' },
+  alternates: { canonical: '/blog/ai-observability-2026/2026/2026/executive-guide/' },
 };
 
 export default function BlogPost() {

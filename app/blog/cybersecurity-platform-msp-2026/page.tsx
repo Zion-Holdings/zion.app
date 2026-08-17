@@ -7,10 +7,10 @@ export const metadata = {
   openGraph: {
     title: 'Cybersecurity for MSPs',
     description: 'Cybersecurity for MSPs - AI and IT insights from Zion Tech Group.',
-    url: 'https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026/2026/2026/',
+    url: 'https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026/2026/2026/2026/',
     type: 'article',
   },
-  alternates: { canonical: '/blog/cybersecurity-platform-msp-2026/2026/2026/' },
+  alternates: { canonical: '/blog/cybersecurity-platform-msp-2026/2026/2026/2026/' },
 };
 
 export default function BlogPost() {

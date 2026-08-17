@@ -7,10 +7,10 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Cost AI Optimizer: implementation playbook',
     description: 'Cloud Cost AI Optimizer: implementation playbook - AI and IT insights from Zion Tech Group.',
-    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/2026/implementation-playbook/',
+    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/2026/2026/implementation-playbook/',
     type: 'article',
   },
-  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-2026/2026/implementation-playbook/' },
+  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-2026/2026/2026/implementation-playbook/' },
 };
 
 export default function BlogPost() {

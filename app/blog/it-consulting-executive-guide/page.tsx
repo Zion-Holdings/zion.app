@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'IT Consulting: executive guide | Zion Tech Group',
     description: 'IT Consulting: executive guide.',
-    url: 'https://ziontechgroup.com/blog/it-consulting-executive-guide/',
+    url: 'https://ziontechgroup.com/blog/it-consulting-2026/executive-guide/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/it-consulting-executive-guide/' },
+  alternates: { canonical: '/blog/it-consulting-2026/executive-guide/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.com/blog/it-consulting-executive-guide/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/it-consulting-2026/executive-guide/'
 };
 
 export default function Page() {
