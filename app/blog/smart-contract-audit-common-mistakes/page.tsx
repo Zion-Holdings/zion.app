@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
@@ -36,19 +37,19 @@ export default function Page() {
         </header>
 
         <section className="prose prose-invert max-w-none">
-## Current state
+      <h2 className="text-xl font-semibold text-white mb-2">Current state</h2>
 Most organizations already have data, tools, and manual workflows for smart contract audit: common mistakes. The missing piece is usually orchestration, clear ownership, and a repeatable operating model that can scale beyond a pilot. Understanding the current state is essential: map workflows, measure cycle times, and identify bottlenecks before proposing automation. A realistic baseline prevents unrealistic promises and helps leadership see the real gap between current state and target outcomes. Spend time in discovery before committing to a roadmap; the best automation plans come from deep operational knowledge.
 
-## Opportunities
+      <h2 className="text-xl font-semibold text-white mb-2">Opportunities</h2>
 High-impact opportunities for smart contract audit: common mistakes usually cluster around onboarding, quality assurance, cost visibility, and escalation handling. Focus on workflows with high volume, high error rates, or slow handoffs; these produce the clearest ROI and fastest adoption. Map each opportunity to a business outcome so stakeholders understand the why behind the investment. Choose one opportunity, measure the current state, then design an automation or augmentation that reduces rework. Track opportunity value over time so you can prioritize the next wave after the first success.
 
-## Implementation roadmap
+      <h2 className="text-xl font-semibold text-white mb-2">Implementation roadmap</h2>
 Phase one should deliver a single measurable win in 30 days for smart contract audit: common mistakes. Phase two adds reliability controls: monitoring, access management, runbooks, and escalation criteria. Phase three expands scope only after validated adoption, stable operations, and clear ownership across teams. Each phase should include a retrospective so lessons learned feed the next phase rather than repeating the same mistakes. Keep the roadmap visible to stakeholders and update it as the program matures; transparency builds trust and funding continuity.
 
-## Risks and mitigations
+      <h2 className="text-xl font-semibold text-white mb-2">Risks and mitigations</h2>
 Main risks for smart contract audit: common mistakes include data quality gaps, over-automation, brittle integrations, missing rollback criteria, and unclear ownership. Data quality gaps can be reduced with lightweight validation and clearly defined data contracts before automation begins. Over-automation is best avoided with guardrails, approval flows, and human escalation paths for exceptions. Weak rollback plans can be fixed with staged rollout criteria and synthetic monitors that trigger alerts before customers are affected. Ownership gaps are solved by naming a primary owner, a backup owner, and an escalation path before launch.
 
-## Outcomes to measure
+      <h2 className="text-xl font-semibold text-white mb-2">Outcomes to measure</h2>
 Leading indicators for smart contract audit: common mistakes: workflow completion rate, escalation rate, time-to-resolution, and user satisfaction. Lagging indicators: revenue trend, cost trend, customer retention, and operational efficiency. Track both leading and lagging indicators so you can explain progress to leadership before financial results appear. Use a rolling 90-day window and re-baseline monthly; this keeps the program accountable without demanding perfection on day one. Publish metrics in a shared dashboard so the whole team sees progress, not just the program sponsor.
 
         </section>
@@ -57,10 +58,18 @@ Leading indicators for smart contract audit: common mistakes: workflow completio
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-expense-tracker-case-study">Microsaas Expense Tracker Case Study</Link></li>
-<li><Link href="/blog/cloud-native-app-development-2026-7364">Cloud Native App Development 2026 7364</Link></li>
-<li><Link href="/blog/event-driven-architecture-2026-6616">Event Driven Architecture 2026 6616</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-architecture-overview">Ai Customer Success Churn Prevention Architecture Overview</Link></li>
+        <ul className="list-disc pl-6 text-slate-300 space-y-2">
+          <li><Link href="/blog/microsaas-expense-tracker-case-study">Microsaas Expense Tracker Case Study</Link></li>
+        </ul>
+        <ul className="list-disc pl-6 text-slate-300 space-y-2">
+          <li><Link href="/blog/cloud-native-app-development-2026-7364">Cloud Native App Development 2026 7364</Link></li>
+        </ul>
+        <ul className="list-disc pl-6 text-slate-300 space-y-2">
+          <li><Link href="/blog/event-driven-architecture-2026-6616">Event Driven Architecture 2026 6616</Link></li>
+        </ul>
+        <ul className="list-disc pl-6 text-slate-300 space-y-2">
+          <li><Link href="/blog/ai-customer-success-churn-prevention-architecture-overview">Ai Customer Success Churn Prevention Architecture Overview</Link></li>
+        </ul>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
