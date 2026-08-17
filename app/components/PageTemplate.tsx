@@ -9,6 +9,8 @@ interface PageTemplateProps {
   children: React.ReactNode;
 }
 
+import Breadcrumb from './Breadcrumb';
+
 export default function PageTemplate({
   title,
   subtitle,
@@ -20,14 +22,9 @@ export default function PageTemplate({
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       {breadcrumbItems.length > 0 && (
-        <nav className="mb-8 text-sm text-slate-400">
-          {breadcrumbItems.map((item, idx) => (
-            <span key={idx}>
-              {idx > 0 && <span className="mx-2">/</span>}
-              {item.href ? <a href={item.href} className="hover:text-purple-400 transition">{item.label}</a> : item.label}
-            </span>
-          ))}
-        </nav>
+        <div className="mb-6">
+          <Breadcrumb items={breadcrumbItems} />
+        </div>
       )}
 
       {layout === 'hero' && (
