@@ -307,7 +307,9 @@ def build_section_body(title: str, cluster: str) -> str:
         section = section.strip()
         if not section:
             continue
-        parts.append(f'## {section}\n{paragraph(title, cluster, section)}\n')
+        body = paragraph(title, cluster, section)
+        body = body.replace('\n', ' ')
+        parts.append(f'<h2>{section}</h2>\n<p>{body}</p>\n')
     return '\n'.join(parts)
 
 
@@ -320,7 +322,7 @@ def build_page(topic: dict) -> str:
     now = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z')
     related = related_slugs(slug)
     related_links = '\n'.join(
-        f'<li><Link href="/blog/{r}">{r.replace("-", " ").title()}</Link></li>' for r in related
+        f'<li><Link href="/blog/{r}/">{r.replace("-", " ").title()}</Link></li>' for r in related
     ) or '<li>Coming soon</li>'
     json_ld = json.dumps({
         '@context': 'https://schema.org',
@@ -357,7 +359,7 @@ export default function Page() {{
   return (
     <div className=\"relative min-h-screen bg-slate-950\">
       <article className=\"relative mx-auto max-w-4xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8\">
-        <SiteBreadcrumbs items={{[{{ label: 'Home', href: '/' }}, {{ label: 'Blog', href: '/blog' }}, {{ label: '{title}' }}]}} className=\"mb-8\" />
+        <SiteBreadcrumbs items={{[{{ label: "Home", href: "/" }}, {{ label: "Blog", href: "/blog/" }}, {{ label: "{title}" }}]}} className="mb-8" />
         <header className=\"mb-10\">
           <h1 className=\"text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl\">{title}</h1>
           <p className=\"mt-4 text-lg text-slate-300\">{description}</p>
