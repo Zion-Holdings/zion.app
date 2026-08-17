@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
@@ -25,9 +25,16 @@ jobs:
           NEXT_DISABLE_TURBOPACK: '1'
           NODE_OPTIONS: '--max-old-space-size=8192'
         run: npm run build
-      - name: Deploy to gh-pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
-          force_push: true
+      - name: Publish static export to gh-pages
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan gh-pages
+          git rm -rf .
+          shopt -s dotglob
+          cp -a out/. .
+          shopt -u dotglob
+          echo 'ziontechgroup.com' > CNAME || true
+          git add -A
+          git commit -m "deploy: static export from main ${GITHUB_SHA::8}"
+          git push origin gh-pages --force
