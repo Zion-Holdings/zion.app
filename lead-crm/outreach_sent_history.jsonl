@@ -24,3 +24,4 @@
 {"ts": "2026-08-17T17:27:47.189979+00:00", "to": "bob@scrubly.com", "subject": "Parceria Zion Tech Group — operações e eficiência para Scrubly", "message_id": "1a010c3ddfcf8272", "thread_id": "1a010c3ddfcf8272", "provider": "gmail_api"}
 {"ts": "2026-08-17T17:27:48.755156+00:00", "to": "hi@app.kilocode.ai", "subject": "Parceria Zion Tech Group — operações e eficiência para App", "message_id": "1a010c3e72bbd1ef", "thread_id": "1a010c3e72bbd1ef", "provider": "gmail_api"}
 {"ts":"2026-08-17T18:49:07.%f+00:00","event":"run","status":"no_send_deduped","note":"all candidates deduped by outreach_sent_history.jsonl"}
+{"ts": "2026-08-17T19:16:24.540918+00:00", "event": "run", "status": "no_send_deduped", "note": "all candidates deduped by outreach_sent_history.jsonl", "deduped_count": 24, "excluded_count": 0, "recent_72h_count": 0, "sendable_count": 0, "send_count": 0}
