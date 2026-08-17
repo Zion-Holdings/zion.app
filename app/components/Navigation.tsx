@@ -258,32 +258,97 @@ export default function Navigation() {
 
       {mobileOpen && (
         <div ref={mobilePanelRef} className="lg:hidden border-t border-slate-800 bg-slate-950/95 backdrop-blur-xl px-4 py-4 space-y-1 max-h-[80vh] overflow-y-auto">
-          {PRIMARY_NAV_LINKS.map((link, i) => (
-            <NavLink key={i} link={link} onClick={() => setMobileOpen(false)} />
-          ))}
+          {PRIMARY_NAV_LINKS.map((link, i) => {
+            const active = isActive(link.href);
+            return (
+              <Link
+                key={i}
+                href={link.href}
+                aria-current={active ? 'page' : undefined}
+                className={`block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                  active ? 'text-purple-400 bg-purple-500/10' : 'text-slate-300 hover:text-white hover:bg-slate-800'
+                }`}
+                onClick={() => setMobileOpen(false)}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
           <div className="border-t border-slate-800 pt-2 mt-2">
             <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold mb-1 px-3">Solutions</div>
-            {SOLUTION_LINKS.map((link, i) => (
-              <NavLink key={i} link={link} onClick={() => setMobileOpen(false)} />
-            ))}
+            {SOLUTION_LINKS.map((link, i) => {
+              const active = isActive(link.href);
+              return (
+                <Link
+                  key={i}
+                  href={link.href}
+                  aria-current={active ? 'page' : undefined}
+                  className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
+                    active ? 'text-purple-300 bg-purple-500/10' : 'text-slate-300 hover:text-white hover:bg-slate-800'
+                  }`}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </div>
           <div className="border-t border-slate-800 pt-2 mt-2">
             <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold mb-1 px-3">Featured AI</div>
-            {FEATURED_AI_SERVICE_LINKS.slice(0, 5).map((link, i) => (
-              <NavLink key={i} link={link} onClick={() => setMobileOpen(false)} />
-            ))}
+            {FEATURED_AI_SERVICE_LINKS.slice(0, 5).map((link, i) => {
+              const active = isActive(link.href);
+              return (
+                <Link
+                  key={i}
+                  href={link.href}
+                  aria-current={active ? 'page' : undefined}
+                  className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
+                    active ? 'text-purple-300 bg-purple-500/10' : 'text-slate-300 hover:text-white hover:bg-slate-800'
+                  }`}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </div>
           <div className="border-t border-slate-800 pt-2 mt-2">
             <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold mb-1 px-3">AI Lab</div>
-            {AI_LAB_LINKS.map((link, i) => (
-              <NavLink key={i} link={link} onClick={() => setMobileOpen(false)} />
-            ))}
+            {AI_LAB_LINKS.map((link, i) => {
+              const active = isActive(link.href);
+              return (
+                <Link
+                  key={i}
+                  href={link.href}
+                  aria-current={active ? 'page' : undefined}
+                  className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
+                    active ? 'text-purple-300 bg-purple-500/10' : 'text-slate-300 hover:text-white hover:bg-slate-800'
+                  }`}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </div>
           <div className="border-t border-slate-800 pt-2 mt-2">
             <div className="text-[10px] text-slate-500 uppercase tracking-wider font-bold mb-1 px-3">Resources</div>
-            {RESOURCE_LINKS.map((link, i) => (
-              <NavLink key={i} link={link} onClick={() => setMobileOpen(false)} />
-            ))}
+            {RESOURCE_LINKS.map((link, i) => {
+              const active = isActive(link.href);
+              return (
+                <Link
+                  key={i}
+                  href={link.href}
+                  aria-current={active ? 'page' : undefined}
+                  className={`block px-3 py-2 rounded-lg text-sm transition-colors ${
+                    active ? 'text-purple-300 bg-purple-500/10' : 'text-slate-300 hover:text-white hover:bg-slate-800'
+                  }`}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
           </div>
           <div className="pt-3">
             <Link href="/agents-monitoring" className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-violet-600/80 to-purple-600/80 text-sm font-semibold text-white" onClick={() => setMobileOpen(false)}>
