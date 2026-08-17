@@ -36,7 +36,6 @@ export const RESOURCE_LINKS: readonly NavigationLink[] = [
   { name: 'Port Scanner', href: '/tools/port-scanner/' },
   { name: 'SSL Checker', href: '/tools/ssl-checker/' },
   { name: 'Platform Status', href: '/tools/health-check/' },
-  { name: 'Client Portal', href: '/portal/' },
 ];
 
 export const FEATURED_AI_SERVICE_LINKS: readonly NavigationLink[] = [
