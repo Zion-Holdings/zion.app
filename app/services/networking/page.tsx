@@ -75,6 +75,6 @@ export default function NetworkingPage() {
           </a>
         </div>
       </div>
-    </main>
+    </PageWrapper>
   );
 }

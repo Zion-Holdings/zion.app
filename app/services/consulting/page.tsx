@@ -75,6 +75,6 @@ export default function ConsultingPage() {
           </a>
         </div>
       </div>
-    </main>
+    </PageWrapper>
   );
 }

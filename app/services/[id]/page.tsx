@@ -112,7 +112,7 @@ export default async function ServicePage({ params }: PageProps) {
   };
 
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <PageWrapper>
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -356,6 +356,6 @@ export default async function ServicePage({ params }: PageProps) {
           </div>
         </section>
       </div>
-    </main>
+    </PageWrapper>
   );
 }

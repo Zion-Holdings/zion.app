@@ -75,6 +75,6 @@ export default function CloudPage() {
           </a>
         </div>
       </div>
-    </main>
+    </PageWrapper>
   );
 }

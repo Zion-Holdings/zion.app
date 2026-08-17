@@ -1,3 +1,4 @@
+import PageWrapper from '@/components/PageWrapper';
 import Link from 'next/link';
 
 export const metadata = {
@@ -8,7 +9,7 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <PageWrapper>
       <div className="container-page">
         <h1 className="text-4xl font-bold text-white mb-4">Professional Data Pipeline Solutions</h1>
         <p className="text-slate-300 text-lg leading-relaxed max-w-3xl mb-10">Professional data pipeline solutions for government. Get expert implementation, support, and results.</p>
@@ -32,6 +33,6 @@ export default function Page() {
         </div>
         <Link href="/contact" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900">Get started</Link>
       </div>
-    </main>
+    </PageWrapper>
   );
 }

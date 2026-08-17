@@ -77,6 +77,6 @@ export default function ManagedITPage() {
           </a>
         </div>
       </div>
-    </main>
+    </PageWrapper>
   );
 }
