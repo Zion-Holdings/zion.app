@@ -39,7 +39,7 @@ export default function AiLabPage() {
           <p className="text-slate-400 text-sm">Production assistants, RAG, and agentic workflows.</p>
           <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
         </Link>
-        <Link href="/agents-monitoring" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+        <Link href="/agents-monitoring/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Monitoring</h3>
           <p className="text-slate-400 text-sm">Observability and reliability for AI systems.</p>
           <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>

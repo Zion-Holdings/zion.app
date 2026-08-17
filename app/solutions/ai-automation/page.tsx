@@ -40,7 +40,7 @@ export default function AiAutomationSolutionsPage() {
           <p className="text-slate-400 text-sm">Workflow automation, ticket routing, and knowledge-base assistants.</p>
           <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
         </Link>
-        <Link href="/agents-monitoring" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+        <Link href="/agents-monitoring/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">AI Agents</h3>
           <p className="text-slate-400 text-sm">Monitoring, observability, and reliability for agentic systems.</p>
           <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>

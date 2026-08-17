@@ -25,7 +25,7 @@ export default function DataPage() {
       ]}
     >
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <Link href="/solutions/data-analytics" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40 transition-all">
+        <Link href="/solutions/data-analytics/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40 transition-all">
           <h3 className="text-white font-semibold mb-2">Data & Analytics Solutions</h3>
           <p className="text-slate-400 text-sm">Explore data and analytics capabilities and implementation patterns.</p>
           <span className="text-purple-300 text-xs mt-3 inline-block">Browse →</span>
