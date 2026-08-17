@@ -1,19 +1,28 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
   title: 'Public Roadmap | Zion Tech Group',
   description: 'Zion Tech Group public roadmap, planned releases, and platform direction.',
+  openGraph: {
+    title: 'Public Roadmap | Zion Tech Group',
+    description: 'See what we’re building next and share feedback.',
+    url: 'https://ziontechgroup.com/public-roadmap/',
+    type: 'website',
+  },
   alternates: { canonical: '/public-roadmap/' },
 };
 
 export default function PublicRoadmapPage() {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16">
-      <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">Public Roadmap</h1>
-      <p className="text-slate-300 text-lg leading-relaxed mb-8">
-        See what we’re building next and share feedback so we can prioritize the right improvements.
-      </p>
+    <StandardPage
+      title="Public Roadmap"
+      subtitle="See what we’re building next and share feedback so we can prioritize the right improvements."
+      breadcrumbItems={[
+        { label: 'Home', href: '/' },
+        { label: 'Public Roadmap' },
+      ]}
+    >
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h3 className="text-white font-semibold mb-2">Platform</h3>
@@ -29,9 +38,9 @@ export default function PublicRoadmapPage() {
         </div>
       </div>
       <div className="flex flex-col sm:flex-row gap-3 mt-10">
-        <Link href="/contact" className="btn-primary text-center">Share feedback</Link>
-        <Link href="/services" className="btn-secondary text-center">Explore services</Link>
+        <a href="/contact" className="btn-primary text-center">Share feedback</a>
+        <a href="/services" className="btn-secondary text-center">Explore services</a>
       </div>
-    </div>
+    </StandardPage>
   );
 }
