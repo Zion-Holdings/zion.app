@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Data Warehouse Modernization: deployment patterns | Zion Tech Group',
     description: 'Data Warehouse Modernization: deployment patterns.',
-    url: 'https://ziontechgroup.comapp/blog/data-warehouse-modernization-deployment-patterns/',
+    url: 'https://ziontechgroup.com/blog/data-warehouse-modernization-deployment-patterns/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/data-warehouse-modernization-deployment-patterns/' },
+  alternates: { canonical: '/blog/data-warehouse-modernization-deployment-patterns/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/data-warehouse-modernization-deployment-patterns/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/data-warehouse-modernization-deployment-patterns/'
 };
 
 export default function Page() {

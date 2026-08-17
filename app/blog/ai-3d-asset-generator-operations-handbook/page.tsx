@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI 3D Asset Generator: operations handbook | Zion Tech Group',
     description: 'AI 3D Asset Generator: operations handbook.',
-    url: 'https://ziontechgroup.comapp/blog/ai-3d-asset-generator-operations-handbook/',
+    url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-operations-handbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-3d-asset-generator-operations-handbook/' },
+  alternates: { canonical: '/blog/ai-3d-asset-generator-operations-handbook/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-3d-asset-generator-operations-handbook/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-operations-handbook/'
 };
 
 export default function Page() {

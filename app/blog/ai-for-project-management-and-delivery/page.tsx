@@ -3,8 +3,15 @@ import type { Metadata } from 'next';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
-  title: 'AI for Project Management and Delivery',
-  description: 'Deep dive into ai for project management and delivery. Learn how Zion Tech Group helps enterprises implement AI-driven ai solutions with proven strategies and ROI metrics.',
+  title: 'Ai For Project Management And Delivery | Zion Tech Group',
+  description: 'AI for project management and delivery insights from Zion Tech Group.',
+  openGraph: {
+    title: 'Ai For Project Management And Delivery | Zion Tech Group',
+    description: 'AI for project management and delivery insights from Zion Tech Group.',
+    url: 'https://ziontechgroup.com/blog/ai-for-project-management-and-delivery/',
+    type: 'website',
+    siteName: 'Zion Tech Group',
+  },
   alternates: { canonical: '/blog/ai-for-project-management-and-delivery/' },
 };
 

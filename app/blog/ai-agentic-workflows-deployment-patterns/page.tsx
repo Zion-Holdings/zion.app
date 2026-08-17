@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI Agentic Workflows: deployment patterns | Zion Tech Group',
     description: 'AI Agentic Workflows: deployment patterns.',
-    url: 'https://ziontechgroup.comapp/blog/ai-agentic-workflows-deployment-patterns/',
+    url: 'https://ziontechgroup.com/blog/ai-agentic-workflows-deployment-patterns/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-agentic-workflows-deployment-patterns/' },
+  alternates: { canonical: '/blog/ai-agentic-workflows-deployment-patterns/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-agentic-workflows-deployment-patterns/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-agentic-workflows-deployment-patterns/'
 };
 
 export default function Page() {

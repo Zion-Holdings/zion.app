@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Container Security Lifecycle: automation roadmap | Zion Tech Group',
     description: 'Container Security Lifecycle: automation roadmap.',
-    url: 'https://ziontechgroup.comapp/blog/container-security-lifecycle-automation-roadmap/',
+    url: 'https://ziontechgroup.com/blog/container-security-lifecycle-automation-roadmap/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/container-security-lifecycle-automation-roadmap/' },
+  alternates: { canonical: '/blog/container-security-lifecycle-automation-roadmap/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/container-security-lifecycle-automation-roadmap/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/container-security-lifecycle-automation-roadmap/'
 };
 
 export default function Page() {

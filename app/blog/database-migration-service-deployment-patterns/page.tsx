@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Database Migration Service: deployment patterns | Zion Tech Group',
     description: 'Database Migration Service: deployment patterns.',
-    url: 'https://ziontechgroup.comapp/blog/database-migration-service-deployment-patterns/',
+    url: 'https://ziontechgroup.com/blog/database-migration-service-deployment-patterns/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/database-migration-service-deployment-patterns/' },
+  alternates: { canonical: '/blog/database-migration-service-deployment-patterns/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/database-migration-service-deployment-patterns/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/database-migration-service-deployment-patterns/'
 };
 
 export default function Page() {

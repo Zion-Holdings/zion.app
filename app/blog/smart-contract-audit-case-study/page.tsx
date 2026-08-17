@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Smart Contract Audit: case study | Zion Tech Group',
     description: 'Smart Contract Audit: case study.',
-    url: 'https://ziontechgroup.comapp/blog/smart-contract-audit-case-study/',
+    url: 'https://ziontechgroup.com/blog/smart-contract-audit-case-study/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/smart-contract-audit-case-study/' },
+  alternates: { canonical: '/blog/smart-contract-audit-case-study/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/smart-contract-audit-case-study/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/smart-contract-audit-case-study/'
 };
 
 export default function Page() {

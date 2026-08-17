@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Data Analytics Platform: evaluation framework | Zion Tech Group',
     description: 'Data Analytics Platform: evaluation framework.',
-    url: 'https://ziontechgroup.comapp/blog/data-analytics-platform-evaluation-framework/',
+    url: 'https://ziontechgroup.com/blog/data-analytics-platform-evaluation-framework/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/data-analytics-platform-evaluation-framework/' },
+  alternates: { canonical: '/blog/data-analytics-platform-evaluation-framework/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/data-analytics-platform-evaluation-framework/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/data-analytics-platform-evaluation-framework/'
 };
 
 export default function Page() {

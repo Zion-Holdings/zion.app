@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'API Orchestration Layer: automation roadmap | Zion Tech Group',
     description: 'API Orchestration Layer: automation roadmap.',
-    url: 'https://ziontechgroup.comapp/blog/api-orchestration-layer-automation-roadmap/',
+    url: 'https://ziontechgroup.com/blog/api-orchestration-layer-automation-roadmap/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/api-orchestration-layer-automation-roadmap/' },
+  alternates: { canonical: '/blog/api-orchestration-layer-automation-roadmap/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/api-orchestration-layer-automation-roadmap/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/api-orchestration-layer-automation-roadmap/'
 };
 
 export default function Page() {

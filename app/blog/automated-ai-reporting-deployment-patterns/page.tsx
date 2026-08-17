@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Automated AI Reporting: deployment patterns | Zion Tech Group',
     description: 'Automated AI Reporting: deployment patterns.',
-    url: 'https://ziontechgroup.comapp/blog/automated-ai-reporting-deployment-patterns/',
+    url: 'https://ziontechgroup.com/blog/automated-ai-reporting-deployment-patterns/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/automated-ai-reporting-deployment-patterns/' },
+  alternates: { canonical: '/blog/automated-ai-reporting-deployment-patterns/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/automated-ai-reporting-deployment-patterns/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/automated-ai-reporting-deployment-patterns/'
 };
 
 export default function Page() {

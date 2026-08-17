@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Migration Services: architecture overview | Zion Tech Group',
     description: 'Cloud Migration Services: architecture overview.',
-    url: 'https://ziontechgroup.comapp/blog/cloud-migration-services-architecture-overview/',
+    url: 'https://ziontechgroup.com/blog/cloud-migration-services-architecture-overview/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/cloud-migration-services-architecture-overview/' },
+  alternates: { canonical: '/blog/cloud-migration-services-architecture-overview/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/cloud-migration-services-architecture-overview/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/cloud-migration-services-architecture-overview/'
 };
 
 export default function Page() {

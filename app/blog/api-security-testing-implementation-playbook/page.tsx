@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'API Security Testing: implementation playbook | Zion Tech Group',
     description: 'API Security Testing: implementation playbook.',
-    url: 'https://ziontechgroup.comapp/blog/api-security-testing-implementation-playbook/',
+    url: 'https://ziontechgroup.com/blog/api-security-testing-implementation-playbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/api-security-testing-implementation-playbook/' },
+  alternates: { canonical: '/blog/api-security-testing-implementation-playbook/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/api-security-testing-implementation-playbook/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/api-security-testing-implementation-playbook/'
 };
 
 export default function Page() {

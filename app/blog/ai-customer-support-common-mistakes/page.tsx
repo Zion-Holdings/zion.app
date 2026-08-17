@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI Customer Support: common mistakes | Zion Tech Group',
     description: 'AI Customer Support: common mistakes.',
-    url: 'https://ziontechgroup.comapp/blog/ai-customer-support-common-mistakes/',
+    url: 'https://ziontechgroup.com/blog/ai-customer-support-common-mistakes/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-customer-support-common-mistakes/' },
+  alternates: { canonical: '/blog/ai-customer-support-common-mistakes/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-customer-support-common-mistakes/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-customer-support-common-mistakes/'
 };
 
 export default function Page() {

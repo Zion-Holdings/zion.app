@@ -3,8 +3,15 @@ import type { Metadata } from 'next';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
-  title: 'AI for Revenue Operations and Business Intelligence',
-  description: 'Deep dive into ai for revenue operations and business intelligence. Learn how Zion Tech Group helps enterprises implement AI-driven ai solutions with proven strategies and ROI metrics.',
+  title: 'Ai For Revenue Operations And Business Intelligence | Zion Tech Group',
+  description: 'AI for revenue operations and business intelligence insights from Zion Tech Group.',
+  openGraph: {
+    title: 'Ai For Revenue Operations And Business Intelligence | Zion Tech Group',
+    description: 'AI for revenue operations and business intelligence insights from Zion Tech Group.',
+    url: 'https://ziontechgroup.com/blog/ai-for-revenue-operations-and-business-intelligence/',
+    type: 'website',
+    siteName: 'Zion Tech Group',
+  },
   alternates: { canonical: '/blog/ai-for-revenue-operations-and-business-intelligence/' },
 };
 

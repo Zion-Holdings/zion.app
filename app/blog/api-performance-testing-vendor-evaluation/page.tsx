@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'API Performance Testing: vendor evaluation | Zion Tech Group',
     description: 'API Performance Testing: vendor evaluation.',
-    url: 'https://ziontechgroup.comapp/blog/api-performance-testing-vendor-evaluation/',
+    url: 'https://ziontechgroup.com/blog/api-performance-testing-vendor-evaluation/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/api-performance-testing-vendor-evaluation/' },
+  alternates: { canonical: '/blog/api-performance-testing-vendor-evaluation/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/api-performance-testing-vendor-evaluation/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/api-performance-testing-vendor-evaluation/'
 };
 
 export default function Page() {

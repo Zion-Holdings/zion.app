@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI Customer Success Churn Prevention: security and governance | Zion Tech Group',
     description: 'AI Customer Success Churn Prevention: security and governance.',
-    url: 'https://ziontechgroup.comapp/blog/ai-customer-success-churn-prevention-security-and-governance/',
+    url: 'https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-security-and-governance/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-customer-success-churn-prevention-security-and-governance/' },
+  alternates: { canonical: '/blog/ai-customer-success-churn-prevention-security-and-governance/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-customer-success-churn-prevention-security-and-governance/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-customer-success-churn-prevention-security-and-governance/'
 };
 
 export default function Page() {

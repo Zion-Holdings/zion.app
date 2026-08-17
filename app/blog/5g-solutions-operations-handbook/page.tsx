@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: '5G Solutions: operations handbook | Zion Tech Group',
     description: '5G Solutions: operations handbook.',
-    url: 'https://ziontechgroup.comapp/blog/5g-solutions-operations-handbook/',
+    url: 'https://ziontechgroup.com/blog/5g-solutions-operations-handbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/5g-solutions-operations-handbook/' },
+  alternates: { canonical: '/blog/5g-solutions-operations-handbook/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/5g-solutions-operations-handbook/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/5g-solutions-operations-handbook/'
 };
 
 export default function Page() {

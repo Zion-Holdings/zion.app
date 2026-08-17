@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI Agent Safety Evaluation: starter template | Zion Tech Group',
     description: 'AI Agent Safety Evaluation: starter template.',
-    url: 'https://ziontechgroup.comapp/blog/ai-agent-safety-evaluation-starter-template/',
+    url: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-starter-template/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-agent-safety-evaluation-starter-template/' },
+  alternates: { canonical: '/blog/ai-agent-safety-evaluation-starter-template/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-agent-safety-evaluation-starter-template/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-agent-safety-evaluation-starter-template/'
 };
 
 export default function Page() {

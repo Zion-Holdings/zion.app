@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Network Infrastructure: vendor evaluation | Zion Tech Group',
     description: 'Network Infrastructure: vendor evaluation.',
-    url: 'https://ziontechgroup.comapp/blog/network-infrastructure-vendor-evaluation/',
+    url: 'https://ziontechgroup.com/blog/network-infrastructure-vendor-evaluation/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/network-infrastructure-vendor-evaluation/' },
+  alternates: { canonical: '/blog/network-infrastructure-vendor-evaluation/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/network-infrastructure-vendor-evaluation/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/network-infrastructure-vendor-evaluation/'
 };
 
 export default function Page() {

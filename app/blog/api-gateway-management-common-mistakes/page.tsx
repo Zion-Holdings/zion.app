@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'API Gateway Management: common mistakes | Zion Tech Group',
     description: 'API Gateway Management: common mistakes.',
-    url: 'https://ziontechgroup.comapp/blog/api-gateway-management-common-mistakes/',
+    url: 'https://ziontechgroup.com/blog/api-gateway-management-common-mistakes/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/api-gateway-management-common-mistakes/' },
+  alternates: { canonical: '/blog/api-gateway-management-common-mistakes/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/api-gateway-management-common-mistakes/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/api-gateway-management-common-mistakes/'
 };
 
 export default function Page() {

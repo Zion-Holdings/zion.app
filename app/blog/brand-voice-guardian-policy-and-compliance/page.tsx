@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Brand Voice Guardian: policy and compliance | Zion Tech Group',
     description: 'Brand Voice Guardian: policy and compliance.',
-    url: 'https://ziontechgroup.comapp/blog/brand-voice-guardian-policy-and-compliance/',
+    url: 'https://ziontechgroup.com/blog/brand-voice-guardian-policy-and-compliance/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/brand-voice-guardian-policy-and-compliance/' },
+  alternates: { canonical: '/blog/brand-voice-guardian-policy-and-compliance/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/brand-voice-guardian-policy-and-compliance/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/brand-voice-guardian-policy-and-compliance/'
 };
 
 export default function Page() {

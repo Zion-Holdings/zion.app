@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI Accessibility Optimizer: security and governance | Zion Tech Group',
     description: 'AI Accessibility Optimizer: security and governance.',
-    url: 'https://ziontechgroup.comapp/blog/ai-accessibility-optimizer-security-and-governance/',
+    url: 'https://ziontechgroup.com/blog/ai-accessibility-optimizer-security-and-governance/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-accessibility-optimizer-security-and-governance/' },
+  alternates: { canonical: '/blog/ai-accessibility-optimizer-security-and-governance/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-accessibility-optimizer-security-and-governance/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-accessibility-optimizer-security-and-governance/'
 };
 
 export default function Page() {

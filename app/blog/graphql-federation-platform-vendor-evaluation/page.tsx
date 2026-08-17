@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'GraphQL Federation Platform: vendor evaluation | Zion Tech Group',
     description: 'GraphQL Federation Platform: vendor evaluation.',
-    url: 'https://ziontechgroup.comapp/blog/graphql-federation-platform-vendor-evaluation/',
+    url: 'https://ziontechgroup.com/blog/graphql-federation-platform-vendor-evaluation/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/graphql-federation-platform-vendor-evaluation/' },
+  alternates: { canonical: '/blog/graphql-federation-platform-vendor-evaluation/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/graphql-federation-platform-vendor-evaluation/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/graphql-federation-platform-vendor-evaluation/'
 };
 
 export default function Page() {

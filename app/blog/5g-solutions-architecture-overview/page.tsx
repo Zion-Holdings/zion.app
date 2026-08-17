@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: '5G Solutions: architecture overview | Zion Tech Group',
     description: '5G Solutions: architecture overview.',
-    url: 'https://ziontechgroup.comapp/blog/5g-solutions-architecture-overview/',
+    url: 'https://ziontechgroup.com/blog/5g-solutions-architecture-overview/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/5g-solutions-architecture-overview/' },
+  alternates: { canonical: '/blog/5g-solutions-architecture-overview/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/5g-solutions-architecture-overview/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/5g-solutions-architecture-overview/'
 };
 
 export default function Page() {

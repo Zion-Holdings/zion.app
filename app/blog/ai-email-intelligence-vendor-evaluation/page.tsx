@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI Email Intelligence: vendor evaluation | Zion Tech Group',
     description: 'AI Email Intelligence: vendor evaluation.',
-    url: 'https://ziontechgroup.comapp/blog/ai-email-intelligence-vendor-evaluation/',
+    url: 'https://ziontechgroup.com/blog/ai-email-intelligence-vendor-evaluation/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-email-intelligence-vendor-evaluation/' },
+  alternates: { canonical: '/blog/ai-email-intelligence-vendor-evaluation/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-email-intelligence-vendor-evaluation/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-email-intelligence-vendor-evaluation/'
 };
 
 export default function Page() {

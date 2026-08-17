@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Cyber Threat Intelligence: automation roadmap | Zion Tech Group',
     description: 'Cyber Threat Intelligence: automation roadmap.',
-    url: 'https://ziontechgroup.comapp/blog/cyber-threat-intelligence-automation-roadmap/',
+    url: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-automation-roadmap/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/cyber-threat-intelligence-automation-roadmap/' },
+  alternates: { canonical: '/blog/cyber-threat-intelligence-automation-roadmap/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/cyber-threat-intelligence-automation-roadmap/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/cyber-threat-intelligence-automation-roadmap/'
 };
 
 export default function Page() {

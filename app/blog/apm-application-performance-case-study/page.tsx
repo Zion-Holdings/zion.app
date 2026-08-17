@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'APM Application Performance: case study | Zion Tech Group',
     description: 'APM Application Performance: case study.',
-    url: 'https://ziontechgroup.comapp/blog/apm-application-performance-case-study/',
+    url: 'https://ziontechgroup.com/blog/apm-application-performance-case-study/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/apm-application-performance-case-study/' },
+  alternates: { canonical: '/blog/apm-application-performance-case-study/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/apm-application-performance-case-study/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/apm-application-performance-case-study/'
 };
 
 export default function Page() {

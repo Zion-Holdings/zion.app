@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Cloud FinOps: starter template | Zion Tech Group',
     description: 'Cloud FinOps: starter template.',
-    url: 'https://ziontechgroup.comapp/blog/cloud-finops-starter-template/',
+    url: 'https://ziontechgroup.com/blog/cloud-finops-starter-template/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/cloud-finops-starter-template/' },
+  alternates: { canonical: '/blog/cloud-finops-starter-template/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/cloud-finops-starter-template/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/cloud-finops-starter-template/'
 };
 
 export default function Page() {

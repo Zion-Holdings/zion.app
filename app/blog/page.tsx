@@ -6,6 +6,13 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Blog | Zion Tech Group',
   description: 'AI, IT, and automation insights, guides, and industry trends from Zion Tech Group.',
+  openGraph: {
+    title: 'Blog | Zion Tech Group',
+    description: 'AI, IT, and automation insights, guides, and industry trends from Zion Tech Group.',
+    url: 'https://ziontechgroup.com/blog/',
+    type: 'website',
+    siteName: 'Zion Tech Group',
+  },
   alternates: { canonical: '/blog/' },
 };
 
@@ -424,13 +431,20 @@ export default function BlogPage() {
         { label: 'Blog' },
       ]}
     >
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {posts.map((post) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 hover:border-purple-500/40 transition-all">
-            <h3 className="text-white font-semibold mb-2">{post.title}</h3>
-            <span className="text-purple-300 text-xs">Read post →</span>
-          </Link>
-        ))}
+      <div className="max-w-5xl mx-auto px-6 py-16">
+        <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">Blog</h1>
+        <p className="text-slate-300 text-lg leading-relaxed mb-8">
+          AI, IT, and automation insights, guides, and industry trends from Zion Tech Group.
+        </p>
+        <h2 className="text-2xl font-bold text-white mb-6">Latest posts</h2>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => (
+            <Link key={post.slug} href={`/blog/${post.slug}/`} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+              <h3 className="text-white font-semibold mb-2">{post.title}</h3>
+              <p className="text-slate-400 text-sm">Read article →</p>
+            </Link>
+          ))}
+        </div>
       </div>
     </StandardPage>
   );

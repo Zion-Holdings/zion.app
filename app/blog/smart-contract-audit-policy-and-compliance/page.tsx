@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Smart Contract Audit: policy and compliance | Zion Tech Group',
     description: 'Smart Contract Audit: policy and compliance.',
-    url: 'https://ziontechgroup.comapp/blog/smart-contract-audit-policy-and-compliance/',
+    url: 'https://ziontechgroup.com/blog/smart-contract-audit-policy-and-compliance/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/smart-contract-audit-policy-and-compliance/' },
+  alternates: { canonical: '/blog/smart-contract-audit-policy-and-compliance/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/smart-contract-audit-policy-and-compliance/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/smart-contract-audit-policy-and-compliance/'
 };
 
 export default function Page() {

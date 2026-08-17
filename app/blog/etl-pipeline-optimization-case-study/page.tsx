@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'ETL Pipeline Optimization: case study | Zion Tech Group',
     description: 'ETL Pipeline Optimization: case study.',
-    url: 'https://ziontechgroup.comapp/blog/etl-pipeline-optimization-case-study/',
+    url: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-case-study/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/etl-pipeline-optimization-case-study/' },
+  alternates: { canonical: '/blog/etl-pipeline-optimization-case-study/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/etl-pipeline-optimization-case-study/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-case-study/'
 };
 
 export default function Page() {

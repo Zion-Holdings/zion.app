@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'API Integration: security and governance | Zion Tech Group',
     description: 'API Integration: security and governance.',
-    url: 'https://ziontechgroup.comapp/blog/api-integration-security-and-governance/',
+    url: 'https://ziontechgroup.com/blog/api-integration-security-and-governance/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/api-integration-security-and-governance/' },
+  alternates: { canonical: '/blog/api-integration-security-and-governance/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/api-integration-security-and-governance/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/api-integration-security-and-governance/'
 };
 
 export default function Page() {

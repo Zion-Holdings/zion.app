@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI Ad Copy Generator: vendor evaluation | Zion Tech Group',
     description: 'AI Ad Copy Generator: vendor evaluation.',
-    url: 'https://ziontechgroup.comapp/blog/ai-ad-copy-generator-vendor-evaluation/',
+    url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-vendor-evaluation/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-ad-copy-generator-vendor-evaluation/' },
+  alternates: { canonical: '/blog/ai-ad-copy-generator-vendor-evaluation/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-ad-copy-generator-vendor-evaluation/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-vendor-evaluation/'
 };
 
 export default function Page() {

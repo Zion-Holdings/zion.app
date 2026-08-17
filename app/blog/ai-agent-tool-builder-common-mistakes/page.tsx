@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI Agent Tool Builder: common mistakes | Zion Tech Group',
     description: 'AI Agent Tool Builder: common mistakes.',
-    url: 'https://ziontechgroup.comapp/blog/ai-agent-tool-builder-common-mistakes/',
+    url: 'https://ziontechgroup.com/blog/ai-agent-tool-builder-common-mistakes/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-agent-tool-builder-common-mistakes/' },
+  alternates: { canonical: '/blog/ai-agent-tool-builder-common-mistakes/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-agent-tool-builder-common-mistakes/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-agent-tool-builder-common-mistakes/'
 };
 
 export default function Page() {

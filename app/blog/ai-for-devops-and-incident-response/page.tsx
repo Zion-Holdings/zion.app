@@ -3,8 +3,15 @@ import type { Metadata } from 'next';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
-  title: 'AI for DevOps and Incident Response',
-  description: 'Deep dive into ai for devops and incident response. Learn how Zion Tech Group helps enterprises implement AI-driven devops solutions with proven strategies and ROI metrics.',
+  title: 'Ai For Devops And Incident Response | Zion Tech Group',
+  description: 'AI for devops and incident response insights from Zion Tech Group.',
+  openGraph: {
+    title: 'Ai For Devops And Incident Response | Zion Tech Group',
+    description: 'AI for devops and incident response insights from Zion Tech Group.',
+    url: 'https://ziontechgroup.com/blog/ai-for-devops-and-incident-response/',
+    type: 'website',
+    siteName: 'Zion Tech Group',
+  },
   alternates: { canonical: '/blog/ai-for-devops-and-incident-response/' },
 };
 

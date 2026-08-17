@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Accessibility Compliance: architecture overview | Zion Tech Group',
     description: 'Accessibility Compliance: architecture overview.',
-    url: 'https://ziontechgroup.comapp/blog/accessibility-compliance-architecture-overview/',
+    url: 'https://ziontechgroup.com/blog/accessibility-compliance-architecture-overview/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/accessibility-compliance-architecture-overview/' },
+  alternates: { canonical: '/blog/accessibility-compliance-architecture-overview/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/accessibility-compliance-architecture-overview/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/accessibility-compliance-architecture-overview/'
 };
 
 export default function Page() {

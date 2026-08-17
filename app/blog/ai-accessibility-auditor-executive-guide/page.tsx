@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI Accessibility Auditor: executive guide | Zion Tech Group',
     description: 'AI Accessibility Auditor: executive guide.',
-    url: 'https://ziontechgroup.comapp/blog/ai-accessibility-auditor-executive-guide/',
+    url: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-executive-guide/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-accessibility-auditor-executive-guide/' },
+  alternates: { canonical: '/blog/ai-accessibility-auditor-executive-guide/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-accessibility-auditor-executive-guide/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-accessibility-auditor-executive-guide/'
 };
 
 export default function Page() {

@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Enterprise AI Intelligence Hub: starter template | Zion Tech Group',
     description: 'Enterprise AI Intelligence Hub: starter template.',
-    url: 'https://ziontechgroup.comapp/blog/enterprise-ai-intelligence-hub-starter-template/',
+    url: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-starter-template/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/enterprise-ai-intelligence-hub-starter-template/' },
+  alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-starter-template/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/enterprise-ai-intelligence-hub-starter-template/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-starter-template/'
 };
 
 export default function Page() {

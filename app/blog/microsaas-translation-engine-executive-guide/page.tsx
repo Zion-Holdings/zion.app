@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'MicroSaaS Translation Engine: executive guide | Zion Tech Group',
     description: 'MicroSaaS Translation Engine: executive guide.',
-    url: 'https://ziontechgroup.comapp/blog/microsaas-translation-engine-executive-guide/',
+    url: 'https://ziontechgroup.com/blog/microsaas-translation-engine-executive-guide/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/microsaas-translation-engine-executive-guide/' },
+  alternates: { canonical: '/blog/microsaas-translation-engine-executive-guide/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/microsaas-translation-engine-executive-guide/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/microsaas-translation-engine-executive-guide/'
 };
 
 export default function Page() {

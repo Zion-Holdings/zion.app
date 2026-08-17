@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Container Security Lifecycle: implementation playbook | Zion Tech Group',
     description: 'Container Security Lifecycle: implementation playbook.',
-    url: 'https://ziontechgroup.comapp/blog/container-security-lifecycle-implementation-playbook/',
+    url: 'https://ziontechgroup.com/blog/container-security-lifecycle-implementation-playbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/container-security-lifecycle-implementation-playbook/' },
+  alternates: { canonical: '/blog/container-security-lifecycle-implementation-playbook/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/container-security-lifecycle-implementation-playbook/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/container-security-lifecycle-implementation-playbook/'
 };
 
 export default function Page() {

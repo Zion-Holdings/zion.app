@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'IT Consulting: evaluation framework | Zion Tech Group',
     description: 'IT Consulting: evaluation framework.',
-    url: 'https://ziontechgroup.comapp/blog/it-consulting-evaluation-framework/',
+    url: 'https://ziontechgroup.com/blog/it-consulting-evaluation-framework/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/it-consulting-evaluation-framework/' },
+  alternates: { canonical: '/blog/it-consulting-evaluation-framework/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/it-consulting-evaluation-framework/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/it-consulting-evaluation-framework/'
 };
 
 export default function Page() {

@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Cost AI Optimizer: operations handbook | Zion Tech Group',
     description: 'Cloud Cost AI Optimizer: operations handbook.',
-    url: 'https://ziontechgroup.comapp/blog/cloud-cost-ai-optimizer-operations-handbook/',
+    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-operations-handbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/cloud-cost-ai-optimizer-operations-handbook/' },
+  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-operations-handbook/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/cloud-cost-ai-optimizer-operations-handbook/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-operations-handbook/'
 };
 
 export default function Page() {

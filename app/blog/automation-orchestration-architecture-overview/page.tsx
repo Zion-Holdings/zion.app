@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Automation Orchestration: architecture overview | Zion Tech Group',
     description: 'Automation Orchestration: architecture overview.',
-    url: 'https://ziontechgroup.comapp/blog/automation-orchestration-architecture-overview/',
+    url: 'https://ziontechgroup.com/blog/automation-orchestration-architecture-overview/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/automation-orchestration-architecture-overview/' },
+  alternates: { canonical: '/blog/automation-orchestration-architecture-overview/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/automation-orchestration-architecture-overview/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/automation-orchestration-architecture-overview/'
 };
 
 export default function Page() {

@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'API Orchestration Layer: common mistakes | Zion Tech Group',
     description: 'API Orchestration Layer: common mistakes.',
-    url: 'https://ziontechgroup.comapp/blog/api-orchestration-layer-common-mistakes/',
+    url: 'https://ziontechgroup.com/blog/api-orchestration-layer-common-mistakes/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/api-orchestration-layer-common-mistakes/' },
+  alternates: { canonical: '/blog/api-orchestration-layer-common-mistakes/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/api-orchestration-layer-common-mistakes/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/api-orchestration-layer-common-mistakes/'
 };
 
 export default function Page() {

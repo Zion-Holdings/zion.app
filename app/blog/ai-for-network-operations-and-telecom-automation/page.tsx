@@ -3,8 +3,15 @@ import type { Metadata } from 'next';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
-  title: 'AI for Network Operations and Telecom Automation',
-  description: 'Deep dive into ai for network operations and telecom automation. Learn how Zion Tech Group helps enterprises implement AI-driven ai solutions with proven strategies and ROI metrics.',
+  title: 'Ai For Network Operations And Telecom Automation | Zion Tech Group',
+  description: 'AI for network operations and telecom automation insights from Zion Tech Group.',
+  openGraph: {
+    title: 'Ai For Network Operations And Telecom Automation | Zion Tech Group',
+    description: 'AI for network operations and telecom automation insights from Zion Tech Group.',
+    url: 'https://ziontechgroup.com/blog/ai-for-network-operations-and-telecom-automation/',
+    type: 'website',
+    siteName: 'Zion Tech Group',
+  },
   alternates: { canonical: '/blog/ai-for-network-operations-and-telecom-automation/' },
 };
 

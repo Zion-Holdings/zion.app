@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI Data Lakehouse Pipelines: case study | Zion Tech Group',
     description: 'AI Data Lakehouse Pipelines: case study.',
-    url: 'https://ziontechgroup.comapp/blog/ai-data-lakehouse-pipelines-case-study/',
+    url: 'https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-case-study/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-data-lakehouse-pipelines-case-study/' },
+  alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-case-study/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-data-lakehouse-pipelines-case-study/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-case-study/'
 };
 
 export default function Page() {

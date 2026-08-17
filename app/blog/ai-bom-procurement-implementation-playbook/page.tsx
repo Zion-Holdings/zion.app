@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI BOM Procurement: implementation playbook | Zion Tech Group',
     description: 'AI BOM Procurement: implementation playbook.',
-    url: 'https://ziontechgroup.comapp/blog/ai-bom-procurement-implementation-playbook/',
+    url: 'https://ziontechgroup.com/blog/ai-bom-procurement-implementation-playbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-bom-procurement-implementation-playbook/' },
+  alternates: { canonical: '/blog/ai-bom-procurement-implementation-playbook/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-bom-procurement-implementation-playbook/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-bom-procurement-implementation-playbook/'
 };
 
 export default function Page() {

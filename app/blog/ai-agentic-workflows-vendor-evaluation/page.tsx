@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI Agentic Workflows: vendor evaluation | Zion Tech Group',
     description: 'AI Agentic Workflows: vendor evaluation.',
-    url: 'https://ziontechgroup.comapp/blog/ai-agentic-workflows-vendor-evaluation/',
+    url: 'https://ziontechgroup.com/blog/ai-agentic-workflows-vendor-evaluation/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-agentic-workflows-vendor-evaluation/' },
+  alternates: { canonical: '/blog/ai-agentic-workflows-vendor-evaluation/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-agentic-workflows-vendor-evaluation/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-agentic-workflows-vendor-evaluation/'
 };
 
 export default function Page() {

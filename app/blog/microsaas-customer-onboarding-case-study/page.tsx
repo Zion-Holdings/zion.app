@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'MicroSaaS Customer Onboarding: case study | Zion Tech Group',
     description: 'MicroSaaS Customer Onboarding: case study.',
-    url: 'https://ziontechgroup.comapp/blog/microsaas-customer-onboarding-case-study/',
+    url: 'https://ziontechgroup.com/blog/microsaas-customer-onboarding-case-study/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/microsaas-customer-onboarding-case-study/' },
+  alternates: { canonical: '/blog/microsaas-customer-onboarding-case-study/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/microsaas-customer-onboarding-case-study/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/microsaas-customer-onboarding-case-study/'
 };
 
 export default function Page() {

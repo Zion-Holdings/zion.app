@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Cybersecurity for MSPs: evaluation framework | Zion Tech Group',
     description: 'Cybersecurity for MSPs: evaluation framework.',
-    url: 'https://ziontechgroup.comapp/blog/cybersecurity-for-msps-evaluation-framework/',
+    url: 'https://ziontechgroup.com/blog/cybersecurity-for-msps-evaluation-framework/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/cybersecurity-for-msps-evaluation-framework/' },
+  alternates: { canonical: '/blog/cybersecurity-for-msps-evaluation-framework/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/cybersecurity-for-msps-evaluation-framework/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/cybersecurity-for-msps-evaluation-framework/'
 };
 
 export default function Page() {

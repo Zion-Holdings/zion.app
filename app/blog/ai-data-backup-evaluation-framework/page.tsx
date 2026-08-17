@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI Data Backup: evaluation framework | Zion Tech Group',
     description: 'AI Data Backup: evaluation framework.',
-    url: 'https://ziontechgroup.comapp/blog/ai-data-backup-evaluation-framework/',
+    url: 'https://ziontechgroup.com/blog/ai-data-backup-evaluation-framework/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-data-backup-evaluation-framework/' },
+  alternates: { canonical: '/blog/ai-data-backup-evaluation-framework/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-data-backup-evaluation-framework/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-data-backup-evaluation-framework/'
 };
 
 export default function Page() {

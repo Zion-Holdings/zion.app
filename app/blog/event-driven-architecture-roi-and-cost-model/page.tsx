@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Event Driven Architecture: ROI and cost model | Zion Tech Group',
     description: 'Event Driven Architecture: ROI and cost model.',
-    url: 'https://ziontechgroup.comapp/blog/event-driven-architecture-roi-and-cost-model/',
+    url: 'https://ziontechgroup.com/blog/event-driven-architecture-roi-and-cost-model/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/event-driven-architecture-roi-and-cost-model/' },
+  alternates: { canonical: '/blog/event-driven-architecture-roi-and-cost-model/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/event-driven-architecture-roi-and-cost-model/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/event-driven-architecture-roi-and-cost-model/'
 };
 
 export default function Page() {

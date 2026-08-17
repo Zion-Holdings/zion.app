@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Data Analytics Platform: operations handbook | Zion Tech Group',
     description: 'Data Analytics Platform: operations handbook.',
-    url: 'https://ziontechgroup.comapp/blog/data-analytics-platform-operations-handbook/',
+    url: 'https://ziontechgroup.com/blog/data-analytics-platform-operations-handbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/data-analytics-platform-operations-handbook/' },
+  alternates: { canonical: '/blog/data-analytics-platform-operations-handbook/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/data-analytics-platform-operations-handbook/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/data-analytics-platform-operations-handbook/'
 };
 
 export default function Page() {

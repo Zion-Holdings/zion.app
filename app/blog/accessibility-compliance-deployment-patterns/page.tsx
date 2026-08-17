@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Accessibility Compliance: deployment patterns | Zion Tech Group',
     description: 'Accessibility Compliance: deployment patterns.',
-    url: 'https://ziontechgroup.comapp/blog/accessibility-compliance-deployment-patterns/',
+    url: 'https://ziontechgroup.com/blog/accessibility-compliance-deployment-patterns/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/accessibility-compliance-deployment-patterns/' },
+  alternates: { canonical: '/blog/accessibility-compliance-deployment-patterns/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/accessibility-compliance-deployment-patterns/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/accessibility-compliance-deployment-patterns/'
 };
 
 export default function Page() {

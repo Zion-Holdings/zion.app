@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'API Gateway Management: operations handbook | Zion Tech Group',
     description: 'API Gateway Management: operations handbook.',
-    url: 'https://ziontechgroup.comapp/blog/api-gateway-management-operations-handbook/',
+    url: 'https://ziontechgroup.com/blog/api-gateway-management-operations-handbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/api-gateway-management-operations-handbook/' },
+  alternates: { canonical: '/blog/api-gateway-management-operations-handbook/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/api-gateway-management-operations-handbook/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/api-gateway-management-operations-handbook/'
 };
 
 export default function Page() {

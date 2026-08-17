@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'ETL Pipeline Optimization: executive guide | Zion Tech Group',
     description: 'ETL Pipeline Optimization: executive guide.',
-    url: 'https://ziontechgroup.comapp/blog/etl-pipeline-optimization-executive-guide/',
+    url: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-executive-guide/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/etl-pipeline-optimization-executive-guide/' },
+  alternates: { canonical: '/blog/etl-pipeline-optimization-executive-guide/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/etl-pipeline-optimization-executive-guide/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-executive-guide/'
 };
 
 export default function Page() {

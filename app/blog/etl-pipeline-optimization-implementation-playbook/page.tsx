@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'ETL Pipeline Optimization: implementation playbook | Zion Tech Group',
     description: 'ETL Pipeline Optimization: implementation playbook.',
-    url: 'https://ziontechgroup.comapp/blog/etl-pipeline-optimization-implementation-playbook/',
+    url: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-implementation-playbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/etl-pipeline-optimization-implementation-playbook/' },
+  alternates: { canonical: '/blog/etl-pipeline-optimization-implementation-playbook/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/etl-pipeline-optimization-implementation-playbook/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/etl-pipeline-optimization-implementation-playbook/'
 };
 
 export default function Page() {

@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Data Warehouse Modernization: evaluation framework | Zion Tech Group',
     description: 'Data Warehouse Modernization: evaluation framework.',
-    url: 'https://ziontechgroup.comapp/blog/data-warehouse-modernization-evaluation-framework/',
+    url: 'https://ziontechgroup.com/blog/data-warehouse-modernization-evaluation-framework/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/data-warehouse-modernization-evaluation-framework/' },
+  alternates: { canonical: '/blog/data-warehouse-modernization-evaluation-framework/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/data-warehouse-modernization-evaluation-framework/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/data-warehouse-modernization-evaluation-framework/'
 };
 
 export default function Page() {

@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Accessibility Compliance: evaluation framework | Zion Tech Group',
     description: 'Accessibility Compliance: evaluation framework.',
-    url: 'https://ziontechgroup.comapp/blog/accessibility-compliance-evaluation-framework/',
+    url: 'https://ziontechgroup.com/blog/accessibility-compliance-evaluation-framework/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/accessibility-compliance-evaluation-framework/' },
+  alternates: { canonical: '/blog/accessibility-compliance-evaluation-framework/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/accessibility-compliance-evaluation-framework/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/accessibility-compliance-evaluation-framework/'
 };
 
 export default function Page() {

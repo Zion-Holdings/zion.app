@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Managed IT Services: deployment patterns | Zion Tech Group',
     description: 'Managed IT Services: deployment patterns.',
-    url: 'https://ziontechgroup.comapp/blog/managed-it-services-deployment-patterns/',
+    url: 'https://ziontechgroup.com/blog/managed-it-services-deployment-patterns/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/managed-it-services-deployment-patterns/' },
+  alternates: { canonical: '/blog/managed-it-services-deployment-patterns/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/managed-it-services-deployment-patterns/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/managed-it-services-deployment-patterns/'
 };
 
 export default function Page() {

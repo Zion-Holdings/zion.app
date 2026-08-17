@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Automated AI Reporting: starter template | Zion Tech Group',
     description: 'Automated AI Reporting: starter template.',
-    url: 'https://ziontechgroup.comapp/blog/automated-ai-reporting-starter-template/',
+    url: 'https://ziontechgroup.com/blog/automated-ai-reporting-starter-template/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/automated-ai-reporting-starter-template/' },
+  alternates: { canonical: '/blog/automated-ai-reporting-starter-template/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/automated-ai-reporting-starter-template/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/automated-ai-reporting-starter-template/'
 };
 
 export default function Page() {

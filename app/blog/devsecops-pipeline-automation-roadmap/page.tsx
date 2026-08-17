@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'DevSecOps Pipeline: automation roadmap | Zion Tech Group',
     description: 'DevSecOps Pipeline: automation roadmap.',
-    url: 'https://ziontechgroup.comapp/blog/devsecops-pipeline-automation-roadmap/',
+    url: 'https://ziontechgroup.com/blog/devsecops-pipeline-automation-roadmap/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/devsecops-pipeline-automation-roadmap/' },
+  alternates: { canonical: '/blog/devsecops-pipeline-automation-roadmap/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/devsecops-pipeline-automation-roadmap/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/devsecops-pipeline-automation-roadmap/'
 };
 
 export default function Page() {

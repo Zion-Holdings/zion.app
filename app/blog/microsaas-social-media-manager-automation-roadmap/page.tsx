@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'MicroSaaS Social Media Manager: automation roadmap | Zion Tech Group',
     description: 'MicroSaaS Social Media Manager: automation roadmap.',
-    url: 'https://ziontechgroup.comapp/blog/microsaas-social-media-manager-automation-roadmap/',
+    url: 'https://ziontechgroup.com/blog/microsaas-social-media-manager-automation-roadmap/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/microsaas-social-media-manager-automation-roadmap/' },
+  alternates: { canonical: '/blog/microsaas-social-media-manager-automation-roadmap/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/microsaas-social-media-manager-automation-roadmap/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/microsaas-social-media-manager-automation-roadmap/'
 };
 
 export default function Page() {

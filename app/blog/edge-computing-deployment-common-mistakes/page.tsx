@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Edge Computing Deployment: common mistakes | Zion Tech Group',
     description: 'Edge Computing Deployment: common mistakes.',
-    url: 'https://ziontechgroup.comapp/blog/edge-computing-deployment-common-mistakes/',
+    url: 'https://ziontechgroup.com/blog/edge-computing-deployment-common-mistakes/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/edge-computing-deployment-common-mistakes/' },
+  alternates: { canonical: '/blog/edge-computing-deployment-common-mistakes/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/edge-computing-deployment-common-mistakes/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/edge-computing-deployment-common-mistakes/'
 };
 
 export default function Page() {

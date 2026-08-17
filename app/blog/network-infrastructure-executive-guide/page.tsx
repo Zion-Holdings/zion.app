@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Network Infrastructure: executive guide | Zion Tech Group',
     description: 'Network Infrastructure: executive guide.',
-    url: 'https://ziontechgroup.comapp/blog/network-infrastructure-executive-guide/',
+    url: 'https://ziontechgroup.com/blog/network-infrastructure-executive-guide/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/network-infrastructure-executive-guide/' },
+  alternates: { canonical: '/blog/network-infrastructure-executive-guide/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/network-infrastructure-executive-guide/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/network-infrastructure-executive-guide/'
 };
 
 export default function Page() {

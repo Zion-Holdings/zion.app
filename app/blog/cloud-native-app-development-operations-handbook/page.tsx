@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Native App Development: operations handbook | Zion Tech Group',
     description: 'Cloud Native App Development: operations handbook.',
-    url: 'https://ziontechgroup.comapp/blog/cloud-native-app-development-operations-handbook/',
+    url: 'https://ziontechgroup.com/blog/cloud-native-app-development-operations-handbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/cloud-native-app-development-operations-handbook/' },
+  alternates: { canonical: '/blog/cloud-native-app-development-operations-handbook/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/cloud-native-app-development-operations-handbook/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/cloud-native-app-development-operations-handbook/'
 };
 
 export default function Page() {

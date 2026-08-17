@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Edge Computing Deployment: vendor evaluation | Zion Tech Group',
     description: 'Edge Computing Deployment: vendor evaluation.',
-    url: 'https://ziontechgroup.comapp/blog/edge-computing-deployment-vendor-evaluation/',
+    url: 'https://ziontechgroup.com/blog/edge-computing-deployment-vendor-evaluation/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/edge-computing-deployment-vendor-evaluation/' },
+  alternates: { canonical: '/blog/edge-computing-deployment-vendor-evaluation/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/edge-computing-deployment-vendor-evaluation/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/edge-computing-deployment-vendor-evaluation/'
 };
 
 export default function Page() {

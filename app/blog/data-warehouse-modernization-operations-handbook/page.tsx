@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Data Warehouse Modernization: operations handbook | Zion Tech Group',
     description: 'Data Warehouse Modernization: operations handbook.',
-    url: 'https://ziontechgroup.comapp/blog/data-warehouse-modernization-operations-handbook/',
+    url: 'https://ziontechgroup.com/blog/data-warehouse-modernization-operations-handbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/data-warehouse-modernization-operations-handbook/' },
+  alternates: { canonical: '/blog/data-warehouse-modernization-operations-handbook/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/data-warehouse-modernization-operations-handbook/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/data-warehouse-modernization-operations-handbook/'
 };
 
 export default function Page() {

@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'GenAI DevOps CI/CD: implementation playbook | Zion Tech Group',
     description: 'GenAI DevOps CI/CD: implementation playbook.',
-    url: 'https://ziontechgroup.comapp/blog/genai-devops-cicd-implementation-playbook/',
+    url: 'https://ziontechgroup.com/blog/genai-devops-cicd-implementation-playbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/genai-devops-cicd-implementation-playbook/' },
+  alternates: { canonical: '/blog/genai-devops-cicd-implementation-playbook/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/genai-devops-cicd-implementation-playbook/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/genai-devops-cicd-implementation-playbook/'
 };
 
 export default function Page() {

@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'API Gateway Management: deployment patterns | Zion Tech Group',
     description: 'API Gateway Management: deployment patterns.',
-    url: 'https://ziontechgroup.comapp/blog/api-gateway-management-deployment-patterns/',
+    url: 'https://ziontechgroup.com/blog/api-gateway-management-deployment-patterns/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/api-gateway-management-deployment-patterns/' },
+  alternates: { canonical: '/blog/api-gateway-management-deployment-patterns/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/api-gateway-management-deployment-patterns/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/api-gateway-management-deployment-patterns/'
 };
 
 export default function Page() {

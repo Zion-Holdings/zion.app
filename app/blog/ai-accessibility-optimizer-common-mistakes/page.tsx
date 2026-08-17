@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI Accessibility Optimizer: common mistakes | Zion Tech Group',
     description: 'AI Accessibility Optimizer: common mistakes.',
-    url: 'https://ziontechgroup.comapp/blog/ai-accessibility-optimizer-common-mistakes/',
+    url: 'https://ziontechgroup.com/blog/ai-accessibility-optimizer-common-mistakes/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-accessibility-optimizer-common-mistakes/' },
+  alternates: { canonical: '/blog/ai-accessibility-optimizer-common-mistakes/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-accessibility-optimizer-common-mistakes/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-accessibility-optimizer-common-mistakes/'
 };
 
 export default function Page() {

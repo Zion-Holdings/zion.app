@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: '5G Solutions: vendor evaluation | Zion Tech Group',
     description: '5G Solutions: vendor evaluation.',
-    url: 'https://ziontechgroup.comapp/blog/5g-solutions-vendor-evaluation/',
+    url: 'https://ziontechgroup.com/blog/5g-solutions-vendor-evaluation/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/5g-solutions-vendor-evaluation/' },
+  alternates: { canonical: '/blog/5g-solutions-vendor-evaluation/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/5g-solutions-vendor-evaluation/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/5g-solutions-vendor-evaluation/'
 };
 
 export default function Page() {

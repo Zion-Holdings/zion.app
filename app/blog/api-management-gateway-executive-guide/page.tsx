@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'API Management Gateway: executive guide | Zion Tech Group',
     description: 'API Management Gateway: executive guide.',
-    url: 'https://ziontechgroup.comapp/blog/api-management-gateway-executive-guide/',
+    url: 'https://ziontechgroup.com/blog/api-management-gateway-executive-guide/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/api-management-gateway-executive-guide/' },
+  alternates: { canonical: '/blog/api-management-gateway-executive-guide/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/api-management-gateway-executive-guide/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/api-management-gateway-executive-guide/'
 };
 
 export default function Page() {

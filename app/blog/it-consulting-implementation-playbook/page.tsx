@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'IT Consulting: implementation playbook | Zion Tech Group',
     description: 'IT Consulting: implementation playbook.',
-    url: 'https://ziontechgroup.comapp/blog/it-consulting-implementation-playbook/',
+    url: 'https://ziontechgroup.com/blog/it-consulting-implementation-playbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/it-consulting-implementation-playbook/' },
+  alternates: { canonical: '/blog/it-consulting-implementation-playbook/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/it-consulting-implementation-playbook/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/it-consulting-implementation-playbook/'
 };
 
 export default function Page() {

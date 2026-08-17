@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Enterprise Backup DR: operations handbook | Zion Tech Group',
     description: 'Enterprise Backup DR: operations handbook.',
-    url: 'https://ziontechgroup.comapp/blog/enterprise-backup-dr-operations-handbook/',
+    url: 'https://ziontechgroup.com/blog/enterprise-backup-dr-operations-handbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/enterprise-backup-dr-operations-handbook/' },
+  alternates: { canonical: '/blog/enterprise-backup-dr-operations-handbook/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/enterprise-backup-dr-operations-handbook/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/enterprise-backup-dr-operations-handbook/'
 };
 
 export default function Page() {

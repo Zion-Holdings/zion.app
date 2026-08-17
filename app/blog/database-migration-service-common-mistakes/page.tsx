@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Database Migration Service: common mistakes | Zion Tech Group',
     description: 'Database Migration Service: common mistakes.',
-    url: 'https://ziontechgroup.comapp/blog/database-migration-service-common-mistakes/',
+    url: 'https://ziontechgroup.com/blog/database-migration-service-common-mistakes/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/database-migration-service-common-mistakes/' },
+  alternates: { canonical: '/blog/database-migration-service-common-mistakes/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/database-migration-service-common-mistakes/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/database-migration-service-common-mistakes/'
 };
 
 export default function Page() {

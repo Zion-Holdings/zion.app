@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Smart Contract Audit: ROI and cost model | Zion Tech Group',
     description: 'Smart Contract Audit: ROI and cost model.',
-    url: 'https://ziontechgroup.comapp/blog/smart-contract-audit-roi-and-cost-model/',
+    url: 'https://ziontechgroup.com/blog/smart-contract-audit-roi-and-cost-model/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/smart-contract-audit-roi-and-cost-model/' },
+  alternates: { canonical: '/blog/smart-contract-audit-roi-and-cost-model/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/smart-contract-audit-roi-and-cost-model/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/smart-contract-audit-roi-and-cost-model/'
 };
 
 export default function Page() {

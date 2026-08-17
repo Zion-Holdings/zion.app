@@ -3,8 +3,15 @@ import type { Metadata } from 'next';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
-  title: 'AI for IT Operations and Observability',
-  description: 'Deep dive into ai for it operations and observability. Learn how Zion Tech Group helps enterprises implement AI-driven ai solutions with proven strategies and ROI metrics.',
+  title: 'Ai For It Operations And Observability | Zion Tech Group',
+  description: 'AI for IT operations and observability insights from Zion Tech Group.',
+  openGraph: {
+    title: 'Ai For It Operations And Observability | Zion Tech Group',
+    description: 'AI for IT operations and observability insights from Zion Tech Group.',
+    url: 'https://ziontechgroup.com/blog/ai-for-it-operations-and-observability/',
+    type: 'website',
+    siteName: 'Zion Tech Group',
+  },
   alternates: { canonical: '/blog/ai-for-it-operations-and-observability/' },
 };
 

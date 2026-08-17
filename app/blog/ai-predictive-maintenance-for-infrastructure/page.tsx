@@ -3,8 +3,15 @@ import type { Metadata } from 'next';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
-  title: 'AI Predictive Maintenance for Infrastructure',
-  description: 'Deep dive into ai predictive maintenance for infrastructure. Learn how Zion Tech Group helps enterprises implement AI-driven ai solutions with proven strategies and ROI metrics.',
+  title: 'Ai Predictive Maintenance For Infrastructure | Zion Tech Group',
+  description: 'AI predictive maintenance for infrastructure insights from Zion Tech Group.',
+  openGraph: {
+    title: 'Ai Predictive Maintenance For Infrastructure | Zion Tech Group',
+    description: 'AI predictive maintenance for infrastructure insights from Zion Tech Group.',
+    url: 'https://ziontechgroup.com/blog/ai-predictive-maintenance-for-infrastructure/',
+    type: 'website',
+    siteName: 'Zion Tech Group',
+  },
   alternates: { canonical: '/blog/ai-predictive-maintenance-for-infrastructure/' },
 };
 

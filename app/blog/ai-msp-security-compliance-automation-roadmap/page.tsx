@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI MSP Security Compliance: automation roadmap | Zion Tech Group',
     description: 'AI MSP Security Compliance: automation roadmap.',
-    url: 'https://ziontechgroup.comapp/blog/ai-msp-security-compliance-automation-roadmap/',
+    url: 'https://ziontechgroup.com/blog/ai-msp-security-compliance-automation-roadmap/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-msp-security-compliance-automation-roadmap/' },
+  alternates: { canonical: '/blog/ai-msp-security-compliance-automation-roadmap/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-msp-security-compliance-automation-roadmap/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-msp-security-compliance-automation-roadmap/'
 };
 
 export default function Page() {

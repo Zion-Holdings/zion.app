@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI API Gateway: executive guide | Zion Tech Group',
     description: 'AI API Gateway: executive guide.',
-    url: 'https://ziontechgroup.comapp/blog/ai-api-gateway-executive-guide/',
+    url: 'https://ziontechgroup.com/blog/ai-api-gateway-executive-guide/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-api-gateway-executive-guide/' },
+  alternates: { canonical: '/blog/ai-api-gateway-executive-guide/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-api-gateway-executive-guide/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-api-gateway-executive-guide/'
 };
 
 export default function Page() {

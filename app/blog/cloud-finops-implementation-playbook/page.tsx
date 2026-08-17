@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Cloud FinOps: implementation playbook | Zion Tech Group',
     description: 'Cloud FinOps: implementation playbook.',
-    url: 'https://ziontechgroup.comapp/blog/cloud-finops-implementation-playbook/',
+    url: 'https://ziontechgroup.com/blog/cloud-finops-implementation-playbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/cloud-finops-implementation-playbook/' },
+  alternates: { canonical: '/blog/cloud-finops-implementation-playbook/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/cloud-finops-implementation-playbook/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/cloud-finops-implementation-playbook/'
 };
 
 export default function Page() {

@@ -3,8 +3,15 @@ import type { Metadata } from 'next';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
-  title: 'AI for Service Desk and Support Automation',
-  description: 'Deep dive into ai for service desk and support automation. Learn how Zion Tech Group helps enterprises implement AI-driven ai solutions with proven strategies and ROI metrics.',
+  title: 'Ai For Service Desk And Support Automation | Zion Tech Group',
+  description: 'AI for service desk and support automation insights from Zion Tech Group.',
+  openGraph: {
+    title: 'Ai For Service Desk And Support Automation | Zion Tech Group',
+    description: 'AI for service desk and support automation insights from Zion Tech Group.',
+    url: 'https://ziontechgroup.com/blog/ai-for-service-desk-and-support-automation/',
+    type: 'website',
+    siteName: 'Zion Tech Group',
+  },
   alternates: { canonical: '/blog/ai-for-service-desk-and-support-automation/' },
 };
 

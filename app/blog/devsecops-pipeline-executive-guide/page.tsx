@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'DevSecOps Pipeline: executive guide | Zion Tech Group',
     description: 'DevSecOps Pipeline: executive guide.',
-    url: 'https://ziontechgroup.comapp/blog/devsecops-pipeline-executive-guide/',
+    url: 'https://ziontechgroup.com/blog/devsecops-pipeline-executive-guide/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/devsecops-pipeline-executive-guide/' },
+  alternates: { canonical: '/blog/devsecops-pipeline-executive-guide/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/devsecops-pipeline-executive-guide/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/devsecops-pipeline-executive-guide/'
 };
 
 export default function Page() {

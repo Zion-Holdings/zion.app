@@ -3,8 +3,15 @@ import type { Metadata } from 'next';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
-  title: 'AI for Managed IT and Enterprise Support',
-  description: 'Deep dive into ai for managed it and enterprise support. Learn how Zion Tech Group helps enterprises implement AI-driven ai solutions with proven strategies and ROI metrics.',
+  title: 'Ai For Managed It And Enterprise Support | Zion Tech Group',
+  description: 'AI for managed IT and enterprise support insights from Zion Tech Group.',
+  openGraph: {
+    title: 'Ai For Managed It And Enterprise Support | Zion Tech Group',
+    description: 'AI for managed IT and enterprise support insights from Zion Tech Group.',
+    url: 'https://ziontechgroup.com/blog/ai-for-managed-it-and-enterprise-support/',
+    type: 'website',
+    siteName: 'Zion Tech Group',
+  },
   alternates: { canonical: '/blog/ai-for-managed-it-and-enterprise-support/' },
 };
 

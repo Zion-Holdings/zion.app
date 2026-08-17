@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Incident Response Retainer: case study | Zion Tech Group',
     description: 'Incident Response Retainer: case study.',
-    url: 'https://ziontechgroup.comapp/blog/incident-response-retainer-case-study/',
+    url: 'https://ziontechgroup.com/blog/incident-response-retainer-case-study/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/incident-response-retainer-case-study/' },
+  alternates: { canonical: '/blog/incident-response-retainer-case-study/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/incident-response-retainer-case-study/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/incident-response-retainer-case-study/'
 };
 
 export default function Page() {

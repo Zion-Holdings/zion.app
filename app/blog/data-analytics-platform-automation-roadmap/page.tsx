@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Data Analytics Platform: automation roadmap | Zion Tech Group',
     description: 'Data Analytics Platform: automation roadmap.',
-    url: 'https://ziontechgroup.comapp/blog/data-analytics-platform-automation-roadmap/',
+    url: 'https://ziontechgroup.com/blog/data-analytics-platform-automation-roadmap/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/data-analytics-platform-automation-roadmap/' },
+  alternates: { canonical: '/blog/data-analytics-platform-automation-roadmap/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/data-analytics-platform-automation-roadmap/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/data-analytics-platform-automation-roadmap/'
 };
 
 export default function Page() {

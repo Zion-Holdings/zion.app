@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'MicroSaaS Customer Onboarding: evaluation framework | Zion Tech Group',
     description: 'MicroSaaS Customer Onboarding: evaluation framework.',
-    url: 'https://ziontechgroup.comapp/blog/microsaas-customer-onboarding-evaluation-framework/',
+    url: 'https://ziontechgroup.com/blog/microsaas-customer-onboarding-evaluation-framework/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/microsaas-customer-onboarding-evaluation-framework/' },
+  alternates: { canonical: '/blog/microsaas-customer-onboarding-evaluation-framework/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/microsaas-customer-onboarding-evaluation-framework/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/microsaas-customer-onboarding-evaluation-framework/'
 };
 
 export default function Page() {

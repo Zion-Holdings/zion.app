@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'MicroSaaS Expense Tracker: case study | Zion Tech Group',
     description: 'MicroSaaS Expense Tracker: case study.',
-    url: 'https://ziontechgroup.comapp/blog/microsaas-expense-tracker-case-study/',
+    url: 'https://ziontechgroup.com/blog/microsaas-expense-tracker-case-study/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/microsaas-expense-tracker-case-study/' },
+  alternates: { canonical: '/blog/microsaas-expense-tracker-case-study/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/microsaas-expense-tracker-case-study/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/microsaas-expense-tracker-case-study/'
 };
 
 export default function Page() {

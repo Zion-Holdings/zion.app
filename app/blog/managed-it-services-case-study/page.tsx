@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Managed IT Services: case study | Zion Tech Group',
     description: 'Managed IT Services: case study.',
-    url: 'https://ziontechgroup.comapp/blog/managed-it-services-case-study/',
+    url: 'https://ziontechgroup.com/blog/managed-it-services-case-study/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/managed-it-services-case-study/' },
+  alternates: { canonical: '/blog/managed-it-services-case-study/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/managed-it-services-case-study/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/managed-it-services-case-study/'
 };
 
 export default function Page() {

@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI Ad Copy Generator: automation roadmap | Zion Tech Group',
     description: 'AI Ad Copy Generator: automation roadmap.',
-    url: 'https://ziontechgroup.comapp/blog/ai-ad-copy-generator-automation-roadmap/',
+    url: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-automation-roadmap/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-ad-copy-generator-automation-roadmap/' },
+  alternates: { canonical: '/blog/ai-ad-copy-generator-automation-roadmap/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-ad-copy-generator-automation-roadmap/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-ad-copy-generator-automation-roadmap/'
 };
 
 export default function Page() {

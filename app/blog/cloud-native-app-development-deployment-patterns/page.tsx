@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Native App Development: deployment patterns | Zion Tech Group',
     description: 'Cloud Native App Development: deployment patterns.',
-    url: 'https://ziontechgroup.comapp/blog/cloud-native-app-development-deployment-patterns/',
+    url: 'https://ziontechgroup.com/blog/cloud-native-app-development-deployment-patterns/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/cloud-native-app-development-deployment-patterns/' },
+  alternates: { canonical: '/blog/cloud-native-app-development-deployment-patterns/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/cloud-native-app-development-deployment-patterns/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/cloud-native-app-development-deployment-patterns/'
 };
 
 export default function Page() {

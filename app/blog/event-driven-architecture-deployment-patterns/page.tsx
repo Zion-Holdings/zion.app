@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Event Driven Architecture: deployment patterns | Zion Tech Group',
     description: 'Event Driven Architecture: deployment patterns.',
-    url: 'https://ziontechgroup.comapp/blog/event-driven-architecture-deployment-patterns/',
+    url: 'https://ziontechgroup.com/blog/event-driven-architecture-deployment-patterns/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/event-driven-architecture-deployment-patterns/' },
+  alternates: { canonical: '/blog/event-driven-architecture-deployment-patterns/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/event-driven-architecture-deployment-patterns/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/event-driven-architecture-deployment-patterns/'
 };
 
 export default function Page() {

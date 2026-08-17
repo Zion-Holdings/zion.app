@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI 3D Asset Generator: vendor evaluation | Zion Tech Group',
     description: 'AI 3D Asset Generator: vendor evaluation.',
-    url: 'https://ziontechgroup.comapp/blog/ai-3d-asset-generator-vendor-evaluation/',
+    url: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-vendor-evaluation/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-3d-asset-generator-vendor-evaluation/' },
+  alternates: { canonical: '/blog/ai-3d-asset-generator-vendor-evaluation/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-3d-asset-generator-vendor-evaluation/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-3d-asset-generator-vendor-evaluation/'
 };
 
 export default function Page() {

@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI API Gateway: starter template | Zion Tech Group',
     description: 'AI API Gateway: starter template.',
-    url: 'https://ziontechgroup.comapp/blog/ai-api-gateway-starter-template/',
+    url: 'https://ziontechgroup.com/blog/ai-api-gateway-starter-template/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-api-gateway-starter-template/' },
+  alternates: { canonical: '/blog/ai-api-gateway-starter-template/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-api-gateway-starter-template/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-api-gateway-starter-template/'
 };
 
 export default function Page() {

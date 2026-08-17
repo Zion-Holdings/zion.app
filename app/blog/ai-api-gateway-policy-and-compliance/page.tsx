@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI API Gateway: policy and compliance | Zion Tech Group',
     description: 'AI API Gateway: policy and compliance.',
-    url: 'https://ziontechgroup.comapp/blog/ai-api-gateway-policy-and-compliance/',
+    url: 'https://ziontechgroup.com/blog/ai-api-gateway-policy-and-compliance/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-api-gateway-policy-and-compliance/' },
+  alternates: { canonical: '/blog/ai-api-gateway-policy-and-compliance/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-api-gateway-policy-and-compliance/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-api-gateway-policy-and-compliance/'
 };
 
 export default function Page() {

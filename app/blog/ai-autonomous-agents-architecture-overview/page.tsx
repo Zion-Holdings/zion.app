@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AI Autonomous Agents: architecture overview | Zion Tech Group',
     description: 'AI Autonomous Agents: architecture overview.',
-    url: 'https://ziontechgroup.comapp/blog/ai-autonomous-agents-architecture-overview/',
+    url: 'https://ziontechgroup.com/blog/ai-autonomous-agents-architecture-overview/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/ai-autonomous-agents-architecture-overview/' },
+  alternates: { canonical: '/blog/ai-autonomous-agents-architecture-overview/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/ai-autonomous-agents-architecture-overview/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-autonomous-agents-architecture-overview/'
 };
 
 export default function Page() {

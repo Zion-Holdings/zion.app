@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Brand Voice Guardian: deployment patterns | Zion Tech Group',
     description: 'Brand Voice Guardian: deployment patterns.',
-    url: 'https://ziontechgroup.comapp/blog/brand-voice-guardian-deployment-patterns/',
+    url: 'https://ziontechgroup.com/blog/brand-voice-guardian-deployment-patterns/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/brand-voice-guardian-deployment-patterns/' },
+  alternates: { canonical: '/blog/brand-voice-guardian-deployment-patterns/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/brand-voice-guardian-deployment-patterns/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/brand-voice-guardian-deployment-patterns/'
 };
 
 export default function Page() {

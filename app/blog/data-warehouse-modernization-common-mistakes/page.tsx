@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'Data Warehouse Modernization: common mistakes | Zion Tech Group',
     description: 'Data Warehouse Modernization: common mistakes.',
-    url: 'https://ziontechgroup.comapp/blog/data-warehouse-modernization-common-mistakes/',
+    url: 'https://ziontechgroup.com/blog/data-warehouse-modernization-common-mistakes/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/data-warehouse-modernization-common-mistakes/' },
+  alternates: { canonical: '/blog/data-warehouse-modernization-common-mistakes/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/data-warehouse-modernization-common-mistakes/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/data-warehouse-modernization-common-mistakes/'
 };
 
 export default function Page() {

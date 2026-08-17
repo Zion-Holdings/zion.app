@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'AIOps Anomaly Detection: operations handbook | Zion Tech Group',
     description: 'AIOps Anomaly Detection: operations handbook.',
-    url: 'https://ziontechgroup.comapp/blog/aiops-anomaly-detection-operations-handbook/',
+    url: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-operations-handbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/aiops-anomaly-detection-operations-handbook/' },
+  alternates: { canonical: '/blog/aiops-anomaly-detection-operations-handbook/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/aiops-anomaly-detection-operations-handbook/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/aiops-anomaly-detection-operations-handbook/'
 };
 
 export default function Page() {

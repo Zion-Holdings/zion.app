@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'API Security Testing: security and governance | Zion Tech Group',
     description: 'API Security Testing: security and governance.',
-    url: 'https://ziontechgroup.comapp/blog/api-security-testing-security-and-governance/',
+    url: 'https://ziontechgroup.com/blog/api-security-testing-security-and-governance/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/api-security-testing-security-and-governance/' },
+  alternates: { canonical: '/blog/api-security-testing-security-and-governance/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/api-security-testing-security-and-governance/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/api-security-testing-security-and-governance/'
 };
 
 export default function Page() {

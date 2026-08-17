@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'DevSecOps Pipeline: starter template | Zion Tech Group',
     description: 'DevSecOps Pipeline: starter template.',
-    url: 'https://ziontechgroup.comapp/blog/devsecops-pipeline-starter-template/',
+    url: 'https://ziontechgroup.com/blog/devsecops-pipeline-starter-template/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/devsecops-pipeline-starter-template/' },
+  alternates: { canonical: '/blog/devsecops-pipeline-starter-template/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/devsecops-pipeline-starter-template/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/devsecops-pipeline-starter-template/'
 };
 
 export default function Page() {

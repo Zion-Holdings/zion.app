@@ -7,11 +7,11 @@ export const metadata = {
   openGraph: {
     title: 'MicroSaaS Expense Tracker: architecture overview | Zion Tech Group',
     description: 'MicroSaaS Expense Tracker: architecture overview.',
-    url: 'https://ziontechgroup.comapp/blog/microsaas-expense-tracker-architecture-overview/',
+    url: 'https://ziontechgroup.com/blog/microsaas-expense-tracker-architecture-overview/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: 'app/blog/microsaas-expense-tracker-architecture-overview/' },
+  alternates: { canonical: '/blog/microsaas-expense-tracker-architecture-overview/' },
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
   datePublished: '2026-08-17T11:00:00Z',
   dateModified: '2026-08-17T11:00:00Z',
-  mainEntityOfPage: 'https://ziontechgroup.comapp/blog/microsaas-expense-tracker-architecture-overview/'
+  mainEntityOfPage: 'https://ziontechgroup.com/blog/microsaas-expense-tracker-architecture-overview/'
 };
 
 export default function Page() {
