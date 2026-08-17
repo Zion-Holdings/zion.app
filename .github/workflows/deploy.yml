@@ -34,6 +34,12 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
+      - name: Prepare Pages support files
+        run: |
+          mkdir -p out/_support
+          if [ -d docs ]; then
+            cp -R docs/. out/_support/
+          fi
 
   deploy:
     environment:
