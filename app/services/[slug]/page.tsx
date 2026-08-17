@@ -44,7 +44,7 @@ export default function ServiceSlugPage({ params }: { params: Params }) {
       subtitle={`${mapping.label} delivery, patterns, and compliance guidance.`}
       breadcrumbItems={[
         { label: 'Home', href: '/' },
-        { label: 'Services', href: '/services' },
+        { label: 'Services', href: '/services/' },
         { label: mapping.label },
       ]}
     >
