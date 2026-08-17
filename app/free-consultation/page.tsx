@@ -28,8 +28,8 @@ export default function FreeConsultationPage() {
           This is a no-obligation discovery call. We’ll review your current environment, identify quick wins, and outline a practical first engagement.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="/contact" className="btn-primary text-center">Book a call</a>
-          <a href="/services" className="btn-secondary text-center">Browse services</a>
+          <a href="/contact/" className="btn-primary text-center">Book a call</a>
+          <a href="/services/" className="btn-secondary text-center">Browse services</a>
         </div>
       </div>
     </StandardPage>

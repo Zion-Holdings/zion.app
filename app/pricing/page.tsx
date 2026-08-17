@@ -38,8 +38,8 @@ export default function PricingPage() {
         </div>
       </div>
       <div className="flex flex-col sm:flex-row gap-3 justify-center mt-10">
-        <a href="/contact" className="btn-primary text-center">Request quote</a>
-        <a href="/services" className="btn-secondary text-center">Browse services</a>
+        <a href="/contact/" className="btn-primary text-center">Request quote</a>
+        <a href="/services/" className="btn-secondary text-center">Browse services</a>
       </div>
     </StandardPage>
   );

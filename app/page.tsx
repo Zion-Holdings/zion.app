@@ -3,7 +3,7 @@ import Link from 'next/link';
 import StandardPage from '@/components/StandardPage';
 
 export const metadata: Metadata = {
-  title: 'Zion Tech Group | AI & IT Company',
+  title: 'Home | Zion Tech Group',
   description: 'Zion Tech Group is an AI-native IT services company building autonomous operations, managed AI, and enterprise-ready delivery.',
   openGraph: {
     title: 'Zion Tech Group | AI & IT Company',

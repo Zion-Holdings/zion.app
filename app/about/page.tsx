@@ -49,8 +49,8 @@ export default function AboutPage() {
           </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-3">
-          <Link href="/services" className="btn-primary text-center">Explore services</Link>
-          <Link href="/contact" className="btn-secondary text-center">Contact us</Link>
+          <Link href="/services/" className="btn-primary text-center">Explore services</Link>
+          <Link href="/contact/" className="btn-secondary text-center">Contact us</Link>
         </div>
       </div>
     </StandardPage>

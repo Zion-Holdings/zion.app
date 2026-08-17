@@ -43,6 +43,9 @@ jobs:
           if [ -d public ]; then
             cp -R public/. out/
           fi
+          if [ -f sitemap.xml ]; then
+            cp sitemap.xml out/ && cp sitemap.xml public/ && cp sitemap.xml docs/
+          fi
 
   deploy:
     environment:

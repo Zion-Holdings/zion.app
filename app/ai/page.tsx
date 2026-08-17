@@ -38,8 +38,8 @@ export default function AiPage() {
         </div>
       </div>
       <div className="flex flex-col sm:flex-row gap-3 mt-10">
-        <a href="/contact" className="btn-primary text-center">Start an AI project</a>
-        <a href="/services" className="btn-secondary text-center">Browse Services</a>
+        <a href="/contact/" className="btn-primary text-center">Start an AI project</a>
+        <a href="/services/" className="btn-secondary text-center">Browse Services</a>
       </div>
     </StandardPage>
   );

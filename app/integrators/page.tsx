@@ -38,8 +38,8 @@ export default function IntegratorsPage() {
           </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-3 mt-10">
-          <a href="/contact" className="btn-primary text-center">Become a partner</a>
-          <a href="/partners" className="btn-secondary text-center">Partner ecosystem</a>
+          <a href="/contact/" className="btn-primary text-center">Become a partner</a>
+          <a href="/partners/" className="btn-secondary text-center">Partner ecosystem</a>
         </div>
       </div>
     </StandardPage>

@@ -28,8 +28,8 @@ export default function ConfiguratorPage() {
           Use this intake to scope cloud, security, data, automation, or AI work. We’ll return a short plan with recommended services, milestones, and timeline.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="/contact" className="btn-primary text-center">Start intake</a>
-          <a href="/services" className="btn-secondary text-center">Browse services</a>
+          <a href="/contact/" className="btn-primary text-center">Start intake</a>
+          <a href="/services/" className="btn-secondary text-center">Browse services</a>
         </div>
       </div>
     </StandardPage>

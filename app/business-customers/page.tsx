@@ -40,8 +40,8 @@ export default function BusinessCustomersPage() {
           </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-3 mt-10">
-          <Link href="/contact" className="btn-primary text-center">Start a project</Link>
-          <Link href="/services" className="btn-secondary text-center">Browse services</Link>
+          <Link href="/contact/" className="btn-primary text-center">Start a project</Link>
+          <Link href="/services/" className="btn-secondary text-center">Browse services</Link>
         </div>
       </div>
     </StandardPage>

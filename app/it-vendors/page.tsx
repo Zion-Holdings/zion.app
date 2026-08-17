@@ -38,8 +38,8 @@ export default function ItVendorsPage() {
           </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-3 mt-10">
-          <a href="/contact" className="btn-primary text-center">Talk to us</a>
-          <a href="/services" className="btn-secondary text-center">Explore services</a>
+          <a href="/contact/" className="btn-primary text-center">Talk to us</a>
+          <a href="/services/" className="btn-secondary text-center">Explore services</a>
         </div>
       </div>
     </StandardPage>

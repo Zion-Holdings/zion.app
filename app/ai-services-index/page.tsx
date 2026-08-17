@@ -38,8 +38,8 @@ export default function AiServicesIndexPage() {
         </div>
       </div>
       <div className="flex flex-col sm:flex-row gap-3 mt-10">
-        <a href="/contact" className="btn-primary text-center">Talk to an Engineer</a>
-        <a href="/services" className="btn-secondary text-center">All Services</a>
+        <a href="/contact/" className="btn-primary text-center">Talk to an Engineer</a>
+        <a href="/services/" className="btn-secondary text-center">All Services</a>
       </div>
     </StandardPage>
   );

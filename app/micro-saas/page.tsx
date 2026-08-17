@@ -39,8 +39,8 @@ export default function MicroSaaSPage() {
         </div>
       </div>
       <div className="flex flex-col sm:flex-row gap-3 mt-10">
-        <a href="/contact" className="btn-primary text-center">Talk to an Engineer</a>
-        <a href="/ai-services" className="btn-secondary text-center">AI Services</a>
+        <a href="/contact/" className="btn-primary text-center">Talk to an Engineer</a>
+        <a href="/ai-services/" className="btn-secondary text-center">AI Services</a>
       </div>
     </StandardPage>
   );

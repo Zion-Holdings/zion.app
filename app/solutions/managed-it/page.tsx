@@ -30,17 +30,17 @@ export default function ManagedItSolutionsPage() {
       ]}
     >
       <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto">
-        <Link href="/services" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+        <Link href="/services/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Support Automation</h3>
           <p className="text-slate-400 text-sm">Ticket deflection, routing, and knowledge-base assistants.</p>
           <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
         </Link>
-        <Link href="/services" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+        <Link href="/services/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Service Desk</h3>
           <p className="text-slate-400 text-sm">Structured support workflows with SLA-aware operations.</p>
           <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
         </Link>
-        <Link href="/services" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+        <Link href="/services/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
           <h3 className="text-white font-semibold mb-2">Enterprise Support</h3>
           <p className="text-slate-400 text-sm">Dedicated coverage for critical business systems.</p>
           <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
