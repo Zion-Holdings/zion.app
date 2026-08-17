@@ -876,3 +876,49 @@
 /sla /docs/sla/index.html 200
 /free-ai-readiness-audit/ /docs/free-ai-readiness-audit/index.html 200
 /free-ai-readiness-audit /docs/free-ai-readiness-audit/index.html 200
+
+# Redirects added by site fix
+/managed-it-services-small-business-2026-6559/ /services/?category=it 301
+/cybersecurity-platform-msp-2026-6558/ /services/?category=security 301
+/cloud-cost-ai-optimizer-2026-6534/ /services/?category=cloud 301
+/ai-observability-2026-6565/ /services/?category=ai 301
+/it-consulting-2026-6570/ /services/?category=it 301
+/cloud-migration-services-2026-6572/ /services/?category=cloud 301
+/services/ai-incident-response-and-oncall-automation/ /services/?category=ai 301
+/services/ai-meeting-intelligence-minutes-and-actions/ /services?category=ai 301
+/services/ai-medical-diagnosis/ /services/?category=ai 301
+/services/hl7-fhir-integration/ /services/?category=data 301
+/services/fraud-detection-ai/ /services/?category=ai 301
+/services/dynamic-pricing/ /services/?category=ai 301
+/services/iot-integration/ /services/?category=iot 301
+/services/route-optimization/ /services/?category=ai 301
+/services/fleet-management/ /services/?category=ai 301
+/services/legal-document-ai/ /services/?category=ai 301
+/services/contract-lifecycle/ /services/?category=ai 301
+/services/smart-inventory-ai/ /services/?category=ai 301
+/services/demand-forecasting/ /services/?category=data 301
+/services/ai-predictive-analytics/ /services/ai-predictive-analytics 301
+/services/data-lake-platform /services/?category=data 301
+/services/data-lake-platform/ /services/?category=data 301
+/services/data-lake-platform /services/data-analytics 301
+/services/data-lake-platform/ /services/data-analytics 301
+
+# Missing service redirects - added for 404 fix
+/services/5g-network-slicing-optimizer-e04c40dd /services/ 301
+/services/5g-network-slicing-optimizer-e04c40dd/ /services/ 301
+/services/adaptive-analytics-for-retail-1e95b778 /services/ 301
+/services/adaptive-analytics-for-retail-1e95b778/ /services/ 301
+/services/adaptive-content-analyzer-1d2109db /services/ 301
+/services/adaptive-content-analyzer-1d2109db/ /services/ 301
+/services/adaptive-coordinator-finance-1-6e5c4f3f /services/ 301
+/services/adaptive-coordinator-finance-1-6e5c4f3f/ /services/ 301
+/services/adaptive-coordinator-for-insurance-c7208f6f /services/ 301
+/services/adaptive-coordinator-for-insurance-c7208f6f/ /services/ 301
+/services/adaptive-director-education-57251642 /services/ 301
+/services/adaptive-director-education-57251642/ /services/ 301
+/services/adaptive-director-real-estate-1-b64eb0c2 /services/ 301
+/services/adaptive-director-real-estate-1-b64eb0c2/ /services/ 301
+/services/adaptive-document-generator-1-2b53b34c /services/ 301
+/services/adaptive-document-generator-1-2b53b34c/ /services/ 301
+/services/adaptive-insights-gaming-013c8e67 /services/ 301
+/services/adaptive-insights-gaming-013c8e67/ /services/ 301
