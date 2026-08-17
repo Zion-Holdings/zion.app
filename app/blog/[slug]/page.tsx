@@ -5,6 +5,12 @@ import StandardPage from '@/components/StandardPage';
 import fs from 'fs';
 import path from 'path';
 
+export const metadata = {
+  title: 'Blog Post | Zion Tech Group',
+  description: 'Read AI, IT, and automation insights from Zion Tech Group.',
+  alternates: { canonical: '/blog/' },
+};
+
 // Generate static params from actual blog post directories
 export async function generateStaticParams() {
   const blogDir = path.join(process.cwd(), 'app', 'blog');

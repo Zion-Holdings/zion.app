@@ -4,10 +4,14 @@
 import Link from 'next/link';
 
 const FOOTER_LINKS = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services/' },
+  { label: 'Products', href: '/products/' },
+  { label: 'Solutions', href: '/solutions/' },
+  { label: 'Blog', href: '/blog/' },
   { label: 'About', href: '/about/' },
+  { label: 'FAQ', href: '/faq/' },
   { label: 'Contact', href: '/contact/' },
-  { label: 'Privacy', href: '/privacy/' },
-  { label: 'Status', href: '/status/' },
 ];
 
 export default function Footer() {
@@ -17,7 +21,7 @@ export default function Footer() {
         <p className="text-sm text-slate-400">
           &copy; {new Date().getFullYear()} Zion Tech Group. All rights reserved.
         </p>
-        <nav className="flex items-center gap-6 text-sm text-slate-300">
+        <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-slate-300">
           {FOOTER_LINKS.map((link) => (
             <Link key={link.href} href={link.href} className="hover:text-purple-400 transition">
               {link.label}

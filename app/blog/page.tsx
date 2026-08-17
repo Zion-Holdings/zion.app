@@ -1,6 +1,12 @@
 import Link from 'next/link';
 import StandardPage from '@/components/StandardPage';
 
+export const metadata = {
+  title: 'Blog | Zion Tech Group',
+  description: 'AI, IT, and automation insights, guides, and industry trends from Zion Tech Group.',
+  alternates: { canonical: '/blog/' },
+};
+
 interface BlogPost {
   slug: string;
   title: string;
