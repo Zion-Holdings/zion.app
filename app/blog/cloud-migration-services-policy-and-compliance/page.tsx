@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Migration Services: policy and compliance',
     description: 'Cloud Migration Services: policy and compliance',
-    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/policy-and-compliance/',
+    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/2026/policy-and-compliance/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/cloud-migration-services-2026/policy-and-compliance/' },
+  alternates: { canonical: '/blog/cloud-migration-services-2026/2026/policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: policy and compliance", "description": "Cloud Migration Services: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:57Z", "dateModified": "2026-08-07T04:51:57Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-2026/policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: policy and compliance", "description": "Cloud Migration Services: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:57Z", "dateModified": "2026-08-07T04:51:57Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-2026/2026/policy-and-compliance/"};
 
 export default function Page() {
   return (

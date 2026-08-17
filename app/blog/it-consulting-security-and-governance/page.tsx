@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'IT Consulting: security and governance',
     description: 'IT Consulting: security and governance',
-    url: 'https://ziontechgroup.com/blog/it-consulting-2026/security-and-governance/',
+    url: 'https://ziontechgroup.com/blog/it-consulting-2026/2026/security-and-governance/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/it-consulting-2026/security-and-governance/' },
+  alternates: { canonical: '/blog/it-consulting-2026/2026/security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: security and governance", "description": "IT Consulting: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:07Z", "dateModified": "2026-08-07T04:52:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/security-and-governance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: security and governance", "description": "IT Consulting: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:07Z", "dateModified": "2026-08-07T04:52:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/2026/security-and-governance/"};
 
 export default function Page() {
   return (

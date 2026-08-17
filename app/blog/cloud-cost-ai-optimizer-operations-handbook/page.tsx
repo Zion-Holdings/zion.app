@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Cost AI Optimizer: operations handbook',
     description: 'Cloud Cost AI Optimizer: operations handbook',
-    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/operations-handbook/',
+    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/2026/operations-handbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-2026/operations-handbook/' },
+  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-2026/2026/operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer: operations handbook", "description": "Cloud Cost AI Optimizer: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:07:59Z", "dateModified": "2026-08-07T05:07:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/operations-handbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer: operations handbook", "description": "Cloud Cost AI Optimizer: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:07:59Z", "dateModified": "2026-08-07T05:07:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/2026/operations-handbook/"};
 
 export default function Page() {
   return (

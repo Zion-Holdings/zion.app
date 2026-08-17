@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Cost AI Optimizer: policy and compliance',
     description: 'Cloud Cost AI Optimizer: policy and compliance',
-    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/policy-and-compliance/',
+    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/2026/policy-and-compliance/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-2026/policy-and-compliance/' },
+  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-2026/2026/policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer: policy and compliance", "description": "Cloud Cost AI Optimizer: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:08Z", "dateModified": "2026-08-07T04:52:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer: policy and compliance", "description": "Cloud Cost AI Optimizer: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:08Z", "dateModified": "2026-08-07T04:52:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/2026/policy-and-compliance/"};
 
 export default function Page() {
   return (

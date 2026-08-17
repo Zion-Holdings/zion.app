@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'AI Observability: evaluation framework',
     description: 'AI Observability: evaluation framework',
-    url: 'https://ziontechgroup.com/blog/ai-observability-2026/evaluation-framework/',
+    url: 'https://ziontechgroup.com/blog/ai-observability-2026/2026/evaluation-framework/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/ai-observability-2026/evaluation-framework/' },
+  alternates: { canonical: '/blog/ai-observability-2026/2026/evaluation-framework/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: evaluation framework", "description": "AI Observability: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:01Z", "dateModified": "2026-08-07T04:52:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-2026/evaluation-framework/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: evaluation framework", "description": "AI Observability: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:01Z", "dateModified": "2026-08-07T04:52:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-2026/2026/evaluation-framework/"};
 
 export default function Page() {
   return (

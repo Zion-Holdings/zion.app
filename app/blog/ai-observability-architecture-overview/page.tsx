@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'AI Observability: architecture overview',
     description: 'AI Observability: architecture overview',
-    url: 'https://ziontechgroup.com/blog/ai-observability-2026/architecture-overview/',
+    url: 'https://ziontechgroup.com/blog/ai-observability-2026/2026/architecture-overview/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/ai-observability-2026/architecture-overview/' },
+  alternates: { canonical: '/blog/ai-observability-2026/2026/architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: architecture overview", "description": "AI Observability: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:12Z", "dateModified": "2026-08-07T04:51:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-2026/architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: architecture overview", "description": "AI Observability: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:12Z", "dateModified": "2026-08-07T04:51:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-2026/2026/architecture-overview/"};
 
 export default function Page() {
   return (

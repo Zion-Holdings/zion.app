@@ -47,7 +47,7 @@ Leading indicators for api management gateway: executive guide: workflow complet
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-3d-asset-generator-deployment-patterns">Ai 3D Asset Generator Deployment Patterns</Link></li>
 <li><Link href="/blog/brand-voice-guardian-2026-7078">Brand Voice Guardian 2026 7078</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026">Cloud Cost Ai Optimizer 2026</Link></li>
+<li><Link href="/blog/cloud-cost-ai-optimizer-2026/2026/2026">Cloud Cost Ai Optimizer 2026</Link></li>
 <li><Link href="/blog/ai-customer-support-pro-2026-7323">Ai Customer Support Pro 2026 7323</Link></li>
             </ul>
           </div>

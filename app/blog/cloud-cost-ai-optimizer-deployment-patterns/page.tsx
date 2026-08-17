@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Cost AI Optimizer: deployment patterns',
     description: 'Cloud Cost AI Optimizer: deployment patterns',
-    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/deployment-patterns/',
+    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/2026/deployment-patterns/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-2026/deployment-patterns/' },
+  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-2026/2026/deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer: deployment patterns", "description": "Cloud Cost AI Optimizer: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:53Z", "dateModified": "2026-08-07T07:56:53Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/deployment-patterns/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer: deployment patterns", "description": "Cloud Cost AI Optimizer: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:53Z", "dateModified": "2026-08-07T07:56:53Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/2026/deployment-patterns/"};
 
 export default function Page() {
   return (

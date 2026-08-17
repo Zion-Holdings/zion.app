@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Cost AI Optimizer: common mistakes',
     description: 'Cloud Cost AI Optimizer: common mistakes',
-    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/common-mistakes/',
+    url: 'https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/2026/common-mistakes/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-2026/common-mistakes/' },
+  alternates: { canonical: '/blog/cloud-cost-ai-optimizer-2026/2026/common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer: common mistakes", "description": "Cloud Cost AI Optimizer: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:24Z", "dateModified": "2026-08-07T04:51:24Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/common-mistakes/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer: common mistakes", "description": "Cloud Cost AI Optimizer: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:24Z", "dateModified": "2026-08-07T04:51:24Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-2026/2026/common-mistakes/"};
 
 export default function Page() {
   return (

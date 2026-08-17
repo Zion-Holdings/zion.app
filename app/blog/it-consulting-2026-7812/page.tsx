@@ -5,21 +5,21 @@ import PageShell from '@/components/PageShell';
 export const metadata = {
   title: 'IT Consulting | Zion Tech Group',
   description: 'Practical guide to it consulting: frameworks, metrics, and rollout playbook.',
-  alternates: { canonical: '/blog/it-consulting-2026/2026-7812/' },
-  openGraph: { title: 'IT Consulting', description: 'Practical guide to it consulting.', url: 'https://ziontechgroup.com/blog/it-consulting-2026/2026-7812/', type: 'article' },
+  alternates: { canonical: '/blog/it-consulting-2026/2026/2026-7812/' },
+  openGraph: { title: 'IT Consulting', description: 'Practical guide to it consulting.', url: 'https://ziontechgroup.com/blog/it-consulting-2026/2026/2026-7812/', type: 'article' },
   twitter: { card: 'summary_large_image', title: 'IT Consulting', description: 'Practical guide to it consulting.' }
 };
 
 export default function Page() {
   return (
-    <PageShell title="IT Consulting" description="Practical guide to it consulting: frameworks, metrics, and rollout playbook." canonical="https://ziontechgroup.com/blog/it-consulting-2026/2026-7812/" jsonLd={{
+    <PageShell title="IT Consulting" description="Practical guide to it consulting: frameworks, metrics, and rollout playbook." canonical="https://ziontechgroup.com/blog/it-consulting-2026/2026/2026-7812/" jsonLd={{
       '@context':'https://schema.org',
       '@type':'BlogPosting',
       headline: 'IT Consulting',
       description: 'Practical guide to it consulting: frameworks, metrics, and rollout playbook.',
       author: { '@type':'Organization', name: 'Zion Tech Group' },
       publisher: { '@type':'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
-      mainEntityOfPage: 'https://ziontechgroup.com/blog/it-consulting-2026/2026-7812/'
+      mainEntityOfPage: 'https://ziontechgroup.com/blog/it-consulting-2026/2026/2026-7812/'
     }}>
       <article className="max-w-3xl mx-auto space-y-6 text-slate-300">
         <p>IT Consulting is moving from experiment to operating layer. Most programs fail because they optimize for demos instead of outcomes.</p>

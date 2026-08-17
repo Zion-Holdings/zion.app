@@ -46,7 +46,7 @@ Review your highest-friction workflow, contact Zion Tech Group for a scoped pilo
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-accessibility-optimizer-checklist-for-it-leaders">Ai Accessibility Optimizer Checklist For It Leaders</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026">Managed It Services Small Business 2026</Link></li>
+<li><Link href="/blog/managed-it-services-small-business-2026/2026/2026">Managed It Services Small Business 2026</Link></li>
 <li><Link href="/blog/event-driven-architecture-2026-6961">Event Driven Architecture 2026 6961</Link></li>
 <li><Link href="/blog/5g-solutions-2026-6569">5G Solutions 2026 6569</Link></li>
             </ul>

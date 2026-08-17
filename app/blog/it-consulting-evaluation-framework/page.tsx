@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'IT Consulting: evaluation framework',
     description: 'IT Consulting: evaluation framework',
-    url: 'https://ziontechgroup.com/blog/it-consulting-2026/evaluation-framework/',
+    url: 'https://ziontechgroup.com/blog/it-consulting-2026/2026/evaluation-framework/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/it-consulting-2026/evaluation-framework/' },
+  alternates: { canonical: '/blog/it-consulting-2026/2026/evaluation-framework/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: evaluation framework", "description": "IT Consulting: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:08:05Z", "dateModified": "2026-08-07T05:08:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/evaluation-framework/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: evaluation framework", "description": "IT Consulting: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:08:05Z", "dateModified": "2026-08-07T05:08:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/2026/evaluation-framework/"};
 
 export default function Page() {
   return (

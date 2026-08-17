@@ -5,21 +5,21 @@ import PageShell from '@/components/PageShell';
 export const metadata = {
   title: 'AI Observability | Zion Tech Group',
   description: 'Practical guide to ai observability: frameworks, metrics, and rollout playbook.',
-  alternates: { canonical: '/blog/ai-observability-2026/2026-7393/' },
-  openGraph: { title: 'AI Observability', description: 'Practical guide to ai observability.', url: 'https://ziontechgroup.com/blog/ai-observability-2026/2026-7393/', type: 'article' },
+  alternates: { canonical: '/blog/ai-observability-2026/2026/2026-7393/' },
+  openGraph: { title: 'AI Observability', description: 'Practical guide to ai observability.', url: 'https://ziontechgroup.com/blog/ai-observability-2026/2026/2026-7393/', type: 'article' },
   twitter: { card: 'summary_large_image', title: 'AI Observability', description: 'Practical guide to ai observability.' }
 };
 
 export default function Page() {
   return (
-    <PageShell title="AI Observability" description="Practical guide to ai observability: frameworks, metrics, and rollout playbook." canonical="https://ziontechgroup.com/blog/ai-observability-2026/2026-7393/" jsonLd={{
+    <PageShell title="AI Observability" description="Practical guide to ai observability: frameworks, metrics, and rollout playbook." canonical="https://ziontechgroup.com/blog/ai-observability-2026/2026/2026-7393/" jsonLd={{
       '@context':'https://schema.org',
       '@type':'BlogPosting',
       headline: 'AI Observability',
       description: 'Practical guide to ai observability: frameworks, metrics, and rollout playbook.',
       author: { '@type':'Organization', name: 'Zion Tech Group' },
       publisher: { '@type':'Organization', name: 'Zion Tech Group', url: 'https://ziontechgroup.com' },
-      mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-observability-2026/2026-7393/'
+      mainEntityOfPage: 'https://ziontechgroup.com/blog/ai-observability-2026/2026/2026-7393/'
     }}>
       <article className="max-w-3xl mx-auto space-y-6 text-slate-300">
         <p>AI Observability is moving from experiment to operating layer. Most programs fail because they optimize for demos instead of outcomes.</p>

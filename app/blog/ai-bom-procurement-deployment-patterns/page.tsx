@@ -46,7 +46,7 @@ If this guide matches your ai bom procurement: deployment patterns initiative, t
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/devops-cicd-2026-6642">Devops Cicd 2026 6642</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026">Managed It Services Small Business 2026</Link></li>
+<li><Link href="/blog/managed-it-services-small-business-2026/2026/2026">Managed It Services Small Business 2026</Link></li>
 <li><Link href="/blog/data-analytics-platform-modern-enterprise-2026-7250">Data Analytics Platform Modern Enterprise 2026 7250</Link></li>
 <li><Link href="/blog/container-security-lifecycle-operations-handbook">Container Security Lifecycle Operations Handbook</Link></li>
             </ul>

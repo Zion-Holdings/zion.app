@@ -45,7 +45,7 @@ For container security lifecycle: evaluation framework: pick one workflow, assig
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-2026/2026">It Consulting 2026</Link></li>
+              <li><Link href="/blog/it-consulting-2026/2026/2026">It Consulting 2026</Link></li>
 <li><Link href="/blog/network-infrastructure-2026-6640">Network Infrastructure 2026 6640</Link></li>
 <li><Link href="/blog/cloud-cost-optimization-checklist-2026-6971">Cloud Cost Optimization Checklist 2026 6971</Link></li>
 <li><Link href="/blog/ai-agent-tool-builder-evaluation-framework">Ai Agent Tool Builder Evaluation Framework</Link></li>

@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'IT Consulting: implementation playbook',
     description: 'IT Consulting: implementation playbook',
-    url: 'https://ziontechgroup.com/blog/it-consulting-2026/implementation-playbook/',
+    url: 'https://ziontechgroup.com/blog/it-consulting-2026/2026/implementation-playbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/it-consulting-2026/implementation-playbook/' },
+  alternates: { canonical: '/blog/it-consulting-2026/2026/implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: implementation playbook", "description": "IT Consulting: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:57:01Z", "dateModified": "2026-08-07T07:57:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: implementation playbook", "description": "IT Consulting: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:57:01Z", "dateModified": "2026-08-07T07:57:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/2026/implementation-playbook/"};
 
 export default function Page() {
   return (

@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'IT Consulting: policy and compliance',
     description: 'IT Consulting: policy and compliance',
-    url: 'https://ziontechgroup.com/blog/it-consulting-2026/policy-and-compliance/',
+    url: 'https://ziontechgroup.com/blog/it-consulting-2026/2026/policy-and-compliance/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/it-consulting-2026/policy-and-compliance/' },
+  alternates: { canonical: '/blog/it-consulting-2026/2026/policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: policy and compliance", "description": "IT Consulting: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:48Z", "dateModified": "2026-08-07T07:56:48Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: policy and compliance", "description": "IT Consulting: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:48Z", "dateModified": "2026-08-07T07:56:48Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/2026/policy-and-compliance/"};
 
 export default function Page() {
   return (

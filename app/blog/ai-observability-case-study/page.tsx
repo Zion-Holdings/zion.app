@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'AI Observability: case study',
     description: 'AI Observability: case study',
-    url: 'https://ziontechgroup.com/blog/ai-observability-2026/case-study/',
+    url: 'https://ziontechgroup.com/blog/ai-observability-2026/2026/case-study/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/ai-observability-2026/case-study/' },
+  alternates: { canonical: '/blog/ai-observability-2026/2026/case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: case study", "description": "AI Observability: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:12Z", "dateModified": "2026-08-07T04:51:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-2026/case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: case study", "description": "AI Observability: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:12Z", "dateModified": "2026-08-07T04:51:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-2026/2026/case-study/"};
 
 export default function Page() {
   return (

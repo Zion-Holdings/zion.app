@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'IT Consulting: common mistakes',
     description: 'IT Consulting: common mistakes',
-    url: 'https://ziontechgroup.com/blog/it-consulting-2026/common-mistakes/',
+    url: 'https://ziontechgroup.com/blog/it-consulting-2026/2026/common-mistakes/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/it-consulting-2026/common-mistakes/' },
+  alternates: { canonical: '/blog/it-consulting-2026/2026/common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: common mistakes", "description": "IT Consulting: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:07:58Z", "dateModified": "2026-08-07T05:07:58Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/common-mistakes/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: common mistakes", "description": "IT Consulting: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:07:58Z", "dateModified": "2026-08-07T05:07:58Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/2026/common-mistakes/"};
 
 export default function Page() {
   return (

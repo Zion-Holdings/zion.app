@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'AI Observability: deployment patterns',
     description: 'AI Observability: deployment patterns',
-    url: 'https://ziontechgroup.com/blog/ai-observability-2026/deployment-patterns/',
+    url: 'https://ziontechgroup.com/blog/ai-observability-2026/2026/deployment-patterns/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/ai-observability-2026/deployment-patterns/' },
+  alternates: { canonical: '/blog/ai-observability-2026/2026/deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: deployment patterns", "description": "AI Observability: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:11Z", "dateModified": "2026-08-07T04:52:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-2026/deployment-patterns/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: deployment patterns", "description": "AI Observability: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:11Z", "dateModified": "2026-08-07T04:52:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-2026/2026/deployment-patterns/"};
 
 export default function Page() {
   return (

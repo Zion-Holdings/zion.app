@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Migration Services: checklist for IT leaders',
     description: 'Cloud Migration Services: checklist for IT leaders',
-    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/checklist-for-it-leaders/',
+    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/2026/checklist-for-it-leaders/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/cloud-migration-services-2026/checklist-for-it-leaders/' },
+  alternates: { canonical: '/blog/cloud-migration-services-2026/2026/checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: checklist for IT leaders", "description": "Cloud Migration Services: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:31Z", "dateModified": "2026-08-07T04:52:31Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-2026/checklist-for-it-leaders/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: checklist for IT leaders", "description": "Cloud Migration Services: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:31Z", "dateModified": "2026-08-07T04:52:31Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-2026/2026/checklist-for-it-leaders/"};
 
 export default function Page() {
   return (

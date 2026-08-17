@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Migration Services: executive guide',
     description: 'Cloud Migration Services: executive guide',
-    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/executive-guide/',
+    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/2026/executive-guide/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/cloud-migration-services-2026/executive-guide/' },
+  alternates: { canonical: '/blog/cloud-migration-services-2026/2026/executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: executive guide", "description": "Cloud Migration Services: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:08:04Z", "dateModified": "2026-08-07T05:08:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-2026/executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: executive guide", "description": "Cloud Migration Services: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:08:04Z", "dateModified": "2026-08-07T05:08:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-2026/2026/executive-guide/"};
 
 export default function Page() {
   return (

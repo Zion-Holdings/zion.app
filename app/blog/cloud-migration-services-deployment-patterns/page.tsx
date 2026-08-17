@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Migration Services: deployment patterns',
     description: 'Cloud Migration Services: deployment patterns',
-    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/deployment-patterns/',
+    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/2026/deployment-patterns/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/cloud-migration-services-2026/deployment-patterns/' },
+  alternates: { canonical: '/blog/cloud-migration-services-2026/2026/deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: deployment patterns", "description": "Cloud Migration Services: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:05Z", "dateModified": "2026-08-07T04:52:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-2026/deployment-patterns/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: deployment patterns", "description": "Cloud Migration Services: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:05Z", "dateModified": "2026-08-07T04:52:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-2026/2026/deployment-patterns/"};
 
 export default function Page() {
   return (

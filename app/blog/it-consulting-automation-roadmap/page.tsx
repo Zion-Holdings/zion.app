@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'IT Consulting: automation roadmap',
     description: 'IT Consulting: automation roadmap',
-    url: 'https://ziontechgroup.com/blog/it-consulting-2026/automation-roadmap/',
+    url: 'https://ziontechgroup.com/blog/it-consulting-2026/2026/automation-roadmap/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/it-consulting-2026/automation-roadmap/' },
+  alternates: { canonical: '/blog/it-consulting-2026/2026/automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: automation roadmap", "description": "IT Consulting: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T08:12:15Z", "dateModified": "2026-08-07T08:12:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: automation roadmap", "description": "IT Consulting: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T08:12:15Z", "dateModified": "2026-08-07T08:12:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/2026/automation-roadmap/"};
 
 export default function Page() {
   return (

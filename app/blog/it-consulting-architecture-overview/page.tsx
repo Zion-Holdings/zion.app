@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'IT Consulting: architecture overview',
     description: 'IT Consulting: architecture overview',
-    url: 'https://ziontechgroup.com/blog/it-consulting-2026/architecture-overview/',
+    url: 'https://ziontechgroup.com/blog/it-consulting-2026/2026/architecture-overview/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/it-consulting-2026/architecture-overview/' },
+  alternates: { canonical: '/blog/it-consulting-2026/2026/architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: architecture overview", "description": "IT Consulting: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:04Z", "dateModified": "2026-08-07T04:52:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: architecture overview", "description": "IT Consulting: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:04Z", "dateModified": "2026-08-07T04:52:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/2026/architecture-overview/"};
 
 export default function Page() {
   return (
@@ -47,7 +47,7 @@ If this guide matches your it consulting: architecture overview initiative, the 
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/microsaas-social-media-manager-case-study">Microsaas Social Media Manager Case Study</Link></li>
 <li><Link href="/blog/etl-pipeline-optimization-2026-6615">Etl Pipeline Optimization 2026 6615</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026">It Consulting 2026</Link></li>
+<li><Link href="/blog/it-consulting-2026/2026/2026">It Consulting 2026</Link></li>
 <li><Link href="/blog/ai-customer-success-churn-prevention-roi-and-cost-model">Ai Customer Success Churn Prevention Roi And Cost Model</Link></li>
             </ul>
           </div>

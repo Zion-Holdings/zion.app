@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Migration Services: architecture overview',
     description: 'Cloud Migration Services: architecture overview',
-    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/architecture-overview/',
+    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/2026/architecture-overview/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/cloud-migration-services-2026/architecture-overview/' },
+  alternates: { canonical: '/blog/cloud-migration-services-2026/2026/architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: architecture overview", "description": "Cloud Migration Services: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:31Z", "dateModified": "2026-08-07T04:51:31Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-2026/architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: architecture overview", "description": "Cloud Migration Services: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:31Z", "dateModified": "2026-08-07T04:51:31Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-2026/2026/architecture-overview/"};
 
 export default function Page() {
   return (

@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'AI Observability',
     description: 'AI Observability',
-    url: 'https://ziontechgroup.com/blog/ai-observability-2026/2026/',
+    url: 'https://ziontechgroup.com/blog/ai-observability-2026/2026/2026/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/ai-observability-2026/2026/' },
+  alternates: { canonical: '/blog/ai-observability-2026/2026/2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability", "description": "AI Observability", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:13Z", "dateModified": "2026-08-07T04:52:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-2026/2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability", "description": "AI Observability", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:13Z", "dateModified": "2026-08-07T04:52:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-2026/2026/2026/"};
 
 export default function Page() {
   return (
@@ -47,7 +47,7 @@ For ai observability: pick one workflow, assign ownership, define success metric
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
               <li><Link href="/blog/ai-3d-asset-generator-2026-7201">Ai 3D Asset Generator 2026 7201</Link></li>
 <li><Link href="/blog/cloud-cost-optimization-checklist-2026-7040">Cloud Cost Optimization Checklist 2026 7040</Link></li>
-<li><Link href="/blog/cybersecurity-platform-msp-2026/2026">Cybersecurity Platform Msp 2026</Link></li>
+<li><Link href="/blog/cybersecurity-platform-msp-2026/2026/2026">Cybersecurity Platform Msp 2026</Link></li>
 <li><Link href="/blog/api-security-testing-2026-6761">Api Security Testing 2026 6761</Link></li>
             </ul>
           </div>

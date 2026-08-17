@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Migration Services: ROI and cost model',
     description: 'Cloud Migration Services: ROI and cost model',
-    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/roi-and-cost-model/',
+    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/2026/roi-and-cost-model/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/cloud-migration-services-2026/roi-and-cost-model/' },
+  alternates: { canonical: '/blog/cloud-migration-services-2026/2026/roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: ROI and cost model", "description": "Cloud Migration Services: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:57:02Z", "dateModified": "2026-08-07T07:57:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-2026/roi-and-cost-model/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: ROI and cost model", "description": "Cloud Migration Services: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:57:02Z", "dateModified": "2026-08-07T07:57:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-2026/2026/roi-and-cost-model/"};
 
 export default function Page() {
   return (

@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'Managed IT Services',
     description: 'Managed IT Services',
-    url: 'https://ziontechgroup.com/blog/managed-it-services-small-business-2026/2026/',
+    url: 'https://ziontechgroup.com/blog/managed-it-services-small-business-2026/2026/2026/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/managed-it-services-small-business-2026/2026/' },
+  alternates: { canonical: '/blog/managed-it-services-small-business-2026/2026/2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services", "description": "Managed IT Services", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:20Z", "dateModified": "2026-08-07T04:51:20Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-small-business-2026/2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services", "description": "Managed IT Services", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:20Z", "dateModified": "2026-08-07T04:51:20Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-small-business-2026/2026/2026/"};
 
 export default function Page() {
   return (

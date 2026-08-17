@@ -48,7 +48,7 @@ If this guide matches your ai bdr sdr: operations handbook initiative, the next 
               <li><Link href="/blog/devops-cicd-roi-and-cost-model">Devops Cicd Roi And Cost Model</Link></li>
 <li><Link href="/blog/cloud-cost-optimization-evaluation-framework">Cloud Cost Optimization Evaluation Framework</Link></li>
 <li><Link href="/blog/ai-msp-security-compliance-2026-7118">Ai Msp Security Compliance 2026 7118</Link></li>
-<li><Link href="/blog/managed-it-services-small-business-2026/2026">Managed It Services Small Business 2026</Link></li>
+<li><Link href="/blog/managed-it-services-small-business-2026/2026/2026">Managed It Services Small Business 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

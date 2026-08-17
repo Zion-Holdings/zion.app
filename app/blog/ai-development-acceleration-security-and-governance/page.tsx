@@ -48,7 +48,7 @@ If this guide matches your ai development acceleration: security and governance 
               <li><Link href="/blog/api-performance-testing-2026">Api Performance Testing 2026</Link></li>
 <li><Link href="/blog/ai-customer-support-operations-handbook">Ai Customer Support Operations Handbook</Link></li>
 <li><Link href="/blog/etl-pipeline-optimization-executive-guide">Etl Pipeline Optimization Executive Guide</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026">It Consulting 2026</Link></li>
+<li><Link href="/blog/it-consulting-2026/2026/2026">It Consulting 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">

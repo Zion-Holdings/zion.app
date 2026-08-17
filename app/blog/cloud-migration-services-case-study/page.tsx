@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Migration Services: case study',
     description: 'Cloud Migration Services: case study',
-    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/case-study/',
+    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/2026/case-study/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/cloud-migration-services-2026/case-study/' },
+  alternates: { canonical: '/blog/cloud-migration-services-2026/2026/case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: case study", "description": "Cloud Migration Services: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:08:03Z", "dateModified": "2026-08-07T05:08:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-2026/case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: case study", "description": "Cloud Migration Services: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T05:08:03Z", "dateModified": "2026-08-07T05:08:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-2026/2026/case-study/"};
 
 export default function Page() {
   return (

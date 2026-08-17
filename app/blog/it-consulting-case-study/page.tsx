@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'IT Consulting: case study',
     description: 'IT Consulting: case study',
-    url: 'https://ziontechgroup.com/blog/it-consulting-2026/case-study/',
+    url: 'https://ziontechgroup.com/blog/it-consulting-2026/2026/case-study/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/it-consulting-2026/case-study/' },
+  alternates: { canonical: '/blog/it-consulting-2026/2026/case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: case study", "description": "IT Consulting: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:43Z", "dateModified": "2026-08-07T04:51:43Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: case study", "description": "IT Consulting: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:43Z", "dateModified": "2026-08-07T04:51:43Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/2026/case-study/"};
 
 export default function Page() {
   return (

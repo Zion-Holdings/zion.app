@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   title: 'AI Observability and MLOps Best Practices',
   description:
     'Model monitoring, drift detection, feature stores, and CI/CD for ML. Building reliable AI systems that stay accurate over time.',
-  alternates: { canonical: '/blog/ai-observability-2026/and-mlops-best-practices/' },
+  alternates: { canonical: '/blog/ai-observability-2026/2026/and-mlops-best-practices/' },
   openGraph: {
     title: 'AI Observability and MLOps Best Practices',
     description:
       'Model monitoring, drift detection, feature stores, and CI/CD for ML. Building reliable AI systems that stay accurate over time.',
     type: 'article',
-    url: 'https://ziontechgroup.com/blog/ai-observability-2026/and-mlops-best-practices',
+    url: 'https://ziontechgroup.com/blog/ai-observability-2026/2026/and-mlops-best-practices',
   },
 };
 

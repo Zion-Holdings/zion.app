@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'IT Consulting: operations handbook',
     description: 'IT Consulting: operations handbook',
-    url: 'https://ziontechgroup.com/blog/it-consulting-2026/operations-handbook/',
+    url: 'https://ziontechgroup.com/blog/it-consulting-2026/2026/operations-handbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/it-consulting-2026/operations-handbook/' },
+  alternates: { canonical: '/blog/it-consulting-2026/2026/operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: operations handbook", "description": "IT Consulting: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:26Z", "dateModified": "2026-08-07T04:51:26Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/operations-handbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: operations handbook", "description": "IT Consulting: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:26Z", "dateModified": "2026-08-07T04:51:26Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/2026/operations-handbook/"};
 
 export default function Page() {
   return (

@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'IT Consulting: vendor evaluation',
     description: 'IT Consulting: vendor evaluation',
-    url: 'https://ziontechgroup.com/blog/it-consulting-2026/vendor-evaluation/',
+    url: 'https://ziontechgroup.com/blog/it-consulting-2026/2026/vendor-evaluation/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/it-consulting-2026/vendor-evaluation/' },
+  alternates: { canonical: '/blog/it-consulting-2026/2026/vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: vendor evaluation", "description": "IT Consulting: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:01Z", "dateModified": "2026-08-07T04:51:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/vendor-evaluation/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: vendor evaluation", "description": "IT Consulting: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:01Z", "dateModified": "2026-08-07T04:51:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/2026/vendor-evaluation/"};
 
 export default function Page() {
   return (

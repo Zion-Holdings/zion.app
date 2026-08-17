@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Migration Services: evaluation framework',
     description: 'Cloud Migration Services: evaluation framework',
-    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/evaluation-framework/',
+    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/2026/evaluation-framework/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/cloud-migration-services-2026/evaluation-framework/' },
+  alternates: { canonical: '/blog/cloud-migration-services-2026/2026/evaluation-framework/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: evaluation framework", "description": "Cloud Migration Services: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:27Z", "dateModified": "2026-08-07T04:51:27Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-2026/evaluation-framework/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: evaluation framework", "description": "Cloud Migration Services: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:27Z", "dateModified": "2026-08-07T04:51:27Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-2026/2026/evaluation-framework/"};
 
 export default function Page() {
   return (

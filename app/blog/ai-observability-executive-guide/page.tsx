@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'AI Observability: executive guide',
     description: 'AI Observability: executive guide',
-    url: 'https://ziontechgroup.com/blog/ai-observability-2026/executive-guide/',
+    url: 'https://ziontechgroup.com/blog/ai-observability-2026/2026/executive-guide/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/ai-observability-2026/executive-guide/' },
+  alternates: { canonical: '/blog/ai-observability-2026/2026/executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: executive guide", "description": "AI Observability: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:05Z", "dateModified": "2026-08-07T04:51:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-2026/executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: executive guide", "description": "AI Observability: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:05Z", "dateModified": "2026-08-07T04:51:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-2026/2026/executive-guide/"};
 
 export default function Page() {
   return (

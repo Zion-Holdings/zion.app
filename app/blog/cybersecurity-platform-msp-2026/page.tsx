@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'Cybersecurity for MSPs',
     description: 'Cybersecurity for MSPs',
-    url: 'https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026/2026/',
+    url: 'https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026/2026/2026/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/cybersecurity-platform-msp-2026/2026/' },
+  alternates: { canonical: '/blog/cybersecurity-platform-msp-2026/2026/2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cybersecurity for MSPs", "description": "Cybersecurity for MSPs", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:10Z", "dateModified": "2026-08-07T04:51:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026/2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cybersecurity for MSPs", "description": "Cybersecurity for MSPs", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:10Z", "dateModified": "2026-08-07T04:51:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cybersecurity-platform-msp-2026/2026/2026/"};
 
 export default function Page() {
   return (

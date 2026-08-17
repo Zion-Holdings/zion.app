@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'AI Observability: operations handbook',
     description: 'AI Observability: operations handbook',
-    url: 'https://ziontechgroup.com/blog/ai-observability-2026/operations-handbook/',
+    url: 'https://ziontechgroup.com/blog/ai-observability-2026/2026/operations-handbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/ai-observability-2026/operations-handbook/' },
+  alternates: { canonical: '/blog/ai-observability-2026/2026/operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: operations handbook", "description": "AI Observability: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:10Z", "dateModified": "2026-08-07T04:52:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-2026/operations-handbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: operations handbook", "description": "AI Observability: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:52:10Z", "dateModified": "2026-08-07T04:52:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-2026/2026/operations-handbook/"};
 
 export default function Page() {
   return (

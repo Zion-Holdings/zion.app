@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'AI Observability: policy and compliance',
     description: 'AI Observability: policy and compliance',
-    url: 'https://ziontechgroup.com/blog/ai-observability-2026/policy-and-compliance/',
+    url: 'https://ziontechgroup.com/blog/ai-observability-2026/2026/policy-and-compliance/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/ai-observability-2026/policy-and-compliance/' },
+  alternates: { canonical: '/blog/ai-observability-2026/2026/policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: policy and compliance", "description": "AI Observability: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:26:19Z", "dateModified": "2026-08-07T07:26:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-2026/policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability: policy and compliance", "description": "AI Observability: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:26:19Z", "dateModified": "2026-08-07T07:26:19Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-2026/2026/policy-and-compliance/"};
 
 export default function Page() {
   return (

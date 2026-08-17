@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'IT Consulting: deployment patterns',
     description: 'IT Consulting: deployment patterns',
-    url: 'https://ziontechgroup.com/blog/it-consulting-2026/deployment-patterns/',
+    url: 'https://ziontechgroup.com/blog/it-consulting-2026/2026/deployment-patterns/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/it-consulting-2026/deployment-patterns/' },
+  alternates: { canonical: '/blog/it-consulting-2026/2026/deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: deployment patterns", "description": "IT Consulting: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T08:27:39Z", "dateModified": "2026-08-07T08:27:39Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/deployment-patterns/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: deployment patterns", "description": "IT Consulting: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T08:27:39Z", "dateModified": "2026-08-07T08:27:39Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/2026/deployment-patterns/"};
 
 export default function Page() {
   return (

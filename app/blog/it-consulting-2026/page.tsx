@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'IT Consulting',
     description: 'IT Consulting',
-    url: 'https://ziontechgroup.com/blog/it-consulting-2026/2026/',
+    url: 'https://ziontechgroup.com/blog/it-consulting-2026/2026/2026/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/it-consulting-2026/2026/' },
+  alternates: { canonical: '/blog/it-consulting-2026/2026/2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting", "description": "IT Consulting", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:23Z", "dateModified": "2026-08-07T04:51:23Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting", "description": "IT Consulting", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T04:51:23Z", "dateModified": "2026-08-07T04:51:23Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/2026/2026/"};
 
 export default function Page() {
   return (

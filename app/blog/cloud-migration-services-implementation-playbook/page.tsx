@@ -9,14 +9,14 @@ export const metadata = {
   openGraph: {
     title: 'Cloud Migration Services: implementation playbook',
     description: 'Cloud Migration Services: implementation playbook',
-    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/implementation-playbook/',
+    url: 'https://ziontechgroup.com/blog/cloud-migration-services-2026/2026/implementation-playbook/',
     type: 'article',
     siteName: 'Zion Tech Group',
   },
-  alternates: { canonical: '/blog/cloud-migration-services-2026/implementation-playbook/' },
+  alternates: { canonical: '/blog/cloud-migration-services-2026/2026/implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: implementation playbook", "description": "Cloud Migration Services: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:47Z", "dateModified": "2026-08-07T07:56:47Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-2026/implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Migration Services: implementation playbook", "description": "Cloud Migration Services: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-07T07:56:47Z", "dateModified": "2026-08-07T07:56:47Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-migration-services-2026/2026/implementation-playbook/"};
 
 export default function Page() {
   return (

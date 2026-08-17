@@ -48,7 +48,7 @@ Leading indicators for network infrastructure: architecture overview: workflow c
               <li><Link href="/blog/ai-customer-support-pro-2026-6564">Ai Customer Support Pro 2026 6564</Link></li>
 <li><Link href="/blog/api-gateway-management-2026-6966">Api Gateway Management 2026 6966</Link></li>
 <li><Link href="/blog/api-gateway-management-architecture-overview">Api Gateway Management Architecture Overview</Link></li>
-<li><Link href="/blog/it-consulting-2026/2026">It Consulting 2026</Link></li>
+<li><Link href="/blog/it-consulting-2026/2026/2026">It Consulting 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
