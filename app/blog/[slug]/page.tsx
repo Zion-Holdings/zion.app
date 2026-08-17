@@ -1,7 +1,7 @@
 // app/blog/[slug]/page.tsx — Dynamic blog post layout (fallback)
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import PageTemplate from '@/components/PageTemplate';
+import StandardPage from '@/components/StandardPage';
 import fs from 'fs';
 import path from 'path';
 

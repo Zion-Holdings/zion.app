@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
-import PageTemplate from '@/components/PageTemplate';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
   title: 'Cybersecurity for MSPs: automation roadmap | Zion Tech Group',

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
-import PageTemplate from '@/components/PageTemplate';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
   title: 'MicroSaaS Translation Engine: common mistakes | Zion Tech Group',

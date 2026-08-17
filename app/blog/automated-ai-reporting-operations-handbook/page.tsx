@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
-import PageTemplate from '@/components/PageTemplate';
+import StandardPage from '@/components/StandardPage';
 
 export const metadata = {
   title: 'Automated AI Reporting: operations handbook | Zion Tech Group',
