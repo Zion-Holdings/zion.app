@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Data Warehouse Modernization: ROI and cost model | Zion Tech Group',
   description: 'Data Warehouse Modernization: ROI and cost model',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Data Warehouse Modernization: ROI and cost model',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/data-warehouse-modernization-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Warehouse Modernization: ROI and cost model", "description": "Data Warehouse Modernization: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:05Z", "dateModified": "2026-08-17T23:29:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-warehouse-modernization-roi-and-cost-model/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Warehouse Modernization: ROI and cost model", "description": "Data Warehouse Modernization: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-warehouse-modernization-roi-and-cost-model/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-policy-and-compliance/">Devsecops Pipeline Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-customer-support-evaluation-framework/">Ai Customer Support Evaluation Framework</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-starter-template/">Cloud Cost Ai Optimizer Starter Template</Link></li>
-<li><Link href="/blog/graphql-federation-platform-implementation-playbook/">Graphql Federation Platform Implementation Playbook</Link></li>
+              <li><Link href="/blog/it-consulting-checklist-for-it-leaders/">It Consulting Checklist For It Leaders</Link></li>
+<li><Link href="/blog/api-gateway-management-vendor-evaluation/">Api Gateway Management Vendor Evaluation</Link></li>
+<li><Link href="/blog/ai-observability-operations-handbook/">Ai Observability Operations Handbook</Link></li>
+<li><Link href="/blog/cloud-finops-implementation-playbook/">Cloud Finops Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

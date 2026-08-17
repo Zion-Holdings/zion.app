@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'API Security Testing | Zion Tech Group',
   description: 'API Security Testing',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'API Security Testing',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-security-testing-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Security Testing", "description": "API Security Testing", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:00Z", "dateModified": "2026-08-17T23:29:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-security-testing-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Security Testing", "description": "API Security Testing", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-security-testing-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bom-procurement-case-study/">Ai Bom Procurement Case Study</Link></li>
-<li><Link href="/blog/ai-observability-executive-guide/">Ai Observability Executive Guide</Link></li>
-<li><Link href="/blog/ai-data-backup-evaluation-framework/">Ai Data Backup Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-starter-template/">Ai Msp Security Compliance Starter Template</Link></li>
+              <li><Link href="/blog/micro-saas-ai-customer-onboarding-2026/">Micro Saas Ai Customer Onboarding 2026</Link></li>
+<li><Link href="/blog/api-security-testing-automation-roadmap/">Api Security Testing Automation Roadmap</Link></li>
+<li><Link href="/blog/ai-bdr-sdr-2026/">Ai Bdr Sdr 2026</Link></li>
+<li><Link href="/blog/ai-3d-asset-generator-vendor-evaluation/">Ai 3D Asset Generator Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

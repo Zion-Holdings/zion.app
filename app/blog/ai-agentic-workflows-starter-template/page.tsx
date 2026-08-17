@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Agentic Workflows: starter template | Zion Tech Group',
   description: 'AI Agentic Workflows: starter template',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Agentic Workflows: starter template',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-agentic-workflows-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agentic Workflows: starter template", "description": "AI Agentic Workflows: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:02Z", "dateModified": "2026-08-17T23:29:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agentic-workflows-starter-template/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agentic Workflows: starter template", "description": "AI Agentic Workflows: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agentic-workflows-starter-template/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/accessibility-compliance-case-study/">Accessibility Compliance Case Study</Link></li>
-<li><Link href="/blog/endpoint-management-case-study/">Endpoint Management Case Study</Link></li>
-<li><Link href="/blog/ai-api-gateway-policy-and-compliance/">Ai Api Gateway Policy And Compliance</Link></li>
-<li><Link href="/blog/cloud-migration-services-starter-template/">Cloud Migration Services Starter Template</Link></li>
+              <li><Link href="/blog/managed-it-services-policy-and-compliance/">Managed It Services Policy And Compliance</Link></li>
+<li><Link href="/blog/micro-saas-ai-social-media-manager-2026/">Micro Saas Ai Social Media Manager 2026</Link></li>
+<li><Link href="/blog/chaos-engineering-roi-and-cost-model/">Chaos Engineering Roi And Cost Model</Link></li>
+<li><Link href="/blog/enterprise-backup-dr-checklist-for-it-leaders/">Enterprise Backup Dr Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

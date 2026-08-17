@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'API Performance Testing | Zion Tech Group',
   description: 'API Performance Testing',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'API Performance Testing',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-performance-testing-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Performance Testing", "description": "API Performance Testing", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:00Z", "dateModified": "2026-08-17T23:29:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-performance-testing-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Performance Testing", "description": "API Performance Testing", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-performance-testing-2026/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-starter-template/">Graphql Federation Platform Starter Template</Link></li>
-<li><Link href="/blog/devsecops-pipeline-roi-and-cost-model/">Devsecops Pipeline Roi And Cost Model</Link></li>
-<li><Link href="/blog/brand-voice-guardian-security-and-governance/">Brand Voice Guardian Security And Governance</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-common-mistakes/">Microsaas Social Media Manager Common Mistakes</Link></li>
+              <li><Link href="/blog/endpoint-management-roi-and-cost-model/">Endpoint Management Roi And Cost Model</Link></li>
+<li><Link href="/blog/microsaas-expense-tracker-case-study/">Microsaas Expense Tracker Case Study</Link></li>
+<li><Link href="/blog/autonomous-qa-engineering-starter-template/">Autonomous Qa Engineering Starter Template</Link></li>
+<li><Link href="/blog/smart-contract-audit-executive-guide/">Smart Contract Audit Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

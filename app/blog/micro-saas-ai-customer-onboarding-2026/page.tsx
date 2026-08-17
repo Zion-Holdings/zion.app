@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'MicroSaaS Customer Onboarding | Zion Tech Group',
   description: 'MicroSaaS Customer Onboarding',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'MicroSaaS Customer Onboarding',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/micro-saas-ai-customer-onboarding-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Customer Onboarding", "description": "MicroSaaS Customer Onboarding", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:05Z", "dateModified": "2026-08-17T23:29:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/micro-saas-ai-customer-onboarding-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Customer Onboarding", "description": "MicroSaaS Customer Onboarding", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/micro-saas-ai-customer-onboarding-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/network-infrastructure-2026/">Network Infrastructure 2026</Link></li>
-<li><Link href="/blog/api-orchestration-layer-security-and-governance/">Api Orchestration Layer Security And Governance</Link></li>
-<li><Link href="/blog/cloud-cost-optimization-checklist-2026/">Cloud Cost Optimization Checklist 2026</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-automation-roadmap/">Ai Ad Copy Generator Automation Roadmap</Link></li>
+              <li><Link href="/blog/accessibility-compliance-evaluation-framework/">Accessibility Compliance Evaluation Framework</Link></li>
+<li><Link href="/blog/ai-observability-operations-handbook/">Ai Observability Operations Handbook</Link></li>
+<li><Link href="/blog/cyber-threat-intelligence-common-mistakes/">Cyber Threat Intelligence Common Mistakes</Link></li>
+<li><Link href="/blog/ai-bom-procurement-2026/">Ai Bom Procurement 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Autonomous Agents | Zion Tech Group',
   description: 'AI Autonomous Agents',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Autonomous Agents',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-autonomous-agents-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Autonomous Agents", "description": "AI Autonomous Agents", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:04Z", "dateModified": "2026-08-17T23:29:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-autonomous-agents-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Autonomous Agents", "description": "AI Autonomous Agents", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-autonomous-agents-2026/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/accessibility-compliance-case-study/">Accessibility Compliance Case Study</Link></li>
-<li><Link href="/blog/ai-it-operations-automation-2026/">Ai It Operations Automation 2026</Link></li>
-<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026/">Data Analytics Platform Modern Enterprise 2026</Link></li>
-<li><Link href="/blog/automated-ai-reporting-2026/">Automated Ai Reporting 2026</Link></li>
+              <li><Link href="/blog/ai-agentic-workflows-implementation-playbook/">Ai Agentic Workflows Implementation Playbook</Link></li>
+<li><Link href="/blog/ai-bdr-sdr-implementation-playbook/">Ai Bdr Sdr Implementation Playbook</Link></li>
+<li><Link href="/blog/ai-api-gateway-roi-and-cost-model/">Ai Api Gateway Roi And Cost Model</Link></li>
+<li><Link href="/blog/ai-agentic-workflows-starter-template/">Ai Agentic Workflows Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

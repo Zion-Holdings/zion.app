@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/enterprise-backup-dr-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR: executive guide", "description": "Enterprise Backup DR: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:02Z", "dateModified": "2026-08-17T23:29:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR: executive guide", "description": "Enterprise Backup DR: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-executive-guide/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-msp-security-compliance-executive-guide/">Ai Msp Security Compliance Executive Guide</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-executive-guide/">Microsaas Customer Onboarding Executive Guide</Link></li>
-<li><Link href="/blog/api-security-testing-2026/">Api Security Testing 2026</Link></li>
-<li><Link href="/blog/ai-observability-executive-guide/">Ai Observability Executive Guide</Link></li>
+              <li><Link href="/blog/autonomous-qa-engineering-starter-template/">Autonomous Qa Engineering Starter Template</Link></li>
+<li><Link href="/blog/ai-it-operations-vendor-evaluation/">Ai It Operations Vendor Evaluation</Link></li>
+<li><Link href="/blog/cloud-migration-services-architecture-overview/">Cloud Migration Services Architecture Overview</Link></li>
+<li><Link href="/blog/automation-orchestration-security-and-governance/">Automation Orchestration Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

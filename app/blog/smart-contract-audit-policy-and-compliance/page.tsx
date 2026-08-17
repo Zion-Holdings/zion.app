@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Smart Contract Audit: policy and compliance | Zion Tech Group',
   description: 'Smart Contract Audit: policy and compliance',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Smart Contract Audit: policy and compliance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/smart-contract-audit-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Smart Contract Audit: policy and compliance", "description": "Smart Contract Audit: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:03Z", "dateModified": "2026-08-17T23:29:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/smart-contract-audit-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Smart Contract Audit: policy and compliance", "description": "Smart Contract Audit: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/smart-contract-audit-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-management-evaluation-framework/">Api Gateway Management Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-it-operations-executive-guide/">Ai It Operations Executive Guide</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-starter-template/">Ai Agentic Workflows Starter Template</Link></li>
-<li><Link href="/blog/event-driven-architecture-case-study/">Event Driven Architecture Case Study</Link></li>
+              <li><Link href="/blog/ai-3d-asset-generator-architecture-overview/">Ai 3D Asset Generator Architecture Overview</Link></li>
+<li><Link href="/blog/database-migration-service-policy-and-compliance/">Database Migration Service Policy And Compliance</Link></li>
+<li><Link href="/blog/cyber-threat-intelligence-common-mistakes/">Cyber Threat Intelligence Common Mistakes</Link></li>
+<li><Link href="/blog/autonomous-qa-engineering-starter-template/">Autonomous Qa Engineering Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

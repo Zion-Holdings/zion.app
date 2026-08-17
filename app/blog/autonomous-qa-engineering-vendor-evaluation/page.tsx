@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/autonomous-qa-engineering-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering: vendor evaluation", "description": "Autonomous QA Engineering: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:03Z", "dateModified": "2026-08-17T23:29:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-vendor-evaluation/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering: vendor evaluation", "description": "Autonomous QA Engineering: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:11Z", "dateModified": "2026-08-17T23:41:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-vendor-evaluation/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cybersecurity-platform-msp-2026/">Cybersecurity Platform Msp 2026</Link></li>
-<li><Link href="/blog/incident-response-retainer-evaluation-framework/">Incident Response Retainer Evaluation Framework</Link></li>
-<li><Link href="/blog/graphql-federation-platform-executive-guide/">Graphql Federation Platform Executive Guide</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-executive-guide/">Microsaas Expense Tracker Executive Guide</Link></li>
+              <li><Link href="/blog/ai-api-gateway-2026/">Ai Api Gateway 2026</Link></li>
+<li><Link href="/blog/incident-response-retainer-common-mistakes/">Incident Response Retainer Common Mistakes</Link></li>
+<li><Link href="/blog/ai-performance-monitoring-2026/">Ai Performance Monitoring 2026</Link></li>
+<li><Link href="/blog/ai-bom-procurement-starter-template/">Ai Bom Procurement Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

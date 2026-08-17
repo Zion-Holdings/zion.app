@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Cybersecurity for MSPs: implementation playbook | Zion Tech Group',
   description: 'Cybersecurity for MSPs: implementation playbook',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Cybersecurity for MSPs: implementation playbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cybersecurity-for-msps-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cybersecurity for MSPs: implementation playbook", "description": "Cybersecurity for MSPs: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:08Z", "dateModified": "2026-08-17T23:29:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cybersecurity-for-msps-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cybersecurity for MSPs: implementation playbook", "description": "Cybersecurity for MSPs: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cybersecurity-for-msps-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-migration-service-policy-and-compliance/">Database Migration Service Policy And Compliance</Link></li>
-<li><Link href="/blog/apm-application-performance-starter-template/">Apm Application Performance Starter Template</Link></li>
-<li><Link href="/blog/brand-voice-guardian-security-and-governance/">Brand Voice Guardian Security And Governance</Link></li>
-<li><Link href="/blog/endpoint-management-case-study/">Endpoint Management Case Study</Link></li>
+              <li><Link href="/blog/ai-api-gateway-2026/">Ai Api Gateway 2026</Link></li>
+<li><Link href="/blog/cloud-finops-2026/">Cloud Finops 2026</Link></li>
+<li><Link href="/blog/ai-msp-security-compliance-security-and-governance/">Ai Msp Security Compliance Security And Governance</Link></li>
+<li><Link href="/blog/incident-response-retainer-policy-and-compliance/">Incident Response Retainer Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

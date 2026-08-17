@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'GenAI DevOps CI/CD | Zion Tech Group',
   description: 'GenAI DevOps CI/CD',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'GenAI DevOps CI/CD',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/devops-gen-ai-cicd-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GenAI DevOps CI/CD", "description": "GenAI DevOps CI/CD", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:08Z", "dateModified": "2026-08-17T23:29:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devops-gen-ai-cicd-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GenAI DevOps CI/CD", "description": "GenAI DevOps CI/CD", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devops-gen-ai-cicd-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/etl-pipeline-optimization-starter-template/">Etl Pipeline Optimization Starter Template</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-checklist-for-it-leaders/">Enterprise Ai Intelligence Hub Checklist For It Leaders</Link></li>
-<li><Link href="/blog/api-security-testing-starter-template/">Api Security Testing Starter Template</Link></li>
-<li><Link href="/blog/ai-observability-2026/">Ai Observability 2026</Link></li>
+              <li><Link href="/blog/cybersecurity-for-msps-roi-and-cost-model/">Cybersecurity For Msps Roi And Cost Model</Link></li>
+<li><Link href="/blog/cyber-threat-intelligence-deployment-patterns/">Cyber Threat Intelligence Deployment Patterns</Link></li>
+<li><Link href="/blog/aiops-anomaly-detection-policy-and-compliance/">Aiops Anomaly Detection Policy And Compliance</Link></li>
+<li><Link href="/blog/api-gateway-management-architecture-overview/">Api Gateway Management Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

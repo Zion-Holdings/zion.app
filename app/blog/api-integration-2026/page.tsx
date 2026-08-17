@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-integration-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Integration", "description": "API Integration", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:04Z", "dateModified": "2026-08-17T23:29:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-integration-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Integration", "description": "API Integration", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-integration-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-api-gateway-policy-and-compliance/">Ai Api Gateway Policy And Compliance</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-common-mistakes/">Microsaas Social Media Manager Common Mistakes</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-2026/">Ai Autonomous Agents 2026</Link></li>
-<li><Link href="/blog/database-migration-service-implementation-playbook/">Database Migration Service Implementation Playbook</Link></li>
+              <li><Link href="/blog/microsaas-hr-recruitment-executive-guide/">Microsaas Hr Recruitment Executive Guide</Link></li>
+<li><Link href="/blog/network-infrastructure-architecture-overview/">Network Infrastructure Architecture Overview</Link></li>
+<li><Link href="/blog/micro-saas-ai-social-media-manager-2026/">Micro Saas Ai Social Media Manager 2026</Link></li>
+<li><Link href="/blog/cloud-cost-ai-optimizer-automation-roadmap/">Cloud Cost Ai Optimizer Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Autonomous Agents: policy and compliance | Zion Tech Group',
   description: 'AI Autonomous Agents: policy and compliance',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Autonomous Agents: policy and compliance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-autonomous-agents-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Autonomous Agents: policy and compliance", "description": "AI Autonomous Agents: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:28:59Z", "dateModified": "2026-08-17T23:28:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-autonomous-agents-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Autonomous Agents: policy and compliance", "description": "AI Autonomous Agents: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-autonomous-agents-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-msp-security-compliance-starter-template/">Ai Msp Security Compliance Starter Template</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026/">Ai Agent Tool Builder 2026</Link></li>
-<li><Link href="/blog/chaos-engineering-2026/">Chaos Engineering 2026</Link></li>
-<li><Link href="/blog/incident-response-retainer-checklist-for-it-leaders/">Incident Response Retainer Checklist For It Leaders</Link></li>
+              <li><Link href="/blog/brand-voice-guardian-2026/">Brand Voice Guardian 2026</Link></li>
+<li><Link href="/blog/api-integration-implementation-playbook/">Api Integration Implementation Playbook</Link></li>
+<li><Link href="/blog/ai-data-backup-evaluation-framework/">Ai Data Backup Evaluation Framework</Link></li>
+<li><Link href="/blog/ai-bdr-sdr-deployment-patterns/">Ai Bdr Sdr Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

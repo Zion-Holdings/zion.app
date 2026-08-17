@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Cloud Native App Development: ROI and cost model | Zion Tech Group',
   description: 'Cloud Native App Development: ROI and cost model',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Cloud Native App Development: ROI and cost model',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-native-app-development-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Native App Development: ROI and cost model", "description": "Cloud Native App Development: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:08Z", "dateModified": "2026-08-17T23:29:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-native-app-development-roi-and-cost-model/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Native App Development: ROI and cost model", "description": "Cloud Native App Development: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:12Z", "dateModified": "2026-08-17T23:41:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-native-app-development-roi-and-cost-model/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-2026/">Event Driven Architecture 2026</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-executive-guide/">Ai Bdr Sdr Executive Guide</Link></li>
-<li><Link href="/blog/automated-ai-reporting-checklist-for-it-leaders/">Automated Ai Reporting Checklist For It Leaders</Link></li>
-<li><Link href="/blog/api-performance-testing-executive-guide/">Api Performance Testing Executive Guide</Link></li>
+              <li><Link href="/blog/accessibility-compliance-checklist-for-it-leaders/">Accessibility Compliance Checklist For It Leaders</Link></li>
+<li><Link href="/blog/ai-accessibility-optimizer-implementation-playbook/">Ai Accessibility Optimizer Implementation Playbook</Link></li>
+<li><Link href="/blog/incident-response-retainer-policy-and-compliance/">Incident Response Retainer Policy And Compliance</Link></li>
+<li><Link href="/blog/smart-contract-audit-checklist-for-it-leaders/">Smart Contract Audit Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

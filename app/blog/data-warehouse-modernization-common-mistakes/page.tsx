@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Data Warehouse Modernization: common mistakes | Zion Tech Group',
   description: 'Data Warehouse Modernization: common mistakes',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Data Warehouse Modernization: common mistakes',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/data-warehouse-modernization-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Warehouse Modernization: common mistakes", "description": "Data Warehouse Modernization: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:07Z", "dateModified": "2026-08-17T23:29:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-warehouse-modernization-common-mistakes/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Data Warehouse Modernization: common mistakes", "description": "Data Warehouse Modernization: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:12Z", "dateModified": "2026-08-17T23:41:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/data-warehouse-modernization-common-mistakes/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-2026/">Cloud Cost Ai Optimizer 2026</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-2026/">Ai Accessibility Optimizer 2026</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-executive-guide/">Ai Accessibility Auditor Executive Guide</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-architecture-overview/">Ai Autonomous Agents Architecture Overview</Link></li>
+              <li><Link href="/blog/api-performance-testing-checklist-for-it-leaders/">Api Performance Testing Checklist For It Leaders</Link></li>
+<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026/">Micro Saas Ai Hr Recruitment 2026</Link></li>
+<li><Link href="/blog/incident-response-retainer-vendor-evaluation/">Incident Response Retainer Vendor Evaluation</Link></li>
+<li><Link href="/blog/automated-ai-reporting-policy-and-compliance/">Automated Ai Reporting Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

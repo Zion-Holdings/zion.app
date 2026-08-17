@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Container Security Lifecycle: security and governance | Zion Tech Group',
   description: 'Container Security Lifecycle: security and governance',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Container Security Lifecycle: security and governance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/container-security-lifecycle-security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Container Security Lifecycle: security and governance", "description": "Container Security Lifecycle: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:00Z", "dateModified": "2026-08-17T23:29:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/container-security-lifecycle-security-and-governance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Container Security Lifecycle: security and governance", "description": "Container Security Lifecycle: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:12Z", "dateModified": "2026-08-17T23:41:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/container-security-lifecycle-security-and-governance/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/aiops-anomaly-detection-operations-handbook/">Aiops Anomaly Detection Operations Handbook</Link></li>
-<li><Link href="/blog/database-migration-service-automation-roadmap/">Database Migration Service Automation Roadmap</Link></li>
-<li><Link href="/blog/api-security-testing-deployment-patterns/">Api Security Testing Deployment Patterns</Link></li>
-<li><Link href="/blog/genai-devops-cicd-common-mistakes/">Genai Devops Cicd Common Mistakes</Link></li>
+              <li><Link href="/blog/api-orchestration-layer-common-mistakes/">Api Orchestration Layer Common Mistakes</Link></li>
+<li><Link href="/blog/event-driven-architecture-2026/">Event Driven Architecture 2026</Link></li>
+<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026/">Micro Saas Ai Hr Recruitment 2026</Link></li>
+<li><Link href="/blog/ai-agent-tool-builder-policy-and-compliance/">Ai Agent Tool Builder Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

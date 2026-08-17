@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-integration-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Integration: implementation playbook", "description": "API Integration: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:03Z", "dateModified": "2026-08-17T23:29:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-integration-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Integration: implementation playbook", "description": "API Integration: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-integration-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-translation-engine-architecture-overview/">Microsaas Translation Engine Architecture Overview</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-2026/">Autonomous Code Deployment 2026</Link></li>
-<li><Link href="/blog/edge-computing-deployment-implementation-playbook/">Edge Computing Deployment Implementation Playbook</Link></li>
-<li><Link href="/blog/edge-computing-deployment-vendor-evaluation/">Edge Computing Deployment Vendor Evaluation</Link></li>
+              <li><Link href="/blog/it-consulting-vendor-evaluation/">It Consulting Vendor Evaluation</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-deployment-patterns/">Enterprise Ai Intelligence Hub Deployment Patterns</Link></li>
+<li><Link href="/blog/database-migration-service-policy-and-compliance/">Database Migration Service Policy And Compliance</Link></li>
+<li><Link href="/blog/managed-it-services-policy-and-compliance/">Managed It Services Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

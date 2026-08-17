@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-finops-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud FinOps: policy and compliance", "description": "Cloud FinOps: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:08Z", "dateModified": "2026-08-17T23:29:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-finops-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud FinOps: policy and compliance", "description": "Cloud FinOps: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:16Z", "dateModified": "2026-08-17T23:41:16Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-finops-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-translation-engine-architecture-overview/">Microsaas Translation Engine Architecture Overview</Link></li>
-<li><Link href="/blog/automation-orchestration-policy-and-compliance/">Automation Orchestration Policy And Compliance</Link></li>
-<li><Link href="/blog/data-analytics-platform-automation-roadmap/">Data Analytics Platform Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-data-backup-2026/">Ai Data Backup 2026</Link></li>
+              <li><Link href="/blog/accessibility-compliance-evaluation-framework/">Accessibility Compliance Evaluation Framework</Link></li>
+<li><Link href="/blog/graphql-federation-platform-case-study/">Graphql Federation Platform Case Study</Link></li>
+<li><Link href="/blog/etl-pipeline-optimization-vendor-evaluation/">Etl Pipeline Optimization Vendor Evaluation</Link></li>
+<li><Link href="/blog/event-driven-architecture-evaluation-framework/">Event Driven Architecture Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

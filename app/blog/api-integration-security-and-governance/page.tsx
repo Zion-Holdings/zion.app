@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-integration-security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Integration: security and governance", "description": "API Integration: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:07Z", "dateModified": "2026-08-17T23:29:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-integration-security-and-governance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Integration: security and governance", "description": "API Integration: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-integration-security-and-governance/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-gateway-management-architecture-overview/">Api Gateway Management Architecture Overview</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-automation-roadmap/">Ai Accessibility Auditor Automation Roadmap</Link></li>
-<li><Link href="/blog/database-migration-service-operations-handbook/">Database Migration Service Operations Handbook</Link></li>
-<li><Link href="/blog/database-migration-service-executive-guide/">Database Migration Service Executive Guide</Link></li>
+              <li><Link href="/blog/ai-bdr-sdr-executive-guide/">Ai Bdr Sdr Executive Guide</Link></li>
+<li><Link href="/blog/cloud-finops-automation-roadmap/">Cloud Finops Automation Roadmap</Link></li>
+<li><Link href="/blog/it-consulting-checklist-for-it-leaders/">It Consulting Checklist For It Leaders</Link></li>
+<li><Link href="/blog/incident-response-retainer-policy-and-compliance/">Incident Response Retainer Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

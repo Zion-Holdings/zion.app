@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/autonomous-qa-engineering-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering: policy and compliance", "description": "Autonomous QA Engineering: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:07Z", "dateModified": "2026-08-17T23:29:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering: policy and compliance", "description": "Autonomous QA Engineering: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,8 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-backup-automation-roadmap/">Ai Data Backup Automation Roadmap</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-architecture-overview/">Aiops Anomaly Detection Architecture Overview</Link></li>
-<li><Link href="/blog/endpoint-management-case-study/">Endpoint Management Case Study</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-checklist-for-it-leaders/">Autonomous Code Deployment Checklist For It Leaders</Link></li>
+              <li><Link href="/blog/microsaas-expense-tracker-case-study/">Microsaas Expense Tracker Case Study</Link></li>
+<li><Link href="/blog/aiops-anomaly-detection-evaluation-framework/">Aiops Anomaly Detection Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +73,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

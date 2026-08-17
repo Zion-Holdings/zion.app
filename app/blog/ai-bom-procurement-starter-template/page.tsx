@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI BOM Procurement: starter template | Zion Tech Group',
   description: 'AI BOM Procurement: starter template',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI BOM Procurement: starter template',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-bom-procurement-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BOM Procurement: starter template", "description": "AI BOM Procurement: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:00Z", "dateModified": "2026-08-17T23:29:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bom-procurement-starter-template/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BOM Procurement: starter template", "description": "AI BOM Procurement: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bom-procurement-starter-template/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-optimization-roi-and-cost-model/">Cloud Cost Optimization Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-2026/">Ai Bdr Sdr 2026</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-starter-template/">Cloud Cost Ai Optimizer Starter Template</Link></li>
-<li><Link href="/blog/accessibility-compliance-checklist-for-it-leaders/">Accessibility Compliance Checklist For It Leaders</Link></li>
+              <li><Link href="/blog/micro-saas-ai-hr-recruitment-2026/">Micro Saas Ai Hr Recruitment 2026</Link></li>
+<li><Link href="/blog/5g-solutions-architecture-overview/">5G Solutions Architecture Overview</Link></li>
+<li><Link href="/blog/api-security-testing-automation-roadmap/">Api Security Testing Automation Roadmap</Link></li>
+<li><Link href="/blog/chaos-engineering-architecture-overview/">Chaos Engineering Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

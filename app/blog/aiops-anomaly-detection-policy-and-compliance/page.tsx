@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/aiops-anomaly-detection-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection: policy and compliance", "description": "AIOps Anomaly Detection: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:02Z", "dateModified": "2026-08-17T23:29:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection: policy and compliance", "description": "AIOps Anomaly Detection: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-backup-dr-roi-and-cost-model/">Enterprise Backup Dr Roi And Cost Model</Link></li>
-<li><Link href="/blog/api-security-testing-deployment-patterns/">Api Security Testing Deployment Patterns</Link></li>
-<li><Link href="/blog/endpoint-management-case-study/">Endpoint Management Case Study</Link></li>
-<li><Link href="/blog/ai-performance-monitoring-vendor-evaluation/">Ai Performance Monitoring Vendor Evaluation</Link></li>
+              <li><Link href="/blog/network-infrastructure-common-mistakes/">Network Infrastructure Common Mistakes</Link></li>
+<li><Link href="/blog/ai-development-acceleration-executive-guide/">Ai Development Acceleration Executive Guide</Link></li>
+<li><Link href="/blog/cloud-cost-ai-optimizer-architecture-overview/">Cloud Cost Ai Optimizer Architecture Overview</Link></li>
+<li><Link href="/blog/ai-it-operations-executive-guide/">Ai It Operations Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

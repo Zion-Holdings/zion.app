@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise AI Intelligence Hub: executive guide", "description": "Enterprise AI Intelligence Hub: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:03Z", "dateModified": "2026-08-17T23:29:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise AI Intelligence Hub: executive guide", "description": "Enterprise AI Intelligence Hub: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-executive-guide/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-management-gateway-operations-handbook/">Api Management Gateway Operations Handbook</Link></li>
-<li><Link href="/blog/managed-it-services-case-study/">Managed It Services Case Study</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-2026/">Ai Accessibility Auditor 2026</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-operations-handbook/">Cyber Threat Intelligence Operations Handbook</Link></li>
+              <li><Link href="/blog/managed-it-services-policy-and-compliance/">Managed It Services Policy And Compliance</Link></li>
+<li><Link href="/blog/ai-accessibility-optimizer-implementation-playbook/">Ai Accessibility Optimizer Implementation Playbook</Link></li>
+<li><Link href="/blog/endpoint-management-case-study/">Endpoint Management Case Study</Link></li>
+<li><Link href="/blog/cloud-cost-ai-optimizer-automation-roadmap/">Cloud Cost Ai Optimizer Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

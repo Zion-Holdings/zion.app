@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-agent-tool-builder-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Tool Builder", "description": "AI Agent Tool Builder", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:28:59Z", "dateModified": "2026-08-17T23:28:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-tool-builder-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Tool Builder", "description": "AI Agent Tool Builder", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-tool-builder-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-native-app-development-automation-roadmap/">Cloud Native App Development Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-customer-support-starter-template/">Ai Customer Support Starter Template</Link></li>
-<li><Link href="/blog/devsecops-pipeline-roi-and-cost-model/">Devsecops Pipeline Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-observability-executive-guide/">Ai Observability Executive Guide</Link></li>
+              <li><Link href="/blog/managed-it-services-policy-and-compliance/">Managed It Services Policy And Compliance</Link></li>
+<li><Link href="/blog/etl-pipeline-optimization-case-study/">Etl Pipeline Optimization Case Study</Link></li>
+<li><Link href="/blog/ai-data-lakehouse-pipelines-checklist-for-it-leaders/">Ai Data Lakehouse Pipelines Checklist For It Leaders</Link></li>
+<li><Link href="/blog/event-driven-architecture-roi-and-cost-model/">Event Driven Architecture Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

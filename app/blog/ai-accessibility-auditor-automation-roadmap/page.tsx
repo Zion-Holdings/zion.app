@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Accessibility Auditor: automation roadmap | Zion Tech Group',
   description: 'AI Accessibility Auditor: automation roadmap',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Accessibility Auditor: automation roadmap',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-accessibility-auditor-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Auditor: automation roadmap", "description": "AI Accessibility Auditor: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:05Z", "dateModified": "2026-08-17T23:29:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-auditor-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Auditor: automation roadmap", "description": "AI Accessibility Auditor: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-auditor-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/brand-voice-guardian-security-and-governance/">Brand Voice Guardian Security And Governance</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-common-mistakes/">Ai Accessibility Auditor Common Mistakes</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-architecture-overview/">Ai Accessibility Optimizer Architecture Overview</Link></li>
-<li><Link href="/blog/ai-api-gateway-vendor-evaluation/">Ai Api Gateway Vendor Evaluation</Link></li>
+              <li><Link href="/blog/ai-3d-asset-generator-2026/">Ai 3D Asset Generator 2026</Link></li>
+<li><Link href="/blog/ai-api-gateway-deployment-patterns/">Ai Api Gateway Deployment Patterns</Link></li>
+<li><Link href="/blog/microsaas-hr-recruitment-implementation-playbook/">Microsaas Hr Recruitment Implementation Playbook</Link></li>
+<li><Link href="/blog/cyber-threat-intelligence-common-mistakes/">Cyber Threat Intelligence Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

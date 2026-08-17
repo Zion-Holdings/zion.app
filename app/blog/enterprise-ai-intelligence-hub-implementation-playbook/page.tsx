@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise AI Intelligence Hub: implementation playbook", "description": "Enterprise AI Intelligence Hub: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:00Z", "dateModified": "2026-08-17T23:29:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise AI Intelligence Hub: implementation playbook", "description": "Enterprise AI Intelligence Hub: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:12Z", "dateModified": "2026-08-17T23:41:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automation-orchestration-implementation-playbook/">Automation Orchestration Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-architecture-overview/">Ai Autonomous Agents Architecture Overview</Link></li>
-<li><Link href="/blog/accessibility-compliance-checklist-for-it-leaders/">Accessibility Compliance Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-security-and-governance/">Ai Accessibility Optimizer Security And Governance</Link></li>
+              <li><Link href="/blog/ai-autonomous-agents-policy-and-compliance/">Ai Autonomous Agents Policy And Compliance</Link></li>
+<li><Link href="/blog/cloud-migration-services-security-and-governance/">Cloud Migration Services Security And Governance</Link></li>
+<li><Link href="/blog/genai-devops-cicd-deployment-patterns/">Genai Devops Cicd Deployment Patterns</Link></li>
+<li><Link href="/blog/edge-computing-deployment-implementation-playbook/">Edge Computing Deployment Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

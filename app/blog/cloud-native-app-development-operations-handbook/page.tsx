@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Cloud Native App Development: operations handbook | Zion Tech Group',
   description: 'Cloud Native App Development: operations handbook',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Cloud Native App Development: operations handbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-native-app-development-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Native App Development: operations handbook", "description": "Cloud Native App Development: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:01Z", "dateModified": "2026-08-17T23:29:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-native-app-development-operations-handbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Native App Development: operations handbook", "description": "Cloud Native App Development: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-native-app-development-operations-handbook/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devops-cicd-roi-and-cost-model/">Devops Cicd Roi And Cost Model</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-starter-template/">Etl Pipeline Optimization Starter Template</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-checklist-for-it-leaders/">Enterprise Ai Intelligence Hub Checklist For It Leaders</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-2026/">Cyber Threat Intelligence 2026</Link></li>
+              <li><Link href="/blog/enterprise-ai-intelligence-hub-deployment-patterns/">Enterprise Ai Intelligence Hub Deployment Patterns</Link></li>
+<li><Link href="/blog/ai-performance-monitoring-common-mistakes/">Ai Performance Monitoring Common Mistakes</Link></li>
+<li><Link href="/blog/micro-saas-ai-social-media-manager-2026/">Micro Saas Ai Social Media Manager 2026</Link></li>
+<li><Link href="/blog/incident-response-retainer-policy-and-compliance/">Incident Response Retainer Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Email Intelligence: operations handbook | Zion Tech Group',
   description: 'AI Email Intelligence: operations handbook',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Email Intelligence: operations handbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-email-intelligence-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Email Intelligence: operations handbook", "description": "AI Email Intelligence: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:01Z", "dateModified": "2026-08-17T23:29:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-intelligence-operations-handbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Email Intelligence: operations handbook", "description": "AI Email Intelligence: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-email-intelligence-operations-handbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/">Cloud Cost Ai Optimizer Checklist For It Leaders</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-roi-and-cost-model/">Enterprise Backup Dr Roi And Cost Model</Link></li>
-<li><Link href="/blog/endpoint-management-2026/">Endpoint Management 2026</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-starter-template/">Etl Pipeline Optimization Starter Template</Link></li>
+              <li><Link href="/blog/endpoint-management-case-study/">Endpoint Management Case Study</Link></li>
+<li><Link href="/blog/ai-development-acceleration-implementation-playbook/">Ai Development Acceleration Implementation Playbook</Link></li>
+<li><Link href="/blog/ai-accessibility-auditor-deployment-patterns/">Ai Accessibility Auditor Deployment Patterns</Link></li>
+<li><Link href="/blog/genai-devops-cicd-starter-template/">Genai Devops Cicd Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

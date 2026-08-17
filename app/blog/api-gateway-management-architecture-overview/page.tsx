@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'API Gateway Management: architecture overview | Zion Tech Group',
   description: 'API Gateway Management: architecture overview',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'API Gateway Management: architecture overview',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-gateway-management-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Gateway Management: architecture overview", "description": "API Gateway Management: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:28:59Z", "dateModified": "2026-08-17T23:28:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-gateway-management-architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Gateway Management: architecture overview", "description": "API Gateway Management: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-gateway-management-architecture-overview/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/chaos-engineering-security-and-governance/">Chaos Engineering Security And Governance</Link></li>
-<li><Link href="/blog/devsecops-pipeline-roi-and-cost-model/">Devsecops Pipeline Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-automation-roadmap/">Ai Data Lakehouse Pipelines Automation Roadmap</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-vendor-evaluation/">Data Warehouse Modernization Vendor Evaluation</Link></li>
+              <li><Link href="/blog/genai-devops-cicd-starter-template/">Genai Devops Cicd Starter Template</Link></li>
+<li><Link href="/blog/accessibility-compliance-evaluation-framework/">Accessibility Compliance Evaluation Framework</Link></li>
+<li><Link href="/blog/smart-contract-audit-policy-and-compliance/">Smart Contract Audit Policy And Compliance</Link></li>
+<li><Link href="/blog/microsaas-expense-tracker-case-study/">Microsaas Expense Tracker Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

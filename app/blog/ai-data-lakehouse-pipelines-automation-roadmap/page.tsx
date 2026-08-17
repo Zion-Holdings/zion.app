@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Data Lakehouse Pipelines: automation roadmap | Zion Tech Group',
   description: 'AI Data Lakehouse Pipelines: automation roadmap',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Data Lakehouse Pipelines: automation roadmap',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Lakehouse Pipelines: automation roadmap", "description": "AI Data Lakehouse Pipelines: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:28:59Z", "dateModified": "2026-08-17T23:28:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Lakehouse Pipelines: automation roadmap", "description": "AI Data Lakehouse Pipelines: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -57,7 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li>Coming soon</li>
+              <li><Link href="/blog/api-orchestration-layer-policy-and-compliance/">Api Orchestration Layer Policy And Compliance</Link></li>
+<li><Link href="/blog/devsecops-pipeline-executive-guide/">Devsecops Pipeline Executive Guide</Link></li>
+<li><Link href="/blog/cloud-native-app-development-operations-handbook/">Cloud Native App Development Operations Handbook</Link></li>
+<li><Link href="/blog/event-driven-architecture-2026/">Event Driven Architecture 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

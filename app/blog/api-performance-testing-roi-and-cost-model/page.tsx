@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'API Performance Testing: ROI and cost model | Zion Tech Group',
   description: 'API Performance Testing: ROI and cost model',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'API Performance Testing: ROI and cost model',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-performance-testing-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Performance Testing: ROI and cost model", "description": "API Performance Testing: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:01Z", "dateModified": "2026-08-17T23:29:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-performance-testing-roi-and-cost-model/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Performance Testing: ROI and cost model", "description": "API Performance Testing: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:11Z", "dateModified": "2026-08-17T23:41:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-performance-testing-roi-and-cost-model/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-finops-implementation-playbook/">Cloud Finops Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-executive-guide/">Ai Accessibility Auditor Executive Guide</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-common-mistakes/">Ai Accessibility Auditor Common Mistakes</Link></li>
-<li><Link href="/blog/data-analytics-platform-automation-roadmap/">Data Analytics Platform Automation Roadmap</Link></li>
+              <li><Link href="/blog/ai-api-gateway-2026/">Ai Api Gateway 2026</Link></li>
+<li><Link href="/blog/data-warehouse-modernization-executive-guide/">Data Warehouse Modernization Executive Guide</Link></li>
+<li><Link href="/blog/ai-api-gateway-deployment-patterns/">Ai Api Gateway Deployment Patterns</Link></li>
+<li><Link href="/blog/graphql-federation-platform-implementation-playbook/">Graphql Federation Platform Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

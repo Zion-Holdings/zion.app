@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Cloud Cost AI Optimizer: starter template | Zion Tech Group',
   description: 'Cloud Cost AI Optimizer: starter template',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Cloud Cost AI Optimizer: starter template',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-cost-ai-optimizer-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer: starter template", "description": "Cloud Cost AI Optimizer: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:00Z", "dateModified": "2026-08-17T23:29:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-starter-template/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer: starter template", "description": "Cloud Cost AI Optimizer: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-starter-template/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-autonomous-agents-policy-and-compliance/">Ai Autonomous Agents Policy And Compliance</Link></li>
-<li><Link href="/blog/endpoint-management-checklist-for-it-leaders/">Endpoint Management Checklist For It Leaders</Link></li>
-<li><Link href="/blog/brand-voice-guardian-security-and-governance/">Brand Voice Guardian Security And Governance</Link></li>
-<li><Link href="/blog/cloud-native-app-development-automation-roadmap/">Cloud Native App Development Automation Roadmap</Link></li>
+              <li><Link href="/blog/endpoint-management-vendor-evaluation/">Endpoint Management Vendor Evaluation</Link></li>
+<li><Link href="/blog/ai-agent-safety-evaluation-2026/">Ai Agent Safety Evaluation 2026</Link></li>
+<li><Link href="/blog/micro-saas-ai-social-media-manager-2026/">Micro Saas Ai Social Media Manager 2026</Link></li>
+<li><Link href="/blog/database-migration-service-policy-and-compliance/">Database Migration Service Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

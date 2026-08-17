@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Automation Orchestration: architecture overview | Zion Tech Group',
   description: 'Automation Orchestration: architecture overview',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Automation Orchestration: architecture overview',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/automation-orchestration-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation Orchestration: architecture overview", "description": "Automation Orchestration: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:07Z", "dateModified": "2026-08-17T23:29:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automation-orchestration-architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation Orchestration: architecture overview", "description": "Automation Orchestration: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automation-orchestration-architecture-overview/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-modern-enterprise-2026/">Data Analytics Platform Modern Enterprise 2026</Link></li>
-<li><Link href="/blog/ai-it-operations-case-study/">Ai It Operations Case Study</Link></li>
-<li><Link href="/blog/ai-api-gateway-vendor-evaluation/">Ai Api Gateway Vendor Evaluation</Link></li>
-<li><Link href="/blog/api-security-testing-architecture-overview/">Api Security Testing Architecture Overview</Link></li>
+              <li><Link href="/blog/api-security-testing-vendor-evaluation/">Api Security Testing Vendor Evaluation</Link></li>
+<li><Link href="/blog/ai-it-operations-implementation-playbook/">Ai It Operations Implementation Playbook</Link></li>
+<li><Link href="/blog/cloud-migration-services-case-study/">Cloud Migration Services Case Study</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-starter-template/">Enterprise Ai Intelligence Hub Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

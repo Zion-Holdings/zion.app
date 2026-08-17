@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'APM Application Performance: executive guide | Zion Tech Group',
   description: 'APM Application Performance: executive guide',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'APM Application Performance: executive guide',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/apm-application-performance-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "APM Application Performance: executive guide", "description": "APM Application Performance: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:05Z", "dateModified": "2026-08-17T23:29:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/apm-application-performance-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "APM Application Performance: executive guide", "description": "APM Application Performance: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/apm-application-performance-executive-guide/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-code-deployment-starter-template/">Autonomous Code Deployment Starter Template</Link></li>
-<li><Link href="/blog/ai-it-operations-operations-handbook/">Ai It Operations Operations Handbook</Link></li>
-<li><Link href="/blog/incident-response-retainer-2026/">Incident Response Retainer 2026</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-executive-guide/">Data Warehouse Modernization Executive Guide</Link></li>
+              <li><Link href="/blog/ai-observability-operations-handbook/">Ai Observability Operations Handbook</Link></li>
+<li><Link href="/blog/ai-api-gateway-deployment-patterns/">Ai Api Gateway Deployment Patterns</Link></li>
+<li><Link href="/blog/ai-data-lakehouse-pipelines-checklist-for-it-leaders/">Ai Data Lakehouse Pipelines Checklist For It Leaders</Link></li>
+<li><Link href="/blog/endpoint-management-implementation-playbook/">Endpoint Management Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

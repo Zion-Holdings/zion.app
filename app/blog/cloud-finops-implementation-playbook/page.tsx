@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-finops-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud FinOps: implementation playbook", "description": "Cloud FinOps: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:00Z", "dateModified": "2026-08-17T23:29:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-finops-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud FinOps: implementation playbook", "description": "Cloud FinOps: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-finops-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-optimizer-vendor-evaluation/">Ai Accessibility Optimizer Vendor Evaluation</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-policy-and-compliance/">Cybersecurity For Msps Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-observability-implementation-playbook/">Ai Observability Implementation Playbook</Link></li>
-<li><Link href="/blog/chaos-engineering-2026/">Chaos Engineering 2026</Link></li>
+              <li><Link href="/blog/ai-api-gateway-2026/">Ai Api Gateway 2026</Link></li>
+<li><Link href="/blog/ai-performance-monitoring-automation-roadmap/">Ai Performance Monitoring Automation Roadmap</Link></li>
+<li><Link href="/blog/cyber-threat-intelligence-2026/">Cyber Threat Intelligence 2026</Link></li>
+<li><Link href="/blog/edge-computing-deployment-evaluation-framework/">Edge Computing Deployment Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/aiops-anomaly-detection-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection", "description": "AIOps Anomaly Detection", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:02Z", "dateModified": "2026-08-17T23:29:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection", "description": "AIOps Anomaly Detection", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bom-procurement-2026/">Ai Bom Procurement 2026</Link></li>
-<li><Link href="/blog/automated-ai-reporting-architecture-overview/">Automated Ai Reporting Architecture Overview</Link></li>
-<li><Link href="/blog/api-performance-testing-roi-and-cost-model/">Api Performance Testing Roi And Cost Model</Link></li>
-<li><Link href="/blog/accessibility-compliance-implementation-playbook/">Accessibility Compliance Implementation Playbook</Link></li>
+              <li><Link href="/blog/ai-data-backup-evaluation-framework/">Ai Data Backup Evaluation Framework</Link></li>
+<li><Link href="/blog/cloud-finops-2026/">Cloud Finops 2026</Link></li>
+<li><Link href="/blog/endpoint-management-case-study/">Endpoint Management Case Study</Link></li>
+<li><Link href="/blog/api-orchestration-layer-policy-and-compliance/">Api Orchestration Layer Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

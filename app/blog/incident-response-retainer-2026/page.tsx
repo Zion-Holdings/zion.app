@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Incident Response Retainer | Zion Tech Group',
   description: 'Incident Response Retainer',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Incident Response Retainer',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/incident-response-retainer-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Incident Response Retainer", "description": "Incident Response Retainer", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:01Z", "dateModified": "2026-08-17T23:29:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/incident-response-retainer-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Incident Response Retainer", "description": "Incident Response Retainer", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:11Z", "dateModified": "2026-08-17T23:41:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/incident-response-retainer-2026/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-it-operations-automation-2026/">Ai It Operations Automation 2026</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-starter-template/">Etl Pipeline Optimization Starter Template</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-checklist-for-it-leaders/">Autonomous Code Deployment Checklist For It Leaders</Link></li>
-<li><Link href="/blog/api-security-testing-2026/">Api Security Testing 2026</Link></li>
+              <li><Link href="/blog/ai-bom-procurement-2026/">Ai Bom Procurement 2026</Link></li>
+<li><Link href="/blog/edge-computing-deployment-case-study/">Edge Computing Deployment Case Study</Link></li>
+<li><Link href="/blog/data-warehouse-modernization-deployment-patterns/">Data Warehouse Modernization Deployment Patterns</Link></li>
+<li><Link href="/blog/chaos-engineering-implementation-playbook/">Chaos Engineering Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

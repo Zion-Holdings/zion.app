@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Agentic Workflows | Zion Tech Group',
   description: 'AI Agentic Workflows',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Agentic Workflows',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-agentic-workflows-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agentic Workflows", "description": "AI Agentic Workflows", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:02Z", "dateModified": "2026-08-17T23:29:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agentic-workflows-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agentic Workflows", "description": "AI Agentic Workflows", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agentic-workflows-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-observability-implementation-playbook/">Ai Observability Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-development-acceleration-2026/">Ai Development Acceleration 2026</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-2026/">Ai Customer Success Churn 2026</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-checklist-for-it-leaders/">Enterprise Ai Intelligence Hub Checklist For It Leaders</Link></li>
+              <li><Link href="/blog/ai-api-gateway-roi-and-cost-model/">Ai Api Gateway Roi And Cost Model</Link></li>
+<li><Link href="/blog/network-infrastructure-2026/">Network Infrastructure 2026</Link></li>
+<li><Link href="/blog/smart-contract-audit-executive-guide/">Smart Contract Audit Executive Guide</Link></li>
+<li><Link href="/blog/cloud-native-app-development-common-mistakes/">Cloud Native App Development Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

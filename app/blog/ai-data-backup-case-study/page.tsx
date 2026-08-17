@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Data Backup: case study | Zion Tech Group',
   description: 'AI Data Backup: case study',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Data Backup: case study',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-data-backup-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Backup: case study", "description": "AI Data Backup: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:06Z", "dateModified": "2026-08-17T23:29:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-backup-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Backup: case study", "description": "AI Data Backup: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:13Z", "dateModified": "2026-08-17T23:41:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-backup-case-study/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-automation-roadmap/">Data Analytics Platform Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-customer-support-vendor-evaluation/">Ai Customer Support Vendor Evaluation</Link></li>
-<li><Link href="/blog/devsecops-pipeline-policy-and-compliance/">Devsecops Pipeline Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-automation-roadmap/">Ai Accessibility Auditor Automation Roadmap</Link></li>
+              <li><Link href="/blog/microsaas-hr-recruitment-executive-guide/">Microsaas Hr Recruitment Executive Guide</Link></li>
+<li><Link href="/blog/ai-msp-security-compliance-automation-roadmap/">Ai Msp Security Compliance Automation Roadmap</Link></li>
+<li><Link href="/blog/ai-accessibility-auditor-deployment-patterns/">Ai Accessibility Auditor Deployment Patterns</Link></li>
+<li><Link href="/blog/ai-development-acceleration-common-mistakes/">Ai Development Acceleration Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

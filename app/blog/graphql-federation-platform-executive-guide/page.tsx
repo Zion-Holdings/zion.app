@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'GraphQL Federation Platform: executive guide | Zion Tech Group',
   description: 'GraphQL Federation Platform: executive guide',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'GraphQL Federation Platform: executive guide',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/graphql-federation-platform-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GraphQL Federation Platform: executive guide", "description": "GraphQL Federation Platform: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:00Z", "dateModified": "2026-08-17T23:29:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/graphql-federation-platform-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "GraphQL Federation Platform: executive guide", "description": "GraphQL Federation Platform: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/graphql-federation-platform-executive-guide/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/data-analytics-platform-automation-roadmap/">Data Analytics Platform Automation Roadmap</Link></li>
-<li><Link href="/blog/devops-cicd-2026/">Devops Cicd 2026</Link></li>
-<li><Link href="/blog/brand-voice-guardian-security-and-governance/">Brand Voice Guardian Security And Governance</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-automation-roadmap/">Ai Data Lakehouse Pipelines Automation Roadmap</Link></li>
+              <li><Link href="/blog/api-gateway-management-architecture-overview/">Api Gateway Management Architecture Overview</Link></li>
+<li><Link href="/blog/etl-pipeline-optimization-checklist-for-it-leaders/">Etl Pipeline Optimization Checklist For It Leaders</Link></li>
+<li><Link href="/blog/database-migration-service-executive-guide/">Database Migration Service Executive Guide</Link></li>
+<li><Link href="/blog/accessibility-compliance-evaluation-framework/">Accessibility Compliance Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

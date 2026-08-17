@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Cloud Cost AI Optimizer: checklist for IT leaders | Zion Tech Group',
   description: 'Cloud Cost AI Optimizer: checklist for IT leaders',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Cloud Cost AI Optimizer: checklist for IT leaders',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer: checklist for IT leaders", "description": "Cloud Cost AI Optimizer: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:01Z", "dateModified": "2026-08-17T23:29:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cloud Cost AI Optimizer: checklist for IT leaders", "description": "Cloud Cost AI Optimizer: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:13Z", "dateModified": "2026-08-17T23:41:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cloud-cost-ai-optimizer-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-performance-testing-architecture-overview/">Api Performance Testing Architecture Overview</Link></li>
-<li><Link href="/blog/api-performance-testing-policy-and-compliance/">Api Performance Testing Policy And Compliance</Link></li>
-<li><Link href="/blog/cloud-native-app-development-2026/">Cloud Native App Development 2026</Link></li>
-<li><Link href="/blog/microsaas-translation-engine-architecture-overview/">Microsaas Translation Engine Architecture Overview</Link></li>
+              <li><Link href="/blog/cloud-native-app-development-automation-roadmap/">Cloud Native App Development Automation Roadmap</Link></li>
+<li><Link href="/blog/cyber-threat-intelligence-common-mistakes/">Cyber Threat Intelligence Common Mistakes</Link></li>
+<li><Link href="/blog/smart-contract-audit-2026/">Smart Contract Audit 2026</Link></li>
+<li><Link href="/blog/autonomous-qa-engineering-common-mistakes/">Autonomous Qa Engineering Common Mistakes</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

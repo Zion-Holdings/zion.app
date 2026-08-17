@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'IT Consulting: checklist for IT leaders | Zion Tech Group',
   description: 'IT Consulting: checklist for IT leaders',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'IT Consulting: checklist for IT leaders',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/it-consulting-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: checklist for IT leaders", "description": "IT Consulting: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:03Z", "dateModified": "2026-08-17T23:29:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-checklist-for-it-leaders/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting: checklist for IT leaders", "description": "IT Consulting: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-2026/">Devsecops Pipeline 2026</Link></li>
-<li><Link href="/blog/ai-agent-safety-evaluation-checklist-for-it-leaders/">Ai Agent Safety Evaluation Checklist For It Leaders</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-evaluation-framework/">Microsaas Expense Tracker Evaluation Framework</Link></li>
-<li><Link href="/blog/genai-devops-cicd-case-study/">Genai Devops Cicd Case Study</Link></li>
+              <li><Link href="/blog/ai-data-backup-evaluation-framework/">Ai Data Backup Evaluation Framework</Link></li>
+<li><Link href="/blog/brand-voice-guardian-deployment-patterns/">Brand Voice Guardian Deployment Patterns</Link></li>
+<li><Link href="/blog/aiops-anomaly-detection-executive-guide/">Aiops Anomaly Detection Executive Guide</Link></li>
+<li><Link href="/blog/smart-contract-audit-deployment-patterns/">Smart Contract Audit Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

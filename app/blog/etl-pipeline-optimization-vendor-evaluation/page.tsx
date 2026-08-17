@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'ETL Pipeline Optimization: vendor evaluation | Zion Tech Group',
   description: 'ETL Pipeline Optimization: vendor evaluation',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'ETL Pipeline Optimization: vendor evaluation',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/etl-pipeline-optimization-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "ETL Pipeline Optimization: vendor evaluation", "description": "ETL Pipeline Optimization: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:00Z", "dateModified": "2026-08-17T23:29:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/etl-pipeline-optimization-vendor-evaluation/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "ETL Pipeline Optimization: vendor evaluation", "description": "ETL Pipeline Optimization: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/etl-pipeline-optimization-vendor-evaluation/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-data-backup-architecture-overview/">Ai Data Backup Architecture Overview</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-vendor-evaluation/">Ai Customer Success Churn Prevention Vendor Evaluation</Link></li>
-<li><Link href="/blog/accessibility-compliance-architecture-overview/">Accessibility Compliance Architecture Overview</Link></li>
-<li><Link href="/blog/ai-observability-executive-guide/">Ai Observability Executive Guide</Link></li>
+              <li><Link href="/blog/edge-computing-deployment-evaluation-framework/">Edge Computing Deployment Evaluation Framework</Link></li>
+<li><Link href="/blog/aiops-anomaly-detection-executive-guide/">Aiops Anomaly Detection Executive Guide</Link></li>
+<li><Link href="/blog/event-driven-architecture-implementation-playbook/">Event Driven Architecture Implementation Playbook</Link></li>
+<li><Link href="/blog/enterprise-backup-dr-2026/">Enterprise Backup Dr 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI API Gateway: security and governance | Zion Tech Group',
   description: 'AI API Gateway: security and governance',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI API Gateway: security and governance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-api-gateway-security-and-governance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway: security and governance", "description": "AI API Gateway: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:01Z", "dateModified": "2026-08-17T23:29:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-security-and-governance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway: security and governance", "description": "AI API Gateway: security and governance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-security-and-governance/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-api-gateway-vendor-evaluation/">Ai Api Gateway Vendor Evaluation</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-executive-guide/">Aiops Anomaly Detection Executive Guide</Link></li>
-<li><Link href="/blog/apm-application-performance-case-study/">Apm Application Performance Case Study</Link></li>
-<li><Link href="/blog/cloud-cost-ai-optimizer-2026/">Cloud Cost Ai Optimizer 2026</Link></li>
+              <li><Link href="/blog/cloud-finops-automation-roadmap/">Cloud Finops Automation Roadmap</Link></li>
+<li><Link href="/blog/container-security-lifecycle-common-mistakes/">Container Security Lifecycle Common Mistakes</Link></li>
+<li><Link href="/blog/ai-api-gateway-2026/">Ai Api Gateway 2026</Link></li>
+<li><Link href="/blog/devsecops-pipeline-deployment-patterns/">Devsecops Pipeline Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

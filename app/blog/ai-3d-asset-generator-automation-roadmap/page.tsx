@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI 3D Asset Generator: automation roadmap | Zion Tech Group',
   description: 'AI 3D Asset Generator: automation roadmap',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI 3D Asset Generator: automation roadmap',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-3d-asset-generator-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator: automation roadmap", "description": "AI 3D Asset Generator: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:04Z", "dateModified": "2026-08-17T23:29:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator: automation roadmap", "description": "AI 3D Asset Generator: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-translation-engine-policy-and-compliance/">Microsaas Translation Engine Policy And Compliance</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-policy-and-compliance/">Cybersecurity For Msps Policy And Compliance</Link></li>
-<li><Link href="/blog/cloud-native-app-development-operations-handbook/">Cloud Native App Development Operations Handbook</Link></li>
-<li><Link href="/blog/api-gateway-management-2026/">Api Gateway Management 2026</Link></li>
+              <li><Link href="/blog/ai-agent-safety-evaluation-checklist-for-it-leaders/">Ai Agent Safety Evaluation Checklist For It Leaders</Link></li>
+<li><Link href="/blog/microsaas-expense-tracker-case-study/">Microsaas Expense Tracker Case Study</Link></li>
+<li><Link href="/blog/database-migration-service-policy-and-compliance/">Database Migration Service Policy And Compliance</Link></li>
+<li><Link href="/blog/endpoint-management-vendor-evaluation/">Endpoint Management Vendor Evaluation</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

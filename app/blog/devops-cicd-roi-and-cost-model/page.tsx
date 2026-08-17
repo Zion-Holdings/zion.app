@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'DevOps CI/CD: ROI and cost model | Zion Tech Group',
   description: 'DevOps CI/CD: ROI and cost model',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'DevOps CI/CD: ROI and cost model',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/devops-cicd-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevOps CI/CD: ROI and cost model", "description": "DevOps CI/CD: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:00Z", "dateModified": "2026-08-17T23:29:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devops-cicd-roi-and-cost-model/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "DevOps CI/CD: ROI and cost model", "description": "DevOps CI/CD: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/devops-cicd-roi-and-cost-model/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/genai-devops-cicd-checklist-for-it-leaders/">Genai Devops Cicd Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-vendor-evaluation/">Ai Accessibility Optimizer Vendor Evaluation</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-2026/">Cyber Threat Intelligence 2026</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-checklist-for-it-leaders/">Enterprise Ai Intelligence Hub Checklist For It Leaders</Link></li>
+              <li><Link href="/blog/accessibility-compliance-evaluation-framework/">Accessibility Compliance Evaluation Framework</Link></li>
+<li><Link href="/blog/chaos-engineering-implementation-playbook/">Chaos Engineering Implementation Playbook</Link></li>
+<li><Link href="/blog/ai-accessibility-auditor-2026/">Ai Accessibility Auditor 2026</Link></li>
+<li><Link href="/blog/ai-bom-procurement-2026/">Ai Bom Procurement 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'ETL Pipeline Optimization: starter template | Zion Tech Group',
   description: 'ETL Pipeline Optimization: starter template',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'ETL Pipeline Optimization: starter template',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/etl-pipeline-optimization-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "ETL Pipeline Optimization: starter template", "description": "ETL Pipeline Optimization: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:00Z", "dateModified": "2026-08-17T23:29:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/etl-pipeline-optimization-starter-template/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "ETL Pipeline Optimization: starter template", "description": "ETL Pipeline Optimization: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/etl-pipeline-optimization-starter-template/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-agent-tool-builder-common-mistakes/">Ai Agent Tool Builder Common Mistakes</Link></li>
-<li><Link href="/blog/ai-bom-procurement-automation-roadmap/">Ai Bom Procurement Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-2026/">Ai 3D Asset Generator 2026</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-architecture-overview/">Ai Autonomous Agents Architecture Overview</Link></li>
+              <li><Link href="/blog/container-security-lifecycle-common-mistakes/">Container Security Lifecycle Common Mistakes</Link></li>
+<li><Link href="/blog/cybersecurity-for-msps-roi-and-cost-model/">Cybersecurity For Msps Roi And Cost Model</Link></li>
+<li><Link href="/blog/microsaas-customer-onboarding-operations-handbook/">Microsaas Customer Onboarding Operations Handbook</Link></li>
+<li><Link href="/blog/accessibility-compliance-2026/">Accessibility Compliance 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Chaos Engineering: architecture overview | Zion Tech Group',
   description: 'Chaos Engineering: architecture overview',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Chaos Engineering: architecture overview',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/chaos-engineering-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Chaos Engineering: architecture overview", "description": "Chaos Engineering: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:05Z", "dateModified": "2026-08-17T23:29:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/chaos-engineering-architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Chaos Engineering: architecture overview", "description": "Chaos Engineering: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/chaos-engineering-architecture-overview/"};
 
 export default function Page() {
   return (
@@ -37,7 +37,7 @@ export default function Page() {
 
         <section className="prose prose-invert max-w-none">
 <h2>Why this matters now</h2>
-<p>Buyers evaluating chaos engineering: architecture overview in 2026 are prioritizing measurable outcomes over feature checklists. This guide focuses on practical adoption, risk reduction, and ROI because generic security marketing no longer converts informed buyers. Teams that invest in chaos engineering: architecture overview with clear success metrics and phased delivery consistently outperform teams that chase experimental AI hype. The organizations that win in 2026 will treat chaos engineering: architecture overview as a durable capability, not a one-off project, and they will instrument execution from day one. If your team is still debating whether chaos engineering: architecture overview is worth investing in, use this guide to build the business case with evidence rather than vendor claims.</p>
+<p>Buyers evaluating chaos engineering: architecture overview in 2026 are prioritizing measurable outcomes over feature checklists. This guide focuses on practical adoption, risk reduction, and ROI because generic cloud marketing no longer converts informed buyers. Teams that invest in chaos engineering: architecture overview with clear success metrics and phased delivery consistently outperform teams that chase experimental AI hype. The organizations that win in 2026 will treat chaos engineering: architecture overview as a durable capability, not a one-off project, and they will instrument execution from day one. If your team is still debating whether chaos engineering: architecture overview is worth investing in, use this guide to build the business case with evidence rather than vendor claims.</p>
 
 <h2>Executive summary</h2>
 <p>This post gives executives a concise view of chaos engineering: architecture overview: value drivers, adoption blockers, realistic timelines, and the ownership model required for success. The bottom line: chaos engineering: architecture overview can shorten delivery cycles, reduce manual exceptions, and improve customer outcomes when scoped correctly and operated responsibly. Recommendation: start with one workflow, assign ownership, define success metrics, and review after 30 days before broader rollout. Use this guide to align leadership, set expectations, and avoid the common mistake of piloting without service ownership or alerting.</p>
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-support-vendor-evaluation/">Ai Customer Support Vendor Evaluation</Link></li>
-<li><Link href="/blog/edge-computing-deployment-vendor-evaluation/">Edge Computing Deployment Vendor Evaluation</Link></li>
-<li><Link href="/blog/enterprise-ai-intelligence-hub-executive-guide/">Enterprise Ai Intelligence Hub Executive Guide</Link></li>
-<li><Link href="/blog/ai-observability-architecture-overview/">Ai Observability Architecture Overview</Link></li>
+              <li><Link href="/blog/api-security-testing-automation-roadmap/">Api Security Testing Automation Roadmap</Link></li>
+<li><Link href="/blog/ai-customer-support-architecture-overview/">Ai Customer Support Architecture Overview</Link></li>
+<li><Link href="/blog/devsecops-pipeline-deployment-patterns/">Devsecops Pipeline Deployment Patterns</Link></li>
+<li><Link href="/blog/ai-data-lakehouse-pipelines-evaluation-framework/">Ai Data Lakehouse Pipelines Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

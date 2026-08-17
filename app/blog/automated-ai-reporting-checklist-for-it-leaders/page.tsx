@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/automated-ai-reporting-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automated AI Reporting: checklist for IT leaders", "description": "Automated AI Reporting: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:05Z", "dateModified": "2026-08-17T23:29:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automated-ai-reporting-checklist-for-it-leaders/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automated AI Reporting: checklist for IT leaders", "description": "Automated AI Reporting: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automated-ai-reporting-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-customer-success-churn-prevention-security-and-governance/">Ai Customer Success Churn Prevention Security And Governance</Link></li>
-<li><Link href="/blog/ai-it-operations-executive-guide/">Ai It Operations Executive Guide</Link></li>
-<li><Link href="/blog/database-migration-service-implementation-playbook/">Database Migration Service Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-2026/">Ai 3D Asset Generator 2026</Link></li>
+              <li><Link href="/blog/api-management-gateway-architecture-overview/">Api Management Gateway Architecture Overview</Link></li>
+<li><Link href="/blog/ai-accessibility-optimizer-security-and-governance/">Ai Accessibility Optimizer Security And Governance</Link></li>
+<li><Link href="/blog/ai-agent-safety-evaluation-2026/">Ai Agent Safety Evaluation 2026</Link></li>
+<li><Link href="/blog/cloud-finops-automation-roadmap/">Cloud Finops Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Managed IT Services: architecture overview | Zion Tech Group',
   description: 'Managed IT Services: architecture overview',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Managed IT Services: architecture overview',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/managed-it-services-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services: architecture overview", "description": "Managed IT Services: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:28:59Z", "dateModified": "2026-08-17T23:28:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Managed IT Services: architecture overview", "description": "Managed IT Services: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/managed-it-services-architecture-overview/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devsecops-pipeline-roi-and-cost-model/">Devsecops Pipeline Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-checklist-for-it-leaders/">Ai 3D Asset Generator Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-starter-template/">Ai Msp Security Compliance Starter Template</Link></li>
-<li><Link href="/blog/cloud-native-app-development-automation-roadmap/">Cloud Native App Development Automation Roadmap</Link></li>
+              <li><Link href="/blog/ai-it-operations-vendor-evaluation/">Ai It Operations Vendor Evaluation</Link></li>
+<li><Link href="/blog/brand-voice-guardian-vendor-evaluation/">Brand Voice Guardian Vendor Evaluation</Link></li>
+<li><Link href="/blog/ai-agent-safety-evaluation-checklist-for-it-leaders/">Ai Agent Safety Evaluation Checklist For It Leaders</Link></li>
+<li><Link href="/blog/automated-ai-reporting-checklist-for-it-leaders/">Automated Ai Reporting Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

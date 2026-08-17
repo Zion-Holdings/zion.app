@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'ETL Pipeline Optimization: checklist for IT leaders | Zion Tech Group',
   description: 'ETL Pipeline Optimization: checklist for IT leaders',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'ETL Pipeline Optimization: checklist for IT leaders',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/etl-pipeline-optimization-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "ETL Pipeline Optimization: checklist for IT leaders", "description": "ETL Pipeline Optimization: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:03Z", "dateModified": "2026-08-17T23:29:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/etl-pipeline-optimization-checklist-for-it-leaders/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "ETL Pipeline Optimization: checklist for IT leaders", "description": "ETL Pipeline Optimization: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/etl-pipeline-optimization-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/5g-solutions-operations-handbook/">5G Solutions Operations Handbook</Link></li>
-<li><Link href="/blog/devsecops-pipeline-policy-and-compliance/">Devsecops Pipeline Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026/">Ai Ad Copy Generator 2026</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-roi-and-cost-model/">Ai Autonomous Agents Roi And Cost Model</Link></li>
+              <li><Link href="/blog/aiops-anomaly-detection-2026/">Aiops Anomaly Detection 2026</Link></li>
+<li><Link href="/blog/ai-accessibility-optimizer-2026/">Ai Accessibility Optimizer 2026</Link></li>
+<li><Link href="/blog/ai-agent-safety-evaluation-2026/">Ai Agent Safety Evaluation 2026</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-deployment-patterns/">Enterprise Ai Intelligence Hub Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

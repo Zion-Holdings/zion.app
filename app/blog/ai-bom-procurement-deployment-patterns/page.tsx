@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI BOM Procurement: deployment patterns | Zion Tech Group',
   description: 'AI BOM Procurement: deployment patterns',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI BOM Procurement: deployment patterns',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-bom-procurement-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BOM Procurement: deployment patterns", "description": "AI BOM Procurement: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:02Z", "dateModified": "2026-08-17T23:29:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bom-procurement-deployment-patterns/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BOM Procurement: deployment patterns", "description": "AI BOM Procurement: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:13Z", "dateModified": "2026-08-17T23:41:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bom-procurement-deployment-patterns/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bom-procurement-case-study/">Ai Bom Procurement Case Study</Link></li>
-<li><Link href="/blog/incident-response-retainer-checklist-for-it-leaders/">Incident Response Retainer Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-security-and-governance/">Ai Customer Success Churn Prevention Security And Governance</Link></li>
-<li><Link href="/blog/cloud-finops-automation-roadmap/">Cloud Finops Automation Roadmap</Link></li>
+              <li><Link href="/blog/event-driven-architecture-starter-template/">Event Driven Architecture Starter Template</Link></li>
+<li><Link href="/blog/chaos-engineering-starter-template/">Chaos Engineering Starter Template</Link></li>
+<li><Link href="/blog/cloud-migration-services-architecture-overview/">Cloud Migration Services Architecture Overview</Link></li>
+<li><Link href="/blog/endpoint-management-operations-handbook/">Endpoint Management Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

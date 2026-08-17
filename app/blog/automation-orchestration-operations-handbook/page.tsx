@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Automation Orchestration: operations handbook | Zion Tech Group',
   description: 'Automation Orchestration: operations handbook',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Automation Orchestration: operations handbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/automation-orchestration-operations-handbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation Orchestration: operations handbook", "description": "Automation Orchestration: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:07Z", "dateModified": "2026-08-17T23:29:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automation-orchestration-operations-handbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation Orchestration: operations handbook", "description": "Automation Orchestration: operations handbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automation-orchestration-operations-handbook/"};
 
 export default function Page() {
   return (
@@ -37,7 +37,7 @@ export default function Page() {
 
         <section className="prose prose-invert max-w-none">
 <h2>Why this matters now</h2>
-<p>Buyers evaluating automation orchestration: operations handbook in 2026 are prioritizing measurable outcomes over feature checklists. This guide focuses on practical adoption, risk reduction, and ROI because generic security marketing no longer converts informed buyers. Teams that invest in automation orchestration: operations handbook with clear success metrics and phased delivery consistently outperform teams that chase experimental AI hype. The organizations that win in 2026 will treat automation orchestration: operations handbook as a durable capability, not a one-off project, and they will instrument execution from day one. If your team is still debating whether automation orchestration: operations handbook is worth investing in, use this guide to build the business case with evidence rather than vendor claims.</p>
+<p>Buyers evaluating automation orchestration: operations handbook in 2026 are prioritizing measurable outcomes over feature checklists. This guide focuses on practical adoption, risk reduction, and ROI because generic cloud marketing no longer converts informed buyers. Teams that invest in automation orchestration: operations handbook with clear success metrics and phased delivery consistently outperform teams that chase experimental AI hype. The organizations that win in 2026 will treat automation orchestration: operations handbook as a durable capability, not a one-off project, and they will instrument execution from day one. If your team is still debating whether automation orchestration: operations handbook is worth investing in, use this guide to build the business case with evidence rather than vendor claims.</p>
 
 <h2>Executive summary</h2>
 <p>This post gives executives a concise view of automation orchestration: operations handbook: value drivers, adoption blockers, realistic timelines, and the ownership model required for success. The bottom line: automation orchestration: operations handbook can shorten delivery cycles, reduce manual exceptions, and improve customer outcomes when scoped correctly and operated responsibly. Recommendation: start with one workflow, assign ownership, define success metrics, and review after 30 days before broader rollout. Use this guide to align leadership, set expectations, and avoid the common mistake of piloting without service ownership or alerting.</p>
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-code-deployment-starter-template/">Autonomous Code Deployment Starter Template</Link></li>
-<li><Link href="/blog/automated-ai-reporting-architecture-overview/">Automated Ai Reporting Architecture Overview</Link></li>
-<li><Link href="/blog/api-management-gateway-automation-roadmap/">Api Management Gateway Automation Roadmap</Link></li>
-<li><Link href="/blog/automated-ai-reporting-starter-template/">Automated Ai Reporting Starter Template</Link></li>
+              <li><Link href="/blog/cloud-native-app-development-automation-roadmap/">Cloud Native App Development Automation Roadmap</Link></li>
+<li><Link href="/blog/microsaas-expense-tracker-case-study/">Microsaas Expense Tracker Case Study</Link></li>
+<li><Link href="/blog/accessibility-compliance-2026/">Accessibility Compliance 2026</Link></li>
+<li><Link href="/blog/data-analytics-platform-evaluation-framework/">Data Analytics Platform Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

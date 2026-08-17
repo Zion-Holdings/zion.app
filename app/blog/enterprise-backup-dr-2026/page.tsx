@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/enterprise-backup-dr-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR", "description": "Enterprise Backup DR", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:01Z", "dateModified": "2026-08-17T23:29:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR", "description": "Enterprise Backup DR", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/container-security-lifecycle-2026/">Container Security Lifecycle 2026</Link></li>
-<li><Link href="/blog/database-migration-service-checklist-for-it-leaders/">Database Migration Service Checklist For It Leaders</Link></li>
-<li><Link href="/blog/data-analytics-platform-automation-roadmap/">Data Analytics Platform Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-bom-procurement-2026/">Ai Bom Procurement 2026</Link></li>
+              <li><Link href="/blog/cloud-finops-implementation-playbook/">Cloud Finops Implementation Playbook</Link></li>
+<li><Link href="/blog/smart-contract-audit-checklist-for-it-leaders/">Smart Contract Audit Checklist For It Leaders</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-starter-template/">Enterprise Ai Intelligence Hub Starter Template</Link></li>
+<li><Link href="/blog/ai-development-acceleration-deployment-patterns/">Ai Development Acceleration Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

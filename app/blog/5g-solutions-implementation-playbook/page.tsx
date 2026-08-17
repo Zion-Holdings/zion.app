@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: '5G Solutions: implementation playbook | Zion Tech Group',
   description: '5G Solutions: implementation playbook',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: '5G Solutions: implementation playbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/5g-solutions-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "5G Solutions: implementation playbook", "description": "5G Solutions: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:01Z", "dateModified": "2026-08-17T23:29:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/5g-solutions-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "5G Solutions: implementation playbook", "description": "5G Solutions: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/5g-solutions-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/aiops-anomaly-detection-operations-handbook/">Aiops Anomaly Detection Operations Handbook</Link></li>
-<li><Link href="/blog/ai-api-gateway-policy-and-compliance/">Ai Api Gateway Policy And Compliance</Link></li>
-<li><Link href="/blog/database-migration-service-automation-roadmap/">Database Migration Service Automation Roadmap</Link></li>
-<li><Link href="/blog/api-gateway-management-architecture-overview/">Api Gateway Management Architecture Overview</Link></li>
+              <li><Link href="/blog/5g-solutions-operations-handbook/">5G Solutions Operations Handbook</Link></li>
+<li><Link href="/blog/ai-bom-procurement-security-and-governance/">Ai Bom Procurement Security And Governance</Link></li>
+<li><Link href="/blog/api-integration-deployment-patterns/">Api Integration Deployment Patterns</Link></li>
+<li><Link href="/blog/devsecops-pipeline-security-and-governance/">Devsecops Pipeline Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

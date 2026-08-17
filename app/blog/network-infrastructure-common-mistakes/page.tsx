@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Network Infrastructure: common mistakes | Zion Tech Group',
   description: 'Network Infrastructure: common mistakes',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Network Infrastructure: common mistakes',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/network-infrastructure-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: common mistakes", "description": "Network Infrastructure: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:04Z", "dateModified": "2026-08-17T23:29:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-common-mistakes/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Network Infrastructure: common mistakes", "description": "Network Infrastructure: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/network-infrastructure-common-mistakes/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-migration-service-policy-and-compliance/">Database Migration Service Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-bom-procurement-case-study/">Ai Bom Procurement Case Study</Link></li>
-<li><Link href="/blog/chaos-engineering-2026/">Chaos Engineering 2026</Link></li>
-<li><Link href="/blog/incident-response-retainer-checklist-for-it-leaders/">Incident Response Retainer Checklist For It Leaders</Link></li>
+              <li><Link href="/blog/api-gateway-management-vendor-evaluation/">Api Gateway Management Vendor Evaluation</Link></li>
+<li><Link href="/blog/incident-response-retainer-vendor-evaluation/">Incident Response Retainer Vendor Evaluation</Link></li>
+<li><Link href="/blog/container-security-lifecycle-roi-and-cost-model/">Container Security Lifecycle Roi And Cost Model</Link></li>
+<li><Link href="/blog/ai-accessibility-auditor-deployment-patterns/">Ai Accessibility Auditor Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

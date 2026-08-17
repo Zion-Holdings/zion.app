@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/enterprise-ai-intelligence-hub-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise AI Intelligence Hub: starter template", "description": "Enterprise AI Intelligence Hub: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:02Z", "dateModified": "2026-08-17T23:29:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-starter-template/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise AI Intelligence Hub: starter template", "description": "Enterprise AI Intelligence Hub: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-ai-intelligence-hub-starter-template/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/it-consulting-executive-guide/">It Consulting Executive Guide</Link></li>
-<li><Link href="/blog/api-orchestration-layer-2026/">Api Orchestration Layer 2026</Link></li>
-<li><Link href="/blog/devsecops-pipeline-2026/">Devsecops Pipeline 2026</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-vendor-evaluation/">Data Warehouse Modernization Vendor Evaluation</Link></li>
+              <li><Link href="/blog/ai-3d-asset-generator-automation-roadmap/">Ai 3D Asset Generator Automation Roadmap</Link></li>
+<li><Link href="/blog/ai-3d-asset-generator-architecture-overview/">Ai 3D Asset Generator Architecture Overview</Link></li>
+<li><Link href="/blog/devsecops-pipeline-executive-guide/">Devsecops Pipeline Executive Guide</Link></li>
+<li><Link href="/blog/cloud-cost-ai-optimizer-starter-template/">Cloud Cost Ai Optimizer Starter Template</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

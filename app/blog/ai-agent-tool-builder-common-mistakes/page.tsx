@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-agent-tool-builder-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Tool Builder: common mistakes", "description": "AI Agent Tool Builder: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:28:59Z", "dateModified": "2026-08-17T23:28:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-tool-builder-common-mistakes/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Tool Builder: common mistakes", "description": "AI Agent Tool Builder: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-tool-builder-common-mistakes/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/accessibility-compliance-operations-handbook/">Accessibility Compliance Operations Handbook</Link></li>
-<li><Link href="/blog/automated-ai-reporting-architecture-overview/">Automated Ai Reporting Architecture Overview</Link></li>
-<li><Link href="/blog/chaos-engineering-security-and-governance/">Chaos Engineering Security And Governance</Link></li>
-<li><Link href="/blog/container-security-lifecycle-roi-and-cost-model/">Container Security Lifecycle Roi And Cost Model</Link></li>
+              <li><Link href="/blog/smart-contract-audit-2026/">Smart Contract Audit 2026</Link></li>
+<li><Link href="/blog/network-infrastructure-architecture-overview/">Network Infrastructure Architecture Overview</Link></li>
+<li><Link href="/blog/api-orchestration-layer-policy-and-compliance/">Api Orchestration Layer Policy And Compliance</Link></li>
+<li><Link href="/blog/ai-3d-asset-generator-automation-roadmap/">Ai 3D Asset Generator Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

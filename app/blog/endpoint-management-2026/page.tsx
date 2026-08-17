@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Endpoint Management | Zion Tech Group',
   description: 'Endpoint Management',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Endpoint Management',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/endpoint-management-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Endpoint Management", "description": "Endpoint Management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:28:59Z", "dateModified": "2026-08-17T23:28:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/endpoint-management-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Endpoint Management", "description": "Endpoint Management", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/endpoint-management-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-optimizer-vendor-evaluation/">Ai Accessibility Optimizer Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026/">Ai Agent Tool Builder 2026</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-vendor-evaluation/">Data Warehouse Modernization Vendor Evaluation</Link></li>
-<li><Link href="/blog/devops-cicd-security-and-governance/">Devops Cicd Security And Governance</Link></li>
+              <li><Link href="/blog/ai-data-lakehouse-pipelines-evaluation-framework/">Ai Data Lakehouse Pipelines Evaluation Framework</Link></li>
+<li><Link href="/blog/apm-application-performance-starter-template/">Apm Application Performance Starter Template</Link></li>
+<li><Link href="/blog/genai-devops-cicd-starter-template/">Genai Devops Cicd Starter Template</Link></li>
+<li><Link href="/blog/cybersecurity-platform-msp-2026/">Cybersecurity Platform Msp 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

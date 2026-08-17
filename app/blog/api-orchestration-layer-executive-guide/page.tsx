@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'API Orchestration Layer: executive guide | Zion Tech Group',
   description: 'API Orchestration Layer: executive guide',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'API Orchestration Layer: executive guide',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-orchestration-layer-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Orchestration Layer: executive guide", "description": "API Orchestration Layer: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:08Z", "dateModified": "2026-08-17T23:29:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-orchestration-layer-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Orchestration Layer: executive guide", "description": "API Orchestration Layer: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-orchestration-layer-executive-guide/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bom-procurement-deployment-patterns/">Ai Bom Procurement Deployment Patterns</Link></li>
-<li><Link href="/blog/micro-saas-ai-hr-recruitment-2026/">Micro Saas Ai Hr Recruitment 2026</Link></li>
-<li><Link href="/blog/ai-bom-procurement-automation-roadmap/">Ai Bom Procurement Automation Roadmap</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-case-study/">Microsaas Customer Onboarding Case Study</Link></li>
+              <li><Link href="/blog/endpoint-management-implementation-playbook/">Endpoint Management Implementation Playbook</Link></li>
+<li><Link href="/blog/ai-data-lakehouse-pipelines-checklist-for-it-leaders/">Ai Data Lakehouse Pipelines Checklist For It Leaders</Link></li>
+<li><Link href="/blog/container-security-lifecycle-case-study/">Container Security Lifecycle Case Study</Link></li>
+<li><Link href="/blog/incident-response-retainer-policy-and-compliance/">Incident Response Retainer Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

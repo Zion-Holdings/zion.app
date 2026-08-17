@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'API Performance Testing: policy and compliance | Zion Tech Group',
   description: 'API Performance Testing: policy and compliance',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'API Performance Testing: policy and compliance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-performance-testing-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Performance Testing: policy and compliance", "description": "API Performance Testing: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:00Z", "dateModified": "2026-08-17T23:29:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-performance-testing-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Performance Testing: policy and compliance", "description": "API Performance Testing: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-performance-testing-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/genai-devops-cicd-checklist-for-it-leaders/">Genai Devops Cicd Checklist For It Leaders</Link></li>
-<li><Link href="/blog/api-gateway-management-architecture-overview/">Api Gateway Management Architecture Overview</Link></li>
-<li><Link href="/blog/api-performance-testing-architecture-overview/">Api Performance Testing Architecture Overview</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-deployment-patterns/">Ai Data Lakehouse Pipelines Deployment Patterns</Link></li>
+              <li><Link href="/blog/genai-devops-cicd-deployment-patterns/">Genai Devops Cicd Deployment Patterns</Link></li>
+<li><Link href="/blog/endpoint-management-2026/">Endpoint Management 2026</Link></li>
+<li><Link href="/blog/api-performance-testing-executive-guide/">Api Performance Testing Executive Guide</Link></li>
+<li><Link href="/blog/aiops-anomaly-detection-architecture-overview/">Aiops Anomaly Detection Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

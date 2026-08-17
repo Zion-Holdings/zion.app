@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Incident Response Retainer: common mistakes | Zion Tech Group',
   description: 'Incident Response Retainer: common mistakes',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Incident Response Retainer: common mistakes',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/incident-response-retainer-common-mistakes/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Incident Response Retainer: common mistakes", "description": "Incident Response Retainer: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:06Z", "dateModified": "2026-08-17T23:29:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/incident-response-retainer-common-mistakes/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Incident Response Retainer: common mistakes", "description": "Incident Response Retainer: common mistakes", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/incident-response-retainer-common-mistakes/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/graphql-federation-platform-2026/">Graphql Federation Platform 2026</Link></li>
-<li><Link href="/blog/network-infrastructure-2026/">Network Infrastructure 2026</Link></li>
-<li><Link href="/blog/it-consulting-checklist-for-it-leaders/">It Consulting Checklist For It Leaders</Link></li>
-<li><Link href="/blog/data-analytics-platform-security-and-governance/">Data Analytics Platform Security And Governance</Link></li>
+              <li><Link href="/blog/api-security-testing-vendor-evaluation/">Api Security Testing Vendor Evaluation</Link></li>
+<li><Link href="/blog/ai-3d-asset-generator-architecture-overview/">Ai 3D Asset Generator Architecture Overview</Link></li>
+<li><Link href="/blog/cloud-finops-2026/">Cloud Finops 2026</Link></li>
+<li><Link href="/blog/enterprise-backup-dr-security-and-governance/">Enterprise Backup Dr Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

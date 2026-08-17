@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Cybersecurity for MSPs: case study | Zion Tech Group',
   description: 'Cybersecurity for MSPs: case study',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Cybersecurity for MSPs: case study',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/cybersecurity-for-msps-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cybersecurity for MSPs: case study", "description": "Cybersecurity for MSPs: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:08Z", "dateModified": "2026-08-17T23:29:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cybersecurity-for-msps-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Cybersecurity for MSPs: case study", "description": "Cybersecurity for MSPs: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:11Z", "dateModified": "2026-08-17T23:41:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/cybersecurity-for-msps-case-study/"};
 
 export default function Page() {
   return (
@@ -37,7 +37,7 @@ export default function Page() {
 
         <section className="prose prose-invert max-w-none">
 <h2>Why this matters now</h2>
-<p>Buyers evaluating cybersecurity for msps: case study in 2026 are prioritizing measurable outcomes over feature checklists. This guide focuses on practical adoption, risk reduction, and ROI because generic it marketing no longer converts informed buyers. Teams that invest in cybersecurity for msps: case study with clear success metrics and phased delivery consistently outperform teams that chase experimental AI hype. The organizations that win in 2026 will treat cybersecurity for msps: case study as a durable capability, not a one-off project, and they will instrument execution from day one. If your team is still debating whether cybersecurity for msps: case study is worth investing in, use this guide to build the business case with evidence rather than vendor claims.</p>
+<p>Buyers evaluating cybersecurity for msps: case study in 2026 are prioritizing measurable outcomes over feature checklists. This guide focuses on practical adoption, risk reduction, and ROI because generic automation marketing no longer converts informed buyers. Teams that invest in cybersecurity for msps: case study with clear success metrics and phased delivery consistently outperform teams that chase experimental AI hype. The organizations that win in 2026 will treat cybersecurity for msps: case study as a durable capability, not a one-off project, and they will instrument execution from day one. If your team is still debating whether cybersecurity for msps: case study is worth investing in, use this guide to build the business case with evidence rather than vendor claims.</p>
 
 <h2>Executive summary</h2>
 <p>This post gives executives a concise view of cybersecurity for msps: case study: value drivers, adoption blockers, realistic timelines, and the ownership model required for success. The bottom line: cybersecurity for msps: case study can shorten delivery cycles, reduce manual exceptions, and improve customer outcomes when scoped correctly and operated responsibly. Recommendation: start with one workflow, assign ownership, define success metrics, and review after 30 days before broader rollout. Use this guide to align leadership, set expectations, and avoid the common mistake of piloting without service ownership or alerting.</p>
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automated-ai-reporting-roi-and-cost-model/">Automated Ai Reporting Roi And Cost Model</Link></li>
-<li><Link href="/blog/event-driven-architecture-case-study/">Event Driven Architecture Case Study</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-vendor-evaluation/">Etl Pipeline Optimization Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-starter-template/">Ai Msp Security Compliance Starter Template</Link></li>
+              <li><Link href="/blog/ai-ad-copy-generator-vendor-evaluation/">Ai Ad Copy Generator Vendor Evaluation</Link></li>
+<li><Link href="/blog/etl-pipeline-optimization-checklist-for-it-leaders/">Etl Pipeline Optimization Checklist For It Leaders</Link></li>
+<li><Link href="/blog/ai-accessibility-optimizer-implementation-playbook/">Ai Accessibility Optimizer Implementation Playbook</Link></li>
+<li><Link href="/blog/cloud-cost-ai-optimizer-automation-roadmap/">Cloud Cost Ai Optimizer Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

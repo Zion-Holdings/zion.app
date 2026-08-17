@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/enterprise-backup-dr-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR: implementation playbook", "description": "Enterprise Backup DR: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:02Z", "dateModified": "2026-08-17T23:29:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR: implementation playbook", "description": "Enterprise Backup DR: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-expense-tracker-2026/">Micro Saas Ai Expense Tracker 2026</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-implementation-playbook/">Microsaas Customer Onboarding Implementation Playbook</Link></li>
-<li><Link href="/blog/automation-orchestration-policy-and-compliance/">Automation Orchestration Policy And Compliance</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-policy-and-compliance/">Cybersecurity For Msps Policy And Compliance</Link></li>
+              <li><Link href="/blog/ai-development-acceleration-implementation-playbook/">Ai Development Acceleration Implementation Playbook</Link></li>
+<li><Link href="/blog/incident-response-retainer-vendor-evaluation/">Incident Response Retainer Vendor Evaluation</Link></li>
+<li><Link href="/blog/5g-solutions-vendor-evaluation/">5G Solutions Vendor Evaluation</Link></li>
+<li><Link href="/blog/ai-data-backup-executive-guide/">Ai Data Backup Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

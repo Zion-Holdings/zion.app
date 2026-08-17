@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Edge Computing Deployment | Zion Tech Group',
   description: 'Edge Computing Deployment',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Edge Computing Deployment',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/edge-computing-deployment-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Edge Computing Deployment", "description": "Edge Computing Deployment", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:05Z", "dateModified": "2026-08-17T23:29:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/edge-computing-deployment-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Edge Computing Deployment", "description": "Edge Computing Deployment", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/edge-computing-deployment-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cloud-native-app-development-common-mistakes/">Cloud Native App Development Common Mistakes</Link></li>
-<li><Link href="/blog/cloud-finops-2026/">Cloud Finops 2026</Link></li>
-<li><Link href="/blog/api-management-gateway-executive-guide/">Api Management Gateway Executive Guide</Link></li>
-<li><Link href="/blog/ai-customer-support-vendor-evaluation/">Ai Customer Support Vendor Evaluation</Link></li>
+              <li><Link href="/blog/devops-cicd-policy-and-compliance/">Devops Cicd Policy And Compliance</Link></li>
+<li><Link href="/blog/microsaas-social-media-manager-policy-and-compliance/">Microsaas Social Media Manager Policy And Compliance</Link></li>
+<li><Link href="/blog/cybersecurity-for-msps-implementation-playbook/">Cybersecurity For Msps Implementation Playbook</Link></li>
+<li><Link href="/blog/api-orchestration-layer-policy-and-compliance/">Api Orchestration Layer Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

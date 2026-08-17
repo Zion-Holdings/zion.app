@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/database-migration-service-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Database Migration Service: executive guide", "description": "Database Migration Service: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:01Z", "dateModified": "2026-08-17T23:29:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/database-migration-service-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Database Migration Service: executive guide", "description": "Database Migration Service: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/database-migration-service-executive-guide/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devops-cicd-security-and-governance/">Devops Cicd Security And Governance</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-starter-template/">Enterprise Backup Dr Starter Template</Link></li>
-<li><Link href="/blog/data-analytics-platform-automation-roadmap/">Data Analytics Platform Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-msp-security-compliance-executive-guide/">Ai Msp Security Compliance Executive Guide</Link></li>
+              <li><Link href="/blog/ai-bom-procurement-security-and-governance/">Ai Bom Procurement Security And Governance</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-deployment-patterns/">Enterprise Ai Intelligence Hub Deployment Patterns</Link></li>
+<li><Link href="/blog/data-analytics-platform-checklist-for-it-leaders/">Data Analytics Platform Checklist For It Leaders</Link></li>
+<li><Link href="/blog/brand-voice-guardian-deployment-patterns/">Brand Voice Guardian Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

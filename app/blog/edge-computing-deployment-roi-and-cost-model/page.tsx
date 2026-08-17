@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Edge Computing Deployment: ROI and cost model | Zion Tech Group',
   description: 'Edge Computing Deployment: ROI and cost model',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Edge Computing Deployment: ROI and cost model',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/edge-computing-deployment-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Edge Computing Deployment: ROI and cost model", "description": "Edge Computing Deployment: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:07Z", "dateModified": "2026-08-17T23:29:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/edge-computing-deployment-roi-and-cost-model/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Edge Computing Deployment: ROI and cost model", "description": "Edge Computing Deployment: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/edge-computing-deployment-roi-and-cost-model/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/accessibility-compliance-checklist-for-it-leaders/">Accessibility Compliance Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-policy-and-compliance/">Ai Autonomous Agents Policy And Compliance</Link></li>
-<li><Link href="/blog/ai-bom-procurement-2026/">Ai Bom Procurement 2026</Link></li>
-<li><Link href="/blog/api-gateway-management-evaluation-framework/">Api Gateway Management Evaluation Framework</Link></li>
+              <li><Link href="/blog/ai-bdr-sdr-deployment-patterns/">Ai Bdr Sdr Deployment Patterns</Link></li>
+<li><Link href="/blog/ai-autonomous-agents-roi-and-cost-model/">Ai Autonomous Agents Roi And Cost Model</Link></li>
+<li><Link href="/blog/api-orchestration-layer-policy-and-compliance/">Api Orchestration Layer Policy And Compliance</Link></li>
+<li><Link href="/blog/etl-pipeline-optimization-checklist-for-it-leaders/">Etl Pipeline Optimization Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

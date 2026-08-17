@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Data Backup: evaluation framework | Zion Tech Group',
   description: 'AI Data Backup: evaluation framework',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Data Backup: evaluation framework',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-data-backup-evaluation-framework/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Backup: evaluation framework", "description": "AI Data Backup: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:00Z", "dateModified": "2026-08-17T23:29:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-backup-evaluation-framework/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Backup: evaluation framework", "description": "AI Data Backup: evaluation framework", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-backup-evaluation-framework/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cybersecurity-platform-msp-2026/">Cybersecurity Platform Msp 2026</Link></li>
-<li><Link href="/blog/api-performance-testing-architecture-overview/">Api Performance Testing Architecture Overview</Link></li>
-<li><Link href="/blog/managed-it-services-architecture-overview/">Managed It Services Architecture Overview</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-policy-and-compliance/">Ai Autonomous Agents Policy And Compliance</Link></li>
+              <li><Link href="/blog/ai-3d-asset-generator-architecture-overview/">Ai 3D Asset Generator Architecture Overview</Link></li>
+<li><Link href="/blog/microsaas-expense-tracker-case-study/">Microsaas Expense Tracker Case Study</Link></li>
+<li><Link href="/blog/ai-performance-monitoring-automation-roadmap/">Ai Performance Monitoring Automation Roadmap</Link></li>
+<li><Link href="/blog/database-migration-service-policy-and-compliance/">Database Migration Service Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

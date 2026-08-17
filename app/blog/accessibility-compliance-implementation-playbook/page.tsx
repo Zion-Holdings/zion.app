@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/accessibility-compliance-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance: implementation playbook", "description": "Accessibility Compliance: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:02Z", "dateModified": "2026-08-17T23:29:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance: implementation playbook", "description": "Accessibility Compliance: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/autonomous-code-deployment-starter-template/">Autonomous Code Deployment Starter Template</Link></li>
-<li><Link href="/blog/cloud-migration-services-starter-template/">Cloud Migration Services Starter Template</Link></li>
-<li><Link href="/blog/endpoint-management-security-and-governance/">Endpoint Management Security And Governance</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026/">Ai Ad Copy Generator 2026</Link></li>
+              <li><Link href="/blog/etl-pipeline-optimization-case-study/">Etl Pipeline Optimization Case Study</Link></li>
+<li><Link href="/blog/ai-it-operations-vendor-evaluation/">Ai It Operations Vendor Evaluation</Link></li>
+<li><Link href="/blog/aiops-anomaly-detection-policy-and-compliance/">Aiops Anomaly Detection Policy And Compliance</Link></li>
+<li><Link href="/blog/devsecops-pipeline-security-and-governance/">Devsecops Pipeline Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

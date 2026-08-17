@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Incident Response Retainer: checklist for IT leaders | Zion Tech Group',
   description: 'Incident Response Retainer: checklist for IT leaders',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Incident Response Retainer: checklist for IT leaders',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/incident-response-retainer-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Incident Response Retainer: checklist for IT leaders", "description": "Incident Response Retainer: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:28:59Z", "dateModified": "2026-08-17T23:28:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/incident-response-retainer-checklist-for-it-leaders/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Incident Response Retainer: checklist for IT leaders", "description": "Incident Response Retainer: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/incident-response-retainer-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-optimizer-vendor-evaluation/">Ai Accessibility Optimizer Vendor Evaluation</Link></li>
-<li><Link href="/blog/managed-it-services-architecture-overview/">Managed It Services Architecture Overview</Link></li>
-<li><Link href="/blog/network-infrastructure-evaluation-framework/">Network Infrastructure Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-checklist-for-it-leaders/">Ai 3D Asset Generator Checklist For It Leaders</Link></li>
+              <li><Link href="/blog/microsaas-social-media-manager-policy-and-compliance/">Microsaas Social Media Manager Policy And Compliance</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-deployment-patterns/">Enterprise Ai Intelligence Hub Deployment Patterns</Link></li>
+<li><Link href="/blog/ai-agentic-workflows-vendor-evaluation/">Ai Agentic Workflows Vendor Evaluation</Link></li>
+<li><Link href="/blog/ai-observability-operations-handbook/">Ai Observability Operations Handbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Automation Orchestration | Zion Tech Group',
   description: 'Automation Orchestration',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Automation Orchestration',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/automation-orchestration-enterprise-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation Orchestration", "description": "Automation Orchestration", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:02Z", "dateModified": "2026-08-17T23:29:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automation-orchestration-enterprise-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automation Orchestration", "description": "Automation Orchestration", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:13Z", "dateModified": "2026-08-17T23:41:13Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automation-orchestration-enterprise-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/etl-pipeline-optimization-case-study/">Etl Pipeline Optimization Case Study</Link></li>
-<li><Link href="/blog/cloud-migration-services-starter-template/">Cloud Migration Services Starter Template</Link></li>
-<li><Link href="/blog/database-migration-service-automation-roadmap/">Database Migration Service Automation Roadmap</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-executive-guide/">Aiops Anomaly Detection Executive Guide</Link></li>
+              <li><Link href="/blog/api-security-testing-starter-template/">Api Security Testing Starter Template</Link></li>
+<li><Link href="/blog/ai-accessibility-optimizer-common-mistakes/">Ai Accessibility Optimizer Common Mistakes</Link></li>
+<li><Link href="/blog/accessibility-compliance-2026/">Accessibility Compliance 2026</Link></li>
+<li><Link href="/blog/devops-cicd-roi-and-cost-model/">Devops Cicd Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

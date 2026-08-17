@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Accessibility Auditor: executive guide | Zion Tech Group',
   description: 'AI Accessibility Auditor: executive guide',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Accessibility Auditor: executive guide',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-accessibility-auditor-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Auditor: executive guide", "description": "AI Accessibility Auditor: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:01Z", "dateModified": "2026-08-17T23:29:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-auditor-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Auditor: executive guide", "description": "AI Accessibility Auditor: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-auditor-executive-guide/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/apm-application-performance-case-study/">Apm Application Performance Case Study</Link></li>
-<li><Link href="/blog/data-analytics-platform-modern-enterprise-2026/">Data Analytics Platform Modern Enterprise 2026</Link></li>
-<li><Link href="/blog/event-driven-architecture-implementation-playbook/">Event Driven Architecture Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-automation-roadmap/">Ai Data Lakehouse Pipelines Automation Roadmap</Link></li>
+              <li><Link href="/blog/enterprise-ai-intelligence-hub-starter-template/">Enterprise Ai Intelligence Hub Starter Template</Link></li>
+<li><Link href="/blog/database-migration-service-policy-and-compliance/">Database Migration Service Policy And Compliance</Link></li>
+<li><Link href="/blog/cloud-cost-ai-optimizer-starter-template/">Cloud Cost Ai Optimizer Starter Template</Link></li>
+<li><Link href="/blog/etl-pipeline-optimization-case-study/">Etl Pipeline Optimization Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

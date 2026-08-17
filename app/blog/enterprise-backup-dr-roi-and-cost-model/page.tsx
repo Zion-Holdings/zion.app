@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/enterprise-backup-dr-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR: ROI and cost model", "description": "Enterprise Backup DR: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:00Z", "dateModified": "2026-08-17T23:29:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-roi-and-cost-model/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Enterprise Backup DR: ROI and cost model", "description": "Enterprise Backup DR: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/enterprise-backup-dr-roi-and-cost-model/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-security-testing-2026/">Api Security Testing 2026</Link></li>
-<li><Link href="/blog/cloud-native-app-development-executive-guide/">Cloud Native App Development Executive Guide</Link></li>
-<li><Link href="/blog/graphql-federation-platform-starter-template/">Graphql Federation Platform Starter Template</Link></li>
-<li><Link href="/blog/ai-ad-copy-generator-2026/">Ai Ad Copy Generator 2026</Link></li>
+              <li><Link href="/blog/ai-bom-procurement-security-and-governance/">Ai Bom Procurement Security And Governance</Link></li>
+<li><Link href="/blog/aiops-anomaly-detection-2026/">Aiops Anomaly Detection 2026</Link></li>
+<li><Link href="/blog/autonomous-qa-engineering-policy-and-compliance/">Autonomous Qa Engineering Policy And Compliance</Link></li>
+<li><Link href="/blog/smart-contract-audit-policy-and-compliance/">Smart Contract Audit Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

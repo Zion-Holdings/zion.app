@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI API Gateway: vendor evaluation | Zion Tech Group',
   description: 'AI API Gateway: vendor evaluation',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI API Gateway: vendor evaluation',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-api-gateway-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway: vendor evaluation", "description": "AI API Gateway: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:00Z", "dateModified": "2026-08-17T23:29:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-vendor-evaluation/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI API Gateway: vendor evaluation", "description": "AI API Gateway: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-api-gateway-vendor-evaluation/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/cybersecurity-platform-msp-2026/">Cybersecurity Platform Msp 2026</Link></li>
-<li><Link href="/blog/cloud-native-app-development-automation-roadmap/">Cloud Native App Development Automation Roadmap</Link></li>
-<li><Link href="/blog/api-security-testing-evaluation-framework/">Api Security Testing Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-architecture-overview/">Ai Autonomous Agents Architecture Overview</Link></li>
+              <li><Link href="/blog/ai-development-acceleration-evaluation-framework/">Ai Development Acceleration Evaluation Framework</Link></li>
+<li><Link href="/blog/ai-agentic-workflows-vendor-evaluation/">Ai Agentic Workflows Vendor Evaluation</Link></li>
+<li><Link href="/blog/event-driven-architecture-starter-template/">Event Driven Architecture Starter Template</Link></li>
+<li><Link href="/blog/automated-ai-reporting-checklist-for-it-leaders/">Automated Ai Reporting Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Incident Response Retainer: vendor evaluation | Zion Tech Group',
   description: 'Incident Response Retainer: vendor evaluation',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Incident Response Retainer: vendor evaluation',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/incident-response-retainer-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Incident Response Retainer: vendor evaluation", "description": "Incident Response Retainer: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:03Z", "dateModified": "2026-08-17T23:29:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/incident-response-retainer-vendor-evaluation/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Incident Response Retainer: vendor evaluation", "description": "Incident Response Retainer: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/incident-response-retainer-vendor-evaluation/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-migration-service-automation-roadmap/">Database Migration Service Automation Roadmap</Link></li>
-<li><Link href="/blog/ai-customer-support-executive-guide/">Ai Customer Support Executive Guide</Link></li>
-<li><Link href="/blog/api-performance-testing-security-and-governance/">Api Performance Testing Security And Governance</Link></li>
-<li><Link href="/blog/incident-response-retainer-executive-guide/">Incident Response Retainer Executive Guide</Link></li>
+              <li><Link href="/blog/endpoint-management-case-study/">Endpoint Management Case Study</Link></li>
+<li><Link href="/blog/ai-3d-asset-generator-automation-roadmap/">Ai 3D Asset Generator Automation Roadmap</Link></li>
+<li><Link href="/blog/container-security-lifecycle-common-mistakes/">Container Security Lifecycle Common Mistakes</Link></li>
+<li><Link href="/blog/managed-it-services-security-and-governance/">Managed It Services Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

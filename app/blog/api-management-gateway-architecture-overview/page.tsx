@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-management-gateway-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Management Gateway: architecture overview", "description": "API Management Gateway: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:04Z", "dateModified": "2026-08-17T23:29:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-management-gateway-architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Management Gateway: architecture overview", "description": "API Management Gateway: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-management-gateway-architecture-overview/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/event-driven-architecture-implementation-playbook/">Event Driven Architecture Implementation Playbook</Link></li>
-<li><Link href="/blog/cloud-native-app-development-2026/">Cloud Native App Development 2026</Link></li>
-<li><Link href="/blog/ai-customer-support-starter-template/">Ai Customer Support Starter Template</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-vendor-evaluation/">Ai Accessibility Optimizer Vendor Evaluation</Link></li>
+              <li><Link href="/blog/cloud-native-app-development-automation-roadmap/">Cloud Native App Development Automation Roadmap</Link></li>
+<li><Link href="/blog/endpoint-management-vendor-evaluation/">Endpoint Management Vendor Evaluation</Link></li>
+<li><Link href="/blog/graphql-federation-platform-starter-template/">Graphql Federation Platform Starter Template</Link></li>
+<li><Link href="/blog/automated-ai-reporting-architecture-overview/">Automated Ai Reporting Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

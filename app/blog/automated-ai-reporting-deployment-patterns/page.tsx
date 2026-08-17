@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/automated-ai-reporting-deployment-patterns/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automated AI Reporting: deployment patterns", "description": "Automated AI Reporting: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:04Z", "dateModified": "2026-08-17T23:29:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automated-ai-reporting-deployment-patterns/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Automated AI Reporting: deployment patterns", "description": "Automated AI Reporting: deployment patterns", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/automated-ai-reporting-deployment-patterns/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/database-migration-service-checklist-for-it-leaders/">Database Migration Service Checklist For It Leaders</Link></li>
-<li><Link href="/blog/devops-cicd-security-and-governance/">Devops Cicd Security And Governance</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-checklist-for-it-leaders/">Ai 3D Asset Generator Checklist For It Leaders</Link></li>
-<li><Link href="/blog/ai-bom-procurement-case-study/">Ai Bom Procurement Case Study</Link></li>
+              <li><Link href="/blog/cloud-migration-services-case-study/">Cloud Migration Services Case Study</Link></li>
+<li><Link href="/blog/ai-accessibility-auditor-automation-roadmap/">Ai Accessibility Auditor Automation Roadmap</Link></li>
+<li><Link href="/blog/api-performance-testing-policy-and-compliance/">Api Performance Testing Policy And Compliance</Link></li>
+<li><Link href="/blog/genai-devops-cicd-automation-roadmap/">Genai Devops Cicd Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

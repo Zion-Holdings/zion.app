@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Observability | Zion Tech Group',
   description: 'AI Observability',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Observability',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-observability-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability", "description": "AI Observability", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:07Z", "dateModified": "2026-08-17T23:29:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Observability", "description": "AI Observability", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-observability-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-optimizer-security-and-governance/">Ai Accessibility Optimizer Security And Governance</Link></li>
-<li><Link href="/blog/devops-cicd-roi-and-cost-model/">Devops Cicd Roi And Cost Model</Link></li>
-<li><Link href="/blog/automated-ai-reporting-deployment-patterns/">Automated Ai Reporting Deployment Patterns</Link></li>
-<li><Link href="/blog/automation-orchestration-policy-and-compliance/">Automation Orchestration Policy And Compliance</Link></li>
+              <li><Link href="/blog/cloud-native-app-development-automation-roadmap/">Cloud Native App Development Automation Roadmap</Link></li>
+<li><Link href="/blog/ai-agent-safety-evaluation-2026/">Ai Agent Safety Evaluation 2026</Link></li>
+<li><Link href="/blog/ai-accessibility-auditor-2026/">Ai Accessibility Auditor 2026</Link></li>
+<li><Link href="/blog/data-warehouse-modernization-evaluation-framework/">Data Warehouse Modernization Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

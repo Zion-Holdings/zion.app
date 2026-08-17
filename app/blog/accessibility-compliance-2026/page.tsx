@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/accessibility-compliance-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance", "description": "Accessibility Compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:04Z", "dateModified": "2026-08-17T23:29:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance", "description": "Accessibility Compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-autonomous-agents-policy-and-compliance/">Ai Autonomous Agents Policy And Compliance</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-2026/">Cyber Threat Intelligence 2026</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-starter-template/">Ai Agentic Workflows Starter Template</Link></li>
-<li><Link href="/blog/ai-agentic-workflows-2026/">Ai Agentic Workflows 2026</Link></li>
+              <li><Link href="/blog/incident-response-retainer-policy-and-compliance/">Incident Response Retainer Policy And Compliance</Link></li>
+<li><Link href="/blog/event-driven-architecture-2026/">Event Driven Architecture 2026</Link></li>
+<li><Link href="/blog/smart-contract-audit-checklist-for-it-leaders/">Smart Contract Audit Checklist For It Leaders</Link></li>
+<li><Link href="/blog/cloud-migration-services-architecture-overview/">Cloud Migration Services Architecture Overview</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

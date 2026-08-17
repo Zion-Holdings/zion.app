@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/autonomous-qa-engineering-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering", "description": "Autonomous QA Engineering", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:04Z", "dateModified": "2026-08-17T23:29:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous QA Engineering", "description": "Autonomous QA Engineering", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:05Z", "dateModified": "2026-08-17T23:41:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-qa-engineering-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/smart-contract-audit-executive-guide/">Smart Contract Audit Executive Guide</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-case-study/">Etl Pipeline Optimization Case Study</Link></li>
-<li><Link href="/blog/ai-api-gateway-vendor-evaluation/">Ai Api Gateway Vendor Evaluation</Link></li>
-<li><Link href="/blog/cloud-finops-implementation-playbook/">Cloud Finops Implementation Playbook</Link></li>
+              <li><Link href="/blog/genai-devops-cicd-starter-template/">Genai Devops Cicd Starter Template</Link></li>
+<li><Link href="/blog/managed-it-services-policy-and-compliance/">Managed It Services Policy And Compliance</Link></li>
+<li><Link href="/blog/microsaas-social-media-manager-policy-and-compliance/">Microsaas Social Media Manager Policy And Compliance</Link></li>
+<li><Link href="/blog/ai-performance-monitoring-automation-roadmap/">Ai Performance Monitoring Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

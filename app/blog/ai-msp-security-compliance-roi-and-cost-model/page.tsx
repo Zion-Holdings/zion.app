@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI MSP Security Compliance: ROI and cost model | Zion Tech Group',
   description: 'AI MSP Security Compliance: ROI and cost model',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI MSP Security Compliance: ROI and cost model',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-msp-security-compliance-roi-and-cost-model/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI MSP Security Compliance: ROI and cost model", "description": "AI MSP Security Compliance: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:05Z", "dateModified": "2026-08-17T23:29:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-msp-security-compliance-roi-and-cost-model/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI MSP Security Compliance: ROI and cost model", "description": "AI MSP Security Compliance: ROI and cost model", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-msp-security-compliance-roi-and-cost-model/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-development-acceleration-evaluation-framework/">Ai Development Acceleration Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-automation-roadmap/">Ai Data Lakehouse Pipelines Automation Roadmap</Link></li>
-<li><Link href="/blog/data-warehouse-modernization-roi-and-cost-model/">Data Warehouse Modernization Roi And Cost Model</Link></li>
-<li><Link href="/blog/ai-customer-success-churn-prevention-case-study/">Ai Customer Success Churn Prevention Case Study</Link></li>
+              <li><Link href="/blog/enterprise-ai-intelligence-hub-2026/">Enterprise Ai Intelligence Hub 2026</Link></li>
+<li><Link href="/blog/ai-customer-support-operations-handbook/">Ai Customer Support Operations Handbook</Link></li>
+<li><Link href="/blog/ai-autonomous-agents-2026/">Ai Autonomous Agents 2026</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-executive-guide/">Enterprise Ai Intelligence Hub Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

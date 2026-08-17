@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/accessibility-compliance-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance: checklist for IT leaders", "description": "Accessibility Compliance: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:00Z", "dateModified": "2026-08-17T23:29:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-checklist-for-it-leaders/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Accessibility Compliance: checklist for IT leaders", "description": "Accessibility Compliance: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:11Z", "dateModified": "2026-08-17T23:41:11Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/accessibility-compliance-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-optimizer-security-and-governance/">Ai Accessibility Optimizer Security And Governance</Link></li>
-<li><Link href="/blog/ai-3d-asset-generator-checklist-for-it-leaders/">Ai 3D Asset Generator Checklist For It Leaders</Link></li>
-<li><Link href="/blog/automated-ai-reporting-architecture-overview/">Automated Ai Reporting Architecture Overview</Link></li>
-<li><Link href="/blog/api-orchestration-layer-automation-roadmap/">Api Orchestration Layer Automation Roadmap</Link></li>
+              <li><Link href="/blog/devops-cicd-policy-and-compliance/">Devops Cicd Policy And Compliance</Link></li>
+<li><Link href="/blog/ai-accessibility-auditor-deployment-patterns/">Ai Accessibility Auditor Deployment Patterns</Link></li>
+<li><Link href="/blog/endpoint-management-vendor-evaluation/">Endpoint Management Vendor Evaluation</Link></li>
+<li><Link href="/blog/network-infrastructure-2026/">Network Infrastructure 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI IT Operations: executive guide | Zion Tech Group',
   description: 'AI IT Operations: executive guide',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI IT Operations: executive guide',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-it-operations-executive-guide/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI IT Operations: executive guide", "description": "AI IT Operations: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:01Z", "dateModified": "2026-08-17T23:29:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-it-operations-executive-guide/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI IT Operations: executive guide", "description": "AI IT Operations: executive guide", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-it-operations-executive-guide/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devops-cicd-roi-and-cost-model/">Devops Cicd Roi And Cost Model</Link></li>
-<li><Link href="/blog/microsaas-social-media-manager-executive-guide/">Microsaas Social Media Manager Executive Guide</Link></li>
-<li><Link href="/blog/event-driven-architecture-implementation-playbook/">Event Driven Architecture Implementation Playbook</Link></li>
-<li><Link href="/blog/container-security-lifecycle-security-and-governance/">Container Security Lifecycle Security And Governance</Link></li>
+              <li><Link href="/blog/5g-solutions-vendor-evaluation/">5G Solutions Vendor Evaluation</Link></li>
+<li><Link href="/blog/edge-computing-deployment-roi-and-cost-model/">Edge Computing Deployment Roi And Cost Model</Link></li>
+<li><Link href="/blog/ai-it-operations-vendor-evaluation/">Ai It Operations Vendor Evaluation</Link></li>
+<li><Link href="/blog/ai-data-backup-evaluation-framework/">Ai Data Backup Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

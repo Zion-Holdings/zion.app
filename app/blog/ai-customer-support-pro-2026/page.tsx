@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Customer Support | Zion Tech Group',
   description: 'AI Customer Support',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Customer Support',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-customer-support-pro-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Customer Support", "description": "AI Customer Support", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:04Z", "dateModified": "2026-08-17T23:29:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-customer-support-pro-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Customer Support", "description": "AI Customer Support", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:14Z", "dateModified": "2026-08-17T23:41:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-customer-support-pro-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/micro-saas-ai-expense-tracker-2026/">Micro Saas Ai Expense Tracker 2026</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-architecture-overview/">Ai Accessibility Optimizer Architecture Overview</Link></li>
-<li><Link href="/blog/cybersecurity-for-msps-policy-and-compliance/">Cybersecurity For Msps Policy And Compliance</Link></li>
-<li><Link href="/blog/event-driven-architecture-roi-and-cost-model/">Event Driven Architecture Roi And Cost Model</Link></li>
+              <li><Link href="/blog/network-infrastructure-vendor-evaluation/">Network Infrastructure Vendor Evaluation</Link></li>
+<li><Link href="/blog/ai-data-backup-2026/">Ai Data Backup 2026</Link></li>
+<li><Link href="/blog/chaos-engineering-roi-and-cost-model/">Chaos Engineering Roi And Cost Model</Link></li>
+<li><Link href="/blog/chaos-engineering-executive-guide/">Chaos Engineering Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

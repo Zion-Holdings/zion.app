@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI 3D Asset Generator: vendor evaluation | Zion Tech Group',
   description: 'AI 3D Asset Generator: vendor evaluation',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI 3D Asset Generator: vendor evaluation',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-3d-asset-generator-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator: vendor evaluation", "description": "AI 3D Asset Generator: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:00Z", "dateModified": "2026-08-17T23:29:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-vendor-evaluation/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI 3D Asset Generator: vendor evaluation", "description": "AI 3D Asset Generator: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-3d-asset-generator-vendor-evaluation/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/enterprise-backup-dr-starter-template/">Enterprise Backup Dr Starter Template</Link></li>
-<li><Link href="/blog/container-security-lifecycle-roi-and-cost-model/">Container Security Lifecycle Roi And Cost Model</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-implementation-playbook/">Microsaas Customer Onboarding Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-accessibility-auditor-security-and-governance/">Ai Accessibility Auditor Security And Governance</Link></li>
+              <li><Link href="/blog/cloud-cost-ai-optimizer-starter-template/">Cloud Cost Ai Optimizer Starter Template</Link></li>
+<li><Link href="/blog/cloud-finops-2026/">Cloud Finops 2026</Link></li>
+<li><Link href="/blog/it-consulting-checklist-for-it-leaders/">It Consulting Checklist For It Leaders</Link></li>
+<li><Link href="/blog/ai-development-acceleration-executive-guide/">Ai Development Acceleration Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

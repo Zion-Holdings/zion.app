@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-agent-tool-builder-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Tool Builder: policy and compliance", "description": "AI Agent Tool Builder: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:07Z", "dateModified": "2026-08-17T23:29:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-tool-builder-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Tool Builder: policy and compliance", "description": "AI Agent Tool Builder: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:08Z", "dateModified": "2026-08-17T23:41:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-agent-tool-builder-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/automation-orchestration-architecture-overview/">Automation Orchestration Architecture Overview</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-architecture-overview/">Ai Accessibility Optimizer Architecture Overview</Link></li>
-<li><Link href="/blog/automated-ai-reporting-2026/">Automated Ai Reporting 2026</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-2026/">Ai Autonomous Agents 2026</Link></li>
+              <li><Link href="/blog/cloud-native-app-development-automation-roadmap/">Cloud Native App Development Automation Roadmap</Link></li>
+<li><Link href="/blog/it-consulting-vendor-evaluation/">It Consulting Vendor Evaluation</Link></li>
+<li><Link href="/blog/ai-customer-support-operations-handbook/">Ai Customer Support Operations Handbook</Link></li>
+<li><Link href="/blog/edge-computing-deployment-evaluation-framework/">Edge Computing Deployment Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

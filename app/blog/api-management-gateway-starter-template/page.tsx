@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/api-management-gateway-starter-template/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Management Gateway: starter template", "description": "API Management Gateway: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:02Z", "dateModified": "2026-08-17T23:29:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-management-gateway-starter-template/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "API Management Gateway: starter template", "description": "API Management Gateway: starter template", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/api-management-gateway-starter-template/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/chaos-engineering-checklist-for-it-leaders/">Chaos Engineering Checklist For It Leaders</Link></li>
-<li><Link href="/blog/5g-solutions-2026/">5G Solutions 2026</Link></li>
-<li><Link href="/blog/microsaas-hr-recruitment-starter-template/">Microsaas Hr Recruitment Starter Template</Link></li>
-<li><Link href="/blog/managed-it-services-roi-and-cost-model/">Managed It Services Roi And Cost Model</Link></li>
+              <li><Link href="/blog/ai-email-intelligence-policy-and-compliance/">Ai Email Intelligence Policy And Compliance</Link></li>
+<li><Link href="/blog/edge-computing-deployment-roi-and-cost-model/">Edge Computing Deployment Roi And Cost Model</Link></li>
+<li><Link href="/blog/smart-contract-audit-checklist-for-it-leaders/">Smart Contract Audit Checklist For It Leaders</Link></li>
+<li><Link href="/blog/ai-accessibility-optimizer-security-and-governance/">Ai Accessibility Optimizer Security And Governance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'ETL Pipeline Optimization: case study | Zion Tech Group',
   description: 'ETL Pipeline Optimization: case study',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'ETL Pipeline Optimization: case study',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/etl-pipeline-optimization-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "ETL Pipeline Optimization: case study", "description": "ETL Pipeline Optimization: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:02Z", "dateModified": "2026-08-17T23:29:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/etl-pipeline-optimization-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "ETL Pipeline Optimization: case study", "description": "ETL Pipeline Optimization: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:04Z", "dateModified": "2026-08-17T23:41:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/etl-pipeline-optimization-case-study/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/network-infrastructure-vendor-evaluation/">Network Infrastructure Vendor Evaluation</Link></li>
-<li><Link href="/blog/ai-it-operations-automation-2026/">Ai It Operations Automation 2026</Link></li>
-<li><Link href="/blog/cloud-finops-implementation-playbook/">Cloud Finops Implementation Playbook</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-implementation-playbook/">Ai Accessibility Optimizer Implementation Playbook</Link></li>
+              <li><Link href="/blog/cloud-migration-services-automation-roadmap/">Cloud Migration Services Automation Roadmap</Link></li>
+<li><Link href="/blog/cloud-finops-automation-roadmap/">Cloud Finops Automation Roadmap</Link></li>
+<li><Link href="/blog/ai-customer-success-churn-prevention-case-study/">Ai Customer Success Churn Prevention Case Study</Link></li>
+<li><Link href="/blog/event-driven-architecture-2026/">Event Driven Architecture 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

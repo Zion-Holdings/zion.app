@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Data Lakehouse Pipelines | Zion Tech Group',
   description: 'AI Data Lakehouse Pipelines',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Data Lakehouse Pipelines',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-data-lakehouse-pipelines-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Lakehouse Pipelines", "description": "AI Data Lakehouse Pipelines", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:04Z", "dateModified": "2026-08-17T23:29:04Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Data Lakehouse Pipelines", "description": "AI Data Lakehouse Pipelines", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:14Z", "dateModified": "2026-08-17T23:41:14Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-data-lakehouse-pipelines-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-ad-copy-generator-2026/">Ai Ad Copy Generator 2026</Link></li>
-<li><Link href="/blog/ai-development-acceleration-vendor-evaluation/">Ai Development Acceleration Vendor Evaluation</Link></li>
-<li><Link href="/blog/automation-orchestration-enterprise-2026/">Automation Orchestration Enterprise 2026</Link></li>
-<li><Link href="/blog/data-analytics-platform-automation-roadmap/">Data Analytics Platform Automation Roadmap</Link></li>
+              <li><Link href="/blog/api-performance-testing-executive-guide/">Api Performance Testing Executive Guide</Link></li>
+<li><Link href="/blog/ai-it-operations-operations-handbook/">Ai It Operations Operations Handbook</Link></li>
+<li><Link href="/blog/genai-devops-cicd-starter-template/">Genai Devops Cicd Starter Template</Link></li>
+<li><Link href="/blog/devsecops-pipeline-checklist-for-it-leaders/">Devsecops Pipeline Checklist For It Leaders</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

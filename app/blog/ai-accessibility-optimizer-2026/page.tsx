@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Accessibility Optimizer | Zion Tech Group',
   description: 'AI Accessibility Optimizer',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Accessibility Optimizer',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-accessibility-optimizer-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Optimizer", "description": "AI Accessibility Optimizer", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:03Z", "dateModified": "2026-08-17T23:29:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Accessibility Optimizer", "description": "AI Accessibility Optimizer", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-accessibility-optimizer-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-email-intelligence-case-study/">Ai Email Intelligence Case Study</Link></li>
-<li><Link href="/blog/microsaas-expense-tracker-executive-guide/">Microsaas Expense Tracker Executive Guide</Link></li>
-<li><Link href="/blog/devops-cicd-security-and-governance/">Devops Cicd Security And Governance</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-executive-guide/">Enterprise Backup Dr Executive Guide</Link></li>
+              <li><Link href="/blog/ai-performance-monitoring-automation-roadmap/">Ai Performance Monitoring Automation Roadmap</Link></li>
+<li><Link href="/blog/microsaas-expense-tracker-case-study/">Microsaas Expense Tracker Case Study</Link></li>
+<li><Link href="/blog/smart-contract-audit-deployment-patterns/">Smart Contract Audit Deployment Patterns</Link></li>
+<li><Link href="/blog/ai-3d-asset-generator-automation-roadmap/">Ai 3D Asset Generator Automation Roadmap</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

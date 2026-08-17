@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Performance Monitoring: automation roadmap | Zion Tech Group',
   description: 'AI Performance Monitoring: automation roadmap',
-  keywords: ['automation', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI Performance Monitoring: automation roadmap',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-performance-monitoring-automation-roadmap/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Performance Monitoring: automation roadmap", "description": "AI Performance Monitoring: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:00Z", "dateModified": "2026-08-17T23:29:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-performance-monitoring-automation-roadmap/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Performance Monitoring: automation roadmap", "description": "AI Performance Monitoring: automation roadmap", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:03Z", "dateModified": "2026-08-17T23:41:03Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-performance-monitoring-automation-roadmap/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/network-infrastructure-evaluation-framework/">Network Infrastructure Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-autonomous-agents-roi-and-cost-model/">Ai Autonomous Agents Roi And Cost Model</Link></li>
-<li><Link href="/blog/api-orchestration-layer-security-and-governance/">Api Orchestration Layer Security And Governance</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026/">Ai Agent Tool Builder 2026</Link></li>
+              <li><Link href="/blog/endpoint-management-vendor-evaluation/">Endpoint Management Vendor Evaluation</Link></li>
+<li><Link href="/blog/microsaas-expense-tracker-case-study/">Microsaas Expense Tracker Case Study</Link></li>
+<li><Link href="/blog/aiops-anomaly-detection-evaluation-framework/">Aiops Anomaly Detection Evaluation Framework</Link></li>
+<li><Link href="/blog/autonomous-qa-engineering-policy-and-compliance/">Autonomous Qa Engineering Policy And Compliance</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

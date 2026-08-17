@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI BOM Procurement: policy and compliance | Zion Tech Group',
   description: 'AI BOM Procurement: policy and compliance',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI BOM Procurement: policy and compliance',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-bom-procurement-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BOM Procurement: policy and compliance", "description": "AI BOM Procurement: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:28:59Z", "dateModified": "2026-08-17T23:28:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bom-procurement-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BOM Procurement: policy and compliance", "description": "AI BOM Procurement: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bom-procurement-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -37,7 +37,7 @@ export default function Page() {
 
         <section className="prose prose-invert max-w-none">
 <h2>Why this matters now</h2>
-<p>Buyers evaluating ai bom procurement: policy and compliance in 2026 are prioritizing measurable outcomes over feature checklists. This guide focuses on practical adoption, risk reduction, and ROI because generic it marketing no longer converts informed buyers. Teams that invest in ai bom procurement: policy and compliance with clear success metrics and phased delivery consistently outperform teams that chase experimental AI hype. The organizations that win in 2026 will treat ai bom procurement: policy and compliance as a durable capability, not a one-off project, and they will instrument execution from day one. If your team is still debating whether ai bom procurement: policy and compliance is worth investing in, use this guide to build the business case with evidence rather than vendor claims.</p>
+<p>Buyers evaluating ai bom procurement: policy and compliance in 2026 are prioritizing measurable outcomes over feature checklists. This guide focuses on practical adoption, risk reduction, and ROI because generic ai marketing no longer converts informed buyers. Teams that invest in ai bom procurement: policy and compliance with clear success metrics and phased delivery consistently outperform teams that chase experimental AI hype. The organizations that win in 2026 will treat ai bom procurement: policy and compliance as a durable capability, not a one-off project, and they will instrument execution from day one. If your team is still debating whether ai bom procurement: policy and compliance is worth investing in, use this guide to build the business case with evidence rather than vendor claims.</p>
 
 <h2>Executive summary</h2>
 <p>This post gives executives a concise view of ai bom procurement: policy and compliance: value drivers, adoption blockers, realistic timelines, and the ownership model required for success. The bottom line: ai bom procurement: policy and compliance can shorten delivery cycles, reduce manual exceptions, and improve customer outcomes when scoped correctly and operated responsibly. Recommendation: start with one workflow, assign ownership, define success metrics, and review after 30 days before broader rollout. Use this guide to align leadership, set expectations, and avoid the common mistake of piloting without service ownership or alerting.</p>
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-optimizer-security-and-governance/">Ai Accessibility Optimizer Security And Governance</Link></li>
-<li><Link href="/blog/ai-data-lakehouse-pipelines-automation-roadmap/">Ai Data Lakehouse Pipelines Automation Roadmap</Link></li>
-<li><Link href="/blog/managed-it-services-roi-and-cost-model/">Managed It Services Roi And Cost Model</Link></li>
-<li><Link href="/blog/devsecops-pipeline-roi-and-cost-model/">Devsecops Pipeline Roi And Cost Model</Link></li>
+              <li><Link href="/blog/aiops-anomaly-detection-architecture-overview/">Aiops Anomaly Detection Architecture Overview</Link></li>
+<li><Link href="/blog/enterprise-backup-dr-implementation-playbook/">Enterprise Backup Dr Implementation Playbook</Link></li>
+<li><Link href="/blog/api-management-gateway-architecture-overview/">Api Management Gateway Architecture Overview</Link></li>
+<li><Link href="/blog/ai-bdr-sdr-implementation-playbook/">Ai Bdr Sdr Implementation Playbook</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'IT Consulting | Zion Tech Group',
   description: 'IT Consulting',
-  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'IT Consulting',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/it-consulting-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting", "description": "IT Consulting", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:02Z", "dateModified": "2026-08-17T23:29:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "IT Consulting", "description": "IT Consulting", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:12Z", "dateModified": "2026-08-17T23:41:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/it-consulting-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/devops-cicd-automation-roadmap/">Devops Cicd Automation Roadmap</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-2026/">Cyber Threat Intelligence 2026</Link></li>
-<li><Link href="/blog/network-infrastructure-vendor-evaluation/">Network Infrastructure Vendor Evaluation</Link></li>
-<li><Link href="/blog/edge-computing-deployment-operations-handbook/">Edge Computing Deployment Operations Handbook</Link></li>
+              <li><Link href="/blog/cloud-migration-services-architecture-overview/">Cloud Migration Services Architecture Overview</Link></li>
+<li><Link href="/blog/etl-pipeline-optimization-2026/">Etl Pipeline Optimization 2026</Link></li>
+<li><Link href="/blog/enterprise-backup-dr-2026/">Enterprise Backup Dr 2026</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-executive-guide/">Enterprise Ai Intelligence Hub Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

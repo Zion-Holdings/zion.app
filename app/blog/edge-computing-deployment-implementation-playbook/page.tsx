@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Edge Computing Deployment: implementation playbook | Zion Tech Group',
   description: 'Edge Computing Deployment: implementation playbook',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Edge Computing Deployment: implementation playbook',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/edge-computing-deployment-implementation-playbook/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Edge Computing Deployment: implementation playbook", "description": "Edge Computing Deployment: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:00Z", "dateModified": "2026-08-17T23:29:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/edge-computing-deployment-implementation-playbook/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Edge Computing Deployment: implementation playbook", "description": "Edge Computing Deployment: implementation playbook", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/edge-computing-deployment-implementation-playbook/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-security-testing-evaluation-framework/">Api Security Testing Evaluation Framework</Link></li>
-<li><Link href="/blog/ai-observability-executive-guide/">Ai Observability Executive Guide</Link></li>
-<li><Link href="/blog/api-gateway-management-security-and-governance/">Api Gateway Management Security And Governance</Link></li>
-<li><Link href="/blog/autonomous-code-deployment-2026/">Autonomous Code Deployment 2026</Link></li>
+              <li><Link href="/blog/automation-orchestration-security-and-governance/">Automation Orchestration Security And Governance</Link></li>
+<li><Link href="/blog/api-security-testing-starter-template/">Api Security Testing Starter Template</Link></li>
+<li><Link href="/blog/ai-accessibility-optimizer-implementation-playbook/">Ai Accessibility Optimizer Implementation Playbook</Link></li>
+<li><Link href="/blog/etl-pipeline-optimization-2026/">Etl Pipeline Optimization 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

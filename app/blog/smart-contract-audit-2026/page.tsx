@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Smart Contract Audit | Zion Tech Group',
   description: 'Smart Contract Audit',
-  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Smart Contract Audit',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/smart-contract-audit-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Smart Contract Audit", "description": "Smart Contract Audit", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:08Z", "dateModified": "2026-08-17T23:29:08Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/smart-contract-audit-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Smart Contract Audit", "description": "Smart Contract Audit", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/smart-contract-audit-2026/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-bom-procurement-deployment-patterns/">Ai Bom Procurement Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-bdr-sdr-deployment-patterns/">Ai Bdr Sdr Deployment Patterns</Link></li>
-<li><Link href="/blog/container-security-lifecycle-automation-roadmap/">Container Security Lifecycle Automation Roadmap</Link></li>
-<li><Link href="/blog/api-security-testing-evaluation-framework/">Api Security Testing Evaluation Framework</Link></li>
+              <li><Link href="/blog/graphql-federation-platform-implementation-playbook/">Graphql Federation Platform Implementation Playbook</Link></li>
+<li><Link href="/blog/edge-computing-deployment-roi-and-cost-model/">Edge Computing Deployment Roi And Cost Model</Link></li>
+<li><Link href="/blog/cloud-cost-ai-optimizer-automation-roadmap/">Cloud Cost Ai Optimizer Automation Roadmap</Link></li>
+<li><Link href="/blog/ai-autonomous-agents-roi-and-cost-model/">Ai Autonomous Agents Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

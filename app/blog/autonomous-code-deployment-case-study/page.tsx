@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Autonomous Code Deployment: case study | Zion Tech Group',
   description: 'Autonomous Code Deployment: case study',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['security', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Autonomous Code Deployment: case study',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/autonomous-code-deployment-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous Code Deployment: case study", "description": "Autonomous Code Deployment: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:07Z", "dateModified": "2026-08-17T23:29:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-code-deployment-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Autonomous Code Deployment: case study", "description": "Autonomous Code Deployment: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/autonomous-code-deployment-case-study/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/endpoint-management-evaluation-framework/">Endpoint Management Evaluation Framework</Link></li>
-<li><Link href="/blog/cyber-threat-intelligence-evaluation-framework/">Cyber Threat Intelligence Evaluation Framework</Link></li>
-<li><Link href="/blog/automation-orchestration-checklist-for-it-leaders/">Automation Orchestration Checklist For It Leaders</Link></li>
-<li><Link href="/blog/brand-voice-guardian-architecture-overview/">Brand Voice Guardian Architecture Overview</Link></li>
+              <li><Link href="/blog/ai-autonomous-agents-2026/">Ai Autonomous Agents 2026</Link></li>
+<li><Link href="/blog/automated-ai-reporting-2026/">Automated Ai Reporting 2026</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-2026/">Enterprise Ai Intelligence Hub 2026</Link></li>
+<li><Link href="/blog/microsaas-hr-recruitment-evaluation-framework/">Microsaas Hr Recruitment Evaluation Framework</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

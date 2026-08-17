@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI BOM Procurement: case study | Zion Tech Group',
   description: 'AI BOM Procurement: case study',
-  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'AI BOM Procurement: case study',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/ai-bom-procurement-case-study/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BOM Procurement: case study", "description": "AI BOM Procurement: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:28:59Z", "dateModified": "2026-08-17T23:28:59Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bom-procurement-case-study/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI BOM Procurement: case study", "description": "AI BOM Procurement: case study", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:10Z", "dateModified": "2026-08-17T23:41:10Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/ai-bom-procurement-case-study/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-social-media-manager-common-mistakes/">Microsaas Social Media Manager Common Mistakes</Link></li>
-<li><Link href="/blog/apm-application-performance-case-study/">Apm Application Performance Case Study</Link></li>
-<li><Link href="/blog/ai-agent-tool-builder-2026/">Ai Agent Tool Builder 2026</Link></li>
-<li><Link href="/blog/devsecops-pipeline-roi-and-cost-model/">Devsecops Pipeline Roi And Cost Model</Link></li>
+              <li><Link href="/blog/genai-devops-cicd-automation-roadmap/">Genai Devops Cicd Automation Roadmap</Link></li>
+<li><Link href="/blog/ai-email-intelligence-policy-and-compliance/">Ai Email Intelligence Policy And Compliance</Link></li>
+<li><Link href="/blog/endpoint-management-roi-and-cost-model/">Endpoint Management Roi And Cost Model</Link></li>
+<li><Link href="/blog/ai-ad-copy-generator-2026/">Ai Ad Copy Generator 2026</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

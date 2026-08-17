@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/aiops-anomaly-detection-checklist-for-it-leaders/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection: checklist for IT leaders", "description": "AIOps Anomaly Detection: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:00Z", "dateModified": "2026-08-17T23:29:00Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-checklist-for-it-leaders/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "AIOps Anomaly Detection: checklist for IT leaders", "description": "AIOps Anomaly Detection: checklist for IT leaders", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:15Z", "dateModified": "2026-08-17T23:41:15Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/aiops-anomaly-detection-checklist-for-it-leaders/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-hr-recruitment-starter-template/">Microsaas Hr Recruitment Starter Template</Link></li>
-<li><Link href="/blog/ai-customer-support-implementation-playbook/">Ai Customer Support Implementation Playbook</Link></li>
-<li><Link href="/blog/database-migration-service-policy-and-compliance/">Database Migration Service Policy And Compliance</Link></li>
-<li><Link href="/blog/network-infrastructure-2026/">Network Infrastructure 2026</Link></li>
+              <li><Link href="/blog/api-performance-testing-roi-and-cost-model/">Api Performance Testing Roi And Cost Model</Link></li>
+<li><Link href="/blog/ai-agent-tool-builder-common-mistakes/">Ai Agent Tool Builder Common Mistakes</Link></li>
+<li><Link href="/blog/api-orchestration-layer-2026/">Api Orchestration Layer 2026</Link></li>
+<li><Link href="/blog/microsaas-translation-engine-deployment-patterns/">Microsaas Translation Engine Deployment Patterns</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: '5G Solutions: architecture overview | Zion Tech Group',
   description: '5G Solutions: architecture overview',
-  keywords: ['ai', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['it', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: '5G Solutions: architecture overview',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/5g-solutions-architecture-overview/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "5G Solutions: architecture overview", "description": "5G Solutions: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:01Z", "dateModified": "2026-08-17T23:29:01Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/5g-solutions-architecture-overview/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "5G Solutions: architecture overview", "description": "5G Solutions: architecture overview", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:09Z", "dateModified": "2026-08-17T23:41:09Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/5g-solutions-architecture-overview/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/ai-accessibility-auditor-security-and-governance/">Ai Accessibility Auditor Security And Governance</Link></li>
-<li><Link href="/blog/api-management-gateway-2026/">Api Management Gateway 2026</Link></li>
-<li><Link href="/blog/ai-api-gateway-policy-and-compliance/">Ai Api Gateway Policy And Compliance</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-policy-and-compliance/">Microsaas Customer Onboarding Policy And Compliance</Link></li>
+              <li><Link href="/blog/micro-saas-ai-customer-onboarding-2026/">Micro Saas Ai Customer Onboarding 2026</Link></li>
+<li><Link href="/blog/ai-3d-asset-generator-checklist-for-it-leaders/">Ai 3D Asset Generator Checklist For It Leaders</Link></li>
+<li><Link href="/blog/ai-api-gateway-security-and-governance/">Ai Api Gateway Security And Governance</Link></li>
+<li><Link href="/blog/apm-application-performance-executive-guide/">Apm Application Performance Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/micro-saas-ai-translation-engine-2026/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Translation Engine", "description": "MicroSaaS Translation Engine", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:05Z", "dateModified": "2026-08-17T23:29:05Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/micro-saas-ai-translation-engine-2026/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Translation Engine", "description": "MicroSaaS Translation Engine", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:07Z", "dateModified": "2026-08-17T23:41:07Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/micro-saas-ai-translation-engine-2026/"};
 
 export default function Page() {
   return (
@@ -54,10 +54,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/chaos-engineering-2026/">Chaos Engineering 2026</Link></li>
-<li><Link href="/blog/enterprise-backup-dr-executive-guide/">Enterprise Backup Dr Executive Guide</Link></li>
-<li><Link href="/blog/ai-bom-procurement-deployment-patterns/">Ai Bom Procurement Deployment Patterns</Link></li>
-<li><Link href="/blog/ai-bom-procurement-case-study/">Ai Bom Procurement Case Study</Link></li>
+              <li><Link href="/blog/micro-saas-ai-customer-onboarding-2026/">Micro Saas Ai Customer Onboarding 2026</Link></li>
+<li><Link href="/blog/enterprise-backup-dr-2026/">Enterprise Backup Dr 2026</Link></li>
+<li><Link href="/blog/enterprise-ai-intelligence-hub-starter-template/">Enterprise Ai Intelligence Hub Starter Template</Link></li>
+<li><Link href="/blog/chaos-engineering-roi-and-cost-model/">Chaos Engineering Roi And Cost Model</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -72,7 +72,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

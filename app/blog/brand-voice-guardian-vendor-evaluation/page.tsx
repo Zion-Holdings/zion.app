@@ -4,7 +4,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Brand Voice Guardian: vendor evaluation | Zion Tech Group',
   description: 'Brand Voice Guardian: vendor evaluation',
-  keywords: ['cloud', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
+  keywords: ['data', 'guide', 'AI services', 'IT services', 'Zion Tech Group'],
   authors: { name: 'Zion Tech Group' },
   openGraph: {
     title: 'Brand Voice Guardian: vendor evaluation',
@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/brand-voice-guardian-vendor-evaluation/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Brand Voice Guardian: vendor evaluation", "description": "Brand Voice Guardian: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:06Z", "dateModified": "2026-08-17T23:29:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/brand-voice-guardian-vendor-evaluation/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "Brand Voice Guardian: vendor evaluation", "description": "Brand Voice Guardian: vendor evaluation", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:06Z", "dateModified": "2026-08-17T23:41:06Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/brand-voice-guardian-vendor-evaluation/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/api-orchestration-layer-policy-and-compliance/">Api Orchestration Layer Policy And Compliance</Link></li>
-<li><Link href="/blog/microsaas-customer-onboarding-case-study/">Microsaas Customer Onboarding Case Study</Link></li>
-<li><Link href="/blog/aiops-anomaly-detection-policy-and-compliance/">Aiops Anomaly Detection Policy And Compliance</Link></li>
-<li><Link href="/blog/etl-pipeline-optimization-vendor-evaluation/">Etl Pipeline Optimization Vendor Evaluation</Link></li>
+              <li><Link href="/blog/micro-saas-ai-customer-onboarding-2026/">Micro Saas Ai Customer Onboarding 2026</Link></li>
+<li><Link href="/blog/ai-agentic-workflows-vendor-evaluation/">Ai Agentic Workflows Vendor Evaluation</Link></li>
+<li><Link href="/blog/ai-development-acceleration-executive-guide/">Ai Development Acceleration Executive Guide</Link></li>
+<li><Link href="/blog/ai-bdr-sdr-executive-guide/">Ai Bdr Sdr Executive Guide</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>

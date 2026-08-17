@@ -16,7 +16,7 @@ export const metadata = {
   alternates: { canonical: '/blog/microsaas-translation-engine-policy-and-compliance/' },
 };
 
-const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Translation Engine: policy and compliance", "description": "MicroSaaS Translation Engine: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:29:02Z", "dateModified": "2026-08-17T23:29:02Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-translation-engine-policy-and-compliance/"};
+const jsonLd = {"@context": "https://schema.org", "@type": "TechArticle", "headline": "MicroSaaS Translation Engine: policy and compliance", "description": "MicroSaaS Translation Engine: policy and compliance", "author": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "publisher": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"}, "datePublished": "2026-08-17T23:41:12Z", "dateModified": "2026-08-17T23:41:12Z", "mainEntityOfPage": "https://ziontechgroup.com/blog/microsaas-translation-engine-policy-and-compliance/"};
 
 export default function Page() {
   return (
@@ -57,10 +57,10 @@ export default function Page() {
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
             <h2 className="mb-2 text-xl font-bold text-white">Related articles</h2>
             <ul className="list-disc pl-6 text-slate-300 space-y-2">
-              <li><Link href="/blog/microsaas-social-media-manager-executive-guide/">Microsaas Social Media Manager Executive Guide</Link></li>
-<li><Link href="/blog/ai-email-intelligence-operations-handbook/">Ai Email Intelligence Operations Handbook</Link></li>
-<li><Link href="/blog/devsecops-pipeline-2026/">Devsecops Pipeline 2026</Link></li>
-<li><Link href="/blog/ai-accessibility-optimizer-security-and-governance/">Ai Accessibility Optimizer Security And Governance</Link></li>
+              <li><Link href="/blog/ai-bom-procurement-policy-and-compliance/">Ai Bom Procurement Policy And Compliance</Link></li>
+<li><Link href="/blog/api-management-gateway-starter-template/">Api Management Gateway Starter Template</Link></li>
+<li><Link href="/blog/ai-customer-success-churn-prevention-security-and-governance/">Ai Customer Success Churn Prevention Security And Governance</Link></li>
+<li><Link href="/blog/microsaas-social-media-manager-case-study/">Microsaas Social Media Manager Case Study</Link></li>
             </ul>
           </div>
           <div className="rounded-2xl border border-violet-500/30 bg-slate-900/60 p-6">
@@ -75,7 +75,7 @@ export default function Page() {
 
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={__html: JSON.stringify(jsonLd)}
+          dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLd)}}
         />
       </article>
     </div>
