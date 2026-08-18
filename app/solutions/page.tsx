@@ -19,14 +19,14 @@ export const metadata = {
 };
 
 const industries = [
-  { name: 'Healthcare', desc: 'HIPAA-compliant AI diagnostics, patient engagement, and clinical automation.', path: '/services?category=ai' },
-  { name: 'Financial Services', desc: 'RegTech, fraud detection, trading bots, and KYC automation.', path: '/services?category=ai' },
-  { name: 'Manufacturing & Industrial', desc: 'Predictive maintenance, supply chain, quality inspection AI.', path: '/services?category=ai' },
-  { name: 'E-Commerce & Retail', desc: 'Recommendation engines, inventory AI, dynamic pricing.', path: '/services?category=ai' },
-  { name: 'Technology & SaaS', desc: 'Developer tools, platform engineering, dev tooling.', path: '/services?category=it' },
-  { name: 'Logistics & Supply Chain', desc: 'Route optimization, warehouse automation, fleet tracking.', path: '/services?category=ai' },
-  { name: 'Government & Public Sector', desc: 'Citizen services, compliance automation, civic AI.', path: '/services?category=ai' },
-  { name: 'Insurance', desc: 'Claims automation, underwriting AI, fraud prevention.', path: '/services?category=ai' },
+  { name: 'Healthcare', desc: 'HIPAA-compliant AI diagnostics, patient engagement, and clinical automation.', path: '/services/?category=ai' },
+  { name: 'Financial Services', desc: 'RegTech, fraud detection, trading bots, and KYC automation.', path: '/services/?category=ai' },
+  { name: 'Manufacturing & Industrial', desc: 'Predictive maintenance, supply chain, quality inspection AI.', path: '/services/?category=ai' },
+  { name: 'E-Commerce & Retail', desc: 'Recommendation engines, inventory AI, dynamic pricing.', path: '/services/?category=ai' },
+  { name: 'Technology & SaaS', desc: 'Developer tools, platform engineering, dev tooling.', path: '/services/?category=cloud' },
+  { name: 'Logistics & Supply Chain', desc: 'Route optimization, warehouse automation, fleet tracking.', path: '/services/?category=automation' },
+  { name: 'Government & Public Sector', desc: 'Citizen services, compliance automation, civic AI.', path: '/services/?category=security' },
+  { name: 'Insurance', desc: 'Claims automation, underwriting AI, fraud prevention.', path: '/services/?category=ai' },
 ];
 
 export default function SolutionsPage() {

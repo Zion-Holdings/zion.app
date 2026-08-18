@@ -76,6 +76,21 @@ export default function HomePage() {
             <p className="text-slate-400 text-sm">Hardened defenses and audit-ready controls.</p>
             <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
           </Link>
+          <Link href="/services/?category=data" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold mb-2">Data & Analytics</h3>
+            <p className="text-slate-400 text-sm">Warehousing, pipelines, and governed insights.</p>
+            <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
+          </Link>
+          <Link href="/services/?category=automation" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold mb-2">Automation & Orchestration</h3>
+            <p className="text-slate-400 text-sm">Workflow automation, triage, and operational runbooks.</p>
+            <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
+          </Link>
+          <Link href="/services/?category=micro-saas" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
+            <h3 className="text-white font-semibold mb-2">Micro-SaaS & Products</h3>
+            <p className="text-slate-400 text-sm">Bootstrap and scale niche AI-enabled products.</p>
+            <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
+          </Link>
         </div>
     
         <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
