@@ -257,3 +257,7 @@
 /start-project /contact/ 301
 /contact-intent /contact/ 301
 /partnership-program /partners/ 301
+
+/proposal /services/ 301
+/proposal/ /services/ 301
+/industries/manufacturing/ /industries/manufacturing 200
