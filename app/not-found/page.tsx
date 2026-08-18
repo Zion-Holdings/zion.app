@@ -13,6 +13,11 @@ export const metadata = {
     siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/404' },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Page Not Found | Zion Tech Group',
+    description: 'The page you are looking for does not exist or has been moved.',
+  },
 };
 
 export default function NotFoundPage() {
