@@ -2,14 +2,43 @@
 import sys, json, base64, urllib.request, urllib.parse, urllib.error, datetime, time, os
 from pathlib import Path
 
-REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
-if not REPO.exists():
+def _resolve_repo() -> Path:
+    """Pick the clone that actually holds the canonical outreach batch.
+
+    Several checkouts of this repo can coexist (Termux clone, macOS clone, CI
+    workspace). A stub directory that merely exists would strand the sender on
+    an empty lead-crm, so require the canonical batch file to be present.
+    """
+    marker = Path('lead-crm') / 'outreach_ready_canonical.json'
+    candidates = []
+    env_repo = os.environ.get('ZTG_REPO')
+    if env_repo:
+        candidates.append(Path(env_repo))
     try:
-        REPO = Path(__file__).resolve().parent.parent
+        candidates.append(Path(__file__).resolve().parent.parent)
     except Exception:
-        REPO = Path('/Users/miami2/zion.app')
-if not REPO.exists():
-    REPO = Path('C:/Users/Zion/tmp/zion-clone-test2')
+        pass
+    candidates.extend([
+        Path('/data/data/com.termux/files/home/zion-support.github.io'),
+        Path('/Users/miami2/zion.app'),
+        Path('C:/Users/Zion/tmp/zion-clone-test2'),
+    ])
+    for cand in candidates:
+        try:
+            if (cand / marker).exists():
+                return cand
+        except Exception:
+            continue
+    for cand in candidates:
+        try:
+            if cand.exists():
+                return cand
+        except Exception:
+            continue
+    return Path(__file__).resolve().parent.parent
+
+
+REPO = _resolve_repo()
 sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(REPO / 'commands'))
 try:
@@ -22,10 +51,7 @@ except Exception:
 
 def _gog_headers():
     from commands.google_workspace import gog_headers
-    try:
-        return gog_headers()
-    except Exception:
-        return None
+    return gog_headers()
 
 
 def _send_request(req, timeout=30):
@@ -475,6 +501,29 @@ def main():
         _update_miner_health(analysis_summary, 'analyzed_no_send')
         print(json.dumps({'generatedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'send_count': 0, 'skipped_templates': skipped_templates, 'results': [], 'note': 'SEND_DISABLED: set ZTG_SEND_ALLOWED=1 to enable outbound sends', 'analysisSummary': analysis_summary}, ensure_ascii=False))
         return
+    # Preflight: fail fast and loudly when Google credentials are unusable.
+    # Without this, gog_headers() raising left every message to be POSTed with
+    # no Authorization header, producing a wall of HTTP 401s that look like a
+    # Gmail problem instead of a missing-token problem.
+    try:
+        _preflight_headers = _gog_headers()
+    except Exception as e:
+        print(json.dumps({
+            'error': 'google_credentials_unavailable',
+            'detail': f'{type(e).__name__}: {e}',
+            'hint': 'gog_tokens.json (client_id, client_secret, refresh_token) is required; no messages were attempted',
+            'send_count': 0,
+            'results': [],
+        }, ensure_ascii=False))
+        return
+    if not (_preflight_headers or {}).get('Authorization'):
+        print(json.dumps({
+            'error': 'google_credentials_missing_authorization',
+            'hint': 'gog_headers() returned no Authorization header; no messages were attempted',
+            'send_count': 0,
+            'results': [],
+        }, ensure_ascii=False))
+        return
     # Run analysis and improvement pass to generate heuristic bodies before sending
     analysis = _analyze_and_improve(rows, excluded)
     improved_rows = analysis['improved']
@@ -503,7 +552,7 @@ def main():
                             'llm_provider': tailored.get('llm_provider'), 'llm_model': tailored.get('llm_model')})
         except Exception as e:
             outputs.append({'to': to, 'success': False, 'error': str(e)})
-        time.sleep(0.25)
+        time.sleep(3.0)
     print(json.dumps({'generatedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(),
                       'send_count': len(outputs), 'skipped_templates': skipped_templates,
                       'results': outputs}))

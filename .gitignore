@@ -73,12 +73,17 @@ final-optimization-summary.json
 main-commit.json
 website/
 portal/
-lead-crm/outreach_sent_history.jsonl
-lead-crm/all-leads.json
-lead-crm/exclusion-list.json
-lead-crm/outreach_drafts/
+lead-crm/*
+# Track the CRM python tooling so fixes travel between clones; lead data,
+# ledgers and health snapshots stay out of git. A bare "lead-crm/" exclusion
+# would stop git descending into the directory at all, making any "!*.py"
+# negation below unreachable -- hence the /* form plus the re-included subdirs.
+# Deny-by-default is deliberate: an allowlist of known data files (leads,
+# ledgers, drafts) silently leaks each new data file someone adds.
 !lead-crm/*.py
-!lead-crm/**/*.py
+!lead-crm/*/
+lead-crm/*/*
+!lead-crm/*/*.py
 outreach/
 outreach_monitor/
 email_drafts/
