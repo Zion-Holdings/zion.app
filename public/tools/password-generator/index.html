@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Generator | Zion Tech Group</title>
+  <meta name="description" content="Generate secure, random passwords with customizable length and character sets.">
+  <meta property="og:title" content="Password Generator | Zion Tech Group">
+  <meta property="og:description" content="Free online password generator — customizable length and character sets.">
+  <meta property="og:url" content="https://ziontechgroup.com/tools/password-generator/">
+  <link rel="canonical" href="https://ziontechgroup.com/tools/password-generator/">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: { 900: '#0b0f1a', 800: '#1e293b', 700: '#334155' },
+            accent: { 400: '#818cf8', 500: '#6366f1' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace; }
+  </style>
+</head>
+<body class="bg-dark-900 text-gray-200 min-h-screen">
+  <div class="max-w-3xl mx-auto px-4 py-8">
+    <h1 class="text-2xl font-bold mb-2">Password Generator</h1>
+    <p class="text-slate-400 mb-8">Generate secure, random passwords with customizable length and character sets.</p>
+
+    <div class="space-y-6">
+      <div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+        <div class="flex items-center justify-between mb-4">
+          <label class="text-sm text-slate-400">Generated Password</label>
+          <span id="strengthBadge" class="px-2 py-1 text-xs font-medium rounded bg-dark-700 text-slate-300">—</span>
+        </div>
+        <div class="flex gap-2">
+          <input type="text" id="password" class="flex-1 p-3 bg-dark-900 border border-dark-700 rounded-lg text-white mono text-lg focus:outline-none focus:border-accent-500" readonly>
+          <button id="copyBtn" class="px-4 py-2 bg-dark-700 hover:bg-dark-800 text-white rounded-lg text-sm transition border border-dark-700 whitespace-nowrap">Copy</button>
+        </div>
+      </div>
+
+      <div class="bg-dark-800 border border-dark-700 rounded-xl p-6 space-y-5">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <label class="text-sm text-slate-400">Password Length</label>
+            <span id="lengthValue" class="text-sm text-accent-400 font-medium">16</span>
+          </div>
+          <input type="range" id="length" min="6" max="64" value="16" class="w-full accent-accent-500">
+          <div class="flex justify-between text-xs text-slate-500 mt-1">
+            <span>6</span>
+            <span>64</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <label class="flex items-center gap-3 cursor-pointer">
+            <input type="checkbox" id="uppercase" checked class="w-4 h-4 accent-accent-500 rounded">
+            <span class="text-sm">Uppercase (A-Z)</span>
+          </label>
+          <label class="flex items-center gap-3 cursor-pointer">
+            <input type="checkbox" id="lowercase" checked class="w-4 h-4 accent-accent-500 rounded">
+            <span class="text-sm">Lowercase (a-z)</span>
+          </label>
+          <label class="flex items-center gap-3 cursor-pointer">
+            <input type="checkbox" id="numbers" checked class="w-4 h-4 accent-accent-500 rounded">
+            <span class="text-sm">Numbers (0-9)</span>
+          </label>
+          <label class="flex items-center gap-3 cursor-pointer">
+            <input type="checkbox" id="symbols" checked class="w-4 h-4 accent-accent-500 rounded">
+            <span class="text-sm">Symbols (!@#$...)</span>
+          </label>
+        </div>
+
+        <button id="generateBtn" class="w-full py-3 bg-accent-500 hover:bg-accent-400 text-white rounded-lg font-medium transition">Generate Password</button>
+      </div>
+
+      <div class="bg-dark-800 border border-dark-700 rounded-xl p-6">
+        <h2 class="text-lg font-semibold mb-4">Password History</h2>
+        <div id="history" class="space-y-2">
+          <p class="text-slate-500 text-sm">No passwords generated yet.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 bg-dark-800 border border-dark-700 rounded-xl p-6">
+      <h2 class="text-lg font-semibold mb-4">Security Notes</h2>
+      <ul class="space-y-3">
+        <li class="pb-3 border-b border-dark-700">
+          <span class="text-accent-400 font-semibold">Crypto-Secure RNG</span> — Uses <code class="text-accent-400">crypto.getRandomValues()</code> for unpredictable randomness
+        </li>
+        <li class="pb-3 border-b border-dark-700">
+          <span class="text-accent-400 font-semibold">Client-Side Only</span> — Passwords are generated locally and never transmitted
+        </li>
+        <li>
+          <span class="text-accent-400 font-semibold">Entropy</span> — Longer passwords with mixed character sets provide exponentially more security
+        </li>
+      </ul>
+    </div>
+
+    <a href="/tools/" class="inline-block mt-6 text-accent-400 hover:underline">← Back to Tools</a>
+  </div>
+
+  <script>
+    const passwordEl = document.getElementById('password');
+    const lengthEl = document.getElementById('length');
+    const lengthValue = document.getElementById('lengthValue');
+    const uppercaseEl = document.getElementById('uppercase');
+    const lowercaseEl = document.getElementById('lowercase');
+    const numbersEl = document.getElementById('numbers');
+    const symbolsEl = document.getElementById('symbols');
+    const generateBtn = document.getElementById('generateBtn');
+    const copyBtn = document.getElementById('copyBtn');
+    const historyEl = document.getElementById('history');
+    const strengthBadge = document.getElementById('strengthBadge');
+
+    const CHAR_SETS = {
+      uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+      lowercase: 'abcdefghijklmnopqrstuvwxyz',
+      numbers: '0123456789',
+      symbols: '!@#$%^&*()_+-=[]{}|;:,.<>?'
+    };
+
+    let passwordHistory = [];
+
+    function getCharset() {
+      let charset = '';
+      if (uppercaseEl.checked) charset += CHAR_SETS.uppercase;
+      if (lowercaseEl.checked) charset += CHAR_SETS.lowercase;
+      if (numbersEl.checked) charset += CHAR_SETS.numbers;
+      if (symbolsEl.checked) charset += CHAR_SETS.symbols;
+      return charset || CHAR_SETS.lowercase;
+    }
+
+    function generatePassword() {
+      const length = parseInt(lengthEl.value);
+      const charset = getCharset();
+      const array = new Uint32Array(length);
+      crypto.getRandomValues(array);
+      let password = '';
+      for (let i = 0; i < length; i++) {
+        password += charset[array[i] % charset.length];
+      }
+      passwordEl.value = password;
+      updateStrength(password);
+      addToHistory(password);
+    }
+
+    function updateStrength(password) {
+      let score = 0;
+      if (password.length >= 8) score++;
+      if (password.length >= 12) score++;
+      if (password.length >= 16) score++;
+      if (/[a-z]/.test(password) && /[A-Z]/.test(password)) score++;
+      if (/\d/.test(password)) score++;
+      if (/[^a-zA-Z0-9]/.test(password)) score++;
+
+      const levels = [
+        { label: 'Very Weak', color: 'bg-red-600' },
+        { label: 'Weak', color: 'bg-orange-500' },
+        { label: 'Fair', color: 'bg-yellow-500' },
+        { label: 'Good', color: 'bg-lime-500' },
+        { label: 'Strong', color: 'bg-green-500' },
+        { label: 'Very Strong', color: 'bg-emerald-400' },
+        { label: 'Excellent', color: 'bg-cyan-400' }
+      ];
+      const level = levels[Math.min(score, levels.length - 1)];
+      strengthBadge.textContent = level.label;
+      strengthBadge.className = `px-2 py-1 text-xs font-medium rounded text-white ${level.color}`;
+    }
+
+    function addToHistory(password) {
+      passwordHistory.unshift(password);
+      if (passwordHistory.length > 5) passwordHistory.pop();
+      renderHistory();
+    }
+
+    function renderHistory() {
+      if (passwordHistory.length === 0) {
+        historyEl.innerHTML = '<p class="text-slate-500 text-sm">No passwords generated yet.</p>';
+        return;
+      }
+      historyEl.innerHTML = passwordHistory.map((pw, i) => `
+        <div class="flex items-center gap-2 p-2 bg-dark-900 rounded border border-dark-700">
+          <input type="text" value="${pw}" readonly class="flex-1 bg-transparent border-none text-white mono text-sm focus:outline-none">
+          <button onclick="navigator.clipboard.writeText('${pw}')" class="px-2 py-1 text-xs bg-dark-700 hover:bg-dark-800 rounded transition">Copy</button>
+        </div>
+      `).join('');
+    }
+
+    lengthEl.addEventListener('input', () => {
+      lengthValue.textContent = lengthEl.value;
+    });
+
+    generateBtn.addEventListener('click', generatePassword);
+
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(passwordEl.value).then(() => {
+        const original = copyBtn.textContent;
+        copyBtn.textContent = 'Copied!';
+        setTimeout(() => copyBtn.textContent = original, 1500);
+      });
+    });
+
+    // Generate initial password
+    generatePassword();
+  </script>
+</body>
+</html>
