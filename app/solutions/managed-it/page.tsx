@@ -9,7 +9,6 @@ export const metadata: Metadata = {
     title: 'Managed IT Solutions | Zion Tech Group',
     description: 'Managed IT solutions with measurable outcomes.',
     url: 'https://ziontechgroup.com/solutions/managed-it/',
-    siteName: 'Zion Tech Group',
     type: 'website',
   },
   twitter: {

@@ -9,14 +9,12 @@ export const metadata: Metadata = {
     title: 'Industries | Zion Tech Group',
     description: 'Industry-specific solutions and delivery patterns.',
     url: 'https://ziontechgroup.com/industries/',
-    siteName: 'Zion Tech Group',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Industries | Zion Tech Group',
     description: 'Industry-specific solutions and delivery patterns.',
-    siteName: 'Zion Tech Group',
   },
   alternates: { canonical: '/industries/' },
 };

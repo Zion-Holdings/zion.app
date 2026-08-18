@@ -7,7 +7,6 @@ export const metadata = {
     title: 'JWT Decoder — Zion Tech Group',
     description: 'Decode JWT tokens to inspect header, payload, and signature data securely in your browser.',
     url: 'https://ziontechgroup.com/tools/jwt-decoder/',
-    siteName: 'Zion Tech Group',
     type: 'website',
   },
   twitter: {

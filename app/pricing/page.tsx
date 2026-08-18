@@ -9,7 +9,6 @@ export const metadata: Metadata = {
     title: 'Pricing & Engagement Models | Zion Tech Group',
     description: 'Flexible engagement models designed for predictable delivery.',
     url: 'https://ziontechgroup.com/pricing/',
-    siteName: 'Zion Tech Group',
     type: 'website',
   },
   twitter: {

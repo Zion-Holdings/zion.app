@@ -8,7 +8,6 @@ export const metadata = {
     title: 'Partnership Program | Zion Tech Group',
     description: 'Collaborate with Zion Tech Group through delivery, co-sell, and integration partnerships.',
     url: 'https://ziontechgroup.com/partnership-program/',
-    siteName: 'Zion Tech Group',
     type: 'website',
   },
   twitter: {

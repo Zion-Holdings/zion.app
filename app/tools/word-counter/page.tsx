@@ -7,7 +7,6 @@ export const metadata = {
     title: 'Word Counter — Zion Tech Group',
     description: 'Count words, characters, sentences, and paragraphs. Useful for content, UX microcopy, and SEO checks.',
     url: 'https://ziontechgroup.com/tools/word-counter/',
-    siteName: 'Zion Tech Group',
     type: 'website',
   },
   twitter: {

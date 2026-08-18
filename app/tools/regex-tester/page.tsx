@@ -7,7 +7,6 @@ export const metadata = {
     title: 'Regex Tester — Zion Tech Group',
     description: 'Test regular expressions with live matching, highlighting, and quick reference for common patterns.',
     url: 'https://ziontechgroup.com/tools/regex-tester/',
-    siteName: 'Zion Tech Group',
     type: 'website',
   },
   twitter: {

@@ -9,7 +9,6 @@ export const metadata: Metadata = {
     title: 'Micro-SaaS Solutions | Zion Tech Group',
     description: 'Micro-SaaS solutions with measurable outcomes.',
     url: 'https://ziontechgroup.com/solutions/micro-saas/',
-    siteName: 'Zion Tech Group',
     type: 'website',
   },
   twitter: {

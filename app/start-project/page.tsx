@@ -8,7 +8,6 @@ export const metadata = {
     title: 'Start a Project | Zion Tech Group',
     description: 'Start your AI or IT project with clear outcomes, timeline, and integration constraints.',
     url: 'https://ziontechgroup.com/start-project/',
-    siteName: 'Zion Tech Group',
     type: 'website',
   },
   twitter: {

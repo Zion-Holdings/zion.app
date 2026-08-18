@@ -7,7 +7,6 @@ export const metadata = {
     title: 'UUID Generator — Zion Tech Group',
     description: 'Generate UUIDs and ULIDs for database keys, event IDs, and distributed system identifiers.',
     url: 'https://ziontechgroup.com/tools/uuid-generator/',
-    siteName: 'Zion Tech Group',
     type: 'website',
   },
   twitter: {

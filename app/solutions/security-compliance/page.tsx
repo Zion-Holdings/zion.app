@@ -9,7 +9,6 @@ export const metadata: Metadata = {
     title: 'Security & Compliance Solutions | Zion Tech Group',
     description: 'Security and compliance solutions with measurable outcomes.',
     url: 'https://ziontechgroup.com/solutions/security-compliance/',
-    siteName: 'Zion Tech Group',
     type: 'website',
   },
   twitter: {

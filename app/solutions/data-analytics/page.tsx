@@ -9,7 +9,6 @@ export const metadata: Metadata = {
     title: 'Data & Analytics Solutions | Zion Tech Group',
     description: 'Data and analytics solutions with measurable outcomes.',
     url: 'https://ziontechgroup.com/solutions/data-analytics/',
-    siteName: 'Zion Tech Group',
     type: 'website',
   },
   twitter: {

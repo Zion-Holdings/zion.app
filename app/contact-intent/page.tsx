@@ -8,7 +8,6 @@ export const metadata = {
     title: 'Contact Intent | Zion Tech Group',
     description: 'Choose the right contact path for new projects, partnerships, support escalations, or press inquiries.',
     url: 'https://ziontechgroup.com/contact-intent/',
-    siteName: 'Zion Tech Group',
     type: 'website',
   },
   twitter: {
