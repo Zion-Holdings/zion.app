@@ -141,46 +141,7 @@ export default function ToolsPage() {
           <h3 className="text-white font-semibold mb-2">JSON to YAML</h3>
           <p className="text-slate-400 text-sm">Convert JSON to YAML instantly.</p>
         </a>
-        <a href="/tools/blog-post-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Blog Post Generator</h3>
-          <p className="text-slate-400 text-sm">Generate blog outlines and introductions.</p>
-        </a>
-        <a href="/tools/color-contrast/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Color Contrast Checker</h3>
-          <p className="text-slate-400 text-sm">Check WCAG color contrast ratios.</p>
-        </a>
-        <a href="/tools/timestamp-to-cron/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Timestamp to Cron</h3>
-          <p className="text-slate-400 text-sm">Convert timestamps to cron expressions.</p>
-        </a>
-        <a href="/tools/mime-lookup/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">MIME Type Lookup</h3>
-          <p className="text-slate-400 text-sm">Look up MIME types by extension.</p>
-        </a>
-        <a href="/tools/number-base-converter/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Number Base Converter</h3>
-          <p className="text-slate-400 text-sm">Convert between binary, octal, decimal, hex.</p>
-        </a>
-        <a href="/tools/text-to-speech/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Text to Speech</h3>
-          <p className="text-slate-400 text-sm">Convert text to speech with multiple voices.</p>
-        </a>
-        <a href="/tools/jwt-decoder-pro/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">JWT Decoder Pro</h3>
-          <p className="text-slate-400 text-sm">Decode JWT with signature verification.</p>
-        </a>
-        <a href="/tools/css-minifier/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">CSS Minifier</h3>
-          <p className="text-slate-400 text-sm">Minify and compress CSS code.</p>
-        </a>
-        <a href="/tools/json-schema-generator/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">JSON Schema Generator</h3>
-          <p className="text-slate-400 text-sm">Generate JSON Schema from JSON.</p>
-        </a>
-        <a href="/tools/regex-cheat-sheet/" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40">
-          <h3 className="text-white font-semibold mb-2">Regex Cheat Sheet</h3>
-          <p className="text-slate-400 text-sm">Common regex patterns and syntax.</p>
-        </a>
+
       </div>
 
       <div className="mt-12 rounded-2xl border border-slate-800 bg-slate-900/60 p-8 max-w-5xl mx-auto">
