@@ -27,7 +27,7 @@ export default function ContactPage() {
         { label: 'Browse services', href: '/services/', style: 'secondary' },
       ]}
     >
-      <div className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
+      <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
         <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-2">Email</h2>
           <p className="text-slate-300 text-sm">General inquiries and scoping calls.</p>
@@ -36,6 +36,11 @@ export default function ContactPage() {
         <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
           <h2 className="text-xl font-bold text-white mb-2">Response time</h2>
           <p className="text-slate-300 text-sm">Most questions get a detailed reply within one business hour.</p>
+        </div>
+        <div className="rounded-2xl border border-purple-500/30 bg-purple-900/20 p-6">
+          <h2 className="text-xl font-bold text-white mb-2">Schedule</h2>
+          <p className="text-slate-300 text-sm">Book a 15-minute alignment call directly on my calendar.</p>
+          <Link href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noopener noreferrer" className="text-purple-300 text-sm font-semibold hover:text-white">calendly.com/kleber-ziontechgroup</Link>
         </div>
       </div>
 
